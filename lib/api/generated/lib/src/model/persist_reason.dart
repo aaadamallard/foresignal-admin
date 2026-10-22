@@ -1,0 +1,47 @@
+//
+// AUTO-GENERATED FILE, DO NOT MODIFY!
+//
+
+// ignore_for_file: unused_element
+import 'package:built_collection/built_collection.dart';
+import 'package:built_value/built_value.dart';
+import 'package:built_value/serializer.dart';
+
+part 'persist_reason.g.dart';
+
+/// Why a version was persisted (Core-Data-Model §5.2; stored codes 1–9)
+class PersistReason extends EnumClass {
+  @BuiltValueEnumConst(wireName: r'FIRST')
+  static const PersistReason FIRST = _$FIRST;
+  @BuiltValueEnumConst(wireName: r'REAPPEAR')
+  static const PersistReason REAPPEAR = _$REAPPEAR;
+  @BuiltValueEnumConst(wireName: r'SIGNIFICANT')
+  static const PersistReason SIGNIFICANT = _$SIGNIFICANT;
+  @BuiltValueEnumConst(wireName: r'TOMBSTONE')
+  static const PersistReason TOMBSTONE = _$TOMBSTONE;
+  @BuiltValueEnumConst(wireName: r'CHANGE')
+  static const PersistReason CHANGE = _$CHANGE;
+  @BuiltValueEnumConst(wireName: r'SAMPLE')
+  static const PersistReason SAMPLE = _$SAMPLE;
+  @BuiltValueEnumConst(wireName: r'KEYFRAME')
+  static const PersistReason KEYFRAME = _$KEYFRAME;
+  @BuiltValueEnumConst(wireName: r'HEARTBEAT')
+  static const PersistReason HEARTBEAT = _$HEARTBEAT;
+  @BuiltValueEnumConst(wireName: r'TRIGGER_EDGE')
+  static const PersistReason TRIGGER_EDGE = _$TRIGGER_EDGE;
+
+  static Serializer<PersistReason> get serializer => _$persistReasonSerializer;
+
+  const PersistReason._(String name) : super(name);
+
+  static BuiltSet<PersistReason> get values => _$values;
+  static PersistReason valueOf(String name) => _$valueOf(name);
+}
+
+/// Optionally, enum_class can generate a mixin to go with your enum for use
+/// with Angular. It exposes your enum constants as getters. So, if you mix it
+/// in to your Dart component class, the values become available to the
+/// corresponding Angular template.
+///
+/// Trigger mixin generation by writing a line like this one next to your enum.
+abstract class PersistReasonMixin = Object with _$PersistReasonMixin;

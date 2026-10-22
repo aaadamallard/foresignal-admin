@@ -1,0 +1,229 @@
+//
+// AUTO-GENERATED FILE, DO NOT MODIFY!
+//
+
+// ignore_for_file: unused_element
+import 'package:built_collection/built_collection.dart';
+import 'package:foresignal_api/src/model/notification_message.dart';
+import 'package:built_value/json_object.dart';
+import 'package:built_value/built_value.dart';
+import 'package:built_value/serializer.dart';
+
+part 'webhook_envelope.g.dart';
+
+/// Default body of the generic `webhook` channel (overridable by `bodyTemplate`)
+///
+/// Properties:
+/// * [event]
+/// * [subtype]
+/// * [message]
+/// * [data]
+/// * [foresignalOrigin] - Install id of the sending instance
+/// * [exercise] - Exercise delivery; also header X-Foresignal-Exercise: true
+@BuiltValue()
+abstract class WebhookEnvelope
+    implements Built<WebhookEnvelope, WebhookEnvelopeBuilder> {
+  @BuiltValueField(wireName: r'event')
+  WebhookEnvelopeEventEnum get event;
+  // enum eventEnum {  alert,  briefing,  system,  test,  };
+
+  @BuiltValueField(wireName: r'subtype')
+  String get subtype;
+
+  @BuiltValueField(wireName: r'message')
+  NotificationMessage get message;
+
+  @BuiltValueField(wireName: r'data')
+  BuiltMap<String, JsonObject?>? get data;
+
+  /// Install id of the sending instance
+  @BuiltValueField(wireName: r'foresignalOrigin')
+  String get foresignalOrigin;
+
+  /// Exercise delivery; also header X-Foresignal-Exercise: true
+  @BuiltValueField(wireName: r'exercise')
+  bool? get exercise;
+
+  WebhookEnvelope._();
+
+  factory WebhookEnvelope([void updates(WebhookEnvelopeBuilder b)]) =
+      _$WebhookEnvelope;
+
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults(WebhookEnvelopeBuilder b) => b;
+
+  @BuiltValueSerializer(custom: true)
+  static Serializer<WebhookEnvelope> get serializer =>
+      _$WebhookEnvelopeSerializer();
+}
+
+class _$WebhookEnvelopeSerializer
+    implements PrimitiveSerializer<WebhookEnvelope> {
+  @override
+  final Iterable<Type> types = const [WebhookEnvelope, _$WebhookEnvelope];
+
+  @override
+  final String wireName = r'WebhookEnvelope';
+
+  Iterable<Object?> _serializeProperties(
+    Serializers serializers,
+    WebhookEnvelope object, {
+    FullType specifiedType = FullType.unspecified,
+  }) sync* {
+    yield r'event';
+    yield serializers.serialize(
+      object.event,
+      specifiedType: const FullType(WebhookEnvelopeEventEnum),
+    );
+    yield r'subtype';
+    yield serializers.serialize(
+      object.subtype,
+      specifiedType: const FullType(String),
+    );
+    yield r'message';
+    yield serializers.serialize(
+      object.message,
+      specifiedType: const FullType(NotificationMessage),
+    );
+    if (object.data != null) {
+      yield r'data';
+      yield serializers.serialize(
+        object.data,
+        specifiedType: const FullType.nullable(
+            BuiltMap, [FullType(String), FullType.nullable(JsonObject)]),
+      );
+    }
+    yield r'foresignalOrigin';
+    yield serializers.serialize(
+      object.foresignalOrigin,
+      specifiedType: const FullType(String),
+    );
+    if (object.exercise != null) {
+      yield r'exercise';
+      yield serializers.serialize(
+        object.exercise,
+        specifiedType: const FullType(bool),
+      );
+    }
+  }
+
+  @override
+  Object serialize(
+    Serializers serializers,
+    WebhookEnvelope object, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
+  }
+
+  void _deserializeProperties(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+    required List<Object?> serializedList,
+    required WebhookEnvelopeBuilder result,
+    required List<Object?> unhandled,
+  }) {
+    for (var i = 0; i < serializedList.length; i += 2) {
+      final key = serializedList[i] as String;
+      final value = serializedList[i + 1];
+      switch (key) {
+        case r'event':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(WebhookEnvelopeEventEnum),
+          ) as WebhookEnvelopeEventEnum;
+          result.event = valueDes;
+          break;
+        case r'subtype':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.subtype = valueDes;
+          break;
+        case r'message':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(NotificationMessage),
+          ) as NotificationMessage;
+          result.message.replace(valueDes);
+          break;
+        case r'data':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType.nullable(
+                BuiltMap, [FullType(String), FullType.nullable(JsonObject)]),
+          ) as BuiltMap<String, JsonObject?>?;
+          if (valueDes == null) continue;
+          result.data.replace(valueDes);
+          break;
+        case r'foresignalOrigin':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.foresignalOrigin = valueDes;
+          break;
+        case r'exercise':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType.nullable(bool),
+          ) as bool?;
+          if (valueDes == null) continue;
+          result.exercise = valueDes;
+          break;
+        default:
+          unhandled.add(key);
+          unhandled.add(value);
+          break;
+      }
+    }
+  }
+
+  @override
+  WebhookEnvelope deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    final result = WebhookEnvelopeBuilder();
+    final serializedList = (serialized as Iterable<Object?>).toList();
+    final unhandled = <Object?>[];
+    _deserializeProperties(
+      serializers,
+      serialized,
+      specifiedType: specifiedType,
+      serializedList: serializedList,
+      unhandled: unhandled,
+      result: result,
+    );
+    return result.build();
+  }
+}
+
+class WebhookEnvelopeEventEnum extends EnumClass {
+  @BuiltValueEnumConst(wireName: r'alert')
+  static const WebhookEnvelopeEventEnum alert =
+      _$webhookEnvelopeEventEnum_alert;
+  @BuiltValueEnumConst(wireName: r'briefing')
+  static const WebhookEnvelopeEventEnum briefing =
+      _$webhookEnvelopeEventEnum_briefing;
+  @BuiltValueEnumConst(wireName: r'system')
+  static const WebhookEnvelopeEventEnum system =
+      _$webhookEnvelopeEventEnum_system;
+  @BuiltValueEnumConst(wireName: r'test')
+  static const WebhookEnvelopeEventEnum test = _$webhookEnvelopeEventEnum_test;
+
+  static Serializer<WebhookEnvelopeEventEnum> get serializer =>
+      _$webhookEnvelopeEventEnumSerializer;
+
+  const WebhookEnvelopeEventEnum._(String name) : super(name);
+
+  static BuiltSet<WebhookEnvelopeEventEnum> get values =>
+      _$webhookEnvelopeEventEnumValues;
+  static WebhookEnvelopeEventEnum valueOf(String name) =>
+      _$webhookEnvelopeEventEnumValueOf(name);
+}

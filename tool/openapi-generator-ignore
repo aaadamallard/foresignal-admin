@@ -1,0 +1,5 @@
+# Files openapi-generator must not write into lib/api/generated/.
+test/**
+doc/**
+.travis.yml
+git_push.sh
