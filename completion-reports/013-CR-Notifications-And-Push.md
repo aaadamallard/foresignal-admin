@@ -78,7 +78,7 @@ All 22 operations the prompt names are called, and every write is confirmed by r
 
 ## Wire spellings found and left alone
 
-None in the 013 files. The scanner reports none, and no allow regions were added. The contract's own description text says "honour Retry-After". That is the contract's wording, is not in the app, and was not touched.
+None in the 013 files. The scanner reports none, and no allow regions were added. The contract's 429 descriptions use the British spelling of "honor" before `Retry-After`. That text is the contract's, is not in the app, and was not touched.
 
 ## Secrets
 
