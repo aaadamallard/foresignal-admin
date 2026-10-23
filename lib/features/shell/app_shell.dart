@@ -10,6 +10,7 @@ import '../../core/theme.dart';
 import '../../core/theme_mode.dart';
 import '../../core/ui/ui.dart';
 import '../notifications/presence.dart';
+import '../notifications/push_arrival_banner.dart';
 
 /// The frame around every screen, as in the mocks: a ForeSignal sidebar with
 /// Connect first (desktop) or a bottom bar (mobile), and the global error
@@ -48,6 +49,7 @@ class AppShell extends ConsumerWidget {
       children: <Widget>[
         const PresenceReporter(),
         const _GlobalErrorSurface(),
+        if (formFactor == FormFactor.mobile) const PushArrivalBanner(),
         Expanded(child: child),
       ],
     );

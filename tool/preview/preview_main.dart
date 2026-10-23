@@ -7,7 +7,9 @@
 //
 // CONNECTED=true starts already connected with the preview token, and the
 // setup wizard counts as never run. FORM_FACTOR=mobile shows the mobile
-// companion's shell and screens in the desktop window.
+// companion's shell and screens in the desktop window. PUSH=true (with
+// FORM_FACTOR=mobile) has a critical alert's push arrive in front 4 s after
+// start, as FCM would deliver it.
 //
 // The fake accepts the admin token `fsr_preview`; any other token is
 // answered 401, as `getServerSettings` would.
@@ -24,6 +26,7 @@ import 'package:foresignal_admin/core/device_id.dart';
 import 'package:foresignal_admin/core/form_factor.dart';
 import 'package:foresignal_admin/core/theme_mode.dart';
 import 'package:foresignal_admin/features/connect/connect_controller.dart';
+import 'package:foresignal_admin/features/notifications/push_arrival.dart';
 import 'package:foresignal_admin/features/setup/setup_wizard_store.dart';
 
 import 'preview_alerts.dart';
@@ -277,10 +280,34 @@ Dio _previewDio(Uri baseUrl, String? token) =>
     createBackendDio(baseUrl: baseUrl, tokenStore: InMemoryAdminTokenStore(token))
       ..httpClientAdapter = _PreviewAdapter();
 
+/// One FCM data message for the newest firing critical alert, arriving in
+/// front 4 s after the app starts.
+class _PreviewPushArrivals implements PushArrivalSource {
+  @override
+  Stream<PushEvent> events() async* {
+    await Future<void>.delayed(const Duration(seconds: 4));
+    final alert = _alerts.alerts.values.lastWhere((a) => a['state'] == 'firing' && a['severity'] == 'critical');
+    final arrival = PushArrival.fromData(<String, Object?>{
+      'v': '1',
+      'id': '9001',
+      'a': '${alert['id']}',
+      's': 'critical',
+      'ev': 'alert',
+      't': '${alert['message']}',
+      'c': 'FORESIGNAL_ALERT',
+    })!;
+    yield (arrival: arrival, opened: false);
+  }
+
+  @override
+  Future<PushArrival?> launchedBy() async => null;
+}
+
 void main() {
   const theme = String.fromEnvironment('THEME', defaultValue: 'dark');
   const connected = bool.fromEnvironment('CONNECTED');
   const mobile = String.fromEnvironment('FORM_FACTOR') == 'mobile';
+  const push = bool.fromEnvironment('PUSH');
   WidgetsFlutterBinding.ensureInitialized();
   final previewUrl = Uri.parse('http://foresignal.local:8080');
   final store = connected
@@ -289,6 +316,7 @@ void main() {
   final container = ProviderContainer(
     overrides: [
       if (mobile) formFactorProvider.overrideWithValue(FormFactor.mobile),
+      pushArrivalSourceProvider.overrideWithValue(push ? _PreviewPushArrivals() : const NoPushArrivals()),
       connectionStoreProvider.overrideWithValue(store),
       adminTokenStoreProvider.overrideWithValue(store),
       themePreferenceStoreProvider.overrideWithValue(InMemoryThemeStore()),

@@ -6,11 +6,13 @@ import 'app.dart';
 import 'core/connection_store.dart';
 import 'core/error_reporter.dart';
 import 'core/theme_mode.dart';
+import 'features/notifications/push_arrival.dart';
 
 /// Starts ForeSignal Admin: loads the saved connection from the secure store
 /// and the saved theme, installs the global error surface, and runs the app.
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  installPushBackgroundHandler();
   final store = SecureConnectionStore();
   Uri? savedUrl;
   try {
