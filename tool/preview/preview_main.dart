@@ -25,6 +25,7 @@ import 'package:foresignal_admin/core/theme_mode.dart';
 import 'package:foresignal_admin/features/connect/connect_controller.dart';
 import 'package:foresignal_admin/features/setup/setup_wizard_store.dart';
 
+import 'preview_llm.dart';
 import 'preview_sources.dart';
 import 'preview_usage.dart';
 import 'preview_validate.dart';
@@ -102,6 +103,7 @@ typedef PreviewReply = ({int status, Object? body});
 
 final PreviewCustom _custom = PreviewCustom();
 final PreviewSettings _settings = PreviewSettings();
+final PreviewLlm _llm = PreviewLlm();
 
 PreviewReply? _answer(RequestOptions options, Object? requestBody) {
   final sources = answerSources(options.method, options.uri.path, requestBody);
@@ -129,6 +131,16 @@ PreviewReply? _answer(RequestOptions options, Object? requestBody) {
   );
   if (usage != null) {
     return usage;
+  }
+  final llm = answerLlm(
+    options.method,
+    options.uri.path,
+    options.uri.queryParametersAll,
+    requestBody,
+    _llm,
+  );
+  if (llm != null) {
+    return llm;
   }
   final body = previewBodies[options.uri.path];
   return body == null ? null : (status: 200, body: body);

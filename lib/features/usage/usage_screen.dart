@@ -204,7 +204,8 @@ Widget tileRow(List<Widget> tiles) => LayoutBuilder(
   },
 );
 
-String _bucketText(DateTime t, UsageWindow window) {
+/// The axis and tooltip text of bucket [t] in [window], UTC.
+String bucketText(DateTime t, UsageWindow window) {
   final u = t.toUtc();
   String two(int n) => n.toString().padLeft(2, '0');
   return window == UsageWindow.day
@@ -372,7 +373,7 @@ class _RequestsChart extends StatelessWidget {
             key: const Key('usage.requestsChart'),
             buckets: stacked.buckets,
             series: series,
-            bucketLabel: (t) => _bucketText(t, window),
+            bucketLabel: (t) => bucketText(t, window),
           ),
         if (usage.failed.isNotEmpty) ...<Widget>[
           const SizedBox(height: 8),
@@ -429,7 +430,7 @@ class _WrittenChart extends StatelessWidget {
               total: compactCount(total),
             ),
           ],
-          bucketLabel: (t) => _bucketText(t, window),
+          bucketLabel: (t) => bucketText(t, window),
         ),
       ],
     );

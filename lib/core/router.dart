@@ -3,6 +3,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 import '../api/backend_endpoint.dart';
+import '../features/ai/ai_screen.dart';
+import '../features/ai/provider_screen.dart';
 import '../features/connect/connect_screen.dart';
 import '../features/setup/setup_wizard_screen.dart';
 import '../features/shell/app_shell.dart';
@@ -84,6 +86,18 @@ Map<String, SectionRoutes> sectionRoutesFor(FormFactor formFactor) {
       ],
     ),
     if (desktop) usagePath: SectionRoutes(builder: (context, state) => const UsageScreen()),
+    if (desktop)
+      aiPath: SectionRoutes(
+        builder: (context, state) => const AiScreen(),
+        routes: <RouteBase>[
+          GoRoute(path: 'new-provider', builder: (context, state) => const ProviderScreen()),
+          GoRoute(
+            path: 'providers/:providerId',
+            builder: (context, state) =>
+                ProviderScreen(providerId: state.pathParameters['providerId']),
+          ),
+        ],
+      ),
   };
 }
 

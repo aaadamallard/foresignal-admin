@@ -148,10 +148,19 @@ class StackedUsage {
   /// Combines per-source series. The [top] sources by requests keep their
   /// own series, in id order so a source keeps its color while it stays in
   /// the top; the rest are summed into [other].
-  factory StackedUsage.combine(Map<String, UsageSeries> bySource, {int top = 5}) {
+  factory StackedUsage.combine(Map<String, UsageSeries> bySource, {int top = 5}) =>
+      StackedUsage.fromPoints(<String, Map<DateTime, int>>{
+        for (final entry in bySource.entries)
+          entry.key: <DateTime, int>{for (final p in entry.value.points) p.t.toUtc(): p.requests},
+      }, top: top);
+
+  /// Combines per-key counts by bucket start the same way as [combine]:
+  /// the [top] keys by total keep their own series, in key order, and the
+  /// rest are summed into [other].
+  factory StackedUsage.fromPoints(Map<String, Map<DateTime, int>> byKey, {int top = 5}) {
     final totals = <String, int>{
-      for (final entry in bySource.entries)
-        entry.key: entry.value.points.fold<int>(0, (sum, p) => sum + p.requests),
+      for (final entry in byKey.entries)
+        entry.key: entry.value.values.fold<int>(0, (sum, v) => sum + v),
     };
     final ranked = totals.keys.where((k) => totals[k]! > 0).toList()
       ..sort((a, b) => totals[b]!.compareTo(totals[a]!));
@@ -160,21 +169,20 @@ class StackedUsage {
     final keys = <String>[...kept, if (folded.isNotEmpty) other];
 
     final times = <DateTime>{
-      for (final series in bySource.values)
-        for (final p in series.points) p.t.toUtc(),
+      for (final points in byKey.values) ...points.keys.map((t) => t.toUtc()),
     }.toList()..sort();
     final index = <DateTime, int>{for (var i = 0; i < times.length; i++) times[i]: i};
     final values = <String, List<int>>{
       for (final k in keys) k: List<int>.filled(times.length, 0),
     };
-    for (final entry in bySource.entries) {
+    for (final entry in byKey.entries) {
       final key = folded.contains(entry.key) ? other : entry.key;
       final row = values[key];
       if (row == null) {
         continue;
       }
-      for (final p in entry.value.points) {
-        row[index[p.t.toUtc()]!] += p.requests;
+      for (final point in entry.value.entries) {
+        row[index[point.key.toUtc()]!] += point.value;
       }
     }
     final keptTotals = <String, int>{

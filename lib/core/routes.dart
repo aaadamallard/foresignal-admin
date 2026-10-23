@@ -27,6 +27,15 @@ String sourceTestPath(String sourceId) => '${sourceDetailPath(sourceId)}/test';
 /// Usage, budgets, the collector governor, rate limits and retention.
 const String usagePath = '/usage';
 
+/// AI configuration: providers, roles, options, templates and usage.
+const String aiPath = '/ai';
+
+/// Adds an LLM provider.
+const String aiNewProviderPath = '$aiPath/new-provider';
+
+/// One LLM provider.
+String aiProviderPath(String providerId) => '$aiPath/providers/${Uri.encodeComponent(providerId)}';
+
 /// Trigger rules.
 const String alertTriggersPath = '/alerts/triggers';
 
