@@ -5,6 +5,10 @@ import 'package:go_router/go_router.dart';
 import '../api/backend_endpoint.dart';
 import '../features/ai/ai_screen.dart';
 import '../features/ai/provider_screen.dart';
+import '../features/analysis/analysis_screen.dart';
+import '../features/analysis/cycle_screen.dart';
+import '../features/analysis/event_screen.dart';
+import '../features/analysis/recipe_screen.dart';
 import '../features/connect/connect_screen.dart';
 import '../features/setup/setup_wizard_screen.dart';
 import '../features/shell/app_shell.dart';
@@ -95,6 +99,30 @@ Map<String, SectionRoutes> sectionRoutesFor(FormFactor formFactor) {
             path: 'providers/:providerId',
             builder: (context, state) =>
                 ProviderScreen(providerId: state.pathParameters['providerId']),
+          ),
+        ],
+      ),
+    if (desktop)
+      analysisPath: SectionRoutes(
+        builder: (context, state) => const AnalysisScreen(),
+        routes: <RouteBase>[
+          GoRoute(path: 'new-recipe', builder: (context, state) => const RecipeScreen()),
+          GoRoute(
+            path: 'recipes/:recipeId',
+            builder: (context, state) => RecipeScreen(recipeId: state.pathParameters['recipeId']),
+          ),
+          GoRoute(
+            path: 'events/:eventId',
+            builder: (context, state) => EventScreen(eventId: state.pathParameters['eventId']!),
+          ),
+          GoRoute(path: 'new-cycle', builder: (context, state) => const CycleScreen()),
+          GoRoute(
+            path: 'cycles/:cycleId',
+            builder: (context, state) => CycleScreen(cycleId: state.pathParameters['cycleId']),
+          ),
+          GoRoute(
+            path: 'runs/:runId',
+            builder: (context, state) => RunScreen(runId: state.pathParameters['runId']!),
           ),
         ],
       ),

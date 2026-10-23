@@ -36,6 +36,28 @@ const String aiNewProviderPath = '$aiPath/new-provider';
 /// One LLM provider.
 String aiProviderPath(String providerId) => '$aiPath/providers/${Uri.encodeComponent(providerId)}';
 
+/// Correlation, analysis cycles, assessments, calibration, corroboration.
+const String analysisPath = '/analysis';
+
+/// Authors a correlation recipe.
+const String analysisNewRecipePath = '$analysisPath/new-recipe';
+
+/// One correlation recipe.
+String analysisRecipePath(String recipeId) =>
+    '$analysisPath/recipes/${Uri.encodeComponent(recipeId)}';
+
+/// One intelligence event.
+String analysisEventPath(String eventId) => '$analysisPath/events/${Uri.encodeComponent(eventId)}';
+
+/// Creates an analysis cycle.
+const String analysisNewCyclePath = '$analysisPath/new-cycle';
+
+/// One analysis cycle and its runs.
+String analysisCyclePath(String cycleId) => '$analysisPath/cycles/${Uri.encodeComponent(cycleId)}';
+
+/// One cycle run.
+String analysisRunPath(String runId) => '$analysisPath/runs/${Uri.encodeComponent(runId)}';
+
 /// Trigger rules.
 const String alertTriggersPath = '/alerts/triggers';
 
