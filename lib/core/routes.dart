@@ -184,6 +184,30 @@ String servingPeerPath(String peerId) => '$servingPeersPath/${Uri.encodeComponen
 /// A new peer.
 const String servingNewPeerPath = '$servingPath/new-peer';
 
+/// System: the instance's health and the client contract.
+const String systemPath = '/system';
+
+/// Server settings.
+const String systemServerPath = '$systemPath/server';
+
+/// Security and access.
+const String systemSecurityPath = '$systemPath/security';
+
+/// Tokens and keys.
+const String systemTokensPath = '$systemPath/tokens';
+
+/// Signing keys and attributions.
+const String systemSigningPath = '$systemPath/signing';
+
+/// Parser plugins.
+const String systemPluginsPath = '$systemPath/plugins';
+
+/// Notification pause, watchdog, weather, metrics and infrastructure rules.
+const String systemOperationsPath = '$systemPath/operations';
+
+/// Settings export and import.
+const String systemBackupPath = '$systemPath/backup';
+
 /// The section root a [path] belongs to: `/sources/x/test` → `/sources`.
 String sectionRootOf(String path) {
   final segments = Uri.parse(path).pathSegments;

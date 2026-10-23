@@ -37,6 +37,7 @@ import '../features/sources/custom/custom_sources_screen.dart';
 import '../features/sources/source_detail_screen.dart';
 import '../features/sources/source_test_screen.dart';
 import '../features/sources/sources_catalog_screen.dart';
+import '../features/system/system_screen.dart';
 import '../features/usage/usage_screen.dart';
 import '../features/vetting/claim_screen.dart';
 import '../features/vetting/entity_screen.dart';
@@ -311,6 +312,14 @@ Map<String, SectionRoutes> sectionRoutesFor(FormFactor formFactor) {
               ),
             ],
           ),
+        ],
+      ),
+    if (desktop)
+      systemPath: SectionRoutes(
+        builder: (context, state) => const SystemScreen(),
+        routes: <RouteBase>[
+          for (final tab in SystemTab.values.skip(1))
+            GoRoute(path: tab.path.substring(systemPath.length + 1), builder: (context, state) => SystemScreen(tab: tab)),
         ],
       ),
     if (!desktop) devicePath: SectionRoutes(builder: (context, state) => const ThisDeviceScreen()),

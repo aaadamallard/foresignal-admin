@@ -33,6 +33,7 @@ import 'preview_llm.dart';
 import 'preview_notifications.dart';
 import 'preview_serving.dart';
 import 'preview_sources.dart';
+import 'preview_system.dart';
 import 'preview_usage.dart';
 import 'preview_validate.dart';
 import 'preview_vetting.dart';
@@ -90,8 +91,19 @@ final PreviewForecasting _forecasting = PreviewForecasting();
 final PreviewAlerts _alerts = PreviewAlerts();
 final PreviewNotifications _notifications = PreviewNotifications();
 final PreviewServing _serving = PreviewServing();
+final PreviewSystem _system = PreviewSystem();
 
 PreviewReply? _answer(RequestOptions options, Object? requestBody) {
+  final system = answerSystem(
+    options.method,
+    options.uri.path,
+    options.uri.queryParametersAll,
+    requestBody,
+    _system,
+  );
+  if (system != null) {
+    return system;
+  }
   final sources = answerSources(options.method, options.uri.path, requestBody);
   if (sources != null) {
     return sources;
@@ -213,7 +225,7 @@ class _PreviewAdapter implements HttpClientAdapter {
     }
     await Future<void>.delayed(const Duration(milliseconds: 400));
     if (path == '/v1/settings/server' &&
-        options.headers['Authorization'] != 'Bearer $previewToken') {
+        options.headers['Authorization'] != 'Bearer ${_system.adminToken}') {
       return _json(
         <String, Object?>{'title': 'Unauthorized', 'status': 401, 'code': 'UNAUTHORIZED'},
         401,
