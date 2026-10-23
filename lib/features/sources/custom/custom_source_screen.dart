@@ -283,8 +283,7 @@ class _KeysPanelState extends ConsumerState<KeysPanel> {
     }
     final text = lines.join('\n');
     // The URLs embed the key: masked with it until it is revealed.
-    return (revealed) =>
-        SelectableText(revealed ? text : OneTimeSecret.maskSecret(text, key));
+    return (revealed) => SelectableText(revealed ? text : OneTimeSecret.maskSecret(text, key));
   }
 
   @override

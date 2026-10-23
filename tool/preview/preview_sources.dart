@@ -24,6 +24,8 @@ class PreviewSource {
     this.core = false,
     this.free = true,
     this.track = false,
+    this.spentUsd,
+    this.capUsd,
   });
 
   /// `id`.
@@ -56,6 +58,12 @@ class PreviewSource {
   /// TRACK history.
   final bool track;
 
+  /// `spentUsdThisMonth` (paid adapters).
+  final double? spentUsd;
+
+  /// `budget.monthlyCapUsd` (paid adapters).
+  final double? capUsd;
+
   /// `enabled`.
   bool enabled;
 
@@ -86,7 +94,11 @@ class PreviewSource {
   /// The rest of SourceSettings, as last written.
   final Map<String, Object?> settings = <String, Object?>{};
 
-  Map<String, Object?> get _budget => <String, Object?>{'perMinute': perMinute, 'perDay': perDay};
+  Map<String, Object?> get _budget => <String, Object?>{
+    'perMinute': perMinute,
+    'perDay': perDay,
+    'monthlyCapUsd': ?capUsd,
+  };
 
   /// SourceSummary.
   Map<String, Object?> get summary => <String, Object?>{
@@ -174,7 +186,11 @@ class PreviewSource {
     'budget': _budget,
     'budgetUsedToday': usedToday,
     'budgetRemainingToday': perDay - usedToday,
-    'requestsLastHour': enabled ? 4 : 0,
+    'requestsLastHour': enabled ? 4 + usedToday ~/ 400 : 0,
+    'bytesLastHour': enabled ? 180000 + usedToday * 40 : 0,
+    'refusedLastHour': enabled && usedToday * 10 > perDay * 8 ? 3 : 0,
+    'budgetHoursRemaining': enabled ? (perDay - usedToday) / (4 + usedToday ~/ 400) : null,
+    'spentUsdThisMonth': ?spentUsd,
     'errorRateLastHour': status == 'failing' ? 1 : 0,
     'lastRecordsSeen': enabled ? 12 : 0,
     'lastRecordsChanged': enabled ? 3 : 0,
@@ -293,6 +309,8 @@ List<PreviewSource> buildPreviewSources() => <PreviewSource>[
     interval: '1h',
     usedToday: 36,
     perDay: 500,
+    spentUsd: 6.4,
+    capUsd: 25,
   ),
   PreviewSource(
     'opensky-states',

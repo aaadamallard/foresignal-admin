@@ -6,6 +6,7 @@ import '../../api/api.dart';
 import '../../core/form_factor.dart';
 import '../../core/routes.dart';
 import '../../core/ui/ui.dart';
+import '../usage/usage_screen.dart';
 import 'source_filter.dart';
 import 'source_providers.dart';
 import 'source_widgets.dart';
@@ -135,6 +136,7 @@ class _SourcesCatalogScreenState extends ConsumerState<SourcesCatalogScreen> {
           ErrorBanner(error: error),
           const SizedBox(height: 16),
         ],
+        if (!_desktop) ...<Widget>[const UsageGlanceCard(), const SizedBox(height: 16)],
         AsyncView<List<SourceSummary>>(
           value: sources,
           onRetry: () => invalidateSources(ref),

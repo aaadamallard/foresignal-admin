@@ -118,7 +118,7 @@ class ProbeResultView extends StatelessWidget {
               ),
               TableColumnSpec<ProbeResultRequestsInner>(
                 label: 'Bytes',
-                cell: (q) => Text(q.bytes == null ? '—' : compactCount(q.bytes!)),
+                cell: (q) => Text(q.bytes == null ? '—' : byteText(q.bytes!)),
               ),
               TableColumnSpec<ProbeResultRequestsInner>(
                 label: 'Time',
@@ -269,7 +269,7 @@ class FetchLogTable extends StatelessWidget {
         TableColumnSpec<FetchLogEntry>(
           label: 'Bytes',
           numeric: true,
-          cell: (f) => Text(f.bytes == null ? '—' : compactCount(f.bytes!)),
+          cell: (f) => Text(f.bytes == null ? '—' : byteText(f.bytes!)),
         ),
       ],
     );
@@ -403,7 +403,7 @@ class UsageSeriesView extends StatelessWidget {
                 MapEntry<String, Object>('Requests', compactCount(t.requests)),
                 MapEntry<String, Object>('Errors', '${t.errors}'),
                 MapEntry<String, Object>('Refused', '${t.refused}'),
-                MapEntry<String, Object>('Bytes', compactCount(t.bytes)),
+                MapEntry<String, Object>('Bytes', byteText(t.bytes)),
                 if (t.recordsSeen case final n?)
                   MapEntry<String, Object>('Records seen', compactCount(n)),
                 if (t.versions case final n?) MapEntry<String, Object>('Versions', compactCount(n)),

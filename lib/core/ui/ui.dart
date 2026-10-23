@@ -12,6 +12,7 @@ export 'one_time_secret.dart';
 export 'page_header.dart';
 export 'result_panel.dart';
 export 'section_card.dart';
+export 'stacked_bar_chart.dart';
 export 'status_chip.dart';
 export 'status_label.dart';
 export 'write_confirm.dart';

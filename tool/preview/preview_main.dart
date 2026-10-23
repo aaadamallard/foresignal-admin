@@ -6,7 +6,8 @@
 //     --dart-define=THEME=light --dart-define=CONNECTED=true
 //
 // CONNECTED=true starts already connected with the preview token, and the
-// setup wizard counts as never run.
+// setup wizard counts as never run. FORM_FACTOR=mobile shows the mobile
+// companion's shell and screens in the desktop window.
 //
 // The fake accepts the admin token `fsr_preview`; any other token is
 // answered 401, as `getServerSettings` would.
@@ -19,11 +20,13 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:foresignal_admin/api/api.dart';
 import 'package:foresignal_admin/app.dart';
 import 'package:foresignal_admin/core/connection_store.dart';
+import 'package:foresignal_admin/core/form_factor.dart';
 import 'package:foresignal_admin/core/theme_mode.dart';
 import 'package:foresignal_admin/features/connect/connect_controller.dart';
 import 'package:foresignal_admin/features/setup/setup_wizard_store.dart';
 
 import 'preview_sources.dart';
+import 'preview_usage.dart';
 import 'preview_validate.dart';
 
 /// The token the fake backend accepts.
@@ -98,6 +101,7 @@ final Map<String, Object?> previewBodies = <String, Object?>{
 typedef PreviewReply = ({int status, Object? body});
 
 final PreviewCustom _custom = PreviewCustom();
+final PreviewSettings _settings = PreviewSettings();
 
 PreviewReply? _answer(RequestOptions options, Object? requestBody) {
   final sources = answerSources(options.method, options.uri.path, requestBody);
@@ -114,6 +118,17 @@ PreviewReply? _answer(RequestOptions options, Object? requestBody) {
   );
   if (validate != null) {
     return validate;
+  }
+  final usage = answerUsage(
+    options.method,
+    options.uri.path,
+    options.uri.queryParametersAll,
+    requestBody,
+    previewSources,
+    _settings,
+  );
+  if (usage != null) {
+    return usage;
   }
   final body = previewBodies[options.uri.path];
   return body == null ? null : (status: 200, body: body);
@@ -173,6 +188,7 @@ Dio _previewDio(Uri baseUrl, String? token) =>
 void main() {
   const theme = String.fromEnvironment('THEME', defaultValue: 'dark');
   const connected = bool.fromEnvironment('CONNECTED');
+  const mobile = String.fromEnvironment('FORM_FACTOR') == 'mobile';
   WidgetsFlutterBinding.ensureInitialized();
   final previewUrl = Uri.parse('http://foresignal.local:8080');
   final store = connected
@@ -180,6 +196,7 @@ void main() {
       : InMemoryConnectionStore();
   final container = ProviderContainer(
     overrides: [
+      if (mobile) formFactorProvider.overrideWithValue(FormFactor.mobile),
       connectionStoreProvider.overrideWithValue(store),
       adminTokenStoreProvider.overrideWithValue(store),
       themePreferenceStoreProvider.overrideWithValue(InMemoryThemeStore()),

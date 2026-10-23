@@ -108,6 +108,19 @@ String compactCount(num n) {
   return '$n';
 }
 
+/// [bytes] in decimal units: `348412` → `348.4 KB`.
+String byteText(num bytes) {
+  const units = <String>['B', 'KB', 'MB', 'GB', 'TB'];
+  var v = bytes.toDouble();
+  var u = 0;
+  while (v.abs() >= 1000 && u < units.length - 1) {
+    v /= 1000;
+    u++;
+  }
+  final text = u == 0 ? '${bytes.round()}' : v.toStringAsFixed(1);
+  return '${text.endsWith('.0') ? text.substring(0, text.length - 2) : text} ${units[u]}';
+}
+
 /// A source's interval for a table cell.
 String intervalText(String? interval) => displayDurationText(interval);
 

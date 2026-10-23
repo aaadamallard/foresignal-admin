@@ -13,6 +13,7 @@ import '../features/sources/custom/custom_sources_screen.dart';
 import '../features/sources/source_detail_screen.dart';
 import '../features/sources/source_test_screen.dart';
 import '../features/sources/sources_catalog_screen.dart';
+import '../features/usage/usage_screen.dart';
 import 'form_factor.dart';
 import 'nav.dart';
 import 'routes.dart';
@@ -82,6 +83,7 @@ Map<String, SectionRoutes> sectionRoutesFor(FormFactor formFactor) {
         ],
       ],
     ),
+    if (desktop) usagePath: SectionRoutes(builder: (context, state) => const UsageScreen()),
   };
 }
 

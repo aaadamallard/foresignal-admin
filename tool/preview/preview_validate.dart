@@ -7,6 +7,7 @@
 // are dropped, never kept.
 
 import 'preview_sources.dart';
+import 'preview_usage.dart';
 
 /// A fake reply.
 typedef Reply = ({int status, Object? body});
@@ -270,37 +271,7 @@ Reply? answerValidate(
       case ('GET', 'health'):
         return (status: 200, body: source.health);
       case ('GET', 'usage'):
-        final hourly = query['resolution']?.first != 'day';
-        final points = <Object?>[
-          for (var i = 0; i < (hourly ? 24 : 7); i++)
-            <String, Object?>{
-              't': hourly
-                  ? '2026-10-22T${i.toString().padLeft(2, '0')}:00:00Z'
-                  : '2026-10-${(16 + i).toString().padLeft(2, '0')}T00:00:00Z',
-              'requests': source.enabled ? (hourly ? 4 + (i * 7) % 9 : 96 + i * 5) : 0,
-              'bytes': 120000 + i * 1000,
-              'errors': source.status == 'failing' && i.isEven ? 1 : 0,
-              'refused': 0,
-              'recordsSeen': 40 + i,
-            },
-        ];
-        return (
-          status: 200,
-          body: <String, Object?>{
-            'sourceId': id,
-            'resolution': hourly ? 'hour' : 'day',
-            'points': points,
-            'totals': <String, Object?>{
-              't': '2026-10-22T00:00:00Z',
-              'requests': source.usedToday,
-              'bytes': 2400000,
-              'errors': source.status == 'failing' ? 12 : 0,
-              'refused': 0,
-              'recordsSeen': 1240,
-              'versions': 310,
-            },
-          },
-        );
+        return (status: 200, body: previewUsageSeries(source, query));
     }
     return null;
   }

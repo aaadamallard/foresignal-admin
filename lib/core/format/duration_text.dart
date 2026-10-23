@@ -64,3 +64,14 @@ String displayDurationText(String? text) {
   final parsed = parseDurationText(text);
   return parsed == null ? text : formatDurationShort(parsed);
 }
+
+/// Whether [a] and [b] are the same duration (`15m` and `PT15M` are), or the
+/// same text when either is not a duration.
+bool sameDuration(String a, String? b) {
+  if (b == null) {
+    return false;
+  }
+  final pa = parseDurationText(a);
+  final pb = parseDurationText(b);
+  return pa != null && pb != null ? pa == pb : a.trim() == b.trim();
+}

@@ -595,17 +595,6 @@ class SourceConfigDraft {
   }
 }
 
-/// Whether [a] and [b] are the same duration (`15m` and `PT15M` are), or the
-/// same text when either is not a duration.
-bool sameDuration(String a, String? b) {
-  if (b == null) {
-    return false;
-  }
-  final pa = parseDurationText(a);
-  final pb = parseDurationText(b);
-  return pa != null && pb != null ? pa == pb : a.trim() == b.trim();
-}
-
 /// JSON equality with durations compared by length, so a backend that
 /// rewrites `60s` as `PT1M` still confirms.
 bool _sameJson(Object? a, Object? b) => jsonEncode(_normalize(a)) == jsonEncode(_normalize(b));

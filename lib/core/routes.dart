@@ -24,6 +24,9 @@ String sourceCredentialsPath(String sourceId) => '${sourceDetailPath(sourceId)}/
 /// One source's test-and-validate page.
 String sourceTestPath(String sourceId) => '${sourceDetailPath(sourceId)}/test';
 
+/// Usage, budgets, the collector governor, rate limits and retention.
+const String usagePath = '/usage';
+
 /// Trigger rules.
 const String alertTriggersPath = '/alerts/triggers';
 
