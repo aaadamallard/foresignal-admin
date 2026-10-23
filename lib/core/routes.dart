@@ -72,6 +72,24 @@ String vettingPlatformPath(String platformId) =>
 String vettingEntityPath(String entityId) =>
     '$vettingPath/entities/${Uri.encodeComponent(entityId)}';
 
+/// Forecasters, calibration, forecast questions and external add-ins (EDP).
+const String forecastingPath = '/forecasting';
+
+/// One forecaster.
+String forecastingForecasterPath(String forecasterId) =>
+    '$forecastingPath/forecasters/${Uri.encodeComponent(forecasterId)}';
+
+/// A new forecast question.
+const String forecastingNewQuestionPath = '$forecastingPath/new-question';
+
+/// One forecast question.
+String forecastingQuestionPath(String questionId) =>
+    '$forecastingPath/questions/${Uri.encodeComponent(questionId)}';
+
+/// One external data provider (EDP source).
+String forecastingProviderPath(String sourceId) =>
+    '$forecastingPath/providers/${Uri.encodeComponent(sourceId)}';
+
 /// Trigger rules.
 const String alertTriggersPath = '/alerts/triggers';
 

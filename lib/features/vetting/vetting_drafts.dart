@@ -5,6 +5,8 @@ import 'package:dio/dio.dart';
 
 import '../../core/format/duration_text.dart';
 
+export '../../core/format/instant_text.dart' show parseInstantText;
+
 /// How a [PathField] is typed and checked.
 enum PathKind {
   /// A whole number, checked against `min` / `max`.
@@ -529,24 +531,6 @@ bool isEntityKey(String text) {
   final t = text.trim();
   final colon = t.indexOf(':');
   return colon > 0 && colon < t.length - 1 && entityKeyTypes.contains(t.substring(0, colon));
-}
-
-/// An instant typed as a UTC date (`2025-03-01`) or an ISO date-time; empty
-/// is `null` (now). Throws [FormatException] for anything else.
-DateTime? parseAsOf(String text) {
-  final t = text.trim();
-  if (t.isEmpty) {
-    return null;
-  }
-  final date = RegExp(r'^(\d{4})-(\d{2})-(\d{2})$').firstMatch(t);
-  if (date != null) {
-    return DateTime.utc(int.parse(date[1]!), int.parse(date[2]!), int.parse(date[3]!));
-  }
-  final parsed = DateTime.tryParse(t);
-  if (parsed == null) {
-    throw const FormatException('A date such as 2025-03-01, or an ISO date-time.');
-  }
-  return parsed.toUtc();
 }
 
 /// An operator key assertion (`EntityKeyInput`), as typed.

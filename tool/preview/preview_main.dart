@@ -26,6 +26,7 @@ import 'package:foresignal_admin/features/connect/connect_controller.dart';
 import 'package:foresignal_admin/features/setup/setup_wizard_store.dart';
 
 import 'preview_analysis.dart';
+import 'preview_forecasting.dart';
 import 'preview_llm.dart';
 import 'preview_sources.dart';
 import 'preview_usage.dart';
@@ -108,6 +109,7 @@ final PreviewSettings _settings = PreviewSettings();
 final PreviewLlm _llm = PreviewLlm();
 final PreviewAnalysis _analysis = PreviewAnalysis();
 final PreviewVetting _vetting = PreviewVetting();
+final PreviewForecasting _forecasting = PreviewForecasting();
 
 PreviewReply? _answer(RequestOptions options, Object? requestBody) {
   final sources = answerSources(options.method, options.uri.path, requestBody);
@@ -166,6 +168,16 @@ PreviewReply? _answer(RequestOptions options, Object? requestBody) {
   );
   if (vetting != null) {
     return vetting;
+  }
+  final forecasting = answerForecasting(
+    options.method,
+    options.uri.path,
+    options.uri.queryParametersAll,
+    requestBody,
+    _forecasting,
+  );
+  if (forecasting != null) {
+    return forecasting;
   }
   final body = previewBodies[options.uri.path];
   return body == null ? null : (status: 200, body: body);

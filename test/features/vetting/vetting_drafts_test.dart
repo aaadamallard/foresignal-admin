@@ -136,9 +136,9 @@ void main() {
     });
 
     test('an as-of date is midnight UTC; empty is now', () {
-      expect(parseAsOf(''), isNull);
-      expect(parseAsOf('2025-03-01'), DateTime.utc(2025, 3, 1));
-      expect(() => parseAsOf('last week'), throwsFormatException);
+      expect(parseInstantText(''), isNull);
+      expect(parseInstantText('2025-03-01'), DateTime.utc(2025, 3, 1));
+      expect(() => parseInstantText('last week'), throwsFormatException);
     });
   });
 

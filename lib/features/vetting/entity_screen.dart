@@ -247,7 +247,7 @@ class _ResolveKeyCardState extends ConsumerState<ResolveKeyCard> {
     }
     DateTime? at;
     try {
-      at = parseAsOf(_at.text);
+      at = parseInstantText(_at.text);
     } on FormatException catch (e) {
       errors['at'] = e.message;
     }

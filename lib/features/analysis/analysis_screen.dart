@@ -1033,7 +1033,6 @@ class CalibrationCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final c = calibration;
-    final palette = AdminPalette.of(context);
     final bins = (c.bins ?? BuiltList<IntelCalibrationBinsInner>()).toList();
     return SectionCard(
       key: Key('analysis.calibration.${wireOf(c.scope)}'),
@@ -1093,12 +1092,9 @@ class CalibrationCard extends StatelessWidget {
                 ),
                 TableColumnSpec<IntelCalibrationBinsInner>(
                   label: 'Observed against forecast',
-                  cell: (b) => _ReliabilityBar(
+                  cell: (b) => ReliabilityBar(
                     forecast: b.meanForecast?.toDouble(),
                     observed: b.observedFrequency?.toDouble(),
-                    color: palette.primary,
-                    track: palette.border,
-                    marker: palette.text,
                   ),
                 ),
               ],
@@ -1110,64 +1106,6 @@ class CalibrationCard extends StatelessWidget {
   }
 }
 
-/// A 0–100% track with the observed frequency as a bar and the mean forecast
-/// as a tick: a perfectly calibrated bin ends its bar on the tick.
-class _ReliabilityBar extends StatelessWidget {
-  const _ReliabilityBar({
-    required this.forecast,
-    required this.observed,
-    required this.color,
-    required this.track,
-    required this.marker,
-  });
-
-  final double? forecast;
-  final double? observed;
-  final Color color;
-  final Color track;
-  final Color marker;
-
-  @override
-  Widget build(BuildContext context) {
-    const width = 160.0;
-    return Tooltip(
-      message: 'Observed ${percent(observed)} against a mean forecast of ${percent(forecast)}',
-      child: SizedBox(
-        width: width,
-        height: 14,
-        child: Stack(
-          children: <Widget>[
-            Positioned.fill(
-              top: 4,
-              bottom: 4,
-              child: DecoratedBox(
-                decoration: BoxDecoration(color: track, borderRadius: BorderRadius.circular(3)),
-              ),
-            ),
-            if (observed != null)
-              Positioned(
-                left: 0,
-                top: 4,
-                bottom: 4,
-                width: width * observed!.clamp(0, 1),
-                child: DecoratedBox(
-                  decoration: BoxDecoration(color: color, borderRadius: BorderRadius.circular(3)),
-                ),
-              ),
-            if (forecast != null)
-              Positioned(
-                left: (width * forecast!.clamp(0, 1)) - 1,
-                top: 0,
-                bottom: 0,
-                width: 2,
-                child: ColoredBox(color: marker),
-              ),
-          ],
-        ),
-      ),
-    );
-  }
-}
 
 /// The corroboration policy (154): when an event is strong or moderate,
 /// when a situation activates, and how a lone event looks for corroboration.

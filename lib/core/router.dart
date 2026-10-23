@@ -10,6 +10,10 @@ import '../features/analysis/cycle_screen.dart';
 import '../features/analysis/event_screen.dart';
 import '../features/analysis/recipe_screen.dart';
 import '../features/connect/connect_screen.dart';
+import '../features/forecasting/edp_provider_screen.dart';
+import '../features/forecasting/forecaster_screen.dart';
+import '../features/forecasting/forecasting_screen.dart';
+import '../features/forecasting/question_screen.dart';
 import '../features/setup/setup_wizard_screen.dart';
 import '../features/shell/app_shell.dart';
 import '../features/shell/section_placeholder.dart';
@@ -146,6 +150,28 @@ Map<String, SectionRoutes> sectionRoutesFor(FormFactor formFactor) {
           GoRoute(
             path: 'entities/:entityId',
             builder: (context, state) => EntityScreen(entityId: state.pathParameters['entityId']!),
+          ),
+        ],
+      ),
+    if (desktop)
+      forecastingPath: SectionRoutes(
+        builder: (context, state) => const ForecastingScreen(),
+        routes: <RouteBase>[
+          GoRoute(
+            path: 'forecasters/:forecasterId',
+            builder: (context, state) =>
+                ForecasterScreen(forecasterId: state.pathParameters['forecasterId']!),
+          ),
+          GoRoute(path: 'new-question', builder: (context, state) => const QuestionScreen()),
+          GoRoute(
+            path: 'questions/:questionId',
+            builder: (context, state) =>
+                QuestionScreen(questionId: state.pathParameters['questionId']),
+          ),
+          GoRoute(
+            path: 'providers/:sourceId',
+            builder: (context, state) =>
+                EdpProviderScreen(sourceId: state.pathParameters['sourceId']!),
           ),
         ],
       ),
