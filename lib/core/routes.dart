@@ -58,6 +58,20 @@ String analysisCyclePath(String cycleId) => '$analysisPath/cycles/${Uri.encodeCo
 /// One cycle run.
 String analysisRunPath(String runId) => '$analysisPath/runs/${Uri.encodeComponent(runId)}';
 
+/// Social and news vetting, entity resolution and ownership chains.
+const String vettingPath = '/vetting';
+
+/// One claim.
+String vettingClaimPath(String claimId) => '$vettingPath/claims/${Uri.encodeComponent(claimId)}';
+
+/// One social platform adapter, by wire id.
+String vettingPlatformPath(String platformId) =>
+    '$vettingPath/platforms/${Uri.encodeComponent(platformId)}';
+
+/// One resolved entity.
+String vettingEntityPath(String entityId) =>
+    '$vettingPath/entities/${Uri.encodeComponent(entityId)}';
+
 /// Trigger rules.
 const String alertTriggersPath = '/alerts/triggers';
 

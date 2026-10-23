@@ -14,6 +14,8 @@ void main() {
       expect(cycle.roles.map(wireOf), contains('red-team'));
       expect(wireText('not_useful'), 'Not useful');
       expect(wireText('digest-only'), 'Digest only');
+      expect(wireText('CO_ASSERTED'), 'Co asserted');
+      expect(wireText('B'), 'B');
     });
   });
 

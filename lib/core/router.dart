@@ -20,6 +20,10 @@ import '../features/sources/source_detail_screen.dart';
 import '../features/sources/source_test_screen.dart';
 import '../features/sources/sources_catalog_screen.dart';
 import '../features/usage/usage_screen.dart';
+import '../features/vetting/claim_screen.dart';
+import '../features/vetting/entity_screen.dart';
+import '../features/vetting/platform_screen.dart';
+import '../features/vetting/vetting_screen.dart';
 import 'form_factor.dart';
 import 'nav.dart';
 import 'routes.dart';
@@ -123,6 +127,25 @@ Map<String, SectionRoutes> sectionRoutesFor(FormFactor formFactor) {
           GoRoute(
             path: 'runs/:runId',
             builder: (context, state) => RunScreen(runId: state.pathParameters['runId']!),
+          ),
+        ],
+      ),
+    if (desktop)
+      vettingPath: SectionRoutes(
+        builder: (context, state) => const VettingScreen(),
+        routes: <RouteBase>[
+          GoRoute(
+            path: 'claims/:claimId',
+            builder: (context, state) => ClaimScreen(claimId: state.pathParameters['claimId']!),
+          ),
+          GoRoute(
+            path: 'platforms/:platformId',
+            builder: (context, state) =>
+                PlatformScreen(platformId: state.pathParameters['platformId']!),
+          ),
+          GoRoute(
+            path: 'entities/:entityId',
+            builder: (context, state) => EntityScreen(entityId: state.pathParameters['entityId']!),
           ),
         ],
       ),

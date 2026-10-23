@@ -30,6 +30,7 @@ import 'preview_llm.dart';
 import 'preview_sources.dart';
 import 'preview_usage.dart';
 import 'preview_validate.dart';
+import 'preview_vetting.dart';
 
 /// The token the fake backend accepts.
 const String previewToken = 'fsr_preview';
@@ -106,6 +107,7 @@ final PreviewCustom _custom = PreviewCustom();
 final PreviewSettings _settings = PreviewSettings();
 final PreviewLlm _llm = PreviewLlm();
 final PreviewAnalysis _analysis = PreviewAnalysis();
+final PreviewVetting _vetting = PreviewVetting();
 
 PreviewReply? _answer(RequestOptions options, Object? requestBody) {
   final sources = answerSources(options.method, options.uri.path, requestBody);
@@ -155,6 +157,16 @@ PreviewReply? _answer(RequestOptions options, Object? requestBody) {
   if (analysis != null) {
     return analysis;
   }
+  final vetting = answerVetting(
+    options.method,
+    options.uri.path,
+    options.uri.queryParametersAll,
+    requestBody,
+    _vetting,
+  );
+  if (vetting != null) {
+    return vetting;
+  }
   final body = previewBodies[options.uri.path];
   return body == null ? null : (status: 200, body: body);
 }
@@ -183,7 +195,9 @@ class _PreviewAdapter implements HttpClientAdapter {
         bytes.addAll(chunk);
       }
       if (bytes.isNotEmpty) {
-        requestBody = jsonDecode(utf8.decode(bytes));
+        final text = utf8.decode(bytes, allowMalformed: true);
+        // A multipart upload stays text; everything else is JSON.
+        requestBody = '${options.contentType}'.startsWith('multipart/') ? text : jsonDecode(text);
       }
     }
     final reply = _answer(options, requestBody);
