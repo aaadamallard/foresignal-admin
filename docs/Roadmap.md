@@ -69,6 +69,7 @@ screen group in [Screens.md](Screens.md) and every backend capability it needs i
 |---|---|---|---|
 | 016 | Mobile-Companion | K | the focused mobile subset (alerts, push, source on/off + health, device registration) via platform-conditional routing |
 | 017 | Build-Package-Deploy | — | `flutter build` desktop (Linux primary) + mobile; packaging; config of the backend URL |
+| 018 | Collector-Governor-Gauges | C | Re-vendor the updated OpenAPI; add live cap/in-use/waiting gauges to the collector screen via `getCollectorStatus` (backend 160) — deferred from 007 |
 
 ## 4. Status
 
