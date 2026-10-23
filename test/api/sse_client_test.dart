@@ -46,6 +46,20 @@ void main() {
     expect(request.options.headers['Last-Event-ID'], '99');
   });
 
+  test('sends extra headers with every attempt', () async {
+    final adapter = FakeAdapter((_) => FakeResponse.eventStream(<String>['data: x\n\n']));
+    final client = SseClient(fakeDio(adapter), delay: (_) async {});
+    await client
+        .connect(
+          SseStream.notifications,
+          headers: <String, Object>{'Foresignal-Device-Id': '0f8e2d3c-1b4a-4c5d-8e6f-7a8b9c0d1e2f'},
+        )
+        .first;
+    final request = adapter.requests.first;
+    expect(request.options.headers['Foresignal-Device-Id'], '0f8e2d3c-1b4a-4c5d-8e6f-7a8b9c0d1e2f');
+    expect(request.options.headers['Accept'], 'text/event-stream');
+  });
+
   test('backs off between failed attempts and honors Retry-After', () async {
     var call = 0;
     final adapter = FakeAdapter((request) {

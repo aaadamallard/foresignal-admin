@@ -4,21 +4,31 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:foresignal_admin/api/api.dart';
 import 'package:foresignal_admin/app.dart';
 import 'package:foresignal_admin/core/connection_store.dart';
+import 'package:foresignal_admin/core/device_id.dart';
 import 'package:foresignal_admin/core/form_factor.dart';
 import 'package:foresignal_admin/core/theme_mode.dart';
 import 'package:foresignal_admin/features/connect/connect_controller.dart';
+import 'package:foresignal_admin/features/notifications/presence.dart';
+import 'package:foresignal_admin/features/notifications/push_token.dart';
 import 'package:foresignal_admin/features/setup/setup_wizard_store.dart';
 
 import 'fake_adapter.dart';
 
+/// The device id every test container uses.
+const String testDeviceId = '0f8e2d3c-1b4a-4c5d-8e6f-7a8b9c0d1e2f';
+
 /// A [ProviderContainer] with in-memory stores, a fixed [formFactor], and
 /// every backend call answered by [adapter] (connection probes included).
+/// The device id is [testDeviceId]; presence reporting is off unless
+/// [reportPresence]; [pushTokens] stands in for Firebase.
 ProviderContainer testContainer({
   required FakeAdapter adapter,
   FormFactor formFactor = FormFactor.desktop,
   InMemoryConnectionStore? store,
   Uri? connectedTo,
   InMemorySetupWizardStore? wizardStore,
+  bool reportPresence = false,
+  PushTokenSource? pushTokens,
 }) {
   final connection = store ?? InMemoryConnectionStore();
   final container = ProviderContainer(
@@ -28,6 +38,9 @@ ProviderContainer testContainer({
       themePreferenceStoreProvider.overrideWithValue(InMemoryThemeStore()),
       setupWizardStoreProvider.overrideWithValue(wizardStore ?? InMemorySetupWizardStore()),
       formFactorProvider.overrideWithValue(formFactor),
+      deviceIdStoreProvider.overrideWithValue(InMemoryDeviceIdStore(testDeviceId)),
+      presenceReportingProvider.overrideWithValue(reportPresence),
+      if (pushTokens != null) pushTokenSourceProvider.overrideWithValue(pushTokens),
       connectionProbeApiProvider.overrideWithValue(
         (baseUrl, token) => ForesignalApi(
           dio: createBackendDio(baseUrl: baseUrl, tokenStore: InMemoryAdminTokenStore(token))

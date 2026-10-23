@@ -222,18 +222,21 @@ class SseClient {
 
   static const Set<int> _fatalStatuses = <int>{400, 401, 403, 404, 405, 410};
 
-  /// Subscribes to [stream] with [query] parameters, resuming after
-  /// [lastEventId] when given. Cancel the subscription to close it.
+  /// Subscribes to [stream] with [query] parameters and extra [headers]
+  /// (such as `Foresignal-Device-Id`), resuming after [lastEventId] when
+  /// given. Cancel the subscription to close it.
   Stream<SseEvent> connect(
     SseStream stream, {
     Map<String, Object?> query = const <String, Object?>{},
+    Map<String, Object> headers = const <String, Object>{},
     String? lastEventId,
-  }) => connectPath(stream.path, query: query, lastEventId: lastEventId);
+  }) => connectPath(stream.path, query: query, headers: headers, lastEventId: lastEventId);
 
   /// Like [connect], for a `text/event-stream` path not listed in [SseStream].
   Stream<SseEvent> connectPath(
     String path, {
     Map<String, Object?> query = const <String, Object?>{},
+    Map<String, Object> headers = const <String, Object>{},
     String? lastEventId,
   }) {
     late final StreamController<SseEvent> controller;
@@ -258,6 +261,7 @@ class SseClient {
               responseType: ResponseType.stream,
               receiveTimeout: Duration.zero,
               headers: <String, Object>{
+                ...headers,
                 'Accept': 'text/event-stream',
                 'Cache-Control': 'no-cache',
                 if (parser.lastEventId != null && parser.lastEventId!.isNotEmpty)

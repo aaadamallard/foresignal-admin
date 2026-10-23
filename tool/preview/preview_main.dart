@@ -20,6 +20,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:foresignal_admin/api/api.dart';
 import 'package:foresignal_admin/app.dart';
 import 'package:foresignal_admin/core/connection_store.dart';
+import 'package:foresignal_admin/core/device_id.dart';
 import 'package:foresignal_admin/core/form_factor.dart';
 import 'package:foresignal_admin/core/theme_mode.dart';
 import 'package:foresignal_admin/features/connect/connect_controller.dart';
@@ -29,6 +30,7 @@ import 'preview_alerts.dart';
 import 'preview_analysis.dart';
 import 'preview_forecasting.dart';
 import 'preview_llm.dart';
+import 'preview_notifications.dart';
 import 'preview_sources.dart';
 import 'preview_usage.dart';
 import 'preview_validate.dart';
@@ -73,21 +75,6 @@ final Map<String, Object?> previewBodies = <String, Object?>{
     'publicBaseUrl': 'http://foresignal.local:8080',
     'timezone': 'America/Chicago',
   },
-  // PushProvider[]
-  '/v1/push/providers': <Object?>[
-    <String, Object?>{
-      'id': 'fcm-main',
-      'type': 'fcm',
-      'appIds': <String>['com.foresignal.admin'],
-      'config': <String, Object?>{
-        'projectId': 'foresignal-home',
-        'clientEmail': 'push@foresignal-home.iam.example',
-      },
-      'enabled': true,
-    },
-  ],
-  // PushDevice[]
-  '/v1/push/devices': <Object?>[],
 };
 
 /// A preview answer: a JSON body and its status.
@@ -100,6 +87,7 @@ final PreviewAnalysis _analysis = PreviewAnalysis();
 final PreviewVetting _vetting = PreviewVetting();
 final PreviewForecasting _forecasting = PreviewForecasting();
 final PreviewAlerts _alerts = PreviewAlerts();
+final PreviewNotifications _notifications = PreviewNotifications();
 
 PreviewReply? _answer(RequestOptions options, Object? requestBody) {
   final sources = answerSources(options.method, options.uri.path, requestBody);
@@ -179,6 +167,16 @@ PreviewReply? _answer(RequestOptions options, Object? requestBody) {
   if (alerts != null) {
     return alerts;
   }
+  final notifications = answerNotifications(
+    options.method,
+    options.uri.path,
+    options.uri.queryParametersAll,
+    requestBody,
+    _notifications,
+  );
+  if (notifications != null) {
+    return notifications;
+  }
   final body = previewBodies[options.uri.path];
   return body == null ? null : (status: 200, body: body);
 }
@@ -191,9 +189,10 @@ class _PreviewAdapter implements HttpClientAdapter {
     Future<void>? cancelFuture,
   ) async {
     final path = options.uri.path;
-    if (path == '/v1/alerts/stream') {
+    if (path == '/v1/alerts/stream' || path == '/v1/notifications/stream') {
       return ResponseBody(
-        _alerts.openStream(cancelFuture).map(Uint8List.fromList),
+        (path == '/v1/alerts/stream' ? _alerts.openStream(cancelFuture) : _notifications.openStream(cancelFuture))
+            .map(Uint8List.fromList),
         200,
         headers: <String, List<String>>{
           'content-type': <String>['text/event-stream'],
@@ -270,6 +269,7 @@ void main() {
       adminTokenStoreProvider.overrideWithValue(store),
       themePreferenceStoreProvider.overrideWithValue(InMemoryThemeStore()),
       setupWizardStoreProvider.overrideWithValue(InMemorySetupWizardStore()),
+      deviceIdStoreProvider.overrideWithValue(InMemoryDeviceIdStore('5d2c7a10-8e3f-4b6a-9c1d-2e4f6a8b0c13')),
       backendDioProvider.overrideWith(
         (ref) => createBackendDio(
           baseUrl: ref.watch(backendEndpointProvider),

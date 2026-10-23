@@ -323,7 +323,7 @@ class _InboxPanelState extends ConsumerState<InboxPanel> {
                 },
               ),
             ),
-            _LiveIndicator(status: _live, error: _streamError, onReconnect: _connect),
+            LiveIndicator(status: _live, error: _streamError, onReconnect: _connect),
             IconButton(
               key: const Key('inbox.refresh'),
               tooltip: 'Refresh',
@@ -474,37 +474,58 @@ class _InboxPanelState extends ConsumerState<InboxPanel> {
   }
 }
 
-class _LiveIndicator extends StatelessWidget {
-  const _LiveIndicator({required this.status, required this.error, required this.onReconnect});
+/// Whether a live stream is connecting, live, or stopped (with Reconnect).
+class LiveIndicator extends StatelessWidget {
+  /// Creates the indicator; [prefix] keys it (`$prefix.live`,
+  /// `$prefix.reconnect`) and [what] names what arrives live.
+  const LiveIndicator({
+    super.key,
+    required this.status,
+    required this.error,
+    required this.onReconnect,
+    this.prefix = 'inbox',
+    this.what = 'alerts',
+  });
 
+  /// The stream's state.
   final LiveStatus status;
+
+  /// Why it stopped, if it failed.
   final Object? error;
+
+  /// Opens the stream again.
   final VoidCallback onReconnect;
+
+  /// The key prefix.
+  final String prefix;
+
+  /// What the stream carries, in the tooltips.
+  final String what;
 
   @override
   Widget build(BuildContext context) => switch (status) {
-    LiveStatus.connecting => const StatusLabel(
-      key: Key('inbox.live'),
+    LiveStatus.connecting => StatusLabel(
+      key: Key('$prefix.live'),
       label: 'Connecting…',
       tone: StatusTone.neutral,
-      tooltip: 'Opening the live alert stream.',
+      tooltip: 'Opening the live $what stream.',
     ),
-    LiveStatus.live => const StatusLabel(
-      key: Key('inbox.live'),
+    LiveStatus.live => StatusLabel(
+      key: Key('$prefix.live'),
       label: 'Live',
       tone: StatusTone.ok,
-      tooltip: 'New and changed alerts appear as they happen.',
+      tooltip: 'New and changed $what appear as they happen.',
     ),
     LiveStatus.stopped => Row(
       mainAxisSize: MainAxisSize.min,
       children: <Widget>[
         StatusLabel(
-          key: const Key('inbox.live'),
+          key: Key('$prefix.live'),
           label: 'Not live',
           tone: StatusTone.warning,
           tooltip: error == null ? 'The live stream ended.' : error is ApiException ? (error! as ApiException).message : '$error',
         ),
-        TextButton(key: const Key('inbox.reconnect'), onPressed: onReconnect, child: const Text('Reconnect')),
+        TextButton(key: Key('$prefix.reconnect'), onPressed: onReconnect, child: const Text('Reconnect')),
       ],
     ),
   };

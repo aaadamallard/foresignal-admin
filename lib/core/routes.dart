@@ -130,8 +130,29 @@ const String alertWatchlistsPath = '$alertsPath/watchlists';
 String alertWatchlistPath(String watchlistId) =>
     '$alertWatchlistsPath/${Uri.encodeComponent(watchlistId)}';
 
-/// Native and Web Push configuration.
-const String pushPath = '/notifications/push';
+/// The notification inbox.
+const String notificationsPath = '/notifications';
+
+/// One notification.
+String notificationPath(int id) => '$notificationsPath/inbox/$id';
+
+/// Native push: providers and registered devices.
+const String pushPath = '$notificationsPath/push';
+
+/// One native push provider.
+String pushProviderPath(String providerId) => '$pushPath/providers/${Uri.encodeComponent(providerId)}';
+
+/// A new native push provider.
+const String pushNewProviderPath = '$pushPath/new-provider';
+
+/// One registered native device.
+String pushDevicePath(String deviceId) => '$pushPath/devices/${Uri.encodeComponent(deviceId)}';
+
+/// Web Push: the VAPID key and browser subscriptions.
+const String webPushPath = '$notificationsPath/web-push';
+
+/// The mobile companion's own push registration.
+const String devicePath = '/device';
 
 /// The section root a [path] belongs to: `/sources/x/test` → `/sources`.
 String sectionRootOf(String path) {

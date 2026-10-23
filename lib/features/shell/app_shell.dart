@@ -9,10 +9,12 @@ import '../../core/nav.dart';
 import '../../core/theme.dart';
 import '../../core/theme_mode.dart';
 import '../../core/ui/ui.dart';
+import '../notifications/presence.dart';
 
 /// The frame around every screen, as in the mocks: a ForeSignal sidebar with
 /// Connect first (desktop) or a bottom bar (mobile), and the global error
-/// surface above the content.
+/// surface above the content. It also reports this device's presence while
+/// the app runs.
 class AppShell extends ConsumerWidget {
   /// Creates the shell around [child], the current route's screen.
   const AppShell({super.key, required this.location, required this.child});
@@ -44,6 +46,7 @@ class AppShell extends ConsumerWidget {
     final selected = selectedIndex(destinations, location);
     final body = Column(
       children: <Widget>[
+        const PresenceReporter(),
         const _GlobalErrorSurface(),
         Expanded(child: child),
       ],

@@ -20,6 +20,10 @@ import '../features/forecasting/edp_provider_screen.dart';
 import '../features/forecasting/forecaster_screen.dart';
 import '../features/forecasting/forecasting_screen.dart';
 import '../features/forecasting/question_screen.dart';
+import '../features/notifications/notification_inbox.dart';
+import '../features/notifications/notifications_screen.dart';
+import '../features/notifications/push_native.dart';
+import '../features/notifications/this_device.dart';
 import '../features/setup/setup_wizard_screen.dart';
 import '../features/shell/app_shell.dart';
 import '../features/shell/section_placeholder.dart';
@@ -236,6 +240,39 @@ Map<String, SectionRoutes> sectionRoutesFor(FormFactor formFactor) {
         ],
       ],
     ),
+    notificationsPath: SectionRoutes(
+      builder: (context, state) => const NotificationsScreen(),
+      routes: <RouteBase>[
+        GoRoute(
+          path: 'inbox/:notificationId',
+          builder: (context, state) =>
+              NotificationScreen(notificationId: state.pathParameters['notificationId']!),
+        ),
+        if (desktop) ...<RouteBase>[
+          GoRoute(
+            path: 'push',
+            builder: (context, state) => const NotificationsScreen(tab: NotificationsTab.push),
+            routes: <RouteBase>[
+              GoRoute(path: 'new-provider', builder: (context, state) => const PushProviderScreen()),
+              GoRoute(
+                path: 'providers/:providerId',
+                builder: (context, state) =>
+                    PushProviderScreen(providerId: state.pathParameters['providerId']),
+              ),
+              GoRoute(
+                path: 'devices/:deviceId',
+                builder: (context, state) => PushDeviceScreen(deviceId: state.pathParameters['deviceId']!),
+              ),
+            ],
+          ),
+          GoRoute(
+            path: 'web-push',
+            builder: (context, state) => const NotificationsScreen(tab: NotificationsTab.webPush),
+          ),
+        ],
+      ],
+    ),
+    if (!desktop) devicePath: SectionRoutes(builder: (context, state) => const ThisDeviceScreen()),
   };
 }
 
