@@ -9,6 +9,12 @@ const String setupPath = '/setup';
 /// The source catalog.
 const String sourcesPath = '/sources';
 
+/// Custom push sources.
+const String customSourcesPath = '$sourcesPath/custom';
+
+/// One custom push source.
+String customSourcePath(String sourceId) => '$customSourcesPath/${Uri.encodeComponent(sourceId)}';
+
 /// One source's detail and configuration.
 String sourceDetailPath(String sourceId) => '$sourcesPath/${Uri.encodeComponent(sourceId)}';
 

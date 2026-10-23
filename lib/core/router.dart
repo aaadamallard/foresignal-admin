@@ -7,7 +7,11 @@ import '../features/connect/connect_screen.dart';
 import '../features/setup/setup_wizard_screen.dart';
 import '../features/shell/app_shell.dart';
 import '../features/shell/section_placeholder.dart';
+import '../features/sources/credentials_screen.dart';
+import '../features/sources/custom/custom_source_screen.dart';
+import '../features/sources/custom/custom_sources_screen.dart';
 import '../features/sources/source_detail_screen.dart';
+import '../features/sources/source_test_screen.dart';
 import '../features/sources/sources_catalog_screen.dart';
 import 'form_factor.dart';
 import 'nav.dart';
@@ -44,12 +48,38 @@ Map<String, SectionRoutes> sectionRoutesFor(FormFactor formFactor) {
     sourcesPath: SectionRoutes(
       builder: (context, state) => const SourcesCatalogScreen(),
       routes: <RouteBase>[
-        if (desktop)
+        if (desktop) ...<RouteBase>[
+          // Before `:sourceId`: a custom source id always starts `custom-`,
+          // so `custom` alone is never a source id.
+          GoRoute(
+            path: 'custom',
+            builder: (context, state) => const CustomSourcesScreen(),
+            routes: <RouteBase>[
+              GoRoute(
+                path: ':customId',
+                builder: (context, state) =>
+                    CustomSourceScreen(sourceId: state.pathParameters['customId']!),
+              ),
+            ],
+          ),
           GoRoute(
             path: ':sourceId',
             builder: (context, state) =>
                 SourceDetailScreen(sourceId: state.pathParameters['sourceId']!),
+            routes: <RouteBase>[
+              GoRoute(
+                path: 'credentials',
+                builder: (context, state) =>
+                    CredentialsScreen(sourceId: state.pathParameters['sourceId']!),
+              ),
+              GoRoute(
+                path: 'test',
+                builder: (context, state) =>
+                    SourceTestScreen(sourceId: state.pathParameters['sourceId']!),
+              ),
+            ],
           ),
+        ],
       ],
     ),
   };

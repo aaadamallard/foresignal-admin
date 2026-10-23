@@ -10,6 +10,7 @@ import '../../core/theme.dart';
 import '../../core/ui/ui.dart';
 import 'source_config.dart';
 import 'source_providers.dart';
+import 'source_test_results.dart';
 import 'source_widgets.dart';
 
 /// The tabs of the source detail screen.
@@ -109,6 +110,13 @@ class _SourceDetailScreenState extends ConsumerState<SourceDetailScreen> {
               HealthLabel(status: detail.health.status, tooltip: healthTooltip(detail.health)),
           ],
           actions: <Widget>[
+            if (d.custom ?? false)
+              TonalButton(
+                key: const Key('source.pushSetup'),
+                label: 'Push setup',
+                icon: Icons.upload,
+                onPressed: () => context.go(customSourcePath(d.id)),
+              ),
             if (d.credentialFields.isNotEmpty)
               TonalButton(
                 key: const Key('source.credentials'),
@@ -206,7 +214,7 @@ class SourceOverview extends StatelessWidget {
                 displayDurationText(s.effectiveRetention),
               ),
             if (s.updatedAt case final at?)
-              MapEntry<String, Object>('Settings updated', at.toUtc().toIso8601String()),
+              MapEntry<String, Object>('Settings updated', utcText(at)),
           ],
         ),
       ),
@@ -278,7 +286,6 @@ class SourceHealthView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    String at(DateTime? t) => t == null ? '—' : t.toUtc().toIso8601String();
     final h = health;
     return _Pair(
       SectionCard(
@@ -288,17 +295,18 @@ class SourceHealthView extends StatelessWidget {
             MapEntry<String, Object>('Status', HealthLabel(status: h.status)),
             if (h.statusReason case final r? when r.isNotEmpty)
               MapEntry<String, Object>('Reason', r),
-            MapEntry<String, Object>('Last attempt', at(h.lastAttemptAt)),
-            MapEntry<String, Object>('Last success', at(h.lastSuccessAt)),
-            MapEntry<String, Object>('Last data', at(h.lastDataAt)),
-            if (h.lastErrorAt != null) MapEntry<String, Object>('Last error at', at(h.lastErrorAt)),
+            MapEntry<String, Object>('Last attempt', utcText(h.lastAttemptAt)),
+            MapEntry<String, Object>('Last success', utcText(h.lastSuccessAt)),
+            MapEntry<String, Object>('Last data', utcText(h.lastDataAt)),
+            if (h.lastErrorAt != null)
+              MapEntry<String, Object>('Last error at', utcText(h.lastErrorAt)),
             if (h.lastError case final e? when e.isNotEmpty)
               MapEntry<String, Object>('Last error', e),
             if (h.lastHttpStatus case final code?)
               MapEntry<String, Object>('Last HTTP status', '$code'),
             MapEntry<String, Object>('Consecutive failures', '${h.consecutiveFailures}'),
             if (h.backoffUntil != null)
-              MapEntry<String, Object>('Backing off until', at(h.backoffUntil)),
+              MapEntry<String, Object>('Backing off until', utcText(h.backoffUntil)),
           ],
         ),
       ),

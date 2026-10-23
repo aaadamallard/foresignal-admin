@@ -74,6 +74,15 @@ class PreviewSource {
   /// `budgetUsedToday`.
   int usedToday;
 
+  /// Whether credentials are stored (values are never kept by the fake).
+  bool credentialsSet = false;
+
+  /// FetchLogEntry rows, newest first.
+  final List<Map<String, Object?>> fetches = <Map<String, Object?>>[];
+
+  /// DoctorReport bodies, newest first.
+  final List<Map<String, Object?>> doctorReports = <Map<String, Object?>>[];
+
   /// The rest of SourceSettings, as last written.
   final Map<String, Object?> settings = <String, Object?>{};
 
@@ -88,7 +97,7 @@ class PreviewSource {
     'enabled': enabled,
     'status': status,
     'credentialsRequired': needsKey,
-    'credentialsSet': false,
+    'credentialsSet': credentialsSet,
     'interval': interval,
     'budget': _budget,
     'budgetUsedToday': usedToday,
@@ -138,7 +147,7 @@ class PreviewSource {
       'enabled': enabled,
       'interval': interval,
       'budget': _budget,
-      'credentialsSet': false,
+      'credentialsSet': credentialsSet,
       'updatedAt': '2026-10-22T16:30:00Z',
       'effectiveIngestPolicy':
           settings['ingestPolicy'] ?? <String, Object?>{'mode': 'ALL', 'keyframe': 'PT6H'},
@@ -174,7 +183,7 @@ class PreviewSource {
   /// Applies a SourceSettingsUpdate; returns a Problem body and status, or
   /// `null` when it was accepted.
   ({int status, Object? body})? apply(Map<String, Object?> update) {
-    if (update['enabled'] == true && needsKey) {
+    if (update['enabled'] == true && needsKey && !credentialsSet) {
       return (
         status: 409,
         body: <String, Object?>{
@@ -308,7 +317,7 @@ List<PreviewSource> buildPreviewSources() => <PreviewSource>[
 ];
 
 /// The preview app's sources.
-final List<PreviewSource> _defaultSources = buildPreviewSources();
+final List<PreviewSource> previewSources = buildPreviewSources();
 
 /// Answers the source operations from [sources], or returns `null` for any
 /// other request.
@@ -318,19 +327,19 @@ final List<PreviewSource> _defaultSources = buildPreviewSources();
   Object? body, [
   List<PreviewSource>? sources,
 ]) {
-  final previewSources = sources ?? _defaultSources;
+  final held = sources ?? previewSources;
   if (path == '/v1/sources' && method == 'GET') {
-    return (status: 200, body: <Object?>[for (final s in previewSources) s.summary]);
+    return (status: 200, body: <Object?>[for (final s in held) s.summary]);
   }
   if (path == '/v1/sources/health' && method == 'GET') {
-    return (status: 200, body: <Object?>[for (final s in previewSources) s.health]);
+    return (status: 200, body: <Object?>[for (final s in held) s.health]);
   }
   if ((path == '/v1/sources/enable-core' || path == '/v1/sources/enable-free') &&
       method == 'POST') {
     final core = path.endsWith('core');
     final enabled = <String>[];
     var skipped = 0;
-    for (final s in previewSources) {
+    for (final s in held) {
       if (s.enabled) {
         continue;
       }
@@ -356,7 +365,7 @@ final List<PreviewSource> _defaultSources = buildPreviewSources();
     return null;
   }
   final id = Uri.decodeComponent(match.group(1)!);
-  final source = previewSources.where((s) => s.id == id).firstOrNull;
+  final source = held.where((s) => s.id == id).firstOrNull;
   if (source == null) {
     return (
       status: 404,

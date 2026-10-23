@@ -67,7 +67,12 @@ class PageHeader extends StatelessWidget {
                   ...titleTrailing,
                 ],
               );
-              final buttons = Wrap(spacing: 10, runSpacing: 8, children: actions);
+              final buttons = Wrap(
+                spacing: 10,
+                runSpacing: 8,
+                crossAxisAlignment: WrapCrossAlignment.center,
+                children: actions,
+              );
               if (actions.isEmpty) {
                 return heading;
               }

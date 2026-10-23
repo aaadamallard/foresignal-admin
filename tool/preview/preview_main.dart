@@ -24,6 +24,7 @@ import 'package:foresignal_admin/features/connect/connect_controller.dart';
 import 'package:foresignal_admin/features/setup/setup_wizard_store.dart';
 
 import 'preview_sources.dart';
+import 'preview_validate.dart';
 
 /// The token the fake backend accepts.
 const String previewToken = 'fsr_preview';
@@ -96,10 +97,23 @@ final Map<String, Object?> previewBodies = <String, Object?>{
 /// A preview answer: a JSON body and its status.
 typedef PreviewReply = ({int status, Object? body});
 
+final PreviewCustom _custom = PreviewCustom();
+
 PreviewReply? _answer(RequestOptions options, Object? requestBody) {
   final sources = answerSources(options.method, options.uri.path, requestBody);
   if (sources != null) {
     return sources;
+  }
+  final validate = answerValidate(
+    options.method,
+    options.uri.path,
+    options.uri.queryParametersAll,
+    requestBody,
+    previewSources,
+    _custom,
+  );
+  if (validate != null) {
+    return validate;
   }
   final body = previewBodies[options.uri.path];
   return body == null ? null : (status: 200, body: body);

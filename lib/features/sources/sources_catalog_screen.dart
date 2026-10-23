@@ -103,6 +103,13 @@ class _SourcesCatalogScreenState extends ConsumerState<SourcesCatalogScreen> {
                 label: const Text('Enable Free Sources'),
               ),
             ],
+            if (_desktop)
+              OutlinedButton.icon(
+                key: const Key('sources.custom'),
+                onPressed: () => context.go(customSourcesPath),
+                icon: const Icon(Icons.upload, size: 18),
+                label: const Text('Custom Sources'),
+              ),
             IconButton(
               key: const Key('sources.refresh'),
               tooltip: 'Refresh',
