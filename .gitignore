@@ -49,3 +49,6 @@ app.*.map.json
 
 # Screenshot scratch
 /review/*.tmp.png
+
+# Packages from tool/package/
+/dist/

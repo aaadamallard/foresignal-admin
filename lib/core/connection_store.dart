@@ -1,3 +1,4 @@
+import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 
@@ -14,6 +15,10 @@ abstract interface class ConnectionStore implements AdminTokenStore {
   /// Uses [token] until the app exits without saving it, and removes any
   /// saved copy (the Connect screen's "Save token in secure storage" unticked).
   Future<void> useForSession(String token);
+
+  /// Why nothing outlives this session, or `null` while saving works: the
+  /// platform secure store refused (on Linux, no Secret Service keyring).
+  String? get persistenceProblem;
 }
 
 /// A [ConnectionStore] in memory only, for tests and as the default before
@@ -34,6 +39,9 @@ class InMemoryConnectionStore extends InMemoryAdminTokenStore implements Connect
 
   @override
   Future<void> useForSession(String token) => write(token);
+
+  @override
+  String? get persistenceProblem => null;
 }
 
 /// The app's [ConnectionStore]. Startup overrides it (and
@@ -42,7 +50,9 @@ final connectionStoreProvider = Provider<ConnectionStore>((ref) => InMemoryConne
 
 /// Persists the connection — the backend URL and the admin token — in the
 /// platform secure store (Keychain, Keystore, libsecret, Windows Credential
-/// Manager). The token is never written anywhere else.
+/// Manager). The token is never written anywhere else: when the secure store
+/// refuses (a Linux desktop with no Secret Service keyring), both are held
+/// in memory for this session and [persistenceProblem] says why.
 class SecureConnectionStore implements ConnectionStore {
   /// Creates the store over [storage].
   SecureConnectionStore([FlutterSecureStorage? storage])
@@ -58,11 +68,30 @@ class SecureConnectionStore implements ConnectionStore {
 
   String? _cachedToken;
   bool _tokenLoaded = false;
+  Uri? _sessionUrl;
+  String? _problem;
+
+  @override
+  String? get persistenceProblem => _problem;
+
+  /// Runs [action] on the secure store; once it has refused, runs nothing
+  /// and answers [fallback] instead.
+  Future<T> _guard<T>(Future<T> Function() action, T fallback) async {
+    if (_problem != null) {
+      return fallback;
+    }
+    try {
+      return await action();
+    } on PlatformException catch (e) {
+      _problem = e.message ?? e.code;
+      return fallback;
+    }
+  }
 
   @override
   Future<String?> read() async {
     if (!_tokenLoaded) {
-      _cachedToken = await _storage.read(key: tokenKey);
+      _cachedToken = await _guard(() => _storage.read(key: tokenKey), null);
       _tokenLoaded = true;
     }
     return _cachedToken;
@@ -70,36 +99,39 @@ class SecureConnectionStore implements ConnectionStore {
 
   @override
   Future<void> write(String token) async {
-    await _storage.write(key: tokenKey, value: token);
+    await _guard(() => _storage.write(key: tokenKey, value: token), null);
     _cachedToken = token;
     _tokenLoaded = true;
   }
 
   @override
   Future<void> clear() async {
-    await _storage.delete(key: tokenKey);
+    await _guard(() => _storage.delete(key: tokenKey), null);
     _cachedToken = null;
     _tokenLoaded = true;
   }
 
   @override
   Future<void> useForSession(String token) async {
-    await _storage.delete(key: tokenKey);
+    await _guard(() => _storage.delete(key: tokenKey), null);
     _cachedToken = token;
     _tokenLoaded = true;
   }
 
   /// Whether a token is saved in the secure store (not just held for the
   /// session).
-  Future<bool> hasSavedToken() async => (await _storage.read(key: tokenKey))?.isNotEmpty ?? false;
+  Future<bool> hasSavedToken() async =>
+      (await _guard(() => _storage.read(key: tokenKey), null))?.isNotEmpty ?? false;
 
   @override
   Future<Uri?> readBackendUrl() async {
-    final text = await _storage.read(key: backendUrlKey);
-    return text == null || text.isEmpty ? null : Uri.tryParse(text);
+    final text = await _guard(() => _storage.read(key: backendUrlKey), null);
+    return text == null || text.isEmpty ? _sessionUrl : Uri.tryParse(text);
   }
 
   @override
-  Future<void> writeBackendUrl(Uri url) =>
-      _storage.write(key: backendUrlKey, value: url.toString());
+  Future<void> writeBackendUrl(Uri url) async {
+    await _guard(() => _storage.write(key: backendUrlKey, value: url.toString()), null);
+    _sessionUrl = url;
+  }
 }

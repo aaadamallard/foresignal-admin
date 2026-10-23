@@ -104,6 +104,7 @@ class _ConnectFormState extends ConsumerState<ConnectForm> {
   bool _showToken = false;
   bool _saveToken = true;
   bool _hasToken = false;
+  String? _notSaved;
 
   @override
   void initState() {
@@ -121,6 +122,7 @@ class _ConnectFormState extends ConsumerState<ConnectForm> {
     setState(() {
       _url.text = url?.toString() ?? '';
       _hasToken = token != null && token.isNotEmpty;
+      _notSaved = store.persistenceProblem;
     });
   }
 
@@ -221,6 +223,17 @@ class _ConnectFormState extends ConsumerState<ConnectForm> {
               : const Text('Test Connection'),
         ),
         const SizedBox(height: 20),
+        if (_notSaved case final problem?) ...<Widget>[
+          ResultPanel(
+            key: const Key('connect.notSaved'),
+            title: 'Kept for this session only',
+            tone: StatusTone.warning,
+            message: 'The secure store refused ($problem), so the backend URL and token are not saved and '
+                'will be asked for again next time. On Linux, run and unlock a Secret Service keyring '
+                '(GNOME Keyring or KWallet).',
+          ),
+          const SizedBox(height: 12),
+        ],
         switch (state) {
           ConnectIdle() || ConnectTesting() => const SizedBox.shrink(),
           ConnectFailed(:final error) => ErrorBanner(

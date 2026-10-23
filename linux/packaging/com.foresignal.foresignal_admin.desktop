@@ -1,0 +1,13 @@
+[Desktop Entry]
+Type=Application
+Version=1.5
+Name=ForeSignal Admin
+GenericName=ForeSignal control plane
+Comment=Set up, configure, secure and monitor a self-hosted ForeSignal backend
+Exec=foresignal-admin
+Icon=com.foresignal.foresignal_admin
+Terminal=false
+Categories=Network;Monitor;
+Keywords=ForeSignal;alerts;sources;admin;
+StartupNotify=true
+StartupWMClass=com.foresignal.foresignal_admin

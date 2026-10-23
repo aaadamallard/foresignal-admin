@@ -50,4 +50,31 @@ void main() {
     expect(find.textContaining('Nothing was saved'), findsOneWidget);
     expect(tester.takeException(), isNull);
   });
+
+  testWidgets('a secure store that refuses is reported, and the connection still works', (tester) async {
+    tester.view.physicalSize = const Size(1400, 1000);
+    tester.view.devicePixelRatio = 1;
+    addTearDown(tester.view.reset);
+    final store = _UnsavedStore();
+    final container = testContainer(adapter: connectBackend(), store: store);
+    addTearDown(container.dispose);
+
+    await tester.pumpWidget(testApp(container));
+    await tester.pumpAndSettle();
+    expect(find.byKey(const Key('connect.notSaved')), findsOneWidget);
+    expect(find.textContaining('No Secret Service'), findsOneWidget);
+
+    await tester.enterText(find.byKey(const Key('connect.url')), 'http://h:8080');
+    await tester.enterText(find.byKey(const Key('connect.token')), 'fsr_good');
+    await tester.tap(find.byKey(const Key('connect.test')));
+    await tester.pumpAndSettle();
+    expect(find.text('Connection successful'), findsOneWidget);
+    expect(find.byKey(const Key('connect.notSaved')), findsOneWidget);
+  });
+}
+
+/// A store whose saving fails, like libsecret without a keyring.
+class _UnsavedStore extends InMemoryConnectionStore {
+  @override
+  String? get persistenceProblem => 'No Secret Service';
 }
