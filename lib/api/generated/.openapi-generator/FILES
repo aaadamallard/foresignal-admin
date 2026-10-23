@@ -380,6 +380,7 @@ lib/src/model/collection_gap.dart
 lib/src/model/collection_gap_page.dart
 lib/src/model/collection_gap_recommendations_inner.dart
 lib/src/model/collector_settings.dart
+lib/src/model/collector_status.dart
 lib/src/model/comment_event.dart
 lib/src/model/common_dependencies.dart
 lib/src/model/common_dependencies_dependencies_inner.dart

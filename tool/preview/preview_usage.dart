@@ -1,6 +1,6 @@
 // The preview's fake answers for usage, the collector governor, rate limits
 // and retention. Bodies follow their schemas in openapi/OpenAPI.json
-// (CollectorSettings, RateLimitSettings, RetentionSettings,
+// (CollectorSettings, CollectorStatus, RateLimitSettings, RetentionSettings,
 // RetentionRunResult, StatsSeries, StatsTop).
 
 import 'preview_sources.dart';
@@ -12,6 +12,14 @@ typedef UsageReply = ({int status, Object? body});
 class PreviewSettings {
   /// CollectorSettings.
   Map<String, Object?> collector = <String, Object?>{'maxConcurrentPulls': 2};
+
+  /// How many polling fetches want a permit now. By default it moves
+  /// between 1 and 8 every 3 s, so the preview's gauges change; tests fix it.
+  int Function() demand = () => 1 + (DateTime.now().millisecondsSinceEpoch ~/ 3000) % 8;
+
+  /// Pulls still running from before the cap was last lowered, which
+  /// CollectorStatus allows to exceed the cap briefly.
+  int runningOverCap = 0;
 
   /// RateLimitSettings.
   Map<String, Object?> rateLimits = <String, Object?>{
@@ -78,6 +86,18 @@ UsageReply? answerUsage(
       }
       settings.collector = <String, Object?>{'maxConcurrentPulls': n.clamp(1, 16)};
       return (status: 200, body: settings.collector);
+    case ('GET', '/v1/settings/collector/status'):
+      final cap = settings.collector['maxConcurrentPulls']! as int;
+      final want = settings.demand();
+      final inUse = want < cap ? want : cap;
+      return (
+        status: 200,
+        body: <String, Object?>{
+          'cap': cap,
+          'inUse': inUse + settings.runningOverCap,
+          'waiting': want > cap ? want - cap : 0,
+        },
+      );
     case ('GET', '/v1/settings/ratelimits'):
       return (status: 200, body: settings.rateLimits);
     case ('PUT', '/v1/settings/ratelimits'):

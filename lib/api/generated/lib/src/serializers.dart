@@ -304,6 +304,7 @@ import 'package:foresignal_api/src/model/collection_gap.dart';
 import 'package:foresignal_api/src/model/collection_gap_page.dart';
 import 'package:foresignal_api/src/model/collection_gap_recommendations_inner.dart';
 import 'package:foresignal_api/src/model/collector_settings.dart';
+import 'package:foresignal_api/src/model/collector_status.dart';
 import 'package:foresignal_api/src/model/comment_event.dart';
 import 'package:foresignal_api/src/model/common_dependencies.dart';
 import 'package:foresignal_api/src/model/common_dependencies_dependencies_inner.dart';
@@ -2010,6 +2011,7 @@ part 'serializers.g.dart';
   CollectionGapPage,
   CollectionGapRecommendationsInner,
   CollectorSettings,
+  CollectorStatus,
   CommentEvent,
   CommonDependencies,
   CommonDependenciesDependenciesInner,

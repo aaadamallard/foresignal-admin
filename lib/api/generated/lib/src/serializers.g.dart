@@ -519,6 +519,7 @@ Serializers _$serializers =
           ..add(CollectionGapRecommendationsInner.serializer)
           ..add(CollectionGapRecommendationsInnerTypeEnum.serializer)
           ..add(CollectorSettings.serializer)
+          ..add(CollectorStatus.serializer)
           ..add(CommentEvent.serializer)
           ..add(CommentEventReasonEnum.serializer)
           ..add(CommonDependencies.serializer)

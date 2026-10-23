@@ -381,6 +381,7 @@ export 'package:foresignal_api/src/model/collection_gap.dart';
 export 'package:foresignal_api/src/model/collection_gap_page.dart';
 export 'package:foresignal_api/src/model/collection_gap_recommendations_inner.dart';
 export 'package:foresignal_api/src/model/collector_settings.dart';
+export 'package:foresignal_api/src/model/collector_status.dart';
 export 'package:foresignal_api/src/model/comment_event.dart';
 export 'package:foresignal_api/src/model/common_dependencies.dart';
 export 'package:foresignal_api/src/model/common_dependencies_dependencies_inner.dart';

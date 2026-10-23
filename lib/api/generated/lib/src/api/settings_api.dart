@@ -10,6 +10,7 @@ import 'package:dio/dio.dart';
 
 import 'package:foresignal_api/src/api_util.dart';
 import 'package:foresignal_api/src/model/collector_settings.dart';
+import 'package:foresignal_api/src/model/collector_status.dart';
 import 'package:foresignal_api/src/model/cors_settings.dart';
 import 'package:foresignal_api/src/model/import_report.dart';
 import 'package:foresignal_api/src/model/infra_rules.dart';
@@ -193,6 +194,81 @@ class SettingsApi {
     }
 
     return Response<CollectorSettings>(
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      requestOptions: _response.requestOptions,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
+    );
+  }
+
+  /// Get collector status
+  /// The pull governor&#39;s live state (prompt 160), so a client can show it working rather than only its setting: &#x60;cap&#x60; is the &#x60;maxConcurrentPulls&#x60; in force (&#x60;getCollectorSettings&#x60;), &#x60;inUse&#x60; how many polling fetches hold a permit and are pulling from upstream right now, and &#x60;waiting&#x60; how many are queued for one. &#x60;inUse&#x60; may briefly exceed &#x60;cap&#x60; just after &#x60;updateCollectorSettings&#x60; lowers it, until running pulls finish. Streams are not counted. Read-only; a snapshot at the time of the request.  **Scope:** &#x60;admin&#x60;.
+  ///
+  /// Parameters:
+  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
+  /// * [headers] - Can be used to add additional headers to the request
+  /// * [extras] - Can be used to add flags to the request
+  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
+  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
+  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///
+  /// Returns a [Future] containing a [Response] with a [CollectorStatus] as data
+  /// Throws [DioException] if API call or serialization fails
+  Future<Response<CollectorStatus>> getCollectorStatus({
+    CancelToken? cancelToken,
+    Map<String, dynamic>? headers,
+    Map<String, dynamic>? extra,
+    ValidateStatus? validateStatus,
+    ProgressCallback? onSendProgress,
+    ProgressCallback? onReceiveProgress,
+  }) async {
+    final _path = r'/v1/settings/collector/status';
+    final _options = Options(
+      method: r'GET',
+      headers: <String, dynamic>{...?headers},
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
+        ],
+        ...?extra,
+      },
+      validateStatus: validateStatus,
+    );
+
+    final _response = await _dio.request<Object>(
+      _path,
+      options: _options,
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
+
+    CollectorStatus? _responseData;
+
+    try {
+      final rawResponse = _response.data;
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+                  rawResponse,
+                  specifiedType: const FullType(CollectorStatus),
+                )
+                as CollectorStatus;
+    } catch (error, stackTrace) {
+      throw DioException(
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioExceptionType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
+    }
+
+    return Response<CollectorStatus>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

@@ -5,12 +5,14 @@ import '../../api/api.dart';
 import '../../core/theme.dart';
 import '../../core/ui/ui.dart';
 import '../sources/source_widgets.dart';
+import 'collector_gauges.dart';
 import 'settings_drafts.dart';
 import 'usage_providers.dart';
 
 /// The collector's pull governor (mock C2): how many polling fetches may
 /// pull from upstream at once, 1 to 16 (`getCollectorSettings` /
-/// `updateCollectorSettings`). Retries and fetch timeouts are deliberately
+/// `updateCollectorSettings`), with the governor's live state beside it
+/// ([CollectorGauges]). Retries and fetch timeouts are deliberately
 /// not here: retries honor each upstream's `Retry-After` on their own, and
 /// a timeout belongs to each source's descriptor.
 class CollectorPanel extends ConsumerWidget {
@@ -137,6 +139,7 @@ class _CollectorFormState extends ConsumerState<CollectorForm> {
                   ],
                 ),
               ),
+              const CollectorGauges(),
               Padding(
                 padding: const EdgeInsets.only(bottom: 12),
                 child: Text(

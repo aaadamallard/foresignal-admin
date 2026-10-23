@@ -699,6 +699,7 @@ Class | Method | HTTP request | Description
 [*SeriesApi*](doc/SeriesApi.md) | [**listSeries**](doc/SeriesApi.md#listseries) | **GET** /v1/series | List time series
 [*SettingsApi*](doc/SettingsApi.md) | [**exportSettings**](doc/SettingsApi.md#exportsettings) | **GET** /v1/settings/export | Export all settings
 [*SettingsApi*](doc/SettingsApi.md) | [**getCollectorSettings**](doc/SettingsApi.md#getcollectorsettings) | **GET** /v1/settings/collector | Get collector settings
+[*SettingsApi*](doc/SettingsApi.md) | [**getCollectorStatus**](doc/SettingsApi.md#getcollectorstatus) | **GET** /v1/settings/collector/status | Get collector status
 [*SettingsApi*](doc/SettingsApi.md) | [**getCors**](doc/SettingsApi.md#getcors) | **GET** /v1/settings/cors | Get CORS settings
 [*SettingsApi*](doc/SettingsApi.md) | [**getInfraRules**](doc/SettingsApi.md#getinfrarules) | **GET** /v1/settings/infra-rules | Get infrastructure dependency rules
 [*SettingsApi*](doc/SettingsApi.md) | [**getMcpAuthSettings**](doc/SettingsApi.md#getmcpauthsettings) | **GET** /v1/settings/mcp-auth | Get MCP authorization settings
@@ -1190,6 +1191,7 @@ Class | Method | HTTP request | Description
  - [CollectionGapPage](doc/CollectionGapPage.md)
  - [CollectionGapRecommendationsInner](doc/CollectionGapRecommendationsInner.md)
  - [CollectorSettings](doc/CollectorSettings.md)
+ - [CollectorStatus](doc/CollectorStatus.md)
  - [CommentEvent](doc/CommentEvent.md)
  - [CommonDependencies](doc/CommonDependencies.md)
  - [CommonDependenciesDependenciesInner](doc/CommonDependenciesDependenciesInner.md)

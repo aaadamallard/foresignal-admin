@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:foresignal_admin/api/api.dart';
 import 'package:foresignal_admin/core/form_factor.dart';
 import 'package:foresignal_admin/core/routes.dart';
+import 'package:foresignal_admin/features/usage/collector_gauges.dart';
 
 import '../../../tool/preview/preview_sources.dart';
 import '../../../tool/preview/preview_usage.dart';
@@ -129,5 +131,72 @@ void main() {
     await openAt(tester, sourcesPath, adapter: usageBackend(), formFactor: FormFactor.mobile);
     expect(find.byKey(const Key('usage.glance')), findsOneWidget);
     expect(find.text('Requests today'), findsOneWidget);
+  });
+
+  group('collector gauges', () {
+    Future<FakeAdapter> openCollector(WidgetTester tester, PreviewSettings settings) async {
+      final adapter = await openAt(tester, usagePath, adapter: usageBackend(settings));
+      await tester.tap(find.byKey(const Key('usage.tab.collector')));
+      await tester.pumpAndSettle();
+      return adapter;
+    }
+
+    String figure(WidgetTester tester, String key) => tester
+        .widgetList<Text>(find.descendant(of: find.byKey(Key(key)), matching: find.byType(Text)))
+        .last
+        .data!;
+
+    Iterable<RecordedRequest> statusReads(FakeAdapter a) =>
+        a.requests.where((r) => r.method == 'GET' && r.uri.path == '/v1/settings/collector/status');
+
+    testWidgets('show cap, in use and waiting from getCollectorStatus', (tester) async {
+      final settings = PreviewSettings()..demand = () => 5;
+      final adapter = await openCollector(tester, settings);
+      expect(find.byKey(const Key('collector.gauges')), findsOneWidget);
+      expect(figure(tester, 'collector.cap'), '2');
+      expect(figure(tester, 'collector.inUse'), '2');
+      expect(figure(tester, 'collector.waiting'), '3');
+      expect(find.text('2 pulls of 2 running; 3 waiting for a permit.'), findsOneWidget);
+      expect(find.byKey(const Key('collector.live')), findsOneWidget);
+      expect(statusReads(adapter), isNotEmpty);
+    });
+
+    testWidgets('re-read while the screen is open, and not after it closes', (tester) async {
+      final settings = PreviewSettings()..demand = () => 1;
+      final adapter = await openCollector(tester, settings);
+      expect(figure(tester, 'collector.waiting'), '0');
+      settings.demand = () => 4;
+      await tester.pump(const Duration(seconds: 3));
+      await tester.pump();
+      expect(figure(tester, 'collector.inUse'), '2');
+      expect(figure(tester, 'collector.waiting'), '2');
+
+      await tester.tap(find.byKey(const Key('usage.tab.rateLimits')));
+      await tester.pumpAndSettle();
+      final reads = statusReads(adapter).length;
+      await tester.pump(const Duration(seconds: 8));
+      expect(statusReads(adapter).length, reads);
+    });
+
+    testWidgets('a cap lowered under running pulls is shown over the cap', (tester) async {
+      final settings = PreviewSettings()
+        ..demand = (() => 2)
+        ..runningOverCap = 3;
+      await openCollector(tester, settings);
+      expect(figure(tester, 'collector.inUse'), '5');
+      expect(find.textContaining('running over a cap of 2'), findsOneWidget);
+    });
+  });
+
+  test('collectorStatusLine reads the snapshot', () {
+    CollectorStatus s(int cap, int inUse, int waiting) => CollectorStatus(
+      (b) => b
+        ..cap = cap
+        ..inUse = inUse
+        ..waiting = waiting,
+    );
+    expect(collectorStatusLine(s(4, 1, 0)), '1 pull of 4 running; none waiting.');
+    expect(collectorStatusLine(s(4, 4, 1)), '4 pulls of 4 running; 1 waiting for a permit.');
+    expect(collectorStatusLine(s(2, 3, 0)), startsWith('3 pulls running over a cap of 2'));
   });
 }
