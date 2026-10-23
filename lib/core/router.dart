@@ -5,6 +5,12 @@ import 'package:go_router/go_router.dart';
 import '../api/backend_endpoint.dart';
 import '../features/ai/ai_screen.dart';
 import '../features/ai/provider_screen.dart';
+import '../features/alerts/alert_inbox.dart';
+import '../features/alerts/alerts_screen.dart';
+import '../features/alerts/channels.dart';
+import '../features/alerts/escalation.dart';
+import '../features/alerts/triggers.dart';
+import '../features/alerts/watchlists.dart';
 import '../features/analysis/analysis_screen.dart';
 import '../features/analysis/cycle_screen.dart';
 import '../features/analysis/event_screen.dart';
@@ -175,6 +181,61 @@ Map<String, SectionRoutes> sectionRoutesFor(FormFactor formFactor) {
           ),
         ],
       ),
+    alertsPath: SectionRoutes(
+      builder: (context, state) => const AlertsScreen(),
+      routes: <RouteBase>[
+        GoRoute(
+          path: 'inbox/:alertId',
+          builder: (context, state) => AlertScreen(alertId: state.pathParameters['alertId']!),
+        ),
+        if (desktop) ...<RouteBase>[
+          GoRoute(
+            path: 'triggers',
+            builder: (context, state) => const AlertsScreen(tab: AlertsTab.triggers),
+            routes: <RouteBase>[
+              GoRoute(
+                path: ':ruleId',
+                builder: (context, state) => TriggerScreen(ruleId: state.pathParameters['ruleId']),
+              ),
+            ],
+          ),
+          GoRoute(path: 'new-trigger', builder: (context, state) => const TriggerScreen()),
+          GoRoute(
+            path: 'escalation',
+            builder: (context, state) => const AlertsScreen(tab: AlertsTab.escalation),
+            routes: <RouteBase>[
+              GoRoute(
+                path: ':policyId',
+                builder: (context, state) => PolicyScreen(policyId: state.pathParameters['policyId']),
+              ),
+            ],
+          ),
+          GoRoute(path: 'new-policy', builder: (context, state) => const PolicyScreen()),
+          GoRoute(
+            path: 'channels',
+            builder: (context, state) => const AlertsScreen(tab: AlertsTab.channels),
+            routes: <RouteBase>[
+              GoRoute(
+                path: ':channelId',
+                builder: (context, state) => ChannelScreen(channelId: state.pathParameters['channelId']),
+              ),
+            ],
+          ),
+          GoRoute(path: 'new-channel', builder: (context, state) => const ChannelScreen()),
+          GoRoute(
+            path: 'watchlists',
+            builder: (context, state) => const AlertsScreen(tab: AlertsTab.watchlists),
+            routes: <RouteBase>[
+              GoRoute(
+                path: ':watchlistId',
+                builder: (context, state) =>
+                    WatchlistScreen(watchlistId: state.pathParameters['watchlistId']!),
+              ),
+            ],
+          ),
+        ],
+      ],
+    ),
   };
 }
 

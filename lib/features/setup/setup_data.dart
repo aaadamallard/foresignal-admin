@@ -3,35 +3,37 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../api/api.dart';
 
 /// The alerting state the wizard's "Configure alerts" step reflects: trigger
-/// rules (`listTriggers`) and notification channels (`listChannels`, admin).
+/// rules (`listTriggers`) and notification channels (`listChannels`, admin),
+/// read as JSON (see [jsonCall]): the generated client cannot read a rule
+/// with a window.
 class AlertingSetup {
   /// Creates the state.
   const AlertingSetup({required this.triggers, required this.channels, this.channelsError});
 
   /// Every trigger rule.
-  final List<TriggerRule> triggers;
+  final List<Map<String, Object?>> triggers;
 
   /// Every channel, or empty when they could not be read.
-  final List<Channel> channels;
+  final List<Map<String, Object?>> channels;
 
   /// Why channels could not be read (no admin token), if so.
   final ApiException? channelsError;
 
   /// Rules that are enabled (a rule with no `enabled` flag counts as enabled).
-  int get enabledTriggers => triggers.where((t) => t.enabled ?? true).length;
+  int get enabledTriggers => triggers.where((t) => t['enabled'] != false).length;
 }
 
 /// The wizard's alerting state.
 final alertingSetupProvider = FutureProvider<AlertingSetup>((ref) async {
-  final api = ref.watch(foresignalApiProvider);
-  final triggers = await callApiRequired(() => api.getTriggersApi().listTriggers());
+  final dio = ref.watch(backendDioProvider);
+  final triggers = await jsonArrayCall(dio, '/v1/triggers');
   try {
-    final channels = await callApiRequired(() => api.getChannelsApi().listChannels());
-    return AlertingSetup(triggers: triggers.toList(), channels: channels.toList());
+    final channels = await jsonArrayCall(dio, '/v1/channels');
+    return AlertingSetup(triggers: triggers, channels: channels);
   } on ApiException catch (error) {
     return AlertingSetup(
-      triggers: triggers.toList(),
-      channels: const <Channel>[],
+      triggers: triggers,
+      channels: const <Map<String, Object?>>[],
       channelsError: error,
     );
   }

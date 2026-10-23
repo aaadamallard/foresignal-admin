@@ -25,6 +25,7 @@ import 'package:foresignal_admin/core/theme_mode.dart';
 import 'package:foresignal_admin/features/connect/connect_controller.dart';
 import 'package:foresignal_admin/features/setup/setup_wizard_store.dart';
 
+import 'preview_alerts.dart';
 import 'preview_analysis.dart';
 import 'preview_forecasting.dart';
 import 'preview_llm.dart';
@@ -72,18 +73,6 @@ final Map<String, Object?> previewBodies = <String, Object?>{
     'publicBaseUrl': 'http://foresignal.local:8080',
     'timezone': 'America/Chicago',
   },
-  // TriggerRule[]
-  '/v1/triggers': <Object?>[
-    <String, Object?>{
-      'id': '7b0e7f0c-3c55-4a43-9f53-0d9b1f0b6a01',
-      'name': 'M5+ earthquakes',
-      'enabled': true,
-      'createdAt': '2026-10-20T10:00:00Z',
-      'updatedAt': '2026-10-20T10:00:00Z',
-    },
-  ],
-  // Channel[]
-  '/v1/channels': <Object?>[],
   // PushProvider[]
   '/v1/push/providers': <Object?>[
     <String, Object?>{
@@ -110,6 +99,7 @@ final PreviewLlm _llm = PreviewLlm();
 final PreviewAnalysis _analysis = PreviewAnalysis();
 final PreviewVetting _vetting = PreviewVetting();
 final PreviewForecasting _forecasting = PreviewForecasting();
+final PreviewAlerts _alerts = PreviewAlerts();
 
 PreviewReply? _answer(RequestOptions options, Object? requestBody) {
   final sources = answerSources(options.method, options.uri.path, requestBody);
@@ -179,6 +169,16 @@ PreviewReply? _answer(RequestOptions options, Object? requestBody) {
   if (forecasting != null) {
     return forecasting;
   }
+  final alerts = answerAlerts(
+    options.method,
+    options.uri.path,
+    options.uri.queryParametersAll,
+    requestBody,
+    _alerts,
+  );
+  if (alerts != null) {
+    return alerts;
+  }
   final body = previewBodies[options.uri.path];
   return body == null ? null : (status: 200, body: body);
 }
@@ -190,8 +190,17 @@ class _PreviewAdapter implements HttpClientAdapter {
     Stream<Uint8List>? requestStream,
     Future<void>? cancelFuture,
   ) async {
-    await Future<void>.delayed(const Duration(milliseconds: 400));
     final path = options.uri.path;
+    if (path == '/v1/alerts/stream') {
+      return ResponseBody(
+        _alerts.openStream(cancelFuture).map(Uint8List.fromList),
+        200,
+        headers: <String, List<String>>{
+          'content-type': <String>['text/event-stream'],
+        },
+      );
+    }
+    await Future<void>.delayed(const Duration(milliseconds: 400));
     if (path == '/v1/settings/server' &&
         options.headers['Authorization'] != 'Bearer $previewToken') {
       return _json(
@@ -215,6 +224,15 @@ class _PreviewAdapter implements HttpClientAdapter {
     final reply = _answer(options, requestBody);
     if (reply == null) {
       return _json(<String, Object?>{'title': 'Not found', 'status': 404}, 404, problem: true);
+    }
+    if (reply.body case final PreviewText text) {
+      return ResponseBody.fromString(
+        text.text,
+        reply.status,
+        headers: <String, List<String>>{
+          'content-type': <String>[text.contentType],
+        },
+      );
     }
     return _json(reply.body, reply.status, problem: reply.status >= 400);
   }

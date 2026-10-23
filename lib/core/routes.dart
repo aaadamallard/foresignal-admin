@@ -90,11 +90,45 @@ String forecastingQuestionPath(String questionId) =>
 String forecastingProviderPath(String sourceId) =>
     '$forecastingPath/providers/${Uri.encodeComponent(sourceId)}';
 
+/// The alert inbox.
+const String alertsPath = '/alerts';
+
+/// One alert.
+String alertPath(int alertId) => '$alertsPath/inbox/$alertId';
+
 /// Trigger rules.
-const String alertTriggersPath = '/alerts/triggers';
+const String alertTriggersPath = '$alertsPath/triggers';
+
+/// One trigger rule.
+String alertTriggerPath(String ruleId) => '$alertTriggersPath/${Uri.encodeComponent(ruleId)}';
+
+/// Authors a trigger rule.
+const String alertNewTriggerPath = '$alertsPath/new-trigger';
+
+/// Escalation policies.
+const String alertEscalationPath = '$alertsPath/escalation';
+
+/// One escalation policy.
+String alertPolicyPath(String policyId) => '$alertEscalationPath/${Uri.encodeComponent(policyId)}';
+
+/// Creates an escalation policy.
+const String alertNewPolicyPath = '$alertsPath/new-policy';
 
 /// Notification channels.
-const String alertChannelsPath = '/alerts/channels';
+const String alertChannelsPath = '$alertsPath/channels';
+
+/// One notification channel.
+String alertChannelPath(String channelId) => '$alertChannelsPath/${Uri.encodeComponent(channelId)}';
+
+/// Creates a notification channel.
+const String alertNewChannelPath = '$alertsPath/new-channel';
+
+/// Watchlists.
+const String alertWatchlistsPath = '$alertsPath/watchlists';
+
+/// One watchlist and its items.
+String alertWatchlistPath(String watchlistId) =>
+    '$alertWatchlistsPath/${Uri.encodeComponent(watchlistId)}';
 
 /// Native and Web Push configuration.
 const String pushPath = '/notifications/push';
