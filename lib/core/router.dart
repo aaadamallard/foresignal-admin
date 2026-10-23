@@ -24,6 +24,10 @@ import '../features/notifications/notification_inbox.dart';
 import '../features/notifications/notifications_screen.dart';
 import '../features/notifications/push_native.dart';
 import '../features/notifications/this_device.dart';
+import '../features/serving/exports.dart';
+import '../features/serving/peers.dart';
+import '../features/serving/serving_screen.dart';
+import '../features/serving/sinks.dart';
 import '../features/setup/setup_wizard_screen.dart';
 import '../features/shell/app_shell.dart';
 import '../features/shell/section_placeholder.dart';
@@ -272,6 +276,43 @@ Map<String, SectionRoutes> sectionRoutesFor(FormFactor formFactor) {
         ],
       ],
     ),
+    if (desktop)
+      servingPath: SectionRoutes(
+        builder: (context, state) => const ServingScreen(),
+        routes: <RouteBase>[
+          GoRoute(path: 'new-sink', builder: (context, state) => const SinkScreen()),
+          GoRoute(
+            path: 'sinks/:sinkId',
+            builder: (context, state) => SinkScreen(sinkId: state.pathParameters['sinkId']),
+          ),
+          GoRoute(path: 'new-export', builder: (context, state) => const NewExportScreen()),
+          GoRoute(
+            path: 'exports',
+            builder: (context, state) => const ServingScreen(tab: ServingTab.exports),
+            routes: <RouteBase>[
+              GoRoute(
+                path: ':exportId',
+                builder: (context, state) => ExportJobScreen(exportId: state.pathParameters['exportId']!),
+              ),
+            ],
+          ),
+          GoRoute(
+            path: 'archive',
+            builder: (context, state) => const ServingScreen(tab: ServingTab.archive),
+          ),
+          GoRoute(path: 'new-peer', builder: (context, state) => const PeerScreen()),
+          GoRoute(
+            path: 'peers',
+            builder: (context, state) => const ServingScreen(tab: ServingTab.peers),
+            routes: <RouteBase>[
+              GoRoute(
+                path: ':peerId',
+                builder: (context, state) => PeerScreen(peerId: state.pathParameters['peerId']),
+              ),
+            ],
+          ),
+        ],
+      ),
     if (!desktop) devicePath: SectionRoutes(builder: (context, state) => const ThisDeviceScreen()),
   };
 }

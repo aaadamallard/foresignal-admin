@@ -31,6 +31,7 @@ import 'preview_analysis.dart';
 import 'preview_forecasting.dart';
 import 'preview_llm.dart';
 import 'preview_notifications.dart';
+import 'preview_serving.dart';
 import 'preview_sources.dart';
 import 'preview_usage.dart';
 import 'preview_validate.dart';
@@ -88,6 +89,7 @@ final PreviewVetting _vetting = PreviewVetting();
 final PreviewForecasting _forecasting = PreviewForecasting();
 final PreviewAlerts _alerts = PreviewAlerts();
 final PreviewNotifications _notifications = PreviewNotifications();
+final PreviewServing _serving = PreviewServing();
 
 PreviewReply? _answer(RequestOptions options, Object? requestBody) {
   final sources = answerSources(options.method, options.uri.path, requestBody);
@@ -176,6 +178,16 @@ PreviewReply? _answer(RequestOptions options, Object? requestBody) {
   );
   if (notifications != null) {
     return notifications;
+  }
+  final serving = answerServing(
+    options.method,
+    options.uri.path,
+    options.uri.queryParametersAll,
+    requestBody,
+    _serving,
+  );
+  if (serving != null) {
+    return serving;
   }
   final body = previewBodies[options.uri.path];
   return body == null ? null : (status: 200, body: body);

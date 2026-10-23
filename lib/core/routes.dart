@@ -154,6 +154,36 @@ const String webPushPath = '$notificationsPath/web-push';
 /// The mobile companion's own push registration.
 const String devicePath = '/device';
 
+/// Serving: outbound sinks.
+const String servingPath = '/serving';
+
+/// One sink.
+String servingSinkPath(String sinkId) => '$servingPath/sinks/${Uri.encodeComponent(sinkId)}';
+
+/// A new sink.
+const String servingNewSinkPath = '$servingPath/new-sink';
+
+/// Export, snapshot and pack jobs.
+const String servingExportsPath = '$servingPath/exports';
+
+/// One export job.
+String servingExportPath(String exportId) => '$servingExportsPath/${Uri.encodeComponent(exportId)}';
+
+/// A new export, snapshot or pack.
+const String servingNewExportPath = '$servingPath/new-export';
+
+/// The cold archive and holds.
+const String servingArchivePath = '$servingPath/archive';
+
+/// Peers and federation.
+const String servingPeersPath = '$servingPath/peers';
+
+/// One peer.
+String servingPeerPath(String peerId) => '$servingPeersPath/${Uri.encodeComponent(peerId)}';
+
+/// A new peer.
+const String servingNewPeerPath = '$servingPath/new-peer';
+
 /// The section root a [path] belongs to: `/sources/x/test` → `/sources`.
 String sectionRootOf(String path) {
   final segments = Uri.parse(path).pathSegments;
