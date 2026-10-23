@@ -1258,6 +1258,8 @@ export 'package:foresignal_api/src/model/projected_impact_page.dart';
 export 'package:foresignal_api/src/model/projected_impact_question_window.dart';
 export 'package:foresignal_api/src/model/projected_impact_skipped_inner.dart';
 export 'package:foresignal_api/src/model/prompt_template.dart';
+export 'package:foresignal_api/src/model/prompt_template_list.dart';
+export 'package:foresignal_api/src/model/prompt_template_summary.dart';
 export 'package:foresignal_api/src/model/propagation_edge.dart';
 export 'package:foresignal_api/src/model/propagation_graph.dart';
 export 'package:foresignal_api/src/model/propagation_graph_cross_platform_order_inner.dart';

@@ -75,6 +75,8 @@ _$notificationDeliveryEventEnum_chroniclePeriodAccessPeriodRequested =
 const NotificationDeliveryEventEnum
 _$notificationDeliveryEventEnum_savedSearchPeriodMatches =
     const NotificationDeliveryEventEnum._('savedSearchPeriodMatches');
+const NotificationDeliveryEventEnum _$notificationDeliveryEventEnum_personal =
+    const NotificationDeliveryEventEnum._('personal');
 
 NotificationDeliveryEventEnum _$notificationDeliveryEventEnumValueOf(
   String name,
@@ -128,6 +130,8 @@ NotificationDeliveryEventEnum _$notificationDeliveryEventEnumValueOf(
       return _$notificationDeliveryEventEnum_chroniclePeriodAccessPeriodRequested;
     case 'savedSearchPeriodMatches':
       return _$notificationDeliveryEventEnum_savedSearchPeriodMatches;
+    case 'personal':
+      return _$notificationDeliveryEventEnum_personal;
     default:
       throw ArgumentError(name);
   }
@@ -160,6 +164,7 @@ _$notificationDeliveryEventEnumValues = BuiltSet<NotificationDeliveryEventEnum>(
     _$notificationDeliveryEventEnum_packagePeriodReceived,
     _$notificationDeliveryEventEnum_chroniclePeriodAccessPeriodRequested,
     _$notificationDeliveryEventEnum_savedSearchPeriodMatches,
+    _$notificationDeliveryEventEnum_personal,
   ],
 );
 
@@ -377,6 +382,7 @@ class _$NotificationDeliveryEventEnumSerializer
     'packagePeriodReceived': 'package.received',
     'chroniclePeriodAccessPeriodRequested': 'chronicle.access.requested',
     'savedSearchPeriodMatches': 'saved-search.matches',
+    'personal': 'personal',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'alert': 'alert',
@@ -403,6 +409,7 @@ class _$NotificationDeliveryEventEnumSerializer
     'package.received': 'packagePeriodReceived',
     'chronicle.access.requested': 'chroniclePeriodAccessPeriodRequested',
     'saved-search.matches': 'savedSearchPeriodMatches',
+    'personal': 'personal',
   };
 
   @override

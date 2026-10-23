@@ -166,10 +166,12 @@ class _CustomSourceScreenState extends ConsumerState<CustomSourceScreen> {
                       draft: draft,
                       onSave: (d) async {
                         final input = d.toInput();
+                        final clears = d.clears;
                         await writeThenConfirm<List<CustomSource>>(
                           write: () => api.getIngestApi().updateCustomSource(
                             sourceId: source.id,
                             customSourceInput: input,
+                            extra: clears.isEmpty ? null : explicitNulls(clears),
                           ),
                           reread: () async {
                             ref.invalidate(customSourcesProvider);

@@ -51,6 +51,29 @@ Future<FakeAdapter> openAt(
 }
 
 void main() {
+  testWidgets('a long kind list and name do not push the other columns off the table', (tester) async {
+    final held = buildPreviewSources();
+    final plain = sourcesBackend(held);
+    const kinds = <String>['aerodrome-osm', 'data-centre-osm', 'hospital', 'port-osm', 'power-line',
+      'power-plant-osm', 'substation', 'telecom-exchange', 'water-facility'];
+    final adapter = FakeAdapter((request) {
+      if (request.method == 'GET' && request.uri.path == '/v1/sources') {
+        final rows = <Object?>[for (final s in held) s.summary];
+        (rows.first! as Map<String, Object?>)
+          ..['kinds'] = kinds
+          ..['name'] = 'Work zones: Metropolitan Transportation Commission San Francisco (WZDx)';
+        return FakeResponse.json(rows);
+      }
+      return plain.handler(request);
+    });
+    await openAt(tester, sourcesPath, adapter: adapter);
+    final first = held.first.id;
+    final toggle = find.byKey(Key('sources.enabled.$first'));
+    expect(toggle, findsOneWidget);
+    expect(tester.getRect(toggle).right, lessThan(1500));
+    expect(find.text(kinds.join(', ')), findsOneWidget);
+  });
+
   testWidgets('the catalog lists every source with tab counts', (tester) async {
     await openAt(tester, sourcesPath);
     expect(find.text('USGS Earthquakes'), findsOneWidget);
@@ -140,6 +163,68 @@ void main() {
       isTrue,
     );
     expect(find.textContaining('Saved and confirmed'), findsOneWidget);
+  });
+
+  testWidgets('an emptied retention clears the override with an explicit null', (tester) async {
+    final sources = buildPreviewSources();
+    sources.firstWhere((s) => s.id == 'usgs-earthquakes').settings['retention'] = '30d';
+    final adapter = await openAt(
+      tester,
+      sourceDetailPath('usgs-earthquakes'),
+      adapter: sourcesBackend(sources),
+    );
+    await tester.tap(find.byKey(const Key('source.tab.configuration')));
+    await tester.pumpAndSettle();
+    final retention = find.byWidgetPredicate(
+      (w) =>
+          w.key is ValueKey<String> &&
+          (w.key! as ValueKey<String>).value.startsWith('config.retention.'),
+    );
+    await tester.enterText(retention, '');
+    await tester.ensureVisible(find.byKey(const Key('form.save')));
+    await tester.tap(find.byKey(const Key('form.save')));
+    await tester.pumpAndSettle();
+
+    final put = adapter.requests.singleWhere((r) => r.method == 'PUT');
+    expect(put.body, <String, Object?>{'retention': null});
+    expect(find.textContaining('Saved and confirmed'), findsOneWidget);
+  });
+
+  testWidgets('editing a field drops the backend\'s problem with it', (tester) async {
+    final backend = sourcesBackend();
+    final adapter = await openAt(
+      tester,
+      sourceDetailPath('usgs-earthquakes'),
+      adapter: FakeAdapter(
+        (request) => request.method == 'PUT'
+            ? FakeResponse.problem(const <String, Object?>{
+                'title': 'Bad Request',
+                'status': 400,
+                'code': 'VALIDATION_FAILED',
+                'errors': <Object?>[
+                  <String, Object?>{'field': 'interval', 'message': 'refused by the backend'},
+                ],
+              }, status: 400)
+            : backend.handler(request),
+      ),
+    );
+    await tester.tap(find.byKey(const Key('source.tab.configuration')));
+    await tester.pumpAndSettle();
+    final interval = find.byWidgetPredicate(
+      (w) =>
+          w.key is ValueKey<String> &&
+          (w.key! as ValueKey<String>).value.startsWith('config.interval.'),
+    );
+    await tester.enterText(interval, '30m');
+    await tester.ensureVisible(find.byKey(const Key('form.save')));
+    await tester.tap(find.byKey(const Key('form.save')));
+    await tester.pumpAndSettle();
+    expect(adapter.requests.where((r) => r.method == 'PUT'), hasLength(1));
+    expect(find.text('refused by the backend'), findsWidgets);
+
+    await tester.enterText(interval, '45m');
+    await tester.pumpAndSettle();
+    expect(find.text('refused by the backend'), findsNothing);
   });
 
   testWidgets('an interval below the minimum is refused before any request', (tester) async {

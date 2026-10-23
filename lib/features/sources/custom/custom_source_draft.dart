@@ -122,8 +122,6 @@ class CustomSourceDraft {
     }
     if (recordTtl.trim().isNotEmpty && parseDurationText(recordTtl) == null) {
       errors['recordTtl'] = 'Enter a duration such as 7d or PT24H.';
-    } else if (recordTtl.trim().isEmpty && base['recordTtl'] != null) {
-      errors['recordTtl'] = 'A stored TTL can be changed here but not cleared.';
     }
     void range(String key, String text, int min, int max) {
       if (text.trim().isEmpty) {
@@ -145,11 +143,18 @@ class CustomSourceDraft {
       } on FormatException catch (e) {
         errors['mapping'] = 'Not valid JSON: ${e.message}';
       }
-    } else if (base['mapping'] != null) {
-      errors['mapping'] = 'A stored mapping can be changed here but not cleared.';
     }
     return errors;
   }
+
+  /// The stored members the operator emptied (`recordTtl`, `mapping`), which
+  /// the update carries as explicit `null`s ([explicitNulls]): the generated
+  /// serializer leaves a null member out, and an absent `recordTtl` on a
+  /// personal source means the 24 h default rather than none.
+  List<String> get clears => <String>[
+    if (!isNew && recordTtl.trim().isEmpty && base['recordTtl'] != null) 'recordTtl',
+    if (!isNew && mapping.trim().isEmpty && base['mapping'] != null) 'mapping',
+  ];
 
   /// The request body as JSON: the stored definition with the edits applied.
   /// Call [validate] first.

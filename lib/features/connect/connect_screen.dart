@@ -400,7 +400,10 @@ class ConnectionDetails extends StatelessWidget {
                   'Unavailable: ${report.contractError!.message}',
                 ),
               if (report.serverSettings != null) ...<MapEntry<String, Object>>[
-                MapEntry<String, Object>('Public base URL', report.serverSettings!.publicBaseUrl),
+                MapEntry<String, Object>(
+                  'Public base URL',
+                  report.serverSettings!.publicBaseUrl ?? "Not set (the request's own address)",
+                ),
                 MapEntry<String, Object>('Time zone', report.serverSettings!.timezone ?? '—'),
               ],
             ],

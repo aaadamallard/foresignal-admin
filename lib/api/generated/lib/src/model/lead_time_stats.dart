@@ -16,7 +16,7 @@ part 'lead_time_stats.g.dart';
 ///
 /// Properties:
 /// * [generatedAt]
-/// * [trainingCutoff] - Comparisons evaluated after this are out of sample
+/// * [trainingCutoff] - Comparisons evaluated after this are out of sample; null until there is a comparison to set it
 /// * [filters]
 /// * [groups]
 /// * [caveats]
@@ -26,9 +26,9 @@ abstract class LeadTimeStats
   @BuiltValueField(wireName: r'generatedAt')
   DateTime get generatedAt;
 
-  /// Comparisons evaluated after this are out of sample
+  /// Comparisons evaluated after this are out of sample; null until there is a comparison to set it
   @BuiltValueField(wireName: r'trainingCutoff')
-  DateTime get trainingCutoff;
+  DateTime? get trainingCutoff;
 
   @BuiltValueField(wireName: r'filters')
   LeadTimeStatsFilters? get filters;
@@ -70,10 +70,12 @@ class _$LeadTimeStatsSerializer implements PrimitiveSerializer<LeadTimeStats> {
       specifiedType: const FullType(DateTime),
     );
     yield r'trainingCutoff';
-    yield serializers.serialize(
-      object.trainingCutoff,
-      specifiedType: const FullType(DateTime),
-    );
+    yield object.trainingCutoff == null
+        ? null
+        : serializers.serialize(
+            object.trainingCutoff,
+            specifiedType: const FullType.nullable(DateTime),
+          );
     if (object.filters != null) {
       yield r'filters';
       yield serializers.serialize(
@@ -135,9 +137,10 @@ class _$LeadTimeStatsSerializer implements PrimitiveSerializer<LeadTimeStats> {
           final valueDes =
               serializers.deserialize(
                     value,
-                    specifiedType: const FullType(DateTime),
+                    specifiedType: const FullType.nullable(DateTime),
                   )
-                  as DateTime;
+                  as DateTime?;
+          if (valueDes == null) continue;
           result.trainingCutoff = valueDes;
           break;
         case r'filters':

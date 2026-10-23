@@ -12,6 +12,22 @@ const NotificationEventEnum _$notificationEventEnum_briefing =
     const NotificationEventEnum._('briefing');
 const NotificationEventEnum _$notificationEventEnum_system =
     const NotificationEventEnum._('system');
+const NotificationEventEnum _$notificationEventEnum_analystPeriodNote =
+    const NotificationEventEnum._('analystPeriodNote');
+const NotificationEventEnum _$notificationEventEnum_situationPeriodActivated =
+    const NotificationEventEnum._('situationPeriodActivated');
+const NotificationEventEnum _$notificationEventEnum_situationPeriodEscalated =
+    const NotificationEventEnum._('situationPeriodEscalated');
+const NotificationEventEnum _$notificationEventEnum_findingPeriodSignificant =
+    const NotificationEventEnum._('findingPeriodSignificant');
+const NotificationEventEnum
+_$notificationEventEnum_forecastPeriodResolutionNeeded =
+    const NotificationEventEnum._('forecastPeriodResolutionNeeded');
+const NotificationEventEnum
+_$notificationEventEnum_hypothesisPeriodBandChanged =
+    const NotificationEventEnum._('hypothesisPeriodBandChanged');
+const NotificationEventEnum _$notificationEventEnum_assessmentPeriodPublished =
+    const NotificationEventEnum._('assessmentPeriodPublished');
 
 NotificationEventEnum _$notificationEventEnumValueOf(String name) {
   switch (name) {
@@ -21,6 +37,20 @@ NotificationEventEnum _$notificationEventEnumValueOf(String name) {
       return _$notificationEventEnum_briefing;
     case 'system':
       return _$notificationEventEnum_system;
+    case 'analystPeriodNote':
+      return _$notificationEventEnum_analystPeriodNote;
+    case 'situationPeriodActivated':
+      return _$notificationEventEnum_situationPeriodActivated;
+    case 'situationPeriodEscalated':
+      return _$notificationEventEnum_situationPeriodEscalated;
+    case 'findingPeriodSignificant':
+      return _$notificationEventEnum_findingPeriodSignificant;
+    case 'forecastPeriodResolutionNeeded':
+      return _$notificationEventEnum_forecastPeriodResolutionNeeded;
+    case 'hypothesisPeriodBandChanged':
+      return _$notificationEventEnum_hypothesisPeriodBandChanged;
+    case 'assessmentPeriodPublished':
+      return _$notificationEventEnum_assessmentPeriodPublished;
     default:
       throw ArgumentError(name);
   }
@@ -31,6 +61,13 @@ final BuiltSet<NotificationEventEnum> _$notificationEventEnumValues =
       _$notificationEventEnum_alert,
       _$notificationEventEnum_briefing,
       _$notificationEventEnum_system,
+      _$notificationEventEnum_analystPeriodNote,
+      _$notificationEventEnum_situationPeriodActivated,
+      _$notificationEventEnum_situationPeriodEscalated,
+      _$notificationEventEnum_findingPeriodSignificant,
+      _$notificationEventEnum_forecastPeriodResolutionNeeded,
+      _$notificationEventEnum_hypothesisPeriodBandChanged,
+      _$notificationEventEnum_assessmentPeriodPublished,
     ]);
 
 const NotificationSeverityEnum _$notificationSeverityEnum_info =
@@ -100,11 +137,25 @@ class _$NotificationEventEnumSerializer
     'alert': 'alert',
     'briefing': 'briefing',
     'system': 'system',
+    'analystPeriodNote': 'analyst.note',
+    'situationPeriodActivated': 'situation.activated',
+    'situationPeriodEscalated': 'situation.escalated',
+    'findingPeriodSignificant': 'finding.significant',
+    'forecastPeriodResolutionNeeded': 'forecast.resolution_needed',
+    'hypothesisPeriodBandChanged': 'hypothesis.band_changed',
+    'assessmentPeriodPublished': 'assessment.published',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'alert': 'alert',
     'briefing': 'briefing',
     'system': 'system',
+    'analyst.note': 'analystPeriodNote',
+    'situation.activated': 'situationPeriodActivated',
+    'situation.escalated': 'situationPeriodEscalated',
+    'finding.significant': 'findingPeriodSignificant',
+    'forecast.resolution_needed': 'forecastPeriodResolutionNeeded',
+    'hypothesis.band_changed': 'hypothesisPeriodBandChanged',
+    'assessment.published': 'assessmentPeriodPublished',
   };
 
   @override

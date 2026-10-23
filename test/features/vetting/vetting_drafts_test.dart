@@ -148,4 +148,12 @@ void main() {
     expect(leadText(7200), '+2h');
     expect(leadText(null), '—');
   });
+
+  test('the lead-time cut-off reads as absent until a comparison sets it', () {
+    expect(leadTimeCutoffText(null), contains('no out-of-sample cut-off'));
+    expect(
+      leadTimeCutoffText(DateTime.utc(2026, 10, 1, 12)),
+      'Comparisons evaluated after 2026-10-01 12:00:00 are out of sample.',
+    );
+  });
 }

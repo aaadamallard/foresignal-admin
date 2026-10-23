@@ -15,7 +15,7 @@ part 'server_settings.g.dart';
 /// ServerSettings
 ///
 /// Properties:
-/// * [publicBaseUrl] - Base URL used in notification links
+/// * [publicBaseUrl] - Base URL used in notification links; null uses the request's own scheme, host and port
 /// * [timezone] - IANA zone; fallback for channel timezones
 /// * [clientLinks]
 /// * [warnings] - PUBLIC_BASE_URL_INSECURE when publicBaseUrl is http:// on a non-local host; PUBLIC_BASE_URL_MISMATCH when requests arrive over https
@@ -24,9 +24,9 @@ part 'server_settings.g.dart';
 @BuiltValue()
 abstract class ServerSettings
     implements Built<ServerSettings, ServerSettingsBuilder> {
-  /// Base URL used in notification links
+  /// Base URL used in notification links; null uses the request's own scheme, host and port
   @BuiltValueField(wireName: r'publicBaseUrl')
-  String get publicBaseUrl;
+  String? get publicBaseUrl;
 
   /// IANA zone; fallback for channel timezones
   @BuiltValueField(wireName: r'timezone')
@@ -73,10 +73,12 @@ class _$ServerSettingsSerializer
     FullType specifiedType = FullType.unspecified,
   }) sync* {
     yield r'publicBaseUrl';
-    yield serializers.serialize(
-      object.publicBaseUrl,
-      specifiedType: const FullType(String),
-    );
+    yield object.publicBaseUrl == null
+        ? null
+        : serializers.serialize(
+            object.publicBaseUrl,
+            specifiedType: const FullType.nullable(String),
+          );
     if (object.timezone != null) {
       yield r'timezone';
       yield serializers.serialize(
@@ -143,9 +145,10 @@ class _$ServerSettingsSerializer
           final valueDes =
               serializers.deserialize(
                     value,
-                    specifiedType: const FullType(String),
+                    specifiedType: const FullType.nullable(String),
                   )
-                  as String;
+                  as String?;
+          if (valueDes == null) continue;
           result.publicBaseUrl = valueDes;
           break;
         case r'timezone':

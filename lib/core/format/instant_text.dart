@@ -27,3 +27,11 @@ String instantText(DateTime? t) {
   final iso = u.toIso8601String();
   return midnight ? iso.substring(0, 10) : iso.replaceFirst('.000Z', 'Z');
 }
+
+/// The time of day of [t] in UTC as `hh:mm:ss`, the clock every instant in
+/// the app is shown in.
+String utcClockText(DateTime t) {
+  final u = t.toUtc();
+  String two(int n) => n.toString().padLeft(2, '0');
+  return '${two(u.hour)}:${two(u.minute)}:${two(u.second)}';
+}

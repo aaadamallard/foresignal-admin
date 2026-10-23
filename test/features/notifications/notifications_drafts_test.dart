@@ -1,5 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:foresignal_admin/api/sse.dart';
+import 'package:foresignal_admin/features/notifications/notification_inbox.dart';
 import 'package:foresignal_admin/features/notifications/notifications_drafts.dart';
 import 'package:foresignal_admin/features/notifications/this_device.dart';
 
@@ -249,10 +250,33 @@ void main() {
     );
   });
 
+  test('the inbox filter offers every inbox event; push filters keep their three', () {
+    expect(inboxEvents, <String>[
+      'alert',
+      'briefing',
+      'system',
+      'analyst.note',
+      'situation.activated',
+      'situation.escalated',
+      'finding.significant',
+      'forecast.resolution_needed',
+      'hypothesis.band_changed',
+      'assessment.published',
+    ]);
+    expect(notificationEvents, <String>['alert', 'briefing', 'system']);
+  });
+
   test('platforms read as their makers write them', () {
     expect(platformText('ios'), 'iOS');
     expect(platformText('ipados'), 'iPadOS');
     expect(platformText('macos'), 'macOS');
     expect(platformText('android'), 'Android');
+  });
+
+  test('a dotted inbox event reads as words', () {
+    expect(inboxEventLabel('analyst.note'), 'Analyst · Note');
+    expect(inboxEventLabel('forecast.resolution_needed'), 'Forecast · Resolution needed');
+    expect(inboxEventLabel('alert'), 'Alert');
+    expect(eventText(<String, Object?>{'event': 'alert', 'subtype': 'alert.snoozed'}), 'Alert · Snoozed');
   });
 }

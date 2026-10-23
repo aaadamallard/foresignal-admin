@@ -83,3 +83,30 @@ class DataTableCard<T> extends StatelessWidget {
     );
   }
 }
+
+/// [text] on one line at most [maxWidth] wide, the whole of it on hover: a
+/// table cell for a value that may be long (a name, a list of kinds) so it
+/// cannot push the other columns off the table.
+class ClippedText extends StatelessWidget {
+  /// Creates the cell.
+  const ClippedText(this.text, {super.key, this.maxWidth = 240, this.style});
+
+  /// The full text.
+  final String text;
+
+  /// The widest the cell may be.
+  final double maxWidth;
+
+  /// The text style.
+  final TextStyle? style;
+
+  @override
+  Widget build(BuildContext context) => ConstrainedBox(
+    constraints: BoxConstraints(maxWidth: maxWidth),
+    child: Tooltip(
+      message: text,
+      waitDuration: const Duration(milliseconds: 500),
+      child: Text(text, maxLines: 1, overflow: TextOverflow.ellipsis, style: style),
+    ),
+  );
+}

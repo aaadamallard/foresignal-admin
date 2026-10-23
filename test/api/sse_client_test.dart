@@ -30,6 +30,14 @@ void main() {
     expect(delays, isNotEmpty);
   });
 
+  test('reports the stream open before any event (the backend opens with a comment)', () async {
+    final adapter = FakeAdapter((_) => FakeResponse.eventStream(<String>[':open\n\n', 'event: alert\ndata: {}\n\n']));
+    final client = SseClient(fakeDio(adapter), delay: (_) async {});
+    final order = <String>[];
+    await client.connect(SseStream.alerts, onOpen: () => order.add('open')).first.then((_) => order.add('event'));
+    expect(order, <String>['open', 'event']);
+  });
+
   test('passes query parameters and an initial Last-Event-ID', () async {
     final adapter = FakeAdapter((_) => FakeResponse.eventStream(<String>['data: x\n\n']));
     final client = SseClient(fakeDio(adapter), delay: (_) async {});

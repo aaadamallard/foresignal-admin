@@ -6,6 +6,7 @@ import 'admin_auth_interceptor.dart';
 import 'admin_token_store.dart';
 import 'api_errors.dart';
 import 'backend_endpoint.dart';
+import 'explicit_nulls.dart';
 
 /// How long to wait for the backend to accept a connection.
 const Duration connectTimeout = Duration(seconds: 10);
@@ -14,7 +15,8 @@ const Duration connectTimeout = Duration(seconds: 10);
 const Duration receiveTimeout = Duration(seconds: 60);
 
 /// Builds the [Dio] every backend call goes through: the base URL, the admin
-/// bearer token, and `Accept` for JSON and ProblemDetail bodies.
+/// bearer token, `Accept` for JSON and ProblemDetail bodies, and the explicit
+/// nulls a patch asks for ([explicitNulls]).
 Dio createBackendDio({required Uri? baseUrl, required AdminTokenStore tokenStore}) {
   final dio = Dio(
     BaseOptions(
@@ -24,7 +26,9 @@ Dio createBackendDio({required Uri? baseUrl, required AdminTokenStore tokenStore
       headers: <String, Object>{'Accept': 'application/json, application/problem+json'},
     ),
   );
-  dio.interceptors.add(AdminAuthInterceptor(tokenStore));
+  dio.interceptors
+    ..add(AdminAuthInterceptor(tokenStore))
+    ..add(const ExplicitNullsInterceptor());
   return dio;
 }
 

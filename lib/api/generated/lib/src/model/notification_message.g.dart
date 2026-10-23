@@ -12,8 +12,73 @@ const NotificationMessageEventEnum _$notificationMessageEventEnum_briefing =
     const NotificationMessageEventEnum._('briefing');
 const NotificationMessageEventEnum _$notificationMessageEventEnum_system =
     const NotificationMessageEventEnum._('system');
+const NotificationMessageEventEnum
+_$notificationMessageEventEnum_chroniclePeriodProposed =
+    const NotificationMessageEventEnum._('chroniclePeriodProposed');
+const NotificationMessageEventEnum
+_$notificationMessageEventEnum_chroniclePeriodCapWarning =
+    const NotificationMessageEventEnum._('chroniclePeriodCapWarning');
+const NotificationMessageEventEnum
+_$notificationMessageEventEnum_chroniclePeriodGap =
+    const NotificationMessageEventEnum._('chroniclePeriodGap');
+const NotificationMessageEventEnum
+_$notificationMessageEventEnum_socialPeriodDivergence =
+    const NotificationMessageEventEnum._('socialPeriodDivergence');
+const NotificationMessageEventEnum
+_$notificationMessageEventEnum_socialPeriodAttentionGap =
+    const NotificationMessageEventEnum._('socialPeriodAttentionGap');
+const NotificationMessageEventEnum
+_$notificationMessageEventEnum_analystPeriodNote =
+    const NotificationMessageEventEnum._('analystPeriodNote');
+const NotificationMessageEventEnum
+_$notificationMessageEventEnum_situationPeriodActivated =
+    const NotificationMessageEventEnum._('situationPeriodActivated');
+const NotificationMessageEventEnum
+_$notificationMessageEventEnum_situationPeriodEscalated =
+    const NotificationMessageEventEnum._('situationPeriodEscalated');
+const NotificationMessageEventEnum
+_$notificationMessageEventEnum_findingPeriodSignificant =
+    const NotificationMessageEventEnum._('findingPeriodSignificant');
+const NotificationMessageEventEnum
+_$notificationMessageEventEnum_forecastPeriodResolved =
+    const NotificationMessageEventEnum._('forecastPeriodResolved');
+const NotificationMessageEventEnum
+_$notificationMessageEventEnum_forecastPeriodResolutionNeeded =
+    const NotificationMessageEventEnum._('forecastPeriodResolutionNeeded');
+const NotificationMessageEventEnum
+_$notificationMessageEventEnum_hypothesisPeriodBandChanged =
+    const NotificationMessageEventEnum._('hypothesisPeriodBandChanged');
+const NotificationMessageEventEnum
+_$notificationMessageEventEnum_indicatorPeriodObserved =
+    const NotificationMessageEventEnum._('indicatorPeriodObserved');
+const NotificationMessageEventEnum
+_$notificationMessageEventEnum_assumptionPeriodBroken =
+    const NotificationMessageEventEnum._('assumptionPeriodBroken');
+const NotificationMessageEventEnum
+_$notificationMessageEventEnum_assessmentPeriodPublished =
+    const NotificationMessageEventEnum._('assessmentPeriodPublished');
+const NotificationMessageEventEnum _$notificationMessageEventEnum_mention =
+    const NotificationMessageEventEnum._('mention');
+const NotificationMessageEventEnum _$notificationMessageEventEnum_share =
+    const NotificationMessageEventEnum._('share');
+const NotificationMessageEventEnum
+_$notificationMessageEventEnum_reportPeriodReceived =
+    const NotificationMessageEventEnum._('reportPeriodReceived');
+const NotificationMessageEventEnum
+_$notificationMessageEventEnum_packagePeriodReceived =
+    const NotificationMessageEventEnum._('packagePeriodReceived');
+const NotificationMessageEventEnum
+_$notificationMessageEventEnum_chroniclePeriodAccessPeriodRequested =
+    const NotificationMessageEventEnum._(
+      'chroniclePeriodAccessPeriodRequested',
+    );
+const NotificationMessageEventEnum
+_$notificationMessageEventEnum_savedSearchPeriodMatches =
+    const NotificationMessageEventEnum._('savedSearchPeriodMatches');
 const NotificationMessageEventEnum _$notificationMessageEventEnum_test =
     const NotificationMessageEventEnum._('test');
+const NotificationMessageEventEnum _$notificationMessageEventEnum_personal =
+    const NotificationMessageEventEnum._('personal');
 
 NotificationMessageEventEnum _$notificationMessageEventEnumValueOf(
   String name,
@@ -25,8 +90,52 @@ NotificationMessageEventEnum _$notificationMessageEventEnumValueOf(
       return _$notificationMessageEventEnum_briefing;
     case 'system':
       return _$notificationMessageEventEnum_system;
+    case 'chroniclePeriodProposed':
+      return _$notificationMessageEventEnum_chroniclePeriodProposed;
+    case 'chroniclePeriodCapWarning':
+      return _$notificationMessageEventEnum_chroniclePeriodCapWarning;
+    case 'chroniclePeriodGap':
+      return _$notificationMessageEventEnum_chroniclePeriodGap;
+    case 'socialPeriodDivergence':
+      return _$notificationMessageEventEnum_socialPeriodDivergence;
+    case 'socialPeriodAttentionGap':
+      return _$notificationMessageEventEnum_socialPeriodAttentionGap;
+    case 'analystPeriodNote':
+      return _$notificationMessageEventEnum_analystPeriodNote;
+    case 'situationPeriodActivated':
+      return _$notificationMessageEventEnum_situationPeriodActivated;
+    case 'situationPeriodEscalated':
+      return _$notificationMessageEventEnum_situationPeriodEscalated;
+    case 'findingPeriodSignificant':
+      return _$notificationMessageEventEnum_findingPeriodSignificant;
+    case 'forecastPeriodResolved':
+      return _$notificationMessageEventEnum_forecastPeriodResolved;
+    case 'forecastPeriodResolutionNeeded':
+      return _$notificationMessageEventEnum_forecastPeriodResolutionNeeded;
+    case 'hypothesisPeriodBandChanged':
+      return _$notificationMessageEventEnum_hypothesisPeriodBandChanged;
+    case 'indicatorPeriodObserved':
+      return _$notificationMessageEventEnum_indicatorPeriodObserved;
+    case 'assumptionPeriodBroken':
+      return _$notificationMessageEventEnum_assumptionPeriodBroken;
+    case 'assessmentPeriodPublished':
+      return _$notificationMessageEventEnum_assessmentPeriodPublished;
+    case 'mention':
+      return _$notificationMessageEventEnum_mention;
+    case 'share':
+      return _$notificationMessageEventEnum_share;
+    case 'reportPeriodReceived':
+      return _$notificationMessageEventEnum_reportPeriodReceived;
+    case 'packagePeriodReceived':
+      return _$notificationMessageEventEnum_packagePeriodReceived;
+    case 'chroniclePeriodAccessPeriodRequested':
+      return _$notificationMessageEventEnum_chroniclePeriodAccessPeriodRequested;
+    case 'savedSearchPeriodMatches':
+      return _$notificationMessageEventEnum_savedSearchPeriodMatches;
     case 'test':
       return _$notificationMessageEventEnum_test;
+    case 'personal':
+      return _$notificationMessageEventEnum_personal;
     default:
       throw ArgumentError(name);
   }
@@ -38,7 +147,29 @@ _$notificationMessageEventEnumValues =
       _$notificationMessageEventEnum_alert,
       _$notificationMessageEventEnum_briefing,
       _$notificationMessageEventEnum_system,
+      _$notificationMessageEventEnum_chroniclePeriodProposed,
+      _$notificationMessageEventEnum_chroniclePeriodCapWarning,
+      _$notificationMessageEventEnum_chroniclePeriodGap,
+      _$notificationMessageEventEnum_socialPeriodDivergence,
+      _$notificationMessageEventEnum_socialPeriodAttentionGap,
+      _$notificationMessageEventEnum_analystPeriodNote,
+      _$notificationMessageEventEnum_situationPeriodActivated,
+      _$notificationMessageEventEnum_situationPeriodEscalated,
+      _$notificationMessageEventEnum_findingPeriodSignificant,
+      _$notificationMessageEventEnum_forecastPeriodResolved,
+      _$notificationMessageEventEnum_forecastPeriodResolutionNeeded,
+      _$notificationMessageEventEnum_hypothesisPeriodBandChanged,
+      _$notificationMessageEventEnum_indicatorPeriodObserved,
+      _$notificationMessageEventEnum_assumptionPeriodBroken,
+      _$notificationMessageEventEnum_assessmentPeriodPublished,
+      _$notificationMessageEventEnum_mention,
+      _$notificationMessageEventEnum_share,
+      _$notificationMessageEventEnum_reportPeriodReceived,
+      _$notificationMessageEventEnum_packagePeriodReceived,
+      _$notificationMessageEventEnum_chroniclePeriodAccessPeriodRequested,
+      _$notificationMessageEventEnum_savedSearchPeriodMatches,
       _$notificationMessageEventEnum_test,
+      _$notificationMessageEventEnum_personal,
     ]);
 
 const NotificationMessageSeverityEnum _$notificationMessageSeverityEnum_info =
@@ -88,13 +219,57 @@ class _$NotificationMessageEventEnumSerializer
     'alert': 'alert',
     'briefing': 'briefing',
     'system': 'system',
+    'chroniclePeriodProposed': 'chronicle.proposed',
+    'chroniclePeriodCapWarning': 'chronicle.cap_warning',
+    'chroniclePeriodGap': 'chronicle.gap',
+    'socialPeriodDivergence': 'social.divergence',
+    'socialPeriodAttentionGap': 'social.attention_gap',
+    'analystPeriodNote': 'analyst.note',
+    'situationPeriodActivated': 'situation.activated',
+    'situationPeriodEscalated': 'situation.escalated',
+    'findingPeriodSignificant': 'finding.significant',
+    'forecastPeriodResolved': 'forecast.resolved',
+    'forecastPeriodResolutionNeeded': 'forecast.resolution_needed',
+    'hypothesisPeriodBandChanged': 'hypothesis.band_changed',
+    'indicatorPeriodObserved': 'indicator.observed',
+    'assumptionPeriodBroken': 'assumption.broken',
+    'assessmentPeriodPublished': 'assessment.published',
+    'mention': 'mention',
+    'share': 'share',
+    'reportPeriodReceived': 'report.received',
+    'packagePeriodReceived': 'package.received',
+    'chroniclePeriodAccessPeriodRequested': 'chronicle.access.requested',
+    'savedSearchPeriodMatches': 'saved-search.matches',
     'test': 'test',
+    'personal': 'personal',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'alert': 'alert',
     'briefing': 'briefing',
     'system': 'system',
+    'chronicle.proposed': 'chroniclePeriodProposed',
+    'chronicle.cap_warning': 'chroniclePeriodCapWarning',
+    'chronicle.gap': 'chroniclePeriodGap',
+    'social.divergence': 'socialPeriodDivergence',
+    'social.attention_gap': 'socialPeriodAttentionGap',
+    'analyst.note': 'analystPeriodNote',
+    'situation.activated': 'situationPeriodActivated',
+    'situation.escalated': 'situationPeriodEscalated',
+    'finding.significant': 'findingPeriodSignificant',
+    'forecast.resolved': 'forecastPeriodResolved',
+    'forecast.resolution_needed': 'forecastPeriodResolutionNeeded',
+    'hypothesis.band_changed': 'hypothesisPeriodBandChanged',
+    'indicator.observed': 'indicatorPeriodObserved',
+    'assumption.broken': 'assumptionPeriodBroken',
+    'assessment.published': 'assessmentPeriodPublished',
+    'mention': 'mention',
+    'share': 'share',
+    'report.received': 'reportPeriodReceived',
+    'package.received': 'packagePeriodReceived',
+    'chronicle.access.requested': 'chroniclePeriodAccessPeriodRequested',
+    'saved-search.matches': 'savedSearchPeriodMatches',
     'test': 'test',
+    'personal': 'personal',
   };
 
   @override

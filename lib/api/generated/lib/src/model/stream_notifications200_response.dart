@@ -119,6 +119,33 @@ class StreamNotifications200ResponseEventEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'system')
   static const StreamNotifications200ResponseEventEnum system =
       _$streamNotifications200ResponseEventEnum_system;
+  @BuiltValueEnumConst(wireName: r'analyst.note')
+  static const StreamNotifications200ResponseEventEnum analystPeriodNote =
+      _$streamNotifications200ResponseEventEnum_analystPeriodNote;
+  @BuiltValueEnumConst(wireName: r'situation.activated')
+  static const StreamNotifications200ResponseEventEnum
+  situationPeriodActivated =
+      _$streamNotifications200ResponseEventEnum_situationPeriodActivated;
+  @BuiltValueEnumConst(wireName: r'situation.escalated')
+  static const StreamNotifications200ResponseEventEnum
+  situationPeriodEscalated =
+      _$streamNotifications200ResponseEventEnum_situationPeriodEscalated;
+  @BuiltValueEnumConst(wireName: r'finding.significant')
+  static const StreamNotifications200ResponseEventEnum
+  findingPeriodSignificant =
+      _$streamNotifications200ResponseEventEnum_findingPeriodSignificant;
+  @BuiltValueEnumConst(wireName: r'forecast.resolution_needed')
+  static const StreamNotifications200ResponseEventEnum
+  forecastPeriodResolutionNeeded =
+      _$streamNotifications200ResponseEventEnum_forecastPeriodResolutionNeeded;
+  @BuiltValueEnumConst(wireName: r'hypothesis.band_changed')
+  static const StreamNotifications200ResponseEventEnum
+  hypothesisPeriodBandChanged =
+      _$streamNotifications200ResponseEventEnum_hypothesisPeriodBandChanged;
+  @BuiltValueEnumConst(wireName: r'assessment.published')
+  static const StreamNotifications200ResponseEventEnum
+  assessmentPeriodPublished =
+      _$streamNotifications200ResponseEventEnum_assessmentPeriodPublished;
 
   static Serializer<StreamNotifications200ResponseEventEnum> get serializer =>
       _$streamNotifications200ResponseEventEnumSerializer;

@@ -182,9 +182,13 @@ class EventSummaryCard extends StatelessWidget {
   }
 }
 
+/// The severity choice that clears an override (sent as `severity: null`).
+const String _computedSeverity = 'computed';
+
 /// Edits the title, status, severity and notes. Only changed members are
 /// sent, with the version last read as `If-Match`; a stale version is
-/// refused (409) and the page offers a reload.
+/// refused (409) and the page offers a reload. An overridden severity can be
+/// cleared back to the computed one.
 class EventEditCard extends ConsumerStatefulWidget {
   /// Creates the card.
   const EventEditCard({super.key, required this.event});
@@ -229,7 +233,10 @@ class _EventEditCardState extends ConsumerState<EventEditCard> {
     return <String, Object?>{
       if (_title.text.trim() != e.title) 'title': _title.text.trim(),
       if (_status != wireOf(e.status)) 'status': _status,
-      if (_severity != wireOf(e.severity)) 'severity': _severity,
+      if (_severity == _computedSeverity && e.severityOverridden == true)
+        'severity': null
+      else if (_severity != _computedSeverity && _severity != wireOf(e.severity))
+        'severity': _severity,
       if (_notes.text != (e.notes ?? '')) 'notes': _notes.text,
     };
   }
@@ -252,20 +259,35 @@ class _EventEditCardState extends ConsumerState<EventEditCard> {
     final api = ref.read(foresignalApiProvider);
     final intel = api.getIntelligenceApi();
     final id = widget.event.id;
+    // A null member clears a value; the generated serializer would leave it out.
+    final nulls = <String>[
+      for (final entry in patch.entries)
+        if (entry.value == null) entry.key,
+    ];
     try {
       await writeThenConfirm<IntelligenceEvent>(
         write: () => intel.updateIntelEvent(
           eventId: id,
           ifMatch: '${widget.event.version}',
           intelEventPatch:
-              api.serializers.deserialize(patch, specifiedType: const FullType(IntelEventPatch))!
+              api.serializers.deserialize(
+                    <String, Object?>{
+                      for (final entry in patch.entries)
+                        if (entry.value != null) entry.key: entry.value,
+                    },
+                    specifiedType: const FullType(IntelEventPatch),
+                  )!
                   as IntelEventPatch,
+          extra: nulls.isEmpty ? null : explicitNulls(nulls),
         ),
         reread: () => callApiRequired(() => intel.getIntelEvent(eventId: id)),
         confirm: (got) => <String>[
           if (patch.containsKey('title') && got.title != patch['title']) 'title',
           if (patch.containsKey('status') && wireOf(got.status) != patch['status']) 'status',
-          if (patch.containsKey('severity') && wireOf(got.severity) != patch['severity'])
+          if (patch.containsKey('severity') &&
+              (patch['severity'] == null
+                  ? got.severityOverridden == true
+                  : wireOf(got.severity) != patch['severity']))
             'severity',
           if (patch.containsKey('notes') && (got.notes ?? '') != patch['notes']) 'notes',
         ].let((d) => d.isEmpty ? null : 'read back different: ${d.join(', ')}'),
@@ -334,9 +356,10 @@ class _EventEditCardState extends ConsumerState<EventEditCard> {
           ),
           LabeledField(
             label: 'Severity',
-            help:
-                'Setting it records an override in the log. The contract clears an override '
-                'with null, which this client cannot yet send.',
+            help: widget.event.severityOverridden == true
+                ? 'Overridden; the override is in the log. Computed clears it and restores '
+                      'the severity it replaced.'
+                : 'Setting it records an override in the log.',
             field: DropdownButtonFormField<String>(
               key: const Key('event.severityField'),
               style: Theme.of(context).textTheme.bodyMedium,
@@ -344,6 +367,12 @@ class _EventEditCardState extends ConsumerState<EventEditCard> {
               items: <DropdownMenuItem<String>>[
                 for (final s in const <String>['info', 'warning', 'critical'])
                   DropdownMenuItem<String>(value: s, child: Text(wireText(s))),
+                if (widget.event.severityOverridden == true)
+                  const DropdownMenuItem<String>(
+                    key: Key('event.severity.computed'),
+                    value: _computedSeverity,
+                    child: Text('Computed (clear override)'),
+                  ),
               ],
               onChanged: (v) {
                 _severity = v ?? _severity;

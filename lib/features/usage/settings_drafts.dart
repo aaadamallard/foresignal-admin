@@ -95,10 +95,9 @@ abstract class SettingsDraft {
     for (final f in fields) {
       final value = text[f.key]!.trim();
       if (value.isEmpty) {
+        // An emptied nullable field is sent as an explicit null ([clears]).
         if (!f.nullable && _read(base, f.path) != null) {
           errors[f.key] = 'Enter a value; a stored setting cannot be emptied here.';
-        } else if (f.nullable && _read(base, f.path) != null) {
-          errors[f.key] = 'This can be changed here but not cleared (the client drops nulls).';
         }
         continue;
       }
@@ -109,6 +108,16 @@ abstract class SettingsDraft {
     }
     return errors;
   }
+
+  /// The top-level nullable members left empty, which the request must carry
+  /// as explicit `null`s ([explicitNulls]): the generated serializer leaves a
+  /// null member out, and the backend can read an absent member as its
+  /// default rather than as none (an absent `trackRawWindow` is 24 h; `null`
+  /// turns downsampling off).
+  List<String> get clears => <String>[
+    for (final f in fields)
+      if (f.nullable && f.path.length == 1 && text[f.key]!.trim().isEmpty) f.path.single,
+  ];
 
   /// The request body as JSON. Call [validate] first.
   Map<String, Object?> toJson() {
@@ -174,7 +183,7 @@ class RateLimitsDraft extends SettingsDraft {
     SettingField(
       <String>['metricsPerMinute'],
       'Metrics scrapes',
-      help: 'Optional limit on /actuator/prometheus per IP',
+      help: 'Optional limit on /actuator/prometheus per IP; empty means no limit',
       nullable: true,
       min: 1,
     ),
@@ -231,7 +240,8 @@ class RetentionDraft extends SettingsDraft {
     SettingField(
       <String>['trackRawWindow'],
       'TRACK raw window',
-      help: 'Older TRACK history is downsampled; shorter than the TRACK window',
+      help: 'Older TRACK history is downsampled; shorter than the TRACK window. Empty turns '
+          'downsampling off',
       nullable: true,
       min: _hour,
     ),

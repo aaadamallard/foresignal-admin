@@ -162,6 +162,14 @@ ApiException _fromDio(DioException error) {
     return NetworkException(_networkMessage(error), cause: error);
   }
   final status = response.statusCode!;
+  if (status >= 200 && status < 300) {
+    // The request succeeded; reading the reply did not (a body that does
+    // not match the contract the client was generated from).
+    return NetworkException(
+      'The backend answered HTTP $status, but the app could not read the reply: ${inner ?? error.message}',
+      cause: error,
+    );
+  }
   final retryAfterHeader = parseRetryAfter(response.headers.value('retry-after'));
   final problem = _decodeProblem(response.data);
   if (problem == null) {

@@ -224,13 +224,16 @@ class SseClient {
 
   /// Subscribes to [stream] with [query] parameters and extra [headers]
   /// (such as `Foresignal-Device-Id`), resuming after [lastEventId] when
-  /// given. Cancel the subscription to close it.
+  /// given. [onOpen] runs each time the backend accepts the stream, before
+  /// any event arrives (the backend opens with a comment, not an event).
+  /// Cancel the subscription to close it.
   Stream<SseEvent> connect(
     SseStream stream, {
     Map<String, Object?> query = const <String, Object?>{},
     Map<String, Object> headers = const <String, Object>{},
     String? lastEventId,
-  }) => connectPath(stream.path, query: query, headers: headers, lastEventId: lastEventId);
+    void Function()? onOpen,
+  }) => connectPath(stream.path, query: query, headers: headers, lastEventId: lastEventId, onOpen: onOpen);
 
   /// Like [connect], for a `text/event-stream` path not listed in [SseStream].
   Stream<SseEvent> connectPath(
@@ -238,6 +241,7 @@ class SseClient {
     Map<String, Object?> query = const <String, Object?>{},
     Map<String, Object> headers = const <String, Object>{},
     String? lastEventId,
+    void Function()? onOpen,
   }) {
     late final StreamController<SseEvent> controller;
     var closed = false;
@@ -272,6 +276,9 @@ class SseClient {
           final body = response.data;
           if (body == null) {
             throw NetworkException('The event stream answered without a body.');
+          }
+          if (!closed) {
+            onOpen?.call();
           }
           await for (final text in utf8.decoder.bind(body.stream)) {
             if (closed) {

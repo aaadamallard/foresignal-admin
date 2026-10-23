@@ -64,6 +64,13 @@ final llmUsageProvider = FutureProvider.family<LlmUsage, UsageWindow>((ref, wind
   );
 });
 
+/// The bundled prompt templates, by id (`listPromptTemplates`).
+final promptTemplatesProvider = FutureProvider.autoDispose<List<PromptTemplateSummary>>((ref) async {
+  final api = ref.watch(foresignalApiProvider);
+  final list = await callApiRequired(() => api.getLLMApi().listPromptTemplates());
+  return list.items.toList();
+});
+
 /// A prompt template by id and optional version (`getPromptTemplate`).
 final promptTemplateProvider = FutureProvider.autoDispose.family<PromptTemplate, (String, String?)>(
   (ref, key) async {
@@ -154,10 +161,13 @@ class LlmUsage {
   LlmUsageTotals get total => totals.values.fold(const LlmUsageTotals(), (sum, t) => sum + t);
 
   /// Tokens (input and output) per bucket, stacked by provider.
-  StackedUsage get stackedTokens => StackedUsage.fromPoints(<String, Map<DateTime, int>>{
-    for (final entry in byProvider.entries)
-      entry.key: <DateTime, int>{
-        for (final p in entry.value.points) p.t.toUtc(): p.inputTokens + p.outputTokens,
-      },
-  });
+  StackedUsage get stackedTokens => StackedUsage.fromPoints(
+    <String, Map<DateTime, int>>{
+      for (final entry in byProvider.entries)
+        entry.key: <DateTime, int>{
+          for (final p in entry.value.points) p.t.toUtc(): p.inputTokens + p.outputTokens,
+        },
+    },
+    step: byProvider.isEmpty ? null : usageStep(wireOf(byProvider.values.first.resolution)),
+  );
 }

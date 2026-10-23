@@ -34,8 +34,8 @@ part 'source_descriptor.g.dart';
 /// * [custom] - Runtime-defined custom push source
 /// * [credentialFields]
 /// * [params]
-/// * [minInterval] - ISO-8601 duration (P7D, PT15M) or shorthand (7d, 15m, 12h)
-/// * [defaultInterval] - ISO-8601 duration (P7D, PT15M) or shorthand (7d, 15m, 12h)
+/// * [minInterval] - ISO-8601 duration (P7D, PT15M) or shorthand (7d, 15m, 12h); null for a source that is not polled (streaming or push)
+/// * [defaultInterval] - ISO-8601 duration (P7D, PT15M) or shorthand (7d, 15m, 12h); null for a source that is not polled (streaming or push)
 /// * [defaultBudget]
 /// * [recordTtl] - ISO-8601 duration (P7D, PT15M) or shorthand (7d, 15m, 12h)
 /// * [zeroResultsNormal]
@@ -114,11 +114,11 @@ abstract class SourceDescriptor
   @BuiltValueField(wireName: r'params')
   BuiltList<ParamSpec> get params;
 
-  /// ISO-8601 duration (P7D, PT15M) or shorthand (7d, 15m, 12h)
+  /// ISO-8601 duration (P7D, PT15M) or shorthand (7d, 15m, 12h); null for a source that is not polled (streaming or push)
   @BuiltValueField(wireName: r'minInterval')
   String? get minInterval;
 
-  /// ISO-8601 duration (P7D, PT15M) or shorthand (7d, 15m, 12h)
+  /// ISO-8601 duration (P7D, PT15M) or shorthand (7d, 15m, 12h); null for a source that is not polled (streaming or push)
   @BuiltValueField(wireName: r'defaultInterval')
   String? get defaultInterval;
 
@@ -372,14 +372,14 @@ class _$SourceDescriptorSerializer
       yield r'minInterval';
       yield serializers.serialize(
         object.minInterval,
-        specifiedType: const FullType(String),
+        specifiedType: const FullType.nullable(String),
       );
     }
     if (object.defaultInterval != null) {
       yield r'defaultInterval';
       yield serializers.serialize(
         object.defaultInterval,
-        specifiedType: const FullType(String),
+        specifiedType: const FullType.nullable(String),
       );
     }
     yield r'defaultBudget';

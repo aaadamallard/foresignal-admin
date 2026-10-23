@@ -55,6 +55,22 @@ void main() {
       expect(stored['publicBaseUrl'], 'http://old', reason: 'the stored object is not changed');
     });
 
+    test('an empty public base URL is sent as null, the request\'s own address', () {
+      final field = serverGroup.fields.firstWhere((f) => f.path == 'publicBaseUrl');
+      expect(field.nullable, isTrue);
+      expect(field.required, isFalse);
+      expect(settingProblem(field, ''), isNull);
+      final body = settingsBody(
+        const <String, Object?>{'publicBaseUrl': 'https://old.example', 'timezone': 'UTC'},
+        serverGroup.fields,
+        const <String, String>{'publicBaseUrl': ''},
+        const <String, Object?>{},
+        readOnly: serverGroup.readOnly,
+      );
+      expect(body.containsKey('publicBaseUrl'), isTrue);
+      expect(body['publicBaseUrl'], isNull);
+    });
+
     test('settingPick falls back to the default when the member is absent', () {
       const open = SettingField('openReads', 'Open reads', kind: SettingKind.toggle, defaultValue: true);
       expect(settingPick(open, const <String, Object?>{}), isTrue);

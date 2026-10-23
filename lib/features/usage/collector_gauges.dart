@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../api/api.dart';
+import '../../core/format/instant_text.dart';
 import '../../core/theme.dart';
 import '../../core/ui/ui.dart';
 
@@ -91,13 +92,13 @@ class _CollectorGaugesState extends ConsumerState<CollectorGauges> {
               if (error == null && status != null)
                 StatusLabel(
                   key: const Key('collector.live'),
-                  label: 'Live · ${_clock(_at!)}',
+                  label: 'Live · ${utcClockText(_at!)}',
                   tone: StatusTone.ok,
                   icon: Icons.circle,
                 )
               else if (error != null)
                 StatusLabel(
-                  label: status == null ? 'Unavailable' : 'Stale · ${_clock(_at!)}',
+                  label: status == null ? 'Unavailable' : 'Stale · ${utcClockText(_at!)}',
                   tone: StatusTone.warning,
                 ),
             ],
@@ -131,11 +132,6 @@ class _CollectorGaugesState extends ConsumerState<CollectorGauges> {
         ],
       ),
     );
-  }
-
-  static String _clock(DateTime t) {
-    String two(int n) => n.toString().padLeft(2, '0');
-    return '${two(t.hour)}:${two(t.minute)}:${two(t.second)}';
   }
 }
 

@@ -41,6 +41,11 @@ Future<void> _tapText(WidgetTester tester, String label) async {
   await tester.pumpAndSettle();
 }
 
+/// Whether the button keyed [key] can be pressed.
+bool _enabled(WidgetTester tester, String key) => tester
+    .widget<ButtonStyleButton>(find.descendant(of: find.byKey(Key(key)), matching: find.bySubtype<ButtonStyleButton>()))
+    .enabled;
+
 void main() {
   testWidgets('the forecasters table names every forecaster and its type', (tester) async {
     await openAt(tester, forecastingPath, adapter: forecastingBackend(PreviewForecasting()));
@@ -134,6 +139,14 @@ void main() {
     expect(adapter.requests.where((r) => r.method == 'POST' && r.uri.path == '/v1/forecasts/questions'), hasLength(1));
     expect(find.byKey(const Key('question.summary')), findsOneWidget);
     expect(find.text('Will the strait close?'), findsWidgets);
+  });
+
+  testWidgets('Show and Compare wait for their forecasters instead of ignoring a click', (tester) async {
+    await openAt(tester, forecastingPath, adapter: forecastingBackend(PreviewForecasting()));
+    await _tab(tester, 'calibration');
+    expect(_enabled(tester, 'calibration.show'), isFalse);
+    await _tab(tester, 'scores');
+    expect(_enabled(tester, 'compare.go'), isFalse);
   });
 
   testWidgets('a registration token is shown once after creation', (tester) async {

@@ -10,6 +10,7 @@ export 'api_client.dart';
 export 'api_errors.dart';
 export 'backend_endpoint.dart';
 export 'contract_version.dart';
+export 'explicit_nulls.dart';
 export 'json_calls.dart';
 export 'sse.dart';
 export 'wire_names.dart';

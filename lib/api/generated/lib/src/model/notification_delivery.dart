@@ -39,7 +39,7 @@ abstract class NotificationDelivery
 
   @BuiltValueField(wireName: r'event')
   NotificationDeliveryEventEnum get event;
-  // enum eventEnum {  alert,  briefing,  system,  social.divergence,  social.attention_gap,  analyst.note,  situation.activated,  situation.escalated,  finding.significant,  forecast.resolved,  forecast.resolution_needed,  hypothesis.band_changed,  indicator.observed,  assumption.broken,  assessment.published,  chronicle.proposed,  chronicle.cap_warning,  chronicle.gap,  mention,  share,  report.received,  package.received,  chronicle.access.requested,  saved-search.matches,  };
+  // enum eventEnum {  alert,  briefing,  system,  social.divergence,  social.attention_gap,  analyst.note,  situation.activated,  situation.escalated,  finding.significant,  forecast.resolved,  forecast.resolution_needed,  hypothesis.band_changed,  indicator.observed,  assumption.broken,  assessment.published,  chronicle.proposed,  chronicle.cap_warning,  chronicle.gap,  mention,  share,  report.received,  package.received,  chronicle.access.requested,  saved-search.matches,  personal,  };
 
   @BuiltValueField(wireName: r'alertId')
   int? get alertId;
@@ -560,6 +560,9 @@ class NotificationDeliveryEventEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'saved-search.matches')
   static const NotificationDeliveryEventEnum savedSearchPeriodMatches =
       _$notificationDeliveryEventEnum_savedSearchPeriodMatches;
+  @BuiltValueEnumConst(wireName: r'personal')
+  static const NotificationDeliveryEventEnum personal =
+      _$notificationDeliveryEventEnum_personal;
 
   static Serializer<NotificationDeliveryEventEnum> get serializer =>
       _$notificationDeliveryEventEnumSerializer;

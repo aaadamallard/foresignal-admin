@@ -73,6 +73,12 @@ StatusTone framingTone(String? label) => switch (label) {
   _ => StatusTone.neutral,
 };
 
+/// The out-of-sample sentence for a `LeadTimeStats.trainingCutoff`, which is
+/// null until a comparison has been evaluated.
+String leadTimeCutoffText(DateTime? cutoff) => cutoff == null
+    ? 'No comparison has been evaluated yet, so there is no out-of-sample cut-off.'
+    : 'Comparisons evaluated after ${utcText(cutoff)} are out of sample.';
+
 /// A lead in seconds as `+2h 10m` (social first) or `−35m`.
 String leadText(num? seconds) {
   if (seconds == null) {
@@ -525,8 +531,9 @@ class LeadTimesPanel extends ConsumerWidget {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
           Text(
-            'Median lead and interquartile range; positive means social came first. Comparisons '
-            'evaluated after ${utcText(stats.trainingCutoff)} are out of sample.',
+            'Median lead and interquartile range; positive means social came first. '
+            '${leadTimeCutoffText(stats.trainingCutoff)}',
+            key: const Key('leadTimes.cutoff'),
             style: TextStyle(color: muted),
           ),
           const SizedBox(height: 12),

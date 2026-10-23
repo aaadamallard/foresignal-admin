@@ -3,8 +3,23 @@ import '../alerts/alerts_drafts.dart' show severityRank;
 import '../forecasting/forecasting_drafts.dart' show commaList, jsonObjectProblem, parseJsonObject;
 import '../forecasting/forecasting_providers.dart' show Json, jsonMap;
 
-/// Notification events (`Notification.event`, `PushFilters.events`).
+/// Push filter events (`PushFilters.events`).
 const List<String> notificationEvents = <String>['alert', 'briefing', 'system'];
+
+/// Device inbox events (`Notification.event`, the `listNotifications`
+/// `events` filter).
+const List<String> inboxEvents = <String>[
+  'alert',
+  'briefing',
+  'system',
+  'analyst.note',
+  'situation.activated',
+  'situation.escalated',
+  'finding.significant',
+  'forecast.resolution_needed',
+  'hypothesis.band_changed',
+  'assessment.published',
+];
 
 /// Native push transports (`PushDeviceInput.transport`, `PushProvider.type`).
 const List<String> pushTransports = <String>['apns', 'fcm'];

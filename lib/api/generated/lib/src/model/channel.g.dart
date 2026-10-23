@@ -181,6 +181,8 @@ _$channelEventsEnum_chroniclePeriodAccessPeriodRequested =
     const ChannelEventsEnum._('chroniclePeriodAccessPeriodRequested');
 const ChannelEventsEnum _$channelEventsEnum_savedSearchPeriodMatches =
     const ChannelEventsEnum._('savedSearchPeriodMatches');
+const ChannelEventsEnum _$channelEventsEnum_personal =
+    const ChannelEventsEnum._('personal');
 
 ChannelEventsEnum _$channelEventsEnumValueOf(String name) {
   switch (name) {
@@ -232,6 +234,8 @@ ChannelEventsEnum _$channelEventsEnumValueOf(String name) {
       return _$channelEventsEnum_chroniclePeriodAccessPeriodRequested;
     case 'savedSearchPeriodMatches':
       return _$channelEventsEnum_savedSearchPeriodMatches;
+    case 'personal':
+      return _$channelEventsEnum_personal;
     default:
       throw ArgumentError(name);
   }
@@ -263,6 +267,7 @@ final BuiltSet<ChannelEventsEnum> _$channelEventsEnumValues =
       _$channelEventsEnum_packagePeriodReceived,
       _$channelEventsEnum_chroniclePeriodAccessPeriodRequested,
       _$channelEventsEnum_savedSearchPeriodMatches,
+      _$channelEventsEnum_personal,
     ]);
 
 const ChannelMinSeverityEnum _$channelMinSeverityEnum_info =
@@ -393,6 +398,7 @@ class _$ChannelEventsEnumSerializer
     'packagePeriodReceived': 'package.received',
     'chroniclePeriodAccessPeriodRequested': 'chronicle.access.requested',
     'savedSearchPeriodMatches': 'saved-search.matches',
+    'personal': 'personal',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'alert': 'alert',
@@ -419,6 +425,7 @@ class _$ChannelEventsEnumSerializer
     'package.received': 'packagePeriodReceived',
     'chronicle.access.requested': 'chroniclePeriodAccessPeriodRequested',
     'saved-search.matches': 'savedSearchPeriodMatches',
+    'personal': 'personal',
   };
 
   @override

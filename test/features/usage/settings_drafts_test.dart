@@ -76,6 +76,15 @@ void main() {
       expect(errors.containsKey('trackDownsampleInterval'), isFalse);
     });
 
+    test('an emptied raw window is sent as an explicit null to turn downsampling off', () {
+      final draft = RetentionDraft(_retention(), standardSerializers);
+      expect(draft.clears, isEmpty);
+      draft.text['trackRawWindow'] = '';
+      expect(draft.validate(), isEmpty);
+      expect(draft.clears, <String>['trackRawWindow']);
+      expect(draft.toJson()['trackRawWindow'], isNull);
+    });
+
     test('keeps the raw window shorter than the TRACK window', () {
       final draft = RetentionDraft(_retention(), standardSerializers)
         ..text['trackRawWindow'] = '4d';

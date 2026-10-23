@@ -19,6 +19,28 @@ StatusTone systemStatusTone(Object? status) => switch (status) {
   _ => StatusTone.neutral,
 };
 
+/// Why `getSystem` reports [system] as degraded or down, from the members
+/// that decide it: the database, the ingest writer, catch-up, failing sources
+/// and warnings above info. Empty when none applies.
+List<String> systemStatusReasons(Json system) {
+  Json? m(String key) => system[key] is Map ? (system[key]! as Map).cast<String, Object?>() : null;
+  final writer = m('ingestWriter')?['state'];
+  final failing = m('sources')?['failing'];
+  final warned = <Object?>[
+    if (system['warnings'] is List)
+      for (final w in system['warnings']! as List)
+        if (w is Map && w['severity'] != 'info') w['code'],
+  ];
+  return <String>[
+    if (m('database')?['status'] == 'down') 'the database is down',
+    if (writer == 'STOPPED' || writer == 'LOCK_LOST') 'the ingest writer is ${wireText('$writer').toLowerCase()}',
+    if (writer == 'CLOCK_BEHIND') "the ingest writer's clock is behind",
+    if (m('catchUp')?['catchingUp'] == true) 'ingest is catching up',
+    if (failing is num && failing > 0) '$failing ${failing == 1 ? 'source is' : 'sources are'} failing',
+    for (final code in warned) 'warning ${code ?? 'without a code'}',
+  ];
+}
+
 /// [seconds] of uptime as days, hours and minutes.
 String uptimeText(Object? seconds) {
   if (seconds is! num) {
@@ -284,7 +306,19 @@ class _Overview extends ConsumerWidget {
                 entries: <MapEntry<String, Object>>[
                   MapEntry<String, Object>(
                     'Status',
-                    StatusLabel(label: wireText(_text(s['status'])), tone: systemStatusTone(s['status'])),
+                    Wrap(
+                      spacing: 8,
+                      crossAxisAlignment: WrapCrossAlignment.center,
+                      children: <Widget>[
+                        StatusLabel(label: wireText(_text(s['status'])), tone: systemStatusTone(s['status'])),
+                        if (s['status'] != 'ok' && systemStatusReasons(s).isNotEmpty)
+                          Text(
+                            systemStatusReasons(s).join('; '),
+                            key: const Key('system.statusReasons'),
+                            style: TextStyle(color: AdminPalette.of(context).muted),
+                          ),
+                      ],
+                    ),
                   ),
                   MapEntry<String, Object>('Version', '${_text(s['version'])} (API ${_text(s['apiVersion'])})'),
                   MapEntry<String, Object>('Mode', s['mode'] == 'edge' ? 'Edge' : 'Full'),

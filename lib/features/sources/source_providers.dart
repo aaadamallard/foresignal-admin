@@ -31,16 +31,22 @@ class SourceWrites {
   /// The generated client.
   final ForesignalApi api;
 
-  /// Sends [update] with `updateSource`, then re-reads the source with
+  /// Sends [update] with `updateSource`, with each of [clears] as an explicit
+  /// `null` (clearing that override), then re-reads the source with
   /// `getSource` and checks it with [confirm] (see [writeThenConfirm]).
   Future<SourceDetail> update(
     String sourceId,
     SourceSettingsUpdate update, {
+    List<String> clears = const <String>[],
     String? Function(SourceDetail confirmed)? confirm,
   }) {
     final sources = api.getSourcesApi();
     return writeThenConfirm<SourceDetail>(
-      write: () => sources.updateSource(sourceId: sourceId, sourceSettingsUpdate: update),
+      write: () => sources.updateSource(
+        sourceId: sourceId,
+        sourceSettingsUpdate: update,
+        extra: clears.isEmpty ? null : explicitNulls(clears),
+      ),
       reread: () => callApiRequired(() => sources.getSource(sourceId: sourceId)),
       confirm: confirm,
     );

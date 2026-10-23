@@ -15,6 +15,33 @@ _$streamNotifications200ResponseEventEnum_briefing =
 const StreamNotifications200ResponseEventEnum
 _$streamNotifications200ResponseEventEnum_system =
     const StreamNotifications200ResponseEventEnum._('system');
+const StreamNotifications200ResponseEventEnum
+_$streamNotifications200ResponseEventEnum_analystPeriodNote =
+    const StreamNotifications200ResponseEventEnum._('analystPeriodNote');
+const StreamNotifications200ResponseEventEnum
+_$streamNotifications200ResponseEventEnum_situationPeriodActivated =
+    const StreamNotifications200ResponseEventEnum._('situationPeriodActivated');
+const StreamNotifications200ResponseEventEnum
+_$streamNotifications200ResponseEventEnum_situationPeriodEscalated =
+    const StreamNotifications200ResponseEventEnum._('situationPeriodEscalated');
+const StreamNotifications200ResponseEventEnum
+_$streamNotifications200ResponseEventEnum_findingPeriodSignificant =
+    const StreamNotifications200ResponseEventEnum._('findingPeriodSignificant');
+const StreamNotifications200ResponseEventEnum
+_$streamNotifications200ResponseEventEnum_forecastPeriodResolutionNeeded =
+    const StreamNotifications200ResponseEventEnum._(
+      'forecastPeriodResolutionNeeded',
+    );
+const StreamNotifications200ResponseEventEnum
+_$streamNotifications200ResponseEventEnum_hypothesisPeriodBandChanged =
+    const StreamNotifications200ResponseEventEnum._(
+      'hypothesisPeriodBandChanged',
+    );
+const StreamNotifications200ResponseEventEnum
+_$streamNotifications200ResponseEventEnum_assessmentPeriodPublished =
+    const StreamNotifications200ResponseEventEnum._(
+      'assessmentPeriodPublished',
+    );
 
 StreamNotifications200ResponseEventEnum
 _$streamNotifications200ResponseEventEnumValueOf(String name) {
@@ -25,6 +52,20 @@ _$streamNotifications200ResponseEventEnumValueOf(String name) {
       return _$streamNotifications200ResponseEventEnum_briefing;
     case 'system':
       return _$streamNotifications200ResponseEventEnum_system;
+    case 'analystPeriodNote':
+      return _$streamNotifications200ResponseEventEnum_analystPeriodNote;
+    case 'situationPeriodActivated':
+      return _$streamNotifications200ResponseEventEnum_situationPeriodActivated;
+    case 'situationPeriodEscalated':
+      return _$streamNotifications200ResponseEventEnum_situationPeriodEscalated;
+    case 'findingPeriodSignificant':
+      return _$streamNotifications200ResponseEventEnum_findingPeriodSignificant;
+    case 'forecastPeriodResolutionNeeded':
+      return _$streamNotifications200ResponseEventEnum_forecastPeriodResolutionNeeded;
+    case 'hypothesisPeriodBandChanged':
+      return _$streamNotifications200ResponseEventEnum_hypothesisPeriodBandChanged;
+    case 'assessmentPeriodPublished':
+      return _$streamNotifications200ResponseEventEnum_assessmentPeriodPublished;
     default:
       throw ArgumentError(name);
   }
@@ -32,13 +73,20 @@ _$streamNotifications200ResponseEventEnumValueOf(String name) {
 
 final BuiltSet<StreamNotifications200ResponseEventEnum>
 _$streamNotifications200ResponseEventEnumValues =
-    BuiltSet<StreamNotifications200ResponseEventEnum>(
-      const <StreamNotifications200ResponseEventEnum>[
-        _$streamNotifications200ResponseEventEnum_alert,
-        _$streamNotifications200ResponseEventEnum_briefing,
-        _$streamNotifications200ResponseEventEnum_system,
-      ],
-    );
+    BuiltSet<StreamNotifications200ResponseEventEnum>(const <
+      StreamNotifications200ResponseEventEnum
+    >[
+      _$streamNotifications200ResponseEventEnum_alert,
+      _$streamNotifications200ResponseEventEnum_briefing,
+      _$streamNotifications200ResponseEventEnum_system,
+      _$streamNotifications200ResponseEventEnum_analystPeriodNote,
+      _$streamNotifications200ResponseEventEnum_situationPeriodActivated,
+      _$streamNotifications200ResponseEventEnum_situationPeriodEscalated,
+      _$streamNotifications200ResponseEventEnum_findingPeriodSignificant,
+      _$streamNotifications200ResponseEventEnum_forecastPeriodResolutionNeeded,
+      _$streamNotifications200ResponseEventEnum_hypothesisPeriodBandChanged,
+      _$streamNotifications200ResponseEventEnum_assessmentPeriodPublished,
+    ]);
 
 const StreamNotifications200ResponseSeverityEnum
 _$streamNotifications200ResponseSeverityEnum_info =
@@ -124,11 +172,25 @@ class _$StreamNotifications200ResponseEventEnumSerializer
     'alert': 'alert',
     'briefing': 'briefing',
     'system': 'system',
+    'analystPeriodNote': 'analyst.note',
+    'situationPeriodActivated': 'situation.activated',
+    'situationPeriodEscalated': 'situation.escalated',
+    'findingPeriodSignificant': 'finding.significant',
+    'forecastPeriodResolutionNeeded': 'forecast.resolution_needed',
+    'hypothesisPeriodBandChanged': 'hypothesis.band_changed',
+    'assessmentPeriodPublished': 'assessment.published',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'alert': 'alert',
     'briefing': 'briefing',
     'system': 'system',
+    'analyst.note': 'analystPeriodNote',
+    'situation.activated': 'situationPeriodActivated',
+    'situation.escalated': 'situationPeriodEscalated',
+    'finding.significant': 'findingPeriodSignificant',
+    'forecast.resolution_needed': 'forecastPeriodResolutionNeeded',
+    'hypothesis.band_changed': 'hypothesisPeriodBandChanged',
+    'assessment.published': 'assessmentPeriodPublished',
   };
 
   @override

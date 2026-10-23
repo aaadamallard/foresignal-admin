@@ -1181,6 +1181,8 @@ import 'package:foresignal_api/src/model/projected_impact_page.dart';
 import 'package:foresignal_api/src/model/projected_impact_question_window.dart';
 import 'package:foresignal_api/src/model/projected_impact_skipped_inner.dart';
 import 'package:foresignal_api/src/model/prompt_template.dart';
+import 'package:foresignal_api/src/model/prompt_template_list.dart';
+import 'package:foresignal_api/src/model/prompt_template_summary.dart';
 import 'package:foresignal_api/src/model/propagation_edge.dart';
 import 'package:foresignal_api/src/model/propagation_graph.dart';
 import 'package:foresignal_api/src/model/propagation_graph_cross_platform_order_inner.dart';
@@ -2888,6 +2890,8 @@ part 'serializers.g.dart';
   ProjectedImpactQuestionWindow,
   ProjectedImpactSkippedInner,
   PromptTemplate,
+  PromptTemplateList,
+  PromptTemplateSummary,
   PropagationEdge,
   PropagationGraph,
   PropagationGraphCrossPlatformOrderInner,
@@ -4948,6 +4952,10 @@ Serializers serializers =
               FullType(InfraImpactResultDependentsInner),
             ]),
             () => ListBuilder<InfraImpactResultDependentsInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(PromptTemplateSummary)]),
+            () => ListBuilder<PromptTemplateSummary>(),
           )
           ..addBuilderFactory(
             const FullType(BuiltList, [FullType(ReferenceImport)]),

@@ -104,6 +104,20 @@ void main() {
       }
     });
 
+    test('a 200 whose reply cannot be read names the decode error, not the status', () {
+      final request = RequestOptions(path: '/v1/settings/server');
+      final error = toApiException(
+        DioException(
+          requestOptions: request,
+          response: Response<Object?>(requestOptions: request, statusCode: 200),
+          error: StateError('null for non-nullable field "publicBaseUrl"'),
+        ),
+      );
+      expect(error, isA<NetworkException>());
+      expect(error.message, contains('could not read the reply'));
+      expect(error.message, contains('publicBaseUrl'));
+    });
+
     test('an ApiException passes through unchanged', () {
       const error = AdminTokenRequiredException();
       expect(identical(toApiException(error), error), isTrue);

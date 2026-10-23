@@ -20,7 +20,7 @@ part 'correlation_recipe.g.dart';
 /// * [origin] - Whether the recipe is a bundled classpath recipe or operator-authored (prompt 157)
 /// * [enabled]
 /// * [definition]
-/// * [params] - Operator overrides
+/// * [params] - Operator overrides; null when there are none
 /// * [disabledReason] - e.g. seed kinds missing (recipe loaded disabled with a warning)
 /// * [lastRunAt]
 /// * [lastError]
@@ -47,7 +47,7 @@ abstract class CorrelationRecipe
   @BuiltValueField(wireName: r'definition')
   CorrelationRecipeDefinition get definition;
 
-  /// Operator overrides
+  /// Operator overrides; null when there are none
   @BuiltValueField(wireName: r'params')
   BuiltMap<String, JsonObject?>? get params;
 
@@ -125,7 +125,7 @@ class _$CorrelationRecipeSerializer
       yield r'params';
       yield serializers.serialize(
         object.params,
-        specifiedType: const FullType(BuiltMap, [
+        specifiedType: const FullType.nullable(BuiltMap, [
           FullType(String),
           FullType.nullable(JsonObject),
         ]),

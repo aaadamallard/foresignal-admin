@@ -49,9 +49,16 @@ void main() {
       expect((fresh()..mapping = '{"version": 1}').validate(), isEmpty);
     });
 
-    test('a stored mapping cannot be cleared from the form', () {
-      final draft = CustomSourceDraft.edit(stored(), standardSerializers)..mapping = '';
-      expect(draft.validate(), contains('mapping'));
+    test('a stored mapping is cleared with an explicit null', () {
+      final draft = CustomSourceDraft.edit(stored(), standardSerializers);
+      expect(draft.clears, isEmpty);
+      draft.mapping = '';
+      expect(draft.validate(), isEmpty);
+      expect(draft.clears, <String>['mapping']);
+    });
+
+    test('a new source has nothing to clear', () {
+      expect((fresh()..mapping = '').clears, isEmpty);
     });
   });
 

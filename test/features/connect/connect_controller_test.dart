@@ -35,6 +35,33 @@ void main() {
     );
   });
 
+  test('a server settings reply with publicBaseUrl null still connects as admin', () async {
+    // An unset publicBaseUrl is null: links then use the request's own
+    // address (ServerSettings.publicBaseUrl in the contract).
+    final store = InMemoryConnectionStore();
+    final container = testContainer(
+      adapter: connectBackend(
+        serverSettings: <String, Object?>{
+          'publicBaseUrl': null,
+          'timezone': 'UTC',
+          'warnings': <Object?>[],
+        },
+      ),
+      store: store,
+    );
+    addTearDown(container.dispose);
+
+    await container
+        .read(connectControllerProvider.notifier)
+        .testAndSave(urlText: 'http://localhost:8080', token: 'fsr_good');
+
+    final state = container.read(connectControllerProvider) as ConnectTested;
+    expect(state.saved, isTrue);
+    expect(state.report.tokenStatus, TokenStatus.admin);
+    expect(state.report.serverSettings!.publicBaseUrl, isNull);
+    expect(await store.read(), 'fsr_good');
+  });
+
   test('a rejected token (401) is reported and nothing is saved', () async {
     final store = InMemoryConnectionStore();
     final container = testContainer(adapter: connectBackend(), store: store);

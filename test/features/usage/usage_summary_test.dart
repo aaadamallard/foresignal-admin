@@ -103,5 +103,18 @@ void main() {
       });
       expect(stacked.keys, <String>['a']);
     });
+
+    test('an hour the backend left out is an empty bucket, not a closed gap', () {
+      final stacked = StackedUsage.fromPoints(<String, Map<DateTime, int>>{
+        'a': <DateTime, int>{
+          DateTime.utc(2026, 10, 22, 21): 10,
+          DateTime.utc(2026, 10, 23, 1): 4,
+        },
+      }, step: usageStep('hour'));
+      expect(stacked.buckets, <DateTime>[
+        for (var h = 21; h <= 25; h++) DateTime.utc(2026, 10, 22, h),
+      ]);
+      expect(stacked.values['a'], <int>[10, 0, 0, 0, 4]);
+    });
   });
 }

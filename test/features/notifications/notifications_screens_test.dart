@@ -187,6 +187,54 @@ void main() {
     await _drainStream(tester);
   });
 
+  testWidgets('Mark All Read works when the badge is zero but notifications are unread', (tester) async {
+    final v = PreviewNotifications();
+    // The firing alerts are read; a briefing and an acknowledged alert stay
+    // unread, and neither counts on the badge.
+    v.readIds.addAll(<int>[9005, 9006, 9007]);
+    final adapter = await _open(tester, notificationsPath, notificationsBackend(v));
+    expect(find.text('0 on the badge'), findsOneWidget);
+    expect(find.text('Morning briefing is ready'), findsOneWidget);
+    await _tapKey(tester, 'notifications.markAll');
+    final body = _bodyOf(_last(adapter, 'POST', '/v1/notifications/read'));
+    expect(body['upToId'], greaterThanOrEqualTo(9007));
+    expect(find.text('Morning briefing is ready'), findsNothing);
+    await _drainStream(tester);
+  });
+
+  testWidgets('after Mark All Read the unread list offers no further page', (tester) async {
+    final v = PreviewNotifications();
+    final inner = notificationsBackend(v);
+    final adapter = FakeAdapter((request) async {
+      final reply = await inner.handler(request);
+      if (request.method == 'GET' && request.uri.path == '/v1/notifications' && reply.status == 200) {
+        final page = (jsonDecode(utf8.decode(reply.bytes)) as Map).cast<String, Object?>();
+        return FakeResponse.json(<String, Object?>{...page, 'nextCursor': 'next-page'});
+      }
+      return reply;
+    });
+    await _open(tester, notificationsPath, adapter);
+    expect(find.byKey(const Key('notifications.more')), findsOneWidget);
+    await _tapKey(tester, 'notifications.markAll');
+    expect(find.text('Nothing unread.'), findsOneWidget);
+    expect(find.byKey(const Key('notifications.more')), findsNothing);
+    await _drainStream(tester);
+  });
+
+  testWidgets('with a filter, Mark Shown Read marks only the shown notifications', (tester) async {
+    final v = PreviewNotifications();
+    final adapter = await _open(tester, notificationsPath, notificationsBackend(v));
+    await _tapKey(tester, 'notifications.minSeverity');
+    await tester.tap(find.text('Critical').last);
+    await tester.pumpAndSettle();
+    expect(find.byKey(const Key('notifications.markAll')), findsNothing);
+    await _tapKey(tester, 'notifications.markShown');
+    final body = _bodyOf(_last(adapter, 'POST', '/v1/notifications/read'));
+    expect(body.containsKey('upToId'), isFalse);
+    expect(body['ids'], isNotEmpty);
+    await _drainStream(tester);
+  });
+
   testWidgets('opening a notification marks it read and runs an action after confirming', (tester) async {
     final v = PreviewNotifications();
     final adapter = await _open(tester, notificationPath(_firingId), notificationsBackend(v));

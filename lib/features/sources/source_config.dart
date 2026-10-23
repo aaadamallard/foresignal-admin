@@ -7,9 +7,8 @@ import 'package:built_value/serializer.dart';
 import '../../api/api.dart';
 import '../../core/format/duration_text.dart';
 
-/// Said when a field holding an operator override is emptied: the generated
-/// client leaves `null` fields out of the request, so `updateSource` cannot
-/// be asked to clear an override from the app.
+/// Said when the monthly cap is emptied: `updateSource` takes no cap to clear
+/// (the backend leaves it unchanged), so an emptied cap is refused here.
 const String cannotClearMessage = 'This override can be changed here but not cleared.';
 
 /// How a descriptor parameter is edited.
@@ -403,11 +402,8 @@ class SourceConfigDraft {
 
   void _checkDuration(Map<String, String> errors, String key, String text, String? current) {
     final t = text.trim();
-    if (t.isEmpty) {
-      if (current != null) {
-        errors[key] = cannotClearMessage;
-      }
-    } else if (parseDurationText(t) == null) {
+    // Empty clears the override (see [clears]).
+    if (t.isNotEmpty && parseDurationText(t) == null) {
       errors[key] = 'Enter a duration such as 30d or P1Y.';
     }
   }
@@ -473,8 +469,21 @@ class SourceConfigDraft {
     for (final entry in _s.params.entries) entry.key: entry.value?.value,
   };
 
+  /// The overrides the operator cleared, which `updateSource` must be sent as
+  /// explicit `null`s ([explicitNulls]): an emptied retention or downsample
+  /// interval, egress or reliability set back to the descriptor default, and an
+  /// ingest-policy override switched off.
+  List<String> get clears => <String>[
+    if (standardHistory && retention.trim().isEmpty && _s.retention != null) 'retention',
+    if (!standardHistory && downsampleInterval.trim().isEmpty && _s.downsampleInterval != null)
+      'downsampleInterval',
+    if (egressOverridable && egress == null && _s.egress != null) 'egress',
+    if (reliability == null && _s.reliability != null) 'reliability',
+    if (!overridePolicy && _s.ingestPolicy != null) 'ingestPolicy',
+  ];
+
   /// The `updateSource` body holding only what changed, or `null` when
-  /// nothing did. Call [validate] first.
+  /// nothing did; the cleared overrides are in [clears]. Call [validate] first.
   SourceSettingsUpdate? toUpdate() {
     var changed = false;
     final update = SourceSettingsUpdateBuilder();
@@ -560,11 +569,21 @@ class SourceConfigDraft {
     );
   }
 
-  /// Checks the re-read [confirmed] source against what [sent] asked for;
-  /// returns `null` when it matches, or what differs.
-  String? confirm(SourceSettingsUpdate sent, SourceDetail confirmed) {
+  /// Checks the re-read [confirmed] source against what [sent] asked for and
+  /// the [cleared] overrides; returns `null` when it matches, or what differs.
+  String? confirm(
+    SourceSettingsUpdate sent,
+    SourceDetail confirmed, {
+    List<String> cleared = const <String>[],
+  }) {
     final s = confirmed.settings;
     final diffs = <String>[
+      if (cleared.contains('retention') && s.retention != null) 'retention',
+      if (cleared.contains('downsampleInterval') && s.downsampleInterval != null)
+        'downsample interval',
+      if (cleared.contains('egress') && s.egress != null) 'egress',
+      if (cleared.contains('reliability') && s.reliability != null) 'reliability',
+      if (cleared.contains('ingestPolicy') && s.ingestPolicy != null) 'ingest policy',
       if (sent.enabled != null && sent.enabled != s.enabled) 'enabled',
       if (sent.interval != null && !sameDuration(sent.interval!, s.interval)) 'interval',
       if (sent.budget != null && sent.budget != s.budget) 'budget',

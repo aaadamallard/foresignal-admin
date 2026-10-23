@@ -1954,6 +1954,8 @@ Serializers _$serializers =
           ..add(ProjectedImpactSkippedInner.serializer)
           ..add(ProjectedImpactStatusEnum.serializer)
           ..add(PromptTemplate.serializer)
+          ..add(PromptTemplateList.serializer)
+          ..add(PromptTemplateSummary.serializer)
           ..add(PropagationEdge.serializer)
           ..add(PropagationEdgeTypeEnum.serializer)
           ..add(PropagationGraph.serializer)
@@ -5254,6 +5256,12 @@ Serializers _$serializers =
             () => ListBuilder<Caveat>(),
           )
           ..addBuilderFactory(
+            const FullType(BuiltList, const [
+              const FullType(PromptTemplateSummary),
+            ]),
+            () => ListBuilder<PromptTemplateSummary>(),
+          )
+          ..addBuilderFactory(
             const FullType(BuiltList, const [const FullType(PropagationNode)]),
             () => ListBuilder<PropagationNode>(),
           )
@@ -5814,6 +5822,10 @@ Serializers _$serializers =
               const FullType(StormTrackPayloadNowcastInner),
             ]),
             () => ListBuilder<StormTrackPayloadNowcastInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, const [const FullType(String)]),
+            () => ListBuilder<String>(),
           )
           ..addBuilderFactory(
             const FullType(BuiltList, const [const FullType(String)]),

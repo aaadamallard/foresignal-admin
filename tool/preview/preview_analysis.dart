@@ -821,9 +821,10 @@ AnalysisReply? answerAnalysis(
         }
       }
       if (input.containsKey('severity')) {
+        // null clears the override: the computed severity stands again.
         e
-          ..['severity'] = input['severity']
-          ..['severityOverridden'] = true;
+          ..['severity'] = input['severity'] ?? e['severity']
+          ..['severityOverridden'] = input['severity'] != null;
       }
       bump(input.containsKey('status') ? 'status' : 'edited');
       return (status: 200, body: e);

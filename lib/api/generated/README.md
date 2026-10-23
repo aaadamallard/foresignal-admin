@@ -506,6 +506,7 @@ Class | Method | HTTP request | Description
 [*LLMApi*](doc/LLMApi.md) | [**getPromptTemplate**](doc/LLMApi.md#getprompttemplate) | **GET** /v1/prompt-templates/{templateId} | Get an LLM prompt template
 [*LLMApi*](doc/LLMApi.md) | [**listLlmProviderModels**](doc/LLMApi.md#listllmprovidermodels) | **GET** /v1/llm/providers/{providerId}/models | List models available from a provider
 [*LLMApi*](doc/LLMApi.md) | [**listLlmProviders**](doc/LLMApi.md#listllmproviders) | **GET** /v1/llm/providers | List LLM providers
+[*LLMApi*](doc/LLMApi.md) | [**listPromptTemplates**](doc/LLMApi.md#listprompttemplates) | **GET** /v1/prompt-templates | List the LLM prompt templates
 [*LLMApi*](doc/LLMApi.md) | [**testLlmProvider**](doc/LLMApi.md#testllmprovider) | **POST** /v1/llm/providers/{providerId}/test | Test an LLM provider
 [*LLMApi*](doc/LLMApi.md) | [**updateLlmProvider**](doc/LLMApi.md#updatellmprovider) | **PUT** /v1/llm/providers/{providerId} | Replace an LLM provider
 [*LLMApi*](doc/LLMApi.md) | [**updateLlmSettings**](doc/LLMApi.md#updatellmsettings) | **PUT** /v1/llm/settings | Set LLM roles and options
@@ -2068,6 +2069,8 @@ Class | Method | HTTP request | Description
  - [ProjectedImpactQuestionWindow](doc/ProjectedImpactQuestionWindow.md)
  - [ProjectedImpactSkippedInner](doc/ProjectedImpactSkippedInner.md)
  - [PromptTemplate](doc/PromptTemplate.md)
+ - [PromptTemplateList](doc/PromptTemplateList.md)
+ - [PromptTemplateSummary](doc/PromptTemplateSummary.md)
  - [PropagationEdge](doc/PropagationEdge.md)
  - [PropagationGraph](doc/PropagationGraph.md)
  - [PropagationGraphCrossPlatformOrderInner](doc/PropagationGraphCrossPlatformOrderInner.md)

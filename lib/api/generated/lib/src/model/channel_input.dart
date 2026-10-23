@@ -18,7 +18,7 @@ part 'channel_input.g.dart';
 /// * [type] - teams accepts only Power Automate Workflows URLs (Office 365 connector URLs → 400); webpush is the built-in Push channel (031): created at startup with a fixed id, updatable but not creatable (400); its config takes quietHoursMode (defer|downgrade|drop); mqtt (060) publishes on the operator's broker (config MqttChannelConfig, secrets username, password, caCertPem): events on {prefix}/alerts/{severity}, {prefix}/alerts/updates, {prefix}/briefings/{briefingId} and {prefix}/system/events, plus retained state and optional Home Assistant discovery; a public broker without TLS or credentials is saved with the warning MQTT_INSECURE_PUBLIC_BROKER; meshtastic (084) sends compact alert lines through the node's MQTT JSON downlink (config MeshtasticChannelConfig, secrets username, password) and meshcore (084) through the MeshCore companion protocol (config MeshcoreChannelConfig); both refuse public or default channels with MESH_PUBLIC_CHANNEL, pass every transmission through a LoRa airtime governor and take only alert.resolved among lifecycle updates
 /// * [config]
 /// * [secrets] - Write-only secret settings per the type's secretFields. A secretFields entry named `prefix.<Name>` (webhook `header.<Name>`) accepts any secret whose name starts with the prefix.
-/// * [events] - Prompt 018 accepts alert, briefing and system (default [\"alert\"]); the other values are subscribed by the prompts that introduce them
+/// * [events] - Default [\"alert\"]. The personal-notice events (`mention`, `share`, `report.received`, `package.received`, `chronicle.proposed`, `chronicle.cap_warning`, `chronicle.gap`, `chronicle.access.requested`, `saved-search.matches`) deliver a copy of each such notice, once per addressee, with its TLP label at the head
 /// * [ruleIds] - null = all rules
 /// * [minSeverity]
 /// * [titleTemplate]
@@ -51,7 +51,7 @@ abstract class ChannelInput
   @BuiltValueField(wireName: r'secrets')
   BuiltMap<String, String>? get secrets;
 
-  /// Prompt 018 accepts alert, briefing and system (default [\"alert\"]); the other values are subscribed by the prompts that introduce them
+  /// Default [\"alert\"]. The personal-notice events (`mention`, `share`, `report.received`, `package.received`, `chronicle.proposed`, `chronicle.cap_warning`, `chronicle.gap`, `chronicle.access.requested`, `saved-search.matches`) deliver a copy of each such notice, once per addressee, with its TLP label at the head
   @BuiltValueField(wireName: r'events')
   BuiltList<ChannelInputEventsEnum>? get events;
   // enum eventsEnum {  alert,  briefing,  system,  chronicle.proposed,  chronicle.cap_warning,  chronicle.gap,  social.divergence,  social.attention_gap,  analyst.note,  situation.activated,  situation.escalated,  finding.significant,  forecast.resolved,  forecast.resolution_needed,  hypothesis.band_changed,  indicator.observed,  assumption.broken,  assessment.published,  mention,  share,  report.received,  package.received,  chronicle.access.requested,  saved-search.matches,  };

@@ -25,7 +25,7 @@ abstract class WebhookEnvelope
     implements Built<WebhookEnvelope, WebhookEnvelopeBuilder> {
   @BuiltValueField(wireName: r'event')
   WebhookEnvelopeEventEnum get event;
-  // enum eventEnum {  alert,  briefing,  system,  test,  };
+  // enum eventEnum {  alert,  briefing,  system,  chronicle.proposed,  chronicle.cap_warning,  chronicle.gap,  social.divergence,  social.attention_gap,  analyst.note,  situation.activated,  situation.escalated,  finding.significant,  forecast.resolved,  forecast.resolution_needed,  hypothesis.band_changed,  indicator.observed,  assumption.broken,  assessment.published,  mention,  share,  report.received,  package.received,  chronicle.access.requested,  saved-search.matches,  test,  personal,  };
 
   @BuiltValueField(wireName: r'subtype')
   String get subtype;
@@ -232,8 +232,74 @@ class WebhookEnvelopeEventEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'system')
   static const WebhookEnvelopeEventEnum system =
       _$webhookEnvelopeEventEnum_system;
+  @BuiltValueEnumConst(wireName: r'chronicle.proposed')
+  static const WebhookEnvelopeEventEnum chroniclePeriodProposed =
+      _$webhookEnvelopeEventEnum_chroniclePeriodProposed;
+  @BuiltValueEnumConst(wireName: r'chronicle.cap_warning')
+  static const WebhookEnvelopeEventEnum chroniclePeriodCapWarning =
+      _$webhookEnvelopeEventEnum_chroniclePeriodCapWarning;
+  @BuiltValueEnumConst(wireName: r'chronicle.gap')
+  static const WebhookEnvelopeEventEnum chroniclePeriodGap =
+      _$webhookEnvelopeEventEnum_chroniclePeriodGap;
+  @BuiltValueEnumConst(wireName: r'social.divergence')
+  static const WebhookEnvelopeEventEnum socialPeriodDivergence =
+      _$webhookEnvelopeEventEnum_socialPeriodDivergence;
+  @BuiltValueEnumConst(wireName: r'social.attention_gap')
+  static const WebhookEnvelopeEventEnum socialPeriodAttentionGap =
+      _$webhookEnvelopeEventEnum_socialPeriodAttentionGap;
+  @BuiltValueEnumConst(wireName: r'analyst.note')
+  static const WebhookEnvelopeEventEnum analystPeriodNote =
+      _$webhookEnvelopeEventEnum_analystPeriodNote;
+  @BuiltValueEnumConst(wireName: r'situation.activated')
+  static const WebhookEnvelopeEventEnum situationPeriodActivated =
+      _$webhookEnvelopeEventEnum_situationPeriodActivated;
+  @BuiltValueEnumConst(wireName: r'situation.escalated')
+  static const WebhookEnvelopeEventEnum situationPeriodEscalated =
+      _$webhookEnvelopeEventEnum_situationPeriodEscalated;
+  @BuiltValueEnumConst(wireName: r'finding.significant')
+  static const WebhookEnvelopeEventEnum findingPeriodSignificant =
+      _$webhookEnvelopeEventEnum_findingPeriodSignificant;
+  @BuiltValueEnumConst(wireName: r'forecast.resolved')
+  static const WebhookEnvelopeEventEnum forecastPeriodResolved =
+      _$webhookEnvelopeEventEnum_forecastPeriodResolved;
+  @BuiltValueEnumConst(wireName: r'forecast.resolution_needed')
+  static const WebhookEnvelopeEventEnum forecastPeriodResolutionNeeded =
+      _$webhookEnvelopeEventEnum_forecastPeriodResolutionNeeded;
+  @BuiltValueEnumConst(wireName: r'hypothesis.band_changed')
+  static const WebhookEnvelopeEventEnum hypothesisPeriodBandChanged =
+      _$webhookEnvelopeEventEnum_hypothesisPeriodBandChanged;
+  @BuiltValueEnumConst(wireName: r'indicator.observed')
+  static const WebhookEnvelopeEventEnum indicatorPeriodObserved =
+      _$webhookEnvelopeEventEnum_indicatorPeriodObserved;
+  @BuiltValueEnumConst(wireName: r'assumption.broken')
+  static const WebhookEnvelopeEventEnum assumptionPeriodBroken =
+      _$webhookEnvelopeEventEnum_assumptionPeriodBroken;
+  @BuiltValueEnumConst(wireName: r'assessment.published')
+  static const WebhookEnvelopeEventEnum assessmentPeriodPublished =
+      _$webhookEnvelopeEventEnum_assessmentPeriodPublished;
+  @BuiltValueEnumConst(wireName: r'mention')
+  static const WebhookEnvelopeEventEnum mention =
+      _$webhookEnvelopeEventEnum_mention;
+  @BuiltValueEnumConst(wireName: r'share')
+  static const WebhookEnvelopeEventEnum share =
+      _$webhookEnvelopeEventEnum_share;
+  @BuiltValueEnumConst(wireName: r'report.received')
+  static const WebhookEnvelopeEventEnum reportPeriodReceived =
+      _$webhookEnvelopeEventEnum_reportPeriodReceived;
+  @BuiltValueEnumConst(wireName: r'package.received')
+  static const WebhookEnvelopeEventEnum packagePeriodReceived =
+      _$webhookEnvelopeEventEnum_packagePeriodReceived;
+  @BuiltValueEnumConst(wireName: r'chronicle.access.requested')
+  static const WebhookEnvelopeEventEnum chroniclePeriodAccessPeriodRequested =
+      _$webhookEnvelopeEventEnum_chroniclePeriodAccessPeriodRequested;
+  @BuiltValueEnumConst(wireName: r'saved-search.matches')
+  static const WebhookEnvelopeEventEnum savedSearchPeriodMatches =
+      _$webhookEnvelopeEventEnum_savedSearchPeriodMatches;
   @BuiltValueEnumConst(wireName: r'test')
   static const WebhookEnvelopeEventEnum test = _$webhookEnvelopeEventEnum_test;
+  @BuiltValueEnumConst(wireName: r'personal')
+  static const WebhookEnvelopeEventEnum personal =
+      _$webhookEnvelopeEventEnum_personal;
 
   static Serializer<WebhookEnvelopeEventEnum> get serializer =>
       _$webhookEnvelopeEventEnumSerializer;

@@ -357,8 +357,10 @@ class _RateLimitsFormState extends ConsumerState<RateLimitsForm> {
             onSave: () async {
               final settings = api.getSettingsApi();
               await writeThenConfirm<RateLimitSettings>(
-                write: () =>
-                    settings.updateRateLimits(rateLimitSettings: _draft.toModel(api.serializers)),
+                write: () => settings.updateRateLimits(
+                  rateLimitSettings: _draft.toModel(api.serializers),
+                  extra: _draft.clears.isEmpty ? null : explicitNulls(_draft.clears),
+                ),
                 reread: () => callApiRequired(settings.getRateLimits),
                 confirm: (s) => _draft.confirm(RateLimitsDraft.jsonOf(s, api.serializers)),
               );
@@ -473,8 +475,10 @@ class _RetentionFormState extends ConsumerState<RetentionForm> {
         onSave: () async {
           final settings = api.getSettingsApi();
           await writeThenConfirm<RetentionSettings>(
-            write: () =>
-                settings.updateRetention(retentionSettings: _draft.toModel(api.serializers)),
+            write: () => settings.updateRetention(
+              retentionSettings: _draft.toModel(api.serializers),
+              extra: _draft.clears.isEmpty ? null : explicitNulls(_draft.clears),
+            ),
             reread: () => callApiRequired(settings.getRetention),
             confirm: (s) => _draft.confirm(RetentionDraft.jsonOf(s, api.serializers)),
           );

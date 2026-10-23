@@ -32,7 +32,7 @@ abstract class Notification
 
   @BuiltValueField(wireName: r'event')
   NotificationEventEnum get event;
-  // enum eventEnum {  alert,  briefing,  system,  };
+  // enum eventEnum {  alert,  briefing,  system,  analyst.note,  situation.activated,  situation.escalated,  finding.significant,  forecast.resolution_needed,  hypothesis.band_changed,  assessment.published,  };
 
   @BuiltValueField(wireName: r'subtype')
   String? get subtype;
@@ -338,6 +338,27 @@ class NotificationEventEnum extends EnumClass {
       _$notificationEventEnum_briefing;
   @BuiltValueEnumConst(wireName: r'system')
   static const NotificationEventEnum system = _$notificationEventEnum_system;
+  @BuiltValueEnumConst(wireName: r'analyst.note')
+  static const NotificationEventEnum analystPeriodNote =
+      _$notificationEventEnum_analystPeriodNote;
+  @BuiltValueEnumConst(wireName: r'situation.activated')
+  static const NotificationEventEnum situationPeriodActivated =
+      _$notificationEventEnum_situationPeriodActivated;
+  @BuiltValueEnumConst(wireName: r'situation.escalated')
+  static const NotificationEventEnum situationPeriodEscalated =
+      _$notificationEventEnum_situationPeriodEscalated;
+  @BuiltValueEnumConst(wireName: r'finding.significant')
+  static const NotificationEventEnum findingPeriodSignificant =
+      _$notificationEventEnum_findingPeriodSignificant;
+  @BuiltValueEnumConst(wireName: r'forecast.resolution_needed')
+  static const NotificationEventEnum forecastPeriodResolutionNeeded =
+      _$notificationEventEnum_forecastPeriodResolutionNeeded;
+  @BuiltValueEnumConst(wireName: r'hypothesis.band_changed')
+  static const NotificationEventEnum hypothesisPeriodBandChanged =
+      _$notificationEventEnum_hypothesisPeriodBandChanged;
+  @BuiltValueEnumConst(wireName: r'assessment.published')
+  static const NotificationEventEnum assessmentPeriodPublished =
+      _$notificationEventEnum_assessmentPeriodPublished;
 
   static Serializer<NotificationEventEnum> get serializer =>
       _$notificationEventEnumSerializer;

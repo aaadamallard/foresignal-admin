@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:foresignal_admin/api/api.dart';
 import 'package:foresignal_admin/core/ui/ui.dart';
@@ -43,5 +44,11 @@ void main() {
       throwsA(isA<AdminTokenRequiredException>()),
     );
     expect(reread, isFalse);
+  });
+
+  testWidgets('the confirmed time is shown in UTC, as other instants are', (tester) async {
+    final at = DateTime.utc(2026, 10, 23, 19, 0, 57).toLocal();
+    await tester.pumpWidget(MaterialApp(home: Scaffold(body: WriteStatusLine(state: WriteConfirmed(at)))));
+    expect(find.text('Saved and confirmed 19:00:57'), findsOneWidget);
   });
 }

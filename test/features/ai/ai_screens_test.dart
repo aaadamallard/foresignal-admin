@@ -121,6 +121,16 @@ void main() {
     expect(find.text('assessment @ 1'), findsOneWidget);
   });
 
+  testWidgets('the bundled templates are listed, and choosing one loads it', (tester) async {
+    await openAt(tester, aiPath, adapter: aiBackend(PreviewLlm()));
+    await tester.tap(find.byKey(const Key('ai.tab.templates')));
+    await tester.pumpAndSettle();
+    expect(find.byKey(const Key('ai.templates.ask')), findsOneWidget);
+    await tester.tap(find.byKey(const Key('ai.templates.assessment')));
+    await tester.pumpAndSettle();
+    expect(find.text('assessment @ 3'), findsOneWidget);
+  });
+
   testWidgets('usage shows totals, the token chart and the provider table', (tester) async {
     await openAt(tester, aiPath, adapter: aiBackend(PreviewLlm()));
     await tester.tap(find.byKey(const Key('ai.tab.usage')));

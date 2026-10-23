@@ -162,6 +162,21 @@ void main() {
     expect(body.containsKey('secrets'), isFalse);
   });
 
+  testWidgets('a test send from the channels table keeps the row narrow', (tester) async {
+    await openAt(tester, alertChannelsPath, adapter: alertsBackend(PreviewAlerts()));
+    await _tapKey(tester, 'channels.test.$previewChannelWebhook');
+    final result = find.byKey(const Key('channels.testResult.$previewChannelWebhook'));
+    expect(result, findsOneWidget);
+    expect((tester.widget(result) as Tooltip).message, 'Sent in 184 ms');
+    expect(find.text('Sent in 184 ms'), findsNothing);
+  });
+
+  testWidgets('a test send from the channel page shows the result as text', (tester) async {
+    await openAt(tester, alertChannelPath(previewChannelWebhook), adapter: alertsBackend(PreviewAlerts()));
+    await _tapKey(tester, 'channels.test.$previewChannelWebhook');
+    expect(find.text('Sent in 184 ms'), findsOneWidget);
+  });
+
   testWidgets('deleting a policy rules still use explains why it stays', (tester) async {
     await openAt(tester, alertPolicyPath(previewPolicyDuty), adapter: alertsBackend(PreviewAlerts()));
     await _tapKey(tester, 'policy.delete');

@@ -20,7 +20,7 @@ part 'source_health.g.dart';
 /// Properties:
 /// * [sourceId]
 /// * [status]
-/// * [statusReason]
+/// * [statusReason] - null while healthy
 /// * [lastAttemptAt]
 /// * [lastSuccessAt]
 /// * [lastErrorAt]
@@ -56,6 +56,7 @@ abstract class SourceHealth
   HealthStatus get status;
   // enum statusEnum {  healthy,  degraded,  failing,  idle,  disabled,  };
 
+  /// null while healthy
   @BuiltValueField(wireName: r'statusReason')
   String? get statusReason;
 
@@ -177,7 +178,7 @@ class _$SourceHealthSerializer implements PrimitiveSerializer<SourceHealth> {
       yield r'statusReason';
       yield serializers.serialize(
         object.statusReason,
-        specifiedType: const FullType(String),
+        specifiedType: const FullType.nullable(String),
       );
     }
     if (object.lastAttemptAt != null) {

@@ -309,7 +309,7 @@ class WatchlistScreen extends ConsumerWidget {
           ],
           subtitle: list.value == null
               ? null
-              : '${wireText('${list.value!['identity']}')} · ${list.value!['itemCount']} items',
+              : '${wireText('${list.value!['identity']}')} · ${watchlistItemCount(list.value!['itemCount'])}',
         ),
         AsyncView<Json>(
           value: list,
@@ -833,7 +833,7 @@ class _DeleteWatchlistCardState extends ConsumerState<_DeleteWatchlistCard> with
       children: <Widget>[
         if (_confirming)
           ConfirmRow(
-            message: 'Delete "${widget.watchlist['name']}" and its ${widget.watchlist['itemCount']} items?',
+            message: 'Delete "${widget.watchlist['name']}" and its ${watchlistItemCount(widget.watchlist['itemCount'])}?',
             action: 'Delete',
             confirmKey: const Key('watchlist.delete.confirm'),
             onConfirm: () {
@@ -856,3 +856,6 @@ class _DeleteWatchlistCardState extends ConsumerState<_DeleteWatchlistCard> with
     ),
   );
 }
+
+/// "1 item" or "N items" for a watchlist's `itemCount`.
+String watchlistItemCount(Object? count) => count == 1 ? '1 item' : '$count items';

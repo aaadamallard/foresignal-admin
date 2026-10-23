@@ -61,6 +61,17 @@ void main() {
     expect(find.text('Error'), findsOneWidget);
   });
 
+  testWidgets('the Edit & Test icon in a recipe row opens that recipe', (tester) async {
+    await openAt(tester, analysisPath, adapter: analysisBackend(PreviewAnalysis()));
+    await _tab(tester, 'recipes');
+    final edit = find.byKey(const Key('analysis.recipe.vessel-dark-gap'));
+    expect(tester.widget<IconButton>(edit).tooltip, 'Edit & Test');
+    await tester.ensureVisible(edit);
+    await tester.tap(edit);
+    await tester.pumpAndSettle();
+    expect(find.byKey(const Key('recipe.test.run')), findsOneWidget);
+  });
+
   testWidgets('a bundled recipe saves only enabled and overrides', (tester) async {
     final a = PreviewAnalysis();
     final adapter = await openAt(
@@ -122,6 +133,31 @@ void main() {
     await _tapSave(tester);
     expect(find.byKey(const Key('event.reload')), findsOneWidget);
     expect(a.events[_event]!['title'], isNot('Renamed'));
+  });
+
+  testWidgets('an overridden severity is cleared with an explicit null', (tester) async {
+    final a = PreviewAnalysis();
+    a.events[_event]!['severityOverridden'] = true;
+    final adapter = await openAt(tester, analysisEventPath(_event), adapter: analysisBackend(a));
+    await tester.ensureVisible(find.byKey(const Key('event.severityField')));
+    await tester.tap(find.byKey(const Key('event.severityField')));
+    await tester.pumpAndSettle();
+    await tester.tap(find.text('Computed (clear override)').last);
+    await tester.pumpAndSettle();
+    await _tapSave(tester);
+
+    final patch = adapter.requests.singleWhere((r) => r.method == 'PATCH');
+    expect(patch.body, <String, Object?>{'severity': null});
+    expect(a.events[_event]!['severityOverridden'], isFalse);
+    expect(find.text('Computed (clear override)'), findsNothing);
+  });
+
+  testWidgets('a computed severity offers no clear choice', (tester) async {
+    await openAt(tester, analysisEventPath(_event), adapter: analysisBackend(PreviewAnalysis()));
+    await tester.ensureVisible(find.byKey(const Key('event.severityField')));
+    await tester.tap(find.byKey(const Key('event.severityField')));
+    await tester.pumpAndSettle();
+    expect(find.text('Computed (clear override)'), findsNothing);
   });
 
   testWidgets('a member is removed after confirming', (tester) async {
@@ -194,6 +230,21 @@ void main() {
     await _tab(tester, 'calibration');
     expect(find.text('Uncalibrated'), findsOneWidget);
     expect(find.text('17 of 50 needed'), findsOneWidget);
+  });
+
+  testWidgets('calibration with no scope yet says so instead of showing nothing', (tester) async {
+    final backend = analysisBackend(PreviewAnalysis());
+    await openAt(
+      tester,
+      analysisPath,
+      adapter: FakeAdapter(
+        (request) => request.uri.path == '/v1/intel/calibration'
+            ? FakeResponse.json(const <String, Object?>{'scopes': <Object?>[]})
+            : backend.handler(request),
+      ),
+    );
+    await _tab(tester, 'calibration');
+    expect(find.byKey(const Key('calibration.empty')), findsOneWidget);
   });
 
   testWidgets('corroboration saves the policy and an emptied field defaults', (tester) async {

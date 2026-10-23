@@ -40,7 +40,7 @@ abstract class NotificationMessage
 
   @BuiltValueField(wireName: r'event')
   NotificationMessageEventEnum get event;
-  // enum eventEnum {  alert,  briefing,  system,  test,  };
+  // enum eventEnum {  alert,  briefing,  system,  chronicle.proposed,  chronicle.cap_warning,  chronicle.gap,  social.divergence,  social.attention_gap,  analyst.note,  situation.activated,  situation.escalated,  finding.significant,  forecast.resolved,  forecast.resolution_needed,  hypothesis.band_changed,  indicator.observed,  assumption.broken,  assessment.published,  mention,  share,  report.received,  package.received,  chronicle.access.requested,  saved-search.matches,  test,  personal,  };
 
   /// e.g. alert.fired, alert.acknowledged, alert.snoozed, alert.resolved, alert.digest (a quiet-hours, pause, backlog or grouping digest), system.source_failing, system.rule_storm, system.delivery_failed, system.push_provider_failed (032), briefing.run (029)
   @BuiltValueField(wireName: r'subtype')
@@ -454,9 +454,76 @@ class NotificationMessageEventEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'system')
   static const NotificationMessageEventEnum system =
       _$notificationMessageEventEnum_system;
+  @BuiltValueEnumConst(wireName: r'chronicle.proposed')
+  static const NotificationMessageEventEnum chroniclePeriodProposed =
+      _$notificationMessageEventEnum_chroniclePeriodProposed;
+  @BuiltValueEnumConst(wireName: r'chronicle.cap_warning')
+  static const NotificationMessageEventEnum chroniclePeriodCapWarning =
+      _$notificationMessageEventEnum_chroniclePeriodCapWarning;
+  @BuiltValueEnumConst(wireName: r'chronicle.gap')
+  static const NotificationMessageEventEnum chroniclePeriodGap =
+      _$notificationMessageEventEnum_chroniclePeriodGap;
+  @BuiltValueEnumConst(wireName: r'social.divergence')
+  static const NotificationMessageEventEnum socialPeriodDivergence =
+      _$notificationMessageEventEnum_socialPeriodDivergence;
+  @BuiltValueEnumConst(wireName: r'social.attention_gap')
+  static const NotificationMessageEventEnum socialPeriodAttentionGap =
+      _$notificationMessageEventEnum_socialPeriodAttentionGap;
+  @BuiltValueEnumConst(wireName: r'analyst.note')
+  static const NotificationMessageEventEnum analystPeriodNote =
+      _$notificationMessageEventEnum_analystPeriodNote;
+  @BuiltValueEnumConst(wireName: r'situation.activated')
+  static const NotificationMessageEventEnum situationPeriodActivated =
+      _$notificationMessageEventEnum_situationPeriodActivated;
+  @BuiltValueEnumConst(wireName: r'situation.escalated')
+  static const NotificationMessageEventEnum situationPeriodEscalated =
+      _$notificationMessageEventEnum_situationPeriodEscalated;
+  @BuiltValueEnumConst(wireName: r'finding.significant')
+  static const NotificationMessageEventEnum findingPeriodSignificant =
+      _$notificationMessageEventEnum_findingPeriodSignificant;
+  @BuiltValueEnumConst(wireName: r'forecast.resolved')
+  static const NotificationMessageEventEnum forecastPeriodResolved =
+      _$notificationMessageEventEnum_forecastPeriodResolved;
+  @BuiltValueEnumConst(wireName: r'forecast.resolution_needed')
+  static const NotificationMessageEventEnum forecastPeriodResolutionNeeded =
+      _$notificationMessageEventEnum_forecastPeriodResolutionNeeded;
+  @BuiltValueEnumConst(wireName: r'hypothesis.band_changed')
+  static const NotificationMessageEventEnum hypothesisPeriodBandChanged =
+      _$notificationMessageEventEnum_hypothesisPeriodBandChanged;
+  @BuiltValueEnumConst(wireName: r'indicator.observed')
+  static const NotificationMessageEventEnum indicatorPeriodObserved =
+      _$notificationMessageEventEnum_indicatorPeriodObserved;
+  @BuiltValueEnumConst(wireName: r'assumption.broken')
+  static const NotificationMessageEventEnum assumptionPeriodBroken =
+      _$notificationMessageEventEnum_assumptionPeriodBroken;
+  @BuiltValueEnumConst(wireName: r'assessment.published')
+  static const NotificationMessageEventEnum assessmentPeriodPublished =
+      _$notificationMessageEventEnum_assessmentPeriodPublished;
+  @BuiltValueEnumConst(wireName: r'mention')
+  static const NotificationMessageEventEnum mention =
+      _$notificationMessageEventEnum_mention;
+  @BuiltValueEnumConst(wireName: r'share')
+  static const NotificationMessageEventEnum share =
+      _$notificationMessageEventEnum_share;
+  @BuiltValueEnumConst(wireName: r'report.received')
+  static const NotificationMessageEventEnum reportPeriodReceived =
+      _$notificationMessageEventEnum_reportPeriodReceived;
+  @BuiltValueEnumConst(wireName: r'package.received')
+  static const NotificationMessageEventEnum packagePeriodReceived =
+      _$notificationMessageEventEnum_packagePeriodReceived;
+  @BuiltValueEnumConst(wireName: r'chronicle.access.requested')
+  static const NotificationMessageEventEnum
+  chroniclePeriodAccessPeriodRequested =
+      _$notificationMessageEventEnum_chroniclePeriodAccessPeriodRequested;
+  @BuiltValueEnumConst(wireName: r'saved-search.matches')
+  static const NotificationMessageEventEnum savedSearchPeriodMatches =
+      _$notificationMessageEventEnum_savedSearchPeriodMatches;
   @BuiltValueEnumConst(wireName: r'test')
   static const NotificationMessageEventEnum test =
       _$notificationMessageEventEnum_test;
+  @BuiltValueEnumConst(wireName: r'personal')
+  static const NotificationMessageEventEnum personal =
+      _$notificationMessageEventEnum_personal;
 
   static Serializer<NotificationMessageEventEnum> get serializer =>
       _$notificationMessageEventEnumSerializer;

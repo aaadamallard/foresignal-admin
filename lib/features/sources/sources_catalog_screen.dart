@@ -258,8 +258,8 @@ class _SourcesCatalogScreenState extends ConsumerState<SourcesCatalogScreen> {
       empty: 'No source matches these filters.',
       onTap: (s) => context.go(sourceDetailPath(s.id)),
       columns: <TableColumnSpec<SourceSummary>>[
-        TableColumnSpec<SourceSummary>(label: 'Name', cell: (s) => Text(s.name)),
-        TableColumnSpec<SourceSummary>(label: 'Kind', cell: (s) => Text(s.kinds.join(', '))),
+        TableColumnSpec<SourceSummary>(label: 'Name', cell: (s) => ClippedText(s.name, maxWidth: 300)),
+        TableColumnSpec<SourceSummary>(label: 'Kind', cell: (s) => ClippedText(s.kinds.join(', '), maxWidth: 200)),
         TableColumnSpec<SourceSummary>(label: 'Enabled', cell: _enabledSwitch),
         TableColumnSpec<SourceSummary>(
           label: 'Health',

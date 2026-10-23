@@ -15,7 +15,7 @@ part 'correlation_recipe_update.g.dart';
 ///
 /// Properties:
 /// * [enabled]
-/// * [params] - Parameter overrides
+/// * [params] - Parameter overrides; null removes them
 /// * [definition]
 @BuiltValue()
 abstract class CorrelationRecipeUpdate
@@ -23,7 +23,7 @@ abstract class CorrelationRecipeUpdate
   @BuiltValueField(wireName: r'enabled')
   bool? get enabled;
 
-  /// Parameter overrides
+  /// Parameter overrides; null removes them
   @BuiltValueField(wireName: r'params')
   BuiltMap<String, JsonObject?>? get params;
 
@@ -71,7 +71,7 @@ class _$CorrelationRecipeUpdateSerializer
       yield r'params';
       yield serializers.serialize(
         object.params,
-        specifiedType: const FullType(BuiltMap, [
+        specifiedType: const FullType.nullable(BuiltMap, [
           FullType(String),
           FullType.nullable(JsonObject),
         ]),

@@ -5,6 +5,7 @@ import 'package:foresignal_admin/api/sse.dart';
 import 'package:foresignal_admin/features/alerts/alert_inbox.dart';
 import 'package:foresignal_admin/features/alerts/alerts_drafts.dart';
 import 'package:foresignal_admin/features/alerts/alerts_providers.dart';
+import 'package:foresignal_admin/features/alerts/watchlists.dart';
 
 const AlertFilter _open = (states: <String>{'firing', 'acknowledged'}, minSeverity: null, ruleId: null);
 
@@ -254,5 +255,30 @@ void main() {
       expect(alertMatches(_alert(1), filter), isFalse);
       expect(alertMatches(_alert(1, severity: 'critical'), filter), isTrue);
     });
+  });
+
+  test('a watchlist item count reads "1 item", never "1 items"', () {
+    expect(watchlistItemCount(1), '1 item');
+    expect(watchlistItemCount(0), '0 items');
+    expect(watchlistItemCount(2), '2 items');
+  });
+
+  test('a weather context lists only the sections that are not ok', () {
+    final entries = weatherContextEntries(<String, Object?>{
+      'status': 'ok',
+      'radar': <String, Object?>{'status': 'ok', 'maxDbz': 0.0},
+      'lightning': <String, Object?>{
+        'status': 'stale',
+        'statusText': 'No GLM file within 2 minutes',
+        'asOf': '2026-10-23T16:40:00Z',
+      },
+      'summary': 'Radar max 0 dBZ within 10 km',
+    });
+    expect(entries.map((e) => e.key), <String>['Lightning']);
+    expect('${entries.single.value}', startsWith('Stale · No GLM file within 2 minutes · last good '));
+
+    final failed = weatherContextEntries(<String, Object?>{'status': 'unavailable'});
+    expect(failed.single.key, 'Weather');
+    expect('${failed.single.value}', 'Unavailable; unknown, not clear');
   });
 }

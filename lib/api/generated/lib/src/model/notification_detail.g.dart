@@ -12,6 +12,27 @@ const NotificationDetailEventEnum _$notificationDetailEventEnum_briefing =
     const NotificationDetailEventEnum._('briefing');
 const NotificationDetailEventEnum _$notificationDetailEventEnum_system =
     const NotificationDetailEventEnum._('system');
+const NotificationDetailEventEnum
+_$notificationDetailEventEnum_analystPeriodNote =
+    const NotificationDetailEventEnum._('analystPeriodNote');
+const NotificationDetailEventEnum
+_$notificationDetailEventEnum_situationPeriodActivated =
+    const NotificationDetailEventEnum._('situationPeriodActivated');
+const NotificationDetailEventEnum
+_$notificationDetailEventEnum_situationPeriodEscalated =
+    const NotificationDetailEventEnum._('situationPeriodEscalated');
+const NotificationDetailEventEnum
+_$notificationDetailEventEnum_findingPeriodSignificant =
+    const NotificationDetailEventEnum._('findingPeriodSignificant');
+const NotificationDetailEventEnum
+_$notificationDetailEventEnum_forecastPeriodResolutionNeeded =
+    const NotificationDetailEventEnum._('forecastPeriodResolutionNeeded');
+const NotificationDetailEventEnum
+_$notificationDetailEventEnum_hypothesisPeriodBandChanged =
+    const NotificationDetailEventEnum._('hypothesisPeriodBandChanged');
+const NotificationDetailEventEnum
+_$notificationDetailEventEnum_assessmentPeriodPublished =
+    const NotificationDetailEventEnum._('assessmentPeriodPublished');
 
 NotificationDetailEventEnum _$notificationDetailEventEnumValueOf(String name) {
   switch (name) {
@@ -21,6 +42,20 @@ NotificationDetailEventEnum _$notificationDetailEventEnumValueOf(String name) {
       return _$notificationDetailEventEnum_briefing;
     case 'system':
       return _$notificationDetailEventEnum_system;
+    case 'analystPeriodNote':
+      return _$notificationDetailEventEnum_analystPeriodNote;
+    case 'situationPeriodActivated':
+      return _$notificationDetailEventEnum_situationPeriodActivated;
+    case 'situationPeriodEscalated':
+      return _$notificationDetailEventEnum_situationPeriodEscalated;
+    case 'findingPeriodSignificant':
+      return _$notificationDetailEventEnum_findingPeriodSignificant;
+    case 'forecastPeriodResolutionNeeded':
+      return _$notificationDetailEventEnum_forecastPeriodResolutionNeeded;
+    case 'hypothesisPeriodBandChanged':
+      return _$notificationDetailEventEnum_hypothesisPeriodBandChanged;
+    case 'assessmentPeriodPublished':
+      return _$notificationDetailEventEnum_assessmentPeriodPublished;
     default:
       throw ArgumentError(name);
   }
@@ -32,6 +67,13 @@ _$notificationDetailEventEnumValues =
       _$notificationDetailEventEnum_alert,
       _$notificationDetailEventEnum_briefing,
       _$notificationDetailEventEnum_system,
+      _$notificationDetailEventEnum_analystPeriodNote,
+      _$notificationDetailEventEnum_situationPeriodActivated,
+      _$notificationDetailEventEnum_situationPeriodEscalated,
+      _$notificationDetailEventEnum_findingPeriodSignificant,
+      _$notificationDetailEventEnum_forecastPeriodResolutionNeeded,
+      _$notificationDetailEventEnum_hypothesisPeriodBandChanged,
+      _$notificationDetailEventEnum_assessmentPeriodPublished,
     ]);
 
 const NotificationDetailSeverityEnum _$notificationDetailSeverityEnum_info =
@@ -117,11 +159,25 @@ class _$NotificationDetailEventEnumSerializer
     'alert': 'alert',
     'briefing': 'briefing',
     'system': 'system',
+    'analystPeriodNote': 'analyst.note',
+    'situationPeriodActivated': 'situation.activated',
+    'situationPeriodEscalated': 'situation.escalated',
+    'findingPeriodSignificant': 'finding.significant',
+    'forecastPeriodResolutionNeeded': 'forecast.resolution_needed',
+    'hypothesisPeriodBandChanged': 'hypothesis.band_changed',
+    'assessmentPeriodPublished': 'assessment.published',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'alert': 'alert',
     'briefing': 'briefing',
     'system': 'system',
+    'analyst.note': 'analystPeriodNote',
+    'situation.activated': 'situationPeriodActivated',
+    'situation.escalated': 'situationPeriodEscalated',
+    'finding.significant': 'findingPeriodSignificant',
+    'forecast.resolution_needed': 'forecastPeriodResolutionNeeded',
+    'hypothesis.band_changed': 'hypothesisPeriodBandChanged',
+    'assessment.published': 'assessmentPeriodPublished',
   };
 
   @override

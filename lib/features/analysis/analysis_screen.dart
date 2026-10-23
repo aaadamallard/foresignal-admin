@@ -327,9 +327,9 @@ class RecipesPanel extends ConsumerWidget {
           ),
           TableColumnSpec<CorrelationRecipe>(
             label: 'Seeds',
-            cell: (r) => Text(
+            cell: (r) => ClippedText(
               <String>[...?r.definition.seed.kinds, ...?r.definition.seed.sources].join(', '),
-              overflow: TextOverflow.ellipsis,
+              maxWidth: 140,
             ),
           ),
           TableColumnSpec<CorrelationRecipe>(
@@ -368,10 +368,12 @@ class RecipesPanel extends ConsumerWidget {
           ),
           TableColumnSpec<CorrelationRecipe>(
             label: 'Actions',
-            cell: (r) => TonalButton(
+            // An icon, so all eight columns fit a 1280-wide window.
+            cell: (r) => IconButton(
               key: Key('analysis.recipe.${r.id}'),
-              label: 'Edit & Test',
+              tooltip: 'Edit & Test',
               onPressed: () => context.go(analysisRecipePath(r.id)),
+              icon: const Icon(Icons.edit_outlined, size: 20),
             ),
           ),
         ],
@@ -1008,7 +1010,14 @@ class CalibrationPanel extends ConsumerWidget {
     return AsyncView<List<IntelCalibration>>(
       value: ref.watch(intelCalibrationProvider),
       onRetry: () => ref.invalidate(intelCalibrationProvider),
-      data: (scopes) => Column(
+      data: (scopes) => scopes.isEmpty
+          ? Text(
+              key: const Key('calibration.empty'),
+              'No calibration yet: confidence stays raw until resolved events give a scope '
+              'a sample.',
+              style: TextStyle(color: AdminPalette.of(context).muted),
+            )
+          : Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
           for (final c in scopes) ...<Widget>[

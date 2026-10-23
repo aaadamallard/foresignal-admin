@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../api/api_errors.dart';
+import '../format/instant_text.dart';
 import 'error_banner.dart';
 import 'status_chip.dart';
 
@@ -104,7 +105,7 @@ class WriteStatusLine extends StatelessWidget {
         ],
       ),
       WriteConfirmed(:final at) => StatusChip(
-        label: 'Saved and confirmed ${_time(at)}',
+        label: 'Saved and confirmed ${utcClockText(at)}',
         tone: StatusTone.ok,
         tooltip: 'The backend was re-read after saving and holds this value.',
       ),
@@ -113,10 +114,5 @@ class WriteStatusLine extends StatelessWidget {
         title: error is WriteNotConfirmedException ? 'Saved, but not confirmed' : 'Could not save',
       ),
     };
-  }
-
-  static String _time(DateTime at) {
-    String two(int n) => n.toString().padLeft(2, '0');
-    return '${two(at.hour)}:${two(at.minute)}:${two(at.second)}';
   }
 }

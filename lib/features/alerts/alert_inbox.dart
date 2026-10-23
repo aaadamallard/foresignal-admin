@@ -174,7 +174,14 @@ class _InboxPanelState extends ConsumerState<InboxPanel> {
     });
     _subscription = ref
         .read(sseClientProvider)
-        .connect(SseStream.alerts)
+        .connect(
+          SseStream.alerts,
+          onOpen: () {
+            if (mounted) {
+              setState(() => _live = LiveStatus.live);
+            }
+          },
+        )
         .listen(
           _onEvent,
           onError: (Object e) {
@@ -669,6 +676,26 @@ class _AlertBody extends ConsumerWidget {
               style: const TextStyle(fontFamily: 'monospace', fontSize: 12),
             ),
     );
+    final weather = jsonMap(jsonMap(alert, 'context'), 'weather');
+    final weatherCard = weather == null
+        ? null
+        : SectionCard(
+            key: const Key('alert.weather'),
+            title: 'Weather',
+            subtitle: weather['at'] == null
+                ? 'Computed for the alert.'
+                : 'Computed for ${whenText(weather['at'])}, when the record was observed.',
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: <Widget>[
+                if (weather['summary'] case final String text) Text(text),
+                if (weatherContextEntries(weather) case final entries when entries.isNotEmpty) ...<Widget>[
+                  const SizedBox(height: 12),
+                  KeyValueList(keyWidth: desktop ? 160 : 120, entries: entries),
+                ],
+              ],
+            ),
+          );
     final cards = <Widget>[
       AlertActionsCard(key: ValueKey<String>('actions.$id.${alert['rev']}'), alert: alert),
       const SizedBox(height: 16),
@@ -689,7 +716,14 @@ class _AlertBody extends ConsumerWidget {
     if (!desktop) {
       return Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: <Widget>[summary, const SizedBox(height: 16), ...cards, const SizedBox(height: 16), recordCard],
+        children: <Widget>[
+          summary,
+          if (weatherCard != null) ...<Widget>[const SizedBox(height: 16), weatherCard],
+          const SizedBox(height: 16),
+          ...cards,
+          const SizedBox(height: 16),
+          recordCard,
+        ],
       );
     }
     return Column(
@@ -698,7 +732,15 @@ class _AlertBody extends ConsumerWidget {
         Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            Expanded(child: summary),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: <Widget>[
+                  summary,
+                  if (weatherCard != null) ...<Widget>[const SizedBox(height: 16), weatherCard],
+                ],
+              ),
+            ),
             const SizedBox(width: 16),
             SizedBox(
               width: 460,
@@ -980,4 +1022,36 @@ class _EscalationCard extends ConsumerWidget {
       ),
     );
   }
+}
+
+/// The weather sections of an alert's `context.weather` (`WeatherContext`)
+/// that are not `ok`, each with its status and explanation: an unknown
+/// section means unknown, never clear, so it is spelled out beside the
+/// summary. A context whose computation failed is one entry.
+List<MapEntry<String, Object>> weatherContextEntries(Json weather) {
+  if (weather['status'] != 'ok') {
+    return <MapEntry<String, Object>>[
+      MapEntry<String, Object>('Weather', '${wireText('${weather['status'] ?? 'unavailable'}')}; unknown, not clear'),
+    ];
+  }
+  const sections = <String, String>{
+    'radar': 'Radar',
+    'lightning': 'Lightning',
+    'precip': 'Precipitation',
+    'warnings': 'Warnings',
+    'wind': 'Wind',
+    'smoke': 'Smoke',
+  };
+  return <MapEntry<String, Object>>[
+    for (final MapEntry(:key, :value) in sections.entries)
+      if (jsonMap(weather, key) case final section? when section['status'] != 'ok')
+        MapEntry<String, Object>(
+          value,
+          <String>[
+            wireText('${section['status']}'),
+            if (section['statusText'] case final String why) why,
+            if (section['asOf'] != null) 'last good ${whenText(section['asOf'])}',
+          ].join(' · '),
+        ),
+  ];
 }

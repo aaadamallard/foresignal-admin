@@ -107,6 +107,19 @@ void main() {
     expect(find.text('MANUAL'), findsOneWidget);
   });
 
+  testWidgets('a fetch outcome survives a switch to another tab and back', (tester) async {
+    await openAt(tester, sourceTestPath('acled'), adapter: validateBackend());
+    await tester.tap(find.byKey(const Key('test.fetchNow')));
+    await tester.tap(find.byKey(const Key('test.tab.doctor')));
+    await tester.pumpAndSettle();
+    expect(find.byKey(const Key('test.fetchOutcome')), findsNothing);
+
+    await tester.tap(find.byKey(const Key('test.tab.fetch')));
+    await tester.pumpAndSettle();
+    expect(find.byKey(const Key('test.fetchOutcome')), findsOneWidget);
+    expect(find.text('MANUAL'), findsOneWidget);
+  });
+
   testWidgets('the doctor follows a 202 to the finished report', (tester) async {
     final adapter = await openAt(tester, sourceTestPath('acled'), adapter: validateBackend());
     await tester.tap(find.byKey(const Key('test.tab.doctor')));
@@ -164,6 +177,23 @@ void main() {
     await tester.tap(find.byKey(const Key('oneTimeSecret.dismiss')));
     await tester.pumpAndSettle();
     expect(find.byKey(const Key('oneTimeSecret')), findsNothing);
+  });
+
+  testWidgets('the ingest key is scrolled into view after creating', (tester) async {
+    await openAt(tester, customSourcesPath, adapter: validateBackend());
+    await tester.tap(find.byKey(const Key('custom.new')));
+    await tester.pumpAndSettle();
+    await tester.enterText(find.byKey(const Key('custom.id')), 'custom-river-gauge');
+    await tester.enterText(find.byKey(const Key('custom.name')), 'River Gauge');
+    await tester.enterText(find.byKey(const Key('custom.kinds')), 'water-level');
+    await tester.ensureVisible(find.byKey(const Key('form.save')));
+    await tester.tap(find.byKey(const Key('form.save')));
+    await tester.pumpAndSettle();
+
+    final panel = tester.getRect(find.byKey(const Key('oneTimeSecret')));
+    final screen = tester.view.physicalSize / tester.view.devicePixelRatio;
+    expect(panel.top, greaterThanOrEqualTo(0));
+    expect(panel.top, lessThan(screen.height));
   });
 
   testWidgets('an invalid custom source id is refused before sending', (tester) async {

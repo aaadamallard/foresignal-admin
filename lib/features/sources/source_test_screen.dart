@@ -74,16 +74,28 @@ class _SourceTestScreenState extends ConsumerState<SourceTestScreen> {
               ),
             ),
             const SizedBox(height: 20),
+            // The three action panels stay mounted while another tab shows, so a
+            // fetch, probe or doctor run started on one finishes there: its
+            // outcome is still on screen on return, and the lists it changes
+            // are re-read.
+            for (final (tab, panel) in <(SourceTestTab, Widget)>[
+              (SourceTestTab.fetch, FetchNowPanel(sourceId: id)),
+              (SourceTestTab.probe, ProbePanel(sourceId: id)),
+              (SourceTestTab.doctor, DoctorPanel(sourceId: id)),
+            ])
+              Offstage(
+                key: Key('test.panel.${tab.name}'),
+                offstage: _tab != tab,
+                child: panel,
+              ),
             switch (_tab) {
-              SourceTestTab.fetch => FetchNowPanel(sourceId: id),
-              SourceTestTab.probe => ProbePanel(sourceId: id),
-              SourceTestTab.doctor => DoctorPanel(sourceId: id),
               SourceTestTab.health => AsyncView<SourceHealth>(
                 value: ref.watch(sourceHealthOneProvider(id)),
                 onRetry: () => ref.invalidate(sourceHealthOneProvider(id)),
                 data: (h) => SourceHealthView(health: h),
               ),
               SourceTestTab.usage => UsagePanel(sourceId: id),
+              _ => const SizedBox.shrink(),
             },
           ],
         );

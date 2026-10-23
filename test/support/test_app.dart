@@ -99,11 +99,13 @@ const Map<String, Object?> serverSettingsBody = <String, Object?>{
 };
 
 /// A fake backend for Connect: accepts [adminToken] for getServerSettings,
-/// answers 401 to any other token, and reports [apiVersion].
+/// answering [serverSettings], answers 401 to any other token, and reports
+/// [apiVersion].
 FakeAdapter connectBackend({
   String adminToken = 'fsr_good',
   String apiVersion = '1.3.0',
   int badTokenStatus = 401,
+  Map<String, Object?> serverSettings = serverSettingsBody,
 }) {
   return FakeAdapter((request) {
     switch (request.uri.path) {
@@ -116,7 +118,7 @@ FakeAdapter connectBackend({
         return FakeResponse.json(contractBody);
       case '/v1/settings/server':
         if (request.options.headers['Authorization'] == 'Bearer $adminToken') {
-          return FakeResponse.json(serverSettingsBody);
+          return FakeResponse.json(serverSettings);
         }
         return FakeResponse.problem(
           <String, Object?>{'title': 'Refused', 'status': badTokenStatus},

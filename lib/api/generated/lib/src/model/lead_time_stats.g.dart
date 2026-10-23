@@ -10,7 +10,7 @@ class _$LeadTimeStats extends LeadTimeStats {
   @override
   final DateTime generatedAt;
   @override
-  final DateTime trainingCutoff;
+  final DateTime? trainingCutoff;
   @override
   final LeadTimeStatsFilters? filters;
   @override
@@ -23,7 +23,7 @@ class _$LeadTimeStats extends LeadTimeStats {
 
   _$LeadTimeStats._({
     required this.generatedAt,
-    required this.trainingCutoff,
+    this.trainingCutoff,
     this.filters,
     required this.groups,
     this.caveats,
@@ -140,11 +140,7 @@ class LeadTimeStatsBuilder
               r'LeadTimeStats',
               'generatedAt',
             ),
-            trainingCutoff: BuiltValueNullFieldError.checkNotNull(
-              trainingCutoff,
-              r'LeadTimeStats',
-              'trainingCutoff',
-            ),
+            trainingCutoff: trainingCutoff,
             filters: _filters?.build(),
             groups: groups.build(),
             caveats: _caveats?.build(),

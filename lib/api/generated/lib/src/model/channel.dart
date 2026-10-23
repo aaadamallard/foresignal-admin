@@ -21,7 +21,7 @@ part 'channel.g.dart';
 /// * [type]
 /// * [config]
 /// * [secretFields] - Names of the secret fields that are set (values are never returned)
-/// * [events]
+/// * [events] - The subscribed events. `personal` marks a principal's personal channel (prompt 130), which carries only that principal's notifications; createChannel and updateChannel never accept it. `mention`, `share`, `report.received`, `package.received`, `chronicle.proposed`, `chronicle.cap_warning`, `chronicle.gap`, `chronicle.access.requested` and `saved-search.matches` on an instance channel receive a copy of each such personal notice, once per addressee, with its TLP label at the head; the copies never reach the device inbox or the instance SSE topics
 /// * [ruleIds]
 /// * [minSeverity]
 /// * [titleTemplate]
@@ -62,9 +62,10 @@ abstract class Channel implements Built<Channel, ChannelBuilder> {
   @BuiltValueField(wireName: r'secretFields')
   BuiltList<String>? get secretFields;
 
+  /// The subscribed events. `personal` marks a principal's personal channel (prompt 130), which carries only that principal's notifications; createChannel and updateChannel never accept it. `mention`, `share`, `report.received`, `package.received`, `chronicle.proposed`, `chronicle.cap_warning`, `chronicle.gap`, `chronicle.access.requested` and `saved-search.matches` on an instance channel receive a copy of each such personal notice, once per addressee, with its TLP label at the head; the copies never reach the device inbox or the instance SSE topics
   @BuiltValueField(wireName: r'events')
   BuiltList<ChannelEventsEnum> get events;
-  // enum eventsEnum {  alert,  briefing,  system,  chronicle.proposed,  chronicle.cap_warning,  chronicle.gap,  social.divergence,  social.attention_gap,  analyst.note,  situation.activated,  situation.escalated,  finding.significant,  forecast.resolved,  forecast.resolution_needed,  hypothesis.band_changed,  indicator.observed,  assumption.broken,  assessment.published,  mention,  share,  report.received,  package.received,  chronicle.access.requested,  saved-search.matches,  };
+  // enum eventsEnum {  alert,  briefing,  system,  chronicle.proposed,  chronicle.cap_warning,  chronicle.gap,  social.divergence,  social.attention_gap,  analyst.note,  situation.activated,  situation.escalated,  finding.significant,  forecast.resolved,  forecast.resolution_needed,  hypothesis.band_changed,  indicator.observed,  assumption.broken,  assessment.published,  mention,  share,  report.received,  package.received,  chronicle.access.requested,  saved-search.matches,  personal,  };
 
   @BuiltValueField(wireName: r'ruleIds')
   BuiltList<String>? get ruleIds;
@@ -796,6 +797,8 @@ class ChannelEventsEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'saved-search.matches')
   static const ChannelEventsEnum savedSearchPeriodMatches =
       _$channelEventsEnum_savedSearchPeriodMatches;
+  @BuiltValueEnumConst(wireName: r'personal')
+  static const ChannelEventsEnum personal = _$channelEventsEnum_personal;
 
   static Serializer<ChannelEventsEnum> get serializer =>
       _$channelEventsEnumSerializer;

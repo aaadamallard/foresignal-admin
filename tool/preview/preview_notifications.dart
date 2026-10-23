@@ -136,9 +136,14 @@ class PreviewNotifications {
   /// [n] with this device's read state.
   Map<String, Object?> view(Map<String, Object?> n) => <String, Object?>{...n, 'read': _read(n['id']! as int)};
 
-  /// This device's badge.
+  /// This device's badge: unread system notifications and fired alerts that
+  /// are still firing, as `getNotificationBadge` counts them.
   Map<String, Object?> badge() {
-    final unread = notifications.values.where((n) => !_read(n['id']! as int));
+    final unread = notifications.values.where(
+      (n) =>
+          !_read(n['id']! as int) &&
+          (n['event'] == 'system' || (n['subtype'] == 'alert.fired' && n['alertState'] == 'firing')),
+    );
     return <String, Object?>{
       'unread': unread.length,
       'unreadCritical': unread.where((n) => n['severity'] == 'critical').length,

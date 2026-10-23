@@ -19,9 +19,14 @@ import 'notifications_drafts.dart';
 import 'notifications_providers.dart';
 import 'presence.dart';
 
+/// A dotted event name as words, each part capitalized: `analyst.note` is
+/// "Analyst · Note", `forecast.resolution_needed` "Forecast · Resolution
+/// needed".
+String inboxEventLabel(String wire) => wire.split('.').map(wireText).join(' · ');
+
 /// A notification's event and subtype, such as "Alert · fired".
 String eventText(Json n) {
-  final event = wireText('${n['event']}');
+  final event = inboxEventLabel('${n['event']}');
   final subtype = n['subtype'] as String?;
   if (subtype == null) {
     return event;
@@ -30,7 +35,9 @@ String eventText(Json n) {
   return '$event · ${wireText(dot < 0 ? subtype : subtype.substring(dot + 1))}';
 }
 
-/// The unread counts: "3 unread · 1 critical".
+/// The badge counts: "3 on the badge · 1 critical". The badge counts unread
+/// system notifications and alerts still firing, not every unread
+/// notification, so it is labeled as the badge.
 class BadgeSummary extends StatelessWidget {
   /// Creates the summary of [badge].
   const BadgeSummary({super.key, required this.badge});
@@ -50,9 +57,12 @@ class BadgeSummary extends StatelessWidget {
       mainAxisSize: MainAxisSize.min,
       children: <Widget>[
         StatusLabel(
-          label: '${b['unread']} unread',
+          label: '${b['unread']} on the badge',
           tone: (b['unread'] as num? ?? 0) > 0 ? StatusTone.info : StatusTone.neutral,
           showIcon: false,
+          tooltip:
+              'Unread system notifications and alerts still firing on this device: the count a '
+              "phone's app badge shows. Other unread notifications are listed but not counted.",
         ),
         if (critical > 0) ...<Widget>[
           const SizedBox(width: 8),
@@ -131,7 +141,15 @@ class _NotificationsInboxPanelState extends ConsumerState<NotificationsInboxPane
     }
     _subscription = ref
         .read(sseClientProvider)
-        .connect(SseStream.notifications, headers: <String, Object>{deviceIdHeader: deviceId})
+        .connect(
+          SseStream.notifications,
+          headers: <String, Object>{deviceIdHeader: deviceId},
+          onOpen: () {
+            if (mounted) {
+              setState(() => _live = LiveStatus.live);
+            }
+          },
+        )
         .listen(
           _onEvent,
           onError: (Object e) {
@@ -224,21 +242,38 @@ class _NotificationsInboxPanelState extends ConsumerState<NotificationsInboxPane
     }
   }
 
-  Future<void> _markRead({int? upToId, int? id}) async {
+  /// Marks [id], or the [ids] shown, or everything up to [upToId] read. Sparse
+  /// reads go in batches of 500, the most one request takes.
+  Future<void> _markRead({int? upToId, int? id, Set<int>? ids}) async {
     setState(() {
       _marking = true;
       _error = null;
     });
     try {
-      final badge = await markNotificationsRead(ref, upToId: upToId, ids: id == null ? null : <int>[id]);
+      final sparse = <int>{?id, ...?ids}.toList();
+      Json? badge;
+      if (upToId != null) {
+        badge = await markNotificationsRead(ref, upToId: upToId);
+      }
+      for (var i = 0; i < sparse.length; i += 500) {
+        badge = await markNotificationsRead(
+          ref,
+          ids: sparse.sublist(i, i + 500 > sparse.length ? sparse.length : i + 500),
+        );
+      }
       if (mounted) {
         setState(() {
-          _badge = badge;
-          _items = markedRead(_items, _filter, ids: id == null ? null : <int>{id}, upToId: upToId);
-          if (id != null) {
-            _fresh.remove(id);
-          } else {
+          _badge = badge ?? _badge;
+          _items = markedRead(_items, _filter, ids: sparse.toSet(), upToId: upToId);
+          if (upToId != null) {
             _fresh.clear();
+            // Everything up to the newest is read: an unread list has no
+            // further page to load.
+            if (_filter.unreadOnly) {
+              _nextCursor = null;
+            }
+          } else {
+            _fresh.removeAll(sparse);
           }
         });
       }
@@ -267,6 +302,10 @@ class _NotificationsInboxPanelState extends ConsumerState<NotificationsInboxPane
     final desktop = ref.watch(formFactorProvider) == FormFactor.desktop;
     final unread = (_badge?['unread'] as num?) ?? 0;
     final latest = _latestId;
+    final shownUnread = <int>{
+      for (final n in _items)
+        if (n['read'] != true) (n['id']! as num).toInt(),
+    };
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: <Widget>[
@@ -286,12 +325,15 @@ class _NotificationsInboxPanelState extends ConsumerState<NotificationsInboxPane
                 },
               ),
             SizedBox(
-              width: 150,
+              width: 240,
               child: WireDropdown(
                 key: const Key('notifications.event'),
                 value: _event ?? 'any',
-                values: const <String>['any', ...notificationEvents],
-                labels: const <String, String>{'any': 'Any event'},
+                values: const <String>['any', ...inboxEvents],
+                labels: <String, String>{
+                  'any': 'Any event',
+                  for (final e in inboxEvents) e: inboxEventLabel(e),
+                },
                 onChanged: (v) {
                   setState(() => _event = v == 'any' ? null : v);
                   unawaited(_reload());
@@ -333,12 +375,25 @@ class _NotificationsInboxPanelState extends ConsumerState<NotificationsInboxPane
           crossAxisAlignment: WrapCrossAlignment.center,
           children: <Widget>[
             BadgeSummary(badge: _badge),
-            OutlinedButton.icon(
-              key: const Key('notifications.markAll'),
-              onPressed: _marking || unread == 0 || latest == null ? null : () => _markRead(upToId: latest),
-              icon: const Icon(Icons.done_all, size: 18),
-              label: const Text('Mark All Read'),
-            ),
+            // With an event or severity filter, only the notifications shown
+            // are marked: moving the device's read cursor would also mark
+            // every notification the filter hides.
+            if (_event != null || _minSeverity != null)
+              OutlinedButton.icon(
+                key: const Key('notifications.markShown'),
+                onPressed: _marking || shownUnread.isEmpty ? null : () => _markRead(ids: shownUnread),
+                icon: const Icon(Icons.done_all, size: 18),
+                label: const Text('Mark Shown Read'),
+              )
+            else
+              OutlinedButton.icon(
+                key: const Key('notifications.markAll'),
+                onPressed: _marking || (unread == 0 && shownUnread.isEmpty) || latest == null
+                    ? null
+                    : () => _markRead(upToId: latest),
+                icon: const Icon(Icons.done_all, size: 18),
+                label: const Text('Mark All Read'),
+              ),
             const Footnote('Read state is kept for this device. Reading never acknowledges an alert.'),
           ],
         ),
@@ -419,7 +474,7 @@ class _NotificationsInboxPanelState extends ConsumerState<NotificationsInboxPane
       TableColumnSpec<Json>(label: 'Severity', cell: (n) => severityLabel(n['severity'])),
       TableColumnSpec<Json>(
         label: 'Notification',
-        cell: (n) => ConstrainedBox(constraints: const BoxConstraints(maxWidth: 420), child: _title(n)),
+        cell: (n) => ConstrainedBox(constraints: const BoxConstraints(maxWidth: 360), child: _title(n)),
       ),
       TableColumnSpec<Json>(label: 'Event', cell: (n) => Text(eventText(n))),
       TableColumnSpec<Json>(label: 'Alert', cell: _alertState),

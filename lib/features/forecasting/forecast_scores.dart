@@ -276,7 +276,12 @@ class _CalibrationPanelState extends ConsumerState<CalibrationPanel> {
                   onSubmitted: (_) => _show(),
                 ),
               ),
-              TonalButton(key: const Key('calibration.show'), label: 'Show', onPressed: _show),
+              TonalButton(
+                key: const Key('calibration.show'),
+                label: 'Show',
+                // Disabled until a forecaster is chosen, so the click is not silently ignored.
+                onPressed: _forecaster.isEmpty ? null : _show,
+              ),
             ],
           ),
           const SizedBox(height: 16),
@@ -537,7 +542,11 @@ class _CompareCardState extends ConsumerState<CompareCard> with WriteTracking<Co
                 child: ForecasterPicker(key: const Key('compare.b'), value: _b, onChanged: (v) => setState(() => _b = v)),
               ),
               SizedBox(width: 160, child: PlainField(controller: _category, hint: 'Category (all)')),
-              TonalButton(key: const Key('compare.go'), label: 'Compare', onPressed: busy ? null : _compare),
+              TonalButton(
+                key: const Key('compare.go'),
+                label: 'Compare',
+                onPressed: busy || _a.isEmpty || _b.isEmpty ? null : _compare,
+              ),
             ],
           ),
           statusLine,

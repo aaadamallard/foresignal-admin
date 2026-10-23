@@ -148,16 +148,29 @@ class StackedUsage {
   /// Combines per-source series. The [top] sources by requests keep their
   /// own series, in id order so a source keeps its color while it stays in
   /// the top; the rest are summed into [other].
+  ///
+  /// The series' own `resolution` sets the bucket step, so an hour or day
+  /// the backend left out (nothing was fetched) is drawn as an empty bucket
+  /// rather than closing the gap on the time axis.
   factory StackedUsage.combine(Map<String, UsageSeries> bySource, {int top = 5}) =>
-      StackedUsage.fromPoints(<String, Map<DateTime, int>>{
-        for (final entry in bySource.entries)
-          entry.key: <DateTime, int>{for (final p in entry.value.points) p.t.toUtc(): p.requests},
-      }, top: top);
+      StackedUsage.fromPoints(
+        <String, Map<DateTime, int>>{
+          for (final entry in bySource.entries)
+            entry.key: <DateTime, int>{for (final p in entry.value.points) p.t.toUtc(): p.requests},
+        },
+        top: top,
+        step: bySource.isEmpty ? null : usageStep(wireOf(bySource.values.first.resolution)),
+      );
 
   /// Combines per-key counts by bucket start the same way as [combine]:
   /// the [top] keys by total keep their own series, in key order, and the
-  /// rest are summed into [other].
-  factory StackedUsage.fromPoints(Map<String, Map<DateTime, int>> byKey, {int top = 5}) {
+  /// rest are summed into [other]. With a [step], every bucket from the
+  /// first to the last is present, the missing ones at zero.
+  factory StackedUsage.fromPoints(
+    Map<String, Map<DateTime, int>> byKey, {
+    int top = 5,
+    Duration? step,
+  }) {
     final totals = <String, int>{
       for (final entry in byKey.entries)
         entry.key: entry.value.values.fold<int>(0, (sum, v) => sum + v),
@@ -171,6 +184,12 @@ class StackedUsage {
     final times = <DateTime>{
       for (final points in byKey.values) ...points.keys.map((t) => t.toUtc()),
     }.toList()..sort();
+    if (step != null && times.length > 1) {
+      final (first, last) = (times.first, times.last);
+      times
+        ..clear()
+        ..addAll(<DateTime>[for (var t = first; !t.isAfter(last); t = t.add(step)) t]);
+    }
     final index = <DateTime, int>{for (var i = 0; i < times.length; i++) times[i]: i};
     final values = <String, List<int>>{
       for (final k in keys) k: List<int>.filled(times.length, 0),
@@ -222,3 +241,12 @@ class StackedUsage {
   /// Requests over the window, every source.
   int get total => totals.values.fold<int>(0, (sum, v) => sum + v);
 }
+
+/// The bucket length of a usage `resolution` (`minute`, `hour`, `day`), or
+/// null for one this app does not know.
+Duration? usageStep(String resolution) => switch (resolution) {
+  'minute' => const Duration(minutes: 1),
+  'hour' => const Duration(hours: 1),
+  'day' => const Duration(days: 1),
+  _ => null,
+};

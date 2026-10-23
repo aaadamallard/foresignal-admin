@@ -521,6 +521,12 @@ class _PromptTemplatePanelState extends ConsumerState<PromptTemplatePanel> {
     super.dispose();
   }
 
+  /// Fills the id field with [id] and loads its newest version.
+  void _pick(String id) {
+    _id.text = id;
+    _load();
+  }
+
   void _load([String? version]) {
     final id = _id.text.trim();
     if (id.isEmpty) {
@@ -545,21 +551,48 @@ class _PromptTemplatePanelState extends ConsumerState<PromptTemplatePanel> {
               subtitle:
                   'The versioned system prompt of an LLM role. Template ids and versions are '
                   'recorded in each assessment and cycle-run manifest.',
-              child: Row(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: <Widget>[
-                  Expanded(
-                    child: TextField(
-                      key: const Key('ai.template.id'),
-                      controller: _id,
-                      decoration: const InputDecoration(hintText: 'Template id'),
-                      onSubmitted: (_) => _load(),
-                    ),
+                  Row(
+                    children: <Widget>[
+                      Expanded(
+                        child: TextField(
+                          key: const Key('ai.template.id'),
+                          controller: _id,
+                          decoration: const InputDecoration(hintText: 'Template id'),
+                          onSubmitted: (_) => _load(),
+                        ),
+                      ),
+                      const SizedBox(width: 12),
+                      FilledButton(
+                        key: const Key('ai.template.load'),
+                        onPressed: _load,
+                        child: const Text('Load'),
+                      ),
+                    ],
                   ),
-                  const SizedBox(width: 12),
-                  FilledButton(
-                    key: const Key('ai.template.load'),
-                    onPressed: _load,
-                    child: const Text('Load'),
+                  const SizedBox(height: 12),
+                  AsyncView<List<PromptTemplateSummary>>(
+                    value: ref.watch(promptTemplatesProvider),
+                    onRetry: () => ref.invalidate(promptTemplatesProvider),
+                    data: (templates) => templates.isEmpty
+                        ? Text('No templates are bundled.', style: TextStyle(color: palette.muted))
+                        : Wrap(
+                            key: const Key('ai.templates'),
+                            spacing: 8,
+                            runSpacing: 6,
+                            children: <Widget>[
+                              for (final t in templates)
+                                ChoiceChip(
+                                  key: Key('ai.templates.${t.id}'),
+                                  label: Text(t.role == null ? t.id : '${t.id} · ${t.role}'),
+                                  tooltip: 'Version ${t.version}; ${t.versions.length} bundled',
+                                  selected: query?.$1 == t.id,
+                                  onSelected: (_) => _pick(t.id),
+                                ),
+                            ],
+                          ),
                   ),
                 ],
               ),

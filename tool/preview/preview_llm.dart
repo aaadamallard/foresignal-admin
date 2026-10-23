@@ -149,6 +149,22 @@ LlmReply? answerLlm(
   if (path == '/v1/llm/usage' && method == 'GET') {
     return (status: 200, body: _usage(query));
   }
+  if (path == '/v1/prompt-templates' && method == 'GET') {
+    return (
+      status: 200,
+      body: <String, Object?>{
+        'items': <Object?>[
+          for (final id in <String>['ask', 'assessment'])
+            <String, Object?>{
+              'id': id,
+              'role': id,
+              'version': '3',
+              'versions': <String>['1', '2', '3'],
+            },
+        ],
+      },
+    );
+  }
   final template = RegExp(r'^/v1/prompt-templates/([^/]+)$').firstMatch(path);
   if (template != null && method == 'GET') {
     final id = Uri.decodeComponent(template.group(1)!);

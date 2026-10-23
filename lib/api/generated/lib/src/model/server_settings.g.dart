@@ -8,7 +8,7 @@ part of 'server_settings.dart';
 
 class _$ServerSettings extends ServerSettings {
   @override
-  final String publicBaseUrl;
+  final String? publicBaseUrl;
   @override
   final String? timezone;
   @override
@@ -24,7 +24,7 @@ class _$ServerSettings extends ServerSettings {
       (ServerSettingsBuilder()..update(updates))._build();
 
   _$ServerSettings._({
-    required this.publicBaseUrl,
+    this.publicBaseUrl,
     this.timezone,
     this.clientLinks,
     this.warnings,
@@ -146,11 +146,7 @@ class ServerSettingsBuilder
       _$result =
           _$v ??
           _$ServerSettings._(
-            publicBaseUrl: BuiltValueNullFieldError.checkNotNull(
-              publicBaseUrl,
-              r'ServerSettings',
-              'publicBaseUrl',
-            ),
+            publicBaseUrl: publicBaseUrl,
             timezone: timezone,
             clientLinks: _clientLinks?.build(),
             warnings: _warnings?.build(),

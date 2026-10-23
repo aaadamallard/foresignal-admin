@@ -1258,6 +1258,8 @@ lib/src/model/projected_impact_page.dart
 lib/src/model/projected_impact_question_window.dart
 lib/src/model/projected_impact_skipped_inner.dart
 lib/src/model/prompt_template.dart
+lib/src/model/prompt_template_list.dart
+lib/src/model/prompt_template_summary.dart
 lib/src/model/propagation_edge.dart
 lib/src/model/propagation_graph.dart
 lib/src/model/propagation_graph_cross_platform_order_inner.dart

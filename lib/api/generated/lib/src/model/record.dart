@@ -30,7 +30,7 @@ part 'record.g.dart';
 /// * [tombstone]
 /// * [geometry]
 /// * [payload] - Current payload `jsonb_strip_nulls(h.payload || l.kinematic)`; projected by `fields`
-/// * [attribution]
+/// * [attribution] - null when the source has no attribution line
 /// * [title] - record_head.title (titleField, else title > name > callsign > place > r > hex > mmsi)
 /// * [persistedObservedAt] - observedAt of the persisted version (observedAt may be newer from live updates)
 /// * [eventTime] - Discrete event time or measurement period start
@@ -85,6 +85,7 @@ abstract class Record implements Built<Record, RecordBuilder> {
   @BuiltValueField(wireName: r'payload')
   BuiltMap<String, JsonObject?> get payload;
 
+  /// null when the source has no attribution line
   @BuiltValueField(wireName: r'attribution')
   String? get attribution;
 
@@ -233,7 +234,7 @@ class _$RecordSerializer implements PrimitiveSerializer<Record> {
       yield r'attribution';
       yield serializers.serialize(
         object.attribution,
-        specifiedType: const FullType(String),
+        specifiedType: const FullType.nullable(String),
       );
     }
     if (object.title != null) {

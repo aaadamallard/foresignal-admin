@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -47,6 +49,31 @@ class OneTimeSecret extends StatefulWidget {
 class _OneTimeSecretState extends State<OneTimeSecret> {
   bool _revealed = false;
   bool _copied = false;
+
+  @override
+  void initState() {
+    super.initState();
+    _bringIntoView();
+  }
+
+  @override
+  void didUpdateWidget(OneTimeSecret oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    if (oldWidget.secret != widget.secret) {
+      _bringIntoView();
+    }
+  }
+
+  /// Scrolls the panel into view once laid out: a form that collapses after
+  /// creating leaves the page scrolled past it, and the secret cannot be
+  /// read again.
+  void _bringIntoView() {
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (mounted) {
+        unawaited(Scrollable.ensureVisible(context, duration: const Duration(milliseconds: 200)));
+      }
+    });
+  }
 
   @override
   Widget build(BuildContext context) {

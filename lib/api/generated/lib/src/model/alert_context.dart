@@ -12,7 +12,7 @@ import 'package:built_value/serializer.dart';
 
 part 'alert_context.g.dart';
 
-/// Computed alert context (`alert.context`); `weather` (056) is the deterministic weather context of a geolocated alert, stored before dispatch; list responses carry only `weather.summary` unless `include=context`
+/// Computed alert context (`alert.context`); `weather` (056) is the deterministic weather context of a geolocated alert, stored before dispatch; list responses carry only `weather.status` and `weather.summary` unless `include=context`
 ///
 /// Properties:
 /// * [weather]

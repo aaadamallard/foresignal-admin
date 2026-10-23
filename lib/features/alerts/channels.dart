@@ -32,13 +32,22 @@ Json? channelTypeOf(List<Json> types, Object? id) => types.where((t) => t['id'] 
 /// result.
 class ChannelTestButton extends ConsumerStatefulWidget {
   /// Creates the button for channel [channelId].
-  const ChannelTestButton({super.key, required this.channelId, this.label = 'Test'});
+  const ChannelTestButton({
+    super.key,
+    required this.channelId,
+    this.label = 'Test',
+    this.compact = false,
+  });
 
   /// The channel.
   final String channelId;
 
   /// The button text.
   final String label;
+
+  /// Whether the result shows as an icon whose tooltip carries the text, so a
+  /// table row keeps its width.
+  final bool compact;
 
   @override
   ConsumerState<ChannelTestButton> createState() => _ChannelTestButtonState();
@@ -77,6 +86,17 @@ class _ChannelTestButtonState extends ConsumerState<ChannelTestButton> {
   Widget build(BuildContext context) {
     final r = _result;
     final ok = r?['success'] == true;
+    Widget outcome({Key? key, required String label, required StatusTone tone, String? detail}) {
+      if (!widget.compact) {
+        return StatusLabel(key: key, label: label, tone: tone, tooltip: detail);
+      }
+      return Tooltip(
+        key: key,
+        message: detail == null ? label : '$label: $detail',
+        child: Icon(tone.icon, size: 16, color: tone.colorOf(context), semanticLabel: label),
+      );
+    }
+
     return Row(
       mainAxisSize: MainAxisSize.min,
       children: <Widget>[
@@ -89,19 +109,19 @@ class _ChannelTestButtonState extends ConsumerState<ChannelTestButton> {
           label: Text(widget.label),
         ),
         if (r != null)
-          StatusLabel(
+          outcome(
             key: Key('channels.testResult.${widget.channelId}'),
             label: ok
                 ? 'Sent${r['durationMs'] == null ? '' : ' in ${r['durationMs']} ms'}'
                 : 'Failed${r['status'] == null ? '' : ' (HTTP ${r['status']})'}',
             tone: ok ? StatusTone.ok : StatusTone.error,
-            tooltip: ok ? null : '${r['error'] ?? 'No detail'}',
+            detail: ok ? null : '${r['error'] ?? 'No detail'}',
           ),
         if (_error != null)
-          StatusLabel(
+          outcome(
             label: 'Could not test',
             tone: StatusTone.error,
-            tooltip: _error is ApiException ? (_error! as ApiException).message : '$_error',
+            detail: _error is ApiException ? (_error! as ApiException).message : '$_error',
           ),
       ],
     );
@@ -198,7 +218,7 @@ class ChannelsPanel extends ConsumerWidget {
                 cell: (c) => Row(
                   mainAxisSize: MainAxisSize.min,
                   children: <Widget>[
-                    ChannelTestButton(channelId: '${c['id']}'),
+                    ChannelTestButton(channelId: '${c['id']}', compact: true),
                     TextButton(
                       key: Key('channels.configure.${c['id']}'),
                       onPressed: () => context.go(alertChannelPath('${c['id']}')),

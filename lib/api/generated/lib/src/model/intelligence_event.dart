@@ -25,7 +25,7 @@ part 'intelligence_event.g.dart';
 /// * [title]
 /// * [status]
 /// * [severity]
-/// * [severityOverridden]
+/// * [severityOverridden] - True when an operator override sets the severity; `severity: null` in `IntelEventPatch` clears it and restores the computed severity
 /// * [private] - True when any member comes from a private source
 /// * [origin]
 /// * [recipeId]
@@ -65,6 +65,7 @@ abstract class IntelligenceEvent
   Severity get severity;
   // enum severityEnum {  info,  warning,  critical,  };
 
+  /// True when an operator override sets the severity; `severity: null` in `IntelEventPatch` clears it and restores the computed severity
   @BuiltValueField(wireName: r'severityOverridden')
   bool? get severityOverridden;
 

@@ -397,11 +397,13 @@ class _SourceConfigFormState extends ConsumerState<SourceConfigForm> {
     if (errors.isNotEmpty) {
       return;
     }
-    final update = _draft.toUpdate();
-    if (update == null) {
+    final changed = _draft.toUpdate();
+    final clears = _draft.clears;
+    if (changed == null && clears.isEmpty) {
       setState(() => _write = WriteConfirmed(DateTime.now()));
       return;
     }
+    final update = changed ?? SourceSettingsUpdate();
     setState(() => _write = const WriteInProgress());
     try {
       await ref
@@ -409,7 +411,8 @@ class _SourceConfigFormState extends ConsumerState<SourceConfigForm> {
           .update(
             widget.detail.descriptor.id,
             update,
-            confirm: (confirmed) => _draft.confirm(update, confirmed),
+            clears: clears,
+            confirm: (confirmed) => _draft.confirm(update, confirmed, cleared: clears),
           );
       if (!mounted) {
         return;
@@ -431,7 +434,18 @@ class _SourceConfigFormState extends ConsumerState<SourceConfigForm> {
     }
   }
 
-  void _edit(void Function() change) => setState(change);
+  /// Applies [change] to the draft. Editing the field named [key] drops its
+  /// stale problem, and any edit retires the last save's outcome, which no
+  /// longer describes the form.
+  void _edit(void Function() change, [String? key]) => setState(() {
+    change();
+    if (key != null) {
+      _errors = <String, String>{..._errors}..remove(key);
+    }
+    if (_write is! WriteInProgress) {
+      _write = const WriteIdle();
+    }
+  });
 
   Widget _text(
     String key,
@@ -450,7 +464,7 @@ class _SourceConfigFormState extends ConsumerState<SourceConfigForm> {
           ? <TextInputFormatter>[FilteringTextInputFormatter.allow(RegExp(r'[0-9.]'))]
           : null,
       decoration: InputDecoration(hintText: hint, errorText: _errors[key], errorMaxLines: 3),
-      onChanged: (v) => _edit(() => onChanged(v)),
+      onChanged: (v) => _edit(() => onChanged(v), key),
     );
   }
 
@@ -459,7 +473,7 @@ class _SourceConfigFormState extends ConsumerState<SourceConfigForm> {
     child: Switch(
       key: Key('config.$key'),
       value: value,
-      onChanged: onChanged == null ? null : (v) => _edit(() => onChanged(v)),
+      onChanged: onChanged == null ? null : (v) => _edit(() => onChanged(v), key),
     ),
   );
 
@@ -477,7 +491,7 @@ class _SourceConfigFormState extends ConsumerState<SourceConfigForm> {
       items: <DropdownMenuItem<String?>>[
         for (final o in options) DropdownMenuItem<String?>(value: o.value, child: Text(o.label)),
       ],
-      onChanged: (v) => _edit(() => onChanged(v)),
+      onChanged: (v) => _edit(() => onChanged(v), key),
     );
   }
 
@@ -555,18 +569,18 @@ class _SourceConfigFormState extends ConsumerState<SourceConfigForm> {
                   label: 'Retention',
                   help: d.defaultRetention == null
                       ? 'Empty uses the default'
-                      : 'Default ${displayDurationText(d.defaultRetention)}',
+                      : 'Default ${displayDurationText(d.defaultRetention)}; empty uses it',
                   field: _text(
                     'retention',
                     draft.retention,
                     (v) => draft.retention = v,
-                    hint: '365d',
+                    hint: d.defaultRetention == null ? '365d' : displayDurationText(d.defaultRetention),
                   ),
                 )
               else
                 LabeledField(
                   label: 'Downsample interval',
-                  help: 'Track sources only',
+                  help: 'Track sources only; empty clears the override',
                   field: _text(
                     'downsampleInterval',
                     draft.downsampleInterval,
@@ -626,8 +640,7 @@ class _SourceConfigFormState extends ConsumerState<SourceConfigForm> {
                     'egress',
                     draft.egress,
                     <FilterOption<String>>[
-                      if (draft.egress == null)
-                        const FilterOption<String>(null, 'Descriptor default'),
+                      const FilterOption<String>(null, 'Descriptor default'),
                       const FilterOption<String>('OPEN', 'Open'),
                       const FilterOption<String>('LOCAL_ONLY', 'Local only'),
                     ],
@@ -641,8 +654,7 @@ class _SourceConfigFormState extends ConsumerState<SourceConfigForm> {
                   'reliability',
                   draft.reliability,
                   <FilterOption<String>>[
-                    if (draft.reliability == null)
-                      const FilterOption<String>(null, 'Descriptor default'),
+                    const FilterOption<String>(null, 'Descriptor default'),
                     for (final grade in const <String>['A', 'B', 'C', 'D', 'E', 'F'])
                       FilterOption<String>(grade, grade),
                   ],
@@ -661,15 +673,13 @@ class _SourceConfigFormState extends ConsumerState<SourceConfigForm> {
             children: <Widget>[
               LabeledField(
                 label: 'Override the default',
-                help: draft.overridePolicy && widget.detail.settings.ingestPolicy != null
-                    ? cannotClearMessage
+                help: widget.detail.settings.ingestPolicy != null
+                    ? 'Switching it off clears the override; the descriptor default applies'
                     : null,
                 field: _switch(
                   'overridePolicy',
                   draft.overridePolicy,
-                  widget.detail.settings.ingestPolicy != null
-                      ? null
-                      : (v) => draft.overridePolicy = v,
+                  (v) => draft.overridePolicy = v,
                 ),
               ),
               if (!draft.overridePolicy)

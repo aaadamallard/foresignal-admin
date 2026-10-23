@@ -36,7 +36,7 @@ abstract class NotificationDetail
 
   @BuiltValueField(wireName: r'event')
   NotificationDetailEventEnum get event;
-  // enum eventEnum {  alert,  briefing,  system,  };
+  // enum eventEnum {  alert,  briefing,  system,  analyst.note,  situation.activated,  situation.escalated,  finding.significant,  forecast.resolution_needed,  hypothesis.band_changed,  assessment.published,  };
 
   @BuiltValueField(wireName: r'subtype')
   String? get subtype;
@@ -398,6 +398,27 @@ class NotificationDetailEventEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'system')
   static const NotificationDetailEventEnum system =
       _$notificationDetailEventEnum_system;
+  @BuiltValueEnumConst(wireName: r'analyst.note')
+  static const NotificationDetailEventEnum analystPeriodNote =
+      _$notificationDetailEventEnum_analystPeriodNote;
+  @BuiltValueEnumConst(wireName: r'situation.activated')
+  static const NotificationDetailEventEnum situationPeriodActivated =
+      _$notificationDetailEventEnum_situationPeriodActivated;
+  @BuiltValueEnumConst(wireName: r'situation.escalated')
+  static const NotificationDetailEventEnum situationPeriodEscalated =
+      _$notificationDetailEventEnum_situationPeriodEscalated;
+  @BuiltValueEnumConst(wireName: r'finding.significant')
+  static const NotificationDetailEventEnum findingPeriodSignificant =
+      _$notificationDetailEventEnum_findingPeriodSignificant;
+  @BuiltValueEnumConst(wireName: r'forecast.resolution_needed')
+  static const NotificationDetailEventEnum forecastPeriodResolutionNeeded =
+      _$notificationDetailEventEnum_forecastPeriodResolutionNeeded;
+  @BuiltValueEnumConst(wireName: r'hypothesis.band_changed')
+  static const NotificationDetailEventEnum hypothesisPeriodBandChanged =
+      _$notificationDetailEventEnum_hypothesisPeriodBandChanged;
+  @BuiltValueEnumConst(wireName: r'assessment.published')
+  static const NotificationDetailEventEnum assessmentPeriodPublished =
+      _$notificationDetailEventEnum_assessmentPeriodPublished;
 
   static Serializer<NotificationDetailEventEnum> get serializer =>
       _$notificationDetailEventEnumSerializer;

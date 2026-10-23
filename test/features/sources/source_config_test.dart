@@ -85,10 +85,39 @@ void main() {
     expect(draft.validate()['params.feed'], contains('Choose one of'));
   });
 
-  test('a stored retention cannot be emptied', () {
+  test('an emptied stored retention is cleared, not refused', () {
     final source = sourceNamed('gdelt')..settings['retention'] = '30d';
     final draft = draftOf(source)..retention = '';
-    expect(draft.validate()['retention'], cannotClearMessage);
+    expect(draft.validate(), isEmpty);
+    expect(draft.toUpdate(), isNull);
+    expect(draft.clears, <String>['retention']);
+  });
+
+  test('reliability set back to the descriptor default is cleared', () {
+    final source = sourceNamed('gdelt')..settings['reliability'] = 'B';
+    final draft = draftOf(source);
+    expect(draft.clears, isEmpty);
+    draft.reliability = null;
+    expect(draft.clears, <String>['reliability']);
+  });
+
+  test('switching an ingest-policy override off clears it', () {
+    final source = sourceNamed('opensky-states')
+      ..settings['ingestPolicy'] = <String, Object?>{'mode': 'ALL'};
+    final draft = draftOf(source);
+    expect(draft.overridePolicy, isTrue);
+    draft.overridePolicy = false;
+    expect(draft.validate(), isEmpty);
+    expect(draft.clears, <String>['ingestPolicy']);
+  });
+
+  test('confirm names a cleared override the re-read still holds', () {
+    final source = sourceNamed('gdelt')..settings['retention'] = '30d';
+    final draft = draftOf(source)..retention = '';
+    final sent = SourceSettingsUpdate();
+    expect(draft.confirm(sent, detailOf(source), cleared: draft.clears), contains('retention'));
+    source.settings.remove('retention');
+    expect(draft.confirm(sent, detailOf(source), cleared: draft.clears), isNull);
   });
 
   test('TRACK sources edit the downsample interval, not retention', () {
