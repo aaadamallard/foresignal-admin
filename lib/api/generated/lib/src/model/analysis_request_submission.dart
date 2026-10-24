@@ -12,7 +12,7 @@ part 'analysis_request_submission.g.dart';
 /// Requests an on-demand forecast of a ledger question from an external forecaster (155).
 ///
 /// Properties:
-/// * [forecasterId] - The external forecaster id, edp:{sourceId}/{streamId}.
+/// * [forecasterId] - The external forecaster id, edp:{sourceId}:{streamId}.
 /// * [questionId] - The ledger question to forecast; must be open.
 /// * [orientation] - Whether the provider's probability is for the question as stated (same) or its negation (inverse).
 /// * [horizon] - Optional forecast horizon passed to the provider (for example an ISO-8601 duration).
@@ -20,7 +20,7 @@ part 'analysis_request_submission.g.dart';
 abstract class AnalysisRequestSubmission
     implements
         Built<AnalysisRequestSubmission, AnalysisRequestSubmissionBuilder> {
-  /// The external forecaster id, edp:{sourceId}/{streamId}.
+  /// The external forecaster id, edp:{sourceId}:{streamId}.
   @BuiltValueField(wireName: r'forecasterId')
   String get forecasterId;
 

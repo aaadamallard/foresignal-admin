@@ -13,7 +13,7 @@ part 'hypothesis_patch_probability_override.g.dart';
 /// Properties:
 /// * [probability]
 /// * [rationale]
-/// * [exceedCap] - Allow a speculative link above its cap (logged and labelled)
+/// * [exceedCap] - Allow a speculative link above its cap (logged and labeled)
 @BuiltValue()
 abstract class HypothesisPatchProbabilityOverride
     implements
@@ -27,7 +27,7 @@ abstract class HypothesisPatchProbabilityOverride
   @BuiltValueField(wireName: r'rationale')
   String get rationale;
 
-  /// Allow a speculative link above its cap (logged and labelled)
+  /// Allow a speculative link above its cap (logged and labeled)
   @BuiltValueField(wireName: r'exceedCap')
   bool? get exceedCap;
 

@@ -83,6 +83,68 @@ void main() {
     expect(find.text('Not set'), findsNWidgets(2)); // ACLED, NASA FIRMS
   });
 
+  testWidgets('rows are numbered, and a header click sorts ascending, then descending', (tester) async {
+    await openAt(tester, sourcesPath);
+    final table = find.byKey(const Key('sources.table'));
+    double top(String text) => tester.getTopLeft(find.descendant(of: table, matching: find.text(text))).dy;
+    expect(find.descendant(of: table, matching: find.text('#')), findsOneWidget);
+    for (var n = 1; n <= 8; n++) {
+      expect(find.descendant(of: table, matching: find.text('$n')), findsWidgets);
+    }
+
+    await tester.tap(find.descendant(of: table, matching: find.text('Name')));
+    await tester.pumpAndSettle();
+    expect(top('ACLED'), lessThan(top('CelesTrak GP')));
+    expect(top('OpenSky States'), lessThan(top('USGS Earthquakes')));
+    // The direction indicator: Name (column 1, after #) sorted ascending.
+    DataTable dataTable() => tester.widget<DataTable>(find.descendant(of: table, matching: find.byType(DataTable)));
+    expect(dataTable().sortColumnIndex, 1);
+    expect(dataTable().sortAscending, isTrue);
+    // Row 1 is the first row as shown.
+    expect((top('1') - top('ACLED')).abs(), lessThan(24));
+
+    await tester.tap(find.descendant(of: table, matching: find.text('Name')));
+    await tester.pumpAndSettle();
+    expect(top('USGS Earthquakes'), lessThan(top('ACLED')));
+    expect((top('1') - top('USGS Earthquakes')).abs(), lessThan(24));
+    expect(dataTable().sortAscending, isFalse);
+
+    // Another column starts ascending: sources needing a key that is not set come last.
+    await tester.tap(find.descendant(of: table, matching: find.text('Credentials')));
+    await tester.pumpAndSettle();
+    expect(top('GDELT'), lessThan(top('ACLED')));
+  });
+
+  testWidgets('the info button describes a source from its descriptor', (tester) async {
+    await openAt(tester, sourcesPath);
+    await tapVisible(tester, find.byKey(const Key('sources.info.usgs-earthquakes')));
+    final dialog = find.byKey(const Key('sourceInfo.dialog'));
+    expect(dialog, findsOneWidget);
+    Finder inDialog(String text) => find.descendant(of: dialog, matching: find.text(text));
+    expect(inDialog('USGS Earthquakes'), findsOneWidget);
+    expect(inDialog('earthquake'), findsOneWidget);
+    expect(inDialog('USGS Earthquakes, collected by the ForeSignal polling adapter.'), findsOneWidget);
+    expect(inDialog('No'), findsWidgets); // Needs credentials
+    expect(find.descendant(of: dialog, matching: find.textContaining('minMagnitude')), findsOneWidget);
+    expect(
+      find.descendant(of: dialog, matching: find.textContaining('one of all_hour, all_day, 2.5_day')),
+      findsOneWidget,
+    );
+    expect(inDialog('Smallest magnitude kept'), findsOneWidget);
+    expect(inDialog('US-PD'), findsOneWidget);
+    // Opening the dialog did not open the row's detail page.
+    expect(find.byKey(const Key('sources.table')), findsOneWidget);
+
+    await tester.tap(find.byKey(const Key('sourceInfo.close')));
+    await tester.pumpAndSettle();
+    expect(dialog, findsNothing);
+
+    await tapVisible(tester, find.byKey(const Key('sources.info.acled')));
+    expect(find.byKey(const Key('sourceInfo.credentials')), findsOneWidget);
+    expect(find.descendant(of: dialog, matching: find.textContaining('apiKey')), findsOneWidget);
+    expect(find.descendant(of: dialog, matching: find.text('Yes')), findsOneWidget);
+  });
+
   testWidgets('search and the Enabled tab filter the table', (tester) async {
     await openAt(tester, sourcesPath);
     await tester.enterText(find.byKey(const Key('sources.search')).last, 'usgs');

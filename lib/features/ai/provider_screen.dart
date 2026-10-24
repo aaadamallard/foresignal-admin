@@ -272,21 +272,23 @@ class _ProviderFormState extends ConsumerState<ProviderForm> {
                     help: _d.creating ? null : 'Fixed once added.',
                     field: DropdownButtonFormField<String>(
                       key: const Key('provider.type'),
-                      initialValue: _d.type,
+                      initialValue: _d.choice,
                       items: <DropdownMenuItem<String>>[
-                        for (final t in llmProviderTypes)
+                        for (final c in llmProviderChoices)
                           DropdownMenuItem<String>(
-                            value: t,
-                            child: Text(switch (t) {
-                              'anthropic' => 'Anthropic',
-                              'openai-compatible' => 'OpenAI-compatible',
-                              _ => 'Ollama',
-                            }),
+                            value: c,
+                            child: Text(llmProviderChoiceLabel(c)),
                           ),
                       ],
                       onChanged: _d.creating
-                          ? (t) => setState(() {
-                              _d.type = t ?? _d.type;
+                          ? (c) => setState(() {
+                              if (c == null) {
+                                return;
+                              }
+                              // The preset may fill or clear the base URL.
+                              _d.text['baseUrl'] = _text['baseUrl']!.text;
+                              _d.choose(c);
+                              _text['baseUrl']!.text = _d.text['baseUrl']!;
                               _write = const WriteIdle();
                             })
                           : null,
@@ -295,6 +297,10 @@ class _ProviderFormState extends ConsumerState<ProviderForm> {
                   _field(
                     'baseUrl',
                     'Base URL',
+                    help: _d.preset == lmStudioPreset
+                        ? "LM Studio's local server, as the backend reaches it. Change the host if "
+                              'LM Studio runs on another machine.'
+                        : null,
                     hint: _d.defaultBaseUrl == null
                         ? 'Required, such as https://api.openai.com/v1'
                         : 'Default ${_d.defaultBaseUrl}',

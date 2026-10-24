@@ -254,7 +254,7 @@ class _$WebhookEnvelope extends WebhookEnvelope {
   @override
   final String subtype;
   @override
-  final NotificationMessage message;
+  final NotificationWebhookMessage message;
   @override
   final BuiltMap<String, JsonObject?>? data;
   @override
@@ -330,10 +330,11 @@ class WebhookEnvelopeBuilder
   String? get subtype => _$this._subtype;
   set subtype(String? subtype) => _$this._subtype = subtype;
 
-  NotificationMessageBuilder? _message;
-  NotificationMessageBuilder get message =>
-      _$this._message ??= NotificationMessageBuilder();
-  set message(NotificationMessageBuilder? message) => _$this._message = message;
+  NotificationWebhookMessageBuilder? _message;
+  NotificationWebhookMessageBuilder get message =>
+      _$this._message ??= NotificationWebhookMessageBuilder();
+  set message(NotificationWebhookMessageBuilder? message) =>
+      _$this._message = message;
 
   MapBuilder<String, JsonObject?>? _data;
   MapBuilder<String, JsonObject?> get data =>

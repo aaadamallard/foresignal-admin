@@ -190,7 +190,11 @@ class ConnectController extends Notifier<ConnectState> {
     }
     final system = systemResponse.data;
     if (system == null) {
-      throw NetworkException('The backend answered getSystem without a body.');
+      throw RequestFailedException(
+        RequestFailure.unexpectedReply,
+        'The backend answered getSystem with HTTP ${systemResponse.statusCode} and no body.',
+        status: systemResponse.statusCode,
+      );
     }
     DateTime? serverTime;
     final dateHeader = systemResponse.headers.value('date');

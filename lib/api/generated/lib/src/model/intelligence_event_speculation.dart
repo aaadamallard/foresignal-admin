@@ -10,7 +10,7 @@ import 'package:built_value/serializer.dart';
 
 part 'intelligence_event_speculation.g.dart';
 
-/// Alternatives and any LLM narrative, always labelled
+/// Alternatives and any LLM narrative, always labeled
 ///
 /// Properties:
 /// * [label]

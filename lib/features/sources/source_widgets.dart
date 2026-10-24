@@ -40,6 +40,15 @@ class HealthLabel extends StatelessWidget {
   }
 }
 
+/// The health states in table order, healthiest first, for sorting.
+final List<HealthStatus> healthOrder = <HealthStatus>[
+  HealthStatus.healthy,
+  HealthStatus.degraded,
+  HealthStatus.failing,
+  HealthStatus.idle,
+  HealthStatus.disabled,
+];
+
 /// Where a source's credentials stand.
 enum CredentialState {
   /// The source needs no key.

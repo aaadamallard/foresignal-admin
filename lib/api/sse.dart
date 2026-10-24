@@ -275,7 +275,11 @@ class SseClient {
           );
           final body = response.data;
           if (body == null) {
-            throw NetworkException('The event stream answered without a body.');
+            throw RequestFailedException(
+              RequestFailure.unexpectedReply,
+              'The event stream answered HTTP ${response.statusCode} without a body.',
+              status: response.statusCode,
+            );
           }
           if (!closed) {
             onOpen?.call();

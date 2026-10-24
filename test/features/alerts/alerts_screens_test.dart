@@ -1,5 +1,7 @@
+import 'dart:async';
 import 'dart:convert';
 
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:foresignal_admin/core/form_factor.dart';
@@ -82,6 +84,99 @@ Future<void> _tapText(WidgetTester tester, String label) async {
 Map<String, Object?> _bodyOf(RecordedRequest r) => (r.body! as Map).cast<String, Object?>();
 
 void main() {
+  testWidgets('a failed inbox load shows the problem and a Retry, not an empty inbox', (tester) async {
+    final good = alertsBackend(PreviewAlerts());
+    var failing = true;
+    final adapter = FakeAdapter((request) {
+      if (failing && request.method == 'GET' && request.uri.path == '/v1/alerts') {
+        throw DioException(requestOptions: request.options, type: DioExceptionType.receiveTimeout);
+      }
+      return good.handler(request);
+    });
+    await openAt(tester, alertsPath, adapter: adapter);
+    expect(find.byKey(const Key('inbox.error')), findsOneWidget);
+    expect(find.text('The backend did not answer in time'), findsOneWidget);
+    expect(find.textContaining('GET /v1/alerts got no answer'), findsOneWidget);
+    expect(find.text('Backend unreachable'), findsNothing);
+    expect(find.text('No alerts match.'), findsNothing);
+    final before = adapter.requests.where((r) => r.uri.path == '/v1/alerts').length;
+    failing = false;
+    await tapVisible(tester, find.widgetWithText(TextButton, 'Retry'));
+    expect(adapter.requests.where((r) => r.uri.path == '/v1/alerts').length, before + 1);
+    expect(find.byKey(const Key('inbox.error')), findsNothing);
+    await _drainStream(tester);
+  });
+
+  group('a failed trigger list is reported on the screen, with a Retry', () {
+    /// The alerts backend, with `GET /v1/triggers` answered by [failure]
+    /// until Retry is pressed.
+    Future<FakeAdapter> openFailing(WidgetTester tester, FutureOr<FakeResponse> Function(RecordedRequest) failure) async {
+      final good = alertsBackend(PreviewAlerts());
+      var failing = true;
+      final adapter = FakeAdapter((request) {
+        if (failing && request.method == 'GET' && request.uri.path == '/v1/triggers') {
+          failing = false;
+          return failure(request);
+        }
+        return good.handler(request);
+      });
+      return openAt(tester, alertTriggersPath, adapter: adapter);
+    }
+
+    Future<void> retries(WidgetTester tester, FakeAdapter adapter) async {
+      final before = adapter.requests.where((r) => r.uri.path == '/v1/triggers').length;
+      await tapVisible(tester, find.widgetWithText(TextButton, 'Retry'));
+      expect(adapter.requests.where((r) => r.uri.path == '/v1/triggers').length, before + 1);
+      expect(find.widgetWithText(TextButton, 'Retry'), findsNothing);
+    }
+
+    testWidgets('a 503 shows the problem and its status', (tester) async {
+      final adapter = await openFailing(
+        tester,
+        (_) => FakeResponse.problem(<String, Object?>{
+          'title': 'Service Unavailable',
+          'status': 503,
+          'code': 'QUERY_TIMEOUT',
+          'detail': 'The query ran longer than 10000 ms; narrow the filters or retry.',
+        }, status: 503),
+      );
+      expect(find.text('Backend unreachable'), findsNothing);
+      expect(find.text('The backend failed'), findsOneWidget);
+      expect(find.text('HTTP 503 · QUERY_TIMEOUT'), findsOneWidget);
+      await retries(tester, adapter);
+    });
+
+    testWidgets('a reply of the wrong shape names what came back', (tester) async {
+      final adapter = await openFailing(tester, (_) => FakeResponse.json(<String, Object?>{'items': <Object?>[]}));
+      expect(find.text('Backend unreachable'), findsNothing);
+      expect(find.text('Unexpected reply from the backend'), findsOneWidget);
+      expect(
+        find.text('GET /v1/triggers answered HTTP 200 with a JSON object, not the expected JSON array.'),
+        findsOneWidget,
+      );
+      await retries(tester, adapter);
+    });
+
+    testWidgets('a timeout says the backend did not answer in time', (tester) async {
+      final adapter = await openFailing(
+        tester,
+        (request) => throw DioException(requestOptions: request.options, type: DioExceptionType.receiveTimeout),
+      );
+      expect(find.text('Backend unreachable'), findsNothing);
+      expect(find.text('The backend did not answer in time'), findsOneWidget);
+      await retries(tester, adapter);
+    });
+
+    testWidgets('only a connection that cannot be made is "Backend unreachable"', (tester) async {
+      final adapter = await openFailing(
+        tester,
+        (request) => throw DioException.connectionError(requestOptions: request.options, reason: 'Connection refused'),
+      );
+      expect(find.text('Backend unreachable'), findsOneWidget);
+      await retries(tester, adapter);
+    });
+  });
+
   testWidgets('the inbox lists open alerts and a live alert joins at the top', (tester) async {
     await openAt(tester, alertsPath, adapter: alertsBackend(PreviewAlerts()));
     expect(find.byKey(const Key('inbox.table')), findsOneWidget);

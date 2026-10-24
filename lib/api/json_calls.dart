@@ -25,19 +25,37 @@ Future<Object?> jsonCall(
   Object? body,
   Map<String, Object?>? query,
   Map<String, Object?>? headers,
+}) async => (await _send(dio, method, path, body: body, query: query, headers: headers)).data;
+
+Future<Response<Object?>> _send(
+  Dio dio,
+  String method,
+  String path, {
+  Object? body,
+  Map<String, Object?>? query,
+  Map<String, Object?>? headers,
 }) async {
   try {
-    final response = await dio.request<Object?>(
+    return await dio.request<Object?>(
       path,
       data: body,
       queryParameters: query,
       options: Options(method: method, headers: headers, contentType: body == null ? null : Headers.jsonContentType),
     );
-    return response.data;
   } on Object catch (error) {
     throw toApiException(error);
   }
 }
+
+/// The reply to [method] [path] was not the JSON [expected]: a request that
+/// failed on a reachable backend, with what came back instead.
+RequestFailedException _unexpected(String method, String path, Response<Object?> response, String expected) =>
+    RequestFailedException(
+      RequestFailure.unexpectedReply,
+      '$method $path answered HTTP ${response.statusCode} with ${jsonShapeOf(response.data)}, '
+      'not the expected $expected.',
+      status: response.statusCode,
+    );
 
 /// [jsonCall] for an operation answering one JSON object.
 Future<Map<String, Object?>> jsonObjectCall(
@@ -48,9 +66,10 @@ Future<Map<String, Object?>> jsonObjectCall(
   Map<String, Object?>? query,
   Map<String, Object?>? headers,
 }) async {
-  final data = await jsonCall(dio, method, path, body: body, query: query, headers: headers);
+  final response = await _send(dio, method, path, body: body, query: query, headers: headers);
+  final data = response.data;
   if (data is! Map) {
-    throw NetworkException('The backend answered without the expected object.');
+    throw _unexpected(method, path, response, 'JSON object');
   }
   return data.cast<String, Object?>();
 }
@@ -61,9 +80,10 @@ Future<List<Map<String, Object?>>> jsonArrayCall(
   String path, {
   Map<String, Object?>? query,
 }) async {
-  final data = await jsonCall(dio, 'GET', path, query: query);
+  final response = await _send(dio, 'GET', path, query: query);
+  final data = response.data;
   if (data is! List) {
-    throw NetworkException('The backend answered without the expected array.');
+    throw _unexpected('GET', path, response, 'JSON array');
   }
   return <Map<String, Object?>>[
     for (final e in data)

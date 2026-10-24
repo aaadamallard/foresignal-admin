@@ -3,8 +3,10 @@ import 'package:flutter/material.dart';
 import '../../api/api_errors.dart';
 import '../theme.dart';
 
-/// Shows a failed backend call where it happened: a refusal (ProblemDetail)
-/// with its code and field errors, a missing token, or an unreachable server.
+/// Shows a failed backend call where it happened: a refusal or failure
+/// (ProblemDetail) with its status, code and field errors, a request that
+/// timed out or was answered with something unexpected, a missing token, or
+/// — only for a connection that could not be made — an unreachable server.
 /// It is never a crash screen.
 class ErrorBanner extends StatelessWidget {
   /// Creates a banner for [error]; [onRetry] adds a Retry button.
@@ -43,6 +45,12 @@ class ErrorBanner extends StatelessWidget {
       case NetworkException():
         heading ??= 'Backend unreachable';
         lines.add(api.message);
+      case RequestFailedException(:final failure, :final status):
+        heading ??= failure.heading;
+        lines.add(api.message);
+        if (status != null && !api.message.contains('HTTP $status')) {
+          lines.add('HTTP $status');
+        }
       case HttpStatusException(:final status):
         heading ??= 'Unexpected response';
         lines.add('The backend (or a proxy in front of it) answered HTTP $status without details.');

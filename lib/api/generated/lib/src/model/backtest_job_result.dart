@@ -79,12 +79,12 @@ part 'backtest_job_result.g.dart';
 /// * [ruleId]
 /// * [since]
 /// * [alerts]
-/// * [labelled]
-/// * [labelledShare]
+/// * [labeled]
+/// * [labeledShare]
 /// * [positive]
 /// * [negative]
 /// * [neutral]
-/// * [precision] - positive ÷ (positive + negative); null when labelled < 5
+/// * [precision] - positive ÷ (positive + negative); null when labeled < 5
 /// * [precisionCi]
 /// * [medianTimeToAck] - ISO-8601 duration
 /// * [medianTimeToResolve] - ISO-8601 duration

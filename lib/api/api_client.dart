@@ -62,11 +62,22 @@ Future<T?> callApi<T>(Future<Response<T>> Function() call) async {
 }
 
 /// Like [callApi], for calls whose 2xx response always carries a body. Throws
-/// a [NetworkException] if the body is missing.
+/// a [RequestFailedException] if the body is missing.
 Future<T> callApiRequired<T>(Future<Response<T>> Function() call) async {
-  final data = await callApi<T>(call);
+  final Response<T> response;
+  try {
+    response = await call();
+  } on Object catch (error) {
+    throw toApiException(error);
+  }
+  final data = response.data;
   if (data == null) {
-    throw NetworkException('The backend answered without the expected body.');
+    throw RequestFailedException(
+      RequestFailure.unexpectedReply,
+      '${response.requestOptions.method} ${response.requestOptions.path} answered '
+      'HTTP ${response.statusCode} without the expected body.',
+      status: response.statusCode,
+    );
   }
   return data;
 }

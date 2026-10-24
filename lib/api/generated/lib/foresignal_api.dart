@@ -1046,6 +1046,7 @@ export 'package:foresignal_api/src/model/notification_preference_input_channel.d
 export 'package:foresignal_api/src/model/notification_preferences_input.dart';
 export 'package:foresignal_api/src/model/notification_settings.dart';
 export 'package:foresignal_api/src/model/notification_settings_chatops.dart';
+export 'package:foresignal_api/src/model/notification_webhook_message.dart';
 export 'package:foresignal_api/src/model/ntfy_message.dart';
 export 'package:foresignal_api/src/model/ntfy_publish_request.dart';
 export 'package:foresignal_api/src/model/nws_alert_payload.dart';

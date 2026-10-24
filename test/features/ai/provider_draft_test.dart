@@ -14,6 +14,35 @@ LlmProvider provider(String id) =>
 
 void main() {
   group('a new provider', () {
+    test('the LM Studio preset is an OpenAI-compatible, local provider at its local server', () {
+      final draft = ProviderDraft.create()..text['id'] = 'lm-studio';
+      draft.choose(lmStudioPreset);
+      expect(draft.choice, lmStudioPreset);
+      expect(draft.type, 'openai-compatible');
+      expect(draft.validate(), isEmpty);
+      final json = draft.toJson();
+      expect(json['type'], 'openai-compatible');
+      expect(json['baseUrl'], 'http://localhost:1234/v1');
+      expect(json['options'], <String, Object?>{'local': true});
+
+      // The base URL stays editable, and leaving the preset undoes what it filled in.
+      draft.text['baseUrl'] = 'http://gpu-box:1234/v1';
+      draft.choose('ollama');
+      expect(draft.choice, 'ollama');
+      expect(draft.local, isFalse);
+      expect(draft.text['baseUrl'], 'http://gpu-box:1234/v1');
+      draft
+        ..choose(lmStudioPreset)
+        ..choose('anthropic');
+      expect(draft.text['baseUrl'], 'http://gpu-box:1234/v1');
+      draft
+        ..text['baseUrl'] = ''
+        ..choose(lmStudioPreset)
+        ..choose('openai-compatible');
+      expect(draft.text['baseUrl'], isEmpty);
+      expect(draft.local, isFalse);
+    });
+
     test('needs a valid id, and Anthropic needs a key', () {
       final draft = ProviderDraft.create()..text['id'] = 'Bad Id';
       final errors = draft.validate();

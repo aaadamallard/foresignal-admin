@@ -19,7 +19,7 @@ import 'package:built_value/serializer.dart';
 
 part 'situation.g.dart';
 
-/// A persistent storyline: evidence (members), inference (status, severity, summary) and labelled speculation (brief)
+/// A persistent storyline: evidence (members), inference (status, severity, summary) and labeled speculation (brief)
 ///
 /// Properties:
 /// * [id] - ULID identifier

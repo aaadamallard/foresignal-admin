@@ -9,7 +9,7 @@ import 'package:built_value/serializer.dart';
 
 part 'situation_speculation.g.dart';
 
-/// Optional LLM brief, labelled speculation-capable narrative; never changes members, status or severity
+/// Optional LLM brief, labeled speculation-capable narrative; never changes members, status or severity
 ///
 /// Properties:
 /// * [label]

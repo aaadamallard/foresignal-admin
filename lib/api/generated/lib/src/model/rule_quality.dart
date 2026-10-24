@@ -19,12 +19,12 @@ part 'rule_quality.g.dart';
 /// * [ruleId]
 /// * [since]
 /// * [alerts]
-/// * [labelled]
-/// * [labelledShare]
+/// * [labeled]
+/// * [labeledShare]
 /// * [positive]
 /// * [negative]
 /// * [neutral]
-/// * [precision] - positive ÷ (positive + negative); null when labelled < 5
+/// * [precision] - positive ÷ (positive + negative); null when labeled < 5
 /// * [precisionCi]
 /// * [medianTimeToAck] - ISO-8601 duration
 /// * [medianTimeToResolve] - ISO-8601 duration
@@ -48,11 +48,11 @@ abstract class RuleQuality implements Built<RuleQuality, RuleQualityBuilder> {
   @BuiltValueField(wireName: r'alerts')
   int get alerts;
 
-  @BuiltValueField(wireName: r'labelled')
-  int get labelled;
+  @BuiltValueField(wireName: r'labeled')
+  int get labeled;
 
-  @BuiltValueField(wireName: r'labelledShare')
-  num? get labelledShare;
+  @BuiltValueField(wireName: r'labeledShare')
+  num? get labeledShare;
 
   @BuiltValueField(wireName: r'positive')
   int get positive;
@@ -63,7 +63,7 @@ abstract class RuleQuality implements Built<RuleQuality, RuleQualityBuilder> {
   @BuiltValueField(wireName: r'neutral')
   int get neutral;
 
-  /// positive ÷ (positive + negative); null when labelled < 5
+  /// positive ÷ (positive + negative); null when labeled < 5
   @BuiltValueField(wireName: r'precision')
   num? get precision;
 
@@ -149,15 +149,15 @@ class _$RuleQualitySerializer implements PrimitiveSerializer<RuleQuality> {
       object.alerts,
       specifiedType: const FullType(int),
     );
-    yield r'labelled';
+    yield r'labeled';
     yield serializers.serialize(
-      object.labelled,
+      object.labeled,
       specifiedType: const FullType(int),
     );
-    if (object.labelledShare != null) {
-      yield r'labelledShare';
+    if (object.labeledShare != null) {
+      yield r'labeledShare';
       yield serializers.serialize(
-        object.labelledShare,
+        object.labeledShare,
         specifiedType: const FullType(num),
       );
     }
@@ -327,13 +327,13 @@ class _$RuleQualitySerializer implements PrimitiveSerializer<RuleQuality> {
                   as int;
           result.alerts = valueDes;
           break;
-        case r'labelled':
+        case r'labeled':
           final valueDes =
               serializers.deserialize(value, specifiedType: const FullType(int))
                   as int;
-          result.labelled = valueDes;
+          result.labeled = valueDes;
           break;
-        case r'labelledShare':
+        case r'labeledShare':
           final valueDes =
               serializers.deserialize(
                     value,
@@ -341,7 +341,7 @@ class _$RuleQualitySerializer implements PrimitiveSerializer<RuleQuality> {
                   )
                   as num?;
           if (valueDes == null) continue;
-          result.labelledShare = valueDes;
+          result.labeledShare = valueDes;
           break;
         case r'positive':
           final valueDes =

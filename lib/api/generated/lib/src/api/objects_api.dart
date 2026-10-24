@@ -146,7 +146,7 @@ class ObjectsApi {
   }
 
   /// Add an operator relation
-  /// Adds an operator or agent relation (&#x60;provenance.operator&#x60;). &#x60;causes&#x60; is labelled at most &#x60;possible&#x60; unless the caller confirms as operator.  **Scope:** &#x60;agent&#x60;.
+  /// Adds an operator or agent relation (&#x60;provenance.operator&#x60;). &#x60;causes&#x60; is labeled at most &#x60;possible&#x60; unless the caller confirms as operator.  **Scope:** &#x60;agent&#x60;.
   ///
   /// Parameters:
   /// * [relationInput]
@@ -740,7 +740,7 @@ class ObjectsApi {
   }
 
   /// Get precision from analyst verdicts
-  /// For findings (by detector), intel events (by recipe), situations (linker) and precursor-active findings: the share confirmed among verdicts with a Wilson interval and counts; &#x60;needs-review&#x60; counts as unlabelled.  **Scope:** &#x60;read&#x60; (open while &#x60;security.openReads&#x60; is on).
+  /// For findings (by detector), intel events (by recipe), situations (linker) and precursor-active findings: the share confirmed among verdicts with a Wilson interval and counts; &#x60;needs-review&#x60; counts as unlabeled.  **Scope:** &#x60;read&#x60; (open while &#x60;security.openReads&#x60; is on).
   ///
   /// Parameters:
   /// * [component] - Producer type

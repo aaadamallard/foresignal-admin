@@ -162,6 +162,37 @@ void main() {
     await _drainStream(tester);
   });
 
+  testWidgets('a failed inbox load shows the problem and a Retry, not an empty inbox', (tester) async {
+    final inner = notificationsBackend(PreviewNotifications());
+    var failing = true;
+    final adapter = await _open(
+      tester,
+      notificationsPath,
+      FakeAdapter((request) {
+        if (failing && request.method == 'GET' && request.uri.path == '/v1/notifications') {
+          return FakeResponse.problem(<String, Object?>{
+            'title': 'Service Unavailable',
+            'status': 503,
+            'code': 'QUERY_TIMEOUT',
+            'detail': 'The query ran longer than 10000 ms; narrow the filters or retry.',
+          }, status: 503);
+        }
+        return inner.handler(request);
+      }),
+    );
+    expect(find.byKey(const Key('notifications.error')), findsOneWidget);
+    expect(find.textContaining('The query ran longer than 10000 ms'), findsOneWidget);
+    expect(find.textContaining('Backend unreachable'), findsNothing);
+    expect(find.text('Nothing unread.'), findsNothing);
+    final before = adapter.requests.where((r) => r.uri.path == '/v1/notifications').length;
+    failing = false;
+    await tapVisible(tester, find.widgetWithText(TextButton, 'Retry'));
+    expect(adapter.requests.where((r) => r.uri.path == '/v1/notifications').length, before + 1);
+    expect(find.byKey(const Key('notifications.error')), findsNothing);
+    expect(find.text('M 6.1 – 42 km SW of Ovalle, Chile'), findsOneWidget);
+    await _drainStream(tester);
+  });
+
   testWidgets('marking one read posts its id with the device header and drops it', (tester) async {
     final v = PreviewNotifications();
     final adapter = await _open(tester, notificationsPath, notificationsBackend(v));

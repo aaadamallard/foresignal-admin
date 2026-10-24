@@ -18,8 +18,8 @@ part 'precision_components_inner.g.dart';
 /// * [confirmed]
 /// * [rejected]
 /// * [duplicate]
-/// * [needsReview] - Counted as unlabelled
-/// * [labelled]
+/// * [needsReview] - Counted as unlabeled
+/// * [labeled]
 /// * [precision]
 /// * [interval]
 @BuiltValue()
@@ -43,12 +43,12 @@ abstract class PrecisionComponentsInner
   @BuiltValueField(wireName: r'duplicate')
   int? get duplicate;
 
-  /// Counted as unlabelled
+  /// Counted as unlabeled
   @BuiltValueField(wireName: r'needsReview')
   int? get needsReview;
 
-  @BuiltValueField(wireName: r'labelled')
-  int get labelled;
+  @BuiltValueField(wireName: r'labeled')
+  int get labeled;
 
   @BuiltValueField(wireName: r'precision')
   num? get precision;
@@ -120,9 +120,9 @@ class _$PrecisionComponentsInnerSerializer
         specifiedType: const FullType(int),
       );
     }
-    yield r'labelled';
+    yield r'labeled';
     yield serializers.serialize(
-      object.labelled,
+      object.labeled,
       specifiedType: const FullType(int),
     );
     if (object.precision != null) {
@@ -218,11 +218,11 @@ class _$PrecisionComponentsInnerSerializer
           if (valueDes == null) continue;
           result.needsReview = valueDes;
           break;
-        case r'labelled':
+        case r'labeled':
           final valueDes =
               serializers.deserialize(value, specifiedType: const FullType(int))
                   as int;
-          result.labelled = valueDes;
+          result.labeled = valueDes;
           break;
         case r'precision':
           final valueDes =

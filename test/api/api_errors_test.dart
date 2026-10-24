@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:dio/dio.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:foresignal_admin/api/api.dart';
@@ -113,9 +115,74 @@ void main() {
           error: StateError('null for non-nullable field "publicBaseUrl"'),
         ),
       );
-      expect(error, isA<NetworkException>());
+      // A reply that arrived is not an unreachable backend (this was a
+      // NetworkException, shown as "Backend unreachable", before the UI fix pass).
+      expect(error, isA<RequestFailedException>());
+      expect((error as RequestFailedException).failure, RequestFailure.unexpectedReply);
+      expect(error.status, 200);
       expect(error.message, contains('could not read the reply'));
       expect(error.message, contains('publicBaseUrl'));
+    });
+
+    test('a receive or send timeout is a request that failed, not an unreachable backend', () {
+      final request = RequestOptions(
+        path: '/v1/intel/events',
+        sendTimeout: const Duration(seconds: 30),
+        receiveTimeout: const Duration(seconds: 60),
+      );
+      final limits = <DioExceptionType, String>{
+        DioExceptionType.receiveTimeout: 'got no answer within 60 s',
+        DioExceptionType.sendTimeout: 'could not be sent within 30 s',
+      };
+      for (final MapEntry(key: type, value: said) in limits.entries) {
+        final error = toApiException(DioException(requestOptions: request, type: type));
+        expect(error, isA<RequestFailedException>(), reason: '$type');
+        expect((error as RequestFailedException).failure, RequestFailure.timeout);
+        // The message names the request and its limit, not the heading again.
+        expect(error.message, startsWith('GET /v1/intel/events $said.'));
+        expect(error.message, isNot(RequestFailure.timeout.heading));
+      }
+    });
+
+    test('only connection failures are NetworkException', () {
+      final request = RequestOptions(path: '/v1/system');
+      for (final type in <DioExceptionType>[
+        DioExceptionType.connectionError,
+        DioExceptionType.connectionTimeout,
+        DioExceptionType.badCertificate,
+      ]) {
+        expect(toApiException(DioException(requestOptions: request, type: type)), isA<NetworkException>());
+      }
+      expect(
+        toApiException(
+          DioException(requestOptions: request, error: const SocketException('Connection refused')),
+        ),
+        isA<NetworkException>(),
+      );
+      expect(toApiException(const SocketException('Failed host lookup')), isA<NetworkException>());
+      // An error the app raised is not a connection failure.
+      expect(toApiException(StateError('bad state')), isA<RequestFailedException>());
+      expect(
+        toApiException(DioException(requestOptions: request, type: DioExceptionType.cancel)),
+        isA<RequestFailedException>().having((e) => e.failure, 'failure', RequestFailure.canceled),
+      );
+    });
+
+    test('json_calls name the shape they got instead of the one they expected', () async {
+      final dio = fakeDio(FakeAdapter((_) => FakeResponse.json(<String, Object?>{'items': <Object?>[]})));
+      try {
+        await jsonArrayCall(dio, '/v1/triggers');
+        fail('the call succeeded');
+      } on RequestFailedException catch (error) {
+        expect(error.failure, RequestFailure.unexpectedReply);
+        expect(error.status, 200);
+        expect(error.message, 'GET /v1/triggers answered HTTP 200 with a JSON object, not the expected JSON array.');
+      }
+      final list = fakeDio(FakeAdapter((_) => FakeResponse.json(<Object?>[])));
+      await expectLater(
+        jsonObjectCall(list, 'GET', '/v1/system'),
+        throwsA(isA<RequestFailedException>().having((e) => e.message, 'message', contains('with a JSON array'))),
+      );
     });
 
     test('an ApiException passes through unchanged', () {

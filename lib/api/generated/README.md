@@ -1857,6 +1857,7 @@ Class | Method | HTTP request | Description
  - [NotificationPreferencesInput](doc/NotificationPreferencesInput.md)
  - [NotificationSettings](doc/NotificationSettings.md)
  - [NotificationSettingsChatops](doc/NotificationSettingsChatops.md)
+ - [NotificationWebhookMessage](doc/NotificationWebhookMessage.md)
  - [NtfyMessage](doc/NtfyMessage.md)
  - [NtfyPublishRequest](doc/NtfyPublishRequest.md)
  - [NwsAlertPayload](doc/NwsAlertPayload.md)

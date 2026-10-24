@@ -969,6 +969,7 @@ import 'package:foresignal_api/src/model/notification_preference_input_channel.d
 import 'package:foresignal_api/src/model/notification_preferences_input.dart';
 import 'package:foresignal_api/src/model/notification_settings.dart';
 import 'package:foresignal_api/src/model/notification_settings_chatops.dart';
+import 'package:foresignal_api/src/model/notification_webhook_message.dart';
 import 'package:foresignal_api/src/model/ntfy_message.dart';
 import 'package:foresignal_api/src/model/ntfy_publish_request.dart';
 import 'package:foresignal_api/src/model/nws_alert_payload.dart';
@@ -2679,6 +2680,7 @@ part 'serializers.g.dart';
   NotificationPreferencesInput,
   NotificationSettings,
   NotificationSettingsChatops,
+  NotificationWebhookMessage,
   NtfyMessage,
   NtfyPublishRequest,
   NwsAlertPayload,

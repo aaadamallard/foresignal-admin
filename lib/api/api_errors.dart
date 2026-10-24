@@ -1,10 +1,11 @@
 import 'dart:convert';
-import 'dart:io' show HttpDate, HttpException;
+import 'dart:io' show HandshakeException, HttpDate, HttpException, SocketException, TlsException;
 
 import 'package:dio/dio.dart';
 
 /// A failed call to the ForeSignal backend, typed so a screen can show the
-/// right thing: a refusal, a missing token, or an unreachable server.
+/// right thing: a refusal, a missing token, a request that failed on a
+/// backend that answers, or a server that cannot be reached at all.
 sealed class ApiException implements Exception {
   /// Creates an [ApiException] with a human-readable [message].
   const ApiException(this.message);
@@ -106,7 +107,11 @@ class AdminTokenRequiredException extends ApiException {
     : super('An admin token is required for this change. Enter one on the Connect screen.');
 }
 
-/// The backend could not be reached, or the connection failed mid-request.
+/// The backend could not be reached: the connection was refused or dropped,
+/// the host name did not resolve, the connection was not accepted in time,
+/// or TLS failed. Only this is shown as "Backend unreachable"; a request that
+/// reached the backend and failed is a [RequestFailedException] or an HTTP
+/// failure.
 class NetworkException extends ApiException {
   /// Creates a network exception wrapping [cause].
   NetworkException(super.message, {this.cause});
@@ -114,6 +119,53 @@ class NetworkException extends ApiException {
   /// The underlying error, if any.
   final Object? cause;
 }
+
+/// Why a request to a reachable backend failed without an HTTP failure status.
+enum RequestFailure {
+  /// The backend took the request but did not answer within the timeout.
+  timeout('The backend did not answer in time'),
+
+  /// The request was canceled before it was answered.
+  canceled('Request canceled'),
+
+  /// The backend answered, but not with what the contract describes: no
+  /// body, the wrong JSON shape, or a reply the app could not read.
+  unexpectedReply('Unexpected reply from the backend');
+
+  const RequestFailure(this.heading);
+
+  /// The heading an error surface shows.
+  final String heading;
+}
+
+/// One request failed on a backend that is reachable: it timed out, was
+/// canceled, or was answered with something the app could not use. The
+/// screen that made the request shows this with a Retry, never as
+/// "Backend unreachable".
+class RequestFailedException extends ApiException {
+  /// Creates the exception for [failure], with the HTTP [status] of the reply
+  /// when there was one.
+  RequestFailedException(this.failure, super.message, {this.status, this.cause});
+
+  /// Why the request failed.
+  final RequestFailure failure;
+
+  /// The HTTP status of the reply, when the backend answered.
+  final int? status;
+
+  /// The underlying error, if any.
+  final Object? cause;
+}
+
+/// The reply to a request for one JSON object or array that was something
+/// else, named for an error surface: "a JSON array", "no body".
+String jsonShapeOf(Object? data) => switch (data) {
+  null => 'no body',
+  Map() => 'a JSON object',
+  List() => 'a JSON array',
+  String() => 'text',
+  _ => 'a ${data.runtimeType}',
+};
 
 /// Parses a `Retry-After` header: delay-seconds or an HTTP-date. A date in the
 /// past yields [Duration.zero]; anything unparsable yields `null`.
@@ -149,8 +201,20 @@ ApiException toApiException(Object error) {
   if (error is DioException) {
     return _fromDio(error);
   }
-  return NetworkException(error.toString(), cause: error);
+  if (_isConnectionFailure(error)) {
+    return NetworkException('The backend could not be reached ($error).', cause: error);
+  }
+  return RequestFailedException(
+    RequestFailure.unexpectedReply,
+    'The app could not use the backend\'s reply: $error',
+    cause: error,
+  );
 }
+
+/// Whether [error] is a transport failure: a socket, TLS or HTTP connection
+/// error rather than anything about a reply.
+bool _isConnectionFailure(Object? error) =>
+    error is SocketException || error is HandshakeException || error is TlsException || error is HttpException;
 
 ApiException _fromDio(DioException error) {
   final inner = error.error;
@@ -159,14 +223,39 @@ ApiException _fromDio(DioException error) {
   }
   final response = error.response;
   if (response == null || response.statusCode == null) {
-    return NetworkException(_networkMessage(error), cause: error);
+    return switch (error.type) {
+      // The connection was made; the answer did not come in time.
+      DioExceptionType.sendTimeout ||
+      DioExceptionType.receiveTimeout ||
+      DioExceptionType.transformTimeout => RequestFailedException(
+        RequestFailure.timeout,
+        _timeoutMessage(error),
+        cause: error,
+      ),
+      DioExceptionType.cancel => RequestFailedException(
+        RequestFailure.canceled,
+        _networkMessage(error),
+        cause: error,
+      ),
+      // An error that is not about the connection (one the app raised while
+      // sending or reading) is not "unreachable" either.
+      DioExceptionType.unknown when inner != null && !_isConnectionFailure(inner) =>
+        RequestFailedException(
+          RequestFailure.unexpectedReply,
+          'The request failed before an answer could be read: $inner',
+          cause: error,
+        ),
+      _ => NetworkException(_networkMessage(error), cause: error),
+    };
   }
   final status = response.statusCode!;
   if (status >= 200 && status < 300) {
     // The request succeeded; reading the reply did not (a body that does
     // not match the contract the client was generated from).
-    return NetworkException(
+    return RequestFailedException(
+      RequestFailure.unexpectedReply,
       'The backend answered HTTP $status, but the app could not read the reply: ${inner ?? error.message}',
+      status: status,
       cause: error,
     );
   }
@@ -191,6 +280,16 @@ ApiException _fromDio(DioException error) {
     retryAfter: retryAfterHeader ?? (retrySeconds is int ? Duration(seconds: retrySeconds) : null),
     body: problem,
   );
+}
+
+/// Names the request that timed out and the limit it ran past, so the banner
+/// says more than its heading.
+String _timeoutMessage(DioException error) {
+  final o = error.requestOptions;
+  final limit = error.type == DioExceptionType.sendTimeout ? o.sendTimeout : o.receiveTimeout;
+  final within = limit == null ? '' : ' within ${limit.inSeconds} s';
+  final what = error.type == DioExceptionType.sendTimeout ? 'could not be sent' : 'got no answer';
+  return '${o.method} ${o.uri.path} $what$within. The backend may be busy; retry, or narrow the request.';
 }
 
 String _networkMessage(DioException error) {

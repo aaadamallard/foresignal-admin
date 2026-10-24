@@ -111,7 +111,8 @@ class _CustomSourceScreenState extends ConsumerState<CustomSourceScreen> {
             final source = list.where((s) => s.id == widget.sourceId).firstOrNull;
             if (source == null) {
               return ErrorBanner(
-                error: NetworkException('No custom source ${widget.sourceId}.'),
+                title: 'Custom source not found',
+                error: 'listCustomSources has no custom source ${widget.sourceId}.',
                 onRetry: () => ref.invalidate(customSourcesProvider),
               );
             }

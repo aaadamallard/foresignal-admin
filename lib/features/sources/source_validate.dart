@@ -138,7 +138,8 @@ class SourceDoctor {
         return report;
       }
     }
-    throw NetworkException(
+    throw RequestFailedException(
+      RequestFailure.timeout,
       'The doctor run $reportId did not finish within ${timeout.inSeconds} s.',
     );
   }
@@ -151,7 +152,11 @@ class SourceDoctor {
       final response = await call();
       final report = response.data;
       if (report == null) {
-        throw NetworkException('The backend answered without a doctor report.');
+        throw RequestFailedException(
+          RequestFailure.unexpectedReply,
+          'The backend answered HTTP ${response.statusCode} without a doctor report.',
+          status: response.statusCode,
+        );
       }
       return (report, null);
     } on DioException catch (error) {
@@ -172,7 +177,11 @@ class SourceDoctor {
         api.serializers.deserialize(body, specifiedType: const FullType(DoctorRunAccepted))
             as DoctorRunAccepted?;
     if (accepted == null) {
-      throw NetworkException('The doctor run was accepted without a report id.');
+      throw RequestFailedException(
+        RequestFailure.unexpectedReply,
+        'The doctor run was accepted without a report id.',
+        status: 202,
+      );
     }
     return accepted.reportId;
   }

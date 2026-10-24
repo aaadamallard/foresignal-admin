@@ -16,7 +16,7 @@ part 'report_block_base.g.dart';
 /// * [id] - Server-assigned; comment on a block with `report:{id}#{blockId}`
 /// * [type]
 /// * [title]
-/// * [textOrigin] - `llm` blocks are labelled narrative from the optional 028 tool loop
+/// * [textOrigin] - `llm` blocks are labeled narrative from the optional 028 tool loop
 /// * [updatedAt]
 /// * [updatedBy]
 @BuiltValue()
@@ -33,7 +33,7 @@ abstract class ReportBlockBase
   @BuiltValueField(wireName: r'title')
   String? get title;
 
-  /// `llm` blocks are labelled narrative from the optional 028 tool loop
+  /// `llm` blocks are labeled narrative from the optional 028 tool loop
   @BuiltValueField(wireName: r'textOrigin')
   ReportBlockBaseTextOriginEnum? get textOrigin;
   // enum textOriginEnum {  author,  deterministic,  llm,  };
@@ -271,7 +271,7 @@ class ReportBlockBaseTypeEnum extends EnumClass {
       _$reportBlockBaseTypeEnumValueOf(name);
 }
 
-/// `llm` blocks are labelled narrative from the optional 028 tool loop
+/// `llm` blocks are labeled narrative from the optional 028 tool loop
 class ReportBlockBaseTextOriginEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'author')
   static const ReportBlockBaseTextOriginEnum author =

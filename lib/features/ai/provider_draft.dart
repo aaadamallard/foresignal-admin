@@ -5,6 +5,30 @@ import '../../api/api.dart';
 /// The provider types (`LlmProviderInput.type`), by wire name.
 const List<String> llmProviderTypes = <String>['anthropic', 'openai-compatible', 'ollama'];
 
+/// The LM Studio preset: an `openai-compatible` provider at LM Studio's local
+/// server, treated as local for LLM egress. Not a wire type.
+const String lmStudioPreset = 'lm-studio';
+
+/// LM Studio's local server, as the backend reaches it by default.
+const String lmStudioBaseUrl = 'http://localhost:1234/v1';
+
+/// The choices of the add form's Type dropdown, in order: the wire types,
+/// with the LM Studio preset after the OpenAI-compatible type it fills in.
+const List<String> llmProviderChoices = <String>[
+  'anthropic',
+  'openai-compatible',
+  lmStudioPreset,
+  'ollama',
+];
+
+/// The label of a Type choice.
+String llmProviderChoiceLabel(String choice) => switch (choice) {
+  'anthropic' => 'Anthropic',
+  'openai-compatible' => 'OpenAI-compatible',
+  lmStudioPreset => 'LM Studio',
+  _ => 'Ollama',
+};
+
 /// The effort levels (`options.effort`), by wire name.
 const List<String> llmEffortLevels = <String>['low', 'medium', 'high', 'xhigh', 'max'];
 
@@ -66,6 +90,37 @@ class ProviderDraft {
 
   /// The provider type, by wire name. Fixed once the provider exists.
   String type;
+
+  /// The preset chosen over [type] while adding ([lmStudioPreset]), or `null`.
+  String? preset;
+
+  /// The Type dropdown's value: the preset when one is chosen, else [type].
+  String get choice => preset ?? type;
+
+  /// Applies a Type [choice] while adding. The LM Studio preset sets the type
+  /// to `openai-compatible`, turns [local] on and fills an empty (or
+  /// preset-filled) base URL with [lmStudioBaseUrl]; leaving it undoes what
+  /// it filled in. Every value stays editable.
+  void choose(String choice) {
+    final wasPreset = preset == lmStudioPreset;
+    if (choice == lmStudioPreset) {
+      preset = lmStudioPreset;
+      type = 'openai-compatible';
+      local = true;
+      if (text['baseUrl']!.trim().isEmpty) {
+        text['baseUrl'] = lmStudioBaseUrl;
+      }
+      return;
+    }
+    preset = null;
+    type = choice;
+    if (wasPreset) {
+      local = false;
+      if (text['baseUrl']!.trim() == lmStudioBaseUrl) {
+        text['baseUrl'] = '';
+      }
+    }
+  }
 
   /// Whether the provider may be used.
   bool enabled;

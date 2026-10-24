@@ -4,7 +4,7 @@
 
 // ignore_for_file: unused_element
 import 'package:built_collection/built_collection.dart';
-import 'package:foresignal_api/src/model/notification_message.dart';
+import 'package:foresignal_api/src/model/notification_webhook_message.dart';
 import 'package:built_value/json_object.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
@@ -32,7 +32,7 @@ abstract class WebhookEnvelope
   String get subtype;
 
   @BuiltValueField(wireName: r'message')
-  NotificationMessage get message;
+  NotificationWebhookMessage get message;
 
   @BuiltValueField(wireName: r'data')
   BuiltMap<String, JsonObject?>? get data;
@@ -84,7 +84,7 @@ class _$WebhookEnvelopeSerializer
     yield r'message';
     yield serializers.serialize(
       object.message,
-      specifiedType: const FullType(NotificationMessage),
+      specifiedType: const FullType(NotificationWebhookMessage),
     );
     if (object.data != null) {
       yield r'data';
@@ -157,9 +157,9 @@ class _$WebhookEnvelopeSerializer
           final valueDes =
               serializers.deserialize(
                     value,
-                    specifiedType: const FullType(NotificationMessage),
+                    specifiedType: const FullType(NotificationWebhookMessage),
                   )
-                  as NotificationMessage;
+                  as NotificationWebhookMessage;
           result.message.replace(valueDes);
           break;
         case r'data':

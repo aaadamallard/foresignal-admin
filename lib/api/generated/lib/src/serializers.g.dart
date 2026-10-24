@@ -1605,7 +1605,6 @@ Serializers _$serializers =
           ..add(NotificationDetailSeverityEnum.serializer)
           ..add(NotificationLink.serializer)
           ..add(NotificationMessage.serializer)
-          ..add(NotificationMessageEventEnum.serializer)
           ..add(NotificationMessageSeverityEnum.serializer)
           ..add(NotificationPage.serializer)
           ..add(NotificationPreference.serializer)
@@ -1621,6 +1620,9 @@ Serializers _$serializers =
           ..add(NotificationSettingsChatops.serializer)
           ..add(NotificationSettingsPauseBypassSeverityEnum.serializer)
           ..add(NotificationSeverityEnum.serializer)
+          ..add(NotificationWebhookMessage.serializer)
+          ..add(NotificationWebhookMessageEventEnum.serializer)
+          ..add(NotificationWebhookMessageSeverityEnum.serializer)
           ..add(NtfyMessage.serializer)
           ..add(NtfyMessageEventEnum.serializer)
           ..add(NtfyPublishRequest.serializer)
@@ -4820,6 +4822,25 @@ Serializers _$serializers =
               const FullType(NotificationAction),
             ]),
             () => ListBuilder<NotificationAction>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, const [const FullType(NotificationLink)]),
+            () => ListBuilder<NotificationLink>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltMap, const [
+              const FullType(String),
+              const FullType.nullable(JsonObject),
+            ]),
+            () => MapBuilder<String, JsonObject?>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, const [const FullType(String)]),
+            () => ListBuilder<String>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, const [const FullType(Attachment)]),
+            () => ListBuilder<Attachment>(),
           )
           ..addBuilderFactory(
             const FullType(BuiltList, const [const FullType(NotificationLink)]),

@@ -143,6 +143,10 @@ class _InboxPanelState extends ConsumerState<InboxPanel> {
   String? _nextCursor;
   bool _loading = true;
   Object? _error;
+
+  /// Repeats the request that set [_error]: the load, the next page, or the
+  /// acknowledge or resolve that failed.
+  VoidCallback? _retry;
   Object? _streamError;
   LiveStatus _live = LiveStatus.connecting;
   final Set<int> _fresh = <int>{};
@@ -241,7 +245,10 @@ class _InboxPanelState extends ConsumerState<InboxPanel> {
       }
     } on Object catch (e) {
       if (mounted && load == _load) {
-        setState(() => _error = e);
+        setState(() {
+          _error = e;
+          _retry = _reload;
+        });
       }
     } finally {
       if (mounted && load == _load) {
@@ -266,7 +273,10 @@ class _InboxPanelState extends ConsumerState<InboxPanel> {
       }
     } on Object catch (e) {
       if (mounted) {
-        setState(() => _error = e);
+        setState(() {
+          _error = e;
+          _retry = _more;
+        });
       }
     }
   }
@@ -287,7 +297,10 @@ class _InboxPanelState extends ConsumerState<InboxPanel> {
       }
     } on Object catch (e) {
       if (mounted) {
-        setState(() => _error = e);
+        setState(() {
+          _error = e;
+          _retry = () => _transition(alert, resolve: resolve);
+        });
       }
     } finally {
       if (mounted) {
@@ -340,9 +353,16 @@ class _InboxPanelState extends ConsumerState<InboxPanel> {
           ],
         ),
         const SizedBox(height: 16),
-        if (_error case final e?) ...<Widget>[ErrorBanner(error: e), const SizedBox(height: 16)],
+        if (_error case final e?) ...<Widget>[
+          ErrorBanner(key: const Key('inbox.error'), error: e, onRetry: _retry),
+          const SizedBox(height: 16),
+        ],
         if (_loading && _alerts.isEmpty)
           const Padding(padding: EdgeInsets.all(24), child: Center(child: CircularProgressIndicator()))
+        // A failed load is not an empty inbox: say nothing rather than
+        // "No alerts match.".
+        else if (_error != null && _alerts.isEmpty)
+          const SizedBox.shrink()
         else if (desktop)
           _table(context)
         else

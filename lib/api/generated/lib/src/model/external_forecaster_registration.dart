@@ -10,10 +10,10 @@ import 'package:built_value/serializer.dart';
 
 part 'external_forecaster_registration.g.dart';
 
-/// Pre-registers, names and configures a first-class external forecaster (155), independent of the auto-derived edp:{sourceId}/{streamId} id.
+/// Pre-registers, names and configures a first-class external forecaster (155), independent of the auto-derived edp:{sourceId}:{streamId} id.
 ///
 /// Properties:
-/// * [id] - Forecaster id, conventionally edp:{sourceId}/{streamId}.
+/// * [id] - Forecaster id, conventionally edp:{sourceId}:{streamId}.
 /// * [name] - Optional display name (defaults to the id).
 /// * [config] - Optional configuration; `sourceId` and `streamId` pin the provider for backtests, and `externalMinResolved` (integer) overrides the ensemble's global minimum resolved count.
 @BuiltValue()
@@ -23,7 +23,7 @@ abstract class ExternalForecasterRegistration
           ExternalForecasterRegistration,
           ExternalForecasterRegistrationBuilder
         > {
-  /// Forecaster id, conventionally edp:{sourceId}/{streamId}.
+  /// Forecaster id, conventionally edp:{sourceId}:{streamId}.
   @BuiltValueField(wireName: r'id')
   String get id;
 

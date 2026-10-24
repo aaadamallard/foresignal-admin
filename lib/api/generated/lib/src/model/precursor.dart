@@ -44,7 +44,7 @@ part 'precursor.g.dart';
 /// * [batchSize] - Tests in the FDR batch
 /// * [status]
 /// * [statusReason]
-/// * [operatorValidated] - Pinned as validated by an operator (logged and labelled)
+/// * [operatorValidated] - Pinned as validated by an operator (logged and labeled)
 /// * [detector]
 /// * [firstValidatedAt]
 /// * [lastTestedAt]
@@ -140,7 +140,7 @@ abstract class Precursor implements Built<Precursor, PrecursorBuilder> {
   @BuiltValueField(wireName: r'statusReason')
   String? get statusReason;
 
-  /// Pinned as validated by an operator (logged and labelled)
+  /// Pinned as validated by an operator (logged and labeled)
   @BuiltValueField(wireName: r'operatorValidated')
   bool? get operatorValidated;
 

@@ -103,7 +103,7 @@ class _$PrecisionComponentsInner extends PrecisionComponentsInner {
   @override
   final int? needsReview;
   @override
-  final int labelled;
+  final int labeled;
   @override
   final num? precision;
   @override
@@ -120,7 +120,7 @@ class _$PrecisionComponentsInner extends PrecisionComponentsInner {
     required this.rejected,
     this.duplicate,
     this.needsReview,
-    required this.labelled,
+    required this.labeled,
     this.precision,
     this.interval,
   }) : super._();
@@ -143,7 +143,7 @@ class _$PrecisionComponentsInner extends PrecisionComponentsInner {
         rejected == other.rejected &&
         duplicate == other.duplicate &&
         needsReview == other.needsReview &&
-        labelled == other.labelled &&
+        labeled == other.labeled &&
         precision == other.precision &&
         interval == other.interval;
   }
@@ -157,7 +157,7 @@ class _$PrecisionComponentsInner extends PrecisionComponentsInner {
     _$hash = $jc(_$hash, rejected.hashCode);
     _$hash = $jc(_$hash, duplicate.hashCode);
     _$hash = $jc(_$hash, needsReview.hashCode);
-    _$hash = $jc(_$hash, labelled.hashCode);
+    _$hash = $jc(_$hash, labeled.hashCode);
     _$hash = $jc(_$hash, precision.hashCode);
     _$hash = $jc(_$hash, interval.hashCode);
     _$hash = $jf(_$hash);
@@ -173,7 +173,7 @@ class _$PrecisionComponentsInner extends PrecisionComponentsInner {
           ..add('rejected', rejected)
           ..add('duplicate', duplicate)
           ..add('needsReview', needsReview)
-          ..add('labelled', labelled)
+          ..add('labeled', labeled)
           ..add('precision', precision)
           ..add('interval', interval))
         .toString();
@@ -210,9 +210,9 @@ class PrecisionComponentsInnerBuilder
   int? get needsReview => _$this._needsReview;
   set needsReview(int? needsReview) => _$this._needsReview = needsReview;
 
-  int? _labelled;
-  int? get labelled => _$this._labelled;
-  set labelled(int? labelled) => _$this._labelled = labelled;
+  int? _labeled;
+  int? get labeled => _$this._labeled;
+  set labeled(int? labeled) => _$this._labeled = labeled;
 
   num? _precision;
   num? get precision => _$this._precision;
@@ -237,7 +237,7 @@ class PrecisionComponentsInnerBuilder
       _rejected = $v.rejected;
       _duplicate = $v.duplicate;
       _needsReview = $v.needsReview;
-      _labelled = $v.labelled;
+      _labeled = $v.labeled;
       _precision = $v.precision;
       _interval = $v.interval?.toBuilder();
       _$v = null;
@@ -286,10 +286,10 @@ class PrecisionComponentsInnerBuilder
             ),
             duplicate: duplicate,
             needsReview: needsReview,
-            labelled: BuiltValueNullFieldError.checkNotNull(
-              labelled,
+            labeled: BuiltValueNullFieldError.checkNotNull(
+              labeled,
               r'PrecisionComponentsInner',
-              'labelled',
+              'labeled',
             ),
             precision: precision,
             interval: _interval?.build(),

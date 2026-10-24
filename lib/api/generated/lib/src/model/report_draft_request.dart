@@ -20,7 +20,7 @@ part 'report_draft_request.g.dart';
 /// * [title]
 /// * [timeWindow]
 /// * [area]
-/// * [narrative] - Add a labelled LLM narrative block (agent scope, budgeted)
+/// * [narrative] - Add a labeled LLM narrative block (agent scope, budgeted)
 /// * [assessmentId] - ULID identifier
 @BuiltValue()
 abstract class ReportDraftRequest
@@ -41,7 +41,7 @@ abstract class ReportDraftRequest
   @BuiltValueField(wireName: r'area')
   Geometry? get area;
 
-  /// Add a labelled LLM narrative block (agent scope, budgeted)
+  /// Add a labeled LLM narrative block (agent scope, budgeted)
   @BuiltValueField(wireName: r'narrative')
   bool? get narrative;
 

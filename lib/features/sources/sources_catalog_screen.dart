@@ -4,10 +4,12 @@ import 'package:go_router/go_router.dart';
 
 import '../../api/api.dart';
 import '../../core/form_factor.dart';
+import '../../core/format/duration_text.dart';
 import '../../core/routes.dart';
 import '../../core/ui/ui.dart';
 import '../usage/usage_screen.dart';
 import 'source_filter.dart';
+import 'source_info_dialog.dart';
 import 'source_providers.dart';
 import 'source_widgets.dart';
 
@@ -254,28 +256,53 @@ class _SourcesCatalogScreenState extends ConsumerState<SourcesCatalogScreen> {
 
   Widget _table(BuildContext context, List<SourceSummary> rows, Map<String, SourceHealth> health) {
     return DataTableCard<SourceSummary>(
+      key: const Key('sources.table'),
       rows: rows,
+      numbered: true,
+      // Nine columns, the info button last, fit a 1280-wide window.
+      columnSpacing: 16,
       empty: 'No source matches these filters.',
       onTap: (s) => context.go(sourceDetailPath(s.id)),
       columns: <TableColumnSpec<SourceSummary>>[
-        TableColumnSpec<SourceSummary>(label: 'Name', cell: (s) => BoundedText(s.name, maxWidth: 240)),
-        TableColumnSpec<SourceSummary>(label: 'Kind', cell: (s) => BoundedText(s.kinds.join(', '), maxWidth: 180)),
-        TableColumnSpec<SourceSummary>(label: 'Enabled', cell: _enabledSwitch),
+        TableColumnSpec<SourceSummary>(
+          label: 'Name',
+          cell: (s) => BoundedText(s.name, maxWidth: 200),
+          sortBy: (s) => s.name,
+        ),
+        TableColumnSpec<SourceSummary>(
+          label: 'Kind',
+          cell: (s) => BoundedText(s.kinds.join(', '), maxWidth: 160),
+          sortBy: (s) => s.kinds.join(', '),
+        ),
+        TableColumnSpec<SourceSummary>(label: 'Enabled', cell: _enabledSwitch, sortBy: (s) => s.enabled),
         TableColumnSpec<SourceSummary>(
           label: 'Health',
           cell: (s) => HealthLabel(status: s.status, tooltip: healthTooltip(health[s.id])),
+          sortBy: (s) => healthOrder.indexOf(s.status),
         ),
         TableColumnSpec<SourceSummary>(
           label: 'Credentials',
           cell: (s) => CredentialLabel(source: s),
+          sortBy: (s) => CredentialState.of(s).index,
         ),
         TableColumnSpec<SourceSummary>(
           label: 'Interval',
           cell: (s) => Text(intervalText(s.interval)),
+          sortBy: (s) => s.interval == null ? null : parseDurationText(s.interval!),
         ),
         TableColumnSpec<SourceSummary>(
           label: 'Usage (today)',
           cell: (s) => Text(usageText(s.budgetUsedToday, s.budget)),
+          sortBy: (s) => s.budgetUsedToday,
+        ),
+        TableColumnSpec<SourceSummary>(
+          label: 'Info',
+          cell: (s) => IconButton(
+            key: Key('sources.info.${s.id}'),
+            tooltip: 'About ${s.name}',
+            icon: const Icon(Icons.info_outline, size: 20),
+            onPressed: () => showSourceInfo(context, s),
+          ),
         ),
       ],
     );

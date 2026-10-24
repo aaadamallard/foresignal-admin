@@ -4,8 +4,14 @@ import '../theme.dart';
 
 /// One column of a [DataTableCard].
 class TableColumnSpec<T> {
-  /// Creates a column with a header [label] and a [cell] builder.
-  const TableColumnSpec({required this.label, required this.cell, this.numeric = false});
+  /// Creates a column with a header [label] and a [cell] builder; a [sortBy]
+  /// makes it sortable from its header.
+  const TableColumnSpec({
+    required this.label,
+    required this.cell,
+    this.numeric = false,
+    this.sortBy,
+  });
 
   /// The header text.
   final String label;
@@ -15,12 +21,57 @@ class TableColumnSpec<T> {
 
   /// Whether the column holds numbers (right-aligned).
   final bool numeric;
+
+  /// The value a row sorts by in this column (a [String], [num], [bool],
+  /// [Duration], [DateTime] or other [Comparable]; `null` sorts last), or
+  /// `null` when the column is not sortable.
+  final Object? Function(T row)? sortBy;
+}
+
+/// Orders two sort values: strings without regard to case, `false` before
+/// `true`, and anything else by its [Comparable] order. `null` is not passed.
+int compareSortValues(Object a, Object b) {
+  if (a is String && b is String) {
+    final folded = a.toLowerCase().compareTo(b.toLowerCase());
+    return folded != 0 ? folded : a.compareTo(b);
+  }
+  if (a is bool && b is bool) {
+    return a == b ? 0 : (a ? 1 : -1);
+  }
+  if (a is Comparable && b is Comparable) {
+    try {
+      return a.compareTo(b);
+    } on TypeError {
+      // Values of different types: keep the given order.
+    }
+  }
+  return 0;
+}
+
+/// [rows] ordered by [key], ascending or not, keeping the given order among
+/// equal values; rows whose value is `null` come last either way.
+List<T> sortRows<T>(List<T> rows, Object? Function(T row) key, {required bool ascending}) {
+  final indexed = <(int, T, Object?)>[for (var i = 0; i < rows.length; i++) (i, rows[i], key(rows[i]))];
+  indexed.sort((x, y) {
+    final a = x.$3;
+    final b = y.$3;
+    if (a == null || b == null) {
+      final nulls = a == null ? (b == null ? 0 : 1) : -1;
+      return nulls != 0 ? nulls : x.$1.compareTo(y.$1);
+    }
+    final order = compareSortValues(a, b);
+    return order != 0 ? (ascending ? order : -order) : x.$1.compareTo(y.$1);
+  });
+  return <T>[for (final entry in indexed) entry.$2];
 }
 
 /// A dense, horizontally scrollable table of [rows], with an [empty] message
 /// when there are none and an optional row tap handler. Rows grow to fit
-/// their tallest cell.
-class DataTableCard<T> extends StatelessWidget {
+/// their tallest cell. A column with a `sortBy` sorts the table when its
+/// header is clicked, ascending first and then descending, with the
+/// direction arrow on that header; [numbered] adds a leading `#` column that
+/// numbers the rows as shown.
+class DataTableCard<T> extends StatefulWidget {
   /// Creates a table.
   const DataTableCard({
     super.key,
@@ -30,6 +81,7 @@ class DataTableCard<T> extends StatelessWidget {
     this.empty = 'Nothing here yet.',
     this.selected,
     this.columnSpacing = 24,
+    this.numbered = false,
   });
 
   /// The columns, in order.
@@ -51,12 +103,41 @@ class DataTableCard<T> extends StatelessWidget {
   /// so it fits a desktop window without scrolling.
   final double columnSpacing;
 
+  /// Whether a leading `#` column numbers the rows in the order shown.
+  final bool numbered;
+
+  @override
+  State<DataTableCard<T>> createState() => _DataTableCardState<T>();
+}
+
+class _DataTableCardState<T> extends State<DataTableCard<T>> {
+  /// The sorted column, as an index into [DataTableCard.columns], or `null`
+  /// for the order the rows were given in.
+  int? _sortColumn;
+  bool _ascending = true;
+
+  @override
+  void didUpdateWidget(DataTableCard<T> oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    final column = _sortColumn;
+    if (column != null && (column >= widget.columns.length || widget.columns[column].sortBy == null)) {
+      _sortColumn = null;
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
+    final columns = widget.columns;
+    final onTap = widget.onTap;
+    final sortColumn = _sortColumn;
+    final rows = sortColumn == null
+        ? widget.rows
+        : sortRows(widget.rows, columns[sortColumn].sortBy!, ascending: _ascending);
+    final offset = widget.numbered ? 1 : 0;
     if (rows.isEmpty) {
       return Padding(
         padding: const EdgeInsets.symmetric(vertical: 16),
-        child: Text(empty, style: TextStyle(color: Theme.of(context).colorScheme.onSurfaceVariant)),
+        child: Text(widget.empty, style: TextStyle(color: Theme.of(context).colorScheme.onSurfaceVariant)),
       );
     }
     return Card(
@@ -68,22 +149,38 @@ class DataTableCard<T> extends StatelessWidget {
             constraints: BoxConstraints(minWidth: constraints.maxWidth),
             child: DataTable(
               showCheckboxColumn: false,
-              columnSpacing: columnSpacing,
+              columnSpacing: widget.columnSpacing,
+              sortColumnIndex: sortColumn == null ? null : sortColumn + offset,
+              sortAscending: _ascending,
               // A row is as tall as its tallest cell (a two-line claim with
               // its subline), never clipped to the default 48.
               dataRowMinHeight: kMinInteractiveDimension,
               dataRowMaxHeight: double.infinity,
               headingRowColor: WidgetStatePropertyAll<Color>(AdminPalette.of(context).input),
               columns: <DataColumn>[
-                for (final column in columns)
-                  DataColumn(label: Text(column.label), numeric: column.numeric),
+                if (widget.numbered) const DataColumn(label: Text('#'), numeric: true),
+                for (var i = 0; i < columns.length; i++)
+                  DataColumn(
+                    label: Text(columns[i].label),
+                    numeric: columns[i].numeric,
+                    onSort: columns[i].sortBy == null
+                        ? null
+                        : (_, ascending) => setState(() {
+                            // A new column starts ascending; the same column flips.
+                            _ascending = _sortColumn == i ? ascending : true;
+                            _sortColumn = i;
+                          }),
+                  ),
               ],
               rows: <DataRow>[
-                for (final row in rows)
+                for (var r = 0; r < rows.length; r++)
                   DataRow(
-                    selected: selected?.call(row) ?? false,
-                    onSelectChanged: onTap == null ? null : (_) => onTap!(row),
-                    cells: <DataCell>[for (final column in columns) DataCell(column.cell(row))],
+                    selected: widget.selected?.call(rows[r]) ?? false,
+                    onSelectChanged: onTap == null ? null : (_) => onTap(rows[r]),
+                    cells: <DataCell>[
+                      if (widget.numbered) DataCell(Text('${r + 1}')),
+                      for (final column in columns) DataCell(column.cell(rows[r])),
+                    ],
                   ),
               ],
             ),

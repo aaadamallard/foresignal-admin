@@ -56,6 +56,26 @@ void main() {
     expect(find.byKey(const Key('provider.keyState')), findsOneWidget);
   });
 
+  testWidgets('LM Studio is a Type preset that creates a local OpenAI-compatible provider', (tester) async {
+    final llm = PreviewLlm();
+    final adapter = await openAt(tester, aiNewProviderPath, adapter: aiBackend(llm));
+    await tester.enterText(find.byKey(const Key('provider.id')), 'lm-studio');
+    await tapVisible(tester, find.byKey(const Key('provider.type')));
+    await tester.tap(find.text('LM Studio').last);
+    await tester.pumpAndSettle();
+    expect(find.text('http://localhost:1234/v1'), findsOneWidget);
+    expect(tester.widget<Switch>(find.byKey(const Key('provider.local'))).value, isTrue);
+    await tapVisible(tester, find.byKey(const Key('form.save')));
+
+    final post = adapter.requests.singleWhere((r) => r.method == 'POST');
+    expect(post.uri.path, '/v1/llm/providers');
+    final body = (post.body! as Map).cast<String, Object?>();
+    expect(body['type'], 'openai-compatible');
+    expect(body['baseUrl'], 'http://localhost:1234/v1');
+    expect(body['options'], <String, Object?>{'local': true});
+    expect(llm.providers['lm-studio']?['type'], 'openai-compatible');
+  });
+
   testWidgets('testing a provider shows the probe result', (tester) async {
     await openAt(tester, aiProviderPath('claude'), adapter: aiBackend(PreviewLlm()));
     await tapVisible(tester, find.byKey(const Key('provider.test')));

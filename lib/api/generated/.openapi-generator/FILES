@@ -1046,6 +1046,7 @@ lib/src/model/notification_preference_input_channel.dart
 lib/src/model/notification_preferences_input.dart
 lib/src/model/notification_settings.dart
 lib/src/model/notification_settings_chatops.dart
+lib/src/model/notification_webhook_message.dart
 lib/src/model/ntfy_message.dart
 lib/src/model/ntfy_publish_request.dart
 lib/src/model/nws_alert_payload.dart

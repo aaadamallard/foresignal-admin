@@ -97,6 +97,10 @@ class _NotificationsInboxPanelState extends ConsumerState<NotificationsInboxPane
   bool _loading = true;
   bool _marking = false;
   Object? _error;
+
+  /// Repeats the request that set [_error]: the load, the next page, or the
+  /// mark-read that failed.
+  VoidCallback? _retry;
   Object? _streamError;
   LiveStatus _live = LiveStatus.connecting;
   final Set<int> _fresh = <int>{};
@@ -223,7 +227,10 @@ class _NotificationsInboxPanelState extends ConsumerState<NotificationsInboxPane
       }
     } on Object catch (e) {
       if (mounted && load == _load) {
-        setState(() => _error = e);
+        setState(() {
+          _error = e;
+          _retry = _reload;
+        });
       }
     } finally {
       if (mounted && load == _load) {
@@ -250,7 +257,10 @@ class _NotificationsInboxPanelState extends ConsumerState<NotificationsInboxPane
       }
     } on Object catch (e) {
       if (mounted) {
-        setState(() => _error = e);
+        setState(() {
+          _error = e;
+          _retry = _more;
+        });
       }
     }
   }
@@ -292,7 +302,10 @@ class _NotificationsInboxPanelState extends ConsumerState<NotificationsInboxPane
       }
     } on Object catch (e) {
       if (mounted) {
-        setState(() => _error = e);
+        setState(() {
+          _error = e;
+          _retry = () => _markRead(upToId: upToId, id: id, ids: ids);
+        });
       }
     } finally {
       if (mounted) {
@@ -411,9 +424,16 @@ class _NotificationsInboxPanelState extends ConsumerState<NotificationsInboxPane
           ],
         ),
         const SizedBox(height: 16),
-        if (_error case final e?) ...<Widget>[ErrorBanner(error: e), const SizedBox(height: 16)],
+        if (_error case final e?) ...<Widget>[
+          ErrorBanner(key: const Key('notifications.error'), error: e, onRetry: _retry),
+          const SizedBox(height: 16),
+        ],
         if (_loading && _items.isEmpty)
           const Padding(padding: EdgeInsets.all(24), child: Center(child: CircularProgressIndicator()))
+        // A failed load is not an empty inbox: say nothing rather than
+        // "Nothing unread.".
+        else if (_error != null && _items.isEmpty)
+          const SizedBox.shrink()
         else if (desktop)
           _table(context)
         else

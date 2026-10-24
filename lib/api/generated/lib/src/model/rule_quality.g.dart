@@ -85,9 +85,9 @@ class _$RuleQuality extends RuleQuality {
   @override
   final int alerts;
   @override
-  final int labelled;
+  final int labeled;
   @override
-  final num? labelledShare;
+  final num? labeledShare;
   @override
   final int positive;
   @override
@@ -128,8 +128,8 @@ class _$RuleQuality extends RuleQuality {
     required this.ruleId,
     required this.since,
     required this.alerts,
-    required this.labelled,
-    this.labelledShare,
+    required this.labeled,
+    this.labeledShare,
     required this.positive,
     required this.negative,
     required this.neutral,
@@ -161,8 +161,8 @@ class _$RuleQuality extends RuleQuality {
         ruleId == other.ruleId &&
         since == other.since &&
         alerts == other.alerts &&
-        labelled == other.labelled &&
-        labelledShare == other.labelledShare &&
+        labeled == other.labeled &&
+        labeledShare == other.labeledShare &&
         positive == other.positive &&
         negative == other.negative &&
         neutral == other.neutral &&
@@ -187,8 +187,8 @@ class _$RuleQuality extends RuleQuality {
     _$hash = $jc(_$hash, ruleId.hashCode);
     _$hash = $jc(_$hash, since.hashCode);
     _$hash = $jc(_$hash, alerts.hashCode);
-    _$hash = $jc(_$hash, labelled.hashCode);
-    _$hash = $jc(_$hash, labelledShare.hashCode);
+    _$hash = $jc(_$hash, labeled.hashCode);
+    _$hash = $jc(_$hash, labeledShare.hashCode);
     _$hash = $jc(_$hash, positive.hashCode);
     _$hash = $jc(_$hash, negative.hashCode);
     _$hash = $jc(_$hash, neutral.hashCode);
@@ -215,8 +215,8 @@ class _$RuleQuality extends RuleQuality {
           ..add('ruleId', ruleId)
           ..add('since', since)
           ..add('alerts', alerts)
-          ..add('labelled', labelled)
-          ..add('labelledShare', labelledShare)
+          ..add('labeled', labeled)
+          ..add('labeledShare', labeledShare)
           ..add('positive', positive)
           ..add('negative', negative)
           ..add('neutral', neutral)
@@ -252,14 +252,13 @@ class RuleQualityBuilder implements Builder<RuleQuality, RuleQualityBuilder> {
   int? get alerts => _$this._alerts;
   set alerts(int? alerts) => _$this._alerts = alerts;
 
-  int? _labelled;
-  int? get labelled => _$this._labelled;
-  set labelled(int? labelled) => _$this._labelled = labelled;
+  int? _labeled;
+  int? get labeled => _$this._labeled;
+  set labeled(int? labeled) => _$this._labeled = labeled;
 
-  num? _labelledShare;
-  num? get labelledShare => _$this._labelledShare;
-  set labelledShare(num? labelledShare) =>
-      _$this._labelledShare = labelledShare;
+  num? _labeledShare;
+  num? get labeledShare => _$this._labeledShare;
+  set labeledShare(num? labeledShare) => _$this._labeledShare = labeledShare;
 
   int? _positive;
   int? get positive => _$this._positive;
@@ -349,8 +348,8 @@ class RuleQualityBuilder implements Builder<RuleQuality, RuleQualityBuilder> {
       _ruleId = $v.ruleId;
       _since = $v.since;
       _alerts = $v.alerts;
-      _labelled = $v.labelled;
-      _labelledShare = $v.labelledShare;
+      _labeled = $v.labeled;
+      _labeledShare = $v.labeledShare;
       _positive = $v.positive;
       _negative = $v.negative;
       _neutral = $v.neutral;
@@ -406,12 +405,12 @@ class RuleQualityBuilder implements Builder<RuleQuality, RuleQualityBuilder> {
               r'RuleQuality',
               'alerts',
             ),
-            labelled: BuiltValueNullFieldError.checkNotNull(
-              labelled,
+            labeled: BuiltValueNullFieldError.checkNotNull(
+              labeled,
               r'RuleQuality',
-              'labelled',
+              'labeled',
             ),
-            labelledShare: labelledShare,
+            labeledShare: labeledShare,
             positive: BuiltValueNullFieldError.checkNotNull(
               positive,
               r'RuleQuality',
