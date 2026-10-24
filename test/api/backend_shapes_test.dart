@@ -37,7 +37,7 @@ void main() {
       'events': <String>['personal'],
       'enabled': true,
     });
-    expect(channel.events.map(wireOf), <String>['personal']);
+    expect(channel.events.toList(), <String>['personal']);
   });
 
   test('server settings with an unset public base URL (null) decode', () {

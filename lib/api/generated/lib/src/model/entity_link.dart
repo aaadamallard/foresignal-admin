@@ -3,7 +3,6 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:built_collection/built_collection.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -14,7 +13,7 @@ part 'entity_link.g.dart';
 /// Properties:
 /// * [sourceId]
 /// * [externalId]
-/// * [keyType]
+/// * [keyType] - Expected to grow (`x-extensible-enum`): a client must accept a value not listed here.
 /// * [keyValue]
 /// * [confidence]
 /// * [validFrom]
@@ -28,9 +27,9 @@ abstract class EntityLink implements Built<EntityLink, EntityLinkBuilder> {
   @BuiltValueField(wireName: r'externalId')
   String get externalId;
 
+  /// Expected to grow (`x-extensible-enum`): a client must accept a value not listed here.
   @BuiltValueField(wireName: r'keyType')
-  EntityLinkKeyTypeEnum get keyType;
-  // enum keyTypeEnum {  airframe,  icao24,  registration,  imo,  mmsi,  norad,  cospar,  callsign,  lei,  company-number,  tax-id,  officer-id,  person-key,  };
+  String get keyType;
 
   @BuiltValueField(wireName: r'keyValue')
   String get keyValue;
@@ -85,7 +84,7 @@ class _$EntityLinkSerializer implements PrimitiveSerializer<EntityLink> {
     yield r'keyType';
     yield serializers.serialize(
       object.keyType,
-      specifiedType: const FullType(EntityLinkKeyTypeEnum),
+      specifiedType: const FullType(String),
     );
     yield r'keyValue';
     yield serializers.serialize(
@@ -165,9 +164,9 @@ class _$EntityLinkSerializer implements PrimitiveSerializer<EntityLink> {
           final valueDes =
               serializers.deserialize(
                     value,
-                    specifiedType: const FullType(EntityLinkKeyTypeEnum),
+                    specifiedType: const FullType(String),
                   )
-                  as EntityLinkKeyTypeEnum;
+                  as String;
           result.keyType = valueDes;
           break;
         case r'keyValue':
@@ -241,49 +240,4 @@ class _$EntityLinkSerializer implements PrimitiveSerializer<EntityLink> {
     );
     return result.build();
   }
-}
-
-class EntityLinkKeyTypeEnum extends EnumClass {
-  @BuiltValueEnumConst(wireName: r'airframe')
-  static const EntityLinkKeyTypeEnum airframe =
-      _$entityLinkKeyTypeEnum_airframe;
-  @BuiltValueEnumConst(wireName: r'icao24')
-  static const EntityLinkKeyTypeEnum icao24 = _$entityLinkKeyTypeEnum_icao24;
-  @BuiltValueEnumConst(wireName: r'registration')
-  static const EntityLinkKeyTypeEnum registration =
-      _$entityLinkKeyTypeEnum_registration;
-  @BuiltValueEnumConst(wireName: r'imo')
-  static const EntityLinkKeyTypeEnum imo = _$entityLinkKeyTypeEnum_imo;
-  @BuiltValueEnumConst(wireName: r'mmsi')
-  static const EntityLinkKeyTypeEnum mmsi = _$entityLinkKeyTypeEnum_mmsi;
-  @BuiltValueEnumConst(wireName: r'norad')
-  static const EntityLinkKeyTypeEnum norad = _$entityLinkKeyTypeEnum_norad;
-  @BuiltValueEnumConst(wireName: r'cospar')
-  static const EntityLinkKeyTypeEnum cospar = _$entityLinkKeyTypeEnum_cospar;
-  @BuiltValueEnumConst(wireName: r'callsign')
-  static const EntityLinkKeyTypeEnum callsign =
-      _$entityLinkKeyTypeEnum_callsign;
-  @BuiltValueEnumConst(wireName: r'lei')
-  static const EntityLinkKeyTypeEnum lei = _$entityLinkKeyTypeEnum_lei;
-  @BuiltValueEnumConst(wireName: r'company-number')
-  static const EntityLinkKeyTypeEnum companyNumber =
-      _$entityLinkKeyTypeEnum_companyNumber;
-  @BuiltValueEnumConst(wireName: r'tax-id')
-  static const EntityLinkKeyTypeEnum taxId = _$entityLinkKeyTypeEnum_taxId;
-  @BuiltValueEnumConst(wireName: r'officer-id')
-  static const EntityLinkKeyTypeEnum officerId =
-      _$entityLinkKeyTypeEnum_officerId;
-  @BuiltValueEnumConst(wireName: r'person-key')
-  static const EntityLinkKeyTypeEnum personKey =
-      _$entityLinkKeyTypeEnum_personKey;
-
-  static Serializer<EntityLinkKeyTypeEnum> get serializer =>
-      _$entityLinkKeyTypeEnumSerializer;
-
-  const EntityLinkKeyTypeEnum._(String name) : super(name);
-
-  static BuiltSet<EntityLinkKeyTypeEnum> get values =>
-      _$entityLinkKeyTypeEnumValues;
-  static EntityLinkKeyTypeEnum valueOf(String name) =>
-      _$entityLinkKeyTypeEnumValueOf(name);
 }

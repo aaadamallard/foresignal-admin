@@ -3,12 +3,14 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../api/api.dart';
+import '../../core/format/money_text.dart';
 import '../../core/routes.dart';
 import '../../core/theme.dart';
 import '../../core/ui/ui.dart';
 import '../sources/source_providers.dart';
 import '../sources/source_validate.dart';
 import '../sources/source_widgets.dart';
+import '../vetting/vetting_providers.dart';
 import 'settings_panels.dart';
 import 'usage_providers.dart';
 import 'usage_summary.dart';
@@ -257,6 +259,7 @@ class _BudgetsPanelState extends ConsumerState<BudgetsPanel> {
               width: 200,
               child: DropdownButtonFormField<UsageWindow>(
                 key: const Key('usage.window'),
+                isExpanded: true,
                 initialValue: _window,
                 items: <DropdownMenuItem<UsageWindow>>[
                   for (final w in UsageWindow.values)
@@ -334,7 +337,13 @@ class _BudgetsPanelState extends ConsumerState<BudgetsPanel> {
         AsyncView<Map<String, SourceHealth>>(
           value: ref.watch(sourceHealthProvider),
           onRetry: () => ref.invalidate(sourceHealthProvider),
-          data: (health) => BudgetTable(rows: SourceBudgetRow.rank(health.values, names)),
+          data: (health) => BudgetTable(
+            rows: SourceBudgetRow.rank(health.values, names),
+            platformCaps: <String, num>{
+              for (final p in ref.watch(socialPlatformsProvider).value ?? const <SocialPlatform>[])
+                wireOf(p.id): ?p.spend?.monthlyCapUsd,
+            },
+          ),
         ),
       ],
     );
@@ -481,10 +490,14 @@ class _TopList extends StatelessWidget {
 /// last hour's rate, refusals and spend. A row opens the source.
 class BudgetTable extends StatelessWidget {
   /// Creates the table.
-  const BudgetTable({super.key, required this.rows});
+  const BudgetTable({super.key, required this.rows, this.platformCaps = const <String, num>{}});
 
   /// The rows, fullest first.
   final List<SourceBudgetRow> rows;
+
+  /// The social platforms' own monthly caps by source id (X's
+  /// `monthlyCapUsd`): a source with one and a source cap says which applies.
+  final Map<String, num> platformCaps;
 
   @override
   Widget build(BuildContext context) {
@@ -494,16 +507,25 @@ class BudgetTable extends StatelessWidget {
       rows: rows,
       empty: 'No sources.',
       onTap: (r) => context.go(sourceDetailPath(r.id)),
+      // Nine columns fit a 1280-wide window: a long name or cap reason wraps
+      // onto a second line rather than widening the table past the screen.
+      columnSpacing: 20,
       columns: <TableColumnSpec<SourceBudgetRow>>[
-        TableColumnSpec<SourceBudgetRow>(label: 'Source', cell: (r) => Text(r.name ?? r.id)),
+        TableColumnSpec<SourceBudgetRow>(
+          label: 'Source',
+          cell: (r) => ConstrainedBox(
+            constraints: const BoxConstraints(maxWidth: 200),
+            child: Text(r.name ?? r.id),
+          ),
+        ),
         TableColumnSpec<SourceBudgetRow>(
           label: 'Today',
           cell: (r) => SizedBox(
-            width: 220,
+            width: 160,
             child: Row(
               children: <Widget>[
                 SizedBox(
-                  width: 110,
+                  width: 70,
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(3),
                     child: LinearProgressIndicator(
@@ -570,13 +592,37 @@ class BudgetTable extends StatelessWidget {
           TableColumnSpec<SourceBudgetRow>(
             label: 'Spend (month)',
             numeric: true,
-            cell: (r) => Text(switch (r.health.spentUsdThisMonth) {
-              null => '—',
-              final s =>
-                r.health.budget?.monthlyCapUsd == null
-                    ? _usd(s)
-                    : '${_usd(s)} / ${_usd(r.health.budget!.monthlyCapUsd!)}',
-            }),
+            cell: (r) {
+              final spend = Text(switch (r.health.spentUsdThisMonth) {
+                null => '—',
+                final s =>
+                  r.health.budget?.monthlyCapUsd == null
+                      ? _usd(s)
+                      : '${_usd(s)} / ${_usd(r.health.budget!.monthlyCapUsd!)}',
+              });
+              final reason = capReasonText(
+                platformCap: platformCaps[r.id],
+                sourceCap: r.health.budget?.monthlyCapUsd,
+              );
+              return reason == null
+                  ? spend
+                  : Column(
+                      mainAxisSize: MainAxisSize.min,
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      children: <Widget>[
+                        spend,
+                        ConstrainedBox(
+                          constraints: const BoxConstraints(maxWidth: 150),
+                          child: Text(
+                            reason,
+                            key: Key('usage.capReason.${r.id}'),
+                            textAlign: TextAlign.end,
+                            style: TextStyle(color: palette.muted, fontSize: 12),
+                          ),
+                        ),
+                      ],
+                    );
+            },
           ),
       ],
     );
@@ -612,8 +658,9 @@ class UsageGlanceCard extends ConsumerWidget {
         children: <Widget>[
           Row(
             children: <Widget>[
-              Text('Requests today', style: TextStyle(color: palette.muted)),
-              const Spacer(),
+              // Wraps rather than pushing the count off a narrow phone.
+              Expanded(child: Text('Requests today', style: TextStyle(color: palette.muted))),
+              const SizedBox(width: 8),
               Text(
                 t.budgetToday == 0
                     ? compactCount(t.requestsToday)

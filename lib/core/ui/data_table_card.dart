@@ -18,7 +18,8 @@ class TableColumnSpec<T> {
 }
 
 /// A dense, horizontally scrollable table of [rows], with an [empty] message
-/// when there are none and an optional row tap handler.
+/// when there are none and an optional row tap handler. Rows grow to fit
+/// their tallest cell.
 class DataTableCard<T> extends StatelessWidget {
   /// Creates a table.
   const DataTableCard({
@@ -28,6 +29,7 @@ class DataTableCard<T> extends StatelessWidget {
     this.onTap,
     this.empty = 'Nothing here yet.',
     this.selected,
+    this.columnSpacing = 24,
   });
 
   /// The columns, in order.
@@ -44,6 +46,10 @@ class DataTableCard<T> extends StatelessWidget {
 
   /// Whether a row is shown as selected.
   final bool Function(T row)? selected;
+
+  /// The gap between columns; a table with many narrow columns may use less
+  /// so it fits a desktop window without scrolling.
+  final double columnSpacing;
 
   @override
   Widget build(BuildContext context) {
@@ -62,7 +68,11 @@ class DataTableCard<T> extends StatelessWidget {
             constraints: BoxConstraints(minWidth: constraints.maxWidth),
             child: DataTable(
               showCheckboxColumn: false,
-              columnSpacing: 24,
+              columnSpacing: columnSpacing,
+              // A row is as tall as its tallest cell (a two-line claim with
+              // its subline), never clipped to the default 48.
+              dataRowMinHeight: kMinInteractiveDimension,
+              dataRowMaxHeight: double.infinity,
               headingRowColor: WidgetStatePropertyAll<Color>(AdminPalette.of(context).input),
               columns: <DataColumn>[
                 for (final column in columns)
@@ -84,12 +94,13 @@ class DataTableCard<T> extends StatelessWidget {
   }
 }
 
-/// [text] on one line at most [maxWidth] wide, the whole of it on hover: a
-/// table cell for a value that may be long (a name, a list of kinds) so it
-/// cannot push the other columns off the table.
-class ClippedText extends StatelessWidget {
+/// [text] at most [maxWidth] wide, wrapping onto further lines rather than
+/// being cut: a table cell for a value that may be long (a name, a list of
+/// kinds) so it cannot push the other columns off the table, while the row
+/// grows to show all of it.
+class BoundedText extends StatelessWidget {
   /// Creates the cell.
-  const ClippedText(this.text, {super.key, this.maxWidth = 240, this.style});
+  const BoundedText(this.text, {super.key, this.maxWidth = 240, this.style});
 
   /// The full text.
   final String text;
@@ -103,10 +114,6 @@ class ClippedText extends StatelessWidget {
   @override
   Widget build(BuildContext context) => ConstrainedBox(
     constraints: BoxConstraints(maxWidth: maxWidth),
-    child: Tooltip(
-      message: text,
-      waitDuration: const Duration(milliseconds: 500),
-      child: Text(text, maxLines: 1, overflow: TextOverflow.ellipsis, style: style),
-    ),
+    child: Text(text, style: style),
   );
 }

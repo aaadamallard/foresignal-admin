@@ -6,6 +6,7 @@ import 'package:foresignal_admin/core/router.dart';
 import 'package:foresignal_admin/core/routes.dart';
 
 import '../../../tool/preview/preview_sources.dart';
+import '../../support/actions.dart';
 import '../../support/fake_adapter.dart';
 import '../../support/test_app.dart';
 
@@ -90,16 +91,14 @@ void main() {
     expect(find.text('GDELT'), findsNothing);
 
     await tester.enterText(find.byKey(const Key('sources.search')).last, '');
-    await tester.tap(find.byKey(const Key('sources.tab.enabled')));
-    await tester.pumpAndSettle();
+    await tapVisible(tester, find.byKey(const Key('sources.tab.enabled')));
     expect(find.text('GDELT'), findsOneWidget);
     expect(find.text('USGS Earthquakes'), findsNothing);
   });
 
   testWidgets('the enabled switch writes, then re-reads the source', (tester) async {
     final adapter = await openAt(tester, sourcesPath);
-    await tester.tap(find.byKey(const Key('sources.enabled.gdacs')));
-    await tester.pumpAndSettle();
+    await tapVisible(tester, find.byKey(const Key('sources.enabled.gdacs')));
     final put = adapter.requests.singleWhere((r) => r.method == 'PUT');
     expect(put.uri.path, '/v1/sources/gdacs');
     expect(put.body, <String, Object?>{'enabled': true});
@@ -117,8 +116,7 @@ void main() {
 
   testWidgets('enabling a source without its key shows the refusal', (tester) async {
     await openAt(tester, sourcesPath);
-    await tester.tap(find.byKey(const Key('sources.enabled.nasa-firms')));
-    await tester.pumpAndSettle();
+    await tapVisible(tester, find.byKey(const Key('sources.enabled.nasa-firms')));
     expect(find.textContaining('CREDENTIALS_REQUIRED'), findsWidgets);
     final toggle = tester.widget<Switch>(find.byKey(const Key('sources.enabled.nasa-firms')));
     expect(toggle.value, isFalse);
@@ -126,8 +124,7 @@ void main() {
 
   testWidgets('Enable Free Sources posts and shows what it enabled', (tester) async {
     final adapter = await openAt(tester, sourcesPath);
-    await tester.tap(find.byKey(const Key('sources.enableFree')));
-    await tester.pumpAndSettle();
+    await tapVisible(tester, find.byKey(const Key('sources.enableFree')));
     final post = adapter.requests.singleWhere((r) => r.uri.path == '/v1/sources/enable-free');
     expect(post.method, 'POST');
     expect(find.byKey(const Key('sources.bulkResult')), findsOneWidget);
@@ -144,16 +141,14 @@ void main() {
 
   testWidgets('a settings edit is saved, re-read and confirmed', (tester) async {
     final adapter = await openAt(tester, sourceDetailPath('usgs-earthquakes'));
-    await tester.tap(find.byKey(const Key('source.tab.configuration')));
-    await tester.pumpAndSettle();
+    await tapVisible(tester, find.byKey(const Key('source.tab.configuration')));
     final interval = find.byWidgetPredicate(
       (w) =>
           w.key is ValueKey<String> &&
           (w.key! as ValueKey<String>).value.startsWith('config.interval.'),
     );
     await tester.enterText(interval, '30m');
-    await tester.tap(find.byKey(const Key('form.save')));
-    await tester.pumpAndSettle();
+    await tapVisible(tester, find.byKey(const Key('form.save')));
 
     final put = adapter.requests.singleWhere((r) => r.method == 'PUT');
     expect(put.body, <String, Object?>{'interval': '30m'});
@@ -173,17 +168,14 @@ void main() {
       sourceDetailPath('usgs-earthquakes'),
       adapter: sourcesBackend(sources),
     );
-    await tester.tap(find.byKey(const Key('source.tab.configuration')));
-    await tester.pumpAndSettle();
+    await tapVisible(tester, find.byKey(const Key('source.tab.configuration')));
     final retention = find.byWidgetPredicate(
       (w) =>
           w.key is ValueKey<String> &&
           (w.key! as ValueKey<String>).value.startsWith('config.retention.'),
     );
     await tester.enterText(retention, '');
-    await tester.ensureVisible(find.byKey(const Key('form.save')));
-    await tester.tap(find.byKey(const Key('form.save')));
-    await tester.pumpAndSettle();
+    await tapVisible(tester, find.byKey(const Key('form.save')));
 
     final put = adapter.requests.singleWhere((r) => r.method == 'PUT');
     expect(put.body, <String, Object?>{'retention': null});
@@ -208,17 +200,14 @@ void main() {
             : backend.handler(request),
       ),
     );
-    await tester.tap(find.byKey(const Key('source.tab.configuration')));
-    await tester.pumpAndSettle();
+    await tapVisible(tester, find.byKey(const Key('source.tab.configuration')));
     final interval = find.byWidgetPredicate(
       (w) =>
           w.key is ValueKey<String> &&
           (w.key! as ValueKey<String>).value.startsWith('config.interval.'),
     );
     await tester.enterText(interval, '30m');
-    await tester.ensureVisible(find.byKey(const Key('form.save')));
-    await tester.tap(find.byKey(const Key('form.save')));
-    await tester.pumpAndSettle();
+    await tapVisible(tester, find.byKey(const Key('form.save')));
     expect(adapter.requests.where((r) => r.method == 'PUT'), hasLength(1));
     expect(find.text('refused by the backend'), findsWidgets);
 
@@ -229,16 +218,14 @@ void main() {
 
   testWidgets('an interval below the minimum is refused before any request', (tester) async {
     final adapter = await openAt(tester, sourceDetailPath('usgs-earthquakes'));
-    await tester.tap(find.byKey(const Key('source.tab.configuration')));
-    await tester.pumpAndSettle();
+    await tapVisible(tester, find.byKey(const Key('source.tab.configuration')));
     final interval = find.byWidgetPredicate(
       (w) =>
           w.key is ValueKey<String> &&
           (w.key! as ValueKey<String>).value.startsWith('config.interval.'),
     );
     await tester.enterText(interval, '10s');
-    await tester.tap(find.byKey(const Key('form.save')));
-    await tester.pumpAndSettle();
+    await tapVisible(tester, find.byKey(const Key('form.save')));
     expect(adapter.requests.where((r) => r.method == 'PUT'), isEmpty);
     expect(find.textContaining('The shortest interval'), findsOneWidget);
   });

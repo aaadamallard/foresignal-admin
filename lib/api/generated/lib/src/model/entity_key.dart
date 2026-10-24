@@ -14,7 +14,7 @@ part 'entity_key.g.dart';
 /// Properties:
 /// * [id] - Key row id
 /// * [entityId] - ULID identifier
-/// * [keyType] - Key type. `callsign` values are domain-prefixed (`air:`, `sea:`, `ham:`). Corporate and person keys (prompt 158): `lei`, `company-number` (`JURISDICTION:NUMBER`), `tax-id`, `officer-id` (`REGISTRY:ID`) for organizations; `person-key` (a normalized name key) for people
+/// * [keyType] - Key type. `callsign` values are domain-prefixed (`air:`, `sea:`, `ham:`). Corporate and person keys (prompt 158): `lei`, `company-number` (`JURISDICTION:NUMBER`), `tax-id`, `officer-id` (`REGISTRY:ID`) for organizations; `person-key` (a normalized name key) for people. Expected to grow (`x-extensible-enum`): a client must accept a value not listed here.
 /// * [keyValue] - Normalised value (e.g. icao24 lowercase hex, registration without spaces or hyphens)
 /// * [role] - ANCHOR keys (airframe, imo, norad, cospar, lei, company-number, tax-id, officer-id) identify an entity on their own; WEAK keys (callsign, person-key) can be re-assigned
 /// * [confidence]
@@ -33,10 +33,9 @@ abstract class EntityKey implements Built<EntityKey, EntityKeyBuilder> {
   @BuiltValueField(wireName: r'entityId')
   String get entityId;
 
-  /// Key type. `callsign` values are domain-prefixed (`air:`, `sea:`, `ham:`). Corporate and person keys (prompt 158): `lei`, `company-number` (`JURISDICTION:NUMBER`), `tax-id`, `officer-id` (`REGISTRY:ID`) for organizations; `person-key` (a normalized name key) for people
+  /// Key type. `callsign` values are domain-prefixed (`air:`, `sea:`, `ham:`). Corporate and person keys (prompt 158): `lei`, `company-number` (`JURISDICTION:NUMBER`), `tax-id`, `officer-id` (`REGISTRY:ID`) for organizations; `person-key` (a normalized name key) for people. Expected to grow (`x-extensible-enum`): a client must accept a value not listed here.
   @BuiltValueField(wireName: r'keyType')
-  EntityKeyKeyTypeEnum get keyType;
-  // enum keyTypeEnum {  airframe,  icao24,  registration,  imo,  mmsi,  norad,  cospar,  callsign,  lei,  company-number,  tax-id,  officer-id,  person-key,  };
+  String get keyType;
 
   /// Normalised value (e.g. icao24 lowercase hex, registration without spaces or hyphens)
   @BuiltValueField(wireName: r'keyValue')
@@ -102,7 +101,7 @@ class _$EntityKeySerializer implements PrimitiveSerializer<EntityKey> {
     yield r'keyType';
     yield serializers.serialize(
       object.keyType,
-      specifiedType: const FullType(EntityKeyKeyTypeEnum),
+      specifiedType: const FullType(String),
     );
     yield r'keyValue';
     yield serializers.serialize(
@@ -194,9 +193,9 @@ class _$EntityKeySerializer implements PrimitiveSerializer<EntityKey> {
           final valueDes =
               serializers.deserialize(
                     value,
-                    specifiedType: const FullType(EntityKeyKeyTypeEnum),
+                    specifiedType: const FullType(String),
                   )
-                  as EntityKeyKeyTypeEnum;
+                  as String;
           result.keyType = valueDes;
           break;
         case r'keyValue':
@@ -297,50 +296,6 @@ class _$EntityKeySerializer implements PrimitiveSerializer<EntityKey> {
     );
     return result.build();
   }
-}
-
-/// Key type. `callsign` values are domain-prefixed (`air:`, `sea:`, `ham:`). Corporate and person keys (prompt 158): `lei`, `company-number` (`JURISDICTION:NUMBER`), `tax-id`, `officer-id` (`REGISTRY:ID`) for organizations; `person-key` (a normalized name key) for people
-class EntityKeyKeyTypeEnum extends EnumClass {
-  @BuiltValueEnumConst(wireName: r'airframe')
-  static const EntityKeyKeyTypeEnum airframe = _$entityKeyKeyTypeEnum_airframe;
-  @BuiltValueEnumConst(wireName: r'icao24')
-  static const EntityKeyKeyTypeEnum icao24 = _$entityKeyKeyTypeEnum_icao24;
-  @BuiltValueEnumConst(wireName: r'registration')
-  static const EntityKeyKeyTypeEnum registration =
-      _$entityKeyKeyTypeEnum_registration;
-  @BuiltValueEnumConst(wireName: r'imo')
-  static const EntityKeyKeyTypeEnum imo = _$entityKeyKeyTypeEnum_imo;
-  @BuiltValueEnumConst(wireName: r'mmsi')
-  static const EntityKeyKeyTypeEnum mmsi = _$entityKeyKeyTypeEnum_mmsi;
-  @BuiltValueEnumConst(wireName: r'norad')
-  static const EntityKeyKeyTypeEnum norad = _$entityKeyKeyTypeEnum_norad;
-  @BuiltValueEnumConst(wireName: r'cospar')
-  static const EntityKeyKeyTypeEnum cospar = _$entityKeyKeyTypeEnum_cospar;
-  @BuiltValueEnumConst(wireName: r'callsign')
-  static const EntityKeyKeyTypeEnum callsign = _$entityKeyKeyTypeEnum_callsign;
-  @BuiltValueEnumConst(wireName: r'lei')
-  static const EntityKeyKeyTypeEnum lei = _$entityKeyKeyTypeEnum_lei;
-  @BuiltValueEnumConst(wireName: r'company-number')
-  static const EntityKeyKeyTypeEnum companyNumber =
-      _$entityKeyKeyTypeEnum_companyNumber;
-  @BuiltValueEnumConst(wireName: r'tax-id')
-  static const EntityKeyKeyTypeEnum taxId = _$entityKeyKeyTypeEnum_taxId;
-  @BuiltValueEnumConst(wireName: r'officer-id')
-  static const EntityKeyKeyTypeEnum officerId =
-      _$entityKeyKeyTypeEnum_officerId;
-  @BuiltValueEnumConst(wireName: r'person-key')
-  static const EntityKeyKeyTypeEnum personKey =
-      _$entityKeyKeyTypeEnum_personKey;
-
-  static Serializer<EntityKeyKeyTypeEnum> get serializer =>
-      _$entityKeyKeyTypeEnumSerializer;
-
-  const EntityKeyKeyTypeEnum._(String name) : super(name);
-
-  static BuiltSet<EntityKeyKeyTypeEnum> get values =>
-      _$entityKeyKeyTypeEnumValues;
-  static EntityKeyKeyTypeEnum valueOf(String name) =>
-      _$entityKeyKeyTypeEnumValueOf(name);
 }
 
 /// ANCHOR keys (airframe, imo, norad, cospar, lei, company-number, tax-id, officer-id) identify an entity on their own; WEAK keys (callsign, person-key) can be re-assigned

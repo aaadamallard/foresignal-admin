@@ -6,168 +6,6 @@ part of 'notification_delivery.dart';
 // BuiltValueGenerator
 // **************************************************************************
 
-const NotificationDeliveryEventEnum _$notificationDeliveryEventEnum_alert =
-    const NotificationDeliveryEventEnum._('alert');
-const NotificationDeliveryEventEnum _$notificationDeliveryEventEnum_briefing =
-    const NotificationDeliveryEventEnum._('briefing');
-const NotificationDeliveryEventEnum _$notificationDeliveryEventEnum_system =
-    const NotificationDeliveryEventEnum._('system');
-const NotificationDeliveryEventEnum
-_$notificationDeliveryEventEnum_socialPeriodDivergence =
-    const NotificationDeliveryEventEnum._('socialPeriodDivergence');
-const NotificationDeliveryEventEnum
-_$notificationDeliveryEventEnum_socialPeriodAttentionGap =
-    const NotificationDeliveryEventEnum._('socialPeriodAttentionGap');
-const NotificationDeliveryEventEnum
-_$notificationDeliveryEventEnum_analystPeriodNote =
-    const NotificationDeliveryEventEnum._('analystPeriodNote');
-const NotificationDeliveryEventEnum
-_$notificationDeliveryEventEnum_situationPeriodActivated =
-    const NotificationDeliveryEventEnum._('situationPeriodActivated');
-const NotificationDeliveryEventEnum
-_$notificationDeliveryEventEnum_situationPeriodEscalated =
-    const NotificationDeliveryEventEnum._('situationPeriodEscalated');
-const NotificationDeliveryEventEnum
-_$notificationDeliveryEventEnum_findingPeriodSignificant =
-    const NotificationDeliveryEventEnum._('findingPeriodSignificant');
-const NotificationDeliveryEventEnum
-_$notificationDeliveryEventEnum_forecastPeriodResolved =
-    const NotificationDeliveryEventEnum._('forecastPeriodResolved');
-const NotificationDeliveryEventEnum
-_$notificationDeliveryEventEnum_forecastPeriodResolutionNeeded =
-    const NotificationDeliveryEventEnum._('forecastPeriodResolutionNeeded');
-const NotificationDeliveryEventEnum
-_$notificationDeliveryEventEnum_hypothesisPeriodBandChanged =
-    const NotificationDeliveryEventEnum._('hypothesisPeriodBandChanged');
-const NotificationDeliveryEventEnum
-_$notificationDeliveryEventEnum_indicatorPeriodObserved =
-    const NotificationDeliveryEventEnum._('indicatorPeriodObserved');
-const NotificationDeliveryEventEnum
-_$notificationDeliveryEventEnum_assumptionPeriodBroken =
-    const NotificationDeliveryEventEnum._('assumptionPeriodBroken');
-const NotificationDeliveryEventEnum
-_$notificationDeliveryEventEnum_assessmentPeriodPublished =
-    const NotificationDeliveryEventEnum._('assessmentPeriodPublished');
-const NotificationDeliveryEventEnum
-_$notificationDeliveryEventEnum_chroniclePeriodProposed =
-    const NotificationDeliveryEventEnum._('chroniclePeriodProposed');
-const NotificationDeliveryEventEnum
-_$notificationDeliveryEventEnum_chroniclePeriodCapWarning =
-    const NotificationDeliveryEventEnum._('chroniclePeriodCapWarning');
-const NotificationDeliveryEventEnum
-_$notificationDeliveryEventEnum_chroniclePeriodGap =
-    const NotificationDeliveryEventEnum._('chroniclePeriodGap');
-const NotificationDeliveryEventEnum _$notificationDeliveryEventEnum_mention =
-    const NotificationDeliveryEventEnum._('mention');
-const NotificationDeliveryEventEnum _$notificationDeliveryEventEnum_share =
-    const NotificationDeliveryEventEnum._('share');
-const NotificationDeliveryEventEnum
-_$notificationDeliveryEventEnum_reportPeriodReceived =
-    const NotificationDeliveryEventEnum._('reportPeriodReceived');
-const NotificationDeliveryEventEnum
-_$notificationDeliveryEventEnum_packagePeriodReceived =
-    const NotificationDeliveryEventEnum._('packagePeriodReceived');
-const NotificationDeliveryEventEnum
-_$notificationDeliveryEventEnum_chroniclePeriodAccessPeriodRequested =
-    const NotificationDeliveryEventEnum._(
-      'chroniclePeriodAccessPeriodRequested',
-    );
-const NotificationDeliveryEventEnum
-_$notificationDeliveryEventEnum_savedSearchPeriodMatches =
-    const NotificationDeliveryEventEnum._('savedSearchPeriodMatches');
-const NotificationDeliveryEventEnum _$notificationDeliveryEventEnum_personal =
-    const NotificationDeliveryEventEnum._('personal');
-
-NotificationDeliveryEventEnum _$notificationDeliveryEventEnumValueOf(
-  String name,
-) {
-  switch (name) {
-    case 'alert':
-      return _$notificationDeliveryEventEnum_alert;
-    case 'briefing':
-      return _$notificationDeliveryEventEnum_briefing;
-    case 'system':
-      return _$notificationDeliveryEventEnum_system;
-    case 'socialPeriodDivergence':
-      return _$notificationDeliveryEventEnum_socialPeriodDivergence;
-    case 'socialPeriodAttentionGap':
-      return _$notificationDeliveryEventEnum_socialPeriodAttentionGap;
-    case 'analystPeriodNote':
-      return _$notificationDeliveryEventEnum_analystPeriodNote;
-    case 'situationPeriodActivated':
-      return _$notificationDeliveryEventEnum_situationPeriodActivated;
-    case 'situationPeriodEscalated':
-      return _$notificationDeliveryEventEnum_situationPeriodEscalated;
-    case 'findingPeriodSignificant':
-      return _$notificationDeliveryEventEnum_findingPeriodSignificant;
-    case 'forecastPeriodResolved':
-      return _$notificationDeliveryEventEnum_forecastPeriodResolved;
-    case 'forecastPeriodResolutionNeeded':
-      return _$notificationDeliveryEventEnum_forecastPeriodResolutionNeeded;
-    case 'hypothesisPeriodBandChanged':
-      return _$notificationDeliveryEventEnum_hypothesisPeriodBandChanged;
-    case 'indicatorPeriodObserved':
-      return _$notificationDeliveryEventEnum_indicatorPeriodObserved;
-    case 'assumptionPeriodBroken':
-      return _$notificationDeliveryEventEnum_assumptionPeriodBroken;
-    case 'assessmentPeriodPublished':
-      return _$notificationDeliveryEventEnum_assessmentPeriodPublished;
-    case 'chroniclePeriodProposed':
-      return _$notificationDeliveryEventEnum_chroniclePeriodProposed;
-    case 'chroniclePeriodCapWarning':
-      return _$notificationDeliveryEventEnum_chroniclePeriodCapWarning;
-    case 'chroniclePeriodGap':
-      return _$notificationDeliveryEventEnum_chroniclePeriodGap;
-    case 'mention':
-      return _$notificationDeliveryEventEnum_mention;
-    case 'share':
-      return _$notificationDeliveryEventEnum_share;
-    case 'reportPeriodReceived':
-      return _$notificationDeliveryEventEnum_reportPeriodReceived;
-    case 'packagePeriodReceived':
-      return _$notificationDeliveryEventEnum_packagePeriodReceived;
-    case 'chroniclePeriodAccessPeriodRequested':
-      return _$notificationDeliveryEventEnum_chroniclePeriodAccessPeriodRequested;
-    case 'savedSearchPeriodMatches':
-      return _$notificationDeliveryEventEnum_savedSearchPeriodMatches;
-    case 'personal':
-      return _$notificationDeliveryEventEnum_personal;
-    default:
-      throw ArgumentError(name);
-  }
-}
-
-final BuiltSet<NotificationDeliveryEventEnum>
-_$notificationDeliveryEventEnumValues = BuiltSet<NotificationDeliveryEventEnum>(
-  const <NotificationDeliveryEventEnum>[
-    _$notificationDeliveryEventEnum_alert,
-    _$notificationDeliveryEventEnum_briefing,
-    _$notificationDeliveryEventEnum_system,
-    _$notificationDeliveryEventEnum_socialPeriodDivergence,
-    _$notificationDeliveryEventEnum_socialPeriodAttentionGap,
-    _$notificationDeliveryEventEnum_analystPeriodNote,
-    _$notificationDeliveryEventEnum_situationPeriodActivated,
-    _$notificationDeliveryEventEnum_situationPeriodEscalated,
-    _$notificationDeliveryEventEnum_findingPeriodSignificant,
-    _$notificationDeliveryEventEnum_forecastPeriodResolved,
-    _$notificationDeliveryEventEnum_forecastPeriodResolutionNeeded,
-    _$notificationDeliveryEventEnum_hypothesisPeriodBandChanged,
-    _$notificationDeliveryEventEnum_indicatorPeriodObserved,
-    _$notificationDeliveryEventEnum_assumptionPeriodBroken,
-    _$notificationDeliveryEventEnum_assessmentPeriodPublished,
-    _$notificationDeliveryEventEnum_chroniclePeriodProposed,
-    _$notificationDeliveryEventEnum_chroniclePeriodCapWarning,
-    _$notificationDeliveryEventEnum_chroniclePeriodGap,
-    _$notificationDeliveryEventEnum_mention,
-    _$notificationDeliveryEventEnum_share,
-    _$notificationDeliveryEventEnum_reportPeriodReceived,
-    _$notificationDeliveryEventEnum_packagePeriodReceived,
-    _$notificationDeliveryEventEnum_chroniclePeriodAccessPeriodRequested,
-    _$notificationDeliveryEventEnum_savedSearchPeriodMatches,
-    _$notificationDeliveryEventEnum_personal,
-  ],
-);
-
 const NotificationDeliveryStatusEnum _$notificationDeliveryStatusEnum_pending =
     const NotificationDeliveryStatusEnum._('pending');
 const NotificationDeliveryStatusEnum
@@ -339,9 +177,6 @@ _$notificationDeliveryAttachmentLevelEnumValues =
       ],
     );
 
-Serializer<NotificationDeliveryEventEnum>
-_$notificationDeliveryEventEnumSerializer =
-    _$NotificationDeliveryEventEnumSerializer();
 Serializer<NotificationDeliveryStatusEnum>
 _$notificationDeliveryStatusEnumSerializer =
     _$NotificationDeliveryStatusEnumSerializer();
@@ -354,85 +189,6 @@ _$notificationDeliveryDeferredReasonEnumSerializer =
 Serializer<NotificationDeliveryAttachmentLevelEnum>
 _$notificationDeliveryAttachmentLevelEnumSerializer =
     _$NotificationDeliveryAttachmentLevelEnumSerializer();
-
-class _$NotificationDeliveryEventEnumSerializer
-    implements PrimitiveSerializer<NotificationDeliveryEventEnum> {
-  static const Map<String, Object> _toWire = const <String, Object>{
-    'alert': 'alert',
-    'briefing': 'briefing',
-    'system': 'system',
-    'socialPeriodDivergence': 'social.divergence',
-    'socialPeriodAttentionGap': 'social.attention_gap',
-    'analystPeriodNote': 'analyst.note',
-    'situationPeriodActivated': 'situation.activated',
-    'situationPeriodEscalated': 'situation.escalated',
-    'findingPeriodSignificant': 'finding.significant',
-    'forecastPeriodResolved': 'forecast.resolved',
-    'forecastPeriodResolutionNeeded': 'forecast.resolution_needed',
-    'hypothesisPeriodBandChanged': 'hypothesis.band_changed',
-    'indicatorPeriodObserved': 'indicator.observed',
-    'assumptionPeriodBroken': 'assumption.broken',
-    'assessmentPeriodPublished': 'assessment.published',
-    'chroniclePeriodProposed': 'chronicle.proposed',
-    'chroniclePeriodCapWarning': 'chronicle.cap_warning',
-    'chroniclePeriodGap': 'chronicle.gap',
-    'mention': 'mention',
-    'share': 'share',
-    'reportPeriodReceived': 'report.received',
-    'packagePeriodReceived': 'package.received',
-    'chroniclePeriodAccessPeriodRequested': 'chronicle.access.requested',
-    'savedSearchPeriodMatches': 'saved-search.matches',
-    'personal': 'personal',
-  };
-  static const Map<Object, String> _fromWire = const <Object, String>{
-    'alert': 'alert',
-    'briefing': 'briefing',
-    'system': 'system',
-    'social.divergence': 'socialPeriodDivergence',
-    'social.attention_gap': 'socialPeriodAttentionGap',
-    'analyst.note': 'analystPeriodNote',
-    'situation.activated': 'situationPeriodActivated',
-    'situation.escalated': 'situationPeriodEscalated',
-    'finding.significant': 'findingPeriodSignificant',
-    'forecast.resolved': 'forecastPeriodResolved',
-    'forecast.resolution_needed': 'forecastPeriodResolutionNeeded',
-    'hypothesis.band_changed': 'hypothesisPeriodBandChanged',
-    'indicator.observed': 'indicatorPeriodObserved',
-    'assumption.broken': 'assumptionPeriodBroken',
-    'assessment.published': 'assessmentPeriodPublished',
-    'chronicle.proposed': 'chroniclePeriodProposed',
-    'chronicle.cap_warning': 'chroniclePeriodCapWarning',
-    'chronicle.gap': 'chroniclePeriodGap',
-    'mention': 'mention',
-    'share': 'share',
-    'report.received': 'reportPeriodReceived',
-    'package.received': 'packagePeriodReceived',
-    'chronicle.access.requested': 'chroniclePeriodAccessPeriodRequested',
-    'saved-search.matches': 'savedSearchPeriodMatches',
-    'personal': 'personal',
-  };
-
-  @override
-  final Iterable<Type> types = const <Type>[NotificationDeliveryEventEnum];
-  @override
-  final String wireName = 'NotificationDeliveryEventEnum';
-
-  @override
-  Object serialize(
-    Serializers serializers,
-    NotificationDeliveryEventEnum object, {
-    FullType specifiedType = FullType.unspecified,
-  }) => _toWire[object.name] ?? object.name;
-
-  @override
-  NotificationDeliveryEventEnum deserialize(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) => NotificationDeliveryEventEnum.valueOf(
-    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
-  );
-}
 
 class _$NotificationDeliveryStatusEnumSerializer
     implements PrimitiveSerializer<NotificationDeliveryStatusEnum> {
@@ -596,7 +352,7 @@ class _$NotificationDelivery extends NotificationDelivery {
   @override
   final int id;
   @override
-  final NotificationDeliveryEventEnum event;
+  final String event;
   @override
   final int? alertId;
   @override
@@ -745,9 +501,9 @@ class NotificationDeliveryBuilder
   int? get id => _$this._id;
   set id(int? id) => _$this._id = id;
 
-  NotificationDeliveryEventEnum? _event;
-  NotificationDeliveryEventEnum? get event => _$this._event;
-  set event(NotificationDeliveryEventEnum? event) => _$this._event = event;
+  String? _event;
+  String? get event => _$this._event;
+  set event(String? event) => _$this._event = event;
 
   int? _alertId;
   int? get alertId => _$this._alertId;

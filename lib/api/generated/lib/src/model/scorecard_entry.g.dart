@@ -6,100 +6,6 @@ part of 'scorecard_entry.dart';
 // BuiltValueGenerator
 // **************************************************************************
 
-const ScorecardEntryForecasterTypeEnum
-_$scorecardEntryForecasterTypeEnum_baseRate =
-    const ScorecardEntryForecasterTypeEnum._('baseRate');
-const ScorecardEntryForecasterTypeEnum
-_$scorecardEntryForecasterTypeEnum_climatology =
-    const ScorecardEntryForecasterTypeEnum._('climatology');
-const ScorecardEntryForecasterTypeEnum
-_$scorecardEntryForecasterTypeEnum_persistence =
-    const ScorecardEntryForecasterTypeEnum._('persistence');
-const ScorecardEntryForecasterTypeEnum
-_$scorecardEntryForecasterTypeEnum_statistical =
-    const ScorecardEntryForecasterTypeEnum._('statistical');
-const ScorecardEntryForecasterTypeEnum
-_$scorecardEntryForecasterTypeEnum_precursor =
-    const ScorecardEntryForecasterTypeEnum._('precursor');
-const ScorecardEntryForecasterTypeEnum
-_$scorecardEntryForecasterTypeEnum_analog =
-    const ScorecardEntryForecasterTypeEnum._('analog');
-const ScorecardEntryForecasterTypeEnum
-_$scorecardEntryForecasterTypeEnum_threshold =
-    const ScorecardEntryForecasterTypeEnum._('threshold');
-const ScorecardEntryForecasterTypeEnum
-_$scorecardEntryForecasterTypeEnum_impact =
-    const ScorecardEntryForecasterTypeEnum._('impact');
-const ScorecardEntryForecasterTypeEnum
-_$scorecardEntryForecasterTypeEnum_indicatorBayes =
-    const ScorecardEntryForecasterTypeEnum._('indicatorBayes');
-const ScorecardEntryForecasterTypeEnum _$scorecardEntryForecasterTypeEnum_llm =
-    const ScorecardEntryForecasterTypeEnum._('llm');
-const ScorecardEntryForecasterTypeEnum
-_$scorecardEntryForecasterTypeEnum_operator_ =
-    const ScorecardEntryForecasterTypeEnum._('operator_');
-const ScorecardEntryForecasterTypeEnum
-_$scorecardEntryForecasterTypeEnum_external_ =
-    const ScorecardEntryForecasterTypeEnum._('external_');
-const ScorecardEntryForecasterTypeEnum
-_$scorecardEntryForecasterTypeEnum_ensemble =
-    const ScorecardEntryForecasterTypeEnum._('ensemble');
-
-ScorecardEntryForecasterTypeEnum _$scorecardEntryForecasterTypeEnumValueOf(
-  String name,
-) {
-  switch (name) {
-    case 'baseRate':
-      return _$scorecardEntryForecasterTypeEnum_baseRate;
-    case 'climatology':
-      return _$scorecardEntryForecasterTypeEnum_climatology;
-    case 'persistence':
-      return _$scorecardEntryForecasterTypeEnum_persistence;
-    case 'statistical':
-      return _$scorecardEntryForecasterTypeEnum_statistical;
-    case 'precursor':
-      return _$scorecardEntryForecasterTypeEnum_precursor;
-    case 'analog':
-      return _$scorecardEntryForecasterTypeEnum_analog;
-    case 'threshold':
-      return _$scorecardEntryForecasterTypeEnum_threshold;
-    case 'impact':
-      return _$scorecardEntryForecasterTypeEnum_impact;
-    case 'indicatorBayes':
-      return _$scorecardEntryForecasterTypeEnum_indicatorBayes;
-    case 'llm':
-      return _$scorecardEntryForecasterTypeEnum_llm;
-    case 'operator_':
-      return _$scorecardEntryForecasterTypeEnum_operator_;
-    case 'external_':
-      return _$scorecardEntryForecasterTypeEnum_external_;
-    case 'ensemble':
-      return _$scorecardEntryForecasterTypeEnum_ensemble;
-    default:
-      throw ArgumentError(name);
-  }
-}
-
-final BuiltSet<ScorecardEntryForecasterTypeEnum>
-_$scorecardEntryForecasterTypeEnumValues =
-    BuiltSet<ScorecardEntryForecasterTypeEnum>(
-      const <ScorecardEntryForecasterTypeEnum>[
-        _$scorecardEntryForecasterTypeEnum_baseRate,
-        _$scorecardEntryForecasterTypeEnum_climatology,
-        _$scorecardEntryForecasterTypeEnum_persistence,
-        _$scorecardEntryForecasterTypeEnum_statistical,
-        _$scorecardEntryForecasterTypeEnum_precursor,
-        _$scorecardEntryForecasterTypeEnum_analog,
-        _$scorecardEntryForecasterTypeEnum_threshold,
-        _$scorecardEntryForecasterTypeEnum_impact,
-        _$scorecardEntryForecasterTypeEnum_indicatorBayes,
-        _$scorecardEntryForecasterTypeEnum_llm,
-        _$scorecardEntryForecasterTypeEnum_operator_,
-        _$scorecardEntryForecasterTypeEnum_external_,
-        _$scorecardEntryForecasterTypeEnum_ensemble,
-      ],
-    );
-
 const ScorecardEntryLabelEnum _$scorecardEntryLabelEnum_ok =
     const ScorecardEntryLabelEnum._('ok');
 const ScorecardEntryLabelEnum _$scorecardEntryLabelEnum_insufficient =
@@ -122,66 +28,8 @@ final BuiltSet<ScorecardEntryLabelEnum> _$scorecardEntryLabelEnumValues =
       _$scorecardEntryLabelEnum_insufficient,
     ]);
 
-Serializer<ScorecardEntryForecasterTypeEnum>
-_$scorecardEntryForecasterTypeEnumSerializer =
-    _$ScorecardEntryForecasterTypeEnumSerializer();
 Serializer<ScorecardEntryLabelEnum> _$scorecardEntryLabelEnumSerializer =
     _$ScorecardEntryLabelEnumSerializer();
-
-class _$ScorecardEntryForecasterTypeEnumSerializer
-    implements PrimitiveSerializer<ScorecardEntryForecasterTypeEnum> {
-  static const Map<String, Object> _toWire = const <String, Object>{
-    'baseRate': 'base-rate',
-    'climatology': 'climatology',
-    'persistence': 'persistence',
-    'statistical': 'statistical',
-    'precursor': 'precursor',
-    'analog': 'analog',
-    'threshold': 'threshold',
-    'impact': 'impact',
-    'indicatorBayes': 'indicator-bayes',
-    'llm': 'llm',
-    'operator_': 'operator',
-    'external_': 'external',
-    'ensemble': 'ensemble',
-  };
-  static const Map<Object, String> _fromWire = const <Object, String>{
-    'base-rate': 'baseRate',
-    'climatology': 'climatology',
-    'persistence': 'persistence',
-    'statistical': 'statistical',
-    'precursor': 'precursor',
-    'analog': 'analog',
-    'threshold': 'threshold',
-    'impact': 'impact',
-    'indicator-bayes': 'indicatorBayes',
-    'llm': 'llm',
-    'operator': 'operator_',
-    'external': 'external_',
-    'ensemble': 'ensemble',
-  };
-
-  @override
-  final Iterable<Type> types = const <Type>[ScorecardEntryForecasterTypeEnum];
-  @override
-  final String wireName = 'ScorecardEntryForecasterTypeEnum';
-
-  @override
-  Object serialize(
-    Serializers serializers,
-    ScorecardEntryForecasterTypeEnum object, {
-    FullType specifiedType = FullType.unspecified,
-  }) => _toWire[object.name] ?? object.name;
-
-  @override
-  ScorecardEntryForecasterTypeEnum deserialize(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) => ScorecardEntryForecasterTypeEnum.valueOf(
-    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
-  );
-}
 
 class _$ScorecardEntryLabelEnumSerializer
     implements PrimitiveSerializer<ScorecardEntryLabelEnum> {
@@ -220,7 +68,7 @@ class _$ScorecardEntry extends ScorecardEntry {
   @override
   final String forecasterId;
   @override
-  final ScorecardEntryForecasterTypeEnum? forecasterType;
+  final String? forecasterType;
   @override
   final String? category;
   @override
@@ -360,10 +208,9 @@ class ScorecardEntryBuilder
   String? get forecasterId => _$this._forecasterId;
   set forecasterId(String? forecasterId) => _$this._forecasterId = forecasterId;
 
-  ScorecardEntryForecasterTypeEnum? _forecasterType;
-  ScorecardEntryForecasterTypeEnum? get forecasterType =>
-      _$this._forecasterType;
-  set forecasterType(ScorecardEntryForecasterTypeEnum? forecasterType) =>
+  String? _forecasterType;
+  String? get forecasterType => _$this._forecasterType;
+  set forecasterType(String? forecasterType) =>
       _$this._forecasterType = forecasterType;
 
   String? _category;

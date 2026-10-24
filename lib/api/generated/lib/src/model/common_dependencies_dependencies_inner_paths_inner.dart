@@ -31,9 +31,7 @@ abstract class CommonDependenciesDependenciesInnerPathsInner
   BuiltList<String> get hops;
 
   @BuiltValueField(wireName: r'relationTypes')
-  BuiltList<CommonDependenciesDependenciesInnerPathsInnerRelationTypesEnum>?
-  get relationTypes;
-  // enum relationTypesEnum {  member-of,  observed-by,  same-as,  located-in,  near,  depends-on,  affects,  derived-from,  evidence-for,  evidence-against,  about,  mentions,  precedes,  causes,  related-to,  owns,  controls,  officer-of,  beneficial-owner,  affiliated-with,  };
+  BuiltList<String>? get relationTypes;
 
   /// Relation or dependency label (104 vocabulary)
   @BuiltValueField(wireName: r'weakestEdgeLabel')
@@ -88,11 +86,7 @@ class _$CommonDependenciesDependenciesInnerPathsInnerSerializer
       yield r'relationTypes';
       yield serializers.serialize(
         object.relationTypes,
-        specifiedType: const FullType(BuiltList, [
-          FullType(
-            CommonDependenciesDependenciesInnerPathsInnerRelationTypesEnum,
-          ),
-        ]),
+        specifiedType: const FullType(BuiltList, [FullType(String)]),
       );
     }
     yield r'weakestEdgeLabel';
@@ -154,14 +148,10 @@ class _$CommonDependenciesDependenciesInnerPathsInnerSerializer
               serializers.deserialize(
                     value,
                     specifiedType: const FullType.nullable(BuiltList, [
-                      FullType(
-                        CommonDependenciesDependenciesInnerPathsInnerRelationTypesEnum,
-                      ),
+                      FullType(String),
                     ]),
                   )
-                  as BuiltList<
-                    CommonDependenciesDependenciesInnerPathsInnerRelationTypesEnum
-                  >?;
+                  as BuiltList<String>?;
           if (valueDes == null) continue;
           result.relationTypes.replace(valueDes);
           break;
@@ -203,110 +193,6 @@ class _$CommonDependenciesDependenciesInnerPathsInnerSerializer
     );
     return result.build();
   }
-}
-
-/// Client-Contract §4 relation type
-class CommonDependenciesDependenciesInnerPathsInnerRelationTypesEnum
-    extends EnumClass {
-  @BuiltValueEnumConst(wireName: r'member-of')
-  static const CommonDependenciesDependenciesInnerPathsInnerRelationTypesEnum
-  memberOf =
-      _$commonDependenciesDependenciesInnerPathsInnerRelationTypesEnum_memberOf;
-  @BuiltValueEnumConst(wireName: r'observed-by')
-  static const CommonDependenciesDependenciesInnerPathsInnerRelationTypesEnum
-  observedBy =
-      _$commonDependenciesDependenciesInnerPathsInnerRelationTypesEnum_observedBy;
-  @BuiltValueEnumConst(wireName: r'same-as')
-  static const CommonDependenciesDependenciesInnerPathsInnerRelationTypesEnum
-  sameAs =
-      _$commonDependenciesDependenciesInnerPathsInnerRelationTypesEnum_sameAs;
-  @BuiltValueEnumConst(wireName: r'located-in')
-  static const CommonDependenciesDependenciesInnerPathsInnerRelationTypesEnum
-  locatedIn =
-      _$commonDependenciesDependenciesInnerPathsInnerRelationTypesEnum_locatedIn;
-  @BuiltValueEnumConst(wireName: r'near')
-  static const CommonDependenciesDependenciesInnerPathsInnerRelationTypesEnum
-  near = _$commonDependenciesDependenciesInnerPathsInnerRelationTypesEnum_near;
-  @BuiltValueEnumConst(wireName: r'depends-on')
-  static const CommonDependenciesDependenciesInnerPathsInnerRelationTypesEnum
-  dependsOn =
-      _$commonDependenciesDependenciesInnerPathsInnerRelationTypesEnum_dependsOn;
-  @BuiltValueEnumConst(wireName: r'affects')
-  static const CommonDependenciesDependenciesInnerPathsInnerRelationTypesEnum
-  affects =
-      _$commonDependenciesDependenciesInnerPathsInnerRelationTypesEnum_affects;
-  @BuiltValueEnumConst(wireName: r'derived-from')
-  static const CommonDependenciesDependenciesInnerPathsInnerRelationTypesEnum
-  derivedFrom =
-      _$commonDependenciesDependenciesInnerPathsInnerRelationTypesEnum_derivedFrom;
-  @BuiltValueEnumConst(wireName: r'evidence-for')
-  static const CommonDependenciesDependenciesInnerPathsInnerRelationTypesEnum
-  evidenceFor =
-      _$commonDependenciesDependenciesInnerPathsInnerRelationTypesEnum_evidenceFor;
-  @BuiltValueEnumConst(wireName: r'evidence-against')
-  static const CommonDependenciesDependenciesInnerPathsInnerRelationTypesEnum
-  evidenceAgainst =
-      _$commonDependenciesDependenciesInnerPathsInnerRelationTypesEnum_evidenceAgainst;
-  @BuiltValueEnumConst(wireName: r'about')
-  static const CommonDependenciesDependenciesInnerPathsInnerRelationTypesEnum
-  about =
-      _$commonDependenciesDependenciesInnerPathsInnerRelationTypesEnum_about;
-  @BuiltValueEnumConst(wireName: r'mentions')
-  static const CommonDependenciesDependenciesInnerPathsInnerRelationTypesEnum
-  mentions =
-      _$commonDependenciesDependenciesInnerPathsInnerRelationTypesEnum_mentions;
-  @BuiltValueEnumConst(wireName: r'precedes')
-  static const CommonDependenciesDependenciesInnerPathsInnerRelationTypesEnum
-  precedes =
-      _$commonDependenciesDependenciesInnerPathsInnerRelationTypesEnum_precedes;
-  @BuiltValueEnumConst(wireName: r'causes')
-  static const CommonDependenciesDependenciesInnerPathsInnerRelationTypesEnum
-  causes =
-      _$commonDependenciesDependenciesInnerPathsInnerRelationTypesEnum_causes;
-  @BuiltValueEnumConst(wireName: r'related-to')
-  static const CommonDependenciesDependenciesInnerPathsInnerRelationTypesEnum
-  relatedTo =
-      _$commonDependenciesDependenciesInnerPathsInnerRelationTypesEnum_relatedTo;
-  @BuiltValueEnumConst(wireName: r'owns')
-  static const CommonDependenciesDependenciesInnerPathsInnerRelationTypesEnum
-  owns = _$commonDependenciesDependenciesInnerPathsInnerRelationTypesEnum_owns;
-  @BuiltValueEnumConst(wireName: r'controls')
-  static const CommonDependenciesDependenciesInnerPathsInnerRelationTypesEnum
-  controls =
-      _$commonDependenciesDependenciesInnerPathsInnerRelationTypesEnum_controls;
-  @BuiltValueEnumConst(wireName: r'officer-of')
-  static const CommonDependenciesDependenciesInnerPathsInnerRelationTypesEnum
-  officerOf =
-      _$commonDependenciesDependenciesInnerPathsInnerRelationTypesEnum_officerOf;
-  @BuiltValueEnumConst(wireName: r'beneficial-owner')
-  static const CommonDependenciesDependenciesInnerPathsInnerRelationTypesEnum
-  beneficialOwner =
-      _$commonDependenciesDependenciesInnerPathsInnerRelationTypesEnum_beneficialOwner;
-  @BuiltValueEnumConst(wireName: r'affiliated-with')
-  static const CommonDependenciesDependenciesInnerPathsInnerRelationTypesEnum
-  affiliatedWith =
-      _$commonDependenciesDependenciesInnerPathsInnerRelationTypesEnum_affiliatedWith;
-
-  static Serializer<
-    CommonDependenciesDependenciesInnerPathsInnerRelationTypesEnum
-  >
-  get serializer =>
-      _$commonDependenciesDependenciesInnerPathsInnerRelationTypesEnumSerializer;
-
-  const CommonDependenciesDependenciesInnerPathsInnerRelationTypesEnum._(
-    String name,
-  ) : super(name);
-
-  static BuiltSet<
-    CommonDependenciesDependenciesInnerPathsInnerRelationTypesEnum
-  >
-  get values =>
-      _$commonDependenciesDependenciesInnerPathsInnerRelationTypesEnumValues;
-  static CommonDependenciesDependenciesInnerPathsInnerRelationTypesEnum valueOf(
-    String name,
-  ) => _$commonDependenciesDependenciesInnerPathsInnerRelationTypesEnumValueOf(
-    name,
-  );
 }
 
 /// Relation or dependency label (104 vocabulary)

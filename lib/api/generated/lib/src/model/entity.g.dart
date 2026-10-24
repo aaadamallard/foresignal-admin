@@ -6,50 +6,6 @@ part of 'entity.dart';
 // BuiltValueGenerator
 // **************************************************************************
 
-const EntityTypeEnum _$entityTypeEnum_aircraft = const EntityTypeEnum._(
-  'aircraft',
-);
-const EntityTypeEnum _$entityTypeEnum_vessel = const EntityTypeEnum._('vessel');
-const EntityTypeEnum _$entityTypeEnum_satellite = const EntityTypeEnum._(
-  'satellite',
-);
-const EntityTypeEnum _$entityTypeEnum_station = const EntityTypeEnum._(
-  'station',
-);
-const EntityTypeEnum _$entityTypeEnum_person = const EntityTypeEnum._('person');
-const EntityTypeEnum _$entityTypeEnum_organization = const EntityTypeEnum._(
-  'organization',
-);
-
-EntityTypeEnum _$entityTypeEnumValueOf(String name) {
-  switch (name) {
-    case 'aircraft':
-      return _$entityTypeEnum_aircraft;
-    case 'vessel':
-      return _$entityTypeEnum_vessel;
-    case 'satellite':
-      return _$entityTypeEnum_satellite;
-    case 'station':
-      return _$entityTypeEnum_station;
-    case 'person':
-      return _$entityTypeEnum_person;
-    case 'organization':
-      return _$entityTypeEnum_organization;
-    default:
-      throw ArgumentError(name);
-  }
-}
-
-final BuiltSet<EntityTypeEnum> _$entityTypeEnumValues =
-    BuiltSet<EntityTypeEnum>(const <EntityTypeEnum>[
-      _$entityTypeEnum_aircraft,
-      _$entityTypeEnum_vessel,
-      _$entityTypeEnum_satellite,
-      _$entityTypeEnum_station,
-      _$entityTypeEnum_person,
-      _$entityTypeEnum_organization,
-    ]);
-
 const EntityStatusEnum _$entityStatusEnum_ACTIVE = const EntityStatusEnum._(
   'ACTIVE',
 );
@@ -74,51 +30,8 @@ final BuiltSet<EntityStatusEnum> _$entityStatusEnumValues =
       _$entityStatusEnum_MERGED,
     ]);
 
-Serializer<EntityTypeEnum> _$entityTypeEnumSerializer =
-    _$EntityTypeEnumSerializer();
 Serializer<EntityStatusEnum> _$entityStatusEnumSerializer =
     _$EntityStatusEnumSerializer();
-
-class _$EntityTypeEnumSerializer
-    implements PrimitiveSerializer<EntityTypeEnum> {
-  static const Map<String, Object> _toWire = const <String, Object>{
-    'aircraft': 'aircraft',
-    'vessel': 'vessel',
-    'satellite': 'satellite',
-    'station': 'station',
-    'person': 'person',
-    'organization': 'organization',
-  };
-  static const Map<Object, String> _fromWire = const <Object, String>{
-    'aircraft': 'aircraft',
-    'vessel': 'vessel',
-    'satellite': 'satellite',
-    'station': 'station',
-    'person': 'person',
-    'organization': 'organization',
-  };
-
-  @override
-  final Iterable<Type> types = const <Type>[EntityTypeEnum];
-  @override
-  final String wireName = 'EntityTypeEnum';
-
-  @override
-  Object serialize(
-    Serializers serializers,
-    EntityTypeEnum object, {
-    FullType specifiedType = FullType.unspecified,
-  }) => _toWire[object.name] ?? object.name;
-
-  @override
-  EntityTypeEnum deserialize(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) => EntityTypeEnum.valueOf(
-    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
-  );
-}
 
 class _$EntityStatusEnumSerializer
     implements PrimitiveSerializer<EntityStatusEnum> {
@@ -159,7 +72,7 @@ class _$Entity extends Entity {
   @override
   final String? requestedId;
   @override
-  final EntityTypeEnum type;
+  final String type;
   @override
   final String? displayName;
   @override
@@ -276,9 +189,9 @@ class EntityBuilder implements Builder<Entity, EntityBuilder> {
   String? get requestedId => _$this._requestedId;
   set requestedId(String? requestedId) => _$this._requestedId = requestedId;
 
-  EntityTypeEnum? _type;
-  EntityTypeEnum? get type => _$this._type;
-  set type(EntityTypeEnum? type) => _$this._type = type;
+  String? _type;
+  String? get type => _$this._type;
+  set type(String? type) => _$this._type = type;
 
   String? _displayName;
   String? get displayName => _$this._displayName;

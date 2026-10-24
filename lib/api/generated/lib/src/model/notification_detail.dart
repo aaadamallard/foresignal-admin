@@ -15,7 +15,7 @@ part 'notification_detail.g.dart';
 ///
 /// Properties:
 /// * [id]
-/// * [event]
+/// * [event] - Expected to grow (`x-extensible-enum`): a client must accept a value not listed here.
 /// * [subtype]
 /// * [severity]
 /// * [title]
@@ -34,9 +34,9 @@ abstract class NotificationDetail
   @BuiltValueField(wireName: r'id')
   int get id;
 
+  /// Expected to grow (`x-extensible-enum`): a client must accept a value not listed here.
   @BuiltValueField(wireName: r'event')
-  NotificationDetailEventEnum get event;
-  // enum eventEnum {  alert,  briefing,  system,  analyst.note,  situation.activated,  situation.escalated,  finding.significant,  forecast.resolution_needed,  hypothesis.band_changed,  assessment.published,  };
+  String get event;
 
   @BuiltValueField(wireName: r'subtype')
   String? get subtype;
@@ -111,7 +111,7 @@ class _$NotificationDetailSerializer
     yield r'event';
     yield serializers.serialize(
       object.event,
-      specifiedType: const FullType(NotificationDetailEventEnum),
+      specifiedType: const FullType(String),
     );
     if (object.subtype != null) {
       yield r'subtype';
@@ -230,9 +230,9 @@ class _$NotificationDetailSerializer
           final valueDes =
               serializers.deserialize(
                     value,
-                    specifiedType: const FullType(NotificationDetailEventEnum),
+                    specifiedType: const FullType(String),
                   )
-                  as NotificationDetailEventEnum;
+                  as String;
           result.event = valueDes;
           break;
         case r'subtype':
@@ -386,49 +386,6 @@ class _$NotificationDetailSerializer
     );
     return result.build();
   }
-}
-
-class NotificationDetailEventEnum extends EnumClass {
-  @BuiltValueEnumConst(wireName: r'alert')
-  static const NotificationDetailEventEnum alert =
-      _$notificationDetailEventEnum_alert;
-  @BuiltValueEnumConst(wireName: r'briefing')
-  static const NotificationDetailEventEnum briefing =
-      _$notificationDetailEventEnum_briefing;
-  @BuiltValueEnumConst(wireName: r'system')
-  static const NotificationDetailEventEnum system =
-      _$notificationDetailEventEnum_system;
-  @BuiltValueEnumConst(wireName: r'analyst.note')
-  static const NotificationDetailEventEnum analystPeriodNote =
-      _$notificationDetailEventEnum_analystPeriodNote;
-  @BuiltValueEnumConst(wireName: r'situation.activated')
-  static const NotificationDetailEventEnum situationPeriodActivated =
-      _$notificationDetailEventEnum_situationPeriodActivated;
-  @BuiltValueEnumConst(wireName: r'situation.escalated')
-  static const NotificationDetailEventEnum situationPeriodEscalated =
-      _$notificationDetailEventEnum_situationPeriodEscalated;
-  @BuiltValueEnumConst(wireName: r'finding.significant')
-  static const NotificationDetailEventEnum findingPeriodSignificant =
-      _$notificationDetailEventEnum_findingPeriodSignificant;
-  @BuiltValueEnumConst(wireName: r'forecast.resolution_needed')
-  static const NotificationDetailEventEnum forecastPeriodResolutionNeeded =
-      _$notificationDetailEventEnum_forecastPeriodResolutionNeeded;
-  @BuiltValueEnumConst(wireName: r'hypothesis.band_changed')
-  static const NotificationDetailEventEnum hypothesisPeriodBandChanged =
-      _$notificationDetailEventEnum_hypothesisPeriodBandChanged;
-  @BuiltValueEnumConst(wireName: r'assessment.published')
-  static const NotificationDetailEventEnum assessmentPeriodPublished =
-      _$notificationDetailEventEnum_assessmentPeriodPublished;
-
-  static Serializer<NotificationDetailEventEnum> get serializer =>
-      _$notificationDetailEventEnumSerializer;
-
-  const NotificationDetailEventEnum._(String name) : super(name);
-
-  static BuiltSet<NotificationDetailEventEnum> get values =>
-      _$notificationDetailEventEnumValues;
-  static NotificationDetailEventEnum valueOf(String name) =>
-      _$notificationDetailEventEnumValueOf(name);
 }
 
 class NotificationDetailSeverityEnum extends EnumClass {

@@ -68,11 +68,10 @@ void main() {
     expect(router.state.matchedLocation, '/alerts');
     router.go('/system');
     await tester.pumpAndSettle();
-    expect(
-      find.byType(NavigationBar),
-      findsNothing,
-      reason: 'an unknown route shows the error page',
-    );
+    // The router's onException sends a route that is not mounted here to
+    // Connect: there is no System screen on mobile.
+    expect(router.state.matchedLocation, connectPath);
+    expect(find.text('System'), findsNothing);
   });
 
   testWidgets('desktop shows the sidebar; mobile the bottom bar', (tester) async {

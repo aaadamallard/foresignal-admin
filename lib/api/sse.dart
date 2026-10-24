@@ -295,7 +295,7 @@ class SseClient {
           if (closed) {
             break;
           }
-          final apiError = toApiException(error);
+          final apiError = toApiException(await _withReadBody(error));
           final status = switch (apiError) {
             ProblemException(:final status) => status,
             HttpStatusException(:final status) => status,
@@ -334,3 +334,41 @@ class SseClient {
 
 /// The app's [SseClient] over the configured backend.
 final sseClientProvider = Provider<SseClient>((ref) => SseClient(ref.watch(backendDioProvider)));
+
+/// The most bytes of a refused stream's body read to decode its problem.
+const int _maxErrorBodyBytes = 64 * 1024;
+
+/// [error] with a refused stream's body read into bytes. A stream request
+/// gets its error body as a [ResponseBody] too, which [toApiException] cannot
+/// decode; read it (up to [_maxErrorBodyBytes]) so a `400 INVALID_CURSOR`
+/// reaches the listener as the backend's problem, not a bare status.
+Future<Object> _withReadBody(Object error) async {
+  if (error is! DioException) {
+    return error;
+  }
+  final response = error.response;
+  final data = response?.data;
+  if (response == null || data is! ResponseBody) {
+    return error;
+  }
+  final bytes = <int>[];
+  try {
+    await for (final chunk in data.stream) {
+      bytes.addAll(chunk);
+      if (bytes.length >= _maxErrorBodyBytes) {
+        break;
+      }
+    }
+  } on Object {
+    return error;
+  }
+  return error.copyWith(
+    response: Response<Object?>(
+      requestOptions: response.requestOptions,
+      data: bytes,
+      statusCode: response.statusCode,
+      statusMessage: response.statusMessage,
+      headers: response.headers,
+    ),
+  );
+}

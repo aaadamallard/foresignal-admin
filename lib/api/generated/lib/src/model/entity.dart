@@ -17,7 +17,7 @@ part 'entity.g.dart';
 /// Properties:
 /// * [id] - ULID identifier
 /// * [requestedId] - Set when the requested id was merged into this canonical entity
-/// * [type]
+/// * [type] - Expected to grow (`x-extensible-enum`): a client must accept a value not listed here.
 /// * [displayName] - Precedence: registration > vessel name > satellite name > key
 /// * [attributes] - Declared attributes copied from records (≤ 16 KB); registry origin wins over observations. Never owner PII.
 /// * [provisional] - True when created from weak keys only
@@ -38,9 +38,9 @@ abstract class Entity implements Built<Entity, EntityBuilder> {
   @BuiltValueField(wireName: r'requestedId')
   String? get requestedId;
 
+  /// Expected to grow (`x-extensible-enum`): a client must accept a value not listed here.
   @BuiltValueField(wireName: r'type')
-  EntityTypeEnum get type;
-  // enum typeEnum {  aircraft,  vessel,  satellite,  station,  person,  organization,  };
+  String get type;
 
   /// Precedence: registration > vessel name > satellite name > key
   @BuiltValueField(wireName: r'displayName')
@@ -116,7 +116,7 @@ class _$EntitySerializer implements PrimitiveSerializer<Entity> {
     yield r'type';
     yield serializers.serialize(
       object.type,
-      specifiedType: const FullType(EntityTypeEnum),
+      specifiedType: const FullType(String),
     );
     if (object.displayName != null) {
       yield r'displayName';
@@ -236,9 +236,9 @@ class _$EntitySerializer implements PrimitiveSerializer<Entity> {
           final valueDes =
               serializers.deserialize(
                     value,
-                    specifiedType: const FullType(EntityTypeEnum),
+                    specifiedType: const FullType(String),
                   )
-                  as EntityTypeEnum;
+                  as String;
           result.type = valueDes;
           break;
         case r'displayName':
@@ -374,29 +374,6 @@ class _$EntitySerializer implements PrimitiveSerializer<Entity> {
     );
     return result.build();
   }
-}
-
-class EntityTypeEnum extends EnumClass {
-  @BuiltValueEnumConst(wireName: r'aircraft')
-  static const EntityTypeEnum aircraft = _$entityTypeEnum_aircraft;
-  @BuiltValueEnumConst(wireName: r'vessel')
-  static const EntityTypeEnum vessel = _$entityTypeEnum_vessel;
-  @BuiltValueEnumConst(wireName: r'satellite')
-  static const EntityTypeEnum satellite = _$entityTypeEnum_satellite;
-  @BuiltValueEnumConst(wireName: r'station')
-  static const EntityTypeEnum station = _$entityTypeEnum_station;
-  @BuiltValueEnumConst(wireName: r'person')
-  static const EntityTypeEnum person = _$entityTypeEnum_person;
-  @BuiltValueEnumConst(wireName: r'organization')
-  static const EntityTypeEnum organization = _$entityTypeEnum_organization;
-
-  static Serializer<EntityTypeEnum> get serializer =>
-      _$entityTypeEnumSerializer;
-
-  const EntityTypeEnum._(String name) : super(name);
-
-  static BuiltSet<EntityTypeEnum> get values => _$entityTypeEnumValues;
-  static EntityTypeEnum valueOf(String name) => _$entityTypeEnumValueOf(name);
 }
 
 class EntityStatusEnum extends EnumClass {

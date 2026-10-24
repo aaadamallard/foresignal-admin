@@ -6,133 +6,6 @@ part of 'relation.dart';
 // BuiltValueGenerator
 // **************************************************************************
 
-const RelationTypeEnum _$relationTypeEnum_memberOf = const RelationTypeEnum._(
-  'memberOf',
-);
-const RelationTypeEnum _$relationTypeEnum_observedBy = const RelationTypeEnum._(
-  'observedBy',
-);
-const RelationTypeEnum _$relationTypeEnum_sameAs = const RelationTypeEnum._(
-  'sameAs',
-);
-const RelationTypeEnum _$relationTypeEnum_locatedIn = const RelationTypeEnum._(
-  'locatedIn',
-);
-const RelationTypeEnum _$relationTypeEnum_near = const RelationTypeEnum._(
-  'near',
-);
-const RelationTypeEnum _$relationTypeEnum_dependsOn = const RelationTypeEnum._(
-  'dependsOn',
-);
-const RelationTypeEnum _$relationTypeEnum_affects = const RelationTypeEnum._(
-  'affects',
-);
-const RelationTypeEnum _$relationTypeEnum_derivedFrom =
-    const RelationTypeEnum._('derivedFrom');
-const RelationTypeEnum _$relationTypeEnum_evidenceFor =
-    const RelationTypeEnum._('evidenceFor');
-const RelationTypeEnum _$relationTypeEnum_evidenceAgainst =
-    const RelationTypeEnum._('evidenceAgainst');
-const RelationTypeEnum _$relationTypeEnum_about = const RelationTypeEnum._(
-  'about',
-);
-const RelationTypeEnum _$relationTypeEnum_mentions = const RelationTypeEnum._(
-  'mentions',
-);
-const RelationTypeEnum _$relationTypeEnum_precedes = const RelationTypeEnum._(
-  'precedes',
-);
-const RelationTypeEnum _$relationTypeEnum_causes = const RelationTypeEnum._(
-  'causes',
-);
-const RelationTypeEnum _$relationTypeEnum_relatedTo = const RelationTypeEnum._(
-  'relatedTo',
-);
-const RelationTypeEnum _$relationTypeEnum_owns = const RelationTypeEnum._(
-  'owns',
-);
-const RelationTypeEnum _$relationTypeEnum_controls = const RelationTypeEnum._(
-  'controls',
-);
-const RelationTypeEnum _$relationTypeEnum_officerOf = const RelationTypeEnum._(
-  'officerOf',
-);
-const RelationTypeEnum _$relationTypeEnum_beneficialOwner =
-    const RelationTypeEnum._('beneficialOwner');
-const RelationTypeEnum _$relationTypeEnum_affiliatedWith =
-    const RelationTypeEnum._('affiliatedWith');
-
-RelationTypeEnum _$relationTypeEnumValueOf(String name) {
-  switch (name) {
-    case 'memberOf':
-      return _$relationTypeEnum_memberOf;
-    case 'observedBy':
-      return _$relationTypeEnum_observedBy;
-    case 'sameAs':
-      return _$relationTypeEnum_sameAs;
-    case 'locatedIn':
-      return _$relationTypeEnum_locatedIn;
-    case 'near':
-      return _$relationTypeEnum_near;
-    case 'dependsOn':
-      return _$relationTypeEnum_dependsOn;
-    case 'affects':
-      return _$relationTypeEnum_affects;
-    case 'derivedFrom':
-      return _$relationTypeEnum_derivedFrom;
-    case 'evidenceFor':
-      return _$relationTypeEnum_evidenceFor;
-    case 'evidenceAgainst':
-      return _$relationTypeEnum_evidenceAgainst;
-    case 'about':
-      return _$relationTypeEnum_about;
-    case 'mentions':
-      return _$relationTypeEnum_mentions;
-    case 'precedes':
-      return _$relationTypeEnum_precedes;
-    case 'causes':
-      return _$relationTypeEnum_causes;
-    case 'relatedTo':
-      return _$relationTypeEnum_relatedTo;
-    case 'owns':
-      return _$relationTypeEnum_owns;
-    case 'controls':
-      return _$relationTypeEnum_controls;
-    case 'officerOf':
-      return _$relationTypeEnum_officerOf;
-    case 'beneficialOwner':
-      return _$relationTypeEnum_beneficialOwner;
-    case 'affiliatedWith':
-      return _$relationTypeEnum_affiliatedWith;
-    default:
-      throw ArgumentError(name);
-  }
-}
-
-final BuiltSet<RelationTypeEnum> _$relationTypeEnumValues =
-    BuiltSet<RelationTypeEnum>(const <RelationTypeEnum>[
-      _$relationTypeEnum_memberOf,
-      _$relationTypeEnum_observedBy,
-      _$relationTypeEnum_sameAs,
-      _$relationTypeEnum_locatedIn,
-      _$relationTypeEnum_near,
-      _$relationTypeEnum_dependsOn,
-      _$relationTypeEnum_affects,
-      _$relationTypeEnum_derivedFrom,
-      _$relationTypeEnum_evidenceFor,
-      _$relationTypeEnum_evidenceAgainst,
-      _$relationTypeEnum_about,
-      _$relationTypeEnum_mentions,
-      _$relationTypeEnum_precedes,
-      _$relationTypeEnum_causes,
-      _$relationTypeEnum_relatedTo,
-      _$relationTypeEnum_owns,
-      _$relationTypeEnum_controls,
-      _$relationTypeEnum_officerOf,
-      _$relationTypeEnum_beneficialOwner,
-      _$relationTypeEnum_affiliatedWith,
-    ]);
-
 const RelationLabelEnum _$relationLabelEnum_confirmed =
     const RelationLabelEnum._('confirmed');
 const RelationLabelEnum _$relationLabelEnum_likely = const RelationLabelEnum._(
@@ -166,79 +39,8 @@ final BuiltSet<RelationLabelEnum> _$relationLabelEnumValues =
       _$relationLabelEnum_speculative,
     ]);
 
-Serializer<RelationTypeEnum> _$relationTypeEnumSerializer =
-    _$RelationTypeEnumSerializer();
 Serializer<RelationLabelEnum> _$relationLabelEnumSerializer =
     _$RelationLabelEnumSerializer();
-
-class _$RelationTypeEnumSerializer
-    implements PrimitiveSerializer<RelationTypeEnum> {
-  static const Map<String, Object> _toWire = const <String, Object>{
-    'memberOf': 'member-of',
-    'observedBy': 'observed-by',
-    'sameAs': 'same-as',
-    'locatedIn': 'located-in',
-    'near': 'near',
-    'dependsOn': 'depends-on',
-    'affects': 'affects',
-    'derivedFrom': 'derived-from',
-    'evidenceFor': 'evidence-for',
-    'evidenceAgainst': 'evidence-against',
-    'about': 'about',
-    'mentions': 'mentions',
-    'precedes': 'precedes',
-    'causes': 'causes',
-    'relatedTo': 'related-to',
-    'owns': 'owns',
-    'controls': 'controls',
-    'officerOf': 'officer-of',
-    'beneficialOwner': 'beneficial-owner',
-    'affiliatedWith': 'affiliated-with',
-  };
-  static const Map<Object, String> _fromWire = const <Object, String>{
-    'member-of': 'memberOf',
-    'observed-by': 'observedBy',
-    'same-as': 'sameAs',
-    'located-in': 'locatedIn',
-    'near': 'near',
-    'depends-on': 'dependsOn',
-    'affects': 'affects',
-    'derived-from': 'derivedFrom',
-    'evidence-for': 'evidenceFor',
-    'evidence-against': 'evidenceAgainst',
-    'about': 'about',
-    'mentions': 'mentions',
-    'precedes': 'precedes',
-    'causes': 'causes',
-    'related-to': 'relatedTo',
-    'owns': 'owns',
-    'controls': 'controls',
-    'officer-of': 'officerOf',
-    'beneficial-owner': 'beneficialOwner',
-    'affiliated-with': 'affiliatedWith',
-  };
-
-  @override
-  final Iterable<Type> types = const <Type>[RelationTypeEnum];
-  @override
-  final String wireName = 'RelationTypeEnum';
-
-  @override
-  Object serialize(
-    Serializers serializers,
-    RelationTypeEnum object, {
-    FullType specifiedType = FullType.unspecified,
-  }) => _toWire[object.name] ?? object.name;
-
-  @override
-  RelationTypeEnum deserialize(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) => RelationTypeEnum.valueOf(
-    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
-  );
-}
 
 class _$RelationLabelEnumSerializer
     implements PrimitiveSerializer<RelationLabelEnum> {
@@ -285,7 +87,7 @@ class _$Relation extends Relation {
   @override
   final String toRef;
   @override
-  final RelationTypeEnum type;
+  final String type;
   @override
   final DateTime validFrom;
   @override
@@ -404,9 +206,9 @@ class RelationBuilder implements Builder<Relation, RelationBuilder> {
   String? get toRef => _$this._toRef;
   set toRef(String? toRef) => _$this._toRef = toRef;
 
-  RelationTypeEnum? _type;
-  RelationTypeEnum? get type => _$this._type;
-  set type(RelationTypeEnum? type) => _$this._type = type;
+  String? _type;
+  String? get type => _$this._type;
+  set type(String? type) => _$this._type = type;
 
   DateTime? _validFrom;
   DateTime? get validFrom => _$this._validFrom;

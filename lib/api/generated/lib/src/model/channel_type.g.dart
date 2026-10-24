@@ -125,145 +125,8 @@ final BuiltSet<ChannelTypeIdEnum> _$channelTypeIdEnumValues =
       _$channelTypeIdEnum_meshcore,
     ]);
 
-const ChannelTypeEventsEnum _$channelTypeEventsEnum_alert =
-    const ChannelTypeEventsEnum._('alert');
-const ChannelTypeEventsEnum _$channelTypeEventsEnum_briefing =
-    const ChannelTypeEventsEnum._('briefing');
-const ChannelTypeEventsEnum _$channelTypeEventsEnum_system =
-    const ChannelTypeEventsEnum._('system');
-const ChannelTypeEventsEnum _$channelTypeEventsEnum_chroniclePeriodProposed =
-    const ChannelTypeEventsEnum._('chroniclePeriodProposed');
-const ChannelTypeEventsEnum _$channelTypeEventsEnum_chroniclePeriodCapWarning =
-    const ChannelTypeEventsEnum._('chroniclePeriodCapWarning');
-const ChannelTypeEventsEnum _$channelTypeEventsEnum_chroniclePeriodGap =
-    const ChannelTypeEventsEnum._('chroniclePeriodGap');
-const ChannelTypeEventsEnum _$channelTypeEventsEnum_socialPeriodDivergence =
-    const ChannelTypeEventsEnum._('socialPeriodDivergence');
-const ChannelTypeEventsEnum _$channelTypeEventsEnum_socialPeriodAttentionGap =
-    const ChannelTypeEventsEnum._('socialPeriodAttentionGap');
-const ChannelTypeEventsEnum _$channelTypeEventsEnum_analystPeriodNote =
-    const ChannelTypeEventsEnum._('analystPeriodNote');
-const ChannelTypeEventsEnum _$channelTypeEventsEnum_situationPeriodActivated =
-    const ChannelTypeEventsEnum._('situationPeriodActivated');
-const ChannelTypeEventsEnum _$channelTypeEventsEnum_situationPeriodEscalated =
-    const ChannelTypeEventsEnum._('situationPeriodEscalated');
-const ChannelTypeEventsEnum _$channelTypeEventsEnum_findingPeriodSignificant =
-    const ChannelTypeEventsEnum._('findingPeriodSignificant');
-const ChannelTypeEventsEnum _$channelTypeEventsEnum_forecastPeriodResolved =
-    const ChannelTypeEventsEnum._('forecastPeriodResolved');
-const ChannelTypeEventsEnum
-_$channelTypeEventsEnum_forecastPeriodResolutionNeeded =
-    const ChannelTypeEventsEnum._('forecastPeriodResolutionNeeded');
-const ChannelTypeEventsEnum
-_$channelTypeEventsEnum_hypothesisPeriodBandChanged =
-    const ChannelTypeEventsEnum._('hypothesisPeriodBandChanged');
-const ChannelTypeEventsEnum _$channelTypeEventsEnum_indicatorPeriodObserved =
-    const ChannelTypeEventsEnum._('indicatorPeriodObserved');
-const ChannelTypeEventsEnum _$channelTypeEventsEnum_assumptionPeriodBroken =
-    const ChannelTypeEventsEnum._('assumptionPeriodBroken');
-const ChannelTypeEventsEnum _$channelTypeEventsEnum_assessmentPeriodPublished =
-    const ChannelTypeEventsEnum._('assessmentPeriodPublished');
-const ChannelTypeEventsEnum _$channelTypeEventsEnum_mention =
-    const ChannelTypeEventsEnum._('mention');
-const ChannelTypeEventsEnum _$channelTypeEventsEnum_share =
-    const ChannelTypeEventsEnum._('share');
-const ChannelTypeEventsEnum _$channelTypeEventsEnum_reportPeriodReceived =
-    const ChannelTypeEventsEnum._('reportPeriodReceived');
-const ChannelTypeEventsEnum _$channelTypeEventsEnum_packagePeriodReceived =
-    const ChannelTypeEventsEnum._('packagePeriodReceived');
-const ChannelTypeEventsEnum
-_$channelTypeEventsEnum_chroniclePeriodAccessPeriodRequested =
-    const ChannelTypeEventsEnum._('chroniclePeriodAccessPeriodRequested');
-const ChannelTypeEventsEnum _$channelTypeEventsEnum_savedSearchPeriodMatches =
-    const ChannelTypeEventsEnum._('savedSearchPeriodMatches');
-
-ChannelTypeEventsEnum _$channelTypeEventsEnumValueOf(String name) {
-  switch (name) {
-    case 'alert':
-      return _$channelTypeEventsEnum_alert;
-    case 'briefing':
-      return _$channelTypeEventsEnum_briefing;
-    case 'system':
-      return _$channelTypeEventsEnum_system;
-    case 'chroniclePeriodProposed':
-      return _$channelTypeEventsEnum_chroniclePeriodProposed;
-    case 'chroniclePeriodCapWarning':
-      return _$channelTypeEventsEnum_chroniclePeriodCapWarning;
-    case 'chroniclePeriodGap':
-      return _$channelTypeEventsEnum_chroniclePeriodGap;
-    case 'socialPeriodDivergence':
-      return _$channelTypeEventsEnum_socialPeriodDivergence;
-    case 'socialPeriodAttentionGap':
-      return _$channelTypeEventsEnum_socialPeriodAttentionGap;
-    case 'analystPeriodNote':
-      return _$channelTypeEventsEnum_analystPeriodNote;
-    case 'situationPeriodActivated':
-      return _$channelTypeEventsEnum_situationPeriodActivated;
-    case 'situationPeriodEscalated':
-      return _$channelTypeEventsEnum_situationPeriodEscalated;
-    case 'findingPeriodSignificant':
-      return _$channelTypeEventsEnum_findingPeriodSignificant;
-    case 'forecastPeriodResolved':
-      return _$channelTypeEventsEnum_forecastPeriodResolved;
-    case 'forecastPeriodResolutionNeeded':
-      return _$channelTypeEventsEnum_forecastPeriodResolutionNeeded;
-    case 'hypothesisPeriodBandChanged':
-      return _$channelTypeEventsEnum_hypothesisPeriodBandChanged;
-    case 'indicatorPeriodObserved':
-      return _$channelTypeEventsEnum_indicatorPeriodObserved;
-    case 'assumptionPeriodBroken':
-      return _$channelTypeEventsEnum_assumptionPeriodBroken;
-    case 'assessmentPeriodPublished':
-      return _$channelTypeEventsEnum_assessmentPeriodPublished;
-    case 'mention':
-      return _$channelTypeEventsEnum_mention;
-    case 'share':
-      return _$channelTypeEventsEnum_share;
-    case 'reportPeriodReceived':
-      return _$channelTypeEventsEnum_reportPeriodReceived;
-    case 'packagePeriodReceived':
-      return _$channelTypeEventsEnum_packagePeriodReceived;
-    case 'chroniclePeriodAccessPeriodRequested':
-      return _$channelTypeEventsEnum_chroniclePeriodAccessPeriodRequested;
-    case 'savedSearchPeriodMatches':
-      return _$channelTypeEventsEnum_savedSearchPeriodMatches;
-    default:
-      throw ArgumentError(name);
-  }
-}
-
-final BuiltSet<ChannelTypeEventsEnum> _$channelTypeEventsEnumValues =
-    BuiltSet<ChannelTypeEventsEnum>(const <ChannelTypeEventsEnum>[
-      _$channelTypeEventsEnum_alert,
-      _$channelTypeEventsEnum_briefing,
-      _$channelTypeEventsEnum_system,
-      _$channelTypeEventsEnum_chroniclePeriodProposed,
-      _$channelTypeEventsEnum_chroniclePeriodCapWarning,
-      _$channelTypeEventsEnum_chroniclePeriodGap,
-      _$channelTypeEventsEnum_socialPeriodDivergence,
-      _$channelTypeEventsEnum_socialPeriodAttentionGap,
-      _$channelTypeEventsEnum_analystPeriodNote,
-      _$channelTypeEventsEnum_situationPeriodActivated,
-      _$channelTypeEventsEnum_situationPeriodEscalated,
-      _$channelTypeEventsEnum_findingPeriodSignificant,
-      _$channelTypeEventsEnum_forecastPeriodResolved,
-      _$channelTypeEventsEnum_forecastPeriodResolutionNeeded,
-      _$channelTypeEventsEnum_hypothesisPeriodBandChanged,
-      _$channelTypeEventsEnum_indicatorPeriodObserved,
-      _$channelTypeEventsEnum_assumptionPeriodBroken,
-      _$channelTypeEventsEnum_assessmentPeriodPublished,
-      _$channelTypeEventsEnum_mention,
-      _$channelTypeEventsEnum_share,
-      _$channelTypeEventsEnum_reportPeriodReceived,
-      _$channelTypeEventsEnum_packagePeriodReceived,
-      _$channelTypeEventsEnum_chroniclePeriodAccessPeriodRequested,
-      _$channelTypeEventsEnum_savedSearchPeriodMatches,
-    ]);
-
 Serializer<ChannelTypeIdEnum> _$channelTypeIdEnumSerializer =
     _$ChannelTypeIdEnumSerializer();
-Serializer<ChannelTypeEventsEnum> _$channelTypeEventsEnumSerializer =
-    _$ChannelTypeEventsEnumSerializer();
 
 class _$ChannelTypeIdEnumSerializer
     implements PrimitiveSerializer<ChannelTypeIdEnum> {
@@ -332,83 +195,6 @@ class _$ChannelTypeIdEnumSerializer
   );
 }
 
-class _$ChannelTypeEventsEnumSerializer
-    implements PrimitiveSerializer<ChannelTypeEventsEnum> {
-  static const Map<String, Object> _toWire = const <String, Object>{
-    'alert': 'alert',
-    'briefing': 'briefing',
-    'system': 'system',
-    'chroniclePeriodProposed': 'chronicle.proposed',
-    'chroniclePeriodCapWarning': 'chronicle.cap_warning',
-    'chroniclePeriodGap': 'chronicle.gap',
-    'socialPeriodDivergence': 'social.divergence',
-    'socialPeriodAttentionGap': 'social.attention_gap',
-    'analystPeriodNote': 'analyst.note',
-    'situationPeriodActivated': 'situation.activated',
-    'situationPeriodEscalated': 'situation.escalated',
-    'findingPeriodSignificant': 'finding.significant',
-    'forecastPeriodResolved': 'forecast.resolved',
-    'forecastPeriodResolutionNeeded': 'forecast.resolution_needed',
-    'hypothesisPeriodBandChanged': 'hypothesis.band_changed',
-    'indicatorPeriodObserved': 'indicator.observed',
-    'assumptionPeriodBroken': 'assumption.broken',
-    'assessmentPeriodPublished': 'assessment.published',
-    'mention': 'mention',
-    'share': 'share',
-    'reportPeriodReceived': 'report.received',
-    'packagePeriodReceived': 'package.received',
-    'chroniclePeriodAccessPeriodRequested': 'chronicle.access.requested',
-    'savedSearchPeriodMatches': 'saved-search.matches',
-  };
-  static const Map<Object, String> _fromWire = const <Object, String>{
-    'alert': 'alert',
-    'briefing': 'briefing',
-    'system': 'system',
-    'chronicle.proposed': 'chroniclePeriodProposed',
-    'chronicle.cap_warning': 'chroniclePeriodCapWarning',
-    'chronicle.gap': 'chroniclePeriodGap',
-    'social.divergence': 'socialPeriodDivergence',
-    'social.attention_gap': 'socialPeriodAttentionGap',
-    'analyst.note': 'analystPeriodNote',
-    'situation.activated': 'situationPeriodActivated',
-    'situation.escalated': 'situationPeriodEscalated',
-    'finding.significant': 'findingPeriodSignificant',
-    'forecast.resolved': 'forecastPeriodResolved',
-    'forecast.resolution_needed': 'forecastPeriodResolutionNeeded',
-    'hypothesis.band_changed': 'hypothesisPeriodBandChanged',
-    'indicator.observed': 'indicatorPeriodObserved',
-    'assumption.broken': 'assumptionPeriodBroken',
-    'assessment.published': 'assessmentPeriodPublished',
-    'mention': 'mention',
-    'share': 'share',
-    'report.received': 'reportPeriodReceived',
-    'package.received': 'packagePeriodReceived',
-    'chronicle.access.requested': 'chroniclePeriodAccessPeriodRequested',
-    'saved-search.matches': 'savedSearchPeriodMatches',
-  };
-
-  @override
-  final Iterable<Type> types = const <Type>[ChannelTypeEventsEnum];
-  @override
-  final String wireName = 'ChannelTypeEventsEnum';
-
-  @override
-  Object serialize(
-    Serializers serializers,
-    ChannelTypeEventsEnum object, {
-    FullType specifiedType = FullType.unspecified,
-  }) => _toWire[object.name] ?? object.name;
-
-  @override
-  ChannelTypeEventsEnum deserialize(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) => ChannelTypeEventsEnum.valueOf(
-    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
-  );
-}
-
 class _$ChannelType extends ChannelType {
   @override
   final ChannelTypeIdEnum id;
@@ -421,7 +207,7 @@ class _$ChannelType extends ChannelType {
   @override
   final BuiltList<ChannelTypeConfigFieldsInner> secretFields;
   @override
-  final BuiltList<ChannelTypeEventsEnum>? events;
+  final BuiltList<String>? events;
   @override
   final ChannelTypeCapabilities? capabilities;
 
@@ -512,11 +298,9 @@ class ChannelTypeBuilder implements Builder<ChannelType, ChannelTypeBuilder> {
   set secretFields(ListBuilder<ChannelTypeConfigFieldsInner>? secretFields) =>
       _$this._secretFields = secretFields;
 
-  ListBuilder<ChannelTypeEventsEnum>? _events;
-  ListBuilder<ChannelTypeEventsEnum> get events =>
-      _$this._events ??= ListBuilder<ChannelTypeEventsEnum>();
-  set events(ListBuilder<ChannelTypeEventsEnum>? events) =>
-      _$this._events = events;
+  ListBuilder<String>? _events;
+  ListBuilder<String> get events => _$this._events ??= ListBuilder<String>();
+  set events(ListBuilder<String>? events) => _$this._events = events;
 
   ChannelTypeCapabilitiesBuilder? _capabilities;
   ChannelTypeCapabilitiesBuilder get capabilities =>

@@ -18,7 +18,7 @@ part 'scorecard_entry.g.dart';
 ///
 /// Properties:
 /// * [forecasterId]
-/// * [forecasterType]
+/// * [forecasterType] - Expected to grow (`x-extensible-enum`): a client must accept a value not listed here.
 /// * [category] - Null = all categories
 /// * [nResolved]
 /// * [nForecasts]
@@ -40,9 +40,9 @@ abstract class ScorecardEntry
   @BuiltValueField(wireName: r'forecasterId')
   String get forecasterId;
 
+  /// Expected to grow (`x-extensible-enum`): a client must accept a value not listed here.
   @BuiltValueField(wireName: r'forecasterType')
-  ScorecardEntryForecasterTypeEnum? get forecasterType;
-  // enum forecasterTypeEnum {  base-rate,  climatology,  persistence,  statistical,  precursor,  analog,  threshold,  impact,  indicator-bayes,  llm,  operator,  external,  ensemble,  };
+  String? get forecasterType;
 
   /// Null = all categories
   @BuiltValueField(wireName: r'category')
@@ -127,7 +127,7 @@ class _$ScorecardEntrySerializer
       yield r'forecasterType';
       yield serializers.serialize(
         object.forecasterType,
-        specifiedType: const FullType(ScorecardEntryForecasterTypeEnum),
+        specifiedType: const FullType(String),
       );
     }
     if (object.category != null) {
@@ -271,11 +271,9 @@ class _$ScorecardEntrySerializer
           final valueDes =
               serializers.deserialize(
                     value,
-                    specifiedType: const FullType.nullable(
-                      ScorecardEntryForecasterTypeEnum,
-                    ),
+                    specifiedType: const FullType.nullable(String),
                   )
-                  as ScorecardEntryForecasterTypeEnum?;
+                  as String?;
           if (valueDes == null) continue;
           result.forecasterType = valueDes;
           break;
@@ -457,58 +455,6 @@ class _$ScorecardEntrySerializer
     );
     return result.build();
   }
-}
-
-class ScorecardEntryForecasterTypeEnum extends EnumClass {
-  @BuiltValueEnumConst(wireName: r'base-rate')
-  static const ScorecardEntryForecasterTypeEnum baseRate =
-      _$scorecardEntryForecasterTypeEnum_baseRate;
-  @BuiltValueEnumConst(wireName: r'climatology')
-  static const ScorecardEntryForecasterTypeEnum climatology =
-      _$scorecardEntryForecasterTypeEnum_climatology;
-  @BuiltValueEnumConst(wireName: r'persistence')
-  static const ScorecardEntryForecasterTypeEnum persistence =
-      _$scorecardEntryForecasterTypeEnum_persistence;
-  @BuiltValueEnumConst(wireName: r'statistical')
-  static const ScorecardEntryForecasterTypeEnum statistical =
-      _$scorecardEntryForecasterTypeEnum_statistical;
-  @BuiltValueEnumConst(wireName: r'precursor')
-  static const ScorecardEntryForecasterTypeEnum precursor =
-      _$scorecardEntryForecasterTypeEnum_precursor;
-  @BuiltValueEnumConst(wireName: r'analog')
-  static const ScorecardEntryForecasterTypeEnum analog =
-      _$scorecardEntryForecasterTypeEnum_analog;
-  @BuiltValueEnumConst(wireName: r'threshold')
-  static const ScorecardEntryForecasterTypeEnum threshold =
-      _$scorecardEntryForecasterTypeEnum_threshold;
-  @BuiltValueEnumConst(wireName: r'impact')
-  static const ScorecardEntryForecasterTypeEnum impact =
-      _$scorecardEntryForecasterTypeEnum_impact;
-  @BuiltValueEnumConst(wireName: r'indicator-bayes')
-  static const ScorecardEntryForecasterTypeEnum indicatorBayes =
-      _$scorecardEntryForecasterTypeEnum_indicatorBayes;
-  @BuiltValueEnumConst(wireName: r'llm')
-  static const ScorecardEntryForecasterTypeEnum llm =
-      _$scorecardEntryForecasterTypeEnum_llm;
-  @BuiltValueEnumConst(wireName: r'operator')
-  static const ScorecardEntryForecasterTypeEnum operator_ =
-      _$scorecardEntryForecasterTypeEnum_operator_;
-  @BuiltValueEnumConst(wireName: r'external')
-  static const ScorecardEntryForecasterTypeEnum external_ =
-      _$scorecardEntryForecasterTypeEnum_external_;
-  @BuiltValueEnumConst(wireName: r'ensemble')
-  static const ScorecardEntryForecasterTypeEnum ensemble =
-      _$scorecardEntryForecasterTypeEnum_ensemble;
-
-  static Serializer<ScorecardEntryForecasterTypeEnum> get serializer =>
-      _$scorecardEntryForecasterTypeEnumSerializer;
-
-  const ScorecardEntryForecasterTypeEnum._(String name) : super(name);
-
-  static BuiltSet<ScorecardEntryForecasterTypeEnum> get values =>
-      _$scorecardEntryForecasterTypeEnumValues;
-  static ScorecardEntryForecasterTypeEnum valueOf(String name) =>
-      _$scorecardEntryForecasterTypeEnumValueOf(name);
 }
 
 /// `insufficient` under 20 resolved questions

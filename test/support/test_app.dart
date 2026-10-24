@@ -35,6 +35,9 @@ ProviderContainer testContainer({
 }) {
   final connection = store ?? InMemoryConnectionStore();
   final container = ProviderContainer(
+    // Riverpod retries a failed provider on a timer; a fake that answers a
+    // call 404 would leave that timer pending when the test ends.
+    retry: (_, _) => null,
     overrides: [
       connectionStoreProvider.overrideWithValue(connection),
       adminTokenStoreProvider.overrideWithValue(connection),

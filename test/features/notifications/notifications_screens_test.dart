@@ -11,6 +11,7 @@ import 'package:foresignal_admin/features/notifications/push_token.dart';
 
 import '../../../tool/preview/preview_alerts.dart' show PreviewText;
 import '../../../tool/preview/preview_notifications.dart';
+import '../../support/actions.dart';
 import '../../support/fake_adapter.dart';
 import '../../support/test_app.dart';
 import '../sources/sources_screens_test.dart' show sourcesBackend;
@@ -120,9 +121,7 @@ Future<void> _drainStream(WidgetTester tester) async {
 }
 
 Future<void> _tapKey(WidgetTester tester, String key) async {
-  await tester.ensureVisible(find.byKey(Key(key)).first);
-  await tester.tap(find.byKey(Key(key)).first);
-  await tester.pumpAndSettle();
+  await tapVisible(tester, find.byKey(Key(key)).first);
 }
 
 Future<void> _tapText(WidgetTester tester, String label) async {

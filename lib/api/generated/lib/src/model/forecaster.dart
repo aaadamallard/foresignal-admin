@@ -15,7 +15,7 @@ part 'forecaster.g.dart';
 ///
 /// Properties:
 /// * [id] - Slug, e.g. `base-rate`, `ensemble`, `operator:jsmith`, `llm:daily-analyst`
-/// * [type]
+/// * [type] - Expected to grow (`x-extensible-enum`): a client must accept a value not listed here.
 /// * [name]
 /// * [config]
 /// * [version]
@@ -28,9 +28,9 @@ abstract class Forecaster implements Built<Forecaster, ForecasterBuilder> {
   @BuiltValueField(wireName: r'id')
   String get id;
 
+  /// Expected to grow (`x-extensible-enum`): a client must accept a value not listed here.
   @BuiltValueField(wireName: r'type')
-  ForecasterTypeEnum get type;
-  // enum typeEnum {  base-rate,  climatology,  persistence,  statistical,  precursor,  analog,  threshold,  impact,  indicator-bayes,  llm,  operator,  external,  ensemble,  };
+  String get type;
 
   @BuiltValueField(wireName: r'name')
   String get name;
@@ -81,7 +81,7 @@ class _$ForecasterSerializer implements PrimitiveSerializer<Forecaster> {
     yield r'type';
     yield serializers.serialize(
       object.type,
-      specifiedType: const FullType(ForecasterTypeEnum),
+      specifiedType: const FullType(String),
     );
     yield r'name';
     yield serializers.serialize(
@@ -160,9 +160,9 @@ class _$ForecasterSerializer implements PrimitiveSerializer<Forecaster> {
           final valueDes =
               serializers.deserialize(
                     value,
-                    specifiedType: const FullType(ForecasterTypeEnum),
+                    specifiedType: const FullType(String),
                   )
-                  as ForecasterTypeEnum;
+                  as String;
           result.type = valueDes;
           break;
         case r'name':
@@ -253,46 +253,4 @@ class _$ForecasterSerializer implements PrimitiveSerializer<Forecaster> {
     );
     return result.build();
   }
-}
-
-class ForecasterTypeEnum extends EnumClass {
-  @BuiltValueEnumConst(wireName: r'base-rate')
-  static const ForecasterTypeEnum baseRate = _$forecasterTypeEnum_baseRate;
-  @BuiltValueEnumConst(wireName: r'climatology')
-  static const ForecasterTypeEnum climatology =
-      _$forecasterTypeEnum_climatology;
-  @BuiltValueEnumConst(wireName: r'persistence')
-  static const ForecasterTypeEnum persistence =
-      _$forecasterTypeEnum_persistence;
-  @BuiltValueEnumConst(wireName: r'statistical')
-  static const ForecasterTypeEnum statistical =
-      _$forecasterTypeEnum_statistical;
-  @BuiltValueEnumConst(wireName: r'precursor')
-  static const ForecasterTypeEnum precursor = _$forecasterTypeEnum_precursor;
-  @BuiltValueEnumConst(wireName: r'analog')
-  static const ForecasterTypeEnum analog = _$forecasterTypeEnum_analog;
-  @BuiltValueEnumConst(wireName: r'threshold')
-  static const ForecasterTypeEnum threshold = _$forecasterTypeEnum_threshold;
-  @BuiltValueEnumConst(wireName: r'impact')
-  static const ForecasterTypeEnum impact = _$forecasterTypeEnum_impact;
-  @BuiltValueEnumConst(wireName: r'indicator-bayes')
-  static const ForecasterTypeEnum indicatorBayes =
-      _$forecasterTypeEnum_indicatorBayes;
-  @BuiltValueEnumConst(wireName: r'llm')
-  static const ForecasterTypeEnum llm = _$forecasterTypeEnum_llm;
-  @BuiltValueEnumConst(wireName: r'operator')
-  static const ForecasterTypeEnum operator_ = _$forecasterTypeEnum_operator_;
-  @BuiltValueEnumConst(wireName: r'external')
-  static const ForecasterTypeEnum external_ = _$forecasterTypeEnum_external_;
-  @BuiltValueEnumConst(wireName: r'ensemble')
-  static const ForecasterTypeEnum ensemble = _$forecasterTypeEnum_ensemble;
-
-  static Serializer<ForecasterTypeEnum> get serializer =>
-      _$forecasterTypeEnumSerializer;
-
-  const ForecasterTypeEnum._(String name) : super(name);
-
-  static BuiltSet<ForecasterTypeEnum> get values => _$forecasterTypeEnumValues;
-  static ForecasterTypeEnum valueOf(String name) =>
-      _$forecasterTypeEnumValueOf(name);
 }

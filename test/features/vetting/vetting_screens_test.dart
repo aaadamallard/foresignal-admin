@@ -32,12 +32,20 @@ FakeAdapter vettingBackend(PreviewVetting v) {
 }
 
 Future<void> _tab(WidgetTester tester, String name) async {
+  // The tab bar scrolls; the last tabs start out of view.
+  await tester.ensureVisible(find.byKey(Key('vetting.tab.$name')));
+  await tester.pumpAndSettle();
   await tester.tap(find.byKey(Key('vetting.tab.$name')));
   await tester.pumpAndSettle();
 }
 
 Future<void> _tapSave(WidgetTester tester) async {
+  // A focused field scrolls itself back into view on the next frame, so
+  // let go of it before scrolling to Save (a click on Save does the same).
+  FocusManager.instance.primaryFocus?.unfocus();
+  await tester.pumpAndSettle();
   await tester.ensureVisible(find.byKey(const Key('form.save')));
+  await tester.pumpAndSettle();
   await tester.tap(find.byKey(const Key('form.save')));
   await tester.pumpAndSettle();
 }
@@ -99,6 +107,20 @@ void main() {
       'europe',
     ]);
     expect(find.textContaining('Saved'), findsOneWidget);
+  });
+
+  testWidgets("X's monthly cap says which of its two caps applies", (tester) async {
+    await openAt(tester, vettingPath, adapter: vettingBackend(PreviewVetting()));
+    await _tab(tester, 'platforms');
+    expect(
+      find.byKey(const Key('vetting.platform.capReason.x')),
+      findsOneWidget,
+    );
+    expect(find.text(r'platform $50 / source $25 — stricter applies'), findsOneWidget);
+
+    await openAt(tester, vettingPlatformPath('x'), adapter: vettingBackend(PreviewVetting()));
+    expect(find.text('Monthly cap'), findsOneWidget);
+    expect(find.text(r'platform $50 / source $25 — stricter applies'), findsOneWidget);
   });
 
   testWidgets('social settings return an emptied field to its default', (tester) async {
@@ -192,6 +214,7 @@ void main() {
       adapter: vettingBackend(PreviewVetting()),
     );
     await tester.ensureVisible(find.byKey(const Key('ownership.chain')));
+    await tester.pumpAndSettle();
     await tester.tap(find.byKey(const Key('ownership.chain')));
     await tester.pumpAndSettle();
     final post = adapter.requests.singleWhere((r) => r.uri.path == '/v1/graph/ownership-chain');

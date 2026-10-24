@@ -340,18 +340,23 @@ class _EventEditCardState extends ConsumerState<EventEditCard> {
           LabeledField(
             label: 'Status',
             help: 'Only an operator or agent may dismiss.',
-            field: DropdownButtonFormField<String>(
-              key: const Key('event.statusField'),
-              style: Theme.of(context).textTheme.bodyMedium,
-              initialValue: _status,
-              items: <DropdownMenuItem<String>>[
-                for (final s in const <String>['emerging', 'active', 'resolved', 'dismissed'])
-                  DropdownMenuItem<String>(value: s, child: Text(wireText(s))),
-              ],
-              onChanged: (v) {
-                _status = v ?? _status;
-                changed();
-              },
+            // Keyed by version: a dropdown keeps its own value, so a re-read
+            // event needs a fresh one.
+            field: KeyedSubtree(
+              key: ValueKey<String>('status.${widget.event.version}'),
+              child: DropdownButtonFormField<String>(
+                key: const Key('event.statusField'),
+                style: Theme.of(context).textTheme.bodyMedium,
+                initialValue: _status,
+                items: <DropdownMenuItem<String>>[
+                  for (final s in const <String>['emerging', 'active', 'resolved', 'dismissed'])
+                    DropdownMenuItem<String>(value: s, child: Text(wireText(s))),
+                ],
+                onChanged: (v) {
+                  _status = v ?? _status;
+                  changed();
+                },
+              ),
             ),
           ),
           LabeledField(
@@ -360,25 +365,28 @@ class _EventEditCardState extends ConsumerState<EventEditCard> {
                 ? 'Overridden; the override is in the log. Computed clears it and restores '
                       'the severity it replaced.'
                 : 'Setting it records an override in the log.',
-            field: DropdownButtonFormField<String>(
-              key: const Key('event.severityField'),
-              isExpanded: true,
-              style: Theme.of(context).textTheme.bodyMedium,
-              initialValue: _severity,
-              items: <DropdownMenuItem<String>>[
-                for (final s in const <String>['info', 'warning', 'critical'])
-                  DropdownMenuItem<String>(value: s, child: Text(wireText(s))),
-                if (widget.event.severityOverridden == true)
-                  const DropdownMenuItem<String>(
-                    key: Key('event.severity.computed'),
-                    value: _computedSeverity,
-                    child: Text('Computed (clear override)'),
-                  ),
-              ],
-              onChanged: (v) {
-                _severity = v ?? _severity;
-                changed();
-              },
+            field: KeyedSubtree(
+              key: ValueKey<String>('severity.${widget.event.version}'),
+              child: DropdownButtonFormField<String>(
+                key: const Key('event.severityField'),
+                isExpanded: true,
+                style: Theme.of(context).textTheme.bodyMedium,
+                initialValue: _severity,
+                items: <DropdownMenuItem<String>>[
+                  for (final s in const <String>['info', 'warning', 'critical'])
+                    DropdownMenuItem<String>(value: s, child: Text(wireText(s))),
+                  if (widget.event.severityOverridden == true)
+                    const DropdownMenuItem<String>(
+                      key: Key('event.severity.computed'),
+                      value: _computedSeverity,
+                      child: Text('Computed (clear override)'),
+                    ),
+                ],
+                onChanged: (v) {
+                  _severity = v ?? _severity;
+                  changed();
+                },
+              ),
             ),
           ),
           LabeledField(
@@ -645,6 +653,7 @@ class _EventMembersCardState extends ConsumerState<EventMembersCard> {
                     width: 160,
                     child: DropdownButtonFormField<String>(
                       key: const Key('event.add.role'),
+                      isExpanded: true,
                       style: Theme.of(context).textTheme.bodyMedium,
                       initialValue: _role,
                       decoration: const InputDecoration(labelText: 'Role'),

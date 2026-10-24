@@ -6,76 +6,6 @@ part of 'notification_detail.dart';
 // BuiltValueGenerator
 // **************************************************************************
 
-const NotificationDetailEventEnum _$notificationDetailEventEnum_alert =
-    const NotificationDetailEventEnum._('alert');
-const NotificationDetailEventEnum _$notificationDetailEventEnum_briefing =
-    const NotificationDetailEventEnum._('briefing');
-const NotificationDetailEventEnum _$notificationDetailEventEnum_system =
-    const NotificationDetailEventEnum._('system');
-const NotificationDetailEventEnum
-_$notificationDetailEventEnum_analystPeriodNote =
-    const NotificationDetailEventEnum._('analystPeriodNote');
-const NotificationDetailEventEnum
-_$notificationDetailEventEnum_situationPeriodActivated =
-    const NotificationDetailEventEnum._('situationPeriodActivated');
-const NotificationDetailEventEnum
-_$notificationDetailEventEnum_situationPeriodEscalated =
-    const NotificationDetailEventEnum._('situationPeriodEscalated');
-const NotificationDetailEventEnum
-_$notificationDetailEventEnum_findingPeriodSignificant =
-    const NotificationDetailEventEnum._('findingPeriodSignificant');
-const NotificationDetailEventEnum
-_$notificationDetailEventEnum_forecastPeriodResolutionNeeded =
-    const NotificationDetailEventEnum._('forecastPeriodResolutionNeeded');
-const NotificationDetailEventEnum
-_$notificationDetailEventEnum_hypothesisPeriodBandChanged =
-    const NotificationDetailEventEnum._('hypothesisPeriodBandChanged');
-const NotificationDetailEventEnum
-_$notificationDetailEventEnum_assessmentPeriodPublished =
-    const NotificationDetailEventEnum._('assessmentPeriodPublished');
-
-NotificationDetailEventEnum _$notificationDetailEventEnumValueOf(String name) {
-  switch (name) {
-    case 'alert':
-      return _$notificationDetailEventEnum_alert;
-    case 'briefing':
-      return _$notificationDetailEventEnum_briefing;
-    case 'system':
-      return _$notificationDetailEventEnum_system;
-    case 'analystPeriodNote':
-      return _$notificationDetailEventEnum_analystPeriodNote;
-    case 'situationPeriodActivated':
-      return _$notificationDetailEventEnum_situationPeriodActivated;
-    case 'situationPeriodEscalated':
-      return _$notificationDetailEventEnum_situationPeriodEscalated;
-    case 'findingPeriodSignificant':
-      return _$notificationDetailEventEnum_findingPeriodSignificant;
-    case 'forecastPeriodResolutionNeeded':
-      return _$notificationDetailEventEnum_forecastPeriodResolutionNeeded;
-    case 'hypothesisPeriodBandChanged':
-      return _$notificationDetailEventEnum_hypothesisPeriodBandChanged;
-    case 'assessmentPeriodPublished':
-      return _$notificationDetailEventEnum_assessmentPeriodPublished;
-    default:
-      throw ArgumentError(name);
-  }
-}
-
-final BuiltSet<NotificationDetailEventEnum>
-_$notificationDetailEventEnumValues =
-    BuiltSet<NotificationDetailEventEnum>(const <NotificationDetailEventEnum>[
-      _$notificationDetailEventEnum_alert,
-      _$notificationDetailEventEnum_briefing,
-      _$notificationDetailEventEnum_system,
-      _$notificationDetailEventEnum_analystPeriodNote,
-      _$notificationDetailEventEnum_situationPeriodActivated,
-      _$notificationDetailEventEnum_situationPeriodEscalated,
-      _$notificationDetailEventEnum_findingPeriodSignificant,
-      _$notificationDetailEventEnum_forecastPeriodResolutionNeeded,
-      _$notificationDetailEventEnum_hypothesisPeriodBandChanged,
-      _$notificationDetailEventEnum_assessmentPeriodPublished,
-    ]);
-
 const NotificationDetailSeverityEnum _$notificationDetailSeverityEnum_info =
     const NotificationDetailSeverityEnum._('info');
 const NotificationDetailSeverityEnum _$notificationDetailSeverityEnum_warning =
@@ -143,64 +73,12 @@ _$notificationDetailAlertStateEnumValues =
       ],
     );
 
-Serializer<NotificationDetailEventEnum>
-_$notificationDetailEventEnumSerializer =
-    _$NotificationDetailEventEnumSerializer();
 Serializer<NotificationDetailSeverityEnum>
 _$notificationDetailSeverityEnumSerializer =
     _$NotificationDetailSeverityEnumSerializer();
 Serializer<NotificationDetailAlertStateEnum>
 _$notificationDetailAlertStateEnumSerializer =
     _$NotificationDetailAlertStateEnumSerializer();
-
-class _$NotificationDetailEventEnumSerializer
-    implements PrimitiveSerializer<NotificationDetailEventEnum> {
-  static const Map<String, Object> _toWire = const <String, Object>{
-    'alert': 'alert',
-    'briefing': 'briefing',
-    'system': 'system',
-    'analystPeriodNote': 'analyst.note',
-    'situationPeriodActivated': 'situation.activated',
-    'situationPeriodEscalated': 'situation.escalated',
-    'findingPeriodSignificant': 'finding.significant',
-    'forecastPeriodResolutionNeeded': 'forecast.resolution_needed',
-    'hypothesisPeriodBandChanged': 'hypothesis.band_changed',
-    'assessmentPeriodPublished': 'assessment.published',
-  };
-  static const Map<Object, String> _fromWire = const <Object, String>{
-    'alert': 'alert',
-    'briefing': 'briefing',
-    'system': 'system',
-    'analyst.note': 'analystPeriodNote',
-    'situation.activated': 'situationPeriodActivated',
-    'situation.escalated': 'situationPeriodEscalated',
-    'finding.significant': 'findingPeriodSignificant',
-    'forecast.resolution_needed': 'forecastPeriodResolutionNeeded',
-    'hypothesis.band_changed': 'hypothesisPeriodBandChanged',
-    'assessment.published': 'assessmentPeriodPublished',
-  };
-
-  @override
-  final Iterable<Type> types = const <Type>[NotificationDetailEventEnum];
-  @override
-  final String wireName = 'NotificationDetailEventEnum';
-
-  @override
-  Object serialize(
-    Serializers serializers,
-    NotificationDetailEventEnum object, {
-    FullType specifiedType = FullType.unspecified,
-  }) => _toWire[object.name] ?? object.name;
-
-  @override
-  NotificationDetailEventEnum deserialize(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) => NotificationDetailEventEnum.valueOf(
-    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
-  );
-}
 
 class _$NotificationDetailSeverityEnumSerializer
     implements PrimitiveSerializer<NotificationDetailSeverityEnum> {
@@ -276,7 +154,7 @@ class _$NotificationDetail extends NotificationDetail {
   @override
   final int id;
   @override
-  final NotificationDetailEventEnum event;
+  final String event;
   @override
   final String? subtype;
   @override
@@ -401,9 +279,9 @@ class NotificationDetailBuilder
   int? get id => _$this._id;
   set id(int? id) => _$this._id = id;
 
-  NotificationDetailEventEnum? _event;
-  NotificationDetailEventEnum? get event => _$this._event;
-  set event(NotificationDetailEventEnum? event) => _$this._event = event;
+  String? _event;
+  String? get event => _$this._event;
+  set event(String? event) => _$this._event = event;
 
   String? _subtype;
   String? get subtype => _$this._subtype;

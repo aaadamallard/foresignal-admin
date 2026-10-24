@@ -16,7 +16,7 @@ part 'relation.g.dart';
 /// * [id] - ULID identifier
 /// * [fromRef] - Canonical object reference `{type}:{id}` (docs/Client-Contract.md §2). Record refs are `record:{sourceId}/{externalId}[@{seq}]` with the external id percent-encoded. Remote refs (132) are `remote:{instanceId}/{type}:{id}`: read-only material received from another instance.
 /// * [toRef] - Canonical object reference `{type}:{id}` (docs/Client-Contract.md §2). Record refs are `record:{sourceId}/{externalId}[@{seq}]` with the external id percent-encoded. Remote refs (132) are `remote:{instanceId}/{type}:{id}`: read-only material received from another instance.
-/// * [type] - Client-Contract §4 relation type
+/// * [type] - Client-Contract §4 relation type. Expected to grow (`x-extensible-enum`): a client must accept a value not listed here.
 /// * [validFrom]
 /// * [validTo]
 /// * [confidence]
@@ -40,10 +40,9 @@ abstract class Relation implements Built<Relation, RelationBuilder> {
   @BuiltValueField(wireName: r'toRef')
   String get toRef;
 
-  /// Client-Contract §4 relation type
+  /// Client-Contract §4 relation type. Expected to grow (`x-extensible-enum`): a client must accept a value not listed here.
   @BuiltValueField(wireName: r'type')
-  RelationTypeEnum get type;
-  // enum typeEnum {  member-of,  observed-by,  same-as,  located-in,  near,  depends-on,  affects,  derived-from,  evidence-for,  evidence-against,  about,  mentions,  precedes,  causes,  related-to,  owns,  controls,  officer-of,  beneficial-owner,  affiliated-with,  };
+  String get type;
 
   @BuiltValueField(wireName: r'validFrom')
   DateTime get validFrom;
@@ -116,7 +115,7 @@ class _$RelationSerializer implements PrimitiveSerializer<Relation> {
     yield r'type';
     yield serializers.serialize(
       object.type,
-      specifiedType: const FullType(RelationTypeEnum),
+      specifiedType: const FullType(String),
     );
     yield r'validFrom';
     yield serializers.serialize(
@@ -227,9 +226,9 @@ class _$RelationSerializer implements PrimitiveSerializer<Relation> {
           final valueDes =
               serializers.deserialize(
                     value,
-                    specifiedType: const FullType(RelationTypeEnum),
+                    specifiedType: const FullType(String),
                   )
-                  as RelationTypeEnum;
+                  as String;
           result.type = valueDes;
           break;
         case r'validFrom':
@@ -340,62 +339,6 @@ class _$RelationSerializer implements PrimitiveSerializer<Relation> {
     );
     return result.build();
   }
-}
-
-/// Client-Contract §4 relation type
-class RelationTypeEnum extends EnumClass {
-  @BuiltValueEnumConst(wireName: r'member-of')
-  static const RelationTypeEnum memberOf = _$relationTypeEnum_memberOf;
-  @BuiltValueEnumConst(wireName: r'observed-by')
-  static const RelationTypeEnum observedBy = _$relationTypeEnum_observedBy;
-  @BuiltValueEnumConst(wireName: r'same-as')
-  static const RelationTypeEnum sameAs = _$relationTypeEnum_sameAs;
-  @BuiltValueEnumConst(wireName: r'located-in')
-  static const RelationTypeEnum locatedIn = _$relationTypeEnum_locatedIn;
-  @BuiltValueEnumConst(wireName: r'near')
-  static const RelationTypeEnum near = _$relationTypeEnum_near;
-  @BuiltValueEnumConst(wireName: r'depends-on')
-  static const RelationTypeEnum dependsOn = _$relationTypeEnum_dependsOn;
-  @BuiltValueEnumConst(wireName: r'affects')
-  static const RelationTypeEnum affects = _$relationTypeEnum_affects;
-  @BuiltValueEnumConst(wireName: r'derived-from')
-  static const RelationTypeEnum derivedFrom = _$relationTypeEnum_derivedFrom;
-  @BuiltValueEnumConst(wireName: r'evidence-for')
-  static const RelationTypeEnum evidenceFor = _$relationTypeEnum_evidenceFor;
-  @BuiltValueEnumConst(wireName: r'evidence-against')
-  static const RelationTypeEnum evidenceAgainst =
-      _$relationTypeEnum_evidenceAgainst;
-  @BuiltValueEnumConst(wireName: r'about')
-  static const RelationTypeEnum about = _$relationTypeEnum_about;
-  @BuiltValueEnumConst(wireName: r'mentions')
-  static const RelationTypeEnum mentions = _$relationTypeEnum_mentions;
-  @BuiltValueEnumConst(wireName: r'precedes')
-  static const RelationTypeEnum precedes = _$relationTypeEnum_precedes;
-  @BuiltValueEnumConst(wireName: r'causes')
-  static const RelationTypeEnum causes = _$relationTypeEnum_causes;
-  @BuiltValueEnumConst(wireName: r'related-to')
-  static const RelationTypeEnum relatedTo = _$relationTypeEnum_relatedTo;
-  @BuiltValueEnumConst(wireName: r'owns')
-  static const RelationTypeEnum owns = _$relationTypeEnum_owns;
-  @BuiltValueEnumConst(wireName: r'controls')
-  static const RelationTypeEnum controls = _$relationTypeEnum_controls;
-  @BuiltValueEnumConst(wireName: r'officer-of')
-  static const RelationTypeEnum officerOf = _$relationTypeEnum_officerOf;
-  @BuiltValueEnumConst(wireName: r'beneficial-owner')
-  static const RelationTypeEnum beneficialOwner =
-      _$relationTypeEnum_beneficialOwner;
-  @BuiltValueEnumConst(wireName: r'affiliated-with')
-  static const RelationTypeEnum affiliatedWith =
-      _$relationTypeEnum_affiliatedWith;
-
-  static Serializer<RelationTypeEnum> get serializer =>
-      _$relationTypeEnumSerializer;
-
-  const RelationTypeEnum._(String name) : super(name);
-
-  static BuiltSet<RelationTypeEnum> get values => _$relationTypeEnumValues;
-  static RelationTypeEnum valueOf(String name) =>
-      _$relationTypeEnumValueOf(name);
 }
 
 /// Relation or dependency label (104 vocabulary)

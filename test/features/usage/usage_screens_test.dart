@@ -8,6 +8,7 @@ import 'package:foresignal_admin/features/usage/collector_gauges.dart';
 import '../../../tool/preview/preview_sources.dart';
 import '../../../tool/preview/preview_usage.dart';
 import '../../../tool/preview/preview_validate.dart';
+import '../../support/actions.dart';
 import '../../support/fake_adapter.dart';
 import '../sources/sources_screens_test.dart' show openAt, sourcesBackend;
 
@@ -52,18 +53,20 @@ void main() {
   testWidgets('the collector slider saves, then confirms by re-reading', (tester) async {
     final settings = PreviewSettings();
     final adapter = await openAt(tester, usagePath, adapter: usageBackend(settings));
-    await tester.tap(find.byKey(const Key('usage.tab.collector')));
-    await tester.pumpAndSettle();
+    await tapVisible(tester, find.byKey(const Key('usage.tab.collector')));
     expect(
-      find.descendant(of: find.byKey(const Key('collector.value')), matching: find.text('2')),
+      find.descendant(
+        of: find.byKey(const Key('collector.value')),
+        matching: find.text('2'),
+        matchRoot: true,
+      ),
       findsOneWidget,
     );
 
     final slider = find.byKey(const Key('collector.slider'));
     await tester.tapAt(tester.getCenter(slider));
     await tester.pumpAndSettle();
-    await tester.tap(find.byKey(const Key('form.save')));
-    await tester.pumpAndSettle();
+    await tapVisible(tester, find.byKey(const Key('form.save')));
 
     final put = adapter.requests.singleWhere((r) => r.method == 'PUT');
     expect(put.uri.path, '/v1/settings/collector');
@@ -80,12 +83,10 @@ void main() {
   testWidgets('a rate limit saves the whole object and stays confirmed', (tester) async {
     final settings = PreviewSettings();
     final adapter = await openAt(tester, usagePath, adapter: usageBackend(settings));
-    await tester.tap(find.byKey(const Key('usage.tab.rateLimits')));
-    await tester.pumpAndSettle();
+    await tapVisible(tester, find.byKey(const Key('usage.tab.rateLimits')));
 
     await tester.enterText(find.byKey(const Key('settings.read')), '900');
-    await tester.tap(find.byKey(const Key('form.save')));
-    await tester.pumpAndSettle();
+    await tapVisible(tester, find.byKey(const Key('form.save')));
 
     final put = adapter.requests.singleWhere((r) => r.method == 'PUT');
     expect(put.uri.path, '/v1/settings/ratelimits');
@@ -98,28 +99,22 @@ void main() {
 
   testWidgets('a retention window under an hour is refused before sending', (tester) async {
     final adapter = await openAt(tester, usagePath, adapter: usageBackend());
-    await tester.tap(find.byKey(const Key('usage.tab.retention')));
-    await tester.pumpAndSettle();
+    await tapVisible(tester, find.byKey(const Key('usage.tab.retention')));
 
     await tester.enterText(find.byKey(const Key('settings.ask')), '30m');
-    await tester.tap(find.byKey(const Key('form.save')).first);
-    await tester.pumpAndSettle();
+    await tapVisible(tester, find.byKey(const Key('form.save')).first);
     expect(find.text('At least 1h.'), findsOneWidget);
     expect(adapter.requests.where((r) => r.method == 'PUT'), isEmpty);
   });
 
   testWidgets('running retention asks first, then shows what was deleted', (tester) async {
     final adapter = await openAt(tester, usagePath, adapter: usageBackend());
-    await tester.tap(find.byKey(const Key('usage.tab.retention')));
-    await tester.pumpAndSettle();
+    await tapVisible(tester, find.byKey(const Key('usage.tab.retention')));
 
-    await tester.ensureVisible(find.byKey(const Key('retention.run')));
-    await tester.tap(find.byKey(const Key('retention.run')));
-    await tester.pumpAndSettle();
+    await tapVisible(tester, find.byKey(const Key('retention.run')));
     expect(adapter.requests.where((r) => r.method == 'POST'), isEmpty);
 
-    await tester.tap(find.byKey(const Key('retention.confirmRun')));
-    await tester.pumpAndSettle();
+    await tapVisible(tester, find.byKey(const Key('retention.confirmRun')));
     expect(
       adapter.requests.where((r) => r.method == 'POST' && r.uri.path.endsWith('/retention/run')),
       hasLength(1),
@@ -136,8 +131,7 @@ void main() {
   group('collector gauges', () {
     Future<FakeAdapter> openCollector(WidgetTester tester, PreviewSettings settings) async {
       final adapter = await openAt(tester, usagePath, adapter: usageBackend(settings));
-      await tester.tap(find.byKey(const Key('usage.tab.collector')));
-      await tester.pumpAndSettle();
+      await tapVisible(tester, find.byKey(const Key('usage.tab.collector')));
       return adapter;
     }
 
@@ -171,8 +165,7 @@ void main() {
       expect(figure(tester, 'collector.inUse'), '2');
       expect(figure(tester, 'collector.waiting'), '2');
 
-      await tester.tap(find.byKey(const Key('usage.tab.rateLimits')));
-      await tester.pumpAndSettle();
+      await tapVisible(tester, find.byKey(const Key('usage.tab.rateLimits')));
       final reads = statusReads(adapter).length;
       await tester.pump(const Duration(seconds: 8));
       expect(statusReads(adapter).length, reads);

@@ -6,141 +6,6 @@ part of 'forecast.dart';
 // BuiltValueGenerator
 // **************************************************************************
 
-const ForecastForecasterTypeEnum _$forecastForecasterTypeEnum_baseRate =
-    const ForecastForecasterTypeEnum._('baseRate');
-const ForecastForecasterTypeEnum _$forecastForecasterTypeEnum_climatology =
-    const ForecastForecasterTypeEnum._('climatology');
-const ForecastForecasterTypeEnum _$forecastForecasterTypeEnum_persistence =
-    const ForecastForecasterTypeEnum._('persistence');
-const ForecastForecasterTypeEnum _$forecastForecasterTypeEnum_statistical =
-    const ForecastForecasterTypeEnum._('statistical');
-const ForecastForecasterTypeEnum _$forecastForecasterTypeEnum_precursor =
-    const ForecastForecasterTypeEnum._('precursor');
-const ForecastForecasterTypeEnum _$forecastForecasterTypeEnum_analog =
-    const ForecastForecasterTypeEnum._('analog');
-const ForecastForecasterTypeEnum _$forecastForecasterTypeEnum_threshold =
-    const ForecastForecasterTypeEnum._('threshold');
-const ForecastForecasterTypeEnum _$forecastForecasterTypeEnum_impact =
-    const ForecastForecasterTypeEnum._('impact');
-const ForecastForecasterTypeEnum _$forecastForecasterTypeEnum_indicatorBayes =
-    const ForecastForecasterTypeEnum._('indicatorBayes');
-const ForecastForecasterTypeEnum _$forecastForecasterTypeEnum_llm =
-    const ForecastForecasterTypeEnum._('llm');
-const ForecastForecasterTypeEnum _$forecastForecasterTypeEnum_operator_ =
-    const ForecastForecasterTypeEnum._('operator_');
-const ForecastForecasterTypeEnum _$forecastForecasterTypeEnum_external_ =
-    const ForecastForecasterTypeEnum._('external_');
-const ForecastForecasterTypeEnum _$forecastForecasterTypeEnum_ensemble =
-    const ForecastForecasterTypeEnum._('ensemble');
-
-ForecastForecasterTypeEnum _$forecastForecasterTypeEnumValueOf(String name) {
-  switch (name) {
-    case 'baseRate':
-      return _$forecastForecasterTypeEnum_baseRate;
-    case 'climatology':
-      return _$forecastForecasterTypeEnum_climatology;
-    case 'persistence':
-      return _$forecastForecasterTypeEnum_persistence;
-    case 'statistical':
-      return _$forecastForecasterTypeEnum_statistical;
-    case 'precursor':
-      return _$forecastForecasterTypeEnum_precursor;
-    case 'analog':
-      return _$forecastForecasterTypeEnum_analog;
-    case 'threshold':
-      return _$forecastForecasterTypeEnum_threshold;
-    case 'impact':
-      return _$forecastForecasterTypeEnum_impact;
-    case 'indicatorBayes':
-      return _$forecastForecasterTypeEnum_indicatorBayes;
-    case 'llm':
-      return _$forecastForecasterTypeEnum_llm;
-    case 'operator_':
-      return _$forecastForecasterTypeEnum_operator_;
-    case 'external_':
-      return _$forecastForecasterTypeEnum_external_;
-    case 'ensemble':
-      return _$forecastForecasterTypeEnum_ensemble;
-    default:
-      throw ArgumentError(name);
-  }
-}
-
-final BuiltSet<ForecastForecasterTypeEnum> _$forecastForecasterTypeEnumValues =
-    BuiltSet<ForecastForecasterTypeEnum>(const <ForecastForecasterTypeEnum>[
-      _$forecastForecasterTypeEnum_baseRate,
-      _$forecastForecasterTypeEnum_climatology,
-      _$forecastForecasterTypeEnum_persistence,
-      _$forecastForecasterTypeEnum_statistical,
-      _$forecastForecasterTypeEnum_precursor,
-      _$forecastForecasterTypeEnum_analog,
-      _$forecastForecasterTypeEnum_threshold,
-      _$forecastForecasterTypeEnum_impact,
-      _$forecastForecasterTypeEnum_indicatorBayes,
-      _$forecastForecasterTypeEnum_llm,
-      _$forecastForecasterTypeEnum_operator_,
-      _$forecastForecasterTypeEnum_external_,
-      _$forecastForecasterTypeEnum_ensemble,
-    ]);
-
-Serializer<ForecastForecasterTypeEnum> _$forecastForecasterTypeEnumSerializer =
-    _$ForecastForecasterTypeEnumSerializer();
-
-class _$ForecastForecasterTypeEnumSerializer
-    implements PrimitiveSerializer<ForecastForecasterTypeEnum> {
-  static const Map<String, Object> _toWire = const <String, Object>{
-    'baseRate': 'base-rate',
-    'climatology': 'climatology',
-    'persistence': 'persistence',
-    'statistical': 'statistical',
-    'precursor': 'precursor',
-    'analog': 'analog',
-    'threshold': 'threshold',
-    'impact': 'impact',
-    'indicatorBayes': 'indicator-bayes',
-    'llm': 'llm',
-    'operator_': 'operator',
-    'external_': 'external',
-    'ensemble': 'ensemble',
-  };
-  static const Map<Object, String> _fromWire = const <Object, String>{
-    'base-rate': 'baseRate',
-    'climatology': 'climatology',
-    'persistence': 'persistence',
-    'statistical': 'statistical',
-    'precursor': 'precursor',
-    'analog': 'analog',
-    'threshold': 'threshold',
-    'impact': 'impact',
-    'indicator-bayes': 'indicatorBayes',
-    'llm': 'llm',
-    'operator': 'operator_',
-    'external': 'external_',
-    'ensemble': 'ensemble',
-  };
-
-  @override
-  final Iterable<Type> types = const <Type>[ForecastForecasterTypeEnum];
-  @override
-  final String wireName = 'ForecastForecasterTypeEnum';
-
-  @override
-  Object serialize(
-    Serializers serializers,
-    ForecastForecasterTypeEnum object, {
-    FullType specifiedType = FullType.unspecified,
-  }) => _toWire[object.name] ?? object.name;
-
-  @override
-  ForecastForecasterTypeEnum deserialize(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) => ForecastForecasterTypeEnum.valueOf(
-    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
-  );
-}
-
 class _$Forecast extends Forecast {
   @override
   final String id;
@@ -149,7 +14,7 @@ class _$Forecast extends Forecast {
   @override
   final String forecasterId;
   @override
-  final ForecastForecasterTypeEnum forecasterType;
+  final String forecasterType;
   @override
   final DateTime madeAt;
   @override
@@ -298,9 +163,9 @@ class ForecastBuilder implements Builder<Forecast, ForecastBuilder> {
   String? get forecasterId => _$this._forecasterId;
   set forecasterId(String? forecasterId) => _$this._forecasterId = forecasterId;
 
-  ForecastForecasterTypeEnum? _forecasterType;
-  ForecastForecasterTypeEnum? get forecasterType => _$this._forecasterType;
-  set forecasterType(ForecastForecasterTypeEnum? forecasterType) =>
+  String? _forecasterType;
+  String? get forecasterType => _$this._forecasterType;
+  set forecasterType(String? forecasterType) =>
       _$this._forecasterType = forecasterType;
 
   DateTime? _madeAt;

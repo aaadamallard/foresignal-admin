@@ -6,83 +6,6 @@ part of 'entity_key.dart';
 // BuiltValueGenerator
 // **************************************************************************
 
-const EntityKeyKeyTypeEnum _$entityKeyKeyTypeEnum_airframe =
-    const EntityKeyKeyTypeEnum._('airframe');
-const EntityKeyKeyTypeEnum _$entityKeyKeyTypeEnum_icao24 =
-    const EntityKeyKeyTypeEnum._('icao24');
-const EntityKeyKeyTypeEnum _$entityKeyKeyTypeEnum_registration =
-    const EntityKeyKeyTypeEnum._('registration');
-const EntityKeyKeyTypeEnum _$entityKeyKeyTypeEnum_imo =
-    const EntityKeyKeyTypeEnum._('imo');
-const EntityKeyKeyTypeEnum _$entityKeyKeyTypeEnum_mmsi =
-    const EntityKeyKeyTypeEnum._('mmsi');
-const EntityKeyKeyTypeEnum _$entityKeyKeyTypeEnum_norad =
-    const EntityKeyKeyTypeEnum._('norad');
-const EntityKeyKeyTypeEnum _$entityKeyKeyTypeEnum_cospar =
-    const EntityKeyKeyTypeEnum._('cospar');
-const EntityKeyKeyTypeEnum _$entityKeyKeyTypeEnum_callsign =
-    const EntityKeyKeyTypeEnum._('callsign');
-const EntityKeyKeyTypeEnum _$entityKeyKeyTypeEnum_lei =
-    const EntityKeyKeyTypeEnum._('lei');
-const EntityKeyKeyTypeEnum _$entityKeyKeyTypeEnum_companyNumber =
-    const EntityKeyKeyTypeEnum._('companyNumber');
-const EntityKeyKeyTypeEnum _$entityKeyKeyTypeEnum_taxId =
-    const EntityKeyKeyTypeEnum._('taxId');
-const EntityKeyKeyTypeEnum _$entityKeyKeyTypeEnum_officerId =
-    const EntityKeyKeyTypeEnum._('officerId');
-const EntityKeyKeyTypeEnum _$entityKeyKeyTypeEnum_personKey =
-    const EntityKeyKeyTypeEnum._('personKey');
-
-EntityKeyKeyTypeEnum _$entityKeyKeyTypeEnumValueOf(String name) {
-  switch (name) {
-    case 'airframe':
-      return _$entityKeyKeyTypeEnum_airframe;
-    case 'icao24':
-      return _$entityKeyKeyTypeEnum_icao24;
-    case 'registration':
-      return _$entityKeyKeyTypeEnum_registration;
-    case 'imo':
-      return _$entityKeyKeyTypeEnum_imo;
-    case 'mmsi':
-      return _$entityKeyKeyTypeEnum_mmsi;
-    case 'norad':
-      return _$entityKeyKeyTypeEnum_norad;
-    case 'cospar':
-      return _$entityKeyKeyTypeEnum_cospar;
-    case 'callsign':
-      return _$entityKeyKeyTypeEnum_callsign;
-    case 'lei':
-      return _$entityKeyKeyTypeEnum_lei;
-    case 'companyNumber':
-      return _$entityKeyKeyTypeEnum_companyNumber;
-    case 'taxId':
-      return _$entityKeyKeyTypeEnum_taxId;
-    case 'officerId':
-      return _$entityKeyKeyTypeEnum_officerId;
-    case 'personKey':
-      return _$entityKeyKeyTypeEnum_personKey;
-    default:
-      throw ArgumentError(name);
-  }
-}
-
-final BuiltSet<EntityKeyKeyTypeEnum> _$entityKeyKeyTypeEnumValues =
-    BuiltSet<EntityKeyKeyTypeEnum>(const <EntityKeyKeyTypeEnum>[
-      _$entityKeyKeyTypeEnum_airframe,
-      _$entityKeyKeyTypeEnum_icao24,
-      _$entityKeyKeyTypeEnum_registration,
-      _$entityKeyKeyTypeEnum_imo,
-      _$entityKeyKeyTypeEnum_mmsi,
-      _$entityKeyKeyTypeEnum_norad,
-      _$entityKeyKeyTypeEnum_cospar,
-      _$entityKeyKeyTypeEnum_callsign,
-      _$entityKeyKeyTypeEnum_lei,
-      _$entityKeyKeyTypeEnum_companyNumber,
-      _$entityKeyKeyTypeEnum_taxId,
-      _$entityKeyKeyTypeEnum_officerId,
-      _$entityKeyKeyTypeEnum_personKey,
-    ]);
-
 const EntityKeyRoleEnum _$entityKeyRoleEnum_ANCHOR = const EntityKeyRoleEnum._(
   'ANCHOR',
 );
@@ -139,67 +62,10 @@ final BuiltSet<EntityKeyOriginEnum> _$entityKeyOriginEnumValues =
       _$entityKeyOriginEnum_OPERATOR,
     ]);
 
-Serializer<EntityKeyKeyTypeEnum> _$entityKeyKeyTypeEnumSerializer =
-    _$EntityKeyKeyTypeEnumSerializer();
 Serializer<EntityKeyRoleEnum> _$entityKeyRoleEnumSerializer =
     _$EntityKeyRoleEnumSerializer();
 Serializer<EntityKeyOriginEnum> _$entityKeyOriginEnumSerializer =
     _$EntityKeyOriginEnumSerializer();
-
-class _$EntityKeyKeyTypeEnumSerializer
-    implements PrimitiveSerializer<EntityKeyKeyTypeEnum> {
-  static const Map<String, Object> _toWire = const <String, Object>{
-    'airframe': 'airframe',
-    'icao24': 'icao24',
-    'registration': 'registration',
-    'imo': 'imo',
-    'mmsi': 'mmsi',
-    'norad': 'norad',
-    'cospar': 'cospar',
-    'callsign': 'callsign',
-    'lei': 'lei',
-    'companyNumber': 'company-number',
-    'taxId': 'tax-id',
-    'officerId': 'officer-id',
-    'personKey': 'person-key',
-  };
-  static const Map<Object, String> _fromWire = const <Object, String>{
-    'airframe': 'airframe',
-    'icao24': 'icao24',
-    'registration': 'registration',
-    'imo': 'imo',
-    'mmsi': 'mmsi',
-    'norad': 'norad',
-    'cospar': 'cospar',
-    'callsign': 'callsign',
-    'lei': 'lei',
-    'company-number': 'companyNumber',
-    'tax-id': 'taxId',
-    'officer-id': 'officerId',
-    'person-key': 'personKey',
-  };
-
-  @override
-  final Iterable<Type> types = const <Type>[EntityKeyKeyTypeEnum];
-  @override
-  final String wireName = 'EntityKeyKeyTypeEnum';
-
-  @override
-  Object serialize(
-    Serializers serializers,
-    EntityKeyKeyTypeEnum object, {
-    FullType specifiedType = FullType.unspecified,
-  }) => _toWire[object.name] ?? object.name;
-
-  @override
-  EntityKeyKeyTypeEnum deserialize(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) => EntityKeyKeyTypeEnum.valueOf(
-    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
-  );
-}
 
 class _$EntityKeyRoleEnumSerializer
     implements PrimitiveSerializer<EntityKeyRoleEnum> {
@@ -277,7 +143,7 @@ class _$EntityKey extends EntityKey {
   @override
   final String entityId;
   @override
-  final EntityKeyKeyTypeEnum keyType;
+  final String keyType;
   @override
   final String keyValue;
   @override
@@ -382,9 +248,9 @@ class EntityKeyBuilder implements Builder<EntityKey, EntityKeyBuilder> {
   String? get entityId => _$this._entityId;
   set entityId(String? entityId) => _$this._entityId = entityId;
 
-  EntityKeyKeyTypeEnum? _keyType;
-  EntityKeyKeyTypeEnum? get keyType => _$this._keyType;
-  set keyType(EntityKeyKeyTypeEnum? keyType) => _$this._keyType = keyType;
+  String? _keyType;
+  String? get keyType => _$this._keyType;
+  set keyType(String? keyType) => _$this._keyType = keyType;
 
   String? _keyValue;
   String? get keyValue => _$this._keyValue;

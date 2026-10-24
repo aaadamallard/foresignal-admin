@@ -34,7 +34,7 @@ part 'report.g.dart';
 /// * [timeWindow]
 /// * [area]
 /// * [blocks] - Ordered blocks (stored as `sections`)
-/// * [machineGenerated] - Any block is deterministic-generated or LLM
+/// * [machineGenerated] - Any block is deterministic-generated or LLM, apart from the sources block the publisher appends to every revision
 /// * [version] - Optimistic-lock version of the draft
 /// * [publishedRevision]
 /// * [publishedAt]
@@ -97,7 +97,7 @@ abstract class Report implements Built<Report, ReportBuilder> {
   @BuiltValueField(wireName: r'blocks')
   BuiltList<JsonObject?> get blocks;
 
-  /// Any block is deterministic-generated or LLM
+  /// Any block is deterministic-generated or LLM, apart from the sources block the publisher appends to every revision
   @BuiltValueField(wireName: r'machineGenerated')
   bool? get machineGenerated;
 

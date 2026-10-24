@@ -100,6 +100,10 @@ class _NotificationsInboxPanelState extends ConsumerState<NotificationsInboxPane
   Object? _streamError;
   LiveStatus _live = LiveStatus.connecting;
   final Set<int> _fresh = <int>{};
+
+  /// Live notifications that arrived while a reload was in flight; the
+  /// reload's page predates them, so they are merged back into it.
+  final List<Json> _arrivedDuringLoad = <Json>[];
   StreamSubscription<SseEvent>? _subscription;
   int _load = 0;
 
@@ -181,6 +185,9 @@ class _NotificationsInboxPanelState extends ConsumerState<NotificationsInboxPane
           _fresh.add(n['id']! as int);
         }
         _items = upsertNotification(_items, n, _filter);
+        if (_loading) {
+          _arrivedDuringLoad.add(n);
+        }
       }
       if (badge != null) {
         _badge = badge;
@@ -193,6 +200,7 @@ class _NotificationsInboxPanelState extends ConsumerState<NotificationsInboxPane
     setState(() {
       _loading = true;
       _error = null;
+      _arrivedDuringLoad.clear();
     });
     try {
       final api = ref.read(foresignalApiProvider);
@@ -202,10 +210,15 @@ class _NotificationsInboxPanelState extends ConsumerState<NotificationsInboxPane
       final badge = await ref.read(notificationBadgeProvider.future);
       if (mounted && load == _load) {
         setState(() {
-          _items = page.items;
+          var items = page.items;
+          for (final n in _arrivedDuringLoad) {
+            items = upsertNotification(items, n, _filter);
+          }
+          _items = items;
           _nextCursor = page.nextCursor;
           _badge = badge;
-          _fresh.clear();
+          _fresh.retainAll(<Object?>{for (final n in _arrivedDuringLoad) n['id']});
+          _arrivedDuringLoad.clear();
         });
       }
     } on Object catch (e) {

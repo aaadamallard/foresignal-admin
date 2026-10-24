@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../api/api.dart';
+import '../../core/format/money_text.dart';
 import '../../core/routes.dart';
 import '../../core/theme.dart';
 import '../../core/ui/ui.dart';
@@ -634,12 +635,32 @@ class PlatformsPanel extends ConsumerWidget {
           TableColumnSpec<SocialPlatform>(
             label: 'Spend this month',
             numeric: true,
-            cell: (p) => Text(
-              p.spend == null
-                  ? '—'
-                  : '\$${p.spend!.spentThisMonth.toStringAsFixed(2)}'
-                        '${p.spend!.monthlyCapUsd == null ? '' : ' of \$${p.spend!.monthlyCapUsd!.toStringAsFixed(0)}'}',
-            ),
+            cell: (p) {
+              final spend = Text(
+                p.spend == null
+                    ? '—'
+                    : '\$${p.spend!.spentThisMonth.toStringAsFixed(2)}'
+                          '${p.spend!.monthlyCapUsd == null ? '' : ' of \$${p.spend!.monthlyCapUsd!.toStringAsFixed(0)}'}',
+              );
+              final reason = capReasonText(
+                platformCap: p.spend?.monthlyCapUsd,
+                sourceCap: p.health?.budget?.monthlyCapUsd,
+              );
+              return reason == null
+                  ? spend
+                  : Column(
+                      mainAxisSize: MainAxisSize.min,
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      children: <Widget>[
+                        spend,
+                        Text(
+                          reason,
+                          key: Key('vetting.platform.capReason.${wireOf(p.id)}'),
+                          style: TextStyle(color: muted, fontSize: 12),
+                        ),
+                      ],
+                    );
+            },
           ),
           TableColumnSpec<SocialPlatform>(
             label: 'Actions',

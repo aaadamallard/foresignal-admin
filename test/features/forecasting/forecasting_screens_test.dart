@@ -3,6 +3,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:foresignal_admin/core/routes.dart';
 
 import '../../../tool/preview/preview_forecasting.dart';
+import '../../support/actions.dart';
 import '../../support/fake_adapter.dart';
 import '../sources/sources_screens_test.dart' show openAt, sourcesBackend;
 
@@ -31,15 +32,17 @@ FakeAdapter forecastingBackend(PreviewForecasting v) {
 }
 
 Future<void> _tab(WidgetTester tester, String name) async {
-  await tester.tap(find.byKey(Key('forecasting.tab.$name')));
-  await tester.pumpAndSettle();
+  await tapVisible(tester, find.byKey(Key('forecasting.tab.$name')));
 }
 
 Future<void> _tapText(WidgetTester tester, String label) async {
-  await tester.ensureVisible(find.text(label).last);
-  await tester.tap(find.text(label).last);
-  await tester.pumpAndSettle();
+  await tapVisible(tester, find.text(label).last);
 }
+
+/// The page's vertical scroll view (tables scroll sideways inside it).
+final Finder _page = find.byWidgetPredicate(
+  (w) => w is Scrollable && w.axisDirection == AxisDirection.down,
+).first;
 
 /// Whether the button keyed [key] can be pressed.
 bool _enabled(WidgetTester tester, String key) => tester
@@ -58,8 +61,7 @@ void main() {
 
   testWidgets('registering a forecaster posts it and opens its page', (tester) async {
     final adapter = await openAt(tester, forecastingPath, adapter: forecastingBackend(PreviewForecasting()));
-    await tester.tap(find.byKey(const Key('forecasters.register')));
-    await tester.pumpAndSettle();
+    await tapVisible(tester, find.byKey(const Key('forecasters.register')));
     await tester.enterText(find.byKey(const Key('forecasters.new.id')), 'edp:kalshi/odds');
     await tester.enterText(find.byKey(const Key('forecasters.new.name')), 'Kalshi odds');
     await _tapText(tester, 'Register');
@@ -76,9 +78,7 @@ void main() {
       adapter: forecastingBackend(PreviewForecasting()),
     );
     await tester.enterText(find.byKey(const Key('forecaster.name')), 'TimesFM (daily)');
-    await tester.ensureVisible(find.byKey(const Key('form.save')).first);
-    await tester.tap(find.byKey(const Key('form.save')).first);
-    await tester.pumpAndSettle();
+    await tapVisible(tester, find.byKey(const Key('form.save')).first);
     final put = adapter.requests.lastWhere((r) => r.method != 'GET' && r.uri.path.contains('timesfm'));
     expect(put.uri.toString(), contains('edp%3Atimesfm%2Fdaily'));
     expect(find.textContaining('confirmed'), findsWidgets);
@@ -90,7 +90,7 @@ void main() {
       forecastingForecasterPath('edp:timesfm/daily'),
       adapter: forecastingBackend(PreviewForecasting()),
     );
-    await tester.scrollUntilVisible(find.byKey(const Key('calibration.quantiles')), 300);
+    await tester.scrollUntilVisible(find.byKey(const Key('calibration.quantiles')), 300, scrollable: _page);
     expect(find.byKey(const Key('calibration.quantiles')), findsOneWidget);
     expect(find.byKey(const Key('calibration.pit')), findsOneWidget);
   });
@@ -121,8 +121,7 @@ void main() {
     await tester.enterText(find.byKey(const Key('resolve.evidence')), 'series:bosporus/transits');
     await _tapText(tester, 'Resolve');
     expect(adapter.requests.where((r) => r.uri.path.endsWith('/resolve')), isEmpty);
-    await tester.tap(find.byKey(const Key('resolve.confirm')));
-    await tester.pumpAndSettle();
+    await tapVisible(tester, find.byKey(const Key('resolve.confirm')));
     final post = adapter.requests.lastWhere((r) => r.uri.path.endsWith('/resolve'));
     expect((post.body! as Map)['value'], 114.5);
     expect(find.byKey(const Key('question.resolve')), findsNothing);
@@ -160,11 +159,10 @@ void main() {
   testWidgets('a private manifest URL is refused with an explanation', (tester) async {
     await openAt(tester, forecastingPath, adapter: forecastingBackend(PreviewForecasting()));
     await _tab(tester, 'providers');
-    await tester.tap(find.byKey(const Key('providers.register')));
-    await tester.pumpAndSettle();
+    await tapVisible(tester, find.byKey(const Key('providers.register')));
     await tester.enterText(find.byKey(const Key('providers.new.url')), 'http://192.168.1.20/manifest.json');
     await _tapText(tester, 'Register');
-    expect(find.textContaining('private or loopback address'), findsOneWidget);
+    expect(find.textContaining('resolves to a private or loopback address'), findsOneWidget);
     expect(find.byKey(const Key('providers.created')), findsNothing);
   });
 
@@ -174,11 +172,9 @@ void main() {
       forecastingProviderPath('timesfm'),
       adapter: forecastingBackend(PreviewForecasting()),
     );
-    await tester.scrollUntilVisible(find.byKey(const Key('bindings.table')), 300);
+    await tester.scrollUntilVisible(find.byKey(const Key('bindings.table')), 300, scrollable: _page);
     final preview = find.byWidgetPredicate((w) => '${w.key}'.contains('bindings.preview.'));
-    await tester.ensureVisible(preview.first);
-    await tester.tap(preview.first);
-    await tester.pumpAndSettle();
+    await tapVisible(tester, preview.first);
     expect(adapter.requests.where((r) => r.uri.path.endsWith('/preview')), isNotEmpty);
     expect(find.byKey(const Key('bindings.previewResult')), findsOneWidget);
   });

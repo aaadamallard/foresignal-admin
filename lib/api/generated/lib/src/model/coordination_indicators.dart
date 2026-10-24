@@ -11,7 +11,7 @@ import 'package:built_value/serializer.dart';
 
 part 'coordination_indicators.g.dart';
 
-/// Coordinated-amplification indicators of a narrative (`CoordinationDetector` 1.0.0): statistics, never labels on accounts
+/// Coordinated-amplification indicators of a narrative (`CoordinationDetector` 1.1.0): statistics, never labels on accounts
 ///
 /// Properties:
 /// * [narrativeId] - ULID identifier

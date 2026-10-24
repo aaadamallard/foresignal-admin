@@ -327,7 +327,7 @@ class RecipesPanel extends ConsumerWidget {
           ),
           TableColumnSpec<CorrelationRecipe>(
             label: 'Seeds',
-            cell: (r) => ClippedText(
+            cell: (r) => BoundedText(
               <String>[...?r.definition.seed.kinds, ...?r.definition.seed.sources].join(', '),
               maxWidth: 140,
             ),

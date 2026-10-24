@@ -11,6 +11,7 @@ import 'package:foresignal_admin/core/routes.dart';
 import 'package:foresignal_admin/features/notifications/push_arrival.dart';
 
 import '../../../tool/preview/preview_alerts.dart';
+import '../../support/actions.dart';
 import '../../support/test_app.dart';
 import '../alerts/alerts_screens_test.dart' show alertsBackend;
 
@@ -32,7 +33,14 @@ class _FakeArrivals implements PushArrivalSource {
 
 /// Opens the mobile companion at the alert inbox with [arrivals]; returns
 /// a reader of the router's location.
-Future<String Function()> _openMobile(WidgetTester tester, _FakeArrivals arrivals, PreviewAlerts v) async {
+/// Opens the mobile app on Alerts; with [start] false it stays where the
+/// app put itself (a launching push has already opened its alert).
+Future<String Function()> _openMobile(
+  WidgetTester tester,
+  _FakeArrivals arrivals,
+  PreviewAlerts v, {
+  bool start = true,
+}) async {
   tester.view.physicalSize = const Size(420, 900);
   tester.view.devicePixelRatio = 1;
   addTearDown(tester.view.reset);
@@ -47,8 +55,10 @@ Future<String Function()> _openMobile(WidgetTester tester, _FakeArrivals arrival
   addTearDown(container.dispose);
   await tester.pumpWidget(testApp(container));
   await tester.pumpAndSettle();
-  container.read(routerProvider).go(alertsPath);
-  await tester.pumpAndSettle();
+  if (start) {
+    container.read(routerProvider).go(alertsPath);
+    await tester.pumpAndSettle();
+  }
   return () => _location(container);
 }
 
@@ -136,8 +146,7 @@ void main() {
       expect(find.byKey(const Key('push.banner')), findsOneWidget);
       expect(find.text('Quake near Ovalle'), findsOneWidget);
       expect(at(), alertsPath, reason: 'a push in front does not move the page');
-      await tester.tap(find.byKey(const Key('push.banner.open')));
-      await tester.pumpAndSettle();
+      await tapVisible(tester, find.byKey(const Key('push.banner.open')));
       expect(at(), alertPath(id));
       expect(find.byKey(const Key('push.banner')), findsNothing);
     });
@@ -147,8 +156,7 @@ void main() {
       final at = await _openMobile(tester, arrivals, PreviewAlerts());
       arrivals.controller.add((arrival: const PushArrival(notificationId: 3, event: 'system'), opened: false));
       await tester.pumpAndSettle();
-      await tester.tap(find.byKey(const Key('push.banner.dismiss')));
-      await tester.pumpAndSettle();
+      await tapVisible(tester, find.byKey(const Key('push.banner.dismiss')));
       expect(find.byKey(const Key('push.banner')), findsNothing);
       expect(at(), alertsPath);
     });
@@ -167,7 +175,12 @@ void main() {
     testWidgets('the push that launched the app opens its alert', (tester) async {
       final v = PreviewAlerts();
       final id = _firing(v);
-      final at = await _openMobile(tester, _FakeArrivals(launch: PushArrival(notificationId: 812, alertId: id)), v);
+      final at = await _openMobile(
+        tester,
+        _FakeArrivals(launch: PushArrival(notificationId: 812, alertId: id)),
+        v,
+        start: false,
+      );
       expect(at(), alertPath(id));
     });
 

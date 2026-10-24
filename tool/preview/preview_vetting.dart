@@ -208,6 +208,14 @@ class PreviewVetting {
         'fields': <String>['bearerToken'],
       },
       'spend': <String, Object?>{'currency': 'USD', 'spentThisMonth': 0, 'monthlyCapUsd': 50},
+      // The source's own budget: its monthly cap is X's default, 25.
+      'health': <String, Object?>{
+        'sourceId': 'x',
+        'status': 'disabled',
+        'consecutiveFailures': 0,
+        'budget': <String, Object?>{'perMinute': 30, 'perDay': 2000, 'monthlyCapUsd': 25},
+        'spentUsdThisMonth': 0,
+      },
       'terms': <String, Object?>{'costs': 'Pay per request; counts are cheapest.'},
       'settings': <String, Object?>{'enabled': false, 'mode': 'counts', 'monthlyCapUsd': 50},
     },

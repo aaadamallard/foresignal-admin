@@ -14,7 +14,7 @@ part 'notification_delivery.g.dart';
 ///
 /// Properties:
 /// * [id]
-/// * [event]
+/// * [event] - Expected to grow (`x-extensible-enum`): a client must accept a value not listed here.
 /// * [alertId]
 /// * [briefingRunId]
 /// * [status]
@@ -37,9 +37,9 @@ abstract class NotificationDelivery
   @BuiltValueField(wireName: r'id')
   int get id;
 
+  /// Expected to grow (`x-extensible-enum`): a client must accept a value not listed here.
   @BuiltValueField(wireName: r'event')
-  NotificationDeliveryEventEnum get event;
-  // enum eventEnum {  alert,  briefing,  system,  social.divergence,  social.attention_gap,  analyst.note,  situation.activated,  situation.escalated,  finding.significant,  forecast.resolved,  forecast.resolution_needed,  hypothesis.band_changed,  indicator.observed,  assumption.broken,  assessment.published,  chronicle.proposed,  chronicle.cap_warning,  chronicle.gap,  mention,  share,  report.received,  package.received,  chronicle.access.requested,  saved-search.matches,  personal,  };
+  String get event;
 
   @BuiltValueField(wireName: r'alertId')
   int? get alertId;
@@ -134,7 +134,7 @@ class _$NotificationDeliverySerializer
     yield r'event';
     yield serializers.serialize(
       object.event,
-      specifiedType: const FullType(NotificationDeliveryEventEnum),
+      specifiedType: const FullType(String),
     );
     if (object.alertId != null) {
       yield r'alertId';
@@ -285,11 +285,9 @@ class _$NotificationDeliverySerializer
           final valueDes =
               serializers.deserialize(
                     value,
-                    specifiedType: const FullType(
-                      NotificationDeliveryEventEnum,
-                    ),
+                    specifiedType: const FullType(String),
                   )
-                  as NotificationDeliveryEventEnum;
+                  as String;
           result.event = valueDes;
           break;
         case r'alertId':
@@ -484,95 +482,6 @@ class _$NotificationDeliverySerializer
     );
     return result.build();
   }
-}
-
-class NotificationDeliveryEventEnum extends EnumClass {
-  @BuiltValueEnumConst(wireName: r'alert')
-  static const NotificationDeliveryEventEnum alert =
-      _$notificationDeliveryEventEnum_alert;
-  @BuiltValueEnumConst(wireName: r'briefing')
-  static const NotificationDeliveryEventEnum briefing =
-      _$notificationDeliveryEventEnum_briefing;
-  @BuiltValueEnumConst(wireName: r'system')
-  static const NotificationDeliveryEventEnum system =
-      _$notificationDeliveryEventEnum_system;
-  @BuiltValueEnumConst(wireName: r'social.divergence')
-  static const NotificationDeliveryEventEnum socialPeriodDivergence =
-      _$notificationDeliveryEventEnum_socialPeriodDivergence;
-  @BuiltValueEnumConst(wireName: r'social.attention_gap')
-  static const NotificationDeliveryEventEnum socialPeriodAttentionGap =
-      _$notificationDeliveryEventEnum_socialPeriodAttentionGap;
-  @BuiltValueEnumConst(wireName: r'analyst.note')
-  static const NotificationDeliveryEventEnum analystPeriodNote =
-      _$notificationDeliveryEventEnum_analystPeriodNote;
-  @BuiltValueEnumConst(wireName: r'situation.activated')
-  static const NotificationDeliveryEventEnum situationPeriodActivated =
-      _$notificationDeliveryEventEnum_situationPeriodActivated;
-  @BuiltValueEnumConst(wireName: r'situation.escalated')
-  static const NotificationDeliveryEventEnum situationPeriodEscalated =
-      _$notificationDeliveryEventEnum_situationPeriodEscalated;
-  @BuiltValueEnumConst(wireName: r'finding.significant')
-  static const NotificationDeliveryEventEnum findingPeriodSignificant =
-      _$notificationDeliveryEventEnum_findingPeriodSignificant;
-  @BuiltValueEnumConst(wireName: r'forecast.resolved')
-  static const NotificationDeliveryEventEnum forecastPeriodResolved =
-      _$notificationDeliveryEventEnum_forecastPeriodResolved;
-  @BuiltValueEnumConst(wireName: r'forecast.resolution_needed')
-  static const NotificationDeliveryEventEnum forecastPeriodResolutionNeeded =
-      _$notificationDeliveryEventEnum_forecastPeriodResolutionNeeded;
-  @BuiltValueEnumConst(wireName: r'hypothesis.band_changed')
-  static const NotificationDeliveryEventEnum hypothesisPeriodBandChanged =
-      _$notificationDeliveryEventEnum_hypothesisPeriodBandChanged;
-  @BuiltValueEnumConst(wireName: r'indicator.observed')
-  static const NotificationDeliveryEventEnum indicatorPeriodObserved =
-      _$notificationDeliveryEventEnum_indicatorPeriodObserved;
-  @BuiltValueEnumConst(wireName: r'assumption.broken')
-  static const NotificationDeliveryEventEnum assumptionPeriodBroken =
-      _$notificationDeliveryEventEnum_assumptionPeriodBroken;
-  @BuiltValueEnumConst(wireName: r'assessment.published')
-  static const NotificationDeliveryEventEnum assessmentPeriodPublished =
-      _$notificationDeliveryEventEnum_assessmentPeriodPublished;
-  @BuiltValueEnumConst(wireName: r'chronicle.proposed')
-  static const NotificationDeliveryEventEnum chroniclePeriodProposed =
-      _$notificationDeliveryEventEnum_chroniclePeriodProposed;
-  @BuiltValueEnumConst(wireName: r'chronicle.cap_warning')
-  static const NotificationDeliveryEventEnum chroniclePeriodCapWarning =
-      _$notificationDeliveryEventEnum_chroniclePeriodCapWarning;
-  @BuiltValueEnumConst(wireName: r'chronicle.gap')
-  static const NotificationDeliveryEventEnum chroniclePeriodGap =
-      _$notificationDeliveryEventEnum_chroniclePeriodGap;
-  @BuiltValueEnumConst(wireName: r'mention')
-  static const NotificationDeliveryEventEnum mention =
-      _$notificationDeliveryEventEnum_mention;
-  @BuiltValueEnumConst(wireName: r'share')
-  static const NotificationDeliveryEventEnum share =
-      _$notificationDeliveryEventEnum_share;
-  @BuiltValueEnumConst(wireName: r'report.received')
-  static const NotificationDeliveryEventEnum reportPeriodReceived =
-      _$notificationDeliveryEventEnum_reportPeriodReceived;
-  @BuiltValueEnumConst(wireName: r'package.received')
-  static const NotificationDeliveryEventEnum packagePeriodReceived =
-      _$notificationDeliveryEventEnum_packagePeriodReceived;
-  @BuiltValueEnumConst(wireName: r'chronicle.access.requested')
-  static const NotificationDeliveryEventEnum
-  chroniclePeriodAccessPeriodRequested =
-      _$notificationDeliveryEventEnum_chroniclePeriodAccessPeriodRequested;
-  @BuiltValueEnumConst(wireName: r'saved-search.matches')
-  static const NotificationDeliveryEventEnum savedSearchPeriodMatches =
-      _$notificationDeliveryEventEnum_savedSearchPeriodMatches;
-  @BuiltValueEnumConst(wireName: r'personal')
-  static const NotificationDeliveryEventEnum personal =
-      _$notificationDeliveryEventEnum_personal;
-
-  static Serializer<NotificationDeliveryEventEnum> get serializer =>
-      _$notificationDeliveryEventEnumSerializer;
-
-  const NotificationDeliveryEventEnum._(String name) : super(name);
-
-  static BuiltSet<NotificationDeliveryEventEnum> get values =>
-      _$notificationDeliveryEventEnumValues;
-  static NotificationDeliveryEventEnum valueOf(String name) =>
-      _$notificationDeliveryEventEnumValueOf(name);
 }
 
 class NotificationDeliveryStatusEnum extends EnumClass {

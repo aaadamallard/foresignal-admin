@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../api/api.dart';
 import '../../core/format/duration_text.dart';
+import '../../core/format/money_text.dart';
 import '../../core/routes.dart';
 import '../../core/theme.dart';
 import '../../core/ui/ui.dart';
@@ -144,6 +145,12 @@ class PlatformScreen extends ConsumerWidget {
                                     '${s.projectedThisMonth == null ? '' : ' · projected \$${s.projectedThisMonth!.toStringAsFixed(2)}'}'
                                     '${(s.refusedThisMonth ?? 0) == 0 ? '' : ' · ${s.refusedThisMonth} refused'}',
                               ),
+                            if (capReasonText(
+                                  platformCap: p.spend?.monthlyCapUsd,
+                                  sourceCap: p.health?.budget?.monthlyCapUsd,
+                                )
+                                case final reason?)
+                              MapEntry<String, Object>('Monthly cap', reason),
                           ],
                         ),
                       ),

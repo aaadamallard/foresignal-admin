@@ -6,6 +6,7 @@ import 'package:foresignal_admin/core/routes.dart';
 
 import '../../../tool/preview/preview_alerts.dart' show PreviewText;
 import '../../../tool/preview/preview_serving.dart';
+import '../../support/actions.dart';
 import '../../support/fake_adapter.dart';
 import '../../support/test_app.dart';
 import '../sources/sources_screens_test.dart' show sourcesBackend;
@@ -57,15 +58,11 @@ Future<FakeAdapter> _open(WidgetTester tester, String path, FakeAdapter adapter)
 }
 
 Future<void> _tapKey(WidgetTester tester, String key) async {
-  await tester.ensureVisible(find.byKey(Key(key)).first);
-  await tester.tap(find.byKey(Key(key)).first);
-  await tester.pumpAndSettle();
+  await tapVisible(tester, find.byKey(Key(key)).first);
 }
 
 Future<void> _tapText(WidgetTester tester, String label) async {
-  await tester.ensureVisible(find.text(label).last);
-  await tester.tap(find.text(label).last);
-  await tester.pumpAndSettle();
+  await tapVisible(tester, find.text(label).last);
 }
 
 Future<void> _enter(WidgetTester tester, String key, String text) async {

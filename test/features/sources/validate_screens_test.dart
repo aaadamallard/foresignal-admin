@@ -4,6 +4,7 @@ import 'package:foresignal_admin/core/routes.dart';
 
 import '../../../tool/preview/preview_sources.dart';
 import '../../../tool/preview/preview_validate.dart';
+import '../../support/actions.dart';
 import '../../support/fake_adapter.dart';
 import 'sources_screens_test.dart' show openAt;
 
@@ -59,8 +60,7 @@ void main() {
     expect(find.text('Not set'), findsWidgets);
 
     await tester.enterText(find.byKey(const Key('credentials.field.apiKey')), 'k-123');
-    await tester.tap(find.byKey(const Key('credentials.save')));
-    await tester.pumpAndSettle();
+    await tapVisible(tester, find.byKey(const Key('credentials.save')));
 
     final put = adapter.requests.singleWhere(
       (r) => r.method == 'PUT' && r.uri.path.endsWith('/credentials'),
@@ -85,23 +85,19 @@ void main() {
       adapter: validateBackend(),
     );
     await tester.enterText(find.byKey(const Key('credentials.field.apiKey')), 'k-123');
-    await tester.tap(find.byKey(const Key('credentials.save')));
-    await tester.pumpAndSettle();
+    await tapVisible(tester, find.byKey(const Key('credentials.save')));
 
-    await tester.tap(find.byKey(const Key('credentials.delete')));
-    await tester.pumpAndSettle();
+    await tapVisible(tester, find.byKey(const Key('credentials.delete')));
     expect(adapter.requests.where((r) => r.method == 'DELETE'), isEmpty);
 
-    await tester.tap(find.byKey(const Key('credentials.confirmDelete')));
-    await tester.pumpAndSettle();
+    await tapVisible(tester, find.byKey(const Key('credentials.confirmDelete')));
     expect(adapter.requests.where((r) => r.method == 'DELETE'), hasLength(1));
     expect(find.text('Not set'), findsWidgets);
   });
 
   testWidgets('Fetch Now shows the outcome and the fetch log', (tester) async {
     await openAt(tester, sourceTestPath('acled'), adapter: validateBackend());
-    await tester.tap(find.byKey(const Key('test.fetchNow')));
-    await tester.pumpAndSettle();
+    await tapVisible(tester, find.byKey(const Key('test.fetchNow')));
     expect(find.byKey(const Key('test.fetchOutcome')), findsOneWidget);
     expect(find.text('HTTP 401 Unauthorized'), findsWidgets);
     expect(find.text('MANUAL'), findsOneWidget);
@@ -109,22 +105,19 @@ void main() {
 
   testWidgets('a fetch outcome survives a switch to another tab and back', (tester) async {
     await openAt(tester, sourceTestPath('acled'), adapter: validateBackend());
-    await tester.tap(find.byKey(const Key('test.fetchNow')));
-    await tester.tap(find.byKey(const Key('test.tab.doctor')));
-    await tester.pumpAndSettle();
+    await tapVisible(tester, find.byKey(const Key('test.fetchNow')));
+    await tapVisible(tester, find.byKey(const Key('test.tab.doctor')));
     expect(find.byKey(const Key('test.fetchOutcome')), findsNothing);
 
-    await tester.tap(find.byKey(const Key('test.tab.fetch')));
-    await tester.pumpAndSettle();
+    await tapVisible(tester, find.byKey(const Key('test.tab.fetch')));
     expect(find.byKey(const Key('test.fetchOutcome')), findsOneWidget);
     expect(find.text('MANUAL'), findsOneWidget);
   });
 
   testWidgets('the doctor follows a 202 to the finished report', (tester) async {
     final adapter = await openAt(tester, sourceTestPath('acled'), adapter: validateBackend());
-    await tester.tap(find.byKey(const Key('test.tab.doctor')));
-    await tester.pumpAndSettle();
-    await tester.tap(find.byKey(const Key('test.doctor')));
+    await tapVisible(tester, find.byKey(const Key('test.tab.doctor')));
+    await tapVisible(tester, find.byKey(const Key('test.doctor')));
     await tester.pumpAndSettle(const Duration(seconds: 3));
 
     expect(
@@ -146,24 +139,19 @@ void main() {
       adapter: validateBackend(),
     );
     await tester.enterText(find.byKey(const Key('credentials.field.apiKey')), 'k-123');
-    await tester.tap(find.byKey(const Key('credentials.save')));
-    await tester.pumpAndSettle();
-    await tester.tap(find.byKey(const Key('credentials.test')));
-    await tester.pumpAndSettle();
+    await tapVisible(tester, find.byKey(const Key('credentials.save')));
+    await tapVisible(tester, find.byKey(const Key('credentials.test')));
     expect(adapter.requests.any((r) => r.uri.path.endsWith('/probe')), isTrue);
     expect(find.text('Probe succeeded'), findsOneWidget);
   });
 
   testWidgets('creating a custom source shows its ingest key once', (tester) async {
     final adapter = await openAt(tester, customSourcesPath, adapter: validateBackend());
-    await tester.tap(find.byKey(const Key('custom.new')));
-    await tester.pumpAndSettle();
+    await tapVisible(tester, find.byKey(const Key('custom.new')));
     await tester.enterText(find.byKey(const Key('custom.id')), 'custom-river-gauge');
     await tester.enterText(find.byKey(const Key('custom.name')), 'River Gauge');
     await tester.enterText(find.byKey(const Key('custom.kinds')), 'water-level');
-    await tester.ensureVisible(find.byKey(const Key('form.save')));
-    await tester.tap(find.byKey(const Key('form.save')));
-    await tester.pumpAndSettle();
+    await tapVisible(tester, find.byKey(const Key('form.save')));
 
     final post = adapter.requests.singleWhere(
       (r) => r.method == 'POST' && r.uri.path == '/v1/custom-sources',
@@ -174,21 +162,17 @@ void main() {
     expect(find.byKey(const Key('oneTimeSecret')), findsOneWidget);
     expect(find.text('River Gauge'), findsOneWidget);
 
-    await tester.tap(find.byKey(const Key('oneTimeSecret.dismiss')));
-    await tester.pumpAndSettle();
+    await tapVisible(tester, find.byKey(const Key('oneTimeSecret.dismiss')));
     expect(find.byKey(const Key('oneTimeSecret')), findsNothing);
   });
 
   testWidgets('the ingest key is scrolled into view after creating', (tester) async {
     await openAt(tester, customSourcesPath, adapter: validateBackend());
-    await tester.tap(find.byKey(const Key('custom.new')));
-    await tester.pumpAndSettle();
+    await tapVisible(tester, find.byKey(const Key('custom.new')));
     await tester.enterText(find.byKey(const Key('custom.id')), 'custom-river-gauge');
     await tester.enterText(find.byKey(const Key('custom.name')), 'River Gauge');
     await tester.enterText(find.byKey(const Key('custom.kinds')), 'water-level');
-    await tester.ensureVisible(find.byKey(const Key('form.save')));
-    await tester.tap(find.byKey(const Key('form.save')));
-    await tester.pumpAndSettle();
+    await tapVisible(tester, find.byKey(const Key('form.save')));
 
     final panel = tester.getRect(find.byKey(const Key('oneTimeSecret')));
     final screen = tester.view.physicalSize / tester.view.devicePixelRatio;
@@ -198,12 +182,9 @@ void main() {
 
   testWidgets('an invalid custom source id is refused before sending', (tester) async {
     final adapter = await openAt(tester, customSourcesPath, adapter: validateBackend());
-    await tester.tap(find.byKey(const Key('custom.new')));
-    await tester.pumpAndSettle();
+    await tapVisible(tester, find.byKey(const Key('custom.new')));
     await tester.enterText(find.byKey(const Key('custom.id')), 'River Gauge');
-    await tester.ensureVisible(find.byKey(const Key('form.save')));
-    await tester.tap(find.byKey(const Key('form.save')));
-    await tester.pumpAndSettle();
+    await tapVisible(tester, find.byKey(const Key('form.save')));
     expect(adapter.requests.where((r) => r.method == 'POST'), isEmpty);
     expect(find.textContaining('Start with custom-'), findsOneWidget);
   });
@@ -214,12 +195,10 @@ void main() {
       customSourcePath('custom-weather-station'),
       adapter: validateBackend(),
     );
-    await tester.tap(find.byKey(const Key('custom.tab.keys')));
-    await tester.pumpAndSettle();
+    await tapVisible(tester, find.byKey(const Key('custom.tab.keys')));
     await tester.enterText(find.byKey(const Key('custom.device.externalId')), 'garage');
     await tester.enterText(find.byKey(const Key('custom.device.name')), 'Garage Sensor');
-    await tester.tap(find.byKey(const Key('custom.device.add')));
-    await tester.pumpAndSettle();
+    await tapVisible(tester, find.byKey(const Key('custom.device.add')));
 
     expect(
       adapter.requests.any((r) => r.method == 'POST' && r.uri.path.endsWith('/devices')),
@@ -228,8 +207,7 @@ void main() {
     expect(find.byKey(const Key('oneTimeSecret')), findsOneWidget);
     expect(find.textContaining('PreviewOnly'), findsNothing);
 
-    await tester.tap(find.byKey(const Key('oneTimeSecret.reveal')));
-    await tester.pumpAndSettle();
+    await tapVisible(tester, find.byKey(const Key('oneTimeSecret.reveal')));
     expect(find.textContaining('PreviewOnly'), findsNWidgets(2));
   });
 
@@ -239,10 +217,8 @@ void main() {
       customSourcePath('custom-weather-station'),
       adapter: validateBackend(),
     );
-    await tester.tap(find.byKey(const Key('custom.tab.mapping')));
-    await tester.pumpAndSettle();
-    await tester.tap(find.byKey(const Key('custom.testStored')));
-    await tester.pumpAndSettle();
+    await tapVisible(tester, find.byKey(const Key('custom.tab.mapping')));
+    await tapVisible(tester, find.byKey(const Key('custom.testStored')));
     final post = adapter.requests.singleWhere((r) => r.uri.path.endsWith('/mapping/test'));
     expect((post.body as Map?)?['mapping'], isNull);
     expect(find.byKey(const Key('custom.mappingResult')), findsOneWidget);

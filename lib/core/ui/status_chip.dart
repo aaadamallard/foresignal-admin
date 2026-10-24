@@ -65,12 +65,15 @@ class StatusChip extends StatelessWidget {
         children: <Widget>[
           Icon(tone.icon, size: 14, color: tone.colorOf(context)),
           const SizedBox(width: 4),
-          Text(
-            label,
-            style: TextStyle(
-              color: tone.colorOf(context),
-              fontSize: 12,
-              fontWeight: FontWeight.w600,
+          // A long label wraps inside a narrow cell instead of overflowing it.
+          Flexible(
+            child: Text(
+              label,
+              style: TextStyle(
+                color: tone.colorOf(context),
+                fontSize: 12,
+                fontWeight: FontWeight.w600,
+              ),
             ),
           ),
         ],

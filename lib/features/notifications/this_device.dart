@@ -178,10 +178,10 @@ class _ThisDeviceScreenState extends ConsumerState<ThisDeviceScreen> with WriteT
                     message: e is PushTokenUnavailable ? e.message : '$e',
                   ),
                 const SizedBox(height: 8),
-                Row(
+                Wrap(
+                  spacing: 8,
                   children: <Widget>[
                     TextButton(onPressed: _obtain, child: const Text('Try Again')),
-                    const SizedBox(width: 8),
                     TextButton(
                       key: const Key('thisDevice.manual'),
                       onPressed: () => setState(() => _manual = !_manual),

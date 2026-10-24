@@ -5,9 +5,11 @@ import 'package:go_router/go_router.dart';
 
 import '../../api/api.dart';
 import '../../core/format/duration_text.dart';
+import '../../core/format/money_text.dart';
 import '../../core/routes.dart';
 import '../../core/theme.dart';
 import '../../core/ui/ui.dart';
+import '../vetting/vetting_providers.dart';
 import 'source_config.dart';
 import 'source_providers.dart';
 import 'source_test_results.dart';
@@ -495,11 +497,34 @@ class _SourceConfigFormState extends ConsumerState<SourceConfigForm> {
     );
   }
 
+  /// The source's own monthly cap in force: as stored, else its default.
+  num? _sourceCap() =>
+      widget.detail.health.budget?.monthlyCapUsd ??
+      widget.detail.settings.budget.monthlyCapUsd ??
+      widget.detail.descriptor.defaultBudget.monthlyCapUsd;
+
+  /// The monthly cap of the social platform this source is, if it has one.
+  num? _platformCap() {
+    final id = widget.detail.descriptor.id;
+    for (final p in ref.watch(socialPlatformsProvider).value ?? const <SocialPlatform>[]) {
+      if (wireOf(p.id) == id) {
+        return p.spend?.monthlyCapUsd;
+      }
+    }
+    return null;
+  }
+
   @override
   Widget build(BuildContext context) {
     final draft = _draft;
     final d = widget.detail.descriptor;
     final muted = AdminPalette.of(context).muted;
+    final capHelp = <String>[
+      if (d.defaultBudget.monthlyCapUsd case final c?) 'Default ${usdText(c)}',
+      // A social platform with a money cap of its own (X): both apply, and
+      // the lower one stops the source.
+      ?capReasonText(platformCap: _platformCap(), sourceCap: _sourceCap()),
+    ].join(' · ');
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: <Widget>[
@@ -539,9 +564,7 @@ class _SourceConfigFormState extends ConsumerState<SourceConfigForm> {
               if (draft.paid)
                 LabeledField(
                   label: 'Monthly cap (USD)',
-                  help: d.defaultBudget.monthlyCapUsd == null
-                      ? null
-                      : 'Default \$${d.defaultBudget.monthlyCapUsd}',
+                  help: capHelp.isEmpty ? null : capHelp,
                   field: _text(
                     'budget.monthlyCapUsd',
                     draft.monthlyCapUsd,

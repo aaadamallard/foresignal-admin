@@ -6,148 +6,13 @@ part of 'entity_link.dart';
 // BuiltValueGenerator
 // **************************************************************************
 
-const EntityLinkKeyTypeEnum _$entityLinkKeyTypeEnum_airframe =
-    const EntityLinkKeyTypeEnum._('airframe');
-const EntityLinkKeyTypeEnum _$entityLinkKeyTypeEnum_icao24 =
-    const EntityLinkKeyTypeEnum._('icao24');
-const EntityLinkKeyTypeEnum _$entityLinkKeyTypeEnum_registration =
-    const EntityLinkKeyTypeEnum._('registration');
-const EntityLinkKeyTypeEnum _$entityLinkKeyTypeEnum_imo =
-    const EntityLinkKeyTypeEnum._('imo');
-const EntityLinkKeyTypeEnum _$entityLinkKeyTypeEnum_mmsi =
-    const EntityLinkKeyTypeEnum._('mmsi');
-const EntityLinkKeyTypeEnum _$entityLinkKeyTypeEnum_norad =
-    const EntityLinkKeyTypeEnum._('norad');
-const EntityLinkKeyTypeEnum _$entityLinkKeyTypeEnum_cospar =
-    const EntityLinkKeyTypeEnum._('cospar');
-const EntityLinkKeyTypeEnum _$entityLinkKeyTypeEnum_callsign =
-    const EntityLinkKeyTypeEnum._('callsign');
-const EntityLinkKeyTypeEnum _$entityLinkKeyTypeEnum_lei =
-    const EntityLinkKeyTypeEnum._('lei');
-const EntityLinkKeyTypeEnum _$entityLinkKeyTypeEnum_companyNumber =
-    const EntityLinkKeyTypeEnum._('companyNumber');
-const EntityLinkKeyTypeEnum _$entityLinkKeyTypeEnum_taxId =
-    const EntityLinkKeyTypeEnum._('taxId');
-const EntityLinkKeyTypeEnum _$entityLinkKeyTypeEnum_officerId =
-    const EntityLinkKeyTypeEnum._('officerId');
-const EntityLinkKeyTypeEnum _$entityLinkKeyTypeEnum_personKey =
-    const EntityLinkKeyTypeEnum._('personKey');
-
-EntityLinkKeyTypeEnum _$entityLinkKeyTypeEnumValueOf(String name) {
-  switch (name) {
-    case 'airframe':
-      return _$entityLinkKeyTypeEnum_airframe;
-    case 'icao24':
-      return _$entityLinkKeyTypeEnum_icao24;
-    case 'registration':
-      return _$entityLinkKeyTypeEnum_registration;
-    case 'imo':
-      return _$entityLinkKeyTypeEnum_imo;
-    case 'mmsi':
-      return _$entityLinkKeyTypeEnum_mmsi;
-    case 'norad':
-      return _$entityLinkKeyTypeEnum_norad;
-    case 'cospar':
-      return _$entityLinkKeyTypeEnum_cospar;
-    case 'callsign':
-      return _$entityLinkKeyTypeEnum_callsign;
-    case 'lei':
-      return _$entityLinkKeyTypeEnum_lei;
-    case 'companyNumber':
-      return _$entityLinkKeyTypeEnum_companyNumber;
-    case 'taxId':
-      return _$entityLinkKeyTypeEnum_taxId;
-    case 'officerId':
-      return _$entityLinkKeyTypeEnum_officerId;
-    case 'personKey':
-      return _$entityLinkKeyTypeEnum_personKey;
-    default:
-      throw ArgumentError(name);
-  }
-}
-
-final BuiltSet<EntityLinkKeyTypeEnum> _$entityLinkKeyTypeEnumValues =
-    BuiltSet<EntityLinkKeyTypeEnum>(const <EntityLinkKeyTypeEnum>[
-      _$entityLinkKeyTypeEnum_airframe,
-      _$entityLinkKeyTypeEnum_icao24,
-      _$entityLinkKeyTypeEnum_registration,
-      _$entityLinkKeyTypeEnum_imo,
-      _$entityLinkKeyTypeEnum_mmsi,
-      _$entityLinkKeyTypeEnum_norad,
-      _$entityLinkKeyTypeEnum_cospar,
-      _$entityLinkKeyTypeEnum_callsign,
-      _$entityLinkKeyTypeEnum_lei,
-      _$entityLinkKeyTypeEnum_companyNumber,
-      _$entityLinkKeyTypeEnum_taxId,
-      _$entityLinkKeyTypeEnum_officerId,
-      _$entityLinkKeyTypeEnum_personKey,
-    ]);
-
-Serializer<EntityLinkKeyTypeEnum> _$entityLinkKeyTypeEnumSerializer =
-    _$EntityLinkKeyTypeEnumSerializer();
-
-class _$EntityLinkKeyTypeEnumSerializer
-    implements PrimitiveSerializer<EntityLinkKeyTypeEnum> {
-  static const Map<String, Object> _toWire = const <String, Object>{
-    'airframe': 'airframe',
-    'icao24': 'icao24',
-    'registration': 'registration',
-    'imo': 'imo',
-    'mmsi': 'mmsi',
-    'norad': 'norad',
-    'cospar': 'cospar',
-    'callsign': 'callsign',
-    'lei': 'lei',
-    'companyNumber': 'company-number',
-    'taxId': 'tax-id',
-    'officerId': 'officer-id',
-    'personKey': 'person-key',
-  };
-  static const Map<Object, String> _fromWire = const <Object, String>{
-    'airframe': 'airframe',
-    'icao24': 'icao24',
-    'registration': 'registration',
-    'imo': 'imo',
-    'mmsi': 'mmsi',
-    'norad': 'norad',
-    'cospar': 'cospar',
-    'callsign': 'callsign',
-    'lei': 'lei',
-    'company-number': 'companyNumber',
-    'tax-id': 'taxId',
-    'officer-id': 'officerId',
-    'person-key': 'personKey',
-  };
-
-  @override
-  final Iterable<Type> types = const <Type>[EntityLinkKeyTypeEnum];
-  @override
-  final String wireName = 'EntityLinkKeyTypeEnum';
-
-  @override
-  Object serialize(
-    Serializers serializers,
-    EntityLinkKeyTypeEnum object, {
-    FullType specifiedType = FullType.unspecified,
-  }) => _toWire[object.name] ?? object.name;
-
-  @override
-  EntityLinkKeyTypeEnum deserialize(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) => EntityLinkKeyTypeEnum.valueOf(
-    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
-  );
-}
-
 class _$EntityLink extends EntityLink {
   @override
   final String sourceId;
   @override
   final String externalId;
   @override
-  final EntityLinkKeyTypeEnum keyType;
+  final String keyType;
   @override
   final String keyValue;
   @override
@@ -234,9 +99,9 @@ class EntityLinkBuilder implements Builder<EntityLink, EntityLinkBuilder> {
   String? get externalId => _$this._externalId;
   set externalId(String? externalId) => _$this._externalId = externalId;
 
-  EntityLinkKeyTypeEnum? _keyType;
-  EntityLinkKeyTypeEnum? get keyType => _$this._keyType;
-  set keyType(EntityLinkKeyTypeEnum? keyType) => _$this._keyType = keyType;
+  String? _keyType;
+  String? get keyType => _$this._keyType;
+  set keyType(String? keyType) => _$this._keyType = keyType;
 
   String? _keyValue;
   String? get keyValue => _$this._keyValue;

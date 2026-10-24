@@ -6,6 +6,7 @@ import 'package:foresignal_admin/core/form_factor.dart';
 import 'package:foresignal_admin/core/routes.dart';
 
 import '../../../tool/preview/preview_alerts.dart';
+import '../../support/actions.dart';
 import '../../support/fake_adapter.dart';
 import '../sources/sources_screens_test.dart' show openAt, sourcesBackend;
 
@@ -69,9 +70,7 @@ Future<void> _drainStream(WidgetTester tester) async {
 }
 
 Future<void> _tapKey(WidgetTester tester, String key) async {
-  await tester.ensureVisible(find.byKey(Key(key)).first);
-  await tester.tap(find.byKey(Key(key)).first);
-  await tester.pumpAndSettle();
+  await tapVisible(tester, find.byKey(Key(key)).first);
 }
 
 Future<void> _tapText(WidgetTester tester, String label) async {

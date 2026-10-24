@@ -3,6 +3,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:foresignal_admin/core/routes.dart';
 
 import '../../../tool/preview/preview_analysis.dart';
+import '../../support/actions.dart';
 import '../../support/fake_adapter.dart';
 import '../sources/sources_screens_test.dart' show openAt, sourcesBackend;
 
@@ -35,14 +36,11 @@ FakeAdapter analysisBackend(PreviewAnalysis a) {
 }
 
 Future<void> _tab(WidgetTester tester, String name) async {
-  await tester.tap(find.byKey(Key('analysis.tab.$name')));
-  await tester.pumpAndSettle();
+  await tapVisible(tester, find.byKey(Key('analysis.tab.$name')));
 }
 
 Future<void> _tapSave(WidgetTester tester) async {
-  await tester.ensureVisible(find.byKey(const Key('form.save')));
-  await tester.tap(find.byKey(const Key('form.save')));
-  await tester.pumpAndSettle();
+  await tapVisible(tester, find.byKey(const Key('form.save')));
 }
 
 void main() {
@@ -80,7 +78,7 @@ void main() {
       adapter: analysisBackend(a),
     );
     expect(find.byKey(const Key('recipe.definitionJson')), findsOneWidget);
-    await tester.tap(find.byKey(const Key('recipe.enabled')));
+    await tapVisible(tester, find.byKey(const Key('recipe.enabled')));
     await tester.pump();
     await _tapSave(tester);
     final put = adapter.requests.singleWhere((r) => r.method == 'PUT');
@@ -97,9 +95,7 @@ void main() {
     );
     await tester.enterText(find.byKey(const Key('recipe.test.from')), '88000');
     await tester.enterText(find.byKey(const Key('recipe.test.to')), '89000');
-    await tester.ensureVisible(find.byKey(const Key('recipe.test.run')));
-    await tester.tap(find.byKey(const Key('recipe.test.run')));
-    await tester.pumpAndSettle();
+    await tapVisible(tester, find.byKey(const Key('recipe.test.run')));
     expect(find.byKey(const Key('recipe.test.result')), findsOneWidget);
     expect(find.textContaining('1 event from records 88000–89000'), findsOneWidget);
   });
@@ -139,9 +135,7 @@ void main() {
     final a = PreviewAnalysis();
     a.events[_event]!['severityOverridden'] = true;
     final adapter = await openAt(tester, analysisEventPath(_event), adapter: analysisBackend(a));
-    await tester.ensureVisible(find.byKey(const Key('event.severityField')));
-    await tester.tap(find.byKey(const Key('event.severityField')));
-    await tester.pumpAndSettle();
+    await tapVisible(tester, find.byKey(const Key('event.severityField')));
     await tester.tap(find.text('Computed (clear override)').last);
     await tester.pumpAndSettle();
     await _tapSave(tester);
@@ -154,20 +148,15 @@ void main() {
 
   testWidgets('a computed severity offers no clear choice', (tester) async {
     await openAt(tester, analysisEventPath(_event), adapter: analysisBackend(PreviewAnalysis()));
-    await tester.ensureVisible(find.byKey(const Key('event.severityField')));
-    await tester.tap(find.byKey(const Key('event.severityField')));
-    await tester.pumpAndSettle();
+    await tapVisible(tester, find.byKey(const Key('event.severityField')));
     expect(find.text('Computed (clear override)'), findsNothing);
   });
 
   testWidgets('a member is removed after confirming', (tester) async {
     final a = PreviewAnalysis();
     await openAt(tester, analysisEventPath(_event), adapter: analysisBackend(a));
-    await tester.ensureVisible(find.byKey(const Key('event.remove.m3')));
-    await tester.tap(find.byKey(const Key('event.remove.m3')));
-    await tester.pumpAndSettle();
-    await tester.tap(find.byKey(const Key('event.confirmRemove.m3')));
-    await tester.pumpAndSettle();
+    await tapVisible(tester, find.byKey(const Key('event.remove.m3')));
+    await tapVisible(tester, find.byKey(const Key('event.confirmRemove.m3')));
     final members = ((a.events[_event]!['evidence']! as Map)['members']! as List)
         .cast<Map<String, Object?>>();
     expect(members.map((m) => m['id']), isNot(contains('m3')));
@@ -175,11 +164,8 @@ void main() {
 
   testWidgets('a record member needs its source, external id and sequence', (tester) async {
     await openAt(tester, analysisEventPath(_event), adapter: analysisBackend(PreviewAnalysis()));
-    await tester.ensureVisible(find.byKey(const Key('event.addMember')));
-    await tester.tap(find.byKey(const Key('event.addMember')));
-    await tester.pumpAndSettle();
-    await tester.tap(find.byKey(const Key('event.add.save')));
-    await tester.pumpAndSettle();
+    await tapVisible(tester, find.byKey(const Key('event.addMember')));
+    await tapVisible(tester, find.byKey(const Key('event.add.save')));
     expect(
       find.text('A record needs its source, external id and sequence number.'),
       findsOneWidget,
@@ -188,8 +174,7 @@ void main() {
 
   testWidgets('running a cycle opens the run, which lists its roles', (tester) async {
     await openAt(tester, analysisCyclePath(_cycle), adapter: analysisBackend(PreviewAnalysis()));
-    await tester.tap(find.byKey(const Key('cycle.runNow')));
-    await tester.pumpAndSettle();
+    await tapVisible(tester, find.byKey(const Key('cycle.runNow')));
     expect(find.byKey(const Key('run.roles')), findsOneWidget);
     expect(find.byKey(const Key('run.packet')), findsOneWidget);
   });
@@ -208,19 +193,16 @@ void main() {
   testWidgets('feedback on the latest assessment is recorded', (tester) async {
     await openAt(tester, analysisPath, adapter: analysisBackend(PreviewAnalysis()));
     await _tab(tester, 'assessments');
-    await tester.tap(find.byKey(const Key('analysis.feedback.useful')).first);
+    await tapVisible(tester, find.byKey(const Key('analysis.feedback.useful')).first);
     await tester.pump();
-    await tester.tap(find.byKey(const Key('analysis.feedback.send')).first);
-    await tester.pumpAndSettle();
+    await tapVisible(tester, find.byKey(const Key('analysis.feedback.send')).first);
     expect(find.byKey(const Key('analysis.feedback.recorded')), findsOneWidget);
   });
 
   testWidgets('maintenance shows each step', (tester) async {
     await openAt(tester, analysisPath, adapter: analysisBackend(PreviewAnalysis()));
     await _tab(tester, 'cycles');
-    await tester.ensureVisible(find.byKey(const Key('analysis.maintenance')));
-    await tester.tap(find.byKey(const Key('analysis.maintenance')));
-    await tester.pumpAndSettle();
+    await tapVisible(tester, find.byKey(const Key('analysis.maintenance')));
     expect(find.byKey(const Key('analysis.maintenanceRun')), findsOneWidget);
     expect(find.text('Base rate refresh: failed'), findsOneWidget);
   });

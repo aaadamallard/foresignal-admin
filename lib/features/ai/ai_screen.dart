@@ -685,6 +685,7 @@ class _LlmUsagePanelState extends ConsumerState<LlmUsagePanel> {
               width: 200,
               child: DropdownButtonFormField<UsageWindow>(
                 key: const Key('ai.usage.window'),
+                isExpanded: true,
                 initialValue: _window,
                 items: <DropdownMenuItem<UsageWindow>>[
                   for (final w in UsageWindow.values)

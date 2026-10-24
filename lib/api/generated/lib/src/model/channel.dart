@@ -64,8 +64,7 @@ abstract class Channel implements Built<Channel, ChannelBuilder> {
 
   /// The subscribed events. `personal` marks a principal's personal channel (prompt 130), which carries only that principal's notifications; createChannel and updateChannel never accept it. `mention`, `share`, `report.received`, `package.received`, `chronicle.proposed`, `chronicle.cap_warning`, `chronicle.gap`, `chronicle.access.requested` and `saved-search.matches` on an instance channel receive a copy of each such personal notice, once per addressee, with its TLP label at the head; the copies never reach the device inbox or the instance SSE topics
   @BuiltValueField(wireName: r'events')
-  BuiltList<ChannelEventsEnum> get events;
-  // enum eventsEnum {  alert,  briefing,  system,  chronicle.proposed,  chronicle.cap_warning,  chronicle.gap,  social.divergence,  social.attention_gap,  analyst.note,  situation.activated,  situation.escalated,  finding.significant,  forecast.resolved,  forecast.resolution_needed,  hypothesis.band_changed,  indicator.observed,  assumption.broken,  assessment.published,  mention,  share,  report.received,  package.received,  chronicle.access.requested,  saved-search.matches,  personal,  };
+  BuiltList<String> get events;
 
   @BuiltValueField(wireName: r'ruleIds')
   BuiltList<String>? get ruleIds;
@@ -196,7 +195,7 @@ class _$ChannelSerializer implements PrimitiveSerializer<Channel> {
     yield r'events';
     yield serializers.serialize(
       object.events,
-      specifiedType: const FullType(BuiltList, [FullType(ChannelEventsEnum)]),
+      specifiedType: const FullType(BuiltList, [FullType(String)]),
     );
     if (object.ruleIds != null) {
       yield r'ruleIds';
@@ -428,10 +427,10 @@ class _$ChannelSerializer implements PrimitiveSerializer<Channel> {
               serializers.deserialize(
                     value,
                     specifiedType: const FullType(BuiltList, [
-                      FullType(ChannelEventsEnum),
+                      FullType(String),
                     ]),
                   )
-                  as BuiltList<ChannelEventsEnum>;
+                  as BuiltList<String>;
           result.events.replace(valueDes);
           break;
         case r'ruleIds':
@@ -727,87 +726,6 @@ class ChannelTypeEnum extends EnumClass {
 
   static BuiltSet<ChannelTypeEnum> get values => _$channelTypeEnumValues;
   static ChannelTypeEnum valueOf(String name) => _$channelTypeEnumValueOf(name);
-}
-
-class ChannelEventsEnum extends EnumClass {
-  @BuiltValueEnumConst(wireName: r'alert')
-  static const ChannelEventsEnum alert = _$channelEventsEnum_alert;
-  @BuiltValueEnumConst(wireName: r'briefing')
-  static const ChannelEventsEnum briefing = _$channelEventsEnum_briefing;
-  @BuiltValueEnumConst(wireName: r'system')
-  static const ChannelEventsEnum system = _$channelEventsEnum_system;
-  @BuiltValueEnumConst(wireName: r'chronicle.proposed')
-  static const ChannelEventsEnum chroniclePeriodProposed =
-      _$channelEventsEnum_chroniclePeriodProposed;
-  @BuiltValueEnumConst(wireName: r'chronicle.cap_warning')
-  static const ChannelEventsEnum chroniclePeriodCapWarning =
-      _$channelEventsEnum_chroniclePeriodCapWarning;
-  @BuiltValueEnumConst(wireName: r'chronicle.gap')
-  static const ChannelEventsEnum chroniclePeriodGap =
-      _$channelEventsEnum_chroniclePeriodGap;
-  @BuiltValueEnumConst(wireName: r'social.divergence')
-  static const ChannelEventsEnum socialPeriodDivergence =
-      _$channelEventsEnum_socialPeriodDivergence;
-  @BuiltValueEnumConst(wireName: r'social.attention_gap')
-  static const ChannelEventsEnum socialPeriodAttentionGap =
-      _$channelEventsEnum_socialPeriodAttentionGap;
-  @BuiltValueEnumConst(wireName: r'analyst.note')
-  static const ChannelEventsEnum analystPeriodNote =
-      _$channelEventsEnum_analystPeriodNote;
-  @BuiltValueEnumConst(wireName: r'situation.activated')
-  static const ChannelEventsEnum situationPeriodActivated =
-      _$channelEventsEnum_situationPeriodActivated;
-  @BuiltValueEnumConst(wireName: r'situation.escalated')
-  static const ChannelEventsEnum situationPeriodEscalated =
-      _$channelEventsEnum_situationPeriodEscalated;
-  @BuiltValueEnumConst(wireName: r'finding.significant')
-  static const ChannelEventsEnum findingPeriodSignificant =
-      _$channelEventsEnum_findingPeriodSignificant;
-  @BuiltValueEnumConst(wireName: r'forecast.resolved')
-  static const ChannelEventsEnum forecastPeriodResolved =
-      _$channelEventsEnum_forecastPeriodResolved;
-  @BuiltValueEnumConst(wireName: r'forecast.resolution_needed')
-  static const ChannelEventsEnum forecastPeriodResolutionNeeded =
-      _$channelEventsEnum_forecastPeriodResolutionNeeded;
-  @BuiltValueEnumConst(wireName: r'hypothesis.band_changed')
-  static const ChannelEventsEnum hypothesisPeriodBandChanged =
-      _$channelEventsEnum_hypothesisPeriodBandChanged;
-  @BuiltValueEnumConst(wireName: r'indicator.observed')
-  static const ChannelEventsEnum indicatorPeriodObserved =
-      _$channelEventsEnum_indicatorPeriodObserved;
-  @BuiltValueEnumConst(wireName: r'assumption.broken')
-  static const ChannelEventsEnum assumptionPeriodBroken =
-      _$channelEventsEnum_assumptionPeriodBroken;
-  @BuiltValueEnumConst(wireName: r'assessment.published')
-  static const ChannelEventsEnum assessmentPeriodPublished =
-      _$channelEventsEnum_assessmentPeriodPublished;
-  @BuiltValueEnumConst(wireName: r'mention')
-  static const ChannelEventsEnum mention = _$channelEventsEnum_mention;
-  @BuiltValueEnumConst(wireName: r'share')
-  static const ChannelEventsEnum share = _$channelEventsEnum_share;
-  @BuiltValueEnumConst(wireName: r'report.received')
-  static const ChannelEventsEnum reportPeriodReceived =
-      _$channelEventsEnum_reportPeriodReceived;
-  @BuiltValueEnumConst(wireName: r'package.received')
-  static const ChannelEventsEnum packagePeriodReceived =
-      _$channelEventsEnum_packagePeriodReceived;
-  @BuiltValueEnumConst(wireName: r'chronicle.access.requested')
-  static const ChannelEventsEnum chroniclePeriodAccessPeriodRequested =
-      _$channelEventsEnum_chroniclePeriodAccessPeriodRequested;
-  @BuiltValueEnumConst(wireName: r'saved-search.matches')
-  static const ChannelEventsEnum savedSearchPeriodMatches =
-      _$channelEventsEnum_savedSearchPeriodMatches;
-  @BuiltValueEnumConst(wireName: r'personal')
-  static const ChannelEventsEnum personal = _$channelEventsEnum_personal;
-
-  static Serializer<ChannelEventsEnum> get serializer =>
-      _$channelEventsEnumSerializer;
-
-  const ChannelEventsEnum._(String name) : super(name);
-
-  static BuiltSet<ChannelEventsEnum> get values => _$channelEventsEnumValues;
-  static ChannelEventsEnum valueOf(String name) =>
-      _$channelEventsEnumValueOf(name);
 }
 
 class ChannelMinSeverityEnum extends EnumClass {

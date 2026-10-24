@@ -16,7 +16,7 @@ part 'notification_message.g.dart';
 ///
 /// Properties:
 /// * [id] - Notification id
-/// * [event]
+/// * [event] - Grows as the server adds events: a receiver must accept a value not listed here. Kept as `enum`, not `x-extensible-enum`, because this schema is also the `notification` webhook's payload, which the compatibility check cannot mark extensible.
 /// * [subtype] - e.g. alert.fired, alert.acknowledged, alert.snoozed, alert.resolved, alert.digest (a quiet-hours, pause, backlog or grouping digest), system.source_failing, system.rule_storm, system.delivery_failed, system.push_provider_failed (032), briefing.run (029)
 /// * [title]
 /// * [shortTitle] - ≤ 40 chars, for watches, mesh and push
@@ -38,6 +38,7 @@ abstract class NotificationMessage
   @BuiltValueField(wireName: r'id')
   int get id;
 
+  /// Grows as the server adds events: a receiver must accept a value not listed here. Kept as `enum`, not `x-extensible-enum`, because this schema is also the `notification` webhook's payload, which the compatibility check cannot mark extensible.
   @BuiltValueField(wireName: r'event')
   NotificationMessageEventEnum get event;
   // enum eventEnum {  alert,  briefing,  system,  chronicle.proposed,  chronicle.cap_warning,  chronicle.gap,  social.divergence,  social.attention_gap,  analyst.note,  situation.activated,  situation.escalated,  finding.significant,  forecast.resolved,  forecast.resolution_needed,  hypothesis.band_changed,  indicator.observed,  assumption.broken,  assessment.published,  mention,  share,  report.received,  package.received,  chronicle.access.requested,  saved-search.matches,  test,  personal,  };
@@ -444,6 +445,7 @@ class _$NotificationMessageSerializer
   }
 }
 
+/// Grows as the server adds events: a receiver must accept a value not listed here. Kept as `enum`, not `x-extensible-enum`, because this schema is also the `notification` webhook's payload, which the compatibility check cannot mark extensible.
 class NotificationMessageEventEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'alert')
   static const NotificationMessageEventEnum alert =

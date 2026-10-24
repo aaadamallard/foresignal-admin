@@ -372,7 +372,6 @@ Serializers _$serializers =
           ..add(Channel.serializer)
           ..add(ChannelActionsConfig.serializer)
           ..add(ChannelAirtime.serializer)
-          ..add(ChannelEventsEnum.serializer)
           ..add(ChannelInput.serializer)
           ..add(ChannelInputEventsEnum.serializer)
           ..add(ChannelInputMinSeverityEnum.serializer)
@@ -387,7 +386,6 @@ Serializers _$serializers =
           ..add(ChannelTypeConfigFieldsInner.serializer)
           ..add(ChannelTypeConfigFieldsInnerTypeEnum.serializer)
           ..add(ChannelTypeEnum.serializer)
-          ..add(ChannelTypeEventsEnum.serializer)
           ..add(ChannelTypeIdEnum.serializer)
           ..add(ChannelWarningsInner.serializer)
           ..add(ChokepointActivityPayload.serializer)
@@ -525,10 +523,6 @@ Serializers _$serializers =
           ..add(CommonDependencies.serializer)
           ..add(CommonDependenciesDependenciesInner.serializer)
           ..add(CommonDependenciesDependenciesInnerPathsInner.serializer)
-          ..add(
-            CommonDependenciesDependenciesInnerPathsInnerRelationTypesEnum
-                .serializer,
-          )
           ..add(
             CommonDependenciesDependenciesInnerPathsInnerWeakestEdgeLabelEnum
                 .serializer,
@@ -810,17 +804,14 @@ Serializers _$serializers =
           ..add(EntityKey.serializer)
           ..add(EntityKeyInput.serializer)
           ..add(EntityKeyInputKeyTypeEnum.serializer)
-          ..add(EntityKeyKeyTypeEnum.serializer)
           ..add(EntityKeyOriginEnum.serializer)
           ..add(EntityKeyRoleEnum.serializer)
           ..add(EntityLink.serializer)
-          ..add(EntityLinkKeyTypeEnum.serializer)
           ..add(EntityMergeInput.serializer)
           ..add(EntityPage.serializer)
           ..add(EntityRecord.serializer)
           ..add(EntityRecordList.serializer)
           ..add(EntityStatusEnum.serializer)
-          ..add(EntityTypeEnum.serializer)
           ..add(Escalation.serializer)
           ..add(EscalationPolicy.serializer)
           ..add(EscalationPolicyInput.serializer)
@@ -1022,7 +1013,6 @@ Serializers _$serializers =
           ..add(ForecastEvaluationRequest.serializer)
           ..add(ForecastEvaluationSkipped.serializer)
           ..add(ForecastEvaluationStatusEnum.serializer)
-          ..add(ForecastForecasterTypeEnum.serializer)
           ..add(ForecastHistory.serializer)
           ..add(ForecastHistorySeriesInner.serializer)
           ..add(ForecastHistorySeriesInnerPointsInner.serializer)
@@ -1074,7 +1064,6 @@ Serializers _$serializers =
           ..add(ForecasterPage.serializer)
           ..add(ForecasterTrackRecord.serializer)
           ..add(ForecasterTrackRecordLabelEnum.serializer)
-          ..add(ForecasterTypeEnum.serializer)
           ..add(ForecasterUpdate.serializer)
           ..add(FrameItem.serializer)
           ..add(FrameStats.serializer)
@@ -1608,15 +1597,12 @@ Serializers _$serializers =
           ..add(NotificationDelivery.serializer)
           ..add(NotificationDeliveryAttachmentLevelEnum.serializer)
           ..add(NotificationDeliveryDeferredReasonEnum.serializer)
-          ..add(NotificationDeliveryEventEnum.serializer)
           ..add(NotificationDeliveryKindEnum.serializer)
           ..add(NotificationDeliveryPage.serializer)
           ..add(NotificationDeliveryStatusEnum.serializer)
           ..add(NotificationDetail.serializer)
           ..add(NotificationDetailAlertStateEnum.serializer)
-          ..add(NotificationDetailEventEnum.serializer)
           ..add(NotificationDetailSeverityEnum.serializer)
-          ..add(NotificationEventEnum.serializer)
           ..add(NotificationLink.serializer)
           ..add(NotificationMessage.serializer)
           ..add(NotificationMessageEventEnum.serializer)
@@ -2116,7 +2102,6 @@ Serializers _$serializers =
           ..add(RelationInputTypeEnum.serializer)
           ..add(RelationLabelEnum.serializer)
           ..add(RelationProvenance.serializer)
-          ..add(RelationTypeEnum.serializer)
           ..add(RemoteMediaAccepted.serializer)
           ..add(RemoteMediaMeta.serializer)
           ..add(RemoteRasterBundleAccepted.serializer)
@@ -2226,7 +2211,6 @@ Serializers _$serializers =
           ..add(SavedViewTimeFieldEnum.serializer)
           ..add(ScorecardEntry.serializer)
           ..add(ScorecardEntryBias.serializer)
-          ..add(ScorecardEntryForecasterTypeEnum.serializer)
           ..add(ScorecardEntryIntervalCoverage.serializer)
           ..add(ScorecardEntryLabelEnum.serializer)
           ..add(ScorecardEntryMurphy.serializer)
@@ -3343,10 +3327,8 @@ Serializers _$serializers =
             () => ListBuilder<ChannelTypeConfigFieldsInner>(),
           )
           ..addBuilderFactory(
-            const FullType(BuiltList, const [
-              const FullType(ChannelTypeEventsEnum),
-            ]),
-            () => ListBuilder<ChannelTypeEventsEnum>(),
+            const FullType(BuiltList, const [const FullType(String)]),
+            () => ListBuilder<String>(),
           )
           ..addBuilderFactory(
             const FullType(BuiltList, const [const FullType(Chronicle)]),
@@ -6350,26 +6332,6 @@ Serializers _$serializers =
           )
           ..addBuilderFactory(
             const FullType(BuiltList, const [
-              const FullType(ChannelEventsEnum),
-            ]),
-            () => ListBuilder<ChannelEventsEnum>(),
-          )
-          ..addBuilderFactory(
-            const FullType(BuiltList, const [const FullType(String)]),
-            () => ListBuilder<String>(),
-          )
-          ..addBuilderFactory(
-            const FullType(BuiltList, const [
-              const FullType(ChannelWarningsInner),
-            ]),
-            () => ListBuilder<ChannelWarningsInner>(),
-          )
-          ..addBuilderFactory(
-            const FullType(BuiltList, const [const FullType(String)]),
-            () => ListBuilder<String>(),
-          )
-          ..addBuilderFactory(
-            const FullType(BuiltList, const [
               const FullType(ChronicleFrameIndexFramesInner),
             ]),
             () => ListBuilder<ChronicleFrameIndexFramesInner>(),
@@ -6393,21 +6355,6 @@ Serializers _$serializers =
               const FullType(CommonDependenciesDependenciesInnerPathsInner),
             ]),
             () => ListBuilder<CommonDependenciesDependenciesInnerPathsInner>(),
-          )
-          ..addBuilderFactory(
-            const FullType(BuiltList, const [const FullType(String)]),
-            () => ListBuilder<String>(),
-          )
-          ..addBuilderFactory(
-            const FullType(BuiltList, const [
-              const FullType(
-                CommonDependenciesDependenciesInnerPathsInnerRelationTypesEnum,
-              ),
-            ]),
-            () =>
-                ListBuilder<
-                  CommonDependenciesDependenciesInnerPathsInnerRelationTypesEnum
-                >(),
           )
           ..addBuilderFactory(
             const FullType(BuiltList, const [const FullType(String)]),
@@ -6979,6 +6926,14 @@ Serializers _$serializers =
             () => ListBuilder<String>(),
           )
           ..addBuilderFactory(
+            const FullType(BuiltList, const [const FullType(String)]),
+            () => ListBuilder<String>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, const [const FullType(String)]),
+            () => ListBuilder<String>(),
+          )
+          ..addBuilderFactory(
             const FullType(BuiltList, const [const FullType(Caveat)]),
             () => ListBuilder<Caveat>(),
           )
@@ -7264,6 +7219,24 @@ Serializers _$serializers =
           ..addBuilderFactory(
             const FullType(BuiltList, const [const FullType(String)]),
             () => ListBuilder<String>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, const [const FullType(String)]),
+            () => ListBuilder<String>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, const [const FullType(String)]),
+            () => ListBuilder<String>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, const [const FullType(String)]),
+            () => ListBuilder<String>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, const [
+              const FullType(ChannelWarningsInner),
+            ]),
+            () => ListBuilder<ChannelWarningsInner>(),
           )
           ..addBuilderFactory(
             const FullType(BuiltList, const [const FullType(String)]),

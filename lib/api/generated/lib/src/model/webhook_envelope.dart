@@ -14,7 +14,7 @@ part 'webhook_envelope.g.dart';
 /// Default body of the generic `webhook` channel (overridable by `bodyTemplate`)
 ///
 /// Properties:
-/// * [event]
+/// * [event] - Grows as the server adds events: a receiver must accept a value not listed here. Kept as `enum`, not `x-extensible-enum`, because this schema is also the `notification` webhook's payload, which the compatibility check cannot mark extensible.
 /// * [subtype]
 /// * [message]
 /// * [data]
@@ -23,6 +23,7 @@ part 'webhook_envelope.g.dart';
 @BuiltValue()
 abstract class WebhookEnvelope
     implements Built<WebhookEnvelope, WebhookEnvelopeBuilder> {
+  /// Grows as the server adds events: a receiver must accept a value not listed here. Kept as `enum`, not `x-extensible-enum`, because this schema is also the `notification` webhook's payload, which the compatibility check cannot mark extensible.
   @BuiltValueField(wireName: r'event')
   WebhookEnvelopeEventEnum get event;
   // enum eventEnum {  alert,  briefing,  system,  chronicle.proposed,  chronicle.cap_warning,  chronicle.gap,  social.divergence,  social.attention_gap,  analyst.note,  situation.activated,  situation.escalated,  finding.significant,  forecast.resolved,  forecast.resolution_needed,  hypothesis.band_changed,  indicator.observed,  assumption.broken,  assessment.published,  mention,  share,  report.received,  package.received,  chronicle.access.requested,  saved-search.matches,  test,  personal,  };
@@ -222,6 +223,7 @@ class _$WebhookEnvelopeSerializer
   }
 }
 
+/// Grows as the server adds events: a receiver must accept a value not listed here. Kept as `enum`, not `x-extensible-enum`, because this schema is also the `notification` webhook's payload, which the compatibility check cannot mark extensible.
 class WebhookEnvelopeEventEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'alert')
   static const WebhookEnvelopeEventEnum alert =

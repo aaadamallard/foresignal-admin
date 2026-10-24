@@ -67,7 +67,8 @@ class _EntitiesPanelState extends ConsumerState<EntitiesPanel> {
           crossAxisAlignment: WrapCrossAlignment.center,
           children: <Widget>[
             SizedBox(
-              width: 340,
+              // Wide enough for the whole hint, key example included.
+              width: 620,
               child: TextField(
                 key: const Key('vetting.entities.search'),
                 controller: _text,
@@ -84,6 +85,7 @@ class _EntitiesPanelState extends ConsumerState<EntitiesPanel> {
               width: 200,
               child: DropdownButtonFormField<String?>(
                 key: const Key('vetting.entities.type'),
+                isExpanded: true,
                 style: Theme.of(context).textTheme.bodyMedium,
                 initialValue: _query.type,
                 decoration: const InputDecoration(isDense: true),
@@ -126,7 +128,7 @@ class _EntitiesPanelState extends ConsumerState<EntitiesPanel> {
                           style: const TextStyle(fontWeight: FontWeight.w600),
                         ),
                         Text(
-                          '${wireText(wireOf(e.type))}${e.provisional ? ' · provisional' : ''}',
+                          '${wireText(e.type)}${e.provisional ? ' · provisional' : ''}',
                           style: TextStyle(color: muted, fontSize: 12),
                         ),
                       ],
@@ -151,7 +153,7 @@ class _EntitiesPanelState extends ConsumerState<EntitiesPanel> {
                       child: Text(
                         (e.keys ?? const <EntityKey>[])
                             .where((k) => !k.retracted)
-                            .map((k) => '${wireOf(k.keyType)}:${k.keyValue}')
+                            .map((k) => '${k.keyType}:${k.keyValue}')
                             .join(', '),
                         maxLines: 2,
                         overflow: TextOverflow.ellipsis,
@@ -376,7 +378,7 @@ class EntityScreen extends ConsumerWidget {
                     const Crumb('Entities'),
                     Crumb(name),
                   ],
-                  subtitle: '${wireText(wireOf(e.type))} · ${e.id}',
+                  subtitle: '${wireText(e.type)} · ${e.id}',
                   titleTrailing: <Widget>[
                     StatusLabel(
                       key: const Key('entity.status'),
@@ -413,7 +415,7 @@ class EntityScreen extends ConsumerWidget {
                   child: KeyValueList(
                     entries: <MapEntry<String, Object>>[
                       MapEntry<String, Object>('Id', e.id),
-                      MapEntry<String, Object>('Type', wireText(wireOf(e.type))),
+                      MapEntry<String, Object>('Type', wireText(e.type)),
                       MapEntry<String, Object>('Created', utcText(e.createdAt)),
                       MapEntry<String, Object>('Updated', utcText(e.updatedAt)),
                       MapEntry<String, Object>(
@@ -585,7 +587,7 @@ class _EntityKeysCardState extends ConsumerState<EntityKeysCard> {
               children: <Widget>[
                 Expanded(
                   child: Text(
-                    'Retract ${wireOf(pending.keyType)}:${pending.keyValue}? Records holding it will no '
+                    'Retract ${pending.keyType}:${pending.keyValue}? Records holding it will no '
                     'longer resolve here.',
                   ),
                 ),
@@ -609,7 +611,7 @@ class _EntityKeysCardState extends ConsumerState<EntityKeysCard> {
               TableColumnSpec<EntityKey>(
                 label: 'Key',
                 cell: (k) => Text(
-                  '${wireOf(k.keyType)}:${k.keyValue}',
+                  '${k.keyType}:${k.keyValue}',
                   style: TextStyle(
                     fontWeight: FontWeight.w600,
                     decoration: k.retracted ? TextDecoration.lineThrough : null,
@@ -657,6 +659,7 @@ class _EntityKeysCardState extends ConsumerState<EntityKeysCard> {
                 width: 180,
                 child: DropdownButtonFormField<String>(
                   key: const Key('entity.key.type'),
+                  isExpanded: true,
                   style: Theme.of(context).textTheme.bodyMedium,
                   initialValue: _draft.keyType,
                   decoration: const InputDecoration(labelText: 'Key type'),
@@ -711,13 +714,18 @@ class _EntityKeysCardState extends ConsumerState<EntityKeysCard> {
               message:
                   'Moving it closes it there and opens it here. Records holding it will resolve to '
                   'this entity from now on.',
-              child: CheckboxListTile(
-                key: const Key('entity.key.force'),
-                contentPadding: EdgeInsets.zero,
-                controlAffinity: ListTileControlAffinity.leading,
-                title: const Text('Move the key here'),
-                value: _draft.force,
-                onChanged: (v) => setState(() => _draft.force = v ?? false),
+              // Its own Material, so the tile's ink shows over the panel's
+              // background.
+              child: Material(
+                type: MaterialType.transparency,
+                child: CheckboxListTile(
+                  key: const Key('entity.key.force'),
+                  contentPadding: EdgeInsets.zero,
+                  controlAffinity: ListTileControlAffinity.leading,
+                  title: const Text('Move the key here'),
+                  value: _draft.force,
+                  onChanged: (v) => setState(() => _draft.force = v ?? false),
+                ),
               ),
             ),
             const SizedBox(height: 8),
@@ -818,7 +826,7 @@ class _EntityRecordsCardState extends ConsumerState<EntityRecordsCard> {
             ),
             TableColumnSpec<EntityRecord>(
               label: 'Linked by',
-              cell: (r) => Text('${wireOf(r.link.keyType)}:${r.link.keyValue}'),
+              cell: (r) => Text('${r.link.keyType}:${r.link.keyValue}'),
             ),
             TableColumnSpec<EntityRecord>(
               label: 'Confidence',
@@ -1085,6 +1093,7 @@ class _OwnershipExplorerState extends ConsumerState<OwnershipExplorer> {
               width: 150,
               child: DropdownButtonFormField<String>(
                 key: const Key('ownership.direction'),
+                isExpanded: true,
                 style: Theme.of(context).textTheme.bodyMedium,
                 initialValue: _draft.direction,
                 decoration: const InputDecoration(labelText: 'Direction'),
@@ -1274,7 +1283,7 @@ class _GraphView extends StatelessWidget {
             ),
             TableColumnSpec<Relation>(
               label: 'Relation',
-              cell: (r) => Text(wireText(wireOf(r.type))),
+              cell: (r) => Text(wireText(r.type)),
             ),
             TableColumnSpec<Relation>(
               label: 'To',

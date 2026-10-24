@@ -3,6 +3,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:foresignal_admin/core/routes.dart';
 
 import '../../../tool/preview/preview_llm.dart';
+import '../../support/actions.dart';
 import '../../support/fake_adapter.dart';
 import '../sources/sources_screens_test.dart' show openAt, sourcesBackend;
 
@@ -44,9 +45,7 @@ void main() {
     final adapter = await openAt(tester, aiNewProviderPath, adapter: aiBackend(llm));
     await tester.enterText(find.byKey(const Key('provider.id')), 'claude-b');
     await tester.enterText(find.byKey(const Key('provider.apiKey')), 'sk-secret');
-    await tester.ensureVisible(find.byKey(const Key('form.save')));
-    await tester.tap(find.byKey(const Key('form.save')));
-    await tester.pumpAndSettle();
+    await tapVisible(tester, find.byKey(const Key('form.save')));
 
     final post = adapter.requests.singleWhere((r) => r.method == 'POST');
     expect(post.uri.path, '/v1/llm/providers');
@@ -59,29 +58,22 @@ void main() {
 
   testWidgets('testing a provider shows the probe result', (tester) async {
     await openAt(tester, aiProviderPath('claude'), adapter: aiBackend(PreviewLlm()));
-    await tester.ensureVisible(find.byKey(const Key('provider.test')));
-    await tester.tap(find.byKey(const Key('provider.test')));
-    await tester.pumpAndSettle();
+    await tapVisible(tester, find.byKey(const Key('provider.test')));
     expect(find.byKey(const Key('provider.testResult')), findsOneWidget);
     expect(find.text('Provider answered'), findsOneWidget);
   });
 
   testWidgets('a failing provider reports the failure in the result', (tester) async {
     await openAt(tester, aiProviderPath('kokoro'), adapter: aiBackend(PreviewLlm()));
-    await tester.ensureVisible(find.byKey(const Key('provider.test')));
-    await tester.tap(find.byKey(const Key('provider.test')));
-    await tester.pumpAndSettle();
+    await tapVisible(tester, find.byKey(const Key('provider.test')));
     expect(find.text('Provider test failed'), findsOneWidget);
   });
 
   testWidgets('deleting a provider in use is refused with the reason', (tester) async {
     final llm = PreviewLlm();
     await openAt(tester, aiProviderPath('claude'), adapter: aiBackend(llm));
-    await tester.ensureVisible(find.byKey(const Key('provider.delete')));
-    await tester.tap(find.byKey(const Key('provider.delete')));
-    await tester.pumpAndSettle();
-    await tester.tap(find.byKey(const Key('provider.confirmDelete')));
-    await tester.pumpAndSettle();
+    await tapVisible(tester, find.byKey(const Key('provider.delete')));
+    await tapVisible(tester, find.byKey(const Key('provider.confirmDelete')));
     expect(find.text('Could not delete'), findsOneWidget);
     expect(llm.providers.containsKey('claude'), isTrue);
   });
@@ -89,15 +81,12 @@ void main() {
   testWidgets('a role is reassigned and confirmed by re-reading', (tester) async {
     final llm = PreviewLlm();
     final adapter = await openAt(tester, aiPath, adapter: aiBackend(llm));
-    await tester.tap(find.byKey(const Key('ai.tab.roles')));
-    await tester.pumpAndSettle();
+    await tapVisible(tester, find.byKey(const Key('ai.tab.roles')));
 
-    await tester.tap(find.byKey(const Key('ai.role.tts')));
-    await tester.pumpAndSettle();
+    await tapVisible(tester, find.byKey(const Key('ai.role.tts')));
     await tester.tap(find.text('kokoro').last);
     await tester.pumpAndSettle();
-    await tester.tap(find.byKey(const Key('form.save')));
-    await tester.pumpAndSettle();
+    await tapVisible(tester, find.byKey(const Key('form.save')));
 
     final put = adapter.requests.singleWhere((r) => r.method == 'PUT');
     expect(put.uri.path, '/v1/llm/settings');
@@ -109,32 +98,26 @@ void main() {
 
   testWidgets('a prompt template loads by id, and its versions switch', (tester) async {
     await openAt(tester, aiPath, adapter: aiBackend(PreviewLlm()));
-    await tester.tap(find.byKey(const Key('ai.tab.templates')));
-    await tester.pumpAndSettle();
+    await tapVisible(tester, find.byKey(const Key('ai.tab.templates')));
     await tester.enterText(find.byKey(const Key('ai.template.id')), 'assessment');
-    await tester.tap(find.byKey(const Key('ai.template.load')));
-    await tester.pumpAndSettle();
+    await tapVisible(tester, find.byKey(const Key('ai.template.load')));
     expect(find.text('assessment @ 3'), findsOneWidget);
 
-    await tester.tap(find.byKey(const Key('ai.template.version.1')));
-    await tester.pumpAndSettle();
+    await tapVisible(tester, find.byKey(const Key('ai.template.version.1')));
     expect(find.text('assessment @ 1'), findsOneWidget);
   });
 
   testWidgets('the bundled templates are listed, and choosing one loads it', (tester) async {
     await openAt(tester, aiPath, adapter: aiBackend(PreviewLlm()));
-    await tester.tap(find.byKey(const Key('ai.tab.templates')));
-    await tester.pumpAndSettle();
+    await tapVisible(tester, find.byKey(const Key('ai.tab.templates')));
     expect(find.byKey(const Key('ai.templates.ask')), findsOneWidget);
-    await tester.tap(find.byKey(const Key('ai.templates.assessment')));
-    await tester.pumpAndSettle();
+    await tapVisible(tester, find.byKey(const Key('ai.templates.assessment')));
     expect(find.text('assessment @ 3'), findsOneWidget);
   });
 
   testWidgets('usage shows totals, the token chart and the provider table', (tester) async {
     await openAt(tester, aiPath, adapter: aiBackend(PreviewLlm()));
-    await tester.tap(find.byKey(const Key('ai.tab.usage')));
-    await tester.pumpAndSettle();
+    await tapVisible(tester, find.byKey(const Key('ai.tab.usage')));
     expect(find.byKey(const Key('ai.usage.requests')), findsOneWidget);
     expect(find.byKey(const Key('ai.usage.chart')), findsOneWidget);
     expect(find.byKey(const Key('ai.usage.table')), findsOneWidget);
