@@ -1557,6 +1557,7 @@ lib/src/model/social_coverage_bucket.dart
 lib/src/model/social_coverage_page.dart
 lib/src/model/social_cue.dart
 lib/src/model/social_cue_event.dart
+lib/src/model/social_cue_external_results_inner.dart
 lib/src/model/social_cue_input.dart
 lib/src/model/social_cue_page.dart
 lib/src/model/social_cue_query.dart

@@ -1557,6 +1557,7 @@ export 'package:foresignal_api/src/model/social_coverage_bucket.dart';
 export 'package:foresignal_api/src/model/social_coverage_page.dart';
 export 'package:foresignal_api/src/model/social_cue.dart';
 export 'package:foresignal_api/src/model/social_cue_event.dart';
+export 'package:foresignal_api/src/model/social_cue_external_results_inner.dart';
 export 'package:foresignal_api/src/model/social_cue_input.dart';
 export 'package:foresignal_api/src/model/social_cue_page.dart';
 export 'package:foresignal_api/src/model/social_cue_query.dart';

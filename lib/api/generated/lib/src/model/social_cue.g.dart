@@ -162,6 +162,8 @@ class _$SocialCue extends SocialCue {
   @override
   final BuiltList<SocialCueResultsInner> results;
   @override
+  final BuiltList<SocialCueExternalResultsInner>? externalResults;
+  @override
   final BuiltList<String> narrativeIds;
   @override
   final num costUsd;
@@ -191,6 +193,7 @@ class _$SocialCue extends SocialCue {
     required this.status,
     this.statusReason,
     required this.results,
+    this.externalResults,
     required this.narrativeIds,
     required this.costUsd,
     this.maxCostUsd,
@@ -220,6 +223,7 @@ class _$SocialCue extends SocialCue {
         status == other.status &&
         statusReason == other.statusReason &&
         results == other.results &&
+        externalResults == other.externalResults &&
         narrativeIds == other.narrativeIds &&
         costUsd == other.costUsd &&
         maxCostUsd == other.maxCostUsd &&
@@ -242,6 +246,7 @@ class _$SocialCue extends SocialCue {
     _$hash = $jc(_$hash, status.hashCode);
     _$hash = $jc(_$hash, statusReason.hashCode);
     _$hash = $jc(_$hash, results.hashCode);
+    _$hash = $jc(_$hash, externalResults.hashCode);
     _$hash = $jc(_$hash, narrativeIds.hashCode);
     _$hash = $jc(_$hash, costUsd.hashCode);
     _$hash = $jc(_$hash, maxCostUsd.hashCode);
@@ -266,6 +271,7 @@ class _$SocialCue extends SocialCue {
           ..add('status', status)
           ..add('statusReason', statusReason)
           ..add('results', results)
+          ..add('externalResults', externalResults)
           ..add('narrativeIds', narrativeIds)
           ..add('costUsd', costUsd)
           ..add('maxCostUsd', maxCostUsd)
@@ -324,6 +330,13 @@ class SocialCueBuilder implements Builder<SocialCue, SocialCueBuilder> {
   set results(ListBuilder<SocialCueResultsInner>? results) =>
       _$this._results = results;
 
+  ListBuilder<SocialCueExternalResultsInner>? _externalResults;
+  ListBuilder<SocialCueExternalResultsInner> get externalResults =>
+      _$this._externalResults ??= ListBuilder<SocialCueExternalResultsInner>();
+  set externalResults(
+    ListBuilder<SocialCueExternalResultsInner>? externalResults,
+  ) => _$this._externalResults = externalResults;
+
   ListBuilder<String>? _narrativeIds;
   ListBuilder<String> get narrativeIds =>
       _$this._narrativeIds ??= ListBuilder<String>();
@@ -374,6 +387,7 @@ class SocialCueBuilder implements Builder<SocialCue, SocialCueBuilder> {
       _status = $v.status;
       _statusReason = $v.statusReason;
       _results = $v.results.toBuilder();
+      _externalResults = $v.externalResults?.toBuilder();
       _narrativeIds = $v.narrativeIds.toBuilder();
       _costUsd = $v.costUsd;
       _maxCostUsd = $v.maxCostUsd;
@@ -423,6 +437,7 @@ class SocialCueBuilder implements Builder<SocialCue, SocialCueBuilder> {
             ),
             statusReason: statusReason,
             results: results.build(),
+            externalResults: _externalResults?.build(),
             narrativeIds: narrativeIds.build(),
             costUsd: BuiltValueNullFieldError.checkNotNull(
               costUsd,
@@ -459,6 +474,8 @@ class SocialCueBuilder implements Builder<SocialCue, SocialCueBuilder> {
 
         _$failedField = 'results';
         results.build();
+        _$failedField = 'externalResults';
+        _externalResults?.build();
         _$failedField = 'narrativeIds';
         narrativeIds.build();
       } catch (e) {

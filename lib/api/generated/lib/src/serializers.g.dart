@@ -2431,6 +2431,7 @@ Serializers _$serializers =
           ..add(SocialCueBackendEnum.serializer)
           ..add(SocialCueEvent.serializer)
           ..add(SocialCueEventEventEnum.serializer)
+          ..add(SocialCueExternalResultsInner.serializer)
           ..add(SocialCueInput.serializer)
           ..add(SocialCuePage.serializer)
           ..add(SocialCueQuery.serializer)
@@ -5730,6 +5731,12 @@ Serializers _$serializers =
               const FullType(SocialCueResultsInner),
             ]),
             () => ListBuilder<SocialCueResultsInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, const [
+              const FullType(SocialCueExternalResultsInner),
+            ]),
+            () => ListBuilder<SocialCueExternalResultsInner>(),
           )
           ..addBuilderFactory(
             const FullType(BuiltList, const [const FullType(String)]),

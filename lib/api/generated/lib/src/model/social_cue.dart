@@ -6,6 +6,7 @@
 import 'package:foresignal_api/src/model/social_cue_results_inner.dart';
 import 'package:built_collection/built_collection.dart';
 import 'package:foresignal_api/src/model/social_cue_trigger.dart';
+import 'package:foresignal_api/src/model/social_cue_external_results_inner.dart';
 import 'package:foresignal_api/src/model/social_platform_id.dart';
 import 'package:foresignal_api/src/model/time_range.dart';
 import 'package:foresignal_api/src/model/social_cue_query.dart';
@@ -26,6 +27,7 @@ part 'social_cue.g.dart';
 /// * [status]
 /// * [statusReason] - e.g. BUDGET_EXCEEDED, PLATFORM_DISABLED
 /// * [results]
+/// * [externalResults] - One item per EDP provider searched
 /// * [narrativeIds]
 /// * [costUsd]
 /// * [maxCostUsd]
@@ -67,6 +69,10 @@ abstract class SocialCue implements Built<SocialCue, SocialCueBuilder> {
 
   @BuiltValueField(wireName: r'results')
   BuiltList<SocialCueResultsInner> get results;
+
+  /// One item per EDP provider searched
+  @BuiltValueField(wireName: r'externalResults')
+  BuiltList<SocialCueExternalResultsInner>? get externalResults;
 
   @BuiltValueField(wireName: r'narrativeIds')
   BuiltList<String> get narrativeIds;
@@ -166,6 +172,15 @@ class _$SocialCueSerializer implements PrimitiveSerializer<SocialCue> {
         FullType(SocialCueResultsInner),
       ]),
     );
+    if (object.externalResults != null) {
+      yield r'externalResults';
+      yield serializers.serialize(
+        object.externalResults,
+        specifiedType: const FullType(BuiltList, [
+          FullType(SocialCueExternalResultsInner),
+        ]),
+      );
+    }
     yield r'narrativeIds';
     yield serializers.serialize(
       object.narrativeIds,
@@ -328,6 +343,18 @@ class _$SocialCueSerializer implements PrimitiveSerializer<SocialCue> {
                   )
                   as BuiltList<SocialCueResultsInner>;
           result.results.replace(valueDes);
+          break;
+        case r'externalResults':
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(SocialCueExternalResultsInner),
+                    ]),
+                  )
+                  as BuiltList<SocialCueExternalResultsInner>?;
+          if (valueDes == null) continue;
+          result.externalResults.replace(valueDes);
           break;
         case r'narrativeIds':
           final valueDes =

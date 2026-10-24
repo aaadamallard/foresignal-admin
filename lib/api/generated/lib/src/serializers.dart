@@ -1480,6 +1480,7 @@ import 'package:foresignal_api/src/model/social_coverage_bucket.dart';
 import 'package:foresignal_api/src/model/social_coverage_page.dart';
 import 'package:foresignal_api/src/model/social_cue.dart';
 import 'package:foresignal_api/src/model/social_cue_event.dart';
+import 'package:foresignal_api/src/model/social_cue_external_results_inner.dart';
 import 'package:foresignal_api/src/model/social_cue_input.dart';
 import 'package:foresignal_api/src/model/social_cue_page.dart';
 import 'package:foresignal_api/src/model/social_cue_query.dart';
@@ -3189,6 +3190,7 @@ part 'serializers.g.dart';
   SocialCoveragePage,
   SocialCue,
   SocialCueEvent,
+  SocialCueExternalResultsInner,
   SocialCueInput,
   SocialCuePage,
   SocialCueQuery,
@@ -5670,6 +5672,12 @@ Serializers serializers =
           ..addBuilderFactory(
             const FullType(BuiltList, [FullType(AnomalyObservation)]),
             () => ListBuilder<AnomalyObservation>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [
+              FullType(SocialCueExternalResultsInner),
+            ]),
+            () => ListBuilder<SocialCueExternalResultsInner>(),
           )
           ..addBuilderFactory(
             const FullType(BuiltList, [FullType(DigestAlertsByRuleInner)]),

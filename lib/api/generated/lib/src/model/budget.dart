@@ -13,7 +13,7 @@ part 'budget.g.dart';
 /// Properties:
 /// * [perMinute]
 /// * [perDay]
-/// * [monthlyCapUsd] - Money cap per calendar month for paid adapters (135; X default 25); refused with BUDGET_EXCEEDED
+/// * [monthlyCapUsd] - Money cap per UTC calendar month for a paid source (135; X default 25, the descriptor's `defaultBudget`). Set with `updateSource`; the budget object is replaced whole, so leaving it out (or null) returns the source to its default cap (none for free sources). Once the month's spend (`SourceHealth.spentUsdThisMonth`) reaches it, the budget governor refuses every request of the source until the next month begins (a push or upload is refused 429 BUDGET_EXCEEDED) and the source's health is `degraded` with the reason. X's platform cap (`social.x.monthlyCapUsd`, default 25) applies as well.
 @BuiltValue()
 abstract class Budget implements Built<Budget, BudgetBuilder> {
   @BuiltValueField(wireName: r'perMinute')
@@ -22,7 +22,7 @@ abstract class Budget implements Built<Budget, BudgetBuilder> {
   @BuiltValueField(wireName: r'perDay')
   int get perDay;
 
-  /// Money cap per calendar month for paid adapters (135; X default 25); refused with BUDGET_EXCEEDED
+  /// Money cap per UTC calendar month for a paid source (135; X default 25, the descriptor's `defaultBudget`). Set with `updateSource`; the budget object is replaced whole, so leaving it out (or null) returns the source to its default cap (none for free sources). Once the month's spend (`SourceHealth.spentUsdThisMonth`) reaches it, the budget governor refuses every request of the source until the next month begins (a push or upload is refused 429 BUDGET_EXCEEDED) and the source's health is `degraded` with the reason. X's platform cap (`social.x.monthlyCapUsd`, default 25) applies as well.
   @BuiltValueField(wireName: r'monthlyCapUsd')
   num? get monthlyCapUsd;
 

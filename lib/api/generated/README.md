@@ -2368,6 +2368,7 @@ Class | Method | HTTP request | Description
  - [SocialCoveragePage](doc/SocialCoveragePage.md)
  - [SocialCue](doc/SocialCue.md)
  - [SocialCueEvent](doc/SocialCueEvent.md)
+ - [SocialCueExternalResultsInner](doc/SocialCueExternalResultsInner.md)
  - [SocialCueInput](doc/SocialCueInput.md)
  - [SocialCuePage](doc/SocialCuePage.md)
  - [SocialCueQuery](doc/SocialCueQuery.md)

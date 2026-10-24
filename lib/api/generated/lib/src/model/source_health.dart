@@ -45,7 +45,7 @@ part 'source_health.g.dart';
 /// * [frameAgeSeconds] - Product sources: age of the newest frame
 /// * [details] - Adapter-specific health details; omitted when there are none. aisstream (063): `compressionEnabled` (from its SubscriptionConfirmation), `perMessageDeflate` (whether the handshake negotiated it; present while connected) and `vessels` (vessels held in the merged state)
 /// * [lastDoctorReport]
-/// * [spentUsdThisMonth] - Paid adapters: money spent this calendar month (135)
+/// * [spentUsdThisMonth] - Paid adapters: money spent this UTC calendar month (135), against `budget.monthlyCapUsd`
 @BuiltValue()
 abstract class SourceHealth
     implements Built<SourceHealth, SourceHealthBuilder> {
@@ -137,7 +137,7 @@ abstract class SourceHealth
   @BuiltValueField(wireName: r'lastDoctorReport')
   DoctorReportSummary? get lastDoctorReport;
 
-  /// Paid adapters: money spent this calendar month (135)
+  /// Paid adapters: money spent this UTC calendar month (135), against `budget.monthlyCapUsd`
   @BuiltValueField(wireName: r'spentUsdThisMonth')
   num? get spentUsdThisMonth;
 
