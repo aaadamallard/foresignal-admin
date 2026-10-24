@@ -1533,6 +1533,11 @@ import 'package:foresignal_api/src/model/source_access.dart';
 import 'package:foresignal_api/src/model/source_descriptor.dart';
 import 'package:foresignal_api/src/model/source_detail.dart';
 import 'package:foresignal_api/src/model/source_health.dart';
+import 'package:foresignal_api/src/model/source_relevance.dart';
+import 'package:foresignal_api/src/model/source_relevance_analysis.dart';
+import 'package:foresignal_api/src/model/source_relevance_analysis_shared.dart';
+import 'package:foresignal_api/src/model/source_relevance_analysis_template.dart';
+import 'package:foresignal_api/src/model/source_relevance_request.dart';
 import 'package:foresignal_api/src/model/source_settings.dart';
 import 'package:foresignal_api/src/model/source_settings_update.dart';
 import 'package:foresignal_api/src/model/source_storage.dart';
@@ -3244,6 +3249,11 @@ part 'serializers.g.dart';
   SourceDescriptor,
   SourceDetail,
   SourceHealth,
+  SourceRelevance,
+  SourceRelevanceAnalysis,
+  SourceRelevanceAnalysisShared,
+  SourceRelevanceAnalysisTemplate,
+  SourceRelevanceRequest,
   SourceSettings,
   SourceSettingsUpdate,
   SourceStorage,
@@ -3934,6 +3944,10 @@ Serializers serializers =
           ..addBuilderFactory(
             const FullType(BuiltList, [FullType(ObjectAclEntry)]),
             () => ListBuilder<ObjectAclEntry>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(SourceRelevance)]),
+            () => ListBuilder<SourceRelevance>(),
           )
           ..addBuilderFactory(
             const FullType(BuiltList, [

@@ -77,6 +77,13 @@ class TriggersPanel extends ConsumerWidget {
               icon: const Icon(Icons.refresh),
             ),
             const SizedBox(width: 8),
+            TonalButton(
+              key: const Key('triggers.builder'),
+              label: 'Alert Builder',
+              icon: Icons.account_tree_outlined,
+              onPressed: () => context.go(alertBuilderPath),
+            ),
+            const SizedBox(width: 8),
             FilledButton.icon(
               key: const Key('triggers.new'),
               onPressed: () => context.go(alertNewTriggerPath),
@@ -131,10 +138,20 @@ class TriggersPanel extends ConsumerWidget {
               ),
               TableColumnSpec<Json>(
                 label: 'Actions',
-                cell: (r) => TextButton(
-                  key: Key('triggers.edit.${r['id']}'),
-                  onPressed: () => context.go(alertTriggerPath('${r['id']}')),
-                  child: const Text('Edit'),
+                cell: (r) => Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: <Widget>[
+                    TextButton(
+                      key: Key('triggers.edit.${r['id']}'),
+                      onPressed: () => context.go(alertTriggerPath('${r['id']}')),
+                      child: const Text('Edit'),
+                    ),
+                    TextButton(
+                      key: Key('triggers.builderEdit.${r['id']}'),
+                      onPressed: () => context.go(alertBuilderRulePath('${r['id']}')),
+                      child: const Text('Builder'),
+                    ),
+                  ],
                 ),
               ),
             ],
@@ -177,6 +194,12 @@ class TriggerScreen extends ConsumerWidget {
           crumbs: <Crumb>[...crumbs, Crumb(rule.value?['name'] as String? ?? id)],
           titleTrailing: <Widget>[if (rule.value case final r?) ruleStatusLabel(r)],
           actions: <Widget>[
+            TextButton.icon(
+              key: const Key('trigger.openBuilder'),
+              onPressed: () => context.go(alertBuilderRulePath(id)),
+              icon: const Icon(Icons.account_tree_outlined, size: 18),
+              label: const Text('Open in Builder'),
+            ),
             IconButton(
               tooltip: 'Refresh',
               onPressed: () {

@@ -5,6 +5,7 @@ import 'package:go_router/go_router.dart';
 import '../api/backend_endpoint.dart';
 import '../features/ai/ai_screen.dart';
 import '../features/ai/provider_screen.dart';
+import '../features/alerts/alert_builder.dart';
 import '../features/alerts/alert_inbox.dart';
 import '../features/alerts/alerts_screen.dart';
 import '../features/alerts/channels.dart';
@@ -209,6 +210,16 @@ Map<String, SectionRoutes> sectionRoutesFor(FormFactor formFactor) {
             ],
           ),
           GoRoute(path: 'new-trigger', builder: (context, state) => const TriggerScreen()),
+          GoRoute(
+            path: 'builder',
+            builder: (context, state) => const AlertBuilderScreen(),
+            routes: <RouteBase>[
+              GoRoute(
+                path: ':ruleId',
+                builder: (context, state) => AlertBuilderScreen(ruleId: state.pathParameters['ruleId']),
+              ),
+            ],
+          ),
           GoRoute(
             path: 'escalation',
             builder: (context, state) => const AlertsScreen(tab: AlertsTab.escalation),

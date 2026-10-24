@@ -4,10 +4,12 @@
 // (TriggerRule, TriggerTestResult, AlertPage, Alert, AlertEvent, Escalation,
 // EscalationPolicy, ChannelType, Channel, ChannelTestResult,
 // NotificationDeliveryPage, WatchlistPage, Watchlist, WatchlistItemPage,
-// WatchlistImportResult). The `mqtt` channel type is the contract's own
-// example; the other types' fields are illustrative.
+// WatchlistImportResult, SourceRelevanceAnalysis). The `mqtt` channel type
+// is the contract's own example; the other types' fields are illustrative.
 import 'dart:async';
 import 'dart:convert';
+
+import 'preview_sources.dart';
 
 /// A fake reply: a JSON body (or [PreviewText]) and its status.
 typedef AlertsReply = ({int status, Object? body});
@@ -688,6 +690,11 @@ AlertsReply? answerAlerts(
   AlertsReply notFound([String code = 'NOT_FOUND']) => (status: 404, body: _problem(404, 'Not found', code));
   final now = _iso(DateTime.now());
 
+  // The Alert Builder's advisory source-relevance check.
+  if (path == '/v1/triggers/analyze-sources' && method == 'POST') {
+    return analyzeSourcesPreview(input);
+  }
+
   // Trigger rules.
   if (path == '/v1/triggers') {
     if (method == 'POST') {
@@ -1187,4 +1194,83 @@ AlertsReply? answerAlerts(
     return null;
   }
   return null;
+}
+
+/// The subject each preview kind reports, standing in for what a model reads
+/// in the catalog: kinds of one subject belong in one dataset.
+const Map<String, String> _kindSubject = <String, String>{
+  'earthquake': 'natural hazards',
+  'weather-alert': 'natural hazards',
+  'fire': 'natural hazards',
+  'disaster': 'natural hazards',
+  'event': 'news events',
+  'conflict': 'armed conflict',
+  'aircraft': 'moving craft',
+  'satellite': 'orbits',
+};
+
+/// `analyzeTriggerSources` without a model: a source shares a subject with
+/// another in the set (relevant), only overlaps it loosely (marginal: broad
+/// news events beside conflict), or with none of them (not meaningful).
+AlertsReply analyzeSourcesPreview(Map<String, Object?> input) {
+  final ids = <String>[...((input['sourceIds'] as List<Object?>?) ?? const <Object?>[]).map((e) => '$e')];
+  final known = <String, PreviewSource>{for (final s in previewSources) s.id: s};
+  final unknown = ids.where((id) => !known.containsKey(id)).toList();
+  if (ids.length < 2 || ids.length > 50 || unknown.isNotEmpty || ids.toSet().length != ids.length) {
+    return (
+      status: 400,
+      body: _problem(
+        400,
+        'Validation failed',
+        'VALIDATION_FAILED',
+        unknown.isNotEmpty ? 'sourceIds: ${unknown.first} is not a registered source id' : 'sourceIds: 2 to 50 distinct ids',
+      ),
+    );
+  }
+  final subjects = <String, String>{for (final id in ids) id: _kindSubject[known[id]!.kind] ?? known[id]!.kind};
+  final counts = <String, int>{};
+  for (final s in subjects.values) {
+    counts[s] = (counts[s] ?? 0) + 1;
+  }
+  final main = counts.entries.reduce((a, b) => b.value > a.value ? b : a).key;
+  final kinds = <String, int>{};
+  for (final id in ids) {
+    kinds[known[id]!.kind] = (kinds[known[id]!.kind] ?? 0) + 1;
+  }
+  return (
+    status: 200,
+    body: <String, Object?>{
+      'advisory': true,
+      'summary': 'A dataset about $main.',
+      'sources': <Object?>[
+        for (final id in ids)
+          () {
+            final s = known[id]!;
+            final subject = subjects[id]!;
+            final others = counts[subject]! - 1;
+            final (verdict, reason) = others > 0
+                ? ('relevant', 'Reports ${s.kind} records, $subject like $others other source${others == 1 ? '' : 's'} in the set.')
+                : subject == 'news events' && counts.containsKey('armed conflict')
+                ? ('marginal', 'Broad news events overlap the conflict source but add mostly unrelated stories.')
+                : ('not-meaningful', 'Reports $subject; nothing else in the set is about $subject, so it shares no kind or subject with the rest.');
+            return <String, Object?>{
+              'sourceId': id,
+              'name': s.name,
+              'kinds': <String>[s.kind],
+              'verdict': verdict,
+              'reason': reason,
+            };
+          }(),
+      ],
+      'shared': <String, Object?>{
+        'kinds': <String>[
+          for (final e in kinds.entries)
+            if (e.value > 1) e.key,
+        ],
+        'entityTypes': const <String>[],
+      },
+      'model': 'preview',
+      'template': const <String, Object?>{'templateId': 'source-relevance-system', 'version': '1.0.0'},
+    },
+  );
 }

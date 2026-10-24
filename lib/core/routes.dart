@@ -105,6 +105,12 @@ String alertTriggerPath(String ruleId) => '$alertTriggersPath/${Uri.encodeCompon
 /// Authors a trigger rule.
 const String alertNewTriggerPath = '$alertsPath/new-trigger';
 
+/// The Alert Builder for a new rule.
+const String alertBuilderPath = '$alertsPath/builder';
+
+/// The Alert Builder for stored rule [ruleId].
+String alertBuilderRulePath(String ruleId) => '$alertBuilderPath/${Uri.encodeComponent(ruleId)}';
+
 /// Escalation policies.
 const String alertEscalationPath = '$alertsPath/escalation';
 

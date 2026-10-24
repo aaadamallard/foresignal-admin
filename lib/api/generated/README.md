@@ -842,6 +842,7 @@ Class | Method | HTTP request | Description
 [*TokensApi*](doc/TokensApi.md) | [**updateCurrentTokenDevice**](doc/TokensApi.md#updatecurrenttokendevice) | **PUT** /v1/tokens/current/device | Report device metadata for this token
 [*TokensApi*](doc/TokensApi.md) | [**updateToken**](doc/TokensApi.md#updatetoken) | **PATCH** /v1/tokens/{tokenId} | Update an API token&#39;s licence policy
 [*TransitApi*](doc/TransitApi.md) | [**searchTransitCatalog**](doc/TransitApi.md#searchtransitcatalog) | **GET** /v1/transit/catalog | Search the Mobility Database GTFS-RT snapshot
+[*TriggersApi*](doc/TriggersApi.md) | [**analyzeTriggerSources**](doc/TriggersApi.md#analyzetriggersources) | **POST** /v1/triggers/analyze-sources | Rate how much each source contributes to a rule&#39;s dataset (advisory)
 [*TriggersApi*](doc/TriggersApi.md) | [**applyTuningSuggestion**](doc/TriggersApi.md#applytuningsuggestion) | **POST** /v1/triggers/{ruleId}/suggestions/{suggestionId}/apply | Apply a tuning suggestion
 [*TriggersApi*](doc/TriggersApi.md) | [**createTrigger**](doc/TriggersApi.md#createtrigger) | **POST** /v1/triggers | Create a trigger rule
 [*TriggersApi*](doc/TriggersApi.md) | [**deleteTrigger**](doc/TriggersApi.md#deletetrigger) | **DELETE** /v1/triggers/{ruleId} | Delete a trigger rule
@@ -2421,6 +2422,11 @@ Class | Method | HTTP request | Description
  - [SourceDescriptor](doc/SourceDescriptor.md)
  - [SourceDetail](doc/SourceDetail.md)
  - [SourceHealth](doc/SourceHealth.md)
+ - [SourceRelevance](doc/SourceRelevance.md)
+ - [SourceRelevanceAnalysis](doc/SourceRelevanceAnalysis.md)
+ - [SourceRelevanceAnalysisShared](doc/SourceRelevanceAnalysisShared.md)
+ - [SourceRelevanceAnalysisTemplate](doc/SourceRelevanceAnalysisTemplate.md)
+ - [SourceRelevanceRequest](doc/SourceRelevanceRequest.md)
  - [SourceSettings](doc/SourceSettings.md)
  - [SourceSettingsUpdate](doc/SourceSettingsUpdate.md)
  - [SourceStorage](doc/SourceStorage.md)

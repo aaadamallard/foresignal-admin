@@ -15,6 +15,9 @@ import 'api_errors.dart';
 ///   channel's URL, topic or broker never reaches the backend or the screen.
 /// - `markNotificationsRead` takes its body as a `JsonObject`, which the
 ///   generated method hands to dio unserialized, so it fails before sending.
+/// - `analyzeTriggerSources` waits on a language model, which can take longer
+///   than the client's receive timeout; the generated method cannot set
+///   another ([jsonObjectCall]'s `receiveTimeout`).
 ///
 /// [path] is sent as given, with any extra [headers], so its segments must already be encoded. Every
 /// failure is thrown as an [ApiException].
@@ -34,13 +37,19 @@ Future<Response<Object?>> _send(
   Object? body,
   Map<String, Object?>? query,
   Map<String, Object?>? headers,
+  Duration? receiveTimeout,
 }) async {
   try {
     return await dio.request<Object?>(
       path,
       data: body,
       queryParameters: query,
-      options: Options(method: method, headers: headers, contentType: body == null ? null : Headers.jsonContentType),
+      options: Options(
+        method: method,
+        headers: headers,
+        contentType: body == null ? null : Headers.jsonContentType,
+        receiveTimeout: receiveTimeout,
+      ),
     );
   } on Object catch (error) {
     throw toApiException(error);
@@ -57,7 +66,8 @@ RequestFailedException _unexpected(String method, String path, Response<Object?>
       status: response.statusCode,
     );
 
-/// [jsonCall] for an operation answering one JSON object.
+/// [jsonCall] for an operation answering one JSON object. A [receiveTimeout]
+/// replaces the client's for this call alone.
 Future<Map<String, Object?>> jsonObjectCall(
   Dio dio,
   String method,
@@ -65,8 +75,17 @@ Future<Map<String, Object?>> jsonObjectCall(
   Object? body,
   Map<String, Object?>? query,
   Map<String, Object?>? headers,
+  Duration? receiveTimeout,
 }) async {
-  final response = await _send(dio, method, path, body: body, query: query, headers: headers);
+  final response = await _send(
+    dio,
+    method,
+    path,
+    body: body,
+    query: query,
+    headers: headers,
+    receiveTimeout: receiveTimeout,
+  );
   final data = response.data;
   if (data is! Map) {
     throw _unexpected(method, path, response, 'JSON object');

@@ -698,8 +698,9 @@ class ChannelDraft {
 
   /// Problems by field (`name`, `events`, `rules`, `config.<name>`,
   /// `secret.<name>`, `otherConfig`, `more`); empty when the draft can be
-  /// sent. A new channel ([creating]) needs its required secrets.
-  Map<String, String> validate({required bool creating}) {
+  /// sent. A new channel ([creating]) needs its required secrets. Only
+  /// these rules with none chosen is a problem unless [allowNoRules].
+  Map<String, String> validate({required bool creating, bool allowNoRules = false}) {
     final errors = <String, String>{};
     final n = name.trim();
     if (n.isEmpty || n.length > 200) {
@@ -708,7 +709,7 @@ class ChannelDraft {
     if (events.isEmpty) {
       errors['events'] = 'At least one event.';
     }
-    if (!allRules && ruleIds.isEmpty) {
+    if (!allRules && ruleIds.isEmpty && !allowNoRules) {
       errors['rules'] = 'Choose rules, or send every rule.';
     }
     for (final f in channelFields(type, 'configFields')) {

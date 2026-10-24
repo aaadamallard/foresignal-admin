@@ -2496,6 +2496,12 @@ Serializers _$serializers =
           ..add(SourceDescriptorTtlAnchorEnum.serializer)
           ..add(SourceDetail.serializer)
           ..add(SourceHealth.serializer)
+          ..add(SourceRelevance.serializer)
+          ..add(SourceRelevanceAnalysis.serializer)
+          ..add(SourceRelevanceAnalysisShared.serializer)
+          ..add(SourceRelevanceAnalysisTemplate.serializer)
+          ..add(SourceRelevanceRequest.serializer)
+          ..add(SourceRelevanceVerdictEnum.serializer)
           ..add(SourceSettings.serializer)
           ..add(SourceSettingsEgressEnum.serializer)
           ..add(SourceSettingsRegionTaggingEnum.serializer)
@@ -5792,6 +5798,10 @@ Serializers _$serializers =
             () => ListBuilder<Caveat>(),
           )
           ..addBuilderFactory(
+            const FullType(BuiltList, const [const FullType(SourceRelevance)]),
+            () => ListBuilder<SourceRelevance>(),
+          )
+          ..addBuilderFactory(
             const FullType(BuiltList, const [
               const FullType(StatsGridFeaturesInner),
             ]),
@@ -5832,6 +5842,10 @@ Serializers _$serializers =
               const FullType(StormTrackPayloadNowcastInner),
             ]),
             () => ListBuilder<StormTrackPayloadNowcastInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, const [const FullType(String)]),
+            () => ListBuilder<String>(),
           )
           ..addBuilderFactory(
             const FullType(BuiltList, const [const FullType(String)]),
@@ -6705,6 +6719,14 @@ Serializers _$serializers =
               const FullType(SocialPlatformPrice),
             ]),
             () => ListBuilder<SocialPlatformPrice>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, const [const FullType(String)]),
+            () => ListBuilder<String>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, const [const FullType(String)]),
+            () => ListBuilder<String>(),
           )
           ..addBuilderFactory(
             const FullType(BuiltList, const [const FullType(String)]),
@@ -10647,6 +10669,10 @@ Serializers _$serializers =
               const FullType(SituationAssessmentRequestRolesEnum),
             ]),
             () => SetBuilder<SituationAssessmentRequestRolesEnum>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltSet, const [const FullType(String)]),
+            () => SetBuilder<String>(),
           )
           ..addBuilderFactory(
             const FullType(BuiltSet, const [const FullType(String)]),

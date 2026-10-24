@@ -388,13 +388,22 @@ class _ChannelScreenState extends ConsumerState<ChannelScreen> {
 /// `updateChannel` and confirmed by re-reading.
 class ChannelForm extends ConsumerStatefulWidget {
   /// Creates the form for [channel] of [type], or a new channel of [type].
-  const ChannelForm({super.key, required this.type, this.channel});
+  const ChannelForm({super.key, required this.type, this.channel, this.initialRuleIds, this.onCreated});
 
   /// The channel type (`ChannelType`).
   final Json type;
 
   /// The stored channel; `null` for a new one.
   final Json? channel;
+
+  /// For a new channel: start with only these rules' alerts instead of every
+  /// rule's. An empty set is allowed, for a rule not saved yet that is routed
+  /// to the channel once it is (the Alert Builder).
+  final Set<String>? initialRuleIds;
+
+  /// For a new channel: called with it once created, instead of opening its
+  /// page.
+  final ValueChanged<Json>? onCreated;
 
   @override
   ConsumerState<ChannelForm> createState() => _ChannelFormState();
@@ -421,6 +430,11 @@ class _ChannelFormState extends ConsumerState<ChannelForm> with WriteTracking<Ch
 
   void _adopt() {
     _draft = widget.channel == null ? ChannelDraft(widget.type) : ChannelDraft.of(widget.type, widget.channel!);
+    if (widget.channel == null && widget.initialRuleIds != null) {
+      _draft
+        ..allRules = false
+        ..ruleIds.addAll(widget.initialRuleIds!);
+    }
     _name.text = _draft.name;
     _title.text = _draft.titleTemplate;
     _body.text = _draft.bodyTemplate;
@@ -457,7 +471,7 @@ class _ChannelFormState extends ConsumerState<ChannelForm> with WriteTracking<Ch
     for (final e in _secrets.entries) {
       _draft.secrets[e.key] = e.value.text;
     }
-    setState(() => _errors = _draft.validate(creating: _creating));
+    setState(() => _errors = _draft.validate(creating: _creating, allowNoRules: widget.initialRuleIds != null));
     if (_errors.isNotEmpty) {
       return;
     }
@@ -469,7 +483,11 @@ class _ChannelFormState extends ConsumerState<ChannelForm> with WriteTracking<Ch
       final created = await track(() => jsonObjectCall(dio, 'POST', '/v1/channels', body: body));
       if (created != null && mounted) {
         ref.invalidate(channelsProvider);
-        context.go(alertChannelPath('${created['id']}'));
+        if (widget.onCreated case final done?) {
+          done(created);
+        } else {
+          context.go(alertChannelPath('${created['id']}'));
+        }
       }
       return;
     }

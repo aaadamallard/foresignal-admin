@@ -5,6 +5,7 @@ import 'api/api.dart';
 import 'app.dart';
 import 'core/connection_store.dart';
 import 'core/error_reporter.dart';
+import 'core/retry_policy.dart';
 import 'core/theme_mode.dart';
 import 'features/notifications/push_arrival.dart';
 
@@ -22,6 +23,9 @@ Future<void> main() async {
     savedUrl = null;
   }
   final container = ProviderContainer(
+    // One delayed reload, and only when the backend may not have seen the
+    // request; the Retry on each error is the way to ask again.
+    retry: appRetry,
     overrides: [
       connectionStoreProvider.overrideWithValue(store),
       adminTokenStoreProvider.overrideWithValue(store),

@@ -111,6 +111,16 @@ small and exist only to prove a source works.
 - **Trigger rules (D).** Author, edit, test, and mute the rules that turn thresholds/patterns into
   alerts, scoped to a view/situation/watchlist. Ops: the `Triggers` set (`listTriggers`,
   `createTrigger`, `updateTrigger`, `testTrigger`, `muteTrigger` — confirm exact ids at build).
+- **Alert Builder (D).** The guided way to build a rule, as a three-node flow read left to right:
+  **Dataset** (multi-select sources, with an advisory LLM relevance check that rates each source and
+  gives a one-line reason; flagged sources get a one-click Omit and nothing is dropped automatically) →
+  **Trigger** (kinds, then conditions as field · operator · value, ANDed, with a dry run of the saved
+  rule) → **Delivery** (channel types as checkboxes; each expands to its existing channels or creates
+  one; saving routes the rule's alerts to the chosen channels through their `ruleIds`). A new rule
+  starts empty; a stored one opens populated, and every member the flow does not edit is kept. Ops:
+  `listSources`, `getSource`, `analyzeTriggerSources`, `createTrigger`, `updateTrigger`, `getTrigger`,
+  `testTrigger`, `muteTrigger`, `snoozeTrigger`, `listChannelTypes`, `listChannels`, `createChannel`,
+  `updateChannel`, `testChannel`.
 - **Alert inbox (D/M).** List newest-first, acknowledge, snooze/unsnooze, resolve, and record
   alert-quality feedback; live via SSE. Ops: `listAlerts`, `getAlert`, `acknowledgeAlert`,
   `snoozeAlert`, `unsnoozeAlert`, `resolveAlert`, `setAlertFeedback`, `streamAlerts`. (M: primary
