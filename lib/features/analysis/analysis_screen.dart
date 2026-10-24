@@ -734,6 +734,7 @@ class _AssessmentsPanelState extends ConsumerState<AssessmentsPanel> {
               width: 220,
               child: DropdownButtonFormField<String?>(
                 key: const Key('analysis.assessments.cadence'),
+                isExpanded: true,
                 style: Theme.of(context).textTheme.bodyMedium,
                 initialValue: _cadence,
                 items: <DropdownMenuItem<String?>>[

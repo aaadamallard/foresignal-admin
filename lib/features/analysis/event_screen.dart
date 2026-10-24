@@ -362,6 +362,7 @@ class _EventEditCardState extends ConsumerState<EventEditCard> {
                 : 'Setting it records an override in the log.',
             field: DropdownButtonFormField<String>(
               key: const Key('event.severityField'),
+              isExpanded: true,
               style: Theme.of(context).textTheme.bodyMedium,
               initialValue: _severity,
               items: <DropdownMenuItem<String>>[

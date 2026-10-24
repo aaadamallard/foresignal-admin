@@ -39,9 +39,13 @@ class StatusLabel extends StatelessWidget {
           Icon(icon ?? tone.icon, size: 16, color: tone.colorOf(context)),
           const SizedBox(width: 6),
         ],
-        Text(
-          this.label,
-          style: TextStyle(color: tone.colorOf(context), fontWeight: FontWeight.w600),
+        Flexible(
+          child: Text(
+            this.label,
+            maxLines: 1,
+            overflow: TextOverflow.ellipsis,
+            style: TextStyle(color: tone.colorOf(context), fontWeight: FontWeight.w600),
+          ),
         ),
       ],
     );

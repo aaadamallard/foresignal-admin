@@ -171,13 +171,17 @@ class _SidebarItem extends StatelessWidget {
               children: <Widget>[
                 Icon(section.icon, size: 18, color: color),
                 const SizedBox(width: 12),
-                Text(
-                  section.label,
-                  style: TextStyle(
-                    color: selected
-                        ? AdminPalette.of(context).primaryText
-                        : AdminPalette.of(context).text.withValues(alpha: 0.85),
-                    fontWeight: selected ? FontWeight.w600 : FontWeight.w400,
+                Flexible(
+                  child: Text(
+                    section.label,
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                    style: TextStyle(
+                      color: selected
+                          ? AdminPalette.of(context).primaryText
+                          : AdminPalette.of(context).text.withValues(alpha: 0.85),
+                      fontWeight: selected ? FontWeight.w600 : FontWeight.w400,
+                    ),
                   ),
                 ),
               ],
@@ -200,7 +204,14 @@ class _Brand extends StatelessWidget {
       children: <Widget>[
         Icon(Icons.radio_button_checked, color: AdminPalette.of(context).primary, size: 22),
         const SizedBox(width: 8),
-        const Text('ForeSignal', style: TextStyle(fontWeight: FontWeight.w700, fontSize: 16)),
+        const Flexible(
+          child: Text(
+            'ForeSignal',
+            maxLines: 1,
+            overflow: TextOverflow.ellipsis,
+            style: TextStyle(fontWeight: FontWeight.w700, fontSize: 16),
+          ),
+        ),
       ],
     );
   }
