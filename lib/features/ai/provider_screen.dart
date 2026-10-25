@@ -273,13 +273,13 @@ class _ProviderFormState extends ConsumerState<ProviderForm> {
                     field: DropdownButtonFormField<String>(
                       key: const Key('provider.type'),
                       initialValue: _d.choice,
-                      items: <DropdownMenuItem<String>>[
+                      items: withCurrentItem(<DropdownMenuItem<String>>[
                         for (final c in llmProviderChoices)
                           DropdownMenuItem<String>(
                             value: c,
                             child: Text(llmProviderChoiceLabel(c)),
                           ),
-                      ],
+                      ], _d.choice),
                       onChanged: _d.creating
                           ? (c) => setState(() {
                               if (c == null) {
@@ -422,11 +422,11 @@ class _ProviderFormState extends ConsumerState<ProviderForm> {
                     field: DropdownButtonFormField<String?>(
                       key: const Key('provider.effort'),
                       initialValue: _d.effort,
-                      items: <DropdownMenuItem<String?>>[
+                      items: withCurrentItem(<DropdownMenuItem<String?>>[
                         const DropdownMenuItem<String?>(value: null, child: Text('Default')),
                         for (final e in llmEffortLevels)
                           DropdownMenuItem<String?>(value: e, child: Text(e)),
-                      ],
+                      ], _d.effort),
                       onChanged: (e) => setState(() {
                         _d.effort = e;
                         _write = const WriteIdle();
@@ -623,7 +623,7 @@ class LlmTestResultView extends StatelessWidget {
             '${chat.inputTokens ?? 0} in · ${chat.outputTokens ?? 0} out'
                 '${chat.cachedTokens == null ? '' : ' · ${chat.cachedTokens} cached'}',
           ),
-          if (chat.stopReason case final s?) MapEntry<String, Object>('Stop reason', s.name),
+          if (chat.stopReason case final s?) MapEntry<String, Object>('Stop reason', wireShown(s, chat, 'stopReason')),
           if (chat.text case final t?) MapEntry<String, Object>('Reply', t),
         ],
         if (embedding != null) ...<MapEntry<String, Object>>[

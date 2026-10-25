@@ -276,11 +276,11 @@ class _RecipeFormState extends ConsumerState<RecipeForm> {
               key: Key('recipe.join.$i.sameRegion'),
               style: Theme.of(context).textTheme.bodyMedium,
               initialValue: j.sameRegion,
-              items: const <DropdownMenuItem<String?>>[
+              items: withCurrentItem(const <DropdownMenuItem<String?>>[
                 DropdownMenuItem<String?>(child: Text('Not required')),
                 DropdownMenuItem<String?>(value: 'admin1', child: Text('First-level region')),
                 DropdownMenuItem<String?>(value: 'country', child: Text('Country')),
-              ],
+              ], j.sameRegion),
               onChanged: (v) {
                 j.sameRegion = v;
                 _changed();
@@ -312,11 +312,11 @@ class _RecipeFormState extends ConsumerState<RecipeForm> {
               key: Key('recipe.join.$i.role'),
               style: Theme.of(context).textTheme.bodyMedium,
               initialValue: j.role,
-              items: <DropdownMenuItem<String?>>[
+              items: withCurrentItem(<DropdownMenuItem<String?>>[
                 const DropdownMenuItem<String?>(child: Text('Default (supporting)')),
                 for (final r in memberRoles)
                   DropdownMenuItem<String?>(value: r, child: Text(wireText(r))),
-              ],
+              ], j.role),
               onChanged: (v) {
                 j.role = v;
                 _changed();
@@ -406,10 +406,10 @@ class _RecipeFormState extends ConsumerState<RecipeForm> {
                           key: const Key('recipe.type'),
                           style: Theme.of(context).textTheme.bodyMedium,
                           initialValue: _d.type,
-                          items: <DropdownMenuItem<String>>[
+                          items: withCurrentItem(<DropdownMenuItem<String>>[
                             for (final t in recipeTypes)
                               DropdownMenuItem<String>(value: t, child: Text(wireText(t))),
-                          ],
+                          ], _d.type),
                           onChanged: (v) {
                             _d.type = v ?? _d.type;
                             _changed();

@@ -250,10 +250,10 @@ class _CycleFormState extends ConsumerState<CycleForm> {
                       key: const Key('cycle.cadence'),
                       style: Theme.of(context).textTheme.bodyMedium,
                       initialValue: _d.cadence,
-                      items: <DropdownMenuItem<String>>[
+                      items: withCurrentItem(<DropdownMenuItem<String>>[
                         for (final c in const <String>['daily', 'weekly', 'monthly'])
                           DropdownMenuItem<String>(value: c, child: Text(wireText(c))),
-                      ],
+                      ], _d.cadence),
                       onChanged: (v) {
                         _d.cadence = v ?? _d.cadence;
                         _changed();
@@ -357,11 +357,11 @@ class _CycleFormState extends ConsumerState<CycleForm> {
                       key: const Key('cycle.notifyMinPriority'),
                       style: Theme.of(context).textTheme.bodyMedium,
                       initialValue: _d.notifyMinPriority,
-                      items: <DropdownMenuItem<String?>>[
+                      items: withCurrentItem(<DropdownMenuItem<String?>>[
                         const DropdownMenuItem<String?>(child: Text('Default')),
                         for (final p in const <String>['low', 'normal', 'high'])
                           DropdownMenuItem<String?>(value: p, child: Text(wireText(p))),
-                      ],
+                      ], _d.notifyMinPriority),
                       onChanged: (v) {
                         _d.notifyMinPriority = v;
                         _changed();

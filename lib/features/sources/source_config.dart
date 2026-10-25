@@ -206,9 +206,9 @@ class SourceConfigDraft {
     statsEnabled = s.statsEnabled ?? true;
     statsIncludePrivate = s.statsIncludePrivate ?? false;
     private = s.private ?? d.private ?? false;
-    regionTagging = s.regionTagging?.name;
-    egress = s.egress?.name;
-    reliability = s.reliability?.name;
+    regionTagging = wireOfOrNull(s.regionTagging, s, 'regionTagging');
+    egress = wireOfOrNull(s.egress, s, 'egress');
+    reliability = wireOfOrNull(s.reliability, s, 'reliability');
     params = <ParamDraft>[
       for (final spec in d.params)
         ParamDraft(
@@ -300,7 +300,7 @@ class SourceConfigDraft {
   bool get polled => _d.mode == SourceDescriptorModeEnum.polling;
 
   /// Whether retention is per source (STANDARD history).
-  bool get standardHistory => _d.historyTier?.name != 'TRACK';
+  bool get standardHistory => wireOfOrNull(_d.historyTier, _d, 'historyTier') != 'TRACK';
 
   /// Whether the source pays per request, so a monthly cap applies.
   bool get paid => _d.defaultBudget.monthlyCapUsd != null || _s.budget.monthlyCapUsd != null;
@@ -526,15 +526,15 @@ class SourceConfigDraft {
       update.private = private;
       changed = true;
     }
-    if (regionTagging != null && regionTagging != _s.regionTagging?.name) {
+    if (regionTagging != null && regionTagging != wireOfOrNull(_s.regionTagging, _s, 'regionTagging')) {
       update.regionTagging = SourceSettingsUpdateRegionTaggingEnum.valueOf(regionTagging!);
       changed = true;
     }
-    if (egressOverridable && egress != null && egress != _s.egress?.name) {
+    if (egressOverridable && egress != null && egress != wireOfOrNull(_s.egress, _s, 'egress')) {
       update.egress = SourceSettingsUpdateEgressEnum.valueOf(egress!);
       changed = true;
     }
-    if (reliability != null && reliability != _s.reliability?.name) {
+    if (reliability != null && reliability != wireOfOrNull(_s.reliability, _s, 'reliability')) {
       update.reliability = SourceSettingsUpdateReliabilityEnum.valueOf(reliability!);
       changed = true;
     }
@@ -596,10 +596,10 @@ class SourceConfigDraft {
       if (sent.statsIncludePrivate != null && sent.statsIncludePrivate != s.statsIncludePrivate)
         'stats for private records',
       if (sent.private != null && sent.private != s.private) 'private',
-      if (sent.regionTagging != null && sent.regionTagging!.name != s.regionTagging?.name)
+      if (sent.regionTagging != null && wireOf(sent.regionTagging!) != wireOfOrNull(s.regionTagging, s, 'regionTagging'))
         'region tagging',
-      if (sent.egress != null && sent.egress!.name != s.egress?.name) 'egress',
-      if (sent.reliability != null && sent.reliability!.name != s.reliability?.name) 'reliability',
+      if (sent.egress != null && wireOf(sent.egress!) != wireOfOrNull(s.egress, s, 'egress')) 'egress',
+      if (sent.reliability != null && wireOf(sent.reliability!) != wireOfOrNull(s.reliability, s, 'reliability')) 'reliability',
       if (sent.params != null &&
           !_sameJson(
             <String, Object?>{for (final e in sent.params!.entries) e.key: e.value?.value},

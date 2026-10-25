@@ -440,11 +440,11 @@ class _EventsPanelState extends ConsumerState<EventsPanel> {
                 key: const Key('analysis.events.type'),
                 style: Theme.of(context).textTheme.bodyMedium,
                 initialValue: _filter.type,
-                items: <DropdownMenuItem<String?>>[
+                items: withCurrentItem(<DropdownMenuItem<String?>>[
                   const DropdownMenuItem<String?>(value: null, child: Text('All types')),
                   for (final t in recipeTypes)
                     DropdownMenuItem<String?>(value: t, child: Text(wireText(t))),
-                ],
+                ], _filter.type),
                 onChanged: (t) => setState(
                   () => _filter = EventFilter(statuses: _filter.statuses, type: t),
                 ),
@@ -751,11 +751,11 @@ class _AssessmentsPanelState extends ConsumerState<AssessmentsPanel> {
                 isExpanded: true,
                 style: Theme.of(context).textTheme.bodyMedium,
                 initialValue: _cadence,
-                items: <DropdownMenuItem<String?>>[
+                items: withCurrentItem(<DropdownMenuItem<String?>>[
                   const DropdownMenuItem<String?>(value: null, child: Text('Every cadence')),
                   for (final c in const <String>['daily', 'weekly', 'monthly', 'on-demand'])
                     DropdownMenuItem<String?>(value: c, child: Text(wireText(c))),
-                ],
+                ], _cadence),
                 onChanged: (c) => setState(() {
                   _cadence = c;
                   _openId = null;

@@ -231,7 +231,7 @@ class FetchLogTable extends StatelessWidget {
   /// The fetches, newest first.
   final List<FetchLogEntry> entries;
 
-  static StatusTone _tone(FetchLogEntryStatusEnum s) => switch (s.name) {
+  static StatusTone _tone(FetchLogEntryStatusEnum s) => switch (wireOf(s)) {
     'OK' => StatusTone.ok,
     'NOT_MODIFIED' => StatusTone.neutral,
     'FAILED' => StatusTone.error,
@@ -245,11 +245,11 @@ class FetchLogTable extends StatelessWidget {
       empty: 'No fetches recorded yet.',
       columns: <TableColumnSpec<FetchLogEntry>>[
         TableColumnSpec<FetchLogEntry>(label: 'Time', cell: (f) => Text(utcText(f.startedAt))),
-        TableColumnSpec<FetchLogEntry>(label: 'Trigger', cell: (f) => Text(f.trigger.name)),
+        TableColumnSpec<FetchLogEntry>(label: 'Trigger', cell: (f) => Text(wireShown(f.trigger, f, 'trigger'))),
         TableColumnSpec<FetchLogEntry>(
           label: 'Status',
           cell: (f) => StatusLabel(
-            label: f.status.name,
+            label: wireShown(f.status, f, 'status'),
             tone: _tone(f.status),
             showIcon: false,
             tooltip: f.error,
@@ -277,7 +277,7 @@ class FetchLogTable extends StatelessWidget {
 }
 
 /// The verdict tone of a doctor report.
-StatusTone doctorTone(DoctorReportStatusEnum status) => switch (status.name) {
+StatusTone doctorTone(DoctorReportStatusEnum status) => switch (wireOf(status)) {
   'OK' => StatusTone.ok,
   'DEGRADED_INFO' => StatusTone.warning,
   _ => StatusTone.error,
@@ -293,7 +293,7 @@ class DoctorReportView extends StatelessWidget {
   /// The report.
   final DoctorReport report;
 
-  static StatusTone _severity(Severity s) => switch (s.name) {
+  static StatusTone _severity(Severity s) => switch (wireOf(s)) {
     'critical' => StatusTone.error,
     'warning' => StatusTone.warning,
     _ => StatusTone.neutral,
@@ -308,20 +308,20 @@ class DoctorReportView extends StatelessWidget {
       children: <Widget>[
         ResultPanel(
           key: const Key('test.doctorReport'),
-          title: switch (r.status.name) {
+          title: switch (wireOf(r.status, r, 'status')) {
             'OK' => 'Doctor: no problems found',
             'DEGRADED_INFO' => 'Doctor: working, with notes',
             _ => 'Doctor: broken',
           },
           tone: doctorTone(r.status),
           details: <MapEntry<String, Object>>[
-            MapEntry<String, Object>('Run', '${utcText(r.createdAt)} (${r.trigger.name})'),
+            MapEntry<String, Object>('Run', '${utcText(r.createdAt)} (${wireShown(r.trigger, r, 'trigger')})'),
             MapEntry<String, Object>('Findings', '${r.findings.length}'),
             if (r.probe case final p?)
               MapEntry<String, Object>(
                 'Probe',
                 p.skipped
-                    ? 'skipped${p.skipReason == null ? '' : ' (${p.skipReason!.name})'}'
+                    ? 'skipped${p.skipReason == null ? '' : ' (${wireShown(p.skipReason!, p, 'skipReason')})'}'
                     : '${p.status ?? '—'}${p.httpStatus == null ? '' : ', HTTP ${p.httpStatus}'}'
                           '${p.records == null ? '' : ', ${p.records} records'}',
               ),
@@ -331,9 +331,9 @@ class DoctorReportView extends StatelessWidget {
         for (final f in r.findings) ...<Widget>[
           const SizedBox(height: 12),
           SectionCard(
-            title: f.code.name,
+            title: wireShown(f.code, f, 'code'),
             actions: <Widget>[
-              StatusChip(label: f.severity.name, tone: _severity(f.severity)),
+              StatusChip(label: wireShown(f.severity, f, 'severity'), tone: _severity(f.severity)),
               if (f.heuristic ?? false)
                 const StatusChip(label: 'heuristic', tone: StatusTone.neutral),
             ],
@@ -412,7 +412,7 @@ class UsageSeriesView extends StatelessWidget {
           ),
         const SizedBox(height: 16),
         SectionCard(
-          title: 'Requests per ${series.resolution.name}',
+          title: 'Requests per ${wireShown(series.resolution, series, 'resolution')}',
           child: points.isEmpty
               ? Text('No requests in this window.', style: TextStyle(color: palette.muted))
               : SizedBox(

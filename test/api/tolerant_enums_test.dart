@@ -72,6 +72,34 @@ void main() {
     expect(toJsonMap(tolerantSerializers, window)['days'], <Object?>['MON', 'HOL']);
   });
 
+  test('wireShown gives the wire name unchanged, and the sent value for an unknown one', () {
+    final event = fromJsonMap<IntelligenceEvent>(tolerantSerializers, _eventWithUnknowns());
+
+    expect(wireShown(event.type, event, 'type'), PreviewAnalysis().events.values.first['type']);
+    expect(wireShown(event.status, event, 'status'), 'quarantined');
+    expect(wireShown(event.status), 'Unknown value');
+    expect(wireShownOrNull(null), isNull);
+    expect(wireOfOrNull(event.status, event, 'status'), 'quarantined');
+    // The Dart name is not the wire name: openaiCompatible is `openai-compatible`.
+    expect(wireShown(LlmProviderTypeEnum.openaiCompatible), 'openai-compatible');
+  });
+
+  test('wireListShown shows a list with an unknown value as the server sent it', () {
+    final window = fromJsonMap<ActiveWindowWindowsInner>(tolerantSerializers, <String, Object?>{
+      'days': <Object?>['MON', 'HOL'],
+      'start': '08:00',
+      'end': '17:00',
+    });
+    final known = fromJsonMap<ActiveWindowWindowsInner>(tolerantSerializers, <String, Object?>{
+      'days': <Object?>['MON', 'TUE'],
+      'start': '08:00',
+      'end': '17:00',
+    });
+
+    expect(wireListShown(window.days, window, 'days'), 'MON, HOL');
+    expect(wireListShown(known.days, known, 'days'), 'MON, TUE');
+  });
+
   test('a failed read does not leave the next one confused', () {
     expect(
       () => fromJsonMap<IntelligenceEvent>(tolerantSerializers, <String, Object?>{'id': 1}),

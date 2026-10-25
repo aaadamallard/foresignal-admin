@@ -155,7 +155,7 @@ class _CustomSourcesScreenState extends ConsumerState<CustomSourcesScreen> {
               ),
               TableColumnSpec<IngestFormatInfo>(
                 label: 'Methods',
-                cell: (f) => Text(f.methods?.map((m) => m.name).join(', ') ?? 'POST'),
+                cell: (f) => Text((f.methods == null ? null : wireListShown(f.methods!, f, 'methods')) ?? 'POST'),
               ),
               TableColumnSpec<IngestFormatInfo>(
                 label: 'Verifiers',

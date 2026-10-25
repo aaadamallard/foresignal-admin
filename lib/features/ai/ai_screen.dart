@@ -48,7 +48,7 @@ StatusTone llmStatusTone(LlmProviderStatusEnum status) => switch (status) {
 
 /// An LLM provider's status as words.
 String llmStatusText(LlmProviderStatusEnum status) {
-  final name = status.name;
+  final name = wireShown(status);
   return '${name[0].toUpperCase()}${name.substring(1)}';
 }
 
@@ -57,7 +57,7 @@ String llmTypeText(LlmProviderTypeEnum type) => switch (type) {
   LlmProviderTypeEnum.anthropic => 'Anthropic',
   LlmProviderTypeEnum.openaiCompatible => 'OpenAI-compatible',
   LlmProviderTypeEnum.ollama => 'Ollama',
-  _ => type.name,
+  _ => wireShown(type),
 };
 
 /// AI configuration (Screens §D, desktop): providers, the roles they serve,
@@ -150,10 +150,7 @@ class ProvidersPanel extends ConsumerWidget {
           TableColumnSpec<LlmProvider>(
             label: 'Roles',
             cell: (p) => Text(
-              (p.roles ?? const <LlmProviderRolesEnum>[])
-                  .map((r) => r.name)
-                  .join(', ')
-                  .ifEmpty('—'),
+              wireListShown(p.roles ?? const <LlmProviderRolesEnum>[], p, 'roles').ifEmpty('—'),
             ),
           ),
           TableColumnSpec<LlmProvider>(
@@ -352,7 +349,7 @@ class _LlmSettingsFormState extends ConsumerState<LlmSettingsForm> {
               style: Theme.of(context).textTheme.bodyMedium,
               value: _draft.roles[role],
               underline: const SizedBox.shrink(),
-              items: <DropdownMenuItem<String?>>[
+              items: withCurrentItem(<DropdownMenuItem<String?>>[
                 DropdownMenuItem<String?>(
                   value: null,
                   child: Text('Not assigned', style: TextStyle(color: muted)),
@@ -369,7 +366,7 @@ class _LlmSettingsFormState extends ConsumerState<LlmSettingsForm> {
                       style: role.refusal(p) == null ? null : TextStyle(color: muted),
                     ),
                   ),
-              ],
+              ], _draft.roles[role]),
               onChanged: (id) => _changed(() => _draft.roles[role] = id),
             ),
           ),
@@ -687,10 +684,10 @@ class _LlmUsagePanelState extends ConsumerState<LlmUsagePanel> {
                 key: const Key('ai.usage.window'),
                 isExpanded: true,
                 initialValue: _window,
-                items: <DropdownMenuItem<UsageWindow>>[
+                items: withCurrentItem(<DropdownMenuItem<UsageWindow>>[
                   for (final w in UsageWindow.values)
                     DropdownMenuItem<UsageWindow>(value: w, child: Text(w.label)),
-                ],
+                ], _window),
                 onChanged: (w) => setState(() => _window = w ?? _window),
               ),
             ),

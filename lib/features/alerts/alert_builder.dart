@@ -528,9 +528,9 @@ class _AlertBuilderState extends ConsumerState<AlertBuilder> with WriteTracking<
               initialValue: _d.rule.severity,
               isExpanded: true,
               decoration: const InputDecoration(labelText: 'Severity', isDense: true),
-              items: <DropdownMenuItem<String>>[
+              items: withCurrentItem(<DropdownMenuItem<String>>[
                 for (final s in severities) DropdownMenuItem<String>(value: s, child: severityLabel(s)),
-              ],
+              ], _d.rule.severity),
               onChanged: (v) => setState(() => _d.rule.severity = v ?? _d.rule.severity),
             ),
           ),

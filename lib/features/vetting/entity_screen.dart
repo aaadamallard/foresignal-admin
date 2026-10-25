@@ -89,11 +89,11 @@ class _EntitiesPanelState extends ConsumerState<EntitiesPanel> {
                 style: Theme.of(context).textTheme.bodyMedium,
                 initialValue: _query.type,
                 decoration: const InputDecoration(isDense: true),
-                items: <DropdownMenuItem<String?>>[
+                items: withCurrentItem(<DropdownMenuItem<String?>>[
                   const DropdownMenuItem<String?>(child: Text('All types')),
                   for (final t in entityTypes)
                     DropdownMenuItem<String?>(value: t, child: Text(wireText(t))),
-                ],
+                ], _query.type),
                 onChanged: (t) => setState(() => _query = EntityQuery(text: _text.text, type: t)),
               ),
             ),
@@ -663,10 +663,10 @@ class _EntityKeysCardState extends ConsumerState<EntityKeysCard> {
                   style: Theme.of(context).textTheme.bodyMedium,
                   initialValue: _draft.keyType,
                   decoration: const InputDecoration(labelText: 'Key type'),
-                  items: <DropdownMenuItem<String>>[
+                  items: withCurrentItem(<DropdownMenuItem<String>>[
                     for (final t in entityKeyTypes)
                       DropdownMenuItem<String>(value: t, child: Text(t)),
-                  ],
+                  ], _draft.keyType),
                   onChanged: (t) => setState(() => _draft.keyType = t ?? _draft.keyType),
                 ),
               ),
@@ -1097,11 +1097,11 @@ class _OwnershipExplorerState extends ConsumerState<OwnershipExplorer> {
                 style: Theme.of(context).textTheme.bodyMedium,
                 initialValue: _draft.direction,
                 decoration: const InputDecoration(labelText: 'Direction'),
-                items: const <DropdownMenuItem<String>>[
+                items: withCurrentItem(const <DropdownMenuItem<String>>[
                   DropdownMenuItem<String>(value: 'both', child: Text('Both ways')),
                   DropdownMenuItem<String>(value: 'out', child: Text('Toward owners')),
                   DropdownMenuItem<String>(value: 'in', child: Text('Toward holdings')),
-                ],
+                ], _draft.direction),
                 onChanged: (v) => setState(() => _draft.direction = v ?? 'both'),
               ),
             ),

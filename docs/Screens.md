@@ -3,12 +3,23 @@
 Written descriptions of the screens the admin app needs, grouped by function. Each screen names the
 backend **operationId**s it uses (the only backend contract). Platform tags: **D** = desktop, **M** =
 mobile companion, **D/M** = both (often fuller on desktop). This is the spec the `design/` mocks and
-the `prompts/` will build against. Date: 2026-10-24.
+the `prompts/` will build against. Date: 2026-10-25.
 
 **Design intent.** This is a control plane, not a data viewer. Screens are dense, form-and-table
 driven, status-forward. The recurring pattern for anything configurable is **see state → edit → test →
 confirm it worked (health/outcome)** — never "admire the data." Record previews, where they appear, are
 small and exist only to prove a source works.
+
+**Navigation.** The home of each section is its left-nav destination (Connect, Sources, Usage, AI,
+Analysis, Vetting, Forecasting, Alerts, Notifications, Serving, System) and that page's tabs; these
+have no Back control. Every page reached from another — a detail, a sub-view, an editor — has a
+**‹ Back** link at the top, above its breadcrumbs, drawn by the app shell so that a page still loading
+or one that failed to load has it too. Back returns to the previous page, or to the nearest enclosing
+page when there is none (an event goes back to Analysis).
+
+**Values the app does not know.** The API's value lists grow. A value a newer server sends that this
+build has not seen never fails a page: it is shown as the server sent it, a dropdown keeps it selected
+alongside the known choices, and saving sends it back unchanged.
 
 ---
 
@@ -66,15 +77,23 @@ small and exist only to prove a source works.
 ## E. Analysis, correlation & feed vetting
 
 - **Correlation recipes (D).** List, edit, and test the intel correlation recipes; inspect and manage
-  canonical intel events (cross-source corroboration — members added/merged). Ops: `listIntelRecipes`,
-  `updateRecipe`, `testRecipe`, `listIntelEvents`, `getIntelEvent`, `updateIntelEvent`,
-  `addIntelEventMember`, `removeIntelEventMember`, `mergeIntelEvent`.
+  canonical intel events (cross-source corroboration — members added/merged). An event's change log
+  shows every action as the server wrote it (`created`, `member_added`, `upgraded`, …). Ops:
+  `listIntelRecipes`, `updateRecipe`, `testRecipe`, `listIntelEvents`, `getIntelEvent`,
+  `updateIntelEvent`, `addIntelEventMember`, `removeIntelEventMember`, `mergeIntelEvent`.
 - **Analysis cycles (D).** Configure and run the scheduled AI analysis cycles; review runs and
   maintenance. Ops: `listAnalysisCycles`, `createAnalysisCycle`, `updateAnalysisCycle`,
   `deleteAnalysisCycle`, `runAnalysisCycle`, `listCycleRuns`, `getCycleRun`, `runAnalysisMaintenance`.
 - **Assessment feedback & quality (D).** Review assessments and submit quality feedback that drives
-  calibration. Ops: `listAssessments`, `getLatestAssessment`, `submitAssessmentFeedback`,
-  `getIntelBoard`.
+  calibration. The Analysis → Overview board lists the top situations; each row opens that situation.
+  Ops: `listAssessments`, `getLatestAssessment`, `submitAssessmentFeedback`, `getIntelBoard`.
+- **Situation (D).** One situation, read-only operational context, opened from the board's Top
+  situations: **why it is warning** (the server's summary, its severity basis and status basis, the
+  corroborated and uncorroborated member counts, signal families and regions), the **current
+  assessment** (the newest one's headline and key judgments), the **members and evidence** grouped by
+  signal family with each member's role, severity and corroboration, and the **timeline** newest
+  first. No map and no edits. Ops: `getSituation`, `listSituationMembers`, `listSituationAssessments`,
+  `getSituationTimeline`.
 - **Social & news vetting (D).** The "strip the post, keep the fact" surface: configure which platforms
   are collected and how, review the **claims** AI extracted (not the raw posts), narratives, cues and
   lead-times, and import source reputation / media ratings. Ops: `getSocialSettings`,
@@ -187,7 +206,8 @@ small and exist only to prove a source works.
 
 A focused operator-on-the-go surface built from the shared code: the **Alert inbox** + push, the
 **Notification inbox**, **source on/off + health glance**, and **native-push device registration**. No
-configuration-heavy screens; those stay desktop-only via platform-conditional routing.
+configuration-heavy screens; those stay desktop-only via platform-conditional routing. Its detail
+pages (one alert, one notification) have the same **‹ Back** link as the desktop's.
 
 ---
 

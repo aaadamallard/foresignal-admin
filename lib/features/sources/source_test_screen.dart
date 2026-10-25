@@ -277,7 +277,7 @@ class _ProbePanelState extends ConsumerState<ProbePanel> {
   @override
   Widget build(BuildContext context) {
     final streaming =
-        ref.watch(sourceDetailProvider(widget.sourceId)).value?.descriptor.mode.name == 'streaming';
+        wireOfOrNull(ref.watch(sourceDetailProvider(widget.sourceId)).value?.descriptor.mode) == 'streaming';
     final muted = AdminPalette.of(context).muted;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -446,10 +446,10 @@ class _DoctorPanelState extends ConsumerState<DoctorPanel> {
             }),
             columns: <TableColumnSpec<DoctorReport>>[
               TableColumnSpec<DoctorReport>(label: 'Time', cell: (r) => Text(utcText(r.createdAt))),
-              TableColumnSpec<DoctorReport>(label: 'Trigger', cell: (r) => Text(r.trigger.name)),
+              TableColumnSpec<DoctorReport>(label: 'Trigger', cell: (r) => Text(wireShown(r.trigger, r, 'trigger'))),
               TableColumnSpec<DoctorReport>(
                 label: 'Status',
-                cell: (r) => StatusLabel(label: r.status.name, tone: doctorTone(r.status)),
+                cell: (r) => StatusLabel(label: wireShown(r.status, r, 'status'), tone: doctorTone(r.status)),
               ),
               TableColumnSpec<DoctorReport>(
                 label: 'Findings',

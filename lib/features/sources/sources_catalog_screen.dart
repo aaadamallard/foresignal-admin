@@ -217,7 +217,7 @@ class _SourcesCatalogScreenState extends ConsumerState<SourcesCatalogScreen> {
               for (final mode in SourceSummaryModeEnum.values)
                 // The fallback for values the app does not know is not a mode to filter by.
                 if (!isUnknownEnum(mode))
-                  FilterOption<SourceSummaryModeEnum>(mode, _capitalized(mode.name)),
+                  FilterOption<SourceSummaryModeEnum>(mode, _capitalized(wireOf(mode))),
             ],
             onChanged: (v) => setState(() => _filter = _filter.copyWith(mode: () => v)),
           ),

@@ -533,7 +533,7 @@ class PushStep extends ConsumerWidget {
                   setup.providers.isEmpty
                       ? 'None configured'
                       : setup.providers
-                            .map((p) => '${p.type.name}${p.enabled ? '' : ' (off)'}')
+                            .map((p) => '${wireShown(p.type, p, 'type')}${p.enabled ? '' : ' (off)'}')
                             .join(', '),
                 ),
                 MapEntry<String, Object>('Registered devices', '${setup.devices.length}'),

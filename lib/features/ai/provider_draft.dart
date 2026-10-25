@@ -57,7 +57,7 @@ class ProviderDraft {
   /// A draft of [provider], as last read.
   ProviderDraft.edit(LlmProvider provider)
     : stored = provider,
-      type = provider.type.name == 'openaiCompatible' ? 'openai-compatible' : provider.type.name,
+      type = wireOf(provider.type, provider, 'type'),
       enabled = provider.enabled,
       local = _option(provider, 'local') == true {
     text['id'] = provider.id;

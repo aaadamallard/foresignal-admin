@@ -16,7 +16,7 @@ class HealthLabel extends StatelessWidget {
   final String? tooltip;
 
   /// The tone for [status].
-  static StatusTone toneOf(HealthStatus status) => switch (status.name) {
+  static StatusTone toneOf(HealthStatus status) => switch (wireOf(status)) {
     'healthy' => StatusTone.ok,
     'degraded' => StatusTone.warning,
     'failing' => StatusTone.error,
@@ -28,7 +28,7 @@ class HealthLabel extends StatelessWidget {
     if (isUnknownEnum(status)) {
       return 'Unknown value';
     }
-    final name = status.name;
+    final name = wireOf(status);
     return name.isEmpty ? name : '${name[0].toUpperCase()}${name.substring(1)}';
   }
 

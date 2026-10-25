@@ -189,8 +189,8 @@ class SourceOverview extends StatelessWidget {
             MapEntry<String, Object>('Kind', d.kinds.join(', ')),
             if (d.description case final text? when text.isNotEmpty)
               MapEntry<String, Object>('Description', text),
-            MapEntry<String, Object>('Mode', d.mode.name),
-            if (d.historyTier case final tier?) MapEntry<String, Object>('History', tier.name),
+            MapEntry<String, Object>('Mode', wireShown(d.mode, d, 'mode')),
+            if (d.historyTier case final tier?) MapEntry<String, Object>('History', wireShown(tier, d, 'historyTier')),
             MapEntry<String, Object>(
               'Requires credentials',
               d.credentialFields.any((f) => f.required_)
@@ -233,17 +233,17 @@ class SourceOverview extends StatelessWidget {
             if (terms?.name case final name?) MapEntry<String, Object>('Terms', name),
             if (d.termsUrl case final url?) MapEntry<String, Object>('Terms URL', url),
             if (d.access case final access?) ...<MapEntry<String, Object>>[
-              MapEntry<String, Object>('Access route', access.route.name),
-              if (access.fragility case final f?) MapEntry<String, Object>('Fragility', f.name),
+              MapEntry<String, Object>('Access route', wireShown(access.route, access, 'route')),
+              if (access.fragility case final f?) MapEntry<String, Object>('Fragility', wireShown(f, access, 'fragility')),
             ],
             MapEntry<String, Object>(
               'Egress',
-              '${s.egress?.name ?? d.egress?.name ?? 'OPEN'}'
+              '${wireShownOrNull(s.egress, s, 'egress') ?? wireShownOrNull(d.egress, d, 'egress') ?? 'OPEN'}'
                   '${d.egressOverridable == true ? ' (overridable)' : ''}',
             ),
             MapEntry<String, Object>(
               'Reliability',
-              s.reliability?.name ?? d.reliability?.name ?? 'F',
+              wireShownOrNull(s.reliability, s, 'reliability') ?? wireShownOrNull(d.reliability, d, 'reliability') ?? 'F',
             ),
             MapEntry<String, Object>(
               'Private',
@@ -490,9 +490,9 @@ class _SourceConfigFormState extends ConsumerState<SourceConfigForm> {
       initialValue: value,
       isExpanded: true,
       decoration: InputDecoration(errorText: _errors[key]),
-      items: <DropdownMenuItem<String?>>[
+      items: withCurrentItem(<DropdownMenuItem<String?>>[
         for (final o in options) DropdownMenuItem<String?>(value: o.value, child: Text(o.label)),
-      ],
+      ], value),
       onChanged: (v) => _edit(() => onChanged(v), key),
     );
   }
@@ -658,7 +658,7 @@ class _SourceConfigFormState extends ConsumerState<SourceConfigForm> {
               if (draft.egressOverridable)
                 LabeledField(
                   label: 'Egress',
-                  help: 'Descriptor default ${d.egress?.name ?? 'OPEN'}',
+                  help: 'Descriptor default ${wireShownOrNull(d.egress, d, 'egress') ?? 'OPEN'}',
                   field: _dropdown(
                     'egress',
                     draft.egress,
@@ -672,7 +672,7 @@ class _SourceConfigFormState extends ConsumerState<SourceConfigForm> {
                 ),
               LabeledField(
                 label: 'Reliability',
-                help: 'Admiralty grade; descriptor default ${d.reliability?.name ?? 'F'}',
+                help: 'Admiralty grade; descriptor default ${wireShownOrNull(d.reliability, d, 'reliability') ?? 'F'}',
                 field: _dropdown(
                   'reliability',
                   draft.reliability,

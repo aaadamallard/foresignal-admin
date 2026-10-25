@@ -166,15 +166,15 @@ class WireDropdown extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => DropdownButtonFormField<String>(
-    initialValue: values.contains(value) ? value : null,
+    initialValue: value == null || value!.isEmpty ? null : value,
     isExpanded: true,
     style: Theme.of(context).textTheme.bodyMedium,
     hint: hint == null ? null : Text(hint!),
     decoration: InputDecoration(isDense: true, errorText: error),
-    items: <DropdownMenuItem<String>>[
+    items: withCurrentItem(<DropdownMenuItem<String>>[
       for (final v in values)
         DropdownMenuItem<String>(value: v, child: Text(labels?[v] ?? wireText(v))),
-    ],
+    ], value == null || value!.isEmpty ? null : value),
     onChanged: (v) {
       if (v != null) {
         onChanged(v);

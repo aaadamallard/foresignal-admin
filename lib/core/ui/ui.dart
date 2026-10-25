@@ -5,6 +5,7 @@ export 'async_view.dart';
 export 'back_link.dart';
 export 'buttons.dart';
 export 'data_table_card.dart';
+export 'dropdown_items.dart';
 export 'error_banner.dart';
 export 'filter_bar.dart';
 export 'key_value_list.dart';

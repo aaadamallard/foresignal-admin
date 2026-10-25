@@ -261,10 +261,10 @@ class _BudgetsPanelState extends ConsumerState<BudgetsPanel> {
                 key: const Key('usage.window'),
                 isExpanded: true,
                 initialValue: _window,
-                items: <DropdownMenuItem<UsageWindow>>[
+                items: withCurrentItem(<DropdownMenuItem<UsageWindow>>[
                   for (final w in UsageWindow.values)
                     DropdownMenuItem<UsageWindow>(value: w, child: Text(w.label)),
-                ],
+                ], _window),
                 onChanged: (w) => setState(() => _window = w ?? _window),
               ),
             ),

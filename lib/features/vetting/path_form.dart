@@ -114,12 +114,12 @@ class _PathDraftFormState extends State<PathDraftForm> {
         field: DropdownButtonFormField<String>(
           key: key,
           style: Theme.of(context).textTheme.bodyMedium,
-          initialValue: f.options.contains(value) ? value : null,
+          initialValue: value == null || value.isEmpty ? null : value,
           hint: f.defaultValue == null ? null : Text('Default ${f.defaultValue}'),
           decoration: InputDecoration(errorText: _errors[f.path]),
-          items: <DropdownMenuItem<String>>[
+          items: withCurrentItem(<DropdownMenuItem<String>>[
             for (final o in f.options) DropdownMenuItem<String>(value: o, child: Text(o)),
-          ],
+          ], value == null || value.isEmpty ? null : value),
           onChanged: (v) {
             _d.text[f.path] = v ?? '';
             _changed();

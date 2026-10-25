@@ -280,7 +280,7 @@ class ConnectionResult extends StatelessWidget {
     final system = report.system;
     final details = <MapEntry<String, Object>>[
       MapEntry<String, Object>('Version', system.version),
-      MapEntry<String, Object>('Environment', system.mode?.name ?? '—'),
+      MapEntry<String, Object>('Environment', wireShownOrNull(system.mode, system, 'mode') ?? '—'),
       MapEntry<String, Object>('OpenAPI', _versionLabel(report)),
       MapEntry<String, Object>(
         'Server time',
@@ -377,8 +377,8 @@ class ConnectionDetails extends StatelessWidget {
               MapEntry<String, Object>(
                 'Status',
                 StatusLabel(
-                  label: system.status?.name ?? 'unknown',
-                  tone: switch (system.status?.name) {
+                  label: wireShownOrNull(system.status, system, 'status') ?? 'unknown',
+                  tone: switch (wireOfOrNull(system.status)) {
                     'ok' => StatusTone.ok,
                     'degraded' => StatusTone.warning,
                     'down' => StatusTone.error,

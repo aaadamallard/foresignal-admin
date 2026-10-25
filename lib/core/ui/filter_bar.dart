@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../theme.dart';
+import 'dropdown_items.dart';
 
 /// A tab label with a count pill, as in "All Sources (27)  Enabled (18)".
 class CountTab extends StatelessWidget {
@@ -109,13 +110,13 @@ class FilterDropdown<T> extends StatelessWidget {
         initialValue: value,
         isExpanded: true,
         decoration: const InputDecoration(),
-        items: <DropdownMenuItem<T?>>[
+        items: withCurrentItem(<DropdownMenuItem<T?>>[
           for (final option in options)
             DropdownMenuItem<T?>(
               value: option.value,
               child: Text(option.label, overflow: TextOverflow.ellipsis),
             ),
-        ],
+        ], value),
         onChanged: onChanged,
       ),
     );

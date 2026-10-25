@@ -348,13 +348,10 @@ class _EventEditCardState extends ConsumerState<EventEditCard> {
                 key: const Key('event.statusField'),
                 style: Theme.of(context).textTheme.bodyMedium,
                 initialValue: _status,
-                items: <DropdownMenuItem<String>>[
+                items: withCurrentItem(<DropdownMenuItem<String>>[
                   for (final s in const <String>['emerging', 'active', 'resolved', 'dismissed'])
                     DropdownMenuItem<String>(value: s, child: Text(wireText(s))),
-                  // A status this app does not know stays selectable as the server sent it.
-                  if (!const <String>['emerging', 'active', 'resolved', 'dismissed'].contains(_status))
-                    DropdownMenuItem<String>(value: _status, child: Text(_status)),
-                ],
+                ], _status),
                 onChanged: (v) {
                   _status = v ?? _status;
                   changed();
@@ -375,18 +372,16 @@ class _EventEditCardState extends ConsumerState<EventEditCard> {
                 isExpanded: true,
                 style: Theme.of(context).textTheme.bodyMedium,
                 initialValue: _severity,
-                items: <DropdownMenuItem<String>>[
+                items: withCurrentItem(<DropdownMenuItem<String>>[
                   for (final s in const <String>['info', 'warning', 'critical'])
                     DropdownMenuItem<String>(value: s, child: Text(wireText(s))),
-                  if (!const <String>['info', 'warning', 'critical', _computedSeverity].contains(_severity))
-                    DropdownMenuItem<String>(value: _severity, child: Text(_severity)),
                   if (widget.event.severityOverridden == true)
                     const DropdownMenuItem<String>(
                       key: Key('event.severity.computed'),
                       value: _computedSeverity,
                       child: Text('Computed (clear override)'),
                     ),
-                ],
+                ], _severity),
                 onChanged: (v) {
                   _severity = v ?? _severity;
                   changed();
@@ -644,10 +639,10 @@ class _EventMembersCardState extends ConsumerState<EventMembersCard> {
                       style: Theme.of(context).textTheme.bodyMedium,
                       initialValue: _type,
                       decoration: const InputDecoration(labelText: 'Member'),
-                      items: <DropdownMenuItem<String>>[
+                      items: withCurrentItem(<DropdownMenuItem<String>>[
                         for (final t in const <String>['record', 'alert', 'anomaly', 'event'])
                           DropdownMenuItem<String>(value: t, child: Text(wireText(t))),
-                      ],
+                      ], _type),
                       onChanged: (v) => setState(() => _type = v ?? _type),
                     ),
                   ),
@@ -662,10 +657,10 @@ class _EventMembersCardState extends ConsumerState<EventMembersCard> {
                       style: Theme.of(context).textTheme.bodyMedium,
                       initialValue: _role,
                       decoration: const InputDecoration(labelText: 'Role'),
-                      items: <DropdownMenuItem<String>>[
+                      items: withCurrentItem(<DropdownMenuItem<String>>[
                         for (final r in memberRoles)
                           DropdownMenuItem<String>(value: r, child: Text(wireText(r))),
-                      ],
+                      ], _role),
                       onChanged: (v) => setState(() => _role = v ?? _role),
                     ),
                   ),

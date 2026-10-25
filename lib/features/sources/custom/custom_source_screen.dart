@@ -595,7 +595,7 @@ class _MappingPanelState extends ConsumerState<MappingPanel> {
                         ExpansionTile(
                           tilePadding: EdgeInsets.zero,
                           title: Text(
-                            '${s.method.name} ${s.format ?? '(default)'} · ${utcText(s.receivedAt)}',
+                            '${wireShown(s.method, s, 'method')} ${s.format ?? '(default)'} · ${utcText(s.receivedAt)}',
                           ),
                           subtitle: Text(
                             '${s.contentType ?? '—'} · ${s.bodyBytes ?? 0} bytes'
@@ -636,7 +636,7 @@ class _MappingPanelState extends ConsumerState<MappingPanel> {
               ? StatusTone.ok
               : StatusTone.warning,
           details: <MapEntry<String, Object>>[
-            MapEntry<String, Object>('Mapping', r.mappingSource.name),
+            MapEntry<String, Object>('Mapping', wireShown(r.mappingSource, r, 'mappingSource')),
             MapEntry<String, Object>('Samples', '${r.samples.length}'),
             MapEntry<String, Object>('Records', '$records'),
             MapEntry<String, Object>('Warnings', '$warnings'),
