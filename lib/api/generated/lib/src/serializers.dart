@@ -1255,6 +1255,8 @@ import 'package:foresignal_api/src/model/record_mapping_tombstone.dart';
 import 'package:foresignal_api/src/model/record_page.dart';
 import 'package:foresignal_api/src/model/record_version.dart';
 import 'package:foresignal_api/src/model/record_version_page.dart';
+import 'package:foresignal_api/src/model/reference_area.dart';
+import 'package:foresignal_api/src/model/reference_area_outline.dart';
 import 'package:foresignal_api/src/model/reference_dataset.dart';
 import 'package:foresignal_api/src/model/reference_import.dart';
 import 'package:foresignal_api/src/model/reference_import_page.dart';
@@ -2971,6 +2973,8 @@ part 'serializers.g.dart';
   RecordPage,
   RecordVersion,
   RecordVersionPage,
+  ReferenceArea,
+  ReferenceAreaOutline,
   ReferenceDataset,
   ReferenceImport,
   ReferenceImportPage,
@@ -4619,6 +4623,10 @@ Serializers serializers =
           ..addBuilderFactory(
             const FullType(BuiltList, [FullType(BriefingRun)]),
             () => ListBuilder<BriefingRun>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(ReferenceArea)]),
+            () => ListBuilder<ReferenceArea>(),
           )
           ..addBuilderFactory(
             const FullType(BuiltList, [FullType(EvidenceGroup)]),

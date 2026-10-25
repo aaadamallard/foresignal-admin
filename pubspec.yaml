@@ -22,6 +22,12 @@ dependencies:
   firebase_messaging: 17.0.0
   built_collection: 5.1.2
   built_value: 8.13.0
+  # The Alert Builder's area map (prompt 161), looked up on pub.dev on
+  # 2026-10-24: flutter_map 8.3.2 (2026-08-27; 8.4.0 is a dev release) and
+  # latlong2 0.10.1 (2026-04-27; 1.0.0 is still a dev release), within
+  # flutter_map's latlong2 range >=0.9.1 <0.11.0.
+  flutter_map: 8.3.2
+  latlong2: 0.10.1
   foresignal_api:
     path: lib/api/generated
 

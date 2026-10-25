@@ -8,10 +8,12 @@ import '../../core/theme.dart';
 import '../../core/ui/ui.dart';
 import '../forecasting/forecasting_widgets.dart';
 import '../sources/source_providers.dart';
+import 'alert_area.dart';
 import 'alert_builder_draft.dart';
 import 'alert_inbox.dart' show severityLabel;
 import 'alerts_drafts.dart';
 import 'alerts_providers.dart';
+import 'area_editor.dart';
 import 'channels.dart';
 import 'triggers.dart';
 
@@ -31,15 +33,18 @@ const List<String> _preferredTypes = <String>[
   'slack',
 ];
 
-/// The three steps of the flow.
+/// The four steps of the flow.
 enum BuilderStep {
   /// Node 1: the sources whose records form the dataset.
   dataset('Dataset', 'Sources', Icons.dataset_outlined),
 
-  /// Node 2: the kinds and conditions that make an alert.
+  /// Node 2: where a record must be.
+  area('Area', 'Where it fires', Icons.place_outlined),
+
+  /// Node 3: the kinds and conditions that make an alert.
   trigger('Trigger', 'Conditions and thresholds', Icons.filter_alt_outlined),
 
-  /// Node 3: where the alerts go.
+  /// Node 4: where the alerts go.
   delivery('Delivery', 'Channels', Icons.send_outlined);
 
   const BuilderStep(this.title, this.caption, this.icon);
@@ -55,10 +60,10 @@ enum BuilderStep {
 }
 
 /// The Alert Builder (`/alerts/builder`, `/alerts/builder/:ruleId`): a
-/// trigger rule built as a three-node flow, Dataset → Trigger → Delivery,
-/// on the same rule and channel operations as the Triggers and Channels
-/// tabs. A new rule starts empty; a stored one opens with its sources,
-/// kinds, conditions and the channels that list it.
+/// trigger rule built as a four-node flow, Dataset → Area → Trigger →
+/// Delivery, on the same rule and channel operations as the Triggers and
+/// Channels tabs. A new rule starts empty; a stored one opens with its
+/// sources, area, kinds, conditions and the channels that list it.
 class AlertBuilderScreen extends ConsumerWidget {
   /// Creates the builder for rule [ruleId], or for a new rule when `null`.
   const AlertBuilderScreen({super.key, this.ruleId});
@@ -82,7 +87,7 @@ class AlertBuilderScreen extends ConsumerWidget {
             const Crumb('Triggers', alertTriggersPath),
             Crumb(id == null ? 'New alert' : name ?? id),
           ],
-          subtitle: 'Choose the sources, say what should fire, and pick where it goes.',
+          subtitle: 'Choose the sources and the area, say what should fire, and pick where it goes.',
           titleTrailing: <Widget>[if (rule?.value case final r?) ruleStatusLabel(r)],
           actions: <Widget>[
             if (id != null)
@@ -140,6 +145,7 @@ class _AlertBuilderState extends ConsumerState<AlertBuilder> with WriteTracking<
   final Set<String> _openTypes = <String>{};
   BuilderStep _step = BuilderStep.dataset;
   Map<String, String> _errors = const <String, String>{};
+  late final AreaLookup _lookup;
 
   RelevanceCheck? _check;
   bool _checking = false;
@@ -156,7 +162,23 @@ class _AlertBuilderState extends ConsumerState<AlertBuilder> with WriteTracking<
   void initState() {
     super.initState();
     _ruleId = widget.rule?['id'] as String?;
+    _lookup = AreaLookup(ref.read(backendDioProvider))..addListener(_onLookup);
     _adopt(widget.rule, widget.channels);
+  }
+
+  void _onLookup() {
+    if (mounted) {
+      setState(() {});
+    }
+  }
+
+  /// Names the stored area's regions and places and finds whether its
+  /// circle is a city, for the Area node.
+  Future<void> _resolveArea() async {
+    final area = _d.area;
+    if (await _lookup.resolve(area) && mounted && identical(area, _d.area)) {
+      setState(() {});
+    }
   }
 
   void _adopt(Json? rule, List<Json> channels) {
@@ -177,6 +199,7 @@ class _AlertBuilderState extends ConsumerState<AlertBuilder> with WriteTracking<
         for (final c in channels)
           if (_d.channelIds.contains(c['id'])) '${c['type']}',
       ]);
+    _resolveArea();
   }
 
   /// Adds the text controllers for [c]. Each pushes its text into the draft
@@ -195,7 +218,7 @@ class _AlertBuilderState extends ConsumerState<AlertBuilder> with WriteTracking<
 
   @override
   void dispose() {
-    for (final c in <ChangeNotifier>[_name, _search, ..._paths, ..._values, ..._pathFocus]) {
+    for (final c in <ChangeNotifier>[_name, _search, ..._paths, ..._values, ..._pathFocus, _lookup]) {
       c.dispose();
     }
     super.dispose();
@@ -342,6 +365,7 @@ class _AlertBuilderState extends ConsumerState<AlertBuilder> with WriteTracking<
 
   BuilderStep? _stepOf(String errorKey) => switch (errorKey) {
     'sources' => BuilderStep.dataset,
+    'area' => BuilderStep.area,
     'kinds' => BuilderStep.trigger,
     _ when errorKey.startsWith('condition.') => BuilderStep.trigger,
     _ => null,
@@ -441,6 +465,7 @@ class _AlertBuilderState extends ConsumerState<AlertBuilder> with WriteTracking<
           }),
           nodes: <BuilderStep, _NodeSummary>{
             BuilderStep.dataset: _datasetSummary(byId),
+            BuilderStep.area: _areaSummary(),
             BuilderStep.trigger: _triggerSummary(),
             BuilderStep.delivery: _deliverySummary(types),
           },
@@ -448,6 +473,14 @@ class _AlertBuilderState extends ConsumerState<AlertBuilder> with WriteTracking<
         const SizedBox(height: 16),
         switch (_step) {
           BuilderStep.dataset => _datasetEditor(context, sources, byId),
+          BuilderStep.area => AreaEditor(
+            key: ObjectKey(_d.area),
+            area: _d.area,
+            lookup: _lookup,
+            error: _errors['area'],
+            onChanged: () => setState(() => _errors = Map<String, String>.of(_errors)..remove('area')),
+            actions: <Widget>[_backButton(BuilderStep.dataset), _nextButton(BuilderStep.trigger)],
+          ),
           BuilderStep.trigger => _triggerEditor(context, byId),
           BuilderStep.delivery => _deliveryEditor(context, types),
         },
@@ -540,6 +573,21 @@ class _AlertBuilderState extends ConsumerState<AlertBuilder> with WriteTracking<
     );
   }
 
+  _NodeSummary _areaSummary() {
+    final a = _d.area;
+    final problem = a.problem();
+    return _NodeSummary(
+      lines: <String>[
+        if (a.kept != null) 'Kept from the full rule form' else a.mode.label,
+        a.describe(),
+        if (problem != null && a.mode != AreaMode.none) 'An area to finish',
+      ],
+      tone: _errors.containsKey('area')
+          ? StatusTone.error
+          : (problem != null ? StatusTone.warning : StatusTone.ok),
+    );
+  }
+
   _NodeSummary _triggerSummary() {
     final rows = _d.conditions;
     final problem = _errors.keys.any((k) => k.startsWith('condition.') || k == 'kinds');
@@ -590,7 +638,7 @@ class _AlertBuilderState extends ConsumerState<AlertBuilder> with WriteTracking<
       key: const Key('builder.editor.dataset'),
       title: '1 · Dataset',
       subtitle: 'The sources whose records this alert watches, together. None chosen watches every source.',
-      actions: <Widget>[_nextButton(BuilderStep.trigger)],
+      actions: <Widget>[_nextButton(BuilderStep.area)],
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
@@ -883,9 +931,9 @@ class _AlertBuilderState extends ConsumerState<AlertBuilder> with WriteTracking<
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: <Widget>[
         SectionCard(
-          title: '2 · Trigger',
+          title: '3 · Trigger',
           subtitle: 'What in those records makes an alert. Every condition must hold.',
-          actions: <Widget>[_backButton(BuilderStep.dataset), _nextButton(BuilderStep.delivery)],
+          actions: <Widget>[_backButton(BuilderStep.area), _nextButton(BuilderStep.delivery)],
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
@@ -1105,7 +1153,7 @@ class _AlertBuilderState extends ConsumerState<AlertBuilder> with WriteTracking<
     ];
     return SectionCard(
       key: const Key('builder.editor.delivery'),
-      title: '3 · Delivery',
+      title: '4 · Delivery',
       subtitle: 'Where the alerts go. Every alert also appears in the Alert Inbox.',
       actions: <Widget>[_backButton(BuilderStep.trigger)],
       child: AsyncView<List<Json>>(
@@ -1293,7 +1341,7 @@ class _NodeSummary {
   final StatusTone tone;
 }
 
-/// The three nodes side by side, joined by arrows; stacked when narrow.
+/// The nodes side by side, joined by arrows; stacked when narrow.
 class _Flow extends StatelessWidget {
   const _Flow({required this.step, required this.onSelect, required this.nodes});
 
@@ -1323,18 +1371,19 @@ class _Flow extends StatelessWidget {
       if (!wide) {
         return Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: <Widget>[cards[0], arrow(), cards[1], arrow(), cards[2]],
+          children: <Widget>[
+            for (var i = 0; i < cards.length; i++) ...<Widget>[if (i > 0) arrow(), cards[i]],
+          ],
         );
       }
       return IntrinsicHeight(
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
-            Expanded(child: cards[0]),
-            Center(child: arrow()),
-            Expanded(child: cards[1]),
-            Center(child: arrow()),
-            Expanded(child: cards[2]),
+            for (var i = 0; i < cards.length; i++) ...<Widget>[
+              if (i > 0) Center(child: arrow()),
+              Expanded(child: cards[i]),
+            ],
           ],
         ),
       );

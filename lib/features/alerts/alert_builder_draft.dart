@@ -1,3 +1,5 @@
+import '../forecasting/forecasting_drafts.dart' show parseJsonObject;
+import 'alert_area.dart';
 import 'alerts_drafts.dart';
 
 /// The verdicts of `analyzeTriggerSources` (`SourceRelevance.verdict`).
@@ -278,15 +280,16 @@ Map<String, Object?>? routeChannelBody(
   return draft.toJson(creating: false);
 }
 
-/// The source, trigger and delivery choices of the Alert Builder over a
+/// The source, area, trigger and delivery choices of the Alert Builder over a
 /// [TriggerDraft], which carries every other member of the rule unchanged.
 class AlertBuilderDraft {
   /// A new rule: no sources, no conditions, the contract defaults.
-  AlertBuilderDraft() : rule = TriggerDraft();
+  AlertBuilderDraft() : rule = TriggerDraft(), area = AreaDraft();
 
   /// A draft of stored [stored], with the channels that list it selected.
   AlertBuilderDraft.of(Map<String, Object?> stored, List<Map<String, Object?>> channels)
-    : rule = TriggerDraft.of(stored) {
+    : rule = TriggerDraft.of(stored),
+      area = AreaDraft.of(stored) {
     sources.addAll(<String>[...((stored['sources'] as List<Object?>?) ?? const <Object?>[]).map((e) => '$e')]);
     kinds.addAll(<String>[...((stored['kinds'] as List<Object?>?) ?? const <Object?>[]).map((e) => '$e')]);
     for (final c in (stored['conditions'] as List<Object?>?) ?? const <Object?>[]) {
@@ -311,6 +314,9 @@ class AlertBuilderDraft {
   /// the rest), sent back as they are.
   final TriggerDraft rule;
 
+  /// Where the rule fires; its members replace the rule's area members.
+  final AreaDraft area;
+
   /// The dataset: source ids in the order chosen; empty for every source.
   final List<String> sources = <String>[];
 
@@ -329,7 +335,7 @@ class AlertBuilderDraft {
   /// The channels that listed the rule when it was opened.
   final Set<String> routedAtLoad = <String>{};
 
-  /// Problems by field (`name`, `sources`, `kinds`, `condition.<n>`); empty
+  /// Problems by field (`name`, `sources`, `kinds`, `condition.<n>`, `area`); empty
   /// when the rule can be saved.
   Map<String, String> validate() {
     final errors = <String, String>{};
@@ -348,15 +354,39 @@ class AlertBuilderDraft {
         errors['condition.$i'] = p;
       }
     }
+    if (area.problem() case final p?) {
+      errors['area'] = p;
+    } else if (_hysteresis > 0 && !_hasEdge) {
+      errors['area'] =
+          'The rule keeps a hysteresis distance (set in the full rule form), which needs a drawn '
+          'shape, a route or a circle.';
+    }
     return errors;
   }
 
-  /// The `TriggerRuleInput`. Call only when [validate] is empty.
+  double get _hysteresis => switch (parseJsonObject(rule.moreText)?['hysteresisMeters']) {
+    final num n => n.toDouble(),
+    _ => 0,
+  };
+
+  /// Whether the area has an edge a hysteresis band can follow: a drawn
+  /// `geofence` or a `near` circle.
+  bool get _hasEdge {
+    final a = area.toJson();
+    return a['geofence'] != null || a['near'] != null;
+  }
+
+  /// The `TriggerRuleInput`: the rule's area members replaced by [area]'s.
+  /// Call only when [validate] is empty.
   Map<String, Object?> toJson() {
     rule
       ..sources = sources.join(', ')
       ..kinds = kinds.join(', ')
       ..conditionsText = jsonArrayText(<Object?>[...kept, for (final c in conditions) c.toJson()]);
-    return rule.toJson();
+    return <String, Object?>{
+      for (final e in rule.toJson().entries)
+        if (!areaMembers.contains(e.key)) e.key: e.value,
+      ...area.toJson(),
+    };
   }
 }

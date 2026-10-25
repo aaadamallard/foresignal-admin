@@ -2058,6 +2058,10 @@ Serializers _$serializers =
           ..add(RecordPage.serializer)
           ..add(RecordVersion.serializer)
           ..add(RecordVersionPage.serializer)
+          ..add(ReferenceArea.serializer)
+          ..add(ReferenceAreaKindEnum.serializer)
+          ..add(ReferenceAreaOutline.serializer)
+          ..add(ReferenceAreaOutlineKindEnum.serializer)
           ..add(ReferenceDataset.serializer)
           ..add(ReferenceDatasetStateEnum.serializer)
           ..add(ReferenceImport.serializer)
@@ -8568,6 +8572,10 @@ Serializers _$serializers =
           ..addBuilderFactory(
             const FullType(BuiltList, const [const FullType(int)]),
             () => ListBuilder<int>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, const [const FullType(num)]),
+            () => ListBuilder<num>(),
           )
           ..addBuilderFactory(
             const FullType(BuiltList, const [const FullType(num)]),

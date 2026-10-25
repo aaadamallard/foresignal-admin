@@ -3,7 +3,7 @@
 Written descriptions of the screens the admin app needs, grouped by function. Each screen names the
 backend **operationId**s it uses (the only backend contract). Platform tags: **D** = desktop, **M** =
 mobile companion, **D/M** = both (often fuller on desktop). This is the spec the `design/` mocks and
-the `prompts/` will build against. Date: 2026-10-22.
+the `prompts/` will build against. Date: 2026-10-24.
 
 **Design intent.** This is a control plane, not a data viewer. Screens are dense, form-and-table
 driven, status-forward. The recurring pattern for anything configurable is **see state → edit → test →
@@ -111,16 +111,23 @@ small and exist only to prove a source works.
 - **Trigger rules (D).** Author, edit, test, and mute the rules that turn thresholds/patterns into
   alerts, scoped to a view/situation/watchlist. Ops: the `Triggers` set (`listTriggers`,
   `createTrigger`, `updateTrigger`, `testTrigger`, `muteTrigger` — confirm exact ids at build).
-- **Alert Builder (D).** The guided way to build a rule, as a three-node flow read left to right:
+- **Alert Builder (D).** The guided way to build a rule, as a four-node flow read left to right:
   **Dataset** (multi-select sources, with an advisory LLM relevance check that rates each source and
   gives a one-line reason; flagged sources get a one-click Omit and nothing is dropped automatically) →
-  **Trigger** (kinds, then conditions as field · operator · value, ANDed, with a dry run of the saved
-  rule) → **Delivery** (channel types as checkboxes; each expands to its existing channels or creates
-  one; saving routes the rule's alerts to the chosen channels through their `ruleIds`). A new rule
-  starts empty; a stored one opens populated, and every member the flow does not edit is kept. Ops:
-  `listSources`, `getSource`, `analyzeTriggerSources`, `createTrigger`, `updateTrigger`, `getTrigger`,
-  `testTrigger`, `muteTrigger`, `snoozeTrigger`, `listChannelTypes`, `listChannels`, `createChannel`,
-  `updateChannel`, `testChannel`.
+  **Area** (where a record must be, on an OpenStreetMap map: no area; a named place — countries and
+  states found by name as a `geofenceRef`, a city as a circle around its point, or saved places as
+  `near.placeIds`; a circle dropped and dragged out as `near.point`; polygons clicked corner by corner
+  and boxes dragged out, together one MultiPolygon `geofence`; or a route clicked point by point with a
+  width either side as a line `geofence` plus `bufferMeters`. Several of one kind combine; a record
+  without a location never matches an area; an area the map cannot draw — a moving anchor, US counties,
+  a shape with holes — is kept as it is) → **Trigger** (kinds, then conditions as field · operator ·
+  value, ANDed, with a dry run of the saved rule) → **Delivery** (channel types as checkboxes; each
+  expands to its existing channels or creates one; saving routes the rule's alerts to the chosen
+  channels through their `ruleIds`). A new rule starts empty; a stored one opens populated, in the area
+  mode that made it, and every member the flow does not edit is kept. Ops: `listSources`, `getSource`,
+  `analyzeTriggerSources`, `searchReferenceAreas`, `getReferenceArea`, `reverseGeocode`, `listPlaces`,
+  `createTrigger`, `updateTrigger`, `getTrigger`, `testTrigger`, `muteTrigger`, `snoozeTrigger`,
+  `listChannelTypes`, `listChannels`, `createChannel`, `updateChannel`, `testChannel`.
 - **Alert inbox (D/M).** List newest-first, acknowledge, snooze/unsnooze, resolve, and record
   alert-quality feedback; live via SSE. Ops: `listAlerts`, `getAlert`, `acknowledgeAlert`,
   `snoozeAlert`, `unsnoozeAlert`, `resolveAlert`, `setAlertFeedback`, `streamAlerts`. (M: primary

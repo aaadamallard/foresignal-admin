@@ -198,6 +198,20 @@ void main() {
       expect(find.byKey(const Key('builder.flagged')), findsNothing);
       expect(find.text('2 sources'), findsOneWidget);
 
+      // Node 2: the area, a state found by name.
+      await _tap(tester, 'builder.next.area');
+      expect(find.byKey(const Key('builder.editor.area')), findsOneWidget);
+      expect(find.text('Anywhere'), findsWidgets);
+      await _tap(tester, 'builder.area.mode.named');
+      await _type(tester, 'builder.area.search', 'texas');
+      await tester.pump(const Duration(milliseconds: 400));
+      await tester.pumpAndSettle();
+      expect(adapter.requests.where((r) => r.uri.path == '/v1/reference/areas'), isNotEmpty);
+      await _tap(tester, 'builder.area.hit.0');
+      expect(find.byKey(const Key('builder.area.region.US-TX')), findsOneWidget);
+      expect(find.text('Inside Texas, United States of America'), findsWidgets);
+      expect(adapter.requests.where((r) => r.uri.path == '/v1/reference/areas/US-TX'), isNotEmpty);
+
       await _tap(tester, 'builder.next.trigger');
       await _tap(tester, 'builder.kind.earthquake');
       await _tap(tester, 'builder.condition.add');
@@ -223,6 +237,11 @@ void main() {
       expect(body['conditions'], <Object?>[
         <String, Object?>{'path': 'mag', 'op': '>=', 'value': 5.5},
       ]);
+      expect(body['geofenceRef'], <String, Object?>{
+        'admin1': <String>['US-TX'],
+      });
+      expect(body.containsKey('near'), isFalse);
+      expect(body.containsKey('geofence'), isFalse);
       final ruleId = v.rules.values.singleWhere((r) => r['name'] == 'Strong quakes')['id']! as String;
       final routed = adapter.requests.singleWhere((r) => r.method == 'PUT' && r.uri.path == '/v1/channels/$_ntfy');
       expect((routed.body! as Map<String, Object?>)['ruleIds'], contains(ruleId));
@@ -238,6 +257,8 @@ void main() {
       expect(find.text('2 sources'), findsOneWidget);
       expect(find.text('Kinds: earthquake'), findsOneWidget);
       expect(find.text('mag is at least 5.5'), findsOneWidget);
+      expect(find.text('Named place'), findsOneWidget);
+      expect(find.text('Inside Texas, United States of America'), findsOneWidget);
       expect(find.text('1 channel'), findsOneWidget);
       expect(find.text('Mute or snooze'), findsOneWidget);
     },

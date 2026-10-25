@@ -231,6 +231,9 @@ class TriggerDraft {
     final more = <String, Object?>{
       for (final m in triggerInputMembers)
         if (!_triggerFormMembers.contains(m) && rule[m] != null) m: rule[m],
+      // A route reads back as its buffered polygon in `geofence` and its line
+      // in `geofenceRoute`; the input is the line, with `bufferMeters`.
+      if (rule['geofenceRoute'] != null) 'geofence': rule['geofenceRoute'],
     };
     return TriggerDraft()
       ..name = '${rule['name'] ?? ''}'

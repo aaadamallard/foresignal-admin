@@ -9,6 +9,7 @@
 import 'dart:async';
 import 'dart:convert';
 
+import 'preview_areas.dart';
 import 'preview_sources.dart';
 
 /// A fake reply: a JSON body (or [PreviewText]) and its status.
@@ -689,6 +690,11 @@ AlertsReply? answerAlerts(
   AlertsReply ok(Object? b) => (status: 200, body: b);
   AlertsReply notFound([String code = 'NOT_FOUND']) => (status: 404, body: _problem(404, 'Not found', code));
   final now = _iso(DateTime.now());
+
+  // The Alert Builder's area lookups.
+  if (answerAreas(method, path, query) case final reply?) {
+    return reply;
+  }
 
   // The Alert Builder's advisory source-relevance check.
   if (path == '/v1/triggers/analyze-sources' && method == 'POST') {

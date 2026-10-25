@@ -64,6 +64,25 @@ void main() {
       expect(body.containsKey('id'), isFalse);
     });
 
+    test('a stored route is sent back as its line, not the buffered polygon it reads back as', () {
+      final line = <String, Object?>{
+        'type': 'LineString',
+        'coordinates': <Object?>[
+          <num>[0, 0],
+          <num>[1, 1],
+        ],
+      };
+      final body = TriggerDraft.of(<String, Object?>{
+        'name': 'Corridor',
+        'geofence': <String, Object?>{'type': 'MultiPolygon', 'coordinates': <Object?>[]},
+        'geofenceRoute': line,
+        'bufferMeters': 30000,
+      }).toJson();
+      expect(body['geofence'], line);
+      expect(body['bufferMeters'], 30000);
+      expect(body.containsKey('geofenceRoute'), isFalse);
+    });
+
     test('a windowed rule needs a window length', () {
       final d = TriggerDraft()
         ..name = 'x'
