@@ -28,6 +28,16 @@ final llmModelsProvider = FutureProvider.autoDispose.family<List<LlmModelInfo>, 
   return models.toList()..sort((a, b) => a.id.compareTo(b.id));
 });
 
+/// A provider's spend against its USD caps, its token limits and any
+/// balance the provider reports (`getLlmProviderBudget`).
+final llmBudgetProvider = FutureProvider.autoDispose.family<LlmProviderBudget, String>((
+  ref,
+  id,
+) async {
+  final api = ref.watch(foresignalApiProvider);
+  return callApiRequired(() => api.getLLMApi().getLlmProviderBudget(providerId: id));
+});
+
 /// The LLM roles and options (`getLlmSettings`).
 final llmSettingsProvider = FutureProvider<LlmSettings>((ref) async {
   final api = ref.watch(foresignalApiProvider);
@@ -65,7 +75,9 @@ final llmUsageProvider = FutureProvider.family<LlmUsage, UsageWindow>((ref, wind
 });
 
 /// The bundled prompt templates, by id (`listPromptTemplates`).
-final promptTemplatesProvider = FutureProvider.autoDispose<List<PromptTemplateSummary>>((ref) async {
+final promptTemplatesProvider = FutureProvider.autoDispose<List<PromptTemplateSummary>>((
+  ref,
+) async {
   final api = ref.watch(foresignalApiProvider);
   final list = await callApiRequired(() => api.getLLMApi().listPromptTemplates());
   return list.items.toList();
@@ -168,6 +180,10 @@ class LlmUsage {
           for (final p in entry.value.points) p.t.toUtc(): p.inputTokens + p.outputTokens,
         },
     },
-    step: byProvider.isEmpty ? null : usageStep(wireOf(byProvider.values.first.resolution, byProvider.values.first, 'resolution')),
+    step: byProvider.isEmpty
+        ? null
+        : usageStep(
+            wireOf(byProvider.values.first.resolution, byProvider.values.first, 'resolution'),
+          ),
   );
 }

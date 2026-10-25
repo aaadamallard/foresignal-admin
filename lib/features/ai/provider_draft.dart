@@ -1,33 +1,12 @@
 import 'package:built_value/serializer.dart';
 
 import '../../api/api.dart';
+import 'provider_presets.dart';
+
+export 'provider_presets.dart';
 
 /// The provider types (`LlmProviderInput.type`), by wire name.
 const List<String> llmProviderTypes = <String>['anthropic', 'openai-compatible', 'ollama'];
-
-/// The LM Studio preset: an `openai-compatible` provider at LM Studio's local
-/// server, treated as local for LLM egress. Not a wire type.
-const String lmStudioPreset = 'lm-studio';
-
-/// LM Studio's local server, as the backend reaches it by default.
-const String lmStudioBaseUrl = 'http://localhost:1234/v1';
-
-/// The choices of the add form's Type dropdown, in order: the wire types,
-/// with the LM Studio preset after the OpenAI-compatible type it fills in.
-const List<String> llmProviderChoices = <String>[
-  'anthropic',
-  'openai-compatible',
-  lmStudioPreset,
-  'ollama',
-];
-
-/// The label of a Type choice.
-String llmProviderChoiceLabel(String choice) => switch (choice) {
-  'anthropic' => 'Anthropic',
-  'openai-compatible' => 'OpenAI-compatible',
-  lmStudioPreset => 'LM Studio',
-  _ => 'Ollama',
-};
 
 /// The effort levels (`options.effort`), by wire name.
 const List<String> llmEffortLevels = <String>['low', 'medium', 'high', 'xhigh', 'max'];
@@ -51,15 +30,35 @@ final RegExp _datePattern = RegExp(r'^\d{4}-\d{2}-\d{2}$');
 /// the contract's default. **The API key is write-only**: it is sent only
 /// when typed, and an edit that leaves it empty keeps the stored key.
 class ProviderDraft {
-  /// A draft for a new provider.
-  ProviderDraft.create() : stored = null, type = 'anthropic', enabled = true, local = false;
+  /// A draft for a new provider: an online Anthropic provider until a preset
+  /// is chosen.
+  ProviderDraft.create()
+    : stored = null,
+      type = 'anthropic',
+      enabled = true,
+      local = false,
+      category = LlmCategory.online,
+      preset = 'anthropic';
 
   /// A draft of [provider], as last read.
   ProviderDraft.edit(LlmProvider provider)
     : stored = provider,
       type = wireOf(provider.type, provider, 'type'),
       enabled = provider.enabled,
-      local = _option(provider, 'local') == true {
+      local = _option(provider, 'local') == true,
+      category =
+          wireOf(provider.type, provider, 'type') == 'ollama' || _option(provider, 'local') == true
+          ? LlmCategory.local
+          : LlmCategory.online,
+      preset = llmPresetFor(
+        type: wireOf(provider.type, provider, 'type'),
+        baseUrl: provider.baseUrl,
+        category:
+            wireOf(provider.type, provider, 'type') == 'ollama' ||
+                _option(provider, 'local') == true
+            ? LlmCategory.local
+            : LlmCategory.online,
+      ).id {
     text['id'] = provider.id;
     text['baseUrl'] = provider.baseUrl ?? '';
     text['chatModel'] = provider.chatModel ?? '';
@@ -78,6 +77,29 @@ class ProviderDraft {
     text['extraHeaders'] = headers is Map
         ? headers.entries.map((e) => '${e.key}: ${e.value}').join('\n')
         : '';
+    final pricing = provider.pricing;
+    text['priceInput'] = _money(pricing?.inputUsdPerMillionTokens);
+    text['priceOutput'] = _money(pricing?.outputUsdPerMillionTokens);
+    text['priceCachedInput'] = _money(pricing?.cachedInputUsdPerMillionTokens);
+    text['priceEmbedding'] = _money(pricing?.embeddingUsdPerMillionTokens);
+    text['hourlyCapUsd'] = _money(provider.hourlyCapUsd);
+    text['dailyCapUsd'] = _money(provider.dailyCapUsd);
+    text['monthlyCapUsd'] = _money(provider.monthlyCapUsd);
+  }
+
+  /// [n] as typed back into a field: no exponent, no trailing `.0`.
+  static String _money(num? n) {
+    if (n == null) {
+      return '';
+    }
+    if (n == n.roundToDouble()) {
+      return n.toInt().toString();
+    }
+    var text = n.toStringAsFixed(6);
+    while (text.endsWith('0')) {
+      text = text.substring(0, text.length - 1);
+    }
+    return text;
   }
 
   static Object? _option(LlmProvider provider, String name) => provider.options?[name]?.value;
@@ -91,34 +113,50 @@ class ProviderDraft {
   /// The provider type, by wire name. Fixed once the provider exists.
   String type;
 
-  /// The preset chosen over [type] while adding ([lmStudioPreset]), or `null`.
-  String? preset;
+  /// Local LLM or Online API: the radio above the provider picker. Choosing
+  /// it sets [local], the egress flag.
+  LlmCategory category;
 
-  /// The Type dropdown's value: the preset when one is chosen, else [type].
-  String get choice => preset ?? type;
+  /// The picker's entry ([LlmPreset.id]).
+  String preset;
 
-  /// Applies a Type [choice] while adding. The LM Studio preset sets the type
-  /// to `openai-compatible`, turns [local] on and fills an empty (or
-  /// preset-filled) base URL with [lmStudioBaseUrl]; leaving it undoes what
-  /// it filled in. Every value stays editable.
-  void choose(String choice) {
-    final wasPreset = preset == lmStudioPreset;
-    if (choice == lmStudioPreset) {
-      preset = lmStudioPreset;
-      type = 'openai-compatible';
-      local = true;
-      if (text['baseUrl']!.trim().isEmpty) {
-        text['baseUrl'] = lmStudioBaseUrl;
-      }
+  /// The picker's entry.
+  LlmPreset get presetInfo => llmPresetById(preset) ?? llmPresetsOf(category).last;
+
+  /// The picker's value; kept for the callers that read it as before.
+  String get choice => preset;
+
+  /// Chooses [next] as the category while adding: its first preset is
+  /// chosen, and [local] follows it.
+  void chooseCategory(LlmCategory next) {
+    if (next == category) {
       return;
     }
-    preset = null;
-    type = choice;
-    if (wasPreset) {
-      local = false;
-      if (text['baseUrl']!.trim() == lmStudioBaseUrl) {
-        text['baseUrl'] = '';
-      }
+    category = next;
+    choose(llmPresetsOf(next).first.id);
+  }
+
+  /// Applies a preset while adding: its type, its base URL (when the field is
+  /// empty or holds another preset's URL, so a typed URL is kept), and the
+  /// local flag of its category. Every value stays editable.
+  void choose(String presetId) {
+    final next = llmPresetById(presetId);
+    if (next == null) {
+      return;
+    }
+    final url = text['baseUrl']!.trim();
+    final filled = url.isEmpty || llmPresets.any((p) => p.baseUrl == url);
+    preset = next.id;
+    category = next.category;
+    type = next.type;
+    local = next.category == LlmCategory.local;
+    if (filled) {
+      text['baseUrl'] = next.baseUrl ?? '';
+    }
+    if (!takesEmbeddings) {
+      text['embeddingModel'] = '';
+      text['embeddingDimensions'] = '';
+      text['priceEmbedding'] = '';
     }
   }
 
@@ -134,7 +172,10 @@ class ProviderDraft {
   /// The text members, by name: `id`, `baseUrl`, `chatModel`,
   /// `embeddingModel`, `embeddingDimensions`, `apiKey`,
   /// `requestsPerMinute`, `tokensPerDay`, `knowledgeCutoff`, `maxTokens`,
-  /// `temperature`, `ttsModel`, `ttsCharactersPerDay`, `extraHeaders`.
+  /// `temperature`, `ttsModel`, `ttsCharactersPerDay`, `extraHeaders`, the
+  /// prices `priceInput`, `priceOutput`, `priceCachedInput`, `priceEmbedding`
+  /// (USD per million tokens) and the caps `hourlyCapUsd`, `dailyCapUsd`,
+  /// `monthlyCapUsd`.
   final Map<String, String> text = <String, String>{
     for (final k in const <String>[
       'id',
@@ -151,6 +192,13 @@ class ProviderDraft {
       'ttsModel',
       'ttsCharactersPerDay',
       'extraHeaders',
+      'priceInput',
+      'priceOutput',
+      'priceCachedInput',
+      'priceEmbedding',
+      'hourlyCapUsd',
+      'dailyCapUsd',
+      'monthlyCapUsd',
     ])
       k: '',
   };
@@ -159,6 +207,9 @@ class ProviderDraft {
 
   /// Whether the type takes a sampling temperature (Anthropic refuses one).
   bool get takesTemperature => type != 'anthropic';
+
+  /// Whether the type has an embeddings endpoint (Anthropic has none).
+  bool get takesEmbeddings => type != 'anthropic';
 
   /// Whether the type can serve the `tts` role.
   bool get takesSpeech => type == 'openai-compatible';
@@ -191,6 +242,8 @@ class ProviderDraft {
           uri.userInfo.isNotEmpty ||
           uri.hasFragment) {
         errors['baseUrl'] = 'An http or https URL with a host, and no user info or fragment.';
+      } else if (presetInfo.placeholder case final p? when baseUrl.contains(p)) {
+        errors['baseUrl'] = 'Replace $p with your own value.';
       }
     }
     if (type == 'anthropic' && _t('apiKey').isEmpty && !(stored?.apiKeySet ?? false)) {
@@ -228,6 +281,26 @@ class ProviderDraft {
         errors['knowledgeCutoff'] = 'A date as YYYY-MM-DD.';
       }
     }
+    for (final key in const <String>[
+      'priceInput',
+      'priceOutput',
+      'priceCachedInput',
+      'priceEmbedding',
+    ]) {
+      _decimal(errors, key, min: 0, max: 100000, places: 6, inclusiveMin: true);
+    }
+    if (!takesEmbeddings && _t('priceEmbedding').isNotEmpty) {
+      errors['priceEmbedding'] = 'Anthropic has no embeddings, so no embedding price.';
+    }
+    for (final key in const <String>['hourlyCapUsd', 'dailyCapUsd', 'monthlyCapUsd']) {
+      _decimal(errors, key, min: 0, max: 10000000000, places: 4, inclusiveMin: false);
+    }
+    final priced = _pricing().isNotEmpty;
+    for (final key in const <String>['hourlyCapUsd', 'dailyCapUsd', 'monthlyCapUsd']) {
+      if (_t(key).isNotEmpty && !priced && !errors.containsKey(key)) {
+        errors[key] = 'Set a price first: spend is the metered tokens at these prices.';
+      }
+    }
     final headers = _headers(errors);
     if (headers != null) {
       final reserved = headers.keys.where(isReservedHeader).toList();
@@ -250,6 +323,42 @@ class ProviderDraft {
           : 'A whole number from $min to $max.';
     }
   }
+
+  void _decimal(
+    Map<String, String> errors,
+    String key, {
+    required num min,
+    required num max,
+    required int places,
+    required bool inclusiveMin,
+  }) {
+    final value = _t(key);
+    if (value.isEmpty) {
+      return;
+    }
+    final n = num.tryParse(value);
+    final dot = value.indexOf('.');
+    final decimals = dot < 0 ? 0 : value.length - dot - 1;
+    final low = n != null && (inclusiveMin ? n >= min : n > min);
+    if (n == null ||
+        !low ||
+        n > max ||
+        decimals > places ||
+        value.contains('e') ||
+        value.contains('E')) {
+      errors[key] = inclusiveMin
+          ? 'A number from $min to $max, at most $places decimal places.'
+          : 'A number above $min, at most $places decimal places.';
+    }
+  }
+
+  /// The `pricing` members that have a value.
+  Map<String, num> _pricing() => <String, num>{
+    'inputUsdPerMillionTokens': ?num.tryParse(_t('priceInput')),
+    'outputUsdPerMillionTokens': ?num.tryParse(_t('priceOutput')),
+    'cachedInputUsdPerMillionTokens': ?num.tryParse(_t('priceCachedInput')),
+    if (takesEmbeddings) 'embeddingUsdPerMillionTokens': ?num.tryParse(_t('priceEmbedding')),
+  };
 
   Map<String, String>? _headers([Map<String, String>? errors]) {
     final map = <String, String>{};
@@ -284,19 +393,25 @@ class ProviderDraft {
       if (takesSpeech) 'ttsModel': ?s('ttsModel'),
       if (takesSpeech) 'ttsCharactersPerDay': ?n('ttsCharactersPerDay'),
     };
+    num? d(String key) => num.tryParse(_t(key));
+    final pricing = _pricing();
     return <String, Object?>{
       'id': _t('id'),
       'type': type,
       'baseUrl': ?s('baseUrl'),
       'chatModel': ?s('chatModel'),
-      'embeddingModel': ?s('embeddingModel'),
-      'embeddingDimensions': ?n('embeddingDimensions'),
+      if (takesEmbeddings) 'embeddingModel': ?s('embeddingModel'),
+      if (takesEmbeddings) 'embeddingDimensions': ?n('embeddingDimensions'),
       'apiKey': ?s('apiKey'),
       if (options.isNotEmpty) 'options': options,
       'requestsPerMinute': ?n('requestsPerMinute'),
       'tokensPerDay': ?n('tokensPerDay'),
       'enabled': enabled,
       'knowledgeCutoff': ?s('knowledgeCutoff'),
+      if (pricing.isNotEmpty) 'pricing': pricing,
+      'hourlyCapUsd': ?d('hourlyCapUsd'),
+      'dailyCapUsd': ?d('dailyCapUsd'),
+      'monthlyCapUsd': ?d('monthlyCapUsd'),
     };
   }
 
@@ -333,6 +448,36 @@ class ProviderDraft {
         differs.add('temperature: sent $t, read back ${got ?? 'nothing'}');
       }
     }
+    void money(String label, Object? want, num? got) {
+      if (want is num && (got == null || (got - want).abs() > 1e-9)) {
+        differs.add('$label: sent $want, read back ${got ?? 'nothing'}');
+      }
+    }
+
+    final pricing = (sent['pricing'] as Map<String, num>?) ?? const <String, num>{};
+    money(
+      'Input price',
+      pricing['inputUsdPerMillionTokens'],
+      reread.pricing?.inputUsdPerMillionTokens,
+    );
+    money(
+      'Output price',
+      pricing['outputUsdPerMillionTokens'],
+      reread.pricing?.outputUsdPerMillionTokens,
+    );
+    money(
+      'Cached input price',
+      pricing['cachedInputUsdPerMillionTokens'],
+      reread.pricing?.cachedInputUsdPerMillionTokens,
+    );
+    money(
+      'Embedding price',
+      pricing['embeddingUsdPerMillionTokens'],
+      reread.pricing?.embeddingUsdPerMillionTokens,
+    );
+    money('Hourly cap', sent['hourlyCapUsd'], reread.hourlyCapUsd);
+    money('Daily cap', sent['dailyCapUsd'], reread.dailyCapUsd);
+    money('Monthly cap', sent['monthlyCapUsd'], reread.monthlyCapUsd);
     if (sent.containsKey('apiKey') && reread.apiKeySet != true) {
       differs.add('the API key is still not set');
     }

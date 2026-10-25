@@ -856,10 +856,18 @@ import 'package:foresignal_api/src/model/lightning_cluster_payload.dart';
 import 'package:foresignal_api/src/model/list_records200_response.dart';
 import 'package:foresignal_api/src/model/live_event.dart';
 import 'package:foresignal_api/src/model/llm_model_info.dart';
+import 'package:foresignal_api/src/model/llm_pricing.dart';
+import 'package:foresignal_api/src/model/llm_probe_result.dart';
 import 'package:foresignal_api/src/model/llm_provider.dart';
+import 'package:foresignal_api/src/model/llm_provider_balance.dart';
+import 'package:foresignal_api/src/model/llm_provider_balance_amounts_inner.dart';
+import 'package:foresignal_api/src/model/llm_provider_budget.dart';
+import 'package:foresignal_api/src/model/llm_provider_budget_rate_limits.dart';
+import 'package:foresignal_api/src/model/llm_provider_budget_windows.dart';
 import 'package:foresignal_api/src/model/llm_provider_input.dart';
 import 'package:foresignal_api/src/model/llm_provider_input_options.dart';
 import 'package:foresignal_api/src/model/llm_settings.dart';
+import 'package:foresignal_api/src/model/llm_spend_window.dart';
 import 'package:foresignal_api/src/model/llm_test_result.dart';
 import 'package:foresignal_api/src/model/llm_test_result_chat.dart';
 import 'package:foresignal_api/src/model/llm_test_result_embedding.dart';
@@ -2574,10 +2582,18 @@ part 'serializers.g.dart';
   ListRecords200Response,
   LiveEvent,
   LlmModelInfo,
+  LlmPricing,
+  LlmProbeResult,
   LlmProvider,
+  LlmProviderBalance,
+  LlmProviderBalanceAmountsInner,
+  LlmProviderBudget,
+  LlmProviderBudgetRateLimits,
+  LlmProviderBudgetWindows,
   LlmProviderInput,
   LlmProviderInputOptions,
   LlmSettings,
+  LlmSpendWindow,
   LlmTestResult,
   LlmTestResultChat,
   LlmTestResultEmbedding,
@@ -5152,6 +5168,12 @@ Serializers serializers =
           ..addBuilderFactory(
             const FullType(BuiltList, [FullType(ObjectEnvelope)]),
             () => ListBuilder<ObjectEnvelope>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [
+              FullType(LlmProviderBalanceAmountsInner),
+            ]),
+            () => ListBuilder<LlmProviderBalanceAmountsInner>(),
           )
           ..addBuilderFactory(
             const FullType(BuiltList, [

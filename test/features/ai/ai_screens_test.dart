@@ -56,9 +56,13 @@ void main() {
     expect(find.byKey(const Key('provider.keyState')), findsOneWidget);
   });
 
-  testWidgets('LM Studio is a Type preset that creates a local OpenAI-compatible provider', (tester) async {
+  testWidgets('LM Studio is a Local LLM preset that creates a local OpenAI-compatible provider', (
+    tester,
+  ) async {
     final llm = PreviewLlm();
     final adapter = await openAt(tester, aiNewProviderPath, adapter: aiBackend(llm));
+    await tapVisible(tester, find.byKey(const Key('provider.category.local')));
+    expect(find.text('http://localhost:11434'), findsOneWidget);
     await tester.enterText(find.byKey(const Key('provider.id')), 'lm-studio');
     await tapVisible(tester, find.byKey(const Key('provider.type')));
     await tester.tap(find.text('LM Studio').last);
@@ -74,6 +78,149 @@ void main() {
     expect(body['baseUrl'], 'http://localhost:1234/v1');
     expect(body['options'], <String, Object?>{'local': true});
     expect(llm.providers['lm-studio']?['type'], 'openai-compatible');
+  });
+
+  testWidgets(
+    'Save is in the header, once: Add Provider while adding, Save Changes while editing',
+    (tester) async {
+      await openAt(tester, aiNewProviderPath, adapter: aiBackend(PreviewLlm()));
+      expect(find.byKey(const Key('form.save')), findsOneWidget);
+      expect(find.widgetWithText(FilledButton, 'Add Provider'), findsOneWidget);
+      expect(find.byKey(const Key('form.cancel')), findsOneWidget);
+      // Top-right: level with the title, right of it.
+      final title = tester.getCenter(find.text('Add provider').last);
+      final save = tester.getCenter(find.byKey(const Key('form.save')));
+      expect(save.dx, greaterThan(title.dx));
+      expect((save.dy - title.dy).abs(), lessThan(40));
+    },
+  );
+
+  testWidgets('editing, the header action is Save Changes', (tester) async {
+    await openAt(tester, aiProviderPath('claude'), adapter: aiBackend(PreviewLlm()));
+    expect(find.byKey(const Key('form.save')), findsOneWidget);
+    expect(find.widgetWithText(FilledButton, 'Save Changes'), findsOneWidget);
+  });
+
+  testWidgets('Cancel discards the edits and goes back, sending nothing', (tester) async {
+    final llm = PreviewLlm();
+    final adapter = await openAt(tester, aiNewProviderPath, adapter: aiBackend(llm));
+    await tester.enterText(find.byKey(const Key('provider.id')), 'never-saved');
+    await tester.enterText(find.byKey(const Key('provider.apiKey')), 'sk-discarded');
+    await tapVisible(tester, find.byKey(const Key('form.cancel')));
+
+    expect(find.byKey(const Key('ai.providers')), findsOneWidget);
+    expect(adapter.requests.where((r) => r.method != 'GET'), isEmpty);
+    expect(llm.providers.containsKey('never-saved'), isFalse);
+    expect(find.text('sk-discarded'), findsNothing);
+
+    // Editing: the change is gone when the page is opened again.
+    await openAt(tester, aiProviderPath('claude'), adapter: aiBackend(llm));
+    await tester.enterText(find.byKey(const Key('provider.priceInput')), '99');
+    await tapVisible(tester, find.byKey(const Key('form.cancel')));
+    expect(find.byKey(const Key('ai.providers')), findsOneWidget);
+    expect((llm.providers['claude']!['pricing']! as Map)['inputUsdPerMillionTokens'], 5);
+  });
+
+  testWidgets(
+    'Test before saving loads the models, one is picked, and the whole form round-trips',
+    (tester) async {
+      final llm = PreviewLlm();
+      final adapter = await openAt(tester, aiNewProviderPath, adapter: aiBackend(llm));
+      await tapVisible(tester, find.byKey(const Key('provider.type')));
+      await tester.tap(find.text('DeepSeek').last);
+      await tester.pumpAndSettle();
+      expect(find.text('https://api.deepseek.com'), findsOneWidget);
+      expect(find.text('Test the connection to load models.'), findsNWidgets(2));
+      await tester.enterText(find.byKey(const Key('provider.id')), 'deepseek');
+      await tester.enterText(find.byKey(const Key('provider.apiKey')), 'sk-deepseek');
+      await tapVisible(tester, find.byKey(const Key('provider.probe')));
+
+      final probe = adapter.requests.singleWhere((r) => r.uri.path == '/v1/llm/probe');
+      final sent = (probe.body! as Map).cast<String, Object?>();
+      expect(sent['baseUrl'], 'https://api.deepseek.com');
+      expect(sent['apiKey'], 'sk-deepseek');
+      expect(find.text('Connection OK'), findsOneWidget);
+      expect(llm.providers.containsKey('deepseek'), isFalse);
+
+      await tapVisible(tester, find.byKey(const Key('provider.chatModel')));
+      expect(find.text('deepseek-reasoner'), findsWidgets);
+      await tester.tap(find.text('deepseek-chat').last);
+      await tester.pumpAndSettle();
+      await tester.enterText(find.byKey(const Key('provider.priceInput')), '0.27');
+      await tester.enterText(find.byKey(const Key('provider.priceOutput')), '1.1');
+      await tester.enterText(find.byKey(const Key('provider.dailyCapUsd')), '5');
+      await tapVisible(tester, find.byKey(const Key('form.save')));
+
+      final post = adapter.requests.singleWhere(
+        (r) => r.method == 'POST' && r.uri.path == '/v1/llm/providers',
+      );
+      final body = (post.body! as Map).cast<String, Object?>();
+      expect(body['chatModel'], 'deepseek-chat');
+      expect(body['pricing'], <String, Object?>{
+        'inputUsdPerMillionTokens': 0.27,
+        'outputUsdPerMillionTokens': 1.1,
+      });
+      expect(body['dailyCapUsd'], 5);
+
+      // The saved provider's page shows it all back, with the reported balance.
+      expect(find.text('deepseek-chat'), findsOneWidget);
+      expect(
+        tester.widget<TextField>(find.byKey(const Key('provider.priceInput'))).controller!.text,
+        '0.27',
+      );
+      expect(
+        tester.widget<TextField>(find.byKey(const Key('provider.dailyCapUsd'))).controller!.text,
+        '5',
+      );
+      expect(find.byKey(const Key('budget.balance')), findsOneWidget);
+      expect(find.textContaining('as reported by DeepSeek'), findsOneWidget);
+      expect(find.textContaining('not a cap'), findsOneWidget);
+      expect(find.text('sk-deepseek'), findsNothing);
+    },
+  );
+
+  testWidgets('a failed Test shows the provider\'s own error, not a generic one', (tester) async {
+    final adapter = await openAt(tester, aiNewProviderPath, adapter: aiBackend(PreviewLlm()));
+    // Anthropic needs a key before there is anything to test.
+    await tapVisible(tester, find.byKey(const Key('provider.probe')));
+    expect(adapter.requests.where((r) => r.uri.path == '/v1/llm/probe'), isEmpty);
+    expect(find.text('Anthropic needs an API key.'), findsOneWidget);
+
+    await tapVisible(tester, find.byKey(const Key('provider.type')));
+    await tester.tap(find.text('Custom (OpenAI-compatible)').last);
+    await tester.pumpAndSettle();
+    await tester.enterText(
+      find.byKey(const Key('provider.baseUrl')),
+      'https://unreachable.example.org/v1',
+    );
+    await tapVisible(tester, find.byKey(const Key('provider.probe')));
+    expect(find.text('Connection failed'), findsOneWidget);
+    expect(find.text('connect timed out: unreachable.example.org'), findsOneWidget);
+  });
+
+  testWidgets('Anthropic has no embedding fields', (tester) async {
+    await openAt(tester, aiNewProviderPath, adapter: aiBackend(PreviewLlm()));
+    expect(find.byKey(const Key('provider.embeddingModel')), findsNothing);
+    expect(find.byKey(const Key('provider.priceEmbedding')), findsNothing);
+    await tapVisible(tester, find.byKey(const Key('provider.type')));
+    await tester.tap(find.text('OpenAI').last);
+    await tester.pumpAndSettle();
+    expect(find.byKey(const Key('provider.embeddingModel')), findsOneWidget);
+    expect(find.byKey(const Key('provider.priceEmbedding')), findsOneWidget);
+  });
+
+  testWidgets('a saved provider shows its spend per window against its caps, and its rate limits', (
+    tester,
+  ) async {
+    await openAt(tester, aiProviderPath('claude'), adapter: aiBackend(PreviewLlm()));
+    expect(find.byKey(const Key('budget.window.hour')), findsOneWidget);
+    expect(find.textContaining(r'$1.62 of $2.00'), findsOneWidget);
+    expect(find.textContaining(r'$9.40 of $20.00'), findsOneWidget);
+    expect(find.textContaining(r'$141.25 of $300.00'), findsOneWidget);
+    expect(find.byKey(const Key('budget.rateLimits')), findsOneWidget);
+    // Claude lists its models, so the chat model is a picker already.
+    expect(find.byType(DropdownMenu<String>), findsOneWidget);
+    expect(find.byKey(const Key('budget.balance')), findsNothing);
   });
 
   testWidgets('testing a provider shows the probe result', (tester) async {

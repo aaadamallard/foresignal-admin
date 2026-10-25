@@ -6,6 +6,7 @@
 import 'package:built_collection/built_collection.dart';
 import 'package:foresignal_api/src/model/date.dart';
 import 'package:foresignal_api/src/model/llm_provider_input_options.dart';
+import 'package:foresignal_api/src/model/llm_pricing.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -26,6 +27,10 @@ part 'llm_provider_input.g.dart';
 /// * [tokensPerDay]
 /// * [enabled]
 /// * [knowledgeCutoff] - Training-data cutoff of the chat model (`YYYY-MM-DD`)
+/// * [pricing] - Prices in USD per million tokens (162); null or omitted means unpriced. Required for a USD cap.
+/// * [hourlyCapUsd] - The most this provider may spend in the UTC clock hour (it resets at the top of the hour), in USD, at most 4 decimal places; null means no cap (162). Spend is the provider's self-metered tokens at its `pricing`, so a cap needs pricing. Once a window's spend, with the estimated cost of the calls in flight, reaches its cap, calls are refused 429 LLM_BUDGET_EXCEEDED with Retry-After at the window's reset. Applies on top of requestsPerMinute and tokensPerDay.
+/// * [dailyCapUsd] - The most this provider may spend in the UTC day (it resets at 00:00 UTC, as tokensPerDay), in USD, at most 4 decimal places; null means no cap (162). Spend is the provider's self-metered tokens at its `pricing`, so a cap needs pricing. Once a window's spend, with the estimated cost of the calls in flight, reaches its cap, calls are refused 429 LLM_BUDGET_EXCEEDED with Retry-After at the window's reset. Applies on top of requestsPerMinute and tokensPerDay.
+/// * [monthlyCapUsd] - The most this provider may spend in the UTC calendar month (it resets at 00:00 UTC on the 1st), in USD, at most 4 decimal places; null means no cap (162). Spend is the provider's self-metered tokens at its `pricing`, so a cap needs pricing. Once a window's spend, with the estimated cost of the calls in flight, reaches its cap, calls are refused 429 LLM_BUDGET_EXCEEDED with Retry-After at the window's reset. Applies on top of requestsPerMinute and tokensPerDay.
 @BuiltValue()
 abstract class LlmProviderInput
     implements Built<LlmProviderInput, LlmProviderInputBuilder> {
@@ -68,6 +73,22 @@ abstract class LlmProviderInput
   /// Training-data cutoff of the chat model (`YYYY-MM-DD`)
   @BuiltValueField(wireName: r'knowledgeCutoff')
   Date? get knowledgeCutoff;
+
+  /// Prices in USD per million tokens (162); null or omitted means unpriced. Required for a USD cap.
+  @BuiltValueField(wireName: r'pricing')
+  LlmPricing? get pricing;
+
+  /// The most this provider may spend in the UTC clock hour (it resets at the top of the hour), in USD, at most 4 decimal places; null means no cap (162). Spend is the provider's self-metered tokens at its `pricing`, so a cap needs pricing. Once a window's spend, with the estimated cost of the calls in flight, reaches its cap, calls are refused 429 LLM_BUDGET_EXCEEDED with Retry-After at the window's reset. Applies on top of requestsPerMinute and tokensPerDay.
+  @BuiltValueField(wireName: r'hourlyCapUsd')
+  num? get hourlyCapUsd;
+
+  /// The most this provider may spend in the UTC day (it resets at 00:00 UTC, as tokensPerDay), in USD, at most 4 decimal places; null means no cap (162). Spend is the provider's self-metered tokens at its `pricing`, so a cap needs pricing. Once a window's spend, with the estimated cost of the calls in flight, reaches its cap, calls are refused 429 LLM_BUDGET_EXCEEDED with Retry-After at the window's reset. Applies on top of requestsPerMinute and tokensPerDay.
+  @BuiltValueField(wireName: r'dailyCapUsd')
+  num? get dailyCapUsd;
+
+  /// The most this provider may spend in the UTC calendar month (it resets at 00:00 UTC on the 1st), in USD, at most 4 decimal places; null means no cap (162). Spend is the provider's self-metered tokens at its `pricing`, so a cap needs pricing. Once a window's spend, with the estimated cost of the calls in flight, reaches its cap, calls are refused 429 LLM_BUDGET_EXCEEDED with Retry-After at the window's reset. Applies on top of requestsPerMinute and tokensPerDay.
+  @BuiltValueField(wireName: r'monthlyCapUsd')
+  num? get monthlyCapUsd;
 
   LlmProviderInput._();
 
@@ -173,6 +194,34 @@ class _$LlmProviderInputSerializer
       yield serializers.serialize(
         object.knowledgeCutoff,
         specifiedType: const FullType.nullable(Date),
+      );
+    }
+    if (object.pricing != null) {
+      yield r'pricing';
+      yield serializers.serialize(
+        object.pricing,
+        specifiedType: const FullType.nullable(LlmPricing),
+      );
+    }
+    if (object.hourlyCapUsd != null) {
+      yield r'hourlyCapUsd';
+      yield serializers.serialize(
+        object.hourlyCapUsd,
+        specifiedType: const FullType.nullable(num),
+      );
+    }
+    if (object.dailyCapUsd != null) {
+      yield r'dailyCapUsd';
+      yield serializers.serialize(
+        object.dailyCapUsd,
+        specifiedType: const FullType.nullable(num),
+      );
+    }
+    if (object.monthlyCapUsd != null) {
+      yield r'monthlyCapUsd';
+      yield serializers.serialize(
+        object.monthlyCapUsd,
+        specifiedType: const FullType.nullable(num),
       );
     }
   }
@@ -321,6 +370,46 @@ class _$LlmProviderInputSerializer
                   as Date?;
           if (valueDes == null) continue;
           result.knowledgeCutoff = valueDes;
+          break;
+        case r'pricing':
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(LlmPricing),
+                  )
+                  as LlmPricing?;
+          if (valueDes == null) continue;
+          result.pricing.replace(valueDes);
+          break;
+        case r'hourlyCapUsd':
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
+          if (valueDes == null) continue;
+          result.hourlyCapUsd = valueDes;
+          break;
+        case r'dailyCapUsd':
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
+          if (valueDes == null) continue;
+          result.dailyCapUsd = valueDes;
+          break;
+        case r'monthlyCapUsd':
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
+          if (valueDes == null) continue;
+          result.monthlyCapUsd = valueDes;
           break;
         default:
           unhandled.add(key);

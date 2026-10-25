@@ -26,7 +26,7 @@ void main() {
     await tester.pumpAndSettle();
 
     expect(find.text('Connection successful'), findsOneWidget);
-    expect(find.text('Compatible (1.4.1)'), findsOneWidget);
+    expect(find.text('Compatible (1.5.0)'), findsOneWidget);
     expect(find.text('2026-10-22 16:30:00 UTC'), findsOneWidget);
     expect(await store.read(), 'fsr_good');
     expect(adapter.requests.last.options.headers['Authorization'], 'Bearer fsr_good');

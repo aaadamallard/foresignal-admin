@@ -81,8 +81,8 @@ Widget testApp(ProviderContainer container) =>
 /// Contract-shaped bodies (SystemInfo, Contract, ServerSettings) for the
 /// three Connect probe operations.
 const Map<String, Object?> systemBody = <String, Object?>{
-  'version': '1.4.1',
-  'apiVersion': '1.4.1',
+  'version': '1.5.0',
+  'apiVersion': '1.5.0',
   'startedAt': '2026-10-22T13:00:00Z',
   'status': 'ok',
   'mode': 'full',
@@ -110,7 +110,7 @@ const Map<String, Object?> serverSettingsBody = <String, Object?>{
 /// [apiVersion].
 FakeAdapter connectBackend({
   String adminToken = 'fsr_good',
-  String apiVersion = '1.4.1',
+  String apiVersion = '1.5.0',
   int badTokenStatus = 401,
   Map<String, Object?> serverSettings = serverSettingsBody,
 }) {

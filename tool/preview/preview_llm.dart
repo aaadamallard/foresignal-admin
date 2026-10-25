@@ -1,6 +1,7 @@
 // The preview's fake answers for the LLM operations. Bodies follow their
 // schemas in openapi/OpenAPI.json (LlmProvider, LlmProviderInput,
-// LlmTestResult, LlmModelInfo, LlmSettings, LlmUsageSeries, PromptTemplate).
+// LlmTestResult, LlmModelInfo, LlmProbeResult, LlmProviderBudget, LlmSettings,
+// LlmUsageSeries, PromptTemplate).
 
 /// A fake reply.
 typedef LlmReply = ({int status, Object? body});
@@ -25,6 +26,14 @@ class PreviewLlm {
       'updatedAt': '2026-10-20T09:12:00Z',
       'supportsTools': true,
       'knowledgeCutoff': '2026-01-31',
+      'pricing': <String, Object?>{
+        'inputUsdPerMillionTokens': 5,
+        'outputUsdPerMillionTokens': 25,
+        'cachedInputUsdPerMillionTokens': 0.5,
+      },
+      'hourlyCapUsd': 2,
+      'dailyCapUsd': 20,
+      'monthlyCapUsd': 300,
       'lastSuccessAt': '2026-10-22T16:28:41Z',
       'consecutiveFailures': 0,
       'local': false,
@@ -79,7 +88,12 @@ class PreviewLlm {
 }
 
 Map<String, Object?> _problem(int status, String title, String code, [String? detail]) =>
-    <String, Object?>{'title': title, 'status': status, 'code': code, 'detail': ?detail};
+    <String, Object?>{
+      'title': title,
+      'status': status,
+      'code': code,
+      'detail': ?detail,
+    };
 
 List<String> _roles(PreviewLlm llm, String id) => <String>[
   if (llm.settings['chatProvider'] == id) 'chat',
@@ -187,7 +201,10 @@ LlmReply? answerLlm(
       },
     );
   }
-  final match = RegExp(r'^/v1/llm/providers/([^/]+)(/test|/models)?$').firstMatch(path);
+  if (path == '/v1/llm/probe' && method == 'POST') {
+    return (status: 200, body: _probe(llm, (body! as Map).cast<String, Object?>()));
+  }
+  final match = RegExp(r'^/v1/llm/providers/([^/]+)(/test|/models|/budget)?$').firstMatch(path);
   if (match == null) {
     return null;
   }
@@ -246,39 +263,10 @@ LlmReply? answerLlm(
     case ('GET', '/models'):
       return (
         status: 200,
-        body: switch (provider['type']) {
-          'anthropic' => <Object?>[
-            <String, Object?>{
-              'id': 'claude-opus-5-5',
-              'displayName': 'Claude Opus 5.5',
-              'contextWindow': 200000,
-              'supportsTools': true,
-              'supportsEmbeddings': false,
-            },
-            <String, Object?>{
-              'id': 'claude-sonnet-5-5',
-              'displayName': 'Claude Sonnet 5.5',
-              'contextWindow': 200000,
-              'supportsTools': true,
-              'supportsEmbeddings': false,
-            },
-            <String, Object?>{
-              'id': 'claude-haiku-5-5',
-              'displayName': 'Claude Haiku 5.5',
-              'contextWindow': 200000,
-              'supportsTools': true,
-              'supportsEmbeddings': false,
-            },
-          ],
-          'ollama' => <Object?>[
-            <String, Object?>{'id': 'nomic-embed-text', 'supportsEmbeddings': true},
-            <String, Object?>{'id': 'llama3.1:8b', 'contextWindow': 131072},
-          ],
-          _ => <Object?>[
-            <String, Object?>{'id': 'kokoro'},
-          ],
-        },
+        body: _models(provider['type']! as String, provider['baseUrl'] as String?),
       );
+    case ('GET', '/budget'):
+      return (status: 200, body: _budget(provider));
   }
   return null;
 }
@@ -308,8 +296,144 @@ Map<String, Object?> _store(Map<String, Object?> input, Map<String, Object?>? ol
     'tokensToday': old?['tokensToday'] ?? 0,
     'updatedAt': '2026-10-22T16:30:00Z',
     'knowledgeCutoff': ?input['knowledgeCutoff'],
+    'pricing': ?input['pricing'],
+    'hourlyCapUsd': ?input['hourlyCapUsd'],
+    'dailyCapUsd': ?input['dailyCapUsd'],
+    'monthlyCapUsd': ?input['monthlyCapUsd'],
     'consecutiveFailures': 0,
     'local': type == 'ollama' || ((input['options'] as Map?)?['local'] == true),
+  };
+}
+
+String? _host(String? baseUrl) => baseUrl == null ? null : Uri.tryParse(baseUrl)?.host;
+
+/// What a provider of [type] at [baseUrl] lists (LlmModelInfo[]).
+List<Object?> _models(String type, String? baseUrl) => switch ((type, _host(baseUrl))) {
+  ('anthropic', _) => <Object?>[
+    for (final (id, name) in const <(String, String)>[
+      ('claude-opus-5-5', 'Claude Opus 5.5'),
+      ('claude-sonnet-5-5', 'Claude Sonnet 5.5'),
+      ('claude-haiku-5-5', 'Claude Haiku 5.5'),
+    ])
+      <String, Object?>{
+        'id': id,
+        'displayName': name,
+        'contextWindow': 200000,
+        'supportsTools': true,
+        'supportsEmbeddings': false,
+      },
+  ],
+  ('ollama', _) => <Object?>[
+    <String, Object?>{'id': 'nomic-embed-text', 'supportsEmbeddings': true},
+    <String, Object?>{'id': 'llama3.1:8b', 'contextWindow': 131072},
+  ],
+  (_, 'api.deepseek.com') => <Object?>[
+    <String, Object?>{'id': 'deepseek-chat'},
+    <String, Object?>{'id': 'deepseek-reasoner'},
+  ],
+  (_, 'api.fireworks.ai') => <Object?>[],
+  _ => <Object?>[
+    <String, Object?>{'id': 'kokoro'},
+  ],
+};
+
+/// probeLlmProvider: the unsaved [input] tested, nothing kept. An Anthropic
+/// provider without a key (sent, or stored under the same id) is refused as
+/// the real API refuses it; a host named `unreachable` cannot be reached.
+Map<String, Object?> _probe(PreviewLlm llm, Map<String, Object?> input) {
+  final type = input['type']! as String;
+  final baseUrl =
+      input['baseUrl'] as String? ??
+      switch (type) {
+        'anthropic' => 'https://api.anthropic.com',
+        'ollama' => 'http://ollama:11434',
+        _ => null,
+      };
+  final host = _host(baseUrl) ?? '';
+  final keyed = input['apiKey'] != null || llm.providers[input['id']]?['apiKeySet'] == true;
+  String? error;
+  if (host.contains('unreachable')) {
+    error = 'connect timed out: $host';
+  } else if (type == 'anthropic' && !keyed) {
+    error = 'HTTP 401 from $host: authentication_error: x-api-key header is required';
+  }
+  if (error != null) {
+    return <String, Object?>{
+      'test': <String, Object?>{'success': false, 'error': error},
+      'models': <Object?>[],
+      'modelsError': error,
+    };
+  }
+  final models = _models(type, baseUrl);
+  final chatModel = input['chatModel'] ?? (type == 'anthropic' ? 'claude-opus-5-5' : null);
+  return <String, Object?>{
+    'test': <String, Object?>{
+      'success': true,
+      if (chatModel != null)
+        'chat': <String, Object?>{
+          'model': chatModel,
+          'latencyMs': 611,
+          'inputTokens': 14,
+          'outputTokens': 2,
+          'cachedTokens': 0,
+          'text': 'ok',
+          'stopReason': 'end',
+        },
+    },
+    'models': models,
+    if (models.isEmpty) 'modelsError': 'HTTP 404 from $host: /models not found',
+  };
+}
+
+/// getLlmProviderBudget, at the preview's fixed now (2026-10-22T16:30:00Z).
+Map<String, Object?> _budget(Map<String, Object?> p) {
+  final pricing = p['pricing'] as Map?;
+  final priced = pricing != null && pricing.values.any((v) => v != null);
+  final spent = <String, num>{
+    'hour': priced && p['id'] == 'claude' ? 1.62 : 0,
+    'day': priced && p['id'] == 'claude' ? 9.4 : 0,
+    'month': priced && p['id'] == 'claude' ? 141.25 : 0,
+  };
+  Map<String, Object?> window(String w, String start, String resetsAt, Object? cap) {
+    final c = cap as num?;
+    final s = spent[w]!;
+    return <String, Object?>{
+      'window': w,
+      'start': start,
+      'resetsAt': resetsAt,
+      'spentUsd': s,
+      'reservedUsd': 0,
+      'capUsd': c,
+      'remainingUsd': c == null ? null : (c - s < 0 ? 0 : c - s),
+      'exhausted': c != null && s >= c,
+    };
+  }
+
+  return <String, Object?>{
+    'providerId': p['id'],
+    'currency': 'USD',
+    'priced': priced,
+    'pricing': pricing,
+    'windows': <String, Object?>{
+      'hour': window('hour', '2026-10-22T16:00:00Z', '2026-10-22T17:00:00Z', p['hourlyCapUsd']),
+      'day': window('day', '2026-10-22T00:00:00Z', '2026-10-23T00:00:00Z', p['dailyCapUsd']),
+      'month': window('month', '2026-10-01T00:00:00Z', '2026-11-01T00:00:00Z', p['monthlyCapUsd']),
+    },
+    'rateLimits': <String, Object?>{
+      'requestsPerMinute': p['requestsPerMinute'],
+      'tokensPerDay': p['tokensPerDay'],
+      'tokensToday': p['tokensToday'],
+    },
+    'providerBalance': _host(p['baseUrl'] as String?) == 'api.deepseek.com'
+        ? <String, Object?>{
+            'provider': 'DeepSeek',
+            'kind': 'account',
+            'amounts': <Object?>[
+              <String, Object?>{'amount': 18.42, 'currency': 'USD'},
+            ],
+            'fetchedAt': '2026-10-22T16:29:30Z',
+          }
+        : null,
   };
 }
 

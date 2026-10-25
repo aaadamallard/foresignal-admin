@@ -18,6 +18,7 @@ part 'llm_usage_point.g.dart';
 /// * [cachedTokens]
 /// * [errors]
 /// * [refused]
+/// * [costUsd] - USD cost of the bucket's calls at the provider's prices when they were made (162); 0 when unpriced
 @BuiltValue()
 abstract class LlmUsagePoint
     implements Built<LlmUsagePoint, LlmUsagePointBuilder> {
@@ -41,6 +42,10 @@ abstract class LlmUsagePoint
 
   @BuiltValueField(wireName: r'refused')
   int? get refused;
+
+  /// USD cost of the bucket's calls at the provider's prices when they were made (162); 0 when unpriced
+  @BuiltValueField(wireName: r'costUsd')
+  num? get costUsd;
 
   LlmUsagePoint._();
 
@@ -106,6 +111,13 @@ class _$LlmUsagePointSerializer implements PrimitiveSerializer<LlmUsagePoint> {
       yield serializers.serialize(
         object.refused,
         specifiedType: const FullType(int),
+      );
+    }
+    if (object.costUsd != null) {
+      yield r'costUsd';
+      yield serializers.serialize(
+        object.costUsd,
+        specifiedType: const FullType(num),
       );
     }
   }
@@ -191,6 +203,16 @@ class _$LlmUsagePointSerializer implements PrimitiveSerializer<LlmUsagePoint> {
                   as int?;
           if (valueDes == null) continue;
           result.refused = valueDes;
+          break;
+        case r'costUsd':
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
+          if (valueDes == null) continue;
+          result.costUsd = valueDes;
           break;
         default:
           unhandled.add(key);

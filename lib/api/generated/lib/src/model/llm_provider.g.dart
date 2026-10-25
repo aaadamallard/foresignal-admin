@@ -279,6 +279,14 @@ class _$LlmProvider extends LlmProvider {
   final int? consecutiveFailures;
   @override
   final bool? local;
+  @override
+  final LlmPricing? pricing;
+  @override
+  final num? hourlyCapUsd;
+  @override
+  final num? dailyCapUsd;
+  @override
+  final num? monthlyCapUsd;
 
   factory _$LlmProvider([void Function(LlmProviderBuilder)? updates]) =>
       (LlmProviderBuilder()..update(updates))._build();
@@ -306,6 +314,10 @@ class _$LlmProvider extends LlmProvider {
     this.lastErrorAt,
     this.consecutiveFailures,
     this.local,
+    this.pricing,
+    this.hourlyCapUsd,
+    this.dailyCapUsd,
+    this.monthlyCapUsd,
   }) : super._();
   @override
   LlmProvider rebuild(void Function(LlmProviderBuilder) updates) =>
@@ -339,7 +351,11 @@ class _$LlmProvider extends LlmProvider {
         lastSuccessAt == other.lastSuccessAt &&
         lastErrorAt == other.lastErrorAt &&
         consecutiveFailures == other.consecutiveFailures &&
-        local == other.local;
+        local == other.local &&
+        pricing == other.pricing &&
+        hourlyCapUsd == other.hourlyCapUsd &&
+        dailyCapUsd == other.dailyCapUsd &&
+        monthlyCapUsd == other.monthlyCapUsd;
   }
 
   @override
@@ -367,6 +383,10 @@ class _$LlmProvider extends LlmProvider {
     _$hash = $jc(_$hash, lastErrorAt.hashCode);
     _$hash = $jc(_$hash, consecutiveFailures.hashCode);
     _$hash = $jc(_$hash, local.hashCode);
+    _$hash = $jc(_$hash, pricing.hashCode);
+    _$hash = $jc(_$hash, hourlyCapUsd.hashCode);
+    _$hash = $jc(_$hash, dailyCapUsd.hashCode);
+    _$hash = $jc(_$hash, monthlyCapUsd.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -395,7 +415,11 @@ class _$LlmProvider extends LlmProvider {
           ..add('lastSuccessAt', lastSuccessAt)
           ..add('lastErrorAt', lastErrorAt)
           ..add('consecutiveFailures', consecutiveFailures)
-          ..add('local', local))
+          ..add('local', local)
+          ..add('pricing', pricing)
+          ..add('hourlyCapUsd', hourlyCapUsd)
+          ..add('dailyCapUsd', dailyCapUsd)
+          ..add('monthlyCapUsd', monthlyCapUsd))
         .toString();
   }
 }
@@ -501,6 +525,23 @@ class LlmProviderBuilder implements Builder<LlmProvider, LlmProviderBuilder> {
   bool? get local => _$this._local;
   set local(bool? local) => _$this._local = local;
 
+  LlmPricingBuilder? _pricing;
+  LlmPricingBuilder get pricing => _$this._pricing ??= LlmPricingBuilder();
+  set pricing(LlmPricingBuilder? pricing) => _$this._pricing = pricing;
+
+  num? _hourlyCapUsd;
+  num? get hourlyCapUsd => _$this._hourlyCapUsd;
+  set hourlyCapUsd(num? hourlyCapUsd) => _$this._hourlyCapUsd = hourlyCapUsd;
+
+  num? _dailyCapUsd;
+  num? get dailyCapUsd => _$this._dailyCapUsd;
+  set dailyCapUsd(num? dailyCapUsd) => _$this._dailyCapUsd = dailyCapUsd;
+
+  num? _monthlyCapUsd;
+  num? get monthlyCapUsd => _$this._monthlyCapUsd;
+  set monthlyCapUsd(num? monthlyCapUsd) =>
+      _$this._monthlyCapUsd = monthlyCapUsd;
+
   LlmProviderBuilder() {
     LlmProvider._defaults(this);
   }
@@ -530,6 +571,10 @@ class LlmProviderBuilder implements Builder<LlmProvider, LlmProviderBuilder> {
       _lastErrorAt = $v.lastErrorAt;
       _consecutiveFailures = $v.consecutiveFailures;
       _local = $v.local;
+      _pricing = $v.pricing?.toBuilder();
+      _hourlyCapUsd = $v.hourlyCapUsd;
+      _dailyCapUsd = $v.dailyCapUsd;
+      _monthlyCapUsd = $v.monthlyCapUsd;
       _$v = null;
     }
     return this;
@@ -588,6 +633,10 @@ class LlmProviderBuilder implements Builder<LlmProvider, LlmProviderBuilder> {
             lastErrorAt: lastErrorAt,
             consecutiveFailures: consecutiveFailures,
             local: local,
+            pricing: _pricing?.build(),
+            hourlyCapUsd: hourlyCapUsd,
+            dailyCapUsd: dailyCapUsd,
+            monthlyCapUsd: monthlyCapUsd,
           );
     } catch (_) {
       late String _$failedField;
@@ -597,6 +646,9 @@ class LlmProviderBuilder implements Builder<LlmProvider, LlmProviderBuilder> {
 
         _$failedField = 'roles';
         _roles?.build();
+
+        _$failedField = 'pricing';
+        _pricing?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
           r'LlmProvider',

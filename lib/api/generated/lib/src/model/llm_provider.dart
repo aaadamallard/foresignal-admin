@@ -6,6 +6,7 @@
 import 'package:built_collection/built_collection.dart';
 import 'package:foresignal_api/src/model/date.dart';
 import 'package:built_value/json_object.dart';
+import 'package:foresignal_api/src/model/llm_pricing.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -36,6 +37,10 @@ part 'llm_provider.g.dart';
 /// * [lastErrorAt]
 /// * [consecutiveFailures]
 /// * [local] - Treated as local for LLM egress (ollama, or `options.local=true`)
+/// * [pricing] - Prices in USD per million tokens (162); every member null when unpriced
+/// * [hourlyCapUsd] - USD cap of the UTC clock hour (it resets at the top of the hour), or null (162)
+/// * [dailyCapUsd] - USD cap of the UTC day (it resets at 00:00 UTC, as tokensPerDay), or null (162)
+/// * [monthlyCapUsd] - USD cap of the UTC calendar month (it resets at 00:00 UTC on the 1st), or null (162)
 @BuiltValue()
 abstract class LlmProvider implements Built<LlmProvider, LlmProviderBuilder> {
   @BuiltValueField(wireName: r'id')
@@ -109,6 +114,22 @@ abstract class LlmProvider implements Built<LlmProvider, LlmProviderBuilder> {
   /// Treated as local for LLM egress (ollama, or `options.local=true`)
   @BuiltValueField(wireName: r'local')
   bool? get local;
+
+  /// Prices in USD per million tokens (162); every member null when unpriced
+  @BuiltValueField(wireName: r'pricing')
+  LlmPricing? get pricing;
+
+  /// USD cap of the UTC clock hour (it resets at the top of the hour), or null (162)
+  @BuiltValueField(wireName: r'hourlyCapUsd')
+  num? get hourlyCapUsd;
+
+  /// USD cap of the UTC day (it resets at 00:00 UTC, as tokensPerDay), or null (162)
+  @BuiltValueField(wireName: r'dailyCapUsd')
+  num? get dailyCapUsd;
+
+  /// USD cap of the UTC calendar month (it resets at 00:00 UTC on the 1st), or null (162)
+  @BuiltValueField(wireName: r'monthlyCapUsd')
+  num? get monthlyCapUsd;
 
   LlmProvider._();
 
@@ -282,6 +303,34 @@ class _$LlmProviderSerializer implements PrimitiveSerializer<LlmProvider> {
       yield serializers.serialize(
         object.local,
         specifiedType: const FullType(bool),
+      );
+    }
+    if (object.pricing != null) {
+      yield r'pricing';
+      yield serializers.serialize(
+        object.pricing,
+        specifiedType: const FullType.nullable(LlmPricing),
+      );
+    }
+    if (object.hourlyCapUsd != null) {
+      yield r'hourlyCapUsd';
+      yield serializers.serialize(
+        object.hourlyCapUsd,
+        specifiedType: const FullType.nullable(num),
+      );
+    }
+    if (object.dailyCapUsd != null) {
+      yield r'dailyCapUsd';
+      yield serializers.serialize(
+        object.dailyCapUsd,
+        specifiedType: const FullType.nullable(num),
+      );
+    }
+    if (object.monthlyCapUsd != null) {
+      yield r'monthlyCapUsd';
+      yield serializers.serialize(
+        object.monthlyCapUsd,
+        specifiedType: const FullType.nullable(num),
       );
     }
   }
@@ -531,6 +580,46 @@ class _$LlmProviderSerializer implements PrimitiveSerializer<LlmProvider> {
                   as bool?;
           if (valueDes == null) continue;
           result.local = valueDes;
+          break;
+        case r'pricing':
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(LlmPricing),
+                  )
+                  as LlmPricing?;
+          if (valueDes == null) continue;
+          result.pricing.replace(valueDes);
+          break;
+        case r'hourlyCapUsd':
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
+          if (valueDes == null) continue;
+          result.hourlyCapUsd = valueDes;
+          break;
+        case r'dailyCapUsd':
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
+          if (valueDes == null) continue;
+          result.dailyCapUsd = valueDes;
+          break;
+        case r'monthlyCapUsd':
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
+          if (valueDes == null) continue;
+          result.monthlyCapUsd = valueDes;
           break;
         default:
           unhandled.add(key);

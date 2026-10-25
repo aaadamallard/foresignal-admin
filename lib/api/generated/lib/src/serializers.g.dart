@@ -1417,7 +1417,15 @@ Serializers _$serializers =
           ..add(ListRecords200Response.serializer)
           ..add(LiveEvent.serializer)
           ..add(LlmModelInfo.serializer)
+          ..add(LlmPricing.serializer)
+          ..add(LlmProbeResult.serializer)
           ..add(LlmProvider.serializer)
+          ..add(LlmProviderBalance.serializer)
+          ..add(LlmProviderBalanceAmountsInner.serializer)
+          ..add(LlmProviderBudget.serializer)
+          ..add(LlmProviderBudgetCurrencyEnum.serializer)
+          ..add(LlmProviderBudgetRateLimits.serializer)
+          ..add(LlmProviderBudgetWindows.serializer)
           ..add(LlmProviderInput.serializer)
           ..add(LlmProviderInputOptions.serializer)
           ..add(LlmProviderInputOptionsEffortEnum.serializer)
@@ -1426,6 +1434,8 @@ Serializers _$serializers =
           ..add(LlmProviderStatusEnum.serializer)
           ..add(LlmProviderTypeEnum.serializer)
           ..add(LlmSettings.serializer)
+          ..add(LlmSpendWindow.serializer)
+          ..add(LlmSpendWindowWindowEnum.serializer)
           ..add(LlmTestResult.serializer)
           ..add(LlmTestResultChat.serializer)
           ..add(LlmTestResultChatStopReasonEnum.serializer)
@@ -4644,6 +4654,16 @@ Serializers _$serializers =
               const FullType(LedgerQuestionBriefForecastersInner),
             ]),
             () => ListBuilder<LedgerQuestionBriefForecastersInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, const [const FullType(LlmModelInfo)]),
+            () => ListBuilder<LlmModelInfo>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, const [
+              const FullType(LlmProviderBalanceAmountsInner),
+            ]),
+            () => ListBuilder<LlmProviderBalanceAmountsInner>(),
           )
           ..addBuilderFactory(
             const FullType(BuiltList, const [const FullType(LlmUsagePoint)]),

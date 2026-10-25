@@ -21,6 +21,8 @@ class _$LlmUsagePoint extends LlmUsagePoint {
   final int? errors;
   @override
   final int? refused;
+  @override
+  final num? costUsd;
 
   factory _$LlmUsagePoint([void Function(LlmUsagePointBuilder)? updates]) =>
       (LlmUsagePointBuilder()..update(updates))._build();
@@ -33,6 +35,7 @@ class _$LlmUsagePoint extends LlmUsagePoint {
     this.cachedTokens,
     this.errors,
     this.refused,
+    this.costUsd,
   }) : super._();
   @override
   LlmUsagePoint rebuild(void Function(LlmUsagePointBuilder) updates) =>
@@ -51,7 +54,8 @@ class _$LlmUsagePoint extends LlmUsagePoint {
         outputTokens == other.outputTokens &&
         cachedTokens == other.cachedTokens &&
         errors == other.errors &&
-        refused == other.refused;
+        refused == other.refused &&
+        costUsd == other.costUsd;
   }
 
   @override
@@ -64,6 +68,7 @@ class _$LlmUsagePoint extends LlmUsagePoint {
     _$hash = $jc(_$hash, cachedTokens.hashCode);
     _$hash = $jc(_$hash, errors.hashCode);
     _$hash = $jc(_$hash, refused.hashCode);
+    _$hash = $jc(_$hash, costUsd.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -77,7 +82,8 @@ class _$LlmUsagePoint extends LlmUsagePoint {
           ..add('outputTokens', outputTokens)
           ..add('cachedTokens', cachedTokens)
           ..add('errors', errors)
-          ..add('refused', refused))
+          ..add('refused', refused)
+          ..add('costUsd', costUsd))
         .toString();
   }
 }
@@ -114,6 +120,10 @@ class LlmUsagePointBuilder
   int? get refused => _$this._refused;
   set refused(int? refused) => _$this._refused = refused;
 
+  num? _costUsd;
+  num? get costUsd => _$this._costUsd;
+  set costUsd(num? costUsd) => _$this._costUsd = costUsd;
+
   LlmUsagePointBuilder() {
     LlmUsagePoint._defaults(this);
   }
@@ -128,6 +138,7 @@ class LlmUsagePointBuilder
       _cachedTokens = $v.cachedTokens;
       _errors = $v.errors;
       _refused = $v.refused;
+      _costUsd = $v.costUsd;
       _$v = null;
     }
     return this;
@@ -169,6 +180,7 @@ class LlmUsagePointBuilder
           cachedTokens: cachedTokens,
           errors: errors,
           refused: refused,
+          costUsd: costUsd,
         );
     replace(_$result);
     return _$result;

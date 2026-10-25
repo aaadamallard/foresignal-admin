@@ -104,6 +104,14 @@ class _$LlmProviderInput extends LlmProviderInput {
   final bool? enabled;
   @override
   final Date? knowledgeCutoff;
+  @override
+  final LlmPricing? pricing;
+  @override
+  final num? hourlyCapUsd;
+  @override
+  final num? dailyCapUsd;
+  @override
+  final num? monthlyCapUsd;
 
   factory _$LlmProviderInput([
     void Function(LlmProviderInputBuilder)? updates,
@@ -122,6 +130,10 @@ class _$LlmProviderInput extends LlmProviderInput {
     this.tokensPerDay,
     this.enabled,
     this.knowledgeCutoff,
+    this.pricing,
+    this.hourlyCapUsd,
+    this.dailyCapUsd,
+    this.monthlyCapUsd,
   }) : super._();
   @override
   LlmProviderInput rebuild(void Function(LlmProviderInputBuilder) updates) =>
@@ -146,7 +158,11 @@ class _$LlmProviderInput extends LlmProviderInput {
         requestsPerMinute == other.requestsPerMinute &&
         tokensPerDay == other.tokensPerDay &&
         enabled == other.enabled &&
-        knowledgeCutoff == other.knowledgeCutoff;
+        knowledgeCutoff == other.knowledgeCutoff &&
+        pricing == other.pricing &&
+        hourlyCapUsd == other.hourlyCapUsd &&
+        dailyCapUsd == other.dailyCapUsd &&
+        monthlyCapUsd == other.monthlyCapUsd;
   }
 
   @override
@@ -164,6 +180,10 @@ class _$LlmProviderInput extends LlmProviderInput {
     _$hash = $jc(_$hash, tokensPerDay.hashCode);
     _$hash = $jc(_$hash, enabled.hashCode);
     _$hash = $jc(_$hash, knowledgeCutoff.hashCode);
+    _$hash = $jc(_$hash, pricing.hashCode);
+    _$hash = $jc(_$hash, hourlyCapUsd.hashCode);
+    _$hash = $jc(_$hash, dailyCapUsd.hashCode);
+    _$hash = $jc(_$hash, monthlyCapUsd.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -182,7 +202,11 @@ class _$LlmProviderInput extends LlmProviderInput {
           ..add('requestsPerMinute', requestsPerMinute)
           ..add('tokensPerDay', tokensPerDay)
           ..add('enabled', enabled)
-          ..add('knowledgeCutoff', knowledgeCutoff))
+          ..add('knowledgeCutoff', knowledgeCutoff)
+          ..add('pricing', pricing)
+          ..add('hourlyCapUsd', hourlyCapUsd)
+          ..add('dailyCapUsd', dailyCapUsd)
+          ..add('monthlyCapUsd', monthlyCapUsd))
         .toString();
   }
 }
@@ -245,6 +269,23 @@ class LlmProviderInputBuilder
   set knowledgeCutoff(Date? knowledgeCutoff) =>
       _$this._knowledgeCutoff = knowledgeCutoff;
 
+  LlmPricingBuilder? _pricing;
+  LlmPricingBuilder get pricing => _$this._pricing ??= LlmPricingBuilder();
+  set pricing(LlmPricingBuilder? pricing) => _$this._pricing = pricing;
+
+  num? _hourlyCapUsd;
+  num? get hourlyCapUsd => _$this._hourlyCapUsd;
+  set hourlyCapUsd(num? hourlyCapUsd) => _$this._hourlyCapUsd = hourlyCapUsd;
+
+  num? _dailyCapUsd;
+  num? get dailyCapUsd => _$this._dailyCapUsd;
+  set dailyCapUsd(num? dailyCapUsd) => _$this._dailyCapUsd = dailyCapUsd;
+
+  num? _monthlyCapUsd;
+  num? get monthlyCapUsd => _$this._monthlyCapUsd;
+  set monthlyCapUsd(num? monthlyCapUsd) =>
+      _$this._monthlyCapUsd = monthlyCapUsd;
+
   LlmProviderInputBuilder() {
     LlmProviderInput._defaults(this);
   }
@@ -264,6 +305,10 @@ class LlmProviderInputBuilder
       _tokensPerDay = $v.tokensPerDay;
       _enabled = $v.enabled;
       _knowledgeCutoff = $v.knowledgeCutoff;
+      _pricing = $v.pricing?.toBuilder();
+      _hourlyCapUsd = $v.hourlyCapUsd;
+      _dailyCapUsd = $v.dailyCapUsd;
+      _monthlyCapUsd = $v.monthlyCapUsd;
       _$v = null;
     }
     return this;
@@ -308,12 +353,19 @@ class LlmProviderInputBuilder
             tokensPerDay: tokensPerDay,
             enabled: enabled,
             knowledgeCutoff: knowledgeCutoff,
+            pricing: _pricing?.build(),
+            hourlyCapUsd: hourlyCapUsd,
+            dailyCapUsd: dailyCapUsd,
+            monthlyCapUsd: monthlyCapUsd,
           );
     } catch (_) {
       late String _$failedField;
       try {
         _$failedField = 'options';
         _options?.build();
+
+        _$failedField = 'pricing';
+        _pricing?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
           r'LlmProviderInput',
