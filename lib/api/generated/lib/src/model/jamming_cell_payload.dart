@@ -381,6 +381,9 @@ class JammingCellPayloadStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'degraded-input')
   static const JammingCellPayloadStatusEnum degradedInput =
       _$jammingCellPayloadStatusEnum_degradedInput;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const JammingCellPayloadStatusEnum unknownDefaultOpenApi =
+      _$jammingCellPayloadStatusEnum_unknownDefaultOpenApi;
 
   static Serializer<JammingCellPayloadStatusEnum> get serializer =>
       _$jammingCellPayloadStatusEnumSerializer;
@@ -400,6 +403,9 @@ class JammingCellPayloadLevelEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'high')
   static const JammingCellPayloadLevelEnum high =
       _$jammingCellPayloadLevelEnum_high;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const JammingCellPayloadLevelEnum unknownDefaultOpenApi =
+      _$jammingCellPayloadLevelEnum_unknownDefaultOpenApi;
 
   static Serializer<JammingCellPayloadLevelEnum> get serializer =>
       _$jammingCellPayloadLevelEnumSerializer;
@@ -418,6 +424,9 @@ class JammingCellPayloadGridEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'deg1')
   static const JammingCellPayloadGridEnum deg1 =
       _$jammingCellPayloadGridEnum_deg1;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const JammingCellPayloadGridEnum unknownDefaultOpenApi =
+      _$jammingCellPayloadGridEnum_unknownDefaultOpenApi;
 
   static Serializer<JammingCellPayloadGridEnum> get serializer =>
       _$jammingCellPayloadGridEnumSerializer;

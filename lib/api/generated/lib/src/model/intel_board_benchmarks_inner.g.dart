@@ -18,6 +18,9 @@ _$intelBoardBenchmarksInnerStatusEnum_fail =
 const IntelBoardBenchmarksInnerStatusEnum
 _$intelBoardBenchmarksInnerStatusEnum_unknown =
     const IntelBoardBenchmarksInnerStatusEnum._('unknown');
+const IntelBoardBenchmarksInnerStatusEnum
+_$intelBoardBenchmarksInnerStatusEnum_unknownDefaultOpenApi =
+    const IntelBoardBenchmarksInnerStatusEnum._('unknownDefaultOpenApi');
 
 IntelBoardBenchmarksInnerStatusEnum
 _$intelBoardBenchmarksInnerStatusEnumValueOf(String name) {
@@ -30,8 +33,10 @@ _$intelBoardBenchmarksInnerStatusEnumValueOf(String name) {
       return _$intelBoardBenchmarksInnerStatusEnum_fail;
     case 'unknown':
       return _$intelBoardBenchmarksInnerStatusEnum_unknown;
+    case 'unknownDefaultOpenApi':
+      return _$intelBoardBenchmarksInnerStatusEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$intelBoardBenchmarksInnerStatusEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -43,6 +48,7 @@ _$intelBoardBenchmarksInnerStatusEnumValues =
         _$intelBoardBenchmarksInnerStatusEnum_warn,
         _$intelBoardBenchmarksInnerStatusEnum_fail,
         _$intelBoardBenchmarksInnerStatusEnum_unknown,
+        _$intelBoardBenchmarksInnerStatusEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -57,12 +63,14 @@ class _$IntelBoardBenchmarksInnerStatusEnumSerializer
     'warn': 'warn',
     'fail': 'fail',
     'unknown': 'unknown',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'pass': 'pass',
     'warn': 'warn',
     'fail': 'fail',
     'unknown': 'unknown',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

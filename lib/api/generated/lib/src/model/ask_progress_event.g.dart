@@ -10,6 +10,9 @@ const AskProgressEventStatusEnum _$askProgressEventStatusEnum_calling =
     const AskProgressEventStatusEnum._('calling');
 const AskProgressEventStatusEnum _$askProgressEventStatusEnum_done =
     const AskProgressEventStatusEnum._('done');
+const AskProgressEventStatusEnum
+_$askProgressEventStatusEnum_unknownDefaultOpenApi =
+    const AskProgressEventStatusEnum._('unknownDefaultOpenApi');
 
 AskProgressEventStatusEnum _$askProgressEventStatusEnumValueOf(String name) {
   switch (name) {
@@ -17,8 +20,10 @@ AskProgressEventStatusEnum _$askProgressEventStatusEnumValueOf(String name) {
       return _$askProgressEventStatusEnum_calling;
     case 'done':
       return _$askProgressEventStatusEnum_done;
+    case 'unknownDefaultOpenApi':
+      return _$askProgressEventStatusEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$askProgressEventStatusEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -26,6 +31,7 @@ final BuiltSet<AskProgressEventStatusEnum> _$askProgressEventStatusEnumValues =
     BuiltSet<AskProgressEventStatusEnum>(const <AskProgressEventStatusEnum>[
       _$askProgressEventStatusEnum_calling,
       _$askProgressEventStatusEnum_done,
+      _$askProgressEventStatusEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<AskProgressEventStatusEnum> _$askProgressEventStatusEnumSerializer =
@@ -36,10 +42,12 @@ class _$AskProgressEventStatusEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'calling': 'calling',
     'done': 'done',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'calling': 'calling',
     'done': 'done',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

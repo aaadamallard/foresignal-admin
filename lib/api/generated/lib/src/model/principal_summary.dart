@@ -203,6 +203,9 @@ class PrincipalSummaryKindEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'service')
   static const PrincipalSummaryKindEnum service =
       _$principalSummaryKindEnum_service;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const PrincipalSummaryKindEnum unknownDefaultOpenApi =
+      _$principalSummaryKindEnum_unknownDefaultOpenApi;
 
   static Serializer<PrincipalSummaryKindEnum> get serializer =>
       _$principalSummaryKindEnumSerializer;

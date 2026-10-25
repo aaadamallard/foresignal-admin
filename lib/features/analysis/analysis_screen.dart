@@ -152,12 +152,19 @@ class BoardPanel extends ConsumerWidget {
                 ? none('No situations.')
                 : Column(
                     children: <Widget>[
+                      // Each row opens the situation: why it is warning,
+                      // its evidence, assessment and timeline.
                       for (final s in b.situations)
-                        _row(
-                          context,
-                          StatusLabel(label: wireLabel(s.severity), tone: severityTone(s.severity)),
-                          s.title,
-                          s.status == null ? null : wireText(s.status!),
+                        InkWell(
+                          key: Key('board.situation.${s.id}'),
+                          onTap: () => context.go(analysisSituationPath(s.id)),
+                          child: _row(
+                            context,
+                            StatusLabel(label: wireLabel(s.severity, s, 'severity'), tone: severityTone(s.severity)),
+                            s.title,
+                            s.status == null ? null : wireText(s.status!),
+                            link: true,
+                          ),
                         ),
                     ],
                   ),
@@ -172,7 +179,7 @@ class BoardPanel extends ConsumerWidget {
                         _row(
                           context,
                           Text(
-                            wireLabel(a.cadence),
+                            wireLabel(a.cadence, a, 'cadence'),
                             style: const TextStyle(fontWeight: FontWeight.w600),
                           ),
                           a.headline ?? 'No headline',
@@ -203,7 +210,7 @@ class BoardPanel extends ConsumerWidget {
                           context,
                           Text(percent(c.probability)),
                           c.question ?? c.label ?? c.hypothesisId,
-                          '${c.fromTerm == null ? '—' : wireLabel(c.fromTerm!)} → ${wireLabel(c.toTerm)}',
+                          '${c.fromTerm == null ? '—' : wireLabel(c.fromTerm!, c, 'fromTerm')} → ${wireLabel(c.toTerm, c, 'toTerm')}',
                         ),
                     ],
                   ),
@@ -261,8 +268,8 @@ class BoardPanel extends ConsumerWidget {
                         children: <Widget>[
                           for (final m in benchmarks)
                             StatusLabel(
-                              label: '${m.component}: ${wireOf(m.status)}',
-                              tone: statusTone(wireOf(m.status)),
+                              label: '${m.component}: ${wireOf(m.status, m, 'status')}',
+                              tone: statusTone(wireOf(m.status, m, 'status')),
                             ),
                         ],
                       ),
@@ -285,12 +292,19 @@ class BoardPanel extends ConsumerWidget {
     return d == null ? window : '${d.inDays} days';
   }
 
-  static Widget _row(BuildContext context, Widget lead, String title, String? trailing) => Padding(
+  static Widget _row(BuildContext context, Widget lead, String title, String? trailing, {bool link = false}) => Padding(
     padding: const EdgeInsets.symmetric(vertical: 6),
     child: Row(
       children: <Widget>[
         SizedBox(width: 96, child: lead),
-        Expanded(child: Text(title, overflow: TextOverflow.ellipsis, maxLines: 2)),
+        Expanded(
+          child: Text(
+            title,
+            overflow: TextOverflow.ellipsis,
+            maxLines: 2,
+            style: link ? TextStyle(color: AdminPalette.of(context).primaryText) : null,
+          ),
+        ),
         if (trailing != null) ...<Widget>[
           const SizedBox(width: 12),
           Text(trailing, style: TextStyle(color: AdminPalette.of(context).muted, fontSize: 12)),
@@ -323,7 +337,7 @@ class RecipesPanel extends ConsumerWidget {
           ),
           TableColumnSpec<CorrelationRecipe>(
             label: 'Type',
-            cell: (r) => Text(wireLabel(r.definition.type)),
+            cell: (r) => Text(wireLabel(r.definition.type, r.definition, 'type')),
           ),
           TableColumnSpec<CorrelationRecipe>(
             label: 'Seeds',
@@ -337,7 +351,7 @@ class RecipesPanel extends ConsumerWidget {
             cell: (r) => Text(
               r.origin == null
                   ? (r.builtIn == true ? 'Bundled' : 'Operator')
-                  : wireLabel(r.origin!),
+                  : wireLabel(r.origin!, r, 'origin'),
               style: TextStyle(color: muted),
             ),
           ),
@@ -465,17 +479,17 @@ class _EventsPanelState extends ConsumerState<EventsPanel> {
                   ),
                   TableColumnSpec<IntelEventSummary>(
                     label: 'Type',
-                    cell: (e) => Text(wireLabel(e.type), style: TextStyle(color: muted)),
+                    cell: (e) => Text(wireLabel(e.type, e, 'type'), style: TextStyle(color: muted)),
                   ),
                   TableColumnSpec<IntelEventSummary>(
                     label: 'Status',
                     cell: (e) =>
-                        StatusLabel(label: wireLabel(e.status), tone: statusTone(wireOf(e.status))),
+                        StatusLabel(label: wireLabel(e.status, e, 'status'), tone: statusTone(wireOf(e.status, e, 'status'))),
                   ),
                   TableColumnSpec<IntelEventSummary>(
                     label: 'Severity',
                     cell: (e) =>
-                        StatusLabel(label: wireLabel(e.severity), tone: severityTone(e.severity)),
+                        StatusLabel(label: wireLabel(e.severity, e, 'severity'), tone: severityTone(e.severity)),
                   ),
                   TableColumnSpec<IntelEventSummary>(
                     label: 'Confidence',
@@ -489,7 +503,7 @@ class _EventsPanelState extends ConsumerState<EventsPanel> {
                   ),
                   TableColumnSpec<IntelEventSummary>(
                     label: 'Evidence',
-                    cell: (e) => Text('${wireLabel(e.evidenceQuality)} · ${e.memberCount} members'),
+                    cell: (e) => Text('${wireLabel(e.evidenceQuality, e, 'evidenceQuality')} · ${e.memberCount} members'),
                   ),
                   TableColumnSpec<IntelEventSummary>(
                     label: 'Updated',
@@ -598,7 +612,7 @@ class _CyclesPanelState extends ConsumerState<CyclesPanel> {
               TableColumnSpec<AnalysisCycle>(
                 label: 'Schedule',
                 cell: (c) => Text(
-                  '${wireLabel(c.cadence)} · ${c.schedule.cron} ${c.schedule.timezone}',
+                  '${wireLabel(c.cadence, c, 'cadence')} · ${c.schedule.cron} ${c.schedule.timezone}',
                 ),
               ),
               TableColumnSpec<AnalysisCycle>(
@@ -632,7 +646,7 @@ class _CyclesPanelState extends ConsumerState<CyclesPanel> {
                           ? TextButton(
                               key: Key('analysis.runResult.${c.id}'),
                               onPressed: () => context.go(analysisRunPath(r.id)),
-                              child: Text('Run ${wireOf(r.status)} · view it'),
+                              child: Text('Run ${wireOf(r.status, r, 'status')} · view it'),
                             )
                           : Tooltip(
                               message: r is ApiException ? r.message : '$r',
@@ -685,8 +699,8 @@ class MaintenanceRunView extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
         StatusLabel(
-          label: 'Maintenance ${wireOf(run.status)} · started ${utcText(run.startedAt)}',
-          tone: statusTone(wireOf(run.status)),
+          label: 'Maintenance ${wireOf(run.status, run, 'status')} · started ${utcText(run.startedAt)}',
+          tone: statusTone(wireOf(run.status, run, 'status')),
         ),
         const SizedBox(height: 8),
         Wrap(
@@ -697,8 +711,8 @@ class MaintenanceRunView extends StatelessWidget {
               Tooltip(
                 message: s.error ?? '',
                 child: StatusLabel(
-                  label: '${wireText(wireOf(s.step))}: ${wireOf(s.status)}',
-                  tone: statusTone(wireOf(s.status)),
+                  label: '${wireText(wireOf(s.step, s, 'step'))}: ${wireOf(s.status, s, 'status')}',
+                  tone: statusTone(wireOf(s.status, s, 'status')),
                 ),
               ),
           ],
@@ -795,11 +809,11 @@ class _AssessmentsPanelState extends ConsumerState<AssessmentsPanel> {
                             overflow: TextOverflow.ellipsis,
                           ),
                           subtitle: Text(
-                            '${wireLabel(a.cadence)} · ${utcText(a.periodStart)} – ${utcText(a.periodEnd)}',
+                            '${wireLabel(a.cadence, a, 'cadence')} · ${utcText(a.periodStart)} – ${utcText(a.periodEnd)}',
                           ),
                           trailing: StatusLabel(
-                            label: wireLabel(a.status),
-                            tone: statusTone(wireOf(a.status)),
+                            label: wireLabel(a.status, a, 'status'),
+                            tone: statusTone(wireOf(a.status, a, 'status')),
                           ),
                           onTap: () => setState(() => _openId = a.id),
                         ),
@@ -886,12 +900,12 @@ class _AssessmentCardState extends ConsumerState<AssessmentCard> {
     final palette = AdminPalette.of(context);
     return SectionCard(
       key: Key('analysis.assessmentCard.${a.id}'),
-      title: '${widget.latest ? 'Latest' : 'Assessment'} · ${wireLabel(a.cadence)}',
+      title: '${widget.latest ? 'Latest' : 'Assessment'} · ${wireLabel(a.cadence, a, 'cadence')}',
       subtitle:
           '${utcText(a.periodStart)} – ${utcText(a.periodEnd)}'
           '${a.model == null ? '' : ' · ${a.model}'}',
       actions: <Widget>[
-        StatusLabel(label: wireLabel(a.status), tone: statusTone(wireOf(a.status))),
+        StatusLabel(label: wireLabel(a.status, a, 'status'), tone: statusTone(wireOf(a.status, a, 'status'))),
       ],
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -910,7 +924,7 @@ class _AssessmentCardState extends ConsumerState<AssessmentCard> {
                       child: Text(
                         j.estimativeTerm == null
                             ? percent(j.probability)
-                            : '${wireLabel(j.estimativeTerm!)} (${percent(j.probability)})',
+                            : '${wireLabel(j.estimativeTerm!, j, 'estimativeTerm')} (${percent(j.probability)})',
                         style: TextStyle(color: palette.muted, fontSize: 12),
                       ),
                     ),
@@ -921,14 +935,14 @@ class _AssessmentCardState extends ConsumerState<AssessmentCard> {
           ],
           if (a.sections.isNotEmpty) ...<Widget>[
             const SizedBox(height: 8),
-            for (final s in a.sections.where((s) => wireOf(s.key) != 'bluf'))
+            for (final s in a.sections.where((s) => wireOf(s.key, s, 'key') != 'bluf'))
               ExpansionTile(
                 tilePadding: EdgeInsets.zero,
                 title: Text(s.title),
-                subtitle: wireOf(s.textOrigin) == 'deterministic'
+                subtitle: wireOf(s.textOrigin, s, 'textOrigin') == 'deterministic'
                     ? null
                     : Text(
-                        wireOf(s.textOrigin) == 'mixed'
+                        wireOf(s.textOrigin, s, 'textOrigin') == 'mixed'
                             ? 'Partly written by an LLM'
                             : 'Written by an LLM',
                         style: TextStyle(color: palette.muted, fontSize: 12),
@@ -980,7 +994,7 @@ class _AssessmentCardState extends ConsumerState<AssessmentCard> {
                     alignment: Alignment.centerLeft,
                     child: StatusChip(
                       key: const Key('analysis.feedback.recorded'),
-                      label: 'Recorded ${wireText(wireOf(f.rating))} at ${utcText(f.at)}',
+                      label: 'Recorded ${wireText(wireOf(f.rating, f, 'rating'))} at ${utcText(f.at)}',
                       tone: StatusTone.ok,
                     ),
                   ),
@@ -1045,8 +1059,8 @@ class CalibrationCard extends StatelessWidget {
     final c = calibration;
     final bins = (c.bins ?? BuiltList<IntelCalibrationBinsInner>()).toList();
     return SectionCard(
-      key: Key('analysis.calibration.${wireOf(c.scope)}'),
-      title: wireLabel(c.scope),
+      key: Key('analysis.calibration.${wireOf(c.scope, c, 'scope')}'),
+      title: wireLabel(c.scope, c, 'scope'),
       subtitle: c.calibrated
           ? 'Calibrated: confidence is a probability fitted to resolved outcomes.'
           : 'Not calibrated yet: the raw score is reported until ${c.minSamples} outcomes resolve.',

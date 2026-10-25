@@ -14,6 +14,8 @@ const CoverageStatsScopeEnum _$coverageStatsScopeEnum_situation =
     const CoverageStatsScopeEnum._('situation');
 const CoverageStatsScopeEnum _$coverageStatsScopeEnum_hypothesis =
     const CoverageStatsScopeEnum._('hypothesis');
+const CoverageStatsScopeEnum _$coverageStatsScopeEnum_unknownDefaultOpenApi =
+    const CoverageStatsScopeEnum._('unknownDefaultOpenApi');
 
 CoverageStatsScopeEnum _$coverageStatsScopeEnumValueOf(String name) {
   switch (name) {
@@ -25,8 +27,10 @@ CoverageStatsScopeEnum _$coverageStatsScopeEnumValueOf(String name) {
       return _$coverageStatsScopeEnum_situation;
     case 'hypothesis':
       return _$coverageStatsScopeEnum_hypothesis;
+    case 'unknownDefaultOpenApi':
+      return _$coverageStatsScopeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$coverageStatsScopeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -36,12 +40,16 @@ final BuiltSet<CoverageStatsScopeEnum> _$coverageStatsScopeEnumValues =
       _$coverageStatsScopeEnum_topic,
       _$coverageStatsScopeEnum_situation,
       _$coverageStatsScopeEnum_hypothesis,
+      _$coverageStatsScopeEnum_unknownDefaultOpenApi,
     ]);
 
 const CoverageStatsBlindspotEnum _$coverageStatsBlindspotEnum_left =
     const CoverageStatsBlindspotEnum._('left');
 const CoverageStatsBlindspotEnum _$coverageStatsBlindspotEnum_right =
     const CoverageStatsBlindspotEnum._('right');
+const CoverageStatsBlindspotEnum
+_$coverageStatsBlindspotEnum_unknownDefaultOpenApi =
+    const CoverageStatsBlindspotEnum._('unknownDefaultOpenApi');
 
 CoverageStatsBlindspotEnum _$coverageStatsBlindspotEnumValueOf(String name) {
   switch (name) {
@@ -49,8 +57,10 @@ CoverageStatsBlindspotEnum _$coverageStatsBlindspotEnumValueOf(String name) {
       return _$coverageStatsBlindspotEnum_left;
     case 'right':
       return _$coverageStatsBlindspotEnum_right;
+    case 'unknownDefaultOpenApi':
+      return _$coverageStatsBlindspotEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$coverageStatsBlindspotEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -58,6 +68,7 @@ final BuiltSet<CoverageStatsBlindspotEnum> _$coverageStatsBlindspotEnumValues =
     BuiltSet<CoverageStatsBlindspotEnum>(const <CoverageStatsBlindspotEnum>[
       _$coverageStatsBlindspotEnum_left,
       _$coverageStatsBlindspotEnum_right,
+      _$coverageStatsBlindspotEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<CoverageStatsScopeEnum> _$coverageStatsScopeEnumSerializer =
@@ -72,12 +83,14 @@ class _$CoverageStatsScopeEnumSerializer
     'topic': 'topic',
     'situation': 'situation',
     'hypothesis': 'hypothesis',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'story': 'story',
     'topic': 'topic',
     'situation': 'situation',
     'hypothesis': 'hypothesis',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -107,10 +120,12 @@ class _$CoverageStatsBlindspotEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'left': 'left',
     'right': 'right',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'left': 'left',
     'right': 'right',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

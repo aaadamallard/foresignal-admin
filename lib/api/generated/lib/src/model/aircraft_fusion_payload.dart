@@ -320,6 +320,9 @@ class AircraftFusionPayloadStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'degraded-input')
   static const AircraftFusionPayloadStatusEnum degradedInput =
       _$aircraftFusionPayloadStatusEnum_degradedInput;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const AircraftFusionPayloadStatusEnum unknownDefaultOpenApi =
+      _$aircraftFusionPayloadStatusEnum_unknownDefaultOpenApi;
 
   static Serializer<AircraftFusionPayloadStatusEnum> get serializer =>
       _$aircraftFusionPayloadStatusEnumSerializer;
@@ -345,6 +348,9 @@ class AircraftFusionPayloadPositionSourceEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'other')
   static const AircraftFusionPayloadPositionSourceEnum other =
       _$aircraftFusionPayloadPositionSourceEnum_other;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const AircraftFusionPayloadPositionSourceEnum unknownDefaultOpenApi =
+      _$aircraftFusionPayloadPositionSourceEnum_unknownDefaultOpenApi;
 
   static Serializer<AircraftFusionPayloadPositionSourceEnum> get serializer =>
       _$aircraftFusionPayloadPositionSourceEnumSerializer;

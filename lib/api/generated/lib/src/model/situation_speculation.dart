@@ -235,6 +235,9 @@ class SituationSpeculationLabelEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'speculation')
   static const SituationSpeculationLabelEnum speculation =
       _$situationSpeculationLabelEnum_speculation;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const SituationSpeculationLabelEnum unknownDefaultOpenApi =
+      _$situationSpeculationLabelEnum_unknownDefaultOpenApi;
 
   static Serializer<SituationSpeculationLabelEnum> get serializer =>
       _$situationSpeculationLabelEnumSerializer;
@@ -251,6 +254,9 @@ class SituationSpeculationTextOriginEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'llm')
   static const SituationSpeculationTextOriginEnum llm =
       _$situationSpeculationTextOriginEnum_llm;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const SituationSpeculationTextOriginEnum unknownDefaultOpenApi =
+      _$situationSpeculationTextOriginEnum_unknownDefaultOpenApi;
 
   static Serializer<SituationSpeculationTextOriginEnum> get serializer =>
       _$situationSpeculationTextOriginEnumSerializer;

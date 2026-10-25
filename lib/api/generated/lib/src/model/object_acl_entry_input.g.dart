@@ -14,6 +14,9 @@ const ObjectAclEntryInputRoleEnum _$objectAclEntryInputRoleEnum_editor =
     const ObjectAclEntryInputRoleEnum._('editor');
 const ObjectAclEntryInputRoleEnum _$objectAclEntryInputRoleEnum_owner =
     const ObjectAclEntryInputRoleEnum._('owner');
+const ObjectAclEntryInputRoleEnum
+_$objectAclEntryInputRoleEnum_unknownDefaultOpenApi =
+    const ObjectAclEntryInputRoleEnum._('unknownDefaultOpenApi');
 
 ObjectAclEntryInputRoleEnum _$objectAclEntryInputRoleEnumValueOf(String name) {
   switch (name) {
@@ -25,8 +28,10 @@ ObjectAclEntryInputRoleEnum _$objectAclEntryInputRoleEnumValueOf(String name) {
       return _$objectAclEntryInputRoleEnum_editor;
     case 'owner':
       return _$objectAclEntryInputRoleEnum_owner;
+    case 'unknownDefaultOpenApi':
+      return _$objectAclEntryInputRoleEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$objectAclEntryInputRoleEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -37,6 +42,7 @@ _$objectAclEntryInputRoleEnumValues =
       _$objectAclEntryInputRoleEnum_commenter,
       _$objectAclEntryInputRoleEnum_editor,
       _$objectAclEntryInputRoleEnum_owner,
+      _$objectAclEntryInputRoleEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<ObjectAclEntryInputRoleEnum>
@@ -50,12 +56,14 @@ class _$ObjectAclEntryInputRoleEnumSerializer
     'commenter': 'commenter',
     'editor': 'editor',
     'owner': 'owner',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'viewer': 'viewer',
     'commenter': 'commenter',
     'editor': 'editor',
     'owner': 'owner',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

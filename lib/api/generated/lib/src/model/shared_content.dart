@@ -281,6 +281,9 @@ class SharedContentTargetTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'export')
   static const SharedContentTargetTypeEnum export_ =
       _$sharedContentTargetTypeEnum_export_;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const SharedContentTargetTypeEnum unknownDefaultOpenApi =
+      _$sharedContentTargetTypeEnum_unknownDefaultOpenApi;
 
   static Serializer<SharedContentTargetTypeEnum> get serializer =>
       _$sharedContentTargetTypeEnumSerializer;

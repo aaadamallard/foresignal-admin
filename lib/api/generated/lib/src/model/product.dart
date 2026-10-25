@@ -511,6 +511,9 @@ class ProductKindEnum extends EnumClass {
   static const ProductKindEnum field = _$productKindEnum_field;
   @BuiltValueEnumConst(wireName: r'external')
   static const ProductKindEnum external_ = _$productKindEnum_external_;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ProductKindEnum unknownDefaultOpenApi =
+      _$productKindEnum_unknownDefaultOpenApi;
 
   static Serializer<ProductKindEnum> get serializer =>
       _$productKindEnumSerializer;
@@ -532,6 +535,9 @@ class ProductCategoryEnum extends EnumClass {
   static const ProductCategoryEnum lightning = _$productCategoryEnum_lightning;
   @BuiltValueEnumConst(wireName: r'imagery')
   static const ProductCategoryEnum imagery = _$productCategoryEnum_imagery;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ProductCategoryEnum unknownDefaultOpenApi =
+      _$productCategoryEnum_unknownDefaultOpenApi;
 
   static Serializer<ProductCategoryEnum> get serializer =>
       _$productCategoryEnumSerializer;
@@ -556,6 +562,9 @@ class ProductDtypeEnum extends EnumClass {
   static const ProductDtypeEnum f32 = _$productDtypeEnum_f32;
   @BuiltValueEnumConst(wireName: r'rgba8')
   static const ProductDtypeEnum rgba8 = _$productDtypeEnum_rgba8;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ProductDtypeEnum unknownDefaultOpenApi =
+      _$productDtypeEnum_unknownDefaultOpenApi;
 
   static Serializer<ProductDtypeEnum> get serializer =>
       _$productDtypeEnumSerializer;
@@ -577,6 +586,9 @@ class ProductCoverageEnum extends EnumClass {
       _$productCoverageEnum_stationDisc;
   @BuiltValueEnumConst(wireName: r'swath')
   static const ProductCoverageEnum swath = _$productCoverageEnum_swath;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ProductCoverageEnum unknownDefaultOpenApi =
+      _$productCoverageEnum_unknownDefaultOpenApi;
 
   static Serializer<ProductCoverageEnum> get serializer =>
       _$productCoverageEnumSerializer;

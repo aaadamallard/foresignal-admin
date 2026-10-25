@@ -280,6 +280,9 @@ class ExternalQuestionLinkOrientationEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'inverse')
   static const ExternalQuestionLinkOrientationEnum inverse =
       _$externalQuestionLinkOrientationEnum_inverse;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ExternalQuestionLinkOrientationEnum unknownDefaultOpenApi =
+      _$externalQuestionLinkOrientationEnum_unknownDefaultOpenApi;
 
   static Serializer<ExternalQuestionLinkOrientationEnum> get serializer =>
       _$externalQuestionLinkOrientationEnumSerializer;

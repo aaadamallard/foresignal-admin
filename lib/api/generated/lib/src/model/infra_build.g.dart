@@ -12,6 +12,8 @@ const InfraBuildStatusEnum _$infraBuildStatusEnum_done =
     const InfraBuildStatusEnum._('done');
 const InfraBuildStatusEnum _$infraBuildStatusEnum_failed =
     const InfraBuildStatusEnum._('failed');
+const InfraBuildStatusEnum _$infraBuildStatusEnum_unknownDefaultOpenApi =
+    const InfraBuildStatusEnum._('unknownDefaultOpenApi');
 
 InfraBuildStatusEnum _$infraBuildStatusEnumValueOf(String name) {
   switch (name) {
@@ -21,8 +23,10 @@ InfraBuildStatusEnum _$infraBuildStatusEnumValueOf(String name) {
       return _$infraBuildStatusEnum_done;
     case 'failed':
       return _$infraBuildStatusEnum_failed;
+    case 'unknownDefaultOpenApi':
+      return _$infraBuildStatusEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$infraBuildStatusEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -31,6 +35,7 @@ final BuiltSet<InfraBuildStatusEnum> _$infraBuildStatusEnumValues =
       _$infraBuildStatusEnum_running,
       _$infraBuildStatusEnum_done,
       _$infraBuildStatusEnum_failed,
+      _$infraBuildStatusEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<InfraBuildStatusEnum> _$infraBuildStatusEnumSerializer =
@@ -42,11 +47,13 @@ class _$InfraBuildStatusEnumSerializer
     'running': 'running',
     'done': 'done',
     'failed': 'failed',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'running': 'running',
     'done': 'done',
     'failed': 'failed',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

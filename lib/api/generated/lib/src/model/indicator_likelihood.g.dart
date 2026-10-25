@@ -14,6 +14,9 @@ const IndicatorLikelihoodClass_Enum _$indicatorLikelihoodClassEnum_low =
     const IndicatorLikelihoodClass_Enum._('low');
 const IndicatorLikelihoodClass_Enum _$indicatorLikelihoodClassEnum_neutral =
     const IndicatorLikelihoodClass_Enum._('neutral');
+const IndicatorLikelihoodClass_Enum
+_$indicatorLikelihoodClassEnum_unknownDefaultOpenApi =
+    const IndicatorLikelihoodClass_Enum._('unknownDefaultOpenApi');
 
 IndicatorLikelihoodClass_Enum _$indicatorLikelihoodClassEnumValueOf(
   String name,
@@ -27,8 +30,10 @@ IndicatorLikelihoodClass_Enum _$indicatorLikelihoodClassEnumValueOf(
       return _$indicatorLikelihoodClassEnum_low;
     case 'neutral':
       return _$indicatorLikelihoodClassEnum_neutral;
+    case 'unknownDefaultOpenApi':
+      return _$indicatorLikelihoodClassEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$indicatorLikelihoodClassEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -39,6 +44,7 @@ _$indicatorLikelihoodClassEnumValues = BuiltSet<IndicatorLikelihoodClass_Enum>(
     _$indicatorLikelihoodClassEnum_medium,
     _$indicatorLikelihoodClassEnum_low,
     _$indicatorLikelihoodClassEnum_neutral,
+    _$indicatorLikelihoodClassEnum_unknownDefaultOpenApi,
   ],
 );
 
@@ -48,6 +54,9 @@ _$indicatorLikelihoodDirectionEnum_supports =
 const IndicatorLikelihoodDirectionEnum
 _$indicatorLikelihoodDirectionEnum_weakens =
     const IndicatorLikelihoodDirectionEnum._('weakens');
+const IndicatorLikelihoodDirectionEnum
+_$indicatorLikelihoodDirectionEnum_unknownDefaultOpenApi =
+    const IndicatorLikelihoodDirectionEnum._('unknownDefaultOpenApi');
 
 IndicatorLikelihoodDirectionEnum _$indicatorLikelihoodDirectionEnumValueOf(
   String name,
@@ -57,8 +66,10 @@ IndicatorLikelihoodDirectionEnum _$indicatorLikelihoodDirectionEnumValueOf(
       return _$indicatorLikelihoodDirectionEnum_supports;
     case 'weakens':
       return _$indicatorLikelihoodDirectionEnum_weakens;
+    case 'unknownDefaultOpenApi':
+      return _$indicatorLikelihoodDirectionEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$indicatorLikelihoodDirectionEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -68,6 +79,7 @@ _$indicatorLikelihoodDirectionEnumValues =
       const <IndicatorLikelihoodDirectionEnum>[
         _$indicatorLikelihoodDirectionEnum_supports,
         _$indicatorLikelihoodDirectionEnum_weakens,
+        _$indicatorLikelihoodDirectionEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -85,12 +97,14 @@ class _$IndicatorLikelihoodClass_EnumSerializer
     'medium': 'medium',
     'low': 'low',
     'neutral': 'neutral',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'high': 'high',
     'medium': 'medium',
     'low': 'low',
     'neutral': 'neutral',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -120,10 +134,12 @@ class _$IndicatorLikelihoodDirectionEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'supports': 'supports',
     'weakens': 'weakens',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'supports': 'supports',
     'weakens': 'weakens',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

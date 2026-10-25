@@ -265,6 +265,9 @@ class ReportDraftRequestTemplateEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'custom')
   static const ReportDraftRequestTemplateEnum custom =
       _$reportDraftRequestTemplateEnum_custom;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ReportDraftRequestTemplateEnum unknownDefaultOpenApi =
+      _$reportDraftRequestTemplateEnum_unknownDefaultOpenApi;
 
   static Serializer<ReportDraftRequestTemplateEnum> get serializer =>
       _$reportDraftRequestTemplateEnumSerializer;

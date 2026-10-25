@@ -280,6 +280,9 @@ class GraphRequestTypesEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'affiliated-with')
   static const GraphRequestTypesEnum affiliatedWith =
       _$graphRequestTypesEnum_affiliatedWith;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const GraphRequestTypesEnum unknownDefaultOpenApi =
+      _$graphRequestTypesEnum_unknownDefaultOpenApi;
 
   static Serializer<GraphRequestTypesEnum> get serializer =>
       _$graphRequestTypesEnumSerializer;

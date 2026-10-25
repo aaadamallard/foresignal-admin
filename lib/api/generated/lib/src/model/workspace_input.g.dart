@@ -10,6 +10,9 @@ const WorkspaceInputMembersEnum _$workspaceInputMembersEnum_viewer =
     const WorkspaceInputMembersEnum._('viewer');
 const WorkspaceInputMembersEnum _$workspaceInputMembersEnum_editor =
     const WorkspaceInputMembersEnum._('editor');
+const WorkspaceInputMembersEnum
+_$workspaceInputMembersEnum_unknownDefaultOpenApi =
+    const WorkspaceInputMembersEnum._('unknownDefaultOpenApi');
 
 WorkspaceInputMembersEnum _$workspaceInputMembersEnumValueOf(String name) {
   switch (name) {
@@ -17,8 +20,10 @@ WorkspaceInputMembersEnum _$workspaceInputMembersEnumValueOf(String name) {
       return _$workspaceInputMembersEnum_viewer;
     case 'editor':
       return _$workspaceInputMembersEnum_editor;
+    case 'unknownDefaultOpenApi':
+      return _$workspaceInputMembersEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$workspaceInputMembersEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -26,6 +31,7 @@ final BuiltSet<WorkspaceInputMembersEnum> _$workspaceInputMembersEnumValues =
     BuiltSet<WorkspaceInputMembersEnum>(const <WorkspaceInputMembersEnum>[
       _$workspaceInputMembersEnum_viewer,
       _$workspaceInputMembersEnum_editor,
+      _$workspaceInputMembersEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<WorkspaceInputMembersEnum> _$workspaceInputMembersEnumSerializer =
@@ -36,10 +42,12 @@ class _$WorkspaceInputMembersEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'viewer': 'viewer',
     'editor': 'editor',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'viewer': 'viewer',
     'editor': 'editor',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

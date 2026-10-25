@@ -10,6 +10,8 @@ const StreamTicketPurposeEnum _$streamTicketPurposeEnum_stream =
     const StreamTicketPurposeEnum._('stream');
 const StreamTicketPurposeEnum _$streamTicketPurposeEnum_tiles =
     const StreamTicketPurposeEnum._('tiles');
+const StreamTicketPurposeEnum _$streamTicketPurposeEnum_unknownDefaultOpenApi =
+    const StreamTicketPurposeEnum._('unknownDefaultOpenApi');
 
 StreamTicketPurposeEnum _$streamTicketPurposeEnumValueOf(String name) {
   switch (name) {
@@ -17,8 +19,10 @@ StreamTicketPurposeEnum _$streamTicketPurposeEnumValueOf(String name) {
       return _$streamTicketPurposeEnum_stream;
     case 'tiles':
       return _$streamTicketPurposeEnum_tiles;
+    case 'unknownDefaultOpenApi':
+      return _$streamTicketPurposeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$streamTicketPurposeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -26,6 +30,7 @@ final BuiltSet<StreamTicketPurposeEnum> _$streamTicketPurposeEnumValues =
     BuiltSet<StreamTicketPurposeEnum>(const <StreamTicketPurposeEnum>[
       _$streamTicketPurposeEnum_stream,
       _$streamTicketPurposeEnum_tiles,
+      _$streamTicketPurposeEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<StreamTicketPurposeEnum> _$streamTicketPurposeEnumSerializer =
@@ -36,10 +41,12 @@ class _$StreamTicketPurposeEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'stream': 'stream',
     'tiles': 'tiles',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'stream': 'stream',
     'tiles': 'tiles',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

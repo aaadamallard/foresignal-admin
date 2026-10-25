@@ -18,6 +18,9 @@ const SharedContentTargetTypeEnum _$sharedContentTargetTypeEnum_briefingRun =
     const SharedContentTargetTypeEnum._('briefingRun');
 const SharedContentTargetTypeEnum _$sharedContentTargetTypeEnum_export_ =
     const SharedContentTargetTypeEnum._('export_');
+const SharedContentTargetTypeEnum
+_$sharedContentTargetTypeEnum_unknownDefaultOpenApi =
+    const SharedContentTargetTypeEnum._('unknownDefaultOpenApi');
 
 SharedContentTargetTypeEnum _$sharedContentTargetTypeEnumValueOf(String name) {
   switch (name) {
@@ -33,8 +36,10 @@ SharedContentTargetTypeEnum _$sharedContentTargetTypeEnumValueOf(String name) {
       return _$sharedContentTargetTypeEnum_briefingRun;
     case 'export_':
       return _$sharedContentTargetTypeEnum_export_;
+    case 'unknownDefaultOpenApi':
+      return _$sharedContentTargetTypeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$sharedContentTargetTypeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -47,6 +52,7 @@ _$sharedContentTargetTypeEnumValues =
       _$sharedContentTargetTypeEnum_track,
       _$sharedContentTargetTypeEnum_briefingRun,
       _$sharedContentTargetTypeEnum_export_,
+      _$sharedContentTargetTypeEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<SharedContentTargetTypeEnum>
@@ -62,6 +68,7 @@ class _$SharedContentTargetTypeEnumSerializer
     'track': 'track',
     'briefingRun': 'briefing-run',
     'export_': 'export',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'record': 'record',
@@ -70,6 +77,7 @@ class _$SharedContentTargetTypeEnumSerializer
     'track': 'track',
     'briefing-run': 'briefingRun',
     'export': 'export_',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

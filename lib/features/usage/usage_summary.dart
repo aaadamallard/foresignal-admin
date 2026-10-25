@@ -159,7 +159,7 @@ class StackedUsage {
             entry.key: <DateTime, int>{for (final p in entry.value.points) p.t.toUtc(): p.requests},
         },
         top: top,
-        step: bySource.isEmpty ? null : usageStep(wireOf(bySource.values.first.resolution)),
+        step: bySource.isEmpty ? null : usageStep(wireOf(bySource.values.first.resolution, bySource.values.first, 'resolution')),
       );
 
   /// Combines per-key counts by bucket start the same way as [combine]:

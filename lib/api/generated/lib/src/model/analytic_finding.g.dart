@@ -48,6 +48,9 @@ _$analyticFindingFindingTypeEnum_socialCoordination =
 const AnalyticFindingFindingTypeEnum
 _$analyticFindingFindingTypeEnum_attentionGap =
     const AnalyticFindingFindingTypeEnum._('attentionGap');
+const AnalyticFindingFindingTypeEnum
+_$analyticFindingFindingTypeEnum_unknownDefaultOpenApi =
+    const AnalyticFindingFindingTypeEnum._('unknownDefaultOpenApi');
 
 AnalyticFindingFindingTypeEnum _$analyticFindingFindingTypeEnumValueOf(
   String name,
@@ -81,8 +84,10 @@ AnalyticFindingFindingTypeEnum _$analyticFindingFindingTypeEnumValueOf(
       return _$analyticFindingFindingTypeEnum_socialCoordination;
     case 'attentionGap':
       return _$analyticFindingFindingTypeEnum_attentionGap;
+    case 'unknownDefaultOpenApi':
+      return _$analyticFindingFindingTypeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$analyticFindingFindingTypeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -104,6 +109,7 @@ _$analyticFindingFindingTypeEnumValues =
         _$analyticFindingFindingTypeEnum_mediaReuse,
         _$analyticFindingFindingTypeEnum_socialCoordination,
         _$analyticFindingFindingTypeEnum_attentionGap,
+        _$analyticFindingFindingTypeEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -113,6 +119,9 @@ const AnalyticFindingStatusEnum _$analyticFindingStatusEnum_superseded =
     const AnalyticFindingStatusEnum._('superseded');
 const AnalyticFindingStatusEnum _$analyticFindingStatusEnum_dismissed =
     const AnalyticFindingStatusEnum._('dismissed');
+const AnalyticFindingStatusEnum
+_$analyticFindingStatusEnum_unknownDefaultOpenApi =
+    const AnalyticFindingStatusEnum._('unknownDefaultOpenApi');
 
 AnalyticFindingStatusEnum _$analyticFindingStatusEnumValueOf(String name) {
   switch (name) {
@@ -122,8 +131,10 @@ AnalyticFindingStatusEnum _$analyticFindingStatusEnumValueOf(String name) {
       return _$analyticFindingStatusEnum_superseded;
     case 'dismissed':
       return _$analyticFindingStatusEnum_dismissed;
+    case 'unknownDefaultOpenApi':
+      return _$analyticFindingStatusEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$analyticFindingStatusEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -132,6 +143,7 @@ final BuiltSet<AnalyticFindingStatusEnum> _$analyticFindingStatusEnumValues =
       _$analyticFindingStatusEnum_open,
       _$analyticFindingStatusEnum_superseded,
       _$analyticFindingStatusEnum_dismissed,
+      _$analyticFindingStatusEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<AnalyticFindingFindingTypeEnum>
@@ -157,6 +169,7 @@ class _$AnalyticFindingFindingTypeEnumSerializer
     'mediaReuse': 'media-reuse',
     'socialCoordination': 'social-coordination',
     'attentionGap': 'attention-gap',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'change-point': 'changePoint',
@@ -173,6 +186,7 @@ class _$AnalyticFindingFindingTypeEnumSerializer
     'media-reuse': 'mediaReuse',
     'social-coordination': 'socialCoordination',
     'attention-gap': 'attentionGap',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -203,11 +217,13 @@ class _$AnalyticFindingStatusEnumSerializer
     'open': 'open',
     'superseded': 'superseded',
     'dismissed': 'dismissed',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'open': 'open',
     'superseded': 'superseded',
     'dismissed': 'dismissed',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

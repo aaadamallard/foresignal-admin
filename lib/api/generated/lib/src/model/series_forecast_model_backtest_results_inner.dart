@@ -195,6 +195,10 @@ class SeriesForecastModelBacktestResultsInnerMethodEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'damped-trend')
   static const SeriesForecastModelBacktestResultsInnerMethodEnum dampedTrend =
       _$seriesForecastModelBacktestResultsInnerMethodEnum_dampedTrend;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const SeriesForecastModelBacktestResultsInnerMethodEnum
+  unknownDefaultOpenApi =
+      _$seriesForecastModelBacktestResultsInnerMethodEnum_unknownDefaultOpenApi;
 
   static Serializer<SeriesForecastModelBacktestResultsInnerMethodEnum>
   get serializer =>

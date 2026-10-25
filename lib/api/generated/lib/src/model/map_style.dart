@@ -229,6 +229,9 @@ class _$MapStyleSerializer implements PrimitiveSerializer<MapStyle> {
 class MapStyleVersionEnum extends EnumClass {
   @BuiltValueEnumConst(wireNumber: 8)
   static const MapStyleVersionEnum number8 = _$mapStyleVersionEnum_number8;
+  @BuiltValueEnumConst(wireNumber: 11184809, fallback: true)
+  static const MapStyleVersionEnum unknownDefaultOpenApi =
+      _$mapStyleVersionEnum_unknownDefaultOpenApi;
 
   static Serializer<MapStyleVersionEnum> get serializer =>
       _$mapStyleVersionEnumSerializer;

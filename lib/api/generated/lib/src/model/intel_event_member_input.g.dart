@@ -18,6 +18,9 @@ _$intelEventMemberInputMemberTypeEnum_anomaly =
 const IntelEventMemberInputMemberTypeEnum
 _$intelEventMemberInputMemberTypeEnum_event =
     const IntelEventMemberInputMemberTypeEnum._('event');
+const IntelEventMemberInputMemberTypeEnum
+_$intelEventMemberInputMemberTypeEnum_unknownDefaultOpenApi =
+    const IntelEventMemberInputMemberTypeEnum._('unknownDefaultOpenApi');
 
 IntelEventMemberInputMemberTypeEnum
 _$intelEventMemberInputMemberTypeEnumValueOf(String name) {
@@ -30,8 +33,10 @@ _$intelEventMemberInputMemberTypeEnumValueOf(String name) {
       return _$intelEventMemberInputMemberTypeEnum_anomaly;
     case 'event':
       return _$intelEventMemberInputMemberTypeEnum_event;
+    case 'unknownDefaultOpenApi':
+      return _$intelEventMemberInputMemberTypeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$intelEventMemberInputMemberTypeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -43,6 +48,7 @@ _$intelEventMemberInputMemberTypeEnumValues =
         _$intelEventMemberInputMemberTypeEnum_alert,
         _$intelEventMemberInputMemberTypeEnum_anomaly,
         _$intelEventMemberInputMemberTypeEnum_event,
+        _$intelEventMemberInputMemberTypeEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -53,6 +59,9 @@ _$intelEventMemberInputRoleEnum_contradicting =
     const IntelEventMemberInputRoleEnum._('contradicting');
 const IntelEventMemberInputRoleEnum _$intelEventMemberInputRoleEnum_context =
     const IntelEventMemberInputRoleEnum._('context');
+const IntelEventMemberInputRoleEnum
+_$intelEventMemberInputRoleEnum_unknownDefaultOpenApi =
+    const IntelEventMemberInputRoleEnum._('unknownDefaultOpenApi');
 
 IntelEventMemberInputRoleEnum _$intelEventMemberInputRoleEnumValueOf(
   String name,
@@ -64,8 +73,10 @@ IntelEventMemberInputRoleEnum _$intelEventMemberInputRoleEnumValueOf(
       return _$intelEventMemberInputRoleEnum_contradicting;
     case 'context':
       return _$intelEventMemberInputRoleEnum_context;
+    case 'unknownDefaultOpenApi':
+      return _$intelEventMemberInputRoleEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$intelEventMemberInputRoleEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -75,6 +86,7 @@ _$intelEventMemberInputRoleEnumValues = BuiltSet<IntelEventMemberInputRoleEnum>(
     _$intelEventMemberInputRoleEnum_supporting,
     _$intelEventMemberInputRoleEnum_contradicting,
     _$intelEventMemberInputRoleEnum_context,
+    _$intelEventMemberInputRoleEnum_unknownDefaultOpenApi,
   ],
 );
 
@@ -92,12 +104,14 @@ class _$IntelEventMemberInputMemberTypeEnumSerializer
     'alert': 'alert',
     'anomaly': 'anomaly',
     'event': 'event',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'record': 'record',
     'alert': 'alert',
     'anomaly': 'anomaly',
     'event': 'event',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -130,11 +144,13 @@ class _$IntelEventMemberInputRoleEnumSerializer
     'supporting': 'supporting',
     'contradicting': 'contradicting',
     'context': 'context',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'supporting': 'supporting',
     'contradicting': 'contradicting',
     'context': 'context',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

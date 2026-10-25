@@ -12,6 +12,8 @@ const WatchlistItemOriginEnum _$watchlistItemOriginEnum_csv =
     const WatchlistItemOriginEnum._('csv');
 const WatchlistItemOriginEnum _$watchlistItemOriginEnum_json =
     const WatchlistItemOriginEnum._('json');
+const WatchlistItemOriginEnum _$watchlistItemOriginEnum_unknownDefaultOpenApi =
+    const WatchlistItemOriginEnum._('unknownDefaultOpenApi');
 
 WatchlistItemOriginEnum _$watchlistItemOriginEnumValueOf(String name) {
   switch (name) {
@@ -21,8 +23,10 @@ WatchlistItemOriginEnum _$watchlistItemOriginEnumValueOf(String name) {
       return _$watchlistItemOriginEnum_csv;
     case 'json':
       return _$watchlistItemOriginEnum_json;
+    case 'unknownDefaultOpenApi':
+      return _$watchlistItemOriginEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$watchlistItemOriginEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -31,6 +35,7 @@ final BuiltSet<WatchlistItemOriginEnum> _$watchlistItemOriginEnumValues =
       _$watchlistItemOriginEnum_manual,
       _$watchlistItemOriginEnum_csv,
       _$watchlistItemOriginEnum_json,
+      _$watchlistItemOriginEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<WatchlistItemOriginEnum> _$watchlistItemOriginEnumSerializer =
@@ -42,11 +47,13 @@ class _$WatchlistItemOriginEnumSerializer
     'manual': 'manual',
     'csv': 'csv',
     'json': 'json',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'manual': 'manual',
     'csv': 'csv',
     'json': 'json',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

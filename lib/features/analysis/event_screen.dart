@@ -36,17 +36,17 @@ class EventScreen extends ConsumerWidget {
               PageHeader(
                 title: e.title,
                 crumbs: <Crumb>[const Crumb('Analysis', analysisPath), Crumb(e.title)],
-                subtitle: '${wireLabel(e.type)} · ${wireLabel(e.origin)} · version ${e.version}',
+                subtitle: '${wireLabel(e.type, e, 'type')} · ${wireLabel(e.origin, e, 'origin')} · version ${e.version}',
                 titleTrailing: <Widget>[
                   StatusLabel(
                     key: const Key('event.status'),
-                    label: wireLabel(e.status),
-                    tone: statusTone(wireOf(e.status)),
+                    label: wireLabel(e.status, e, 'status'),
+                    tone: statusTone(wireOf(e.status, e, 'status')),
                   ),
                   const SizedBox(width: 8),
                   StatusLabel(
                     label:
-                        '${wireLabel(e.severity)}${e.severityOverridden == true ? ' (set by hand)' : ''}',
+                        '${wireLabel(e.severity, e, 'severity')}${e.severityOverridden == true ? ' (set by hand)' : ''}',
                     tone: severityTone(e.severity),
                   ),
                 ],
@@ -89,7 +89,7 @@ class EventScreen extends ConsumerWidget {
                                 Padding(
                                   padding: const EdgeInsets.symmetric(vertical: 3),
                                   child: Text(
-                                    '${utcText(l.at)}  ${wireLabel(l.action)} by ${l.actor}',
+                                    '${utcText(l.at)}  ${wireText(l.action)} by ${l.actor}',
                                   ),
                                 ),
                             ],
@@ -134,14 +134,14 @@ class EventSummaryCard extends StatelessWidget {
             entries: <MapEntry<String, Object>>[
               MapEntry<String, Object>(
                 'Confidence',
-                '${percent(i.confidence)} · ${wireLabel(i.confidenceLabel)}'
+                '${percent(i.confidence)} · ${wireLabel(i.confidenceLabel, i, 'confidenceLabel')}'
                     '${i.calibrated ? ' · calibrated' : ' · raw, not yet calibrated'}'
                     '${i.rawConfidence == null || i.calibrated == false ? '' : ' (raw ${percent(i.rawConfidence)})'}',
               ),
               MapEntry<String, Object>('Method', i.confidenceMethod),
               MapEntry<String, Object>(
                 'Evidence',
-                '${wireLabel(i.evidenceQuality)} · ${e.evidence.memberCount} members'
+                '${wireLabel(i.evidenceQuality, i, 'evidenceQuality')} · ${e.evidence.memberCount} members'
                     '${e.evidence.signalFamilies == null ? '' : ' · families ${e.evidence.signalFamilies!.join(', ')}'}',
               ),
               MapEntry<String, Object>(
@@ -203,8 +203,8 @@ class EventEditCard extends ConsumerStatefulWidget {
 class _EventEditCardState extends ConsumerState<EventEditCard> {
   late final TextEditingController _title = TextEditingController(text: widget.event.title);
   late final TextEditingController _notes = TextEditingController(text: widget.event.notes ?? '');
-  late String _status = wireOf(widget.event.status);
-  late String _severity = wireOf(widget.event.severity);
+  late String _status = wireOf(widget.event.status, widget.event, 'status');
+  late String _severity = wireOf(widget.event.severity, widget.event, 'severity');
   WriteState _write = const WriteIdle();
   String? _problem;
 
@@ -222,8 +222,8 @@ class _EventEditCardState extends ConsumerState<EventEditCard> {
     if (widget.event.version != old.event.version) {
       _title.text = widget.event.title;
       _notes.text = widget.event.notes ?? '';
-      _status = wireOf(widget.event.status);
-      _severity = wireOf(widget.event.severity);
+      _status = wireOf(widget.event.status, widget.event, 'status');
+      _severity = wireOf(widget.event.severity, widget.event, 'severity');
     }
   }
 
@@ -232,10 +232,10 @@ class _EventEditCardState extends ConsumerState<EventEditCard> {
     final e = widget.event;
     return <String, Object?>{
       if (_title.text.trim() != e.title) 'title': _title.text.trim(),
-      if (_status != wireOf(e.status)) 'status': _status,
+      if (_status != wireOf(e.status, e, 'status')) 'status': _status,
       if (_severity == _computedSeverity && e.severityOverridden == true)
         'severity': null
-      else if (_severity != _computedSeverity && _severity != wireOf(e.severity))
+      else if (_severity != _computedSeverity && _severity != wireOf(e.severity, e, 'severity'))
         'severity': _severity,
       if (_notes.text != (e.notes ?? '')) 'notes': _notes.text,
     };
@@ -283,11 +283,11 @@ class _EventEditCardState extends ConsumerState<EventEditCard> {
         reread: () => callApiRequired(() => intel.getIntelEvent(eventId: id)),
         confirm: (got) => <String>[
           if (patch.containsKey('title') && got.title != patch['title']) 'title',
-          if (patch.containsKey('status') && wireOf(got.status) != patch['status']) 'status',
+          if (patch.containsKey('status') && wireOf(got.status, got, 'status') != patch['status']) 'status',
           if (patch.containsKey('severity') &&
               (patch['severity'] == null
                   ? got.severityOverridden == true
-                  : wireOf(got.severity) != patch['severity']))
+                  : wireOf(got.severity, got, 'severity') != patch['severity']))
             'severity',
           if (patch.containsKey('notes') && (got.notes ?? '') != patch['notes']) 'notes',
         ].let((d) => d.isEmpty ? null : 'read back different: ${d.join(', ')}'),
@@ -351,6 +351,9 @@ class _EventEditCardState extends ConsumerState<EventEditCard> {
                 items: <DropdownMenuItem<String>>[
                   for (final s in const <String>['emerging', 'active', 'resolved', 'dismissed'])
                     DropdownMenuItem<String>(value: s, child: Text(wireText(s))),
+                  // A status this app does not know stays selectable as the server sent it.
+                  if (!const <String>['emerging', 'active', 'resolved', 'dismissed'].contains(_status))
+                    DropdownMenuItem<String>(value: _status, child: Text(_status)),
                 ],
                 onChanged: (v) {
                   _status = v ?? _status;
@@ -375,6 +378,8 @@ class _EventEditCardState extends ConsumerState<EventEditCard> {
                 items: <DropdownMenuItem<String>>[
                   for (final s in const <String>['info', 'warning', 'critical'])
                     DropdownMenuItem<String>(value: s, child: Text(wireText(s))),
+                  if (!const <String>['info', 'warning', 'critical', _computedSeverity].contains(_severity))
+                    DropdownMenuItem<String>(value: _severity, child: Text(_severity)),
                   if (widget.event.severityOverridden == true)
                     const DropdownMenuItem<String>(
                       key: Key('event.severity.computed'),
@@ -573,7 +578,7 @@ class _EventMembersCardState extends ConsumerState<EventMembersCard> {
     }
   }
 
-  String _ref(IntelEventMember m) => switch (wireOf(m.memberType)) {
+  String _ref(IntelEventMember m) => switch (wireOf(m.memberType, m, 'memberType')) {
     'record' => '${m.sourceId ?? '?'} / ${m.externalId ?? '?'} #${m.seq ?? '?'}',
     'alert' => 'alert ${m.alertId}',
     'anomaly' => 'anomaly ${m.anomalyId}',
@@ -730,8 +735,8 @@ class _EventMembersCardState extends ConsumerState<EventMembersCard> {
               TableColumnSpec<IntelEventMember>(
                 label: 'Role',
                 cell: (m) => StatusLabel(
-                  label: wireLabel(m.role),
-                  tone: wireOf(m.role) == 'contradicting' ? StatusTone.warning : StatusTone.neutral,
+                  label: wireLabel(m.role, m, 'role'),
+                  tone: wireOf(m.role, m, 'role') == 'contradicting' ? StatusTone.warning : StatusTone.neutral,
                 ),
               ),
               TableColumnSpec<IntelEventMember>(

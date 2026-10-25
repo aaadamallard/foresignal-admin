@@ -445,6 +445,9 @@ class HypothesisRevisionCauseEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'created')
   static const HypothesisRevisionCauseEnum created =
       _$hypothesisRevisionCauseEnum_created;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const HypothesisRevisionCauseEnum unknownDefaultOpenApi =
+      _$hypothesisRevisionCauseEnum_unknownDefaultOpenApi;
 
   static Serializer<HypothesisRevisionCauseEnum> get serializer =>
       _$hypothesisRevisionCauseEnumSerializer;
@@ -467,6 +470,9 @@ class HypothesisRevisionRationaleOriginEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'analyst')
   static const HypothesisRevisionRationaleOriginEnum analyst =
       _$hypothesisRevisionRationaleOriginEnum_analyst;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const HypothesisRevisionRationaleOriginEnum unknownDefaultOpenApi =
+      _$hypothesisRevisionRationaleOriginEnum_unknownDefaultOpenApi;
 
   static Serializer<HypothesisRevisionRationaleOriginEnum> get serializer =>
       _$hypothesisRevisionRationaleOriginEnumSerializer;

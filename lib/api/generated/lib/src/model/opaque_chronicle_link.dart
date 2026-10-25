@@ -321,6 +321,9 @@ class OpaqueChronicleLinkDisclosureEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'opaque')
   static const OpaqueChronicleLinkDisclosureEnum opaque =
       _$opaqueChronicleLinkDisclosureEnum_opaque;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const OpaqueChronicleLinkDisclosureEnum unknownDefaultOpenApi =
+      _$opaqueChronicleLinkDisclosureEnum_unknownDefaultOpenApi;
 
   static Serializer<OpaqueChronicleLinkDisclosureEnum> get serializer =>
       _$opaqueChronicleLinkDisclosureEnumSerializer;
@@ -344,6 +347,9 @@ class OpaqueChronicleLinkStrengthEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'high')
   static const OpaqueChronicleLinkStrengthEnum high =
       _$opaqueChronicleLinkStrengthEnum_high;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const OpaqueChronicleLinkStrengthEnum unknownDefaultOpenApi =
+      _$opaqueChronicleLinkStrengthEnum_unknownDefaultOpenApi;
 
   static Serializer<OpaqueChronicleLinkStrengthEnum> get serializer =>
       _$opaqueChronicleLinkStrengthEnumSerializer;
@@ -369,6 +375,9 @@ class OpaqueChronicleLinkDimensionsEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'topics')
   static const OpaqueChronicleLinkDimensionsEnum topics =
       _$opaqueChronicleLinkDimensionsEnum_topics;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const OpaqueChronicleLinkDimensionsEnum unknownDefaultOpenApi =
+      _$opaqueChronicleLinkDimensionsEnum_unknownDefaultOpenApi;
 
   static Serializer<OpaqueChronicleLinkDimensionsEnum> get serializer =>
       _$opaqueChronicleLinkDimensionsEnumSerializer;
@@ -391,6 +400,9 @@ class OpaqueChronicleLinkTimeOverlapEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'full')
   static const OpaqueChronicleLinkTimeOverlapEnum full =
       _$opaqueChronicleLinkTimeOverlapEnum_full;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const OpaqueChronicleLinkTimeOverlapEnum unknownDefaultOpenApi =
+      _$opaqueChronicleLinkTimeOverlapEnum_unknownDefaultOpenApi;
 
   static Serializer<OpaqueChronicleLinkTimeOverlapEnum> get serializer =>
       _$opaqueChronicleLinkTimeOverlapEnumSerializer;
@@ -413,6 +425,10 @@ class OpaqueChronicleLinkAccessRequestStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'declined')
   static const OpaqueChronicleLinkAccessRequestStatusEnum declined =
       _$opaqueChronicleLinkAccessRequestStatusEnum_declined;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const OpaqueChronicleLinkAccessRequestStatusEnum
+  unknownDefaultOpenApi =
+      _$opaqueChronicleLinkAccessRequestStatusEnum_unknownDefaultOpenApi;
 
   static Serializer<OpaqueChronicleLinkAccessRequestStatusEnum>
   get serializer => _$opaqueChronicleLinkAccessRequestStatusEnumSerializer;

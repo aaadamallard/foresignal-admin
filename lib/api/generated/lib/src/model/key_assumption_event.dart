@@ -272,6 +272,9 @@ class KeyAssumptionEventStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'broken')
   static const KeyAssumptionEventStatusEnum broken =
       _$keyAssumptionEventStatusEnum_broken;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const KeyAssumptionEventStatusEnum unknownDefaultOpenApi =
+      _$keyAssumptionEventStatusEnum_unknownDefaultOpenApi;
 
   static Serializer<KeyAssumptionEventStatusEnum> get serializer =>
       _$keyAssumptionEventStatusEnumSerializer;
@@ -297,6 +300,9 @@ class KeyAssumptionEventPreviousStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'broken')
   static const KeyAssumptionEventPreviousStatusEnum broken =
       _$keyAssumptionEventPreviousStatusEnum_broken;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const KeyAssumptionEventPreviousStatusEnum unknownDefaultOpenApi =
+      _$keyAssumptionEventPreviousStatusEnum_unknownDefaultOpenApi;
 
   static Serializer<KeyAssumptionEventPreviousStatusEnum> get serializer =>
       _$keyAssumptionEventPreviousStatusEnumSerializer;

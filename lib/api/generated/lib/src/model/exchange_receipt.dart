@@ -199,6 +199,9 @@ class ExchangeReceiptTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'acknowledged')
   static const ExchangeReceiptTypeEnum acknowledged =
       _$exchangeReceiptTypeEnum_acknowledged;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ExchangeReceiptTypeEnum unknownDefaultOpenApi =
+      _$exchangeReceiptTypeEnum_unknownDefaultOpenApi;
 
   static Serializer<ExchangeReceiptTypeEnum> get serializer =>
       _$exchangeReceiptTypeEnumSerializer;

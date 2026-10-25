@@ -17,6 +17,9 @@ _$aircraftFusionPayloadStatusEnum_noCoverage =
 const AircraftFusionPayloadStatusEnum
 _$aircraftFusionPayloadStatusEnum_degradedInput =
     const AircraftFusionPayloadStatusEnum._('degradedInput');
+const AircraftFusionPayloadStatusEnum
+_$aircraftFusionPayloadStatusEnum_unknownDefaultOpenApi =
+    const AircraftFusionPayloadStatusEnum._('unknownDefaultOpenApi');
 
 AircraftFusionPayloadStatusEnum _$aircraftFusionPayloadStatusEnumValueOf(
   String name,
@@ -30,8 +33,10 @@ AircraftFusionPayloadStatusEnum _$aircraftFusionPayloadStatusEnumValueOf(
       return _$aircraftFusionPayloadStatusEnum_noCoverage;
     case 'degradedInput':
       return _$aircraftFusionPayloadStatusEnum_degradedInput;
+    case 'unknownDefaultOpenApi':
+      return _$aircraftFusionPayloadStatusEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$aircraftFusionPayloadStatusEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -43,6 +48,7 @@ _$aircraftFusionPayloadStatusEnumValues =
         _$aircraftFusionPayloadStatusEnum_insufficientData,
         _$aircraftFusionPayloadStatusEnum_noCoverage,
         _$aircraftFusionPayloadStatusEnum_degradedInput,
+        _$aircraftFusionPayloadStatusEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -58,6 +64,9 @@ _$aircraftFusionPayloadPositionSourceEnum_tisb =
 const AircraftFusionPayloadPositionSourceEnum
 _$aircraftFusionPayloadPositionSourceEnum_other =
     const AircraftFusionPayloadPositionSourceEnum._('other');
+const AircraftFusionPayloadPositionSourceEnum
+_$aircraftFusionPayloadPositionSourceEnum_unknownDefaultOpenApi =
+    const AircraftFusionPayloadPositionSourceEnum._('unknownDefaultOpenApi');
 
 AircraftFusionPayloadPositionSourceEnum
 _$aircraftFusionPayloadPositionSourceEnumValueOf(String name) {
@@ -70,8 +79,10 @@ _$aircraftFusionPayloadPositionSourceEnumValueOf(String name) {
       return _$aircraftFusionPayloadPositionSourceEnum_tisb;
     case 'other':
       return _$aircraftFusionPayloadPositionSourceEnum_other;
+    case 'unknownDefaultOpenApi':
+      return _$aircraftFusionPayloadPositionSourceEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$aircraftFusionPayloadPositionSourceEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -83,6 +94,7 @@ _$aircraftFusionPayloadPositionSourceEnumValues =
         _$aircraftFusionPayloadPositionSourceEnum_mlat,
         _$aircraftFusionPayloadPositionSourceEnum_tisb,
         _$aircraftFusionPayloadPositionSourceEnum_other,
+        _$aircraftFusionPayloadPositionSourceEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -100,12 +112,14 @@ class _$AircraftFusionPayloadStatusEnumSerializer
     'insufficientData': 'insufficient-data',
     'noCoverage': 'no-coverage',
     'degradedInput': 'degraded-input',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'ok': 'ok',
     'insufficient-data': 'insufficientData',
     'no-coverage': 'noCoverage',
     'degraded-input': 'degradedInput',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -137,12 +151,14 @@ class _$AircraftFusionPayloadPositionSourceEnumSerializer
     'mlat': 'mlat',
     'tisb': 'tisb',
     'other': 'other',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'adsb': 'adsb',
     'mlat': 'mlat',
     'tisb': 'tisb',
     'other': 'other',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

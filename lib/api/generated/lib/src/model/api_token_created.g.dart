@@ -12,6 +12,9 @@ const ApiTokenCreatedScopeEnum _$apiTokenCreatedScopeEnum_agent =
     const ApiTokenCreatedScopeEnum._('agent');
 const ApiTokenCreatedScopeEnum _$apiTokenCreatedScopeEnum_admin =
     const ApiTokenCreatedScopeEnum._('admin');
+const ApiTokenCreatedScopeEnum
+_$apiTokenCreatedScopeEnum_unknownDefaultOpenApi =
+    const ApiTokenCreatedScopeEnum._('unknownDefaultOpenApi');
 
 ApiTokenCreatedScopeEnum _$apiTokenCreatedScopeEnumValueOf(String name) {
   switch (name) {
@@ -21,8 +24,10 @@ ApiTokenCreatedScopeEnum _$apiTokenCreatedScopeEnumValueOf(String name) {
       return _$apiTokenCreatedScopeEnum_agent;
     case 'admin':
       return _$apiTokenCreatedScopeEnum_admin;
+    case 'unknownDefaultOpenApi':
+      return _$apiTokenCreatedScopeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$apiTokenCreatedScopeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -31,6 +36,7 @@ final BuiltSet<ApiTokenCreatedScopeEnum> _$apiTokenCreatedScopeEnumValues =
       _$apiTokenCreatedScopeEnum_read,
       _$apiTokenCreatedScopeEnum_agent,
       _$apiTokenCreatedScopeEnum_admin,
+      _$apiTokenCreatedScopeEnum_unknownDefaultOpenApi,
     ]);
 
 const ApiTokenCreatedCreatedViaEnum _$apiTokenCreatedCreatedViaEnum_api =
@@ -39,6 +45,9 @@ const ApiTokenCreatedCreatedViaEnum _$apiTokenCreatedCreatedViaEnum_pairing =
     const ApiTokenCreatedCreatedViaEnum._('pairing');
 const ApiTokenCreatedCreatedViaEnum _$apiTokenCreatedCreatedViaEnum_bootstrap =
     const ApiTokenCreatedCreatedViaEnum._('bootstrap');
+const ApiTokenCreatedCreatedViaEnum
+_$apiTokenCreatedCreatedViaEnum_unknownDefaultOpenApi =
+    const ApiTokenCreatedCreatedViaEnum._('unknownDefaultOpenApi');
 
 ApiTokenCreatedCreatedViaEnum _$apiTokenCreatedCreatedViaEnumValueOf(
   String name,
@@ -50,8 +59,10 @@ ApiTokenCreatedCreatedViaEnum _$apiTokenCreatedCreatedViaEnumValueOf(
       return _$apiTokenCreatedCreatedViaEnum_pairing;
     case 'bootstrap':
       return _$apiTokenCreatedCreatedViaEnum_bootstrap;
+    case 'unknownDefaultOpenApi':
+      return _$apiTokenCreatedCreatedViaEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$apiTokenCreatedCreatedViaEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -61,6 +72,7 @@ _$apiTokenCreatedCreatedViaEnumValues = BuiltSet<ApiTokenCreatedCreatedViaEnum>(
     _$apiTokenCreatedCreatedViaEnum_api,
     _$apiTokenCreatedCreatedViaEnum_pairing,
     _$apiTokenCreatedCreatedViaEnum_bootstrap,
+    _$apiTokenCreatedCreatedViaEnum_unknownDefaultOpenApi,
   ],
 );
 
@@ -71,6 +83,9 @@ const ApiTokenCreatedLicencePolicyEnum _$apiTokenCreatedLicencePolicyEnum_noSa =
 const ApiTokenCreatedLicencePolicyEnum
 _$apiTokenCreatedLicencePolicyEnum_redistributable =
     const ApiTokenCreatedLicencePolicyEnum._('redistributable');
+const ApiTokenCreatedLicencePolicyEnum
+_$apiTokenCreatedLicencePolicyEnum_unknownDefaultOpenApi =
+    const ApiTokenCreatedLicencePolicyEnum._('unknownDefaultOpenApi');
 
 ApiTokenCreatedLicencePolicyEnum _$apiTokenCreatedLicencePolicyEnumValueOf(
   String name,
@@ -82,8 +97,10 @@ ApiTokenCreatedLicencePolicyEnum _$apiTokenCreatedLicencePolicyEnumValueOf(
       return _$apiTokenCreatedLicencePolicyEnum_noSa;
     case 'redistributable':
       return _$apiTokenCreatedLicencePolicyEnum_redistributable;
+    case 'unknownDefaultOpenApi':
+      return _$apiTokenCreatedLicencePolicyEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$apiTokenCreatedLicencePolicyEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -94,6 +111,7 @@ _$apiTokenCreatedLicencePolicyEnumValues =
         _$apiTokenCreatedLicencePolicyEnum_noNc,
         _$apiTokenCreatedLicencePolicyEnum_noSa,
         _$apiTokenCreatedLicencePolicyEnum_redistributable,
+        _$apiTokenCreatedLicencePolicyEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -112,11 +130,13 @@ class _$ApiTokenCreatedScopeEnumSerializer
     'read': 'read',
     'agent': 'agent',
     'admin': 'admin',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'read': 'read',
     'agent': 'agent',
     'admin': 'admin',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -147,11 +167,13 @@ class _$ApiTokenCreatedCreatedViaEnumSerializer
     'api': 'api',
     'pairing': 'pairing',
     'bootstrap': 'bootstrap',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'api': 'api',
     'pairing': 'pairing',
     'bootstrap': 'bootstrap',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -182,11 +204,13 @@ class _$ApiTokenCreatedLicencePolicyEnumSerializer
     'noNc': 'no-nc',
     'noSa': 'no-sa',
     'redistributable': 'redistributable',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'no-nc': 'noNc',
     'no-sa': 'noSa',
     'redistributable': 'redistributable',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

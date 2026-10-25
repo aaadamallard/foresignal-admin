@@ -192,6 +192,9 @@ class SourceAccessRouteEnum extends EnumClass {
   static const SourceAccessRouteEnum browser = _$sourceAccessRouteEnum_browser;
   @BuiltValueEnumConst(wireName: r'other')
   static const SourceAccessRouteEnum other = _$sourceAccessRouteEnum_other;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const SourceAccessRouteEnum unknownDefaultOpenApi =
+      _$sourceAccessRouteEnum_unknownDefaultOpenApi;
 
   static Serializer<SourceAccessRouteEnum> get serializer =>
       _$sourceAccessRouteEnumSerializer;
@@ -213,6 +216,9 @@ class SourceAccessFragilityEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'high')
   static const SourceAccessFragilityEnum high =
       _$sourceAccessFragilityEnum_high;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const SourceAccessFragilityEnum unknownDefaultOpenApi =
+      _$sourceAccessFragilityEnum_unknownDefaultOpenApi;
 
   static Serializer<SourceAccessFragilityEnum> get serializer =>
       _$sourceAccessFragilityEnumSerializer;

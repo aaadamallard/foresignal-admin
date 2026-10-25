@@ -15,6 +15,9 @@ _$analysisSeriesInputDetectorsEnum_changepointBocpd =
 const AnalysisSeriesInputDetectorsEnum
 _$analysisSeriesInputDetectorsEnum_forecast =
     const AnalysisSeriesInputDetectorsEnum._('forecast');
+const AnalysisSeriesInputDetectorsEnum
+_$analysisSeriesInputDetectorsEnum_unknownDefaultOpenApi =
+    const AnalysisSeriesInputDetectorsEnum._('unknownDefaultOpenApi');
 
 AnalysisSeriesInputDetectorsEnum _$analysisSeriesInputDetectorsEnumValueOf(
   String name,
@@ -26,8 +29,10 @@ AnalysisSeriesInputDetectorsEnum _$analysisSeriesInputDetectorsEnumValueOf(
       return _$analysisSeriesInputDetectorsEnum_changepointBocpd;
     case 'forecast':
       return _$analysisSeriesInputDetectorsEnum_forecast;
+    case 'unknownDefaultOpenApi':
+      return _$analysisSeriesInputDetectorsEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$analysisSeriesInputDetectorsEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -38,6 +43,7 @@ _$analysisSeriesInputDetectorsEnumValues =
         _$analysisSeriesInputDetectorsEnum_changepointCusum,
         _$analysisSeriesInputDetectorsEnum_changepointBocpd,
         _$analysisSeriesInputDetectorsEnum_forecast,
+        _$analysisSeriesInputDetectorsEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -47,6 +53,9 @@ const AnalysisSeriesInputFrequencyEnum _$analysisSeriesInputFrequencyEnum_day =
     const AnalysisSeriesInputFrequencyEnum._('day');
 const AnalysisSeriesInputFrequencyEnum _$analysisSeriesInputFrequencyEnum_week =
     const AnalysisSeriesInputFrequencyEnum._('week');
+const AnalysisSeriesInputFrequencyEnum
+_$analysisSeriesInputFrequencyEnum_unknownDefaultOpenApi =
+    const AnalysisSeriesInputFrequencyEnum._('unknownDefaultOpenApi');
 
 AnalysisSeriesInputFrequencyEnum _$analysisSeriesInputFrequencyEnumValueOf(
   String name,
@@ -58,8 +67,10 @@ AnalysisSeriesInputFrequencyEnum _$analysisSeriesInputFrequencyEnumValueOf(
       return _$analysisSeriesInputFrequencyEnum_day;
     case 'week':
       return _$analysisSeriesInputFrequencyEnum_week;
+    case 'unknownDefaultOpenApi':
+      return _$analysisSeriesInputFrequencyEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$analysisSeriesInputFrequencyEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -70,6 +81,7 @@ _$analysisSeriesInputFrequencyEnumValues =
         _$analysisSeriesInputFrequencyEnum_hour,
         _$analysisSeriesInputFrequencyEnum_day,
         _$analysisSeriesInputFrequencyEnum_week,
+        _$analysisSeriesInputFrequencyEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -86,11 +98,13 @@ class _$AnalysisSeriesInputDetectorsEnumSerializer
     'changepointCusum': 'changepoint-cusum',
     'changepointBocpd': 'changepoint-bocpd',
     'forecast': 'forecast',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'changepoint-cusum': 'changepointCusum',
     'changepoint-bocpd': 'changepointBocpd',
     'forecast': 'forecast',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -121,11 +135,13 @@ class _$AnalysisSeriesInputFrequencyEnumSerializer
     'hour': 'hour',
     'day': 'day',
     'week': 'week',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'hour': 'hour',
     'day': 'day',
     'week': 'week',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

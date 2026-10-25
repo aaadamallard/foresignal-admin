@@ -110,6 +110,9 @@ class GetPrincipal200ResponseKindEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'service')
   static const GetPrincipal200ResponseKindEnum service =
       _$getPrincipal200ResponseKindEnum_service;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const GetPrincipal200ResponseKindEnum unknownDefaultOpenApi =
+      _$getPrincipal200ResponseKindEnum_unknownDefaultOpenApi;
 
   static Serializer<GetPrincipal200ResponseKindEnum> get serializer =>
       _$getPrincipal200ResponseKindEnumSerializer;

@@ -38,6 +38,8 @@ const RegionNearCompass16Enum _$regionNearCompass16Enum_NW =
     const RegionNearCompass16Enum._('NW');
 const RegionNearCompass16Enum _$regionNearCompass16Enum_NNW =
     const RegionNearCompass16Enum._('NNW');
+const RegionNearCompass16Enum _$regionNearCompass16Enum_unknownDefaultOpenApi =
+    const RegionNearCompass16Enum._('unknownDefaultOpenApi');
 
 RegionNearCompass16Enum _$regionNearCompass16EnumValueOf(String name) {
   switch (name) {
@@ -73,8 +75,10 @@ RegionNearCompass16Enum _$regionNearCompass16EnumValueOf(String name) {
       return _$regionNearCompass16Enum_NW;
     case 'NNW':
       return _$regionNearCompass16Enum_NNW;
+    case 'unknownDefaultOpenApi':
+      return _$regionNearCompass16Enum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$regionNearCompass16Enum_unknownDefaultOpenApi;
   }
 }
 
@@ -96,6 +100,7 @@ final BuiltSet<RegionNearCompass16Enum> _$regionNearCompass16EnumValues =
       _$regionNearCompass16Enum_WNW,
       _$regionNearCompass16Enum_NW,
       _$regionNearCompass16Enum_NNW,
+      _$regionNearCompass16Enum_unknownDefaultOpenApi,
     ]);
 
 Serializer<RegionNearCompass16Enum> _$regionNearCompass16EnumSerializer =
@@ -120,6 +125,7 @@ class _$RegionNearCompass16EnumSerializer
     'WNW': 'WNW',
     'NW': 'NW',
     'NNW': 'NNW',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'N': 'N',
@@ -138,6 +144,7 @@ class _$RegionNearCompass16EnumSerializer
     'WNW': 'WNW',
     'NW': 'NW',
     'NNW': 'NNW',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

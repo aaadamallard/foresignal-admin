@@ -147,6 +147,9 @@ class GroupMemberInputRoleEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'manager')
   static const GroupMemberInputRoleEnum manager =
       _$groupMemberInputRoleEnum_manager;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const GroupMemberInputRoleEnum unknownDefaultOpenApi =
+      _$groupMemberInputRoleEnum_unknownDefaultOpenApi;
 
   static Serializer<GroupMemberInputRoleEnum> get serializer =>
       _$groupMemberInputRoleEnumSerializer;

@@ -8,19 +8,25 @@ part of 'feature_collection.dart';
 
 const FeatureCollectionTypeEnum _$featureCollectionTypeEnum_featureCollection =
     const FeatureCollectionTypeEnum._('featureCollection');
+const FeatureCollectionTypeEnum
+_$featureCollectionTypeEnum_unknownDefaultOpenApi =
+    const FeatureCollectionTypeEnum._('unknownDefaultOpenApi');
 
 FeatureCollectionTypeEnum _$featureCollectionTypeEnumValueOf(String name) {
   switch (name) {
     case 'featureCollection':
       return _$featureCollectionTypeEnum_featureCollection;
+    case 'unknownDefaultOpenApi':
+      return _$featureCollectionTypeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$featureCollectionTypeEnum_unknownDefaultOpenApi;
   }
 }
 
 final BuiltSet<FeatureCollectionTypeEnum> _$featureCollectionTypeEnumValues =
     BuiltSet<FeatureCollectionTypeEnum>(const <FeatureCollectionTypeEnum>[
       _$featureCollectionTypeEnum_featureCollection,
+      _$featureCollectionTypeEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<FeatureCollectionTypeEnum> _$featureCollectionTypeEnumSerializer =
@@ -30,9 +36,11 @@ class _$FeatureCollectionTypeEnumSerializer
     implements PrimitiveSerializer<FeatureCollectionTypeEnum> {
   static const Map<String, Object> _toWire = const <String, Object>{
     'featureCollection': 'FeatureCollection',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'FeatureCollection': 'featureCollection',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

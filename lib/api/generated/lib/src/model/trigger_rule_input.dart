@@ -878,6 +878,9 @@ class TriggerRuleInputModeEnum extends EnumClass {
       _$triggerRuleInputModeEnum_enter;
   @BuiltValueEnumConst(wireName: r'exit')
   static const TriggerRuleInputModeEnum exit = _$triggerRuleInputModeEnum_exit;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const TriggerRuleInputModeEnum unknownDefaultOpenApi =
+      _$triggerRuleInputModeEnum_unknownDefaultOpenApi;
 
   static Serializer<TriggerRuleInputModeEnum> get serializer =>
       _$triggerRuleInputModeEnumSerializer;
@@ -900,6 +903,9 @@ class TriggerRuleInputSeverityEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'critical')
   static const TriggerRuleInputSeverityEnum critical =
       _$triggerRuleInputSeverityEnum_critical;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const TriggerRuleInputSeverityEnum unknownDefaultOpenApi =
+      _$triggerRuleInputSeverityEnum_unknownDefaultOpenApi;
 
   static Serializer<TriggerRuleInputSeverityEnum> get serializer =>
       _$triggerRuleInputSeverityEnumSerializer;
@@ -919,6 +925,9 @@ class TriggerRuleInputCooldownScopeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'rule')
   static const TriggerRuleInputCooldownScopeEnum rule =
       _$triggerRuleInputCooldownScopeEnum_rule;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const TriggerRuleInputCooldownScopeEnum unknownDefaultOpenApi =
+      _$triggerRuleInputCooldownScopeEnum_unknownDefaultOpenApi;
 
   static Serializer<TriggerRuleInputCooldownScopeEnum> get serializer =>
       _$triggerRuleInputCooldownScopeEnumSerializer;
@@ -939,6 +948,9 @@ class TriggerRuleInputWeatherContextEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'off')
   static const TriggerRuleInputWeatherContextEnum off =
       _$triggerRuleInputWeatherContextEnum_off;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const TriggerRuleInputWeatherContextEnum unknownDefaultOpenApi =
+      _$triggerRuleInputWeatherContextEnum_unknownDefaultOpenApi;
 
   static Serializer<TriggerRuleInputWeatherContextEnum> get serializer =>
       _$triggerRuleInputWeatherContextEnumSerializer;
@@ -965,6 +977,9 @@ class TriggerRuleInputTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'anomaly')
   static const TriggerRuleInputTypeEnum anomaly =
       _$triggerRuleInputTypeEnum_anomaly;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const TriggerRuleInputTypeEnum unknownDefaultOpenApi =
+      _$triggerRuleInputTypeEnum_unknownDefaultOpenApi;
 
   static Serializer<TriggerRuleInputTypeEnum> get serializer =>
       _$triggerRuleInputTypeEnumSerializer;

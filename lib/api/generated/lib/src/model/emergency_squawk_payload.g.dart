@@ -17,6 +17,9 @@ _$emergencySquawkPayloadStatusEnum_noCoverage =
 const EmergencySquawkPayloadStatusEnum
 _$emergencySquawkPayloadStatusEnum_degradedInput =
     const EmergencySquawkPayloadStatusEnum._('degradedInput');
+const EmergencySquawkPayloadStatusEnum
+_$emergencySquawkPayloadStatusEnum_unknownDefaultOpenApi =
+    const EmergencySquawkPayloadStatusEnum._('unknownDefaultOpenApi');
 
 EmergencySquawkPayloadStatusEnum _$emergencySquawkPayloadStatusEnumValueOf(
   String name,
@@ -30,8 +33,10 @@ EmergencySquawkPayloadStatusEnum _$emergencySquawkPayloadStatusEnumValueOf(
       return _$emergencySquawkPayloadStatusEnum_noCoverage;
     case 'degradedInput':
       return _$emergencySquawkPayloadStatusEnum_degradedInput;
+    case 'unknownDefaultOpenApi':
+      return _$emergencySquawkPayloadStatusEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$emergencySquawkPayloadStatusEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -43,6 +48,7 @@ _$emergencySquawkPayloadStatusEnumValues =
         _$emergencySquawkPayloadStatusEnum_insufficientData,
         _$emergencySquawkPayloadStatusEnum_noCoverage,
         _$emergencySquawkPayloadStatusEnum_degradedInput,
+        _$emergencySquawkPayloadStatusEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -55,6 +61,9 @@ _$emergencySquawkPayloadMeaningEnum_radioFailure =
 const EmergencySquawkPayloadMeaningEnum
 _$emergencySquawkPayloadMeaningEnum_emergency =
     const EmergencySquawkPayloadMeaningEnum._('emergency');
+const EmergencySquawkPayloadMeaningEnum
+_$emergencySquawkPayloadMeaningEnum_unknownDefaultOpenApi =
+    const EmergencySquawkPayloadMeaningEnum._('unknownDefaultOpenApi');
 
 EmergencySquawkPayloadMeaningEnum _$emergencySquawkPayloadMeaningEnumValueOf(
   String name,
@@ -66,8 +75,10 @@ EmergencySquawkPayloadMeaningEnum _$emergencySquawkPayloadMeaningEnumValueOf(
       return _$emergencySquawkPayloadMeaningEnum_radioFailure;
     case 'emergency':
       return _$emergencySquawkPayloadMeaningEnum_emergency;
+    case 'unknownDefaultOpenApi':
+      return _$emergencySquawkPayloadMeaningEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$emergencySquawkPayloadMeaningEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -78,6 +89,7 @@ _$emergencySquawkPayloadMeaningEnumValues =
         _$emergencySquawkPayloadMeaningEnum_unlawfulInterference,
         _$emergencySquawkPayloadMeaningEnum_radioFailure,
         _$emergencySquawkPayloadMeaningEnum_emergency,
+        _$emergencySquawkPayloadMeaningEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -95,12 +107,14 @@ class _$EmergencySquawkPayloadStatusEnumSerializer
     'insufficientData': 'insufficient-data',
     'noCoverage': 'no-coverage',
     'degradedInput': 'degraded-input',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'ok': 'ok',
     'insufficient-data': 'insufficientData',
     'no-coverage': 'noCoverage',
     'degraded-input': 'degradedInput',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -131,11 +145,13 @@ class _$EmergencySquawkPayloadMeaningEnumSerializer
     'unlawfulInterference': 'unlawful interference',
     'radioFailure': 'radio failure',
     'emergency': 'emergency',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'unlawful interference': 'unlawfulInterference',
     'radio failure': 'radioFailure',
     'emergency': 'emergency',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

@@ -287,6 +287,9 @@ class WindowStateStateEnum extends EnumClass {
   static const WindowStateStateEnum unknown = _$windowStateStateEnum_unknown;
   @BuiltValueEnumConst(wireName: r'learning')
   static const WindowStateStateEnum learning = _$windowStateStateEnum_learning;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const WindowStateStateEnum unknownDefaultOpenApi =
+      _$windowStateStateEnum_unknownDefaultOpenApi;
 
   static Serializer<WindowStateStateEnum> get serializer =>
       _$windowStateStateEnumSerializer;

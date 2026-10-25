@@ -39,6 +39,9 @@ _$impactProjectionEventHazardTypeEnum_riverFlood =
 const ImpactProjectionEventHazardTypeEnum
 _$impactProjectionEventHazardTypeEnum_stormCell =
     const ImpactProjectionEventHazardTypeEnum._('stormCell');
+const ImpactProjectionEventHazardTypeEnum
+_$impactProjectionEventHazardTypeEnum_unknownDefaultOpenApi =
+    const ImpactProjectionEventHazardTypeEnum._('unknownDefaultOpenApi');
 
 ImpactProjectionEventHazardTypeEnum
 _$impactProjectionEventHazardTypeEnumValueOf(String name) {
@@ -65,8 +68,10 @@ _$impactProjectionEventHazardTypeEnumValueOf(String name) {
       return _$impactProjectionEventHazardTypeEnum_riverFlood;
     case 'stormCell':
       return _$impactProjectionEventHazardTypeEnum_stormCell;
+    case 'unknownDefaultOpenApi':
+      return _$impactProjectionEventHazardTypeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$impactProjectionEventHazardTypeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -85,6 +90,7 @@ _$impactProjectionEventHazardTypeEnumValues =
         _$impactProjectionEventHazardTypeEnum_excessiveRain,
         _$impactProjectionEventHazardTypeEnum_riverFlood,
         _$impactProjectionEventHazardTypeEnum_stormCell,
+        _$impactProjectionEventHazardTypeEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -106,6 +112,7 @@ class _$ImpactProjectionEventHazardTypeEnumSerializer
     'excessiveRain': 'excessive-rain',
     'riverFlood': 'river-flood',
     'stormCell': 'storm-cell',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'tropical-wind-34': 'tropicalWind34',
@@ -119,6 +126,7 @@ class _$ImpactProjectionEventHazardTypeEnumSerializer
     'excessive-rain': 'excessiveRain',
     'river-flood': 'riverFlood',
     'storm-cell': 'stormCell',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

@@ -12,6 +12,11 @@ _$settingsBundleChannelsInnerConfigAttachMapEnum_none =
 const SettingsBundleChannelsInnerConfigAttachMapEnum
 _$settingsBundleChannelsInnerConfigAttachMapEnum_static_ =
     const SettingsBundleChannelsInnerConfigAttachMapEnum._('static_');
+const SettingsBundleChannelsInnerConfigAttachMapEnum
+_$settingsBundleChannelsInnerConfigAttachMapEnum_unknownDefaultOpenApi =
+    const SettingsBundleChannelsInnerConfigAttachMapEnum._(
+      'unknownDefaultOpenApi',
+    );
 
 SettingsBundleChannelsInnerConfigAttachMapEnum
 _$settingsBundleChannelsInnerConfigAttachMapEnumValueOf(String name) {
@@ -20,8 +25,10 @@ _$settingsBundleChannelsInnerConfigAttachMapEnumValueOf(String name) {
       return _$settingsBundleChannelsInnerConfigAttachMapEnum_none;
     case 'static_':
       return _$settingsBundleChannelsInnerConfigAttachMapEnum_static_;
+    case 'unknownDefaultOpenApi':
+      return _$settingsBundleChannelsInnerConfigAttachMapEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$settingsBundleChannelsInnerConfigAttachMapEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -31,6 +38,7 @@ _$settingsBundleChannelsInnerConfigAttachMapEnumValues =
       const <SettingsBundleChannelsInnerConfigAttachMapEnum>[
         _$settingsBundleChannelsInnerConfigAttachMapEnum_none,
         _$settingsBundleChannelsInnerConfigAttachMapEnum_static_,
+        _$settingsBundleChannelsInnerConfigAttachMapEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -40,6 +48,9 @@ _$settingsBundleChannelsInnerConfigUnitsEnum_metric =
 const SettingsBundleChannelsInnerConfigUnitsEnum
 _$settingsBundleChannelsInnerConfigUnitsEnum_imperial =
     const SettingsBundleChannelsInnerConfigUnitsEnum._('imperial');
+const SettingsBundleChannelsInnerConfigUnitsEnum
+_$settingsBundleChannelsInnerConfigUnitsEnum_unknownDefaultOpenApi =
+    const SettingsBundleChannelsInnerConfigUnitsEnum._('unknownDefaultOpenApi');
 
 SettingsBundleChannelsInnerConfigUnitsEnum
 _$settingsBundleChannelsInnerConfigUnitsEnumValueOf(String name) {
@@ -48,8 +59,10 @@ _$settingsBundleChannelsInnerConfigUnitsEnumValueOf(String name) {
       return _$settingsBundleChannelsInnerConfigUnitsEnum_metric;
     case 'imperial':
       return _$settingsBundleChannelsInnerConfigUnitsEnum_imperial;
+    case 'unknownDefaultOpenApi':
+      return _$settingsBundleChannelsInnerConfigUnitsEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$settingsBundleChannelsInnerConfigUnitsEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -59,6 +72,7 @@ _$settingsBundleChannelsInnerConfigUnitsEnumValues =
       const <SettingsBundleChannelsInnerConfigUnitsEnum>[
         _$settingsBundleChannelsInnerConfigUnitsEnum_metric,
         _$settingsBundleChannelsInnerConfigUnitsEnum_imperial,
+        _$settingsBundleChannelsInnerConfigUnitsEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -75,10 +89,12 @@ class _$SettingsBundleChannelsInnerConfigAttachMapEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'none': 'none',
     'static_': 'static',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'none': 'none',
     'static': 'static_',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -110,10 +126,12 @@ class _$SettingsBundleChannelsInnerConfigUnitsEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'metric': 'metric',
     'imperial': 'imperial',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'metric': 'metric',
     'imperial': 'imperial',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

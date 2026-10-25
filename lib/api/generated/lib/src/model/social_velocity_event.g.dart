@@ -9,6 +9,9 @@ part of 'social_velocity_event.dart';
 const SocialVelocityEventEventEnum
 _$socialVelocityEventEventEnum_socialPeriodVelocity =
     const SocialVelocityEventEventEnum._('socialPeriodVelocity');
+const SocialVelocityEventEventEnum
+_$socialVelocityEventEventEnum_unknownDefaultOpenApi =
+    const SocialVelocityEventEventEnum._('unknownDefaultOpenApi');
 
 SocialVelocityEventEventEnum _$socialVelocityEventEventEnumValueOf(
   String name,
@@ -16,17 +19,19 @@ SocialVelocityEventEventEnum _$socialVelocityEventEventEnumValueOf(
   switch (name) {
     case 'socialPeriodVelocity':
       return _$socialVelocityEventEventEnum_socialPeriodVelocity;
+    case 'unknownDefaultOpenApi':
+      return _$socialVelocityEventEventEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$socialVelocityEventEventEnum_unknownDefaultOpenApi;
   }
 }
 
 final BuiltSet<SocialVelocityEventEventEnum>
-_$socialVelocityEventEventEnumValues = BuiltSet<SocialVelocityEventEventEnum>(
-  const <SocialVelocityEventEventEnum>[
-    _$socialVelocityEventEventEnum_socialPeriodVelocity,
-  ],
-);
+_$socialVelocityEventEventEnumValues =
+    BuiltSet<SocialVelocityEventEventEnum>(const <SocialVelocityEventEventEnum>[
+      _$socialVelocityEventEventEnum_socialPeriodVelocity,
+      _$socialVelocityEventEventEnum_unknownDefaultOpenApi,
+    ]);
 
 Serializer<SocialVelocityEventEventEnum>
 _$socialVelocityEventEventEnumSerializer =
@@ -36,9 +41,11 @@ class _$SocialVelocityEventEventEnumSerializer
     implements PrimitiveSerializer<SocialVelocityEventEventEnum> {
   static const Map<String, Object> _toWire = const <String, Object>{
     'socialPeriodVelocity': 'social.velocity',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'social.velocity': 'socialPeriodVelocity',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

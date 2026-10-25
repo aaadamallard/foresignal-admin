@@ -12,6 +12,8 @@ const SearchResultDocTypeEnum _$searchResultDocTypeEnum_briefing =
     const SearchResultDocTypeEnum._('briefing');
 const SearchResultDocTypeEnum _$searchResultDocTypeEnum_alert =
     const SearchResultDocTypeEnum._('alert');
+const SearchResultDocTypeEnum _$searchResultDocTypeEnum_unknownDefaultOpenApi =
+    const SearchResultDocTypeEnum._('unknownDefaultOpenApi');
 
 SearchResultDocTypeEnum _$searchResultDocTypeEnumValueOf(String name) {
   switch (name) {
@@ -21,8 +23,10 @@ SearchResultDocTypeEnum _$searchResultDocTypeEnumValueOf(String name) {
       return _$searchResultDocTypeEnum_briefing;
     case 'alert':
       return _$searchResultDocTypeEnum_alert;
+    case 'unknownDefaultOpenApi':
+      return _$searchResultDocTypeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$searchResultDocTypeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -31,6 +35,7 @@ final BuiltSet<SearchResultDocTypeEnum> _$searchResultDocTypeEnumValues =
       _$searchResultDocTypeEnum_record,
       _$searchResultDocTypeEnum_briefing,
       _$searchResultDocTypeEnum_alert,
+      _$searchResultDocTypeEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<SearchResultDocTypeEnum> _$searchResultDocTypeEnumSerializer =
@@ -42,11 +47,13 @@ class _$SearchResultDocTypeEnumSerializer
     'record': 'record',
     'briefing': 'briefing',
     'alert': 'alert',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'record': 'record',
     'briefing': 'briefing',
     'alert': 'alert',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

@@ -8,19 +8,24 @@ part of 'finding_patch.dart';
 
 const FindingPatchStatusEnum _$findingPatchStatusEnum_dismissed =
     const FindingPatchStatusEnum._('dismissed');
+const FindingPatchStatusEnum _$findingPatchStatusEnum_unknownDefaultOpenApi =
+    const FindingPatchStatusEnum._('unknownDefaultOpenApi');
 
 FindingPatchStatusEnum _$findingPatchStatusEnumValueOf(String name) {
   switch (name) {
     case 'dismissed':
       return _$findingPatchStatusEnum_dismissed;
+    case 'unknownDefaultOpenApi':
+      return _$findingPatchStatusEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$findingPatchStatusEnum_unknownDefaultOpenApi;
   }
 }
 
 final BuiltSet<FindingPatchStatusEnum> _$findingPatchStatusEnumValues =
     BuiltSet<FindingPatchStatusEnum>(const <FindingPatchStatusEnum>[
       _$findingPatchStatusEnum_dismissed,
+      _$findingPatchStatusEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<FindingPatchStatusEnum> _$findingPatchStatusEnumSerializer =
@@ -30,9 +35,11 @@ class _$FindingPatchStatusEnumSerializer
     implements PrimitiveSerializer<FindingPatchStatusEnum> {
   static const Map<String, Object> _toWire = const <String, Object>{
     'dismissed': 'dismissed',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'dismissed': 'dismissed',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

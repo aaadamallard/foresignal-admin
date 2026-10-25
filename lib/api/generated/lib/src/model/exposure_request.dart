@@ -220,6 +220,9 @@ class ExposureRequestPopulationEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'required')
   static const ExposureRequestPopulationEnum required_ =
       _$exposureRequestPopulationEnum_required_;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ExposureRequestPopulationEnum unknownDefaultOpenApi =
+      _$exposureRequestPopulationEnum_unknownDefaultOpenApi;
 
   static Serializer<ExposureRequestPopulationEnum> get serializer =>
       _$exposureRequestPopulationEnumSerializer;

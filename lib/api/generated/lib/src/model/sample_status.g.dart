@@ -12,6 +12,9 @@ const SampleStatus _$noData = const SampleStatus._('noData');
 const SampleStatus _$stale = const SampleStatus._('stale');
 const SampleStatus _$unavailable = const SampleStatus._('unavailable');
 const SampleStatus _$stalePosition = const SampleStatus._('stalePosition');
+const SampleStatus _$unknownDefaultOpenApi = const SampleStatus._(
+  'unknownDefaultOpenApi',
+);
 
 SampleStatus _$valueOf(String name) {
   switch (name) {
@@ -27,21 +30,23 @@ SampleStatus _$valueOf(String name) {
       return _$unavailable;
     case 'stalePosition':
       return _$stalePosition;
+    case 'unknownDefaultOpenApi':
+      return _$unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$unknownDefaultOpenApi;
   }
 }
 
-final BuiltSet<SampleStatus> _$values = BuiltSet<SampleStatus>(
-  const <SampleStatus>[
-    _$ok,
-    _$noCoverage,
-    _$noData,
-    _$stale,
-    _$unavailable,
-    _$stalePosition,
-  ],
-);
+final BuiltSet<SampleStatus> _$values =
+    BuiltSet<SampleStatus>(const <SampleStatus>[
+      _$ok,
+      _$noCoverage,
+      _$noData,
+      _$stale,
+      _$unavailable,
+      _$stalePosition,
+      _$unknownDefaultOpenApi,
+    ]);
 
 class _$SampleStatusMeta {
   const _$SampleStatusMeta();
@@ -51,6 +56,7 @@ class _$SampleStatusMeta {
   SampleStatus get stale => _$stale;
   SampleStatus get unavailable => _$unavailable;
   SampleStatus get stalePosition => _$stalePosition;
+  SampleStatus get unknownDefaultOpenApi => _$unknownDefaultOpenApi;
   SampleStatus valueOf(String name) => _$valueOf(name);
   BuiltSet<SampleStatus> get values => _$values;
 }
@@ -70,6 +76,7 @@ class _$SampleStatusSerializer implements PrimitiveSerializer<SampleStatus> {
     'stale': 'stale',
     'unavailable': 'unavailable',
     'stalePosition': 'stale-position',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'ok': 'ok',
@@ -78,6 +85,7 @@ class _$SampleStatusSerializer implements PrimitiveSerializer<SampleStatus> {
     'stale': 'stale',
     'unavailable': 'unavailable',
     'stale-position': 'stalePosition',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

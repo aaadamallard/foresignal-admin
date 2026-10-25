@@ -17,6 +17,9 @@ const EdpSourceInfoAccessRouteEnum _$edpSourceInfoAccessRouteEnum_browser =
     const EdpSourceInfoAccessRouteEnum._('browser');
 const EdpSourceInfoAccessRouteEnum _$edpSourceInfoAccessRouteEnum_other =
     const EdpSourceInfoAccessRouteEnum._('other');
+const EdpSourceInfoAccessRouteEnum
+_$edpSourceInfoAccessRouteEnum_unknownDefaultOpenApi =
+    const EdpSourceInfoAccessRouteEnum._('unknownDefaultOpenApi');
 
 EdpSourceInfoAccessRouteEnum _$edpSourceInfoAccessRouteEnumValueOf(
   String name,
@@ -32,8 +35,10 @@ EdpSourceInfoAccessRouteEnum _$edpSourceInfoAccessRouteEnumValueOf(
       return _$edpSourceInfoAccessRouteEnum_browser;
     case 'other':
       return _$edpSourceInfoAccessRouteEnum_other;
+    case 'unknownDefaultOpenApi':
+      return _$edpSourceInfoAccessRouteEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$edpSourceInfoAccessRouteEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -45,6 +50,7 @@ _$edpSourceInfoAccessRouteEnumValues =
       _$edpSourceInfoAccessRouteEnum_scrape,
       _$edpSourceInfoAccessRouteEnum_browser,
       _$edpSourceInfoAccessRouteEnum_other,
+      _$edpSourceInfoAccessRouteEnum_unknownDefaultOpenApi,
     ]);
 
 const EdpSourceInfoAccessFragilityEnum _$edpSourceInfoAccessFragilityEnum_low =
@@ -54,6 +60,9 @@ _$edpSourceInfoAccessFragilityEnum_medium =
     const EdpSourceInfoAccessFragilityEnum._('medium');
 const EdpSourceInfoAccessFragilityEnum _$edpSourceInfoAccessFragilityEnum_high =
     const EdpSourceInfoAccessFragilityEnum._('high');
+const EdpSourceInfoAccessFragilityEnum
+_$edpSourceInfoAccessFragilityEnum_unknownDefaultOpenApi =
+    const EdpSourceInfoAccessFragilityEnum._('unknownDefaultOpenApi');
 
 EdpSourceInfoAccessFragilityEnum _$edpSourceInfoAccessFragilityEnumValueOf(
   String name,
@@ -65,8 +74,10 @@ EdpSourceInfoAccessFragilityEnum _$edpSourceInfoAccessFragilityEnumValueOf(
       return _$edpSourceInfoAccessFragilityEnum_medium;
     case 'high':
       return _$edpSourceInfoAccessFragilityEnum_high;
+    case 'unknownDefaultOpenApi':
+      return _$edpSourceInfoAccessFragilityEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$edpSourceInfoAccessFragilityEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -77,6 +88,7 @@ _$edpSourceInfoAccessFragilityEnumValues =
         _$edpSourceInfoAccessFragilityEnum_low,
         _$edpSourceInfoAccessFragilityEnum_medium,
         _$edpSourceInfoAccessFragilityEnum_high,
+        _$edpSourceInfoAccessFragilityEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -95,6 +107,7 @@ class _$EdpSourceInfoAccessRouteEnumSerializer
     'scrape': 'scrape',
     'browser': 'browser',
     'other': 'other',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'official': 'official',
@@ -102,6 +115,7 @@ class _$EdpSourceInfoAccessRouteEnumSerializer
     'scrape': 'scrape',
     'browser': 'browser',
     'other': 'other',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -132,11 +146,13 @@ class _$EdpSourceInfoAccessFragilityEnumSerializer
     'low': 'low',
     'medium': 'medium',
     'high': 'high',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'low': 'low',
     'medium': 'medium',
     'high': 'high',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

@@ -10,6 +10,8 @@ const TripScheduleTypeEnum _$tripScheduleTypeEnum_once =
     const TripScheduleTypeEnum._('once');
 const TripScheduleTypeEnum _$tripScheduleTypeEnum_recurring =
     const TripScheduleTypeEnum._('recurring');
+const TripScheduleTypeEnum _$tripScheduleTypeEnum_unknownDefaultOpenApi =
+    const TripScheduleTypeEnum._('unknownDefaultOpenApi');
 
 TripScheduleTypeEnum _$tripScheduleTypeEnumValueOf(String name) {
   switch (name) {
@@ -17,8 +19,10 @@ TripScheduleTypeEnum _$tripScheduleTypeEnumValueOf(String name) {
       return _$tripScheduleTypeEnum_once;
     case 'recurring':
       return _$tripScheduleTypeEnum_recurring;
+    case 'unknownDefaultOpenApi':
+      return _$tripScheduleTypeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$tripScheduleTypeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -26,6 +30,7 @@ final BuiltSet<TripScheduleTypeEnum> _$tripScheduleTypeEnumValues =
     BuiltSet<TripScheduleTypeEnum>(const <TripScheduleTypeEnum>[
       _$tripScheduleTypeEnum_once,
       _$tripScheduleTypeEnum_recurring,
+      _$tripScheduleTypeEnum_unknownDefaultOpenApi,
     ]);
 
 const TripScheduleDaysEnum _$tripScheduleDaysEnum_MO =
@@ -42,6 +47,8 @@ const TripScheduleDaysEnum _$tripScheduleDaysEnum_SA =
     const TripScheduleDaysEnum._('SA');
 const TripScheduleDaysEnum _$tripScheduleDaysEnum_SU =
     const TripScheduleDaysEnum._('SU');
+const TripScheduleDaysEnum _$tripScheduleDaysEnum_unknownDefaultOpenApi =
+    const TripScheduleDaysEnum._('unknownDefaultOpenApi');
 
 TripScheduleDaysEnum _$tripScheduleDaysEnumValueOf(String name) {
   switch (name) {
@@ -59,8 +66,10 @@ TripScheduleDaysEnum _$tripScheduleDaysEnumValueOf(String name) {
       return _$tripScheduleDaysEnum_SA;
     case 'SU':
       return _$tripScheduleDaysEnum_SU;
+    case 'unknownDefaultOpenApi':
+      return _$tripScheduleDaysEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$tripScheduleDaysEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -73,6 +82,7 @@ final BuiltSet<TripScheduleDaysEnum> _$tripScheduleDaysEnumValues =
       _$tripScheduleDaysEnum_FR,
       _$tripScheduleDaysEnum_SA,
       _$tripScheduleDaysEnum_SU,
+      _$tripScheduleDaysEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<TripScheduleTypeEnum> _$tripScheduleTypeEnumSerializer =
@@ -85,10 +95,12 @@ class _$TripScheduleTypeEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'once': 'once',
     'recurring': 'recurring',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'once': 'once',
     'recurring': 'recurring',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -123,6 +135,7 @@ class _$TripScheduleDaysEnumSerializer
     'FR': 'FR',
     'SA': 'SA',
     'SU': 'SU',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'MO': 'MO',
@@ -132,6 +145,7 @@ class _$TripScheduleDaysEnumSerializer
     'FR': 'FR',
     'SA': 'SA',
     'SU': 'SU',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

@@ -470,6 +470,9 @@ class SeriesCatalogEntryFrequencyEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'P1Y')
   static const SeriesCatalogEntryFrequencyEnum P1Y =
       _$seriesCatalogEntryFrequencyEnum_P1Y;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const SeriesCatalogEntryFrequencyEnum unknownDefaultOpenApi =
+      _$seriesCatalogEntryFrequencyEnum_unknownDefaultOpenApi;
 
   static Serializer<SeriesCatalogEntryFrequencyEnum> get serializer =>
       _$seriesCatalogEntryFrequencyEnumSerializer;
@@ -495,6 +498,9 @@ class SeriesCatalogEntryStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'forecast')
   static const SeriesCatalogEntryStatusEnum forecast =
       _$seriesCatalogEntryStatusEnum_forecast;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const SeriesCatalogEntryStatusEnum unknownDefaultOpenApi =
+      _$seriesCatalogEntryStatusEnum_unknownDefaultOpenApi;
 
   static Serializer<SeriesCatalogEntryStatusEnum> get serializer =>
       _$seriesCatalogEntryStatusEnumSerializer;
@@ -538,6 +544,9 @@ class SeriesCatalogEntryFamilyEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'structural')
   static const SeriesCatalogEntryFamilyEnum structural =
       _$seriesCatalogEntryFamilyEnum_structural;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const SeriesCatalogEntryFamilyEnum unknownDefaultOpenApi =
+      _$seriesCatalogEntryFamilyEnum_unknownDefaultOpenApi;
 
   static Serializer<SeriesCatalogEntryFamilyEnum> get serializer =>
       _$seriesCatalogEntryFamilyEnumSerializer;
@@ -564,6 +573,9 @@ class SeriesCatalogEntryTransformEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'level')
   static const SeriesCatalogEntryTransformEnum level =
       _$seriesCatalogEntryTransformEnum_level;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const SeriesCatalogEntryTransformEnum unknownDefaultOpenApi =
+      _$seriesCatalogEntryTransformEnum_unknownDefaultOpenApi;
 
   static Serializer<SeriesCatalogEntryTransformEnum> get serializer =>
       _$seriesCatalogEntryTransformEnumSerializer;
@@ -584,6 +596,9 @@ class SeriesCatalogEntryEgressEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'LOCAL_ONLY')
   static const SeriesCatalogEntryEgressEnum LOCAL_ONLY =
       _$seriesCatalogEntryEgressEnum_LOCAL_ONLY;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const SeriesCatalogEntryEgressEnum unknownDefaultOpenApi =
+      _$seriesCatalogEntryEgressEnum_unknownDefaultOpenApi;
 
   static Serializer<SeriesCatalogEntryEgressEnum> get serializer =>
       _$seriesCatalogEntryEgressEnumSerializer;

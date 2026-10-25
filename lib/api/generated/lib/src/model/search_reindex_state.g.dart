@@ -14,6 +14,9 @@ const SearchReindexStateStateEnum _$searchReindexStateStateEnum_indexing =
     const SearchReindexStateStateEnum._('indexing');
 const SearchReindexStateStateEnum _$searchReindexStateStateEnum_swapping =
     const SearchReindexStateStateEnum._('swapping');
+const SearchReindexStateStateEnum
+_$searchReindexStateStateEnum_unknownDefaultOpenApi =
+    const SearchReindexStateStateEnum._('unknownDefaultOpenApi');
 
 SearchReindexStateStateEnum _$searchReindexStateStateEnumValueOf(String name) {
   switch (name) {
@@ -25,8 +28,10 @@ SearchReindexStateStateEnum _$searchReindexStateStateEnumValueOf(String name) {
       return _$searchReindexStateStateEnum_indexing;
     case 'swapping':
       return _$searchReindexStateStateEnum_swapping;
+    case 'unknownDefaultOpenApi':
+      return _$searchReindexStateStateEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$searchReindexStateStateEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -37,6 +42,7 @@ _$searchReindexStateStateEnumValues =
       _$searchReindexStateStateEnum_backfilling,
       _$searchReindexStateStateEnum_indexing,
       _$searchReindexStateStateEnum_swapping,
+      _$searchReindexStateStateEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<SearchReindexStateStateEnum>
@@ -50,12 +56,14 @@ class _$SearchReindexStateStateEnumSerializer
     'backfilling': 'backfilling',
     'indexing': 'indexing',
     'swapping': 'swapping',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'idle': 'idle',
     'backfilling': 'backfilling',
     'indexing': 'indexing',
     'swapping': 'swapping',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

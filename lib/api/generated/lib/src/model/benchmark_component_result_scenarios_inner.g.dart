@@ -41,6 +41,11 @@ _$benchmarkComponentResultScenariosInnerScenarioEnum_preEventMove =
 const BenchmarkComponentResultScenariosInnerScenarioEnum
 _$benchmarkComponentResultScenariosInnerScenarioEnum_historical =
     const BenchmarkComponentResultScenariosInnerScenarioEnum._('historical');
+const BenchmarkComponentResultScenariosInnerScenarioEnum
+_$benchmarkComponentResultScenariosInnerScenarioEnum_unknownDefaultOpenApi =
+    const BenchmarkComponentResultScenariosInnerScenarioEnum._(
+      'unknownDefaultOpenApi',
+    );
 
 BenchmarkComponentResultScenariosInnerScenarioEnum
 _$benchmarkComponentResultScenariosInnerScenarioEnumValueOf(String name) {
@@ -67,28 +72,31 @@ _$benchmarkComponentResultScenariosInnerScenarioEnumValueOf(String name) {
       return _$benchmarkComponentResultScenariosInnerScenarioEnum_preEventMove;
     case 'historical':
       return _$benchmarkComponentResultScenariosInnerScenarioEnum_historical;
+    case 'unknownDefaultOpenApi':
+      return _$benchmarkComponentResultScenariosInnerScenarioEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$benchmarkComponentResultScenariosInnerScenarioEnum_unknownDefaultOpenApi;
   }
 }
 
 final BuiltSet<BenchmarkComponentResultScenariosInnerScenarioEnum>
 _$benchmarkComponentResultScenariosInnerScenarioEnumValues =
-    BuiltSet<BenchmarkComponentResultScenariosInnerScenarioEnum>(
-      const <BenchmarkComponentResultScenariosInnerScenarioEnum>[
-        _$benchmarkComponentResultScenariosInnerScenarioEnum_nullSeasonal,
-        _$benchmarkComponentResultScenariosInnerScenarioEnum_stepChange,
-        _$benchmarkComponentResultScenariosInnerScenarioEnum_spike,
-        _$benchmarkComponentResultScenariosInnerScenarioEnum_coverageOutage,
-        _$benchmarkComponentResultScenariosInnerScenarioEnum_duplicateEcho,
-        _$benchmarkComponentResultScenariosInnerScenarioEnum_lateRevision,
-        _$benchmarkComponentResultScenariosInnerScenarioEnum_commonDriver,
-        _$benchmarkComponentResultScenariosInnerScenarioEnum_truePrecursor,
-        _$benchmarkComponentResultScenariosInnerScenarioEnum_baseRateDrift,
-        _$benchmarkComponentResultScenariosInnerScenarioEnum_preEventMove,
-        _$benchmarkComponentResultScenariosInnerScenarioEnum_historical,
-      ],
-    );
+    BuiltSet<BenchmarkComponentResultScenariosInnerScenarioEnum>(const <
+      BenchmarkComponentResultScenariosInnerScenarioEnum
+    >[
+      _$benchmarkComponentResultScenariosInnerScenarioEnum_nullSeasonal,
+      _$benchmarkComponentResultScenariosInnerScenarioEnum_stepChange,
+      _$benchmarkComponentResultScenariosInnerScenarioEnum_spike,
+      _$benchmarkComponentResultScenariosInnerScenarioEnum_coverageOutage,
+      _$benchmarkComponentResultScenariosInnerScenarioEnum_duplicateEcho,
+      _$benchmarkComponentResultScenariosInnerScenarioEnum_lateRevision,
+      _$benchmarkComponentResultScenariosInnerScenarioEnum_commonDriver,
+      _$benchmarkComponentResultScenariosInnerScenarioEnum_truePrecursor,
+      _$benchmarkComponentResultScenariosInnerScenarioEnum_baseRateDrift,
+      _$benchmarkComponentResultScenariosInnerScenarioEnum_preEventMove,
+      _$benchmarkComponentResultScenariosInnerScenarioEnum_historical,
+      _$benchmarkComponentResultScenariosInnerScenarioEnum_unknownDefaultOpenApi,
+    ]);
 
 const BenchmarkComponentResultScenariosInnerStatusEnum
 _$benchmarkComponentResultScenariosInnerStatusEnum_pass =
@@ -99,6 +107,11 @@ _$benchmarkComponentResultScenariosInnerStatusEnum_warn =
 const BenchmarkComponentResultScenariosInnerStatusEnum
 _$benchmarkComponentResultScenariosInnerStatusEnum_fail =
     const BenchmarkComponentResultScenariosInnerStatusEnum._('fail');
+const BenchmarkComponentResultScenariosInnerStatusEnum
+_$benchmarkComponentResultScenariosInnerStatusEnum_unknownDefaultOpenApi =
+    const BenchmarkComponentResultScenariosInnerStatusEnum._(
+      'unknownDefaultOpenApi',
+    );
 
 BenchmarkComponentResultScenariosInnerStatusEnum
 _$benchmarkComponentResultScenariosInnerStatusEnumValueOf(String name) {
@@ -109,20 +122,23 @@ _$benchmarkComponentResultScenariosInnerStatusEnumValueOf(String name) {
       return _$benchmarkComponentResultScenariosInnerStatusEnum_warn;
     case 'fail':
       return _$benchmarkComponentResultScenariosInnerStatusEnum_fail;
+    case 'unknownDefaultOpenApi':
+      return _$benchmarkComponentResultScenariosInnerStatusEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$benchmarkComponentResultScenariosInnerStatusEnum_unknownDefaultOpenApi;
   }
 }
 
 final BuiltSet<BenchmarkComponentResultScenariosInnerStatusEnum>
 _$benchmarkComponentResultScenariosInnerStatusEnumValues =
-    BuiltSet<BenchmarkComponentResultScenariosInnerStatusEnum>(
-      const <BenchmarkComponentResultScenariosInnerStatusEnum>[
-        _$benchmarkComponentResultScenariosInnerStatusEnum_pass,
-        _$benchmarkComponentResultScenariosInnerStatusEnum_warn,
-        _$benchmarkComponentResultScenariosInnerStatusEnum_fail,
-      ],
-    );
+    BuiltSet<BenchmarkComponentResultScenariosInnerStatusEnum>(const <
+      BenchmarkComponentResultScenariosInnerStatusEnum
+    >[
+      _$benchmarkComponentResultScenariosInnerStatusEnum_pass,
+      _$benchmarkComponentResultScenariosInnerStatusEnum_warn,
+      _$benchmarkComponentResultScenariosInnerStatusEnum_fail,
+      _$benchmarkComponentResultScenariosInnerStatusEnum_unknownDefaultOpenApi,
+    ]);
 
 Serializer<BenchmarkComponentResultScenariosInnerScenarioEnum>
 _$benchmarkComponentResultScenariosInnerScenarioEnumSerializer =
@@ -148,6 +164,7 @@ class _$BenchmarkComponentResultScenariosInnerScenarioEnumSerializer
     'baseRateDrift': 'base-rate-drift',
     'preEventMove': 'pre-event-move',
     'historical': 'historical',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'null-seasonal': 'nullSeasonal',
@@ -161,6 +178,7 @@ class _$BenchmarkComponentResultScenariosInnerScenarioEnumSerializer
     'base-rate-drift': 'baseRateDrift',
     'pre-event-move': 'preEventMove',
     'historical': 'historical',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -194,11 +212,13 @@ class _$BenchmarkComponentResultScenariosInnerStatusEnumSerializer
     'pass': 'pass',
     'warn': 'warn',
     'fail': 'fail',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'pass': 'pass',
     'warn': 'warn',
     'fail': 'fail',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

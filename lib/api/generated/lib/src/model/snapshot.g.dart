@@ -21,6 +21,8 @@ const SnapshotKindEnum _$snapshotKindEnum_RASTER = const SnapshotKindEnum._(
 const SnapshotKindEnum _$snapshotKindEnum_PLACE_PACK = const SnapshotKindEnum._(
   'PLACE_PACK',
 );
+const SnapshotKindEnum _$snapshotKindEnum_unknownDefaultOpenApi =
+    const SnapshotKindEnum._('unknownDefaultOpenApi');
 
 SnapshotKindEnum _$snapshotKindEnumValueOf(String name) {
   switch (name) {
@@ -34,8 +36,10 @@ SnapshotKindEnum _$snapshotKindEnumValueOf(String name) {
       return _$snapshotKindEnum_RASTER;
     case 'PLACE_PACK':
       return _$snapshotKindEnum_PLACE_PACK;
+    case 'unknownDefaultOpenApi':
+      return _$snapshotKindEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$snapshotKindEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -46,6 +50,7 @@ final BuiltSet<SnapshotKindEnum> _$snapshotKindEnumValues =
       _$snapshotKindEnum_PACK,
       _$snapshotKindEnum_RASTER,
       _$snapshotKindEnum_PLACE_PACK,
+      _$snapshotKindEnum_unknownDefaultOpenApi,
     ]);
 
 const SnapshotFormatEnum _$snapshotFormatEnum_geoparquet =
@@ -69,6 +74,8 @@ const SnapshotFormatEnum _$snapshotFormatEnum_zip = const SnapshotFormatEnum._(
 );
 const SnapshotFormatEnum _$snapshotFormatEnum_jsonBundle =
     const SnapshotFormatEnum._('jsonBundle');
+const SnapshotFormatEnum _$snapshotFormatEnum_unknownDefaultOpenApi =
+    const SnapshotFormatEnum._('unknownDefaultOpenApi');
 
 SnapshotFormatEnum _$snapshotFormatEnumValueOf(String name) {
   switch (name) {
@@ -90,8 +97,10 @@ SnapshotFormatEnum _$snapshotFormatEnumValueOf(String name) {
       return _$snapshotFormatEnum_zip;
     case 'jsonBundle':
       return _$snapshotFormatEnum_jsonBundle;
+    case 'unknownDefaultOpenApi':
+      return _$snapshotFormatEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$snapshotFormatEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -106,6 +115,7 @@ final BuiltSet<SnapshotFormatEnum> _$snapshotFormatEnumValues =
       _$snapshotFormatEnum_cog,
       _$snapshotFormatEnum_zip,
       _$snapshotFormatEnum_jsonBundle,
+      _$snapshotFormatEnum_unknownDefaultOpenApi,
     ]);
 
 const SnapshotStatusEnum _$snapshotStatusEnum_QUEUED =
@@ -121,6 +131,8 @@ const SnapshotStatusEnum _$snapshotStatusEnum_CANCELLED =
     const SnapshotStatusEnum._('CANCELLED');
 const SnapshotStatusEnum _$snapshotStatusEnum_EXPIRED =
     const SnapshotStatusEnum._('EXPIRED');
+const SnapshotStatusEnum _$snapshotStatusEnum_unknownDefaultOpenApi =
+    const SnapshotStatusEnum._('unknownDefaultOpenApi');
 
 SnapshotStatusEnum _$snapshotStatusEnumValueOf(String name) {
   switch (name) {
@@ -136,8 +148,10 @@ SnapshotStatusEnum _$snapshotStatusEnumValueOf(String name) {
       return _$snapshotStatusEnum_CANCELLED;
     case 'EXPIRED':
       return _$snapshotStatusEnum_EXPIRED;
+    case 'unknownDefaultOpenApi':
+      return _$snapshotStatusEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$snapshotStatusEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -149,6 +163,7 @@ final BuiltSet<SnapshotStatusEnum> _$snapshotStatusEnumValues =
       _$snapshotStatusEnum_FAILED,
       _$snapshotStatusEnum_CANCELLED,
       _$snapshotStatusEnum_EXPIRED,
+      _$snapshotStatusEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<SnapshotKindEnum> _$snapshotKindEnumSerializer =
@@ -166,6 +181,7 @@ class _$SnapshotKindEnumSerializer
     'PACK': 'PACK',
     'RASTER': 'RASTER',
     'PLACE_PACK': 'PLACE_PACK',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'EXPORT': 'EXPORT',
@@ -173,6 +189,7 @@ class _$SnapshotKindEnumSerializer
     'PACK': 'PACK',
     'RASTER': 'RASTER',
     'PLACE_PACK': 'PLACE_PACK',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -209,6 +226,7 @@ class _$SnapshotFormatEnumSerializer
     'cog': 'cog',
     'zip': 'zip',
     'jsonBundle': 'json-bundle',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'geoparquet': 'geoparquet',
@@ -220,6 +238,7 @@ class _$SnapshotFormatEnumSerializer
     'cog': 'cog',
     'zip': 'zip',
     'json-bundle': 'jsonBundle',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -253,6 +272,7 @@ class _$SnapshotStatusEnumSerializer
     'FAILED': 'FAILED',
     'CANCELLED': 'CANCELLED',
     'EXPIRED': 'EXPIRED',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'QUEUED': 'QUEUED',
@@ -261,6 +281,7 @@ class _$SnapshotStatusEnumSerializer
     'FAILED': 'FAILED',
     'CANCELLED': 'CANCELLED',
     'EXPIRED': 'EXPIRED',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

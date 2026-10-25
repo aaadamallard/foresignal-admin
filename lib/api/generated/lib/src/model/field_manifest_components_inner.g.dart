@@ -12,6 +12,9 @@ _$fieldManifestComponentsInnerNameEnum_u =
 const FieldManifestComponentsInnerNameEnum
 _$fieldManifestComponentsInnerNameEnum_v =
     const FieldManifestComponentsInnerNameEnum._('v');
+const FieldManifestComponentsInnerNameEnum
+_$fieldManifestComponentsInnerNameEnum_unknownDefaultOpenApi =
+    const FieldManifestComponentsInnerNameEnum._('unknownDefaultOpenApi');
 
 FieldManifestComponentsInnerNameEnum
 _$fieldManifestComponentsInnerNameEnumValueOf(String name) {
@@ -20,8 +23,10 @@ _$fieldManifestComponentsInnerNameEnumValueOf(String name) {
       return _$fieldManifestComponentsInnerNameEnum_u;
     case 'v':
       return _$fieldManifestComponentsInnerNameEnum_v;
+    case 'unknownDefaultOpenApi':
+      return _$fieldManifestComponentsInnerNameEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$fieldManifestComponentsInnerNameEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -31,6 +36,7 @@ _$fieldManifestComponentsInnerNameEnumValues =
       const <FieldManifestComponentsInnerNameEnum>[
         _$fieldManifestComponentsInnerNameEnum_u,
         _$fieldManifestComponentsInnerNameEnum_v,
+        _$fieldManifestComponentsInnerNameEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -43,10 +49,12 @@ class _$FieldManifestComponentsInnerNameEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'u': 'u',
     'v': 'v',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'u': 'u',
     'v': 'v',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

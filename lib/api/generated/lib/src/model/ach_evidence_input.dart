@@ -272,6 +272,9 @@ class AchEvidenceInputSource_Enum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'social-claim')
   static const AchEvidenceInputSource_Enum socialClaim =
       _$achEvidenceInputSourceEnum_socialClaim;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const AchEvidenceInputSource_Enum unknownDefaultOpenApi =
+      _$achEvidenceInputSourceEnum_unknownDefaultOpenApi;
 
   static Serializer<AchEvidenceInputSource_Enum> get serializer =>
       _$achEvidenceInputSourceEnumSerializer;
@@ -294,6 +297,9 @@ class AchEvidenceInputCredibilityEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'L')
   static const AchEvidenceInputCredibilityEnum L =
       _$achEvidenceInputCredibilityEnum_L;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const AchEvidenceInputCredibilityEnum unknownDefaultOpenApi =
+      _$achEvidenceInputCredibilityEnum_unknownDefaultOpenApi;
 
   static Serializer<AchEvidenceInputCredibilityEnum> get serializer =>
       _$achEvidenceInputCredibilityEnumSerializer;
@@ -316,6 +322,9 @@ class AchEvidenceInputRelevanceEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'L')
   static const AchEvidenceInputRelevanceEnum L =
       _$achEvidenceInputRelevanceEnum_L;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const AchEvidenceInputRelevanceEnum unknownDefaultOpenApi =
+      _$achEvidenceInputRelevanceEnum_unknownDefaultOpenApi;
 
   static Serializer<AchEvidenceInputRelevanceEnum> get serializer =>
       _$achEvidenceInputRelevanceEnumSerializer;
@@ -345,6 +354,9 @@ class AchEvidenceInputRatingsEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'II')
   static const AchEvidenceInputRatingsEnum II =
       _$achEvidenceInputRatingsEnum_II;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const AchEvidenceInputRatingsEnum unknownDefaultOpenApi =
+      _$achEvidenceInputRatingsEnum_unknownDefaultOpenApi;
 
   static Serializer<AchEvidenceInputRatingsEnum> get serializer =>
       _$achEvidenceInputRatingsEnumSerializer;

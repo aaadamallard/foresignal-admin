@@ -9,6 +9,9 @@ part of 'opaque_chronicle_link.dart';
 const OpaqueChronicleLinkDisclosureEnum
 _$opaqueChronicleLinkDisclosureEnum_opaque =
     const OpaqueChronicleLinkDisclosureEnum._('opaque');
+const OpaqueChronicleLinkDisclosureEnum
+_$opaqueChronicleLinkDisclosureEnum_unknownDefaultOpenApi =
+    const OpaqueChronicleLinkDisclosureEnum._('unknownDefaultOpenApi');
 
 OpaqueChronicleLinkDisclosureEnum _$opaqueChronicleLinkDisclosureEnumValueOf(
   String name,
@@ -16,8 +19,10 @@ OpaqueChronicleLinkDisclosureEnum _$opaqueChronicleLinkDisclosureEnumValueOf(
   switch (name) {
     case 'opaque':
       return _$opaqueChronicleLinkDisclosureEnum_opaque;
+    case 'unknownDefaultOpenApi':
+      return _$opaqueChronicleLinkDisclosureEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$opaqueChronicleLinkDisclosureEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -26,6 +31,7 @@ _$opaqueChronicleLinkDisclosureEnumValues =
     BuiltSet<OpaqueChronicleLinkDisclosureEnum>(
       const <OpaqueChronicleLinkDisclosureEnum>[
         _$opaqueChronicleLinkDisclosureEnum_opaque,
+        _$opaqueChronicleLinkDisclosureEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -35,6 +41,9 @@ const OpaqueChronicleLinkStrengthEnum _$opaqueChronicleLinkStrengthEnum_medium =
     const OpaqueChronicleLinkStrengthEnum._('medium');
 const OpaqueChronicleLinkStrengthEnum _$opaqueChronicleLinkStrengthEnum_high =
     const OpaqueChronicleLinkStrengthEnum._('high');
+const OpaqueChronicleLinkStrengthEnum
+_$opaqueChronicleLinkStrengthEnum_unknownDefaultOpenApi =
+    const OpaqueChronicleLinkStrengthEnum._('unknownDefaultOpenApi');
 
 OpaqueChronicleLinkStrengthEnum _$opaqueChronicleLinkStrengthEnumValueOf(
   String name,
@@ -46,8 +55,10 @@ OpaqueChronicleLinkStrengthEnum _$opaqueChronicleLinkStrengthEnumValueOf(
       return _$opaqueChronicleLinkStrengthEnum_medium;
     case 'high':
       return _$opaqueChronicleLinkStrengthEnum_high;
+    case 'unknownDefaultOpenApi':
+      return _$opaqueChronicleLinkStrengthEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$opaqueChronicleLinkStrengthEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -58,6 +69,7 @@ _$opaqueChronicleLinkStrengthEnumValues =
         _$opaqueChronicleLinkStrengthEnum_low,
         _$opaqueChronicleLinkStrengthEnum_medium,
         _$opaqueChronicleLinkStrengthEnum_high,
+        _$opaqueChronicleLinkStrengthEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -73,6 +85,9 @@ _$opaqueChronicleLinkDimensionsEnum_areaTime =
 const OpaqueChronicleLinkDimensionsEnum
 _$opaqueChronicleLinkDimensionsEnum_topics =
     const OpaqueChronicleLinkDimensionsEnum._('topics');
+const OpaqueChronicleLinkDimensionsEnum
+_$opaqueChronicleLinkDimensionsEnum_unknownDefaultOpenApi =
+    const OpaqueChronicleLinkDimensionsEnum._('unknownDefaultOpenApi');
 
 OpaqueChronicleLinkDimensionsEnum _$opaqueChronicleLinkDimensionsEnumValueOf(
   String name,
@@ -86,8 +101,10 @@ OpaqueChronicleLinkDimensionsEnum _$opaqueChronicleLinkDimensionsEnumValueOf(
       return _$opaqueChronicleLinkDimensionsEnum_areaTime;
     case 'topics':
       return _$opaqueChronicleLinkDimensionsEnum_topics;
+    case 'unknownDefaultOpenApi':
+      return _$opaqueChronicleLinkDimensionsEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$opaqueChronicleLinkDimensionsEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -99,6 +116,7 @@ _$opaqueChronicleLinkDimensionsEnumValues =
         _$opaqueChronicleLinkDimensionsEnum_entities,
         _$opaqueChronicleLinkDimensionsEnum_areaTime,
         _$opaqueChronicleLinkDimensionsEnum_topics,
+        _$opaqueChronicleLinkDimensionsEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -111,6 +129,9 @@ _$opaqueChronicleLinkTimeOverlapEnum_partial =
 const OpaqueChronicleLinkTimeOverlapEnum
 _$opaqueChronicleLinkTimeOverlapEnum_full =
     const OpaqueChronicleLinkTimeOverlapEnum._('full');
+const OpaqueChronicleLinkTimeOverlapEnum
+_$opaqueChronicleLinkTimeOverlapEnum_unknownDefaultOpenApi =
+    const OpaqueChronicleLinkTimeOverlapEnum._('unknownDefaultOpenApi');
 
 OpaqueChronicleLinkTimeOverlapEnum _$opaqueChronicleLinkTimeOverlapEnumValueOf(
   String name,
@@ -122,8 +143,10 @@ OpaqueChronicleLinkTimeOverlapEnum _$opaqueChronicleLinkTimeOverlapEnumValueOf(
       return _$opaqueChronicleLinkTimeOverlapEnum_partial;
     case 'full':
       return _$opaqueChronicleLinkTimeOverlapEnum_full;
+    case 'unknownDefaultOpenApi':
+      return _$opaqueChronicleLinkTimeOverlapEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$opaqueChronicleLinkTimeOverlapEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -134,6 +157,7 @@ _$opaqueChronicleLinkTimeOverlapEnumValues =
         _$opaqueChronicleLinkTimeOverlapEnum_none,
         _$opaqueChronicleLinkTimeOverlapEnum_partial,
         _$opaqueChronicleLinkTimeOverlapEnum_full,
+        _$opaqueChronicleLinkTimeOverlapEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -146,6 +170,9 @@ _$opaqueChronicleLinkAccessRequestStatusEnum_granted =
 const OpaqueChronicleLinkAccessRequestStatusEnum
 _$opaqueChronicleLinkAccessRequestStatusEnum_declined =
     const OpaqueChronicleLinkAccessRequestStatusEnum._('declined');
+const OpaqueChronicleLinkAccessRequestStatusEnum
+_$opaqueChronicleLinkAccessRequestStatusEnum_unknownDefaultOpenApi =
+    const OpaqueChronicleLinkAccessRequestStatusEnum._('unknownDefaultOpenApi');
 
 OpaqueChronicleLinkAccessRequestStatusEnum
 _$opaqueChronicleLinkAccessRequestStatusEnumValueOf(String name) {
@@ -156,8 +183,10 @@ _$opaqueChronicleLinkAccessRequestStatusEnumValueOf(String name) {
       return _$opaqueChronicleLinkAccessRequestStatusEnum_granted;
     case 'declined':
       return _$opaqueChronicleLinkAccessRequestStatusEnum_declined;
+    case 'unknownDefaultOpenApi':
+      return _$opaqueChronicleLinkAccessRequestStatusEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$opaqueChronicleLinkAccessRequestStatusEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -168,6 +197,7 @@ _$opaqueChronicleLinkAccessRequestStatusEnumValues =
         _$opaqueChronicleLinkAccessRequestStatusEnum_pending,
         _$opaqueChronicleLinkAccessRequestStatusEnum_granted,
         _$opaqueChronicleLinkAccessRequestStatusEnum_declined,
+        _$opaqueChronicleLinkAccessRequestStatusEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -191,9 +221,11 @@ class _$OpaqueChronicleLinkDisclosureEnumSerializer
     implements PrimitiveSerializer<OpaqueChronicleLinkDisclosureEnum> {
   static const Map<String, Object> _toWire = const <String, Object>{
     'opaque': 'opaque',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'opaque': 'opaque',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -224,11 +256,13 @@ class _$OpaqueChronicleLinkStrengthEnumSerializer
     'low': 'low',
     'medium': 'medium',
     'high': 'high',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'low': 'low',
     'medium': 'medium',
     'high': 'high',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -260,12 +294,14 @@ class _$OpaqueChronicleLinkDimensionsEnumSerializer
     'entities': 'entities',
     'areaTime': 'area-time',
     'topics': 'topics',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'evidence': 'evidence',
     'entities': 'entities',
     'area-time': 'areaTime',
     'topics': 'topics',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -296,11 +332,13 @@ class _$OpaqueChronicleLinkTimeOverlapEnumSerializer
     'none': 'none',
     'partial': 'partial',
     'full': 'full',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'none': 'none',
     'partial': 'partial',
     'full': 'full',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -331,11 +369,13 @@ class _$OpaqueChronicleLinkAccessRequestStatusEnumSerializer
     'pending': 'pending',
     'granted': 'granted',
     'declined': 'declined',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'pending': 'pending',
     'granted': 'granted',
     'declined': 'declined',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

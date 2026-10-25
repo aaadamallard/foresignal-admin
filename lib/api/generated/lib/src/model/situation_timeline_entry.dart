@@ -17,7 +17,7 @@ part 'situation_timeline_entry.g.dart';
 /// * [at]
 /// * [entryType]
 /// * [member]
-/// * [action] - Log action (log entries)
+/// * [action] - Log action (log entries); null for a member entry. The list grows as the server adds actions; a client shows an action it does not know as its text.
 /// * [actor] - Token id, `linker:<version>` or `analyst:<profile>`
 /// * [before]
 /// * [after]
@@ -34,10 +34,9 @@ abstract class SituationTimelineEntry
   @BuiltValueField(wireName: r'member')
   SituationMember? get member;
 
-  /// Log action (log entries)
+  /// Log action (log entries); null for a member entry. The list grows as the server adds actions; a client shows an action it does not know as its text.
   @BuiltValueField(wireName: r'action')
-  SituationTimelineEntryActionEnum? get action;
-  // enum actionEnum {  created,  member_added,  member_removed,  status,  severity,  merged,  split,  renamed,  theme,  brief,  };
+  String? get action;
 
   /// Token id, `linker:<version>` or `analyst:<profile>`
   @BuiltValueField(wireName: r'actor')
@@ -100,9 +99,7 @@ class _$SituationTimelineEntrySerializer
       yield r'action';
       yield serializers.serialize(
         object.action,
-        specifiedType: const FullType.nullable(
-          SituationTimelineEntryActionEnum,
-        ),
+        specifiedType: const FullType.nullable(String),
       );
     }
     if (object.actor != null) {
@@ -193,11 +190,9 @@ class _$SituationTimelineEntrySerializer
           final valueDes =
               serializers.deserialize(
                     value,
-                    specifiedType: const FullType.nullable(
-                      SituationTimelineEntryActionEnum,
-                    ),
+                    specifiedType: const FullType.nullable(String),
                   )
-                  as SituationTimelineEntryActionEnum?;
+                  as String?;
           if (valueDes == null) continue;
           result.action = valueDes;
           break;
@@ -273,6 +268,9 @@ class SituationTimelineEntryEntryTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'log')
   static const SituationTimelineEntryEntryTypeEnum log =
       _$situationTimelineEntryEntryTypeEnum_log;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const SituationTimelineEntryEntryTypeEnum unknownDefaultOpenApi =
+      _$situationTimelineEntryEntryTypeEnum_unknownDefaultOpenApi;
 
   static Serializer<SituationTimelineEntryEntryTypeEnum> get serializer =>
       _$situationTimelineEntryEntryTypeEnumSerializer;
@@ -283,48 +281,4 @@ class SituationTimelineEntryEntryTypeEnum extends EnumClass {
       _$situationTimelineEntryEntryTypeEnumValues;
   static SituationTimelineEntryEntryTypeEnum valueOf(String name) =>
       _$situationTimelineEntryEntryTypeEnumValueOf(name);
-}
-
-/// Log action (log entries)
-class SituationTimelineEntryActionEnum extends EnumClass {
-  @BuiltValueEnumConst(wireName: r'created')
-  static const SituationTimelineEntryActionEnum created =
-      _$situationTimelineEntryActionEnum_created;
-  @BuiltValueEnumConst(wireName: r'member_added')
-  static const SituationTimelineEntryActionEnum memberAdded =
-      _$situationTimelineEntryActionEnum_memberAdded;
-  @BuiltValueEnumConst(wireName: r'member_removed')
-  static const SituationTimelineEntryActionEnum memberRemoved =
-      _$situationTimelineEntryActionEnum_memberRemoved;
-  @BuiltValueEnumConst(wireName: r'status')
-  static const SituationTimelineEntryActionEnum status =
-      _$situationTimelineEntryActionEnum_status;
-  @BuiltValueEnumConst(wireName: r'severity')
-  static const SituationTimelineEntryActionEnum severity =
-      _$situationTimelineEntryActionEnum_severity;
-  @BuiltValueEnumConst(wireName: r'merged')
-  static const SituationTimelineEntryActionEnum merged =
-      _$situationTimelineEntryActionEnum_merged;
-  @BuiltValueEnumConst(wireName: r'split')
-  static const SituationTimelineEntryActionEnum split =
-      _$situationTimelineEntryActionEnum_split;
-  @BuiltValueEnumConst(wireName: r'renamed')
-  static const SituationTimelineEntryActionEnum renamed =
-      _$situationTimelineEntryActionEnum_renamed;
-  @BuiltValueEnumConst(wireName: r'theme')
-  static const SituationTimelineEntryActionEnum theme =
-      _$situationTimelineEntryActionEnum_theme;
-  @BuiltValueEnumConst(wireName: r'brief')
-  static const SituationTimelineEntryActionEnum brief =
-      _$situationTimelineEntryActionEnum_brief;
-
-  static Serializer<SituationTimelineEntryActionEnum> get serializer =>
-      _$situationTimelineEntryActionEnumSerializer;
-
-  const SituationTimelineEntryActionEnum._(String name) : super(name);
-
-  static BuiltSet<SituationTimelineEntryActionEnum> get values =>
-      _$situationTimelineEntryActionEnumValues;
-  static SituationTimelineEntryActionEnum valueOf(String name) =>
-      _$situationTimelineEntryActionEnumValueOf(name);
 }

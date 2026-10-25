@@ -266,6 +266,9 @@ class ChronicleStatusEventStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'archived')
   static const ChronicleStatusEventStatusEnum archived =
       _$chronicleStatusEventStatusEnum_archived;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ChronicleStatusEventStatusEnum unknownDefaultOpenApi =
+      _$chronicleStatusEventStatusEnum_unknownDefaultOpenApi;
 
   static Serializer<ChronicleStatusEventStatusEnum> get serializer =>
       _$chronicleStatusEventStatusEnumSerializer;
@@ -294,6 +297,9 @@ class ChronicleStatusEventPreviousStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'archived')
   static const ChronicleStatusEventPreviousStatusEnum archived =
       _$chronicleStatusEventPreviousStatusEnum_archived;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ChronicleStatusEventPreviousStatusEnum unknownDefaultOpenApi =
+      _$chronicleStatusEventPreviousStatusEnum_unknownDefaultOpenApi;
 
   static Serializer<ChronicleStatusEventPreviousStatusEnum> get serializer =>
       _$chronicleStatusEventPreviousStatusEnumSerializer;
@@ -316,6 +322,9 @@ class ChronicleStatusEventCapStateEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'exceeded')
   static const ChronicleStatusEventCapStateEnum exceeded =
       _$chronicleStatusEventCapStateEnum_exceeded;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ChronicleStatusEventCapStateEnum unknownDefaultOpenApi =
+      _$chronicleStatusEventCapStateEnum_unknownDefaultOpenApi;
 
   static Serializer<ChronicleStatusEventCapStateEnum> get serializer =>
       _$chronicleStatusEventCapStateEnumSerializer;

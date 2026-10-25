@@ -172,6 +172,9 @@ class SystemInfoWarningsInnerSeverityEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'critical')
   static const SystemInfoWarningsInnerSeverityEnum critical =
       _$systemInfoWarningsInnerSeverityEnum_critical;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const SystemInfoWarningsInnerSeverityEnum unknownDefaultOpenApi =
+      _$systemInfoWarningsInnerSeverityEnum_unknownDefaultOpenApi;
 
   static Serializer<SystemInfoWarningsInnerSeverityEnum> get serializer =>
       _$systemInfoWarningsInnerSeverityEnumSerializer;

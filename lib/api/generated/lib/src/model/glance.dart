@@ -297,6 +297,9 @@ class GlanceStatusEnum extends EnumClass {
   static const GlanceStatusEnum degraded = _$glanceStatusEnum_degraded;
   @BuiltValueEnumConst(wireName: r'failing')
   static const GlanceStatusEnum failing = _$glanceStatusEnum_failing;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const GlanceStatusEnum unknownDefaultOpenApi =
+      _$glanceStatusEnum_unknownDefaultOpenApi;
 
   static Serializer<GlanceStatusEnum> get serializer =>
       _$glanceStatusEnumSerializer;

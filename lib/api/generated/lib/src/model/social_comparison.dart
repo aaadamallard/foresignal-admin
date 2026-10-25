@@ -561,6 +561,9 @@ class SocialComparisonStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'insufficient-coverage')
   static const SocialComparisonStatusEnum insufficientCoverage =
       _$socialComparisonStatusEnum_insufficientCoverage;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const SocialComparisonStatusEnum unknownDefaultOpenApi =
+      _$socialComparisonStatusEnum_unknownDefaultOpenApi;
 
   static Serializer<SocialComparisonStatusEnum> get serializer =>
       _$socialComparisonStatusEnumSerializer;
@@ -581,6 +584,9 @@ class SocialComparisonFoundByEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'cue')
   static const SocialComparisonFoundByEnum cue =
       _$socialComparisonFoundByEnum_cue;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const SocialComparisonFoundByEnum unknownDefaultOpenApi =
+      _$socialComparisonFoundByEnum_unknownDefaultOpenApi;
 
   static Serializer<SocialComparisonFoundByEnum> get serializer =>
       _$socialComparisonFoundByEnumSerializer;

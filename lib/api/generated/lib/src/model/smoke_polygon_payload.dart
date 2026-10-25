@@ -227,6 +227,9 @@ class SmokePolygonPayloadDensityEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'heavy')
   static const SmokePolygonPayloadDensityEnum heavy =
       _$smokePolygonPayloadDensityEnum_heavy;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const SmokePolygonPayloadDensityEnum unknownDefaultOpenApi =
+      _$smokePolygonPayloadDensityEnum_unknownDefaultOpenApi;
 
   static Serializer<SmokePolygonPayloadDensityEnum> get serializer =>
       _$smokePolygonPayloadDensityEnumSerializer;

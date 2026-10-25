@@ -15,6 +15,11 @@ _$declaredObservabilityKindsValueAreaTypeEnum_bbox =
 const DeclaredObservabilityKindsValueAreaTypeEnum
 _$declaredObservabilityKindsValueAreaTypeEnum_regions =
     const DeclaredObservabilityKindsValueAreaTypeEnum._('regions');
+const DeclaredObservabilityKindsValueAreaTypeEnum
+_$declaredObservabilityKindsValueAreaTypeEnum_unknownDefaultOpenApi =
+    const DeclaredObservabilityKindsValueAreaTypeEnum._(
+      'unknownDefaultOpenApi',
+    );
 
 DeclaredObservabilityKindsValueAreaTypeEnum
 _$declaredObservabilityKindsValueAreaTypeEnumValueOf(String name) {
@@ -25,8 +30,10 @@ _$declaredObservabilityKindsValueAreaTypeEnumValueOf(String name) {
       return _$declaredObservabilityKindsValueAreaTypeEnum_bbox;
     case 'regions':
       return _$declaredObservabilityKindsValueAreaTypeEnum_regions;
+    case 'unknownDefaultOpenApi':
+      return _$declaredObservabilityKindsValueAreaTypeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$declaredObservabilityKindsValueAreaTypeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -37,6 +44,7 @@ _$declaredObservabilityKindsValueAreaTypeEnumValues =
         _$declaredObservabilityKindsValueAreaTypeEnum_global,
         _$declaredObservabilityKindsValueAreaTypeEnum_bbox,
         _$declaredObservabilityKindsValueAreaTypeEnum_regions,
+        _$declaredObservabilityKindsValueAreaTypeEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -51,11 +59,13 @@ class _$DeclaredObservabilityKindsValueAreaTypeEnumSerializer
     'global': 'global',
     'bbox': 'bbox',
     'regions': 'regions',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'global': 'global',
     'bbox': 'bbox',
     'regions': 'regions',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

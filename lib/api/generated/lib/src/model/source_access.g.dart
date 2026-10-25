@@ -16,6 +16,8 @@ const SourceAccessRouteEnum _$sourceAccessRouteEnum_browser =
     const SourceAccessRouteEnum._('browser');
 const SourceAccessRouteEnum _$sourceAccessRouteEnum_other =
     const SourceAccessRouteEnum._('other');
+const SourceAccessRouteEnum _$sourceAccessRouteEnum_unknownDefaultOpenApi =
+    const SourceAccessRouteEnum._('unknownDefaultOpenApi');
 
 SourceAccessRouteEnum _$sourceAccessRouteEnumValueOf(String name) {
   switch (name) {
@@ -29,8 +31,10 @@ SourceAccessRouteEnum _$sourceAccessRouteEnumValueOf(String name) {
       return _$sourceAccessRouteEnum_browser;
     case 'other':
       return _$sourceAccessRouteEnum_other;
+    case 'unknownDefaultOpenApi':
+      return _$sourceAccessRouteEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$sourceAccessRouteEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -41,6 +45,7 @@ final BuiltSet<SourceAccessRouteEnum> _$sourceAccessRouteEnumValues =
       _$sourceAccessRouteEnum_scrape,
       _$sourceAccessRouteEnum_browser,
       _$sourceAccessRouteEnum_other,
+      _$sourceAccessRouteEnum_unknownDefaultOpenApi,
     ]);
 
 const SourceAccessFragilityEnum _$sourceAccessFragilityEnum_low =
@@ -49,6 +54,9 @@ const SourceAccessFragilityEnum _$sourceAccessFragilityEnum_medium =
     const SourceAccessFragilityEnum._('medium');
 const SourceAccessFragilityEnum _$sourceAccessFragilityEnum_high =
     const SourceAccessFragilityEnum._('high');
+const SourceAccessFragilityEnum
+_$sourceAccessFragilityEnum_unknownDefaultOpenApi =
+    const SourceAccessFragilityEnum._('unknownDefaultOpenApi');
 
 SourceAccessFragilityEnum _$sourceAccessFragilityEnumValueOf(String name) {
   switch (name) {
@@ -58,8 +66,10 @@ SourceAccessFragilityEnum _$sourceAccessFragilityEnumValueOf(String name) {
       return _$sourceAccessFragilityEnum_medium;
     case 'high':
       return _$sourceAccessFragilityEnum_high;
+    case 'unknownDefaultOpenApi':
+      return _$sourceAccessFragilityEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$sourceAccessFragilityEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -68,6 +78,7 @@ final BuiltSet<SourceAccessFragilityEnum> _$sourceAccessFragilityEnumValues =
       _$sourceAccessFragilityEnum_low,
       _$sourceAccessFragilityEnum_medium,
       _$sourceAccessFragilityEnum_high,
+      _$sourceAccessFragilityEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<SourceAccessRouteEnum> _$sourceAccessRouteEnumSerializer =
@@ -83,6 +94,7 @@ class _$SourceAccessRouteEnumSerializer
     'scrape': 'scrape',
     'browser': 'browser',
     'other': 'other',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'official': 'official',
@@ -90,6 +102,7 @@ class _$SourceAccessRouteEnumSerializer
     'scrape': 'scrape',
     'browser': 'browser',
     'other': 'other',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -120,11 +133,13 @@ class _$SourceAccessFragilityEnumSerializer
     'low': 'low',
     'medium': 'medium',
     'high': 'high',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'low': 'low',
     'medium': 'medium',
     'high': 'high',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

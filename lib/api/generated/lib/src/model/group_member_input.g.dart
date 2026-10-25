@@ -10,6 +10,9 @@ const GroupMemberInputRoleEnum _$groupMemberInputRoleEnum_member =
     const GroupMemberInputRoleEnum._('member');
 const GroupMemberInputRoleEnum _$groupMemberInputRoleEnum_manager =
     const GroupMemberInputRoleEnum._('manager');
+const GroupMemberInputRoleEnum
+_$groupMemberInputRoleEnum_unknownDefaultOpenApi =
+    const GroupMemberInputRoleEnum._('unknownDefaultOpenApi');
 
 GroupMemberInputRoleEnum _$groupMemberInputRoleEnumValueOf(String name) {
   switch (name) {
@@ -17,8 +20,10 @@ GroupMemberInputRoleEnum _$groupMemberInputRoleEnumValueOf(String name) {
       return _$groupMemberInputRoleEnum_member;
     case 'manager':
       return _$groupMemberInputRoleEnum_manager;
+    case 'unknownDefaultOpenApi':
+      return _$groupMemberInputRoleEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$groupMemberInputRoleEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -26,6 +31,7 @@ final BuiltSet<GroupMemberInputRoleEnum> _$groupMemberInputRoleEnumValues =
     BuiltSet<GroupMemberInputRoleEnum>(const <GroupMemberInputRoleEnum>[
       _$groupMemberInputRoleEnum_member,
       _$groupMemberInputRoleEnum_manager,
+      _$groupMemberInputRoleEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<GroupMemberInputRoleEnum> _$groupMemberInputRoleEnumSerializer =
@@ -36,10 +42,12 @@ class _$GroupMemberInputRoleEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'member': 'member',
     'manager': 'manager',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'member': 'member',
     'manager': 'manager',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

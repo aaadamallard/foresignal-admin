@@ -18,6 +18,9 @@ _$referenceImportRequestDatasetEnum_usgsComcat =
 const ReferenceImportRequestDatasetEnum
 _$referenceImportRequestDatasetEnum_gdacs =
     const ReferenceImportRequestDatasetEnum._('gdacs');
+const ReferenceImportRequestDatasetEnum
+_$referenceImportRequestDatasetEnum_unknownDefaultOpenApi =
+    const ReferenceImportRequestDatasetEnum._('unknownDefaultOpenApi');
 
 ReferenceImportRequestDatasetEnum _$referenceImportRequestDatasetEnumValueOf(
   String name,
@@ -31,8 +34,10 @@ ReferenceImportRequestDatasetEnum _$referenceImportRequestDatasetEnumValueOf(
       return _$referenceImportRequestDatasetEnum_usgsComcat;
     case 'gdacs':
       return _$referenceImportRequestDatasetEnum_gdacs;
+    case 'unknownDefaultOpenApi':
+      return _$referenceImportRequestDatasetEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$referenceImportRequestDatasetEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -44,6 +49,7 @@ _$referenceImportRequestDatasetEnumValues =
         _$referenceImportRequestDatasetEnum_acled,
         _$referenceImportRequestDatasetEnum_usgsComcat,
         _$referenceImportRequestDatasetEnum_gdacs,
+        _$referenceImportRequestDatasetEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -58,12 +64,14 @@ class _$ReferenceImportRequestDatasetEnumSerializer
     'acled': 'acled',
     'usgsComcat': 'usgs-comcat',
     'gdacs': 'gdacs',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'ucdp-ged': 'ucdpGed',
     'acled': 'acled',
     'usgs-comcat': 'usgsComcat',
     'gdacs': 'gdacs',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

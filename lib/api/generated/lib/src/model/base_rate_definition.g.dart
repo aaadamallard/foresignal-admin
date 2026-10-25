@@ -12,6 +12,9 @@ const BaseRateDefinitionWindowEnum _$baseRateDefinitionWindowEnum_P28D =
     const BaseRateDefinitionWindowEnum._('P28D');
 const BaseRateDefinitionWindowEnum _$baseRateDefinitionWindowEnum_P90D =
     const BaseRateDefinitionWindowEnum._('P90D');
+const BaseRateDefinitionWindowEnum
+_$baseRateDefinitionWindowEnum_unknownDefaultOpenApi =
+    const BaseRateDefinitionWindowEnum._('unknownDefaultOpenApi');
 
 BaseRateDefinitionWindowEnum _$baseRateDefinitionWindowEnumValueOf(
   String name,
@@ -23,8 +26,10 @@ BaseRateDefinitionWindowEnum _$baseRateDefinitionWindowEnumValueOf(
       return _$baseRateDefinitionWindowEnum_P28D;
     case 'P90D':
       return _$baseRateDefinitionWindowEnum_P90D;
+    case 'unknownDefaultOpenApi':
+      return _$baseRateDefinitionWindowEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$baseRateDefinitionWindowEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -34,6 +39,7 @@ _$baseRateDefinitionWindowEnumValues =
       _$baseRateDefinitionWindowEnum_P7D,
       _$baseRateDefinitionWindowEnum_P28D,
       _$baseRateDefinitionWindowEnum_P90D,
+      _$baseRateDefinitionWindowEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<BaseRateDefinitionWindowEnum>
@@ -46,11 +52,13 @@ class _$BaseRateDefinitionWindowEnumSerializer
     'P7D': 'P7D',
     'P28D': 'P28D',
     'P90D': 'P90D',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'P7D': 'P7D',
     'P28D': 'P28D',
     'P90D': 'P90D',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

@@ -337,6 +337,9 @@ class AlertmanagerWebhookVersionEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'4')
   static const AlertmanagerWebhookVersionEnum n4 =
       _$alertmanagerWebhookVersionEnum_n4;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const AlertmanagerWebhookVersionEnum unknownDefaultOpenApi =
+      _$alertmanagerWebhookVersionEnum_unknownDefaultOpenApi;
 
   static Serializer<AlertmanagerWebhookVersionEnum> get serializer =>
       _$alertmanagerWebhookVersionEnumSerializer;
@@ -356,6 +359,9 @@ class AlertmanagerWebhookStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'resolved')
   static const AlertmanagerWebhookStatusEnum resolved =
       _$alertmanagerWebhookStatusEnum_resolved;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const AlertmanagerWebhookStatusEnum unknownDefaultOpenApi =
+      _$alertmanagerWebhookStatusEnum_unknownDefaultOpenApi;
 
   static Serializer<AlertmanagerWebhookStatusEnum> get serializer =>
       _$alertmanagerWebhookStatusEnumSerializer;

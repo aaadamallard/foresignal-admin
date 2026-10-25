@@ -353,6 +353,9 @@ class InboxItemCategoryEnum extends EnumClass {
       _$inboxItemCategoryEnum_savedSearch;
   @BuiltValueEnumConst(wireName: r'system')
   static const InboxItemCategoryEnum system = _$inboxItemCategoryEnum_system;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const InboxItemCategoryEnum unknownDefaultOpenApi =
+      _$inboxItemCategoryEnum_unknownDefaultOpenApi;
 
   static Serializer<InboxItemCategoryEnum> get serializer =>
       _$inboxItemCategoryEnumSerializer;

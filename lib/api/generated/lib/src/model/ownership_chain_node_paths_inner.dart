@@ -209,6 +209,10 @@ class OwnershipChainNodePathsInnerRelationTypesEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'affiliated-with')
   static const OwnershipChainNodePathsInnerRelationTypesEnum affiliatedWith =
       _$ownershipChainNodePathsInnerRelationTypesEnum_affiliatedWith;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const OwnershipChainNodePathsInnerRelationTypesEnum
+  unknownDefaultOpenApi =
+      _$ownershipChainNodePathsInnerRelationTypesEnum_unknownDefaultOpenApi;
 
   static Serializer<OwnershipChainNodePathsInnerRelationTypesEnum>
   get serializer => _$ownershipChainNodePathsInnerRelationTypesEnumSerializer;
@@ -235,6 +239,10 @@ class OwnershipChainNodePathsInnerWeakestEdgeLabelEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'speculative')
   static const OwnershipChainNodePathsInnerWeakestEdgeLabelEnum speculative =
       _$ownershipChainNodePathsInnerWeakestEdgeLabelEnum_speculative;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const OwnershipChainNodePathsInnerWeakestEdgeLabelEnum
+  unknownDefaultOpenApi =
+      _$ownershipChainNodePathsInnerWeakestEdgeLabelEnum_unknownDefaultOpenApi;
 
   static Serializer<OwnershipChainNodePathsInnerWeakestEdgeLabelEnum>
   get serializer =>

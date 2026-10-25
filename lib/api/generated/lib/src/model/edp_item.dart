@@ -289,6 +289,9 @@ class EdpItemTypeEnum extends EnumClass {
   static const EdpItemTypeEnum delete = _$edpItemTypeEnum_delete;
   @BuiltValueEnumConst(wireName: r'status')
   static const EdpItemTypeEnum status = _$edpItemTypeEnum_status;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const EdpItemTypeEnum unknownDefaultOpenApi =
+      _$edpItemTypeEnum_unknownDefaultOpenApi;
 
   static Serializer<EdpItemTypeEnum> get serializer =>
       _$edpItemTypeEnumSerializer;
@@ -314,6 +317,9 @@ class EdpItemDocumentTypeEnum extends EnumClass {
       _$edpItemDocumentTypeEnum_transcript;
   @BuiltValueEnumConst(wireName: r'note')
   static const EdpItemDocumentTypeEnum note = _$edpItemDocumentTypeEnum_note;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const EdpItemDocumentTypeEnum unknownDefaultOpenApi =
+      _$edpItemDocumentTypeEnum_unknownDefaultOpenApi;
 
   static Serializer<EdpItemDocumentTypeEnum> get serializer =>
       _$edpItemDocumentTypeEnumSerializer;
@@ -339,6 +345,9 @@ class EdpItemHealthEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'geo-restricted')
   static const EdpItemHealthEnum geoRestricted =
       _$edpItemHealthEnum_geoRestricted;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const EdpItemHealthEnum unknownDefaultOpenApi =
+      _$edpItemHealthEnum_unknownDefaultOpenApi;
 
   static Serializer<EdpItemHealthEnum> get serializer =>
       _$edpItemHealthEnumSerializer;

@@ -14,6 +14,8 @@ const LoiterPayloadStatusEnum _$loiterPayloadStatusEnum_noCoverage =
     const LoiterPayloadStatusEnum._('noCoverage');
 const LoiterPayloadStatusEnum _$loiterPayloadStatusEnum_degradedInput =
     const LoiterPayloadStatusEnum._('degradedInput');
+const LoiterPayloadStatusEnum _$loiterPayloadStatusEnum_unknownDefaultOpenApi =
+    const LoiterPayloadStatusEnum._('unknownDefaultOpenApi');
 
 LoiterPayloadStatusEnum _$loiterPayloadStatusEnumValueOf(String name) {
   switch (name) {
@@ -25,8 +27,10 @@ LoiterPayloadStatusEnum _$loiterPayloadStatusEnumValueOf(String name) {
       return _$loiterPayloadStatusEnum_noCoverage;
     case 'degradedInput':
       return _$loiterPayloadStatusEnum_degradedInput;
+    case 'unknownDefaultOpenApi':
+      return _$loiterPayloadStatusEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$loiterPayloadStatusEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -36,6 +40,7 @@ final BuiltSet<LoiterPayloadStatusEnum> _$loiterPayloadStatusEnumValues =
       _$loiterPayloadStatusEnum_insufficientData,
       _$loiterPayloadStatusEnum_noCoverage,
       _$loiterPayloadStatusEnum_degradedInput,
+      _$loiterPayloadStatusEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<LoiterPayloadStatusEnum> _$loiterPayloadStatusEnumSerializer =
@@ -48,12 +53,14 @@ class _$LoiterPayloadStatusEnumSerializer
     'insufficientData': 'insufficient-data',
     'noCoverage': 'no-coverage',
     'degradedInput': 'degraded-input',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'ok': 'ok',
     'insufficient-data': 'insufficientData',
     'no-coverage': 'noCoverage',
     'degraded-input': 'degradedInput',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

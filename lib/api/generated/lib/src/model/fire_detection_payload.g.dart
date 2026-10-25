@@ -15,6 +15,9 @@ _$fireDetectionPayloadConfidenceClassEnum_nominal =
 const FireDetectionPayloadConfidenceClassEnum
 _$fireDetectionPayloadConfidenceClassEnum_high =
     const FireDetectionPayloadConfidenceClassEnum._('high');
+const FireDetectionPayloadConfidenceClassEnum
+_$fireDetectionPayloadConfidenceClassEnum_unknownDefaultOpenApi =
+    const FireDetectionPayloadConfidenceClassEnum._('unknownDefaultOpenApi');
 
 FireDetectionPayloadConfidenceClassEnum
 _$fireDetectionPayloadConfidenceClassEnumValueOf(String name) {
@@ -25,8 +28,10 @@ _$fireDetectionPayloadConfidenceClassEnumValueOf(String name) {
       return _$fireDetectionPayloadConfidenceClassEnum_nominal;
     case 'high':
       return _$fireDetectionPayloadConfidenceClassEnum_high;
+    case 'unknownDefaultOpenApi':
+      return _$fireDetectionPayloadConfidenceClassEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$fireDetectionPayloadConfidenceClassEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -37,6 +42,7 @@ _$fireDetectionPayloadConfidenceClassEnumValues =
         _$fireDetectionPayloadConfidenceClassEnum_low,
         _$fireDetectionPayloadConfidenceClassEnum_nominal,
         _$fireDetectionPayloadConfidenceClassEnum_high,
+        _$fireDetectionPayloadConfidenceClassEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -50,11 +56,13 @@ class _$FireDetectionPayloadConfidenceClassEnumSerializer
     'low': 'low',
     'nominal': 'nominal',
     'high': 'high',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'low': 'low',
     'nominal': 'nominal',
     'high': 'high',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

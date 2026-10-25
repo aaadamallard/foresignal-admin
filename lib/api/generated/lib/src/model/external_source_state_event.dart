@@ -196,6 +196,9 @@ class ExternalSourceStateEventChangeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'deleted')
   static const ExternalSourceStateEventChangeEnum deleted =
       _$externalSourceStateEventChangeEnum_deleted;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ExternalSourceStateEventChangeEnum unknownDefaultOpenApi =
+      _$externalSourceStateEventChangeEnum_unknownDefaultOpenApi;
 
   static Serializer<ExternalSourceStateEventChangeEnum> get serializer =>
       _$externalSourceStateEventChangeEnumSerializer;

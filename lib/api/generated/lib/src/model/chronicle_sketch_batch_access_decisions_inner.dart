@@ -202,6 +202,10 @@ class ChronicleSketchBatchAccessDecisionsInnerStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'declined')
   static const ChronicleSketchBatchAccessDecisionsInnerStatusEnum declined =
       _$chronicleSketchBatchAccessDecisionsInnerStatusEnum_declined;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ChronicleSketchBatchAccessDecisionsInnerStatusEnum
+  unknownDefaultOpenApi =
+      _$chronicleSketchBatchAccessDecisionsInnerStatusEnum_unknownDefaultOpenApi;
 
   static Serializer<ChronicleSketchBatchAccessDecisionsInnerStatusEnum>
   get serializer =>
@@ -226,6 +230,10 @@ class ChronicleSketchBatchAccessDecisionsInnerDeliveredAsEnum
   static const ChronicleSketchBatchAccessDecisionsInnerDeliveredAsEnum
   chronicleExtract =
       _$chronicleSketchBatchAccessDecisionsInnerDeliveredAsEnum_chronicleExtract;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ChronicleSketchBatchAccessDecisionsInnerDeliveredAsEnum
+  unknownDefaultOpenApi =
+      _$chronicleSketchBatchAccessDecisionsInnerDeliveredAsEnum_unknownDefaultOpenApi;
 
   static Serializer<ChronicleSketchBatchAccessDecisionsInnerDeliveredAsEnum>
   get serializer =>

@@ -14,6 +14,8 @@ const CpaPayloadStatusEnum _$cpaPayloadStatusEnum_noCoverage =
     const CpaPayloadStatusEnum._('noCoverage');
 const CpaPayloadStatusEnum _$cpaPayloadStatusEnum_degradedInput =
     const CpaPayloadStatusEnum._('degradedInput');
+const CpaPayloadStatusEnum _$cpaPayloadStatusEnum_unknownDefaultOpenApi =
+    const CpaPayloadStatusEnum._('unknownDefaultOpenApi');
 
 CpaPayloadStatusEnum _$cpaPayloadStatusEnumValueOf(String name) {
   switch (name) {
@@ -25,8 +27,10 @@ CpaPayloadStatusEnum _$cpaPayloadStatusEnumValueOf(String name) {
       return _$cpaPayloadStatusEnum_noCoverage;
     case 'degradedInput':
       return _$cpaPayloadStatusEnum_degradedInput;
+    case 'unknownDefaultOpenApi':
+      return _$cpaPayloadStatusEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$cpaPayloadStatusEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -36,6 +40,7 @@ final BuiltSet<CpaPayloadStatusEnum> _$cpaPayloadStatusEnumValues =
       _$cpaPayloadStatusEnum_insufficientData,
       _$cpaPayloadStatusEnum_noCoverage,
       _$cpaPayloadStatusEnum_degradedInput,
+      _$cpaPayloadStatusEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<CpaPayloadStatusEnum> _$cpaPayloadStatusEnumSerializer =
@@ -48,12 +53,14 @@ class _$CpaPayloadStatusEnumSerializer
     'insufficientData': 'insufficient-data',
     'noCoverage': 'no-coverage',
     'degradedInput': 'degraded-input',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'ok': 'ok',
     'insufficient-data': 'insufficientData',
     'no-coverage': 'noCoverage',
     'degraded-input': 'degradedInput',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

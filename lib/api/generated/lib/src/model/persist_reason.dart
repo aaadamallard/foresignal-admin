@@ -29,6 +29,8 @@ class PersistReason extends EnumClass {
   static const PersistReason HEARTBEAT = _$HEARTBEAT;
   @BuiltValueEnumConst(wireName: r'TRIGGER_EDGE')
   static const PersistReason TRIGGER_EDGE = _$TRIGGER_EDGE;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const PersistReason unknownDefaultOpenApi = _$unknownDefaultOpenApi;
 
   static Serializer<PersistReason> get serializer => _$persistReasonSerializer;
 

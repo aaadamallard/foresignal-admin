@@ -15,6 +15,9 @@ _$apnsProviderConfigKeyEnvironmentEnum_production =
 const ApnsProviderConfigKeyEnvironmentEnum
 _$apnsProviderConfigKeyEnvironmentEnum_both =
     const ApnsProviderConfigKeyEnvironmentEnum._('both');
+const ApnsProviderConfigKeyEnvironmentEnum
+_$apnsProviderConfigKeyEnvironmentEnum_unknownDefaultOpenApi =
+    const ApnsProviderConfigKeyEnvironmentEnum._('unknownDefaultOpenApi');
 
 ApnsProviderConfigKeyEnvironmentEnum
 _$apnsProviderConfigKeyEnvironmentEnumValueOf(String name) {
@@ -25,8 +28,10 @@ _$apnsProviderConfigKeyEnvironmentEnumValueOf(String name) {
       return _$apnsProviderConfigKeyEnvironmentEnum_production;
     case 'both':
       return _$apnsProviderConfigKeyEnvironmentEnum_both;
+    case 'unknownDefaultOpenApi':
+      return _$apnsProviderConfigKeyEnvironmentEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$apnsProviderConfigKeyEnvironmentEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -37,6 +42,7 @@ _$apnsProviderConfigKeyEnvironmentEnumValues =
         _$apnsProviderConfigKeyEnvironmentEnum_sandbox,
         _$apnsProviderConfigKeyEnvironmentEnum_production,
         _$apnsProviderConfigKeyEnvironmentEnum_both,
+        _$apnsProviderConfigKeyEnvironmentEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -50,11 +56,13 @@ class _$ApnsProviderConfigKeyEnvironmentEnumSerializer
     'sandbox': 'sandbox',
     'production': 'production',
     'both': 'both',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'sandbox': 'sandbox',
     'production': 'production',
     'both': 'both',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

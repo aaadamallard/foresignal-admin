@@ -9,6 +9,9 @@ part of 'social_comparison_event.dart';
 const SocialComparisonEventEventEnum
 _$socialComparisonEventEventEnum_comparisonPeriodUpdated =
     const SocialComparisonEventEventEnum._('comparisonPeriodUpdated');
+const SocialComparisonEventEventEnum
+_$socialComparisonEventEventEnum_unknownDefaultOpenApi =
+    const SocialComparisonEventEventEnum._('unknownDefaultOpenApi');
 
 SocialComparisonEventEventEnum _$socialComparisonEventEventEnumValueOf(
   String name,
@@ -16,8 +19,10 @@ SocialComparisonEventEventEnum _$socialComparisonEventEventEnumValueOf(
   switch (name) {
     case 'comparisonPeriodUpdated':
       return _$socialComparisonEventEventEnum_comparisonPeriodUpdated;
+    case 'unknownDefaultOpenApi':
+      return _$socialComparisonEventEventEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$socialComparisonEventEventEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -26,6 +31,7 @@ _$socialComparisonEventEventEnumValues =
     BuiltSet<SocialComparisonEventEventEnum>(
       const <SocialComparisonEventEventEnum>[
         _$socialComparisonEventEventEnum_comparisonPeriodUpdated,
+        _$socialComparisonEventEventEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -44,6 +50,9 @@ _$socialComparisonEventStatusEnum_contradicted =
 const SocialComparisonEventStatusEnum
 _$socialComparisonEventStatusEnum_insufficientCoverage =
     const SocialComparisonEventStatusEnum._('insufficientCoverage');
+const SocialComparisonEventStatusEnum
+_$socialComparisonEventStatusEnum_unknownDefaultOpenApi =
+    const SocialComparisonEventStatusEnum._('unknownDefaultOpenApi');
 
 SocialComparisonEventStatusEnum _$socialComparisonEventStatusEnumValueOf(
   String name,
@@ -59,8 +68,10 @@ SocialComparisonEventStatusEnum _$socialComparisonEventStatusEnumValueOf(
       return _$socialComparisonEventStatusEnum_contradicted;
     case 'insufficientCoverage':
       return _$socialComparisonEventStatusEnum_insufficientCoverage;
+    case 'unknownDefaultOpenApi':
+      return _$socialComparisonEventStatusEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$socialComparisonEventStatusEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -73,6 +84,7 @@ _$socialComparisonEventStatusEnumValues =
         _$socialComparisonEventStatusEnum_unobserved,
         _$socialComparisonEventStatusEnum_contradicted,
         _$socialComparisonEventStatusEnum_insufficientCoverage,
+        _$socialComparisonEventStatusEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -91,6 +103,9 @@ _$socialComparisonEventPreviousStatusEnum_contradicted =
 const SocialComparisonEventPreviousStatusEnum
 _$socialComparisonEventPreviousStatusEnum_insufficientCoverage =
     const SocialComparisonEventPreviousStatusEnum._('insufficientCoverage');
+const SocialComparisonEventPreviousStatusEnum
+_$socialComparisonEventPreviousStatusEnum_unknownDefaultOpenApi =
+    const SocialComparisonEventPreviousStatusEnum._('unknownDefaultOpenApi');
 
 SocialComparisonEventPreviousStatusEnum
 _$socialComparisonEventPreviousStatusEnumValueOf(String name) {
@@ -105,8 +120,10 @@ _$socialComparisonEventPreviousStatusEnumValueOf(String name) {
       return _$socialComparisonEventPreviousStatusEnum_contradicted;
     case 'insufficientCoverage':
       return _$socialComparisonEventPreviousStatusEnum_insufficientCoverage;
+    case 'unknownDefaultOpenApi':
+      return _$socialComparisonEventPreviousStatusEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$socialComparisonEventPreviousStatusEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -119,6 +136,7 @@ _$socialComparisonEventPreviousStatusEnumValues =
         _$socialComparisonEventPreviousStatusEnum_unobserved,
         _$socialComparisonEventPreviousStatusEnum_contradicted,
         _$socialComparisonEventPreviousStatusEnum_insufficientCoverage,
+        _$socialComparisonEventPreviousStatusEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -136,9 +154,11 @@ class _$SocialComparisonEventEventEnumSerializer
     implements PrimitiveSerializer<SocialComparisonEventEventEnum> {
   static const Map<String, Object> _toWire = const <String, Object>{
     'comparisonPeriodUpdated': 'comparison.updated',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'comparison.updated': 'comparisonPeriodUpdated',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -171,6 +191,7 @@ class _$SocialComparisonEventStatusEnumSerializer
     'unobserved': 'unobserved',
     'contradicted': 'contradicted',
     'insufficientCoverage': 'insufficient-coverage',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'pending': 'pending',
@@ -178,6 +199,7 @@ class _$SocialComparisonEventStatusEnumSerializer
     'unobserved': 'unobserved',
     'contradicted': 'contradicted',
     'insufficient-coverage': 'insufficientCoverage',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -210,6 +232,7 @@ class _$SocialComparisonEventPreviousStatusEnumSerializer
     'unobserved': 'unobserved',
     'contradicted': 'contradicted',
     'insufficientCoverage': 'insufficient-coverage',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'pending': 'pending',
@@ -217,6 +240,7 @@ class _$SocialComparisonEventPreviousStatusEnumSerializer
     'unobserved': 'unobserved',
     'contradicted': 'contradicted',
     'insufficient-coverage': 'insufficientCoverage',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

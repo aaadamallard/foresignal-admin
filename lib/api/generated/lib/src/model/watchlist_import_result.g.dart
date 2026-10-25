@@ -10,6 +10,9 @@ const WatchlistImportResultModeEnum _$watchlistImportResultModeEnum_merge =
     const WatchlistImportResultModeEnum._('merge');
 const WatchlistImportResultModeEnum _$watchlistImportResultModeEnum_replace =
     const WatchlistImportResultModeEnum._('replace');
+const WatchlistImportResultModeEnum
+_$watchlistImportResultModeEnum_unknownDefaultOpenApi =
+    const WatchlistImportResultModeEnum._('unknownDefaultOpenApi');
 
 WatchlistImportResultModeEnum _$watchlistImportResultModeEnumValueOf(
   String name,
@@ -19,8 +22,10 @@ WatchlistImportResultModeEnum _$watchlistImportResultModeEnumValueOf(
       return _$watchlistImportResultModeEnum_merge;
     case 'replace':
       return _$watchlistImportResultModeEnum_replace;
+    case 'unknownDefaultOpenApi':
+      return _$watchlistImportResultModeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$watchlistImportResultModeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -29,6 +34,7 @@ _$watchlistImportResultModeEnumValues = BuiltSet<WatchlistImportResultModeEnum>(
   const <WatchlistImportResultModeEnum>[
     _$watchlistImportResultModeEnum_merge,
     _$watchlistImportResultModeEnum_replace,
+    _$watchlistImportResultModeEnum_unknownDefaultOpenApi,
   ],
 );
 
@@ -41,10 +47,12 @@ class _$WatchlistImportResultModeEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'merge': 'merge',
     'replace': 'replace',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'merge': 'merge',
     'replace': 'replace',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

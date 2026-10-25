@@ -312,6 +312,9 @@ class SeriesInfoFrequencyEnum extends EnumClass {
   static const SeriesInfoFrequencyEnum P3M = _$seriesInfoFrequencyEnum_P3M;
   @BuiltValueEnumConst(wireName: r'P1Y')
   static const SeriesInfoFrequencyEnum P1Y = _$seriesInfoFrequencyEnum_P1Y;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const SeriesInfoFrequencyEnum unknownDefaultOpenApi =
+      _$seriesInfoFrequencyEnum_unknownDefaultOpenApi;
 
   static Serializer<SeriesInfoFrequencyEnum> get serializer =>
       _$seriesInfoFrequencyEnumSerializer;
@@ -335,6 +338,9 @@ class SeriesInfoStatusEnum extends EnumClass {
       _$seriesInfoStatusEnum_estimated;
   @BuiltValueEnumConst(wireName: r'forecast')
   static const SeriesInfoStatusEnum forecast = _$seriesInfoStatusEnum_forecast;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const SeriesInfoStatusEnum unknownDefaultOpenApi =
+      _$seriesInfoStatusEnum_unknownDefaultOpenApi;
 
   static Serializer<SeriesInfoStatusEnum> get serializer =>
       _$seriesInfoStatusEnumSerializer;

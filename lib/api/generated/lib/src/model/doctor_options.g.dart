@@ -12,6 +12,8 @@ const DoctorOptionsLlmEnum _$doctorOptionsLlmEnum_on_ =
     const DoctorOptionsLlmEnum._('on_');
 const DoctorOptionsLlmEnum _$doctorOptionsLlmEnum_off =
     const DoctorOptionsLlmEnum._('off');
+const DoctorOptionsLlmEnum _$doctorOptionsLlmEnum_unknownDefaultOpenApi =
+    const DoctorOptionsLlmEnum._('unknownDefaultOpenApi');
 
 DoctorOptionsLlmEnum _$doctorOptionsLlmEnumValueOf(String name) {
   switch (name) {
@@ -21,8 +23,10 @@ DoctorOptionsLlmEnum _$doctorOptionsLlmEnumValueOf(String name) {
       return _$doctorOptionsLlmEnum_on_;
     case 'off':
       return _$doctorOptionsLlmEnum_off;
+    case 'unknownDefaultOpenApi':
+      return _$doctorOptionsLlmEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$doctorOptionsLlmEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -31,12 +35,15 @@ final BuiltSet<DoctorOptionsLlmEnum> _$doctorOptionsLlmEnumValues =
       _$doctorOptionsLlmEnum_auto,
       _$doctorOptionsLlmEnum_on_,
       _$doctorOptionsLlmEnum_off,
+      _$doctorOptionsLlmEnum_unknownDefaultOpenApi,
     ]);
 
 const DoctorOptionsDetailEnum _$doctorOptionsDetailEnum_compact =
     const DoctorOptionsDetailEnum._('compact');
 const DoctorOptionsDetailEnum _$doctorOptionsDetailEnum_full =
     const DoctorOptionsDetailEnum._('full');
+const DoctorOptionsDetailEnum _$doctorOptionsDetailEnum_unknownDefaultOpenApi =
+    const DoctorOptionsDetailEnum._('unknownDefaultOpenApi');
 
 DoctorOptionsDetailEnum _$doctorOptionsDetailEnumValueOf(String name) {
   switch (name) {
@@ -44,8 +51,10 @@ DoctorOptionsDetailEnum _$doctorOptionsDetailEnumValueOf(String name) {
       return _$doctorOptionsDetailEnum_compact;
     case 'full':
       return _$doctorOptionsDetailEnum_full;
+    case 'unknownDefaultOpenApi':
+      return _$doctorOptionsDetailEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$doctorOptionsDetailEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -53,6 +62,7 @@ final BuiltSet<DoctorOptionsDetailEnum> _$doctorOptionsDetailEnumValues =
     BuiltSet<DoctorOptionsDetailEnum>(const <DoctorOptionsDetailEnum>[
       _$doctorOptionsDetailEnum_compact,
       _$doctorOptionsDetailEnum_full,
+      _$doctorOptionsDetailEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<DoctorOptionsLlmEnum> _$doctorOptionsLlmEnumSerializer =
@@ -66,11 +76,13 @@ class _$DoctorOptionsLlmEnumSerializer
     'auto': 'auto',
     'on_': 'on',
     'off': 'off',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'auto': 'auto',
     'on': 'on_',
     'off': 'off',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -100,10 +112,12 @@ class _$DoctorOptionsDetailEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'compact': 'compact',
     'full': 'full',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'compact': 'compact',
     'full': 'full',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

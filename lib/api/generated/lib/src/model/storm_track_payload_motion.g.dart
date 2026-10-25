@@ -12,6 +12,9 @@ _$stormTrackPayloadMotionMethodEnum_titanLiteV1 =
 const StormTrackPayloadMotionMethodEnum
 _$stormTrackPayloadMotionMethodEnum_centroidV1 =
     const StormTrackPayloadMotionMethodEnum._('centroidV1');
+const StormTrackPayloadMotionMethodEnum
+_$stormTrackPayloadMotionMethodEnum_unknownDefaultOpenApi =
+    const StormTrackPayloadMotionMethodEnum._('unknownDefaultOpenApi');
 
 StormTrackPayloadMotionMethodEnum _$stormTrackPayloadMotionMethodEnumValueOf(
   String name,
@@ -21,8 +24,10 @@ StormTrackPayloadMotionMethodEnum _$stormTrackPayloadMotionMethodEnumValueOf(
       return _$stormTrackPayloadMotionMethodEnum_titanLiteV1;
     case 'centroidV1':
       return _$stormTrackPayloadMotionMethodEnum_centroidV1;
+    case 'unknownDefaultOpenApi':
+      return _$stormTrackPayloadMotionMethodEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$stormTrackPayloadMotionMethodEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -32,6 +37,7 @@ _$stormTrackPayloadMotionMethodEnumValues =
       const <StormTrackPayloadMotionMethodEnum>[
         _$stormTrackPayloadMotionMethodEnum_titanLiteV1,
         _$stormTrackPayloadMotionMethodEnum_centroidV1,
+        _$stormTrackPayloadMotionMethodEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -44,10 +50,12 @@ class _$StormTrackPayloadMotionMethodEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'titanLiteV1': 'titan-lite-v1',
     'centroidV1': 'centroid-v1',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'titan-lite-v1': 'titanLiteV1',
     'centroid-v1': 'centroidV1',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

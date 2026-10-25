@@ -74,6 +74,9 @@ const WebhookEnvelopeEventEnum _$webhookEnvelopeEventEnum_test =
     const WebhookEnvelopeEventEnum._('test');
 const WebhookEnvelopeEventEnum _$webhookEnvelopeEventEnum_personal =
     const WebhookEnvelopeEventEnum._('personal');
+const WebhookEnvelopeEventEnum
+_$webhookEnvelopeEventEnum_unknownDefaultOpenApi =
+    const WebhookEnvelopeEventEnum._('unknownDefaultOpenApi');
 
 WebhookEnvelopeEventEnum _$webhookEnvelopeEventEnumValueOf(String name) {
   switch (name) {
@@ -129,8 +132,10 @@ WebhookEnvelopeEventEnum _$webhookEnvelopeEventEnumValueOf(String name) {
       return _$webhookEnvelopeEventEnum_test;
     case 'personal':
       return _$webhookEnvelopeEventEnum_personal;
+    case 'unknownDefaultOpenApi':
+      return _$webhookEnvelopeEventEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$webhookEnvelopeEventEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -162,6 +167,7 @@ final BuiltSet<WebhookEnvelopeEventEnum> _$webhookEnvelopeEventEnumValues =
       _$webhookEnvelopeEventEnum_savedSearchPeriodMatches,
       _$webhookEnvelopeEventEnum_test,
       _$webhookEnvelopeEventEnum_personal,
+      _$webhookEnvelopeEventEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<WebhookEnvelopeEventEnum> _$webhookEnvelopeEventEnumSerializer =
@@ -196,6 +202,7 @@ class _$WebhookEnvelopeEventEnumSerializer
     'savedSearchPeriodMatches': 'saved-search.matches',
     'test': 'test',
     'personal': 'personal',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'alert': 'alert',
@@ -224,6 +231,7 @@ class _$WebhookEnvelopeEventEnumSerializer
     'saved-search.matches': 'savedSearchPeriodMatches',
     'test': 'test',
     'personal': 'personal',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

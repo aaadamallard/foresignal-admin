@@ -143,6 +143,9 @@ class TileLayerIndexTilejsonEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'3.0.0')
   static const TileLayerIndexTilejsonEnum n3period0Period0 =
       _$tileLayerIndexTilejsonEnum_n3period0Period0;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const TileLayerIndexTilejsonEnum unknownDefaultOpenApi =
+      _$tileLayerIndexTilejsonEnum_unknownDefaultOpenApi;
 
   static Serializer<TileLayerIndexTilejsonEnum> get serializer =>
       _$tileLayerIndexTilejsonEnumSerializer;

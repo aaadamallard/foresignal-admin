@@ -159,6 +159,9 @@ class StormTrackPayloadMotionMethodEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'centroid-v1')
   static const StormTrackPayloadMotionMethodEnum centroidV1 =
       _$stormTrackPayloadMotionMethodEnum_centroidV1;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const StormTrackPayloadMotionMethodEnum unknownDefaultOpenApi =
+      _$stormTrackPayloadMotionMethodEnum_unknownDefaultOpenApi;
 
   static Serializer<StormTrackPayloadMotionMethodEnum> get serializer =>
       _$stormTrackPayloadMotionMethodEnumSerializer;

@@ -325,6 +325,9 @@ class DoctorReportTriggerEnum extends EnumClass {
   static const DoctorReportTriggerEnum AUTO = _$doctorReportTriggerEnum_AUTO;
   @BuiltValueEnumConst(wireName: r'MCP')
   static const DoctorReportTriggerEnum MCP = _$doctorReportTriggerEnum_MCP;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const DoctorReportTriggerEnum unknownDefaultOpenApi =
+      _$doctorReportTriggerEnum_unknownDefaultOpenApi;
 
   static Serializer<DoctorReportTriggerEnum> get serializer =>
       _$doctorReportTriggerEnumSerializer;
@@ -345,6 +348,9 @@ class DoctorReportStatusEnum extends EnumClass {
       _$doctorReportStatusEnum_DEGRADED_INFO;
   @BuiltValueEnumConst(wireName: r'BROKEN')
   static const DoctorReportStatusEnum BROKEN = _$doctorReportStatusEnum_BROKEN;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const DoctorReportStatusEnum unknownDefaultOpenApi =
+      _$doctorReportStatusEnum_unknownDefaultOpenApi;
 
   static Serializer<DoctorReportStatusEnum> get serializer =>
       _$doctorReportStatusEnumSerializer;

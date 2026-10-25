@@ -18,6 +18,9 @@ _$ruleBacktestResultSamplesInnerEdgeEnum_exit =
 const RuleBacktestResultSamplesInnerEdgeEnum
 _$ruleBacktestResultSamplesInnerEdgeEnum_window =
     const RuleBacktestResultSamplesInnerEdgeEnum._('window');
+const RuleBacktestResultSamplesInnerEdgeEnum
+_$ruleBacktestResultSamplesInnerEdgeEnum_unknownDefaultOpenApi =
+    const RuleBacktestResultSamplesInnerEdgeEnum._('unknownDefaultOpenApi');
 
 RuleBacktestResultSamplesInnerEdgeEnum
 _$ruleBacktestResultSamplesInnerEdgeEnumValueOf(String name) {
@@ -30,8 +33,10 @@ _$ruleBacktestResultSamplesInnerEdgeEnumValueOf(String name) {
       return _$ruleBacktestResultSamplesInnerEdgeEnum_exit;
     case 'window':
       return _$ruleBacktestResultSamplesInnerEdgeEnum_window;
+    case 'unknownDefaultOpenApi':
+      return _$ruleBacktestResultSamplesInnerEdgeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$ruleBacktestResultSamplesInnerEdgeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -43,6 +48,7 @@ _$ruleBacktestResultSamplesInnerEdgeEnumValues =
         _$ruleBacktestResultSamplesInnerEdgeEnum_enter,
         _$ruleBacktestResultSamplesInnerEdgeEnum_exit,
         _$ruleBacktestResultSamplesInnerEdgeEnum_window,
+        _$ruleBacktestResultSamplesInnerEdgeEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -57,12 +63,14 @@ class _$RuleBacktestResultSamplesInnerEdgeEnumSerializer
     'enter': 'enter',
     'exit': 'exit',
     'window': 'window',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'match': 'match',
     'enter': 'enter',
     'exit': 'exit',
     'window': 'window',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

@@ -358,6 +358,9 @@ class _$CompactMessageSerializer
 class CompactMessageN0Enum extends EnumClass {
   @BuiltValueEnumConst(wireNumber: 1)
   static const CompactMessageN0Enum number1 = _$compactMessageN0Enum_number1;
+  @BuiltValueEnumConst(wireNumber: 11184809, fallback: true)
+  static const CompactMessageN0Enum unknownDefaultOpenApi =
+      _$compactMessageN0Enum_unknownDefaultOpenApi;
 
   static Serializer<CompactMessageN0Enum> get serializer =>
       _$compactMessageN0EnumSerializer;

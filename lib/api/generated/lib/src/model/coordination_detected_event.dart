@@ -211,6 +211,9 @@ class CoordinationDetectedEventEventEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'coordination.detected')
   static const CoordinationDetectedEventEventEnum coordinationPeriodDetected =
       _$coordinationDetectedEventEventEnum_coordinationPeriodDetected;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const CoordinationDetectedEventEventEnum unknownDefaultOpenApi =
+      _$coordinationDetectedEventEventEnum_unknownDefaultOpenApi;
 
   static Serializer<CoordinationDetectedEventEventEnum> get serializer =>
       _$coordinationDetectedEventEventEnumSerializer;
@@ -239,6 +242,10 @@ class CoordinationDetectedEventSignificantIndicatorsEnum extends EnumClass {
   static const CoordinationDetectedEventSignificantIndicatorsEnum
   coRepostBursts =
       _$coordinationDetectedEventSignificantIndicatorsEnum_coRepostBursts;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const CoordinationDetectedEventSignificantIndicatorsEnum
+  unknownDefaultOpenApi =
+      _$coordinationDetectedEventSignificantIndicatorsEnum_unknownDefaultOpenApi;
 
   static Serializer<CoordinationDetectedEventSignificantIndicatorsEnum>
   get serializer =>

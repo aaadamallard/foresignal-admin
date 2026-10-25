@@ -12,6 +12,9 @@ _$fieldEncodingsPngTilesTmsEnum_webMercatorQuad =
 const FieldEncodingsPngTilesTmsEnum
 _$fieldEncodingsPngTilesTmsEnum_worldCRS84Quad =
     const FieldEncodingsPngTilesTmsEnum._('worldCRS84Quad');
+const FieldEncodingsPngTilesTmsEnum
+_$fieldEncodingsPngTilesTmsEnum_unknownDefaultOpenApi =
+    const FieldEncodingsPngTilesTmsEnum._('unknownDefaultOpenApi');
 
 FieldEncodingsPngTilesTmsEnum _$fieldEncodingsPngTilesTmsEnumValueOf(
   String name,
@@ -21,8 +24,10 @@ FieldEncodingsPngTilesTmsEnum _$fieldEncodingsPngTilesTmsEnumValueOf(
       return _$fieldEncodingsPngTilesTmsEnum_webMercatorQuad;
     case 'worldCRS84Quad':
       return _$fieldEncodingsPngTilesTmsEnum_worldCRS84Quad;
+    case 'unknownDefaultOpenApi':
+      return _$fieldEncodingsPngTilesTmsEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$fieldEncodingsPngTilesTmsEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -31,6 +36,7 @@ _$fieldEncodingsPngTilesTmsEnumValues = BuiltSet<FieldEncodingsPngTilesTmsEnum>(
   const <FieldEncodingsPngTilesTmsEnum>[
     _$fieldEncodingsPngTilesTmsEnum_webMercatorQuad,
     _$fieldEncodingsPngTilesTmsEnum_worldCRS84Quad,
+    _$fieldEncodingsPngTilesTmsEnum_unknownDefaultOpenApi,
   ],
 );
 
@@ -43,10 +49,12 @@ class _$FieldEncodingsPngTilesTmsEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'webMercatorQuad': 'WebMercatorQuad',
     'worldCRS84Quad': 'WorldCRS84Quad',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'WebMercatorQuad': 'webMercatorQuad',
     'WorldCRS84Quad': 'worldCRS84Quad',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

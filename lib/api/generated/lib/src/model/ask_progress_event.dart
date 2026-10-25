@@ -162,6 +162,9 @@ class AskProgressEventStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'done')
   static const AskProgressEventStatusEnum done =
       _$askProgressEventStatusEnum_done;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const AskProgressEventStatusEnum unknownDefaultOpenApi =
+      _$askProgressEventStatusEnum_unknownDefaultOpenApi;
 
   static Serializer<AskProgressEventStatusEnum> get serializer =>
       _$askProgressEventStatusEnumSerializer;

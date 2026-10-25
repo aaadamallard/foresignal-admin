@@ -26,6 +26,11 @@ _$commonDependenciesDependenciesInnerPathsInnerWeakestEdgeLabelEnum_speculative 
     const CommonDependenciesDependenciesInnerPathsInnerWeakestEdgeLabelEnum._(
       'speculative',
     );
+const CommonDependenciesDependenciesInnerPathsInnerWeakestEdgeLabelEnum
+_$commonDependenciesDependenciesInnerPathsInnerWeakestEdgeLabelEnum_unknownDefaultOpenApi =
+    const CommonDependenciesDependenciesInnerPathsInnerWeakestEdgeLabelEnum._(
+      'unknownDefaultOpenApi',
+    );
 
 CommonDependenciesDependenciesInnerPathsInnerWeakestEdgeLabelEnum
 _$commonDependenciesDependenciesInnerPathsInnerWeakestEdgeLabelEnumValueOf(
@@ -40,8 +45,10 @@ _$commonDependenciesDependenciesInnerPathsInnerWeakestEdgeLabelEnumValueOf(
       return _$commonDependenciesDependenciesInnerPathsInnerWeakestEdgeLabelEnum_possible;
     case 'speculative':
       return _$commonDependenciesDependenciesInnerPathsInnerWeakestEdgeLabelEnum_speculative;
+    case 'unknownDefaultOpenApi':
+      return _$commonDependenciesDependenciesInnerPathsInnerWeakestEdgeLabelEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$commonDependenciesDependenciesInnerPathsInnerWeakestEdgeLabelEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -56,6 +63,7 @@ _$commonDependenciesDependenciesInnerPathsInnerWeakestEdgeLabelEnumValues =
       _$commonDependenciesDependenciesInnerPathsInnerWeakestEdgeLabelEnum_likely,
       _$commonDependenciesDependenciesInnerPathsInnerWeakestEdgeLabelEnum_possible,
       _$commonDependenciesDependenciesInnerPathsInnerWeakestEdgeLabelEnum_speculative,
+      _$commonDependenciesDependenciesInnerPathsInnerWeakestEdgeLabelEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<CommonDependenciesDependenciesInnerPathsInnerWeakestEdgeLabelEnum>
@@ -72,12 +80,14 @@ class _$CommonDependenciesDependenciesInnerPathsInnerWeakestEdgeLabelEnumSeriali
     'likely': 'likely',
     'possible': 'possible',
     'speculative': 'speculative',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'confirmed': 'confirmed',
     'likely': 'likely',
     'possible': 'possible',
     'speculative': 'speculative',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

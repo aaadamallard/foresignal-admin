@@ -18,6 +18,9 @@ _$collectionGapRecommendationsInnerTypeEnum_addSensor =
 const CollectionGapRecommendationsInnerTypeEnum
 _$collectionGapRecommendationsInnerTypeEnum_none =
     const CollectionGapRecommendationsInnerTypeEnum._('none');
+const CollectionGapRecommendationsInnerTypeEnum
+_$collectionGapRecommendationsInnerTypeEnum_unknownDefaultOpenApi =
+    const CollectionGapRecommendationsInnerTypeEnum._('unknownDefaultOpenApi');
 
 CollectionGapRecommendationsInnerTypeEnum
 _$collectionGapRecommendationsInnerTypeEnumValueOf(String name) {
@@ -30,8 +33,10 @@ _$collectionGapRecommendationsInnerTypeEnumValueOf(String name) {
       return _$collectionGapRecommendationsInnerTypeEnum_addSensor;
     case 'none':
       return _$collectionGapRecommendationsInnerTypeEnum_none;
+    case 'unknownDefaultOpenApi':
+      return _$collectionGapRecommendationsInnerTypeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$collectionGapRecommendationsInnerTypeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -43,6 +48,7 @@ _$collectionGapRecommendationsInnerTypeEnumValues =
         _$collectionGapRecommendationsInnerTypeEnum_addReceiver,
         _$collectionGapRecommendationsInnerTypeEnum_addSensor,
         _$collectionGapRecommendationsInnerTypeEnum_none,
+        _$collectionGapRecommendationsInnerTypeEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -57,12 +63,14 @@ class _$CollectionGapRecommendationsInnerTypeEnumSerializer
     'addReceiver': 'add-receiver',
     'addSensor': 'add-sensor',
     'none': 'none',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'enable-source': 'enableSource',
     'add-receiver': 'addReceiver',
     'add-sensor': 'addSensor',
     'none': 'none',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

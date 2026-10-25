@@ -564,6 +564,9 @@ class ChannelInputTypeEnum extends EnumClass {
       _$channelInputTypeEnum_meshtastic;
   @BuiltValueEnumConst(wireName: r'meshcore')
   static const ChannelInputTypeEnum meshcore = _$channelInputTypeEnum_meshcore;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ChannelInputTypeEnum unknownDefaultOpenApi =
+      _$channelInputTypeEnum_unknownDefaultOpenApi;
 
   static Serializer<ChannelInputTypeEnum> get serializer =>
       _$channelInputTypeEnumSerializer;
@@ -646,6 +649,9 @@ class ChannelInputEventsEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'saved-search.matches')
   static const ChannelInputEventsEnum savedSearchPeriodMatches =
       _$channelInputEventsEnum_savedSearchPeriodMatches;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ChannelInputEventsEnum unknownDefaultOpenApi =
+      _$channelInputEventsEnum_unknownDefaultOpenApi;
 
   static Serializer<ChannelInputEventsEnum> get serializer =>
       _$channelInputEventsEnumSerializer;
@@ -668,6 +674,9 @@ class ChannelInputMinSeverityEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'critical')
   static const ChannelInputMinSeverityEnum critical =
       _$channelInputMinSeverityEnum_critical;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ChannelInputMinSeverityEnum unknownDefaultOpenApi =
+      _$channelInputMinSeverityEnum_unknownDefaultOpenApi;
 
   static Serializer<ChannelInputMinSeverityEnum> get serializer =>
       _$channelInputMinSeverityEnumSerializer;

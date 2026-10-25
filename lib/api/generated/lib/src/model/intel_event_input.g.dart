@@ -19,6 +19,8 @@ const IntelEventInputTypeEnum _$intelEventInputTypeEnum_seismic =
     const IntelEventInputTypeEnum._('seismic');
 const IntelEventInputTypeEnum _$intelEventInputTypeEnum_custom =
     const IntelEventInputTypeEnum._('custom');
+const IntelEventInputTypeEnum _$intelEventInputTypeEnum_unknownDefaultOpenApi =
+    const IntelEventInputTypeEnum._('unknownDefaultOpenApi');
 
 IntelEventInputTypeEnum _$intelEventInputTypeEnumValueOf(String name) {
   switch (name) {
@@ -34,8 +36,10 @@ IntelEventInputTypeEnum _$intelEventInputTypeEnumValueOf(String name) {
       return _$intelEventInputTypeEnum_seismic;
     case 'custom':
       return _$intelEventInputTypeEnum_custom;
+    case 'unknownDefaultOpenApi':
+      return _$intelEventInputTypeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$intelEventInputTypeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -47,12 +51,16 @@ final BuiltSet<IntelEventInputTypeEnum> _$intelEventInputTypeEnumValues =
       _$intelEventInputTypeEnum_weatherImpact,
       _$intelEventInputTypeEnum_seismic,
       _$intelEventInputTypeEnum_custom,
+      _$intelEventInputTypeEnum_unknownDefaultOpenApi,
     ]);
 
 const IntelEventInputOriginEnum _$intelEventInputOriginEnum_agent =
     const IntelEventInputOriginEnum._('agent');
 const IntelEventInputOriginEnum _$intelEventInputOriginEnum_operator_ =
     const IntelEventInputOriginEnum._('operator_');
+const IntelEventInputOriginEnum
+_$intelEventInputOriginEnum_unknownDefaultOpenApi =
+    const IntelEventInputOriginEnum._('unknownDefaultOpenApi');
 
 IntelEventInputOriginEnum _$intelEventInputOriginEnumValueOf(String name) {
   switch (name) {
@@ -60,8 +68,10 @@ IntelEventInputOriginEnum _$intelEventInputOriginEnumValueOf(String name) {
       return _$intelEventInputOriginEnum_agent;
     case 'operator_':
       return _$intelEventInputOriginEnum_operator_;
+    case 'unknownDefaultOpenApi':
+      return _$intelEventInputOriginEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$intelEventInputOriginEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -69,6 +79,7 @@ final BuiltSet<IntelEventInputOriginEnum> _$intelEventInputOriginEnumValues =
     BuiltSet<IntelEventInputOriginEnum>(const <IntelEventInputOriginEnum>[
       _$intelEventInputOriginEnum_agent,
       _$intelEventInputOriginEnum_operator_,
+      _$intelEventInputOriginEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<IntelEventInputTypeEnum> _$intelEventInputTypeEnumSerializer =
@@ -85,6 +96,7 @@ class _$IntelEventInputTypeEnumSerializer
     'weatherImpact': 'weather-impact',
     'seismic': 'seismic',
     'custom': 'custom',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'maritime-disruption': 'maritimeDisruption',
@@ -93,6 +105,7 @@ class _$IntelEventInputTypeEnumSerializer
     'weather-impact': 'weatherImpact',
     'seismic': 'seismic',
     'custom': 'custom',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -122,10 +135,12 @@ class _$IntelEventInputOriginEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'agent': 'agent',
     'operator_': 'operator',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'agent': 'agent',
     'operator': 'operator_',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

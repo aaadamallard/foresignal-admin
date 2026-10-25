@@ -157,6 +157,9 @@ class MeGroupsInnerRoleEnum extends EnumClass {
   static const MeGroupsInnerRoleEnum member = _$meGroupsInnerRoleEnum_member;
   @BuiltValueEnumConst(wireName: r'manager')
   static const MeGroupsInnerRoleEnum manager = _$meGroupsInnerRoleEnum_manager;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const MeGroupsInnerRoleEnum unknownDefaultOpenApi =
+      _$meGroupsInnerRoleEnum_unknownDefaultOpenApi;
 
   static Serializer<MeGroupsInnerRoleEnum> get serializer =>
       _$meGroupsInnerRoleEnumSerializer;

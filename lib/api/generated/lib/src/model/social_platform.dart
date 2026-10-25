@@ -499,6 +499,9 @@ class SocialPlatformStateEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'unavailable')
   static const SocialPlatformStateEnum unavailable =
       _$socialPlatformStateEnum_unavailable;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const SocialPlatformStateEnum unknownDefaultOpenApi =
+      _$socialPlatformStateEnum_unknownDefaultOpenApi;
 
   static Serializer<SocialPlatformStateEnum> get serializer =>
       _$socialPlatformStateEnumSerializer;

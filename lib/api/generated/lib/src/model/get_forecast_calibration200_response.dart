@@ -117,6 +117,10 @@ class GetForecastCalibration200ResponseLabelEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'insufficient')
   static const GetForecastCalibration200ResponseLabelEnum insufficient =
       _$getForecastCalibration200ResponseLabelEnum_insufficient;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const GetForecastCalibration200ResponseLabelEnum
+  unknownDefaultOpenApi =
+      _$getForecastCalibration200ResponseLabelEnum_unknownDefaultOpenApi;
 
   static Serializer<GetForecastCalibration200ResponseLabelEnum>
   get serializer => _$getForecastCalibration200ResponseLabelEnumSerializer;
@@ -137,6 +141,10 @@ class GetForecastCalibration200ResponseMethodEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'bins')
   static const GetForecastCalibration200ResponseMethodEnum bins =
       _$getForecastCalibration200ResponseMethodEnum_bins;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const GetForecastCalibration200ResponseMethodEnum
+  unknownDefaultOpenApi =
+      _$getForecastCalibration200ResponseMethodEnum_unknownDefaultOpenApi;
 
   static Serializer<GetForecastCalibration200ResponseMethodEnum>
   get serializer => _$getForecastCalibration200ResponseMethodEnumSerializer;
@@ -154,6 +162,9 @@ class GetForecastCalibration200ResponseTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'numeric')
   static const GetForecastCalibration200ResponseTypeEnum numeric =
       _$getForecastCalibration200ResponseTypeEnum_numeric;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const GetForecastCalibration200ResponseTypeEnum unknownDefaultOpenApi =
+      _$getForecastCalibration200ResponseTypeEnum_unknownDefaultOpenApi;
 
   static Serializer<GetForecastCalibration200ResponseTypeEnum> get serializer =>
       _$getForecastCalibration200ResponseTypeEnumSerializer;

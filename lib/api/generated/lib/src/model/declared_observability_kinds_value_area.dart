@@ -185,6 +185,10 @@ class DeclaredObservabilityKindsValueAreaTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'regions')
   static const DeclaredObservabilityKindsValueAreaTypeEnum regions =
       _$declaredObservabilityKindsValueAreaTypeEnum_regions;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const DeclaredObservabilityKindsValueAreaTypeEnum
+  unknownDefaultOpenApi =
+      _$declaredObservabilityKindsValueAreaTypeEnum_unknownDefaultOpenApi;
 
   static Serializer<DeclaredObservabilityKindsValueAreaTypeEnum>
   get serializer => _$declaredObservabilityKindsValueAreaTypeEnumSerializer;

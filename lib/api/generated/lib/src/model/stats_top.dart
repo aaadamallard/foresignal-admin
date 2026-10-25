@@ -224,6 +224,9 @@ class StatsTopByEnum extends EnumClass {
   static const StatsTopByEnum cell = _$statsTopByEnum_cell;
   @BuiltValueEnumConst(wireName: r'entity')
   static const StatsTopByEnum entity = _$statsTopByEnum_entity;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const StatsTopByEnum unknownDefaultOpenApi =
+      _$statsTopByEnum_unknownDefaultOpenApi;
 
   static Serializer<StatsTopByEnum> get serializer =>
       _$statsTopByEnumSerializer;
@@ -241,6 +244,9 @@ class StatsTopBackendEnum extends EnumClass {
   static const StatsTopBackendEnum raw = _$statsTopBackendEnum_raw;
   @BuiltValueEnumConst(wireName: r'mixed')
   static const StatsTopBackendEnum mixed = _$statsTopBackendEnum_mixed;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const StatsTopBackendEnum unknownDefaultOpenApi =
+      _$statsTopBackendEnum_unknownDefaultOpenApi;
 
   static Serializer<StatsTopBackendEnum> get serializer =>
       _$statsTopBackendEnumSerializer;

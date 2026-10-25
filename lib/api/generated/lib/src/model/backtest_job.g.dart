@@ -28,6 +28,8 @@ const BacktestJobTypeEnum _$backtestJobTypeEnum_manifestReplay =
     const BacktestJobTypeEnum._('manifestReplay');
 const BacktestJobTypeEnum _$backtestJobTypeEnum_benchmark =
     const BacktestJobTypeEnum._('benchmark');
+const BacktestJobTypeEnum _$backtestJobTypeEnum_unknownDefaultOpenApi =
+    const BacktestJobTypeEnum._('unknownDefaultOpenApi');
 
 BacktestJobTypeEnum _$backtestJobTypeEnumValueOf(String name) {
   switch (name) {
@@ -53,8 +55,10 @@ BacktestJobTypeEnum _$backtestJobTypeEnumValueOf(String name) {
       return _$backtestJobTypeEnum_manifestReplay;
     case 'benchmark':
       return _$backtestJobTypeEnum_benchmark;
+    case 'unknownDefaultOpenApi':
+      return _$backtestJobTypeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$backtestJobTypeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -71,6 +75,7 @@ final BuiltSet<BacktestJobTypeEnum> _$backtestJobTypeEnumValues =
       _$backtestJobTypeEnum_baseRateRefresh,
       _$backtestJobTypeEnum_manifestReplay,
       _$backtestJobTypeEnum_benchmark,
+      _$backtestJobTypeEnum_unknownDefaultOpenApi,
     ]);
 
 const BacktestJobStatusEnum _$backtestJobStatusEnum_queued =
@@ -83,6 +88,8 @@ const BacktestJobStatusEnum _$backtestJobStatusEnum_failed =
     const BacktestJobStatusEnum._('failed');
 const BacktestJobStatusEnum _$backtestJobStatusEnum_cancelled =
     const BacktestJobStatusEnum._('cancelled');
+const BacktestJobStatusEnum _$backtestJobStatusEnum_unknownDefaultOpenApi =
+    const BacktestJobStatusEnum._('unknownDefaultOpenApi');
 
 BacktestJobStatusEnum _$backtestJobStatusEnumValueOf(String name) {
   switch (name) {
@@ -96,8 +103,10 @@ BacktestJobStatusEnum _$backtestJobStatusEnumValueOf(String name) {
       return _$backtestJobStatusEnum_failed;
     case 'cancelled':
       return _$backtestJobStatusEnum_cancelled;
+    case 'unknownDefaultOpenApi':
+      return _$backtestJobStatusEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$backtestJobStatusEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -108,6 +117,7 @@ final BuiltSet<BacktestJobStatusEnum> _$backtestJobStatusEnumValues =
       _$backtestJobStatusEnum_done,
       _$backtestJobStatusEnum_failed,
       _$backtestJobStatusEnum_cancelled,
+      _$backtestJobStatusEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<BacktestJobTypeEnum> _$backtestJobTypeEnumSerializer =
@@ -129,6 +139,7 @@ class _$BacktestJobTypeEnumSerializer
     'baseRateRefresh': 'base-rate-refresh',
     'manifestReplay': 'manifest-replay',
     'benchmark': 'benchmark',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'rule': 'rule',
@@ -142,6 +153,7 @@ class _$BacktestJobTypeEnumSerializer
     'base-rate-refresh': 'baseRateRefresh',
     'manifest-replay': 'manifestReplay',
     'benchmark': 'benchmark',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -174,6 +186,7 @@ class _$BacktestJobStatusEnumSerializer
     'done': 'done',
     'failed': 'failed',
     'cancelled': 'cancelled',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'queued': 'queued',
@@ -181,6 +194,7 @@ class _$BacktestJobStatusEnumSerializer
     'done': 'done',
     'failed': 'failed',
     'cancelled': 'cancelled',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

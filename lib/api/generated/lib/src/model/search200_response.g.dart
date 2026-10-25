@@ -12,6 +12,9 @@ const Search200ResponseModeEnum _$search200ResponseModeEnum_semantic =
     const Search200ResponseModeEnum._('semantic');
 const Search200ResponseModeEnum _$search200ResponseModeEnum_text =
     const Search200ResponseModeEnum._('text');
+const Search200ResponseModeEnum
+_$search200ResponseModeEnum_unknownDefaultOpenApi =
+    const Search200ResponseModeEnum._('unknownDefaultOpenApi');
 
 Search200ResponseModeEnum _$search200ResponseModeEnumValueOf(String name) {
   switch (name) {
@@ -21,8 +24,10 @@ Search200ResponseModeEnum _$search200ResponseModeEnumValueOf(String name) {
       return _$search200ResponseModeEnum_semantic;
     case 'text':
       return _$search200ResponseModeEnum_text;
+    case 'unknownDefaultOpenApi':
+      return _$search200ResponseModeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$search200ResponseModeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -31,6 +36,7 @@ final BuiltSet<Search200ResponseModeEnum> _$search200ResponseModeEnumValues =
       _$search200ResponseModeEnum_hybrid,
       _$search200ResponseModeEnum_semantic,
       _$search200ResponseModeEnum_text,
+      _$search200ResponseModeEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<Search200ResponseModeEnum> _$search200ResponseModeEnumSerializer =
@@ -42,11 +48,13 @@ class _$Search200ResponseModeEnumSerializer
     'hybrid': 'hybrid',
     'semantic': 'semantic',
     'text': 'text',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'hybrid': 'hybrid',
     'semantic': 'semantic',
     'text': 'text',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

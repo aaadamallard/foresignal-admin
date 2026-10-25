@@ -12,6 +12,9 @@ const StormReportPayloadTypeEnum _$stormReportPayloadTypeEnum_wind =
     const StormReportPayloadTypeEnum._('wind');
 const StormReportPayloadTypeEnum _$stormReportPayloadTypeEnum_hail =
     const StormReportPayloadTypeEnum._('hail');
+const StormReportPayloadTypeEnum
+_$stormReportPayloadTypeEnum_unknownDefaultOpenApi =
+    const StormReportPayloadTypeEnum._('unknownDefaultOpenApi');
 
 StormReportPayloadTypeEnum _$stormReportPayloadTypeEnumValueOf(String name) {
   switch (name) {
@@ -21,8 +24,10 @@ StormReportPayloadTypeEnum _$stormReportPayloadTypeEnumValueOf(String name) {
       return _$stormReportPayloadTypeEnum_wind;
     case 'hail':
       return _$stormReportPayloadTypeEnum_hail;
+    case 'unknownDefaultOpenApi':
+      return _$stormReportPayloadTypeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$stormReportPayloadTypeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -31,6 +36,7 @@ final BuiltSet<StormReportPayloadTypeEnum> _$stormReportPayloadTypeEnumValues =
       _$stormReportPayloadTypeEnum_tornado,
       _$stormReportPayloadTypeEnum_wind,
       _$stormReportPayloadTypeEnum_hail,
+      _$stormReportPayloadTypeEnum_unknownDefaultOpenApi,
     ]);
 
 const StormReportPayloadMagnitudeUnitsEnum
@@ -42,6 +48,9 @@ _$stormReportPayloadMagnitudeUnitsEnum_mph =
 const StormReportPayloadMagnitudeUnitsEnum
 _$stormReportPayloadMagnitudeUnitsEnum_in_ =
     const StormReportPayloadMagnitudeUnitsEnum._('in_');
+const StormReportPayloadMagnitudeUnitsEnum
+_$stormReportPayloadMagnitudeUnitsEnum_unknownDefaultOpenApi =
+    const StormReportPayloadMagnitudeUnitsEnum._('unknownDefaultOpenApi');
 
 StormReportPayloadMagnitudeUnitsEnum
 _$stormReportPayloadMagnitudeUnitsEnumValueOf(String name) {
@@ -52,8 +61,10 @@ _$stormReportPayloadMagnitudeUnitsEnumValueOf(String name) {
       return _$stormReportPayloadMagnitudeUnitsEnum_mph;
     case 'in_':
       return _$stormReportPayloadMagnitudeUnitsEnum_in_;
+    case 'unknownDefaultOpenApi':
+      return _$stormReportPayloadMagnitudeUnitsEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$stormReportPayloadMagnitudeUnitsEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -64,6 +75,7 @@ _$stormReportPayloadMagnitudeUnitsEnumValues =
         _$stormReportPayloadMagnitudeUnitsEnum_EF,
         _$stormReportPayloadMagnitudeUnitsEnum_mph,
         _$stormReportPayloadMagnitudeUnitsEnum_in_,
+        _$stormReportPayloadMagnitudeUnitsEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -79,11 +91,13 @@ class _$StormReportPayloadTypeEnumSerializer
     'tornado': 'tornado',
     'wind': 'wind',
     'hail': 'hail',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'tornado': 'tornado',
     'wind': 'wind',
     'hail': 'hail',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -114,11 +128,13 @@ class _$StormReportPayloadMagnitudeUnitsEnumSerializer
     'EF': 'EF',
     'mph': 'mph',
     'in_': 'in',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'EF': 'EF',
     'mph': 'mph',
     'in': 'in_',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

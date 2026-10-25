@@ -220,6 +220,9 @@ class AssessmentFeedbackRatingEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'wrong')
   static const AssessmentFeedbackRatingEnum wrong =
       _$assessmentFeedbackRatingEnum_wrong;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const AssessmentFeedbackRatingEnum unknownDefaultOpenApi =
+      _$assessmentFeedbackRatingEnum_unknownDefaultOpenApi;
 
   static Serializer<AssessmentFeedbackRatingEnum> get serializer =>
       _$assessmentFeedbackRatingEnumSerializer;

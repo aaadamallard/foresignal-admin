@@ -855,6 +855,9 @@ class CustomSourceObservedAtModeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'RECEIVED')
   static const CustomSourceObservedAtModeEnum RECEIVED =
       _$customSourceObservedAtModeEnum_RECEIVED;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const CustomSourceObservedAtModeEnum unknownDefaultOpenApi =
+      _$customSourceObservedAtModeEnum_unknownDefaultOpenApi;
 
   static Serializer<CustomSourceObservedAtModeEnum> get serializer =>
       _$customSourceObservedAtModeEnumSerializer;
@@ -874,6 +877,9 @@ class CustomSourceTtlAnchorEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'OBSERVED')
   static const CustomSourceTtlAnchorEnum OBSERVED =
       _$customSourceTtlAnchorEnum_OBSERVED;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const CustomSourceTtlAnchorEnum unknownDefaultOpenApi =
+      _$customSourceTtlAnchorEnum_unknownDefaultOpenApi;
 
   static Serializer<CustomSourceTtlAnchorEnum> get serializer =>
       _$customSourceTtlAnchorEnumSerializer;
@@ -891,6 +897,9 @@ class CustomSourceProfileEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'personal-location')
   static const CustomSourceProfileEnum personalLocation =
       _$customSourceProfileEnum_personalLocation;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const CustomSourceProfileEnum unknownDefaultOpenApi =
+      _$customSourceProfileEnum_unknownDefaultOpenApi;
 
   static Serializer<CustomSourceProfileEnum> get serializer =>
       _$customSourceProfileEnumSerializer;

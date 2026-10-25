@@ -14,6 +14,9 @@ const ProvenanceLicenceBasisEnum _$provenanceLicenceBasisEnum_mlatOverride =
     const ProvenanceLicenceBasisEnum._('mlatOverride');
 const ProvenanceLicenceBasisEnum _$provenanceLicenceBasisEnum_peerOrigin =
     const ProvenanceLicenceBasisEnum._('peerOrigin');
+const ProvenanceLicenceBasisEnum
+_$provenanceLicenceBasisEnum_unknownDefaultOpenApi =
+    const ProvenanceLicenceBasisEnum._('unknownDefaultOpenApi');
 
 ProvenanceLicenceBasisEnum _$provenanceLicenceBasisEnumValueOf(String name) {
   switch (name) {
@@ -25,8 +28,10 @@ ProvenanceLicenceBasisEnum _$provenanceLicenceBasisEnumValueOf(String name) {
       return _$provenanceLicenceBasisEnum_mlatOverride;
     case 'peerOrigin':
       return _$provenanceLicenceBasisEnum_peerOrigin;
+    case 'unknownDefaultOpenApi':
+      return _$provenanceLicenceBasisEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$provenanceLicenceBasisEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -36,6 +41,7 @@ final BuiltSet<ProvenanceLicenceBasisEnum> _$provenanceLicenceBasisEnumValues =
       _$provenanceLicenceBasisEnum_descriptor,
       _$provenanceLicenceBasisEnum_mlatOverride,
       _$provenanceLicenceBasisEnum_peerOrigin,
+      _$provenanceLicenceBasisEnum_unknownDefaultOpenApi,
     ]);
 
 const ProvenanceReliabilityEnum _$provenanceReliabilityEnum_A =
@@ -50,6 +56,9 @@ const ProvenanceReliabilityEnum _$provenanceReliabilityEnum_E =
     const ProvenanceReliabilityEnum._('E');
 const ProvenanceReliabilityEnum _$provenanceReliabilityEnum_F =
     const ProvenanceReliabilityEnum._('F');
+const ProvenanceReliabilityEnum
+_$provenanceReliabilityEnum_unknownDefaultOpenApi =
+    const ProvenanceReliabilityEnum._('unknownDefaultOpenApi');
 
 ProvenanceReliabilityEnum _$provenanceReliabilityEnumValueOf(String name) {
   switch (name) {
@@ -65,8 +74,10 @@ ProvenanceReliabilityEnum _$provenanceReliabilityEnumValueOf(String name) {
       return _$provenanceReliabilityEnum_E;
     case 'F':
       return _$provenanceReliabilityEnum_F;
+    case 'unknownDefaultOpenApi':
+      return _$provenanceReliabilityEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$provenanceReliabilityEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -78,6 +89,7 @@ final BuiltSet<ProvenanceReliabilityEnum> _$provenanceReliabilityEnumValues =
       _$provenanceReliabilityEnum_D,
       _$provenanceReliabilityEnum_E,
       _$provenanceReliabilityEnum_F,
+      _$provenanceReliabilityEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<ProvenanceLicenceBasisEnum> _$provenanceLicenceBasisEnumSerializer =
@@ -92,12 +104,14 @@ class _$ProvenanceLicenceBasisEnumSerializer
     'descriptor': 'descriptor',
     'mlatOverride': 'mlat-override',
     'peerOrigin': 'peer-origin',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'batch': 'batch',
     'descriptor': 'descriptor',
     'mlat-override': 'mlatOverride',
     'peer-origin': 'peerOrigin',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -131,6 +145,7 @@ class _$ProvenanceReliabilityEnumSerializer
     'D': 'D',
     'E': 'E',
     'F': 'F',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'A': 'A',
@@ -139,6 +154,7 @@ class _$ProvenanceReliabilityEnumSerializer
     'D': 'D',
     'E': 'E',
     'F': 'F',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

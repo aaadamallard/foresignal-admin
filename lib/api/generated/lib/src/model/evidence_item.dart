@@ -619,6 +619,9 @@ class EvidenceItemSourceReliabilityEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'F')
   static const EvidenceItemSourceReliabilityEnum F =
       _$evidenceItemSourceReliabilityEnum_F;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const EvidenceItemSourceReliabilityEnum unknownDefaultOpenApi =
+      _$evidenceItemSourceReliabilityEnum_unknownDefaultOpenApi;
 
   static Serializer<EvidenceItemSourceReliabilityEnum> get serializer =>
       _$evidenceItemSourceReliabilityEnumSerializer;

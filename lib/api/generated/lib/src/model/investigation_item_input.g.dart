@@ -36,6 +36,9 @@ _$investigationItemInputItemTypeEnum_attachment =
 const InvestigationItemInputItemTypeEnum
 _$investigationItemInputItemTypeEnum_object =
     const InvestigationItemInputItemTypeEnum._('object');
+const InvestigationItemInputItemTypeEnum
+_$investigationItemInputItemTypeEnum_unknownDefaultOpenApi =
+    const InvestigationItemInputItemTypeEnum._('unknownDefaultOpenApi');
 
 InvestigationItemInputItemTypeEnum _$investigationItemInputItemTypeEnumValueOf(
   String name,
@@ -61,8 +64,10 @@ InvestigationItemInputItemTypeEnum _$investigationItemInputItemTypeEnumValueOf(
       return _$investigationItemInputItemTypeEnum_attachment;
     case 'object':
       return _$investigationItemInputItemTypeEnum_object;
+    case 'unknownDefaultOpenApi':
+      return _$investigationItemInputItemTypeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$investigationItemInputItemTypeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -80,6 +85,7 @@ _$investigationItemInputItemTypeEnumValues =
         _$investigationItemInputItemTypeEnum_evidenceItem,
         _$investigationItemInputItemTypeEnum_attachment,
         _$investigationItemInputItemTypeEnum_object,
+        _$investigationItemInputItemTypeEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -100,6 +106,7 @@ class _$InvestigationItemInputItemTypeEnumSerializer
     'evidenceItem': 'evidence-item',
     'attachment': 'attachment',
     'object': 'object',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'event': 'event',
@@ -112,6 +119,7 @@ class _$InvestigationItemInputItemTypeEnumSerializer
     'evidence-item': 'evidenceItem',
     'attachment': 'attachment',
     'object': 'object',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

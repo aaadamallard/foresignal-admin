@@ -7,6 +7,7 @@ import 'admin_token_store.dart';
 import 'api_errors.dart';
 import 'backend_endpoint.dart';
 import 'explicit_nulls.dart';
+import 'tolerant_enums.dart';
 
 /// How long to wait for the backend to accept a connection.
 const Duration connectTimeout = Duration(seconds: 10);
@@ -47,7 +48,11 @@ final backendDioProvider = Provider<Dio>((ref) {
 final foresignalApiProvider = Provider<ForesignalApi>((ref) {
   // An empty interceptor list keeps the generated auth interceptors off: the
   // admin token is added by [AdminAuthInterceptor] alone.
-  return ForesignalApi(dio: ref.watch(backendDioProvider), interceptors: const <Interceptor>[]);
+  return ForesignalApi(
+    dio: ref.watch(backendDioProvider),
+    interceptors: const <Interceptor>[],
+    serializers: tolerantSerializers,
+  );
 });
 
 /// Awaits a generated-client call and returns its body, turning any failure

@@ -11,6 +11,9 @@ const BaseRateLicencesInnerEgressEnum _$baseRateLicencesInnerEgressEnum_OPEN =
 const BaseRateLicencesInnerEgressEnum
 _$baseRateLicencesInnerEgressEnum_LOCAL_ONLY =
     const BaseRateLicencesInnerEgressEnum._('LOCAL_ONLY');
+const BaseRateLicencesInnerEgressEnum
+_$baseRateLicencesInnerEgressEnum_unknownDefaultOpenApi =
+    const BaseRateLicencesInnerEgressEnum._('unknownDefaultOpenApi');
 
 BaseRateLicencesInnerEgressEnum _$baseRateLicencesInnerEgressEnumValueOf(
   String name,
@@ -20,8 +23,10 @@ BaseRateLicencesInnerEgressEnum _$baseRateLicencesInnerEgressEnumValueOf(
       return _$baseRateLicencesInnerEgressEnum_OPEN;
     case 'LOCAL_ONLY':
       return _$baseRateLicencesInnerEgressEnum_LOCAL_ONLY;
+    case 'unknownDefaultOpenApi':
+      return _$baseRateLicencesInnerEgressEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$baseRateLicencesInnerEgressEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -31,6 +36,7 @@ _$baseRateLicencesInnerEgressEnumValues =
       const <BaseRateLicencesInnerEgressEnum>[
         _$baseRateLicencesInnerEgressEnum_OPEN,
         _$baseRateLicencesInnerEgressEnum_LOCAL_ONLY,
+        _$baseRateLicencesInnerEgressEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -43,10 +49,12 @@ class _$BaseRateLicencesInnerEgressEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'OPEN': 'OPEN',
     'LOCAL_ONLY': 'LOCAL_ONLY',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'OPEN': 'OPEN',
     'LOCAL_ONLY': 'LOCAL_ONLY',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

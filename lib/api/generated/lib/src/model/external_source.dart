@@ -500,6 +500,9 @@ class ExternalSourceStateEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'suspended')
   static const ExternalSourceStateEnum suspended =
       _$externalSourceStateEnum_suspended;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ExternalSourceStateEnum unknownDefaultOpenApi =
+      _$externalSourceStateEnum_unknownDefaultOpenApi;
 
   static Serializer<ExternalSourceStateEnum> get serializer =>
       _$externalSourceStateEnumSerializer;
@@ -519,6 +522,9 @@ class ExternalSourceRegisteredViaEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'registration-token')
   static const ExternalSourceRegisteredViaEnum registrationToken =
       _$externalSourceRegisteredViaEnum_registrationToken;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ExternalSourceRegisteredViaEnum unknownDefaultOpenApi =
+      _$externalSourceRegisteredViaEnum_unknownDefaultOpenApi;
 
   static Serializer<ExternalSourceRegisteredViaEnum> get serializer =>
       _$externalSourceRegisteredViaEnumSerializer;

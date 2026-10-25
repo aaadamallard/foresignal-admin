@@ -192,6 +192,9 @@ class PushDeviceUpdateContentLevelEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'short')
   static const PushDeviceUpdateContentLevelEnum short =
       _$pushDeviceUpdateContentLevelEnum_short;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const PushDeviceUpdateContentLevelEnum unknownDefaultOpenApi =
+      _$pushDeviceUpdateContentLevelEnum_unknownDefaultOpenApi;
 
   static Serializer<PushDeviceUpdateContentLevelEnum> get serializer =>
       _$pushDeviceUpdateContentLevelEnumSerializer;

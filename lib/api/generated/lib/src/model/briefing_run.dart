@@ -465,6 +465,9 @@ class BriefingRunStatusEnum extends EnumClass {
       _$briefingRunStatusEnum_fallback;
   @BuiltValueEnumConst(wireName: r'failed')
   static const BriefingRunStatusEnum failed = _$briefingRunStatusEnum_failed;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const BriefingRunStatusEnum unknownDefaultOpenApi =
+      _$briefingRunStatusEnum_unknownDefaultOpenApi;
 
   static Serializer<BriefingRunStatusEnum> get serializer =>
       _$briefingRunStatusEnumSerializer;
@@ -482,6 +485,9 @@ class BriefingRunModeEnum extends EnumClass {
   static const BriefingRunModeEnum digest = _$briefingRunModeEnum_digest;
   @BuiltValueEnumConst(wireName: r'llm')
   static const BriefingRunModeEnum llm = _$briefingRunModeEnum_llm;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const BriefingRunModeEnum unknownDefaultOpenApi =
+      _$briefingRunModeEnum_unknownDefaultOpenApi;
 
   static Serializer<BriefingRunModeEnum> get serializer =>
       _$briefingRunModeEnumSerializer;

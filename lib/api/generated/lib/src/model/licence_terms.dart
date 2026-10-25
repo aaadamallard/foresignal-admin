@@ -264,6 +264,9 @@ class LicenceTermsCommercialUseEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'UNKNOWN')
   static const LicenceTermsCommercialUseEnum UNKNOWN =
       _$licenceTermsCommercialUseEnum_UNKNOWN;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const LicenceTermsCommercialUseEnum unknownDefaultOpenApi =
+      _$licenceTermsCommercialUseEnum_unknownDefaultOpenApi;
 
   static Serializer<LicenceTermsCommercialUseEnum> get serializer =>
       _$licenceTermsCommercialUseEnumSerializer;
@@ -290,6 +293,9 @@ class LicenceTermsRedistributionEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'UNKNOWN')
   static const LicenceTermsRedistributionEnum UNKNOWN =
       _$licenceTermsRedistributionEnum_UNKNOWN;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const LicenceTermsRedistributionEnum unknownDefaultOpenApi =
+      _$licenceTermsRedistributionEnum_unknownDefaultOpenApi;
 
   static Serializer<LicenceTermsRedistributionEnum> get serializer =>
       _$licenceTermsRedistributionEnumSerializer;

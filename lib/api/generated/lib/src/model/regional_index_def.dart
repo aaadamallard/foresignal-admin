@@ -420,6 +420,9 @@ class RegionalIndexDefWeightsOriginEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'operator')
   static const RegionalIndexDefWeightsOriginEnum operator_ =
       _$regionalIndexDefWeightsOriginEnum_operator_;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const RegionalIndexDefWeightsOriginEnum unknownDefaultOpenApi =
+      _$regionalIndexDefWeightsOriginEnum_unknownDefaultOpenApi;
 
   static Serializer<RegionalIndexDefWeightsOriginEnum> get serializer =>
       _$regionalIndexDefWeightsOriginEnumSerializer;

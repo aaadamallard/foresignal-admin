@@ -205,6 +205,9 @@ class PresenceEventClientsInnerClientKindEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'other')
   static const PresenceEventClientsInnerClientKindEnum other =
       _$presenceEventClientsInnerClientKindEnum_other;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const PresenceEventClientsInnerClientKindEnum unknownDefaultOpenApi =
+      _$presenceEventClientsInnerClientKindEnum_unknownDefaultOpenApi;
 
   static Serializer<PresenceEventClientsInnerClientKindEnum> get serializer =>
       _$presenceEventClientsInnerClientKindEnumSerializer;

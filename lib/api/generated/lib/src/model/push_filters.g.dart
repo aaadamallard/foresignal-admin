@@ -12,6 +12,8 @@ const PushFiltersEventsEnum _$pushFiltersEventsEnum_briefing =
     const PushFiltersEventsEnum._('briefing');
 const PushFiltersEventsEnum _$pushFiltersEventsEnum_system =
     const PushFiltersEventsEnum._('system');
+const PushFiltersEventsEnum _$pushFiltersEventsEnum_unknownDefaultOpenApi =
+    const PushFiltersEventsEnum._('unknownDefaultOpenApi');
 
 PushFiltersEventsEnum _$pushFiltersEventsEnumValueOf(String name) {
   switch (name) {
@@ -21,8 +23,10 @@ PushFiltersEventsEnum _$pushFiltersEventsEnumValueOf(String name) {
       return _$pushFiltersEventsEnum_briefing;
     case 'system':
       return _$pushFiltersEventsEnum_system;
+    case 'unknownDefaultOpenApi':
+      return _$pushFiltersEventsEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$pushFiltersEventsEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -31,6 +35,7 @@ final BuiltSet<PushFiltersEventsEnum> _$pushFiltersEventsEnumValues =
       _$pushFiltersEventsEnum_alert,
       _$pushFiltersEventsEnum_briefing,
       _$pushFiltersEventsEnum_system,
+      _$pushFiltersEventsEnum_unknownDefaultOpenApi,
     ]);
 
 const PushFiltersMinSeverityEnum _$pushFiltersMinSeverityEnum_info =
@@ -39,6 +44,9 @@ const PushFiltersMinSeverityEnum _$pushFiltersMinSeverityEnum_warning =
     const PushFiltersMinSeverityEnum._('warning');
 const PushFiltersMinSeverityEnum _$pushFiltersMinSeverityEnum_critical =
     const PushFiltersMinSeverityEnum._('critical');
+const PushFiltersMinSeverityEnum
+_$pushFiltersMinSeverityEnum_unknownDefaultOpenApi =
+    const PushFiltersMinSeverityEnum._('unknownDefaultOpenApi');
 
 PushFiltersMinSeverityEnum _$pushFiltersMinSeverityEnumValueOf(String name) {
   switch (name) {
@@ -48,8 +56,10 @@ PushFiltersMinSeverityEnum _$pushFiltersMinSeverityEnumValueOf(String name) {
       return _$pushFiltersMinSeverityEnum_warning;
     case 'critical':
       return _$pushFiltersMinSeverityEnum_critical;
+    case 'unknownDefaultOpenApi':
+      return _$pushFiltersMinSeverityEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$pushFiltersMinSeverityEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -58,6 +68,7 @@ final BuiltSet<PushFiltersMinSeverityEnum> _$pushFiltersMinSeverityEnumValues =
       _$pushFiltersMinSeverityEnum_info,
       _$pushFiltersMinSeverityEnum_warning,
       _$pushFiltersMinSeverityEnum_critical,
+      _$pushFiltersMinSeverityEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<PushFiltersEventsEnum> _$pushFiltersEventsEnumSerializer =
@@ -71,11 +82,13 @@ class _$PushFiltersEventsEnumSerializer
     'alert': 'alert',
     'briefing': 'briefing',
     'system': 'system',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'alert': 'alert',
     'briefing': 'briefing',
     'system': 'system',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -106,11 +119,13 @@ class _$PushFiltersMinSeverityEnumSerializer
     'info': 'info',
     'warning': 'warning',
     'critical': 'critical',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'info': 'info',
     'warning': 'warning',
     'critical': 'critical',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

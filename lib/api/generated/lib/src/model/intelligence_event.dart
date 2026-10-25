@@ -582,6 +582,9 @@ class IntelligenceEventTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'custom')
   static const IntelligenceEventTypeEnum custom =
       _$intelligenceEventTypeEnum_custom;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const IntelligenceEventTypeEnum unknownDefaultOpenApi =
+      _$intelligenceEventTypeEnum_unknownDefaultOpenApi;
 
   static Serializer<IntelligenceEventTypeEnum> get serializer =>
       _$intelligenceEventTypeEnumSerializer;
@@ -607,6 +610,9 @@ class IntelligenceEventStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'dismissed')
   static const IntelligenceEventStatusEnum dismissed =
       _$intelligenceEventStatusEnum_dismissed;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const IntelligenceEventStatusEnum unknownDefaultOpenApi =
+      _$intelligenceEventStatusEnum_unknownDefaultOpenApi;
 
   static Serializer<IntelligenceEventStatusEnum> get serializer =>
       _$intelligenceEventStatusEnumSerializer;
@@ -632,6 +638,9 @@ class IntelligenceEventOriginEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'operator')
   static const IntelligenceEventOriginEnum operator_ =
       _$intelligenceEventOriginEnum_operator_;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const IntelligenceEventOriginEnum unknownDefaultOpenApi =
+      _$intelligenceEventOriginEnum_unknownDefaultOpenApi;
 
   static Serializer<IntelligenceEventOriginEnum> get serializer =>
       _$intelligenceEventOriginEnumSerializer;

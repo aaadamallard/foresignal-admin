@@ -134,6 +134,9 @@ class UpdateTokenRequestLicencePolicyEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'redistributable')
   static const UpdateTokenRequestLicencePolicyEnum redistributable =
       _$updateTokenRequestLicencePolicyEnum_redistributable;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const UpdateTokenRequestLicencePolicyEnum unknownDefaultOpenApi =
+      _$updateTokenRequestLicencePolicyEnum_unknownDefaultOpenApi;
 
   static Serializer<UpdateTokenRequestLicencePolicyEnum> get serializer =>
       _$updateTokenRequestLicencePolicyEnumSerializer;

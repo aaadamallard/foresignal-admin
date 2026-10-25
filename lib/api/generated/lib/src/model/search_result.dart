@@ -345,6 +345,9 @@ class SearchResultDocTypeEnum extends EnumClass {
       _$searchResultDocTypeEnum_briefing;
   @BuiltValueEnumConst(wireName: r'alert')
   static const SearchResultDocTypeEnum alert = _$searchResultDocTypeEnum_alert;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const SearchResultDocTypeEnum unknownDefaultOpenApi =
+      _$searchResultDocTypeEnum_unknownDefaultOpenApi;
 
   static Serializer<SearchResultDocTypeEnum> get serializer =>
       _$searchResultDocTypeEnumSerializer;

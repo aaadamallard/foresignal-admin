@@ -246,6 +246,9 @@ class StatsGridTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'FeatureCollection')
   static const StatsGridTypeEnum featureCollection =
       _$statsGridTypeEnum_featureCollection;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const StatsGridTypeEnum unknownDefaultOpenApi =
+      _$statsGridTypeEnum_unknownDefaultOpenApi;
 
   static Serializer<StatsGridTypeEnum> get serializer =>
       _$statsGridTypeEnumSerializer;
@@ -263,6 +266,9 @@ class StatsGridCellSystemEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'hex3857')
   static const StatsGridCellSystemEnum hex3857 =
       _$statsGridCellSystemEnum_hex3857;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const StatsGridCellSystemEnum unknownDefaultOpenApi =
+      _$statsGridCellSystemEnum_unknownDefaultOpenApi;
 
   static Serializer<StatsGridCellSystemEnum> get serializer =>
       _$statsGridCellSystemEnumSerializer;
@@ -280,6 +286,9 @@ class StatsGridBackendEnum extends EnumClass {
   static const StatsGridBackendEnum rollup = _$statsGridBackendEnum_rollup;
   @BuiltValueEnumConst(wireName: r'raw')
   static const StatsGridBackendEnum raw = _$statsGridBackendEnum_raw;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const StatsGridBackendEnum unknownDefaultOpenApi =
+      _$statsGridBackendEnum_unknownDefaultOpenApi;
 
   static Serializer<StatsGridBackendEnum> get serializer =>
       _$statsGridBackendEnumSerializer;

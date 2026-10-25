@@ -336,6 +336,9 @@ class CorroborationPayloadStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'degraded-input')
   static const CorroborationPayloadStatusEnum degradedInput =
       _$corroborationPayloadStatusEnum_degradedInput;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const CorroborationPayloadStatusEnum unknownDefaultOpenApi =
+      _$corroborationPayloadStatusEnum_unknownDefaultOpenApi;
 
   static Serializer<CorroborationPayloadStatusEnum> get serializer =>
       _$corroborationPayloadStatusEnumSerializer;
@@ -361,6 +364,9 @@ class CorroborationPayloadKindFamilyEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'outage')
   static const CorroborationPayloadKindFamilyEnum outage =
       _$corroborationPayloadKindFamilyEnum_outage;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const CorroborationPayloadKindFamilyEnum unknownDefaultOpenApi =
+      _$corroborationPayloadKindFamilyEnum_unknownDefaultOpenApi;
 
   static Serializer<CorroborationPayloadKindFamilyEnum> get serializer =>
       _$corroborationPayloadKindFamilyEnumSerializer;
@@ -393,6 +399,9 @@ class CorroborationPayloadReliabilityEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'F')
   static const CorroborationPayloadReliabilityEnum F =
       _$corroborationPayloadReliabilityEnum_F;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const CorroborationPayloadReliabilityEnum unknownDefaultOpenApi =
+      _$corroborationPayloadReliabilityEnum_unknownDefaultOpenApi;
 
   static Serializer<CorroborationPayloadReliabilityEnum> get serializer =>
       _$corroborationPayloadReliabilityEnumSerializer;

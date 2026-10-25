@@ -486,6 +486,9 @@ class ExternalBindingTargetEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'chronicle')
   static const ExternalBindingTargetEnum chronicle =
       _$externalBindingTargetEnum_chronicle;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ExternalBindingTargetEnum unknownDefaultOpenApi =
+      _$externalBindingTargetEnum_unknownDefaultOpenApi;
 
   static Serializer<ExternalBindingTargetEnum> get serializer =>
       _$externalBindingTargetEnumSerializer;
@@ -511,6 +514,9 @@ class ExternalBindingStateEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'error')
   static const ExternalBindingStateEnum error =
       _$externalBindingStateEnum_error;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ExternalBindingStateEnum unknownDefaultOpenApi =
+      _$externalBindingStateEnum_unknownDefaultOpenApi;
 
   static Serializer<ExternalBindingStateEnum> get serializer =>
       _$externalBindingStateEnumSerializer;

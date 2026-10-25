@@ -257,6 +257,9 @@ class InfraRulesRulesInnerIdEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'airport-port-serves')
   static const InfraRulesRulesInnerIdEnum airportPortServes =
       _$infraRulesRulesInnerIdEnum_airportPortServes;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const InfraRulesRulesInnerIdEnum unknownDefaultOpenApi =
+      _$infraRulesRulesInnerIdEnum_unknownDefaultOpenApi;
 
   static Serializer<InfraRulesRulesInnerIdEnum> get serializer =>
       _$infraRulesRulesInnerIdEnumSerializer;
@@ -282,6 +285,9 @@ class InfraRulesRulesInnerMethodEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'inferred')
   static const InfraRulesRulesInnerMethodEnum inferred =
       _$infraRulesRulesInnerMethodEnum_inferred;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const InfraRulesRulesInnerMethodEnum unknownDefaultOpenApi =
+      _$infraRulesRulesInnerMethodEnum_unknownDefaultOpenApi;
 
   static Serializer<InfraRulesRulesInnerMethodEnum> get serializer =>
       _$infraRulesRulesInnerMethodEnumSerializer;
@@ -313,6 +319,9 @@ class InfraRulesRulesInnerRelationEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'serves')
   static const InfraRulesRulesInnerRelationEnum serves =
       _$infraRulesRulesInnerRelationEnum_serves;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const InfraRulesRulesInnerRelationEnum unknownDefaultOpenApi =
+      _$infraRulesRulesInnerRelationEnum_unknownDefaultOpenApi;
 
   static Serializer<InfraRulesRulesInnerRelationEnum> get serializer =>
       _$infraRulesRulesInnerRelationEnumSerializer;
@@ -338,6 +347,9 @@ class InfraRulesRulesInnerLabelEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'speculative')
   static const InfraRulesRulesInnerLabelEnum speculative =
       _$infraRulesRulesInnerLabelEnum_speculative;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const InfraRulesRulesInnerLabelEnum unknownDefaultOpenApi =
+      _$infraRulesRulesInnerLabelEnum_unknownDefaultOpenApi;
 
   static Serializer<InfraRulesRulesInnerLabelEnum> get serializer =>
       _$infraRulesRulesInnerLabelEnumSerializer;

@@ -327,6 +327,9 @@ class IntelEventRecordPayloadTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'custom')
   static const IntelEventRecordPayloadTypeEnum custom =
       _$intelEventRecordPayloadTypeEnum_custom;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const IntelEventRecordPayloadTypeEnum unknownDefaultOpenApi =
+      _$intelEventRecordPayloadTypeEnum_unknownDefaultOpenApi;
 
   static Serializer<IntelEventRecordPayloadTypeEnum> get serializer =>
       _$intelEventRecordPayloadTypeEnumSerializer;
@@ -352,6 +355,9 @@ class IntelEventRecordPayloadStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'dismissed')
   static const IntelEventRecordPayloadStatusEnum dismissed =
       _$intelEventRecordPayloadStatusEnum_dismissed;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const IntelEventRecordPayloadStatusEnum unknownDefaultOpenApi =
+      _$intelEventRecordPayloadStatusEnum_unknownDefaultOpenApi;
 
   static Serializer<IntelEventRecordPayloadStatusEnum> get serializer =>
       _$intelEventRecordPayloadStatusEnumSerializer;
@@ -374,6 +380,9 @@ class IntelEventRecordPayloadLabelEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'high')
   static const IntelEventRecordPayloadLabelEnum high =
       _$intelEventRecordPayloadLabelEnum_high;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const IntelEventRecordPayloadLabelEnum unknownDefaultOpenApi =
+      _$intelEventRecordPayloadLabelEnum_unknownDefaultOpenApi;
 
   static Serializer<IntelEventRecordPayloadLabelEnum> get serializer =>
       _$intelEventRecordPayloadLabelEnumSerializer;
@@ -399,6 +408,10 @@ class IntelEventRecordPayloadEvidenceQualityEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'insufficient')
   static const IntelEventRecordPayloadEvidenceQualityEnum insufficient =
       _$intelEventRecordPayloadEvidenceQualityEnum_insufficient;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const IntelEventRecordPayloadEvidenceQualityEnum
+  unknownDefaultOpenApi =
+      _$intelEventRecordPayloadEvidenceQualityEnum_unknownDefaultOpenApi;
 
   static Serializer<IntelEventRecordPayloadEvidenceQualityEnum>
   get serializer => _$intelEventRecordPayloadEvidenceQualityEnumSerializer;

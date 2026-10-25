@@ -18,6 +18,9 @@ const NarrativePostLinkReasonEnum _$narrativePostLinkReasonEnum_link =
     const NarrativePostLinkReasonEnum._('link');
 const NarrativePostLinkReasonEnum _$narrativePostLinkReasonEnum_media =
     const NarrativePostLinkReasonEnum._('media');
+const NarrativePostLinkReasonEnum
+_$narrativePostLinkReasonEnum_unknownDefaultOpenApi =
+    const NarrativePostLinkReasonEnum._('unknownDefaultOpenApi');
 
 NarrativePostLinkReasonEnum _$narrativePostLinkReasonEnumValueOf(String name) {
   switch (name) {
@@ -33,8 +36,10 @@ NarrativePostLinkReasonEnum _$narrativePostLinkReasonEnumValueOf(String name) {
       return _$narrativePostLinkReasonEnum_link;
     case 'media':
       return _$narrativePostLinkReasonEnum_media;
+    case 'unknownDefaultOpenApi':
+      return _$narrativePostLinkReasonEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$narrativePostLinkReasonEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -47,6 +52,7 @@ _$narrativePostLinkReasonEnumValues =
       _$narrativePostLinkReasonEnum_text,
       _$narrativePostLinkReasonEnum_link,
       _$narrativePostLinkReasonEnum_media,
+      _$narrativePostLinkReasonEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<NarrativePostLinkReasonEnum>
@@ -62,6 +68,7 @@ class _$NarrativePostLinkReasonEnumSerializer
     'text': 'text',
     'link': 'link',
     'media': 'media',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'seed': 'seed',
@@ -70,6 +77,7 @@ class _$NarrativePostLinkReasonEnumSerializer
     'text': 'text',
     'link': 'link',
     'media': 'media',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

@@ -10,6 +10,8 @@ const AnalogResultMethodEnum _$analogResultMethodEnum_fused =
     const AnalogResultMethodEnum._('fused');
 const AnalogResultMethodEnum _$analogResultMethodEnum_featureOnly =
     const AnalogResultMethodEnum._('featureOnly');
+const AnalogResultMethodEnum _$analogResultMethodEnum_unknownDefaultOpenApi =
+    const AnalogResultMethodEnum._('unknownDefaultOpenApi');
 
 AnalogResultMethodEnum _$analogResultMethodEnumValueOf(String name) {
   switch (name) {
@@ -17,8 +19,10 @@ AnalogResultMethodEnum _$analogResultMethodEnumValueOf(String name) {
       return _$analogResultMethodEnum_fused;
     case 'featureOnly':
       return _$analogResultMethodEnum_featureOnly;
+    case 'unknownDefaultOpenApi':
+      return _$analogResultMethodEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$analogResultMethodEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -26,6 +30,7 @@ final BuiltSet<AnalogResultMethodEnum> _$analogResultMethodEnumValues =
     BuiltSet<AnalogResultMethodEnum>(const <AnalogResultMethodEnum>[
       _$analogResultMethodEnum_fused,
       _$analogResultMethodEnum_featureOnly,
+      _$analogResultMethodEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<AnalogResultMethodEnum> _$analogResultMethodEnumSerializer =
@@ -36,10 +41,12 @@ class _$AnalogResultMethodEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'fused': 'fused',
     'featureOnly': 'feature-only',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'fused': 'fused',
     'feature-only': 'featureOnly',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

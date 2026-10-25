@@ -283,6 +283,9 @@ class AnalystProfileScopeEventTypesEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'custom')
   static const AnalystProfileScopeEventTypesEnum custom =
       _$analystProfileScopeEventTypesEnum_custom;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const AnalystProfileScopeEventTypesEnum unknownDefaultOpenApi =
+      _$analystProfileScopeEventTypesEnum_unknownDefaultOpenApi;
 
   static Serializer<AnalystProfileScopeEventTypesEnum> get serializer =>
       _$analystProfileScopeEventTypesEnumSerializer;

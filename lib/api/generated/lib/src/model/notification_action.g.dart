@@ -8,6 +8,9 @@ part of 'notification_action.dart';
 
 const NotificationActionMethodEnum _$notificationActionMethodEnum_POST =
     const NotificationActionMethodEnum._('POST');
+const NotificationActionMethodEnum
+_$notificationActionMethodEnum_unknownDefaultOpenApi =
+    const NotificationActionMethodEnum._('unknownDefaultOpenApi');
 
 NotificationActionMethodEnum _$notificationActionMethodEnumValueOf(
   String name,
@@ -15,15 +18,19 @@ NotificationActionMethodEnum _$notificationActionMethodEnumValueOf(
   switch (name) {
     case 'POST':
       return _$notificationActionMethodEnum_POST;
+    case 'unknownDefaultOpenApi':
+      return _$notificationActionMethodEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$notificationActionMethodEnum_unknownDefaultOpenApi;
   }
 }
 
 final BuiltSet<NotificationActionMethodEnum>
-_$notificationActionMethodEnumValues = BuiltSet<NotificationActionMethodEnum>(
-  const <NotificationActionMethodEnum>[_$notificationActionMethodEnum_POST],
-);
+_$notificationActionMethodEnumValues =
+    BuiltSet<NotificationActionMethodEnum>(const <NotificationActionMethodEnum>[
+      _$notificationActionMethodEnum_POST,
+      _$notificationActionMethodEnum_unknownDefaultOpenApi,
+    ]);
 
 Serializer<NotificationActionMethodEnum>
 _$notificationActionMethodEnumSerializer =
@@ -33,9 +40,11 @@ class _$NotificationActionMethodEnumSerializer
     implements PrimitiveSerializer<NotificationActionMethodEnum> {
   static const Map<String, Object> _toWire = const <String, Object>{
     'POST': 'POST',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'POST': 'POST',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

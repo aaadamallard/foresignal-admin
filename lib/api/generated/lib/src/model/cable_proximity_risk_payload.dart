@@ -423,6 +423,9 @@ class CableProximityRiskPayloadStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'degraded-input')
   static const CableProximityRiskPayloadStatusEnum degradedInput =
       _$cableProximityRiskPayloadStatusEnum_degradedInput;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const CableProximityRiskPayloadStatusEnum unknownDefaultOpenApi =
+      _$cableProximityRiskPayloadStatusEnum_unknownDefaultOpenApi;
 
   static Serializer<CableProximityRiskPayloadStatusEnum> get serializer =>
       _$cableProximityRiskPayloadStatusEnumSerializer;

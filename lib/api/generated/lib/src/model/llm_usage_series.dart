@@ -189,6 +189,9 @@ class LlmUsageSeriesResolutionEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'day')
   static const LlmUsageSeriesResolutionEnum day =
       _$llmUsageSeriesResolutionEnum_day;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const LlmUsageSeriesResolutionEnum unknownDefaultOpenApi =
+      _$llmUsageSeriesResolutionEnum_unknownDefaultOpenApi;
 
   static Serializer<LlmUsageSeriesResolutionEnum> get serializer =>
       _$llmUsageSeriesResolutionEnumSerializer;

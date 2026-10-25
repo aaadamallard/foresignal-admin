@@ -20,6 +20,9 @@ const OwnTracksMessageTypeEnum _$ownTracksMessageTypeEnum_status =
     const OwnTracksMessageTypeEnum._('status');
 const OwnTracksMessageTypeEnum _$ownTracksMessageTypeEnum_encrypted =
     const OwnTracksMessageTypeEnum._('encrypted');
+const OwnTracksMessageTypeEnum
+_$ownTracksMessageTypeEnum_unknownDefaultOpenApi =
+    const OwnTracksMessageTypeEnum._('unknownDefaultOpenApi');
 
 OwnTracksMessageTypeEnum _$ownTracksMessageTypeEnumValueOf(String name) {
   switch (name) {
@@ -37,8 +40,10 @@ OwnTracksMessageTypeEnum _$ownTracksMessageTypeEnumValueOf(String name) {
       return _$ownTracksMessageTypeEnum_status;
     case 'encrypted':
       return _$ownTracksMessageTypeEnum_encrypted;
+    case 'unknownDefaultOpenApi':
+      return _$ownTracksMessageTypeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$ownTracksMessageTypeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -51,6 +56,7 @@ final BuiltSet<OwnTracksMessageTypeEnum> _$ownTracksMessageTypeEnumValues =
       _$ownTracksMessageTypeEnum_card,
       _$ownTracksMessageTypeEnum_status,
       _$ownTracksMessageTypeEnum_encrypted,
+      _$ownTracksMessageTypeEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<OwnTracksMessageTypeEnum> _$ownTracksMessageTypeEnumSerializer =
@@ -66,6 +72,7 @@ class _$OwnTracksMessageTypeEnumSerializer
     'card': 'card',
     'status': 'status',
     'encrypted': 'encrypted',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'location': 'location',
@@ -75,6 +82,7 @@ class _$OwnTracksMessageTypeEnumSerializer
     'card': 'card',
     'status': 'status',
     'encrypted': 'encrypted',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

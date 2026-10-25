@@ -267,7 +267,7 @@ class _ClaimsPanelState extends ConsumerState<ClaimsPanel> {
                             overflow: TextOverflow.ellipsis,
                           ),
                           Text(
-                            '${wireLabel(c.polarity)}${c.hedged ? ' · hedged' : ''} · ${c.type}',
+                            '${wireLabel(c.polarity, c, 'polarity')}${c.hedged ? ' · hedged' : ''} · ${c.type}',
                             style: TextStyle(color: muted, fontSize: 12),
                           ),
                         ],
@@ -294,8 +294,8 @@ class _ClaimsPanelState extends ConsumerState<ClaimsPanel> {
                         ? Text('—', style: TextStyle(color: muted))
                         : StatusLabel(
                             label:
-                                '${wireLabel(c.framingLabel!)} ${c.framingScore?.toStringAsFixed(2) ?? ''}',
-                            tone: framingTone(wireOf(c.framingLabel!)),
+                                '${wireLabel(c.framingLabel!, c, 'framingLabel')} ${c.framingScore?.toStringAsFixed(2) ?? ''}',
+                            tone: framingTone(wireOf(c.framingLabel!, c, 'framingLabel')),
                           ),
                   ),
                   TableColumnSpec<Claim>(
@@ -311,8 +311,8 @@ class _ClaimsPanelState extends ConsumerState<ClaimsPanel> {
                   TableColumnSpec<Claim>(
                     label: 'Status',
                     cell: (c) => StatusLabel(
-                      label: wireLabel(c.status),
-                      tone: vettingTone(wireOf(c.status)),
+                      label: wireLabel(c.status, c, 'status'),
+                      tone: vettingTone(wireOf(c.status, c, 'status')),
                     ),
                   ),
                   TableColumnSpec<Claim>(
@@ -367,11 +367,11 @@ class NarrativesPanel extends ConsumerWidget {
             cell: (n) =>
                 Text(n.platforms.map((p) => p.platform).join(', '), style: TextStyle(color: muted)),
           ),
-          TableColumnSpec<NarrativeSummary>(label: 'State', cell: (n) => Text(wireLabel(n.state))),
+          TableColumnSpec<NarrativeSummary>(label: 'State', cell: (n) => Text(wireLabel(n.state, n, 'state'))),
           TableColumnSpec<NarrativeSummary>(
             label: 'Status',
             cell: (n) =>
-                StatusLabel(label: wireLabel(n.status), tone: vettingTone(wireOf(n.status))),
+                StatusLabel(label: wireLabel(n.status, n, 'status'), tone: vettingTone(wireOf(n.status, n, 'status'))),
           ),
           TableColumnSpec<NarrativeSummary>(
             label: 'Posts · authors · groups',
@@ -422,7 +422,7 @@ class ComparisonsPanel extends ConsumerWidget {
           TableColumnSpec<SocialComparison>(
             label: 'Status',
             cell: (c) =>
-                StatusLabel(label: wireLabel(c.status), tone: vettingTone(wireOf(c.status))),
+                StatusLabel(label: wireLabel(c.status, c, 'status'), tone: vettingTone(wireOf(c.status, c, 'status'))),
           ),
           TableColumnSpec<SocialComparison>(
             label: 'Could see absence',
@@ -436,7 +436,7 @@ class ComparisonsPanel extends ConsumerWidget {
           ),
           TableColumnSpec<SocialComparison>(
             label: 'Found by',
-            cell: (c) => Text(wireLabel(c.foundBy)),
+            cell: (c) => Text(wireLabel(c.foundBy, c, 'foundBy')),
           ),
           TableColumnSpec<SocialComparison>(
             label: 'Evaluated',
@@ -467,7 +467,7 @@ class CuesPanel extends ConsumerWidget {
         columns: <TableColumnSpec<SocialCue>>[
           TableColumnSpec<SocialCue>(
             label: 'Trigger',
-            cell: (c) => Text(wireLabel(c.trigger.type)),
+            cell: (c) => Text(wireLabel(c.trigger.type, c.trigger, 'type')),
           ),
           TableColumnSpec<SocialCue>(
             label: 'Queries',
@@ -487,8 +487,8 @@ class CuesPanel extends ConsumerWidget {
           TableColumnSpec<SocialCue>(
             label: 'Status',
             cell: (c) => StatusLabel(
-              label: wireLabel(c.status),
-              tone: vettingTone(wireOf(c.status)),
+              label: wireLabel(c.status, c, 'status'),
+              tone: vettingTone(wireOf(c.status, c, 'status')),
               tooltip: c.statusReason,
             ),
           ),
@@ -554,7 +554,7 @@ class LeadTimesPanel extends ConsumerWidget {
               ),
               TableColumnSpec<LeadTimeStatsGroupsInner>(
                 label: 'Found by',
-                cell: (g) => Text(wireLabel(g.foundBy)),
+                cell: (g) => Text(wireLabel(g.foundBy, g, 'foundBy')),
               ),
               TableColumnSpec<LeadTimeStatsGroupsInner>(
                 label: 'Comparisons',
@@ -600,7 +600,7 @@ class PlatformsPanel extends ConsumerWidget {
         key: const Key('vetting.platforms'),
         rows: list,
         empty: 'No platforms.',
-        onTap: (p) => context.go(vettingPlatformPath(wireOf(p.id))),
+        onTap: (p) => context.go(vettingPlatformPath(wireOf(p.id, p, 'id'))),
         columns: <TableColumnSpec<SocialPlatform>>[
           TableColumnSpec<SocialPlatform>(
             label: 'Platform',
@@ -616,8 +616,8 @@ class PlatformsPanel extends ConsumerWidget {
           TableColumnSpec<SocialPlatform>(
             label: 'State',
             cell: (p) => StatusLabel(
-              label: wireLabel(p.state),
-              tone: vettingTone(wireOf(p.state)),
+              label: wireLabel(p.state, p, 'state'),
+              tone: vettingTone(wireOf(p.state, p, 'state')),
               tooltip: p.stateReason,
             ),
           ),
@@ -655,7 +655,7 @@ class PlatformsPanel extends ConsumerWidget {
                         spend,
                         Text(
                           reason,
-                          key: Key('vetting.platform.capReason.${wireOf(p.id)}'),
+                          key: Key('vetting.platform.capReason.${wireOf(p.id, p, 'id')}'),
                           style: TextStyle(color: muted, fontSize: 12),
                         ),
                       ],
@@ -665,9 +665,9 @@ class PlatformsPanel extends ConsumerWidget {
           TableColumnSpec<SocialPlatform>(
             label: 'Actions',
             cell: (p) => TonalButton(
-              key: Key('vetting.platform.${wireOf(p.id)}'),
+              key: Key('vetting.platform.${wireOf(p.id, p, 'id')}'),
               label: 'Configure',
-              onPressed: () => context.go(vettingPlatformPath(wireOf(p.id))),
+              onPressed: () => context.go(vettingPlatformPath(wireOf(p.id, p, 'id'))),
             ),
           ),
         ],

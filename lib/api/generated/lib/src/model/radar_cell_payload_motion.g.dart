@@ -9,6 +9,9 @@ part of 'radar_cell_payload_motion.dart';
 const RadarCellPayloadMotionMethodEnum
 _$radarCellPayloadMotionMethodEnum_centroidV1 =
     const RadarCellPayloadMotionMethodEnum._('centroidV1');
+const RadarCellPayloadMotionMethodEnum
+_$radarCellPayloadMotionMethodEnum_unknownDefaultOpenApi =
+    const RadarCellPayloadMotionMethodEnum._('unknownDefaultOpenApi');
 
 RadarCellPayloadMotionMethodEnum _$radarCellPayloadMotionMethodEnumValueOf(
   String name,
@@ -16,8 +19,10 @@ RadarCellPayloadMotionMethodEnum _$radarCellPayloadMotionMethodEnumValueOf(
   switch (name) {
     case 'centroidV1':
       return _$radarCellPayloadMotionMethodEnum_centroidV1;
+    case 'unknownDefaultOpenApi':
+      return _$radarCellPayloadMotionMethodEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$radarCellPayloadMotionMethodEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -26,6 +31,7 @@ _$radarCellPayloadMotionMethodEnumValues =
     BuiltSet<RadarCellPayloadMotionMethodEnum>(
       const <RadarCellPayloadMotionMethodEnum>[
         _$radarCellPayloadMotionMethodEnum_centroidV1,
+        _$radarCellPayloadMotionMethodEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -37,9 +43,11 @@ class _$RadarCellPayloadMotionMethodEnumSerializer
     implements PrimitiveSerializer<RadarCellPayloadMotionMethodEnum> {
   static const Map<String, Object> _toWire = const <String, Object>{
     'centroidV1': 'centroid-v1',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'centroid-v1': 'centroidV1',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

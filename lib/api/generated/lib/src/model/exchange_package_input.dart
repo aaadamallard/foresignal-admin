@@ -219,6 +219,9 @@ class ExchangePackageInputDeliverEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'file')
   static const ExchangePackageInputDeliverEnum file =
       _$exchangePackageInputDeliverEnum_file;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ExchangePackageInputDeliverEnum unknownDefaultOpenApi =
+      _$exchangePackageInputDeliverEnum_unknownDefaultOpenApi;
 
   static Serializer<ExchangePackageInputDeliverEnum> get serializer =>
       _$exchangePackageInputDeliverEnumSerializer;

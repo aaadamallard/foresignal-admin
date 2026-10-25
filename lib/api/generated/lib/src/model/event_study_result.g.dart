@@ -10,6 +10,9 @@ const EventStudyResultFrequencyEnum _$eventStudyResultFrequencyEnum_day =
     const EventStudyResultFrequencyEnum._('day');
 const EventStudyResultFrequencyEnum _$eventStudyResultFrequencyEnum_week =
     const EventStudyResultFrequencyEnum._('week');
+const EventStudyResultFrequencyEnum
+_$eventStudyResultFrequencyEnum_unknownDefaultOpenApi =
+    const EventStudyResultFrequencyEnum._('unknownDefaultOpenApi');
 
 EventStudyResultFrequencyEnum _$eventStudyResultFrequencyEnumValueOf(
   String name,
@@ -19,8 +22,10 @@ EventStudyResultFrequencyEnum _$eventStudyResultFrequencyEnumValueOf(
       return _$eventStudyResultFrequencyEnum_day;
     case 'week':
       return _$eventStudyResultFrequencyEnum_week;
+    case 'unknownDefaultOpenApi':
+      return _$eventStudyResultFrequencyEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$eventStudyResultFrequencyEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -29,6 +34,7 @@ _$eventStudyResultFrequencyEnumValues = BuiltSet<EventStudyResultFrequencyEnum>(
   const <EventStudyResultFrequencyEnum>[
     _$eventStudyResultFrequencyEnum_day,
     _$eventStudyResultFrequencyEnum_week,
+    _$eventStudyResultFrequencyEnum_unknownDefaultOpenApi,
   ],
 );
 
@@ -43,6 +49,9 @@ _$eventStudyResultTransformEnum_weeklyDifferenceStandardised =
 const EventStudyResultTransformEnum
 _$eventStudyResultTransformEnum_anscombeResidual =
     const EventStudyResultTransformEnum._('anscombeResidual');
+const EventStudyResultTransformEnum
+_$eventStudyResultTransformEnum_unknownDefaultOpenApi =
+    const EventStudyResultTransformEnum._('unknownDefaultOpenApi');
 
 EventStudyResultTransformEnum _$eventStudyResultTransformEnumValueOf(
   String name,
@@ -56,8 +65,10 @@ EventStudyResultTransformEnum _$eventStudyResultTransformEnumValueOf(
       return _$eventStudyResultTransformEnum_weeklyDifferenceStandardised;
     case 'anscombeResidual':
       return _$eventStudyResultTransformEnum_anscombeResidual;
+    case 'unknownDefaultOpenApi':
+      return _$eventStudyResultTransformEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$eventStudyResultTransformEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -68,6 +79,7 @@ _$eventStudyResultTransformEnumValues = BuiltSet<EventStudyResultTransformEnum>(
     _$eventStudyResultTransformEnum_logLevelStandardised,
     _$eventStudyResultTransformEnum_weeklyDifferenceStandardised,
     _$eventStudyResultTransformEnum_anscombeResidual,
+    _$eventStudyResultTransformEnum_unknownDefaultOpenApi,
   ],
 );
 
@@ -83,10 +95,12 @@ class _$EventStudyResultFrequencyEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'day': 'day',
     'week': 'week',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'day': 'day',
     'week': 'week',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -118,12 +132,14 @@ class _$EventStudyResultTransformEnumSerializer
     'logLevelStandardised': 'log-level-standardised',
     'weeklyDifferenceStandardised': 'weekly-difference-standardised',
     'anscombeResidual': 'anscombe-residual',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'log-return': 'logReturn',
     'log-level-standardised': 'logLevelStandardised',
     'weekly-difference-standardised': 'weeklyDifferenceStandardised',
     'anscombe-residual': 'anscombeResidual',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

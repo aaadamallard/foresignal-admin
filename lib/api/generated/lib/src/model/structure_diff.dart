@@ -430,6 +430,9 @@ class StructureDiffFormatEnum extends EnumClass {
   static const StructureDiffFormatEnum html = _$structureDiffFormatEnum_html;
   @BuiltValueEnumConst(wireName: r'text')
   static const StructureDiffFormatEnum text = _$structureDiffFormatEnum_text;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const StructureDiffFormatEnum unknownDefaultOpenApi =
+      _$structureDiffFormatEnum_unknownDefaultOpenApi;
 
   static Serializer<StructureDiffFormatEnum> get serializer =>
       _$structureDiffFormatEnumSerializer;

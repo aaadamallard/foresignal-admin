@@ -18,6 +18,8 @@ const EdpGeometryTypeEnum _$edpGeometryTypeEnum_polygon =
     const EdpGeometryTypeEnum._('polygon');
 const EdpGeometryTypeEnum _$edpGeometryTypeEnum_multiPolygon =
     const EdpGeometryTypeEnum._('multiPolygon');
+const EdpGeometryTypeEnum _$edpGeometryTypeEnum_unknownDefaultOpenApi =
+    const EdpGeometryTypeEnum._('unknownDefaultOpenApi');
 
 EdpGeometryTypeEnum _$edpGeometryTypeEnumValueOf(String name) {
   switch (name) {
@@ -33,8 +35,10 @@ EdpGeometryTypeEnum _$edpGeometryTypeEnumValueOf(String name) {
       return _$edpGeometryTypeEnum_polygon;
     case 'multiPolygon':
       return _$edpGeometryTypeEnum_multiPolygon;
+    case 'unknownDefaultOpenApi':
+      return _$edpGeometryTypeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$edpGeometryTypeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -46,6 +50,7 @@ final BuiltSet<EdpGeometryTypeEnum> _$edpGeometryTypeEnumValues =
       _$edpGeometryTypeEnum_multiLineString,
       _$edpGeometryTypeEnum_polygon,
       _$edpGeometryTypeEnum_multiPolygon,
+      _$edpGeometryTypeEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<EdpGeometryTypeEnum> _$edpGeometryTypeEnumSerializer =
@@ -60,6 +65,7 @@ class _$EdpGeometryTypeEnumSerializer
     'multiLineString': 'MultiLineString',
     'polygon': 'Polygon',
     'multiPolygon': 'MultiPolygon',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'Point': 'point',
@@ -68,6 +74,7 @@ class _$EdpGeometryTypeEnumSerializer
     'MultiLineString': 'multiLineString',
     'Polygon': 'polygon',
     'MultiPolygon': 'multiPolygon',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

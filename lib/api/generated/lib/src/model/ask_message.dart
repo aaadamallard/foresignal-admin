@@ -201,6 +201,9 @@ class AskMessageRoleEnum extends EnumClass {
   static const AskMessageRoleEnum user = _$askMessageRoleEnum_user;
   @BuiltValueEnumConst(wireName: r'assistant')
   static const AskMessageRoleEnum assistant = _$askMessageRoleEnum_assistant;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const AskMessageRoleEnum unknownDefaultOpenApi =
+      _$askMessageRoleEnum_unknownDefaultOpenApi;
 
   static Serializer<AskMessageRoleEnum> get serializer =>
       _$askMessageRoleEnumSerializer;

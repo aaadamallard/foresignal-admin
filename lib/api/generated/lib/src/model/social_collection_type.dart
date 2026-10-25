@@ -17,6 +17,9 @@ class SocialCollectionType extends EnumClass {
   static const SocialCollectionType paged = _$paged;
   @BuiltValueEnumConst(wireName: r'sampled')
   static const SocialCollectionType sampled = _$sampled;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const SocialCollectionType unknownDefaultOpenApi =
+      _$unknownDefaultOpenApi;
 
   static Serializer<SocialCollectionType> get serializer =>
       _$socialCollectionTypeSerializer;

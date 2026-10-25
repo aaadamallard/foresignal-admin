@@ -24,6 +24,9 @@ _$shareLinkCreatedTargetTypeEnum_workspace =
     const ShareLinkCreatedTargetTypeEnum._('workspace');
 const ShareLinkCreatedTargetTypeEnum _$shareLinkCreatedTargetTypeEnum_report =
     const ShareLinkCreatedTargetTypeEnum._('report');
+const ShareLinkCreatedTargetTypeEnum
+_$shareLinkCreatedTargetTypeEnum_unknownDefaultOpenApi =
+    const ShareLinkCreatedTargetTypeEnum._('unknownDefaultOpenApi');
 
 ShareLinkCreatedTargetTypeEnum _$shareLinkCreatedTargetTypeEnumValueOf(
   String name,
@@ -45,8 +48,10 @@ ShareLinkCreatedTargetTypeEnum _$shareLinkCreatedTargetTypeEnumValueOf(
       return _$shareLinkCreatedTargetTypeEnum_workspace;
     case 'report':
       return _$shareLinkCreatedTargetTypeEnum_report;
+    case 'unknownDefaultOpenApi':
+      return _$shareLinkCreatedTargetTypeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$shareLinkCreatedTargetTypeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -62,6 +67,7 @@ _$shareLinkCreatedTargetTypeEnumValues =
         _$shareLinkCreatedTargetTypeEnum_export_,
         _$shareLinkCreatedTargetTypeEnum_workspace,
         _$shareLinkCreatedTargetTypeEnum_report,
+        _$shareLinkCreatedTargetTypeEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -73,6 +79,9 @@ const ShareLinkCreatedStatusEnum _$shareLinkCreatedStatusEnum_revoked =
     const ShareLinkCreatedStatusEnum._('revoked');
 const ShareLinkCreatedStatusEnum _$shareLinkCreatedStatusEnum_exhausted =
     const ShareLinkCreatedStatusEnum._('exhausted');
+const ShareLinkCreatedStatusEnum
+_$shareLinkCreatedStatusEnum_unknownDefaultOpenApi =
+    const ShareLinkCreatedStatusEnum._('unknownDefaultOpenApi');
 
 ShareLinkCreatedStatusEnum _$shareLinkCreatedStatusEnumValueOf(String name) {
   switch (name) {
@@ -84,8 +93,10 @@ ShareLinkCreatedStatusEnum _$shareLinkCreatedStatusEnumValueOf(String name) {
       return _$shareLinkCreatedStatusEnum_revoked;
     case 'exhausted':
       return _$shareLinkCreatedStatusEnum_exhausted;
+    case 'unknownDefaultOpenApi':
+      return _$shareLinkCreatedStatusEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$shareLinkCreatedStatusEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -95,6 +106,7 @@ final BuiltSet<ShareLinkCreatedStatusEnum> _$shareLinkCreatedStatusEnumValues =
       _$shareLinkCreatedStatusEnum_expired,
       _$shareLinkCreatedStatusEnum_revoked,
       _$shareLinkCreatedStatusEnum_exhausted,
+      _$shareLinkCreatedStatusEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<ShareLinkCreatedTargetTypeEnum>
@@ -114,6 +126,7 @@ class _$ShareLinkCreatedTargetTypeEnumSerializer
     'export_': 'export',
     'workspace': 'workspace',
     'report': 'report',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'record': 'record',
@@ -124,6 +137,7 @@ class _$ShareLinkCreatedTargetTypeEnumSerializer
     'export': 'export_',
     'workspace': 'workspace',
     'report': 'report',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -155,12 +169,14 @@ class _$ShareLinkCreatedStatusEnumSerializer
     'expired': 'expired',
     'revoked': 'revoked',
     'exhausted': 'exhausted',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'active': 'active',
     'expired': 'expired',
     'revoked': 'revoked',
     'exhausted': 'exhausted',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

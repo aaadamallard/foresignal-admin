@@ -14,6 +14,9 @@ const InvestigationInputStatusEnum _$investigationInputStatusEnum_closed =
     const InvestigationInputStatusEnum._('closed');
 const InvestigationInputStatusEnum _$investigationInputStatusEnum_archived =
     const InvestigationInputStatusEnum._('archived');
+const InvestigationInputStatusEnum
+_$investigationInputStatusEnum_unknownDefaultOpenApi =
+    const InvestigationInputStatusEnum._('unknownDefaultOpenApi');
 
 InvestigationInputStatusEnum _$investigationInputStatusEnumValueOf(
   String name,
@@ -27,8 +30,10 @@ InvestigationInputStatusEnum _$investigationInputStatusEnumValueOf(
       return _$investigationInputStatusEnum_closed;
     case 'archived':
       return _$investigationInputStatusEnum_archived;
+    case 'unknownDefaultOpenApi':
+      return _$investigationInputStatusEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$investigationInputStatusEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -39,6 +44,7 @@ _$investigationInputStatusEnumValues =
       _$investigationInputStatusEnum_active,
       _$investigationInputStatusEnum_closed,
       _$investigationInputStatusEnum_archived,
+      _$investigationInputStatusEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<InvestigationInputStatusEnum>
@@ -52,12 +58,14 @@ class _$InvestigationInputStatusEnumSerializer
     'active': 'active',
     'closed': 'closed',
     'archived': 'archived',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'open': 'open',
     'active': 'active',
     'closed': 'closed',
     'archived': 'archived',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

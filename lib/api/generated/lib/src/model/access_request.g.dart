@@ -10,6 +10,9 @@ const AccessRequestDirectionEnum _$accessRequestDirectionEnum_incoming =
     const AccessRequestDirectionEnum._('incoming');
 const AccessRequestDirectionEnum _$accessRequestDirectionEnum_outgoing =
     const AccessRequestDirectionEnum._('outgoing');
+const AccessRequestDirectionEnum
+_$accessRequestDirectionEnum_unknownDefaultOpenApi =
+    const AccessRequestDirectionEnum._('unknownDefaultOpenApi');
 
 AccessRequestDirectionEnum _$accessRequestDirectionEnumValueOf(String name) {
   switch (name) {
@@ -17,8 +20,10 @@ AccessRequestDirectionEnum _$accessRequestDirectionEnumValueOf(String name) {
       return _$accessRequestDirectionEnum_incoming;
     case 'outgoing':
       return _$accessRequestDirectionEnum_outgoing;
+    case 'unknownDefaultOpenApi':
+      return _$accessRequestDirectionEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$accessRequestDirectionEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -26,6 +31,7 @@ final BuiltSet<AccessRequestDirectionEnum> _$accessRequestDirectionEnumValues =
     BuiltSet<AccessRequestDirectionEnum>(const <AccessRequestDirectionEnum>[
       _$accessRequestDirectionEnum_incoming,
       _$accessRequestDirectionEnum_outgoing,
+      _$accessRequestDirectionEnum_unknownDefaultOpenApi,
     ]);
 
 const AccessRequestStatusEnum _$accessRequestStatusEnum_pending =
@@ -34,6 +40,8 @@ const AccessRequestStatusEnum _$accessRequestStatusEnum_granted =
     const AccessRequestStatusEnum._('granted');
 const AccessRequestStatusEnum _$accessRequestStatusEnum_declined =
     const AccessRequestStatusEnum._('declined');
+const AccessRequestStatusEnum _$accessRequestStatusEnum_unknownDefaultOpenApi =
+    const AccessRequestStatusEnum._('unknownDefaultOpenApi');
 
 AccessRequestStatusEnum _$accessRequestStatusEnumValueOf(String name) {
   switch (name) {
@@ -43,8 +51,10 @@ AccessRequestStatusEnum _$accessRequestStatusEnumValueOf(String name) {
       return _$accessRequestStatusEnum_granted;
     case 'declined':
       return _$accessRequestStatusEnum_declined;
+    case 'unknownDefaultOpenApi':
+      return _$accessRequestStatusEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$accessRequestStatusEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -53,6 +63,7 @@ final BuiltSet<AccessRequestStatusEnum> _$accessRequestStatusEnumValues =
       _$accessRequestStatusEnum_pending,
       _$accessRequestStatusEnum_granted,
       _$accessRequestStatusEnum_declined,
+      _$accessRequestStatusEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<AccessRequestDirectionEnum> _$accessRequestDirectionEnumSerializer =
@@ -65,10 +76,12 @@ class _$AccessRequestDirectionEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'incoming': 'incoming',
     'outgoing': 'outgoing',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'incoming': 'incoming',
     'outgoing': 'outgoing',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -99,11 +112,13 @@ class _$AccessRequestStatusEnumSerializer
     'pending': 'pending',
     'granted': 'granted',
     'declined': 'declined',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'pending': 'pending',
     'granted': 'granted',
     'declined': 'declined',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

@@ -9,6 +9,9 @@ part of 'forecast_numeric_calibration.dart';
 const ForecastNumericCalibrationTypeEnum
 _$forecastNumericCalibrationTypeEnum_numeric =
     const ForecastNumericCalibrationTypeEnum._('numeric');
+const ForecastNumericCalibrationTypeEnum
+_$forecastNumericCalibrationTypeEnum_unknownDefaultOpenApi =
+    const ForecastNumericCalibrationTypeEnum._('unknownDefaultOpenApi');
 
 ForecastNumericCalibrationTypeEnum _$forecastNumericCalibrationTypeEnumValueOf(
   String name,
@@ -16,8 +19,10 @@ ForecastNumericCalibrationTypeEnum _$forecastNumericCalibrationTypeEnumValueOf(
   switch (name) {
     case 'numeric':
       return _$forecastNumericCalibrationTypeEnum_numeric;
+    case 'unknownDefaultOpenApi':
+      return _$forecastNumericCalibrationTypeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$forecastNumericCalibrationTypeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -26,6 +31,7 @@ _$forecastNumericCalibrationTypeEnumValues =
     BuiltSet<ForecastNumericCalibrationTypeEnum>(
       const <ForecastNumericCalibrationTypeEnum>[
         _$forecastNumericCalibrationTypeEnum_numeric,
+        _$forecastNumericCalibrationTypeEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -35,6 +41,9 @@ _$forecastNumericCalibrationLabelEnum_ok =
 const ForecastNumericCalibrationLabelEnum
 _$forecastNumericCalibrationLabelEnum_insufficient =
     const ForecastNumericCalibrationLabelEnum._('insufficient');
+const ForecastNumericCalibrationLabelEnum
+_$forecastNumericCalibrationLabelEnum_unknownDefaultOpenApi =
+    const ForecastNumericCalibrationLabelEnum._('unknownDefaultOpenApi');
 
 ForecastNumericCalibrationLabelEnum
 _$forecastNumericCalibrationLabelEnumValueOf(String name) {
@@ -43,8 +52,10 @@ _$forecastNumericCalibrationLabelEnumValueOf(String name) {
       return _$forecastNumericCalibrationLabelEnum_ok;
     case 'insufficient':
       return _$forecastNumericCalibrationLabelEnum_insufficient;
+    case 'unknownDefaultOpenApi':
+      return _$forecastNumericCalibrationLabelEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$forecastNumericCalibrationLabelEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -54,6 +65,7 @@ _$forecastNumericCalibrationLabelEnumValues =
       const <ForecastNumericCalibrationLabelEnum>[
         _$forecastNumericCalibrationLabelEnum_ok,
         _$forecastNumericCalibrationLabelEnum_insufficient,
+        _$forecastNumericCalibrationLabelEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -68,9 +80,11 @@ class _$ForecastNumericCalibrationTypeEnumSerializer
     implements PrimitiveSerializer<ForecastNumericCalibrationTypeEnum> {
   static const Map<String, Object> _toWire = const <String, Object>{
     'numeric': 'numeric',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'numeric': 'numeric',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -100,10 +114,12 @@ class _$ForecastNumericCalibrationLabelEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'ok': 'ok',
     'insufficient': 'insufficient',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'ok': 'ok',
     'insufficient': 'insufficient',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

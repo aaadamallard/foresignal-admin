@@ -318,6 +318,9 @@ class TagNamespaceEnum extends EnumClass {
   static const TagNamespaceEnum personal = _$tagNamespaceEnum_personal;
   @BuiltValueEnumConst(wireName: r'shared')
   static const TagNamespaceEnum shared = _$tagNamespaceEnum_shared;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const TagNamespaceEnum unknownDefaultOpenApi =
+      _$tagNamespaceEnum_unknownDefaultOpenApi;
 
   static Serializer<TagNamespaceEnum> get serializer =>
       _$tagNamespaceEnumSerializer;

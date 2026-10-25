@@ -266,6 +266,9 @@ class ProductTemporalTypeEnum extends EnumClass {
       _$productTemporalTypeEnum_forecast;
   @BuiltValueEnumConst(wireName: r'pass')
   static const ProductTemporalTypeEnum pass = _$productTemporalTypeEnum_pass;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ProductTemporalTypeEnum unknownDefaultOpenApi =
+      _$productTemporalTypeEnum_unknownDefaultOpenApi;
 
   static Serializer<ProductTemporalTypeEnum> get serializer =>
       _$productTemporalTypeEnumSerializer;

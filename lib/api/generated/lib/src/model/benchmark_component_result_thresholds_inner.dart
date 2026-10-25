@@ -285,6 +285,10 @@ class BenchmarkComponentResultThresholdsInnerComparatorEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'within')
   static const BenchmarkComponentResultThresholdsInnerComparatorEnum within =
       _$benchmarkComponentResultThresholdsInnerComparatorEnum_within;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const BenchmarkComponentResultThresholdsInnerComparatorEnum
+  unknownDefaultOpenApi =
+      _$benchmarkComponentResultThresholdsInnerComparatorEnum_unknownDefaultOpenApi;
 
   static Serializer<BenchmarkComponentResultThresholdsInnerComparatorEnum>
   get serializer =>
@@ -311,6 +315,10 @@ class BenchmarkComponentResultThresholdsInnerStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'fail')
   static const BenchmarkComponentResultThresholdsInnerStatusEnum fail =
       _$benchmarkComponentResultThresholdsInnerStatusEnum_fail;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const BenchmarkComponentResultThresholdsInnerStatusEnum
+  unknownDefaultOpenApi =
+      _$benchmarkComponentResultThresholdsInnerStatusEnum_unknownDefaultOpenApi;
 
   static Serializer<BenchmarkComponentResultThresholdsInnerStatusEnum>
   get serializer =>

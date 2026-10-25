@@ -17,6 +17,9 @@ _$derivedPayloadCommonStatusEnum_noCoverage =
 const DerivedPayloadCommonStatusEnum
 _$derivedPayloadCommonStatusEnum_degradedInput =
     const DerivedPayloadCommonStatusEnum._('degradedInput');
+const DerivedPayloadCommonStatusEnum
+_$derivedPayloadCommonStatusEnum_unknownDefaultOpenApi =
+    const DerivedPayloadCommonStatusEnum._('unknownDefaultOpenApi');
 
 DerivedPayloadCommonStatusEnum _$derivedPayloadCommonStatusEnumValueOf(
   String name,
@@ -30,8 +33,10 @@ DerivedPayloadCommonStatusEnum _$derivedPayloadCommonStatusEnumValueOf(
       return _$derivedPayloadCommonStatusEnum_noCoverage;
     case 'degradedInput':
       return _$derivedPayloadCommonStatusEnum_degradedInput;
+    case 'unknownDefaultOpenApi':
+      return _$derivedPayloadCommonStatusEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$derivedPayloadCommonStatusEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -43,6 +48,7 @@ _$derivedPayloadCommonStatusEnumValues =
         _$derivedPayloadCommonStatusEnum_insufficientData,
         _$derivedPayloadCommonStatusEnum_noCoverage,
         _$derivedPayloadCommonStatusEnum_degradedInput,
+        _$derivedPayloadCommonStatusEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -57,12 +63,14 @@ class _$DerivedPayloadCommonStatusEnumSerializer
     'insufficientData': 'insufficient-data',
     'noCoverage': 'no-coverage',
     'degradedInput': 'degraded-input',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'ok': 'ok',
     'insufficient-data': 'insufficientData',
     'no-coverage': 'noCoverage',
     'degraded-input': 'degradedInput',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

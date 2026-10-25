@@ -163,6 +163,9 @@ class EdpSearchAuthEnum extends EnumClass {
   static const EdpSearchAuthEnum header = _$edpSearchAuthEnum_header;
   @BuiltValueEnumConst(wireName: r'basic')
   static const EdpSearchAuthEnum basic = _$edpSearchAuthEnum_basic;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const EdpSearchAuthEnum unknownDefaultOpenApi =
+      _$edpSearchAuthEnum_unknownDefaultOpenApi;
 
   static Serializer<EdpSearchAuthEnum> get serializer =>
       _$edpSearchAuthEnumSerializer;

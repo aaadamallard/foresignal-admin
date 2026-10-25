@@ -186,6 +186,9 @@ class SituationBriefStatusStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'running')
   static const SituationBriefStatusStatusEnum running =
       _$situationBriefStatusStatusEnum_running;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const SituationBriefStatusStatusEnum unknownDefaultOpenApi =
+      _$situationBriefStatusStatusEnum_unknownDefaultOpenApi;
 
   static Serializer<SituationBriefStatusStatusEnum> get serializer =>
       _$situationBriefStatusStatusEnumSerializer;

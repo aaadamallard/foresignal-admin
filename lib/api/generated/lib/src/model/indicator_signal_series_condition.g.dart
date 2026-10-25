@@ -18,6 +18,9 @@ _$indicatorSignalSeriesConditionOpEnum_lt =
 const IndicatorSignalSeriesConditionOpEnum
 _$indicatorSignalSeriesConditionOpEnum_lte =
     const IndicatorSignalSeriesConditionOpEnum._('lte');
+const IndicatorSignalSeriesConditionOpEnum
+_$indicatorSignalSeriesConditionOpEnum_unknownDefaultOpenApi =
+    const IndicatorSignalSeriesConditionOpEnum._('unknownDefaultOpenApi');
 
 IndicatorSignalSeriesConditionOpEnum
 _$indicatorSignalSeriesConditionOpEnumValueOf(String name) {
@@ -30,8 +33,10 @@ _$indicatorSignalSeriesConditionOpEnumValueOf(String name) {
       return _$indicatorSignalSeriesConditionOpEnum_lt;
     case 'lte':
       return _$indicatorSignalSeriesConditionOpEnum_lte;
+    case 'unknownDefaultOpenApi':
+      return _$indicatorSignalSeriesConditionOpEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$indicatorSignalSeriesConditionOpEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -43,6 +48,7 @@ _$indicatorSignalSeriesConditionOpEnumValues =
         _$indicatorSignalSeriesConditionOpEnum_gte,
         _$indicatorSignalSeriesConditionOpEnum_lt,
         _$indicatorSignalSeriesConditionOpEnum_lte,
+        _$indicatorSignalSeriesConditionOpEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -57,12 +63,14 @@ class _$IndicatorSignalSeriesConditionOpEnumSerializer
     'gte': 'gte',
     'lt': 'lt',
     'lte': 'lte',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'gt': 'gt',
     'gte': 'gte',
     'lt': 'lt',
     'lte': 'lte',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

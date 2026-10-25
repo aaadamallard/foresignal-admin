@@ -309,6 +309,9 @@ class ImpactProjectionEventHazardTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'storm-cell')
   static const ImpactProjectionEventHazardTypeEnum stormCell =
       _$impactProjectionEventHazardTypeEnum_stormCell;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ImpactProjectionEventHazardTypeEnum unknownDefaultOpenApi =
+      _$impactProjectionEventHazardTypeEnum_unknownDefaultOpenApi;
 
   static Serializer<ImpactProjectionEventHazardTypeEnum> get serializer =>
       _$impactProjectionEventHazardTypeEnumSerializer;

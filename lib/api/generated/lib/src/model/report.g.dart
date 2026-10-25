@@ -18,6 +18,8 @@ const ReportStatusEnum _$reportStatusEnum_published = const ReportStatusEnum._(
 const ReportStatusEnum _$reportStatusEnum_retracted = const ReportStatusEnum._(
   'retracted',
 );
+const ReportStatusEnum _$reportStatusEnum_unknownDefaultOpenApi =
+    const ReportStatusEnum._('unknownDefaultOpenApi');
 
 ReportStatusEnum _$reportStatusEnumValueOf(String name) {
   switch (name) {
@@ -29,8 +31,10 @@ ReportStatusEnum _$reportStatusEnumValueOf(String name) {
       return _$reportStatusEnum_published;
     case 'retracted':
       return _$reportStatusEnum_retracted;
+    case 'unknownDefaultOpenApi':
+      return _$reportStatusEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$reportStatusEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -40,6 +44,7 @@ final BuiltSet<ReportStatusEnum> _$reportStatusEnumValues =
       _$reportStatusEnum_review,
       _$reportStatusEnum_published,
       _$reportStatusEnum_retracted,
+      _$reportStatusEnum_unknownDefaultOpenApi,
     ]);
 
 const ReportTemplateEnum _$reportTemplateEnum_situationBrief =
@@ -52,6 +57,8 @@ const ReportTemplateEnum _$reportTemplateEnum_weeklyAssessment =
     const ReportTemplateEnum._('weeklyAssessment');
 const ReportTemplateEnum _$reportTemplateEnum_custom =
     const ReportTemplateEnum._('custom');
+const ReportTemplateEnum _$reportTemplateEnum_unknownDefaultOpenApi =
+    const ReportTemplateEnum._('unknownDefaultOpenApi');
 
 ReportTemplateEnum _$reportTemplateEnumValueOf(String name) {
   switch (name) {
@@ -65,8 +72,10 @@ ReportTemplateEnum _$reportTemplateEnumValueOf(String name) {
       return _$reportTemplateEnum_weeklyAssessment;
     case 'custom':
       return _$reportTemplateEnum_custom;
+    case 'unknownDefaultOpenApi':
+      return _$reportTemplateEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$reportTemplateEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -77,6 +86,7 @@ final BuiltSet<ReportTemplateEnum> _$reportTemplateEnumValues =
       _$reportTemplateEnum_chronicleRecap,
       _$reportTemplateEnum_weeklyAssessment,
       _$reportTemplateEnum_custom,
+      _$reportTemplateEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<ReportStatusEnum> _$reportStatusEnumSerializer =
@@ -91,12 +101,14 @@ class _$ReportStatusEnumSerializer
     'review': 'review',
     'published': 'published',
     'retracted': 'retracted',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'draft': 'draft',
     'review': 'review',
     'published': 'published',
     'retracted': 'retracted',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -129,6 +141,7 @@ class _$ReportTemplateEnumSerializer
     'chronicleRecap': 'chronicle-recap',
     'weeklyAssessment': 'weekly-assessment',
     'custom': 'custom',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'situation-brief': 'situationBrief',
@@ -136,6 +149,7 @@ class _$ReportTemplateEnumSerializer
     'chronicle-recap': 'chronicleRecap',
     'weekly-assessment': 'weeklyAssessment',
     'custom': 'custom',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

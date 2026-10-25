@@ -12,6 +12,8 @@ const SystemInfoStatusEnum _$systemInfoStatusEnum_degraded =
     const SystemInfoStatusEnum._('degraded');
 const SystemInfoStatusEnum _$systemInfoStatusEnum_down =
     const SystemInfoStatusEnum._('down');
+const SystemInfoStatusEnum _$systemInfoStatusEnum_unknownDefaultOpenApi =
+    const SystemInfoStatusEnum._('unknownDefaultOpenApi');
 
 SystemInfoStatusEnum _$systemInfoStatusEnumValueOf(String name) {
   switch (name) {
@@ -21,8 +23,10 @@ SystemInfoStatusEnum _$systemInfoStatusEnumValueOf(String name) {
       return _$systemInfoStatusEnum_degraded;
     case 'down':
       return _$systemInfoStatusEnum_down;
+    case 'unknownDefaultOpenApi':
+      return _$systemInfoStatusEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$systemInfoStatusEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -31,6 +35,7 @@ final BuiltSet<SystemInfoStatusEnum> _$systemInfoStatusEnumValues =
       _$systemInfoStatusEnum_ok,
       _$systemInfoStatusEnum_degraded,
       _$systemInfoStatusEnum_down,
+      _$systemInfoStatusEnum_unknownDefaultOpenApi,
     ]);
 
 const SystemInfoModeEnum _$systemInfoModeEnum_full = const SystemInfoModeEnum._(
@@ -39,6 +44,8 @@ const SystemInfoModeEnum _$systemInfoModeEnum_full = const SystemInfoModeEnum._(
 const SystemInfoModeEnum _$systemInfoModeEnum_edge = const SystemInfoModeEnum._(
   'edge',
 );
+const SystemInfoModeEnum _$systemInfoModeEnum_unknownDefaultOpenApi =
+    const SystemInfoModeEnum._('unknownDefaultOpenApi');
 
 SystemInfoModeEnum _$systemInfoModeEnumValueOf(String name) {
   switch (name) {
@@ -46,8 +53,10 @@ SystemInfoModeEnum _$systemInfoModeEnumValueOf(String name) {
       return _$systemInfoModeEnum_full;
     case 'edge':
       return _$systemInfoModeEnum_edge;
+    case 'unknownDefaultOpenApi':
+      return _$systemInfoModeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$systemInfoModeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -55,6 +64,7 @@ final BuiltSet<SystemInfoModeEnum> _$systemInfoModeEnumValues =
     BuiltSet<SystemInfoModeEnum>(const <SystemInfoModeEnum>[
       _$systemInfoModeEnum_full,
       _$systemInfoModeEnum_edge,
+      _$systemInfoModeEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<SystemInfoStatusEnum> _$systemInfoStatusEnumSerializer =
@@ -68,11 +78,13 @@ class _$SystemInfoStatusEnumSerializer
     'ok': 'ok',
     'degraded': 'degraded',
     'down': 'down',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'ok': 'ok',
     'degraded': 'degraded',
     'down': 'down',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -102,10 +114,12 @@ class _$SystemInfoModeEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'full': 'full',
     'edge': 'edge',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'full': 'full',
     'edge': 'edge',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

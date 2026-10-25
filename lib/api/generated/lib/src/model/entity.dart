@@ -381,6 +381,9 @@ class EntityStatusEnum extends EnumClass {
   static const EntityStatusEnum ACTIVE = _$entityStatusEnum_ACTIVE;
   @BuiltValueEnumConst(wireName: r'MERGED')
   static const EntityStatusEnum MERGED = _$entityStatusEnum_MERGED;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const EntityStatusEnum unknownDefaultOpenApi =
+      _$entityStatusEnum_unknownDefaultOpenApi;
 
   static Serializer<EntityStatusEnum> get serializer =>
       _$entityStatusEnumSerializer;

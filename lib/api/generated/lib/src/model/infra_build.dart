@@ -321,6 +321,9 @@ class InfraBuildStatusEnum extends EnumClass {
   static const InfraBuildStatusEnum done = _$infraBuildStatusEnum_done;
   @BuiltValueEnumConst(wireName: r'failed')
   static const InfraBuildStatusEnum failed = _$infraBuildStatusEnum_failed;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const InfraBuildStatusEnum unknownDefaultOpenApi =
+      _$infraBuildStatusEnum_unknownDefaultOpenApi;
 
   static Serializer<InfraBuildStatusEnum> get serializer =>
       _$infraBuildStatusEnumSerializer;

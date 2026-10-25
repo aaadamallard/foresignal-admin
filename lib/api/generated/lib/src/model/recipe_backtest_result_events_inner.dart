@@ -253,6 +253,9 @@ class RecipeBacktestResultEventsInnerTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'custom')
   static const RecipeBacktestResultEventsInnerTypeEnum custom =
       _$recipeBacktestResultEventsInnerTypeEnum_custom;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const RecipeBacktestResultEventsInnerTypeEnum unknownDefaultOpenApi =
+      _$recipeBacktestResultEventsInnerTypeEnum_unknownDefaultOpenApi;
 
   static Serializer<RecipeBacktestResultEventsInnerTypeEnum> get serializer =>
       _$recipeBacktestResultEventsInnerTypeEnumSerializer;
@@ -278,6 +281,10 @@ class RecipeBacktestResultEventsInnerEvidenceQualityEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'insufficient')
   static const RecipeBacktestResultEventsInnerEvidenceQualityEnum insufficient =
       _$recipeBacktestResultEventsInnerEvidenceQualityEnum_insufficient;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const RecipeBacktestResultEventsInnerEvidenceQualityEnum
+  unknownDefaultOpenApi =
+      _$recipeBacktestResultEventsInnerEvidenceQualityEnum_unknownDefaultOpenApi;
 
   static Serializer<RecipeBacktestResultEventsInnerEvidenceQualityEnum>
   get serializer =>

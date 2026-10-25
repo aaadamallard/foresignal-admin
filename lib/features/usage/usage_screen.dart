@@ -341,7 +341,7 @@ class _BudgetsPanelState extends ConsumerState<BudgetsPanel> {
             rows: SourceBudgetRow.rank(health.values, names),
             platformCaps: <String, num>{
               for (final p in ref.watch(socialPlatformsProvider).value ?? const <SocialPlatform>[])
-                wireOf(p.id): ?p.spend?.monthlyCapUsd,
+                wireOf(p.id, p, 'id'): ?p.spend?.monthlyCapUsd,
             },
           ),
         ),

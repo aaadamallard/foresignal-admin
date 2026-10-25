@@ -335,6 +335,9 @@ class MilNavalCooccurrencePayloadStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'degraded-input')
   static const MilNavalCooccurrencePayloadStatusEnum degradedInput =
       _$milNavalCooccurrencePayloadStatusEnum_degradedInput;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const MilNavalCooccurrencePayloadStatusEnum unknownDefaultOpenApi =
+      _$milNavalCooccurrencePayloadStatusEnum_unknownDefaultOpenApi;
 
   static Serializer<MilNavalCooccurrencePayloadStatusEnum> get serializer =>
       _$milNavalCooccurrencePayloadStatusEnumSerializer;

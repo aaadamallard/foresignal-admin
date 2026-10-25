@@ -434,6 +434,9 @@ class OwnTracksMessageTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'encrypted')
   static const OwnTracksMessageTypeEnum encrypted =
       _$ownTracksMessageTypeEnum_encrypted;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const OwnTracksMessageTypeEnum unknownDefaultOpenApi =
+      _$ownTracksMessageTypeEnum_unknownDefaultOpenApi;
 
   static Serializer<OwnTracksMessageTypeEnum> get serializer =>
       _$ownTracksMessageTypeEnumSerializer;

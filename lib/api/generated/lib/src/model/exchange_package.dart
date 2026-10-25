@@ -321,6 +321,9 @@ class ExchangePackageStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'failed')
   static const ExchangePackageStatusEnum failed =
       _$exchangePackageStatusEnum_failed;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ExchangePackageStatusEnum unknownDefaultOpenApi =
+      _$exchangePackageStatusEnum_unknownDefaultOpenApi;
 
   static Serializer<ExchangePackageStatusEnum> get serializer =>
       _$exchangePackageStatusEnumSerializer;

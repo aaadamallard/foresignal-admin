@@ -195,6 +195,9 @@ class ChronicleExternalStreamSelectorTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'external-stream')
   static const ChronicleExternalStreamSelectorTypeEnum externalStream =
       _$chronicleExternalStreamSelectorTypeEnum_externalStream;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ChronicleExternalStreamSelectorTypeEnum unknownDefaultOpenApi =
+      _$chronicleExternalStreamSelectorTypeEnum_unknownDefaultOpenApi;
 
   static Serializer<ChronicleExternalStreamSelectorTypeEnum> get serializer =>
       _$chronicleExternalStreamSelectorTypeEnumSerializer;

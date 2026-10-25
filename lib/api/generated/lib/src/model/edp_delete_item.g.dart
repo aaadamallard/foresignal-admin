@@ -8,19 +8,24 @@ part of 'edp_delete_item.dart';
 
 const EdpDeleteItemTypeEnum _$edpDeleteItemTypeEnum_delete =
     const EdpDeleteItemTypeEnum._('delete');
+const EdpDeleteItemTypeEnum _$edpDeleteItemTypeEnum_unknownDefaultOpenApi =
+    const EdpDeleteItemTypeEnum._('unknownDefaultOpenApi');
 
 EdpDeleteItemTypeEnum _$edpDeleteItemTypeEnumValueOf(String name) {
   switch (name) {
     case 'delete':
       return _$edpDeleteItemTypeEnum_delete;
+    case 'unknownDefaultOpenApi':
+      return _$edpDeleteItemTypeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$edpDeleteItemTypeEnum_unknownDefaultOpenApi;
   }
 }
 
 final BuiltSet<EdpDeleteItemTypeEnum> _$edpDeleteItemTypeEnumValues =
     BuiltSet<EdpDeleteItemTypeEnum>(const <EdpDeleteItemTypeEnum>[
       _$edpDeleteItemTypeEnum_delete,
+      _$edpDeleteItemTypeEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<EdpDeleteItemTypeEnum> _$edpDeleteItemTypeEnumSerializer =
@@ -30,9 +35,11 @@ class _$EdpDeleteItemTypeEnumSerializer
     implements PrimitiveSerializer<EdpDeleteItemTypeEnum> {
   static const Map<String, Object> _toWire = const <String, Object>{
     'delete': 'delete',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'delete': 'delete',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

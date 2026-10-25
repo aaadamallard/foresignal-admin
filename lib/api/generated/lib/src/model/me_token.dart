@@ -197,6 +197,9 @@ class MeTokenScopeEnum extends EnumClass {
   static const MeTokenScopeEnum agent = _$meTokenScopeEnum_agent;
   @BuiltValueEnumConst(wireName: r'admin')
   static const MeTokenScopeEnum admin = _$meTokenScopeEnum_admin;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const MeTokenScopeEnum unknownDefaultOpenApi =
+      _$meTokenScopeEnum_unknownDefaultOpenApi;
 
   static Serializer<MeTokenScopeEnum> get serializer =>
       _$meTokenScopeEnumSerializer;

@@ -21,6 +21,11 @@ _$seriesForecastModelBacktestResultsInnerMethodEnum_nbGlm =
 const SeriesForecastModelBacktestResultsInnerMethodEnum
 _$seriesForecastModelBacktestResultsInnerMethodEnum_dampedTrend =
     const SeriesForecastModelBacktestResultsInnerMethodEnum._('dampedTrend');
+const SeriesForecastModelBacktestResultsInnerMethodEnum
+_$seriesForecastModelBacktestResultsInnerMethodEnum_unknownDefaultOpenApi =
+    const SeriesForecastModelBacktestResultsInnerMethodEnum._(
+      'unknownDefaultOpenApi',
+    );
 
 SeriesForecastModelBacktestResultsInnerMethodEnum
 _$seriesForecastModelBacktestResultsInnerMethodEnumValueOf(String name) {
@@ -35,22 +40,25 @@ _$seriesForecastModelBacktestResultsInnerMethodEnumValueOf(String name) {
       return _$seriesForecastModelBacktestResultsInnerMethodEnum_nbGlm;
     case 'dampedTrend':
       return _$seriesForecastModelBacktestResultsInnerMethodEnum_dampedTrend;
+    case 'unknownDefaultOpenApi':
+      return _$seriesForecastModelBacktestResultsInnerMethodEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$seriesForecastModelBacktestResultsInnerMethodEnum_unknownDefaultOpenApi;
   }
 }
 
 final BuiltSet<SeriesForecastModelBacktestResultsInnerMethodEnum>
 _$seriesForecastModelBacktestResultsInnerMethodEnumValues =
-    BuiltSet<SeriesForecastModelBacktestResultsInnerMethodEnum>(
-      const <SeriesForecastModelBacktestResultsInnerMethodEnum>[
-        _$seriesForecastModelBacktestResultsInnerMethodEnum_seasonalNaive,
-        _$seriesForecastModelBacktestResultsInnerMethodEnum_etsAnn,
-        _$seriesForecastModelBacktestResultsInnerMethodEnum_etsAaa,
-        _$seriesForecastModelBacktestResultsInnerMethodEnum_nbGlm,
-        _$seriesForecastModelBacktestResultsInnerMethodEnum_dampedTrend,
-      ],
-    );
+    BuiltSet<SeriesForecastModelBacktestResultsInnerMethodEnum>(const <
+      SeriesForecastModelBacktestResultsInnerMethodEnum
+    >[
+      _$seriesForecastModelBacktestResultsInnerMethodEnum_seasonalNaive,
+      _$seriesForecastModelBacktestResultsInnerMethodEnum_etsAnn,
+      _$seriesForecastModelBacktestResultsInnerMethodEnum_etsAaa,
+      _$seriesForecastModelBacktestResultsInnerMethodEnum_nbGlm,
+      _$seriesForecastModelBacktestResultsInnerMethodEnum_dampedTrend,
+      _$seriesForecastModelBacktestResultsInnerMethodEnum_unknownDefaultOpenApi,
+    ]);
 
 Serializer<SeriesForecastModelBacktestResultsInnerMethodEnum>
 _$seriesForecastModelBacktestResultsInnerMethodEnumSerializer =
@@ -65,6 +73,7 @@ class _$SeriesForecastModelBacktestResultsInnerMethodEnumSerializer
     'etsAaa': 'ets-aaa',
     'nbGlm': 'nb-glm',
     'dampedTrend': 'damped-trend',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'seasonal-naive': 'seasonalNaive',
@@ -72,6 +81,7 @@ class _$SeriesForecastModelBacktestResultsInnerMethodEnumSerializer
     'ets-aaa': 'etsAaa',
     'nb-glm': 'nbGlm',
     'damped-trend': 'dampedTrend',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

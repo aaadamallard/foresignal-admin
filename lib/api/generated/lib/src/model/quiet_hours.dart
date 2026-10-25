@@ -196,6 +196,9 @@ class QuietHoursDaysEnum extends EnumClass {
   static const QuietHoursDaysEnum SAT = _$quietHoursDaysEnum_SAT;
   @BuiltValueEnumConst(wireName: r'SUN')
   static const QuietHoursDaysEnum SUN = _$quietHoursDaysEnum_SUN;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const QuietHoursDaysEnum unknownDefaultOpenApi =
+      _$quietHoursDaysEnum_unknownDefaultOpenApi;
 
   static Serializer<QuietHoursDaysEnum> get serializer =>
       _$quietHoursDaysEnumSerializer;
@@ -218,6 +221,9 @@ class QuietHoursBypassSeverityEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'critical')
   static const QuietHoursBypassSeverityEnum critical =
       _$quietHoursBypassSeverityEnum_critical;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const QuietHoursBypassSeverityEnum unknownDefaultOpenApi =
+      _$quietHoursBypassSeverityEnum_unknownDefaultOpenApi;
 
   static Serializer<QuietHoursBypassSeverityEnum> get serializer =>
       _$quietHoursBypassSeverityEnumSerializer;

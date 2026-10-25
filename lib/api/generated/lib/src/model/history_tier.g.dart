@@ -8,6 +8,9 @@ part of 'history_tier.dart';
 
 const HistoryTier _$STANDARD = const HistoryTier._('STANDARD');
 const HistoryTier _$TRACK = const HistoryTier._('TRACK');
+const HistoryTier _$unknownDefaultOpenApi = const HistoryTier._(
+  'unknownDefaultOpenApi',
+);
 
 HistoryTier _$valueOf(String name) {
   switch (name) {
@@ -15,19 +18,22 @@ HistoryTier _$valueOf(String name) {
       return _$STANDARD;
     case 'TRACK':
       return _$TRACK;
+    case 'unknownDefaultOpenApi':
+      return _$unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$unknownDefaultOpenApi;
   }
 }
 
 final BuiltSet<HistoryTier> _$values = BuiltSet<HistoryTier>(
-  const <HistoryTier>[_$STANDARD, _$TRACK],
+  const <HistoryTier>[_$STANDARD, _$TRACK, _$unknownDefaultOpenApi],
 );
 
 class _$HistoryTierMeta {
   const _$HistoryTierMeta();
   HistoryTier get STANDARD => _$STANDARD;
   HistoryTier get TRACK => _$TRACK;
+  HistoryTier get unknownDefaultOpenApi => _$unknownDefaultOpenApi;
   HistoryTier valueOf(String name) => _$valueOf(name);
   BuiltSet<HistoryTier> get values => _$values;
 }
@@ -43,10 +49,12 @@ class _$HistoryTierSerializer implements PrimitiveSerializer<HistoryTier> {
   static const Map<String, Object> _toWire = const <String, Object>{
     'STANDARD': 'STANDARD',
     'TRACK': 'TRACK',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'STANDARD': 'STANDARD',
     'TRACK': 'TRACK',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

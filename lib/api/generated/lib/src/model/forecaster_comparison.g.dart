@@ -11,6 +11,9 @@ const ForecasterComparisonLabelEnum _$forecasterComparisonLabelEnum_ok =
 const ForecasterComparisonLabelEnum
 _$forecasterComparisonLabelEnum_insufficient =
     const ForecasterComparisonLabelEnum._('insufficient');
+const ForecasterComparisonLabelEnum
+_$forecasterComparisonLabelEnum_unknownDefaultOpenApi =
+    const ForecasterComparisonLabelEnum._('unknownDefaultOpenApi');
 
 ForecasterComparisonLabelEnum _$forecasterComparisonLabelEnumValueOf(
   String name,
@@ -20,8 +23,10 @@ ForecasterComparisonLabelEnum _$forecasterComparisonLabelEnumValueOf(
       return _$forecasterComparisonLabelEnum_ok;
     case 'insufficient':
       return _$forecasterComparisonLabelEnum_insufficient;
+    case 'unknownDefaultOpenApi':
+      return _$forecasterComparisonLabelEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$forecasterComparisonLabelEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -30,11 +35,15 @@ _$forecasterComparisonLabelEnumValues = BuiltSet<ForecasterComparisonLabelEnum>(
   const <ForecasterComparisonLabelEnum>[
     _$forecasterComparisonLabelEnum_ok,
     _$forecasterComparisonLabelEnum_insufficient,
+    _$forecasterComparisonLabelEnum_unknownDefaultOpenApi,
   ],
 );
 
 const ForecasterComparisonMetricEnum _$forecasterComparisonMetricEnum_brier =
     const ForecasterComparisonMetricEnum._('brier');
+const ForecasterComparisonMetricEnum
+_$forecasterComparisonMetricEnum_unknownDefaultOpenApi =
+    const ForecasterComparisonMetricEnum._('unknownDefaultOpenApi');
 
 ForecasterComparisonMetricEnum _$forecasterComparisonMetricEnumValueOf(
   String name,
@@ -42,8 +51,10 @@ ForecasterComparisonMetricEnum _$forecasterComparisonMetricEnumValueOf(
   switch (name) {
     case 'brier':
       return _$forecasterComparisonMetricEnum_brier;
+    case 'unknownDefaultOpenApi':
+      return _$forecasterComparisonMetricEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$forecasterComparisonMetricEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -52,6 +63,7 @@ _$forecasterComparisonMetricEnumValues =
     BuiltSet<ForecasterComparisonMetricEnum>(
       const <ForecasterComparisonMetricEnum>[
         _$forecasterComparisonMetricEnum_brier,
+        _$forecasterComparisonMetricEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -67,10 +79,12 @@ class _$ForecasterComparisonLabelEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'ok': 'ok',
     'insufficient': 'insufficient',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'ok': 'ok',
     'insufficient': 'insufficient',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -99,9 +113,11 @@ class _$ForecasterComparisonMetricEnumSerializer
     implements PrimitiveSerializer<ForecasterComparisonMetricEnum> {
   static const Map<String, Object> _toWire = const <String, Object>{
     'brier': 'brier',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'brier': 'brier',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

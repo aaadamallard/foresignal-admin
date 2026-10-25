@@ -12,6 +12,9 @@ _$situationTimelineEntryEntryTypeEnum_member =
 const SituationTimelineEntryEntryTypeEnum
 _$situationTimelineEntryEntryTypeEnum_log =
     const SituationTimelineEntryEntryTypeEnum._('log');
+const SituationTimelineEntryEntryTypeEnum
+_$situationTimelineEntryEntryTypeEnum_unknownDefaultOpenApi =
+    const SituationTimelineEntryEntryTypeEnum._('unknownDefaultOpenApi');
 
 SituationTimelineEntryEntryTypeEnum
 _$situationTimelineEntryEntryTypeEnumValueOf(String name) {
@@ -20,8 +23,10 @@ _$situationTimelineEntryEntryTypeEnumValueOf(String name) {
       return _$situationTimelineEntryEntryTypeEnum_member;
     case 'log':
       return _$situationTimelineEntryEntryTypeEnum_log;
+    case 'unknownDefaultOpenApi':
+      return _$situationTimelineEntryEntryTypeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$situationTimelineEntryEntryTypeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -31,102 +36,25 @@ _$situationTimelineEntryEntryTypeEnumValues =
       const <SituationTimelineEntryEntryTypeEnum>[
         _$situationTimelineEntryEntryTypeEnum_member,
         _$situationTimelineEntryEntryTypeEnum_log,
-      ],
-    );
-
-const SituationTimelineEntryActionEnum
-_$situationTimelineEntryActionEnum_created =
-    const SituationTimelineEntryActionEnum._('created');
-const SituationTimelineEntryActionEnum
-_$situationTimelineEntryActionEnum_memberAdded =
-    const SituationTimelineEntryActionEnum._('memberAdded');
-const SituationTimelineEntryActionEnum
-_$situationTimelineEntryActionEnum_memberRemoved =
-    const SituationTimelineEntryActionEnum._('memberRemoved');
-const SituationTimelineEntryActionEnum
-_$situationTimelineEntryActionEnum_status =
-    const SituationTimelineEntryActionEnum._('status');
-const SituationTimelineEntryActionEnum
-_$situationTimelineEntryActionEnum_severity =
-    const SituationTimelineEntryActionEnum._('severity');
-const SituationTimelineEntryActionEnum
-_$situationTimelineEntryActionEnum_merged =
-    const SituationTimelineEntryActionEnum._('merged');
-const SituationTimelineEntryActionEnum
-_$situationTimelineEntryActionEnum_split =
-    const SituationTimelineEntryActionEnum._('split');
-const SituationTimelineEntryActionEnum
-_$situationTimelineEntryActionEnum_renamed =
-    const SituationTimelineEntryActionEnum._('renamed');
-const SituationTimelineEntryActionEnum
-_$situationTimelineEntryActionEnum_theme =
-    const SituationTimelineEntryActionEnum._('theme');
-const SituationTimelineEntryActionEnum
-_$situationTimelineEntryActionEnum_brief =
-    const SituationTimelineEntryActionEnum._('brief');
-
-SituationTimelineEntryActionEnum _$situationTimelineEntryActionEnumValueOf(
-  String name,
-) {
-  switch (name) {
-    case 'created':
-      return _$situationTimelineEntryActionEnum_created;
-    case 'memberAdded':
-      return _$situationTimelineEntryActionEnum_memberAdded;
-    case 'memberRemoved':
-      return _$situationTimelineEntryActionEnum_memberRemoved;
-    case 'status':
-      return _$situationTimelineEntryActionEnum_status;
-    case 'severity':
-      return _$situationTimelineEntryActionEnum_severity;
-    case 'merged':
-      return _$situationTimelineEntryActionEnum_merged;
-    case 'split':
-      return _$situationTimelineEntryActionEnum_split;
-    case 'renamed':
-      return _$situationTimelineEntryActionEnum_renamed;
-    case 'theme':
-      return _$situationTimelineEntryActionEnum_theme;
-    case 'brief':
-      return _$situationTimelineEntryActionEnum_brief;
-    default:
-      throw ArgumentError(name);
-  }
-}
-
-final BuiltSet<SituationTimelineEntryActionEnum>
-_$situationTimelineEntryActionEnumValues =
-    BuiltSet<SituationTimelineEntryActionEnum>(
-      const <SituationTimelineEntryActionEnum>[
-        _$situationTimelineEntryActionEnum_created,
-        _$situationTimelineEntryActionEnum_memberAdded,
-        _$situationTimelineEntryActionEnum_memberRemoved,
-        _$situationTimelineEntryActionEnum_status,
-        _$situationTimelineEntryActionEnum_severity,
-        _$situationTimelineEntryActionEnum_merged,
-        _$situationTimelineEntryActionEnum_split,
-        _$situationTimelineEntryActionEnum_renamed,
-        _$situationTimelineEntryActionEnum_theme,
-        _$situationTimelineEntryActionEnum_brief,
+        _$situationTimelineEntryEntryTypeEnum_unknownDefaultOpenApi,
       ],
     );
 
 Serializer<SituationTimelineEntryEntryTypeEnum>
 _$situationTimelineEntryEntryTypeEnumSerializer =
     _$SituationTimelineEntryEntryTypeEnumSerializer();
-Serializer<SituationTimelineEntryActionEnum>
-_$situationTimelineEntryActionEnumSerializer =
-    _$SituationTimelineEntryActionEnumSerializer();
 
 class _$SituationTimelineEntryEntryTypeEnumSerializer
     implements PrimitiveSerializer<SituationTimelineEntryEntryTypeEnum> {
   static const Map<String, Object> _toWire = const <String, Object>{
     'member': 'member',
     'log': 'log',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'member': 'member',
     'log': 'log',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -153,55 +81,6 @@ class _$SituationTimelineEntryEntryTypeEnumSerializer
   );
 }
 
-class _$SituationTimelineEntryActionEnumSerializer
-    implements PrimitiveSerializer<SituationTimelineEntryActionEnum> {
-  static const Map<String, Object> _toWire = const <String, Object>{
-    'created': 'created',
-    'memberAdded': 'member_added',
-    'memberRemoved': 'member_removed',
-    'status': 'status',
-    'severity': 'severity',
-    'merged': 'merged',
-    'split': 'split',
-    'renamed': 'renamed',
-    'theme': 'theme',
-    'brief': 'brief',
-  };
-  static const Map<Object, String> _fromWire = const <Object, String>{
-    'created': 'created',
-    'member_added': 'memberAdded',
-    'member_removed': 'memberRemoved',
-    'status': 'status',
-    'severity': 'severity',
-    'merged': 'merged',
-    'split': 'split',
-    'renamed': 'renamed',
-    'theme': 'theme',
-    'brief': 'brief',
-  };
-
-  @override
-  final Iterable<Type> types = const <Type>[SituationTimelineEntryActionEnum];
-  @override
-  final String wireName = 'SituationTimelineEntryActionEnum';
-
-  @override
-  Object serialize(
-    Serializers serializers,
-    SituationTimelineEntryActionEnum object, {
-    FullType specifiedType = FullType.unspecified,
-  }) => _toWire[object.name] ?? object.name;
-
-  @override
-  SituationTimelineEntryActionEnum deserialize(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) => SituationTimelineEntryActionEnum.valueOf(
-    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
-  );
-}
-
 class _$SituationTimelineEntry extends SituationTimelineEntry {
   @override
   final DateTime at;
@@ -210,7 +89,7 @@ class _$SituationTimelineEntry extends SituationTimelineEntry {
   @override
   final SituationMember? member;
   @override
-  final SituationTimelineEntryActionEnum? action;
+  final String? action;
   @override
   final String? actor;
   @override
@@ -299,10 +178,9 @@ class SituationTimelineEntryBuilder
       _$this._member ??= SituationMemberBuilder();
   set member(SituationMemberBuilder? member) => _$this._member = member;
 
-  SituationTimelineEntryActionEnum? _action;
-  SituationTimelineEntryActionEnum? get action => _$this._action;
-  set action(SituationTimelineEntryActionEnum? action) =>
-      _$this._action = action;
+  String? _action;
+  String? get action => _$this._action;
+  set action(String? action) => _$this._action = action;
 
   String? _actor;
   String? get actor => _$this._actor;

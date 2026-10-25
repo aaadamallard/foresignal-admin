@@ -219,6 +219,10 @@ class TriggerTestResultWindowEvaluationsInnerStateEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'learning')
   static const TriggerTestResultWindowEvaluationsInnerStateEnum learning =
       _$triggerTestResultWindowEvaluationsInnerStateEnum_learning;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const TriggerTestResultWindowEvaluationsInnerStateEnum
+  unknownDefaultOpenApi =
+      _$triggerTestResultWindowEvaluationsInnerStateEnum_unknownDefaultOpenApi;
 
   static Serializer<TriggerTestResultWindowEvaluationsInnerStateEnum>
   get serializer =>

@@ -308,6 +308,9 @@ class WindowStatePayloadTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'anomaly')
   static const WindowStatePayloadTypeEnum anomaly =
       _$windowStatePayloadTypeEnum_anomaly;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const WindowStatePayloadTypeEnum unknownDefaultOpenApi =
+      _$windowStatePayloadTypeEnum_unknownDefaultOpenApi;
 
   static Serializer<WindowStatePayloadTypeEnum> get serializer =>
       _$windowStatePayloadTypeEnumSerializer;
@@ -333,6 +336,9 @@ class WindowStatePayloadStateEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'learning')
   static const WindowStatePayloadStateEnum learning =
       _$windowStatePayloadStateEnum_learning;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const WindowStatePayloadStateEnum unknownDefaultOpenApi =
+      _$windowStatePayloadStateEnum_unknownDefaultOpenApi;
 
   static Serializer<WindowStatePayloadStateEnum> get serializer =>
       _$windowStatePayloadStateEnumSerializer;

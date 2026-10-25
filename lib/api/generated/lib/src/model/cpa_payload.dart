@@ -279,6 +279,9 @@ class CpaPayloadStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'degraded-input')
   static const CpaPayloadStatusEnum degradedInput =
       _$cpaPayloadStatusEnum_degradedInput;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const CpaPayloadStatusEnum unknownDefaultOpenApi =
+      _$cpaPayloadStatusEnum_unknownDefaultOpenApi;
 
   static Serializer<CpaPayloadStatusEnum> get serializer =>
       _$cpaPayloadStatusEnumSerializer;

@@ -224,6 +224,9 @@ class SystemInfoIngestWriterStateEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'STOPPED')
   static const SystemInfoIngestWriterStateEnum STOPPED =
       _$systemInfoIngestWriterStateEnum_STOPPED;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const SystemInfoIngestWriterStateEnum unknownDefaultOpenApi =
+      _$systemInfoIngestWriterStateEnum_unknownDefaultOpenApi;
 
   static Serializer<SystemInfoIngestWriterStateEnum> get serializer =>
       _$systemInfoIngestWriterStateEnumSerializer;

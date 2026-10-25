@@ -119,6 +119,10 @@ class StreamNotifications200ResponseSeverityEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'critical')
   static const StreamNotifications200ResponseSeverityEnum critical =
       _$streamNotifications200ResponseSeverityEnum_critical;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const StreamNotifications200ResponseSeverityEnum
+  unknownDefaultOpenApi =
+      _$streamNotifications200ResponseSeverityEnum_unknownDefaultOpenApi;
 
   static Serializer<StreamNotifications200ResponseSeverityEnum>
   get serializer => _$streamNotifications200ResponseSeverityEnumSerializer;
@@ -142,6 +146,10 @@ class StreamNotifications200ResponseAlertStateEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'resolved')
   static const StreamNotifications200ResponseAlertStateEnum resolved =
       _$streamNotifications200ResponseAlertStateEnum_resolved;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const StreamNotifications200ResponseAlertStateEnum
+  unknownDefaultOpenApi =
+      _$streamNotifications200ResponseAlertStateEnum_unknownDefaultOpenApi;
 
   static Serializer<StreamNotifications200ResponseAlertStateEnum>
   get serializer => _$streamNotifications200ResponseAlertStateEnumSerializer;

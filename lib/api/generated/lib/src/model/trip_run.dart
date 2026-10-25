@@ -278,6 +278,9 @@ class TripRunStatusEnum extends EnumClass {
   static const TripRunStatusEnum dryRun = _$tripRunStatusEnum_dryRun;
   @BuiltValueEnumConst(wireName: r'failed')
   static const TripRunStatusEnum failed = _$tripRunStatusEnum_failed;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const TripRunStatusEnum unknownDefaultOpenApi =
+      _$tripRunStatusEnum_unknownDefaultOpenApi;
 
   static Serializer<TripRunStatusEnum> get serializer =>
       _$tripRunStatusEnumSerializer;

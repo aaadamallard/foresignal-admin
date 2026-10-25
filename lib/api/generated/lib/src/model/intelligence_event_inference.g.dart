@@ -15,6 +15,11 @@ _$intelligenceEventInferenceConfidenceLabelEnum_moderate =
 const IntelligenceEventInferenceConfidenceLabelEnum
 _$intelligenceEventInferenceConfidenceLabelEnum_high =
     const IntelligenceEventInferenceConfidenceLabelEnum._('high');
+const IntelligenceEventInferenceConfidenceLabelEnum
+_$intelligenceEventInferenceConfidenceLabelEnum_unknownDefaultOpenApi =
+    const IntelligenceEventInferenceConfidenceLabelEnum._(
+      'unknownDefaultOpenApi',
+    );
 
 IntelligenceEventInferenceConfidenceLabelEnum
 _$intelligenceEventInferenceConfidenceLabelEnumValueOf(String name) {
@@ -25,8 +30,10 @@ _$intelligenceEventInferenceConfidenceLabelEnumValueOf(String name) {
       return _$intelligenceEventInferenceConfidenceLabelEnum_moderate;
     case 'high':
       return _$intelligenceEventInferenceConfidenceLabelEnum_high;
+    case 'unknownDefaultOpenApi':
+      return _$intelligenceEventInferenceConfidenceLabelEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$intelligenceEventInferenceConfidenceLabelEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -37,6 +44,7 @@ _$intelligenceEventInferenceConfidenceLabelEnumValues =
         _$intelligenceEventInferenceConfidenceLabelEnum_low,
         _$intelligenceEventInferenceConfidenceLabelEnum_moderate,
         _$intelligenceEventInferenceConfidenceLabelEnum_high,
+        _$intelligenceEventInferenceConfidenceLabelEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -52,6 +60,11 @@ _$intelligenceEventInferenceEvidenceQualityEnum_weak =
 const IntelligenceEventInferenceEvidenceQualityEnum
 _$intelligenceEventInferenceEvidenceQualityEnum_insufficient =
     const IntelligenceEventInferenceEvidenceQualityEnum._('insufficient');
+const IntelligenceEventInferenceEvidenceQualityEnum
+_$intelligenceEventInferenceEvidenceQualityEnum_unknownDefaultOpenApi =
+    const IntelligenceEventInferenceEvidenceQualityEnum._(
+      'unknownDefaultOpenApi',
+    );
 
 IntelligenceEventInferenceEvidenceQualityEnum
 _$intelligenceEventInferenceEvidenceQualityEnumValueOf(String name) {
@@ -64,8 +77,10 @@ _$intelligenceEventInferenceEvidenceQualityEnumValueOf(String name) {
       return _$intelligenceEventInferenceEvidenceQualityEnum_weak;
     case 'insufficient':
       return _$intelligenceEventInferenceEvidenceQualityEnum_insufficient;
+    case 'unknownDefaultOpenApi':
+      return _$intelligenceEventInferenceEvidenceQualityEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$intelligenceEventInferenceEvidenceQualityEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -77,6 +92,7 @@ _$intelligenceEventInferenceEvidenceQualityEnumValues =
         _$intelligenceEventInferenceEvidenceQualityEnum_moderate,
         _$intelligenceEventInferenceEvidenceQualityEnum_weak,
         _$intelligenceEventInferenceEvidenceQualityEnum_insufficient,
+        _$intelligenceEventInferenceEvidenceQualityEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -94,11 +110,13 @@ class _$IntelligenceEventInferenceConfidenceLabelEnumSerializer
     'low': 'low',
     'moderate': 'moderate',
     'high': 'high',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'low': 'low',
     'moderate': 'moderate',
     'high': 'high',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -133,12 +151,14 @@ class _$IntelligenceEventInferenceEvidenceQualityEnumSerializer
     'moderate': 'moderate',
     'weak': 'weak',
     'insufficient': 'insufficient',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'strong': 'strong',
     'moderate': 'moderate',
     'weak': 'weak',
     'insufficient': 'insufficient',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

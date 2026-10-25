@@ -159,6 +159,10 @@ class StormTrackPayloadNowcastInnerLeadMinutesEnum extends EnumClass {
   @BuiltValueEnumConst(wireNumber: 60)
   static const StormTrackPayloadNowcastInnerLeadMinutesEnum number60 =
       _$stormTrackPayloadNowcastInnerLeadMinutesEnum_number60;
+  @BuiltValueEnumConst(wireNumber: 11184809, fallback: true)
+  static const StormTrackPayloadNowcastInnerLeadMinutesEnum
+  unknownDefaultOpenApi =
+      _$stormTrackPayloadNowcastInnerLeadMinutesEnum_unknownDefaultOpenApi;
 
   static Serializer<StormTrackPayloadNowcastInnerLeadMinutesEnum>
   get serializer => _$stormTrackPayloadNowcastInnerLeadMinutesEnumSerializer;
@@ -176,6 +180,9 @@ class StormTrackPayloadNowcastInnerMethodEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'linear-advection')
   static const StormTrackPayloadNowcastInnerMethodEnum linearAdvection =
       _$stormTrackPayloadNowcastInnerMethodEnum_linearAdvection;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const StormTrackPayloadNowcastInnerMethodEnum unknownDefaultOpenApi =
+      _$stormTrackPayloadNowcastInnerMethodEnum_unknownDefaultOpenApi;
 
   static Serializer<StormTrackPayloadNowcastInnerMethodEnum> get serializer =>
       _$stormTrackPayloadNowcastInnerMethodEnumSerializer;

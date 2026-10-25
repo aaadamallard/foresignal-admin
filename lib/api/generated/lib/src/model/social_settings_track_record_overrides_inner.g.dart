@@ -24,6 +24,11 @@ _$socialSettingsTrackRecordOverridesInnerReliabilityEnum_E =
 const SocialSettingsTrackRecordOverridesInnerReliabilityEnum
 _$socialSettingsTrackRecordOverridesInnerReliabilityEnum_F =
     const SocialSettingsTrackRecordOverridesInnerReliabilityEnum._('F');
+const SocialSettingsTrackRecordOverridesInnerReliabilityEnum
+_$socialSettingsTrackRecordOverridesInnerReliabilityEnum_unknownDefaultOpenApi =
+    const SocialSettingsTrackRecordOverridesInnerReliabilityEnum._(
+      'unknownDefaultOpenApi',
+    );
 
 SocialSettingsTrackRecordOverridesInnerReliabilityEnum
 _$socialSettingsTrackRecordOverridesInnerReliabilityEnumValueOf(String name) {
@@ -40,23 +45,26 @@ _$socialSettingsTrackRecordOverridesInnerReliabilityEnumValueOf(String name) {
       return _$socialSettingsTrackRecordOverridesInnerReliabilityEnum_E;
     case 'F':
       return _$socialSettingsTrackRecordOverridesInnerReliabilityEnum_F;
+    case 'unknownDefaultOpenApi':
+      return _$socialSettingsTrackRecordOverridesInnerReliabilityEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$socialSettingsTrackRecordOverridesInnerReliabilityEnum_unknownDefaultOpenApi;
   }
 }
 
 final BuiltSet<SocialSettingsTrackRecordOverridesInnerReliabilityEnum>
 _$socialSettingsTrackRecordOverridesInnerReliabilityEnumValues =
-    BuiltSet<SocialSettingsTrackRecordOverridesInnerReliabilityEnum>(
-      const <SocialSettingsTrackRecordOverridesInnerReliabilityEnum>[
-        _$socialSettingsTrackRecordOverridesInnerReliabilityEnum_A,
-        _$socialSettingsTrackRecordOverridesInnerReliabilityEnum_B,
-        _$socialSettingsTrackRecordOverridesInnerReliabilityEnum_C,
-        _$socialSettingsTrackRecordOverridesInnerReliabilityEnum_D,
-        _$socialSettingsTrackRecordOverridesInnerReliabilityEnum_E,
-        _$socialSettingsTrackRecordOverridesInnerReliabilityEnum_F,
-      ],
-    );
+    BuiltSet<SocialSettingsTrackRecordOverridesInnerReliabilityEnum>(const <
+      SocialSettingsTrackRecordOverridesInnerReliabilityEnum
+    >[
+      _$socialSettingsTrackRecordOverridesInnerReliabilityEnum_A,
+      _$socialSettingsTrackRecordOverridesInnerReliabilityEnum_B,
+      _$socialSettingsTrackRecordOverridesInnerReliabilityEnum_C,
+      _$socialSettingsTrackRecordOverridesInnerReliabilityEnum_D,
+      _$socialSettingsTrackRecordOverridesInnerReliabilityEnum_E,
+      _$socialSettingsTrackRecordOverridesInnerReliabilityEnum_F,
+      _$socialSettingsTrackRecordOverridesInnerReliabilityEnum_unknownDefaultOpenApi,
+    ]);
 
 Serializer<SocialSettingsTrackRecordOverridesInnerReliabilityEnum>
 _$socialSettingsTrackRecordOverridesInnerReliabilityEnumSerializer =
@@ -74,6 +82,7 @@ class _$SocialSettingsTrackRecordOverridesInnerReliabilityEnumSerializer
     'D': 'D',
     'E': 'E',
     'F': 'F',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'A': 'A',
@@ -82,6 +91,7 @@ class _$SocialSettingsTrackRecordOverridesInnerReliabilityEnumSerializer
     'D': 'D',
     'E': 'E',
     'F': 'F',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

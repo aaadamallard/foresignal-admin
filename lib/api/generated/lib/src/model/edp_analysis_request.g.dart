@@ -14,6 +14,9 @@ const EdpAnalysisRequestAuthEnum _$edpAnalysisRequestAuthEnum_header =
     const EdpAnalysisRequestAuthEnum._('header');
 const EdpAnalysisRequestAuthEnum _$edpAnalysisRequestAuthEnum_basic =
     const EdpAnalysisRequestAuthEnum._('basic');
+const EdpAnalysisRequestAuthEnum
+_$edpAnalysisRequestAuthEnum_unknownDefaultOpenApi =
+    const EdpAnalysisRequestAuthEnum._('unknownDefaultOpenApi');
 
 EdpAnalysisRequestAuthEnum _$edpAnalysisRequestAuthEnumValueOf(String name) {
   switch (name) {
@@ -25,8 +28,10 @@ EdpAnalysisRequestAuthEnum _$edpAnalysisRequestAuthEnumValueOf(String name) {
       return _$edpAnalysisRequestAuthEnum_header;
     case 'basic':
       return _$edpAnalysisRequestAuthEnum_basic;
+    case 'unknownDefaultOpenApi':
+      return _$edpAnalysisRequestAuthEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$edpAnalysisRequestAuthEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -36,6 +41,7 @@ final BuiltSet<EdpAnalysisRequestAuthEnum> _$edpAnalysisRequestAuthEnumValues =
       _$edpAnalysisRequestAuthEnum_bearer,
       _$edpAnalysisRequestAuthEnum_header,
       _$edpAnalysisRequestAuthEnum_basic,
+      _$edpAnalysisRequestAuthEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<EdpAnalysisRequestAuthEnum> _$edpAnalysisRequestAuthEnumSerializer =
@@ -48,12 +54,14 @@ class _$EdpAnalysisRequestAuthEnumSerializer
     'bearer': 'bearer',
     'header': 'header',
     'basic': 'basic',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'none': 'none',
     'bearer': 'bearer',
     'header': 'header',
     'basic': 'basic',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

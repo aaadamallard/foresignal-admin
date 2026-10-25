@@ -341,6 +341,9 @@ class HoldingPatternPayloadStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'degraded-input')
   static const HoldingPatternPayloadStatusEnum degradedInput =
       _$holdingPatternPayloadStatusEnum_degradedInput;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const HoldingPatternPayloadStatusEnum unknownDefaultOpenApi =
+      _$holdingPatternPayloadStatusEnum_unknownDefaultOpenApi;
 
   static Serializer<HoldingPatternPayloadStatusEnum> get serializer =>
       _$holdingPatternPayloadStatusEnumSerializer;

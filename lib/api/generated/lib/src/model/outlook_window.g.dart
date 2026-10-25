@@ -12,6 +12,8 @@ const OutlookWindowStatusEnum _$outlookWindowStatusEnum_resolved =
     const OutlookWindowStatusEnum._('resolved');
 const OutlookWindowStatusEnum _$outlookWindowStatusEnum_annulled =
     const OutlookWindowStatusEnum._('annulled');
+const OutlookWindowStatusEnum _$outlookWindowStatusEnum_unknownDefaultOpenApi =
+    const OutlookWindowStatusEnum._('unknownDefaultOpenApi');
 
 OutlookWindowStatusEnum _$outlookWindowStatusEnumValueOf(String name) {
   switch (name) {
@@ -21,8 +23,10 @@ OutlookWindowStatusEnum _$outlookWindowStatusEnumValueOf(String name) {
       return _$outlookWindowStatusEnum_resolved;
     case 'annulled':
       return _$outlookWindowStatusEnum_annulled;
+    case 'unknownDefaultOpenApi':
+      return _$outlookWindowStatusEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$outlookWindowStatusEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -31,12 +35,16 @@ final BuiltSet<OutlookWindowStatusEnum> _$outlookWindowStatusEnumValues =
       _$outlookWindowStatusEnum_open,
       _$outlookWindowStatusEnum_resolved,
       _$outlookWindowStatusEnum_annulled,
+      _$outlookWindowStatusEnum_unknownDefaultOpenApi,
     ]);
 
 const OutlookWindowExceedanceEnum _$outlookWindowExceedanceEnum_aboveP95 =
     const OutlookWindowExceedanceEnum._('aboveP95');
 const OutlookWindowExceedanceEnum _$outlookWindowExceedanceEnum_belowP05 =
     const OutlookWindowExceedanceEnum._('belowP05');
+const OutlookWindowExceedanceEnum
+_$outlookWindowExceedanceEnum_unknownDefaultOpenApi =
+    const OutlookWindowExceedanceEnum._('unknownDefaultOpenApi');
 
 OutlookWindowExceedanceEnum _$outlookWindowExceedanceEnumValueOf(String name) {
   switch (name) {
@@ -44,18 +52,20 @@ OutlookWindowExceedanceEnum _$outlookWindowExceedanceEnumValueOf(String name) {
       return _$outlookWindowExceedanceEnum_aboveP95;
     case 'belowP05':
       return _$outlookWindowExceedanceEnum_belowP05;
+    case 'unknownDefaultOpenApi':
+      return _$outlookWindowExceedanceEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$outlookWindowExceedanceEnum_unknownDefaultOpenApi;
   }
 }
 
 final BuiltSet<OutlookWindowExceedanceEnum>
-_$outlookWindowExceedanceEnumValues = BuiltSet<OutlookWindowExceedanceEnum>(
-  const <OutlookWindowExceedanceEnum>[
-    _$outlookWindowExceedanceEnum_aboveP95,
-    _$outlookWindowExceedanceEnum_belowP05,
-  ],
-);
+_$outlookWindowExceedanceEnumValues =
+    BuiltSet<OutlookWindowExceedanceEnum>(const <OutlookWindowExceedanceEnum>[
+      _$outlookWindowExceedanceEnum_aboveP95,
+      _$outlookWindowExceedanceEnum_belowP05,
+      _$outlookWindowExceedanceEnum_unknownDefaultOpenApi,
+    ]);
 
 Serializer<OutlookWindowStatusEnum> _$outlookWindowStatusEnumSerializer =
     _$OutlookWindowStatusEnumSerializer();
@@ -69,11 +79,13 @@ class _$OutlookWindowStatusEnumSerializer
     'open': 'open',
     'resolved': 'resolved',
     'annulled': 'annulled',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'open': 'open',
     'resolved': 'resolved',
     'annulled': 'annulled',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -103,10 +115,12 @@ class _$OutlookWindowExceedanceEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'aboveP95': 'above-p95',
     'belowP05': 'below-p05',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'above-p95': 'aboveP95',
     'below-p05': 'belowP05',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

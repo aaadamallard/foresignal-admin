@@ -298,6 +298,9 @@ class BenchmarkCaseSource_Enum extends EnumClass {
   static const BenchmarkCaseSource_Enum agent = _$benchmarkCaseSourceEnum_agent;
   @BuiltValueEnumConst(wireName: r'auto')
   static const BenchmarkCaseSource_Enum auto = _$benchmarkCaseSourceEnum_auto;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const BenchmarkCaseSource_Enum unknownDefaultOpenApi =
+      _$benchmarkCaseSourceEnum_unknownDefaultOpenApi;
 
   static Serializer<BenchmarkCaseSource_Enum> get serializer =>
       _$benchmarkCaseSourceEnumSerializer;

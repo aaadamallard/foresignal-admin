@@ -16,6 +16,9 @@ const SeriesForecastMethodEnum _$seriesForecastMethodEnum_nbGlm =
     const SeriesForecastMethodEnum._('nbGlm');
 const SeriesForecastMethodEnum _$seriesForecastMethodEnum_dampedTrend =
     const SeriesForecastMethodEnum._('dampedTrend');
+const SeriesForecastMethodEnum
+_$seriesForecastMethodEnum_unknownDefaultOpenApi =
+    const SeriesForecastMethodEnum._('unknownDefaultOpenApi');
 
 SeriesForecastMethodEnum _$seriesForecastMethodEnumValueOf(String name) {
   switch (name) {
@@ -29,8 +32,10 @@ SeriesForecastMethodEnum _$seriesForecastMethodEnumValueOf(String name) {
       return _$seriesForecastMethodEnum_nbGlm;
     case 'dampedTrend':
       return _$seriesForecastMethodEnum_dampedTrend;
+    case 'unknownDefaultOpenApi':
+      return _$seriesForecastMethodEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$seriesForecastMethodEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -41,12 +46,15 @@ final BuiltSet<SeriesForecastMethodEnum> _$seriesForecastMethodEnumValues =
       _$seriesForecastMethodEnum_etsAaa,
       _$seriesForecastMethodEnum_nbGlm,
       _$seriesForecastMethodEnum_dampedTrend,
+      _$seriesForecastMethodEnum_unknownDefaultOpenApi,
     ]);
 
 const SeriesForecastUnitsEnum _$seriesForecastUnitsEnum_native_ =
     const SeriesForecastUnitsEnum._('native_');
 const SeriesForecastUnitsEnum _$seriesForecastUnitsEnum_standardised =
     const SeriesForecastUnitsEnum._('standardised');
+const SeriesForecastUnitsEnum _$seriesForecastUnitsEnum_unknownDefaultOpenApi =
+    const SeriesForecastUnitsEnum._('unknownDefaultOpenApi');
 
 SeriesForecastUnitsEnum _$seriesForecastUnitsEnumValueOf(String name) {
   switch (name) {
@@ -54,8 +62,10 @@ SeriesForecastUnitsEnum _$seriesForecastUnitsEnumValueOf(String name) {
       return _$seriesForecastUnitsEnum_native_;
     case 'standardised':
       return _$seriesForecastUnitsEnum_standardised;
+    case 'unknownDefaultOpenApi':
+      return _$seriesForecastUnitsEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$seriesForecastUnitsEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -63,6 +73,7 @@ final BuiltSet<SeriesForecastUnitsEnum> _$seriesForecastUnitsEnumValues =
     BuiltSet<SeriesForecastUnitsEnum>(const <SeriesForecastUnitsEnum>[
       _$seriesForecastUnitsEnum_native_,
       _$seriesForecastUnitsEnum_standardised,
+      _$seriesForecastUnitsEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<SeriesForecastMethodEnum> _$seriesForecastMethodEnumSerializer =
@@ -78,6 +89,7 @@ class _$SeriesForecastMethodEnumSerializer
     'etsAaa': 'ets-aaa',
     'nbGlm': 'nb-glm',
     'dampedTrend': 'damped-trend',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'seasonal-naive': 'seasonalNaive',
@@ -85,6 +97,7 @@ class _$SeriesForecastMethodEnumSerializer
     'ets-aaa': 'etsAaa',
     'nb-glm': 'nbGlm',
     'damped-trend': 'dampedTrend',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -114,10 +127,12 @@ class _$SeriesForecastUnitsEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'native_': 'native',
     'standardised': 'standardised',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'native': 'native_',
     'standardised': 'standardised',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

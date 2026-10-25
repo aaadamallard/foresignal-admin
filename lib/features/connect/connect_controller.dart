@@ -115,6 +115,7 @@ final connectionProbeApiProvider = Provider<ForesignalApi Function(Uri baseUrl, 
       (baseUrl, token) => ForesignalApi(
         dio: createBackendDio(baseUrl: baseUrl, tokenStore: InMemoryAdminTokenStore(token)),
         interceptors: const <Interceptor>[],
+        serializers: tolerantSerializers,
       ),
 );
 

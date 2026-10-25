@@ -344,6 +344,9 @@ class ForecasterComparisonLabelEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'insufficient')
   static const ForecasterComparisonLabelEnum insufficient =
       _$forecasterComparisonLabelEnum_insufficient;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ForecasterComparisonLabelEnum unknownDefaultOpenApi =
+      _$forecasterComparisonLabelEnum_unknownDefaultOpenApi;
 
   static Serializer<ForecasterComparisonLabelEnum> get serializer =>
       _$forecasterComparisonLabelEnumSerializer;
@@ -360,6 +363,9 @@ class ForecasterComparisonMetricEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'brier')
   static const ForecasterComparisonMetricEnum brier =
       _$forecasterComparisonMetricEnum_brier;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ForecasterComparisonMetricEnum unknownDefaultOpenApi =
+      _$forecasterComparisonMetricEnum_unknownDefaultOpenApi;
 
   static Serializer<ForecasterComparisonMetricEnum> get serializer =>
       _$forecasterComparisonMetricEnumSerializer;

@@ -20,6 +20,9 @@ const SatellitePassPayloadStatusEnum _$satellitePassPayloadStatusEnum_failed =
     const SatellitePassPayloadStatusEnum._('failed');
 const SatellitePassPayloadStatusEnum _$satellitePassPayloadStatusEnum_missed =
     const SatellitePassPayloadStatusEnum._('missed');
+const SatellitePassPayloadStatusEnum
+_$satellitePassPayloadStatusEnum_unknownDefaultOpenApi =
+    const SatellitePassPayloadStatusEnum._('unknownDefaultOpenApi');
 
 SatellitePassPayloadStatusEnum _$satellitePassPayloadStatusEnumValueOf(
   String name,
@@ -37,8 +40,10 @@ SatellitePassPayloadStatusEnum _$satellitePassPayloadStatusEnumValueOf(
       return _$satellitePassPayloadStatusEnum_failed;
     case 'missed':
       return _$satellitePassPayloadStatusEnum_missed;
+    case 'unknownDefaultOpenApi':
+      return _$satellitePassPayloadStatusEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$satellitePassPayloadStatusEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -52,6 +57,7 @@ _$satellitePassPayloadStatusEnumValues =
         _$satellitePassPayloadStatusEnum_decoded,
         _$satellitePassPayloadStatusEnum_failed,
         _$satellitePassPayloadStatusEnum_missed,
+        _$satellitePassPayloadStatusEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -61,6 +67,9 @@ _$satellitePassPayloadGeometrySourceEnum_footprint =
 const SatellitePassPayloadGeometrySourceEnum
 _$satellitePassPayloadGeometrySourceEnum_swath =
     const SatellitePassPayloadGeometrySourceEnum._('swath');
+const SatellitePassPayloadGeometrySourceEnum
+_$satellitePassPayloadGeometrySourceEnum_unknownDefaultOpenApi =
+    const SatellitePassPayloadGeometrySourceEnum._('unknownDefaultOpenApi');
 
 SatellitePassPayloadGeometrySourceEnum
 _$satellitePassPayloadGeometrySourceEnumValueOf(String name) {
@@ -69,8 +78,10 @@ _$satellitePassPayloadGeometrySourceEnumValueOf(String name) {
       return _$satellitePassPayloadGeometrySourceEnum_footprint;
     case 'swath':
       return _$satellitePassPayloadGeometrySourceEnum_swath;
+    case 'unknownDefaultOpenApi':
+      return _$satellitePassPayloadGeometrySourceEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$satellitePassPayloadGeometrySourceEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -80,6 +91,7 @@ _$satellitePassPayloadGeometrySourceEnumValues =
       const <SatellitePassPayloadGeometrySourceEnum>[
         _$satellitePassPayloadGeometrySourceEnum_footprint,
         _$satellitePassPayloadGeometrySourceEnum_swath,
+        _$satellitePassPayloadGeometrySourceEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -99,6 +111,7 @@ class _$SatellitePassPayloadStatusEnumSerializer
     'decoded': 'decoded',
     'failed': 'failed',
     'missed': 'missed',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'predicted': 'predicted',
@@ -107,6 +120,7 @@ class _$SatellitePassPayloadStatusEnumSerializer
     'decoded': 'decoded',
     'failed': 'failed',
     'missed': 'missed',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -136,10 +150,12 @@ class _$SatellitePassPayloadGeometrySourceEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'footprint': 'footprint',
     'swath': 'swath',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'footprint': 'footprint',
     'swath': 'swath',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

@@ -320,6 +320,9 @@ class FindingEventFindingFindingTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'attention-gap')
   static const FindingEventFindingFindingTypeEnum attentionGap =
       _$findingEventFindingFindingTypeEnum_attentionGap;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const FindingEventFindingFindingTypeEnum unknownDefaultOpenApi =
+      _$findingEventFindingFindingTypeEnum_unknownDefaultOpenApi;
 
   static Serializer<FindingEventFindingFindingTypeEnum> get serializer =>
       _$findingEventFindingFindingTypeEnumSerializer;
@@ -342,6 +345,9 @@ class FindingEventFindingStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'dismissed')
   static const FindingEventFindingStatusEnum dismissed =
       _$findingEventFindingStatusEnum_dismissed;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const FindingEventFindingStatusEnum unknownDefaultOpenApi =
+      _$findingEventFindingStatusEnum_unknownDefaultOpenApi;
 
   static Serializer<FindingEventFindingStatusEnum> get serializer =>
       _$findingEventFindingStatusEnumSerializer;

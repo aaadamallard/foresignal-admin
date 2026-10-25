@@ -9,6 +9,9 @@ part of 'declarative_push_payload.dart';
 const DeclarativePushPayloadWebPushEnum
 _$declarativePushPayloadWebPushEnum_number8030 =
     const DeclarativePushPayloadWebPushEnum._('number8030');
+const DeclarativePushPayloadWebPushEnum
+_$declarativePushPayloadWebPushEnum_unknownDefaultOpenApi =
+    const DeclarativePushPayloadWebPushEnum._('unknownDefaultOpenApi');
 
 DeclarativePushPayloadWebPushEnum _$declarativePushPayloadWebPushEnumValueOf(
   String name,
@@ -16,8 +19,10 @@ DeclarativePushPayloadWebPushEnum _$declarativePushPayloadWebPushEnumValueOf(
   switch (name) {
     case 'number8030':
       return _$declarativePushPayloadWebPushEnum_number8030;
+    case 'unknownDefaultOpenApi':
+      return _$declarativePushPayloadWebPushEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$declarativePushPayloadWebPushEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -26,6 +31,7 @@ _$declarativePushPayloadWebPushEnumValues =
     BuiltSet<DeclarativePushPayloadWebPushEnum>(
       const <DeclarativePushPayloadWebPushEnum>[
         _$declarativePushPayloadWebPushEnum_number8030,
+        _$declarativePushPayloadWebPushEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -37,9 +43,11 @@ class _$DeclarativePushPayloadWebPushEnumSerializer
     implements PrimitiveSerializer<DeclarativePushPayloadWebPushEnum> {
   static const Map<String, Object> _toWire = const <String, Object>{
     'number8030': 8030,
+    'unknownDefaultOpenApi': 11184809,
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     8030: 'number8030',
+    11184809: 'unknownDefaultOpenApi',
   };
 
   @override

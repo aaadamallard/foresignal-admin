@@ -822,6 +822,9 @@ class ChronicleStatusEnum extends EnumClass {
   static const ChronicleStatusEnum stopped = _$chronicleStatusEnum_stopped;
   @BuiltValueEnumConst(wireName: r'archived')
   static const ChronicleStatusEnum archived = _$chronicleStatusEnum_archived;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ChronicleStatusEnum unknownDefaultOpenApi =
+      _$chronicleStatusEnum_unknownDefaultOpenApi;
 
   static Serializer<ChronicleStatusEnum> get serializer =>
       _$chronicleStatusEnumSerializer;
@@ -843,6 +846,9 @@ class ChronicleCapStateEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'exceeded')
   static const ChronicleCapStateEnum exceeded =
       _$chronicleCapStateEnum_exceeded;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ChronicleCapStateEnum unknownDefaultOpenApi =
+      _$chronicleCapStateEnum_unknownDefaultOpenApi;
 
   static Serializer<ChronicleCapStateEnum> get serializer =>
       _$chronicleCapStateEnumSerializer;
@@ -862,6 +868,9 @@ class ChronicleOriginEnum extends EnumClass {
   static const ChronicleOriginEnum agent = _$chronicleOriginEnum_agent;
   @BuiltValueEnumConst(wireName: r'analyst')
   static const ChronicleOriginEnum analyst = _$chronicleOriginEnum_analyst;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ChronicleOriginEnum unknownDefaultOpenApi =
+      _$chronicleOriginEnum_unknownDefaultOpenApi;
 
   static Serializer<ChronicleOriginEnum> get serializer =>
       _$chronicleOriginEnumSerializer;
@@ -885,6 +894,9 @@ class ChronicleDiscoverabilityEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'network')
   static const ChronicleDiscoverabilityEnum network =
       _$chronicleDiscoverabilityEnum_network;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ChronicleDiscoverabilityEnum unknownDefaultOpenApi =
+      _$chronicleDiscoverabilityEnum_unknownDefaultOpenApi;
 
   static Serializer<ChronicleDiscoverabilityEnum> get serializer =>
       _$chronicleDiscoverabilityEnumSerializer;

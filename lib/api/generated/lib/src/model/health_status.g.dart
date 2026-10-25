@@ -11,6 +11,9 @@ const HealthStatus _$degraded = const HealthStatus._('degraded');
 const HealthStatus _$failing = const HealthStatus._('failing');
 const HealthStatus _$idle = const HealthStatus._('idle');
 const HealthStatus _$disabled = const HealthStatus._('disabled');
+const HealthStatus _$unknownDefaultOpenApi = const HealthStatus._(
+  'unknownDefaultOpenApi',
+);
 
 HealthStatus _$valueOf(String name) {
   switch (name) {
@@ -24,13 +27,22 @@ HealthStatus _$valueOf(String name) {
       return _$idle;
     case 'disabled':
       return _$disabled;
+    case 'unknownDefaultOpenApi':
+      return _$unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$unknownDefaultOpenApi;
   }
 }
 
 final BuiltSet<HealthStatus> _$values = BuiltSet<HealthStatus>(
-  const <HealthStatus>[_$healthy, _$degraded, _$failing, _$idle, _$disabled],
+  const <HealthStatus>[
+    _$healthy,
+    _$degraded,
+    _$failing,
+    _$idle,
+    _$disabled,
+    _$unknownDefaultOpenApi,
+  ],
 );
 
 class _$HealthStatusMeta {
@@ -40,6 +52,7 @@ class _$HealthStatusMeta {
   HealthStatus get failing => _$failing;
   HealthStatus get idle => _$idle;
   HealthStatus get disabled => _$disabled;
+  HealthStatus get unknownDefaultOpenApi => _$unknownDefaultOpenApi;
   HealthStatus valueOf(String name) => _$valueOf(name);
   BuiltSet<HealthStatus> get values => _$values;
 }
@@ -58,6 +71,7 @@ class _$HealthStatusSerializer implements PrimitiveSerializer<HealthStatus> {
     'failing': 'failing',
     'idle': 'idle',
     'disabled': 'disabled',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'healthy': 'healthy',
@@ -65,6 +79,7 @@ class _$HealthStatusSerializer implements PrimitiveSerializer<HealthStatus> {
     'failing': 'failing',
     'idle': 'idle',
     'disabled': 'disabled',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

@@ -42,6 +42,9 @@ _$findingEventFindingFindingTypeEnum_socialCoordination =
 const FindingEventFindingFindingTypeEnum
 _$findingEventFindingFindingTypeEnum_attentionGap =
     const FindingEventFindingFindingTypeEnum._('attentionGap');
+const FindingEventFindingFindingTypeEnum
+_$findingEventFindingFindingTypeEnum_unknownDefaultOpenApi =
+    const FindingEventFindingFindingTypeEnum._('unknownDefaultOpenApi');
 
 FindingEventFindingFindingTypeEnum _$findingEventFindingFindingTypeEnumValueOf(
   String name,
@@ -71,8 +74,10 @@ FindingEventFindingFindingTypeEnum _$findingEventFindingFindingTypeEnumValueOf(
       return _$findingEventFindingFindingTypeEnum_socialCoordination;
     case 'attentionGap':
       return _$findingEventFindingFindingTypeEnum_attentionGap;
+    case 'unknownDefaultOpenApi':
+      return _$findingEventFindingFindingTypeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$findingEventFindingFindingTypeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -92,6 +97,7 @@ _$findingEventFindingFindingTypeEnumValues =
         _$findingEventFindingFindingTypeEnum_mediaReuse,
         _$findingEventFindingFindingTypeEnum_socialCoordination,
         _$findingEventFindingFindingTypeEnum_attentionGap,
+        _$findingEventFindingFindingTypeEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -101,6 +107,9 @@ const FindingEventFindingStatusEnum _$findingEventFindingStatusEnum_superseded =
     const FindingEventFindingStatusEnum._('superseded');
 const FindingEventFindingStatusEnum _$findingEventFindingStatusEnum_dismissed =
     const FindingEventFindingStatusEnum._('dismissed');
+const FindingEventFindingStatusEnum
+_$findingEventFindingStatusEnum_unknownDefaultOpenApi =
+    const FindingEventFindingStatusEnum._('unknownDefaultOpenApi');
 
 FindingEventFindingStatusEnum _$findingEventFindingStatusEnumValueOf(
   String name,
@@ -112,8 +121,10 @@ FindingEventFindingStatusEnum _$findingEventFindingStatusEnumValueOf(
       return _$findingEventFindingStatusEnum_superseded;
     case 'dismissed':
       return _$findingEventFindingStatusEnum_dismissed;
+    case 'unknownDefaultOpenApi':
+      return _$findingEventFindingStatusEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$findingEventFindingStatusEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -123,6 +134,7 @@ _$findingEventFindingStatusEnumValues = BuiltSet<FindingEventFindingStatusEnum>(
     _$findingEventFindingStatusEnum_open,
     _$findingEventFindingStatusEnum_superseded,
     _$findingEventFindingStatusEnum_dismissed,
+    _$findingEventFindingStatusEnum_unknownDefaultOpenApi,
   ],
 );
 
@@ -148,6 +160,7 @@ class _$FindingEventFindingFindingTypeEnumSerializer
     'mediaReuse': 'media-reuse',
     'socialCoordination': 'social-coordination',
     'attentionGap': 'attention-gap',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'change-point': 'changePoint',
@@ -162,6 +175,7 @@ class _$FindingEventFindingFindingTypeEnumSerializer
     'media-reuse': 'mediaReuse',
     'social-coordination': 'socialCoordination',
     'attention-gap': 'attentionGap',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -192,11 +206,13 @@ class _$FindingEventFindingStatusEnumSerializer
     'open': 'open',
     'superseded': 'superseded',
     'dismissed': 'dismissed',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'open': 'open',
     'superseded': 'superseded',
     'dismissed': 'dismissed',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

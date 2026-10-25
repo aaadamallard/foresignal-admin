@@ -10,6 +10,8 @@ const WorkspaceMembersEnum _$workspaceMembersEnum_viewer =
     const WorkspaceMembersEnum._('viewer');
 const WorkspaceMembersEnum _$workspaceMembersEnum_editor =
     const WorkspaceMembersEnum._('editor');
+const WorkspaceMembersEnum _$workspaceMembersEnum_unknownDefaultOpenApi =
+    const WorkspaceMembersEnum._('unknownDefaultOpenApi');
 
 WorkspaceMembersEnum _$workspaceMembersEnumValueOf(String name) {
   switch (name) {
@@ -17,8 +19,10 @@ WorkspaceMembersEnum _$workspaceMembersEnumValueOf(String name) {
       return _$workspaceMembersEnum_viewer;
     case 'editor':
       return _$workspaceMembersEnum_editor;
+    case 'unknownDefaultOpenApi':
+      return _$workspaceMembersEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$workspaceMembersEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -26,6 +30,7 @@ final BuiltSet<WorkspaceMembersEnum> _$workspaceMembersEnumValues =
     BuiltSet<WorkspaceMembersEnum>(const <WorkspaceMembersEnum>[
       _$workspaceMembersEnum_viewer,
       _$workspaceMembersEnum_editor,
+      _$workspaceMembersEnum_unknownDefaultOpenApi,
     ]);
 
 const WorkspaceCallerRoleEnum _$workspaceCallerRoleEnum_owner =
@@ -34,6 +39,8 @@ const WorkspaceCallerRoleEnum _$workspaceCallerRoleEnum_editor =
     const WorkspaceCallerRoleEnum._('editor');
 const WorkspaceCallerRoleEnum _$workspaceCallerRoleEnum_viewer =
     const WorkspaceCallerRoleEnum._('viewer');
+const WorkspaceCallerRoleEnum _$workspaceCallerRoleEnum_unknownDefaultOpenApi =
+    const WorkspaceCallerRoleEnum._('unknownDefaultOpenApi');
 
 WorkspaceCallerRoleEnum _$workspaceCallerRoleEnumValueOf(String name) {
   switch (name) {
@@ -43,8 +50,10 @@ WorkspaceCallerRoleEnum _$workspaceCallerRoleEnumValueOf(String name) {
       return _$workspaceCallerRoleEnum_editor;
     case 'viewer':
       return _$workspaceCallerRoleEnum_viewer;
+    case 'unknownDefaultOpenApi':
+      return _$workspaceCallerRoleEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$workspaceCallerRoleEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -53,6 +62,7 @@ final BuiltSet<WorkspaceCallerRoleEnum> _$workspaceCallerRoleEnumValues =
       _$workspaceCallerRoleEnum_owner,
       _$workspaceCallerRoleEnum_editor,
       _$workspaceCallerRoleEnum_viewer,
+      _$workspaceCallerRoleEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<WorkspaceMembersEnum> _$workspaceMembersEnumSerializer =
@@ -65,10 +75,12 @@ class _$WorkspaceMembersEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'viewer': 'viewer',
     'editor': 'editor',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'viewer': 'viewer',
     'editor': 'editor',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -99,11 +111,13 @@ class _$WorkspaceCallerRoleEnumSerializer
     'owner': 'owner',
     'editor': 'editor',
     'viewer': 'viewer',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'owner': 'owner',
     'editor': 'editor',
     'viewer': 'viewer',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

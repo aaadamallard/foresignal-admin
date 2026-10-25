@@ -18,6 +18,9 @@ _$milNavalCooccurrencePayloadStatusEnum_noCoverage =
 const MilNavalCooccurrencePayloadStatusEnum
 _$milNavalCooccurrencePayloadStatusEnum_degradedInput =
     const MilNavalCooccurrencePayloadStatusEnum._('degradedInput');
+const MilNavalCooccurrencePayloadStatusEnum
+_$milNavalCooccurrencePayloadStatusEnum_unknownDefaultOpenApi =
+    const MilNavalCooccurrencePayloadStatusEnum._('unknownDefaultOpenApi');
 
 MilNavalCooccurrencePayloadStatusEnum
 _$milNavalCooccurrencePayloadStatusEnumValueOf(String name) {
@@ -30,8 +33,10 @@ _$milNavalCooccurrencePayloadStatusEnumValueOf(String name) {
       return _$milNavalCooccurrencePayloadStatusEnum_noCoverage;
     case 'degradedInput':
       return _$milNavalCooccurrencePayloadStatusEnum_degradedInput;
+    case 'unknownDefaultOpenApi':
+      return _$milNavalCooccurrencePayloadStatusEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$milNavalCooccurrencePayloadStatusEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -43,6 +48,7 @@ _$milNavalCooccurrencePayloadStatusEnumValues =
         _$milNavalCooccurrencePayloadStatusEnum_insufficientData,
         _$milNavalCooccurrencePayloadStatusEnum_noCoverage,
         _$milNavalCooccurrencePayloadStatusEnum_degradedInput,
+        _$milNavalCooccurrencePayloadStatusEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -57,12 +63,14 @@ class _$MilNavalCooccurrencePayloadStatusEnumSerializer
     'insufficientData': 'insufficient-data',
     'noCoverage': 'no-coverage',
     'degradedInput': 'degraded-input',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'ok': 'ok',
     'insufficient-data': 'insufficientData',
     'no-coverage': 'noCoverage',
     'degraded-input': 'degradedInput',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

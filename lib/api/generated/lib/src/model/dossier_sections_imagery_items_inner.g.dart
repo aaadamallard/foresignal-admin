@@ -15,6 +15,9 @@ _$dossierSectionsImageryItemsInnerKindEnum_satdumpProduct =
 const DossierSectionsImageryItemsInnerKindEnum
 _$dossierSectionsImageryItemsInnerKindEnum_stacScene =
     const DossierSectionsImageryItemsInnerKindEnum._('stacScene');
+const DossierSectionsImageryItemsInnerKindEnum
+_$dossierSectionsImageryItemsInnerKindEnum_unknownDefaultOpenApi =
+    const DossierSectionsImageryItemsInnerKindEnum._('unknownDefaultOpenApi');
 
 DossierSectionsImageryItemsInnerKindEnum
 _$dossierSectionsImageryItemsInnerKindEnumValueOf(String name) {
@@ -25,8 +28,10 @@ _$dossierSectionsImageryItemsInnerKindEnumValueOf(String name) {
       return _$dossierSectionsImageryItemsInnerKindEnum_satdumpProduct;
     case 'stacScene':
       return _$dossierSectionsImageryItemsInnerKindEnum_stacScene;
+    case 'unknownDefaultOpenApi':
+      return _$dossierSectionsImageryItemsInnerKindEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$dossierSectionsImageryItemsInnerKindEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -37,6 +42,7 @@ _$dossierSectionsImageryItemsInnerKindEnumValues =
         _$dossierSectionsImageryItemsInnerKindEnum_rasterFrame,
         _$dossierSectionsImageryItemsInnerKindEnum_satdumpProduct,
         _$dossierSectionsImageryItemsInnerKindEnum_stacScene,
+        _$dossierSectionsImageryItemsInnerKindEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -50,11 +56,13 @@ class _$DossierSectionsImageryItemsInnerKindEnumSerializer
     'rasterFrame': 'raster-frame',
     'satdumpProduct': 'satdump-product',
     'stacScene': 'stac-scene',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'raster-frame': 'rasterFrame',
     'satdump-product': 'satdumpProduct',
     'stac-scene': 'stacScene',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

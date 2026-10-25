@@ -244,6 +244,10 @@ class NotificationPreferenceInputChannelTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'webpush')
   static const NotificationPreferenceInputChannelTypeEnum webpush =
       _$notificationPreferenceInputChannelTypeEnum_webpush;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const NotificationPreferenceInputChannelTypeEnum
+  unknownDefaultOpenApi =
+      _$notificationPreferenceInputChannelTypeEnum_unknownDefaultOpenApi;
 
   static Serializer<NotificationPreferenceInputChannelTypeEnum>
   get serializer => _$notificationPreferenceInputChannelTypeEnumSerializer;

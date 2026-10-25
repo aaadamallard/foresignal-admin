@@ -29,6 +29,11 @@ _$hypothesisSetInputLedgerQuestionResolverTypeEnum_situationStatus =
 const HypothesisSetInputLedgerQuestionResolverTypeEnum
 _$hypothesisSetInputLedgerQuestionResolverTypeEnum_manual =
     const HypothesisSetInputLedgerQuestionResolverTypeEnum._('manual');
+const HypothesisSetInputLedgerQuestionResolverTypeEnum
+_$hypothesisSetInputLedgerQuestionResolverTypeEnum_unknownDefaultOpenApi =
+    const HypothesisSetInputLedgerQuestionResolverTypeEnum._(
+      'unknownDefaultOpenApi',
+    );
 
 HypothesisSetInputLedgerQuestionResolverTypeEnum
 _$hypothesisSetInputLedgerQuestionResolverTypeEnumValueOf(String name) {
@@ -47,24 +52,27 @@ _$hypothesisSetInputLedgerQuestionResolverTypeEnumValueOf(String name) {
       return _$hypothesisSetInputLedgerQuestionResolverTypeEnum_situationStatus;
     case 'manual':
       return _$hypothesisSetInputLedgerQuestionResolverTypeEnum_manual;
+    case 'unknownDefaultOpenApi':
+      return _$hypothesisSetInputLedgerQuestionResolverTypeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$hypothesisSetInputLedgerQuestionResolverTypeEnum_unknownDefaultOpenApi;
   }
 }
 
 final BuiltSet<HypothesisSetInputLedgerQuestionResolverTypeEnum>
 _$hypothesisSetInputLedgerQuestionResolverTypeEnumValues =
-    BuiltSet<HypothesisSetInputLedgerQuestionResolverTypeEnum>(
-      const <HypothesisSetInputLedgerQuestionResolverTypeEnum>[
-        _$hypothesisSetInputLedgerQuestionResolverTypeEnum_hypothesisOutcome,
-        _$hypothesisSetInputLedgerQuestionResolverTypeEnum_eventExists,
-        _$hypothesisSetInputLedgerQuestionResolverTypeEnum_countThreshold,
-        _$hypothesisSetInputLedgerQuestionResolverTypeEnum_seriesValue,
-        _$hypothesisSetInputLedgerQuestionResolverTypeEnum_alertFired,
-        _$hypothesisSetInputLedgerQuestionResolverTypeEnum_situationStatus,
-        _$hypothesisSetInputLedgerQuestionResolverTypeEnum_manual,
-      ],
-    );
+    BuiltSet<HypothesisSetInputLedgerQuestionResolverTypeEnum>(const <
+      HypothesisSetInputLedgerQuestionResolverTypeEnum
+    >[
+      _$hypothesisSetInputLedgerQuestionResolverTypeEnum_hypothesisOutcome,
+      _$hypothesisSetInputLedgerQuestionResolverTypeEnum_eventExists,
+      _$hypothesisSetInputLedgerQuestionResolverTypeEnum_countThreshold,
+      _$hypothesisSetInputLedgerQuestionResolverTypeEnum_seriesValue,
+      _$hypothesisSetInputLedgerQuestionResolverTypeEnum_alertFired,
+      _$hypothesisSetInputLedgerQuestionResolverTypeEnum_situationStatus,
+      _$hypothesisSetInputLedgerQuestionResolverTypeEnum_manual,
+      _$hypothesisSetInputLedgerQuestionResolverTypeEnum_unknownDefaultOpenApi,
+    ]);
 
 Serializer<HypothesisSetInputLedgerQuestionResolverTypeEnum>
 _$hypothesisSetInputLedgerQuestionResolverTypeEnumSerializer =
@@ -81,6 +89,7 @@ class _$HypothesisSetInputLedgerQuestionResolverTypeEnumSerializer
     'alertFired': 'alert-fired',
     'situationStatus': 'situation-status',
     'manual': 'manual',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'hypothesis-outcome': 'hypothesisOutcome',
@@ -90,6 +99,7 @@ class _$HypothesisSetInputLedgerQuestionResolverTypeEnumSerializer
     'alert-fired': 'alertFired',
     'situation-status': 'situationStatus',
     'manual': 'manual',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

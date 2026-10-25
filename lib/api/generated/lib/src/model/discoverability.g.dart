@@ -15,6 +15,9 @@ _$discoverabilityDiscoverabilityEnum_instance =
 const DiscoverabilityDiscoverabilityEnum
 _$discoverabilityDiscoverabilityEnum_network =
     const DiscoverabilityDiscoverabilityEnum._('network');
+const DiscoverabilityDiscoverabilityEnum
+_$discoverabilityDiscoverabilityEnum_unknownDefaultOpenApi =
+    const DiscoverabilityDiscoverabilityEnum._('unknownDefaultOpenApi');
 
 DiscoverabilityDiscoverabilityEnum _$discoverabilityDiscoverabilityEnumValueOf(
   String name,
@@ -26,8 +29,10 @@ DiscoverabilityDiscoverabilityEnum _$discoverabilityDiscoverabilityEnumValueOf(
       return _$discoverabilityDiscoverabilityEnum_instance;
     case 'network':
       return _$discoverabilityDiscoverabilityEnum_network;
+    case 'unknownDefaultOpenApi':
+      return _$discoverabilityDiscoverabilityEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$discoverabilityDiscoverabilityEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -38,6 +43,7 @@ _$discoverabilityDiscoverabilityEnumValues =
         _$discoverabilityDiscoverabilityEnum_none,
         _$discoverabilityDiscoverabilityEnum_instance,
         _$discoverabilityDiscoverabilityEnum_network,
+        _$discoverabilityDiscoverabilityEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -47,6 +53,9 @@ const DiscoverabilityMaxAllowedEnum _$discoverabilityMaxAllowedEnum_instance =
     const DiscoverabilityMaxAllowedEnum._('instance');
 const DiscoverabilityMaxAllowedEnum _$discoverabilityMaxAllowedEnum_network =
     const DiscoverabilityMaxAllowedEnum._('network');
+const DiscoverabilityMaxAllowedEnum
+_$discoverabilityMaxAllowedEnum_unknownDefaultOpenApi =
+    const DiscoverabilityMaxAllowedEnum._('unknownDefaultOpenApi');
 
 DiscoverabilityMaxAllowedEnum _$discoverabilityMaxAllowedEnumValueOf(
   String name,
@@ -58,8 +67,10 @@ DiscoverabilityMaxAllowedEnum _$discoverabilityMaxAllowedEnumValueOf(
       return _$discoverabilityMaxAllowedEnum_instance;
     case 'network':
       return _$discoverabilityMaxAllowedEnum_network;
+    case 'unknownDefaultOpenApi':
+      return _$discoverabilityMaxAllowedEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$discoverabilityMaxAllowedEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -69,6 +80,7 @@ _$discoverabilityMaxAllowedEnumValues = BuiltSet<DiscoverabilityMaxAllowedEnum>(
     _$discoverabilityMaxAllowedEnum_none,
     _$discoverabilityMaxAllowedEnum_instance,
     _$discoverabilityMaxAllowedEnum_network,
+    _$discoverabilityMaxAllowedEnum_unknownDefaultOpenApi,
   ],
 );
 
@@ -85,11 +97,13 @@ class _$DiscoverabilityDiscoverabilityEnumSerializer
     'none': 'none',
     'instance': 'instance',
     'network': 'network',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'none': 'none',
     'instance': 'instance',
     'network': 'network',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -120,11 +134,13 @@ class _$DiscoverabilityMaxAllowedEnumSerializer
     'none': 'none',
     'instance': 'instance',
     'network': 'network',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'none': 'none',
     'instance': 'instance',
     'network': 'network',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

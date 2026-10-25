@@ -365,6 +365,9 @@ class ChronicleSketchPackageKeyTypesEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'topics')
   static const ChronicleSketchPackageKeyTypesEnum topics =
       _$chronicleSketchPackageKeyTypesEnum_topics;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ChronicleSketchPackageKeyTypesEnum unknownDefaultOpenApi =
+      _$chronicleSketchPackageKeyTypesEnum_unknownDefaultOpenApi;
 
   static Serializer<ChronicleSketchPackageKeyTypesEnum> get serializer =>
       _$chronicleSketchPackageKeyTypesEnumSerializer;

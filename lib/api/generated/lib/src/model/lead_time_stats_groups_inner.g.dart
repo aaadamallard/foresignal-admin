@@ -12,6 +12,9 @@ _$leadTimeStatsGroupsInnerFoundByEnum_organic =
 const LeadTimeStatsGroupsInnerFoundByEnum
 _$leadTimeStatsGroupsInnerFoundByEnum_cue =
     const LeadTimeStatsGroupsInnerFoundByEnum._('cue');
+const LeadTimeStatsGroupsInnerFoundByEnum
+_$leadTimeStatsGroupsInnerFoundByEnum_unknownDefaultOpenApi =
+    const LeadTimeStatsGroupsInnerFoundByEnum._('unknownDefaultOpenApi');
 
 LeadTimeStatsGroupsInnerFoundByEnum
 _$leadTimeStatsGroupsInnerFoundByEnumValueOf(String name) {
@@ -20,8 +23,10 @@ _$leadTimeStatsGroupsInnerFoundByEnumValueOf(String name) {
       return _$leadTimeStatsGroupsInnerFoundByEnum_organic;
     case 'cue':
       return _$leadTimeStatsGroupsInnerFoundByEnum_cue;
+    case 'unknownDefaultOpenApi':
+      return _$leadTimeStatsGroupsInnerFoundByEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$leadTimeStatsGroupsInnerFoundByEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -31,6 +36,7 @@ _$leadTimeStatsGroupsInnerFoundByEnumValues =
       const <LeadTimeStatsGroupsInnerFoundByEnum>[
         _$leadTimeStatsGroupsInnerFoundByEnum_organic,
         _$leadTimeStatsGroupsInnerFoundByEnum_cue,
+        _$leadTimeStatsGroupsInnerFoundByEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -43,10 +49,12 @@ class _$LeadTimeStatsGroupsInnerFoundByEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'organic': 'organic',
     'cue': 'cue',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'organic': 'organic',
     'cue': 'cue',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

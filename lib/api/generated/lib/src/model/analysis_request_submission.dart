@@ -195,6 +195,9 @@ class AnalysisRequestSubmissionOrientationEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'inverse')
   static const AnalysisRequestSubmissionOrientationEnum inverse =
       _$analysisRequestSubmissionOrientationEnum_inverse;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const AnalysisRequestSubmissionOrientationEnum unknownDefaultOpenApi =
+      _$analysisRequestSubmissionOrientationEnum_unknownDefaultOpenApi;
 
   static Serializer<AnalysisRequestSubmissionOrientationEnum> get serializer =>
       _$analysisRequestSubmissionOrientationEnumSerializer;

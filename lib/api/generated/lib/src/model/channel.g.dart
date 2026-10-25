@@ -59,6 +59,8 @@ const ChannelTypeEnum _$channelTypeEnum_meshtastic = const ChannelTypeEnum._(
 const ChannelTypeEnum _$channelTypeEnum_meshcore = const ChannelTypeEnum._(
   'meshcore',
 );
+const ChannelTypeEnum _$channelTypeEnum_unknownDefaultOpenApi =
+    const ChannelTypeEnum._('unknownDefaultOpenApi');
 
 ChannelTypeEnum _$channelTypeEnumValueOf(String name) {
   switch (name) {
@@ -100,8 +102,10 @@ ChannelTypeEnum _$channelTypeEnumValueOf(String name) {
       return _$channelTypeEnum_meshtastic;
     case 'meshcore':
       return _$channelTypeEnum_meshcore;
+    case 'unknownDefaultOpenApi':
+      return _$channelTypeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$channelTypeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -126,6 +130,7 @@ final BuiltSet<ChannelTypeEnum> _$channelTypeEnumValues =
       _$channelTypeEnum_mqtt,
       _$channelTypeEnum_meshtastic,
       _$channelTypeEnum_meshcore,
+      _$channelTypeEnum_unknownDefaultOpenApi,
     ]);
 
 const ChannelMinSeverityEnum _$channelMinSeverityEnum_info =
@@ -134,6 +139,8 @@ const ChannelMinSeverityEnum _$channelMinSeverityEnum_warning =
     const ChannelMinSeverityEnum._('warning');
 const ChannelMinSeverityEnum _$channelMinSeverityEnum_critical =
     const ChannelMinSeverityEnum._('critical');
+const ChannelMinSeverityEnum _$channelMinSeverityEnum_unknownDefaultOpenApi =
+    const ChannelMinSeverityEnum._('unknownDefaultOpenApi');
 
 ChannelMinSeverityEnum _$channelMinSeverityEnumValueOf(String name) {
   switch (name) {
@@ -143,8 +150,10 @@ ChannelMinSeverityEnum _$channelMinSeverityEnumValueOf(String name) {
       return _$channelMinSeverityEnum_warning;
     case 'critical':
       return _$channelMinSeverityEnum_critical;
+    case 'unknownDefaultOpenApi':
+      return _$channelMinSeverityEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$channelMinSeverityEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -153,6 +162,7 @@ final BuiltSet<ChannelMinSeverityEnum> _$channelMinSeverityEnumValues =
       _$channelMinSeverityEnum_info,
       _$channelMinSeverityEnum_warning,
       _$channelMinSeverityEnum_critical,
+      _$channelMinSeverityEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<ChannelTypeEnum> _$channelTypeEnumSerializer =
@@ -182,6 +192,7 @@ class _$ChannelTypeEnumSerializer
     'mqtt': 'mqtt',
     'meshtastic': 'meshtastic',
     'meshcore': 'meshcore',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'webhook': 'webhook',
@@ -203,6 +214,7 @@ class _$ChannelTypeEnumSerializer
     'mqtt': 'mqtt',
     'meshtastic': 'meshtastic',
     'meshcore': 'meshcore',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -233,11 +245,13 @@ class _$ChannelMinSeverityEnumSerializer
     'info': 'info',
     'warning': 'warning',
     'critical': 'critical',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'info': 'info',
     'warning': 'warning',
     'critical': 'critical',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

@@ -188,6 +188,9 @@ class ShareRequestRoleEnum extends EnumClass {
       _$shareRequestRoleEnum_commenter;
   @BuiltValueEnumConst(wireName: r'editor')
   static const ShareRequestRoleEnum editor = _$shareRequestRoleEnum_editor;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ShareRequestRoleEnum unknownDefaultOpenApi =
+      _$shareRequestRoleEnum_unknownDefaultOpenApi;
 
   static Serializer<ShareRequestRoleEnum> get serializer =>
       _$shareRequestRoleEnumSerializer;

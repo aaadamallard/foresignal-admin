@@ -16,6 +16,9 @@ const GroundStationPayloadStateEnum _$groundStationPayloadStateEnum_locked =
     const GroundStationPayloadStateEnum._('locked');
 const GroundStationPayloadStateEnum _$groundStationPayloadStateEnum_unknown =
     const GroundStationPayloadStateEnum._('unknown');
+const GroundStationPayloadStateEnum
+_$groundStationPayloadStateEnum_unknownDefaultOpenApi =
+    const GroundStationPayloadStateEnum._('unknownDefaultOpenApi');
 
 GroundStationPayloadStateEnum _$groundStationPayloadStateEnumValueOf(
   String name,
@@ -31,8 +34,10 @@ GroundStationPayloadStateEnum _$groundStationPayloadStateEnumValueOf(
       return _$groundStationPayloadStateEnum_locked;
     case 'unknown':
       return _$groundStationPayloadStateEnum_unknown;
+    case 'unknownDefaultOpenApi':
+      return _$groundStationPayloadStateEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$groundStationPayloadStateEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -44,6 +49,7 @@ _$groundStationPayloadStateEnumValues = BuiltSet<GroundStationPayloadStateEnum>(
     _$groundStationPayloadStateEnum_receiving,
     _$groundStationPayloadStateEnum_locked,
     _$groundStationPayloadStateEnum_unknown,
+    _$groundStationPayloadStateEnum_unknownDefaultOpenApi,
   ],
 );
 
@@ -53,6 +59,9 @@ _$groundStationPayloadSatdumpModeEnum_live =
 const GroundStationPayloadSatdumpModeEnum
 _$groundStationPayloadSatdumpModeEnum_autotrack =
     const GroundStationPayloadSatdumpModeEnum._('autotrack');
+const GroundStationPayloadSatdumpModeEnum
+_$groundStationPayloadSatdumpModeEnum_unknownDefaultOpenApi =
+    const GroundStationPayloadSatdumpModeEnum._('unknownDefaultOpenApi');
 
 GroundStationPayloadSatdumpModeEnum
 _$groundStationPayloadSatdumpModeEnumValueOf(String name) {
@@ -61,8 +70,10 @@ _$groundStationPayloadSatdumpModeEnumValueOf(String name) {
       return _$groundStationPayloadSatdumpModeEnum_live;
     case 'autotrack':
       return _$groundStationPayloadSatdumpModeEnum_autotrack;
+    case 'unknownDefaultOpenApi':
+      return _$groundStationPayloadSatdumpModeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$groundStationPayloadSatdumpModeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -72,6 +83,7 @@ _$groundStationPayloadSatdumpModeEnumValues =
       const <GroundStationPayloadSatdumpModeEnum>[
         _$groundStationPayloadSatdumpModeEnum_live,
         _$groundStationPayloadSatdumpModeEnum_autotrack,
+        _$groundStationPayloadSatdumpModeEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -90,6 +102,7 @@ class _$GroundStationPayloadStateEnumSerializer
     'receiving': 'receiving',
     'locked': 'locked',
     'unknown': 'unknown',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'idle': 'idle',
@@ -97,6 +110,7 @@ class _$GroundStationPayloadStateEnumSerializer
     'receiving': 'receiving',
     'locked': 'locked',
     'unknown': 'unknown',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -126,10 +140,12 @@ class _$GroundStationPayloadSatdumpModeEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'live': 'live',
     'autotrack': 'autotrack',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'live': 'live',
     'autotrack': 'autotrack',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

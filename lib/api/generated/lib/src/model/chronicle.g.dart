@@ -16,6 +16,8 @@ const ChronicleStatusEnum _$chronicleStatusEnum_stopped =
     const ChronicleStatusEnum._('stopped');
 const ChronicleStatusEnum _$chronicleStatusEnum_archived =
     const ChronicleStatusEnum._('archived');
+const ChronicleStatusEnum _$chronicleStatusEnum_unknownDefaultOpenApi =
+    const ChronicleStatusEnum._('unknownDefaultOpenApi');
 
 ChronicleStatusEnum _$chronicleStatusEnumValueOf(String name) {
   switch (name) {
@@ -29,8 +31,10 @@ ChronicleStatusEnum _$chronicleStatusEnumValueOf(String name) {
       return _$chronicleStatusEnum_stopped;
     case 'archived':
       return _$chronicleStatusEnum_archived;
+    case 'unknownDefaultOpenApi':
+      return _$chronicleStatusEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$chronicleStatusEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -41,6 +45,7 @@ final BuiltSet<ChronicleStatusEnum> _$chronicleStatusEnumValues =
       _$chronicleStatusEnum_paused,
       _$chronicleStatusEnum_stopped,
       _$chronicleStatusEnum_archived,
+      _$chronicleStatusEnum_unknownDefaultOpenApi,
     ]);
 
 const ChronicleCapStateEnum _$chronicleCapStateEnum_ok =
@@ -49,6 +54,8 @@ const ChronicleCapStateEnum _$chronicleCapStateEnum_warning =
     const ChronicleCapStateEnum._('warning');
 const ChronicleCapStateEnum _$chronicleCapStateEnum_exceeded =
     const ChronicleCapStateEnum._('exceeded');
+const ChronicleCapStateEnum _$chronicleCapStateEnum_unknownDefaultOpenApi =
+    const ChronicleCapStateEnum._('unknownDefaultOpenApi');
 
 ChronicleCapStateEnum _$chronicleCapStateEnumValueOf(String name) {
   switch (name) {
@@ -58,8 +65,10 @@ ChronicleCapStateEnum _$chronicleCapStateEnumValueOf(String name) {
       return _$chronicleCapStateEnum_warning;
     case 'exceeded':
       return _$chronicleCapStateEnum_exceeded;
+    case 'unknownDefaultOpenApi':
+      return _$chronicleCapStateEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$chronicleCapStateEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -68,6 +77,7 @@ final BuiltSet<ChronicleCapStateEnum> _$chronicleCapStateEnumValues =
       _$chronicleCapStateEnum_ok,
       _$chronicleCapStateEnum_warning,
       _$chronicleCapStateEnum_exceeded,
+      _$chronicleCapStateEnum_unknownDefaultOpenApi,
     ]);
 
 const ChronicleOriginEnum _$chronicleOriginEnum_operator_ =
@@ -76,6 +86,8 @@ const ChronicleOriginEnum _$chronicleOriginEnum_agent =
     const ChronicleOriginEnum._('agent');
 const ChronicleOriginEnum _$chronicleOriginEnum_analyst =
     const ChronicleOriginEnum._('analyst');
+const ChronicleOriginEnum _$chronicleOriginEnum_unknownDefaultOpenApi =
+    const ChronicleOriginEnum._('unknownDefaultOpenApi');
 
 ChronicleOriginEnum _$chronicleOriginEnumValueOf(String name) {
   switch (name) {
@@ -85,8 +97,10 @@ ChronicleOriginEnum _$chronicleOriginEnumValueOf(String name) {
       return _$chronicleOriginEnum_agent;
     case 'analyst':
       return _$chronicleOriginEnum_analyst;
+    case 'unknownDefaultOpenApi':
+      return _$chronicleOriginEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$chronicleOriginEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -95,6 +109,7 @@ final BuiltSet<ChronicleOriginEnum> _$chronicleOriginEnumValues =
       _$chronicleOriginEnum_operator_,
       _$chronicleOriginEnum_agent,
       _$chronicleOriginEnum_analyst,
+      _$chronicleOriginEnum_unknownDefaultOpenApi,
     ]);
 
 const ChronicleDiscoverabilityEnum _$chronicleDiscoverabilityEnum_none =
@@ -103,6 +118,9 @@ const ChronicleDiscoverabilityEnum _$chronicleDiscoverabilityEnum_instance =
     const ChronicleDiscoverabilityEnum._('instance');
 const ChronicleDiscoverabilityEnum _$chronicleDiscoverabilityEnum_network =
     const ChronicleDiscoverabilityEnum._('network');
+const ChronicleDiscoverabilityEnum
+_$chronicleDiscoverabilityEnum_unknownDefaultOpenApi =
+    const ChronicleDiscoverabilityEnum._('unknownDefaultOpenApi');
 
 ChronicleDiscoverabilityEnum _$chronicleDiscoverabilityEnumValueOf(
   String name,
@@ -114,8 +132,10 @@ ChronicleDiscoverabilityEnum _$chronicleDiscoverabilityEnumValueOf(
       return _$chronicleDiscoverabilityEnum_instance;
     case 'network':
       return _$chronicleDiscoverabilityEnum_network;
+    case 'unknownDefaultOpenApi':
+      return _$chronicleDiscoverabilityEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$chronicleDiscoverabilityEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -125,6 +145,7 @@ _$chronicleDiscoverabilityEnumValues =
       _$chronicleDiscoverabilityEnum_none,
       _$chronicleDiscoverabilityEnum_instance,
       _$chronicleDiscoverabilityEnum_network,
+      _$chronicleDiscoverabilityEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<ChronicleStatusEnum> _$chronicleStatusEnumSerializer =
@@ -145,6 +166,7 @@ class _$ChronicleStatusEnumSerializer
     'paused': 'paused',
     'stopped': 'stopped',
     'archived': 'archived',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'proposed': 'proposed',
@@ -152,6 +174,7 @@ class _$ChronicleStatusEnumSerializer
     'paused': 'paused',
     'stopped': 'stopped',
     'archived': 'archived',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -182,11 +205,13 @@ class _$ChronicleCapStateEnumSerializer
     'ok': 'ok',
     'warning': 'warning',
     'exceeded': 'exceeded',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'ok': 'ok',
     'warning': 'warning',
     'exceeded': 'exceeded',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -217,11 +242,13 @@ class _$ChronicleOriginEnumSerializer
     'operator_': 'operator',
     'agent': 'agent',
     'analyst': 'analyst',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'operator': 'operator_',
     'agent': 'agent',
     'analyst': 'analyst',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -252,11 +279,13 @@ class _$ChronicleDiscoverabilityEnumSerializer
     'none': 'none',
     'instance': 'instance',
     'network': 'network',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'none': 'none',
     'instance': 'instance',
     'network': 'network',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

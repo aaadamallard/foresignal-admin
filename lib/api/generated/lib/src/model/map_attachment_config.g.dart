@@ -11,6 +11,9 @@ const MapAttachmentConfigAttachMapEnum _$mapAttachmentConfigAttachMapEnum_none =
 const MapAttachmentConfigAttachMapEnum
 _$mapAttachmentConfigAttachMapEnum_static_ =
     const MapAttachmentConfigAttachMapEnum._('static_');
+const MapAttachmentConfigAttachMapEnum
+_$mapAttachmentConfigAttachMapEnum_unknownDefaultOpenApi =
+    const MapAttachmentConfigAttachMapEnum._('unknownDefaultOpenApi');
 
 MapAttachmentConfigAttachMapEnum _$mapAttachmentConfigAttachMapEnumValueOf(
   String name,
@@ -20,8 +23,10 @@ MapAttachmentConfigAttachMapEnum _$mapAttachmentConfigAttachMapEnumValueOf(
       return _$mapAttachmentConfigAttachMapEnum_none;
     case 'static_':
       return _$mapAttachmentConfigAttachMapEnum_static_;
+    case 'unknownDefaultOpenApi':
+      return _$mapAttachmentConfigAttachMapEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$mapAttachmentConfigAttachMapEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -31,6 +36,7 @@ _$mapAttachmentConfigAttachMapEnumValues =
       const <MapAttachmentConfigAttachMapEnum>[
         _$mapAttachmentConfigAttachMapEnum_none,
         _$mapAttachmentConfigAttachMapEnum_static_,
+        _$mapAttachmentConfigAttachMapEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -43,10 +49,12 @@ class _$MapAttachmentConfigAttachMapEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'none': 'none',
     'static_': 'static',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'none': 'none',
     'static': 'static_',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

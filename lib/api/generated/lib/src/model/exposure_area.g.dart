@@ -12,6 +12,8 @@ const ExposureAreaSource_Enum _$exposureAreaSourceEnum_place =
     const ExposureAreaSource_Enum._('place');
 const ExposureAreaSource_Enum _$exposureAreaSourceEnum_event =
     const ExposureAreaSource_Enum._('event');
+const ExposureAreaSource_Enum _$exposureAreaSourceEnum_unknownDefaultOpenApi =
+    const ExposureAreaSource_Enum._('unknownDefaultOpenApi');
 
 ExposureAreaSource_Enum _$exposureAreaSourceEnumValueOf(String name) {
   switch (name) {
@@ -21,8 +23,10 @@ ExposureAreaSource_Enum _$exposureAreaSourceEnumValueOf(String name) {
       return _$exposureAreaSourceEnum_place;
     case 'event':
       return _$exposureAreaSourceEnum_event;
+    case 'unknownDefaultOpenApi':
+      return _$exposureAreaSourceEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$exposureAreaSourceEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -31,6 +35,7 @@ final BuiltSet<ExposureAreaSource_Enum> _$exposureAreaSourceEnumValues =
       _$exposureAreaSourceEnum_geometry,
       _$exposureAreaSourceEnum_place,
       _$exposureAreaSourceEnum_event,
+      _$exposureAreaSourceEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<ExposureAreaSource_Enum> _$exposureAreaSourceEnumSerializer =
@@ -42,11 +47,13 @@ class _$ExposureAreaSource_EnumSerializer
     'geometry': 'geometry',
     'place': 'place',
     'event': 'event',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'geometry': 'geometry',
     'place': 'place',
     'event': 'event',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

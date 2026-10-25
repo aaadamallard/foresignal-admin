@@ -9,6 +9,9 @@ part of 'confidence_level.dart';
 const ConfidenceLevel _$low = const ConfidenceLevel._('low');
 const ConfidenceLevel _$moderate = const ConfidenceLevel._('moderate');
 const ConfidenceLevel _$high = const ConfidenceLevel._('high');
+const ConfidenceLevel _$unknownDefaultOpenApi = const ConfidenceLevel._(
+  'unknownDefaultOpenApi',
+);
 
 ConfidenceLevel _$valueOf(String name) {
   switch (name) {
@@ -18,13 +21,15 @@ ConfidenceLevel _$valueOf(String name) {
       return _$moderate;
     case 'high':
       return _$high;
+    case 'unknownDefaultOpenApi':
+      return _$unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$unknownDefaultOpenApi;
   }
 }
 
 final BuiltSet<ConfidenceLevel> _$values = BuiltSet<ConfidenceLevel>(
-  const <ConfidenceLevel>[_$low, _$moderate, _$high],
+  const <ConfidenceLevel>[_$low, _$moderate, _$high, _$unknownDefaultOpenApi],
 );
 
 class _$ConfidenceLevelMeta {
@@ -32,6 +37,7 @@ class _$ConfidenceLevelMeta {
   ConfidenceLevel get low => _$low;
   ConfidenceLevel get moderate => _$moderate;
   ConfidenceLevel get high => _$high;
+  ConfidenceLevel get unknownDefaultOpenApi => _$unknownDefaultOpenApi;
   ConfidenceLevel valueOf(String name) => _$valueOf(name);
   BuiltSet<ConfidenceLevel> get values => _$values;
 }
@@ -50,11 +56,13 @@ class _$ConfidenceLevelSerializer
     'low': 'low',
     'moderate': 'moderate',
     'high': 'high',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'low': 'low',
     'moderate': 'moderate',
     'high': 'high',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

@@ -473,6 +473,9 @@ class LedgerQuestionBriefTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'numeric')
   static const LedgerQuestionBriefTypeEnum numeric =
       _$ledgerQuestionBriefTypeEnum_numeric;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const LedgerQuestionBriefTypeEnum unknownDefaultOpenApi =
+      _$ledgerQuestionBriefTypeEnum_unknownDefaultOpenApi;
 
   static Serializer<LedgerQuestionBriefTypeEnum> get serializer =>
       _$ledgerQuestionBriefTypeEnumSerializer;
@@ -498,6 +501,9 @@ class LedgerQuestionBriefStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'annulled')
   static const LedgerQuestionBriefStatusEnum annulled =
       _$ledgerQuestionBriefStatusEnum_annulled;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const LedgerQuestionBriefStatusEnum unknownDefaultOpenApi =
+      _$ledgerQuestionBriefStatusEnum_unknownDefaultOpenApi;
 
   static Serializer<LedgerQuestionBriefStatusEnum> get serializer =>
       _$ledgerQuestionBriefStatusEnumSerializer;

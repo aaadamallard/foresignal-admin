@@ -18,6 +18,9 @@ _$forecastQuestionEventEventEnum_questionPeriodResolved =
 const ForecastQuestionEventEventEnum
 _$forecastQuestionEventEventEnum_questionPeriodAnnulled =
     const ForecastQuestionEventEventEnum._('questionPeriodAnnulled');
+const ForecastQuestionEventEventEnum
+_$forecastQuestionEventEventEnum_unknownDefaultOpenApi =
+    const ForecastQuestionEventEventEnum._('unknownDefaultOpenApi');
 
 ForecastQuestionEventEventEnum _$forecastQuestionEventEventEnumValueOf(
   String name,
@@ -31,8 +34,10 @@ ForecastQuestionEventEventEnum _$forecastQuestionEventEventEnumValueOf(
       return _$forecastQuestionEventEventEnum_questionPeriodResolved;
     case 'questionPeriodAnnulled':
       return _$forecastQuestionEventEventEnum_questionPeriodAnnulled;
+    case 'unknownDefaultOpenApi':
+      return _$forecastQuestionEventEventEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$forecastQuestionEventEventEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -44,6 +49,7 @@ _$forecastQuestionEventEventEnumValues =
         _$forecastQuestionEventEventEnum_questionPeriodClosed,
         _$forecastQuestionEventEventEnum_questionPeriodResolved,
         _$forecastQuestionEventEventEnum_questionPeriodAnnulled,
+        _$forecastQuestionEventEventEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -58,12 +64,14 @@ class _$ForecastQuestionEventEventEnumSerializer
     'questionPeriodClosed': 'question.closed',
     'questionPeriodResolved': 'question.resolved',
     'questionPeriodAnnulled': 'question.annulled',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'question.opened': 'questionPeriodOpened',
     'question.closed': 'questionPeriodClosed',
     'question.resolved': 'questionPeriodResolved',
     'question.annulled': 'questionPeriodAnnulled',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

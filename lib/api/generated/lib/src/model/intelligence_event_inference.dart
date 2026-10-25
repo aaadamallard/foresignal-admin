@@ -381,6 +381,10 @@ class IntelligenceEventInferenceConfidenceLabelEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'high')
   static const IntelligenceEventInferenceConfidenceLabelEnum high =
       _$intelligenceEventInferenceConfidenceLabelEnum_high;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const IntelligenceEventInferenceConfidenceLabelEnum
+  unknownDefaultOpenApi =
+      _$intelligenceEventInferenceConfidenceLabelEnum_unknownDefaultOpenApi;
 
   static Serializer<IntelligenceEventInferenceConfidenceLabelEnum>
   get serializer => _$intelligenceEventInferenceConfidenceLabelEnumSerializer;
@@ -407,6 +411,10 @@ class IntelligenceEventInferenceEvidenceQualityEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'insufficient')
   static const IntelligenceEventInferenceEvidenceQualityEnum insufficient =
       _$intelligenceEventInferenceEvidenceQualityEnum_insufficient;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const IntelligenceEventInferenceEvidenceQualityEnum
+  unknownDefaultOpenApi =
+      _$intelligenceEventInferenceEvidenceQualityEnum_unknownDefaultOpenApi;
 
   static Serializer<IntelligenceEventInferenceEvidenceQualityEnum>
   get serializer => _$intelligenceEventInferenceEvidenceQualityEnumSerializer;

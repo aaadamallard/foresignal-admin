@@ -16,6 +16,9 @@ const ForecastSeriesProviderEnum _$forecastSeriesProviderEnum_aifs =
     const ForecastSeriesProviderEnum._('aifs');
 const ForecastSeriesProviderEnum _$forecastSeriesProviderEnum_nws =
     const ForecastSeriesProviderEnum._('nws');
+const ForecastSeriesProviderEnum
+_$forecastSeriesProviderEnum_unknownDefaultOpenApi =
+    const ForecastSeriesProviderEnum._('unknownDefaultOpenApi');
 
 ForecastSeriesProviderEnum _$forecastSeriesProviderEnumValueOf(String name) {
   switch (name) {
@@ -29,8 +32,10 @@ ForecastSeriesProviderEnum _$forecastSeriesProviderEnumValueOf(String name) {
       return _$forecastSeriesProviderEnum_aifs;
     case 'nws':
       return _$forecastSeriesProviderEnum_nws;
+    case 'unknownDefaultOpenApi':
+      return _$forecastSeriesProviderEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$forecastSeriesProviderEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -41,6 +46,7 @@ final BuiltSet<ForecastSeriesProviderEnum> _$forecastSeriesProviderEnumValues =
       _$forecastSeriesProviderEnum_ifs,
       _$forecastSeriesProviderEnum_aifs,
       _$forecastSeriesProviderEnum_nws,
+      _$forecastSeriesProviderEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<ForecastSeriesProviderEnum> _$forecastSeriesProviderEnumSerializer =
@@ -54,6 +60,7 @@ class _$ForecastSeriesProviderEnumSerializer
     'ifs': 'ifs',
     'aifs': 'aifs',
     'nws': 'nws',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'gfs': 'gfs',
@@ -61,6 +68,7 @@ class _$ForecastSeriesProviderEnumSerializer
     'ifs': 'ifs',
     'aifs': 'aifs',
     'nws': 'nws',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

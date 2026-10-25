@@ -218,6 +218,9 @@ class WatchdogSettingsMethodEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'POST')
   static const WatchdogSettingsMethodEnum POST =
       _$watchdogSettingsMethodEnum_POST;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const WatchdogSettingsMethodEnum unknownDefaultOpenApi =
+      _$watchdogSettingsMethodEnum_unknownDefaultOpenApi;
 
   static Serializer<WatchdogSettingsMethodEnum> get serializer =>
       _$watchdogSettingsMethodEnumSerializer;

@@ -458,6 +458,9 @@ class PlaceShapeEnum extends EnumClass {
   static const PlaceShapeEnum polygon = _$placeShapeEnum_polygon;
   @BuiltValueEnumConst(wireName: r'route')
   static const PlaceShapeEnum route = _$placeShapeEnum_route;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const PlaceShapeEnum unknownDefaultOpenApi =
+      _$placeShapeEnum_unknownDefaultOpenApi;
 
   static Serializer<PlaceShapeEnum> get serializer =>
       _$placeShapeEnumSerializer;
@@ -475,6 +478,9 @@ class PlaceKindEnum extends EnumClass {
   static const PlaceKindEnum airport = _$placeKindEnum_airport;
   @BuiltValueEnumConst(wireName: r'asset')
   static const PlaceKindEnum asset = _$placeKindEnum_asset;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const PlaceKindEnum unknownDefaultOpenApi =
+      _$placeKindEnum_unknownDefaultOpenApi;
 
   static Serializer<PlaceKindEnum> get serializer => _$placeKindEnumSerializer;
 

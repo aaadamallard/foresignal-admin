@@ -239,6 +239,9 @@ class ParamSpecTypeEnum extends EnumClass {
   static const ParamSpecTypeEnum inboxPath = _$paramSpecTypeEnum_inboxPath;
   @BuiltValueEnumConst(wireName: r'json')
   static const ParamSpecTypeEnum json = _$paramSpecTypeEnum_json;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ParamSpecTypeEnum unknownDefaultOpenApi =
+      _$paramSpecTypeEnum_unknownDefaultOpenApi;
 
   static Serializer<ParamSpecTypeEnum> get serializer =>
       _$paramSpecTypeEnumSerializer;

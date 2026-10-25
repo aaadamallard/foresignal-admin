@@ -14,6 +14,8 @@ const WindowStateStateEnum _$windowStateStateEnum_unknown =
     const WindowStateStateEnum._('unknown');
 const WindowStateStateEnum _$windowStateStateEnum_learning =
     const WindowStateStateEnum._('learning');
+const WindowStateStateEnum _$windowStateStateEnum_unknownDefaultOpenApi =
+    const WindowStateStateEnum._('unknownDefaultOpenApi');
 
 WindowStateStateEnum _$windowStateStateEnumValueOf(String name) {
   switch (name) {
@@ -25,8 +27,10 @@ WindowStateStateEnum _$windowStateStateEnumValueOf(String name) {
       return _$windowStateStateEnum_unknown;
     case 'learning':
       return _$windowStateStateEnum_learning;
+    case 'unknownDefaultOpenApi':
+      return _$windowStateStateEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$windowStateStateEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -36,6 +40,7 @@ final BuiltSet<WindowStateStateEnum> _$windowStateStateEnumValues =
       _$windowStateStateEnum_clear,
       _$windowStateStateEnum_unknown,
       _$windowStateStateEnum_learning,
+      _$windowStateStateEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<WindowStateStateEnum> _$windowStateStateEnumSerializer =
@@ -48,12 +53,14 @@ class _$WindowStateStateEnumSerializer
     'clear': 'clear',
     'unknown': 'unknown',
     'learning': 'learning',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'active': 'active',
     'clear': 'clear',
     'unknown': 'unknown',
     'learning': 'learning',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

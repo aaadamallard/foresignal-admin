@@ -18,6 +18,8 @@ const SocialPostMediaTypeEnum _$socialPostMediaTypeEnum_linkCard =
     const SocialPostMediaTypeEnum._('linkCard');
 const SocialPostMediaTypeEnum _$socialPostMediaTypeEnum_other =
     const SocialPostMediaTypeEnum._('other');
+const SocialPostMediaTypeEnum _$socialPostMediaTypeEnum_unknownDefaultOpenApi =
+    const SocialPostMediaTypeEnum._('unknownDefaultOpenApi');
 
 SocialPostMediaTypeEnum _$socialPostMediaTypeEnumValueOf(String name) {
   switch (name) {
@@ -33,8 +35,10 @@ SocialPostMediaTypeEnum _$socialPostMediaTypeEnumValueOf(String name) {
       return _$socialPostMediaTypeEnum_linkCard;
     case 'other':
       return _$socialPostMediaTypeEnum_other;
+    case 'unknownDefaultOpenApi':
+      return _$socialPostMediaTypeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$socialPostMediaTypeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -46,6 +50,7 @@ final BuiltSet<SocialPostMediaTypeEnum> _$socialPostMediaTypeEnumValues =
       _$socialPostMediaTypeEnum_audio,
       _$socialPostMediaTypeEnum_linkCard,
       _$socialPostMediaTypeEnum_other,
+      _$socialPostMediaTypeEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<SocialPostMediaTypeEnum> _$socialPostMediaTypeEnumSerializer =
@@ -60,6 +65,7 @@ class _$SocialPostMediaTypeEnumSerializer
     'audio': 'audio',
     'linkCard': 'link-card',
     'other': 'other',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'image': 'image',
@@ -68,6 +74,7 @@ class _$SocialPostMediaTypeEnumSerializer
     'audio': 'audio',
     'link-card': 'linkCard',
     'other': 'other',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

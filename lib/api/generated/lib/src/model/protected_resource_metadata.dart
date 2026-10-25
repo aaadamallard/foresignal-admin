@@ -246,6 +246,10 @@ class ProtectedResourceMetadataBearerMethodsSupportedEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'header')
   static const ProtectedResourceMetadataBearerMethodsSupportedEnum header =
       _$protectedResourceMetadataBearerMethodsSupportedEnum_header;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ProtectedResourceMetadataBearerMethodsSupportedEnum
+  unknownDefaultOpenApi =
+      _$protectedResourceMetadataBearerMethodsSupportedEnum_unknownDefaultOpenApi;
 
   static Serializer<ProtectedResourceMetadataBearerMethodsSupportedEnum>
   get serializer =>
@@ -265,6 +269,9 @@ class ProtectedResourceMetadataResourceNameEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'Foresignal')
   static const ProtectedResourceMetadataResourceNameEnum foresignal =
       _$protectedResourceMetadataResourceNameEnum_foresignal;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ProtectedResourceMetadataResourceNameEnum unknownDefaultOpenApi =
+      _$protectedResourceMetadataResourceNameEnum_unknownDefaultOpenApi;
 
   static Serializer<ProtectedResourceMetadataResourceNameEnum> get serializer =>
       _$protectedResourceMetadataResourceNameEnumSerializer;

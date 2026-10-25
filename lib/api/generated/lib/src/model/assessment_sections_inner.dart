@@ -241,6 +241,9 @@ class AssessmentSectionsInnerKeyEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'social')
   static const AssessmentSectionsInnerKeyEnum social =
       _$assessmentSectionsInnerKeyEnum_social;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const AssessmentSectionsInnerKeyEnum unknownDefaultOpenApi =
+      _$assessmentSectionsInnerKeyEnum_unknownDefaultOpenApi;
 
   static Serializer<AssessmentSectionsInnerKeyEnum> get serializer =>
       _$assessmentSectionsInnerKeyEnumSerializer;
@@ -263,6 +266,9 @@ class AssessmentSectionsInnerTextOriginEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'mixed')
   static const AssessmentSectionsInnerTextOriginEnum mixed =
       _$assessmentSectionsInnerTextOriginEnum_mixed;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const AssessmentSectionsInnerTextOriginEnum unknownDefaultOpenApi =
+      _$assessmentSectionsInnerTextOriginEnum_unknownDefaultOpenApi;
 
   static Serializer<AssessmentSectionsInnerTextOriginEnum> get serializer =>
       _$assessmentSectionsInnerTextOriginEnumSerializer;

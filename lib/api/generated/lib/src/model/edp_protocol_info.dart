@@ -254,6 +254,9 @@ class EdpProtocolInfoModesEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'atomic')
   static const EdpProtocolInfoModesEnum atomic =
       _$edpProtocolInfoModesEnum_atomic;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const EdpProtocolInfoModesEnum unknownDefaultOpenApi =
+      _$edpProtocolInfoModesEnum_unknownDefaultOpenApi;
 
   static Serializer<EdpProtocolInfoModesEnum> get serializer =>
       _$edpProtocolInfoModesEnumSerializer;

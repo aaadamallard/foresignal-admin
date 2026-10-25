@@ -12,6 +12,9 @@ const ExposurePlacesStatusEnum _$exposurePlacesStatusEnum_unavailable =
     const ExposurePlacesStatusEnum._('unavailable');
 const ExposurePlacesStatusEnum _$exposurePlacesStatusEnum_notInstalled =
     const ExposurePlacesStatusEnum._('notInstalled');
+const ExposurePlacesStatusEnum
+_$exposurePlacesStatusEnum_unknownDefaultOpenApi =
+    const ExposurePlacesStatusEnum._('unknownDefaultOpenApi');
 
 ExposurePlacesStatusEnum _$exposurePlacesStatusEnumValueOf(String name) {
   switch (name) {
@@ -21,8 +24,10 @@ ExposurePlacesStatusEnum _$exposurePlacesStatusEnumValueOf(String name) {
       return _$exposurePlacesStatusEnum_unavailable;
     case 'notInstalled':
       return _$exposurePlacesStatusEnum_notInstalled;
+    case 'unknownDefaultOpenApi':
+      return _$exposurePlacesStatusEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$exposurePlacesStatusEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -31,6 +36,7 @@ final BuiltSet<ExposurePlacesStatusEnum> _$exposurePlacesStatusEnumValues =
       _$exposurePlacesStatusEnum_ok,
       _$exposurePlacesStatusEnum_unavailable,
       _$exposurePlacesStatusEnum_notInstalled,
+      _$exposurePlacesStatusEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<ExposurePlacesStatusEnum> _$exposurePlacesStatusEnumSerializer =
@@ -42,11 +48,13 @@ class _$ExposurePlacesStatusEnumSerializer
     'ok': 'ok',
     'unavailable': 'unavailable',
     'notInstalled': 'not-installed',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'ok': 'ok',
     'unavailable': 'unavailable',
     'not-installed': 'notInstalled',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

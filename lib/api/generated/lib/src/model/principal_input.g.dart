@@ -12,6 +12,8 @@ const PrincipalInputKindEnum _$principalInputKindEnum_agent =
     const PrincipalInputKindEnum._('agent');
 const PrincipalInputKindEnum _$principalInputKindEnum_service =
     const PrincipalInputKindEnum._('service');
+const PrincipalInputKindEnum _$principalInputKindEnum_unknownDefaultOpenApi =
+    const PrincipalInputKindEnum._('unknownDefaultOpenApi');
 
 PrincipalInputKindEnum _$principalInputKindEnumValueOf(String name) {
   switch (name) {
@@ -21,8 +23,10 @@ PrincipalInputKindEnum _$principalInputKindEnumValueOf(String name) {
       return _$principalInputKindEnum_agent;
     case 'service':
       return _$principalInputKindEnum_service;
+    case 'unknownDefaultOpenApi':
+      return _$principalInputKindEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$principalInputKindEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -31,6 +35,7 @@ final BuiltSet<PrincipalInputKindEnum> _$principalInputKindEnumValues =
       _$principalInputKindEnum_person,
       _$principalInputKindEnum_agent,
       _$principalInputKindEnum_service,
+      _$principalInputKindEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<PrincipalInputKindEnum> _$principalInputKindEnumSerializer =
@@ -42,11 +47,13 @@ class _$PrincipalInputKindEnumSerializer
     'person': 'person',
     'agent': 'agent',
     'service': 'service',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'person': 'person',
     'agent': 'agent',
     'service': 'service',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

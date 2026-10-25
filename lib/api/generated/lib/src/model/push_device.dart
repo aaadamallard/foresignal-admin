@@ -489,6 +489,9 @@ class PushDeviceTransportEnum extends EnumClass {
   static const PushDeviceTransportEnum apns = _$pushDeviceTransportEnum_apns;
   @BuiltValueEnumConst(wireName: r'fcm')
   static const PushDeviceTransportEnum fcm = _$pushDeviceTransportEnum_fcm;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const PushDeviceTransportEnum unknownDefaultOpenApi =
+      _$pushDeviceTransportEnum_unknownDefaultOpenApi;
 
   static Serializer<PushDeviceTransportEnum> get serializer =>
       _$pushDeviceTransportEnumSerializer;
@@ -511,6 +514,9 @@ class PushDevicePlatformEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'android')
   static const PushDevicePlatformEnum android =
       _$pushDevicePlatformEnum_android;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const PushDevicePlatformEnum unknownDefaultOpenApi =
+      _$pushDevicePlatformEnum_unknownDefaultOpenApi;
 
   static Serializer<PushDevicePlatformEnum> get serializer =>
       _$pushDevicePlatformEnumSerializer;
@@ -530,6 +536,9 @@ class PushDeviceEnvironmentEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'production')
   static const PushDeviceEnvironmentEnum production =
       _$pushDeviceEnvironmentEnum_production;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const PushDeviceEnvironmentEnum unknownDefaultOpenApi =
+      _$pushDeviceEnvironmentEnum_unknownDefaultOpenApi;
 
   static Serializer<PushDeviceEnvironmentEnum> get serializer =>
       _$pushDeviceEnvironmentEnumSerializer;
@@ -549,6 +558,9 @@ class PushDeviceContentLevelEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'short')
   static const PushDeviceContentLevelEnum short =
       _$pushDeviceContentLevelEnum_short;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const PushDeviceContentLevelEnum unknownDefaultOpenApi =
+      _$pushDeviceContentLevelEnum_unknownDefaultOpenApi;
 
   static Serializer<PushDeviceContentLevelEnum> get serializer =>
       _$pushDeviceContentLevelEnumSerializer;
@@ -567,6 +579,9 @@ class PushDeviceStatusEnum extends EnumClass {
   static const PushDeviceStatusEnum active = _$pushDeviceStatusEnum_active;
   @BuiltValueEnumConst(wireName: r'disabled')
   static const PushDeviceStatusEnum disabled = _$pushDeviceStatusEnum_disabled;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const PushDeviceStatusEnum unknownDefaultOpenApi =
+      _$pushDeviceStatusEnum_unknownDefaultOpenApi;
 
   static Serializer<PushDeviceStatusEnum> get serializer =>
       _$pushDeviceStatusEnumSerializer;

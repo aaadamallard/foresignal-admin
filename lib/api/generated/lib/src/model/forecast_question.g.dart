@@ -14,6 +14,9 @@ const ForecastQuestionTypeEnum _$forecastQuestionTypeEnum_ordered =
     const ForecastQuestionTypeEnum._('ordered');
 const ForecastQuestionTypeEnum _$forecastQuestionTypeEnum_numeric =
     const ForecastQuestionTypeEnum._('numeric');
+const ForecastQuestionTypeEnum
+_$forecastQuestionTypeEnum_unknownDefaultOpenApi =
+    const ForecastQuestionTypeEnum._('unknownDefaultOpenApi');
 
 ForecastQuestionTypeEnum _$forecastQuestionTypeEnumValueOf(String name) {
   switch (name) {
@@ -25,8 +28,10 @@ ForecastQuestionTypeEnum _$forecastQuestionTypeEnumValueOf(String name) {
       return _$forecastQuestionTypeEnum_ordered;
     case 'numeric':
       return _$forecastQuestionTypeEnum_numeric;
+    case 'unknownDefaultOpenApi':
+      return _$forecastQuestionTypeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$forecastQuestionTypeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -36,6 +41,7 @@ final BuiltSet<ForecastQuestionTypeEnum> _$forecastQuestionTypeEnumValues =
       _$forecastQuestionTypeEnum_multiple,
       _$forecastQuestionTypeEnum_ordered,
       _$forecastQuestionTypeEnum_numeric,
+      _$forecastQuestionTypeEnum_unknownDefaultOpenApi,
     ]);
 
 const ForecastQuestionStatusEnum _$forecastQuestionStatusEnum_open =
@@ -46,6 +52,9 @@ const ForecastQuestionStatusEnum _$forecastQuestionStatusEnum_resolved =
     const ForecastQuestionStatusEnum._('resolved');
 const ForecastQuestionStatusEnum _$forecastQuestionStatusEnum_annulled =
     const ForecastQuestionStatusEnum._('annulled');
+const ForecastQuestionStatusEnum
+_$forecastQuestionStatusEnum_unknownDefaultOpenApi =
+    const ForecastQuestionStatusEnum._('unknownDefaultOpenApi');
 
 ForecastQuestionStatusEnum _$forecastQuestionStatusEnumValueOf(String name) {
   switch (name) {
@@ -57,8 +66,10 @@ ForecastQuestionStatusEnum _$forecastQuestionStatusEnumValueOf(String name) {
       return _$forecastQuestionStatusEnum_resolved;
     case 'annulled':
       return _$forecastQuestionStatusEnum_annulled;
+    case 'unknownDefaultOpenApi':
+      return _$forecastQuestionStatusEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$forecastQuestionStatusEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -68,6 +79,7 @@ final BuiltSet<ForecastQuestionStatusEnum> _$forecastQuestionStatusEnumValues =
       _$forecastQuestionStatusEnum_closed,
       _$forecastQuestionStatusEnum_resolved,
       _$forecastQuestionStatusEnum_annulled,
+      _$forecastQuestionStatusEnum_unknownDefaultOpenApi,
     ]);
 
 const ForecastQuestionResolverTypeEnum
@@ -91,6 +103,9 @@ _$forecastQuestionResolverTypeEnum_hypothesisOutcome =
 const ForecastQuestionResolverTypeEnum
 _$forecastQuestionResolverTypeEnum_manual =
     const ForecastQuestionResolverTypeEnum._('manual');
+const ForecastQuestionResolverTypeEnum
+_$forecastQuestionResolverTypeEnum_unknownDefaultOpenApi =
+    const ForecastQuestionResolverTypeEnum._('unknownDefaultOpenApi');
 
 ForecastQuestionResolverTypeEnum _$forecastQuestionResolverTypeEnumValueOf(
   String name,
@@ -110,8 +125,10 @@ ForecastQuestionResolverTypeEnum _$forecastQuestionResolverTypeEnumValueOf(
       return _$forecastQuestionResolverTypeEnum_hypothesisOutcome;
     case 'manual':
       return _$forecastQuestionResolverTypeEnum_manual;
+    case 'unknownDefaultOpenApi':
+      return _$forecastQuestionResolverTypeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$forecastQuestionResolverTypeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -126,6 +143,7 @@ _$forecastQuestionResolverTypeEnumValues =
         _$forecastQuestionResolverTypeEnum_situationStatus,
         _$forecastQuestionResolverTypeEnum_hypothesisOutcome,
         _$forecastQuestionResolverTypeEnum_manual,
+        _$forecastQuestionResolverTypeEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -137,6 +155,9 @@ const ForecastQuestionOriginEnum _$forecastQuestionOriginEnum_system =
     const ForecastQuestionOriginEnum._('system');
 const ForecastQuestionOriginEnum _$forecastQuestionOriginEnum_analyst =
     const ForecastQuestionOriginEnum._('analyst');
+const ForecastQuestionOriginEnum
+_$forecastQuestionOriginEnum_unknownDefaultOpenApi =
+    const ForecastQuestionOriginEnum._('unknownDefaultOpenApi');
 
 ForecastQuestionOriginEnum _$forecastQuestionOriginEnumValueOf(String name) {
   switch (name) {
@@ -148,8 +169,10 @@ ForecastQuestionOriginEnum _$forecastQuestionOriginEnumValueOf(String name) {
       return _$forecastQuestionOriginEnum_system;
     case 'analyst':
       return _$forecastQuestionOriginEnum_analyst;
+    case 'unknownDefaultOpenApi':
+      return _$forecastQuestionOriginEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$forecastQuestionOriginEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -159,6 +182,7 @@ final BuiltSet<ForecastQuestionOriginEnum> _$forecastQuestionOriginEnumValues =
       _$forecastQuestionOriginEnum_agent,
       _$forecastQuestionOriginEnum_system,
       _$forecastQuestionOriginEnum_analyst,
+      _$forecastQuestionOriginEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<ForecastQuestionTypeEnum> _$forecastQuestionTypeEnumSerializer =
@@ -178,12 +202,14 @@ class _$ForecastQuestionTypeEnumSerializer
     'multiple': 'multiple',
     'ordered': 'ordered',
     'numeric': 'numeric',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'binary': 'binary',
     'multiple': 'multiple',
     'ordered': 'ordered',
     'numeric': 'numeric',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -215,12 +241,14 @@ class _$ForecastQuestionStatusEnumSerializer
     'closed': 'closed',
     'resolved': 'resolved',
     'annulled': 'annulled',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'open': 'open',
     'closed': 'closed',
     'resolved': 'resolved',
     'annulled': 'annulled',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -255,6 +283,7 @@ class _$ForecastQuestionResolverTypeEnumSerializer
     'situationStatus': 'situation-status',
     'hypothesisOutcome': 'hypothesis-outcome',
     'manual': 'manual',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'event-exists': 'eventExists',
@@ -264,6 +293,7 @@ class _$ForecastQuestionResolverTypeEnumSerializer
     'situation-status': 'situationStatus',
     'hypothesis-outcome': 'hypothesisOutcome',
     'manual': 'manual',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -295,12 +325,14 @@ class _$ForecastQuestionOriginEnumSerializer
     'agent': 'agent',
     'system': 'system',
     'analyst': 'analyst',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'operator': 'operator_',
     'agent': 'agent',
     'system': 'system',
     'analyst': 'analyst',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

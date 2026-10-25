@@ -656,6 +656,9 @@ class ClaimPolarityEnum extends EnumClass {
   static const ClaimPolarityEnum denied = _$claimPolarityEnum_denied;
   @BuiltValueEnumConst(wireName: r'questioned')
   static const ClaimPolarityEnum questioned = _$claimPolarityEnum_questioned;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ClaimPolarityEnum unknownDefaultOpenApi =
+      _$claimPolarityEnum_unknownDefaultOpenApi;
 
   static Serializer<ClaimPolarityEnum> get serializer =>
       _$claimPolarityEnumSerializer;
@@ -673,6 +676,9 @@ class ClaimExtractionEnum extends EnumClass {
       _$claimExtractionEnum_deterministic;
   @BuiltValueEnumConst(wireName: r'llm')
   static const ClaimExtractionEnum llm = _$claimExtractionEnum_llm;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ClaimExtractionEnum unknownDefaultOpenApi =
+      _$claimExtractionEnum_unknownDefaultOpenApi;
 
   static Serializer<ClaimExtractionEnum> get serializer =>
       _$claimExtractionEnumSerializer;
@@ -700,6 +706,9 @@ class ClaimStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'insufficient-coverage')
   static const ClaimStatusEnum insufficientCoverage =
       _$claimStatusEnum_insufficientCoverage;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ClaimStatusEnum unknownDefaultOpenApi =
+      _$claimStatusEnum_unknownDefaultOpenApi;
 
   static Serializer<ClaimStatusEnum> get serializer =>
       _$claimStatusEnumSerializer;
@@ -724,6 +733,9 @@ class ClaimSourceReliabilityEnum extends EnumClass {
   static const ClaimSourceReliabilityEnum E = _$claimSourceReliabilityEnum_E;
   @BuiltValueEnumConst(wireName: r'F')
   static const ClaimSourceReliabilityEnum F = _$claimSourceReliabilityEnum_F;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ClaimSourceReliabilityEnum unknownDefaultOpenApi =
+      _$claimSourceReliabilityEnum_unknownDefaultOpenApi;
 
   static Serializer<ClaimSourceReliabilityEnum> get serializer =>
       _$claimSourceReliabilityEnumSerializer;
@@ -745,6 +757,9 @@ class ClaimFramingLabelEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'inflammatory')
   static const ClaimFramingLabelEnum inflammatory =
       _$claimFramingLabelEnum_inflammatory;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ClaimFramingLabelEnum unknownDefaultOpenApi =
+      _$claimFramingLabelEnum_unknownDefaultOpenApi;
 
   static Serializer<ClaimFramingLabelEnum> get serializer =>
       _$claimFramingLabelEnumSerializer;

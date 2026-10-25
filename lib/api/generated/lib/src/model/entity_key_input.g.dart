@@ -32,6 +32,9 @@ const EntityKeyInputKeyTypeEnum _$entityKeyInputKeyTypeEnum_officerId =
     const EntityKeyInputKeyTypeEnum._('officerId');
 const EntityKeyInputKeyTypeEnum _$entityKeyInputKeyTypeEnum_personKey =
     const EntityKeyInputKeyTypeEnum._('personKey');
+const EntityKeyInputKeyTypeEnum
+_$entityKeyInputKeyTypeEnum_unknownDefaultOpenApi =
+    const EntityKeyInputKeyTypeEnum._('unknownDefaultOpenApi');
 
 EntityKeyInputKeyTypeEnum _$entityKeyInputKeyTypeEnumValueOf(String name) {
   switch (name) {
@@ -61,8 +64,10 @@ EntityKeyInputKeyTypeEnum _$entityKeyInputKeyTypeEnumValueOf(String name) {
       return _$entityKeyInputKeyTypeEnum_officerId;
     case 'personKey':
       return _$entityKeyInputKeyTypeEnum_personKey;
+    case 'unknownDefaultOpenApi':
+      return _$entityKeyInputKeyTypeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$entityKeyInputKeyTypeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -81,6 +86,7 @@ final BuiltSet<EntityKeyInputKeyTypeEnum> _$entityKeyInputKeyTypeEnumValues =
       _$entityKeyInputKeyTypeEnum_taxId,
       _$entityKeyInputKeyTypeEnum_officerId,
       _$entityKeyInputKeyTypeEnum_personKey,
+      _$entityKeyInputKeyTypeEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<EntityKeyInputKeyTypeEnum> _$entityKeyInputKeyTypeEnumSerializer =
@@ -102,6 +108,7 @@ class _$EntityKeyInputKeyTypeEnumSerializer
     'taxId': 'tax-id',
     'officerId': 'officer-id',
     'personKey': 'person-key',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'airframe': 'airframe',
@@ -117,6 +124,7 @@ class _$EntityKeyInputKeyTypeEnumSerializer
     'tax-id': 'taxId',
     'officer-id': 'officerId',
     'person-key': 'personKey',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

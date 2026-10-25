@@ -361,6 +361,9 @@ class LlmProviderInputTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'ollama')
   static const LlmProviderInputTypeEnum ollama =
       _$llmProviderInputTypeEnum_ollama;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const LlmProviderInputTypeEnum unknownDefaultOpenApi =
+      _$llmProviderInputTypeEnum_unknownDefaultOpenApi;
 
   static Serializer<LlmProviderInputTypeEnum> get serializer =>
       _$llmProviderInputTypeEnumSerializer;

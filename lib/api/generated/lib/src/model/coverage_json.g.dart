@@ -10,6 +10,8 @@ const CoverageJsonTypeEnum _$coverageJsonTypeEnum_coverage =
     const CoverageJsonTypeEnum._('coverage');
 const CoverageJsonTypeEnum _$coverageJsonTypeEnum_coverageCollection =
     const CoverageJsonTypeEnum._('coverageCollection');
+const CoverageJsonTypeEnum _$coverageJsonTypeEnum_unknownDefaultOpenApi =
+    const CoverageJsonTypeEnum._('unknownDefaultOpenApi');
 
 CoverageJsonTypeEnum _$coverageJsonTypeEnumValueOf(String name) {
   switch (name) {
@@ -17,8 +19,10 @@ CoverageJsonTypeEnum _$coverageJsonTypeEnumValueOf(String name) {
       return _$coverageJsonTypeEnum_coverage;
     case 'coverageCollection':
       return _$coverageJsonTypeEnum_coverageCollection;
+    case 'unknownDefaultOpenApi':
+      return _$coverageJsonTypeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$coverageJsonTypeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -26,6 +30,7 @@ final BuiltSet<CoverageJsonTypeEnum> _$coverageJsonTypeEnumValues =
     BuiltSet<CoverageJsonTypeEnum>(const <CoverageJsonTypeEnum>[
       _$coverageJsonTypeEnum_coverage,
       _$coverageJsonTypeEnum_coverageCollection,
+      _$coverageJsonTypeEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<CoverageJsonTypeEnum> _$coverageJsonTypeEnumSerializer =
@@ -36,10 +41,12 @@ class _$CoverageJsonTypeEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'coverage': 'Coverage',
     'coverageCollection': 'CoverageCollection',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'Coverage': 'coverage',
     'CoverageCollection': 'coverageCollection',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

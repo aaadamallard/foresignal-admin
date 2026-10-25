@@ -14,6 +14,9 @@ const SourceRelevanceVerdictEnum _$sourceRelevanceVerdictEnum_notMeaningful =
     const SourceRelevanceVerdictEnum._('notMeaningful');
 const SourceRelevanceVerdictEnum _$sourceRelevanceVerdictEnum_unrated =
     const SourceRelevanceVerdictEnum._('unrated');
+const SourceRelevanceVerdictEnum
+_$sourceRelevanceVerdictEnum_unknownDefaultOpenApi =
+    const SourceRelevanceVerdictEnum._('unknownDefaultOpenApi');
 
 SourceRelevanceVerdictEnum _$sourceRelevanceVerdictEnumValueOf(String name) {
   switch (name) {
@@ -25,8 +28,10 @@ SourceRelevanceVerdictEnum _$sourceRelevanceVerdictEnumValueOf(String name) {
       return _$sourceRelevanceVerdictEnum_notMeaningful;
     case 'unrated':
       return _$sourceRelevanceVerdictEnum_unrated;
+    case 'unknownDefaultOpenApi':
+      return _$sourceRelevanceVerdictEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$sourceRelevanceVerdictEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -36,6 +41,7 @@ final BuiltSet<SourceRelevanceVerdictEnum> _$sourceRelevanceVerdictEnumValues =
       _$sourceRelevanceVerdictEnum_marginal,
       _$sourceRelevanceVerdictEnum_notMeaningful,
       _$sourceRelevanceVerdictEnum_unrated,
+      _$sourceRelevanceVerdictEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<SourceRelevanceVerdictEnum> _$sourceRelevanceVerdictEnumSerializer =
@@ -48,12 +54,14 @@ class _$SourceRelevanceVerdictEnumSerializer
     'marginal': 'marginal',
     'notMeaningful': 'not-meaningful',
     'unrated': 'unrated',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'relevant': 'relevant',
     'marginal': 'marginal',
     'not-meaningful': 'notMeaningful',
     'unrated': 'unrated',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

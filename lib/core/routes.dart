@@ -49,6 +49,10 @@ String analysisRecipePath(String recipeId) =>
 /// One intelligence event.
 String analysisEventPath(String eventId) => '$analysisPath/events/${Uri.encodeComponent(eventId)}';
 
+/// One situation: why it is warning, its members, assessment and timeline.
+String analysisSituationPath(String situationId) =>
+    '$analysisPath/situations/${Uri.encodeComponent(situationId)}';
+
 /// Creates an analysis cycle.
 const String analysisNewCyclePath = '$analysisPath/new-cycle';
 
@@ -218,4 +222,50 @@ const String systemBackupPath = '$systemPath/backup';
 String sectionRootOf(String path) {
   final segments = Uri.parse(path).pathSegments;
   return segments.isEmpty ? '/' : '/${segments.first}';
+}
+
+/// Paths that open a section's own page on one of its tabs. Like the
+/// section root, they are the home of their section, not a page pushed
+/// from another one, so they get no Back control.
+const Set<String> sectionTabPaths = <String>{
+  alertTriggersPath,
+  alertEscalationPath,
+  alertChannelsPath,
+  alertWatchlistsPath,
+  pushPath,
+  webPushPath,
+  servingExportsPath,
+  servingArchivePath,
+  servingPeersPath,
+  systemServerPath,
+  systemSecurityPath,
+  systemTokensPath,
+  systemSigningPath,
+  systemPluginsPath,
+  systemOperationsPath,
+  systemBackupPath,
+};
+
+/// Whether [location] is the home of a section — one of the [roots] (the
+/// left-nav destinations, Connect included) or one of its tabs
+/// ([sectionTabPaths]) — rather than a page pushed from another.
+bool isSectionHome(String location, Iterable<String> roots) {
+  final path = Uri.parse(location).path;
+  return roots.contains(path) || sectionTabPaths.contains(path);
+}
+
+/// Where Back leads from [location] when there is no history to return to:
+/// the nearest enclosing path that is a page of its own ([routeExists]), so
+/// `/analysis/events/E` → `/analysis` (there is no `/analysis/events` page)
+/// and `/alerts/triggers/R` → `/alerts/triggers`. Falls back to the
+/// section root.
+String backTargetOf(String location, {required bool Function(String path) routeExists}) {
+  final segments = Uri.parse(location).pathSegments.where((s) => s.isNotEmpty).toList();
+  for (var n = segments.length - 1; n >= 1; n--) {
+    final candidate = '/${segments.take(n).map(Uri.encodeComponent).join('/')}';
+    if (routeExists(candidate)) {
+      return candidate;
+    }
+  }
+  return sectionRootOf(location);
 }

@@ -348,6 +348,9 @@ class DoctorReportProbeSkipReasonEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'not-requested')
   static const DoctorReportProbeSkipReasonEnum notRequested =
       _$doctorReportProbeSkipReasonEnum_notRequested;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const DoctorReportProbeSkipReasonEnum unknownDefaultOpenApi =
+      _$doctorReportProbeSkipReasonEnum_unknownDefaultOpenApi;
 
   static Serializer<DoctorReportProbeSkipReasonEnum> get serializer =>
       _$doctorReportProbeSkipReasonEnumSerializer;

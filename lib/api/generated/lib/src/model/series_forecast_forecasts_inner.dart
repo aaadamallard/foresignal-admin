@@ -176,6 +176,9 @@ class SeriesForecastForecastsInnerHorizonEnum extends EnumClass {
   @BuiltValueEnumConst(wireNumber: 28)
   static const SeriesForecastForecastsInnerHorizonEnum number28 =
       _$seriesForecastForecastsInnerHorizonEnum_number28;
+  @BuiltValueEnumConst(wireNumber: 11184809, fallback: true)
+  static const SeriesForecastForecastsInnerHorizonEnum unknownDefaultOpenApi =
+      _$seriesForecastForecastsInnerHorizonEnum_unknownDefaultOpenApi;
 
   static Serializer<SeriesForecastForecastsInnerHorizonEnum> get serializer =>
       _$seriesForecastForecastsInnerHorizonEnumSerializer;

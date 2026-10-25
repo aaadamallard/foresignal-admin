@@ -21,6 +21,11 @@ _$ownershipChainNodePathsInnerRelationTypesEnum_beneficialOwner =
 const OwnershipChainNodePathsInnerRelationTypesEnum
 _$ownershipChainNodePathsInnerRelationTypesEnum_affiliatedWith =
     const OwnershipChainNodePathsInnerRelationTypesEnum._('affiliatedWith');
+const OwnershipChainNodePathsInnerRelationTypesEnum
+_$ownershipChainNodePathsInnerRelationTypesEnum_unknownDefaultOpenApi =
+    const OwnershipChainNodePathsInnerRelationTypesEnum._(
+      'unknownDefaultOpenApi',
+    );
 
 OwnershipChainNodePathsInnerRelationTypesEnum
 _$ownershipChainNodePathsInnerRelationTypesEnumValueOf(String name) {
@@ -35,8 +40,10 @@ _$ownershipChainNodePathsInnerRelationTypesEnumValueOf(String name) {
       return _$ownershipChainNodePathsInnerRelationTypesEnum_beneficialOwner;
     case 'affiliatedWith':
       return _$ownershipChainNodePathsInnerRelationTypesEnum_affiliatedWith;
+    case 'unknownDefaultOpenApi':
+      return _$ownershipChainNodePathsInnerRelationTypesEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$ownershipChainNodePathsInnerRelationTypesEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -49,6 +56,7 @@ _$ownershipChainNodePathsInnerRelationTypesEnumValues =
         _$ownershipChainNodePathsInnerRelationTypesEnum_officerOf,
         _$ownershipChainNodePathsInnerRelationTypesEnum_beneficialOwner,
         _$ownershipChainNodePathsInnerRelationTypesEnum_affiliatedWith,
+        _$ownershipChainNodePathsInnerRelationTypesEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -64,6 +72,11 @@ _$ownershipChainNodePathsInnerWeakestEdgeLabelEnum_possible =
 const OwnershipChainNodePathsInnerWeakestEdgeLabelEnum
 _$ownershipChainNodePathsInnerWeakestEdgeLabelEnum_speculative =
     const OwnershipChainNodePathsInnerWeakestEdgeLabelEnum._('speculative');
+const OwnershipChainNodePathsInnerWeakestEdgeLabelEnum
+_$ownershipChainNodePathsInnerWeakestEdgeLabelEnum_unknownDefaultOpenApi =
+    const OwnershipChainNodePathsInnerWeakestEdgeLabelEnum._(
+      'unknownDefaultOpenApi',
+    );
 
 OwnershipChainNodePathsInnerWeakestEdgeLabelEnum
 _$ownershipChainNodePathsInnerWeakestEdgeLabelEnumValueOf(String name) {
@@ -76,21 +89,24 @@ _$ownershipChainNodePathsInnerWeakestEdgeLabelEnumValueOf(String name) {
       return _$ownershipChainNodePathsInnerWeakestEdgeLabelEnum_possible;
     case 'speculative':
       return _$ownershipChainNodePathsInnerWeakestEdgeLabelEnum_speculative;
+    case 'unknownDefaultOpenApi':
+      return _$ownershipChainNodePathsInnerWeakestEdgeLabelEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$ownershipChainNodePathsInnerWeakestEdgeLabelEnum_unknownDefaultOpenApi;
   }
 }
 
 final BuiltSet<OwnershipChainNodePathsInnerWeakestEdgeLabelEnum>
 _$ownershipChainNodePathsInnerWeakestEdgeLabelEnumValues =
-    BuiltSet<OwnershipChainNodePathsInnerWeakestEdgeLabelEnum>(
-      const <OwnershipChainNodePathsInnerWeakestEdgeLabelEnum>[
-        _$ownershipChainNodePathsInnerWeakestEdgeLabelEnum_confirmed,
-        _$ownershipChainNodePathsInnerWeakestEdgeLabelEnum_likely,
-        _$ownershipChainNodePathsInnerWeakestEdgeLabelEnum_possible,
-        _$ownershipChainNodePathsInnerWeakestEdgeLabelEnum_speculative,
-      ],
-    );
+    BuiltSet<OwnershipChainNodePathsInnerWeakestEdgeLabelEnum>(const <
+      OwnershipChainNodePathsInnerWeakestEdgeLabelEnum
+    >[
+      _$ownershipChainNodePathsInnerWeakestEdgeLabelEnum_confirmed,
+      _$ownershipChainNodePathsInnerWeakestEdgeLabelEnum_likely,
+      _$ownershipChainNodePathsInnerWeakestEdgeLabelEnum_possible,
+      _$ownershipChainNodePathsInnerWeakestEdgeLabelEnum_speculative,
+      _$ownershipChainNodePathsInnerWeakestEdgeLabelEnum_unknownDefaultOpenApi,
+    ]);
 
 Serializer<OwnershipChainNodePathsInnerRelationTypesEnum>
 _$ownershipChainNodePathsInnerRelationTypesEnumSerializer =
@@ -108,6 +124,7 @@ class _$OwnershipChainNodePathsInnerRelationTypesEnumSerializer
     'officerOf': 'officer-of',
     'beneficialOwner': 'beneficial-owner',
     'affiliatedWith': 'affiliated-with',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'owns': 'owns',
@@ -115,6 +132,7 @@ class _$OwnershipChainNodePathsInnerRelationTypesEnumSerializer
     'officer-of': 'officerOf',
     'beneficial-owner': 'beneficialOwner',
     'affiliated-with': 'affiliatedWith',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -149,12 +167,14 @@ class _$OwnershipChainNodePathsInnerWeakestEdgeLabelEnumSerializer
     'likely': 'likely',
     'possible': 'possible',
     'speculative': 'speculative',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'confirmed': 'confirmed',
     'likely': 'likely',
     'possible': 'possible',
     'speculative': 'speculative',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

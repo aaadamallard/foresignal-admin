@@ -180,6 +180,9 @@ class StreamTicketPurposeEnum extends EnumClass {
       _$streamTicketPurposeEnum_stream;
   @BuiltValueEnumConst(wireName: r'tiles')
   static const StreamTicketPurposeEnum tiles = _$streamTicketPurposeEnum_tiles;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const StreamTicketPurposeEnum unknownDefaultOpenApi =
+      _$streamTicketPurposeEnum_unknownDefaultOpenApi;
 
   static Serializer<StreamTicketPurposeEnum> get serializer =>
       _$streamTicketPurposeEnumSerializer;

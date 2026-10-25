@@ -377,6 +377,9 @@ class KeyJudgmentTextOriginEnum extends EnumClass {
       _$keyJudgmentTextOriginEnum_deterministic;
   @BuiltValueEnumConst(wireName: r'llm')
   static const KeyJudgmentTextOriginEnum llm = _$keyJudgmentTextOriginEnum_llm;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const KeyJudgmentTextOriginEnum unknownDefaultOpenApi =
+      _$keyJudgmentTextOriginEnum_unknownDefaultOpenApi;
 
   static Serializer<KeyJudgmentTextOriginEnum> get serializer =>
       _$keyJudgmentTextOriginEnumSerializer;

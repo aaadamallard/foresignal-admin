@@ -141,6 +141,9 @@ class PrecursorPatchStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'validated')
   static const PrecursorPatchStatusEnum validated =
       _$precursorPatchStatusEnum_validated;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const PrecursorPatchStatusEnum unknownDefaultOpenApi =
+      _$precursorPatchStatusEnum_unknownDefaultOpenApi;
 
   static Serializer<PrecursorPatchStatusEnum> get serializer =>
       _$precursorPatchStatusEnumSerializer;

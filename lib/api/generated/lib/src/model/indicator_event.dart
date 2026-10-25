@@ -325,6 +325,9 @@ class IndicatorEventStateEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'reported')
   static const IndicatorEventStateEnum reported =
       _$indicatorEventStateEnum_reported;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const IndicatorEventStateEnum unknownDefaultOpenApi =
+      _$indicatorEventStateEnum_unknownDefaultOpenApi;
 
   static Serializer<IndicatorEventStateEnum> get serializer =>
       _$indicatorEventStateEnumSerializer;
@@ -359,6 +362,9 @@ class IndicatorEventPreviousStateEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'reported')
   static const IndicatorEventPreviousStateEnum reported =
       _$indicatorEventPreviousStateEnum_reported;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const IndicatorEventPreviousStateEnum unknownDefaultOpenApi =
+      _$indicatorEventPreviousStateEnum_unknownDefaultOpenApi;
 
   static Serializer<IndicatorEventPreviousStateEnum> get serializer =>
       _$indicatorEventPreviousStateEnumSerializer;

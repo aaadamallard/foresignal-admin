@@ -390,6 +390,9 @@ class FieldManifestSchemaVersionEnum extends EnumClass {
   @BuiltValueEnumConst(wireNumber: 1)
   static const FieldManifestSchemaVersionEnum number1 =
       _$fieldManifestSchemaVersionEnum_number1;
+  @BuiltValueEnumConst(wireNumber: 11184809, fallback: true)
+  static const FieldManifestSchemaVersionEnum unknownDefaultOpenApi =
+      _$fieldManifestSchemaVersionEnum_unknownDefaultOpenApi;
 
   static Serializer<FieldManifestSchemaVersionEnum> get serializer =>
       _$fieldManifestSchemaVersionEnumSerializer;

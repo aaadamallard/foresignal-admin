@@ -13,6 +13,9 @@ const IcdTerm _$roughlyEvenChance = const IcdTerm._('roughlyEvenChance');
 const IcdTerm _$likely = const IcdTerm._('likely');
 const IcdTerm _$veryLikely = const IcdTerm._('veryLikely');
 const IcdTerm _$almostCertain = const IcdTerm._('almostCertain');
+const IcdTerm _$unknownDefaultOpenApi = const IcdTerm._(
+  'unknownDefaultOpenApi',
+);
 
 IcdTerm _$valueOf(String name) {
   switch (name) {
@@ -30,8 +33,10 @@ IcdTerm _$valueOf(String name) {
       return _$veryLikely;
     case 'almostCertain':
       return _$almostCertain;
+    case 'unknownDefaultOpenApi':
+      return _$unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$unknownDefaultOpenApi;
   }
 }
 
@@ -43,6 +48,7 @@ final BuiltSet<IcdTerm> _$values = BuiltSet<IcdTerm>(const <IcdTerm>[
   _$likely,
   _$veryLikely,
   _$almostCertain,
+  _$unknownDefaultOpenApi,
 ]);
 
 class _$IcdTermMeta {
@@ -54,6 +60,7 @@ class _$IcdTermMeta {
   IcdTerm get likely => _$likely;
   IcdTerm get veryLikely => _$veryLikely;
   IcdTerm get almostCertain => _$almostCertain;
+  IcdTerm get unknownDefaultOpenApi => _$unknownDefaultOpenApi;
   IcdTerm valueOf(String name) => _$valueOf(name);
   BuiltSet<IcdTerm> get values => _$values;
 }
@@ -74,6 +81,7 @@ class _$IcdTermSerializer implements PrimitiveSerializer<IcdTerm> {
     'likely': 'likely',
     'veryLikely': 'very likely',
     'almostCertain': 'almost certain',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'almost no chance': 'almostNoChance',
@@ -83,6 +91,7 @@ class _$IcdTermSerializer implements PrimitiveSerializer<IcdTerm> {
     'likely': 'likely',
     'very likely': 'veryLikely',
     'almost certain': 'almostCertain',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

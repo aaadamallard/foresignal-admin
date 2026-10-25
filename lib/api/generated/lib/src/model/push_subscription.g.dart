@@ -12,6 +12,9 @@ const PushSubscriptionStatusEnum _$pushSubscriptionStatusEnum_active =
     const PushSubscriptionStatusEnum._('active');
 const PushSubscriptionStatusEnum _$pushSubscriptionStatusEnum_disabled =
     const PushSubscriptionStatusEnum._('disabled');
+const PushSubscriptionStatusEnum
+_$pushSubscriptionStatusEnum_unknownDefaultOpenApi =
+    const PushSubscriptionStatusEnum._('unknownDefaultOpenApi');
 
 PushSubscriptionStatusEnum _$pushSubscriptionStatusEnumValueOf(String name) {
   switch (name) {
@@ -21,8 +24,10 @@ PushSubscriptionStatusEnum _$pushSubscriptionStatusEnumValueOf(String name) {
       return _$pushSubscriptionStatusEnum_active;
     case 'disabled':
       return _$pushSubscriptionStatusEnum_disabled;
+    case 'unknownDefaultOpenApi':
+      return _$pushSubscriptionStatusEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$pushSubscriptionStatusEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -31,6 +36,7 @@ final BuiltSet<PushSubscriptionStatusEnum> _$pushSubscriptionStatusEnumValues =
       _$pushSubscriptionStatusEnum_pending,
       _$pushSubscriptionStatusEnum_active,
       _$pushSubscriptionStatusEnum_disabled,
+      _$pushSubscriptionStatusEnum_unknownDefaultOpenApi,
     ]);
 
 const PushSubscriptionTransportLabelEnum
@@ -42,6 +48,9 @@ _$pushSubscriptionTransportLabelEnum_unifiedpush =
 const PushSubscriptionTransportLabelEnum
 _$pushSubscriptionTransportLabelEnum_other =
     const PushSubscriptionTransportLabelEnum._('other');
+const PushSubscriptionTransportLabelEnum
+_$pushSubscriptionTransportLabelEnum_unknownDefaultOpenApi =
+    const PushSubscriptionTransportLabelEnum._('unknownDefaultOpenApi');
 
 PushSubscriptionTransportLabelEnum _$pushSubscriptionTransportLabelEnumValueOf(
   String name,
@@ -53,8 +62,10 @@ PushSubscriptionTransportLabelEnum _$pushSubscriptionTransportLabelEnumValueOf(
       return _$pushSubscriptionTransportLabelEnum_unifiedpush;
     case 'other':
       return _$pushSubscriptionTransportLabelEnum_other;
+    case 'unknownDefaultOpenApi':
+      return _$pushSubscriptionTransportLabelEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$pushSubscriptionTransportLabelEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -65,6 +76,7 @@ _$pushSubscriptionTransportLabelEnumValues =
         _$pushSubscriptionTransportLabelEnum_browser,
         _$pushSubscriptionTransportLabelEnum_unifiedpush,
         _$pushSubscriptionTransportLabelEnum_other,
+        _$pushSubscriptionTransportLabelEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -74,6 +86,9 @@ _$pushSubscriptionPayloadFormatEnum_foresignal =
 const PushSubscriptionPayloadFormatEnum
 _$pushSubscriptionPayloadFormatEnum_declarative =
     const PushSubscriptionPayloadFormatEnum._('declarative');
+const PushSubscriptionPayloadFormatEnum
+_$pushSubscriptionPayloadFormatEnum_unknownDefaultOpenApi =
+    const PushSubscriptionPayloadFormatEnum._('unknownDefaultOpenApi');
 
 PushSubscriptionPayloadFormatEnum _$pushSubscriptionPayloadFormatEnumValueOf(
   String name,
@@ -83,8 +98,10 @@ PushSubscriptionPayloadFormatEnum _$pushSubscriptionPayloadFormatEnumValueOf(
       return _$pushSubscriptionPayloadFormatEnum_foresignal;
     case 'declarative':
       return _$pushSubscriptionPayloadFormatEnum_declarative;
+    case 'unknownDefaultOpenApi':
+      return _$pushSubscriptionPayloadFormatEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$pushSubscriptionPayloadFormatEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -94,6 +111,7 @@ _$pushSubscriptionPayloadFormatEnumValues =
       const <PushSubscriptionPayloadFormatEnum>[
         _$pushSubscriptionPayloadFormatEnum_foresignal,
         _$pushSubscriptionPayloadFormatEnum_declarative,
+        _$pushSubscriptionPayloadFormatEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -112,11 +130,13 @@ class _$PushSubscriptionStatusEnumSerializer
     'pending': 'pending',
     'active': 'active',
     'disabled': 'disabled',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'pending': 'pending',
     'active': 'active',
     'disabled': 'disabled',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -147,11 +167,13 @@ class _$PushSubscriptionTransportLabelEnumSerializer
     'browser': 'browser',
     'unifiedpush': 'unifiedpush',
     'other': 'other',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'browser': 'browser',
     'unifiedpush': 'unifiedpush',
     'other': 'other',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -181,10 +203,12 @@ class _$PushSubscriptionPayloadFormatEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'foresignal': 'foresignal',
     'declarative': 'declarative',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'foresignal': 'foresignal',
     'declarative': 'declarative',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

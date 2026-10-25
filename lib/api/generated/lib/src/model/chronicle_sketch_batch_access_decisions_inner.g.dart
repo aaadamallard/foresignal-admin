@@ -12,6 +12,11 @@ _$chronicleSketchBatchAccessDecisionsInnerStatusEnum_granted =
 const ChronicleSketchBatchAccessDecisionsInnerStatusEnum
 _$chronicleSketchBatchAccessDecisionsInnerStatusEnum_declined =
     const ChronicleSketchBatchAccessDecisionsInnerStatusEnum._('declined');
+const ChronicleSketchBatchAccessDecisionsInnerStatusEnum
+_$chronicleSketchBatchAccessDecisionsInnerStatusEnum_unknownDefaultOpenApi =
+    const ChronicleSketchBatchAccessDecisionsInnerStatusEnum._(
+      'unknownDefaultOpenApi',
+    );
 
 ChronicleSketchBatchAccessDecisionsInnerStatusEnum
 _$chronicleSketchBatchAccessDecisionsInnerStatusEnumValueOf(String name) {
@@ -20,19 +25,22 @@ _$chronicleSketchBatchAccessDecisionsInnerStatusEnumValueOf(String name) {
       return _$chronicleSketchBatchAccessDecisionsInnerStatusEnum_granted;
     case 'declined':
       return _$chronicleSketchBatchAccessDecisionsInnerStatusEnum_declined;
+    case 'unknownDefaultOpenApi':
+      return _$chronicleSketchBatchAccessDecisionsInnerStatusEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$chronicleSketchBatchAccessDecisionsInnerStatusEnum_unknownDefaultOpenApi;
   }
 }
 
 final BuiltSet<ChronicleSketchBatchAccessDecisionsInnerStatusEnum>
 _$chronicleSketchBatchAccessDecisionsInnerStatusEnumValues =
-    BuiltSet<ChronicleSketchBatchAccessDecisionsInnerStatusEnum>(
-      const <ChronicleSketchBatchAccessDecisionsInnerStatusEnum>[
-        _$chronicleSketchBatchAccessDecisionsInnerStatusEnum_granted,
-        _$chronicleSketchBatchAccessDecisionsInnerStatusEnum_declined,
-      ],
-    );
+    BuiltSet<ChronicleSketchBatchAccessDecisionsInnerStatusEnum>(const <
+      ChronicleSketchBatchAccessDecisionsInnerStatusEnum
+    >[
+      _$chronicleSketchBatchAccessDecisionsInnerStatusEnum_granted,
+      _$chronicleSketchBatchAccessDecisionsInnerStatusEnum_declined,
+      _$chronicleSketchBatchAccessDecisionsInnerStatusEnum_unknownDefaultOpenApi,
+    ]);
 
 const ChronicleSketchBatchAccessDecisionsInnerDeliveredAsEnum
 _$chronicleSketchBatchAccessDecisionsInnerDeliveredAsEnum_report =
@@ -42,6 +50,11 @@ _$chronicleSketchBatchAccessDecisionsInnerDeliveredAsEnum_chronicleExtract =
     const ChronicleSketchBatchAccessDecisionsInnerDeliveredAsEnum._(
       'chronicleExtract',
     );
+const ChronicleSketchBatchAccessDecisionsInnerDeliveredAsEnum
+_$chronicleSketchBatchAccessDecisionsInnerDeliveredAsEnum_unknownDefaultOpenApi =
+    const ChronicleSketchBatchAccessDecisionsInnerDeliveredAsEnum._(
+      'unknownDefaultOpenApi',
+    );
 
 ChronicleSketchBatchAccessDecisionsInnerDeliveredAsEnum
 _$chronicleSketchBatchAccessDecisionsInnerDeliveredAsEnumValueOf(String name) {
@@ -50,8 +63,10 @@ _$chronicleSketchBatchAccessDecisionsInnerDeliveredAsEnumValueOf(String name) {
       return _$chronicleSketchBatchAccessDecisionsInnerDeliveredAsEnum_report;
     case 'chronicleExtract':
       return _$chronicleSketchBatchAccessDecisionsInnerDeliveredAsEnum_chronicleExtract;
+    case 'unknownDefaultOpenApi':
+      return _$chronicleSketchBatchAccessDecisionsInnerDeliveredAsEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$chronicleSketchBatchAccessDecisionsInnerDeliveredAsEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -62,6 +77,7 @@ _$chronicleSketchBatchAccessDecisionsInnerDeliveredAsEnumValues =
     >[
       _$chronicleSketchBatchAccessDecisionsInnerDeliveredAsEnum_report,
       _$chronicleSketchBatchAccessDecisionsInnerDeliveredAsEnum_chronicleExtract,
+      _$chronicleSketchBatchAccessDecisionsInnerDeliveredAsEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<ChronicleSketchBatchAccessDecisionsInnerStatusEnum>
@@ -79,10 +95,12 @@ class _$ChronicleSketchBatchAccessDecisionsInnerStatusEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'granted': 'granted',
     'declined': 'declined',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'granted': 'granted',
     'declined': 'declined',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -117,10 +135,12 @@ class _$ChronicleSketchBatchAccessDecisionsInnerDeliveredAsEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'report': 'report',
     'chronicleExtract': 'chronicle-extract',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'report': 'report',
     'chronicle-extract': 'chronicleExtract',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

@@ -192,6 +192,9 @@ class HypothesisSetPatchCadenceEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'monthly')
   static const HypothesisSetPatchCadenceEnum monthly =
       _$hypothesisSetPatchCadenceEnum_monthly;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const HypothesisSetPatchCadenceEnum unknownDefaultOpenApi =
+      _$hypothesisSetPatchCadenceEnum_unknownDefaultOpenApi;
 
   static Serializer<HypothesisSetPatchCadenceEnum> get serializer =>
       _$hypothesisSetPatchCadenceEnumSerializer;
@@ -211,6 +214,9 @@ class HypothesisSetPatchStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'archived')
   static const HypothesisSetPatchStatusEnum archived =
       _$hypothesisSetPatchStatusEnum_archived;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const HypothesisSetPatchStatusEnum unknownDefaultOpenApi =
+      _$hypothesisSetPatchStatusEnum_unknownDefaultOpenApi;
 
   static Serializer<HypothesisSetPatchStatusEnum> get serializer =>
       _$hypothesisSetPatchStatusEnumSerializer;

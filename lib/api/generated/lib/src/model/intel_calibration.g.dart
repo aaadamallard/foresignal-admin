@@ -10,6 +10,9 @@ const IntelCalibrationScopeEnum _$intelCalibrationScopeEnum_intelEvent =
     const IntelCalibrationScopeEnum._('intelEvent');
 const IntelCalibrationScopeEnum _$intelCalibrationScopeEnum_precursorActive =
     const IntelCalibrationScopeEnum._('precursorActive');
+const IntelCalibrationScopeEnum
+_$intelCalibrationScopeEnum_unknownDefaultOpenApi =
+    const IntelCalibrationScopeEnum._('unknownDefaultOpenApi');
 
 IntelCalibrationScopeEnum _$intelCalibrationScopeEnumValueOf(String name) {
   switch (name) {
@@ -17,8 +20,10 @@ IntelCalibrationScopeEnum _$intelCalibrationScopeEnumValueOf(String name) {
       return _$intelCalibrationScopeEnum_intelEvent;
     case 'precursorActive':
       return _$intelCalibrationScopeEnum_precursorActive;
+    case 'unknownDefaultOpenApi':
+      return _$intelCalibrationScopeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$intelCalibrationScopeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -26,6 +31,7 @@ final BuiltSet<IntelCalibrationScopeEnum> _$intelCalibrationScopeEnumValues =
     BuiltSet<IntelCalibrationScopeEnum>(const <IntelCalibrationScopeEnum>[
       _$intelCalibrationScopeEnum_intelEvent,
       _$intelCalibrationScopeEnum_precursorActive,
+      _$intelCalibrationScopeEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<IntelCalibrationScopeEnum> _$intelCalibrationScopeEnumSerializer =
@@ -36,10 +42,12 @@ class _$IntelCalibrationScopeEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'intelEvent': 'intel-event',
     'precursorActive': 'precursor-active',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'intel-event': 'intelEvent',
     'precursor-active': 'precursorActive',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

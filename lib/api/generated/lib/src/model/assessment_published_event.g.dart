@@ -18,6 +18,9 @@ _$assessmentPublishedEventCadenceEnum_monthly =
 const AssessmentPublishedEventCadenceEnum
 _$assessmentPublishedEventCadenceEnum_onDemand =
     const AssessmentPublishedEventCadenceEnum._('onDemand');
+const AssessmentPublishedEventCadenceEnum
+_$assessmentPublishedEventCadenceEnum_unknownDefaultOpenApi =
+    const AssessmentPublishedEventCadenceEnum._('unknownDefaultOpenApi');
 
 AssessmentPublishedEventCadenceEnum
 _$assessmentPublishedEventCadenceEnumValueOf(String name) {
@@ -30,8 +33,10 @@ _$assessmentPublishedEventCadenceEnumValueOf(String name) {
       return _$assessmentPublishedEventCadenceEnum_monthly;
     case 'onDemand':
       return _$assessmentPublishedEventCadenceEnum_onDemand;
+    case 'unknownDefaultOpenApi':
+      return _$assessmentPublishedEventCadenceEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$assessmentPublishedEventCadenceEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -43,6 +48,7 @@ _$assessmentPublishedEventCadenceEnumValues =
         _$assessmentPublishedEventCadenceEnum_weekly,
         _$assessmentPublishedEventCadenceEnum_monthly,
         _$assessmentPublishedEventCadenceEnum_onDemand,
+        _$assessmentPublishedEventCadenceEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -58,6 +64,9 @@ _$assessmentPublishedEventStatusEnum_digestOnly =
 const AssessmentPublishedEventStatusEnum
 _$assessmentPublishedEventStatusEnum_failed =
     const AssessmentPublishedEventStatusEnum._('failed');
+const AssessmentPublishedEventStatusEnum
+_$assessmentPublishedEventStatusEnum_unknownDefaultOpenApi =
+    const AssessmentPublishedEventStatusEnum._('unknownDefaultOpenApi');
 
 AssessmentPublishedEventStatusEnum _$assessmentPublishedEventStatusEnumValueOf(
   String name,
@@ -71,8 +80,10 @@ AssessmentPublishedEventStatusEnum _$assessmentPublishedEventStatusEnumValueOf(
       return _$assessmentPublishedEventStatusEnum_digestOnly;
     case 'failed':
       return _$assessmentPublishedEventStatusEnum_failed;
+    case 'unknownDefaultOpenApi':
+      return _$assessmentPublishedEventStatusEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$assessmentPublishedEventStatusEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -84,6 +95,7 @@ _$assessmentPublishedEventStatusEnumValues =
         _$assessmentPublishedEventStatusEnum_partial,
         _$assessmentPublishedEventStatusEnum_digestOnly,
         _$assessmentPublishedEventStatusEnum_failed,
+        _$assessmentPublishedEventStatusEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -101,12 +113,14 @@ class _$AssessmentPublishedEventCadenceEnumSerializer
     'weekly': 'weekly',
     'monthly': 'monthly',
     'onDemand': 'on-demand',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'daily': 'daily',
     'weekly': 'weekly',
     'monthly': 'monthly',
     'on-demand': 'onDemand',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -140,12 +154,14 @@ class _$AssessmentPublishedEventStatusEnumSerializer
     'partial': 'partial',
     'digestOnly': 'digest-only',
     'failed': 'failed',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'ok': 'ok',
     'partial': 'partial',
     'digest-only': 'digestOnly',
     'failed': 'failed',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

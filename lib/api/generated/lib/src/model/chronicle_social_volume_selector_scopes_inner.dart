@@ -156,6 +156,10 @@ class ChronicleSocialVolumeSelectorScopesInnerTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'entity')
   static const ChronicleSocialVolumeSelectorScopesInnerTypeEnum entity =
       _$chronicleSocialVolumeSelectorScopesInnerTypeEnum_entity;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ChronicleSocialVolumeSelectorScopesInnerTypeEnum
+  unknownDefaultOpenApi =
+      _$chronicleSocialVolumeSelectorScopesInnerTypeEnum_unknownDefaultOpenApi;
 
   static Serializer<ChronicleSocialVolumeSelectorScopesInnerTypeEnum>
   get serializer =>

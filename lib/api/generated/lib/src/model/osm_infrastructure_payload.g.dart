@@ -15,6 +15,9 @@ _$osmInfrastructurePayloadOsmTypeEnum_way =
 const OsmInfrastructurePayloadOsmTypeEnum
 _$osmInfrastructurePayloadOsmTypeEnum_relation =
     const OsmInfrastructurePayloadOsmTypeEnum._('relation');
+const OsmInfrastructurePayloadOsmTypeEnum
+_$osmInfrastructurePayloadOsmTypeEnum_unknownDefaultOpenApi =
+    const OsmInfrastructurePayloadOsmTypeEnum._('unknownDefaultOpenApi');
 
 OsmInfrastructurePayloadOsmTypeEnum
 _$osmInfrastructurePayloadOsmTypeEnumValueOf(String name) {
@@ -25,8 +28,10 @@ _$osmInfrastructurePayloadOsmTypeEnumValueOf(String name) {
       return _$osmInfrastructurePayloadOsmTypeEnum_way;
     case 'relation':
       return _$osmInfrastructurePayloadOsmTypeEnum_relation;
+    case 'unknownDefaultOpenApi':
+      return _$osmInfrastructurePayloadOsmTypeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$osmInfrastructurePayloadOsmTypeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -37,6 +42,7 @@ _$osmInfrastructurePayloadOsmTypeEnumValues =
         _$osmInfrastructurePayloadOsmTypeEnum_node,
         _$osmInfrastructurePayloadOsmTypeEnum_way,
         _$osmInfrastructurePayloadOsmTypeEnum_relation,
+        _$osmInfrastructurePayloadOsmTypeEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -50,11 +56,13 @@ class _$OsmInfrastructurePayloadOsmTypeEnumSerializer
     'node': 'node',
     'way': 'way',
     'relation': 'relation',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'node': 'node',
     'way': 'way',
     'relation': 'relation',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

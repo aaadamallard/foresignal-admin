@@ -183,6 +183,9 @@ class ExposureWatchlistEntitiesStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'not-installed')
   static const ExposureWatchlistEntitiesStatusEnum notInstalled =
       _$exposureWatchlistEntitiesStatusEnum_notInstalled;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ExposureWatchlistEntitiesStatusEnum unknownDefaultOpenApi =
+      _$exposureWatchlistEntitiesStatusEnum_unknownDefaultOpenApi;
 
   static Serializer<ExposureWatchlistEntitiesStatusEnum> get serializer =>
       _$exposureWatchlistEntitiesStatusEnumSerializer;

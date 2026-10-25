@@ -197,6 +197,9 @@ class IndexWeightsInputSource_Enum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'default')
   static const IndexWeightsInputSource_Enum default_ =
       _$indexWeightsInputSourceEnum_default_;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const IndexWeightsInputSource_Enum unknownDefaultOpenApi =
+      _$indexWeightsInputSourceEnum_unknownDefaultOpenApi;
 
   static Serializer<IndexWeightsInputSource_Enum> get serializer =>
       _$indexWeightsInputSourceEnumSerializer;

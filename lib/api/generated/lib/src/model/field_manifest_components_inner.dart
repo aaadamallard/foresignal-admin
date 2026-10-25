@@ -149,6 +149,9 @@ class FieldManifestComponentsInnerNameEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'v')
   static const FieldManifestComponentsInnerNameEnum v =
       _$fieldManifestComponentsInnerNameEnum_v;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const FieldManifestComponentsInnerNameEnum unknownDefaultOpenApi =
+      _$fieldManifestComponentsInnerNameEnum_unknownDefaultOpenApi;
 
   static Serializer<FieldManifestComponentsInnerNameEnum> get serializer =>
       _$fieldManifestComponentsInnerNameEnumSerializer;

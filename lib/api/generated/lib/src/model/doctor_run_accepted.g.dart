@@ -8,20 +8,27 @@ part of 'doctor_run_accepted.dart';
 
 const DoctorRunAcceptedStatusEnum _$doctorRunAcceptedStatusEnum_running =
     const DoctorRunAcceptedStatusEnum._('running');
+const DoctorRunAcceptedStatusEnum
+_$doctorRunAcceptedStatusEnum_unknownDefaultOpenApi =
+    const DoctorRunAcceptedStatusEnum._('unknownDefaultOpenApi');
 
 DoctorRunAcceptedStatusEnum _$doctorRunAcceptedStatusEnumValueOf(String name) {
   switch (name) {
     case 'running':
       return _$doctorRunAcceptedStatusEnum_running;
+    case 'unknownDefaultOpenApi':
+      return _$doctorRunAcceptedStatusEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$doctorRunAcceptedStatusEnum_unknownDefaultOpenApi;
   }
 }
 
 final BuiltSet<DoctorRunAcceptedStatusEnum>
-_$doctorRunAcceptedStatusEnumValues = BuiltSet<DoctorRunAcceptedStatusEnum>(
-  const <DoctorRunAcceptedStatusEnum>[_$doctorRunAcceptedStatusEnum_running],
-);
+_$doctorRunAcceptedStatusEnumValues =
+    BuiltSet<DoctorRunAcceptedStatusEnum>(const <DoctorRunAcceptedStatusEnum>[
+      _$doctorRunAcceptedStatusEnum_running,
+      _$doctorRunAcceptedStatusEnum_unknownDefaultOpenApi,
+    ]);
 
 Serializer<DoctorRunAcceptedStatusEnum>
 _$doctorRunAcceptedStatusEnumSerializer =
@@ -31,9 +38,11 @@ class _$DoctorRunAcceptedStatusEnumSerializer
     implements PrimitiveSerializer<DoctorRunAcceptedStatusEnum> {
   static const Map<String, Object> _toWire = const <String, Object>{
     'running': 'running',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'running': 'running',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

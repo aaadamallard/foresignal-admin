@@ -274,6 +274,9 @@ class _$NtfyMessageSerializer implements PrimitiveSerializer<NtfyMessage> {
 class NtfyMessageEventEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'message')
   static const NtfyMessageEventEnum message = _$ntfyMessageEventEnum_message;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const NtfyMessageEventEnum unknownDefaultOpenApi =
+      _$ntfyMessageEventEnum_unknownDefaultOpenApi;
 
   static Serializer<NtfyMessageEventEnum> get serializer =>
       _$ntfyMessageEventEnumSerializer;

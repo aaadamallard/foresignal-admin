@@ -7,18 +7,25 @@ part of 'track.dart';
 // **************************************************************************
 
 const TrackTypeEnum _$trackTypeEnum_feature = const TrackTypeEnum._('feature');
+const TrackTypeEnum _$trackTypeEnum_unknownDefaultOpenApi =
+    const TrackTypeEnum._('unknownDefaultOpenApi');
 
 TrackTypeEnum _$trackTypeEnumValueOf(String name) {
   switch (name) {
     case 'feature':
       return _$trackTypeEnum_feature;
+    case 'unknownDefaultOpenApi':
+      return _$trackTypeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$trackTypeEnum_unknownDefaultOpenApi;
   }
 }
 
 final BuiltSet<TrackTypeEnum> _$trackTypeEnumValues = BuiltSet<TrackTypeEnum>(
-  const <TrackTypeEnum>[_$trackTypeEnum_feature],
+  const <TrackTypeEnum>[
+    _$trackTypeEnum_feature,
+    _$trackTypeEnum_unknownDefaultOpenApi,
+  ],
 );
 
 Serializer<TrackTypeEnum> _$trackTypeEnumSerializer =
@@ -27,9 +34,11 @@ Serializer<TrackTypeEnum> _$trackTypeEnumSerializer =
 class _$TrackTypeEnumSerializer implements PrimitiveSerializer<TrackTypeEnum> {
   static const Map<String, Object> _toWire = const <String, Object>{
     'feature': 'Feature',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'Feature': 'feature',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

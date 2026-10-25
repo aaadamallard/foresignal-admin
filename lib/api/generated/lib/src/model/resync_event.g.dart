@@ -12,6 +12,8 @@ const ResyncEventReasonEnum _$resyncEventReasonEnum_liveCap =
     const ResyncEventReasonEnum._('liveCap');
 const ResyncEventReasonEnum _$resyncEventReasonEnum_liveDropped =
     const ResyncEventReasonEnum._('liveDropped');
+const ResyncEventReasonEnum _$resyncEventReasonEnum_unknownDefaultOpenApi =
+    const ResyncEventReasonEnum._('unknownDefaultOpenApi');
 
 ResyncEventReasonEnum _$resyncEventReasonEnumValueOf(String name) {
   switch (name) {
@@ -21,8 +23,10 @@ ResyncEventReasonEnum _$resyncEventReasonEnumValueOf(String name) {
       return _$resyncEventReasonEnum_liveCap;
     case 'liveDropped':
       return _$resyncEventReasonEnum_liveDropped;
+    case 'unknownDefaultOpenApi':
+      return _$resyncEventReasonEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$resyncEventReasonEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -31,6 +35,7 @@ final BuiltSet<ResyncEventReasonEnum> _$resyncEventReasonEnumValues =
       _$resyncEventReasonEnum_gap,
       _$resyncEventReasonEnum_liveCap,
       _$resyncEventReasonEnum_liveDropped,
+      _$resyncEventReasonEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<ResyncEventReasonEnum> _$resyncEventReasonEnumSerializer =
@@ -42,11 +47,13 @@ class _$ResyncEventReasonEnumSerializer
     'gap': 'gap',
     'liveCap': 'live_cap',
     'liveDropped': 'live_dropped',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'gap': 'gap',
     'live_cap': 'liveCap',
     'live_dropped': 'liveDropped',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

@@ -243,6 +243,9 @@ class LightningClusterPayloadFlashes5mEnum extends EnumClass {
   @BuiltValueEnumConst(wireNumber: 200)
   static const LightningClusterPayloadFlashes5mEnum number200 =
       _$lightningClusterPayloadFlashes5mEnum_number200;
+  @BuiltValueEnumConst(wireNumber: 11184809, fallback: true)
+  static const LightningClusterPayloadFlashes5mEnum unknownDefaultOpenApi =
+      _$lightningClusterPayloadFlashes5mEnum_unknownDefaultOpenApi;
 
   static Serializer<LightningClusterPayloadFlashes5mEnum> get serializer =>
       _$lightningClusterPayloadFlashes5mEnumSerializer;

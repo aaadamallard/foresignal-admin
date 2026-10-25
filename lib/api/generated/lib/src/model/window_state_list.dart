@@ -185,6 +185,9 @@ class WindowStateListTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'anomaly')
   static const WindowStateListTypeEnum anomaly =
       _$windowStateListTypeEnum_anomaly;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const WindowStateListTypeEnum unknownDefaultOpenApi =
+      _$windowStateListTypeEnum_unknownDefaultOpenApi;
 
   static Serializer<WindowStateListTypeEnum> get serializer =>
       _$windowStateListTypeEnumSerializer;

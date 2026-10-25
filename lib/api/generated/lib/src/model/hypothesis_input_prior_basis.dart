@@ -198,6 +198,9 @@ class HypothesisInputPriorBasisTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'operator')
   static const HypothesisInputPriorBasisTypeEnum operator_ =
       _$hypothesisInputPriorBasisTypeEnum_operator_;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const HypothesisInputPriorBasisTypeEnum unknownDefaultOpenApi =
+      _$hypothesisInputPriorBasisTypeEnum_unknownDefaultOpenApi;
 
   static Serializer<HypothesisInputPriorBasisTypeEnum> get serializer =>
       _$hypothesisInputPriorBasisTypeEnumSerializer;

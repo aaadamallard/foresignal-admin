@@ -9,14 +9,19 @@ part of 'emwin_warning_payload_duplicate_of.dart';
 const EmwinWarningPayloadDuplicateOfSource_Enum
 _$emwinWarningPayloadDuplicateOfSourceEnum_nwsAlerts =
     const EmwinWarningPayloadDuplicateOfSource_Enum._('nwsAlerts');
+const EmwinWarningPayloadDuplicateOfSource_Enum
+_$emwinWarningPayloadDuplicateOfSourceEnum_unknownDefaultOpenApi =
+    const EmwinWarningPayloadDuplicateOfSource_Enum._('unknownDefaultOpenApi');
 
 EmwinWarningPayloadDuplicateOfSource_Enum
 _$emwinWarningPayloadDuplicateOfSourceEnumValueOf(String name) {
   switch (name) {
     case 'nwsAlerts':
       return _$emwinWarningPayloadDuplicateOfSourceEnum_nwsAlerts;
+    case 'unknownDefaultOpenApi':
+      return _$emwinWarningPayloadDuplicateOfSourceEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$emwinWarningPayloadDuplicateOfSourceEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -25,6 +30,7 @@ _$emwinWarningPayloadDuplicateOfSourceEnumValues =
     BuiltSet<EmwinWarningPayloadDuplicateOfSource_Enum>(
       const <EmwinWarningPayloadDuplicateOfSource_Enum>[
         _$emwinWarningPayloadDuplicateOfSourceEnum_nwsAlerts,
+        _$emwinWarningPayloadDuplicateOfSourceEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -36,9 +42,11 @@ class _$EmwinWarningPayloadDuplicateOfSource_EnumSerializer
     implements PrimitiveSerializer<EmwinWarningPayloadDuplicateOfSource_Enum> {
   static const Map<String, Object> _toWire = const <String, Object>{
     'nwsAlerts': 'nws-alerts',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'nws-alerts': 'nwsAlerts',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

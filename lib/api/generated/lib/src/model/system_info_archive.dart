@@ -275,6 +275,9 @@ class SystemInfoArchiveTargetEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r's3')
   static const SystemInfoArchiveTargetEnum s3 =
       _$systemInfoArchiveTargetEnum_s3;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const SystemInfoArchiveTargetEnum unknownDefaultOpenApi =
+      _$systemInfoArchiveTargetEnum_unknownDefaultOpenApi;
 
   static Serializer<SystemInfoArchiveTargetEnum> get serializer =>
       _$systemInfoArchiveTargetEnumSerializer;

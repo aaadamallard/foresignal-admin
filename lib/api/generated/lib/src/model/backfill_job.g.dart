@@ -16,6 +16,8 @@ const BackfillJobStatusEnum _$backfillJobStatusEnum_failed =
     const BackfillJobStatusEnum._('failed');
 const BackfillJobStatusEnum _$backfillJobStatusEnum_cancelled =
     const BackfillJobStatusEnum._('cancelled');
+const BackfillJobStatusEnum _$backfillJobStatusEnum_unknownDefaultOpenApi =
+    const BackfillJobStatusEnum._('unknownDefaultOpenApi');
 
 BackfillJobStatusEnum _$backfillJobStatusEnumValueOf(String name) {
   switch (name) {
@@ -29,8 +31,10 @@ BackfillJobStatusEnum _$backfillJobStatusEnumValueOf(String name) {
       return _$backfillJobStatusEnum_failed;
     case 'cancelled':
       return _$backfillJobStatusEnum_cancelled;
+    case 'unknownDefaultOpenApi':
+      return _$backfillJobStatusEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$backfillJobStatusEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -41,6 +45,7 @@ final BuiltSet<BackfillJobStatusEnum> _$backfillJobStatusEnumValues =
       _$backfillJobStatusEnum_done,
       _$backfillJobStatusEnum_failed,
       _$backfillJobStatusEnum_cancelled,
+      _$backfillJobStatusEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<BackfillJobStatusEnum> _$backfillJobStatusEnumSerializer =
@@ -54,6 +59,7 @@ class _$BackfillJobStatusEnumSerializer
     'done': 'done',
     'failed': 'failed',
     'cancelled': 'cancelled',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'queued': 'queued',
@@ -61,6 +67,7 @@ class _$BackfillJobStatusEnumSerializer
     'done': 'done',
     'failed': 'failed',
     'cancelled': 'cancelled',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

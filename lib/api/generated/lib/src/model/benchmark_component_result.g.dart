@@ -15,6 +15,9 @@ _$benchmarkComponentResultStatusEnum_warn =
 const BenchmarkComponentResultStatusEnum
 _$benchmarkComponentResultStatusEnum_fail =
     const BenchmarkComponentResultStatusEnum._('fail');
+const BenchmarkComponentResultStatusEnum
+_$benchmarkComponentResultStatusEnum_unknownDefaultOpenApi =
+    const BenchmarkComponentResultStatusEnum._('unknownDefaultOpenApi');
 
 BenchmarkComponentResultStatusEnum _$benchmarkComponentResultStatusEnumValueOf(
   String name,
@@ -26,8 +29,10 @@ BenchmarkComponentResultStatusEnum _$benchmarkComponentResultStatusEnumValueOf(
       return _$benchmarkComponentResultStatusEnum_warn;
     case 'fail':
       return _$benchmarkComponentResultStatusEnum_fail;
+    case 'unknownDefaultOpenApi':
+      return _$benchmarkComponentResultStatusEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$benchmarkComponentResultStatusEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -38,6 +43,7 @@ _$benchmarkComponentResultStatusEnumValues =
         _$benchmarkComponentResultStatusEnum_pass,
         _$benchmarkComponentResultStatusEnum_warn,
         _$benchmarkComponentResultStatusEnum_fail,
+        _$benchmarkComponentResultStatusEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -51,11 +57,13 @@ class _$BenchmarkComponentResultStatusEnumSerializer
     'pass': 'pass',
     'warn': 'warn',
     'fail': 'fail',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'pass': 'pass',
     'warn': 'warn',
     'fail': 'fail',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

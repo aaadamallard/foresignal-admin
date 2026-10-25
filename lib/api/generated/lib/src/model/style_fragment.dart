@@ -196,6 +196,9 @@ class StyleFragmentVersionEnum extends EnumClass {
   @BuiltValueEnumConst(wireNumber: 8)
   static const StyleFragmentVersionEnum number8 =
       _$styleFragmentVersionEnum_number8;
+  @BuiltValueEnumConst(wireNumber: 11184809, fallback: true)
+  static const StyleFragmentVersionEnum unknownDefaultOpenApi =
+      _$styleFragmentVersionEnum_unknownDefaultOpenApi;
 
   static Serializer<StyleFragmentVersionEnum> get serializer =>
       _$styleFragmentVersionEnumSerializer;

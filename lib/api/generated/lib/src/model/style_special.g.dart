@@ -12,6 +12,8 @@ const StyleSpecialKindEnum _$styleSpecialKindEnum_noEcho =
     const StyleSpecialKindEnum._('noEcho');
 const StyleSpecialKindEnum _$styleSpecialKindEnum_noData =
     const StyleSpecialKindEnum._('noData');
+const StyleSpecialKindEnum _$styleSpecialKindEnum_unknownDefaultOpenApi =
+    const StyleSpecialKindEnum._('unknownDefaultOpenApi');
 
 StyleSpecialKindEnum _$styleSpecialKindEnumValueOf(String name) {
   switch (name) {
@@ -21,8 +23,10 @@ StyleSpecialKindEnum _$styleSpecialKindEnumValueOf(String name) {
       return _$styleSpecialKindEnum_noEcho;
     case 'noData':
       return _$styleSpecialKindEnum_noData;
+    case 'unknownDefaultOpenApi':
+      return _$styleSpecialKindEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$styleSpecialKindEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -31,6 +35,7 @@ final BuiltSet<StyleSpecialKindEnum> _$styleSpecialKindEnumValues =
       _$styleSpecialKindEnum_noCoverage,
       _$styleSpecialKindEnum_noEcho,
       _$styleSpecialKindEnum_noData,
+      _$styleSpecialKindEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<StyleSpecialKindEnum> _$styleSpecialKindEnumSerializer =
@@ -42,11 +47,13 @@ class _$StyleSpecialKindEnumSerializer
     'noCoverage': 'noCoverage',
     'noEcho': 'noEcho',
     'noData': 'noData',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'noCoverage': 'noCoverage',
     'noEcho': 'noEcho',
     'noData': 'noData',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

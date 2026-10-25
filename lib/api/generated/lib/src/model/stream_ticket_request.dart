@@ -174,6 +174,9 @@ class StreamTicketRequestPurposeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'tiles')
   static const StreamTicketRequestPurposeEnum tiles =
       _$streamTicketRequestPurposeEnum_tiles;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const StreamTicketRequestPurposeEnum unknownDefaultOpenApi =
+      _$streamTicketRequestPurposeEnum_unknownDefaultOpenApi;
 
   static Serializer<StreamTicketRequestPurposeEnum> get serializer =>
       _$streamTicketRequestPurposeEnumSerializer;

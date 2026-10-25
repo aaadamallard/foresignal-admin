@@ -216,6 +216,9 @@ class OriginatorClass_Enum extends EnumClass {
   static const OriginatorClass_Enum derived = _$originatorClassEnum_derived;
   @BuiltValueEnumConst(wireName: r'social')
   static const OriginatorClass_Enum social = _$originatorClassEnum_social;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const OriginatorClass_Enum unknownDefaultOpenApi =
+      _$originatorClassEnum_unknownDefaultOpenApi;
 
   static Serializer<OriginatorClass_Enum> get serializer =>
       _$originatorClassEnumSerializer;

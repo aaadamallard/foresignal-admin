@@ -175,6 +175,9 @@ class CaptureModeModeEnum extends EnumClass {
       _$captureModeModeEnum_rollupOnly;
   @BuiltValueEnumConst(wireName: r'frames')
   static const CaptureModeModeEnum frames = _$captureModeModeEnum_frames;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const CaptureModeModeEnum unknownDefaultOpenApi =
+      _$captureModeModeEnum_unknownDefaultOpenApi;
 
   static Serializer<CaptureModeModeEnum> get serializer =>
       _$captureModeModeEnumSerializer;

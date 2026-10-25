@@ -191,6 +191,10 @@ class BenchmarkStatusComponentsInnerGatingProposerAutoExecutionEnum
   static const BenchmarkStatusComponentsInnerGatingProposerAutoExecutionEnum
   degraded =
       _$benchmarkStatusComponentsInnerGatingProposerAutoExecutionEnum_degraded;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const BenchmarkStatusComponentsInnerGatingProposerAutoExecutionEnum
+  unknownDefaultOpenApi =
+      _$benchmarkStatusComponentsInnerGatingProposerAutoExecutionEnum_unknownDefaultOpenApi;
 
   static Serializer<
     BenchmarkStatusComponentsInnerGatingProposerAutoExecutionEnum
@@ -221,6 +225,10 @@ class BenchmarkStatusComponentsInnerGatingLlmEnsembleWeightEnum
   static const BenchmarkStatusComponentsInnerGatingLlmEnsembleWeightEnum
   degraded =
       _$benchmarkStatusComponentsInnerGatingLlmEnsembleWeightEnum_degraded;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const BenchmarkStatusComponentsInnerGatingLlmEnsembleWeightEnum
+  unknownDefaultOpenApi =
+      _$benchmarkStatusComponentsInnerGatingLlmEnsembleWeightEnum_unknownDefaultOpenApi;
 
   static Serializer<BenchmarkStatusComponentsInnerGatingLlmEnsembleWeightEnum>
   get serializer =>

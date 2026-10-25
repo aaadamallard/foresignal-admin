@@ -26,6 +26,8 @@ const BacktestCaveatCodeEnum _$backtestCaveatCodeEnum_SMALL_SAMPLE =
     const BacktestCaveatCodeEnum._('SMALL_SAMPLE');
 const BacktestCaveatCodeEnum _$backtestCaveatCodeEnum_NOT_GROUND_TRUTH =
     const BacktestCaveatCodeEnum._('NOT_GROUND_TRUTH');
+const BacktestCaveatCodeEnum _$backtestCaveatCodeEnum_unknownDefaultOpenApi =
+    const BacktestCaveatCodeEnum._('unknownDefaultOpenApi');
 
 BacktestCaveatCodeEnum _$backtestCaveatCodeEnumValueOf(String name) {
   switch (name) {
@@ -47,8 +49,10 @@ BacktestCaveatCodeEnum _$backtestCaveatCodeEnumValueOf(String name) {
       return _$backtestCaveatCodeEnum_SMALL_SAMPLE;
     case 'NOT_GROUND_TRUTH':
       return _$backtestCaveatCodeEnum_NOT_GROUND_TRUTH;
+    case 'unknownDefaultOpenApi':
+      return _$backtestCaveatCodeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$backtestCaveatCodeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -63,6 +67,7 @@ final BuiltSet<BacktestCaveatCodeEnum> _$backtestCaveatCodeEnumValues =
       _$backtestCaveatCodeEnum_WINDOW_APPROXIMATE,
       _$backtestCaveatCodeEnum_SMALL_SAMPLE,
       _$backtestCaveatCodeEnum_NOT_GROUND_TRUTH,
+      _$backtestCaveatCodeEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<BacktestCaveatCodeEnum> _$backtestCaveatCodeEnumSerializer =
@@ -80,6 +85,7 @@ class _$BacktestCaveatCodeEnumSerializer
     'WINDOW_APPROXIMATE': 'WINDOW_APPROXIMATE',
     'SMALL_SAMPLE': 'SMALL_SAMPLE',
     'NOT_GROUND_TRUTH': 'NOT_GROUND_TRUTH',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'RANGE_CLAMPED_BY_RETENTION': 'RANGE_CLAMPED_BY_RETENTION',
@@ -91,6 +97,7 @@ class _$BacktestCaveatCodeEnumSerializer
     'WINDOW_APPROXIMATE': 'WINDOW_APPROXIMATE',
     'SMALL_SAMPLE': 'SMALL_SAMPLE',
     'NOT_GROUND_TRUTH': 'NOT_GROUND_TRUTH',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

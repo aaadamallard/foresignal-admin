@@ -173,6 +173,9 @@ class StatIntervalMethodEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'empirical')
   static const StatIntervalMethodEnum empirical =
       _$statIntervalMethodEnum_empirical;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const StatIntervalMethodEnum unknownDefaultOpenApi =
+      _$statIntervalMethodEnum_unknownDefaultOpenApi;
 
   static Serializer<StatIntervalMethodEnum> get serializer =>
       _$statIntervalMethodEnumSerializer;

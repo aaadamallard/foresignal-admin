@@ -338,6 +338,10 @@ class BenchmarkComponentResultScenariosInnerScenarioEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'historical')
   static const BenchmarkComponentResultScenariosInnerScenarioEnum historical =
       _$benchmarkComponentResultScenariosInnerScenarioEnum_historical;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const BenchmarkComponentResultScenariosInnerScenarioEnum
+  unknownDefaultOpenApi =
+      _$benchmarkComponentResultScenariosInnerScenarioEnum_unknownDefaultOpenApi;
 
   static Serializer<BenchmarkComponentResultScenariosInnerScenarioEnum>
   get serializer =>
@@ -364,6 +368,10 @@ class BenchmarkComponentResultScenariosInnerStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'fail')
   static const BenchmarkComponentResultScenariosInnerStatusEnum fail =
       _$benchmarkComponentResultScenariosInnerStatusEnum_fail;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const BenchmarkComponentResultScenariosInnerStatusEnum
+  unknownDefaultOpenApi =
+      _$benchmarkComponentResultScenariosInnerStatusEnum_unknownDefaultOpenApi;
 
   static Serializer<BenchmarkComponentResultScenariosInnerStatusEnum>
   get serializer =>

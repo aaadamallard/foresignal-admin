@@ -467,6 +467,9 @@ class SituationMemberMemberTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'investigation')
   static const SituationMemberMemberTypeEnum investigation =
       _$situationMemberMemberTypeEnum_investigation;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const SituationMemberMemberTypeEnum unknownDefaultOpenApi =
+      _$situationMemberMemberTypeEnum_unknownDefaultOpenApi;
 
   static Serializer<SituationMemberMemberTypeEnum> get serializer =>
       _$situationMemberMemberTypeEnumSerializer;
@@ -486,6 +489,9 @@ class SituationMemberRoleEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'context')
   static const SituationMemberRoleEnum context =
       _$situationMemberRoleEnum_context;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const SituationMemberRoleEnum unknownDefaultOpenApi =
+      _$situationMemberRoleEnum_unknownDefaultOpenApi;
 
   static Serializer<SituationMemberRoleEnum> get serializer =>
       _$situationMemberRoleEnumSerializer;

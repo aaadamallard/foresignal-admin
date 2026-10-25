@@ -14,6 +14,9 @@ const FederationInfoCapabilitiesEnum _$federationInfoCapabilitiesEnum_snapshot =
     const FederationInfoCapabilitiesEnum._('snapshot');
 const FederationInfoCapabilitiesEnum _$federationInfoCapabilitiesEnum_ingest =
     const FederationInfoCapabilitiesEnum._('ingest');
+const FederationInfoCapabilitiesEnum
+_$federationInfoCapabilitiesEnum_unknownDefaultOpenApi =
+    const FederationInfoCapabilitiesEnum._('unknownDefaultOpenApi');
 
 FederationInfoCapabilitiesEnum _$federationInfoCapabilitiesEnumValueOf(
   String name,
@@ -27,8 +30,10 @@ FederationInfoCapabilitiesEnum _$federationInfoCapabilitiesEnumValueOf(
       return _$federationInfoCapabilitiesEnum_snapshot;
     case 'ingest':
       return _$federationInfoCapabilitiesEnum_ingest;
+    case 'unknownDefaultOpenApi':
+      return _$federationInfoCapabilitiesEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$federationInfoCapabilitiesEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -40,6 +45,7 @@ _$federationInfoCapabilitiesEnumValues =
         _$federationInfoCapabilitiesEnum_stream,
         _$federationInfoCapabilitiesEnum_snapshot,
         _$federationInfoCapabilitiesEnum_ingest,
+        _$federationInfoCapabilitiesEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -54,12 +60,14 @@ class _$FederationInfoCapabilitiesEnumSerializer
     'stream': 'stream',
     'snapshot': 'snapshot',
     'ingest': 'ingest',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'changes': 'changes',
     'stream': 'stream',
     'snapshot': 'snapshot',
     'ingest': 'ingest',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

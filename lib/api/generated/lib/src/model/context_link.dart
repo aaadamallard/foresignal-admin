@@ -190,6 +190,9 @@ class ContextLinkVersionEnum extends EnumClass {
   @BuiltValueEnumConst(wireNumber: 1)
   static const ContextLinkVersionEnum number1 =
       _$contextLinkVersionEnum_number1;
+  @BuiltValueEnumConst(wireNumber: 11184809, fallback: true)
+  static const ContextLinkVersionEnum unknownDefaultOpenApi =
+      _$contextLinkVersionEnum_unknownDefaultOpenApi;
 
   static Serializer<ContextLinkVersionEnum> get serializer =>
       _$contextLinkVersionEnumSerializer;

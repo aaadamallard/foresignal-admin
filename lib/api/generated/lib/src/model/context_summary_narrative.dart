@@ -144,6 +144,9 @@ class ContextSummaryNarrativeTextOriginEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'llm')
   static const ContextSummaryNarrativeTextOriginEnum llm =
       _$contextSummaryNarrativeTextOriginEnum_llm;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ContextSummaryNarrativeTextOriginEnum unknownDefaultOpenApi =
+      _$contextSummaryNarrativeTextOriginEnum_unknownDefaultOpenApi;
 
   static Serializer<ContextSummaryNarrativeTextOriginEnum> get serializer =>
       _$contextSummaryNarrativeTextOriginEnumSerializer;

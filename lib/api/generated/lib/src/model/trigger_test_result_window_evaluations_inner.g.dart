@@ -18,6 +18,11 @@ _$triggerTestResultWindowEvaluationsInnerStateEnum_unknown =
 const TriggerTestResultWindowEvaluationsInnerStateEnum
 _$triggerTestResultWindowEvaluationsInnerStateEnum_learning =
     const TriggerTestResultWindowEvaluationsInnerStateEnum._('learning');
+const TriggerTestResultWindowEvaluationsInnerStateEnum
+_$triggerTestResultWindowEvaluationsInnerStateEnum_unknownDefaultOpenApi =
+    const TriggerTestResultWindowEvaluationsInnerStateEnum._(
+      'unknownDefaultOpenApi',
+    );
 
 TriggerTestResultWindowEvaluationsInnerStateEnum
 _$triggerTestResultWindowEvaluationsInnerStateEnumValueOf(String name) {
@@ -30,21 +35,24 @@ _$triggerTestResultWindowEvaluationsInnerStateEnumValueOf(String name) {
       return _$triggerTestResultWindowEvaluationsInnerStateEnum_unknown;
     case 'learning':
       return _$triggerTestResultWindowEvaluationsInnerStateEnum_learning;
+    case 'unknownDefaultOpenApi':
+      return _$triggerTestResultWindowEvaluationsInnerStateEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$triggerTestResultWindowEvaluationsInnerStateEnum_unknownDefaultOpenApi;
   }
 }
 
 final BuiltSet<TriggerTestResultWindowEvaluationsInnerStateEnum>
 _$triggerTestResultWindowEvaluationsInnerStateEnumValues =
-    BuiltSet<TriggerTestResultWindowEvaluationsInnerStateEnum>(
-      const <TriggerTestResultWindowEvaluationsInnerStateEnum>[
-        _$triggerTestResultWindowEvaluationsInnerStateEnum_active,
-        _$triggerTestResultWindowEvaluationsInnerStateEnum_clear,
-        _$triggerTestResultWindowEvaluationsInnerStateEnum_unknown,
-        _$triggerTestResultWindowEvaluationsInnerStateEnum_learning,
-      ],
-    );
+    BuiltSet<TriggerTestResultWindowEvaluationsInnerStateEnum>(const <
+      TriggerTestResultWindowEvaluationsInnerStateEnum
+    >[
+      _$triggerTestResultWindowEvaluationsInnerStateEnum_active,
+      _$triggerTestResultWindowEvaluationsInnerStateEnum_clear,
+      _$triggerTestResultWindowEvaluationsInnerStateEnum_unknown,
+      _$triggerTestResultWindowEvaluationsInnerStateEnum_learning,
+      _$triggerTestResultWindowEvaluationsInnerStateEnum_unknownDefaultOpenApi,
+    ]);
 
 Serializer<TriggerTestResultWindowEvaluationsInnerStateEnum>
 _$triggerTestResultWindowEvaluationsInnerStateEnumSerializer =
@@ -58,12 +66,14 @@ class _$TriggerTestResultWindowEvaluationsInnerStateEnumSerializer
     'clear': 'clear',
     'unknown': 'unknown',
     'learning': 'learning',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'active': 'active',
     'clear': 'clear',
     'unknown': 'unknown',
     'learning': 'learning',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

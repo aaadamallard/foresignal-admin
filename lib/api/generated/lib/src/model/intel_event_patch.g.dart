@@ -14,6 +14,9 @@ const IntelEventPatchStatusEnum _$intelEventPatchStatusEnum_resolved =
     const IntelEventPatchStatusEnum._('resolved');
 const IntelEventPatchStatusEnum _$intelEventPatchStatusEnum_dismissed =
     const IntelEventPatchStatusEnum._('dismissed');
+const IntelEventPatchStatusEnum
+_$intelEventPatchStatusEnum_unknownDefaultOpenApi =
+    const IntelEventPatchStatusEnum._('unknownDefaultOpenApi');
 
 IntelEventPatchStatusEnum _$intelEventPatchStatusEnumValueOf(String name) {
   switch (name) {
@@ -25,8 +28,10 @@ IntelEventPatchStatusEnum _$intelEventPatchStatusEnumValueOf(String name) {
       return _$intelEventPatchStatusEnum_resolved;
     case 'dismissed':
       return _$intelEventPatchStatusEnum_dismissed;
+    case 'unknownDefaultOpenApi':
+      return _$intelEventPatchStatusEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$intelEventPatchStatusEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -36,6 +41,7 @@ final BuiltSet<IntelEventPatchStatusEnum> _$intelEventPatchStatusEnumValues =
       _$intelEventPatchStatusEnum_active,
       _$intelEventPatchStatusEnum_resolved,
       _$intelEventPatchStatusEnum_dismissed,
+      _$intelEventPatchStatusEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<IntelEventPatchStatusEnum> _$intelEventPatchStatusEnumSerializer =
@@ -48,12 +54,14 @@ class _$IntelEventPatchStatusEnumSerializer
     'active': 'active',
     'resolved': 'resolved',
     'dismissed': 'dismissed',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'emerging': 'emerging',
     'active': 'active',
     'resolved': 'resolved',
     'dismissed': 'dismissed',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

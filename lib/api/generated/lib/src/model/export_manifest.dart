@@ -396,6 +396,9 @@ class ExportManifestManifestVersionEnum extends EnumClass {
   @BuiltValueEnumConst(wireNumber: 1)
   static const ExportManifestManifestVersionEnum number1 =
       _$exportManifestManifestVersionEnum_number1;
+  @BuiltValueEnumConst(wireNumber: 11184809, fallback: true)
+  static const ExportManifestManifestVersionEnum unknownDefaultOpenApi =
+      _$exportManifestManifestVersionEnum_unknownDefaultOpenApi;
 
   static Serializer<ExportManifestManifestVersionEnum> get serializer =>
       _$exportManifestManifestVersionEnumSerializer;
@@ -416,6 +419,9 @@ class ExportManifestKindEnum extends EnumClass {
       _$exportManifestKindEnum_SNAPSHOT;
   @BuiltValueEnumConst(wireName: r'PACK')
   static const ExportManifestKindEnum PACK = _$exportManifestKindEnum_PACK;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ExportManifestKindEnum unknownDefaultOpenApi =
+      _$exportManifestKindEnum_unknownDefaultOpenApi;
 
   static Serializer<ExportManifestKindEnum> get serializer =>
       _$exportManifestKindEnumSerializer;
@@ -443,6 +449,9 @@ class ExportManifestFormatEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'pmtiles')
   static const ExportManifestFormatEnum pmtiles =
       _$exportManifestFormatEnum_pmtiles;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ExportManifestFormatEnum unknownDefaultOpenApi =
+      _$exportManifestFormatEnum_unknownDefaultOpenApi;
 
   static Serializer<ExportManifestFormatEnum> get serializer =>
       _$exportManifestFormatEnumSerializer;

@@ -216,6 +216,10 @@ class InfraImpactResultDependentsInnerPathLabelEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'speculative')
   static const InfraImpactResultDependentsInnerPathLabelEnum speculative =
       _$infraImpactResultDependentsInnerPathLabelEnum_speculative;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const InfraImpactResultDependentsInnerPathLabelEnum
+  unknownDefaultOpenApi =
+      _$infraImpactResultDependentsInnerPathLabelEnum_unknownDefaultOpenApi;
 
   static Serializer<InfraImpactResultDependentsInnerPathLabelEnum>
   get serializer => _$infraImpactResultDependentsInnerPathLabelEnumSerializer;

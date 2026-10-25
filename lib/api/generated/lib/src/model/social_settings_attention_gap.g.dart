@@ -12,6 +12,9 @@ _$socialSettingsAttentionGapMinSeverityEnum_notable =
 const SocialSettingsAttentionGapMinSeverityEnum
 _$socialSettingsAttentionGapMinSeverityEnum_significant =
     const SocialSettingsAttentionGapMinSeverityEnum._('significant');
+const SocialSettingsAttentionGapMinSeverityEnum
+_$socialSettingsAttentionGapMinSeverityEnum_unknownDefaultOpenApi =
+    const SocialSettingsAttentionGapMinSeverityEnum._('unknownDefaultOpenApi');
 
 SocialSettingsAttentionGapMinSeverityEnum
 _$socialSettingsAttentionGapMinSeverityEnumValueOf(String name) {
@@ -20,8 +23,10 @@ _$socialSettingsAttentionGapMinSeverityEnumValueOf(String name) {
       return _$socialSettingsAttentionGapMinSeverityEnum_notable;
     case 'significant':
       return _$socialSettingsAttentionGapMinSeverityEnum_significant;
+    case 'unknownDefaultOpenApi':
+      return _$socialSettingsAttentionGapMinSeverityEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$socialSettingsAttentionGapMinSeverityEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -31,6 +36,7 @@ _$socialSettingsAttentionGapMinSeverityEnumValues =
       const <SocialSettingsAttentionGapMinSeverityEnum>[
         _$socialSettingsAttentionGapMinSeverityEnum_notable,
         _$socialSettingsAttentionGapMinSeverityEnum_significant,
+        _$socialSettingsAttentionGapMinSeverityEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -43,10 +49,12 @@ class _$SocialSettingsAttentionGapMinSeverityEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'notable': 'notable',
     'significant': 'significant',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'notable': 'notable',
     'significant': 'significant',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

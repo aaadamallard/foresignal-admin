@@ -14,6 +14,8 @@ const SinkTestResultPhaseEnum _$sinkTestResultPhaseEnum_bind =
     const SinkTestResultPhaseEnum._('bind');
 const SinkTestResultPhaseEnum _$sinkTestResultPhaseEnum_send =
     const SinkTestResultPhaseEnum._('send');
+const SinkTestResultPhaseEnum _$sinkTestResultPhaseEnum_unknownDefaultOpenApi =
+    const SinkTestResultPhaseEnum._('unknownDefaultOpenApi');
 
 SinkTestResultPhaseEnum _$sinkTestResultPhaseEnumValueOf(String name) {
   switch (name) {
@@ -25,8 +27,10 @@ SinkTestResultPhaseEnum _$sinkTestResultPhaseEnumValueOf(String name) {
       return _$sinkTestResultPhaseEnum_bind;
     case 'send':
       return _$sinkTestResultPhaseEnum_send;
+    case 'unknownDefaultOpenApi':
+      return _$sinkTestResultPhaseEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$sinkTestResultPhaseEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -36,6 +40,7 @@ final BuiltSet<SinkTestResultPhaseEnum> _$sinkTestResultPhaseEnumValues =
       _$sinkTestResultPhaseEnum_connect,
       _$sinkTestResultPhaseEnum_bind,
       _$sinkTestResultPhaseEnum_send,
+      _$sinkTestResultPhaseEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<SinkTestResultPhaseEnum> _$sinkTestResultPhaseEnumSerializer =
@@ -48,12 +53,14 @@ class _$SinkTestResultPhaseEnumSerializer
     'connect': 'connect',
     'bind': 'bind',
     'send': 'send',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'validate': 'validate',
     'connect': 'connect',
     'bind': 'bind',
     'send': 'send',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

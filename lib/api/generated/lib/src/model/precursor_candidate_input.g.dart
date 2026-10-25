@@ -10,6 +10,9 @@ const PrecursorCandidateInputKindEnum _$precursorCandidateInputKindEnum_event =
     const PrecursorCandidateInputKindEnum._('event');
 const PrecursorCandidateInputKindEnum _$precursorCandidateInputKindEnum_series =
     const PrecursorCandidateInputKindEnum._('series');
+const PrecursorCandidateInputKindEnum
+_$precursorCandidateInputKindEnum_unknownDefaultOpenApi =
+    const PrecursorCandidateInputKindEnum._('unknownDefaultOpenApi');
 
 PrecursorCandidateInputKindEnum _$precursorCandidateInputKindEnumValueOf(
   String name,
@@ -19,8 +22,10 @@ PrecursorCandidateInputKindEnum _$precursorCandidateInputKindEnumValueOf(
       return _$precursorCandidateInputKindEnum_event;
     case 'series':
       return _$precursorCandidateInputKindEnum_series;
+    case 'unknownDefaultOpenApi':
+      return _$precursorCandidateInputKindEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$precursorCandidateInputKindEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -30,6 +35,7 @@ _$precursorCandidateInputKindEnumValues =
       const <PrecursorCandidateInputKindEnum>[
         _$precursorCandidateInputKindEnum_event,
         _$precursorCandidateInputKindEnum_series,
+        _$precursorCandidateInputKindEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -42,10 +48,12 @@ class _$PrecursorCandidateInputKindEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'event': 'event',
     'series': 'series',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'event': 'event',
     'series': 'series',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

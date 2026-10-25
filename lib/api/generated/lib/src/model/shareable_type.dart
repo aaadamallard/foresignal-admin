@@ -29,6 +29,8 @@ class ShareableType extends EnumClass {
   static const ShareableType evidenceItem = _$evidenceItem;
   @BuiltValueEnumConst(wireName: r'tag')
   static const ShareableType tag = _$tag;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ShareableType unknownDefaultOpenApi = _$unknownDefaultOpenApi;
 
   static Serializer<ShareableType> get serializer => _$shareableTypeSerializer;
 

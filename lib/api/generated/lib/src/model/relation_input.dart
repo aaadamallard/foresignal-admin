@@ -319,6 +319,9 @@ class RelationInputTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'affiliated-with')
   static const RelationInputTypeEnum affiliatedWith =
       _$relationInputTypeEnum_affiliatedWith;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const RelationInputTypeEnum unknownDefaultOpenApi =
+      _$relationInputTypeEnum_unknownDefaultOpenApi;
 
   static Serializer<RelationInputTypeEnum> get serializer =>
       _$relationInputTypeEnumSerializer;
@@ -344,6 +347,9 @@ class RelationInputLabelEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'speculative')
   static const RelationInputLabelEnum speculative =
       _$relationInputLabelEnum_speculative;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const RelationInputLabelEnum unknownDefaultOpenApi =
+      _$relationInputLabelEnum_unknownDefaultOpenApi;
 
   static Serializer<RelationInputLabelEnum> get serializer =>
       _$relationInputLabelEnumSerializer;

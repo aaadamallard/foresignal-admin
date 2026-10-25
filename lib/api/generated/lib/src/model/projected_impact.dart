@@ -660,6 +660,9 @@ class ProjectedImpactStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'superseded')
   static const ProjectedImpactStatusEnum superseded =
       _$projectedImpactStatusEnum_superseded;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ProjectedImpactStatusEnum unknownDefaultOpenApi =
+      _$projectedImpactStatusEnum_unknownDefaultOpenApi;
 
   static Serializer<ProjectedImpactStatusEnum> get serializer =>
       _$projectedImpactStatusEnumSerializer;

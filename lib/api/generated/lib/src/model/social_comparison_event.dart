@@ -263,6 +263,9 @@ class SocialComparisonEventEventEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'comparison.updated')
   static const SocialComparisonEventEventEnum comparisonPeriodUpdated =
       _$socialComparisonEventEventEnum_comparisonPeriodUpdated;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const SocialComparisonEventEventEnum unknownDefaultOpenApi =
+      _$socialComparisonEventEventEnum_unknownDefaultOpenApi;
 
   static Serializer<SocialComparisonEventEventEnum> get serializer =>
       _$socialComparisonEventEventEnumSerializer;
@@ -291,6 +294,9 @@ class SocialComparisonEventStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'insufficient-coverage')
   static const SocialComparisonEventStatusEnum insufficientCoverage =
       _$socialComparisonEventStatusEnum_insufficientCoverage;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const SocialComparisonEventStatusEnum unknownDefaultOpenApi =
+      _$socialComparisonEventStatusEnum_unknownDefaultOpenApi;
 
   static Serializer<SocialComparisonEventStatusEnum> get serializer =>
       _$socialComparisonEventStatusEnumSerializer;
@@ -319,6 +325,9 @@ class SocialComparisonEventPreviousStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'insufficient-coverage')
   static const SocialComparisonEventPreviousStatusEnum insufficientCoverage =
       _$socialComparisonEventPreviousStatusEnum_insufficientCoverage;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const SocialComparisonEventPreviousStatusEnum unknownDefaultOpenApi =
+      _$socialComparisonEventPreviousStatusEnum_unknownDefaultOpenApi;
 
   static Serializer<SocialComparisonEventPreviousStatusEnum> get serializer =>
       _$socialComparisonEventPreviousStatusEnumSerializer;

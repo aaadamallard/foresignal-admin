@@ -479,6 +479,9 @@ class CoverageStatsScopeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'hypothesis')
   static const CoverageStatsScopeEnum hypothesis =
       _$coverageStatsScopeEnum_hypothesis;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const CoverageStatsScopeEnum unknownDefaultOpenApi =
+      _$coverageStatsScopeEnum_unknownDefaultOpenApi;
 
   static Serializer<CoverageStatsScopeEnum> get serializer =>
       _$coverageStatsScopeEnumSerializer;
@@ -499,6 +502,9 @@ class CoverageStatsBlindspotEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'right')
   static const CoverageStatsBlindspotEnum right =
       _$coverageStatsBlindspotEnum_right;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const CoverageStatsBlindspotEnum unknownDefaultOpenApi =
+      _$coverageStatsBlindspotEnum_unknownDefaultOpenApi;
 
   static Serializer<CoverageStatsBlindspotEnum> get serializer =>
       _$coverageStatsBlindspotEnumSerializer;

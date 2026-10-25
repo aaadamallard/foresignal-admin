@@ -711,6 +711,9 @@ class NwsAlertPayloadSeverityEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'Unknown')
   static const NwsAlertPayloadSeverityEnum unknown =
       _$nwsAlertPayloadSeverityEnum_unknown;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const NwsAlertPayloadSeverityEnum unknownDefaultOpenApi =
+      _$nwsAlertPayloadSeverityEnum_unknownDefaultOpenApi;
 
   static Serializer<NwsAlertPayloadSeverityEnum> get serializer =>
       _$nwsAlertPayloadSeverityEnumSerializer;
@@ -733,6 +736,9 @@ class NwsAlertPayloadMessageTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'Cancel')
   static const NwsAlertPayloadMessageTypeEnum cancel =
       _$nwsAlertPayloadMessageTypeEnum_cancel;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const NwsAlertPayloadMessageTypeEnum unknownDefaultOpenApi =
+      _$nwsAlertPayloadMessageTypeEnum_unknownDefaultOpenApi;
 
   static Serializer<NwsAlertPayloadMessageTypeEnum> get serializer =>
       _$nwsAlertPayloadMessageTypeEnumSerializer;
@@ -755,6 +761,9 @@ class NwsAlertPayloadGeometrySourceEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'none')
   static const NwsAlertPayloadGeometrySourceEnum none =
       _$nwsAlertPayloadGeometrySourceEnum_none;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const NwsAlertPayloadGeometrySourceEnum unknownDefaultOpenApi =
+      _$nwsAlertPayloadGeometrySourceEnum_unknownDefaultOpenApi;
 
   static Serializer<NwsAlertPayloadGeometrySourceEnum> get serializer =>
       _$nwsAlertPayloadGeometrySourceEnumSerializer;

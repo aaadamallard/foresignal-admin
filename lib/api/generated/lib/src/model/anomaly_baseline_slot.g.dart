@@ -10,6 +10,9 @@ const AnomalyBaselineSlotModelEnum _$anomalyBaselineSlotModelEnum_poisson =
     const AnomalyBaselineSlotModelEnum._('poisson');
 const AnomalyBaselineSlotModelEnum _$anomalyBaselineSlotModelEnum_nb =
     const AnomalyBaselineSlotModelEnum._('nb');
+const AnomalyBaselineSlotModelEnum
+_$anomalyBaselineSlotModelEnum_unknownDefaultOpenApi =
+    const AnomalyBaselineSlotModelEnum._('unknownDefaultOpenApi');
 
 AnomalyBaselineSlotModelEnum _$anomalyBaselineSlotModelEnumValueOf(
   String name,
@@ -19,18 +22,20 @@ AnomalyBaselineSlotModelEnum _$anomalyBaselineSlotModelEnumValueOf(
       return _$anomalyBaselineSlotModelEnum_poisson;
     case 'nb':
       return _$anomalyBaselineSlotModelEnum_nb;
+    case 'unknownDefaultOpenApi':
+      return _$anomalyBaselineSlotModelEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$anomalyBaselineSlotModelEnum_unknownDefaultOpenApi;
   }
 }
 
 final BuiltSet<AnomalyBaselineSlotModelEnum>
-_$anomalyBaselineSlotModelEnumValues = BuiltSet<AnomalyBaselineSlotModelEnum>(
-  const <AnomalyBaselineSlotModelEnum>[
-    _$anomalyBaselineSlotModelEnum_poisson,
-    _$anomalyBaselineSlotModelEnum_nb,
-  ],
-);
+_$anomalyBaselineSlotModelEnumValues =
+    BuiltSet<AnomalyBaselineSlotModelEnum>(const <AnomalyBaselineSlotModelEnum>[
+      _$anomalyBaselineSlotModelEnum_poisson,
+      _$anomalyBaselineSlotModelEnum_nb,
+      _$anomalyBaselineSlotModelEnum_unknownDefaultOpenApi,
+    ]);
 
 Serializer<AnomalyBaselineSlotModelEnum>
 _$anomalyBaselineSlotModelEnumSerializer =
@@ -41,10 +46,12 @@ class _$AnomalyBaselineSlotModelEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'poisson': 'poisson',
     'nb': 'nb',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'poisson': 'poisson',
     'nb': 'nb',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

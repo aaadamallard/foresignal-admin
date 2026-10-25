@@ -339,6 +339,9 @@ class EmergencySquawkPayloadStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'degraded-input')
   static const EmergencySquawkPayloadStatusEnum degradedInput =
       _$emergencySquawkPayloadStatusEnum_degradedInput;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const EmergencySquawkPayloadStatusEnum unknownDefaultOpenApi =
+      _$emergencySquawkPayloadStatusEnum_unknownDefaultOpenApi;
 
   static Serializer<EmergencySquawkPayloadStatusEnum> get serializer =>
       _$emergencySquawkPayloadStatusEnumSerializer;
@@ -361,6 +364,9 @@ class EmergencySquawkPayloadMeaningEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'emergency')
   static const EmergencySquawkPayloadMeaningEnum emergency =
       _$emergencySquawkPayloadMeaningEnum_emergency;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const EmergencySquawkPayloadMeaningEnum unknownDefaultOpenApi =
+      _$emergencySquawkPayloadMeaningEnum_unknownDefaultOpenApi;
 
   static Serializer<EmergencySquawkPayloadMeaningEnum> get serializer =>
       _$emergencySquawkPayloadMeaningEnumSerializer;

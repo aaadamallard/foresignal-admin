@@ -454,6 +454,9 @@ class NotificationMessageSeverityEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'critical')
   static const NotificationMessageSeverityEnum critical =
       _$notificationMessageSeverityEnum_critical;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const NotificationMessageSeverityEnum unknownDefaultOpenApi =
+      _$notificationMessageSeverityEnum_unknownDefaultOpenApi;
 
   static Serializer<NotificationMessageSeverityEnum> get serializer =>
       _$notificationMessageSeverityEnumSerializer;

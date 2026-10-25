@@ -12,6 +12,9 @@ const BriefingRunAudioStatusEnum _$briefingRunAudioStatusEnum_failed =
     const BriefingRunAudioStatusEnum._('failed');
 const BriefingRunAudioStatusEnum _$briefingRunAudioStatusEnum_skipped =
     const BriefingRunAudioStatusEnum._('skipped');
+const BriefingRunAudioStatusEnum
+_$briefingRunAudioStatusEnum_unknownDefaultOpenApi =
+    const BriefingRunAudioStatusEnum._('unknownDefaultOpenApi');
 
 BriefingRunAudioStatusEnum _$briefingRunAudioStatusEnumValueOf(String name) {
   switch (name) {
@@ -21,8 +24,10 @@ BriefingRunAudioStatusEnum _$briefingRunAudioStatusEnumValueOf(String name) {
       return _$briefingRunAudioStatusEnum_failed;
     case 'skipped':
       return _$briefingRunAudioStatusEnum_skipped;
+    case 'unknownDefaultOpenApi':
+      return _$briefingRunAudioStatusEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$briefingRunAudioStatusEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -31,12 +36,16 @@ final BuiltSet<BriefingRunAudioStatusEnum> _$briefingRunAudioStatusEnumValues =
       _$briefingRunAudioStatusEnum_ok,
       _$briefingRunAudioStatusEnum_failed,
       _$briefingRunAudioStatusEnum_skipped,
+      _$briefingRunAudioStatusEnum_unknownDefaultOpenApi,
     ]);
 
 const BriefingRunAudioFormatEnum _$briefingRunAudioFormatEnum_mp3 =
     const BriefingRunAudioFormatEnum._('mp3');
 const BriefingRunAudioFormatEnum _$briefingRunAudioFormatEnum_opus =
     const BriefingRunAudioFormatEnum._('opus');
+const BriefingRunAudioFormatEnum
+_$briefingRunAudioFormatEnum_unknownDefaultOpenApi =
+    const BriefingRunAudioFormatEnum._('unknownDefaultOpenApi');
 
 BriefingRunAudioFormatEnum _$briefingRunAudioFormatEnumValueOf(String name) {
   switch (name) {
@@ -44,8 +53,10 @@ BriefingRunAudioFormatEnum _$briefingRunAudioFormatEnumValueOf(String name) {
       return _$briefingRunAudioFormatEnum_mp3;
     case 'opus':
       return _$briefingRunAudioFormatEnum_opus;
+    case 'unknownDefaultOpenApi':
+      return _$briefingRunAudioFormatEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$briefingRunAudioFormatEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -53,6 +64,7 @@ final BuiltSet<BriefingRunAudioFormatEnum> _$briefingRunAudioFormatEnumValues =
     BuiltSet<BriefingRunAudioFormatEnum>(const <BriefingRunAudioFormatEnum>[
       _$briefingRunAudioFormatEnum_mp3,
       _$briefingRunAudioFormatEnum_opus,
+      _$briefingRunAudioFormatEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<BriefingRunAudioStatusEnum> _$briefingRunAudioStatusEnumSerializer =
@@ -66,11 +78,13 @@ class _$BriefingRunAudioStatusEnumSerializer
     'ok': 'ok',
     'failed': 'failed',
     'skipped': 'skipped',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'ok': 'ok',
     'failed': 'failed',
     'skipped': 'skipped',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -100,10 +114,12 @@ class _$BriefingRunAudioFormatEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'mp3': 'mp3',
     'opus': 'opus',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'mp3': 'mp3',
     'opus': 'opus',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

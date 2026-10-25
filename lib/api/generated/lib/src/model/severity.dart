@@ -16,6 +16,8 @@ class Severity extends EnumClass {
   static const Severity warning = _$warning;
   @BuiltValueEnumConst(wireName: r'critical')
   static const Severity critical = _$critical;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const Severity unknownDefaultOpenApi = _$unknownDefaultOpenApi;
 
   static Serializer<Severity> get serializer => _$severitySerializer;
 

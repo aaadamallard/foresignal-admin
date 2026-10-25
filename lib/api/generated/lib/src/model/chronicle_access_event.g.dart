@@ -12,6 +12,9 @@ const ChronicleAccessEventStatusEnum _$chronicleAccessEventStatusEnum_granted =
     const ChronicleAccessEventStatusEnum._('granted');
 const ChronicleAccessEventStatusEnum _$chronicleAccessEventStatusEnum_declined =
     const ChronicleAccessEventStatusEnum._('declined');
+const ChronicleAccessEventStatusEnum
+_$chronicleAccessEventStatusEnum_unknownDefaultOpenApi =
+    const ChronicleAccessEventStatusEnum._('unknownDefaultOpenApi');
 
 ChronicleAccessEventStatusEnum _$chronicleAccessEventStatusEnumValueOf(
   String name,
@@ -23,8 +26,10 @@ ChronicleAccessEventStatusEnum _$chronicleAccessEventStatusEnumValueOf(
       return _$chronicleAccessEventStatusEnum_granted;
     case 'declined':
       return _$chronicleAccessEventStatusEnum_declined;
+    case 'unknownDefaultOpenApi':
+      return _$chronicleAccessEventStatusEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$chronicleAccessEventStatusEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -35,6 +40,7 @@ _$chronicleAccessEventStatusEnumValues =
         _$chronicleAccessEventStatusEnum_pending,
         _$chronicleAccessEventStatusEnum_granted,
         _$chronicleAccessEventStatusEnum_declined,
+        _$chronicleAccessEventStatusEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -48,11 +54,13 @@ class _$ChronicleAccessEventStatusEnumSerializer
     'pending': 'pending',
     'granted': 'granted',
     'declined': 'declined',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'pending': 'pending',
     'granted': 'granted',
     'declined': 'declined',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

@@ -277,6 +277,9 @@ class IndicatorInputCredibilityEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'L')
   static const IndicatorInputCredibilityEnum L =
       _$indicatorInputCredibilityEnum_L;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const IndicatorInputCredibilityEnum unknownDefaultOpenApi =
+      _$indicatorInputCredibilityEnum_unknownDefaultOpenApi;
 
   static Serializer<IndicatorInputCredibilityEnum> get serializer =>
       _$indicatorInputCredibilityEnumSerializer;
@@ -296,6 +299,9 @@ class IndicatorInputRelevanceEnum extends EnumClass {
   static const IndicatorInputRelevanceEnum M = _$indicatorInputRelevanceEnum_M;
   @BuiltValueEnumConst(wireName: r'L')
   static const IndicatorInputRelevanceEnum L = _$indicatorInputRelevanceEnum_L;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const IndicatorInputRelevanceEnum unknownDefaultOpenApi =
+      _$indicatorInputRelevanceEnum_unknownDefaultOpenApi;
 
   static Serializer<IndicatorInputRelevanceEnum> get serializer =>
       _$indicatorInputRelevanceEnumSerializer;

@@ -175,6 +175,9 @@ class PrecursorTestResultHitRateCiMethodEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'wilson-95')
   static const PrecursorTestResultHitRateCiMethodEnum wilson95 =
       _$precursorTestResultHitRateCiMethodEnum_wilson95;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const PrecursorTestResultHitRateCiMethodEnum unknownDefaultOpenApi =
+      _$precursorTestResultHitRateCiMethodEnum_unknownDefaultOpenApi;
 
   static Serializer<PrecursorTestResultHitRateCiMethodEnum> get serializer =>
       _$precursorTestResultHitRateCiMethodEnumSerializer;

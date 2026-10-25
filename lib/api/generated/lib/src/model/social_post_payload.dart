@@ -605,6 +605,9 @@ class SocialPostPayloadCollectionEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'import')
   static const SocialPostPayloadCollectionEnum import_ =
       _$socialPostPayloadCollectionEnum_import_;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const SocialPostPayloadCollectionEnum unknownDefaultOpenApi =
+      _$socialPostPayloadCollectionEnum_unknownDefaultOpenApi;
 
   static Serializer<SocialPostPayloadCollectionEnum> get serializer =>
       _$socialPostPayloadCollectionEnumSerializer;

@@ -235,6 +235,9 @@ class FindingBaseRateMethodEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'other')
   static const FindingBaseRateMethodEnum other =
       _$findingBaseRateMethodEnum_other;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const FindingBaseRateMethodEnum unknownDefaultOpenApi =
+      _$findingBaseRateMethodEnum_unknownDefaultOpenApi;
 
   static Serializer<FindingBaseRateMethodEnum> get serializer =>
       _$findingBaseRateMethodEnumSerializer;

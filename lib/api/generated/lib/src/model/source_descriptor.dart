@@ -1334,6 +1334,9 @@ class SourceDescriptorModeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'derived')
   static const SourceDescriptorModeEnum derived =
       _$sourceDescriptorModeEnum_derived;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const SourceDescriptorModeEnum unknownDefaultOpenApi =
+      _$sourceDescriptorModeEnum_unknownDefaultOpenApi;
 
   static Serializer<SourceDescriptorModeEnum> get serializer =>
       _$sourceDescriptorModeEnumSerializer;
@@ -1354,6 +1357,9 @@ class SourceDescriptorObservedAtModeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'RECEIVED')
   static const SourceDescriptorObservedAtModeEnum RECEIVED =
       _$sourceDescriptorObservedAtModeEnum_RECEIVED;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const SourceDescriptorObservedAtModeEnum unknownDefaultOpenApi =
+      _$sourceDescriptorObservedAtModeEnum_unknownDefaultOpenApi;
 
   static Serializer<SourceDescriptorObservedAtModeEnum> get serializer =>
       _$sourceDescriptorObservedAtModeEnumSerializer;
@@ -1374,6 +1380,9 @@ class SourceDescriptorTtlAnchorEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'RECEIVED')
   static const SourceDescriptorTtlAnchorEnum RECEIVED =
       _$sourceDescriptorTtlAnchorEnum_RECEIVED;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const SourceDescriptorTtlAnchorEnum unknownDefaultOpenApi =
+      _$sourceDescriptorTtlAnchorEnum_unknownDefaultOpenApi;
 
   static Serializer<SourceDescriptorTtlAnchorEnum> get serializer =>
       _$sourceDescriptorTtlAnchorEnumSerializer;
@@ -1394,6 +1403,9 @@ class SourceDescriptorEgressEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'LOCAL_ONLY')
   static const SourceDescriptorEgressEnum LOCAL_ONLY =
       _$sourceDescriptorEgressEnum_LOCAL_ONLY;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const SourceDescriptorEgressEnum unknownDefaultOpenApi =
+      _$sourceDescriptorEgressEnum_unknownDefaultOpenApi;
 
   static Serializer<SourceDescriptorEgressEnum> get serializer =>
       _$sourceDescriptorEgressEnumSerializer;
@@ -1426,6 +1438,9 @@ class SourceDescriptorReliabilityEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'F')
   static const SourceDescriptorReliabilityEnum F =
       _$sourceDescriptorReliabilityEnum_F;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const SourceDescriptorReliabilityEnum unknownDefaultOpenApi =
+      _$sourceDescriptorReliabilityEnum_unknownDefaultOpenApi;
 
   static Serializer<SourceDescriptorReliabilityEnum> get serializer =>
       _$sourceDescriptorReliabilityEnumSerializer;

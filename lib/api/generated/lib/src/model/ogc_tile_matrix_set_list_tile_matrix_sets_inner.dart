@@ -198,6 +198,10 @@ class OgcTileMatrixSetListTileMatrixSetsInnerIdEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'WorldCRS84Quad')
   static const OgcTileMatrixSetListTileMatrixSetsInnerIdEnum worldCRS84Quad =
       _$ogcTileMatrixSetListTileMatrixSetsInnerIdEnum_worldCRS84Quad;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const OgcTileMatrixSetListTileMatrixSetsInnerIdEnum
+  unknownDefaultOpenApi =
+      _$ogcTileMatrixSetListTileMatrixSetsInnerIdEnum_unknownDefaultOpenApi;
 
   static Serializer<OgcTileMatrixSetListTileMatrixSetsInnerIdEnum>
   get serializer => _$ogcTileMatrixSetListTileMatrixSetsInnerIdEnumSerializer;

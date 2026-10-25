@@ -197,6 +197,9 @@ class ChronicleSuggestionTextOriginEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'llm')
   static const ChronicleSuggestionTextOriginEnum llm =
       _$chronicleSuggestionTextOriginEnum_llm;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ChronicleSuggestionTextOriginEnum unknownDefaultOpenApi =
+      _$chronicleSuggestionTextOriginEnum_unknownDefaultOpenApi;
 
   static Serializer<ChronicleSuggestionTextOriginEnum> get serializer =>
       _$chronicleSuggestionTextOriginEnumSerializer;

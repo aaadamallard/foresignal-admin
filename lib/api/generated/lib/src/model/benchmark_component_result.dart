@@ -273,6 +273,9 @@ class BenchmarkComponentResultStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'fail')
   static const BenchmarkComponentResultStatusEnum fail =
       _$benchmarkComponentResultStatusEnum_fail;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const BenchmarkComponentResultStatusEnum unknownDefaultOpenApi =
+      _$benchmarkComponentResultStatusEnum_unknownDefaultOpenApi;
 
   static Serializer<BenchmarkComponentResultStatusEnum> get serializer =>
       _$benchmarkComponentResultStatusEnumSerializer;

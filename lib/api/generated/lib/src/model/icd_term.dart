@@ -25,6 +25,8 @@ class IcdTerm extends EnumClass {
   static const IcdTerm veryLikely = _$veryLikely;
   @BuiltValueEnumConst(wireName: r'almost certain')
   static const IcdTerm almostCertain = _$almostCertain;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const IcdTerm unknownDefaultOpenApi = _$unknownDefaultOpenApi;
 
   static Serializer<IcdTerm> get serializer => _$icdTermSerializer;
 

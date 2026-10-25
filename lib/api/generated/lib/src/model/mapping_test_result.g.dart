@@ -12,6 +12,9 @@ _$mappingTestResultMappingSourceEnum_stored =
 const MappingTestResultMappingSourceEnum
 _$mappingTestResultMappingSourceEnum_proposed =
     const MappingTestResultMappingSourceEnum._('proposed');
+const MappingTestResultMappingSourceEnum
+_$mappingTestResultMappingSourceEnum_unknownDefaultOpenApi =
+    const MappingTestResultMappingSourceEnum._('unknownDefaultOpenApi');
 
 MappingTestResultMappingSourceEnum _$mappingTestResultMappingSourceEnumValueOf(
   String name,
@@ -21,8 +24,10 @@ MappingTestResultMappingSourceEnum _$mappingTestResultMappingSourceEnumValueOf(
       return _$mappingTestResultMappingSourceEnum_stored;
     case 'proposed':
       return _$mappingTestResultMappingSourceEnum_proposed;
+    case 'unknownDefaultOpenApi':
+      return _$mappingTestResultMappingSourceEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$mappingTestResultMappingSourceEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -32,6 +37,7 @@ _$mappingTestResultMappingSourceEnumValues =
       const <MappingTestResultMappingSourceEnum>[
         _$mappingTestResultMappingSourceEnum_stored,
         _$mappingTestResultMappingSourceEnum_proposed,
+        _$mappingTestResultMappingSourceEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -44,10 +50,12 @@ class _$MappingTestResultMappingSourceEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'stored': 'stored',
     'proposed': 'proposed',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'stored': 'stored',
     'proposed': 'proposed',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

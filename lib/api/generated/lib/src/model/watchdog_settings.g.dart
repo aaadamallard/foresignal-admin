@@ -10,6 +10,9 @@ const WatchdogSettingsMethodEnum _$watchdogSettingsMethodEnum_GET =
     const WatchdogSettingsMethodEnum._('GET');
 const WatchdogSettingsMethodEnum _$watchdogSettingsMethodEnum_POST =
     const WatchdogSettingsMethodEnum._('POST');
+const WatchdogSettingsMethodEnum
+_$watchdogSettingsMethodEnum_unknownDefaultOpenApi =
+    const WatchdogSettingsMethodEnum._('unknownDefaultOpenApi');
 
 WatchdogSettingsMethodEnum _$watchdogSettingsMethodEnumValueOf(String name) {
   switch (name) {
@@ -17,8 +20,10 @@ WatchdogSettingsMethodEnum _$watchdogSettingsMethodEnumValueOf(String name) {
       return _$watchdogSettingsMethodEnum_GET;
     case 'POST':
       return _$watchdogSettingsMethodEnum_POST;
+    case 'unknownDefaultOpenApi':
+      return _$watchdogSettingsMethodEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$watchdogSettingsMethodEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -26,6 +31,7 @@ final BuiltSet<WatchdogSettingsMethodEnum> _$watchdogSettingsMethodEnumValues =
     BuiltSet<WatchdogSettingsMethodEnum>(const <WatchdogSettingsMethodEnum>[
       _$watchdogSettingsMethodEnum_GET,
       _$watchdogSettingsMethodEnum_POST,
+      _$watchdogSettingsMethodEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<WatchdogSettingsMethodEnum> _$watchdogSettingsMethodEnumSerializer =
@@ -36,10 +42,12 @@ class _$WatchdogSettingsMethodEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'GET': 'GET',
     'POST': 'POST',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'GET': 'GET',
     'POST': 'POST',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

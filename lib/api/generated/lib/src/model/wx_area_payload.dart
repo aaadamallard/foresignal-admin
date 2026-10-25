@@ -312,6 +312,9 @@ class WxAreaPayloadFieldEnum extends EnumClass {
   static const WxAreaPayloadFieldEnum qpe1h = _$wxAreaPayloadFieldEnum_qpe1h;
   @BuiltValueEnumConst(wireName: r'ffg')
   static const WxAreaPayloadFieldEnum ffg = _$wxAreaPayloadFieldEnum_ffg;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const WxAreaPayloadFieldEnum unknownDefaultOpenApi =
+      _$wxAreaPayloadFieldEnum_unknownDefaultOpenApi;
 
   static Serializer<WxAreaPayloadFieldEnum> get serializer =>
       _$wxAreaPayloadFieldEnumSerializer;

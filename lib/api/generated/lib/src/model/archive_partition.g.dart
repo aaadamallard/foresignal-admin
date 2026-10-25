@@ -10,6 +10,9 @@ const ArchivePartitionTierEnum _$archivePartitionTierEnum_std =
     const ArchivePartitionTierEnum._('std');
 const ArchivePartitionTierEnum _$archivePartitionTierEnum_trk =
     const ArchivePartitionTierEnum._('trk');
+const ArchivePartitionTierEnum
+_$archivePartitionTierEnum_unknownDefaultOpenApi =
+    const ArchivePartitionTierEnum._('unknownDefaultOpenApi');
 
 ArchivePartitionTierEnum _$archivePartitionTierEnumValueOf(String name) {
   switch (name) {
@@ -17,8 +20,10 @@ ArchivePartitionTierEnum _$archivePartitionTierEnumValueOf(String name) {
       return _$archivePartitionTierEnum_std;
     case 'trk':
       return _$archivePartitionTierEnum_trk;
+    case 'unknownDefaultOpenApi':
+      return _$archivePartitionTierEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$archivePartitionTierEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -26,6 +31,7 @@ final BuiltSet<ArchivePartitionTierEnum> _$archivePartitionTierEnumValues =
     BuiltSet<ArchivePartitionTierEnum>(const <ArchivePartitionTierEnum>[
       _$archivePartitionTierEnum_std,
       _$archivePartitionTierEnum_trk,
+      _$archivePartitionTierEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<ArchivePartitionTierEnum> _$archivePartitionTierEnumSerializer =
@@ -36,10 +42,12 @@ class _$ArchivePartitionTierEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'std': 'std',
     'trk': 'trk',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'std': 'std',
     'trk': 'trk',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

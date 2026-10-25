@@ -297,6 +297,9 @@ class PeerUpdateReliabilityEnum extends EnumClass {
   static const PeerUpdateReliabilityEnum E = _$peerUpdateReliabilityEnum_E;
   @BuiltValueEnumConst(wireName: r'F')
   static const PeerUpdateReliabilityEnum F = _$peerUpdateReliabilityEnum_F;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const PeerUpdateReliabilityEnum unknownDefaultOpenApi =
+      _$peerUpdateReliabilityEnum_unknownDefaultOpenApi;
 
   static Serializer<PeerUpdateReliabilityEnum> get serializer =>
       _$peerUpdateReliabilityEnumSerializer;

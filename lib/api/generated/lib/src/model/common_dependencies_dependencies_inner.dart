@@ -208,6 +208,10 @@ class CommonDependenciesDependenciesInnerWeakestEdgeLabelEnum
   static const CommonDependenciesDependenciesInnerWeakestEdgeLabelEnum
   speculative =
       _$commonDependenciesDependenciesInnerWeakestEdgeLabelEnum_speculative;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const CommonDependenciesDependenciesInnerWeakestEdgeLabelEnum
+  unknownDefaultOpenApi =
+      _$commonDependenciesDependenciesInnerWeakestEdgeLabelEnum_unknownDefaultOpenApi;
 
   static Serializer<CommonDependenciesDependenciesInnerWeakestEdgeLabelEnum>
   get serializer =>

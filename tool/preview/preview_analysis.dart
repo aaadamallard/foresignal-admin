@@ -440,6 +440,83 @@ class PreviewAnalysis {
     },
   };
 
+  /// Situations (`getSituation`), by id: the two on the board.
+  final Map<String, Map<String, Object?>> situations = <String, Map<String, Object?>>{
+    _felixstowe: _situation(
+      _felixstowe,
+      'Felixstowe port disruption',
+      'active',
+      'warning',
+      summary: 'Vessel queue at Felixstowe is three times its norm, with a crane outage reported.',
+      statusBasis: '3 signal families, 2 independent evidence groups',
+      severityBasis: 'Max core-member severity: warning (port-congestion event)',
+      members: <Map<String, Object?>>[
+        _situationMember(_felixstowe, '01JB9M1A3B5C7D9E1F3G5H7J9K', 'intel_event', 'Port congestion at Felixstowe',
+            family: 'maritime', role: 'core', severity: 'warning', corroboration: 'corroborated'),
+        _situationMember(_felixstowe, '01JB9M2A3B5C7D9E1F3G5H7J9K', 'record', 'Crane 7 out of service',
+            family: 'infrastructure', role: 'core', severity: 'info', corroboration: 'corroborated'),
+        _situationMember(_felixstowe, '01JB9M3A3B5C7D9E1F3G5H7J9K', 'finding', 'Unexplained move in freight rates',
+            family: 'markets', role: 'context', severity: null, corroboration: 'uncorroborated'),
+      ],
+    ),
+    _eastAnglia: _situation(
+      _eastAnglia,
+      'East Anglia grid reliability',
+      'emerging',
+      'info',
+      summary: 'Two substation alarms in 24 hours; not yet corroborated.',
+      statusBasis: '1 signal family, 1 evidence group',
+      severityBasis: 'Max core-member severity: info',
+      members: <Map<String, Object?>>[
+        _situationMember(_eastAnglia, '01JB9M4A3B5C7D9E1F3G5H7J9K', 'alert', 'Substation alarm, Bramford',
+            family: 'infrastructure', role: 'core', severity: 'info', corroboration: 'unknown'),
+      ],
+    ),
+  };
+
+  /// Situation timelines (`getSituationTimeline`), by situation id.
+  final Map<String, List<Map<String, Object?>>> situationTimelines = <String, List<Map<String, Object?>>>{
+    _felixstowe: <Map<String, Object?>>[
+      <String, Object?>{'at': '2026-10-21T08:00:00Z', 'entryType': 'log', 'action': 'created', 'actor': 'linker'},
+      <String, Object?>{'at': '2026-10-21T09:10:00Z', 'entryType': 'log', 'action': 'member_added', 'actor': 'linker'},
+      <String, Object?>{
+        'at': '2026-10-22T11:00:00Z',
+        'entryType': 'log',
+        'action': 'status',
+        'actor': 'linker',
+        'before': <String, Object?>{'status': 'emerging'},
+        'after': <String, Object?>{'status': 'active'},
+      },
+      <String, Object?>{'at': '2026-10-22T15:40:00Z', 'entryType': 'log', 'action': 'edited', 'actor': 'admin'},
+    ],
+  };
+
+  /// Situation assessments (`listSituationAssessments`), by situation id.
+  final Map<String, List<Map<String, Object?>>> situationAssessments = <String, List<Map<String, Object?>>>{
+    _felixstowe: <Map<String, Object?>>[
+      <String, Object?>{
+        'id': '01JB9A1A3B5C7D9E1F3G5H7J9K',
+        'situationId': _felixstowe,
+        'cadence': 'on-demand',
+        'periodStart': '2026-10-21T00:00:00Z',
+        'periodEnd': '2026-10-22T16:00:00Z',
+        'status': 'ok',
+        'headline': 'Felixstowe throughput likely to stay reduced for 48 hours',
+        'bluf': <Object?>[
+          <String, Object?>{
+            'text': 'Throughput at Felixstowe will likely stay below 70% of normal through Friday.',
+            'probability': 0.7,
+            'citations': <Object?>['intel_event:01JB9M1A3B5C7D9E1F3G5H7J9K'],
+            'textOrigin': 'deterministic',
+          },
+        ],
+        'sections': <Object?>[],
+        'private': false,
+        'createdAt': '2026-10-22T16:05:00Z',
+      },
+    ],
+  };
+
   /// CycleRun objects, by id.
   final Map<String, Map<String, Object?>> runs = <String, Map<String, Object?>>{
     '01JB9R0A2B4C6D8E0F2G4H6J8K': _run(
@@ -554,18 +631,101 @@ class PreviewAnalysis {
   String newId() => '01JBA${(_next++).toString().padLeft(21, '0')}';
 }
 
+const String _felixstowe = '01JB9S1A3B5C7D9E1F3G5H7J9K';
+const String _eastAnglia = '01JB9S2A3B5C7D9E1F3G5H7J9K';
+
+/// A SituationMember of situation [situationId].
+Map<String, Object?> _situationMember(
+  String situationId,
+  String id,
+  String memberType,
+  String title, {
+  required String family,
+  required String role,
+  required String? severity,
+  required String corroboration,
+}) => <String, Object?>{
+  'id': id,
+  'situationId': situationId,
+  'memberType': memberType,
+  'ref': id,
+  'objectRef': '$memberType:$id',
+  'title': title,
+  'signalFamily': family,
+  'severity': severity,
+  'observedAt': '2026-10-22T09:00:00Z',
+  'role': role,
+  'corroboration': corroboration,
+  'addedAt': '2026-10-22T09:05:00Z',
+  'addedBy': 'linker',
+};
+
+/// A Situation with [members] as its evidence.
+Map<String, Object?> _situation(
+  String id,
+  String title,
+  String status,
+  String severity, {
+  required String summary,
+  required String statusBasis,
+  required String severityBasis,
+  required List<Map<String, Object?>> members,
+}) {
+  final families = <String, List<Map<String, Object?>>>{};
+  for (final m in members) {
+    families.putIfAbsent(m['signalFamily']! as String, () => <Map<String, Object?>>[]).add(m);
+  }
+  final corroborated = members.where((m) => m['corroboration'] == 'corroborated').length;
+  return <String, Object?>{
+    'id': id,
+    'title': title,
+    'theme': 'infrastructure',
+    'status': status,
+    'severity': severity,
+    'regionCodes': <Object?>['GB-ENG'],
+    'startedAt': '2026-10-21T08:00:00Z',
+    'lastActivityAt': '2026-10-22T15:40:00Z',
+    'memberCount': members.length,
+    'signalFamilies': families.keys.toList(),
+    'summary': summary,
+    'origin': 'auto',
+    'private': false,
+    'version': 3,
+    'geometry': null,
+    'createdAt': '2026-10-21T08:00:00Z',
+    'evidence': <String, Object?>{
+      'memberCounts': <String, Object?>{},
+      'families': <Object?>[
+        for (final f in families.entries)
+          <String, Object?>{'family': f.key, 'count': f.value.length, 'members': f.value},
+      ],
+      'corroboration': <String, Object?>{
+        'corroborated': corroborated,
+        'uncorroborated': members.length - corroborated,
+        'share': members.isEmpty ? null : corroborated / members.length,
+      },
+    },
+    'inference': <String, Object?>{
+      'summary': summary,
+      'statusBasis': statusBasis,
+      'severityBasis': severityBasis,
+    },
+    'speculation': <String, Object?>{'label': 'speculation', 'brief': null},
+  };
+}
+
 const Map<String, Object?> _board = <String, Object?>{
   'generatedAt': '2026-10-22T16:30:00Z',
   'situations': <Object?>[
     <String, Object?>{
-      'id': '01JB9S1A3B5C7D9E1F3G5H7J9K',
+      'id': _felixstowe,
       'title': 'Felixstowe port disruption',
       'status': 'active',
       'severity': 'warning',
       'lastActivityAt': '2026-10-22T15:40:00Z',
     },
     <String, Object?>{
-      'id': '01JB9S2A3B5C7D9E1F3G5H7J9K',
+      'id': _eastAnglia,
       'title': 'East Anglia grid reliability',
       'status': 'emerging',
       'severity': 'info',
@@ -1022,6 +1182,43 @@ AnalysisReply? answerAnalysis(
         'at': '2026-10-22T16:31:00Z',
       },
     );
+  }
+
+  // Situations (read-only: the situation page).
+  if (parts.length >= 4 && parts[1] == 'v1' && parts[2] == 'situations' && method == 'GET') {
+    final situation = a.situations[Uri.decodeComponent(parts[3])];
+    if (situation == null) {
+      return notFound;
+    }
+    final id = situation['id']! as String;
+    if (parts.length == 4) {
+      return (status: 200, body: situation);
+    }
+    switch (parts[4]) {
+      case 'members':
+        final members = <Object?>[
+          for (final f in ((situation['evidence']! as Map)['families']! as List<Object?>))
+            ...((f! as Map)['members']! as List<Object?>),
+        ];
+        return (status: 200, body: <String, Object?>{'items': members, 'nextCursor': null});
+      case 'timeline':
+        return (
+          status: 200,
+          body: <String, Object?>{
+            'items': <Object?>[...?a.situationTimelines[id]],
+            'nextCursor': null,
+          },
+        );
+      case 'assessments':
+        return (
+          status: 200,
+          body: <String, Object?>{
+            'items': <Object?>[...?a.situationAssessments[id]],
+            'nextCursor': null,
+          },
+        );
+    }
+    return notFound;
   }
 
   // Board, calibration, corroboration.

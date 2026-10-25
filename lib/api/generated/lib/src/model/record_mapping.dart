@@ -442,6 +442,9 @@ class RecordMappingVersionEnum extends EnumClass {
   @BuiltValueEnumConst(wireNumber: 1)
   static const RecordMappingVersionEnum number1 =
       _$recordMappingVersionEnum_number1;
+  @BuiltValueEnumConst(wireNumber: 11184809, fallback: true)
+  static const RecordMappingVersionEnum unknownDefaultOpenApi =
+      _$recordMappingVersionEnum_unknownDefaultOpenApi;
 
   static Serializer<RecordMappingVersionEnum> get serializer =>
       _$recordMappingVersionEnumSerializer;

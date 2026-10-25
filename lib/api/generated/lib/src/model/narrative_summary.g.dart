@@ -21,6 +21,9 @@ const NarrativeSummaryStatusEnum _$narrativeSummaryStatusEnum_mixed =
 const NarrativeSummaryStatusEnum
 _$narrativeSummaryStatusEnum_insufficientCoverage =
     const NarrativeSummaryStatusEnum._('insufficientCoverage');
+const NarrativeSummaryStatusEnum
+_$narrativeSummaryStatusEnum_unknownDefaultOpenApi =
+    const NarrativeSummaryStatusEnum._('unknownDefaultOpenApi');
 
 NarrativeSummaryStatusEnum _$narrativeSummaryStatusEnumValueOf(String name) {
   switch (name) {
@@ -38,8 +41,10 @@ NarrativeSummaryStatusEnum _$narrativeSummaryStatusEnumValueOf(String name) {
       return _$narrativeSummaryStatusEnum_mixed;
     case 'insufficientCoverage':
       return _$narrativeSummaryStatusEnum_insufficientCoverage;
+    case 'unknownDefaultOpenApi':
+      return _$narrativeSummaryStatusEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$narrativeSummaryStatusEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -52,6 +57,7 @@ final BuiltSet<NarrativeSummaryStatusEnum> _$narrativeSummaryStatusEnumValues =
       _$narrativeSummaryStatusEnum_contradicted,
       _$narrativeSummaryStatusEnum_mixed,
       _$narrativeSummaryStatusEnum_insufficientCoverage,
+      _$narrativeSummaryStatusEnum_unknownDefaultOpenApi,
     ]);
 
 const NarrativeSummaryStateEnum _$narrativeSummaryStateEnum_emerging =
@@ -62,6 +68,9 @@ const NarrativeSummaryStateEnum _$narrativeSummaryStateEnum_fading =
     const NarrativeSummaryStateEnum._('fading');
 const NarrativeSummaryStateEnum _$narrativeSummaryStateEnum_dormant =
     const NarrativeSummaryStateEnum._('dormant');
+const NarrativeSummaryStateEnum
+_$narrativeSummaryStateEnum_unknownDefaultOpenApi =
+    const NarrativeSummaryStateEnum._('unknownDefaultOpenApi');
 
 NarrativeSummaryStateEnum _$narrativeSummaryStateEnumValueOf(String name) {
   switch (name) {
@@ -73,8 +82,10 @@ NarrativeSummaryStateEnum _$narrativeSummaryStateEnumValueOf(String name) {
       return _$narrativeSummaryStateEnum_fading;
     case 'dormant':
       return _$narrativeSummaryStateEnum_dormant;
+    case 'unknownDefaultOpenApi':
+      return _$narrativeSummaryStateEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$narrativeSummaryStateEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -84,6 +95,7 @@ final BuiltSet<NarrativeSummaryStateEnum> _$narrativeSummaryStateEnumValues =
       _$narrativeSummaryStateEnum_active,
       _$narrativeSummaryStateEnum_fading,
       _$narrativeSummaryStateEnum_dormant,
+      _$narrativeSummaryStateEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<NarrativeSummaryStatusEnum> _$narrativeSummaryStatusEnumSerializer =
@@ -101,6 +113,7 @@ class _$NarrativeSummaryStatusEnumSerializer
     'contradicted': 'contradicted',
     'mixed': 'mixed',
     'insufficientCoverage': 'insufficient-coverage',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'unassessed': 'unassessed',
@@ -110,6 +123,7 @@ class _$NarrativeSummaryStatusEnumSerializer
     'contradicted': 'contradicted',
     'mixed': 'mixed',
     'insufficient-coverage': 'insufficientCoverage',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -141,12 +155,14 @@ class _$NarrativeSummaryStateEnumSerializer
     'active': 'active',
     'fading': 'fading',
     'dormant': 'dormant',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'emerging': 'emerging',
     'active': 'active',
     'fading': 'fading',
     'dormant': 'dormant',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

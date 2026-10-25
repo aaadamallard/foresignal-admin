@@ -181,6 +181,9 @@ class RelatedObjectDirectionEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'in')
   static const RelatedObjectDirectionEnum in_ =
       _$relatedObjectDirectionEnum_in_;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const RelatedObjectDirectionEnum unknownDefaultOpenApi =
+      _$relatedObjectDirectionEnum_unknownDefaultOpenApi;
 
   static Serializer<RelatedObjectDirectionEnum> get serializer =>
       _$relatedObjectDirectionEnumSerializer;

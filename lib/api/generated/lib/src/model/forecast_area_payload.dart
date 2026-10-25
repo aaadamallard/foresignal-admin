@@ -332,6 +332,9 @@ class ForecastAreaPayloadModelEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'aifs')
   static const ForecastAreaPayloadModelEnum aifs =
       _$forecastAreaPayloadModelEnum_aifs;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ForecastAreaPayloadModelEnum unknownDefaultOpenApi =
+      _$forecastAreaPayloadModelEnum_unknownDefaultOpenApi;
 
   static Serializer<ForecastAreaPayloadModelEnum> get serializer =>
       _$forecastAreaPayloadModelEnumSerializer;

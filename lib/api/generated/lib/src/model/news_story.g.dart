@@ -10,6 +10,8 @@ const NewsStoryBlindspotEnum _$newsStoryBlindspotEnum_left =
     const NewsStoryBlindspotEnum._('left');
 const NewsStoryBlindspotEnum _$newsStoryBlindspotEnum_right =
     const NewsStoryBlindspotEnum._('right');
+const NewsStoryBlindspotEnum _$newsStoryBlindspotEnum_unknownDefaultOpenApi =
+    const NewsStoryBlindspotEnum._('unknownDefaultOpenApi');
 
 NewsStoryBlindspotEnum _$newsStoryBlindspotEnumValueOf(String name) {
   switch (name) {
@@ -17,8 +19,10 @@ NewsStoryBlindspotEnum _$newsStoryBlindspotEnumValueOf(String name) {
       return _$newsStoryBlindspotEnum_left;
     case 'right':
       return _$newsStoryBlindspotEnum_right;
+    case 'unknownDefaultOpenApi':
+      return _$newsStoryBlindspotEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$newsStoryBlindspotEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -26,6 +30,7 @@ final BuiltSet<NewsStoryBlindspotEnum> _$newsStoryBlindspotEnumValues =
     BuiltSet<NewsStoryBlindspotEnum>(const <NewsStoryBlindspotEnum>[
       _$newsStoryBlindspotEnum_left,
       _$newsStoryBlindspotEnum_right,
+      _$newsStoryBlindspotEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<NewsStoryBlindspotEnum> _$newsStoryBlindspotEnumSerializer =
@@ -36,10 +41,12 @@ class _$NewsStoryBlindspotEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'left': 'left',
     'right': 'right',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'left': 'left',
     'right': 'right',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

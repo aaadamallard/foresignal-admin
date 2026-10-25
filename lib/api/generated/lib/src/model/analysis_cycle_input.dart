@@ -392,6 +392,9 @@ class AnalysisCycleInputCadenceEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'monthly')
   static const AnalysisCycleInputCadenceEnum monthly =
       _$analysisCycleInputCadenceEnum_monthly;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const AnalysisCycleInputCadenceEnum unknownDefaultOpenApi =
+      _$analysisCycleInputCadenceEnum_unknownDefaultOpenApi;
 
   static Serializer<AnalysisCycleInputCadenceEnum> get serializer =>
       _$analysisCycleInputCadenceEnumSerializer;
@@ -417,6 +420,9 @@ class AnalysisCycleInputRolesEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'proposer')
   static const AnalysisCycleInputRolesEnum proposer =
       _$analysisCycleInputRolesEnum_proposer;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const AnalysisCycleInputRolesEnum unknownDefaultOpenApi =
+      _$analysisCycleInputRolesEnum_unknownDefaultOpenApi;
 
   static Serializer<AnalysisCycleInputRolesEnum> get serializer =>
       _$analysisCycleInputRolesEnumSerializer;
@@ -439,6 +445,9 @@ class AnalysisCycleInputNotifyMinPriorityEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'high')
   static const AnalysisCycleInputNotifyMinPriorityEnum high =
       _$analysisCycleInputNotifyMinPriorityEnum_high;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const AnalysisCycleInputNotifyMinPriorityEnum unknownDefaultOpenApi =
+      _$analysisCycleInputNotifyMinPriorityEnum_unknownDefaultOpenApi;
 
   static Serializer<AnalysisCycleInputNotifyMinPriorityEnum> get serializer =>
       _$analysisCycleInputNotifyMinPriorityEnumSerializer;

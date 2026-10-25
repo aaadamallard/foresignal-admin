@@ -387,6 +387,9 @@ class ChokepointActivityPayloadStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'degraded-input')
   static const ChokepointActivityPayloadStatusEnum degradedInput =
       _$chokepointActivityPayloadStatusEnum_degradedInput;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ChokepointActivityPayloadStatusEnum unknownDefaultOpenApi =
+      _$chokepointActivityPayloadStatusEnum_unknownDefaultOpenApi;
 
   static Serializer<ChokepointActivityPayloadStatusEnum> get serializer =>
       _$chokepointActivityPayloadStatusEnumSerializer;
@@ -412,6 +415,10 @@ class ChokepointActivityPayloadCoverageStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'degraded-input')
   static const ChokepointActivityPayloadCoverageStatusEnum degradedInput =
       _$chokepointActivityPayloadCoverageStatusEnum_degradedInput;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ChokepointActivityPayloadCoverageStatusEnum
+  unknownDefaultOpenApi =
+      _$chokepointActivityPayloadCoverageStatusEnum_unknownDefaultOpenApi;
 
   static Serializer<ChokepointActivityPayloadCoverageStatusEnum>
   get serializer => _$chokepointActivityPayloadCoverageStatusEnumSerializer;

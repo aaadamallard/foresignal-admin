@@ -311,6 +311,9 @@ class SituationPatchStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'closed')
   static const SituationPatchStatusEnum closed =
       _$situationPatchStatusEnum_closed;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const SituationPatchStatusEnum unknownDefaultOpenApi =
+      _$situationPatchStatusEnum_unknownDefaultOpenApi;
 
   static Serializer<SituationPatchStatusEnum> get serializer =>
       _$situationPatchStatusEnumSerializer;

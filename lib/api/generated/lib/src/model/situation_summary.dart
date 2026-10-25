@@ -526,6 +526,9 @@ class SituationSummaryOriginEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'analyst')
   static const SituationSummaryOriginEnum analyst =
       _$situationSummaryOriginEnum_analyst;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const SituationSummaryOriginEnum unknownDefaultOpenApi =
+      _$situationSummaryOriginEnum_unknownDefaultOpenApi;
 
   static Serializer<SituationSummaryOriginEnum> get serializer =>
       _$situationSummaryOriginEnumSerializer;

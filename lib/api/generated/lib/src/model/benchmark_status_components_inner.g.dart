@@ -18,6 +18,9 @@ _$benchmarkStatusComponentsInnerStatusEnum_fail =
 const BenchmarkStatusComponentsInnerStatusEnum
 _$benchmarkStatusComponentsInnerStatusEnum_unknown =
     const BenchmarkStatusComponentsInnerStatusEnum._('unknown');
+const BenchmarkStatusComponentsInnerStatusEnum
+_$benchmarkStatusComponentsInnerStatusEnum_unknownDefaultOpenApi =
+    const BenchmarkStatusComponentsInnerStatusEnum._('unknownDefaultOpenApi');
 
 BenchmarkStatusComponentsInnerStatusEnum
 _$benchmarkStatusComponentsInnerStatusEnumValueOf(String name) {
@@ -30,8 +33,10 @@ _$benchmarkStatusComponentsInnerStatusEnumValueOf(String name) {
       return _$benchmarkStatusComponentsInnerStatusEnum_fail;
     case 'unknown':
       return _$benchmarkStatusComponentsInnerStatusEnum_unknown;
+    case 'unknownDefaultOpenApi':
+      return _$benchmarkStatusComponentsInnerStatusEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$benchmarkStatusComponentsInnerStatusEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -43,6 +48,7 @@ _$benchmarkStatusComponentsInnerStatusEnumValues =
         _$benchmarkStatusComponentsInnerStatusEnum_warn,
         _$benchmarkStatusComponentsInnerStatusEnum_fail,
         _$benchmarkStatusComponentsInnerStatusEnum_unknown,
+        _$benchmarkStatusComponentsInnerStatusEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -55,6 +61,9 @@ _$benchmarkStatusComponentsInnerSuiteEnum_historical =
 const BenchmarkStatusComponentsInnerSuiteEnum
 _$benchmarkStatusComponentsInnerSuiteEnum_all =
     const BenchmarkStatusComponentsInnerSuiteEnum._('all');
+const BenchmarkStatusComponentsInnerSuiteEnum
+_$benchmarkStatusComponentsInnerSuiteEnum_unknownDefaultOpenApi =
+    const BenchmarkStatusComponentsInnerSuiteEnum._('unknownDefaultOpenApi');
 
 BenchmarkStatusComponentsInnerSuiteEnum
 _$benchmarkStatusComponentsInnerSuiteEnumValueOf(String name) {
@@ -65,8 +74,10 @@ _$benchmarkStatusComponentsInnerSuiteEnumValueOf(String name) {
       return _$benchmarkStatusComponentsInnerSuiteEnum_historical;
     case 'all':
       return _$benchmarkStatusComponentsInnerSuiteEnum_all;
+    case 'unknownDefaultOpenApi':
+      return _$benchmarkStatusComponentsInnerSuiteEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$benchmarkStatusComponentsInnerSuiteEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -77,6 +88,7 @@ _$benchmarkStatusComponentsInnerSuiteEnumValues =
         _$benchmarkStatusComponentsInnerSuiteEnum_synthetic,
         _$benchmarkStatusComponentsInnerSuiteEnum_historical,
         _$benchmarkStatusComponentsInnerSuiteEnum_all,
+        _$benchmarkStatusComponentsInnerSuiteEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -94,12 +106,14 @@ class _$BenchmarkStatusComponentsInnerStatusEnumSerializer
     'warn': 'warn',
     'fail': 'fail',
     'unknown': 'unknown',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'pass': 'pass',
     'warn': 'warn',
     'fail': 'fail',
     'unknown': 'unknown',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -132,11 +146,13 @@ class _$BenchmarkStatusComponentsInnerSuiteEnumSerializer
     'synthetic': 'synthetic',
     'historical': 'historical',
     'all': 'all',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'synthetic': 'synthetic',
     'historical': 'historical',
     'all': 'all',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

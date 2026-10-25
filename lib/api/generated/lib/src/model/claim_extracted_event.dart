@@ -160,6 +160,9 @@ class ClaimExtractedEventEventEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'claim.extracted')
   static const ClaimExtractedEventEventEnum claimPeriodExtracted =
       _$claimExtractedEventEventEnum_claimPeriodExtracted;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ClaimExtractedEventEventEnum unknownDefaultOpenApi =
+      _$claimExtractedEventEventEnum_unknownDefaultOpenApi;
 
   static Serializer<ClaimExtractedEventEventEnum> get serializer =>
       _$claimExtractedEventEventEnumSerializer;

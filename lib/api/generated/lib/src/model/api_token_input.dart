@@ -255,6 +255,9 @@ class ApiTokenInputScopeEnum extends EnumClass {
   static const ApiTokenInputScopeEnum agent = _$apiTokenInputScopeEnum_agent;
   @BuiltValueEnumConst(wireName: r'admin')
   static const ApiTokenInputScopeEnum admin = _$apiTokenInputScopeEnum_admin;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ApiTokenInputScopeEnum unknownDefaultOpenApi =
+      _$apiTokenInputScopeEnum_unknownDefaultOpenApi;
 
   static Serializer<ApiTokenInputScopeEnum> get serializer =>
       _$apiTokenInputScopeEnumSerializer;
@@ -277,6 +280,9 @@ class ApiTokenInputLicencePolicyEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'redistributable')
   static const ApiTokenInputLicencePolicyEnum redistributable =
       _$apiTokenInputLicencePolicyEnum_redistributable;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ApiTokenInputLicencePolicyEnum unknownDefaultOpenApi =
+      _$apiTokenInputLicencePolicyEnum_unknownDefaultOpenApi;
 
   static Serializer<ApiTokenInputLicencePolicyEnum> get serializer =>
       _$apiTokenInputLicencePolicyEnumSerializer;

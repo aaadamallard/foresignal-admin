@@ -159,6 +159,9 @@ class TimelineTickKindEnum extends EnumClass {
   static const TimelineTickKindEnum observed = _$timelineTickKindEnum_observed;
   @BuiltValueEnumConst(wireName: r'forecast')
   static const TimelineTickKindEnum forecast = _$timelineTickKindEnum_forecast;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const TimelineTickKindEnum unknownDefaultOpenApi =
+      _$timelineTickKindEnum_unknownDefaultOpenApi;
 
   static Serializer<TimelineTickKindEnum> get serializer =>
       _$timelineTickKindEnumSerializer;

@@ -26,6 +26,8 @@ const FieldSpecTypeEnum _$fieldSpecTypeEnum_OBJECT = const FieldSpecTypeEnum._(
 const FieldSpecTypeEnum _$fieldSpecTypeEnum_ARRAY = const FieldSpecTypeEnum._(
   'ARRAY',
 );
+const FieldSpecTypeEnum _$fieldSpecTypeEnum_unknownDefaultOpenApi =
+    const FieldSpecTypeEnum._('unknownDefaultOpenApi');
 
 FieldSpecTypeEnum _$fieldSpecTypeEnumValueOf(String name) {
   switch (name) {
@@ -43,8 +45,10 @@ FieldSpecTypeEnum _$fieldSpecTypeEnumValueOf(String name) {
       return _$fieldSpecTypeEnum_OBJECT;
     case 'ARRAY':
       return _$fieldSpecTypeEnum_ARRAY;
+    case 'unknownDefaultOpenApi':
+      return _$fieldSpecTypeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$fieldSpecTypeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -57,6 +61,7 @@ final BuiltSet<FieldSpecTypeEnum> _$fieldSpecTypeEnumValues =
       _$fieldSpecTypeEnum_TIMESTAMP,
       _$fieldSpecTypeEnum_OBJECT,
       _$fieldSpecTypeEnum_ARRAY,
+      _$fieldSpecTypeEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<FieldSpecTypeEnum> _$fieldSpecTypeEnumSerializer =
@@ -72,6 +77,7 @@ class _$FieldSpecTypeEnumSerializer
     'TIMESTAMP': 'TIMESTAMP',
     'OBJECT': 'OBJECT',
     'ARRAY': 'ARRAY',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'STRING': 'STRING',
@@ -81,6 +87,7 @@ class _$FieldSpecTypeEnumSerializer
     'TIMESTAMP': 'TIMESTAMP',
     'OBJECT': 'OBJECT',
     'ARRAY': 'ARRAY',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

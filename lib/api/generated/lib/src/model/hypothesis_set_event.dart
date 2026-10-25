@@ -318,6 +318,9 @@ class HypothesisSetEventStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'archived')
   static const HypothesisSetEventStatusEnum archived =
       _$hypothesisSetEventStatusEnum_archived;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const HypothesisSetEventStatusEnum unknownDefaultOpenApi =
+      _$hypothesisSetEventStatusEnum_unknownDefaultOpenApi;
 
   static Serializer<HypothesisSetEventStatusEnum> get serializer =>
       _$hypothesisSetEventStatusEnumSerializer;
@@ -355,6 +358,9 @@ class HypothesisSetEventCauseEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'created')
   static const HypothesisSetEventCauseEnum created =
       _$hypothesisSetEventCauseEnum_created;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const HypothesisSetEventCauseEnum unknownDefaultOpenApi =
+      _$hypothesisSetEventCauseEnum_unknownDefaultOpenApi;
 
   static Serializer<HypothesisSetEventCauseEnum> get serializer =>
       _$hypothesisSetEventCauseEnumSerializer;

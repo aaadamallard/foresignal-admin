@@ -18,6 +18,11 @@ _$hypothesisReviewInputAssumptionsInnerStatusEnum_unsupported =
 const HypothesisReviewInputAssumptionsInnerStatusEnum
 _$hypothesisReviewInputAssumptionsInnerStatusEnum_broken =
     const HypothesisReviewInputAssumptionsInnerStatusEnum._('broken');
+const HypothesisReviewInputAssumptionsInnerStatusEnum
+_$hypothesisReviewInputAssumptionsInnerStatusEnum_unknownDefaultOpenApi =
+    const HypothesisReviewInputAssumptionsInnerStatusEnum._(
+      'unknownDefaultOpenApi',
+    );
 
 HypothesisReviewInputAssumptionsInnerStatusEnum
 _$hypothesisReviewInputAssumptionsInnerStatusEnumValueOf(String name) {
@@ -30,8 +35,10 @@ _$hypothesisReviewInputAssumptionsInnerStatusEnumValueOf(String name) {
       return _$hypothesisReviewInputAssumptionsInnerStatusEnum_unsupported;
     case 'broken':
       return _$hypothesisReviewInputAssumptionsInnerStatusEnum_broken;
+    case 'unknownDefaultOpenApi':
+      return _$hypothesisReviewInputAssumptionsInnerStatusEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$hypothesisReviewInputAssumptionsInnerStatusEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -43,6 +50,7 @@ _$hypothesisReviewInputAssumptionsInnerStatusEnumValues =
         _$hypothesisReviewInputAssumptionsInnerStatusEnum_caveated,
         _$hypothesisReviewInputAssumptionsInnerStatusEnum_unsupported,
         _$hypothesisReviewInputAssumptionsInnerStatusEnum_broken,
+        _$hypothesisReviewInputAssumptionsInnerStatusEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -58,12 +66,14 @@ class _$HypothesisReviewInputAssumptionsInnerStatusEnumSerializer
     'caveated': 'caveated',
     'unsupported': 'unsupported',
     'broken': 'broken',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'solid': 'solid',
     'caveated': 'caveated',
     'unsupported': 'unsupported',
     'broken': 'broken',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

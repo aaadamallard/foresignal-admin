@@ -12,6 +12,8 @@ const McpAuthSettingsModeEnum _$mcpAuthSettingsModeEnum_oauth =
     const McpAuthSettingsModeEnum._('oauth');
 const McpAuthSettingsModeEnum _$mcpAuthSettingsModeEnum_both =
     const McpAuthSettingsModeEnum._('both');
+const McpAuthSettingsModeEnum _$mcpAuthSettingsModeEnum_unknownDefaultOpenApi =
+    const McpAuthSettingsModeEnum._('unknownDefaultOpenApi');
 
 McpAuthSettingsModeEnum _$mcpAuthSettingsModeEnumValueOf(String name) {
   switch (name) {
@@ -21,8 +23,10 @@ McpAuthSettingsModeEnum _$mcpAuthSettingsModeEnumValueOf(String name) {
       return _$mcpAuthSettingsModeEnum_oauth;
     case 'both':
       return _$mcpAuthSettingsModeEnum_both;
+    case 'unknownDefaultOpenApi':
+      return _$mcpAuthSettingsModeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$mcpAuthSettingsModeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -31,12 +35,16 @@ final BuiltSet<McpAuthSettingsModeEnum> _$mcpAuthSettingsModeEnumValues =
       _$mcpAuthSettingsModeEnum_token,
       _$mcpAuthSettingsModeEnum_oauth,
       _$mcpAuthSettingsModeEnum_both,
+      _$mcpAuthSettingsModeEnum_unknownDefaultOpenApi,
     ]);
 
 const McpAuthSettingsScopeMapEnum _$mcpAuthSettingsScopeMapEnum_read =
     const McpAuthSettingsScopeMapEnum._('read');
 const McpAuthSettingsScopeMapEnum _$mcpAuthSettingsScopeMapEnum_agent =
     const McpAuthSettingsScopeMapEnum._('agent');
+const McpAuthSettingsScopeMapEnum
+_$mcpAuthSettingsScopeMapEnum_unknownDefaultOpenApi =
+    const McpAuthSettingsScopeMapEnum._('unknownDefaultOpenApi');
 
 McpAuthSettingsScopeMapEnum _$mcpAuthSettingsScopeMapEnumValueOf(String name) {
   switch (name) {
@@ -44,23 +52,28 @@ McpAuthSettingsScopeMapEnum _$mcpAuthSettingsScopeMapEnumValueOf(String name) {
       return _$mcpAuthSettingsScopeMapEnum_read;
     case 'agent':
       return _$mcpAuthSettingsScopeMapEnum_agent;
+    case 'unknownDefaultOpenApi':
+      return _$mcpAuthSettingsScopeMapEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$mcpAuthSettingsScopeMapEnum_unknownDefaultOpenApi;
   }
 }
 
 final BuiltSet<McpAuthSettingsScopeMapEnum>
-_$mcpAuthSettingsScopeMapEnumValues = BuiltSet<McpAuthSettingsScopeMapEnum>(
-  const <McpAuthSettingsScopeMapEnum>[
-    _$mcpAuthSettingsScopeMapEnum_read,
-    _$mcpAuthSettingsScopeMapEnum_agent,
-  ],
-);
+_$mcpAuthSettingsScopeMapEnumValues =
+    BuiltSet<McpAuthSettingsScopeMapEnum>(const <McpAuthSettingsScopeMapEnum>[
+      _$mcpAuthSettingsScopeMapEnum_read,
+      _$mcpAuthSettingsScopeMapEnum_agent,
+      _$mcpAuthSettingsScopeMapEnum_unknownDefaultOpenApi,
+    ]);
 
 const McpAuthSettingsScopeClaimEnum _$mcpAuthSettingsScopeClaimEnum_scope =
     const McpAuthSettingsScopeClaimEnum._('scope');
 const McpAuthSettingsScopeClaimEnum _$mcpAuthSettingsScopeClaimEnum_scp =
     const McpAuthSettingsScopeClaimEnum._('scp');
+const McpAuthSettingsScopeClaimEnum
+_$mcpAuthSettingsScopeClaimEnum_unknownDefaultOpenApi =
+    const McpAuthSettingsScopeClaimEnum._('unknownDefaultOpenApi');
 
 McpAuthSettingsScopeClaimEnum _$mcpAuthSettingsScopeClaimEnumValueOf(
   String name,
@@ -70,8 +83,10 @@ McpAuthSettingsScopeClaimEnum _$mcpAuthSettingsScopeClaimEnumValueOf(
       return _$mcpAuthSettingsScopeClaimEnum_scope;
     case 'scp':
       return _$mcpAuthSettingsScopeClaimEnum_scp;
+    case 'unknownDefaultOpenApi':
+      return _$mcpAuthSettingsScopeClaimEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$mcpAuthSettingsScopeClaimEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -80,6 +95,7 @@ _$mcpAuthSettingsScopeClaimEnumValues = BuiltSet<McpAuthSettingsScopeClaimEnum>(
   const <McpAuthSettingsScopeClaimEnum>[
     _$mcpAuthSettingsScopeClaimEnum_scope,
     _$mcpAuthSettingsScopeClaimEnum_scp,
+    _$mcpAuthSettingsScopeClaimEnum_unknownDefaultOpenApi,
   ],
 );
 
@@ -91,6 +107,9 @@ const McpAuthSettingsAllowedAlgsEnum _$mcpAuthSettingsAllowedAlgsEnum_edDSA =
     const McpAuthSettingsAllowedAlgsEnum._('edDSA');
 const McpAuthSettingsAllowedAlgsEnum _$mcpAuthSettingsAllowedAlgsEnum_ed25519 =
     const McpAuthSettingsAllowedAlgsEnum._('ed25519');
+const McpAuthSettingsAllowedAlgsEnum
+_$mcpAuthSettingsAllowedAlgsEnum_unknownDefaultOpenApi =
+    const McpAuthSettingsAllowedAlgsEnum._('unknownDefaultOpenApi');
 
 McpAuthSettingsAllowedAlgsEnum _$mcpAuthSettingsAllowedAlgsEnumValueOf(
   String name,
@@ -104,8 +123,10 @@ McpAuthSettingsAllowedAlgsEnum _$mcpAuthSettingsAllowedAlgsEnumValueOf(
       return _$mcpAuthSettingsAllowedAlgsEnum_edDSA;
     case 'ed25519':
       return _$mcpAuthSettingsAllowedAlgsEnum_ed25519;
+    case 'unknownDefaultOpenApi':
+      return _$mcpAuthSettingsAllowedAlgsEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$mcpAuthSettingsAllowedAlgsEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -117,6 +138,7 @@ _$mcpAuthSettingsAllowedAlgsEnumValues =
         _$mcpAuthSettingsAllowedAlgsEnum_ES256,
         _$mcpAuthSettingsAllowedAlgsEnum_edDSA,
         _$mcpAuthSettingsAllowedAlgsEnum_ed25519,
+        _$mcpAuthSettingsAllowedAlgsEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -138,11 +160,13 @@ class _$McpAuthSettingsModeEnumSerializer
     'token': 'token',
     'oauth': 'oauth',
     'both': 'both',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'token': 'token',
     'oauth': 'oauth',
     'both': 'both',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -172,10 +196,12 @@ class _$McpAuthSettingsScopeMapEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'read': 'read',
     'agent': 'agent',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'read': 'read',
     'agent': 'agent',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -205,10 +231,12 @@ class _$McpAuthSettingsScopeClaimEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'scope': 'scope',
     'scp': 'scp',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'scope': 'scope',
     'scp': 'scp',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -240,12 +268,14 @@ class _$McpAuthSettingsAllowedAlgsEnumSerializer
     'ES256': 'ES256',
     'edDSA': 'EdDSA',
     'ed25519': 'Ed25519',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'RS256': 'RS256',
     'ES256': 'ES256',
     'EdDSA': 'edDSA',
     'Ed25519': 'ed25519',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

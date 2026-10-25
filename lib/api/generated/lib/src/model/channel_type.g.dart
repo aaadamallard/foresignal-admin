@@ -56,6 +56,8 @@ const ChannelTypeIdEnum _$channelTypeIdEnum_meshtastic =
     const ChannelTypeIdEnum._('meshtastic');
 const ChannelTypeIdEnum _$channelTypeIdEnum_meshcore =
     const ChannelTypeIdEnum._('meshcore');
+const ChannelTypeIdEnum _$channelTypeIdEnum_unknownDefaultOpenApi =
+    const ChannelTypeIdEnum._('unknownDefaultOpenApi');
 
 ChannelTypeIdEnum _$channelTypeIdEnumValueOf(String name) {
   switch (name) {
@@ -97,8 +99,10 @@ ChannelTypeIdEnum _$channelTypeIdEnumValueOf(String name) {
       return _$channelTypeIdEnum_meshtastic;
     case 'meshcore':
       return _$channelTypeIdEnum_meshcore;
+    case 'unknownDefaultOpenApi':
+      return _$channelTypeIdEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$channelTypeIdEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -123,6 +127,7 @@ final BuiltSet<ChannelTypeIdEnum> _$channelTypeIdEnumValues =
       _$channelTypeIdEnum_mqtt,
       _$channelTypeIdEnum_meshtastic,
       _$channelTypeIdEnum_meshcore,
+      _$channelTypeIdEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<ChannelTypeIdEnum> _$channelTypeIdEnumSerializer =
@@ -150,6 +155,7 @@ class _$ChannelTypeIdEnumSerializer
     'mqtt': 'mqtt',
     'meshtastic': 'meshtastic',
     'meshcore': 'meshcore',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'webhook': 'webhook',
@@ -171,6 +177,7 @@ class _$ChannelTypeIdEnumSerializer
     'mqtt': 'mqtt',
     'meshtastic': 'meshtastic',
     'meshcore': 'meshcore',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

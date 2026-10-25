@@ -8,19 +8,24 @@ part of 'ingest_policy_all.dart';
 
 const IngestPolicyAllModeEnum _$ingestPolicyAllModeEnum_ALL =
     const IngestPolicyAllModeEnum._('ALL');
+const IngestPolicyAllModeEnum _$ingestPolicyAllModeEnum_unknownDefaultOpenApi =
+    const IngestPolicyAllModeEnum._('unknownDefaultOpenApi');
 
 IngestPolicyAllModeEnum _$ingestPolicyAllModeEnumValueOf(String name) {
   switch (name) {
     case 'ALL':
       return _$ingestPolicyAllModeEnum_ALL;
+    case 'unknownDefaultOpenApi':
+      return _$ingestPolicyAllModeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$ingestPolicyAllModeEnum_unknownDefaultOpenApi;
   }
 }
 
 final BuiltSet<IngestPolicyAllModeEnum> _$ingestPolicyAllModeEnumValues =
     BuiltSet<IngestPolicyAllModeEnum>(const <IngestPolicyAllModeEnum>[
       _$ingestPolicyAllModeEnum_ALL,
+      _$ingestPolicyAllModeEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<IngestPolicyAllModeEnum> _$ingestPolicyAllModeEnumSerializer =
@@ -30,9 +35,11 @@ class _$IngestPolicyAllModeEnumSerializer
     implements PrimitiveSerializer<IngestPolicyAllModeEnum> {
   static const Map<String, Object> _toWire = const <String, Object>{
     'ALL': 'ALL',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'ALL': 'ALL',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

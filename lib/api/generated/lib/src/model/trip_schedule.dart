@@ -212,6 +212,9 @@ class TripScheduleTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'recurring')
   static const TripScheduleTypeEnum recurring =
       _$tripScheduleTypeEnum_recurring;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const TripScheduleTypeEnum unknownDefaultOpenApi =
+      _$tripScheduleTypeEnum_unknownDefaultOpenApi;
 
   static Serializer<TripScheduleTypeEnum> get serializer =>
       _$tripScheduleTypeEnumSerializer;
@@ -239,6 +242,9 @@ class TripScheduleDaysEnum extends EnumClass {
   static const TripScheduleDaysEnum SA = _$tripScheduleDaysEnum_SA;
   @BuiltValueEnumConst(wireName: r'SU')
   static const TripScheduleDaysEnum SU = _$tripScheduleDaysEnum_SU;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const TripScheduleDaysEnum unknownDefaultOpenApi =
+      _$tripScheduleDaysEnum_unknownDefaultOpenApi;
 
   static Serializer<TripScheduleDaysEnum> get serializer =>
       _$tripScheduleDaysEnumSerializer;

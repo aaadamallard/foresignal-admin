@@ -276,6 +276,9 @@ class OutletConsensusBucketEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'right')
   static const OutletConsensusBucketEnum right =
       _$outletConsensusBucketEnum_right;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const OutletConsensusBucketEnum unknownDefaultOpenApi =
+      _$outletConsensusBucketEnum_unknownDefaultOpenApi;
 
   static Serializer<OutletConsensusBucketEnum> get serializer =>
       _$outletConsensusBucketEnumSerializer;

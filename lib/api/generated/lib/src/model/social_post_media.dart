@@ -212,6 +212,9 @@ class SocialPostMediaTypeEnum extends EnumClass {
       _$socialPostMediaTypeEnum_linkCard;
   @BuiltValueEnumConst(wireName: r'other')
   static const SocialPostMediaTypeEnum other = _$socialPostMediaTypeEnum_other;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const SocialPostMediaTypeEnum unknownDefaultOpenApi =
+      _$socialPostMediaTypeEnum_unknownDefaultOpenApi;
 
   static Serializer<SocialPostMediaTypeEnum> get serializer =>
       _$socialPostMediaTypeEnumSerializer;

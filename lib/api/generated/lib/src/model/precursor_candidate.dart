@@ -319,6 +319,9 @@ class PrecursorCandidateKindEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'series')
   static const PrecursorCandidateKindEnum series =
       _$precursorCandidateKindEnum_series;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const PrecursorCandidateKindEnum unknownDefaultOpenApi =
+      _$precursorCandidateKindEnum_unknownDefaultOpenApi;
 
   static Serializer<PrecursorCandidateKindEnum> get serializer =>
       _$precursorCandidateKindEnumSerializer;

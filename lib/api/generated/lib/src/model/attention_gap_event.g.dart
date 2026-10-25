@@ -9,19 +9,25 @@ part of 'attention_gap_event.dart';
 const AttentionGapEventEventEnum
 _$attentionGapEventEventEnum_attentionPeriodGap =
     const AttentionGapEventEventEnum._('attentionPeriodGap');
+const AttentionGapEventEventEnum
+_$attentionGapEventEventEnum_unknownDefaultOpenApi =
+    const AttentionGapEventEventEnum._('unknownDefaultOpenApi');
 
 AttentionGapEventEventEnum _$attentionGapEventEventEnumValueOf(String name) {
   switch (name) {
     case 'attentionPeriodGap':
       return _$attentionGapEventEventEnum_attentionPeriodGap;
+    case 'unknownDefaultOpenApi':
+      return _$attentionGapEventEventEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$attentionGapEventEventEnum_unknownDefaultOpenApi;
   }
 }
 
 final BuiltSet<AttentionGapEventEventEnum> _$attentionGapEventEventEnumValues =
     BuiltSet<AttentionGapEventEventEnum>(const <AttentionGapEventEventEnum>[
       _$attentionGapEventEventEnum_attentionPeriodGap,
+      _$attentionGapEventEventEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<AttentionGapEventEventEnum> _$attentionGapEventEventEnumSerializer =
@@ -31,9 +37,11 @@ class _$AttentionGapEventEventEnumSerializer
     implements PrimitiveSerializer<AttentionGapEventEventEnum> {
   static const Map<String, Object> _toWire = const <String, Object>{
     'attentionPeriodGap': 'attention.gap',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'attention.gap': 'attentionPeriodGap',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

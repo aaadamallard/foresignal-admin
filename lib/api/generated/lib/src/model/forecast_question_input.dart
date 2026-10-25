@@ -376,6 +376,9 @@ class ForecastQuestionInputTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'numeric')
   static const ForecastQuestionInputTypeEnum numeric =
       _$forecastQuestionInputTypeEnum_numeric;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ForecastQuestionInputTypeEnum unknownDefaultOpenApi =
+      _$forecastQuestionInputTypeEnum_unknownDefaultOpenApi;
 
   static Serializer<ForecastQuestionInputTypeEnum> get serializer =>
       _$forecastQuestionInputTypeEnumSerializer;

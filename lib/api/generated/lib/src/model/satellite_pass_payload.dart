@@ -591,6 +591,9 @@ class SatellitePassPayloadStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'missed')
   static const SatellitePassPayloadStatusEnum missed =
       _$satellitePassPayloadStatusEnum_missed;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const SatellitePassPayloadStatusEnum unknownDefaultOpenApi =
+      _$satellitePassPayloadStatusEnum_unknownDefaultOpenApi;
 
   static Serializer<SatellitePassPayloadStatusEnum> get serializer =>
       _$satellitePassPayloadStatusEnumSerializer;
@@ -611,6 +614,9 @@ class SatellitePassPayloadGeometrySourceEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'swath')
   static const SatellitePassPayloadGeometrySourceEnum swath =
       _$satellitePassPayloadGeometrySourceEnum_swath;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const SatellitePassPayloadGeometrySourceEnum unknownDefaultOpenApi =
+      _$satellitePassPayloadGeometrySourceEnum_unknownDefaultOpenApi;
 
   static Serializer<SatellitePassPayloadGeometrySourceEnum> get serializer =>
       _$satellitePassPayloadGeometrySourceEnumSerializer;

@@ -250,6 +250,9 @@ class AttentionGapEventEventEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'attention.gap')
   static const AttentionGapEventEventEnum attentionPeriodGap =
       _$attentionGapEventEventEnum_attentionPeriodGap;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const AttentionGapEventEventEnum unknownDefaultOpenApi =
+      _$attentionGapEventEventEnum_unknownDefaultOpenApi;
 
   static Serializer<AttentionGapEventEventEnum> get serializer =>
       _$attentionGapEventEventEnumSerializer;

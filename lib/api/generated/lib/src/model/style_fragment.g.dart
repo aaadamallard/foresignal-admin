@@ -8,19 +8,25 @@ part of 'style_fragment.dart';
 
 const StyleFragmentVersionEnum _$styleFragmentVersionEnum_number8 =
     const StyleFragmentVersionEnum._('number8');
+const StyleFragmentVersionEnum
+_$styleFragmentVersionEnum_unknownDefaultOpenApi =
+    const StyleFragmentVersionEnum._('unknownDefaultOpenApi');
 
 StyleFragmentVersionEnum _$styleFragmentVersionEnumValueOf(String name) {
   switch (name) {
     case 'number8':
       return _$styleFragmentVersionEnum_number8;
+    case 'unknownDefaultOpenApi':
+      return _$styleFragmentVersionEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$styleFragmentVersionEnum_unknownDefaultOpenApi;
   }
 }
 
 final BuiltSet<StyleFragmentVersionEnum> _$styleFragmentVersionEnumValues =
     BuiltSet<StyleFragmentVersionEnum>(const <StyleFragmentVersionEnum>[
       _$styleFragmentVersionEnum_number8,
+      _$styleFragmentVersionEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<StyleFragmentVersionEnum> _$styleFragmentVersionEnumSerializer =
@@ -30,9 +36,11 @@ class _$StyleFragmentVersionEnumSerializer
     implements PrimitiveSerializer<StyleFragmentVersionEnum> {
   static const Map<String, Object> _toWire = const <String, Object>{
     'number8': 8,
+    'unknownDefaultOpenApi': 11184809,
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     8: 'number8',
+    11184809: 'unknownDefaultOpenApi',
   };
 
   @override

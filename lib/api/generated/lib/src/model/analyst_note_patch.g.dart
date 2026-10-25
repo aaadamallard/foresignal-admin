@@ -12,6 +12,9 @@ const AnalystNotePatchStatusEnum _$analystNotePatchStatusEnum_read =
     const AnalystNotePatchStatusEnum._('read');
 const AnalystNotePatchStatusEnum _$analystNotePatchStatusEnum_dismissed =
     const AnalystNotePatchStatusEnum._('dismissed');
+const AnalystNotePatchStatusEnum
+_$analystNotePatchStatusEnum_unknownDefaultOpenApi =
+    const AnalystNotePatchStatusEnum._('unknownDefaultOpenApi');
 
 AnalystNotePatchStatusEnum _$analystNotePatchStatusEnumValueOf(String name) {
   switch (name) {
@@ -21,8 +24,10 @@ AnalystNotePatchStatusEnum _$analystNotePatchStatusEnumValueOf(String name) {
       return _$analystNotePatchStatusEnum_read;
     case 'dismissed':
       return _$analystNotePatchStatusEnum_dismissed;
+    case 'unknownDefaultOpenApi':
+      return _$analystNotePatchStatusEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$analystNotePatchStatusEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -31,6 +36,7 @@ final BuiltSet<AnalystNotePatchStatusEnum> _$analystNotePatchStatusEnumValues =
       _$analystNotePatchStatusEnum_new_,
       _$analystNotePatchStatusEnum_read,
       _$analystNotePatchStatusEnum_dismissed,
+      _$analystNotePatchStatusEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<AnalystNotePatchStatusEnum> _$analystNotePatchStatusEnumSerializer =
@@ -42,11 +48,13 @@ class _$AnalystNotePatchStatusEnumSerializer
     'new_': 'new',
     'read': 'read',
     'dismissed': 'dismissed',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'new': 'new_',
     'read': 'read',
     'dismissed': 'dismissed',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

@@ -266,6 +266,9 @@ class SinkCreateTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'federation-push')
   static const SinkCreateTypeEnum federationPush =
       _$sinkCreateTypeEnum_federationPush;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const SinkCreateTypeEnum unknownDefaultOpenApi =
+      _$sinkCreateTypeEnum_unknownDefaultOpenApi;
 
   static Serializer<SinkCreateTypeEnum> get serializer =>
       _$sinkCreateTypeEnumSerializer;

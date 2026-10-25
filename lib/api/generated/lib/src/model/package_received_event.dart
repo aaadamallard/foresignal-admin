@@ -270,6 +270,9 @@ class PackageReceivedEventTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'evidence')
   static const PackageReceivedEventTypeEnum evidence =
       _$packageReceivedEventTypeEnum_evidence;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const PackageReceivedEventTypeEnum unknownDefaultOpenApi =
+      _$packageReceivedEventTypeEnum_unknownDefaultOpenApi;
 
   static Serializer<PackageReceivedEventTypeEnum> get serializer =>
       _$packageReceivedEventTypeEnumSerializer;
@@ -292,6 +295,9 @@ class PackageReceivedEventSignatureStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'unknown-key')
   static const PackageReceivedEventSignatureStatusEnum unknownKey =
       _$packageReceivedEventSignatureStatusEnum_unknownKey;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const PackageReceivedEventSignatureStatusEnum unknownDefaultOpenApi =
+      _$packageReceivedEventSignatureStatusEnum_unknownDefaultOpenApi;
 
   static Serializer<PackageReceivedEventSignatureStatusEnum> get serializer =>
       _$packageReceivedEventSignatureStatusEnumSerializer;

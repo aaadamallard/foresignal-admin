@@ -316,6 +316,9 @@ class AnalogResultMethodEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'feature-only')
   static const AnalogResultMethodEnum featureOnly =
       _$analogResultMethodEnum_featureOnly;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const AnalogResultMethodEnum unknownDefaultOpenApi =
+      _$analogResultMethodEnum_unknownDefaultOpenApi;
 
   static Serializer<AnalogResultMethodEnum> get serializer =>
       _$analogResultMethodEnumSerializer;

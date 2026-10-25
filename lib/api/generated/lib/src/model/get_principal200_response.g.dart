@@ -13,6 +13,9 @@ const GetPrincipal200ResponseKindEnum _$getPrincipal200ResponseKindEnum_agent =
 const GetPrincipal200ResponseKindEnum
 _$getPrincipal200ResponseKindEnum_service =
     const GetPrincipal200ResponseKindEnum._('service');
+const GetPrincipal200ResponseKindEnum
+_$getPrincipal200ResponseKindEnum_unknownDefaultOpenApi =
+    const GetPrincipal200ResponseKindEnum._('unknownDefaultOpenApi');
 
 GetPrincipal200ResponseKindEnum _$getPrincipal200ResponseKindEnumValueOf(
   String name,
@@ -24,8 +27,10 @@ GetPrincipal200ResponseKindEnum _$getPrincipal200ResponseKindEnumValueOf(
       return _$getPrincipal200ResponseKindEnum_agent;
     case 'service':
       return _$getPrincipal200ResponseKindEnum_service;
+    case 'unknownDefaultOpenApi':
+      return _$getPrincipal200ResponseKindEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$getPrincipal200ResponseKindEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -36,6 +41,7 @@ _$getPrincipal200ResponseKindEnumValues =
         _$getPrincipal200ResponseKindEnum_person,
         _$getPrincipal200ResponseKindEnum_agent,
         _$getPrincipal200ResponseKindEnum_service,
+        _$getPrincipal200ResponseKindEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -49,11 +55,13 @@ class _$GetPrincipal200ResponseKindEnumSerializer
     'person': 'person',
     'agent': 'agent',
     'service': 'service',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'person': 'person',
     'agent': 'agent',
     'service': 'service',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

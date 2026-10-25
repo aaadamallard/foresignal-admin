@@ -485,6 +485,9 @@ class ReceivedPackageTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'evidence')
   static const ReceivedPackageTypeEnum evidence =
       _$receivedPackageTypeEnum_evidence;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ReceivedPackageTypeEnum unknownDefaultOpenApi =
+      _$receivedPackageTypeEnum_unknownDefaultOpenApi;
 
   static Serializer<ReceivedPackageTypeEnum> get serializer =>
       _$receivedPackageTypeEnumSerializer;
@@ -507,6 +510,9 @@ class ReceivedPackageSignatureStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'unknown-key')
   static const ReceivedPackageSignatureStatusEnum unknownKey =
       _$receivedPackageSignatureStatusEnum_unknownKey;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ReceivedPackageSignatureStatusEnum unknownDefaultOpenApi =
+      _$receivedPackageSignatureStatusEnum_unknownDefaultOpenApi;
 
   static Serializer<ReceivedPackageSignatureStatusEnum> get serializer =>
       _$receivedPackageSignatureStatusEnumSerializer;
@@ -526,6 +532,9 @@ class ReceivedPackageKeySourceEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'pinned')
   static const ReceivedPackageKeySourceEnum pinned =
       _$receivedPackageKeySourceEnum_pinned;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ReceivedPackageKeySourceEnum unknownDefaultOpenApi =
+      _$receivedPackageKeySourceEnum_unknownDefaultOpenApi;
 
   static Serializer<ReceivedPackageKeySourceEnum> get serializer =>
       _$receivedPackageKeySourceEnumSerializer;
@@ -545,6 +554,9 @@ class ReceivedPackageReceivedViaEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'import')
   static const ReceivedPackageReceivedViaEnum import_ =
       _$receivedPackageReceivedViaEnum_import_;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ReceivedPackageReceivedViaEnum unknownDefaultOpenApi =
+      _$receivedPackageReceivedViaEnum_unknownDefaultOpenApi;
 
   static Serializer<ReceivedPackageReceivedViaEnum> get serializer =>
       _$receivedPackageReceivedViaEnumSerializer;

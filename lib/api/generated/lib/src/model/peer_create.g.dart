@@ -11,6 +11,8 @@ const PeerCreateModeEnum _$peerCreateModeEnum_PULL = const PeerCreateModeEnum._(
 );
 const PeerCreateModeEnum _$peerCreateModeEnum_RECEIVE =
     const PeerCreateModeEnum._('RECEIVE');
+const PeerCreateModeEnum _$peerCreateModeEnum_unknownDefaultOpenApi =
+    const PeerCreateModeEnum._('unknownDefaultOpenApi');
 
 PeerCreateModeEnum _$peerCreateModeEnumValueOf(String name) {
   switch (name) {
@@ -18,8 +20,10 @@ PeerCreateModeEnum _$peerCreateModeEnumValueOf(String name) {
       return _$peerCreateModeEnum_PULL;
     case 'RECEIVE':
       return _$peerCreateModeEnum_RECEIVE;
+    case 'unknownDefaultOpenApi':
+      return _$peerCreateModeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$peerCreateModeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -27,6 +31,7 @@ final BuiltSet<PeerCreateModeEnum> _$peerCreateModeEnumValues =
     BuiltSet<PeerCreateModeEnum>(const <PeerCreateModeEnum>[
       _$peerCreateModeEnum_PULL,
       _$peerCreateModeEnum_RECEIVE,
+      _$peerCreateModeEnum_unknownDefaultOpenApi,
     ]);
 
 const PeerCreateReliabilityEnum _$peerCreateReliabilityEnum_A =
@@ -41,6 +46,9 @@ const PeerCreateReliabilityEnum _$peerCreateReliabilityEnum_E =
     const PeerCreateReliabilityEnum._('E');
 const PeerCreateReliabilityEnum _$peerCreateReliabilityEnum_F =
     const PeerCreateReliabilityEnum._('F');
+const PeerCreateReliabilityEnum
+_$peerCreateReliabilityEnum_unknownDefaultOpenApi =
+    const PeerCreateReliabilityEnum._('unknownDefaultOpenApi');
 
 PeerCreateReliabilityEnum _$peerCreateReliabilityEnumValueOf(String name) {
   switch (name) {
@@ -56,8 +64,10 @@ PeerCreateReliabilityEnum _$peerCreateReliabilityEnumValueOf(String name) {
       return _$peerCreateReliabilityEnum_E;
     case 'F':
       return _$peerCreateReliabilityEnum_F;
+    case 'unknownDefaultOpenApi':
+      return _$peerCreateReliabilityEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$peerCreateReliabilityEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -69,6 +79,7 @@ final BuiltSet<PeerCreateReliabilityEnum> _$peerCreateReliabilityEnumValues =
       _$peerCreateReliabilityEnum_D,
       _$peerCreateReliabilityEnum_E,
       _$peerCreateReliabilityEnum_F,
+      _$peerCreateReliabilityEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<PeerCreateModeEnum> _$peerCreateModeEnumSerializer =
@@ -81,10 +92,12 @@ class _$PeerCreateModeEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'PULL': 'PULL',
     'RECEIVE': 'RECEIVE',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'PULL': 'PULL',
     'RECEIVE': 'RECEIVE',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -118,6 +131,7 @@ class _$PeerCreateReliabilityEnumSerializer
     'D': 'D',
     'E': 'E',
     'F': 'F',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'A': 'A',
@@ -126,6 +140,7 @@ class _$PeerCreateReliabilityEnumSerializer
     'D': 'D',
     'E': 'E',
     'F': 'F',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

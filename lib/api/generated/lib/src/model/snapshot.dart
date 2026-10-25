@@ -647,6 +647,9 @@ class SnapshotKindEnum extends EnumClass {
   static const SnapshotKindEnum RASTER = _$snapshotKindEnum_RASTER;
   @BuiltValueEnumConst(wireName: r'PLACE_PACK')
   static const SnapshotKindEnum PLACE_PACK = _$snapshotKindEnum_PLACE_PACK;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const SnapshotKindEnum unknownDefaultOpenApi =
+      _$snapshotKindEnum_unknownDefaultOpenApi;
 
   static Serializer<SnapshotKindEnum> get serializer =>
       _$snapshotKindEnumSerializer;
@@ -677,6 +680,9 @@ class SnapshotFormatEnum extends EnumClass {
   static const SnapshotFormatEnum zip = _$snapshotFormatEnum_zip;
   @BuiltValueEnumConst(wireName: r'json-bundle')
   static const SnapshotFormatEnum jsonBundle = _$snapshotFormatEnum_jsonBundle;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const SnapshotFormatEnum unknownDefaultOpenApi =
+      _$snapshotFormatEnum_unknownDefaultOpenApi;
 
   static Serializer<SnapshotFormatEnum> get serializer =>
       _$snapshotFormatEnumSerializer;
@@ -701,6 +707,9 @@ class SnapshotStatusEnum extends EnumClass {
   static const SnapshotStatusEnum CANCELLED = _$snapshotStatusEnum_CANCELLED;
   @BuiltValueEnumConst(wireName: r'EXPIRED')
   static const SnapshotStatusEnum EXPIRED = _$snapshotStatusEnum_EXPIRED;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const SnapshotStatusEnum unknownDefaultOpenApi =
+      _$snapshotStatusEnum_unknownDefaultOpenApi;
 
   static Serializer<SnapshotStatusEnum> get serializer =>
       _$snapshotStatusEnumSerializer;

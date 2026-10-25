@@ -8,19 +8,24 @@ part of 'social_cue_event.dart';
 
 const SocialCueEventEventEnum _$socialCueEventEventEnum_cuePeriodCompleted =
     const SocialCueEventEventEnum._('cuePeriodCompleted');
+const SocialCueEventEventEnum _$socialCueEventEventEnum_unknownDefaultOpenApi =
+    const SocialCueEventEventEnum._('unknownDefaultOpenApi');
 
 SocialCueEventEventEnum _$socialCueEventEventEnumValueOf(String name) {
   switch (name) {
     case 'cuePeriodCompleted':
       return _$socialCueEventEventEnum_cuePeriodCompleted;
+    case 'unknownDefaultOpenApi':
+      return _$socialCueEventEventEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$socialCueEventEventEnum_unknownDefaultOpenApi;
   }
 }
 
 final BuiltSet<SocialCueEventEventEnum> _$socialCueEventEventEnumValues =
     BuiltSet<SocialCueEventEventEnum>(const <SocialCueEventEventEnum>[
       _$socialCueEventEventEnum_cuePeriodCompleted,
+      _$socialCueEventEventEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<SocialCueEventEventEnum> _$socialCueEventEventEnumSerializer =
@@ -30,9 +35,11 @@ class _$SocialCueEventEventEnumSerializer
     implements PrimitiveSerializer<SocialCueEventEventEnum> {
   static const Map<String, Object> _toWire = const <String, Object>{
     'cuePeriodCompleted': 'cue.completed',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'cue.completed': 'cuePeriodCompleted',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

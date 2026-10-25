@@ -215,7 +215,9 @@ class _SourcesCatalogScreenState extends ConsumerState<SourcesCatalogScreen> {
             options: <FilterOption<SourceSummaryModeEnum>>[
               const FilterOption<SourceSummaryModeEnum>(null, 'All modes'),
               for (final mode in SourceSummaryModeEnum.values)
-                FilterOption<SourceSummaryModeEnum>(mode, _capitalized(mode.name)),
+                // The fallback for values the app does not know is not a mode to filter by.
+                if (!isUnknownEnum(mode))
+                  FilterOption<SourceSummaryModeEnum>(mode, _capitalized(mode.name)),
             ],
             onChanged: (v) => setState(() => _filter = _filter.copyWith(mode: () => v)),
           ),
@@ -237,7 +239,7 @@ class _SourcesCatalogScreenState extends ConsumerState<SourcesCatalogScreen> {
           options: <FilterOption<HealthStatus>>[
             const FilterOption<HealthStatus>(null, 'All health'),
             for (final status in HealthStatus.values)
-              FilterOption<HealthStatus>(status, HealthLabel.labelOf(status)),
+              if (!isUnknownEnum(status)) FilterOption<HealthStatus>(status, HealthLabel.labelOf(status)),
           ],
           onChanged: (v) => setState(() => _filter = _filter.copyWith(health: () => v)),
         ),

@@ -10,6 +10,9 @@ const RegionalOutlookRegionLevelEnum _$regionalOutlookRegionLevelEnum_country =
     const RegionalOutlookRegionLevelEnum._('country');
 const RegionalOutlookRegionLevelEnum _$regionalOutlookRegionLevelEnum_admin1 =
     const RegionalOutlookRegionLevelEnum._('admin1');
+const RegionalOutlookRegionLevelEnum
+_$regionalOutlookRegionLevelEnum_unknownDefaultOpenApi =
+    const RegionalOutlookRegionLevelEnum._('unknownDefaultOpenApi');
 
 RegionalOutlookRegionLevelEnum _$regionalOutlookRegionLevelEnumValueOf(
   String name,
@@ -19,8 +22,10 @@ RegionalOutlookRegionLevelEnum _$regionalOutlookRegionLevelEnumValueOf(
       return _$regionalOutlookRegionLevelEnum_country;
     case 'admin1':
       return _$regionalOutlookRegionLevelEnum_admin1;
+    case 'unknownDefaultOpenApi':
+      return _$regionalOutlookRegionLevelEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$regionalOutlookRegionLevelEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -30,6 +35,7 @@ _$regionalOutlookRegionLevelEnumValues =
       const <RegionalOutlookRegionLevelEnum>[
         _$regionalOutlookRegionLevelEnum_country,
         _$regionalOutlookRegionLevelEnum_admin1,
+        _$regionalOutlookRegionLevelEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -42,10 +48,12 @@ class _$RegionalOutlookRegionLevelEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'country': 'country',
     'admin1': 'admin1',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'country': 'country',
     'admin1': 'admin1',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

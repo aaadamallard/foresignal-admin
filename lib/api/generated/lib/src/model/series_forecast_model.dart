@@ -282,6 +282,9 @@ class SeriesForecastModelMethodEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'damped-trend')
   static const SeriesForecastModelMethodEnum dampedTrend =
       _$seriesForecastModelMethodEnum_dampedTrend;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const SeriesForecastModelMethodEnum unknownDefaultOpenApi =
+      _$seriesForecastModelMethodEnum_unknownDefaultOpenApi;
 
   static Serializer<SeriesForecastModelMethodEnum> get serializer =>
       _$seriesForecastModelMethodEnumSerializer;

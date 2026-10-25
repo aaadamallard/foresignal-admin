@@ -380,6 +380,9 @@ class SinkStatusStateEnum extends EnumClass {
   static const SinkStatusStateEnum FAILING = _$sinkStatusStateEnum_FAILING;
   @BuiltValueEnumConst(wireName: r'STOPPED')
   static const SinkStatusStateEnum STOPPED = _$sinkStatusStateEnum_STOPPED;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const SinkStatusStateEnum unknownDefaultOpenApi =
+      _$sinkStatusStateEnum_unknownDefaultOpenApi;
 
   static Serializer<SinkStatusStateEnum> get serializer =>
       _$sinkStatusStateEnumSerializer;

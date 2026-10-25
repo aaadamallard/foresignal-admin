@@ -166,6 +166,9 @@ class ExportManifestSignatureAlgEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'EdDSA')
   static const ExportManifestSignatureAlgEnum edDSA =
       _$exportManifestSignatureAlgEnum_edDSA;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ExportManifestSignatureAlgEnum unknownDefaultOpenApi =
+      _$exportManifestSignatureAlgEnum_unknownDefaultOpenApi;
 
   static Serializer<ExportManifestSignatureAlgEnum> get serializer =>
       _$exportManifestSignatureAlgEnumSerializer;

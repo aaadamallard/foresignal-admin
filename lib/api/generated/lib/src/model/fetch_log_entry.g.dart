@@ -14,6 +14,9 @@ const FetchLogEntryTriggerEnum _$fetchLogEntryTriggerEnum_STREAM =
     const FetchLogEntryTriggerEnum._('STREAM');
 const FetchLogEntryTriggerEnum _$fetchLogEntryTriggerEnum_PUSH =
     const FetchLogEntryTriggerEnum._('PUSH');
+const FetchLogEntryTriggerEnum
+_$fetchLogEntryTriggerEnum_unknownDefaultOpenApi =
+    const FetchLogEntryTriggerEnum._('unknownDefaultOpenApi');
 
 FetchLogEntryTriggerEnum _$fetchLogEntryTriggerEnumValueOf(String name) {
   switch (name) {
@@ -25,8 +28,10 @@ FetchLogEntryTriggerEnum _$fetchLogEntryTriggerEnumValueOf(String name) {
       return _$fetchLogEntryTriggerEnum_STREAM;
     case 'PUSH':
       return _$fetchLogEntryTriggerEnum_PUSH;
+    case 'unknownDefaultOpenApi':
+      return _$fetchLogEntryTriggerEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$fetchLogEntryTriggerEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -36,6 +41,7 @@ final BuiltSet<FetchLogEntryTriggerEnum> _$fetchLogEntryTriggerEnumValues =
       _$fetchLogEntryTriggerEnum_MANUAL,
       _$fetchLogEntryTriggerEnum_STREAM,
       _$fetchLogEntryTriggerEnum_PUSH,
+      _$fetchLogEntryTriggerEnum_unknownDefaultOpenApi,
     ]);
 
 const FetchLogEntryStatusEnum _$fetchLogEntryStatusEnum_OK =
@@ -48,6 +54,8 @@ const FetchLogEntryStatusEnum _$fetchLogEntryStatusEnum_REFUSED =
     const FetchLogEntryStatusEnum._('REFUSED');
 const FetchLogEntryStatusEnum _$fetchLogEntryStatusEnum_DISCARDED =
     const FetchLogEntryStatusEnum._('DISCARDED');
+const FetchLogEntryStatusEnum _$fetchLogEntryStatusEnum_unknownDefaultOpenApi =
+    const FetchLogEntryStatusEnum._('unknownDefaultOpenApi');
 
 FetchLogEntryStatusEnum _$fetchLogEntryStatusEnumValueOf(String name) {
   switch (name) {
@@ -61,8 +69,10 @@ FetchLogEntryStatusEnum _$fetchLogEntryStatusEnumValueOf(String name) {
       return _$fetchLogEntryStatusEnum_REFUSED;
     case 'DISCARDED':
       return _$fetchLogEntryStatusEnum_DISCARDED;
+    case 'unknownDefaultOpenApi':
+      return _$fetchLogEntryStatusEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$fetchLogEntryStatusEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -73,6 +83,7 @@ final BuiltSet<FetchLogEntryStatusEnum> _$fetchLogEntryStatusEnumValues =
       _$fetchLogEntryStatusEnum_FAILED,
       _$fetchLogEntryStatusEnum_REFUSED,
       _$fetchLogEntryStatusEnum_DISCARDED,
+      _$fetchLogEntryStatusEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<FetchLogEntryTriggerEnum> _$fetchLogEntryTriggerEnumSerializer =
@@ -87,12 +98,14 @@ class _$FetchLogEntryTriggerEnumSerializer
     'MANUAL': 'MANUAL',
     'STREAM': 'STREAM',
     'PUSH': 'PUSH',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'SCHEDULED': 'SCHEDULED',
     'MANUAL': 'MANUAL',
     'STREAM': 'STREAM',
     'PUSH': 'PUSH',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -125,6 +138,7 @@ class _$FetchLogEntryStatusEnumSerializer
     'FAILED': 'FAILED',
     'REFUSED': 'REFUSED',
     'DISCARDED': 'DISCARDED',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'OK': 'OK',
@@ -132,6 +146,7 @@ class _$FetchLogEntryStatusEnumSerializer
     'FAILED': 'FAILED',
     'REFUSED': 'REFUSED',
     'DISCARDED': 'DISCARDED',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

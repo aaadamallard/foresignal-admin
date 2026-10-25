@@ -14,6 +14,8 @@ const ForecastHistoryTypeEnum _$forecastHistoryTypeEnum_ordered =
     const ForecastHistoryTypeEnum._('ordered');
 const ForecastHistoryTypeEnum _$forecastHistoryTypeEnum_numeric =
     const ForecastHistoryTypeEnum._('numeric');
+const ForecastHistoryTypeEnum _$forecastHistoryTypeEnum_unknownDefaultOpenApi =
+    const ForecastHistoryTypeEnum._('unknownDefaultOpenApi');
 
 ForecastHistoryTypeEnum _$forecastHistoryTypeEnumValueOf(String name) {
   switch (name) {
@@ -25,8 +27,10 @@ ForecastHistoryTypeEnum _$forecastHistoryTypeEnumValueOf(String name) {
       return _$forecastHistoryTypeEnum_ordered;
     case 'numeric':
       return _$forecastHistoryTypeEnum_numeric;
+    case 'unknownDefaultOpenApi':
+      return _$forecastHistoryTypeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$forecastHistoryTypeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -36,23 +40,29 @@ final BuiltSet<ForecastHistoryTypeEnum> _$forecastHistoryTypeEnumValues =
       _$forecastHistoryTypeEnum_multiple,
       _$forecastHistoryTypeEnum_ordered,
       _$forecastHistoryTypeEnum_numeric,
+      _$forecastHistoryTypeEnum_unknownDefaultOpenApi,
     ]);
 
 const ForecastHistoryStepEnum _$forecastHistoryStepEnum_P1D =
     const ForecastHistoryStepEnum._('P1D');
+const ForecastHistoryStepEnum _$forecastHistoryStepEnum_unknownDefaultOpenApi =
+    const ForecastHistoryStepEnum._('unknownDefaultOpenApi');
 
 ForecastHistoryStepEnum _$forecastHistoryStepEnumValueOf(String name) {
   switch (name) {
     case 'P1D':
       return _$forecastHistoryStepEnum_P1D;
+    case 'unknownDefaultOpenApi':
+      return _$forecastHistoryStepEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$forecastHistoryStepEnum_unknownDefaultOpenApi;
   }
 }
 
 final BuiltSet<ForecastHistoryStepEnum> _$forecastHistoryStepEnumValues =
     BuiltSet<ForecastHistoryStepEnum>(const <ForecastHistoryStepEnum>[
       _$forecastHistoryStepEnum_P1D,
+      _$forecastHistoryStepEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<ForecastHistoryTypeEnum> _$forecastHistoryTypeEnumSerializer =
@@ -67,12 +77,14 @@ class _$ForecastHistoryTypeEnumSerializer
     'multiple': 'multiple',
     'ordered': 'ordered',
     'numeric': 'numeric',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'binary': 'binary',
     'multiple': 'multiple',
     'ordered': 'ordered',
     'numeric': 'numeric',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -101,9 +113,11 @@ class _$ForecastHistoryStepEnumSerializer
     implements PrimitiveSerializer<ForecastHistoryStepEnum> {
   static const Map<String, Object> _toWire = const <String, Object>{
     'P1D': 'P1D',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'P1D': 'P1D',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

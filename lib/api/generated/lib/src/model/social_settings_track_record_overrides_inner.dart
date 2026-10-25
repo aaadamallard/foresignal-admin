@@ -230,6 +230,10 @@ class SocialSettingsTrackRecordOverridesInnerReliabilityEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'F')
   static const SocialSettingsTrackRecordOverridesInnerReliabilityEnum F =
       _$socialSettingsTrackRecordOverridesInnerReliabilityEnum_F;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const SocialSettingsTrackRecordOverridesInnerReliabilityEnum
+  unknownDefaultOpenApi =
+      _$socialSettingsTrackRecordOverridesInnerReliabilityEnum_unknownDefaultOpenApi;
 
   static Serializer<SocialSettingsTrackRecordOverridesInnerReliabilityEnum>
   get serializer =>

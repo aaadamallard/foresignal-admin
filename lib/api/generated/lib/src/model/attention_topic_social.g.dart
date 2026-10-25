@@ -10,6 +10,9 @@ const AttentionTopicSocialModeEnum _$attentionTopicSocialModeEnum_standing =
     const AttentionTopicSocialModeEnum._('standing');
 const AttentionTopicSocialModeEnum _$attentionTopicSocialModeEnum_cueOnly =
     const AttentionTopicSocialModeEnum._('cueOnly');
+const AttentionTopicSocialModeEnum
+_$attentionTopicSocialModeEnum_unknownDefaultOpenApi =
+    const AttentionTopicSocialModeEnum._('unknownDefaultOpenApi');
 
 AttentionTopicSocialModeEnum _$attentionTopicSocialModeEnumValueOf(
   String name,
@@ -19,18 +22,20 @@ AttentionTopicSocialModeEnum _$attentionTopicSocialModeEnumValueOf(
       return _$attentionTopicSocialModeEnum_standing;
     case 'cueOnly':
       return _$attentionTopicSocialModeEnum_cueOnly;
+    case 'unknownDefaultOpenApi':
+      return _$attentionTopicSocialModeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$attentionTopicSocialModeEnum_unknownDefaultOpenApi;
   }
 }
 
 final BuiltSet<AttentionTopicSocialModeEnum>
-_$attentionTopicSocialModeEnumValues = BuiltSet<AttentionTopicSocialModeEnum>(
-  const <AttentionTopicSocialModeEnum>[
-    _$attentionTopicSocialModeEnum_standing,
-    _$attentionTopicSocialModeEnum_cueOnly,
-  ],
-);
+_$attentionTopicSocialModeEnumValues =
+    BuiltSet<AttentionTopicSocialModeEnum>(const <AttentionTopicSocialModeEnum>[
+      _$attentionTopicSocialModeEnum_standing,
+      _$attentionTopicSocialModeEnum_cueOnly,
+      _$attentionTopicSocialModeEnum_unknownDefaultOpenApi,
+    ]);
 
 Serializer<AttentionTopicSocialModeEnum>
 _$attentionTopicSocialModeEnumSerializer =
@@ -41,10 +46,12 @@ class _$AttentionTopicSocialModeEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'standing': 'standing',
     'cueOnly': 'cue-only',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'standing': 'standing',
     'cue-only': 'cueOnly',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

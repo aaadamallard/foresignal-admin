@@ -14,6 +14,9 @@ const AnnotationPatchVerdictEnum _$annotationPatchVerdictEnum_needsReview =
     const AnnotationPatchVerdictEnum._('needsReview');
 const AnnotationPatchVerdictEnum _$annotationPatchVerdictEnum_duplicateOf =
     const AnnotationPatchVerdictEnum._('duplicateOf');
+const AnnotationPatchVerdictEnum
+_$annotationPatchVerdictEnum_unknownDefaultOpenApi =
+    const AnnotationPatchVerdictEnum._('unknownDefaultOpenApi');
 
 AnnotationPatchVerdictEnum _$annotationPatchVerdictEnumValueOf(String name) {
   switch (name) {
@@ -25,8 +28,10 @@ AnnotationPatchVerdictEnum _$annotationPatchVerdictEnumValueOf(String name) {
       return _$annotationPatchVerdictEnum_needsReview;
     case 'duplicateOf':
       return _$annotationPatchVerdictEnum_duplicateOf;
+    case 'unknownDefaultOpenApi':
+      return _$annotationPatchVerdictEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$annotationPatchVerdictEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -36,6 +41,7 @@ final BuiltSet<AnnotationPatchVerdictEnum> _$annotationPatchVerdictEnumValues =
       _$annotationPatchVerdictEnum_rejected,
       _$annotationPatchVerdictEnum_needsReview,
       _$annotationPatchVerdictEnum_duplicateOf,
+      _$annotationPatchVerdictEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<AnnotationPatchVerdictEnum> _$annotationPatchVerdictEnumSerializer =
@@ -48,12 +54,14 @@ class _$AnnotationPatchVerdictEnumSerializer
     'rejected': 'rejected',
     'needsReview': 'needs-review',
     'duplicateOf': 'duplicate-of',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'confirmed': 'confirmed',
     'rejected': 'rejected',
     'needs-review': 'needsReview',
     'duplicate-of': 'duplicateOf',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

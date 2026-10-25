@@ -210,6 +210,10 @@ class StructureDiffRenameCandidatesInnerReasonEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'value-distribution')
   static const StructureDiffRenameCandidatesInnerReasonEnum valueDistribution =
       _$structureDiffRenameCandidatesInnerReasonEnum_valueDistribution;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const StructureDiffRenameCandidatesInnerReasonEnum
+  unknownDefaultOpenApi =
+      _$structureDiffRenameCandidatesInnerReasonEnum_unknownDefaultOpenApi;
 
   static Serializer<StructureDiffRenameCandidatesInnerReasonEnum>
   get serializer => _$structureDiffRenameCandidatesInnerReasonEnumSerializer;

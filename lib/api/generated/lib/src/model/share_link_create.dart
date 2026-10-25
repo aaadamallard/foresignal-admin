@@ -245,6 +245,9 @@ class ShareLinkCreateTargetTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'export')
   static const ShareLinkCreateTargetTypeEnum export_ =
       _$shareLinkCreateTargetTypeEnum_export_;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ShareLinkCreateTargetTypeEnum unknownDefaultOpenApi =
+      _$shareLinkCreateTargetTypeEnum_unknownDefaultOpenApi;
 
   static Serializer<ShareLinkCreateTargetTypeEnum> get serializer =>
       _$shareLinkCreateTargetTypeEnumSerializer;

@@ -18,6 +18,9 @@ _$cableProximityRiskPayloadStatusEnum_noCoverage =
 const CableProximityRiskPayloadStatusEnum
 _$cableProximityRiskPayloadStatusEnum_degradedInput =
     const CableProximityRiskPayloadStatusEnum._('degradedInput');
+const CableProximityRiskPayloadStatusEnum
+_$cableProximityRiskPayloadStatusEnum_unknownDefaultOpenApi =
+    const CableProximityRiskPayloadStatusEnum._('unknownDefaultOpenApi');
 
 CableProximityRiskPayloadStatusEnum
 _$cableProximityRiskPayloadStatusEnumValueOf(String name) {
@@ -30,8 +33,10 @@ _$cableProximityRiskPayloadStatusEnumValueOf(String name) {
       return _$cableProximityRiskPayloadStatusEnum_noCoverage;
     case 'degradedInput':
       return _$cableProximityRiskPayloadStatusEnum_degradedInput;
+    case 'unknownDefaultOpenApi':
+      return _$cableProximityRiskPayloadStatusEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$cableProximityRiskPayloadStatusEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -43,6 +48,7 @@ _$cableProximityRiskPayloadStatusEnumValues =
         _$cableProximityRiskPayloadStatusEnum_insufficientData,
         _$cableProximityRiskPayloadStatusEnum_noCoverage,
         _$cableProximityRiskPayloadStatusEnum_degradedInput,
+        _$cableProximityRiskPayloadStatusEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -57,12 +63,14 @@ class _$CableProximityRiskPayloadStatusEnumSerializer
     'insufficientData': 'insufficient-data',
     'noCoverage': 'no-coverage',
     'degradedInput': 'degraded-input',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'ok': 'ok',
     'insufficient-data': 'insufficientData',
     'no-coverage': 'noCoverage',
     'degraded-input': 'degradedInput',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

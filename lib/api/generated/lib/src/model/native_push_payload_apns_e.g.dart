@@ -8,20 +8,27 @@ part of 'native_push_payload_apns_e.dart';
 
 const NativePushPayloadApnsEVEnum _$nativePushPayloadApnsEVEnum_number1 =
     const NativePushPayloadApnsEVEnum._('number1');
+const NativePushPayloadApnsEVEnum
+_$nativePushPayloadApnsEVEnum_unknownDefaultOpenApi =
+    const NativePushPayloadApnsEVEnum._('unknownDefaultOpenApi');
 
 NativePushPayloadApnsEVEnum _$nativePushPayloadApnsEVEnumValueOf(String name) {
   switch (name) {
     case 'number1':
       return _$nativePushPayloadApnsEVEnum_number1;
+    case 'unknownDefaultOpenApi':
+      return _$nativePushPayloadApnsEVEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$nativePushPayloadApnsEVEnum_unknownDefaultOpenApi;
   }
 }
 
 final BuiltSet<NativePushPayloadApnsEVEnum>
-_$nativePushPayloadApnsEVEnumValues = BuiltSet<NativePushPayloadApnsEVEnum>(
-  const <NativePushPayloadApnsEVEnum>[_$nativePushPayloadApnsEVEnum_number1],
-);
+_$nativePushPayloadApnsEVEnumValues =
+    BuiltSet<NativePushPayloadApnsEVEnum>(const <NativePushPayloadApnsEVEnum>[
+      _$nativePushPayloadApnsEVEnum_number1,
+      _$nativePushPayloadApnsEVEnum_unknownDefaultOpenApi,
+    ]);
 
 const NativePushPayloadApnsESEnum _$nativePushPayloadApnsESEnum_info =
     const NativePushPayloadApnsESEnum._('info');
@@ -29,6 +36,9 @@ const NativePushPayloadApnsESEnum _$nativePushPayloadApnsESEnum_warning =
     const NativePushPayloadApnsESEnum._('warning');
 const NativePushPayloadApnsESEnum _$nativePushPayloadApnsESEnum_critical =
     const NativePushPayloadApnsESEnum._('critical');
+const NativePushPayloadApnsESEnum
+_$nativePushPayloadApnsESEnum_unknownDefaultOpenApi =
+    const NativePushPayloadApnsESEnum._('unknownDefaultOpenApi');
 
 NativePushPayloadApnsESEnum _$nativePushPayloadApnsESEnumValueOf(String name) {
   switch (name) {
@@ -38,8 +48,10 @@ NativePushPayloadApnsESEnum _$nativePushPayloadApnsESEnumValueOf(String name) {
       return _$nativePushPayloadApnsESEnum_warning;
     case 'critical':
       return _$nativePushPayloadApnsESEnum_critical;
+    case 'unknownDefaultOpenApi':
+      return _$nativePushPayloadApnsESEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$nativePushPayloadApnsESEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -49,6 +61,7 @@ _$nativePushPayloadApnsESEnumValues =
       _$nativePushPayloadApnsESEnum_info,
       _$nativePushPayloadApnsESEnum_warning,
       _$nativePushPayloadApnsESEnum_critical,
+      _$nativePushPayloadApnsESEnum_unknownDefaultOpenApi,
     ]);
 
 const NativePushPayloadApnsEEvEnum _$nativePushPayloadApnsEEvEnum_alert =
@@ -57,6 +70,9 @@ const NativePushPayloadApnsEEvEnum _$nativePushPayloadApnsEEvEnum_briefing =
     const NativePushPayloadApnsEEvEnum._('briefing');
 const NativePushPayloadApnsEEvEnum _$nativePushPayloadApnsEEvEnum_system =
     const NativePushPayloadApnsEEvEnum._('system');
+const NativePushPayloadApnsEEvEnum
+_$nativePushPayloadApnsEEvEnum_unknownDefaultOpenApi =
+    const NativePushPayloadApnsEEvEnum._('unknownDefaultOpenApi');
 
 NativePushPayloadApnsEEvEnum _$nativePushPayloadApnsEEvEnumValueOf(
   String name,
@@ -68,8 +84,10 @@ NativePushPayloadApnsEEvEnum _$nativePushPayloadApnsEEvEnumValueOf(
       return _$nativePushPayloadApnsEEvEnum_briefing;
     case 'system':
       return _$nativePushPayloadApnsEEvEnum_system;
+    case 'unknownDefaultOpenApi':
+      return _$nativePushPayloadApnsEEvEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$nativePushPayloadApnsEEvEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -79,6 +97,7 @@ _$nativePushPayloadApnsEEvEnumValues =
       _$nativePushPayloadApnsEEvEnum_alert,
       _$nativePushPayloadApnsEEvEnum_briefing,
       _$nativePushPayloadApnsEEvEnum_system,
+      _$nativePushPayloadApnsEEvEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<NativePushPayloadApnsEVEnum>
@@ -95,9 +114,11 @@ class _$NativePushPayloadApnsEVEnumSerializer
     implements PrimitiveSerializer<NativePushPayloadApnsEVEnum> {
   static const Map<String, Object> _toWire = const <String, Object>{
     'number1': 1,
+    'unknownDefaultOpenApi': 11184809,
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     1: 'number1',
+    11184809: 'unknownDefaultOpenApi',
   };
 
   @override
@@ -128,11 +149,13 @@ class _$NativePushPayloadApnsESEnumSerializer
     'info': 'info',
     'warning': 'warning',
     'critical': 'critical',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'info': 'info',
     'warning': 'warning',
     'critical': 'critical',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -163,11 +186,13 @@ class _$NativePushPayloadApnsEEvEnumSerializer
     'alert': 'alert',
     'briefing': 'briefing',
     'system': 'system',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'alert': 'alert',
     'briefing': 'briefing',
     'system': 'system',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

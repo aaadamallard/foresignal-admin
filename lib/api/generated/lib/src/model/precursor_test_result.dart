@@ -482,6 +482,9 @@ class PrecursorTestResultPermutationsEnum extends EnumClass {
   @BuiltValueEnumConst(wireNumber: 200)
   static const PrecursorTestResultPermutationsEnum number200 =
       _$precursorTestResultPermutationsEnum_number200;
+  @BuiltValueEnumConst(wireNumber: 11184809, fallback: true)
+  static const PrecursorTestResultPermutationsEnum unknownDefaultOpenApi =
+      _$precursorTestResultPermutationsEnum_unknownDefaultOpenApi;
 
   static Serializer<PrecursorTestResultPermutationsEnum> get serializer =>
       _$precursorTestResultPermutationsEnumSerializer;
@@ -507,6 +510,9 @@ class PrecursorTestResultVerdictEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'notable')
   static const PrecursorTestResultVerdictEnum notable =
       _$precursorTestResultVerdictEnum_notable;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const PrecursorTestResultVerdictEnum unknownDefaultOpenApi =
+      _$precursorTestResultVerdictEnum_unknownDefaultOpenApi;
 
   static Serializer<PrecursorTestResultVerdictEnum> get serializer =>
       _$precursorTestResultVerdictEnumSerializer;

@@ -435,6 +435,9 @@ class MediaProviderIdEnum extends EnumClass {
   static const MediaProviderIdEnum mbfc = _$mediaProviderIdEnum_mbfc;
   @BuiltValueEnumConst(wireName: r'operator')
   static const MediaProviderIdEnum operator_ = _$mediaProviderIdEnum_operator_;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const MediaProviderIdEnum unknownDefaultOpenApi =
+      _$mediaProviderIdEnum_unknownDefaultOpenApi;
 
   static Serializer<MediaProviderIdEnum> get serializer =>
       _$mediaProviderIdEnumSerializer;
@@ -453,6 +456,9 @@ class MediaProviderEgressEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'LOCAL_ONLY')
   static const MediaProviderEgressEnum LOCAL_ONLY =
       _$mediaProviderEgressEnum_LOCAL_ONLY;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const MediaProviderEgressEnum unknownDefaultOpenApi =
+      _$mediaProviderEgressEnum_unknownDefaultOpenApi;
 
   static Serializer<MediaProviderEgressEnum> get serializer =>
       _$mediaProviderEgressEnumSerializer;
@@ -475,6 +481,9 @@ class MediaProviderLastImportStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'failed')
   static const MediaProviderLastImportStatusEnum failed =
       _$mediaProviderLastImportStatusEnum_failed;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const MediaProviderLastImportStatusEnum unknownDefaultOpenApi =
+      _$mediaProviderLastImportStatusEnum_unknownDefaultOpenApi;
 
   static Serializer<MediaProviderLastImportStatusEnum> get serializer =>
       _$mediaProviderLastImportStatusEnumSerializer;

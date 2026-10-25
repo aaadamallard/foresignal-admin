@@ -336,6 +336,9 @@ class RendezvousPayloadStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'degraded-input')
   static const RendezvousPayloadStatusEnum degradedInput =
       _$rendezvousPayloadStatusEnum_degradedInput;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const RendezvousPayloadStatusEnum unknownDefaultOpenApi =
+      _$rendezvousPayloadStatusEnum_unknownDefaultOpenApi;
 
   static Serializer<RendezvousPayloadStatusEnum> get serializer =>
       _$rendezvousPayloadStatusEnumSerializer;

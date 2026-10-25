@@ -12,6 +12,8 @@ const TripHazardSectionEnum _$tripHazardSectionEnum_nearRoute =
     const TripHazardSectionEnum._('nearRoute');
 const TripHazardSectionEnum _$tripHazardSectionEnum_timing =
     const TripHazardSectionEnum._('timing');
+const TripHazardSectionEnum _$tripHazardSectionEnum_unknownDefaultOpenApi =
+    const TripHazardSectionEnum._('unknownDefaultOpenApi');
 
 TripHazardSectionEnum _$tripHazardSectionEnumValueOf(String name) {
   switch (name) {
@@ -21,8 +23,10 @@ TripHazardSectionEnum _$tripHazardSectionEnumValueOf(String name) {
       return _$tripHazardSectionEnum_nearRoute;
     case 'timing':
       return _$tripHazardSectionEnum_timing;
+    case 'unknownDefaultOpenApi':
+      return _$tripHazardSectionEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$tripHazardSectionEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -31,6 +35,7 @@ final BuiltSet<TripHazardSectionEnum> _$tripHazardSectionEnumValues =
       _$tripHazardSectionEnum_onRoute,
       _$tripHazardSectionEnum_nearRoute,
       _$tripHazardSectionEnum_timing,
+      _$tripHazardSectionEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<TripHazardSectionEnum> _$tripHazardSectionEnumSerializer =
@@ -42,11 +47,13 @@ class _$TripHazardSectionEnumSerializer
     'onRoute': 'on-route',
     'nearRoute': 'near-route',
     'timing': 'timing',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'on-route': 'onRoute',
     'near-route': 'nearRoute',
     'timing': 'timing',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

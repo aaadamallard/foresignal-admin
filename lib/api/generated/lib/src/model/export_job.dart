@@ -566,6 +566,9 @@ class ExportJobKindEnum extends EnumClass {
   static const ExportJobKindEnum RASTER = _$exportJobKindEnum_RASTER;
   @BuiltValueEnumConst(wireName: r'PLACE_PACK')
   static const ExportJobKindEnum PLACE_PACK = _$exportJobKindEnum_PLACE_PACK;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ExportJobKindEnum unknownDefaultOpenApi =
+      _$exportJobKindEnum_unknownDefaultOpenApi;
 
   static Serializer<ExportJobKindEnum> get serializer =>
       _$exportJobKindEnumSerializer;
@@ -600,6 +603,9 @@ class ExportJobFormatEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'json-bundle')
   static const ExportJobFormatEnum jsonBundle =
       _$exportJobFormatEnum_jsonBundle;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ExportJobFormatEnum unknownDefaultOpenApi =
+      _$exportJobFormatEnum_unknownDefaultOpenApi;
 
   static Serializer<ExportJobFormatEnum> get serializer =>
       _$exportJobFormatEnumSerializer;
@@ -625,6 +631,9 @@ class ExportJobStatusEnum extends EnumClass {
   static const ExportJobStatusEnum CANCELLED = _$exportJobStatusEnum_CANCELLED;
   @BuiltValueEnumConst(wireName: r'EXPIRED')
   static const ExportJobStatusEnum EXPIRED = _$exportJobStatusEnum_EXPIRED;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ExportJobStatusEnum unknownDefaultOpenApi =
+      _$exportJobStatusEnum_unknownDefaultOpenApi;
 
   static Serializer<ExportJobStatusEnum> get serializer =>
       _$exportJobStatusEnumSerializer;

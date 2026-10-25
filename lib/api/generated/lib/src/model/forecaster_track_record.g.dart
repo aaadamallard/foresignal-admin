@@ -11,6 +11,9 @@ const ForecasterTrackRecordLabelEnum _$forecasterTrackRecordLabelEnum_ok =
 const ForecasterTrackRecordLabelEnum
 _$forecasterTrackRecordLabelEnum_insufficient =
     const ForecasterTrackRecordLabelEnum._('insufficient');
+const ForecasterTrackRecordLabelEnum
+_$forecasterTrackRecordLabelEnum_unknownDefaultOpenApi =
+    const ForecasterTrackRecordLabelEnum._('unknownDefaultOpenApi');
 
 ForecasterTrackRecordLabelEnum _$forecasterTrackRecordLabelEnumValueOf(
   String name,
@@ -20,8 +23,10 @@ ForecasterTrackRecordLabelEnum _$forecasterTrackRecordLabelEnumValueOf(
       return _$forecasterTrackRecordLabelEnum_ok;
     case 'insufficient':
       return _$forecasterTrackRecordLabelEnum_insufficient;
+    case 'unknownDefaultOpenApi':
+      return _$forecasterTrackRecordLabelEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$forecasterTrackRecordLabelEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -31,6 +36,7 @@ _$forecasterTrackRecordLabelEnumValues =
       const <ForecasterTrackRecordLabelEnum>[
         _$forecasterTrackRecordLabelEnum_ok,
         _$forecasterTrackRecordLabelEnum_insufficient,
+        _$forecasterTrackRecordLabelEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -43,10 +49,12 @@ class _$ForecasterTrackRecordLabelEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'ok': 'ok',
     'insufficient': 'insufficient',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'ok': 'ok',
     'insufficient': 'insufficient',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

@@ -230,6 +230,9 @@ class IngestPolicySampledModeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'SAMPLED')
   static const IngestPolicySampledModeEnum SAMPLED =
       _$ingestPolicySampledModeEnum_SAMPLED;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const IngestPolicySampledModeEnum unknownDefaultOpenApi =
+      _$ingestPolicySampledModeEnum_unknownDefaultOpenApi;
 
   static Serializer<IngestPolicySampledModeEnum> get serializer =>
       _$ingestPolicySampledModeEnumSerializer;

@@ -225,6 +225,9 @@ class ArchivePartitionTierEnum extends EnumClass {
   static const ArchivePartitionTierEnum std = _$archivePartitionTierEnum_std;
   @BuiltValueEnumConst(wireName: r'trk')
   static const ArchivePartitionTierEnum trk = _$archivePartitionTierEnum_trk;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ArchivePartitionTierEnum unknownDefaultOpenApi =
+      _$archivePartitionTierEnum_unknownDefaultOpenApi;
 
   static Serializer<ArchivePartitionTierEnum> get serializer =>
       _$archivePartitionTierEnumSerializer;

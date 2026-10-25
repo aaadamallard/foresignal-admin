@@ -40,6 +40,9 @@ const AssessmentSectionsInnerKeyEnum _$assessmentSectionsInnerKeyEnum_risks =
     const AssessmentSectionsInnerKeyEnum._('risks');
 const AssessmentSectionsInnerKeyEnum _$assessmentSectionsInnerKeyEnum_social =
     const AssessmentSectionsInnerKeyEnum._('social');
+const AssessmentSectionsInnerKeyEnum
+_$assessmentSectionsInnerKeyEnum_unknownDefaultOpenApi =
+    const AssessmentSectionsInnerKeyEnum._('unknownDefaultOpenApi');
 
 AssessmentSectionsInnerKeyEnum _$assessmentSectionsInnerKeyEnumValueOf(
   String name,
@@ -71,8 +74,10 @@ AssessmentSectionsInnerKeyEnum _$assessmentSectionsInnerKeyEnumValueOf(
       return _$assessmentSectionsInnerKeyEnum_risks;
     case 'social':
       return _$assessmentSectionsInnerKeyEnum_social;
+    case 'unknownDefaultOpenApi':
+      return _$assessmentSectionsInnerKeyEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$assessmentSectionsInnerKeyEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -93,6 +98,7 @@ _$assessmentSectionsInnerKeyEnumValues =
         _$assessmentSectionsInnerKeyEnum_outlook,
         _$assessmentSectionsInnerKeyEnum_risks,
         _$assessmentSectionsInnerKeyEnum_social,
+        _$assessmentSectionsInnerKeyEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -105,6 +111,9 @@ _$assessmentSectionsInnerTextOriginEnum_llm =
 const AssessmentSectionsInnerTextOriginEnum
 _$assessmentSectionsInnerTextOriginEnum_mixed =
     const AssessmentSectionsInnerTextOriginEnum._('mixed');
+const AssessmentSectionsInnerTextOriginEnum
+_$assessmentSectionsInnerTextOriginEnum_unknownDefaultOpenApi =
+    const AssessmentSectionsInnerTextOriginEnum._('unknownDefaultOpenApi');
 
 AssessmentSectionsInnerTextOriginEnum
 _$assessmentSectionsInnerTextOriginEnumValueOf(String name) {
@@ -115,8 +124,10 @@ _$assessmentSectionsInnerTextOriginEnumValueOf(String name) {
       return _$assessmentSectionsInnerTextOriginEnum_llm;
     case 'mixed':
       return _$assessmentSectionsInnerTextOriginEnum_mixed;
+    case 'unknownDefaultOpenApi':
+      return _$assessmentSectionsInnerTextOriginEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$assessmentSectionsInnerTextOriginEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -127,6 +138,7 @@ _$assessmentSectionsInnerTextOriginEnumValues =
         _$assessmentSectionsInnerTextOriginEnum_deterministic,
         _$assessmentSectionsInnerTextOriginEnum_llm,
         _$assessmentSectionsInnerTextOriginEnum_mixed,
+        _$assessmentSectionsInnerTextOriginEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -153,6 +165,7 @@ class _$AssessmentSectionsInnerKeyEnumSerializer
     'outlook': 'outlook',
     'risks': 'risks',
     'social': 'social',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'bluf': 'bluf',
@@ -168,6 +181,7 @@ class _$AssessmentSectionsInnerKeyEnumSerializer
     'outlook': 'outlook',
     'risks': 'risks',
     'social': 'social',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -198,11 +212,13 @@ class _$AssessmentSectionsInnerTextOriginEnumSerializer
     'deterministic': 'deterministic',
     'llm': 'llm',
     'mixed': 'mixed',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'deterministic': 'deterministic',
     'llm': 'llm',
     'mixed': 'mixed',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

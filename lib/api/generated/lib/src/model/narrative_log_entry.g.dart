@@ -6,113 +6,11 @@ part of 'narrative_log_entry.dart';
 // BuiltValueGenerator
 // **************************************************************************
 
-const NarrativeLogEntryActionEnum _$narrativeLogEntryActionEnum_created =
-    const NarrativeLogEntryActionEnum._('created');
-const NarrativeLogEntryActionEnum _$narrativeLogEntryActionEnum_merged =
-    const NarrativeLogEntryActionEnum._('merged');
-const NarrativeLogEntryActionEnum _$narrativeLogEntryActionEnum_mergedInto =
-    const NarrativeLogEntryActionEnum._('mergedInto');
-const NarrativeLogEntryActionEnum _$narrativeLogEntryActionEnum_split =
-    const NarrativeLogEntryActionEnum._('split');
-const NarrativeLogEntryActionEnum _$narrativeLogEntryActionEnum_splitFrom =
-    const NarrativeLogEntryActionEnum._('splitFrom');
-const NarrativeLogEntryActionEnum _$narrativeLogEntryActionEnum_stateChanged =
-    const NarrativeLogEntryActionEnum._('stateChanged');
-const NarrativeLogEntryActionEnum _$narrativeLogEntryActionEnum_statusChanged =
-    const NarrativeLogEntryActionEnum._('statusChanged');
-const NarrativeLogEntryActionEnum _$narrativeLogEntryActionEnum_titleChanged =
-    const NarrativeLogEntryActionEnum._('titleChanged');
-
-NarrativeLogEntryActionEnum _$narrativeLogEntryActionEnumValueOf(String name) {
-  switch (name) {
-    case 'created':
-      return _$narrativeLogEntryActionEnum_created;
-    case 'merged':
-      return _$narrativeLogEntryActionEnum_merged;
-    case 'mergedInto':
-      return _$narrativeLogEntryActionEnum_mergedInto;
-    case 'split':
-      return _$narrativeLogEntryActionEnum_split;
-    case 'splitFrom':
-      return _$narrativeLogEntryActionEnum_splitFrom;
-    case 'stateChanged':
-      return _$narrativeLogEntryActionEnum_stateChanged;
-    case 'statusChanged':
-      return _$narrativeLogEntryActionEnum_statusChanged;
-    case 'titleChanged':
-      return _$narrativeLogEntryActionEnum_titleChanged;
-    default:
-      throw ArgumentError(name);
-  }
-}
-
-final BuiltSet<NarrativeLogEntryActionEnum>
-_$narrativeLogEntryActionEnumValues =
-    BuiltSet<NarrativeLogEntryActionEnum>(const <NarrativeLogEntryActionEnum>[
-      _$narrativeLogEntryActionEnum_created,
-      _$narrativeLogEntryActionEnum_merged,
-      _$narrativeLogEntryActionEnum_mergedInto,
-      _$narrativeLogEntryActionEnum_split,
-      _$narrativeLogEntryActionEnum_splitFrom,
-      _$narrativeLogEntryActionEnum_stateChanged,
-      _$narrativeLogEntryActionEnum_statusChanged,
-      _$narrativeLogEntryActionEnum_titleChanged,
-    ]);
-
-Serializer<NarrativeLogEntryActionEnum>
-_$narrativeLogEntryActionEnumSerializer =
-    _$NarrativeLogEntryActionEnumSerializer();
-
-class _$NarrativeLogEntryActionEnumSerializer
-    implements PrimitiveSerializer<NarrativeLogEntryActionEnum> {
-  static const Map<String, Object> _toWire = const <String, Object>{
-    'created': 'created',
-    'merged': 'merged',
-    'mergedInto': 'merged-into',
-    'split': 'split',
-    'splitFrom': 'split-from',
-    'stateChanged': 'state-changed',
-    'statusChanged': 'status-changed',
-    'titleChanged': 'title-changed',
-  };
-  static const Map<Object, String> _fromWire = const <Object, String>{
-    'created': 'created',
-    'merged': 'merged',
-    'merged-into': 'mergedInto',
-    'split': 'split',
-    'split-from': 'splitFrom',
-    'state-changed': 'stateChanged',
-    'status-changed': 'statusChanged',
-    'title-changed': 'titleChanged',
-  };
-
-  @override
-  final Iterable<Type> types = const <Type>[NarrativeLogEntryActionEnum];
-  @override
-  final String wireName = 'NarrativeLogEntryActionEnum';
-
-  @override
-  Object serialize(
-    Serializers serializers,
-    NarrativeLogEntryActionEnum object, {
-    FullType specifiedType = FullType.unspecified,
-  }) => _toWire[object.name] ?? object.name;
-
-  @override
-  NarrativeLogEntryActionEnum deserialize(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) => NarrativeLogEntryActionEnum.valueOf(
-    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
-  );
-}
-
 class _$NarrativeLogEntry extends NarrativeLogEntry {
   @override
   final DateTime at;
   @override
-  final NarrativeLogEntryActionEnum action;
+  final String action;
   @override
   final String by;
   @override
@@ -194,9 +92,9 @@ class NarrativeLogEntryBuilder
   DateTime? get at => _$this._at;
   set at(DateTime? at) => _$this._at = at;
 
-  NarrativeLogEntryActionEnum? _action;
-  NarrativeLogEntryActionEnum? get action => _$this._action;
-  set action(NarrativeLogEntryActionEnum? action) => _$this._action = action;
+  String? _action;
+  String? get action => _$this._action;
+  set action(String? action) => _$this._action = action;
 
   String? _by;
   String? get by => _$this._by;

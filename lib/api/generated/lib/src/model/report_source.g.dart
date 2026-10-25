@@ -18,6 +18,8 @@ const ReportSourceTypeEnum _$reportSourceTypeEnum_situation =
     const ReportSourceTypeEnum._('situation');
 const ReportSourceTypeEnum _$reportSourceTypeEnum_workspace =
     const ReportSourceTypeEnum._('workspace');
+const ReportSourceTypeEnum _$reportSourceTypeEnum_unknownDefaultOpenApi =
+    const ReportSourceTypeEnum._('unknownDefaultOpenApi');
 
 ReportSourceTypeEnum _$reportSourceTypeEnumValueOf(String name) {
   switch (name) {
@@ -33,8 +35,10 @@ ReportSourceTypeEnum _$reportSourceTypeEnumValueOf(String name) {
       return _$reportSourceTypeEnum_situation;
     case 'workspace':
       return _$reportSourceTypeEnum_workspace;
+    case 'unknownDefaultOpenApi':
+      return _$reportSourceTypeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$reportSourceTypeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -46,6 +50,7 @@ final BuiltSet<ReportSourceTypeEnum> _$reportSourceTypeEnumValues =
       _$reportSourceTypeEnum_chronicle,
       _$reportSourceTypeEnum_situation,
       _$reportSourceTypeEnum_workspace,
+      _$reportSourceTypeEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<ReportSourceTypeEnum> _$reportSourceTypeEnumSerializer =
@@ -60,6 +65,7 @@ class _$ReportSourceTypeEnumSerializer
     'chronicle': 'chronicle',
     'situation': 'situation',
     'workspace': 'workspace',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'selection': 'selection',
@@ -68,6 +74,7 @@ class _$ReportSourceTypeEnumSerializer
     'chronicle': 'chronicle',
     'situation': 'situation',
     'workspace': 'workspace',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

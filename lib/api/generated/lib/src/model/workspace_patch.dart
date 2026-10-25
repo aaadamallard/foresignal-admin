@@ -219,6 +219,9 @@ class WorkspacePatchMembersEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'editor')
   static const WorkspacePatchMembersEnum editor =
       _$workspacePatchMembersEnum_editor;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const WorkspacePatchMembersEnum unknownDefaultOpenApi =
+      _$workspacePatchMembersEnum_unknownDefaultOpenApi;
 
   static Serializer<WorkspacePatchMembersEnum> get serializer =>
       _$workspacePatchMembersEnumSerializer;

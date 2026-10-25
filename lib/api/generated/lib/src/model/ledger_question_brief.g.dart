@@ -14,6 +14,9 @@ const LedgerQuestionBriefTypeEnum _$ledgerQuestionBriefTypeEnum_ordered =
     const LedgerQuestionBriefTypeEnum._('ordered');
 const LedgerQuestionBriefTypeEnum _$ledgerQuestionBriefTypeEnum_numeric =
     const LedgerQuestionBriefTypeEnum._('numeric');
+const LedgerQuestionBriefTypeEnum
+_$ledgerQuestionBriefTypeEnum_unknownDefaultOpenApi =
+    const LedgerQuestionBriefTypeEnum._('unknownDefaultOpenApi');
 
 LedgerQuestionBriefTypeEnum _$ledgerQuestionBriefTypeEnumValueOf(String name) {
   switch (name) {
@@ -25,8 +28,10 @@ LedgerQuestionBriefTypeEnum _$ledgerQuestionBriefTypeEnumValueOf(String name) {
       return _$ledgerQuestionBriefTypeEnum_ordered;
     case 'numeric':
       return _$ledgerQuestionBriefTypeEnum_numeric;
+    case 'unknownDefaultOpenApi':
+      return _$ledgerQuestionBriefTypeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$ledgerQuestionBriefTypeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -37,6 +42,7 @@ _$ledgerQuestionBriefTypeEnumValues =
       _$ledgerQuestionBriefTypeEnum_multiple,
       _$ledgerQuestionBriefTypeEnum_ordered,
       _$ledgerQuestionBriefTypeEnum_numeric,
+      _$ledgerQuestionBriefTypeEnum_unknownDefaultOpenApi,
     ]);
 
 const LedgerQuestionBriefStatusEnum _$ledgerQuestionBriefStatusEnum_open =
@@ -47,6 +53,9 @@ const LedgerQuestionBriefStatusEnum _$ledgerQuestionBriefStatusEnum_resolved =
     const LedgerQuestionBriefStatusEnum._('resolved');
 const LedgerQuestionBriefStatusEnum _$ledgerQuestionBriefStatusEnum_annulled =
     const LedgerQuestionBriefStatusEnum._('annulled');
+const LedgerQuestionBriefStatusEnum
+_$ledgerQuestionBriefStatusEnum_unknownDefaultOpenApi =
+    const LedgerQuestionBriefStatusEnum._('unknownDefaultOpenApi');
 
 LedgerQuestionBriefStatusEnum _$ledgerQuestionBriefStatusEnumValueOf(
   String name,
@@ -60,8 +69,10 @@ LedgerQuestionBriefStatusEnum _$ledgerQuestionBriefStatusEnumValueOf(
       return _$ledgerQuestionBriefStatusEnum_resolved;
     case 'annulled':
       return _$ledgerQuestionBriefStatusEnum_annulled;
+    case 'unknownDefaultOpenApi':
+      return _$ledgerQuestionBriefStatusEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$ledgerQuestionBriefStatusEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -72,6 +83,7 @@ _$ledgerQuestionBriefStatusEnumValues = BuiltSet<LedgerQuestionBriefStatusEnum>(
     _$ledgerQuestionBriefStatusEnum_closed,
     _$ledgerQuestionBriefStatusEnum_resolved,
     _$ledgerQuestionBriefStatusEnum_annulled,
+    _$ledgerQuestionBriefStatusEnum_unknownDefaultOpenApi,
   ],
 );
 
@@ -89,12 +101,14 @@ class _$LedgerQuestionBriefTypeEnumSerializer
     'multiple': 'multiple',
     'ordered': 'ordered',
     'numeric': 'numeric',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'binary': 'binary',
     'multiple': 'multiple',
     'ordered': 'ordered',
     'numeric': 'numeric',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -126,12 +140,14 @@ class _$LedgerQuestionBriefStatusEnumSerializer
     'closed': 'closed',
     'resolved': 'resolved',
     'annulled': 'annulled',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'open': 'open',
     'closed': 'closed',
     'resolved': 'resolved',
     'annulled': 'annulled',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

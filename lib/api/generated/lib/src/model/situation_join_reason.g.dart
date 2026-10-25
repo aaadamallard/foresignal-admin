@@ -16,6 +16,9 @@ const SituationJoinReasonMethodEnum _$situationJoinReasonMethodEnum_agent =
     const SituationJoinReasonMethodEnum._('agent');
 const SituationJoinReasonMethodEnum _$situationJoinReasonMethodEnum_analyst =
     const SituationJoinReasonMethodEnum._('analyst');
+const SituationJoinReasonMethodEnum
+_$situationJoinReasonMethodEnum_unknownDefaultOpenApi =
+    const SituationJoinReasonMethodEnum._('unknownDefaultOpenApi');
 
 SituationJoinReasonMethodEnum _$situationJoinReasonMethodEnumValueOf(
   String name,
@@ -31,8 +34,10 @@ SituationJoinReasonMethodEnum _$situationJoinReasonMethodEnumValueOf(
       return _$situationJoinReasonMethodEnum_agent;
     case 'analyst':
       return _$situationJoinReasonMethodEnum_analyst;
+    case 'unknownDefaultOpenApi':
+      return _$situationJoinReasonMethodEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$situationJoinReasonMethodEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -44,6 +49,7 @@ _$situationJoinReasonMethodEnumValues = BuiltSet<SituationJoinReasonMethodEnum>(
     _$situationJoinReasonMethodEnum_operator_,
     _$situationJoinReasonMethodEnum_agent,
     _$situationJoinReasonMethodEnum_analyst,
+    _$situationJoinReasonMethodEnum_unknownDefaultOpenApi,
   ],
 );
 
@@ -59,6 +65,7 @@ class _$SituationJoinReasonMethodEnumSerializer
     'operator_': 'operator',
     'agent': 'agent',
     'analyst': 'analyst',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'linker': 'linker',
@@ -66,6 +73,7 @@ class _$SituationJoinReasonMethodEnumSerializer
     'operator': 'operator_',
     'agent': 'agent',
     'analyst': 'analyst',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

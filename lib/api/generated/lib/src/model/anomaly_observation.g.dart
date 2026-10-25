@@ -10,6 +10,9 @@ const AnomalyObservationDirectionEnum _$anomalyObservationDirectionEnum_up =
     const AnomalyObservationDirectionEnum._('up');
 const AnomalyObservationDirectionEnum _$anomalyObservationDirectionEnum_down =
     const AnomalyObservationDirectionEnum._('down');
+const AnomalyObservationDirectionEnum
+_$anomalyObservationDirectionEnum_unknownDefaultOpenApi =
+    const AnomalyObservationDirectionEnum._('unknownDefaultOpenApi');
 
 AnomalyObservationDirectionEnum _$anomalyObservationDirectionEnumValueOf(
   String name,
@@ -19,8 +22,10 @@ AnomalyObservationDirectionEnum _$anomalyObservationDirectionEnumValueOf(
       return _$anomalyObservationDirectionEnum_up;
     case 'down':
       return _$anomalyObservationDirectionEnum_down;
+    case 'unknownDefaultOpenApi':
+      return _$anomalyObservationDirectionEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$anomalyObservationDirectionEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -30,6 +35,7 @@ _$anomalyObservationDirectionEnumValues =
       const <AnomalyObservationDirectionEnum>[
         _$anomalyObservationDirectionEnum_up,
         _$anomalyObservationDirectionEnum_down,
+        _$anomalyObservationDirectionEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -51,6 +57,9 @@ _$anomalyObservationClassificationEnum_learning =
 const AnomalyObservationClassificationEnum
 _$anomalyObservationClassificationEnum_normal =
     const AnomalyObservationClassificationEnum._('normal');
+const AnomalyObservationClassificationEnum
+_$anomalyObservationClassificationEnum_unknownDefaultOpenApi =
+    const AnomalyObservationClassificationEnum._('unknownDefaultOpenApi');
 
 AnomalyObservationClassificationEnum
 _$anomalyObservationClassificationEnumValueOf(String name) {
@@ -67,8 +76,10 @@ _$anomalyObservationClassificationEnumValueOf(String name) {
       return _$anomalyObservationClassificationEnum_learning;
     case 'normal':
       return _$anomalyObservationClassificationEnum_normal;
+    case 'unknownDefaultOpenApi':
+      return _$anomalyObservationClassificationEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$anomalyObservationClassificationEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -82,6 +93,7 @@ _$anomalyObservationClassificationEnumValues =
         _$anomalyObservationClassificationEnum_insufficientCoverage,
         _$anomalyObservationClassificationEnum_learning,
         _$anomalyObservationClassificationEnum_normal,
+        _$anomalyObservationClassificationEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -97,10 +109,12 @@ class _$AnomalyObservationDirectionEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'up': 'up',
     'down': 'down',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'up': 'up',
     'down': 'down',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -134,6 +148,7 @@ class _$AnomalyObservationClassificationEnumSerializer
     'insufficientCoverage': 'insufficient-coverage',
     'learning': 'learning',
     'normal': 'normal',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'activity-up': 'activityUp',
@@ -142,6 +157,7 @@ class _$AnomalyObservationClassificationEnumSerializer
     'insufficient-coverage': 'insufficientCoverage',
     'learning': 'learning',
     'normal': 'normal',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

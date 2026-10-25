@@ -10,6 +10,9 @@ const ForecastCalibrationLabelEnum _$forecastCalibrationLabelEnum_ok =
     const ForecastCalibrationLabelEnum._('ok');
 const ForecastCalibrationLabelEnum _$forecastCalibrationLabelEnum_insufficient =
     const ForecastCalibrationLabelEnum._('insufficient');
+const ForecastCalibrationLabelEnum
+_$forecastCalibrationLabelEnum_unknownDefaultOpenApi =
+    const ForecastCalibrationLabelEnum._('unknownDefaultOpenApi');
 
 ForecastCalibrationLabelEnum _$forecastCalibrationLabelEnumValueOf(
   String name,
@@ -19,23 +22,28 @@ ForecastCalibrationLabelEnum _$forecastCalibrationLabelEnumValueOf(
       return _$forecastCalibrationLabelEnum_ok;
     case 'insufficient':
       return _$forecastCalibrationLabelEnum_insufficient;
+    case 'unknownDefaultOpenApi':
+      return _$forecastCalibrationLabelEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$forecastCalibrationLabelEnum_unknownDefaultOpenApi;
   }
 }
 
 final BuiltSet<ForecastCalibrationLabelEnum>
-_$forecastCalibrationLabelEnumValues = BuiltSet<ForecastCalibrationLabelEnum>(
-  const <ForecastCalibrationLabelEnum>[
-    _$forecastCalibrationLabelEnum_ok,
-    _$forecastCalibrationLabelEnum_insufficient,
-  ],
-);
+_$forecastCalibrationLabelEnumValues =
+    BuiltSet<ForecastCalibrationLabelEnum>(const <ForecastCalibrationLabelEnum>[
+      _$forecastCalibrationLabelEnum_ok,
+      _$forecastCalibrationLabelEnum_insufficient,
+      _$forecastCalibrationLabelEnum_unknownDefaultOpenApi,
+    ]);
 
 const ForecastCalibrationMethodEnum _$forecastCalibrationMethodEnum_corp =
     const ForecastCalibrationMethodEnum._('corp');
 const ForecastCalibrationMethodEnum _$forecastCalibrationMethodEnum_bins =
     const ForecastCalibrationMethodEnum._('bins');
+const ForecastCalibrationMethodEnum
+_$forecastCalibrationMethodEnum_unknownDefaultOpenApi =
+    const ForecastCalibrationMethodEnum._('unknownDefaultOpenApi');
 
 ForecastCalibrationMethodEnum _$forecastCalibrationMethodEnumValueOf(
   String name,
@@ -45,8 +53,10 @@ ForecastCalibrationMethodEnum _$forecastCalibrationMethodEnumValueOf(
       return _$forecastCalibrationMethodEnum_corp;
     case 'bins':
       return _$forecastCalibrationMethodEnum_bins;
+    case 'unknownDefaultOpenApi':
+      return _$forecastCalibrationMethodEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$forecastCalibrationMethodEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -55,6 +65,7 @@ _$forecastCalibrationMethodEnumValues = BuiltSet<ForecastCalibrationMethodEnum>(
   const <ForecastCalibrationMethodEnum>[
     _$forecastCalibrationMethodEnum_corp,
     _$forecastCalibrationMethodEnum_bins,
+    _$forecastCalibrationMethodEnum_unknownDefaultOpenApi,
   ],
 );
 
@@ -70,10 +81,12 @@ class _$ForecastCalibrationLabelEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'ok': 'ok',
     'insufficient': 'insufficient',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'ok': 'ok',
     'insufficient': 'insufficient',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -103,10 +116,12 @@ class _$ForecastCalibrationMethodEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'corp': 'corp',
     'bins': 'bins',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'corp': 'corp',
     'bins': 'bins',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

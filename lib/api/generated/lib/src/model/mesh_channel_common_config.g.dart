@@ -23,6 +23,9 @@ _$meshChannelCommonConfigRegionEnum_ANZ =
 const MeshChannelCommonConfigRegionEnum
 _$meshChannelCommonConfigRegionEnum_OTHER =
     const MeshChannelCommonConfigRegionEnum._('OTHER');
+const MeshChannelCommonConfigRegionEnum
+_$meshChannelCommonConfigRegionEnum_unknownDefaultOpenApi =
+    const MeshChannelCommonConfigRegionEnum._('unknownDefaultOpenApi');
 
 MeshChannelCommonConfigRegionEnum _$meshChannelCommonConfigRegionEnumValueOf(
   String name,
@@ -40,8 +43,10 @@ MeshChannelCommonConfigRegionEnum _$meshChannelCommonConfigRegionEnumValueOf(
       return _$meshChannelCommonConfigRegionEnum_ANZ;
     case 'OTHER':
       return _$meshChannelCommonConfigRegionEnum_OTHER;
+    case 'unknownDefaultOpenApi':
+      return _$meshChannelCommonConfigRegionEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$meshChannelCommonConfigRegionEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -55,6 +60,7 @@ _$meshChannelCommonConfigRegionEnumValues =
         _$meshChannelCommonConfigRegionEnum_US,
         _$meshChannelCommonConfigRegionEnum_ANZ,
         _$meshChannelCommonConfigRegionEnum_OTHER,
+        _$meshChannelCommonConfigRegionEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -67,6 +73,9 @@ _$meshChannelCommonConfigAirtimePresetEnum_meshtasticMediumfast =
 const MeshChannelCommonConfigAirtimePresetEnum
 _$meshChannelCommonConfigAirtimePresetEnum_custom =
     const MeshChannelCommonConfigAirtimePresetEnum._('custom');
+const MeshChannelCommonConfigAirtimePresetEnum
+_$meshChannelCommonConfigAirtimePresetEnum_unknownDefaultOpenApi =
+    const MeshChannelCommonConfigAirtimePresetEnum._('unknownDefaultOpenApi');
 
 MeshChannelCommonConfigAirtimePresetEnum
 _$meshChannelCommonConfigAirtimePresetEnumValueOf(String name) {
@@ -77,8 +86,10 @@ _$meshChannelCommonConfigAirtimePresetEnumValueOf(String name) {
       return _$meshChannelCommonConfigAirtimePresetEnum_meshtasticMediumfast;
     case 'custom':
       return _$meshChannelCommonConfigAirtimePresetEnum_custom;
+    case 'unknownDefaultOpenApi':
+      return _$meshChannelCommonConfigAirtimePresetEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$meshChannelCommonConfigAirtimePresetEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -89,6 +100,7 @@ _$meshChannelCommonConfigAirtimePresetEnumValues =
         _$meshChannelCommonConfigAirtimePresetEnum_meshtasticLongfast,
         _$meshChannelCommonConfigAirtimePresetEnum_meshtasticMediumfast,
         _$meshChannelCommonConfigAirtimePresetEnum_custom,
+        _$meshChannelCommonConfigAirtimePresetEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -98,6 +110,9 @@ _$meshChannelCommonConfigProfileEnum_text =
 const MeshChannelCommonConfigProfileEnum
 _$meshChannelCommonConfigProfileEnum_cbor =
     const MeshChannelCommonConfigProfileEnum._('cbor');
+const MeshChannelCommonConfigProfileEnum
+_$meshChannelCommonConfigProfileEnum_unknownDefaultOpenApi =
+    const MeshChannelCommonConfigProfileEnum._('unknownDefaultOpenApi');
 
 MeshChannelCommonConfigProfileEnum _$meshChannelCommonConfigProfileEnumValueOf(
   String name,
@@ -107,8 +122,10 @@ MeshChannelCommonConfigProfileEnum _$meshChannelCommonConfigProfileEnumValueOf(
       return _$meshChannelCommonConfigProfileEnum_text;
     case 'cbor':
       return _$meshChannelCommonConfigProfileEnum_cbor;
+    case 'unknownDefaultOpenApi':
+      return _$meshChannelCommonConfigProfileEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$meshChannelCommonConfigProfileEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -118,6 +135,7 @@ _$meshChannelCommonConfigProfileEnumValues =
       const <MeshChannelCommonConfigProfileEnum>[
         _$meshChannelCommonConfigProfileEnum_text,
         _$meshChannelCommonConfigProfileEnum_cbor,
+        _$meshChannelCommonConfigProfileEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -130,6 +148,9 @@ _$meshChannelCommonConfigMinSeverityEnum_warning =
 const MeshChannelCommonConfigMinSeverityEnum
 _$meshChannelCommonConfigMinSeverityEnum_critical =
     const MeshChannelCommonConfigMinSeverityEnum._('critical');
+const MeshChannelCommonConfigMinSeverityEnum
+_$meshChannelCommonConfigMinSeverityEnum_unknownDefaultOpenApi =
+    const MeshChannelCommonConfigMinSeverityEnum._('unknownDefaultOpenApi');
 
 MeshChannelCommonConfigMinSeverityEnum
 _$meshChannelCommonConfigMinSeverityEnumValueOf(String name) {
@@ -140,8 +161,10 @@ _$meshChannelCommonConfigMinSeverityEnumValueOf(String name) {
       return _$meshChannelCommonConfigMinSeverityEnum_warning;
     case 'critical':
       return _$meshChannelCommonConfigMinSeverityEnum_critical;
+    case 'unknownDefaultOpenApi':
+      return _$meshChannelCommonConfigMinSeverityEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$meshChannelCommonConfigMinSeverityEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -152,6 +175,7 @@ _$meshChannelCommonConfigMinSeverityEnumValues =
         _$meshChannelCommonConfigMinSeverityEnum_info,
         _$meshChannelCommonConfigMinSeverityEnum_warning,
         _$meshChannelCommonConfigMinSeverityEnum_critical,
+        _$meshChannelCommonConfigMinSeverityEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -161,6 +185,9 @@ _$meshChannelCommonConfigAllowedSendersEnum_report =
 const MeshChannelCommonConfigAllowedSendersEnum
 _$meshChannelCommonConfigAllowedSendersEnum_ack =
     const MeshChannelCommonConfigAllowedSendersEnum._('ack');
+const MeshChannelCommonConfigAllowedSendersEnum
+_$meshChannelCommonConfigAllowedSendersEnum_unknownDefaultOpenApi =
+    const MeshChannelCommonConfigAllowedSendersEnum._('unknownDefaultOpenApi');
 
 MeshChannelCommonConfigAllowedSendersEnum
 _$meshChannelCommonConfigAllowedSendersEnumValueOf(String name) {
@@ -169,8 +196,10 @@ _$meshChannelCommonConfigAllowedSendersEnumValueOf(String name) {
       return _$meshChannelCommonConfigAllowedSendersEnum_report;
     case 'ack':
       return _$meshChannelCommonConfigAllowedSendersEnum_ack;
+    case 'unknownDefaultOpenApi':
+      return _$meshChannelCommonConfigAllowedSendersEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$meshChannelCommonConfigAllowedSendersEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -180,6 +209,7 @@ _$meshChannelCommonConfigAllowedSendersEnumValues =
       const <MeshChannelCommonConfigAllowedSendersEnum>[
         _$meshChannelCommonConfigAllowedSendersEnum_report,
         _$meshChannelCommonConfigAllowedSendersEnum_ack,
+        _$meshChannelCommonConfigAllowedSendersEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -208,6 +238,7 @@ class _$MeshChannelCommonConfigRegionEnumSerializer
     'US': 'US',
     'ANZ': 'ANZ',
     'OTHER': 'OTHER',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'EU_868': 'EU_868',
@@ -216,6 +247,7 @@ class _$MeshChannelCommonConfigRegionEnumSerializer
     'US': 'US',
     'ANZ': 'ANZ',
     'OTHER': 'OTHER',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -246,11 +278,13 @@ class _$MeshChannelCommonConfigAirtimePresetEnumSerializer
     'meshtasticLongfast': 'meshtastic-longfast',
     'meshtasticMediumfast': 'meshtastic-mediumfast',
     'custom': 'custom',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'meshtastic-longfast': 'meshtasticLongfast',
     'meshtastic-mediumfast': 'meshtasticMediumfast',
     'custom': 'custom',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -282,10 +316,12 @@ class _$MeshChannelCommonConfigProfileEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'text': 'text',
     'cbor': 'cbor',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'text': 'text',
     'cbor': 'cbor',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -316,11 +352,13 @@ class _$MeshChannelCommonConfigMinSeverityEnumSerializer
     'info': 'info',
     'warning': 'warning',
     'critical': 'critical',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'info': 'info',
     'warning': 'warning',
     'critical': 'critical',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -352,10 +390,12 @@ class _$MeshChannelCommonConfigAllowedSendersEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'report': 'report',
     'ack': 'ack',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'report': 'report',
     'ack': 'ack',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

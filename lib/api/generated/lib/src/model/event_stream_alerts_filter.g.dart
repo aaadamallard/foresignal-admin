@@ -15,6 +15,9 @@ _$eventStreamAlertsFilterMinSeverityEnum_warning =
 const EventStreamAlertsFilterMinSeverityEnum
 _$eventStreamAlertsFilterMinSeverityEnum_critical =
     const EventStreamAlertsFilterMinSeverityEnum._('critical');
+const EventStreamAlertsFilterMinSeverityEnum
+_$eventStreamAlertsFilterMinSeverityEnum_unknownDefaultOpenApi =
+    const EventStreamAlertsFilterMinSeverityEnum._('unknownDefaultOpenApi');
 
 EventStreamAlertsFilterMinSeverityEnum
 _$eventStreamAlertsFilterMinSeverityEnumValueOf(String name) {
@@ -25,8 +28,10 @@ _$eventStreamAlertsFilterMinSeverityEnumValueOf(String name) {
       return _$eventStreamAlertsFilterMinSeverityEnum_warning;
     case 'critical':
       return _$eventStreamAlertsFilterMinSeverityEnum_critical;
+    case 'unknownDefaultOpenApi':
+      return _$eventStreamAlertsFilterMinSeverityEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$eventStreamAlertsFilterMinSeverityEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -37,6 +42,7 @@ _$eventStreamAlertsFilterMinSeverityEnumValues =
         _$eventStreamAlertsFilterMinSeverityEnum_info,
         _$eventStreamAlertsFilterMinSeverityEnum_warning,
         _$eventStreamAlertsFilterMinSeverityEnum_critical,
+        _$eventStreamAlertsFilterMinSeverityEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -50,11 +56,13 @@ class _$EventStreamAlertsFilterMinSeverityEnumSerializer
     'info': 'info',
     'warning': 'warning',
     'critical': 'critical',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'info': 'info',
     'warning': 'warning',
     'critical': 'critical',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

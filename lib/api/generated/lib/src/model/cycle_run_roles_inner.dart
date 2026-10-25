@@ -392,6 +392,9 @@ class CycleRunRolesInnerRoleEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'proposer')
   static const CycleRunRolesInnerRoleEnum proposer =
       _$cycleRunRolesInnerRoleEnum_proposer;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const CycleRunRolesInnerRoleEnum unknownDefaultOpenApi =
+      _$cycleRunRolesInnerRoleEnum_unknownDefaultOpenApi;
 
   static Serializer<CycleRunRolesInnerRoleEnum> get serializer =>
       _$cycleRunRolesInnerRoleEnumSerializer;
@@ -417,6 +420,9 @@ class CycleRunRolesInnerStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'not-configured')
   static const CycleRunRolesInnerStatusEnum notConfigured =
       _$cycleRunRolesInnerStatusEnum_notConfigured;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const CycleRunRolesInnerStatusEnum unknownDefaultOpenApi =
+      _$cycleRunRolesInnerStatusEnum_unknownDefaultOpenApi;
 
   static Serializer<CycleRunRolesInnerStatusEnum> get serializer =>
       _$cycleRunRolesInnerStatusEnumSerializer;
@@ -440,6 +446,9 @@ class CycleRunRolesInnerEffortEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'high')
   static const CycleRunRolesInnerEffortEnum high =
       _$cycleRunRolesInnerEffortEnum_high;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const CycleRunRolesInnerEffortEnum unknownDefaultOpenApi =
+      _$cycleRunRolesInnerEffortEnum_unknownDefaultOpenApi;
 
   static Serializer<CycleRunRolesInnerEffortEnum> get serializer =>
       _$cycleRunRolesInnerEffortEnumSerializer;

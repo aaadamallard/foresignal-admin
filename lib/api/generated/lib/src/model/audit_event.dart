@@ -426,6 +426,9 @@ class AuditEventActorKindEnum extends EnumClass {
   static const AuditEventActorKindEnum chat = _$auditEventActorKindEnum_chat;
   @BuiltValueEnumConst(wireName: r'mesh')
   static const AuditEventActorKindEnum mesh = _$auditEventActorKindEnum_mesh;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const AuditEventActorKindEnum unknownDefaultOpenApi =
+      _$auditEventActorKindEnum_unknownDefaultOpenApi;
 
   static Serializer<AuditEventActorKindEnum> get serializer =>
       _$auditEventActorKindEnumSerializer;
@@ -445,6 +448,9 @@ class AuditEventScopeEnum extends EnumClass {
   static const AuditEventScopeEnum agent = _$auditEventScopeEnum_agent;
   @BuiltValueEnumConst(wireName: r'admin')
   static const AuditEventScopeEnum admin = _$auditEventScopeEnum_admin;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const AuditEventScopeEnum unknownDefaultOpenApi =
+      _$auditEventScopeEnum_unknownDefaultOpenApi;
 
   static Serializer<AuditEventScopeEnum> get serializer =>
       _$auditEventScopeEnumSerializer;

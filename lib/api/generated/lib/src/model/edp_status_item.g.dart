@@ -8,19 +8,24 @@ part of 'edp_status_item.dart';
 
 const EdpStatusItemTypeEnum _$edpStatusItemTypeEnum_status =
     const EdpStatusItemTypeEnum._('status');
+const EdpStatusItemTypeEnum _$edpStatusItemTypeEnum_unknownDefaultOpenApi =
+    const EdpStatusItemTypeEnum._('unknownDefaultOpenApi');
 
 EdpStatusItemTypeEnum _$edpStatusItemTypeEnumValueOf(String name) {
   switch (name) {
     case 'status':
       return _$edpStatusItemTypeEnum_status;
+    case 'unknownDefaultOpenApi':
+      return _$edpStatusItemTypeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$edpStatusItemTypeEnum_unknownDefaultOpenApi;
   }
 }
 
 final BuiltSet<EdpStatusItemTypeEnum> _$edpStatusItemTypeEnumValues =
     BuiltSet<EdpStatusItemTypeEnum>(const <EdpStatusItemTypeEnum>[
       _$edpStatusItemTypeEnum_status,
+      _$edpStatusItemTypeEnum_unknownDefaultOpenApi,
     ]);
 
 const EdpStatusItemHealthEnum _$edpStatusItemHealthEnum_ok =
@@ -33,6 +38,8 @@ const EdpStatusItemHealthEnum _$edpStatusItemHealthEnum_layoutChanged =
     const EdpStatusItemHealthEnum._('layoutChanged');
 const EdpStatusItemHealthEnum _$edpStatusItemHealthEnum_geoRestricted =
     const EdpStatusItemHealthEnum._('geoRestricted');
+const EdpStatusItemHealthEnum _$edpStatusItemHealthEnum_unknownDefaultOpenApi =
+    const EdpStatusItemHealthEnum._('unknownDefaultOpenApi');
 
 EdpStatusItemHealthEnum _$edpStatusItemHealthEnumValueOf(String name) {
   switch (name) {
@@ -46,8 +53,10 @@ EdpStatusItemHealthEnum _$edpStatusItemHealthEnumValueOf(String name) {
       return _$edpStatusItemHealthEnum_layoutChanged;
     case 'geoRestricted':
       return _$edpStatusItemHealthEnum_geoRestricted;
+    case 'unknownDefaultOpenApi':
+      return _$edpStatusItemHealthEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$edpStatusItemHealthEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -58,6 +67,7 @@ final BuiltSet<EdpStatusItemHealthEnum> _$edpStatusItemHealthEnumValues =
       _$edpStatusItemHealthEnum_blocked,
       _$edpStatusItemHealthEnum_layoutChanged,
       _$edpStatusItemHealthEnum_geoRestricted,
+      _$edpStatusItemHealthEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<EdpStatusItemTypeEnum> _$edpStatusItemTypeEnumSerializer =
@@ -69,9 +79,11 @@ class _$EdpStatusItemTypeEnumSerializer
     implements PrimitiveSerializer<EdpStatusItemTypeEnum> {
   static const Map<String, Object> _toWire = const <String, Object>{
     'status': 'status',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'status': 'status',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -104,6 +116,7 @@ class _$EdpStatusItemHealthEnumSerializer
     'blocked': 'blocked',
     'layoutChanged': 'layout-changed',
     'geoRestricted': 'geo-restricted',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'ok': 'ok',
@@ -111,6 +124,7 @@ class _$EdpStatusItemHealthEnumSerializer
     'blocked': 'blocked',
     'layout-changed': 'layoutChanged',
     'geo-restricted': 'geoRestricted',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

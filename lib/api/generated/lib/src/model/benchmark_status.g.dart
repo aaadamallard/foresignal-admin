@@ -14,6 +14,9 @@ const BenchmarkStatusOverallEnum _$benchmarkStatusOverallEnum_fail =
     const BenchmarkStatusOverallEnum._('fail');
 const BenchmarkStatusOverallEnum _$benchmarkStatusOverallEnum_unknown =
     const BenchmarkStatusOverallEnum._('unknown');
+const BenchmarkStatusOverallEnum
+_$benchmarkStatusOverallEnum_unknownDefaultOpenApi =
+    const BenchmarkStatusOverallEnum._('unknownDefaultOpenApi');
 
 BenchmarkStatusOverallEnum _$benchmarkStatusOverallEnumValueOf(String name) {
   switch (name) {
@@ -25,8 +28,10 @@ BenchmarkStatusOverallEnum _$benchmarkStatusOverallEnumValueOf(String name) {
       return _$benchmarkStatusOverallEnum_fail;
     case 'unknown':
       return _$benchmarkStatusOverallEnum_unknown;
+    case 'unknownDefaultOpenApi':
+      return _$benchmarkStatusOverallEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$benchmarkStatusOverallEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -36,6 +41,7 @@ final BuiltSet<BenchmarkStatusOverallEnum> _$benchmarkStatusOverallEnumValues =
       _$benchmarkStatusOverallEnum_warn,
       _$benchmarkStatusOverallEnum_fail,
       _$benchmarkStatusOverallEnum_unknown,
+      _$benchmarkStatusOverallEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<BenchmarkStatusOverallEnum> _$benchmarkStatusOverallEnumSerializer =
@@ -48,12 +54,14 @@ class _$BenchmarkStatusOverallEnumSerializer
     'warn': 'warn',
     'fail': 'fail',
     'unknown': 'unknown',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'pass': 'pass',
     'warn': 'warn',
     'fail': 'fail',
     'unknown': 'unknown',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

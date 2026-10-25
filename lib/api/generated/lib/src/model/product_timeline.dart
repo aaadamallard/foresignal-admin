@@ -274,6 +274,9 @@ class ProductTimelineModeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'seamless')
   static const ProductTimelineModeEnum seamless =
       _$productTimelineModeEnum_seamless;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ProductTimelineModeEnum unknownDefaultOpenApi =
+      _$productTimelineModeEnum_unknownDefaultOpenApi;
 
   static Serializer<ProductTimelineModeEnum> get serializer =>
       _$productTimelineModeEnumSerializer;

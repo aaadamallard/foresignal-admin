@@ -331,6 +331,9 @@ class ForecastCalibrationLabelEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'insufficient')
   static const ForecastCalibrationLabelEnum insufficient =
       _$forecastCalibrationLabelEnum_insufficient;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ForecastCalibrationLabelEnum unknownDefaultOpenApi =
+      _$forecastCalibrationLabelEnum_unknownDefaultOpenApi;
 
   static Serializer<ForecastCalibrationLabelEnum> get serializer =>
       _$forecastCalibrationLabelEnumSerializer;
@@ -351,6 +354,9 @@ class ForecastCalibrationMethodEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'bins')
   static const ForecastCalibrationMethodEnum bins =
       _$forecastCalibrationMethodEnum_bins;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ForecastCalibrationMethodEnum unknownDefaultOpenApi =
+      _$forecastCalibrationMethodEnum_unknownDefaultOpenApi;
 
   static Serializer<ForecastCalibrationMethodEnum> get serializer =>
       _$forecastCalibrationMethodEnumSerializer;

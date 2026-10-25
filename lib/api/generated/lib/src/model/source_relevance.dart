@@ -207,6 +207,9 @@ class SourceRelevanceVerdictEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'unrated')
   static const SourceRelevanceVerdictEnum unrated =
       _$sourceRelevanceVerdictEnum_unrated;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const SourceRelevanceVerdictEnum unknownDefaultOpenApi =
+      _$sourceRelevanceVerdictEnum_unknownDefaultOpenApi;
 
   static Serializer<SourceRelevanceVerdictEnum> get serializer =>
       _$sourceRelevanceVerdictEnumSerializer;

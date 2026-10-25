@@ -224,6 +224,10 @@ class ChronicleClusterMembersInnerDisclosureEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'opaque')
   static const ChronicleClusterMembersInnerDisclosureEnum opaque =
       _$chronicleClusterMembersInnerDisclosureEnum_opaque;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ChronicleClusterMembersInnerDisclosureEnum
+  unknownDefaultOpenApi =
+      _$chronicleClusterMembersInnerDisclosureEnum_unknownDefaultOpenApi;
 
   static Serializer<ChronicleClusterMembersInnerDisclosureEnum>
   get serializer => _$chronicleClusterMembersInnerDisclosureEnumSerializer;
@@ -247,6 +251,9 @@ class ChronicleClusterMembersInnerStrengthEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'high')
   static const ChronicleClusterMembersInnerStrengthEnum high =
       _$chronicleClusterMembersInnerStrengthEnum_high;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ChronicleClusterMembersInnerStrengthEnum unknownDefaultOpenApi =
+      _$chronicleClusterMembersInnerStrengthEnum_unknownDefaultOpenApi;
 
   static Serializer<ChronicleClusterMembersInnerStrengthEnum> get serializer =>
       _$chronicleClusterMembersInnerStrengthEnumSerializer;

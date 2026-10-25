@@ -245,6 +245,9 @@ class FederationInfoCapabilitiesEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'ingest')
   static const FederationInfoCapabilitiesEnum ingest =
       _$federationInfoCapabilitiesEnum_ingest;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const FederationInfoCapabilitiesEnum unknownDefaultOpenApi =
+      _$federationInfoCapabilitiesEnum_unknownDefaultOpenApi;
 
   static Serializer<FederationInfoCapabilitiesEnum> get serializer =>
       _$federationInfoCapabilitiesEnumSerializer;

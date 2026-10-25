@@ -18,6 +18,9 @@ _$systemInfoIngestWriterStateEnum_LOCK_LOST =
 const SystemInfoIngestWriterStateEnum
 _$systemInfoIngestWriterStateEnum_STOPPED =
     const SystemInfoIngestWriterStateEnum._('STOPPED');
+const SystemInfoIngestWriterStateEnum
+_$systemInfoIngestWriterStateEnum_unknownDefaultOpenApi =
+    const SystemInfoIngestWriterStateEnum._('unknownDefaultOpenApi');
 
 SystemInfoIngestWriterStateEnum _$systemInfoIngestWriterStateEnumValueOf(
   String name,
@@ -31,8 +34,10 @@ SystemInfoIngestWriterStateEnum _$systemInfoIngestWriterStateEnumValueOf(
       return _$systemInfoIngestWriterStateEnum_LOCK_LOST;
     case 'STOPPED':
       return _$systemInfoIngestWriterStateEnum_STOPPED;
+    case 'unknownDefaultOpenApi':
+      return _$systemInfoIngestWriterStateEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$systemInfoIngestWriterStateEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -44,6 +49,7 @@ _$systemInfoIngestWriterStateEnumValues =
         _$systemInfoIngestWriterStateEnum_CLOCK_BEHIND,
         _$systemInfoIngestWriterStateEnum_LOCK_LOST,
         _$systemInfoIngestWriterStateEnum_STOPPED,
+        _$systemInfoIngestWriterStateEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -58,12 +64,14 @@ class _$SystemInfoIngestWriterStateEnumSerializer
     'CLOCK_BEHIND': 'CLOCK_BEHIND',
     'LOCK_LOST': 'LOCK_LOST',
     'STOPPED': 'STOPPED',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'RUNNING': 'RUNNING',
     'CLOCK_BEHIND': 'CLOCK_BEHIND',
     'LOCK_LOST': 'LOCK_LOST',
     'STOPPED': 'STOPPED',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

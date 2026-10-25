@@ -9,6 +9,9 @@ part of 'coordination_detected_event.dart';
 const CoordinationDetectedEventEventEnum
 _$coordinationDetectedEventEventEnum_coordinationPeriodDetected =
     const CoordinationDetectedEventEventEnum._('coordinationPeriodDetected');
+const CoordinationDetectedEventEventEnum
+_$coordinationDetectedEventEventEnum_unknownDefaultOpenApi =
+    const CoordinationDetectedEventEventEnum._('unknownDefaultOpenApi');
 
 CoordinationDetectedEventEventEnum _$coordinationDetectedEventEventEnumValueOf(
   String name,
@@ -16,8 +19,10 @@ CoordinationDetectedEventEventEnum _$coordinationDetectedEventEventEnumValueOf(
   switch (name) {
     case 'coordinationPeriodDetected':
       return _$coordinationDetectedEventEventEnum_coordinationPeriodDetected;
+    case 'unknownDefaultOpenApi':
+      return _$coordinationDetectedEventEventEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$coordinationDetectedEventEventEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -26,6 +31,7 @@ _$coordinationDetectedEventEventEnumValues =
     BuiltSet<CoordinationDetectedEventEventEnum>(
       const <CoordinationDetectedEventEventEnum>[
         _$coordinationDetectedEventEventEnum_coordinationPeriodDetected,
+        _$coordinationDetectedEventEventEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -47,6 +53,11 @@ _$coordinationDetectedEventSignificantIndicatorsEnum_coRepostBursts =
     const CoordinationDetectedEventSignificantIndicatorsEnum._(
       'coRepostBursts',
     );
+const CoordinationDetectedEventSignificantIndicatorsEnum
+_$coordinationDetectedEventSignificantIndicatorsEnum_unknownDefaultOpenApi =
+    const CoordinationDetectedEventSignificantIndicatorsEnum._(
+      'unknownDefaultOpenApi',
+    );
 
 CoordinationDetectedEventSignificantIndicatorsEnum
 _$coordinationDetectedEventSignificantIndicatorsEnumValueOf(String name) {
@@ -59,21 +70,24 @@ _$coordinationDetectedEventSignificantIndicatorsEnumValueOf(String name) {
       return _$coordinationDetectedEventSignificantIndicatorsEnum_accountAgeSkew;
     case 'coRepostBursts':
       return _$coordinationDetectedEventSignificantIndicatorsEnum_coRepostBursts;
+    case 'unknownDefaultOpenApi':
+      return _$coordinationDetectedEventSignificantIndicatorsEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$coordinationDetectedEventSignificantIndicatorsEnum_unknownDefaultOpenApi;
   }
 }
 
 final BuiltSet<CoordinationDetectedEventSignificantIndicatorsEnum>
 _$coordinationDetectedEventSignificantIndicatorsEnumValues =
-    BuiltSet<CoordinationDetectedEventSignificantIndicatorsEnum>(
-      const <CoordinationDetectedEventSignificantIndicatorsEnum>[
-        _$coordinationDetectedEventSignificantIndicatorsEnum_synchrony,
-        _$coordinationDetectedEventSignificantIndicatorsEnum_textDuplication,
-        _$coordinationDetectedEventSignificantIndicatorsEnum_accountAgeSkew,
-        _$coordinationDetectedEventSignificantIndicatorsEnum_coRepostBursts,
-      ],
-    );
+    BuiltSet<CoordinationDetectedEventSignificantIndicatorsEnum>(const <
+      CoordinationDetectedEventSignificantIndicatorsEnum
+    >[
+      _$coordinationDetectedEventSignificantIndicatorsEnum_synchrony,
+      _$coordinationDetectedEventSignificantIndicatorsEnum_textDuplication,
+      _$coordinationDetectedEventSignificantIndicatorsEnum_accountAgeSkew,
+      _$coordinationDetectedEventSignificantIndicatorsEnum_coRepostBursts,
+      _$coordinationDetectedEventSignificantIndicatorsEnum_unknownDefaultOpenApi,
+    ]);
 
 Serializer<CoordinationDetectedEventEventEnum>
 _$coordinationDetectedEventEventEnumSerializer =
@@ -86,9 +100,11 @@ class _$CoordinationDetectedEventEventEnumSerializer
     implements PrimitiveSerializer<CoordinationDetectedEventEventEnum> {
   static const Map<String, Object> _toWire = const <String, Object>{
     'coordinationPeriodDetected': 'coordination.detected',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'coordination.detected': 'coordinationPeriodDetected',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -123,12 +139,14 @@ class _$CoordinationDetectedEventSignificantIndicatorsEnumSerializer
     'textDuplication': 'textDuplication',
     'accountAgeSkew': 'accountAgeSkew',
     'coRepostBursts': 'coRepostBursts',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'synchrony': 'synchrony',
     'textDuplication': 'textDuplication',
     'accountAgeSkew': 'accountAgeSkew',
     'coRepostBursts': 'coRepostBursts',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

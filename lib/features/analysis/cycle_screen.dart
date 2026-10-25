@@ -43,7 +43,7 @@ class CycleScreen extends ConsumerWidget {
                   title: c.name,
                   crumbs: <Crumb>[_analysis, Crumb(c.name)],
                   subtitle:
-                      '${wireLabel(c.cadence)} · ${c.schedule.cron} ${c.schedule.timezone}'
+                      '${wireLabel(c.cadence, c, 'cadence')} · ${c.schedule.cron} ${c.schedule.timezone}'
                       '${c.enabled ? ' · next ${utcText(c.nextRunAt)}' : ''}',
                   titleTrailing: <Widget>[
                     StatusLabel(
@@ -502,13 +502,13 @@ class _CycleRunsCardState extends ConsumerState<CycleRunsCard> {
                 ),
                 TableColumnSpec<CycleRun>(
                   label: 'Trigger',
-                  cell: (r) => Text(wireLabel(r.trigger)),
+                  cell: (r) => Text(wireLabel(r.trigger, r, 'trigger')),
                 ),
                 TableColumnSpec<CycleRun>(
                   label: 'Status',
                   cell: (r) => StatusLabel(
-                    label: wireLabel(r.status),
-                    tone: statusTone(wireOf(r.status)),
+                    label: wireLabel(r.status, r, 'status'),
+                    tone: statusTone(wireOf(r.status, r, 'status')),
                     tooltip: r.error,
                   ),
                 ),
@@ -557,13 +557,13 @@ class RunScreen extends ConsumerWidget {
                     const Crumb('Run'),
                   ],
                   subtitle:
-                      '${wireLabel(r.cadence)} · ${wireLabel(r.trigger)} · '
+                      '${wireLabel(r.cadence, r, 'cadence')} · ${wireLabel(r.trigger, r, 'trigger')} · '
                       '${utcText(r.periodStart)} – ${utcText(r.periodEnd)}',
                   titleTrailing: <Widget>[
                     StatusLabel(
                       key: const Key('run.status'),
-                      label: wireLabel(r.status),
-                      tone: statusTone(wireOf(r.status)),
+                      label: wireLabel(r.status, r, 'status'),
+                      tone: statusTone(wireOf(r.status, r, 'status')),
                     ),
                   ],
                   actions: <Widget>[
@@ -628,15 +628,15 @@ class RunScreen extends ConsumerWidget {
                                 TableColumnSpec<CycleRunRolesInner>(
                                   label: 'Role',
                                   cell: (x) => Text(
-                                    wireLabel(x.role),
+                                    wireLabel(x.role, x, 'role'),
                                     style: const TextStyle(fontWeight: FontWeight.w600),
                                   ),
                                 ),
                                 TableColumnSpec<CycleRunRolesInner>(
                                   label: 'Status',
                                   cell: (x) => StatusLabel(
-                                    label: wireLabel(x.status),
-                                    tone: statusTone(wireOf(x.status)),
+                                    label: wireLabel(x.status, x, 'status'),
+                                    tone: statusTone(wireOf(x.status, x, 'status')),
                                     tooltip: x.reason,
                                   ),
                                 ),
@@ -644,7 +644,7 @@ class RunScreen extends ConsumerWidget {
                                   label: 'Model',
                                   cell: (x) => Text(
                                     '${x.provider ?? '—'} · ${x.model ?? '—'}'
-                                    '${x.effort == null ? '' : ' · ${wireOf(x.effort!)}'}',
+                                    '${x.effort == null ? '' : ' · ${wireOf(x.effort!, x, 'effort')}'}',
                                   ),
                                 ),
                                 TableColumnSpec<CycleRunRolesInner>(

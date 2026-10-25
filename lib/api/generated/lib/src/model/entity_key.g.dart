@@ -12,6 +12,8 @@ const EntityKeyRoleEnum _$entityKeyRoleEnum_ANCHOR = const EntityKeyRoleEnum._(
 const EntityKeyRoleEnum _$entityKeyRoleEnum_WEAK = const EntityKeyRoleEnum._(
   'WEAK',
 );
+const EntityKeyRoleEnum _$entityKeyRoleEnum_unknownDefaultOpenApi =
+    const EntityKeyRoleEnum._('unknownDefaultOpenApi');
 
 EntityKeyRoleEnum _$entityKeyRoleEnumValueOf(String name) {
   switch (name) {
@@ -19,8 +21,10 @@ EntityKeyRoleEnum _$entityKeyRoleEnumValueOf(String name) {
       return _$entityKeyRoleEnum_ANCHOR;
     case 'WEAK':
       return _$entityKeyRoleEnum_WEAK;
+    case 'unknownDefaultOpenApi':
+      return _$entityKeyRoleEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$entityKeyRoleEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -28,6 +32,7 @@ final BuiltSet<EntityKeyRoleEnum> _$entityKeyRoleEnumValues =
     BuiltSet<EntityKeyRoleEnum>(const <EntityKeyRoleEnum>[
       _$entityKeyRoleEnum_ANCHOR,
       _$entityKeyRoleEnum_WEAK,
+      _$entityKeyRoleEnum_unknownDefaultOpenApi,
     ]);
 
 const EntityKeyOriginEnum _$entityKeyOriginEnum_REGISTRY =
@@ -38,6 +43,8 @@ const EntityKeyOriginEnum _$entityKeyOriginEnum_OBSERVED =
     const EntityKeyOriginEnum._('OBSERVED');
 const EntityKeyOriginEnum _$entityKeyOriginEnum_OPERATOR =
     const EntityKeyOriginEnum._('OPERATOR');
+const EntityKeyOriginEnum _$entityKeyOriginEnum_unknownDefaultOpenApi =
+    const EntityKeyOriginEnum._('unknownDefaultOpenApi');
 
 EntityKeyOriginEnum _$entityKeyOriginEnumValueOf(String name) {
   switch (name) {
@@ -49,8 +56,10 @@ EntityKeyOriginEnum _$entityKeyOriginEnumValueOf(String name) {
       return _$entityKeyOriginEnum_OBSERVED;
     case 'OPERATOR':
       return _$entityKeyOriginEnum_OPERATOR;
+    case 'unknownDefaultOpenApi':
+      return _$entityKeyOriginEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$entityKeyOriginEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -60,6 +69,7 @@ final BuiltSet<EntityKeyOriginEnum> _$entityKeyOriginEnumValues =
       _$entityKeyOriginEnum_CO_ASSERTED,
       _$entityKeyOriginEnum_OBSERVED,
       _$entityKeyOriginEnum_OPERATOR,
+      _$entityKeyOriginEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<EntityKeyRoleEnum> _$entityKeyRoleEnumSerializer =
@@ -72,10 +82,12 @@ class _$EntityKeyRoleEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'ANCHOR': 'ANCHOR',
     'WEAK': 'WEAK',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'ANCHOR': 'ANCHOR',
     'WEAK': 'WEAK',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -107,12 +119,14 @@ class _$EntityKeyOriginEnumSerializer
     'CO_ASSERTED': 'CO_ASSERTED',
     'OBSERVED': 'OBSERVED',
     'OPERATOR': 'OPERATOR',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'REGISTRY': 'REGISTRY',
     'CO_ASSERTED': 'CO_ASSERTED',
     'OBSERVED': 'OBSERVED',
     'OPERATOR': 'OPERATOR',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

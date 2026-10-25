@@ -30,6 +30,9 @@ _$edpSourceInfoOriginatorClassEnum_operator_ =
 const EdpSourceInfoOriginatorClass_Enum
 _$edpSourceInfoOriginatorClassEnum_derived =
     const EdpSourceInfoOriginatorClass_Enum._('derived');
+const EdpSourceInfoOriginatorClass_Enum
+_$edpSourceInfoOriginatorClassEnum_unknownDefaultOpenApi =
+    const EdpSourceInfoOriginatorClass_Enum._('unknownDefaultOpenApi');
 
 EdpSourceInfoOriginatorClass_Enum _$edpSourceInfoOriginatorClassEnumValueOf(
   String name,
@@ -51,8 +54,10 @@ EdpSourceInfoOriginatorClass_Enum _$edpSourceInfoOriginatorClassEnumValueOf(
       return _$edpSourceInfoOriginatorClassEnum_operator_;
     case 'derived':
       return _$edpSourceInfoOriginatorClassEnum_derived;
+    case 'unknownDefaultOpenApi':
+      return _$edpSourceInfoOriginatorClassEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$edpSourceInfoOriginatorClassEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -68,6 +73,7 @@ _$edpSourceInfoOriginatorClassEnumValues =
         _$edpSourceInfoOriginatorClassEnum_social,
         _$edpSourceInfoOriginatorClassEnum_operator_,
         _$edpSourceInfoOriginatorClassEnum_derived,
+        _$edpSourceInfoOriginatorClassEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -86,6 +92,7 @@ class _$EdpSourceInfoOriginatorClass_EnumSerializer
     'social': 'social',
     'operator_': 'operator',
     'derived': 'derived',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'sensor-network': 'sensorNetwork',
@@ -96,6 +103,7 @@ class _$EdpSourceInfoOriginatorClass_EnumSerializer
     'social': 'social',
     'operator': 'operator_',
     'derived': 'derived',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

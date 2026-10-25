@@ -165,6 +165,9 @@ class ForecasterTrackRecordLabelEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'insufficient')
   static const ForecasterTrackRecordLabelEnum insufficient =
       _$forecasterTrackRecordLabelEnum_insufficient;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ForecasterTrackRecordLabelEnum unknownDefaultOpenApi =
+      _$forecasterTrackRecordLabelEnum_unknownDefaultOpenApi;
 
   static Serializer<ForecasterTrackRecordLabelEnum> get serializer =>
       _$forecasterTrackRecordLabelEnumSerializer;

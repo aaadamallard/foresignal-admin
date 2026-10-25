@@ -158,6 +158,9 @@ class StyleSpecialKindEnum extends EnumClass {
   static const StyleSpecialKindEnum noEcho = _$styleSpecialKindEnum_noEcho;
   @BuiltValueEnumConst(wireName: r'noData')
   static const StyleSpecialKindEnum noData = _$styleSpecialKindEnum_noData;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const StyleSpecialKindEnum unknownDefaultOpenApi =
+      _$styleSpecialKindEnum_unknownDefaultOpenApi;
 
   static Serializer<StyleSpecialKindEnum> get serializer =>
       _$styleSpecialKindEnumSerializer;

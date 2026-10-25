@@ -10,6 +10,8 @@ const ReportPatchStatusEnum _$reportPatchStatusEnum_draft =
     const ReportPatchStatusEnum._('draft');
 const ReportPatchStatusEnum _$reportPatchStatusEnum_review =
     const ReportPatchStatusEnum._('review');
+const ReportPatchStatusEnum _$reportPatchStatusEnum_unknownDefaultOpenApi =
+    const ReportPatchStatusEnum._('unknownDefaultOpenApi');
 
 ReportPatchStatusEnum _$reportPatchStatusEnumValueOf(String name) {
   switch (name) {
@@ -17,8 +19,10 @@ ReportPatchStatusEnum _$reportPatchStatusEnumValueOf(String name) {
       return _$reportPatchStatusEnum_draft;
     case 'review':
       return _$reportPatchStatusEnum_review;
+    case 'unknownDefaultOpenApi':
+      return _$reportPatchStatusEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$reportPatchStatusEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -26,6 +30,7 @@ final BuiltSet<ReportPatchStatusEnum> _$reportPatchStatusEnumValues =
     BuiltSet<ReportPatchStatusEnum>(const <ReportPatchStatusEnum>[
       _$reportPatchStatusEnum_draft,
       _$reportPatchStatusEnum_review,
+      _$reportPatchStatusEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<ReportPatchStatusEnum> _$reportPatchStatusEnumSerializer =
@@ -36,10 +41,12 @@ class _$ReportPatchStatusEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'draft': 'draft',
     'review': 'review',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'draft': 'draft',
     'review': 'review',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

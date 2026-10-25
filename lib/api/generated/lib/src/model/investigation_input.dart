@@ -360,6 +360,9 @@ class InvestigationInputStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'archived')
   static const InvestigationInputStatusEnum archived =
       _$investigationInputStatusEnum_archived;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const InvestigationInputStatusEnum unknownDefaultOpenApi =
+      _$investigationInputStatusEnum_unknownDefaultOpenApi;
 
   static Serializer<InvestigationInputStatusEnum> get serializer =>
       _$investigationInputStatusEnumSerializer;

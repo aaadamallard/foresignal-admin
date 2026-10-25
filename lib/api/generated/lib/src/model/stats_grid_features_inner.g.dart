@@ -8,6 +8,9 @@ part of 'stats_grid_features_inner.dart';
 
 const StatsGridFeaturesInnerTypeEnum _$statsGridFeaturesInnerTypeEnum_feature =
     const StatsGridFeaturesInnerTypeEnum._('feature');
+const StatsGridFeaturesInnerTypeEnum
+_$statsGridFeaturesInnerTypeEnum_unknownDefaultOpenApi =
+    const StatsGridFeaturesInnerTypeEnum._('unknownDefaultOpenApi');
 
 StatsGridFeaturesInnerTypeEnum _$statsGridFeaturesInnerTypeEnumValueOf(
   String name,
@@ -15,8 +18,10 @@ StatsGridFeaturesInnerTypeEnum _$statsGridFeaturesInnerTypeEnumValueOf(
   switch (name) {
     case 'feature':
       return _$statsGridFeaturesInnerTypeEnum_feature;
+    case 'unknownDefaultOpenApi':
+      return _$statsGridFeaturesInnerTypeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$statsGridFeaturesInnerTypeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -25,6 +30,7 @@ _$statsGridFeaturesInnerTypeEnumValues =
     BuiltSet<StatsGridFeaturesInnerTypeEnum>(
       const <StatsGridFeaturesInnerTypeEnum>[
         _$statsGridFeaturesInnerTypeEnum_feature,
+        _$statsGridFeaturesInnerTypeEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -36,9 +42,11 @@ class _$StatsGridFeaturesInnerTypeEnumSerializer
     implements PrimitiveSerializer<StatsGridFeaturesInnerTypeEnum> {
   static const Map<String, Object> _toWire = const <String, Object>{
     'feature': 'Feature',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'Feature': 'feature',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

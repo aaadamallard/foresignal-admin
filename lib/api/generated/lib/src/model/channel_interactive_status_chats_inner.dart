@@ -258,6 +258,10 @@ class ChannelInteractiveStatusChatsInnerScopeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'agent')
   static const ChannelInteractiveStatusChatsInnerScopeEnum agent =
       _$channelInteractiveStatusChatsInnerScopeEnum_agent;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ChannelInteractiveStatusChatsInnerScopeEnum
+  unknownDefaultOpenApi =
+      _$channelInteractiveStatusChatsInnerScopeEnum_unknownDefaultOpenApi;
 
   static Serializer<ChannelInteractiveStatusChatsInnerScopeEnum>
   get serializer => _$channelInteractiveStatusChatsInnerScopeEnumSerializer;

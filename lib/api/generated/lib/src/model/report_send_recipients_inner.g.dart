@@ -18,6 +18,9 @@ _$reportSendRecipientsInnerStatusEnum_delivered =
 const ReportSendRecipientsInnerStatusEnum
 _$reportSendRecipientsInnerStatusEnum_failed =
     const ReportSendRecipientsInnerStatusEnum._('failed');
+const ReportSendRecipientsInnerStatusEnum
+_$reportSendRecipientsInnerStatusEnum_unknownDefaultOpenApi =
+    const ReportSendRecipientsInnerStatusEnum._('unknownDefaultOpenApi');
 
 ReportSendRecipientsInnerStatusEnum
 _$reportSendRecipientsInnerStatusEnumValueOf(String name) {
@@ -30,8 +33,10 @@ _$reportSendRecipientsInnerStatusEnumValueOf(String name) {
       return _$reportSendRecipientsInnerStatusEnum_delivered;
     case 'failed':
       return _$reportSendRecipientsInnerStatusEnum_failed;
+    case 'unknownDefaultOpenApi':
+      return _$reportSendRecipientsInnerStatusEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$reportSendRecipientsInnerStatusEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -43,6 +48,7 @@ _$reportSendRecipientsInnerStatusEnumValues =
         _$reportSendRecipientsInnerStatusEnum_granted,
         _$reportSendRecipientsInnerStatusEnum_delivered,
         _$reportSendRecipientsInnerStatusEnum_failed,
+        _$reportSendRecipientsInnerStatusEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -57,12 +63,14 @@ class _$ReportSendRecipientsInnerStatusEnumSerializer
     'granted': 'granted',
     'delivered': 'delivered',
     'failed': 'failed',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'notified': 'notified',
     'granted': 'granted',
     'delivered': 'delivered',
     'failed': 'failed',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

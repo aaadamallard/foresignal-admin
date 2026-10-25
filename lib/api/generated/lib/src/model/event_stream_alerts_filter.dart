@@ -231,6 +231,9 @@ class EventStreamAlertsFilterMinSeverityEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'critical')
   static const EventStreamAlertsFilterMinSeverityEnum critical =
       _$eventStreamAlertsFilterMinSeverityEnum_critical;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const EventStreamAlertsFilterMinSeverityEnum unknownDefaultOpenApi =
+      _$eventStreamAlertsFilterMinSeverityEnum_unknownDefaultOpenApi;
 
   static Serializer<EventStreamAlertsFilterMinSeverityEnum> get serializer =>
       _$eventStreamAlertsFilterMinSeverityEnumSerializer;

@@ -249,6 +249,9 @@ class InfraImpactRequestMinLabelEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'speculative')
   static const InfraImpactRequestMinLabelEnum speculative =
       _$infraImpactRequestMinLabelEnum_speculative;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const InfraImpactRequestMinLabelEnum unknownDefaultOpenApi =
+      _$infraImpactRequestMinLabelEnum_unknownDefaultOpenApi;
 
   static Serializer<InfraImpactRequestMinLabelEnum> get serializer =>
       _$infraImpactRequestMinLabelEnumSerializer;
@@ -304,6 +307,9 @@ class InfraImpactRequestTypesEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'space.spaceport')
   static const InfraImpactRequestTypesEnum spacePeriodSpaceport =
       _$infraImpactRequestTypesEnum_spacePeriodSpaceport;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const InfraImpactRequestTypesEnum unknownDefaultOpenApi =
+      _$infraImpactRequestTypesEnum_unknownDefaultOpenApi;
 
   static Serializer<InfraImpactRequestTypesEnum> get serializer =>
       _$infraImpactRequestTypesEnumSerializer;

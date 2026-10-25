@@ -197,6 +197,9 @@ class EdpSourceInfoLicenceRedistributionEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'unknown')
   static const EdpSourceInfoLicenceRedistributionEnum unknown =
       _$edpSourceInfoLicenceRedistributionEnum_unknown;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const EdpSourceInfoLicenceRedistributionEnum unknownDefaultOpenApi =
+      _$edpSourceInfoLicenceRedistributionEnum_unknownDefaultOpenApi;
 
   static Serializer<EdpSourceInfoLicenceRedistributionEnum> get serializer =>
       _$edpSourceInfoLicenceRedistributionEnumSerializer;

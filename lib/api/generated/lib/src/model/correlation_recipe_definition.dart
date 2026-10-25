@@ -378,6 +378,9 @@ class CorrelationRecipeDefinitionTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'custom')
   static const CorrelationRecipeDefinitionTypeEnum custom =
       _$correlationRecipeDefinitionTypeEnum_custom;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const CorrelationRecipeDefinitionTypeEnum unknownDefaultOpenApi =
+      _$correlationRecipeDefinitionTypeEnum_unknownDefaultOpenApi;
 
   static Serializer<CorrelationRecipeDefinitionTypeEnum> get serializer =>
       _$correlationRecipeDefinitionTypeEnumSerializer;

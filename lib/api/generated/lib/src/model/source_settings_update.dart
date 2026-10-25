@@ -431,6 +431,9 @@ class SourceSettingsUpdateRegionTaggingEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'off')
   static const SourceSettingsUpdateRegionTaggingEnum off =
       _$sourceSettingsUpdateRegionTaggingEnum_off;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const SourceSettingsUpdateRegionTaggingEnum unknownDefaultOpenApi =
+      _$sourceSettingsUpdateRegionTaggingEnum_unknownDefaultOpenApi;
 
   static Serializer<SourceSettingsUpdateRegionTaggingEnum> get serializer =>
       _$sourceSettingsUpdateRegionTaggingEnumSerializer;
@@ -451,6 +454,9 @@ class SourceSettingsUpdateEgressEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'LOCAL_ONLY')
   static const SourceSettingsUpdateEgressEnum LOCAL_ONLY =
       _$sourceSettingsUpdateEgressEnum_LOCAL_ONLY;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const SourceSettingsUpdateEgressEnum unknownDefaultOpenApi =
+      _$sourceSettingsUpdateEgressEnum_unknownDefaultOpenApi;
 
   static Serializer<SourceSettingsUpdateEgressEnum> get serializer =>
       _$sourceSettingsUpdateEgressEnumSerializer;
@@ -483,6 +489,9 @@ class SourceSettingsUpdateReliabilityEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'F')
   static const SourceSettingsUpdateReliabilityEnum F =
       _$sourceSettingsUpdateReliabilityEnum_F;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const SourceSettingsUpdateReliabilityEnum unknownDefaultOpenApi =
+      _$sourceSettingsUpdateReliabilityEnum_unknownDefaultOpenApi;
 
   static Serializer<SourceSettingsUpdateReliabilityEnum> get serializer =>
       _$sourceSettingsUpdateReliabilityEnumSerializer;

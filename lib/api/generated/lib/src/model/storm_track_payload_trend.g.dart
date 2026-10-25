@@ -15,6 +15,9 @@ _$stormTrackPayloadTrendMaxDbzEnum_steady =
 const StormTrackPayloadTrendMaxDbzEnum
 _$stormTrackPayloadTrendMaxDbzEnum_falling =
     const StormTrackPayloadTrendMaxDbzEnum._('falling');
+const StormTrackPayloadTrendMaxDbzEnum
+_$stormTrackPayloadTrendMaxDbzEnum_unknownDefaultOpenApi =
+    const StormTrackPayloadTrendMaxDbzEnum._('unknownDefaultOpenApi');
 
 StormTrackPayloadTrendMaxDbzEnum _$stormTrackPayloadTrendMaxDbzEnumValueOf(
   String name,
@@ -26,8 +29,10 @@ StormTrackPayloadTrendMaxDbzEnum _$stormTrackPayloadTrendMaxDbzEnumValueOf(
       return _$stormTrackPayloadTrendMaxDbzEnum_steady;
     case 'falling':
       return _$stormTrackPayloadTrendMaxDbzEnum_falling;
+    case 'unknownDefaultOpenApi':
+      return _$stormTrackPayloadTrendMaxDbzEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$stormTrackPayloadTrendMaxDbzEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -38,6 +43,7 @@ _$stormTrackPayloadTrendMaxDbzEnumValues =
         _$stormTrackPayloadTrendMaxDbzEnum_rising,
         _$stormTrackPayloadTrendMaxDbzEnum_steady,
         _$stormTrackPayloadTrendMaxDbzEnum_falling,
+        _$stormTrackPayloadTrendMaxDbzEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -51,11 +57,13 @@ class _$StormTrackPayloadTrendMaxDbzEnumSerializer
     'rising': 'rising',
     'steady': 'steady',
     'falling': 'falling',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'rising': 'rising',
     'steady': 'steady',
     'falling': 'falling',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

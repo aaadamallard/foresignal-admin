@@ -168,6 +168,9 @@ class RadarCellPayloadMotionMethodEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'centroid-v1')
   static const RadarCellPayloadMotionMethodEnum centroidV1 =
       _$radarCellPayloadMotionMethodEnum_centroidV1;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const RadarCellPayloadMotionMethodEnum unknownDefaultOpenApi =
+      _$radarCellPayloadMotionMethodEnum_unknownDefaultOpenApi;
 
   static Serializer<RadarCellPayloadMotionMethodEnum> get serializer =>
       _$radarCellPayloadMotionMethodEnumSerializer;

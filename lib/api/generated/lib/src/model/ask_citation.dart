@@ -310,6 +310,9 @@ class AskCitationTypeEnum extends EnumClass {
   static const AskCitationTypeEnum briefing = _$askCitationTypeEnum_briefing;
   @BuiltValueEnumConst(wireName: r'weather')
   static const AskCitationTypeEnum weather = _$askCitationTypeEnum_weather;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const AskCitationTypeEnum unknownDefaultOpenApi =
+      _$askCitationTypeEnum_unknownDefaultOpenApi;
 
   static Serializer<AskCitationTypeEnum> get serializer =>
       _$askCitationTypeEnumSerializer;

@@ -12,6 +12,8 @@ const EvidenceEventStatusEnum _$evidenceEventStatusEnum_merged =
     const EvidenceEventStatusEnum._('merged');
 const EvidenceEventStatusEnum _$evidenceEventStatusEnum_closed =
     const EvidenceEventStatusEnum._('closed');
+const EvidenceEventStatusEnum _$evidenceEventStatusEnum_unknownDefaultOpenApi =
+    const EvidenceEventStatusEnum._('unknownDefaultOpenApi');
 
 EvidenceEventStatusEnum _$evidenceEventStatusEnumValueOf(String name) {
   switch (name) {
@@ -21,8 +23,10 @@ EvidenceEventStatusEnum _$evidenceEventStatusEnumValueOf(String name) {
       return _$evidenceEventStatusEnum_merged;
     case 'closed':
       return _$evidenceEventStatusEnum_closed;
+    case 'unknownDefaultOpenApi':
+      return _$evidenceEventStatusEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$evidenceEventStatusEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -31,6 +35,7 @@ final BuiltSet<EvidenceEventStatusEnum> _$evidenceEventStatusEnumValues =
       _$evidenceEventStatusEnum_open,
       _$evidenceEventStatusEnum_merged,
       _$evidenceEventStatusEnum_closed,
+      _$evidenceEventStatusEnum_unknownDefaultOpenApi,
     ]);
 
 const EvidenceEventQualityFlagsEnum _$evidenceEventQualityFlagsEnum_ECHO =
@@ -44,6 +49,9 @@ _$evidenceEventQualityFlagsEnum_SINGLE_ORIGINATOR =
 const EvidenceEventQualityFlagsEnum
 _$evidenceEventQualityFlagsEnum_LATE_REVISION =
     const EvidenceEventQualityFlagsEnum._('LATE_REVISION');
+const EvidenceEventQualityFlagsEnum
+_$evidenceEventQualityFlagsEnum_unknownDefaultOpenApi =
+    const EvidenceEventQualityFlagsEnum._('unknownDefaultOpenApi');
 
 EvidenceEventQualityFlagsEnum _$evidenceEventQualityFlagsEnumValueOf(
   String name,
@@ -57,8 +65,10 @@ EvidenceEventQualityFlagsEnum _$evidenceEventQualityFlagsEnumValueOf(
       return _$evidenceEventQualityFlagsEnum_SINGLE_ORIGINATOR;
     case 'LATE_REVISION':
       return _$evidenceEventQualityFlagsEnum_LATE_REVISION;
+    case 'unknownDefaultOpenApi':
+      return _$evidenceEventQualityFlagsEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$evidenceEventQualityFlagsEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -69,6 +79,7 @@ _$evidenceEventQualityFlagsEnumValues = BuiltSet<EvidenceEventQualityFlagsEnum>(
     _$evidenceEventQualityFlagsEnum_TIMESTAMP_CONFLICT,
     _$evidenceEventQualityFlagsEnum_SINGLE_ORIGINATOR,
     _$evidenceEventQualityFlagsEnum_LATE_REVISION,
+    _$evidenceEventQualityFlagsEnum_unknownDefaultOpenApi,
   ],
 );
 
@@ -82,6 +93,9 @@ _$evidenceEventFlagsAddedEnum_SINGLE_ORIGINATOR =
     const EvidenceEventFlagsAddedEnum._('SINGLE_ORIGINATOR');
 const EvidenceEventFlagsAddedEnum _$evidenceEventFlagsAddedEnum_LATE_REVISION =
     const EvidenceEventFlagsAddedEnum._('LATE_REVISION');
+const EvidenceEventFlagsAddedEnum
+_$evidenceEventFlagsAddedEnum_unknownDefaultOpenApi =
+    const EvidenceEventFlagsAddedEnum._('unknownDefaultOpenApi');
 
 EvidenceEventFlagsAddedEnum _$evidenceEventFlagsAddedEnumValueOf(String name) {
   switch (name) {
@@ -93,8 +107,10 @@ EvidenceEventFlagsAddedEnum _$evidenceEventFlagsAddedEnumValueOf(String name) {
       return _$evidenceEventFlagsAddedEnum_SINGLE_ORIGINATOR;
     case 'LATE_REVISION':
       return _$evidenceEventFlagsAddedEnum_LATE_REVISION;
+    case 'unknownDefaultOpenApi':
+      return _$evidenceEventFlagsAddedEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$evidenceEventFlagsAddedEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -105,6 +121,7 @@ _$evidenceEventFlagsAddedEnumValues =
       _$evidenceEventFlagsAddedEnum_TIMESTAMP_CONFLICT,
       _$evidenceEventFlagsAddedEnum_SINGLE_ORIGINATOR,
       _$evidenceEventFlagsAddedEnum_LATE_REVISION,
+      _$evidenceEventFlagsAddedEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<EvidenceEventStatusEnum> _$evidenceEventStatusEnumSerializer =
@@ -122,11 +139,13 @@ class _$EvidenceEventStatusEnumSerializer
     'open': 'open',
     'merged': 'merged',
     'closed': 'closed',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'open': 'open',
     'merged': 'merged',
     'closed': 'closed',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -158,12 +177,14 @@ class _$EvidenceEventQualityFlagsEnumSerializer
     'TIMESTAMP_CONFLICT': 'TIMESTAMP_CONFLICT',
     'SINGLE_ORIGINATOR': 'SINGLE_ORIGINATOR',
     'LATE_REVISION': 'LATE_REVISION',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'ECHO': 'ECHO',
     'TIMESTAMP_CONFLICT': 'TIMESTAMP_CONFLICT',
     'SINGLE_ORIGINATOR': 'SINGLE_ORIGINATOR',
     'LATE_REVISION': 'LATE_REVISION',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -195,12 +216,14 @@ class _$EvidenceEventFlagsAddedEnumSerializer
     'TIMESTAMP_CONFLICT': 'TIMESTAMP_CONFLICT',
     'SINGLE_ORIGINATOR': 'SINGLE_ORIGINATOR',
     'LATE_REVISION': 'LATE_REVISION',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'ECHO': 'ECHO',
     'TIMESTAMP_CONFLICT': 'TIMESTAMP_CONFLICT',
     'SINGLE_ORIGINATOR': 'SINGLE_ORIGINATOR',
     'LATE_REVISION': 'LATE_REVISION',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

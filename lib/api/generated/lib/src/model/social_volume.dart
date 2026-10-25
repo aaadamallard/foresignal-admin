@@ -266,6 +266,9 @@ class SocialVolumeMetricEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'denominator')
   static const SocialVolumeMetricEnum denominator =
       _$socialVolumeMetricEnum_denominator;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const SocialVolumeMetricEnum unknownDefaultOpenApi =
+      _$socialVolumeMetricEnum_unknownDefaultOpenApi;
 
   static Serializer<SocialVolumeMetricEnum> get serializer =>
       _$socialVolumeMetricEnumSerializer;
@@ -283,6 +286,9 @@ class SocialVolumeIntervalEnum extends EnumClass {
   static const SocialVolumeIntervalEnum PT1H = _$socialVolumeIntervalEnum_PT1H;
   @BuiltValueEnumConst(wireName: r'P1D')
   static const SocialVolumeIntervalEnum P1D = _$socialVolumeIntervalEnum_P1D;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const SocialVolumeIntervalEnum unknownDefaultOpenApi =
+      _$socialVolumeIntervalEnum_unknownDefaultOpenApi;
 
   static Serializer<SocialVolumeIntervalEnum> get serializer =>
       _$socialVolumeIntervalEnumSerializer;

@@ -322,6 +322,9 @@ class AssessmentPublishedEventCadenceEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'on-demand')
   static const AssessmentPublishedEventCadenceEnum onDemand =
       _$assessmentPublishedEventCadenceEnum_onDemand;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const AssessmentPublishedEventCadenceEnum unknownDefaultOpenApi =
+      _$assessmentPublishedEventCadenceEnum_unknownDefaultOpenApi;
 
   static Serializer<AssessmentPublishedEventCadenceEnum> get serializer =>
       _$assessmentPublishedEventCadenceEnumSerializer;
@@ -347,6 +350,9 @@ class AssessmentPublishedEventStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'failed')
   static const AssessmentPublishedEventStatusEnum failed =
       _$assessmentPublishedEventStatusEnum_failed;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const AssessmentPublishedEventStatusEnum unknownDefaultOpenApi =
+      _$assessmentPublishedEventStatusEnum_unknownDefaultOpenApi;
 
   static Serializer<AssessmentPublishedEventStatusEnum> get serializer =>
       _$assessmentPublishedEventStatusEnumSerializer;

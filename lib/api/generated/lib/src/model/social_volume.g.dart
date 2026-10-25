@@ -16,6 +16,8 @@ const SocialVolumeMetricEnum _$socialVolumeMetricEnum_engagement =
     const SocialVolumeMetricEnum._('engagement');
 const SocialVolumeMetricEnum _$socialVolumeMetricEnum_denominator =
     const SocialVolumeMetricEnum._('denominator');
+const SocialVolumeMetricEnum _$socialVolumeMetricEnum_unknownDefaultOpenApi =
+    const SocialVolumeMetricEnum._('unknownDefaultOpenApi');
 
 SocialVolumeMetricEnum _$socialVolumeMetricEnumValueOf(String name) {
   switch (name) {
@@ -29,8 +31,10 @@ SocialVolumeMetricEnum _$socialVolumeMetricEnumValueOf(String name) {
       return _$socialVolumeMetricEnum_engagement;
     case 'denominator':
       return _$socialVolumeMetricEnum_denominator;
+    case 'unknownDefaultOpenApi':
+      return _$socialVolumeMetricEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$socialVolumeMetricEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -41,12 +45,16 @@ final BuiltSet<SocialVolumeMetricEnum> _$socialVolumeMetricEnumValues =
       _$socialVolumeMetricEnum_reposts,
       _$socialVolumeMetricEnum_engagement,
       _$socialVolumeMetricEnum_denominator,
+      _$socialVolumeMetricEnum_unknownDefaultOpenApi,
     ]);
 
 const SocialVolumeIntervalEnum _$socialVolumeIntervalEnum_PT1H =
     const SocialVolumeIntervalEnum._('PT1H');
 const SocialVolumeIntervalEnum _$socialVolumeIntervalEnum_P1D =
     const SocialVolumeIntervalEnum._('P1D');
+const SocialVolumeIntervalEnum
+_$socialVolumeIntervalEnum_unknownDefaultOpenApi =
+    const SocialVolumeIntervalEnum._('unknownDefaultOpenApi');
 
 SocialVolumeIntervalEnum _$socialVolumeIntervalEnumValueOf(String name) {
   switch (name) {
@@ -54,8 +62,10 @@ SocialVolumeIntervalEnum _$socialVolumeIntervalEnumValueOf(String name) {
       return _$socialVolumeIntervalEnum_PT1H;
     case 'P1D':
       return _$socialVolumeIntervalEnum_P1D;
+    case 'unknownDefaultOpenApi':
+      return _$socialVolumeIntervalEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$socialVolumeIntervalEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -63,6 +73,7 @@ final BuiltSet<SocialVolumeIntervalEnum> _$socialVolumeIntervalEnumValues =
     BuiltSet<SocialVolumeIntervalEnum>(const <SocialVolumeIntervalEnum>[
       _$socialVolumeIntervalEnum_PT1H,
       _$socialVolumeIntervalEnum_P1D,
+      _$socialVolumeIntervalEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<SocialVolumeMetricEnum> _$socialVolumeMetricEnumSerializer =
@@ -78,6 +89,7 @@ class _$SocialVolumeMetricEnumSerializer
     'reposts': 'reposts',
     'engagement': 'engagement',
     'denominator': 'denominator',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'posts': 'posts',
@@ -85,6 +97,7 @@ class _$SocialVolumeMetricEnumSerializer
     'reposts': 'reposts',
     'engagement': 'engagement',
     'denominator': 'denominator',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -114,10 +127,12 @@ class _$SocialVolumeIntervalEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'PT1H': 'PT1H',
     'P1D': 'P1D',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'PT1H': 'PT1H',
     'P1D': 'P1D',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

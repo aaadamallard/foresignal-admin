@@ -14,6 +14,8 @@ const ReplayResultStatusEnum _$replayResultStatusEnum_done =
     const ReplayResultStatusEnum._('done');
 const ReplayResultStatusEnum _$replayResultStatusEnum_failed =
     const ReplayResultStatusEnum._('failed');
+const ReplayResultStatusEnum _$replayResultStatusEnum_unknownDefaultOpenApi =
+    const ReplayResultStatusEnum._('unknownDefaultOpenApi');
 
 ReplayResultStatusEnum _$replayResultStatusEnumValueOf(String name) {
   switch (name) {
@@ -25,8 +27,10 @@ ReplayResultStatusEnum _$replayResultStatusEnumValueOf(String name) {
       return _$replayResultStatusEnum_done;
     case 'failed':
       return _$replayResultStatusEnum_failed;
+    case 'unknownDefaultOpenApi':
+      return _$replayResultStatusEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$replayResultStatusEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -36,6 +40,7 @@ final BuiltSet<ReplayResultStatusEnum> _$replayResultStatusEnumValues =
       _$replayResultStatusEnum_running,
       _$replayResultStatusEnum_done,
       _$replayResultStatusEnum_failed,
+      _$replayResultStatusEnum_unknownDefaultOpenApi,
     ]);
 
 const ReplayResultOutcomeEnum _$replayResultOutcomeEnum_identical =
@@ -44,6 +49,8 @@ const ReplayResultOutcomeEnum _$replayResultOutcomeEnum_differs =
     const ReplayResultOutcomeEnum._('differs');
 const ReplayResultOutcomeEnum _$replayResultOutcomeEnum_notReplayable =
     const ReplayResultOutcomeEnum._('notReplayable');
+const ReplayResultOutcomeEnum _$replayResultOutcomeEnum_unknownDefaultOpenApi =
+    const ReplayResultOutcomeEnum._('unknownDefaultOpenApi');
 
 ReplayResultOutcomeEnum _$replayResultOutcomeEnumValueOf(String name) {
   switch (name) {
@@ -53,8 +60,10 @@ ReplayResultOutcomeEnum _$replayResultOutcomeEnumValueOf(String name) {
       return _$replayResultOutcomeEnum_differs;
     case 'notReplayable':
       return _$replayResultOutcomeEnum_notReplayable;
+    case 'unknownDefaultOpenApi':
+      return _$replayResultOutcomeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$replayResultOutcomeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -63,6 +72,7 @@ final BuiltSet<ReplayResultOutcomeEnum> _$replayResultOutcomeEnumValues =
       _$replayResultOutcomeEnum_identical,
       _$replayResultOutcomeEnum_differs,
       _$replayResultOutcomeEnum_notReplayable,
+      _$replayResultOutcomeEnum_unknownDefaultOpenApi,
     ]);
 
 const ReplayResultReasonEnum _$replayResultReasonEnum_inputsPurged =
@@ -71,6 +81,8 @@ const ReplayResultReasonEnum _$replayResultReasonEnum_componentRemoved =
     const ReplayResultReasonEnum._('componentRemoved');
 const ReplayResultReasonEnum _$replayResultReasonEnum_llmOutput =
     const ReplayResultReasonEnum._('llmOutput');
+const ReplayResultReasonEnum _$replayResultReasonEnum_unknownDefaultOpenApi =
+    const ReplayResultReasonEnum._('unknownDefaultOpenApi');
 
 ReplayResultReasonEnum _$replayResultReasonEnumValueOf(String name) {
   switch (name) {
@@ -80,8 +92,10 @@ ReplayResultReasonEnum _$replayResultReasonEnumValueOf(String name) {
       return _$replayResultReasonEnum_componentRemoved;
     case 'llmOutput':
       return _$replayResultReasonEnum_llmOutput;
+    case 'unknownDefaultOpenApi':
+      return _$replayResultReasonEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$replayResultReasonEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -90,6 +104,7 @@ final BuiltSet<ReplayResultReasonEnum> _$replayResultReasonEnumValues =
       _$replayResultReasonEnum_inputsPurged,
       _$replayResultReasonEnum_componentRemoved,
       _$replayResultReasonEnum_llmOutput,
+      _$replayResultReasonEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<ReplayResultStatusEnum> _$replayResultStatusEnumSerializer =
@@ -106,12 +121,14 @@ class _$ReplayResultStatusEnumSerializer
     'running': 'running',
     'done': 'done',
     'failed': 'failed',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'queued': 'queued',
     'running': 'running',
     'done': 'done',
     'failed': 'failed',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -142,11 +159,13 @@ class _$ReplayResultOutcomeEnumSerializer
     'identical': 'identical',
     'differs': 'differs',
     'notReplayable': 'not-replayable',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'identical': 'identical',
     'differs': 'differs',
     'not-replayable': 'notReplayable',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -177,11 +196,13 @@ class _$ReplayResultReasonEnumSerializer
     'inputsPurged': 'inputs-purged',
     'componentRemoved': 'component-removed',
     'llmOutput': 'llm-output',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'inputs-purged': 'inputsPurged',
     'component-removed': 'componentRemoved',
     'llm-output': 'llmOutput',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

@@ -108,6 +108,9 @@ class TriggerRuleInputWindowBucketEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'1h')
   static const TriggerRuleInputWindowBucketEnum n1h =
       _$triggerRuleInputWindowBucketEnum_n1h;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const TriggerRuleInputWindowBucketEnum unknownDefaultOpenApi =
+      _$triggerRuleInputWindowBucketEnum_unknownDefaultOpenApi;
 
   static Serializer<TriggerRuleInputWindowBucketEnum> get serializer =>
       _$triggerRuleInputWindowBucketEnumSerializer;
@@ -127,6 +130,9 @@ class TriggerRuleInputWindowSlotModeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'hour-of-day')
   static const TriggerRuleInputWindowSlotModeEnum hourOfDay =
       _$triggerRuleInputWindowSlotModeEnum_hourOfDay;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const TriggerRuleInputWindowSlotModeEnum unknownDefaultOpenApi =
+      _$triggerRuleInputWindowSlotModeEnum_unknownDefaultOpenApi;
 
   static Serializer<TriggerRuleInputWindowSlotModeEnum> get serializer =>
       _$triggerRuleInputWindowSlotModeEnumSerializer;
@@ -149,6 +155,9 @@ class TriggerRuleInputWindowDirectionEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'both')
   static const TriggerRuleInputWindowDirectionEnum both =
       _$triggerRuleInputWindowDirectionEnum_both;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const TriggerRuleInputWindowDirectionEnum unknownDefaultOpenApi =
+      _$triggerRuleInputWindowDirectionEnum_unknownDefaultOpenApi;
 
   static Serializer<TriggerRuleInputWindowDirectionEnum> get serializer =>
       _$triggerRuleInputWindowDirectionEnumSerializer;
@@ -172,6 +181,9 @@ class TriggerRuleInputWindowSensitivityEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'high')
   static const TriggerRuleInputWindowSensitivityEnum high =
       _$triggerRuleInputWindowSensitivityEnum_high;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const TriggerRuleInputWindowSensitivityEnum unknownDefaultOpenApi =
+      _$triggerRuleInputWindowSensitivityEnum_unknownDefaultOpenApi;
 
   static Serializer<TriggerRuleInputWindowSensitivityEnum> get serializer =>
       _$triggerRuleInputWindowSensitivityEnumSerializer;

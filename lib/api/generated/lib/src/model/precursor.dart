@@ -833,6 +833,9 @@ class PrecursorKindEnum extends EnumClass {
   static const PrecursorKindEnum event = _$precursorKindEnum_event;
   @BuiltValueEnumConst(wireName: r'series')
   static const PrecursorKindEnum series = _$precursorKindEnum_series;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const PrecursorKindEnum unknownDefaultOpenApi =
+      _$precursorKindEnum_unknownDefaultOpenApi;
 
   static Serializer<PrecursorKindEnum> get serializer =>
       _$precursorKindEnumSerializer;
@@ -851,6 +854,9 @@ class PrecursorCorrelationSignEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'negative')
   static const PrecursorCorrelationSignEnum negative =
       _$precursorCorrelationSignEnum_negative;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const PrecursorCorrelationSignEnum unknownDefaultOpenApi =
+      _$precursorCorrelationSignEnum_unknownDefaultOpenApi;
 
   static Serializer<PrecursorCorrelationSignEnum> get serializer =>
       _$precursorCorrelationSignEnumSerializer;
@@ -872,6 +878,9 @@ class PrecursorStatusEnum extends EnumClass {
   static const PrecursorStatusEnum stale = _$precursorStatusEnum_stale;
   @BuiltValueEnumConst(wireName: r'retired')
   static const PrecursorStatusEnum retired = _$precursorStatusEnum_retired;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const PrecursorStatusEnum unknownDefaultOpenApi =
+      _$precursorStatusEnum_unknownDefaultOpenApi;
 
   static Serializer<PrecursorStatusEnum> get serializer =>
       _$precursorStatusEnumSerializer;
@@ -889,6 +898,9 @@ class PrecursorOriginEnum extends EnumClass {
   static const PrecursorOriginEnum auto = _$precursorOriginEnum_auto;
   @BuiltValueEnumConst(wireName: r'operator')
   static const PrecursorOriginEnum operator_ = _$precursorOriginEnum_operator_;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const PrecursorOriginEnum unknownDefaultOpenApi =
+      _$precursorOriginEnum_unknownDefaultOpenApi;
 
   static Serializer<PrecursorOriginEnum> get serializer =>
       _$precursorOriginEnumSerializer;

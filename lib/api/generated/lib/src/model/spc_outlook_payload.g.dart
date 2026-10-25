@@ -24,6 +24,9 @@ const SpcOutlookPayloadTypeEnum _$spcOutlookPayloadTypeEnum_prob =
     const SpcOutlookPayloadTypeEnum._('prob');
 const SpcOutlookPayloadTypeEnum _$spcOutlookPayloadTypeEnum_sigprob =
     const SpcOutlookPayloadTypeEnum._('sigprob');
+const SpcOutlookPayloadTypeEnum
+_$spcOutlookPayloadTypeEnum_unknownDefaultOpenApi =
+    const SpcOutlookPayloadTypeEnum._('unknownDefaultOpenApi');
 
 SpcOutlookPayloadTypeEnum _$spcOutlookPayloadTypeEnumValueOf(String name) {
   switch (name) {
@@ -45,8 +48,10 @@ SpcOutlookPayloadTypeEnum _$spcOutlookPayloadTypeEnumValueOf(String name) {
       return _$spcOutlookPayloadTypeEnum_prob;
     case 'sigprob':
       return _$spcOutlookPayloadTypeEnum_sigprob;
+    case 'unknownDefaultOpenApi':
+      return _$spcOutlookPayloadTypeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$spcOutlookPayloadTypeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -61,6 +66,7 @@ final BuiltSet<SpcOutlookPayloadTypeEnum> _$spcOutlookPayloadTypeEnumValues =
       _$spcOutlookPayloadTypeEnum_sighail,
       _$spcOutlookPayloadTypeEnum_prob,
       _$spcOutlookPayloadTypeEnum_sigprob,
+      _$spcOutlookPayloadTypeEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<SpcOutlookPayloadTypeEnum> _$spcOutlookPayloadTypeEnumSerializer =
@@ -78,6 +84,7 @@ class _$SpcOutlookPayloadTypeEnumSerializer
     'sighail': 'sighail',
     'prob': 'prob',
     'sigprob': 'sigprob',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'cat': 'cat',
@@ -89,6 +96,7 @@ class _$SpcOutlookPayloadTypeEnumSerializer
     'sighail': 'sighail',
     'prob': 'prob',
     'sigprob': 'sigprob',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

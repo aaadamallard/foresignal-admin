@@ -479,6 +479,9 @@ class HazardForecastHazardTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'storm-cell')
   static const HazardForecastHazardTypeEnum stormCell =
       _$hazardForecastHazardTypeEnum_stormCell;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const HazardForecastHazardTypeEnum unknownDefaultOpenApi =
+      _$hazardForecastHazardTypeEnum_unknownDefaultOpenApi;
 
   static Serializer<HazardForecastHazardTypeEnum> get serializer =>
       _$hazardForecastHazardTypeEnumSerializer;
@@ -511,6 +514,9 @@ class HazardForecastProbabilityModelEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'none')
   static const HazardForecastProbabilityModelEnum none =
       _$hazardForecastProbabilityModelEnum_none;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const HazardForecastProbabilityModelEnum unknownDefaultOpenApi =
+      _$hazardForecastProbabilityModelEnum_unknownDefaultOpenApi;
 
   static Serializer<HazardForecastProbabilityModelEnum> get serializer =>
       _$hazardForecastProbabilityModelEnumSerializer;

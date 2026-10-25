@@ -226,6 +226,9 @@ class OutletConsensusProvidersInnerProviderEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'operator')
   static const OutletConsensusProvidersInnerProviderEnum operator_ =
       _$outletConsensusProvidersInnerProviderEnum_operator_;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const OutletConsensusProvidersInnerProviderEnum unknownDefaultOpenApi =
+      _$outletConsensusProvidersInnerProviderEnum_unknownDefaultOpenApi;
 
   static Serializer<OutletConsensusProvidersInnerProviderEnum> get serializer =>
       _$outletConsensusProvidersInnerProviderEnumSerializer;

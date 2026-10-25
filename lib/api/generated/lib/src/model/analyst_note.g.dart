@@ -12,6 +12,8 @@ const AnalystNotePriorityEnum _$analystNotePriorityEnum_normal =
     const AnalystNotePriorityEnum._('normal');
 const AnalystNotePriorityEnum _$analystNotePriorityEnum_high =
     const AnalystNotePriorityEnum._('high');
+const AnalystNotePriorityEnum _$analystNotePriorityEnum_unknownDefaultOpenApi =
+    const AnalystNotePriorityEnum._('unknownDefaultOpenApi');
 
 AnalystNotePriorityEnum _$analystNotePriorityEnumValueOf(String name) {
   switch (name) {
@@ -21,8 +23,10 @@ AnalystNotePriorityEnum _$analystNotePriorityEnumValueOf(String name) {
       return _$analystNotePriorityEnum_normal;
     case 'high':
       return _$analystNotePriorityEnum_high;
+    case 'unknownDefaultOpenApi':
+      return _$analystNotePriorityEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$analystNotePriorityEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -31,6 +35,7 @@ final BuiltSet<AnalystNotePriorityEnum> _$analystNotePriorityEnumValues =
       _$analystNotePriorityEnum_low,
       _$analystNotePriorityEnum_normal,
       _$analystNotePriorityEnum_high,
+      _$analystNotePriorityEnum_unknownDefaultOpenApi,
     ]);
 
 const AnalystNoteStatusEnum _$analystNoteStatusEnum_new_ =
@@ -39,6 +44,8 @@ const AnalystNoteStatusEnum _$analystNoteStatusEnum_read =
     const AnalystNoteStatusEnum._('read');
 const AnalystNoteStatusEnum _$analystNoteStatusEnum_dismissed =
     const AnalystNoteStatusEnum._('dismissed');
+const AnalystNoteStatusEnum _$analystNoteStatusEnum_unknownDefaultOpenApi =
+    const AnalystNoteStatusEnum._('unknownDefaultOpenApi');
 
 AnalystNoteStatusEnum _$analystNoteStatusEnumValueOf(String name) {
   switch (name) {
@@ -48,8 +55,10 @@ AnalystNoteStatusEnum _$analystNoteStatusEnumValueOf(String name) {
       return _$analystNoteStatusEnum_read;
     case 'dismissed':
       return _$analystNoteStatusEnum_dismissed;
+    case 'unknownDefaultOpenApi':
+      return _$analystNoteStatusEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$analystNoteStatusEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -58,6 +67,7 @@ final BuiltSet<AnalystNoteStatusEnum> _$analystNoteStatusEnumValues =
       _$analystNoteStatusEnum_new_,
       _$analystNoteStatusEnum_read,
       _$analystNoteStatusEnum_dismissed,
+      _$analystNoteStatusEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<AnalystNotePriorityEnum> _$analystNotePriorityEnumSerializer =
@@ -71,11 +81,13 @@ class _$AnalystNotePriorityEnumSerializer
     'low': 'low',
     'normal': 'normal',
     'high': 'high',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'low': 'low',
     'normal': 'normal',
     'high': 'high',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -106,11 +118,13 @@ class _$AnalystNoteStatusEnumSerializer
     'new_': 'new',
     'read': 'read',
     'dismissed': 'dismissed',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'new': 'new_',
     'read': 'read',
     'dismissed': 'dismissed',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

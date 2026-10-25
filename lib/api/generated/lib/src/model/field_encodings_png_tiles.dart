@@ -280,6 +280,9 @@ class FieldEncodingsPngTilesTmsEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'WorldCRS84Quad')
   static const FieldEncodingsPngTilesTmsEnum worldCRS84Quad =
       _$fieldEncodingsPngTilesTmsEnum_worldCRS84Quad;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const FieldEncodingsPngTilesTmsEnum unknownDefaultOpenApi =
+      _$fieldEncodingsPngTilesTmsEnum_unknownDefaultOpenApi;
 
   static Serializer<FieldEncodingsPngTilesTmsEnum> get serializer =>
       _$fieldEncodingsPngTilesTmsEnumSerializer;

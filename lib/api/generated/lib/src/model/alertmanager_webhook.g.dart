@@ -8,6 +8,9 @@ part of 'alertmanager_webhook.dart';
 
 const AlertmanagerWebhookVersionEnum _$alertmanagerWebhookVersionEnum_n4 =
     const AlertmanagerWebhookVersionEnum._('n4');
+const AlertmanagerWebhookVersionEnum
+_$alertmanagerWebhookVersionEnum_unknownDefaultOpenApi =
+    const AlertmanagerWebhookVersionEnum._('unknownDefaultOpenApi');
 
 AlertmanagerWebhookVersionEnum _$alertmanagerWebhookVersionEnumValueOf(
   String name,
@@ -15,8 +18,10 @@ AlertmanagerWebhookVersionEnum _$alertmanagerWebhookVersionEnumValueOf(
   switch (name) {
     case 'n4':
       return _$alertmanagerWebhookVersionEnum_n4;
+    case 'unknownDefaultOpenApi':
+      return _$alertmanagerWebhookVersionEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$alertmanagerWebhookVersionEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -25,6 +30,7 @@ _$alertmanagerWebhookVersionEnumValues =
     BuiltSet<AlertmanagerWebhookVersionEnum>(
       const <AlertmanagerWebhookVersionEnum>[
         _$alertmanagerWebhookVersionEnum_n4,
+        _$alertmanagerWebhookVersionEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -32,6 +38,9 @@ const AlertmanagerWebhookStatusEnum _$alertmanagerWebhookStatusEnum_firing =
     const AlertmanagerWebhookStatusEnum._('firing');
 const AlertmanagerWebhookStatusEnum _$alertmanagerWebhookStatusEnum_resolved =
     const AlertmanagerWebhookStatusEnum._('resolved');
+const AlertmanagerWebhookStatusEnum
+_$alertmanagerWebhookStatusEnum_unknownDefaultOpenApi =
+    const AlertmanagerWebhookStatusEnum._('unknownDefaultOpenApi');
 
 AlertmanagerWebhookStatusEnum _$alertmanagerWebhookStatusEnumValueOf(
   String name,
@@ -41,8 +50,10 @@ AlertmanagerWebhookStatusEnum _$alertmanagerWebhookStatusEnumValueOf(
       return _$alertmanagerWebhookStatusEnum_firing;
     case 'resolved':
       return _$alertmanagerWebhookStatusEnum_resolved;
+    case 'unknownDefaultOpenApi':
+      return _$alertmanagerWebhookStatusEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$alertmanagerWebhookStatusEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -51,6 +62,7 @@ _$alertmanagerWebhookStatusEnumValues = BuiltSet<AlertmanagerWebhookStatusEnum>(
   const <AlertmanagerWebhookStatusEnum>[
     _$alertmanagerWebhookStatusEnum_firing,
     _$alertmanagerWebhookStatusEnum_resolved,
+    _$alertmanagerWebhookStatusEnum_unknownDefaultOpenApi,
   ],
 );
 
@@ -63,9 +75,13 @@ _$alertmanagerWebhookStatusEnumSerializer =
 
 class _$AlertmanagerWebhookVersionEnumSerializer
     implements PrimitiveSerializer<AlertmanagerWebhookVersionEnum> {
-  static const Map<String, Object> _toWire = const <String, Object>{'n4': '4'};
+  static const Map<String, Object> _toWire = const <String, Object>{
+    'n4': '4',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
+  };
   static const Map<Object, String> _fromWire = const <Object, String>{
     '4': 'n4',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -95,10 +111,12 @@ class _$AlertmanagerWebhookStatusEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'firing': 'firing',
     'resolved': 'resolved',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'firing': 'firing',
     'resolved': 'resolved',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

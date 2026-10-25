@@ -12,6 +12,8 @@ const StatsTopByEnum _$statsTopByEnum_source_ = const StatsTopByEnum._(
 const StatsTopByEnum _$statsTopByEnum_kind = const StatsTopByEnum._('kind');
 const StatsTopByEnum _$statsTopByEnum_cell = const StatsTopByEnum._('cell');
 const StatsTopByEnum _$statsTopByEnum_entity = const StatsTopByEnum._('entity');
+const StatsTopByEnum _$statsTopByEnum_unknownDefaultOpenApi =
+    const StatsTopByEnum._('unknownDefaultOpenApi');
 
 StatsTopByEnum _$statsTopByEnumValueOf(String name) {
   switch (name) {
@@ -23,8 +25,10 @@ StatsTopByEnum _$statsTopByEnumValueOf(String name) {
       return _$statsTopByEnum_cell;
     case 'entity':
       return _$statsTopByEnum_entity;
+    case 'unknownDefaultOpenApi':
+      return _$statsTopByEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$statsTopByEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -34,6 +38,7 @@ final BuiltSet<StatsTopByEnum> _$statsTopByEnumValues =
       _$statsTopByEnum_kind,
       _$statsTopByEnum_cell,
       _$statsTopByEnum_entity,
+      _$statsTopByEnum_unknownDefaultOpenApi,
     ]);
 
 const StatsTopBackendEnum _$statsTopBackendEnum_rollup =
@@ -42,6 +47,8 @@ const StatsTopBackendEnum _$statsTopBackendEnum_raw =
     const StatsTopBackendEnum._('raw');
 const StatsTopBackendEnum _$statsTopBackendEnum_mixed =
     const StatsTopBackendEnum._('mixed');
+const StatsTopBackendEnum _$statsTopBackendEnum_unknownDefaultOpenApi =
+    const StatsTopBackendEnum._('unknownDefaultOpenApi');
 
 StatsTopBackendEnum _$statsTopBackendEnumValueOf(String name) {
   switch (name) {
@@ -51,8 +58,10 @@ StatsTopBackendEnum _$statsTopBackendEnumValueOf(String name) {
       return _$statsTopBackendEnum_raw;
     case 'mixed':
       return _$statsTopBackendEnum_mixed;
+    case 'unknownDefaultOpenApi':
+      return _$statsTopBackendEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$statsTopBackendEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -61,6 +70,7 @@ final BuiltSet<StatsTopBackendEnum> _$statsTopBackendEnumValues =
       _$statsTopBackendEnum_rollup,
       _$statsTopBackendEnum_raw,
       _$statsTopBackendEnum_mixed,
+      _$statsTopBackendEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<StatsTopByEnum> _$statsTopByEnumSerializer =
@@ -75,12 +85,14 @@ class _$StatsTopByEnumSerializer
     'kind': 'kind',
     'cell': 'cell',
     'entity': 'entity',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'source': 'source_',
     'kind': 'kind',
     'cell': 'cell',
     'entity': 'entity',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -111,11 +123,13 @@ class _$StatsTopBackendEnumSerializer
     'rollup': 'rollup',
     'raw': 'raw',
     'mixed': 'mixed',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'rollup': 'rollup',
     'raw': 'raw',
     'mixed': 'mixed',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

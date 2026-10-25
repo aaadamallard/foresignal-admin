@@ -414,6 +414,9 @@ class BenchmarkRunSuiteEnum extends EnumClass {
       _$benchmarkRunSuiteEnum_historical;
   @BuiltValueEnumConst(wireName: r'all')
   static const BenchmarkRunSuiteEnum all = _$benchmarkRunSuiteEnum_all;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const BenchmarkRunSuiteEnum unknownDefaultOpenApi =
+      _$benchmarkRunSuiteEnum_unknownDefaultOpenApi;
 
   static Serializer<BenchmarkRunSuiteEnum> get serializer =>
       _$benchmarkRunSuiteEnumSerializer;
@@ -443,6 +446,9 @@ class BenchmarkRunJobStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'cancelled')
   static const BenchmarkRunJobStatusEnum cancelled =
       _$benchmarkRunJobStatusEnum_cancelled;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const BenchmarkRunJobStatusEnum unknownDefaultOpenApi =
+      _$benchmarkRunJobStatusEnum_unknownDefaultOpenApi;
 
   static Serializer<BenchmarkRunJobStatusEnum> get serializer =>
       _$benchmarkRunJobStatusEnumSerializer;
@@ -463,6 +469,9 @@ class BenchmarkRunStatusEnum extends EnumClass {
   static const BenchmarkRunStatusEnum warn = _$benchmarkRunStatusEnum_warn;
   @BuiltValueEnumConst(wireName: r'fail')
   static const BenchmarkRunStatusEnum fail = _$benchmarkRunStatusEnum_fail;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const BenchmarkRunStatusEnum unknownDefaultOpenApi =
+      _$benchmarkRunStatusEnum_unknownDefaultOpenApi;
 
   static Serializer<BenchmarkRunStatusEnum> get serializer =>
       _$benchmarkRunStatusEnumSerializer;

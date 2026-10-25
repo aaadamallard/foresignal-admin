@@ -15,6 +15,9 @@ const AlertFeedbackInputFeedbackEnum _$alertFeedbackInputFeedbackEnum_late_ =
 const AlertFeedbackInputFeedbackEnum
 _$alertFeedbackInputFeedbackEnum_falsePositive =
     const AlertFeedbackInputFeedbackEnum._('falsePositive');
+const AlertFeedbackInputFeedbackEnum
+_$alertFeedbackInputFeedbackEnum_unknownDefaultOpenApi =
+    const AlertFeedbackInputFeedbackEnum._('unknownDefaultOpenApi');
 
 AlertFeedbackInputFeedbackEnum _$alertFeedbackInputFeedbackEnumValueOf(
   String name,
@@ -28,8 +31,10 @@ AlertFeedbackInputFeedbackEnum _$alertFeedbackInputFeedbackEnumValueOf(
       return _$alertFeedbackInputFeedbackEnum_late_;
     case 'falsePositive':
       return _$alertFeedbackInputFeedbackEnum_falsePositive;
+    case 'unknownDefaultOpenApi':
+      return _$alertFeedbackInputFeedbackEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$alertFeedbackInputFeedbackEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -41,6 +46,7 @@ _$alertFeedbackInputFeedbackEnumValues =
         _$alertFeedbackInputFeedbackEnum_noise,
         _$alertFeedbackInputFeedbackEnum_late_,
         _$alertFeedbackInputFeedbackEnum_falsePositive,
+        _$alertFeedbackInputFeedbackEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -55,12 +61,14 @@ class _$AlertFeedbackInputFeedbackEnumSerializer
     'noise': 'noise',
     'late_': 'late',
     'falsePositive': 'false_positive',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'useful': 'useful',
     'noise': 'noise',
     'late': 'late_',
     'false_positive': 'falsePositive',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

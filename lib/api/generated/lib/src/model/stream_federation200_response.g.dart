@@ -36,6 +36,11 @@ _$streamFederation200ResponsePersistReasonEnum_TRIGGER_EDGE =
 const StreamFederation200ResponsePersistReasonEnum
 _$streamFederation200ResponsePersistReasonEnum_SNAPSHOT =
     const StreamFederation200ResponsePersistReasonEnum._('SNAPSHOT');
+const StreamFederation200ResponsePersistReasonEnum
+_$streamFederation200ResponsePersistReasonEnum_unknownDefaultOpenApi =
+    const StreamFederation200ResponsePersistReasonEnum._(
+      'unknownDefaultOpenApi',
+    );
 
 StreamFederation200ResponsePersistReasonEnum
 _$streamFederation200ResponsePersistReasonEnumValueOf(String name) {
@@ -60,8 +65,10 @@ _$streamFederation200ResponsePersistReasonEnumValueOf(String name) {
       return _$streamFederation200ResponsePersistReasonEnum_TRIGGER_EDGE;
     case 'SNAPSHOT':
       return _$streamFederation200ResponsePersistReasonEnum_SNAPSHOT;
+    case 'unknownDefaultOpenApi':
+      return _$streamFederation200ResponsePersistReasonEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$streamFederation200ResponsePersistReasonEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -79,6 +86,7 @@ _$streamFederation200ResponsePersistReasonEnumValues =
         _$streamFederation200ResponsePersistReasonEnum_HEARTBEAT,
         _$streamFederation200ResponsePersistReasonEnum_TRIGGER_EDGE,
         _$streamFederation200ResponsePersistReasonEnum_SNAPSHOT,
+        _$streamFederation200ResponsePersistReasonEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -88,6 +96,9 @@ _$streamFederation200ResponseHistoryTierEnum_STANDARD =
 const StreamFederation200ResponseHistoryTierEnum
 _$streamFederation200ResponseHistoryTierEnum_TRACK =
     const StreamFederation200ResponseHistoryTierEnum._('TRACK');
+const StreamFederation200ResponseHistoryTierEnum
+_$streamFederation200ResponseHistoryTierEnum_unknownDefaultOpenApi =
+    const StreamFederation200ResponseHistoryTierEnum._('unknownDefaultOpenApi');
 
 StreamFederation200ResponseHistoryTierEnum
 _$streamFederation200ResponseHistoryTierEnumValueOf(String name) {
@@ -96,8 +107,10 @@ _$streamFederation200ResponseHistoryTierEnumValueOf(String name) {
       return _$streamFederation200ResponseHistoryTierEnum_STANDARD;
     case 'TRACK':
       return _$streamFederation200ResponseHistoryTierEnum_TRACK;
+    case 'unknownDefaultOpenApi':
+      return _$streamFederation200ResponseHistoryTierEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$streamFederation200ResponseHistoryTierEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -107,6 +120,7 @@ _$streamFederation200ResponseHistoryTierEnumValues =
       const <StreamFederation200ResponseHistoryTierEnum>[
         _$streamFederation200ResponseHistoryTierEnum_STANDARD,
         _$streamFederation200ResponseHistoryTierEnum_TRACK,
+        _$streamFederation200ResponseHistoryTierEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -119,6 +133,9 @@ _$streamFederation200ResponseReasonEnum_replayCap =
 const StreamFederation200ResponseReasonEnum
 _$streamFederation200ResponseReasonEnum_resyncRequired =
     const StreamFederation200ResponseReasonEnum._('resyncRequired');
+const StreamFederation200ResponseReasonEnum
+_$streamFederation200ResponseReasonEnum_unknownDefaultOpenApi =
+    const StreamFederation200ResponseReasonEnum._('unknownDefaultOpenApi');
 
 StreamFederation200ResponseReasonEnum
 _$streamFederation200ResponseReasonEnumValueOf(String name) {
@@ -129,8 +146,10 @@ _$streamFederation200ResponseReasonEnumValueOf(String name) {
       return _$streamFederation200ResponseReasonEnum_replayCap;
     case 'resyncRequired':
       return _$streamFederation200ResponseReasonEnum_resyncRequired;
+    case 'unknownDefaultOpenApi':
+      return _$streamFederation200ResponseReasonEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$streamFederation200ResponseReasonEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -141,6 +160,7 @@ _$streamFederation200ResponseReasonEnumValues =
         _$streamFederation200ResponseReasonEnum_bufferOverflow,
         _$streamFederation200ResponseReasonEnum_replayCap,
         _$streamFederation200ResponseReasonEnum_resyncRequired,
+        _$streamFederation200ResponseReasonEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -168,6 +188,7 @@ class _$StreamFederation200ResponsePersistReasonEnumSerializer
     'HEARTBEAT': 'HEARTBEAT',
     'TRIGGER_EDGE': 'TRIGGER_EDGE',
     'SNAPSHOT': 'SNAPSHOT',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'FIRST': 'FIRST',
@@ -180,6 +201,7 @@ class _$StreamFederation200ResponsePersistReasonEnumSerializer
     'HEARTBEAT': 'HEARTBEAT',
     'TRIGGER_EDGE': 'TRIGGER_EDGE',
     'SNAPSHOT': 'SNAPSHOT',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -211,10 +233,12 @@ class _$StreamFederation200ResponseHistoryTierEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'STANDARD': 'STANDARD',
     'TRACK': 'TRACK',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'STANDARD': 'STANDARD',
     'TRACK': 'TRACK',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -247,11 +271,13 @@ class _$StreamFederation200ResponseReasonEnumSerializer
     'bufferOverflow': 'buffer_overflow',
     'replayCap': 'replay_cap',
     'resyncRequired': 'resync_required',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'buffer_overflow': 'bufferOverflow',
     'replay_cap': 'replayCap',
     'resync_required': 'resyncRequired',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

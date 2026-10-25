@@ -248,6 +248,9 @@ class SocialPlatformStateEventEventEnum extends EnumClass {
   static const SocialPlatformStateEventEventEnum
   socialPeriodPlatformPeriodState =
       _$socialPlatformStateEventEventEnum_socialPeriodPlatformPeriodState;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const SocialPlatformStateEventEventEnum unknownDefaultOpenApi =
+      _$socialPlatformStateEventEventEnum_unknownDefaultOpenApi;
 
   static Serializer<SocialPlatformStateEventEventEnum> get serializer =>
       _$socialPlatformStateEventEventEnumSerializer;

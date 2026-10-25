@@ -14,6 +14,9 @@ const SavedSearchHitMatchedByEnum _$savedSearchHitMatchedByEnum_hybrid =
     const SavedSearchHitMatchedByEnum._('hybrid');
 const SavedSearchHitMatchedByEnum _$savedSearchHitMatchedByEnum_filter =
     const SavedSearchHitMatchedByEnum._('filter');
+const SavedSearchHitMatchedByEnum
+_$savedSearchHitMatchedByEnum_unknownDefaultOpenApi =
+    const SavedSearchHitMatchedByEnum._('unknownDefaultOpenApi');
 
 SavedSearchHitMatchedByEnum _$savedSearchHitMatchedByEnumValueOf(String name) {
   switch (name) {
@@ -25,8 +28,10 @@ SavedSearchHitMatchedByEnum _$savedSearchHitMatchedByEnumValueOf(String name) {
       return _$savedSearchHitMatchedByEnum_hybrid;
     case 'filter':
       return _$savedSearchHitMatchedByEnum_filter;
+    case 'unknownDefaultOpenApi':
+      return _$savedSearchHitMatchedByEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$savedSearchHitMatchedByEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -37,6 +42,7 @@ _$savedSearchHitMatchedByEnumValues =
       _$savedSearchHitMatchedByEnum_semantic,
       _$savedSearchHitMatchedByEnum_hybrid,
       _$savedSearchHitMatchedByEnum_filter,
+      _$savedSearchHitMatchedByEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<SavedSearchHitMatchedByEnum>
@@ -50,12 +56,14 @@ class _$SavedSearchHitMatchedByEnumSerializer
     'semantic': 'semantic',
     'hybrid': 'hybrid',
     'filter': 'filter',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'text': 'text',
     'semantic': 'semantic',
     'hybrid': 'hybrid',
     'filter': 'filter',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

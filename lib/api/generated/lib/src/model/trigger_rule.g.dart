@@ -12,6 +12,8 @@ const TriggerRuleModeEnum _$triggerRuleModeEnum_enter =
     const TriggerRuleModeEnum._('enter');
 const TriggerRuleModeEnum _$triggerRuleModeEnum_exit =
     const TriggerRuleModeEnum._('exit');
+const TriggerRuleModeEnum _$triggerRuleModeEnum_unknownDefaultOpenApi =
+    const TriggerRuleModeEnum._('unknownDefaultOpenApi');
 
 TriggerRuleModeEnum _$triggerRuleModeEnumValueOf(String name) {
   switch (name) {
@@ -21,8 +23,10 @@ TriggerRuleModeEnum _$triggerRuleModeEnumValueOf(String name) {
       return _$triggerRuleModeEnum_enter;
     case 'exit':
       return _$triggerRuleModeEnum_exit;
+    case 'unknownDefaultOpenApi':
+      return _$triggerRuleModeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$triggerRuleModeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -31,6 +35,7 @@ final BuiltSet<TriggerRuleModeEnum> _$triggerRuleModeEnumValues =
       _$triggerRuleModeEnum_match,
       _$triggerRuleModeEnum_enter,
       _$triggerRuleModeEnum_exit,
+      _$triggerRuleModeEnum_unknownDefaultOpenApi,
     ]);
 
 const TriggerRuleSeverityEnum _$triggerRuleSeverityEnum_info =
@@ -39,6 +44,8 @@ const TriggerRuleSeverityEnum _$triggerRuleSeverityEnum_warning =
     const TriggerRuleSeverityEnum._('warning');
 const TriggerRuleSeverityEnum _$triggerRuleSeverityEnum_critical =
     const TriggerRuleSeverityEnum._('critical');
+const TriggerRuleSeverityEnum _$triggerRuleSeverityEnum_unknownDefaultOpenApi =
+    const TriggerRuleSeverityEnum._('unknownDefaultOpenApi');
 
 TriggerRuleSeverityEnum _$triggerRuleSeverityEnumValueOf(String name) {
   switch (name) {
@@ -48,8 +55,10 @@ TriggerRuleSeverityEnum _$triggerRuleSeverityEnumValueOf(String name) {
       return _$triggerRuleSeverityEnum_warning;
     case 'critical':
       return _$triggerRuleSeverityEnum_critical;
+    case 'unknownDefaultOpenApi':
+      return _$triggerRuleSeverityEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$triggerRuleSeverityEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -58,12 +67,16 @@ final BuiltSet<TriggerRuleSeverityEnum> _$triggerRuleSeverityEnumValues =
       _$triggerRuleSeverityEnum_info,
       _$triggerRuleSeverityEnum_warning,
       _$triggerRuleSeverityEnum_critical,
+      _$triggerRuleSeverityEnum_unknownDefaultOpenApi,
     ]);
 
 const TriggerRuleCooldownScopeEnum _$triggerRuleCooldownScopeEnum_record =
     const TriggerRuleCooldownScopeEnum._('record');
 const TriggerRuleCooldownScopeEnum _$triggerRuleCooldownScopeEnum_rule =
     const TriggerRuleCooldownScopeEnum._('rule');
+const TriggerRuleCooldownScopeEnum
+_$triggerRuleCooldownScopeEnum_unknownDefaultOpenApi =
+    const TriggerRuleCooldownScopeEnum._('unknownDefaultOpenApi');
 
 TriggerRuleCooldownScopeEnum _$triggerRuleCooldownScopeEnumValueOf(
   String name,
@@ -73,23 +86,28 @@ TriggerRuleCooldownScopeEnum _$triggerRuleCooldownScopeEnumValueOf(
       return _$triggerRuleCooldownScopeEnum_record;
     case 'rule':
       return _$triggerRuleCooldownScopeEnum_rule;
+    case 'unknownDefaultOpenApi':
+      return _$triggerRuleCooldownScopeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$triggerRuleCooldownScopeEnum_unknownDefaultOpenApi;
   }
 }
 
 final BuiltSet<TriggerRuleCooldownScopeEnum>
-_$triggerRuleCooldownScopeEnumValues = BuiltSet<TriggerRuleCooldownScopeEnum>(
-  const <TriggerRuleCooldownScopeEnum>[
-    _$triggerRuleCooldownScopeEnum_record,
-    _$triggerRuleCooldownScopeEnum_rule,
-  ],
-);
+_$triggerRuleCooldownScopeEnumValues =
+    BuiltSet<TriggerRuleCooldownScopeEnum>(const <TriggerRuleCooldownScopeEnum>[
+      _$triggerRuleCooldownScopeEnum_record,
+      _$triggerRuleCooldownScopeEnum_rule,
+      _$triggerRuleCooldownScopeEnum_unknownDefaultOpenApi,
+    ]);
 
 const TriggerRuleWeatherContextEnum _$triggerRuleWeatherContextEnum_auto =
     const TriggerRuleWeatherContextEnum._('auto');
 const TriggerRuleWeatherContextEnum _$triggerRuleWeatherContextEnum_off =
     const TriggerRuleWeatherContextEnum._('off');
+const TriggerRuleWeatherContextEnum
+_$triggerRuleWeatherContextEnum_unknownDefaultOpenApi =
+    const TriggerRuleWeatherContextEnum._('unknownDefaultOpenApi');
 
 TriggerRuleWeatherContextEnum _$triggerRuleWeatherContextEnumValueOf(
   String name,
@@ -99,8 +117,10 @@ TriggerRuleWeatherContextEnum _$triggerRuleWeatherContextEnumValueOf(
       return _$triggerRuleWeatherContextEnum_auto;
     case 'off':
       return _$triggerRuleWeatherContextEnum_off;
+    case 'unknownDefaultOpenApi':
+      return _$triggerRuleWeatherContextEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$triggerRuleWeatherContextEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -109,6 +129,7 @@ _$triggerRuleWeatherContextEnumValues = BuiltSet<TriggerRuleWeatherContextEnum>(
   const <TriggerRuleWeatherContextEnum>[
     _$triggerRuleWeatherContextEnum_auto,
     _$triggerRuleWeatherContextEnum_off,
+    _$triggerRuleWeatherContextEnum_unknownDefaultOpenApi,
   ],
 );
 
@@ -120,6 +141,8 @@ const TriggerRuleTypeEnum _$triggerRuleTypeEnum_absence =
     const TriggerRuleTypeEnum._('absence');
 const TriggerRuleTypeEnum _$triggerRuleTypeEnum_anomaly =
     const TriggerRuleTypeEnum._('anomaly');
+const TriggerRuleTypeEnum _$triggerRuleTypeEnum_unknownDefaultOpenApi =
+    const TriggerRuleTypeEnum._('unknownDefaultOpenApi');
 
 TriggerRuleTypeEnum _$triggerRuleTypeEnumValueOf(String name) {
   switch (name) {
@@ -131,8 +154,10 @@ TriggerRuleTypeEnum _$triggerRuleTypeEnumValueOf(String name) {
       return _$triggerRuleTypeEnum_absence;
     case 'anomaly':
       return _$triggerRuleTypeEnum_anomaly;
+    case 'unknownDefaultOpenApi':
+      return _$triggerRuleTypeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$triggerRuleTypeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -142,12 +167,16 @@ final BuiltSet<TriggerRuleTypeEnum> _$triggerRuleTypeEnumValues =
       _$triggerRuleTypeEnum_count,
       _$triggerRuleTypeEnum_absence,
       _$triggerRuleTypeEnum_anomaly,
+      _$triggerRuleTypeEnum_unknownDefaultOpenApi,
     ]);
 
 const TriggerRuleGeofenceOriginEnum _$triggerRuleGeofenceOriginEnum_inline =
     const TriggerRuleGeofenceOriginEnum._('inline');
 const TriggerRuleGeofenceOriginEnum _$triggerRuleGeofenceOriginEnum_near =
     const TriggerRuleGeofenceOriginEnum._('near');
+const TriggerRuleGeofenceOriginEnum
+_$triggerRuleGeofenceOriginEnum_unknownDefaultOpenApi =
+    const TriggerRuleGeofenceOriginEnum._('unknownDefaultOpenApi');
 
 TriggerRuleGeofenceOriginEnum _$triggerRuleGeofenceOriginEnumValueOf(
   String name,
@@ -157,8 +186,10 @@ TriggerRuleGeofenceOriginEnum _$triggerRuleGeofenceOriginEnumValueOf(
       return _$triggerRuleGeofenceOriginEnum_inline;
     case 'near':
       return _$triggerRuleGeofenceOriginEnum_near;
+    case 'unknownDefaultOpenApi':
+      return _$triggerRuleGeofenceOriginEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$triggerRuleGeofenceOriginEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -167,6 +198,7 @@ _$triggerRuleGeofenceOriginEnumValues = BuiltSet<TriggerRuleGeofenceOriginEnum>(
   const <TriggerRuleGeofenceOriginEnum>[
     _$triggerRuleGeofenceOriginEnum_inline,
     _$triggerRuleGeofenceOriginEnum_near,
+    _$triggerRuleGeofenceOriginEnum_unknownDefaultOpenApi,
   ],
 );
 
@@ -174,6 +206,9 @@ const TriggerRuleAnchorStatusEnum _$triggerRuleAnchorStatusEnum_active =
     const TriggerRuleAnchorStatusEnum._('active');
 const TriggerRuleAnchorStatusEnum _$triggerRuleAnchorStatusEnum_stale =
     const TriggerRuleAnchorStatusEnum._('stale');
+const TriggerRuleAnchorStatusEnum
+_$triggerRuleAnchorStatusEnum_unknownDefaultOpenApi =
+    const TriggerRuleAnchorStatusEnum._('unknownDefaultOpenApi');
 
 TriggerRuleAnchorStatusEnum _$triggerRuleAnchorStatusEnumValueOf(String name) {
   switch (name) {
@@ -181,18 +216,20 @@ TriggerRuleAnchorStatusEnum _$triggerRuleAnchorStatusEnumValueOf(String name) {
       return _$triggerRuleAnchorStatusEnum_active;
     case 'stale':
       return _$triggerRuleAnchorStatusEnum_stale;
+    case 'unknownDefaultOpenApi':
+      return _$triggerRuleAnchorStatusEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$triggerRuleAnchorStatusEnum_unknownDefaultOpenApi;
   }
 }
 
 final BuiltSet<TriggerRuleAnchorStatusEnum>
-_$triggerRuleAnchorStatusEnumValues = BuiltSet<TriggerRuleAnchorStatusEnum>(
-  const <TriggerRuleAnchorStatusEnum>[
-    _$triggerRuleAnchorStatusEnum_active,
-    _$triggerRuleAnchorStatusEnum_stale,
-  ],
-);
+_$triggerRuleAnchorStatusEnumValues =
+    BuiltSet<TriggerRuleAnchorStatusEnum>(const <TriggerRuleAnchorStatusEnum>[
+      _$triggerRuleAnchorStatusEnum_active,
+      _$triggerRuleAnchorStatusEnum_stale,
+      _$triggerRuleAnchorStatusEnum_unknownDefaultOpenApi,
+    ]);
 
 Serializer<TriggerRuleModeEnum> _$triggerRuleModeEnumSerializer =
     _$TriggerRuleModeEnumSerializer();
@@ -219,11 +256,13 @@ class _$TriggerRuleModeEnumSerializer
     'match': 'match',
     'enter': 'enter',
     'exit': 'exit',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'match': 'match',
     'enter': 'enter',
     'exit': 'exit',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -254,11 +293,13 @@ class _$TriggerRuleSeverityEnumSerializer
     'info': 'info',
     'warning': 'warning',
     'critical': 'critical',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'info': 'info',
     'warning': 'warning',
     'critical': 'critical',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -288,10 +329,12 @@ class _$TriggerRuleCooldownScopeEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'record': 'record',
     'rule': 'rule',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'record': 'record',
     'rule': 'rule',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -321,10 +364,12 @@ class _$TriggerRuleWeatherContextEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'auto': 'auto',
     'off': 'off',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'auto': 'auto',
     'off': 'off',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -356,12 +401,14 @@ class _$TriggerRuleTypeEnumSerializer
     'count': 'count',
     'absence': 'absence',
     'anomaly': 'anomaly',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'record': 'record',
     'count': 'count',
     'absence': 'absence',
     'anomaly': 'anomaly',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -391,10 +438,12 @@ class _$TriggerRuleGeofenceOriginEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'inline': 'inline',
     'near': 'near',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'inline': 'inline',
     'near': 'near',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -424,10 +473,12 @@ class _$TriggerRuleAnchorStatusEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'active': 'active',
     'stale': 'stale',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'active': 'active',
     'stale': 'stale',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

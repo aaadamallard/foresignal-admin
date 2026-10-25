@@ -14,6 +14,8 @@ const SituationOriginEnum _$situationOriginEnum_agent =
     const SituationOriginEnum._('agent');
 const SituationOriginEnum _$situationOriginEnum_analyst =
     const SituationOriginEnum._('analyst');
+const SituationOriginEnum _$situationOriginEnum_unknownDefaultOpenApi =
+    const SituationOriginEnum._('unknownDefaultOpenApi');
 
 SituationOriginEnum _$situationOriginEnumValueOf(String name) {
   switch (name) {
@@ -25,8 +27,10 @@ SituationOriginEnum _$situationOriginEnumValueOf(String name) {
       return _$situationOriginEnum_agent;
     case 'analyst':
       return _$situationOriginEnum_analyst;
+    case 'unknownDefaultOpenApi':
+      return _$situationOriginEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$situationOriginEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -36,6 +40,7 @@ final BuiltSet<SituationOriginEnum> _$situationOriginEnumValues =
       _$situationOriginEnum_operator_,
       _$situationOriginEnum_agent,
       _$situationOriginEnum_analyst,
+      _$situationOriginEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<SituationOriginEnum> _$situationOriginEnumSerializer =
@@ -48,12 +53,14 @@ class _$SituationOriginEnumSerializer
     'operator_': 'operator',
     'agent': 'agent',
     'analyst': 'analyst',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'auto': 'auto',
     'operator': 'operator_',
     'agent': 'agent',
     'analyst': 'analyst',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

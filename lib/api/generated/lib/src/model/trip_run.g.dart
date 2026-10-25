@@ -17,6 +17,8 @@ const TripRunStatusEnum _$tripRunStatusEnum_dryRun = const TripRunStatusEnum._(
 const TripRunStatusEnum _$tripRunStatusEnum_failed = const TripRunStatusEnum._(
   'failed',
 );
+const TripRunStatusEnum _$tripRunStatusEnum_unknownDefaultOpenApi =
+    const TripRunStatusEnum._('unknownDefaultOpenApi');
 
 TripRunStatusEnum _$tripRunStatusEnumValueOf(String name) {
   switch (name) {
@@ -28,8 +30,10 @@ TripRunStatusEnum _$tripRunStatusEnumValueOf(String name) {
       return _$tripRunStatusEnum_dryRun;
     case 'failed':
       return _$tripRunStatusEnum_failed;
+    case 'unknownDefaultOpenApi':
+      return _$tripRunStatusEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$tripRunStatusEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -39,6 +43,7 @@ final BuiltSet<TripRunStatusEnum> _$tripRunStatusEnumValues =
       _$tripRunStatusEnum_skipped,
       _$tripRunStatusEnum_dryRun,
       _$tripRunStatusEnum_failed,
+      _$tripRunStatusEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<TripRunStatusEnum> _$tripRunStatusEnumSerializer =
@@ -51,12 +56,14 @@ class _$TripRunStatusEnumSerializer
     'skipped': 'skipped',
     'dryRun': 'dry-run',
     'failed': 'failed',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'delivered': 'delivered',
     'skipped': 'skipped',
     'dry-run': 'dryRun',
     'failed': 'failed',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

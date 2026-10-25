@@ -491,6 +491,9 @@ class ReferenceImportDatasetEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'gdacs')
   static const ReferenceImportDatasetEnum gdacs =
       _$referenceImportDatasetEnum_gdacs;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ReferenceImportDatasetEnum unknownDefaultOpenApi =
+      _$referenceImportDatasetEnum_unknownDefaultOpenApi;
 
   static Serializer<ReferenceImportDatasetEnum> get serializer =>
       _$referenceImportDatasetEnumSerializer;
@@ -522,6 +525,9 @@ class ReferenceImportStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'cancelled')
   static const ReferenceImportStatusEnum cancelled =
       _$referenceImportStatusEnum_cancelled;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ReferenceImportStatusEnum unknownDefaultOpenApi =
+      _$referenceImportStatusEnum_unknownDefaultOpenApi;
 
   static Serializer<ReferenceImportStatusEnum> get serializer =>
       _$referenceImportStatusEnumSerializer;
@@ -541,6 +547,9 @@ class ReferenceImportEgressEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'LOCAL_ONLY')
   static const ReferenceImportEgressEnum LOCAL_ONLY =
       _$referenceImportEgressEnum_LOCAL_ONLY;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ReferenceImportEgressEnum unknownDefaultOpenApi =
+      _$referenceImportEgressEnum_unknownDefaultOpenApi;
 
   static Serializer<ReferenceImportEgressEnum> get serializer =>
       _$referenceImportEgressEnumSerializer;

@@ -18,6 +18,9 @@ _$ownershipChainNodeWeakestEdgeLabelEnum_possible =
 const OwnershipChainNodeWeakestEdgeLabelEnum
 _$ownershipChainNodeWeakestEdgeLabelEnum_speculative =
     const OwnershipChainNodeWeakestEdgeLabelEnum._('speculative');
+const OwnershipChainNodeWeakestEdgeLabelEnum
+_$ownershipChainNodeWeakestEdgeLabelEnum_unknownDefaultOpenApi =
+    const OwnershipChainNodeWeakestEdgeLabelEnum._('unknownDefaultOpenApi');
 
 OwnershipChainNodeWeakestEdgeLabelEnum
 _$ownershipChainNodeWeakestEdgeLabelEnumValueOf(String name) {
@@ -30,8 +33,10 @@ _$ownershipChainNodeWeakestEdgeLabelEnumValueOf(String name) {
       return _$ownershipChainNodeWeakestEdgeLabelEnum_possible;
     case 'speculative':
       return _$ownershipChainNodeWeakestEdgeLabelEnum_speculative;
+    case 'unknownDefaultOpenApi':
+      return _$ownershipChainNodeWeakestEdgeLabelEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$ownershipChainNodeWeakestEdgeLabelEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -43,6 +48,7 @@ _$ownershipChainNodeWeakestEdgeLabelEnumValues =
         _$ownershipChainNodeWeakestEdgeLabelEnum_likely,
         _$ownershipChainNodeWeakestEdgeLabelEnum_possible,
         _$ownershipChainNodeWeakestEdgeLabelEnum_speculative,
+        _$ownershipChainNodeWeakestEdgeLabelEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -57,12 +63,14 @@ class _$OwnershipChainNodeWeakestEdgeLabelEnumSerializer
     'likely': 'likely',
     'possible': 'possible',
     'speculative': 'speculative',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'confirmed': 'confirmed',
     'likely': 'likely',
     'possible': 'possible',
     'speculative': 'speculative',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

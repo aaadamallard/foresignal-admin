@@ -8,19 +8,25 @@ part of 'ogc_collection.dart';
 
 const OgcCollectionItemTypeEnum _$ogcCollectionItemTypeEnum_feature =
     const OgcCollectionItemTypeEnum._('feature');
+const OgcCollectionItemTypeEnum
+_$ogcCollectionItemTypeEnum_unknownDefaultOpenApi =
+    const OgcCollectionItemTypeEnum._('unknownDefaultOpenApi');
 
 OgcCollectionItemTypeEnum _$ogcCollectionItemTypeEnumValueOf(String name) {
   switch (name) {
     case 'feature':
       return _$ogcCollectionItemTypeEnum_feature;
+    case 'unknownDefaultOpenApi':
+      return _$ogcCollectionItemTypeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$ogcCollectionItemTypeEnum_unknownDefaultOpenApi;
   }
 }
 
 final BuiltSet<OgcCollectionItemTypeEnum> _$ogcCollectionItemTypeEnumValues =
     BuiltSet<OgcCollectionItemTypeEnum>(const <OgcCollectionItemTypeEnum>[
       _$ogcCollectionItemTypeEnum_feature,
+      _$ogcCollectionItemTypeEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<OgcCollectionItemTypeEnum> _$ogcCollectionItemTypeEnumSerializer =
@@ -30,9 +36,11 @@ class _$OgcCollectionItemTypeEnumSerializer
     implements PrimitiveSerializer<OgcCollectionItemTypeEnum> {
   static const Map<String, Object> _toWire = const <String, Object>{
     'feature': 'feature',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'feature': 'feature',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

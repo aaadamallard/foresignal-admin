@@ -333,6 +333,9 @@ class ReportInputTemplateEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'custom')
   static const ReportInputTemplateEnum custom =
       _$reportInputTemplateEnum_custom;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ReportInputTemplateEnum unknownDefaultOpenApi =
+      _$reportInputTemplateEnum_unknownDefaultOpenApi;
 
   static Serializer<ReportInputTemplateEnum> get serializer =>
       _$reportInputTemplateEnumSerializer;

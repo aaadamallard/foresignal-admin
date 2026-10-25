@@ -14,6 +14,8 @@ const AskCitationTypeEnum _$askCitationTypeEnum_briefing =
     const AskCitationTypeEnum._('briefing');
 const AskCitationTypeEnum _$askCitationTypeEnum_weather =
     const AskCitationTypeEnum._('weather');
+const AskCitationTypeEnum _$askCitationTypeEnum_unknownDefaultOpenApi =
+    const AskCitationTypeEnum._('unknownDefaultOpenApi');
 
 AskCitationTypeEnum _$askCitationTypeEnumValueOf(String name) {
   switch (name) {
@@ -25,8 +27,10 @@ AskCitationTypeEnum _$askCitationTypeEnumValueOf(String name) {
       return _$askCitationTypeEnum_briefing;
     case 'weather':
       return _$askCitationTypeEnum_weather;
+    case 'unknownDefaultOpenApi':
+      return _$askCitationTypeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$askCitationTypeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -36,6 +40,7 @@ final BuiltSet<AskCitationTypeEnum> _$askCitationTypeEnumValues =
       _$askCitationTypeEnum_alert,
       _$askCitationTypeEnum_briefing,
       _$askCitationTypeEnum_weather,
+      _$askCitationTypeEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<AskCitationTypeEnum> _$askCitationTypeEnumSerializer =
@@ -48,12 +53,14 @@ class _$AskCitationTypeEnumSerializer
     'alert': 'alert',
     'briefing': 'briefing',
     'weather': 'weather',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'record': 'record',
     'alert': 'alert',
     'briefing': 'briefing',
     'weather': 'weather',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

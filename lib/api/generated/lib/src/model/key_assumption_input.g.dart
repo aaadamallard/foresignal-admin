@@ -14,6 +14,9 @@ const KeyAssumptionInputStatusEnum _$keyAssumptionInputStatusEnum_unsupported =
     const KeyAssumptionInputStatusEnum._('unsupported');
 const KeyAssumptionInputStatusEnum _$keyAssumptionInputStatusEnum_broken =
     const KeyAssumptionInputStatusEnum._('broken');
+const KeyAssumptionInputStatusEnum
+_$keyAssumptionInputStatusEnum_unknownDefaultOpenApi =
+    const KeyAssumptionInputStatusEnum._('unknownDefaultOpenApi');
 
 KeyAssumptionInputStatusEnum _$keyAssumptionInputStatusEnumValueOf(
   String name,
@@ -27,8 +30,10 @@ KeyAssumptionInputStatusEnum _$keyAssumptionInputStatusEnumValueOf(
       return _$keyAssumptionInputStatusEnum_unsupported;
     case 'broken':
       return _$keyAssumptionInputStatusEnum_broken;
+    case 'unknownDefaultOpenApi':
+      return _$keyAssumptionInputStatusEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$keyAssumptionInputStatusEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -39,6 +44,7 @@ _$keyAssumptionInputStatusEnumValues =
       _$keyAssumptionInputStatusEnum_caveated,
       _$keyAssumptionInputStatusEnum_unsupported,
       _$keyAssumptionInputStatusEnum_broken,
+      _$keyAssumptionInputStatusEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<KeyAssumptionInputStatusEnum>
@@ -52,12 +58,14 @@ class _$KeyAssumptionInputStatusEnumSerializer
     'caveated': 'caveated',
     'unsupported': 'unsupported',
     'broken': 'broken',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'solid': 'solid',
     'caveated': 'caveated',
     'unsupported': 'unsupported',
     'broken': 'broken',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

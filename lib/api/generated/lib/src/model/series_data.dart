@@ -306,6 +306,9 @@ class SeriesDataFrequencyEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'irregular')
   static const SeriesDataFrequencyEnum irregular =
       _$seriesDataFrequencyEnum_irregular;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const SeriesDataFrequencyEnum unknownDefaultOpenApi =
+      _$seriesDataFrequencyEnum_unknownDefaultOpenApi;
 
   static Serializer<SeriesDataFrequencyEnum> get serializer =>
       _$seriesDataFrequencyEnumSerializer;

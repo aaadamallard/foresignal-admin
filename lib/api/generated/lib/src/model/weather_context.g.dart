@@ -10,6 +10,9 @@ const WeatherContextStatusEnum _$weatherContextStatusEnum_ok =
     const WeatherContextStatusEnum._('ok');
 const WeatherContextStatusEnum _$weatherContextStatusEnum_unavailable =
     const WeatherContextStatusEnum._('unavailable');
+const WeatherContextStatusEnum
+_$weatherContextStatusEnum_unknownDefaultOpenApi =
+    const WeatherContextStatusEnum._('unknownDefaultOpenApi');
 
 WeatherContextStatusEnum _$weatherContextStatusEnumValueOf(String name) {
   switch (name) {
@@ -17,8 +20,10 @@ WeatherContextStatusEnum _$weatherContextStatusEnumValueOf(String name) {
       return _$weatherContextStatusEnum_ok;
     case 'unavailable':
       return _$weatherContextStatusEnum_unavailable;
+    case 'unknownDefaultOpenApi':
+      return _$weatherContextStatusEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$weatherContextStatusEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -26,6 +31,7 @@ final BuiltSet<WeatherContextStatusEnum> _$weatherContextStatusEnumValues =
     BuiltSet<WeatherContextStatusEnum>(const <WeatherContextStatusEnum>[
       _$weatherContextStatusEnum_ok,
       _$weatherContextStatusEnum_unavailable,
+      _$weatherContextStatusEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<WeatherContextStatusEnum> _$weatherContextStatusEnumSerializer =
@@ -36,10 +42,12 @@ class _$WeatherContextStatusEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'ok': 'ok',
     'unavailable': 'unavailable',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'ok': 'ok',
     'unavailable': 'unavailable',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

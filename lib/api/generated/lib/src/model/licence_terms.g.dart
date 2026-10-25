@@ -12,6 +12,9 @@ const LicenceTermsCommercialUseEnum _$licenceTermsCommercialUseEnum_FORBIDDEN =
     const LicenceTermsCommercialUseEnum._('FORBIDDEN');
 const LicenceTermsCommercialUseEnum _$licenceTermsCommercialUseEnum_UNKNOWN =
     const LicenceTermsCommercialUseEnum._('UNKNOWN');
+const LicenceTermsCommercialUseEnum
+_$licenceTermsCommercialUseEnum_unknownDefaultOpenApi =
+    const LicenceTermsCommercialUseEnum._('unknownDefaultOpenApi');
 
 LicenceTermsCommercialUseEnum _$licenceTermsCommercialUseEnumValueOf(
   String name,
@@ -23,8 +26,10 @@ LicenceTermsCommercialUseEnum _$licenceTermsCommercialUseEnumValueOf(
       return _$licenceTermsCommercialUseEnum_FORBIDDEN;
     case 'UNKNOWN':
       return _$licenceTermsCommercialUseEnum_UNKNOWN;
+    case 'unknownDefaultOpenApi':
+      return _$licenceTermsCommercialUseEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$licenceTermsCommercialUseEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -34,6 +39,7 @@ _$licenceTermsCommercialUseEnumValues = BuiltSet<LicenceTermsCommercialUseEnum>(
     _$licenceTermsCommercialUseEnum_ALLOWED,
     _$licenceTermsCommercialUseEnum_FORBIDDEN,
     _$licenceTermsCommercialUseEnum_UNKNOWN,
+    _$licenceTermsCommercialUseEnum_unknownDefaultOpenApi,
   ],
 );
 
@@ -47,6 +53,9 @@ _$licenceTermsRedistributionEnum_FORBIDDEN =
     const LicenceTermsRedistributionEnum._('FORBIDDEN');
 const LicenceTermsRedistributionEnum _$licenceTermsRedistributionEnum_UNKNOWN =
     const LicenceTermsRedistributionEnum._('UNKNOWN');
+const LicenceTermsRedistributionEnum
+_$licenceTermsRedistributionEnum_unknownDefaultOpenApi =
+    const LicenceTermsRedistributionEnum._('unknownDefaultOpenApi');
 
 LicenceTermsRedistributionEnum _$licenceTermsRedistributionEnumValueOf(
   String name,
@@ -60,8 +69,10 @@ LicenceTermsRedistributionEnum _$licenceTermsRedistributionEnumValueOf(
       return _$licenceTermsRedistributionEnum_FORBIDDEN;
     case 'UNKNOWN':
       return _$licenceTermsRedistributionEnum_UNKNOWN;
+    case 'unknownDefaultOpenApi':
+      return _$licenceTermsRedistributionEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$licenceTermsRedistributionEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -73,6 +84,7 @@ _$licenceTermsRedistributionEnumValues =
         _$licenceTermsRedistributionEnum_LOCAL_ONLY,
         _$licenceTermsRedistributionEnum_FORBIDDEN,
         _$licenceTermsRedistributionEnum_UNKNOWN,
+        _$licenceTermsRedistributionEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -89,11 +101,13 @@ class _$LicenceTermsCommercialUseEnumSerializer
     'ALLOWED': 'ALLOWED',
     'FORBIDDEN': 'FORBIDDEN',
     'UNKNOWN': 'UNKNOWN',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'ALLOWED': 'ALLOWED',
     'FORBIDDEN': 'FORBIDDEN',
     'UNKNOWN': 'UNKNOWN',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -125,12 +139,14 @@ class _$LicenceTermsRedistributionEnumSerializer
     'LOCAL_ONLY': 'LOCAL_ONLY',
     'FORBIDDEN': 'FORBIDDEN',
     'UNKNOWN': 'UNKNOWN',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'ALLOWED': 'ALLOWED',
     'LOCAL_ONLY': 'LOCAL_ONLY',
     'FORBIDDEN': 'FORBIDDEN',
     'UNKNOWN': 'UNKNOWN',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

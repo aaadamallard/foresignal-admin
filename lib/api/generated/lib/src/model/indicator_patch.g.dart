@@ -12,6 +12,9 @@ const IndicatorPatchCredibilityEnum _$indicatorPatchCredibilityEnum_M =
     const IndicatorPatchCredibilityEnum._('M');
 const IndicatorPatchCredibilityEnum _$indicatorPatchCredibilityEnum_L =
     const IndicatorPatchCredibilityEnum._('L');
+const IndicatorPatchCredibilityEnum
+_$indicatorPatchCredibilityEnum_unknownDefaultOpenApi =
+    const IndicatorPatchCredibilityEnum._('unknownDefaultOpenApi');
 
 IndicatorPatchCredibilityEnum _$indicatorPatchCredibilityEnumValueOf(
   String name,
@@ -23,8 +26,10 @@ IndicatorPatchCredibilityEnum _$indicatorPatchCredibilityEnumValueOf(
       return _$indicatorPatchCredibilityEnum_M;
     case 'L':
       return _$indicatorPatchCredibilityEnum_L;
+    case 'unknownDefaultOpenApi':
+      return _$indicatorPatchCredibilityEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$indicatorPatchCredibilityEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -34,6 +39,7 @@ _$indicatorPatchCredibilityEnumValues = BuiltSet<IndicatorPatchCredibilityEnum>(
     _$indicatorPatchCredibilityEnum_H,
     _$indicatorPatchCredibilityEnum_M,
     _$indicatorPatchCredibilityEnum_L,
+    _$indicatorPatchCredibilityEnum_unknownDefaultOpenApi,
   ],
 );
 
@@ -43,6 +49,9 @@ const IndicatorPatchRelevanceEnum _$indicatorPatchRelevanceEnum_M =
     const IndicatorPatchRelevanceEnum._('M');
 const IndicatorPatchRelevanceEnum _$indicatorPatchRelevanceEnum_L =
     const IndicatorPatchRelevanceEnum._('L');
+const IndicatorPatchRelevanceEnum
+_$indicatorPatchRelevanceEnum_unknownDefaultOpenApi =
+    const IndicatorPatchRelevanceEnum._('unknownDefaultOpenApi');
 
 IndicatorPatchRelevanceEnum _$indicatorPatchRelevanceEnumValueOf(String name) {
   switch (name) {
@@ -52,8 +61,10 @@ IndicatorPatchRelevanceEnum _$indicatorPatchRelevanceEnumValueOf(String name) {
       return _$indicatorPatchRelevanceEnum_M;
     case 'L':
       return _$indicatorPatchRelevanceEnum_L;
+    case 'unknownDefaultOpenApi':
+      return _$indicatorPatchRelevanceEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$indicatorPatchRelevanceEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -63,12 +74,15 @@ _$indicatorPatchRelevanceEnumValues =
       _$indicatorPatchRelevanceEnum_H,
       _$indicatorPatchRelevanceEnum_M,
       _$indicatorPatchRelevanceEnum_L,
+      _$indicatorPatchRelevanceEnum_unknownDefaultOpenApi,
     ]);
 
 const IndicatorPatchStateEnum _$indicatorPatchStateEnum_observed =
     const IndicatorPatchStateEnum._('observed');
 const IndicatorPatchStateEnum _$indicatorPatchStateEnum_absent =
     const IndicatorPatchStateEnum._('absent');
+const IndicatorPatchStateEnum _$indicatorPatchStateEnum_unknownDefaultOpenApi =
+    const IndicatorPatchStateEnum._('unknownDefaultOpenApi');
 
 IndicatorPatchStateEnum _$indicatorPatchStateEnumValueOf(String name) {
   switch (name) {
@@ -76,8 +90,10 @@ IndicatorPatchStateEnum _$indicatorPatchStateEnumValueOf(String name) {
       return _$indicatorPatchStateEnum_observed;
     case 'absent':
       return _$indicatorPatchStateEnum_absent;
+    case 'unknownDefaultOpenApi':
+      return _$indicatorPatchStateEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$indicatorPatchStateEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -85,6 +101,7 @@ final BuiltSet<IndicatorPatchStateEnum> _$indicatorPatchStateEnumValues =
     BuiltSet<IndicatorPatchStateEnum>(const <IndicatorPatchStateEnum>[
       _$indicatorPatchStateEnum_observed,
       _$indicatorPatchStateEnum_absent,
+      _$indicatorPatchStateEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<IndicatorPatchCredibilityEnum>
@@ -102,11 +119,13 @@ class _$IndicatorPatchCredibilityEnumSerializer
     'H': 'H',
     'M': 'M',
     'L': 'L',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'H': 'H',
     'M': 'M',
     'L': 'L',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -137,11 +156,13 @@ class _$IndicatorPatchRelevanceEnumSerializer
     'H': 'H',
     'M': 'M',
     'L': 'L',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'H': 'H',
     'M': 'M',
     'L': 'L',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -171,10 +192,12 @@ class _$IndicatorPatchStateEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'observed': 'observed',
     'absent': 'absent',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'observed': 'observed',
     'absent': 'absent',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

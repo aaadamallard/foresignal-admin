@@ -21,6 +21,9 @@ _$outletConsensusProvidersInnerProviderEnum_mbfc =
 const OutletConsensusProvidersInnerProviderEnum
 _$outletConsensusProvidersInnerProviderEnum_operator_ =
     const OutletConsensusProvidersInnerProviderEnum._('operator_');
+const OutletConsensusProvidersInnerProviderEnum
+_$outletConsensusProvidersInnerProviderEnum_unknownDefaultOpenApi =
+    const OutletConsensusProvidersInnerProviderEnum._('unknownDefaultOpenApi');
 
 OutletConsensusProvidersInnerProviderEnum
 _$outletConsensusProvidersInnerProviderEnumValueOf(String name) {
@@ -35,8 +38,10 @@ _$outletConsensusProvidersInnerProviderEnumValueOf(String name) {
       return _$outletConsensusProvidersInnerProviderEnum_mbfc;
     case 'operator_':
       return _$outletConsensusProvidersInnerProviderEnum_operator_;
+    case 'unknownDefaultOpenApi':
+      return _$outletConsensusProvidersInnerProviderEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$outletConsensusProvidersInnerProviderEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -49,6 +54,7 @@ _$outletConsensusProvidersInnerProviderEnumValues =
         _$outletConsensusProvidersInnerProviderEnum_allsides,
         _$outletConsensusProvidersInnerProviderEnum_mbfc,
         _$outletConsensusProvidersInnerProviderEnum_operator_,
+        _$outletConsensusProvidersInnerProviderEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -64,6 +70,7 @@ class _$OutletConsensusProvidersInnerProviderEnumSerializer
     'allsides': 'allsides',
     'mbfc': 'mbfc',
     'operator_': 'operator',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'wikidata': 'wikidata',
@@ -71,6 +78,7 @@ class _$OutletConsensusProvidersInnerProviderEnumSerializer
     'allsides': 'allsides',
     'mbfc': 'mbfc',
     'operator': 'operator_',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

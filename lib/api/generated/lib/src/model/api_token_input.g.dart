@@ -12,6 +12,8 @@ const ApiTokenInputScopeEnum _$apiTokenInputScopeEnum_agent =
     const ApiTokenInputScopeEnum._('agent');
 const ApiTokenInputScopeEnum _$apiTokenInputScopeEnum_admin =
     const ApiTokenInputScopeEnum._('admin');
+const ApiTokenInputScopeEnum _$apiTokenInputScopeEnum_unknownDefaultOpenApi =
+    const ApiTokenInputScopeEnum._('unknownDefaultOpenApi');
 
 ApiTokenInputScopeEnum _$apiTokenInputScopeEnumValueOf(String name) {
   switch (name) {
@@ -21,8 +23,10 @@ ApiTokenInputScopeEnum _$apiTokenInputScopeEnumValueOf(String name) {
       return _$apiTokenInputScopeEnum_agent;
     case 'admin':
       return _$apiTokenInputScopeEnum_admin;
+    case 'unknownDefaultOpenApi':
+      return _$apiTokenInputScopeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$apiTokenInputScopeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -31,6 +35,7 @@ final BuiltSet<ApiTokenInputScopeEnum> _$apiTokenInputScopeEnumValues =
       _$apiTokenInputScopeEnum_read,
       _$apiTokenInputScopeEnum_agent,
       _$apiTokenInputScopeEnum_admin,
+      _$apiTokenInputScopeEnum_unknownDefaultOpenApi,
     ]);
 
 const ApiTokenInputLicencePolicyEnum _$apiTokenInputLicencePolicyEnum_noNc =
@@ -40,6 +45,9 @@ const ApiTokenInputLicencePolicyEnum _$apiTokenInputLicencePolicyEnum_noSa =
 const ApiTokenInputLicencePolicyEnum
 _$apiTokenInputLicencePolicyEnum_redistributable =
     const ApiTokenInputLicencePolicyEnum._('redistributable');
+const ApiTokenInputLicencePolicyEnum
+_$apiTokenInputLicencePolicyEnum_unknownDefaultOpenApi =
+    const ApiTokenInputLicencePolicyEnum._('unknownDefaultOpenApi');
 
 ApiTokenInputLicencePolicyEnum _$apiTokenInputLicencePolicyEnumValueOf(
   String name,
@@ -51,8 +59,10 @@ ApiTokenInputLicencePolicyEnum _$apiTokenInputLicencePolicyEnumValueOf(
       return _$apiTokenInputLicencePolicyEnum_noSa;
     case 'redistributable':
       return _$apiTokenInputLicencePolicyEnum_redistributable;
+    case 'unknownDefaultOpenApi':
+      return _$apiTokenInputLicencePolicyEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$apiTokenInputLicencePolicyEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -63,6 +73,7 @@ _$apiTokenInputLicencePolicyEnumValues =
         _$apiTokenInputLicencePolicyEnum_noNc,
         _$apiTokenInputLicencePolicyEnum_noSa,
         _$apiTokenInputLicencePolicyEnum_redistributable,
+        _$apiTokenInputLicencePolicyEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -78,11 +89,13 @@ class _$ApiTokenInputScopeEnumSerializer
     'read': 'read',
     'agent': 'agent',
     'admin': 'admin',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'read': 'read',
     'agent': 'agent',
     'admin': 'admin',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -113,11 +126,13 @@ class _$ApiTokenInputLicencePolicyEnumSerializer
     'noNc': 'no-nc',
     'noSa': 'no-sa',
     'redistributable': 'redistributable',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'no-nc': 'noNc',
     'no-sa': 'noSa',
     'redistributable': 'redistributable',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

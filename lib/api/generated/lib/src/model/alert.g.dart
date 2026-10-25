@@ -14,6 +14,8 @@ const AlertSeverityEnum _$alertSeverityEnum_warning = const AlertSeverityEnum._(
 );
 const AlertSeverityEnum _$alertSeverityEnum_critical =
     const AlertSeverityEnum._('critical');
+const AlertSeverityEnum _$alertSeverityEnum_unknownDefaultOpenApi =
+    const AlertSeverityEnum._('unknownDefaultOpenApi');
 
 AlertSeverityEnum _$alertSeverityEnumValueOf(String name) {
   switch (name) {
@@ -23,8 +25,10 @@ AlertSeverityEnum _$alertSeverityEnumValueOf(String name) {
       return _$alertSeverityEnum_warning;
     case 'critical':
       return _$alertSeverityEnum_critical;
+    case 'unknownDefaultOpenApi':
+      return _$alertSeverityEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$alertSeverityEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -33,6 +37,7 @@ final BuiltSet<AlertSeverityEnum> _$alertSeverityEnumValues =
       _$alertSeverityEnum_info,
       _$alertSeverityEnum_warning,
       _$alertSeverityEnum_critical,
+      _$alertSeverityEnum_unknownDefaultOpenApi,
     ]);
 
 const AlertStateEnum _$alertStateEnum_firing = const AlertStateEnum._('firing');
@@ -42,6 +47,8 @@ const AlertStateEnum _$alertStateEnum_acknowledged = const AlertStateEnum._(
 const AlertStateEnum _$alertStateEnum_resolved = const AlertStateEnum._(
   'resolved',
 );
+const AlertStateEnum _$alertStateEnum_unknownDefaultOpenApi =
+    const AlertStateEnum._('unknownDefaultOpenApi');
 
 AlertStateEnum _$alertStateEnumValueOf(String name) {
   switch (name) {
@@ -51,8 +58,10 @@ AlertStateEnum _$alertStateEnumValueOf(String name) {
       return _$alertStateEnum_acknowledged;
     case 'resolved':
       return _$alertStateEnum_resolved;
+    case 'unknownDefaultOpenApi':
+      return _$alertStateEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$alertStateEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -61,6 +70,7 @@ final BuiltSet<AlertStateEnum> _$alertStateEnumValues =
       _$alertStateEnum_firing,
       _$alertStateEnum_acknowledged,
       _$alertStateEnum_resolved,
+      _$alertStateEnum_unknownDefaultOpenApi,
     ]);
 
 const AlertFeedbackEnum _$alertFeedbackEnum_useful = const AlertFeedbackEnum._(
@@ -74,6 +84,8 @@ const AlertFeedbackEnum _$alertFeedbackEnum_late_ = const AlertFeedbackEnum._(
 );
 const AlertFeedbackEnum _$alertFeedbackEnum_falsePositive =
     const AlertFeedbackEnum._('falsePositive');
+const AlertFeedbackEnum _$alertFeedbackEnum_unknownDefaultOpenApi =
+    const AlertFeedbackEnum._('unknownDefaultOpenApi');
 
 AlertFeedbackEnum _$alertFeedbackEnumValueOf(String name) {
   switch (name) {
@@ -85,8 +97,10 @@ AlertFeedbackEnum _$alertFeedbackEnumValueOf(String name) {
       return _$alertFeedbackEnum_late_;
     case 'falsePositive':
       return _$alertFeedbackEnum_falsePositive;
+    case 'unknownDefaultOpenApi':
+      return _$alertFeedbackEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$alertFeedbackEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -96,12 +110,16 @@ final BuiltSet<AlertFeedbackEnum> _$alertFeedbackEnumValues =
       _$alertFeedbackEnum_noise,
       _$alertFeedbackEnum_late_,
       _$alertFeedbackEnum_falsePositive,
+      _$alertFeedbackEnum_unknownDefaultOpenApi,
     ]);
 
 const AlertSuppressedReasonEnum _$alertSuppressedReasonEnum_alertSnoozed =
     const AlertSuppressedReasonEnum._('alertSnoozed');
 const AlertSuppressedReasonEnum _$alertSuppressedReasonEnum_ruleSnoozed =
     const AlertSuppressedReasonEnum._('ruleSnoozed');
+const AlertSuppressedReasonEnum
+_$alertSuppressedReasonEnum_unknownDefaultOpenApi =
+    const AlertSuppressedReasonEnum._('unknownDefaultOpenApi');
 
 AlertSuppressedReasonEnum _$alertSuppressedReasonEnumValueOf(String name) {
   switch (name) {
@@ -109,8 +127,10 @@ AlertSuppressedReasonEnum _$alertSuppressedReasonEnumValueOf(String name) {
       return _$alertSuppressedReasonEnum_alertSnoozed;
     case 'ruleSnoozed':
       return _$alertSuppressedReasonEnum_ruleSnoozed;
+    case 'unknownDefaultOpenApi':
+      return _$alertSuppressedReasonEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$alertSuppressedReasonEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -118,6 +138,7 @@ final BuiltSet<AlertSuppressedReasonEnum> _$alertSuppressedReasonEnumValues =
     BuiltSet<AlertSuppressedReasonEnum>(const <AlertSuppressedReasonEnum>[
       _$alertSuppressedReasonEnum_alertSnoozed,
       _$alertSuppressedReasonEnum_ruleSnoozed,
+      _$alertSuppressedReasonEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<AlertSeverityEnum> _$alertSeverityEnumSerializer =
@@ -135,11 +156,13 @@ class _$AlertSeverityEnumSerializer
     'info': 'info',
     'warning': 'warning',
     'critical': 'critical',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'info': 'info',
     'warning': 'warning',
     'critical': 'critical',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -170,11 +193,13 @@ class _$AlertStateEnumSerializer
     'firing': 'firing',
     'acknowledged': 'acknowledged',
     'resolved': 'resolved',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'firing': 'firing',
     'acknowledged': 'acknowledged',
     'resolved': 'resolved',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -206,12 +231,14 @@ class _$AlertFeedbackEnumSerializer
     'noise': 'noise',
     'late_': 'late',
     'falsePositive': 'false_positive',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'useful': 'useful',
     'noise': 'noise',
     'late': 'late_',
     'false_positive': 'falsePositive',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -241,10 +268,12 @@ class _$AlertSuppressedReasonEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'alertSnoozed': 'alert_snoozed',
     'ruleSnoozed': 'rule_snoozed',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'alert_snoozed': 'alertSnoozed',
     'rule_snoozed': 'ruleSnoozed',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

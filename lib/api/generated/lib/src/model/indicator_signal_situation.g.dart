@@ -18,6 +18,9 @@ _$indicatorSignalSituationStatusEnum_dormant =
 const IndicatorSignalSituationStatusEnum
 _$indicatorSignalSituationStatusEnum_closed =
     const IndicatorSignalSituationStatusEnum._('closed');
+const IndicatorSignalSituationStatusEnum
+_$indicatorSignalSituationStatusEnum_unknownDefaultOpenApi =
+    const IndicatorSignalSituationStatusEnum._('unknownDefaultOpenApi');
 
 IndicatorSignalSituationStatusEnum _$indicatorSignalSituationStatusEnumValueOf(
   String name,
@@ -31,8 +34,10 @@ IndicatorSignalSituationStatusEnum _$indicatorSignalSituationStatusEnumValueOf(
       return _$indicatorSignalSituationStatusEnum_dormant;
     case 'closed':
       return _$indicatorSignalSituationStatusEnum_closed;
+    case 'unknownDefaultOpenApi':
+      return _$indicatorSignalSituationStatusEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$indicatorSignalSituationStatusEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -44,6 +49,7 @@ _$indicatorSignalSituationStatusEnumValues =
         _$indicatorSignalSituationStatusEnum_active,
         _$indicatorSignalSituationStatusEnum_dormant,
         _$indicatorSignalSituationStatusEnum_closed,
+        _$indicatorSignalSituationStatusEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -58,12 +64,14 @@ class _$IndicatorSignalSituationStatusEnumSerializer
     'active': 'active',
     'dormant': 'dormant',
     'closed': 'closed',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'emerging': 'emerging',
     'active': 'active',
     'dormant': 'dormant',
     'closed': 'closed',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

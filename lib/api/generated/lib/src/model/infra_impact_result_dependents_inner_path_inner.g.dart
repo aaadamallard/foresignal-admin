@@ -30,6 +30,11 @@ _$infraImpactResultDependentsInnerPathInnerRelationEnum_hosts =
 const InfraImpactResultDependentsInnerPathInnerRelationEnum
 _$infraImpactResultDependentsInnerPathInnerRelationEnum_serves =
     const InfraImpactResultDependentsInnerPathInnerRelationEnum._('serves');
+const InfraImpactResultDependentsInnerPathInnerRelationEnum
+_$infraImpactResultDependentsInnerPathInnerRelationEnum_unknownDefaultOpenApi =
+    const InfraImpactResultDependentsInnerPathInnerRelationEnum._(
+      'unknownDefaultOpenApi',
+    );
 
 InfraImpactResultDependentsInnerPathInnerRelationEnum
 _$infraImpactResultDependentsInnerPathInnerRelationEnumValueOf(String name) {
@@ -46,23 +51,26 @@ _$infraImpactResultDependentsInnerPathInnerRelationEnumValueOf(String name) {
       return _$infraImpactResultDependentsInnerPathInnerRelationEnum_hosts;
     case 'serves':
       return _$infraImpactResultDependentsInnerPathInnerRelationEnum_serves;
+    case 'unknownDefaultOpenApi':
+      return _$infraImpactResultDependentsInnerPathInnerRelationEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$infraImpactResultDependentsInnerPathInnerRelationEnum_unknownDefaultOpenApi;
   }
 }
 
 final BuiltSet<InfraImpactResultDependentsInnerPathInnerRelationEnum>
 _$infraImpactResultDependentsInnerPathInnerRelationEnumValues =
-    BuiltSet<InfraImpactResultDependentsInnerPathInnerRelationEnum>(
-      const <InfraImpactResultDependentsInnerPathInnerRelationEnum>[
-        _$infraImpactResultDependentsInnerPathInnerRelationEnum_suppliesPower,
-        _$infraImpactResultDependentsInnerPathInnerRelationEnum_transmitsPower,
-        _$infraImpactResultDependentsInnerPathInnerRelationEnum_landsAt,
-        _$infraImpactResultDependentsInnerPathInnerRelationEnum_interconnects,
-        _$infraImpactResultDependentsInnerPathInnerRelationEnum_hosts,
-        _$infraImpactResultDependentsInnerPathInnerRelationEnum_serves,
-      ],
-    );
+    BuiltSet<InfraImpactResultDependentsInnerPathInnerRelationEnum>(const <
+      InfraImpactResultDependentsInnerPathInnerRelationEnum
+    >[
+      _$infraImpactResultDependentsInnerPathInnerRelationEnum_suppliesPower,
+      _$infraImpactResultDependentsInnerPathInnerRelationEnum_transmitsPower,
+      _$infraImpactResultDependentsInnerPathInnerRelationEnum_landsAt,
+      _$infraImpactResultDependentsInnerPathInnerRelationEnum_interconnects,
+      _$infraImpactResultDependentsInnerPathInnerRelationEnum_hosts,
+      _$infraImpactResultDependentsInnerPathInnerRelationEnum_serves,
+      _$infraImpactResultDependentsInnerPathInnerRelationEnum_unknownDefaultOpenApi,
+    ]);
 
 const InfraImpactResultDependentsInnerPathInnerMethodEnum
 _$infraImpactResultDependentsInnerPathInnerMethodEnum_declared =
@@ -76,6 +84,11 @@ _$infraImpactResultDependentsInnerPathInnerMethodEnum_proximity =
 const InfraImpactResultDependentsInnerPathInnerMethodEnum
 _$infraImpactResultDependentsInnerPathInnerMethodEnum_inferred =
     const InfraImpactResultDependentsInnerPathInnerMethodEnum._('inferred');
+const InfraImpactResultDependentsInnerPathInnerMethodEnum
+_$infraImpactResultDependentsInnerPathInnerMethodEnum_unknownDefaultOpenApi =
+    const InfraImpactResultDependentsInnerPathInnerMethodEnum._(
+      'unknownDefaultOpenApi',
+    );
 
 InfraImpactResultDependentsInnerPathInnerMethodEnum
 _$infraImpactResultDependentsInnerPathInnerMethodEnumValueOf(String name) {
@@ -88,21 +101,24 @@ _$infraImpactResultDependentsInnerPathInnerMethodEnumValueOf(String name) {
       return _$infraImpactResultDependentsInnerPathInnerMethodEnum_proximity;
     case 'inferred':
       return _$infraImpactResultDependentsInnerPathInnerMethodEnum_inferred;
+    case 'unknownDefaultOpenApi':
+      return _$infraImpactResultDependentsInnerPathInnerMethodEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$infraImpactResultDependentsInnerPathInnerMethodEnum_unknownDefaultOpenApi;
   }
 }
 
 final BuiltSet<InfraImpactResultDependentsInnerPathInnerMethodEnum>
 _$infraImpactResultDependentsInnerPathInnerMethodEnumValues =
-    BuiltSet<InfraImpactResultDependentsInnerPathInnerMethodEnum>(
-      const <InfraImpactResultDependentsInnerPathInnerMethodEnum>[
-        _$infraImpactResultDependentsInnerPathInnerMethodEnum_declared,
-        _$infraImpactResultDependentsInnerPathInnerMethodEnum_topological,
-        _$infraImpactResultDependentsInnerPathInnerMethodEnum_proximity,
-        _$infraImpactResultDependentsInnerPathInnerMethodEnum_inferred,
-      ],
-    );
+    BuiltSet<InfraImpactResultDependentsInnerPathInnerMethodEnum>(const <
+      InfraImpactResultDependentsInnerPathInnerMethodEnum
+    >[
+      _$infraImpactResultDependentsInnerPathInnerMethodEnum_declared,
+      _$infraImpactResultDependentsInnerPathInnerMethodEnum_topological,
+      _$infraImpactResultDependentsInnerPathInnerMethodEnum_proximity,
+      _$infraImpactResultDependentsInnerPathInnerMethodEnum_inferred,
+      _$infraImpactResultDependentsInnerPathInnerMethodEnum_unknownDefaultOpenApi,
+    ]);
 
 const InfraImpactResultDependentsInnerPathInnerLabelEnum
 _$infraImpactResultDependentsInnerPathInnerLabelEnum_confirmed =
@@ -116,6 +132,11 @@ _$infraImpactResultDependentsInnerPathInnerLabelEnum_possible =
 const InfraImpactResultDependentsInnerPathInnerLabelEnum
 _$infraImpactResultDependentsInnerPathInnerLabelEnum_speculative =
     const InfraImpactResultDependentsInnerPathInnerLabelEnum._('speculative');
+const InfraImpactResultDependentsInnerPathInnerLabelEnum
+_$infraImpactResultDependentsInnerPathInnerLabelEnum_unknownDefaultOpenApi =
+    const InfraImpactResultDependentsInnerPathInnerLabelEnum._(
+      'unknownDefaultOpenApi',
+    );
 
 InfraImpactResultDependentsInnerPathInnerLabelEnum
 _$infraImpactResultDependentsInnerPathInnerLabelEnumValueOf(String name) {
@@ -128,21 +149,24 @@ _$infraImpactResultDependentsInnerPathInnerLabelEnumValueOf(String name) {
       return _$infraImpactResultDependentsInnerPathInnerLabelEnum_possible;
     case 'speculative':
       return _$infraImpactResultDependentsInnerPathInnerLabelEnum_speculative;
+    case 'unknownDefaultOpenApi':
+      return _$infraImpactResultDependentsInnerPathInnerLabelEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$infraImpactResultDependentsInnerPathInnerLabelEnum_unknownDefaultOpenApi;
   }
 }
 
 final BuiltSet<InfraImpactResultDependentsInnerPathInnerLabelEnum>
 _$infraImpactResultDependentsInnerPathInnerLabelEnumValues =
-    BuiltSet<InfraImpactResultDependentsInnerPathInnerLabelEnum>(
-      const <InfraImpactResultDependentsInnerPathInnerLabelEnum>[
-        _$infraImpactResultDependentsInnerPathInnerLabelEnum_confirmed,
-        _$infraImpactResultDependentsInnerPathInnerLabelEnum_likely,
-        _$infraImpactResultDependentsInnerPathInnerLabelEnum_possible,
-        _$infraImpactResultDependentsInnerPathInnerLabelEnum_speculative,
-      ],
-    );
+    BuiltSet<InfraImpactResultDependentsInnerPathInnerLabelEnum>(const <
+      InfraImpactResultDependentsInnerPathInnerLabelEnum
+    >[
+      _$infraImpactResultDependentsInnerPathInnerLabelEnum_confirmed,
+      _$infraImpactResultDependentsInnerPathInnerLabelEnum_likely,
+      _$infraImpactResultDependentsInnerPathInnerLabelEnum_possible,
+      _$infraImpactResultDependentsInnerPathInnerLabelEnum_speculative,
+      _$infraImpactResultDependentsInnerPathInnerLabelEnum_unknownDefaultOpenApi,
+    ]);
 
 Serializer<InfraImpactResultDependentsInnerPathInnerRelationEnum>
 _$infraImpactResultDependentsInnerPathInnerRelationEnumSerializer =
@@ -166,6 +190,7 @@ class _$InfraImpactResultDependentsInnerPathInnerRelationEnumSerializer
     'interconnects': 'interconnects',
     'hosts': 'hosts',
     'serves': 'serves',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'supplies_power': 'suppliesPower',
@@ -174,6 +199,7 @@ class _$InfraImpactResultDependentsInnerPathInnerRelationEnumSerializer
     'interconnects': 'interconnects',
     'hosts': 'hosts',
     'serves': 'serves',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -211,12 +237,14 @@ class _$InfraImpactResultDependentsInnerPathInnerMethodEnumSerializer
     'topological': 'topological',
     'proximity': 'proximity',
     'inferred': 'inferred',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'declared': 'declared',
     'topological': 'topological',
     'proximity': 'proximity',
     'inferred': 'inferred',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -253,12 +281,14 @@ class _$InfraImpactResultDependentsInnerPathInnerLabelEnumSerializer
     'likely': 'likely',
     'possible': 'possible',
     'speculative': 'speculative',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'confirmed': 'confirmed',
     'likely': 'likely',
     'possible': 'possible',
     'speculative': 'speculative',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

@@ -12,6 +12,8 @@ const ReferenceAreaKindEnum _$referenceAreaKindEnum_admin1 =
     const ReferenceAreaKindEnum._('admin1');
 const ReferenceAreaKindEnum _$referenceAreaKindEnum_place =
     const ReferenceAreaKindEnum._('place');
+const ReferenceAreaKindEnum _$referenceAreaKindEnum_unknownDefaultOpenApi =
+    const ReferenceAreaKindEnum._('unknownDefaultOpenApi');
 
 ReferenceAreaKindEnum _$referenceAreaKindEnumValueOf(String name) {
   switch (name) {
@@ -21,8 +23,10 @@ ReferenceAreaKindEnum _$referenceAreaKindEnumValueOf(String name) {
       return _$referenceAreaKindEnum_admin1;
     case 'place':
       return _$referenceAreaKindEnum_place;
+    case 'unknownDefaultOpenApi':
+      return _$referenceAreaKindEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$referenceAreaKindEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -31,6 +35,7 @@ final BuiltSet<ReferenceAreaKindEnum> _$referenceAreaKindEnumValues =
       _$referenceAreaKindEnum_country,
       _$referenceAreaKindEnum_admin1,
       _$referenceAreaKindEnum_place,
+      _$referenceAreaKindEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<ReferenceAreaKindEnum> _$referenceAreaKindEnumSerializer =
@@ -42,11 +47,13 @@ class _$ReferenceAreaKindEnumSerializer
     'country': 'country',
     'admin1': 'admin1',
     'place': 'place',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'country': 'country',
     'admin1': 'admin1',
     'place': 'place',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

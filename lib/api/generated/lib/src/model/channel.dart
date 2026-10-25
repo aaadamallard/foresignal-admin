@@ -718,6 +718,9 @@ class ChannelTypeEnum extends EnumClass {
   static const ChannelTypeEnum meshtastic = _$channelTypeEnum_meshtastic;
   @BuiltValueEnumConst(wireName: r'meshcore')
   static const ChannelTypeEnum meshcore = _$channelTypeEnum_meshcore;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ChannelTypeEnum unknownDefaultOpenApi =
+      _$channelTypeEnum_unknownDefaultOpenApi;
 
   static Serializer<ChannelTypeEnum> get serializer =>
       _$channelTypeEnumSerializer;
@@ -737,6 +740,9 @@ class ChannelMinSeverityEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'critical')
   static const ChannelMinSeverityEnum critical =
       _$channelMinSeverityEnum_critical;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ChannelMinSeverityEnum unknownDefaultOpenApi =
+      _$channelMinSeverityEnum_unknownDefaultOpenApi;
 
   static Serializer<ChannelMinSeverityEnum> get serializer =>
       _$channelMinSeverityEnumSerializer;

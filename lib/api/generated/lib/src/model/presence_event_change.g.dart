@@ -10,6 +10,9 @@ const PresenceEventChangeTypeEnum _$presenceEventChangeTypeEnum_joined =
     const PresenceEventChangeTypeEnum._('joined');
 const PresenceEventChangeTypeEnum _$presenceEventChangeTypeEnum_left =
     const PresenceEventChangeTypeEnum._('left');
+const PresenceEventChangeTypeEnum
+_$presenceEventChangeTypeEnum_unknownDefaultOpenApi =
+    const PresenceEventChangeTypeEnum._('unknownDefaultOpenApi');
 
 PresenceEventChangeTypeEnum _$presenceEventChangeTypeEnumValueOf(String name) {
   switch (name) {
@@ -17,18 +20,20 @@ PresenceEventChangeTypeEnum _$presenceEventChangeTypeEnumValueOf(String name) {
       return _$presenceEventChangeTypeEnum_joined;
     case 'left':
       return _$presenceEventChangeTypeEnum_left;
+    case 'unknownDefaultOpenApi':
+      return _$presenceEventChangeTypeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$presenceEventChangeTypeEnum_unknownDefaultOpenApi;
   }
 }
 
 final BuiltSet<PresenceEventChangeTypeEnum>
-_$presenceEventChangeTypeEnumValues = BuiltSet<PresenceEventChangeTypeEnum>(
-  const <PresenceEventChangeTypeEnum>[
-    _$presenceEventChangeTypeEnum_joined,
-    _$presenceEventChangeTypeEnum_left,
-  ],
-);
+_$presenceEventChangeTypeEnumValues =
+    BuiltSet<PresenceEventChangeTypeEnum>(const <PresenceEventChangeTypeEnum>[
+      _$presenceEventChangeTypeEnum_joined,
+      _$presenceEventChangeTypeEnum_left,
+      _$presenceEventChangeTypeEnum_unknownDefaultOpenApi,
+    ]);
 
 Serializer<PresenceEventChangeTypeEnum>
 _$presenceEventChangeTypeEnumSerializer =
@@ -39,10 +44,12 @@ class _$PresenceEventChangeTypeEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'joined': 'joined',
     'left': 'left',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'joined': 'joined',
     'left': 'left',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

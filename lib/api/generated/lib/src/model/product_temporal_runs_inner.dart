@@ -215,6 +215,9 @@ class ProductTemporalRunsInnerStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'partial')
   static const ProductTemporalRunsInnerStatusEnum partial =
       _$productTemporalRunsInnerStatusEnum_partial;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ProductTemporalRunsInnerStatusEnum unknownDefaultOpenApi =
+      _$productTemporalRunsInnerStatusEnum_unknownDefaultOpenApi;
 
   static Serializer<ProductTemporalRunsInnerStatusEnum> get serializer =>
       _$productTemporalRunsInnerStatusEnumSerializer;

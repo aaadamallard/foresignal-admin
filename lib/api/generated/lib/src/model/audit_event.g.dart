@@ -20,6 +20,8 @@ const AuditEventActorKindEnum _$auditEventActorKindEnum_chat =
     const AuditEventActorKindEnum._('chat');
 const AuditEventActorKindEnum _$auditEventActorKindEnum_mesh =
     const AuditEventActorKindEnum._('mesh');
+const AuditEventActorKindEnum _$auditEventActorKindEnum_unknownDefaultOpenApi =
+    const AuditEventActorKindEnum._('unknownDefaultOpenApi');
 
 AuditEventActorKindEnum _$auditEventActorKindEnumValueOf(String name) {
   switch (name) {
@@ -37,8 +39,10 @@ AuditEventActorKindEnum _$auditEventActorKindEnumValueOf(String name) {
       return _$auditEventActorKindEnum_chat;
     case 'mesh':
       return _$auditEventActorKindEnum_mesh;
+    case 'unknownDefaultOpenApi':
+      return _$auditEventActorKindEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$auditEventActorKindEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -51,6 +55,7 @@ final BuiltSet<AuditEventActorKindEnum> _$auditEventActorKindEnumValues =
       _$auditEventActorKindEnum_action,
       _$auditEventActorKindEnum_chat,
       _$auditEventActorKindEnum_mesh,
+      _$auditEventActorKindEnum_unknownDefaultOpenApi,
     ]);
 
 const AuditEventScopeEnum _$auditEventScopeEnum_read =
@@ -59,6 +64,8 @@ const AuditEventScopeEnum _$auditEventScopeEnum_agent =
     const AuditEventScopeEnum._('agent');
 const AuditEventScopeEnum _$auditEventScopeEnum_admin =
     const AuditEventScopeEnum._('admin');
+const AuditEventScopeEnum _$auditEventScopeEnum_unknownDefaultOpenApi =
+    const AuditEventScopeEnum._('unknownDefaultOpenApi');
 
 AuditEventScopeEnum _$auditEventScopeEnumValueOf(String name) {
   switch (name) {
@@ -68,8 +75,10 @@ AuditEventScopeEnum _$auditEventScopeEnumValueOf(String name) {
       return _$auditEventScopeEnum_agent;
     case 'admin':
       return _$auditEventScopeEnum_admin;
+    case 'unknownDefaultOpenApi':
+      return _$auditEventScopeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$auditEventScopeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -78,6 +87,7 @@ final BuiltSet<AuditEventScopeEnum> _$auditEventScopeEnumValues =
       _$auditEventScopeEnum_read,
       _$auditEventScopeEnum_agent,
       _$auditEventScopeEnum_admin,
+      _$auditEventScopeEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<AuditEventActorKindEnum> _$auditEventActorKindEnumSerializer =
@@ -95,6 +105,7 @@ class _$AuditEventActorKindEnumSerializer
     'action': 'action',
     'chat': 'chat',
     'mesh': 'mesh',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'token': 'token',
@@ -104,6 +115,7 @@ class _$AuditEventActorKindEnumSerializer
     'action': 'action',
     'chat': 'chat',
     'mesh': 'mesh',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -134,11 +146,13 @@ class _$AuditEventScopeEnumSerializer
     'read': 'read',
     'agent': 'agent',
     'admin': 'admin',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'read': 'read',
     'agent': 'agent',
     'admin': 'admin',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

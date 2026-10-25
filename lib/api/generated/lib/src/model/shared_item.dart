@@ -221,6 +221,9 @@ class SharedItemRoleEnum extends EnumClass {
   static const SharedItemRoleEnum editor = _$sharedItemRoleEnum_editor;
   @BuiltValueEnumConst(wireName: r'owner')
   static const SharedItemRoleEnum owner = _$sharedItemRoleEnum_owner;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const SharedItemRoleEnum unknownDefaultOpenApi =
+      _$sharedItemRoleEnum_unknownDefaultOpenApi;
 
   static Serializer<SharedItemRoleEnum> get serializer =>
       _$sharedItemRoleEnumSerializer;
@@ -239,6 +242,9 @@ class SharedItemViaEnum extends EnumClass {
   static const SharedItemViaEnum group = _$sharedItemViaEnum_group;
   @BuiltValueEnumConst(wireName: r'instance')
   static const SharedItemViaEnum instance = _$sharedItemViaEnum_instance;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const SharedItemViaEnum unknownDefaultOpenApi =
+      _$sharedItemViaEnum_unknownDefaultOpenApi;
 
   static Serializer<SharedItemViaEnum> get serializer =>
       _$sharedItemViaEnumSerializer;

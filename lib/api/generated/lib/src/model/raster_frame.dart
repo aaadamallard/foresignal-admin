@@ -432,6 +432,9 @@ class RasterFrameStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'complete')
   static const RasterFrameStatusEnum complete =
       _$rasterFrameStatusEnum_complete;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const RasterFrameStatusEnum unknownDefaultOpenApi =
+      _$rasterFrameStatusEnum_unknownDefaultOpenApi;
 
   static Serializer<RasterFrameStatusEnum> get serializer =>
       _$rasterFrameStatusEnumSerializer;

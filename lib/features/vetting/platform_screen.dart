@@ -81,8 +81,8 @@ class PlatformScreen extends ConsumerWidget {
                   titleTrailing: <Widget>[
                     StatusLabel(
                       key: const Key('platform.state'),
-                      label: wireLabel(p.state),
-                      tone: vettingTone(wireOf(p.state)),
+                      label: wireLabel(p.state, p, 'state'),
+                      tone: vettingTone(wireOf(p.state, p, 'state')),
                       tooltip: p.stateReason,
                     ),
                   ],
@@ -112,7 +112,7 @@ class PlatformScreen extends ConsumerWidget {
                             if (p.health case final h?) ...<MapEntry<String, Object>>[
                               MapEntry<String, Object>(
                                 'Health',
-                                '${wireLabel(h.status)}${h.statusReason == null ? '' : ' · ${h.statusReason}'}',
+                                '${wireLabel(h.status, h, 'status')}${h.statusReason == null ? '' : ' · ${h.statusReason}'}',
                               ),
                               if (h.lastSuccessAt != null)
                                 MapEntry<String, Object>('Last success', utcText(h.lastSuccessAt!)),
@@ -182,11 +182,11 @@ class PlatformScreen extends ConsumerWidget {
                     columns: <TableColumnSpec<SocialCollectionPath>>[
                       TableColumnSpec<SocialCollectionPath>(
                         label: 'Path',
-                        cell: (c) => Text(wireText(wireOf(c.path))),
+                        cell: (c) => Text(wireText(wireOf(c.path, c, 'path'))),
                       ),
                       TableColumnSpec<SocialCollectionPath>(
                         label: 'Coverage',
-                        cell: (c) => Text(wireLabel(c.collectionType)),
+                        cell: (c) => Text(wireLabel(c.collectionType, c, 'collectionType')),
                       ),
                       TableColumnSpec<SocialCollectionPath>(
                         label: 'Enabled',
@@ -214,7 +214,7 @@ class PlatformScreen extends ConsumerWidget {
                           label: 'Quota',
                           cell: (q) => Text(
                             q.description ??
-                                '${wireLabel(q.unit)} per ${displayDurationText(q.window)}',
+                                '${wireLabel(q.unit, q, 'unit')} per ${displayDurationText(q.window)}',
                           ),
                         ),
                         TableColumnSpec<SocialQuota>(

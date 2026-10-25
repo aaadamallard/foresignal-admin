@@ -10,6 +10,9 @@ const AccessGrantInputRoleEnum _$accessGrantInputRoleEnum_viewer =
     const AccessGrantInputRoleEnum._('viewer');
 const AccessGrantInputRoleEnum _$accessGrantInputRoleEnum_commenter =
     const AccessGrantInputRoleEnum._('commenter');
+const AccessGrantInputRoleEnum
+_$accessGrantInputRoleEnum_unknownDefaultOpenApi =
+    const AccessGrantInputRoleEnum._('unknownDefaultOpenApi');
 
 AccessGrantInputRoleEnum _$accessGrantInputRoleEnumValueOf(String name) {
   switch (name) {
@@ -17,8 +20,10 @@ AccessGrantInputRoleEnum _$accessGrantInputRoleEnumValueOf(String name) {
       return _$accessGrantInputRoleEnum_viewer;
     case 'commenter':
       return _$accessGrantInputRoleEnum_commenter;
+    case 'unknownDefaultOpenApi':
+      return _$accessGrantInputRoleEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$accessGrantInputRoleEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -26,6 +31,7 @@ final BuiltSet<AccessGrantInputRoleEnum> _$accessGrantInputRoleEnumValues =
     BuiltSet<AccessGrantInputRoleEnum>(const <AccessGrantInputRoleEnum>[
       _$accessGrantInputRoleEnum_viewer,
       _$accessGrantInputRoleEnum_commenter,
+      _$accessGrantInputRoleEnum_unknownDefaultOpenApi,
     ]);
 
 const AccessGrantInputDeliverAsEnum _$accessGrantInputDeliverAsEnum_report =
@@ -33,6 +39,9 @@ const AccessGrantInputDeliverAsEnum _$accessGrantInputDeliverAsEnum_report =
 const AccessGrantInputDeliverAsEnum
 _$accessGrantInputDeliverAsEnum_chronicleExtract =
     const AccessGrantInputDeliverAsEnum._('chronicleExtract');
+const AccessGrantInputDeliverAsEnum
+_$accessGrantInputDeliverAsEnum_unknownDefaultOpenApi =
+    const AccessGrantInputDeliverAsEnum._('unknownDefaultOpenApi');
 
 AccessGrantInputDeliverAsEnum _$accessGrantInputDeliverAsEnumValueOf(
   String name,
@@ -42,8 +51,10 @@ AccessGrantInputDeliverAsEnum _$accessGrantInputDeliverAsEnumValueOf(
       return _$accessGrantInputDeliverAsEnum_report;
     case 'chronicleExtract':
       return _$accessGrantInputDeliverAsEnum_chronicleExtract;
+    case 'unknownDefaultOpenApi':
+      return _$accessGrantInputDeliverAsEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$accessGrantInputDeliverAsEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -52,6 +63,7 @@ _$accessGrantInputDeliverAsEnumValues = BuiltSet<AccessGrantInputDeliverAsEnum>(
   const <AccessGrantInputDeliverAsEnum>[
     _$accessGrantInputDeliverAsEnum_report,
     _$accessGrantInputDeliverAsEnum_chronicleExtract,
+    _$accessGrantInputDeliverAsEnum_unknownDefaultOpenApi,
   ],
 );
 
@@ -66,10 +78,12 @@ class _$AccessGrantInputRoleEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'viewer': 'viewer',
     'commenter': 'commenter',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'viewer': 'viewer',
     'commenter': 'commenter',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -99,10 +113,12 @@ class _$AccessGrantInputDeliverAsEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'report': 'report',
     'chronicleExtract': 'chronicle-extract',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'report': 'report',
     'chronicle-extract': 'chronicleExtract',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

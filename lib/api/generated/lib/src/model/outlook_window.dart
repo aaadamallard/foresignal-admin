@@ -283,6 +283,9 @@ class OutlookWindowStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'annulled')
   static const OutlookWindowStatusEnum annulled =
       _$outlookWindowStatusEnum_annulled;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const OutlookWindowStatusEnum unknownDefaultOpenApi =
+      _$outlookWindowStatusEnum_unknownDefaultOpenApi;
 
   static Serializer<OutlookWindowStatusEnum> get serializer =>
       _$outlookWindowStatusEnumSerializer;
@@ -302,6 +305,9 @@ class OutlookWindowExceedanceEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'below-p05')
   static const OutlookWindowExceedanceEnum belowP05 =
       _$outlookWindowExceedanceEnum_belowP05;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const OutlookWindowExceedanceEnum unknownDefaultOpenApi =
+      _$outlookWindowExceedanceEnum_unknownDefaultOpenApi;
 
   static Serializer<OutlookWindowExceedanceEnum> get serializer =>
       _$outlookWindowExceedanceEnumSerializer;

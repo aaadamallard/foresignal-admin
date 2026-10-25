@@ -15,6 +15,11 @@ _$chronicleSocialVolumeSelectorScopesInnerTypeEnum_place =
 const ChronicleSocialVolumeSelectorScopesInnerTypeEnum
 _$chronicleSocialVolumeSelectorScopesInnerTypeEnum_entity =
     const ChronicleSocialVolumeSelectorScopesInnerTypeEnum._('entity');
+const ChronicleSocialVolumeSelectorScopesInnerTypeEnum
+_$chronicleSocialVolumeSelectorScopesInnerTypeEnum_unknownDefaultOpenApi =
+    const ChronicleSocialVolumeSelectorScopesInnerTypeEnum._(
+      'unknownDefaultOpenApi',
+    );
 
 ChronicleSocialVolumeSelectorScopesInnerTypeEnum
 _$chronicleSocialVolumeSelectorScopesInnerTypeEnumValueOf(String name) {
@@ -25,20 +30,23 @@ _$chronicleSocialVolumeSelectorScopesInnerTypeEnumValueOf(String name) {
       return _$chronicleSocialVolumeSelectorScopesInnerTypeEnum_place;
     case 'entity':
       return _$chronicleSocialVolumeSelectorScopesInnerTypeEnum_entity;
+    case 'unknownDefaultOpenApi':
+      return _$chronicleSocialVolumeSelectorScopesInnerTypeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$chronicleSocialVolumeSelectorScopesInnerTypeEnum_unknownDefaultOpenApi;
   }
 }
 
 final BuiltSet<ChronicleSocialVolumeSelectorScopesInnerTypeEnum>
 _$chronicleSocialVolumeSelectorScopesInnerTypeEnumValues =
-    BuiltSet<ChronicleSocialVolumeSelectorScopesInnerTypeEnum>(
-      const <ChronicleSocialVolumeSelectorScopesInnerTypeEnum>[
-        _$chronicleSocialVolumeSelectorScopesInnerTypeEnum_topic,
-        _$chronicleSocialVolumeSelectorScopesInnerTypeEnum_place,
-        _$chronicleSocialVolumeSelectorScopesInnerTypeEnum_entity,
-      ],
-    );
+    BuiltSet<ChronicleSocialVolumeSelectorScopesInnerTypeEnum>(const <
+      ChronicleSocialVolumeSelectorScopesInnerTypeEnum
+    >[
+      _$chronicleSocialVolumeSelectorScopesInnerTypeEnum_topic,
+      _$chronicleSocialVolumeSelectorScopesInnerTypeEnum_place,
+      _$chronicleSocialVolumeSelectorScopesInnerTypeEnum_entity,
+      _$chronicleSocialVolumeSelectorScopesInnerTypeEnum_unknownDefaultOpenApi,
+    ]);
 
 Serializer<ChronicleSocialVolumeSelectorScopesInnerTypeEnum>
 _$chronicleSocialVolumeSelectorScopesInnerTypeEnumSerializer =
@@ -51,11 +59,13 @@ class _$ChronicleSocialVolumeSelectorScopesInnerTypeEnumSerializer
     'topic': 'topic',
     'place': 'place',
     'entity': 'entity',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'topic': 'topic',
     'place': 'place',
     'entity': 'entity',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

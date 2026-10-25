@@ -14,6 +14,8 @@ const CycleRunCadenceEnum _$cycleRunCadenceEnum_monthly =
     const CycleRunCadenceEnum._('monthly');
 const CycleRunCadenceEnum _$cycleRunCadenceEnum_onDemand =
     const CycleRunCadenceEnum._('onDemand');
+const CycleRunCadenceEnum _$cycleRunCadenceEnum_unknownDefaultOpenApi =
+    const CycleRunCadenceEnum._('unknownDefaultOpenApi');
 
 CycleRunCadenceEnum _$cycleRunCadenceEnumValueOf(String name) {
   switch (name) {
@@ -25,8 +27,10 @@ CycleRunCadenceEnum _$cycleRunCadenceEnumValueOf(String name) {
       return _$cycleRunCadenceEnum_monthly;
     case 'onDemand':
       return _$cycleRunCadenceEnum_onDemand;
+    case 'unknownDefaultOpenApi':
+      return _$cycleRunCadenceEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$cycleRunCadenceEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -36,6 +40,7 @@ final BuiltSet<CycleRunCadenceEnum> _$cycleRunCadenceEnumValues =
       _$cycleRunCadenceEnum_weekly,
       _$cycleRunCadenceEnum_monthly,
       _$cycleRunCadenceEnum_onDemand,
+      _$cycleRunCadenceEnum_unknownDefaultOpenApi,
     ]);
 
 const CycleRunTriggerEnum _$cycleRunTriggerEnum_schedule =
@@ -46,6 +51,8 @@ const CycleRunTriggerEnum _$cycleRunTriggerEnum_manual =
     const CycleRunTriggerEnum._('manual');
 const CycleRunTriggerEnum _$cycleRunTriggerEnum_situation =
     const CycleRunTriggerEnum._('situation');
+const CycleRunTriggerEnum _$cycleRunTriggerEnum_unknownDefaultOpenApi =
+    const CycleRunTriggerEnum._('unknownDefaultOpenApi');
 
 CycleRunTriggerEnum _$cycleRunTriggerEnumValueOf(String name) {
   switch (name) {
@@ -57,8 +64,10 @@ CycleRunTriggerEnum _$cycleRunTriggerEnumValueOf(String name) {
       return _$cycleRunTriggerEnum_manual;
     case 'situation':
       return _$cycleRunTriggerEnum_situation;
+    case 'unknownDefaultOpenApi':
+      return _$cycleRunTriggerEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$cycleRunTriggerEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -68,6 +77,7 @@ final BuiltSet<CycleRunTriggerEnum> _$cycleRunTriggerEnumValues =
       _$cycleRunTriggerEnum_missed,
       _$cycleRunTriggerEnum_manual,
       _$cycleRunTriggerEnum_situation,
+      _$cycleRunTriggerEnum_unknownDefaultOpenApi,
     ]);
 
 const CycleRunStatusEnum _$cycleRunStatusEnum_queued =
@@ -83,6 +93,8 @@ const CycleRunStatusEnum _$cycleRunStatusEnum_digestOnly =
     const CycleRunStatusEnum._('digestOnly');
 const CycleRunStatusEnum _$cycleRunStatusEnum_failed =
     const CycleRunStatusEnum._('failed');
+const CycleRunStatusEnum _$cycleRunStatusEnum_unknownDefaultOpenApi =
+    const CycleRunStatusEnum._('unknownDefaultOpenApi');
 
 CycleRunStatusEnum _$cycleRunStatusEnumValueOf(String name) {
   switch (name) {
@@ -98,8 +110,10 @@ CycleRunStatusEnum _$cycleRunStatusEnumValueOf(String name) {
       return _$cycleRunStatusEnum_digestOnly;
     case 'failed':
       return _$cycleRunStatusEnum_failed;
+    case 'unknownDefaultOpenApi':
+      return _$cycleRunStatusEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$cycleRunStatusEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -111,6 +125,7 @@ final BuiltSet<CycleRunStatusEnum> _$cycleRunStatusEnumValues =
       _$cycleRunStatusEnum_partial,
       _$cycleRunStatusEnum_digestOnly,
       _$cycleRunStatusEnum_failed,
+      _$cycleRunStatusEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<CycleRunCadenceEnum> _$cycleRunCadenceEnumSerializer =
@@ -127,12 +142,14 @@ class _$CycleRunCadenceEnumSerializer
     'weekly': 'weekly',
     'monthly': 'monthly',
     'onDemand': 'on-demand',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'daily': 'daily',
     'weekly': 'weekly',
     'monthly': 'monthly',
     'on-demand': 'onDemand',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -164,12 +181,14 @@ class _$CycleRunTriggerEnumSerializer
     'missed': 'missed',
     'manual': 'manual',
     'situation': 'situation',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'schedule': 'schedule',
     'missed': 'missed',
     'manual': 'manual',
     'situation': 'situation',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -203,6 +222,7 @@ class _$CycleRunStatusEnumSerializer
     'partial': 'partial',
     'digestOnly': 'digest-only',
     'failed': 'failed',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'queued': 'queued',
@@ -211,6 +231,7 @@ class _$CycleRunStatusEnumSerializer
     'partial': 'partial',
     'digest-only': 'digestOnly',
     'failed': 'failed',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

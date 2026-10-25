@@ -357,6 +357,9 @@ class ChokepointUturnPayloadStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'degraded-input')
   static const ChokepointUturnPayloadStatusEnum degradedInput =
       _$chokepointUturnPayloadStatusEnum_degradedInput;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ChokepointUturnPayloadStatusEnum unknownDefaultOpenApi =
+      _$chokepointUturnPayloadStatusEnum_unknownDefaultOpenApi;
 
   static Serializer<ChokepointUturnPayloadStatusEnum> get serializer =>
       _$chokepointUturnPayloadStatusEnumSerializer;
@@ -379,6 +382,9 @@ class ChokepointUturnPayloadManoeuvreEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'speed-drop')
   static const ChokepointUturnPayloadManoeuvreEnum speedDrop =
       _$chokepointUturnPayloadManoeuvreEnum_speedDrop;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ChokepointUturnPayloadManoeuvreEnum unknownDefaultOpenApi =
+      _$chokepointUturnPayloadManoeuvreEnum_unknownDefaultOpenApi;
 
   static Serializer<ChokepointUturnPayloadManoeuvreEnum> get serializer =>
       _$chokepointUturnPayloadManoeuvreEnumSerializer;

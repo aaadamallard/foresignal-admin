@@ -454,6 +454,9 @@ class ForecastResolverTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'manual')
   static const ForecastResolverTypeEnum manual =
       _$forecastResolverTypeEnum_manual;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ForecastResolverTypeEnum unknownDefaultOpenApi =
+      _$forecastResolverTypeEnum_unknownDefaultOpenApi;
 
   static Serializer<ForecastResolverTypeEnum> get serializer =>
       _$forecastResolverTypeEnumSerializer;
@@ -478,6 +481,9 @@ class ForecastResolverOpEnum extends EnumClass {
   static const ForecastResolverOpEnum lte = _$forecastResolverOpEnum_lte;
   @BuiltValueEnumConst(wireName: r'eq')
   static const ForecastResolverOpEnum eq = _$forecastResolverOpEnum_eq;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ForecastResolverOpEnum unknownDefaultOpenApi =
+      _$forecastResolverOpEnum_unknownDefaultOpenApi;
 
   static Serializer<ForecastResolverOpEnum> get serializer =>
       _$forecastResolverOpEnumSerializer;
@@ -504,6 +510,9 @@ class ForecastResolverAggregateEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'sum')
   static const ForecastResolverAggregateEnum sum =
       _$forecastResolverAggregateEnum_sum;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ForecastResolverAggregateEnum unknownDefaultOpenApi =
+      _$forecastResolverAggregateEnum_unknownDefaultOpenApi;
 
   static Serializer<ForecastResolverAggregateEnum> get serializer =>
       _$forecastResolverAggregateEnumSerializer;

@@ -322,6 +322,9 @@ class IndicatorSignalTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'manual')
   static const IndicatorSignalTypeEnum manual =
       _$indicatorSignalTypeEnum_manual;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const IndicatorSignalTypeEnum unknownDefaultOpenApi =
+      _$indicatorSignalTypeEnum_unknownDefaultOpenApi;
 
   static Serializer<IndicatorSignalTypeEnum> get serializer =>
       _$indicatorSignalTypeEnumSerializer;

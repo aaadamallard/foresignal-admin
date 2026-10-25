@@ -180,6 +180,9 @@ class QuestionAnnulmentCodeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'OPERATOR')
   static const QuestionAnnulmentCodeEnum OPERATOR =
       _$questionAnnulmentCodeEnum_OPERATOR;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const QuestionAnnulmentCodeEnum unknownDefaultOpenApi =
+      _$questionAnnulmentCodeEnum_unknownDefaultOpenApi;
 
   static Serializer<QuestionAnnulmentCodeEnum> get serializer =>
       _$questionAnnulmentCodeEnumSerializer;

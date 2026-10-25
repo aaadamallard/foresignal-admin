@@ -279,6 +279,9 @@ class ClusterTimelineItemTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'record')
   static const ClusterTimelineItemTypeEnum record =
       _$clusterTimelineItemTypeEnum_record;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ClusterTimelineItemTypeEnum unknownDefaultOpenApi =
+      _$clusterTimelineItemTypeEnum_unknownDefaultOpenApi;
 
   static Serializer<ClusterTimelineItemTypeEnum> get serializer =>
       _$clusterTimelineItemTypeEnumSerializer;

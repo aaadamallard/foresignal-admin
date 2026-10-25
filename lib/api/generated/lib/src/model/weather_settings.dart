@@ -174,6 +174,9 @@ class WeatherSettingsAlertContextEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'off')
   static const WeatherSettingsAlertContextEnum off =
       _$weatherSettingsAlertContextEnum_off;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const WeatherSettingsAlertContextEnum unknownDefaultOpenApi =
+      _$weatherSettingsAlertContextEnum_unknownDefaultOpenApi;
 
   static Serializer<WeatherSettingsAlertContextEnum> get serializer =>
       _$weatherSettingsAlertContextEnumSerializer;

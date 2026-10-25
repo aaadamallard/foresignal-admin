@@ -152,6 +152,9 @@ class AnalystFeedbackInputRatingEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'wrong')
   static const AnalystFeedbackInputRatingEnum wrong =
       _$analystFeedbackInputRatingEnum_wrong;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const AnalystFeedbackInputRatingEnum unknownDefaultOpenApi =
+      _$analystFeedbackInputRatingEnum_unknownDefaultOpenApi;
 
   static Serializer<AnalystFeedbackInputRatingEnum> get serializer =>
       _$analystFeedbackInputRatingEnumSerializer;

@@ -241,6 +241,9 @@ class _$SocialSpendSerializer implements PrimitiveSerializer<SocialSpend> {
 class SocialSpendCurrencyEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'USD')
   static const SocialSpendCurrencyEnum USD = _$socialSpendCurrencyEnum_USD;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const SocialSpendCurrencyEnum unknownDefaultOpenApi =
+      _$socialSpendCurrencyEnum_unknownDefaultOpenApi;
 
   static Serializer<SocialSpendCurrencyEnum> get serializer =>
       _$socialSpendCurrencyEnumSerializer;

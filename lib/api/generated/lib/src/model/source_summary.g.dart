@@ -14,6 +14,8 @@ const SourceSummaryModeEnum _$sourceSummaryModeEnum_push =
     const SourceSummaryModeEnum._('push');
 const SourceSummaryModeEnum _$sourceSummaryModeEnum_derived =
     const SourceSummaryModeEnum._('derived');
+const SourceSummaryModeEnum _$sourceSummaryModeEnum_unknownDefaultOpenApi =
+    const SourceSummaryModeEnum._('unknownDefaultOpenApi');
 
 SourceSummaryModeEnum _$sourceSummaryModeEnumValueOf(String name) {
   switch (name) {
@@ -25,8 +27,10 @@ SourceSummaryModeEnum _$sourceSummaryModeEnumValueOf(String name) {
       return _$sourceSummaryModeEnum_push;
     case 'derived':
       return _$sourceSummaryModeEnum_derived;
+    case 'unknownDefaultOpenApi':
+      return _$sourceSummaryModeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$sourceSummaryModeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -36,6 +40,7 @@ final BuiltSet<SourceSummaryModeEnum> _$sourceSummaryModeEnumValues =
       _$sourceSummaryModeEnum_streaming,
       _$sourceSummaryModeEnum_push,
       _$sourceSummaryModeEnum_derived,
+      _$sourceSummaryModeEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<SourceSummaryModeEnum> _$sourceSummaryModeEnumSerializer =
@@ -48,12 +53,14 @@ class _$SourceSummaryModeEnumSerializer
     'streaming': 'streaming',
     'push': 'push',
     'derived': 'derived',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'polling': 'polling',
     'streaming': 'streaming',
     'push': 'push',
     'derived': 'derived',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

@@ -10,6 +10,9 @@ const AnomalyBaselineSlotModeEnum _$anomalyBaselineSlotModeEnum_hourOfWeek =
     const AnomalyBaselineSlotModeEnum._('hourOfWeek');
 const AnomalyBaselineSlotModeEnum _$anomalyBaselineSlotModeEnum_hourOfDay =
     const AnomalyBaselineSlotModeEnum._('hourOfDay');
+const AnomalyBaselineSlotModeEnum
+_$anomalyBaselineSlotModeEnum_unknownDefaultOpenApi =
+    const AnomalyBaselineSlotModeEnum._('unknownDefaultOpenApi');
 
 AnomalyBaselineSlotModeEnum _$anomalyBaselineSlotModeEnumValueOf(String name) {
   switch (name) {
@@ -17,8 +20,10 @@ AnomalyBaselineSlotModeEnum _$anomalyBaselineSlotModeEnumValueOf(String name) {
       return _$anomalyBaselineSlotModeEnum_hourOfWeek;
     case 'hourOfDay':
       return _$anomalyBaselineSlotModeEnum_hourOfDay;
+    case 'unknownDefaultOpenApi':
+      return _$anomalyBaselineSlotModeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$anomalyBaselineSlotModeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -27,12 +32,16 @@ _$anomalyBaselineSlotModeEnumValues =
     BuiltSet<AnomalyBaselineSlotModeEnum>(const <AnomalyBaselineSlotModeEnum>[
       _$anomalyBaselineSlotModeEnum_hourOfWeek,
       _$anomalyBaselineSlotModeEnum_hourOfDay,
+      _$anomalyBaselineSlotModeEnum_unknownDefaultOpenApi,
     ]);
 
 const AnomalyBaselineBucketEnum _$anomalyBaselineBucketEnum_n15m =
     const AnomalyBaselineBucketEnum._('n15m');
 const AnomalyBaselineBucketEnum _$anomalyBaselineBucketEnum_n1h =
     const AnomalyBaselineBucketEnum._('n1h');
+const AnomalyBaselineBucketEnum
+_$anomalyBaselineBucketEnum_unknownDefaultOpenApi =
+    const AnomalyBaselineBucketEnum._('unknownDefaultOpenApi');
 
 AnomalyBaselineBucketEnum _$anomalyBaselineBucketEnumValueOf(String name) {
   switch (name) {
@@ -40,8 +49,10 @@ AnomalyBaselineBucketEnum _$anomalyBaselineBucketEnumValueOf(String name) {
       return _$anomalyBaselineBucketEnum_n15m;
     case 'n1h':
       return _$anomalyBaselineBucketEnum_n1h;
+    case 'unknownDefaultOpenApi':
+      return _$anomalyBaselineBucketEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$anomalyBaselineBucketEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -49,6 +60,7 @@ final BuiltSet<AnomalyBaselineBucketEnum> _$anomalyBaselineBucketEnumValues =
     BuiltSet<AnomalyBaselineBucketEnum>(const <AnomalyBaselineBucketEnum>[
       _$anomalyBaselineBucketEnum_n15m,
       _$anomalyBaselineBucketEnum_n1h,
+      _$anomalyBaselineBucketEnum_unknownDefaultOpenApi,
     ]);
 
 const AnomalyBaselineSamplePathEnum
@@ -57,6 +69,9 @@ _$anomalyBaselineSamplePathEnum_activitySample =
 const AnomalyBaselineSamplePathEnum
 _$anomalyBaselineSamplePathEnum_activityRollup =
     const AnomalyBaselineSamplePathEnum._('activityRollup');
+const AnomalyBaselineSamplePathEnum
+_$anomalyBaselineSamplePathEnum_unknownDefaultOpenApi =
+    const AnomalyBaselineSamplePathEnum._('unknownDefaultOpenApi');
 
 AnomalyBaselineSamplePathEnum _$anomalyBaselineSamplePathEnumValueOf(
   String name,
@@ -66,8 +81,10 @@ AnomalyBaselineSamplePathEnum _$anomalyBaselineSamplePathEnumValueOf(
       return _$anomalyBaselineSamplePathEnum_activitySample;
     case 'activityRollup':
       return _$anomalyBaselineSamplePathEnum_activityRollup;
+    case 'unknownDefaultOpenApi':
+      return _$anomalyBaselineSamplePathEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$anomalyBaselineSamplePathEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -76,6 +93,7 @@ _$anomalyBaselineSamplePathEnumValues = BuiltSet<AnomalyBaselineSamplePathEnum>(
   const <AnomalyBaselineSamplePathEnum>[
     _$anomalyBaselineSamplePathEnum_activitySample,
     _$anomalyBaselineSamplePathEnum_activityRollup,
+    _$anomalyBaselineSamplePathEnum_unknownDefaultOpenApi,
   ],
 );
 
@@ -93,10 +111,12 @@ class _$AnomalyBaselineSlotModeEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'hourOfWeek': 'hour-of-week',
     'hourOfDay': 'hour-of-day',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'hour-of-week': 'hourOfWeek',
     'hour-of-day': 'hourOfDay',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -126,10 +146,12 @@ class _$AnomalyBaselineBucketEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'n15m': '15m',
     'n1h': '1h',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     '15m': 'n15m',
     '1h': 'n1h',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -159,10 +181,12 @@ class _$AnomalyBaselineSamplePathEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'activitySample': 'activity_sample',
     'activityRollup': 'activity_rollup',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'activity_sample': 'activitySample',
     'activity_rollup': 'activityRollup',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

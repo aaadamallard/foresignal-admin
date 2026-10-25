@@ -348,6 +348,9 @@ class OsmInfrastructurePayloadOsmTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'relation')
   static const OsmInfrastructurePayloadOsmTypeEnum relation =
       _$osmInfrastructurePayloadOsmTypeEnum_relation;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const OsmInfrastructurePayloadOsmTypeEnum unknownDefaultOpenApi =
+      _$osmInfrastructurePayloadOsmTypeEnum_unknownDefaultOpenApi;
 
   static Serializer<OsmInfrastructurePayloadOsmTypeEnum> get serializer =>
       _$osmInfrastructurePayloadOsmTypeEnumSerializer;

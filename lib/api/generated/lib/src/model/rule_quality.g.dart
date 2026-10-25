@@ -12,6 +12,9 @@ const RuleQualityFeedbackMappingEnum _$ruleQualityFeedbackMappingEnum_negative =
     const RuleQualityFeedbackMappingEnum._('negative');
 const RuleQualityFeedbackMappingEnum _$ruleQualityFeedbackMappingEnum_neutral =
     const RuleQualityFeedbackMappingEnum._('neutral');
+const RuleQualityFeedbackMappingEnum
+_$ruleQualityFeedbackMappingEnum_unknownDefaultOpenApi =
+    const RuleQualityFeedbackMappingEnum._('unknownDefaultOpenApi');
 
 RuleQualityFeedbackMappingEnum _$ruleQualityFeedbackMappingEnumValueOf(
   String name,
@@ -23,8 +26,10 @@ RuleQualityFeedbackMappingEnum _$ruleQualityFeedbackMappingEnumValueOf(
       return _$ruleQualityFeedbackMappingEnum_negative;
     case 'neutral':
       return _$ruleQualityFeedbackMappingEnum_neutral;
+    case 'unknownDefaultOpenApi':
+      return _$ruleQualityFeedbackMappingEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$ruleQualityFeedbackMappingEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -35,6 +40,7 @@ _$ruleQualityFeedbackMappingEnumValues =
         _$ruleQualityFeedbackMappingEnum_positive,
         _$ruleQualityFeedbackMappingEnum_negative,
         _$ruleQualityFeedbackMappingEnum_neutral,
+        _$ruleQualityFeedbackMappingEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -48,11 +54,13 @@ class _$RuleQualityFeedbackMappingEnumSerializer
     'positive': 'positive',
     'negative': 'negative',
     'neutral': 'neutral',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'positive': 'positive',
     'negative': 'negative',
     'neutral': 'neutral',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

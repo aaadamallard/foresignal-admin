@@ -146,6 +146,9 @@ class IngestRecordsPathKeyRequestTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'encrypted')
   static const IngestRecordsPathKeyRequestTypeEnum encrypted =
       _$ingestRecordsPathKeyRequestTypeEnum_encrypted;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const IngestRecordsPathKeyRequestTypeEnum unknownDefaultOpenApi =
+      _$ingestRecordsPathKeyRequestTypeEnum_unknownDefaultOpenApi;
 
   static Serializer<IngestRecordsPathKeyRequestTypeEnum> get serializer =>
       _$ingestRecordsPathKeyRequestTypeEnumSerializer;

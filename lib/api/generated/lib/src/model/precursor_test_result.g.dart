@@ -9,14 +9,19 @@ part of 'precursor_test_result.dart';
 const PrecursorTestResultPermutationsEnum
 _$precursorTestResultPermutationsEnum_number200 =
     const PrecursorTestResultPermutationsEnum._('number200');
+const PrecursorTestResultPermutationsEnum
+_$precursorTestResultPermutationsEnum_unknownDefaultOpenApi =
+    const PrecursorTestResultPermutationsEnum._('unknownDefaultOpenApi');
 
 PrecursorTestResultPermutationsEnum
 _$precursorTestResultPermutationsEnumValueOf(String name) {
   switch (name) {
     case 'number200':
       return _$precursorTestResultPermutationsEnum_number200;
+    case 'unknownDefaultOpenApi':
+      return _$precursorTestResultPermutationsEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$precursorTestResultPermutationsEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -25,6 +30,7 @@ _$precursorTestResultPermutationsEnumValues =
     BuiltSet<PrecursorTestResultPermutationsEnum>(
       const <PrecursorTestResultPermutationsEnum>[
         _$precursorTestResultPermutationsEnum_number200,
+        _$precursorTestResultPermutationsEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -38,6 +44,9 @@ const PrecursorTestResultVerdictEnum _$precursorTestResultVerdictEnum_weak =
     const PrecursorTestResultVerdictEnum._('weak');
 const PrecursorTestResultVerdictEnum _$precursorTestResultVerdictEnum_notable =
     const PrecursorTestResultVerdictEnum._('notable');
+const PrecursorTestResultVerdictEnum
+_$precursorTestResultVerdictEnum_unknownDefaultOpenApi =
+    const PrecursorTestResultVerdictEnum._('unknownDefaultOpenApi');
 
 PrecursorTestResultVerdictEnum _$precursorTestResultVerdictEnumValueOf(
   String name,
@@ -51,8 +60,10 @@ PrecursorTestResultVerdictEnum _$precursorTestResultVerdictEnumValueOf(
       return _$precursorTestResultVerdictEnum_weak;
     case 'notable':
       return _$precursorTestResultVerdictEnum_notable;
+    case 'unknownDefaultOpenApi':
+      return _$precursorTestResultVerdictEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$precursorTestResultVerdictEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -64,6 +75,7 @@ _$precursorTestResultVerdictEnumValues =
         _$precursorTestResultVerdictEnum_noEvidenceOfPrecedence,
         _$precursorTestResultVerdictEnum_weak,
         _$precursorTestResultVerdictEnum_notable,
+        _$precursorTestResultVerdictEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -78,9 +90,11 @@ class _$PrecursorTestResultPermutationsEnumSerializer
     implements PrimitiveSerializer<PrecursorTestResultPermutationsEnum> {
   static const Map<String, Object> _toWire = const <String, Object>{
     'number200': 200,
+    'unknownDefaultOpenApi': 11184809,
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     200: 'number200',
+    11184809: 'unknownDefaultOpenApi',
   };
 
   @override
@@ -114,12 +128,14 @@ class _$PrecursorTestResultVerdictEnumSerializer
     'noEvidenceOfPrecedence': 'no-evidence-of-precedence',
     'weak': 'weak',
     'notable': 'notable',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'insufficient': 'insufficient',
     'no-evidence-of-precedence': 'noEvidenceOfPrecedence',
     'weak': 'weak',
     'notable': 'notable',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

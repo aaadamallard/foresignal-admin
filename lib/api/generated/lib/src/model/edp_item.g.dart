@@ -27,6 +27,8 @@ const EdpItemTypeEnum _$edpItemTypeEnum_delete = const EdpItemTypeEnum._(
 const EdpItemTypeEnum _$edpItemTypeEnum_status = const EdpItemTypeEnum._(
   'status',
 );
+const EdpItemTypeEnum _$edpItemTypeEnum_unknownDefaultOpenApi =
+    const EdpItemTypeEnum._('unknownDefaultOpenApi');
 
 EdpItemTypeEnum _$edpItemTypeEnumValueOf(String name) {
   switch (name) {
@@ -44,8 +46,10 @@ EdpItemTypeEnum _$edpItemTypeEnumValueOf(String name) {
       return _$edpItemTypeEnum_delete;
     case 'status':
       return _$edpItemTypeEnum_status;
+    case 'unknownDefaultOpenApi':
+      return _$edpItemTypeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$edpItemTypeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -58,6 +62,7 @@ final BuiltSet<EdpItemTypeEnum> _$edpItemTypeEnumValues =
       _$edpItemTypeEnum_forecast,
       _$edpItemTypeEnum_delete,
       _$edpItemTypeEnum_status,
+      _$edpItemTypeEnum_unknownDefaultOpenApi,
     ]);
 
 const EdpItemDocumentTypeEnum _$edpItemDocumentTypeEnum_socialPost =
@@ -70,6 +75,8 @@ const EdpItemDocumentTypeEnum _$edpItemDocumentTypeEnum_transcript =
     const EdpItemDocumentTypeEnum._('transcript');
 const EdpItemDocumentTypeEnum _$edpItemDocumentTypeEnum_note =
     const EdpItemDocumentTypeEnum._('note');
+const EdpItemDocumentTypeEnum _$edpItemDocumentTypeEnum_unknownDefaultOpenApi =
+    const EdpItemDocumentTypeEnum._('unknownDefaultOpenApi');
 
 EdpItemDocumentTypeEnum _$edpItemDocumentTypeEnumValueOf(String name) {
   switch (name) {
@@ -83,8 +90,10 @@ EdpItemDocumentTypeEnum _$edpItemDocumentTypeEnumValueOf(String name) {
       return _$edpItemDocumentTypeEnum_transcript;
     case 'note':
       return _$edpItemDocumentTypeEnum_note;
+    case 'unknownDefaultOpenApi':
+      return _$edpItemDocumentTypeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$edpItemDocumentTypeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -95,6 +104,7 @@ final BuiltSet<EdpItemDocumentTypeEnum> _$edpItemDocumentTypeEnumValues =
       _$edpItemDocumentTypeEnum_report,
       _$edpItemDocumentTypeEnum_transcript,
       _$edpItemDocumentTypeEnum_note,
+      _$edpItemDocumentTypeEnum_unknownDefaultOpenApi,
     ]);
 
 const EdpItemHealthEnum _$edpItemHealthEnum_ok = const EdpItemHealthEnum._(
@@ -109,6 +119,8 @@ const EdpItemHealthEnum _$edpItemHealthEnum_layoutChanged =
     const EdpItemHealthEnum._('layoutChanged');
 const EdpItemHealthEnum _$edpItemHealthEnum_geoRestricted =
     const EdpItemHealthEnum._('geoRestricted');
+const EdpItemHealthEnum _$edpItemHealthEnum_unknownDefaultOpenApi =
+    const EdpItemHealthEnum._('unknownDefaultOpenApi');
 
 EdpItemHealthEnum _$edpItemHealthEnumValueOf(String name) {
   switch (name) {
@@ -122,8 +134,10 @@ EdpItemHealthEnum _$edpItemHealthEnumValueOf(String name) {
       return _$edpItemHealthEnum_layoutChanged;
     case 'geoRestricted':
       return _$edpItemHealthEnum_geoRestricted;
+    case 'unknownDefaultOpenApi':
+      return _$edpItemHealthEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$edpItemHealthEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -134,6 +148,7 @@ final BuiltSet<EdpItemHealthEnum> _$edpItemHealthEnumValues =
       _$edpItemHealthEnum_blocked,
       _$edpItemHealthEnum_layoutChanged,
       _$edpItemHealthEnum_geoRestricted,
+      _$edpItemHealthEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<EdpItemTypeEnum> _$edpItemTypeEnumSerializer =
@@ -153,6 +168,7 @@ class _$EdpItemTypeEnumSerializer
     'forecast': 'forecast',
     'delete': 'delete',
     'status': 'status',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'feature': 'feature',
@@ -162,6 +178,7 @@ class _$EdpItemTypeEnumSerializer
     'forecast': 'forecast',
     'delete': 'delete',
     'status': 'status',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -194,6 +211,7 @@ class _$EdpItemDocumentTypeEnumSerializer
     'report': 'report',
     'transcript': 'transcript',
     'note': 'note',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'social-post': 'socialPost',
@@ -201,6 +219,7 @@ class _$EdpItemDocumentTypeEnumSerializer
     'report': 'report',
     'transcript': 'transcript',
     'note': 'note',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -233,6 +252,7 @@ class _$EdpItemHealthEnumSerializer
     'blocked': 'blocked',
     'layoutChanged': 'layout-changed',
     'geoRestricted': 'geo-restricted',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'ok': 'ok',
@@ -240,6 +260,7 @@ class _$EdpItemHealthEnumSerializer
     'blocked': 'blocked',
     'layout-changed': 'layoutChanged',
     'geo-restricted': 'geoRestricted',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

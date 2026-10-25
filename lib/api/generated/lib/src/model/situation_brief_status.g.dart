@@ -10,6 +10,9 @@ const SituationBriefStatusStatusEnum _$situationBriefStatusStatusEnum_queued =
     const SituationBriefStatusStatusEnum._('queued');
 const SituationBriefStatusStatusEnum _$situationBriefStatusStatusEnum_running =
     const SituationBriefStatusStatusEnum._('running');
+const SituationBriefStatusStatusEnum
+_$situationBriefStatusStatusEnum_unknownDefaultOpenApi =
+    const SituationBriefStatusStatusEnum._('unknownDefaultOpenApi');
 
 SituationBriefStatusStatusEnum _$situationBriefStatusStatusEnumValueOf(
   String name,
@@ -19,8 +22,10 @@ SituationBriefStatusStatusEnum _$situationBriefStatusStatusEnumValueOf(
       return _$situationBriefStatusStatusEnum_queued;
     case 'running':
       return _$situationBriefStatusStatusEnum_running;
+    case 'unknownDefaultOpenApi':
+      return _$situationBriefStatusStatusEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$situationBriefStatusStatusEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -30,6 +35,7 @@ _$situationBriefStatusStatusEnumValues =
       const <SituationBriefStatusStatusEnum>[
         _$situationBriefStatusStatusEnum_queued,
         _$situationBriefStatusStatusEnum_running,
+        _$situationBriefStatusStatusEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -42,10 +48,12 @@ class _$SituationBriefStatusStatusEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'queued': 'queued',
     'running': 'running',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'queued': 'queued',
     'running': 'running',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

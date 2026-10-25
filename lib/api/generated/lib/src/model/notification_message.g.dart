@@ -14,6 +14,9 @@ _$notificationMessageSeverityEnum_warning =
 const NotificationMessageSeverityEnum
 _$notificationMessageSeverityEnum_critical =
     const NotificationMessageSeverityEnum._('critical');
+const NotificationMessageSeverityEnum
+_$notificationMessageSeverityEnum_unknownDefaultOpenApi =
+    const NotificationMessageSeverityEnum._('unknownDefaultOpenApi');
 
 NotificationMessageSeverityEnum _$notificationMessageSeverityEnumValueOf(
   String name,
@@ -25,8 +28,10 @@ NotificationMessageSeverityEnum _$notificationMessageSeverityEnumValueOf(
       return _$notificationMessageSeverityEnum_warning;
     case 'critical':
       return _$notificationMessageSeverityEnum_critical;
+    case 'unknownDefaultOpenApi':
+      return _$notificationMessageSeverityEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$notificationMessageSeverityEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -37,6 +42,7 @@ _$notificationMessageSeverityEnumValues =
         _$notificationMessageSeverityEnum_info,
         _$notificationMessageSeverityEnum_warning,
         _$notificationMessageSeverityEnum_critical,
+        _$notificationMessageSeverityEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -50,11 +56,13 @@ class _$NotificationMessageSeverityEnumSerializer
     'info': 'info',
     'warning': 'warning',
     'critical': 'critical',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'info': 'info',
     'warning': 'warning',
     'critical': 'critical',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

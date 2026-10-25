@@ -16,6 +16,8 @@ const ObjectActionMethodEnum _$objectActionMethodEnum_PATCH =
     const ObjectActionMethodEnum._('PATCH');
 const ObjectActionMethodEnum _$objectActionMethodEnum_DELETE =
     const ObjectActionMethodEnum._('DELETE');
+const ObjectActionMethodEnum _$objectActionMethodEnum_unknownDefaultOpenApi =
+    const ObjectActionMethodEnum._('unknownDefaultOpenApi');
 
 ObjectActionMethodEnum _$objectActionMethodEnumValueOf(String name) {
   switch (name) {
@@ -29,8 +31,10 @@ ObjectActionMethodEnum _$objectActionMethodEnumValueOf(String name) {
       return _$objectActionMethodEnum_PATCH;
     case 'DELETE':
       return _$objectActionMethodEnum_DELETE;
+    case 'unknownDefaultOpenApi':
+      return _$objectActionMethodEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$objectActionMethodEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -41,6 +45,7 @@ final BuiltSet<ObjectActionMethodEnum> _$objectActionMethodEnumValues =
       _$objectActionMethodEnum_PUT,
       _$objectActionMethodEnum_PATCH,
       _$objectActionMethodEnum_DELETE,
+      _$objectActionMethodEnum_unknownDefaultOpenApi,
     ]);
 
 const ObjectActionScopeEnum _$objectActionScopeEnum_read =
@@ -49,6 +54,8 @@ const ObjectActionScopeEnum _$objectActionScopeEnum_agent =
     const ObjectActionScopeEnum._('agent');
 const ObjectActionScopeEnum _$objectActionScopeEnum_admin =
     const ObjectActionScopeEnum._('admin');
+const ObjectActionScopeEnum _$objectActionScopeEnum_unknownDefaultOpenApi =
+    const ObjectActionScopeEnum._('unknownDefaultOpenApi');
 
 ObjectActionScopeEnum _$objectActionScopeEnumValueOf(String name) {
   switch (name) {
@@ -58,8 +65,10 @@ ObjectActionScopeEnum _$objectActionScopeEnumValueOf(String name) {
       return _$objectActionScopeEnum_agent;
     case 'admin':
       return _$objectActionScopeEnum_admin;
+    case 'unknownDefaultOpenApi':
+      return _$objectActionScopeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$objectActionScopeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -68,6 +77,7 @@ final BuiltSet<ObjectActionScopeEnum> _$objectActionScopeEnumValues =
       _$objectActionScopeEnum_read,
       _$objectActionScopeEnum_agent,
       _$objectActionScopeEnum_admin,
+      _$objectActionScopeEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<ObjectActionMethodEnum> _$objectActionMethodEnumSerializer =
@@ -83,6 +93,7 @@ class _$ObjectActionMethodEnumSerializer
     'PUT': 'PUT',
     'PATCH': 'PATCH',
     'DELETE': 'DELETE',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'GET': 'GET',
@@ -90,6 +101,7 @@ class _$ObjectActionMethodEnumSerializer
     'PUT': 'PUT',
     'PATCH': 'PATCH',
     'DELETE': 'DELETE',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -120,11 +132,13 @@ class _$ObjectActionScopeEnumSerializer
     'read': 'read',
     'agent': 'agent',
     'admin': 'admin',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'read': 'read',
     'agent': 'agent',
     'admin': 'admin',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

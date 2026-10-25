@@ -23,6 +23,9 @@ _$intelEventRecordPayloadTypeEnum_seismic =
     const IntelEventRecordPayloadTypeEnum._('seismic');
 const IntelEventRecordPayloadTypeEnum _$intelEventRecordPayloadTypeEnum_custom =
     const IntelEventRecordPayloadTypeEnum._('custom');
+const IntelEventRecordPayloadTypeEnum
+_$intelEventRecordPayloadTypeEnum_unknownDefaultOpenApi =
+    const IntelEventRecordPayloadTypeEnum._('unknownDefaultOpenApi');
 
 IntelEventRecordPayloadTypeEnum _$intelEventRecordPayloadTypeEnumValueOf(
   String name,
@@ -40,8 +43,10 @@ IntelEventRecordPayloadTypeEnum _$intelEventRecordPayloadTypeEnumValueOf(
       return _$intelEventRecordPayloadTypeEnum_seismic;
     case 'custom':
       return _$intelEventRecordPayloadTypeEnum_custom;
+    case 'unknownDefaultOpenApi':
+      return _$intelEventRecordPayloadTypeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$intelEventRecordPayloadTypeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -55,6 +60,7 @@ _$intelEventRecordPayloadTypeEnumValues =
         _$intelEventRecordPayloadTypeEnum_weatherImpact,
         _$intelEventRecordPayloadTypeEnum_seismic,
         _$intelEventRecordPayloadTypeEnum_custom,
+        _$intelEventRecordPayloadTypeEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -70,6 +76,9 @@ _$intelEventRecordPayloadStatusEnum_resolved =
 const IntelEventRecordPayloadStatusEnum
 _$intelEventRecordPayloadStatusEnum_dismissed =
     const IntelEventRecordPayloadStatusEnum._('dismissed');
+const IntelEventRecordPayloadStatusEnum
+_$intelEventRecordPayloadStatusEnum_unknownDefaultOpenApi =
+    const IntelEventRecordPayloadStatusEnum._('unknownDefaultOpenApi');
 
 IntelEventRecordPayloadStatusEnum _$intelEventRecordPayloadStatusEnumValueOf(
   String name,
@@ -83,8 +92,10 @@ IntelEventRecordPayloadStatusEnum _$intelEventRecordPayloadStatusEnumValueOf(
       return _$intelEventRecordPayloadStatusEnum_resolved;
     case 'dismissed':
       return _$intelEventRecordPayloadStatusEnum_dismissed;
+    case 'unknownDefaultOpenApi':
+      return _$intelEventRecordPayloadStatusEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$intelEventRecordPayloadStatusEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -96,6 +107,7 @@ _$intelEventRecordPayloadStatusEnumValues =
         _$intelEventRecordPayloadStatusEnum_active,
         _$intelEventRecordPayloadStatusEnum_resolved,
         _$intelEventRecordPayloadStatusEnum_dismissed,
+        _$intelEventRecordPayloadStatusEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -106,6 +118,9 @@ _$intelEventRecordPayloadLabelEnum_moderate =
     const IntelEventRecordPayloadLabelEnum._('moderate');
 const IntelEventRecordPayloadLabelEnum _$intelEventRecordPayloadLabelEnum_high =
     const IntelEventRecordPayloadLabelEnum._('high');
+const IntelEventRecordPayloadLabelEnum
+_$intelEventRecordPayloadLabelEnum_unknownDefaultOpenApi =
+    const IntelEventRecordPayloadLabelEnum._('unknownDefaultOpenApi');
 
 IntelEventRecordPayloadLabelEnum _$intelEventRecordPayloadLabelEnumValueOf(
   String name,
@@ -117,8 +132,10 @@ IntelEventRecordPayloadLabelEnum _$intelEventRecordPayloadLabelEnumValueOf(
       return _$intelEventRecordPayloadLabelEnum_moderate;
     case 'high':
       return _$intelEventRecordPayloadLabelEnum_high;
+    case 'unknownDefaultOpenApi':
+      return _$intelEventRecordPayloadLabelEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$intelEventRecordPayloadLabelEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -129,6 +146,7 @@ _$intelEventRecordPayloadLabelEnumValues =
         _$intelEventRecordPayloadLabelEnum_low,
         _$intelEventRecordPayloadLabelEnum_moderate,
         _$intelEventRecordPayloadLabelEnum_high,
+        _$intelEventRecordPayloadLabelEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -144,6 +162,9 @@ _$intelEventRecordPayloadEvidenceQualityEnum_weak =
 const IntelEventRecordPayloadEvidenceQualityEnum
 _$intelEventRecordPayloadEvidenceQualityEnum_insufficient =
     const IntelEventRecordPayloadEvidenceQualityEnum._('insufficient');
+const IntelEventRecordPayloadEvidenceQualityEnum
+_$intelEventRecordPayloadEvidenceQualityEnum_unknownDefaultOpenApi =
+    const IntelEventRecordPayloadEvidenceQualityEnum._('unknownDefaultOpenApi');
 
 IntelEventRecordPayloadEvidenceQualityEnum
 _$intelEventRecordPayloadEvidenceQualityEnumValueOf(String name) {
@@ -156,8 +177,10 @@ _$intelEventRecordPayloadEvidenceQualityEnumValueOf(String name) {
       return _$intelEventRecordPayloadEvidenceQualityEnum_weak;
     case 'insufficient':
       return _$intelEventRecordPayloadEvidenceQualityEnum_insufficient;
+    case 'unknownDefaultOpenApi':
+      return _$intelEventRecordPayloadEvidenceQualityEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$intelEventRecordPayloadEvidenceQualityEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -169,6 +192,7 @@ _$intelEventRecordPayloadEvidenceQualityEnumValues =
         _$intelEventRecordPayloadEvidenceQualityEnum_moderate,
         _$intelEventRecordPayloadEvidenceQualityEnum_weak,
         _$intelEventRecordPayloadEvidenceQualityEnum_insufficient,
+        _$intelEventRecordPayloadEvidenceQualityEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -194,6 +218,7 @@ class _$IntelEventRecordPayloadTypeEnumSerializer
     'weatherImpact': 'weather-impact',
     'seismic': 'seismic',
     'custom': 'custom',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'maritime-disruption': 'maritimeDisruption',
@@ -202,6 +227,7 @@ class _$IntelEventRecordPayloadTypeEnumSerializer
     'weather-impact': 'weatherImpact',
     'seismic': 'seismic',
     'custom': 'custom',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -233,12 +259,14 @@ class _$IntelEventRecordPayloadStatusEnumSerializer
     'active': 'active',
     'resolved': 'resolved',
     'dismissed': 'dismissed',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'emerging': 'emerging',
     'active': 'active',
     'resolved': 'resolved',
     'dismissed': 'dismissed',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -269,11 +297,13 @@ class _$IntelEventRecordPayloadLabelEnumSerializer
     'low': 'low',
     'moderate': 'moderate',
     'high': 'high',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'low': 'low',
     'moderate': 'moderate',
     'high': 'high',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -305,12 +335,14 @@ class _$IntelEventRecordPayloadEvidenceQualityEnumSerializer
     'moderate': 'moderate',
     'weak': 'weak',
     'insufficient': 'insufficient',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'strong': 'strong',
     'moderate': 'moderate',
     'weak': 'weak',
     'insufficient': 'insufficient',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

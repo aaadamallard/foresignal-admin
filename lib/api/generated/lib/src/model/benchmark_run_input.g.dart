@@ -12,6 +12,9 @@ const BenchmarkRunInputSuiteEnum _$benchmarkRunInputSuiteEnum_historical =
     const BenchmarkRunInputSuiteEnum._('historical');
 const BenchmarkRunInputSuiteEnum _$benchmarkRunInputSuiteEnum_all =
     const BenchmarkRunInputSuiteEnum._('all');
+const BenchmarkRunInputSuiteEnum
+_$benchmarkRunInputSuiteEnum_unknownDefaultOpenApi =
+    const BenchmarkRunInputSuiteEnum._('unknownDefaultOpenApi');
 
 BenchmarkRunInputSuiteEnum _$benchmarkRunInputSuiteEnumValueOf(String name) {
   switch (name) {
@@ -21,8 +24,10 @@ BenchmarkRunInputSuiteEnum _$benchmarkRunInputSuiteEnumValueOf(String name) {
       return _$benchmarkRunInputSuiteEnum_historical;
     case 'all':
       return _$benchmarkRunInputSuiteEnum_all;
+    case 'unknownDefaultOpenApi':
+      return _$benchmarkRunInputSuiteEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$benchmarkRunInputSuiteEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -31,6 +36,7 @@ final BuiltSet<BenchmarkRunInputSuiteEnum> _$benchmarkRunInputSuiteEnumValues =
       _$benchmarkRunInputSuiteEnum_synthetic,
       _$benchmarkRunInputSuiteEnum_historical,
       _$benchmarkRunInputSuiteEnum_all,
+      _$benchmarkRunInputSuiteEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<BenchmarkRunInputSuiteEnum> _$benchmarkRunInputSuiteEnumSerializer =
@@ -42,11 +48,13 @@ class _$BenchmarkRunInputSuiteEnumSerializer
     'synthetic': 'synthetic',
     'historical': 'historical',
     'all': 'all',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'synthetic': 'synthetic',
     'historical': 'historical',
     'all': 'all',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

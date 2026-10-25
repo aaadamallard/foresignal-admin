@@ -666,6 +666,9 @@ class FetchLogEntryTriggerEnum extends EnumClass {
       _$fetchLogEntryTriggerEnum_STREAM;
   @BuiltValueEnumConst(wireName: r'PUSH')
   static const FetchLogEntryTriggerEnum PUSH = _$fetchLogEntryTriggerEnum_PUSH;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const FetchLogEntryTriggerEnum unknownDefaultOpenApi =
+      _$fetchLogEntryTriggerEnum_unknownDefaultOpenApi;
 
   static Serializer<FetchLogEntryTriggerEnum> get serializer =>
       _$fetchLogEntryTriggerEnumSerializer;
@@ -693,6 +696,9 @@ class FetchLogEntryStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'DISCARDED')
   static const FetchLogEntryStatusEnum DISCARDED =
       _$fetchLogEntryStatusEnum_DISCARDED;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const FetchLogEntryStatusEnum unknownDefaultOpenApi =
+      _$fetchLogEntryStatusEnum_unknownDefaultOpenApi;
 
   static Serializer<FetchLogEntryStatusEnum> get serializer =>
       _$fetchLogEntryStatusEnumSerializer;

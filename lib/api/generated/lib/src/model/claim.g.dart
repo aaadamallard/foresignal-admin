@@ -13,6 +13,8 @@ const ClaimPolarityEnum _$claimPolarityEnum_denied = const ClaimPolarityEnum._(
 );
 const ClaimPolarityEnum _$claimPolarityEnum_questioned =
     const ClaimPolarityEnum._('questioned');
+const ClaimPolarityEnum _$claimPolarityEnum_unknownDefaultOpenApi =
+    const ClaimPolarityEnum._('unknownDefaultOpenApi');
 
 ClaimPolarityEnum _$claimPolarityEnumValueOf(String name) {
   switch (name) {
@@ -22,8 +24,10 @@ ClaimPolarityEnum _$claimPolarityEnumValueOf(String name) {
       return _$claimPolarityEnum_denied;
     case 'questioned':
       return _$claimPolarityEnum_questioned;
+    case 'unknownDefaultOpenApi':
+      return _$claimPolarityEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$claimPolarityEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -32,12 +36,15 @@ final BuiltSet<ClaimPolarityEnum> _$claimPolarityEnumValues =
       _$claimPolarityEnum_asserted,
       _$claimPolarityEnum_denied,
       _$claimPolarityEnum_questioned,
+      _$claimPolarityEnum_unknownDefaultOpenApi,
     ]);
 
 const ClaimExtractionEnum _$claimExtractionEnum_deterministic =
     const ClaimExtractionEnum._('deterministic');
 const ClaimExtractionEnum _$claimExtractionEnum_llm =
     const ClaimExtractionEnum._('llm');
+const ClaimExtractionEnum _$claimExtractionEnum_unknownDefaultOpenApi =
+    const ClaimExtractionEnum._('unknownDefaultOpenApi');
 
 ClaimExtractionEnum _$claimExtractionEnumValueOf(String name) {
   switch (name) {
@@ -45,8 +52,10 @@ ClaimExtractionEnum _$claimExtractionEnumValueOf(String name) {
       return _$claimExtractionEnum_deterministic;
     case 'llm':
       return _$claimExtractionEnum_llm;
+    case 'unknownDefaultOpenApi':
+      return _$claimExtractionEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$claimExtractionEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -54,6 +63,7 @@ final BuiltSet<ClaimExtractionEnum> _$claimExtractionEnumValues =
     BuiltSet<ClaimExtractionEnum>(const <ClaimExtractionEnum>[
       _$claimExtractionEnum_deterministic,
       _$claimExtractionEnum_llm,
+      _$claimExtractionEnum_unknownDefaultOpenApi,
     ]);
 
 const ClaimStatusEnum _$claimStatusEnum_unassessed = const ClaimStatusEnum._(
@@ -73,6 +83,8 @@ const ClaimStatusEnum _$claimStatusEnum_contradicted = const ClaimStatusEnum._(
 );
 const ClaimStatusEnum _$claimStatusEnum_insufficientCoverage =
     const ClaimStatusEnum._('insufficientCoverage');
+const ClaimStatusEnum _$claimStatusEnum_unknownDefaultOpenApi =
+    const ClaimStatusEnum._('unknownDefaultOpenApi');
 
 ClaimStatusEnum _$claimStatusEnumValueOf(String name) {
   switch (name) {
@@ -88,8 +100,10 @@ ClaimStatusEnum _$claimStatusEnumValueOf(String name) {
       return _$claimStatusEnum_contradicted;
     case 'insufficientCoverage':
       return _$claimStatusEnum_insufficientCoverage;
+    case 'unknownDefaultOpenApi':
+      return _$claimStatusEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$claimStatusEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -101,6 +115,7 @@ final BuiltSet<ClaimStatusEnum> _$claimStatusEnumValues =
       _$claimStatusEnum_unobserved,
       _$claimStatusEnum_contradicted,
       _$claimStatusEnum_insufficientCoverage,
+      _$claimStatusEnum_unknownDefaultOpenApi,
     ]);
 
 const ClaimSourceReliabilityEnum _$claimSourceReliabilityEnum_A =
@@ -115,6 +130,9 @@ const ClaimSourceReliabilityEnum _$claimSourceReliabilityEnum_E =
     const ClaimSourceReliabilityEnum._('E');
 const ClaimSourceReliabilityEnum _$claimSourceReliabilityEnum_F =
     const ClaimSourceReliabilityEnum._('F');
+const ClaimSourceReliabilityEnum
+_$claimSourceReliabilityEnum_unknownDefaultOpenApi =
+    const ClaimSourceReliabilityEnum._('unknownDefaultOpenApi');
 
 ClaimSourceReliabilityEnum _$claimSourceReliabilityEnumValueOf(String name) {
   switch (name) {
@@ -130,8 +148,10 @@ ClaimSourceReliabilityEnum _$claimSourceReliabilityEnumValueOf(String name) {
       return _$claimSourceReliabilityEnum_E;
     case 'F':
       return _$claimSourceReliabilityEnum_F;
+    case 'unknownDefaultOpenApi':
+      return _$claimSourceReliabilityEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$claimSourceReliabilityEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -143,6 +163,7 @@ final BuiltSet<ClaimSourceReliabilityEnum> _$claimSourceReliabilityEnumValues =
       _$claimSourceReliabilityEnum_D,
       _$claimSourceReliabilityEnum_E,
       _$claimSourceReliabilityEnum_F,
+      _$claimSourceReliabilityEnum_unknownDefaultOpenApi,
     ]);
 
 const ClaimFramingLabelEnum _$claimFramingLabelEnum_neutral =
@@ -151,6 +172,8 @@ const ClaimFramingLabelEnum _$claimFramingLabelEnum_charged =
     const ClaimFramingLabelEnum._('charged');
 const ClaimFramingLabelEnum _$claimFramingLabelEnum_inflammatory =
     const ClaimFramingLabelEnum._('inflammatory');
+const ClaimFramingLabelEnum _$claimFramingLabelEnum_unknownDefaultOpenApi =
+    const ClaimFramingLabelEnum._('unknownDefaultOpenApi');
 
 ClaimFramingLabelEnum _$claimFramingLabelEnumValueOf(String name) {
   switch (name) {
@@ -160,8 +183,10 @@ ClaimFramingLabelEnum _$claimFramingLabelEnumValueOf(String name) {
       return _$claimFramingLabelEnum_charged;
     case 'inflammatory':
       return _$claimFramingLabelEnum_inflammatory;
+    case 'unknownDefaultOpenApi':
+      return _$claimFramingLabelEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$claimFramingLabelEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -170,6 +195,7 @@ final BuiltSet<ClaimFramingLabelEnum> _$claimFramingLabelEnumValues =
       _$claimFramingLabelEnum_neutral,
       _$claimFramingLabelEnum_charged,
       _$claimFramingLabelEnum_inflammatory,
+      _$claimFramingLabelEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<ClaimPolarityEnum> _$claimPolarityEnumSerializer =
@@ -189,11 +215,13 @@ class _$ClaimPolarityEnumSerializer
     'asserted': 'asserted',
     'denied': 'denied',
     'questioned': 'questioned',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'asserted': 'asserted',
     'denied': 'denied',
     'questioned': 'questioned',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -223,10 +251,12 @@ class _$ClaimExtractionEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'deterministic': 'deterministic',
     'llm': 'llm',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'deterministic': 'deterministic',
     'llm': 'llm',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -260,6 +290,7 @@ class _$ClaimStatusEnumSerializer
     'unobserved': 'unobserved',
     'contradicted': 'contradicted',
     'insufficientCoverage': 'insufficient-coverage',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'unassessed': 'unassessed',
@@ -268,6 +299,7 @@ class _$ClaimStatusEnumSerializer
     'unobserved': 'unobserved',
     'contradicted': 'contradicted',
     'insufficient-coverage': 'insufficientCoverage',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -301,6 +333,7 @@ class _$ClaimSourceReliabilityEnumSerializer
     'D': 'D',
     'E': 'E',
     'F': 'F',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'A': 'A',
@@ -309,6 +342,7 @@ class _$ClaimSourceReliabilityEnumSerializer
     'D': 'D',
     'E': 'E',
     'F': 'F',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -339,11 +373,13 @@ class _$ClaimFramingLabelEnumSerializer
     'neutral': 'neutral',
     'charged': 'charged',
     'inflammatory': 'inflammatory',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'neutral': 'neutral',
     'charged': 'charged',
     'inflammatory': 'inflammatory',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

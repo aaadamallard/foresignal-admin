@@ -18,6 +18,9 @@ _$signatureVerifierConfigSchemeEnum_standardWebhooks =
 const SignatureVerifierConfigSchemeEnum
 _$signatureVerifierConfigSchemeEnum_foresignal =
     const SignatureVerifierConfigSchemeEnum._('foresignal');
+const SignatureVerifierConfigSchemeEnum
+_$signatureVerifierConfigSchemeEnum_unknownDefaultOpenApi =
+    const SignatureVerifierConfigSchemeEnum._('unknownDefaultOpenApi');
 
 SignatureVerifierConfigSchemeEnum _$signatureVerifierConfigSchemeEnumValueOf(
   String name,
@@ -31,8 +34,10 @@ SignatureVerifierConfigSchemeEnum _$signatureVerifierConfigSchemeEnumValueOf(
       return _$signatureVerifierConfigSchemeEnum_standardWebhooks;
     case 'foresignal':
       return _$signatureVerifierConfigSchemeEnum_foresignal;
+    case 'unknownDefaultOpenApi':
+      return _$signatureVerifierConfigSchemeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$signatureVerifierConfigSchemeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -44,6 +49,7 @@ _$signatureVerifierConfigSchemeEnumValues =
         _$signatureVerifierConfigSchemeEnum_hmacSha256,
         _$signatureVerifierConfigSchemeEnum_standardWebhooks,
         _$signatureVerifierConfigSchemeEnum_foresignal,
+        _$signatureVerifierConfigSchemeEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -58,12 +64,14 @@ class _$SignatureVerifierConfigSchemeEnumSerializer
     'hmacSha256': 'hmac-sha256',
     'standardWebhooks': 'standard-webhooks',
     'foresignal': 'foresignal',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'none': 'none',
     'hmac-sha256': 'hmacSha256',
     'standard-webhooks': 'standardWebhooks',
     'foresignal': 'foresignal',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

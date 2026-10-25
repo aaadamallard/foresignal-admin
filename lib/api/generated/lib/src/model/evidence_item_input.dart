@@ -424,6 +424,9 @@ class EvidenceItemInputSourceReliabilityEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'F')
   static const EvidenceItemInputSourceReliabilityEnum F =
       _$evidenceItemInputSourceReliabilityEnum_F;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const EvidenceItemInputSourceReliabilityEnum unknownDefaultOpenApi =
+      _$evidenceItemInputSourceReliabilityEnum_unknownDefaultOpenApi;
 
   static Serializer<EvidenceItemInputSourceReliabilityEnum> get serializer =>
       _$evidenceItemInputSourceReliabilityEnumSerializer;

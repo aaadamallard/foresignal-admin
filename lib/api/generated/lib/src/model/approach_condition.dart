@@ -169,6 +169,9 @@ class ApproachConditionTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'approach')
   static const ApproachConditionTypeEnum approach =
       _$approachConditionTypeEnum_approach;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ApproachConditionTypeEnum unknownDefaultOpenApi =
+      _$approachConditionTypeEnum_unknownDefaultOpenApi;
 
   static Serializer<ApproachConditionTypeEnum> get serializer =>
       _$approachConditionTypeEnumSerializer;

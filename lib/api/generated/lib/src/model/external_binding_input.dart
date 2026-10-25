@@ -270,6 +270,9 @@ class ExternalBindingInputTargetEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'chronicle')
   static const ExternalBindingInputTargetEnum chronicle =
       _$externalBindingInputTargetEnum_chronicle;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ExternalBindingInputTargetEnum unknownDefaultOpenApi =
+      _$externalBindingInputTargetEnum_unknownDefaultOpenApi;
 
   static Serializer<ExternalBindingInputTargetEnum> get serializer =>
       _$externalBindingInputTargetEnumSerializer;

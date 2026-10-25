@@ -215,6 +215,9 @@ class InvestigationItemInputItemTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'object')
   static const InvestigationItemInputItemTypeEnum object =
       _$investigationItemInputItemTypeEnum_object;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const InvestigationItemInputItemTypeEnum unknownDefaultOpenApi =
+      _$investigationItemInputItemTypeEnum_unknownDefaultOpenApi;
 
   static Serializer<InvestigationItemInputItemTypeEnum> get serializer =>
       _$investigationItemInputItemTypeEnumSerializer;

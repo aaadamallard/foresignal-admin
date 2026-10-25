@@ -202,6 +202,9 @@ class WatchlistInputIdentityEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'custom')
   static const WatchlistInputIdentityEnum custom =
       _$watchlistInputIdentityEnum_custom;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const WatchlistInputIdentityEnum unknownDefaultOpenApi =
+      _$watchlistInputIdentityEnum_unknownDefaultOpenApi;
 
   static Serializer<WatchlistInputIdentityEnum> get serializer =>
       _$watchlistInputIdentityEnumSerializer;
@@ -228,6 +231,9 @@ class WatchlistInputNormalizeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'none')
   static const WatchlistInputNormalizeEnum none =
       _$watchlistInputNormalizeEnum_none;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const WatchlistInputNormalizeEnum unknownDefaultOpenApi =
+      _$watchlistInputNormalizeEnum_unknownDefaultOpenApi;
 
   static Serializer<WatchlistInputNormalizeEnum> get serializer =>
       _$watchlistInputNormalizeEnumSerializer;

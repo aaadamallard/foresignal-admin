@@ -24,6 +24,9 @@ _$dossierSectionsTimelineItemsInnerKindEnum_annotation =
 const DossierSectionsTimelineItemsInnerKindEnum
 _$dossierSectionsTimelineItemsInnerKindEnum_other =
     const DossierSectionsTimelineItemsInnerKindEnum._('other');
+const DossierSectionsTimelineItemsInnerKindEnum
+_$dossierSectionsTimelineItemsInnerKindEnum_unknownDefaultOpenApi =
+    const DossierSectionsTimelineItemsInnerKindEnum._('unknownDefaultOpenApi');
 
 DossierSectionsTimelineItemsInnerKindEnum
 _$dossierSectionsTimelineItemsInnerKindEnumValueOf(String name) {
@@ -40,8 +43,10 @@ _$dossierSectionsTimelineItemsInnerKindEnumValueOf(String name) {
       return _$dossierSectionsTimelineItemsInnerKindEnum_annotation;
     case 'other':
       return _$dossierSectionsTimelineItemsInnerKindEnum_other;
+    case 'unknownDefaultOpenApi':
+      return _$dossierSectionsTimelineItemsInnerKindEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$dossierSectionsTimelineItemsInnerKindEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -55,6 +60,7 @@ _$dossierSectionsTimelineItemsInnerKindEnumValues =
         _$dossierSectionsTimelineItemsInnerKindEnum_situationLog,
         _$dossierSectionsTimelineItemsInnerKindEnum_annotation,
         _$dossierSectionsTimelineItemsInnerKindEnum_other,
+        _$dossierSectionsTimelineItemsInnerKindEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -71,6 +77,7 @@ class _$DossierSectionsTimelineItemsInnerKindEnumSerializer
     'situationLog': 'situation-log',
     'annotation': 'annotation',
     'other': 'other',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'version': 'version',
@@ -79,6 +86,7 @@ class _$DossierSectionsTimelineItemsInnerKindEnumSerializer
     'situation-log': 'situationLog',
     'annotation': 'annotation',
     'other': 'other',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

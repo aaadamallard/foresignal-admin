@@ -24,6 +24,9 @@ _$situationMemberInputMemberTypeEnum_record =
 const SituationMemberInputMemberTypeEnum
 _$situationMemberInputMemberTypeEnum_investigation =
     const SituationMemberInputMemberTypeEnum._('investigation');
+const SituationMemberInputMemberTypeEnum
+_$situationMemberInputMemberTypeEnum_unknownDefaultOpenApi =
+    const SituationMemberInputMemberTypeEnum._('unknownDefaultOpenApi');
 
 SituationMemberInputMemberTypeEnum _$situationMemberInputMemberTypeEnumValueOf(
   String name,
@@ -41,8 +44,10 @@ SituationMemberInputMemberTypeEnum _$situationMemberInputMemberTypeEnumValueOf(
       return _$situationMemberInputMemberTypeEnum_record;
     case 'investigation':
       return _$situationMemberInputMemberTypeEnum_investigation;
+    case 'unknownDefaultOpenApi':
+      return _$situationMemberInputMemberTypeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$situationMemberInputMemberTypeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -56,6 +61,7 @@ _$situationMemberInputMemberTypeEnumValues =
         _$situationMemberInputMemberTypeEnum_anomaly,
         _$situationMemberInputMemberTypeEnum_record,
         _$situationMemberInputMemberTypeEnum_investigation,
+        _$situationMemberInputMemberTypeEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -63,6 +69,9 @@ const SituationMemberInputRoleEnum _$situationMemberInputRoleEnum_core =
     const SituationMemberInputRoleEnum._('core');
 const SituationMemberInputRoleEnum _$situationMemberInputRoleEnum_context =
     const SituationMemberInputRoleEnum._('context');
+const SituationMemberInputRoleEnum
+_$situationMemberInputRoleEnum_unknownDefaultOpenApi =
+    const SituationMemberInputRoleEnum._('unknownDefaultOpenApi');
 
 SituationMemberInputRoleEnum _$situationMemberInputRoleEnumValueOf(
   String name,
@@ -72,18 +81,20 @@ SituationMemberInputRoleEnum _$situationMemberInputRoleEnumValueOf(
       return _$situationMemberInputRoleEnum_core;
     case 'context':
       return _$situationMemberInputRoleEnum_context;
+    case 'unknownDefaultOpenApi':
+      return _$situationMemberInputRoleEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$situationMemberInputRoleEnum_unknownDefaultOpenApi;
   }
 }
 
 final BuiltSet<SituationMemberInputRoleEnum>
-_$situationMemberInputRoleEnumValues = BuiltSet<SituationMemberInputRoleEnum>(
-  const <SituationMemberInputRoleEnum>[
-    _$situationMemberInputRoleEnum_core,
-    _$situationMemberInputRoleEnum_context,
-  ],
-);
+_$situationMemberInputRoleEnumValues =
+    BuiltSet<SituationMemberInputRoleEnum>(const <SituationMemberInputRoleEnum>[
+      _$situationMemberInputRoleEnum_core,
+      _$situationMemberInputRoleEnum_context,
+      _$situationMemberInputRoleEnum_unknownDefaultOpenApi,
+    ]);
 
 Serializer<SituationMemberInputMemberTypeEnum>
 _$situationMemberInputMemberTypeEnumSerializer =
@@ -101,6 +112,7 @@ class _$SituationMemberInputMemberTypeEnumSerializer
     'anomaly': 'anomaly',
     'record': 'record',
     'investigation': 'investigation',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'intel_event': 'intelEvent',
@@ -109,6 +121,7 @@ class _$SituationMemberInputMemberTypeEnumSerializer
     'anomaly': 'anomaly',
     'record': 'record',
     'investigation': 'investigation',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -138,10 +151,12 @@ class _$SituationMemberInputRoleEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'core': 'core',
     'context': 'context',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'core': 'core',
     'context': 'context',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

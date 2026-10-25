@@ -15,6 +15,8 @@ const RelationLabelEnum _$relationLabelEnum_possible =
     const RelationLabelEnum._('possible');
 const RelationLabelEnum _$relationLabelEnum_speculative =
     const RelationLabelEnum._('speculative');
+const RelationLabelEnum _$relationLabelEnum_unknownDefaultOpenApi =
+    const RelationLabelEnum._('unknownDefaultOpenApi');
 
 RelationLabelEnum _$relationLabelEnumValueOf(String name) {
   switch (name) {
@@ -26,8 +28,10 @@ RelationLabelEnum _$relationLabelEnumValueOf(String name) {
       return _$relationLabelEnum_possible;
     case 'speculative':
       return _$relationLabelEnum_speculative;
+    case 'unknownDefaultOpenApi':
+      return _$relationLabelEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$relationLabelEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -37,6 +41,7 @@ final BuiltSet<RelationLabelEnum> _$relationLabelEnumValues =
       _$relationLabelEnum_likely,
       _$relationLabelEnum_possible,
       _$relationLabelEnum_speculative,
+      _$relationLabelEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<RelationLabelEnum> _$relationLabelEnumSerializer =
@@ -49,12 +54,14 @@ class _$RelationLabelEnumSerializer
     'likely': 'likely',
     'possible': 'possible',
     'speculative': 'speculative',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'confirmed': 'confirmed',
     'likely': 'likely',
     'possible': 'possible',
     'speculative': 'speculative',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

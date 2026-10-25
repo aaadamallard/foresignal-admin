@@ -148,6 +148,9 @@ class EmwinWarningPayloadDuplicateOfSource_Enum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'nws-alerts')
   static const EmwinWarningPayloadDuplicateOfSource_Enum nwsAlerts =
       _$emwinWarningPayloadDuplicateOfSourceEnum_nwsAlerts;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const EmwinWarningPayloadDuplicateOfSource_Enum unknownDefaultOpenApi =
+      _$emwinWarningPayloadDuplicateOfSourceEnum_unknownDefaultOpenApi;
 
   static Serializer<EmwinWarningPayloadDuplicateOfSource_Enum> get serializer =>
       _$emwinWarningPayloadDuplicateOfSourceEnumSerializer;

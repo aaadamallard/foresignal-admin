@@ -264,6 +264,9 @@ class IndexChangedEventWeightsOriginEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'operator')
   static const IndexChangedEventWeightsOriginEnum operator_ =
       _$indexChangedEventWeightsOriginEnum_operator_;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const IndexChangedEventWeightsOriginEnum unknownDefaultOpenApi =
+      _$indexChangedEventWeightsOriginEnum_unknownDefaultOpenApi;
 
   static Serializer<IndexChangedEventWeightsOriginEnum> get serializer =>
       _$indexChangedEventWeightsOriginEnumSerializer;

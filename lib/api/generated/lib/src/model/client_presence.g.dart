@@ -12,6 +12,8 @@ const ClientPresenceKindEnum _$clientPresenceKindEnum_mobile =
     const ClientPresenceKindEnum._('mobile');
 const ClientPresenceKindEnum _$clientPresenceKindEnum_web =
     const ClientPresenceKindEnum._('web');
+const ClientPresenceKindEnum _$clientPresenceKindEnum_unknownDefaultOpenApi =
+    const ClientPresenceKindEnum._('unknownDefaultOpenApi');
 
 ClientPresenceKindEnum _$clientPresenceKindEnumValueOf(String name) {
   switch (name) {
@@ -21,8 +23,10 @@ ClientPresenceKindEnum _$clientPresenceKindEnumValueOf(String name) {
       return _$clientPresenceKindEnum_mobile;
     case 'web':
       return _$clientPresenceKindEnum_web;
+    case 'unknownDefaultOpenApi':
+      return _$clientPresenceKindEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$clientPresenceKindEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -31,6 +35,7 @@ final BuiltSet<ClientPresenceKindEnum> _$clientPresenceKindEnumValues =
       _$clientPresenceKindEnum_desktop,
       _$clientPresenceKindEnum_mobile,
       _$clientPresenceKindEnum_web,
+      _$clientPresenceKindEnum_unknownDefaultOpenApi,
     ]);
 
 const ClientPresenceStateEnum _$clientPresenceStateEnum_active =
@@ -39,6 +44,8 @@ const ClientPresenceStateEnum _$clientPresenceStateEnum_idle =
     const ClientPresenceStateEnum._('idle');
 const ClientPresenceStateEnum _$clientPresenceStateEnum_background =
     const ClientPresenceStateEnum._('background');
+const ClientPresenceStateEnum _$clientPresenceStateEnum_unknownDefaultOpenApi =
+    const ClientPresenceStateEnum._('unknownDefaultOpenApi');
 
 ClientPresenceStateEnum _$clientPresenceStateEnumValueOf(String name) {
   switch (name) {
@@ -48,8 +55,10 @@ ClientPresenceStateEnum _$clientPresenceStateEnumValueOf(String name) {
       return _$clientPresenceStateEnum_idle;
     case 'background':
       return _$clientPresenceStateEnum_background;
+    case 'unknownDefaultOpenApi':
+      return _$clientPresenceStateEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$clientPresenceStateEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -58,6 +67,7 @@ final BuiltSet<ClientPresenceStateEnum> _$clientPresenceStateEnumValues =
       _$clientPresenceStateEnum_active,
       _$clientPresenceStateEnum_idle,
       _$clientPresenceStateEnum_background,
+      _$clientPresenceStateEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<ClientPresenceKindEnum> _$clientPresenceKindEnumSerializer =
@@ -71,11 +81,13 @@ class _$ClientPresenceKindEnumSerializer
     'desktop': 'desktop',
     'mobile': 'mobile',
     'web': 'web',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'desktop': 'desktop',
     'mobile': 'mobile',
     'web': 'web',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -106,11 +118,13 @@ class _$ClientPresenceStateEnumSerializer
     'active': 'active',
     'idle': 'idle',
     'background': 'background',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'active': 'active',
     'idle': 'idle',
     'background': 'background',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

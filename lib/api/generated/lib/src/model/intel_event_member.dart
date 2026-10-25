@@ -490,6 +490,9 @@ class IntelEventMemberRoleEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'context')
   static const IntelEventMemberRoleEnum context =
       _$intelEventMemberRoleEnum_context;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const IntelEventMemberRoleEnum unknownDefaultOpenApi =
+      _$intelEventMemberRoleEnum_unknownDefaultOpenApi;
 
   static Serializer<IntelEventMemberRoleEnum> get serializer =>
       _$intelEventMemberRoleEnumSerializer;
@@ -515,6 +518,9 @@ class IntelEventMemberMemberTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'event')
   static const IntelEventMemberMemberTypeEnum event =
       _$intelEventMemberMemberTypeEnum_event;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const IntelEventMemberMemberTypeEnum unknownDefaultOpenApi =
+      _$intelEventMemberMemberTypeEnum_unknownDefaultOpenApi;
 
   static Serializer<IntelEventMemberMemberTypeEnum> get serializer =>
       _$intelEventMemberMemberTypeEnumSerializer;

@@ -230,6 +230,9 @@ class _$OgcQueryablesSerializer implements PrimitiveSerializer<OgcQueryables> {
 class OgcQueryablesTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'object')
   static const OgcQueryablesTypeEnum object = _$ogcQueryablesTypeEnum_object;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const OgcQueryablesTypeEnum unknownDefaultOpenApi =
+      _$ogcQueryablesTypeEnum_unknownDefaultOpenApi;
 
   static Serializer<OgcQueryablesTypeEnum> get serializer =>
       _$ogcQueryablesTypeEnumSerializer;

@@ -14,6 +14,8 @@ const ClaimPlacePrecisionEnum _$claimPlacePrecisionEnum_admin1 =
     const ClaimPlacePrecisionEnum._('admin1');
 const ClaimPlacePrecisionEnum _$claimPlacePrecisionEnum_country =
     const ClaimPlacePrecisionEnum._('country');
+const ClaimPlacePrecisionEnum _$claimPlacePrecisionEnum_unknownDefaultOpenApi =
+    const ClaimPlacePrecisionEnum._('unknownDefaultOpenApi');
 
 ClaimPlacePrecisionEnum _$claimPlacePrecisionEnumValueOf(String name) {
   switch (name) {
@@ -25,8 +27,10 @@ ClaimPlacePrecisionEnum _$claimPlacePrecisionEnumValueOf(String name) {
       return _$claimPlacePrecisionEnum_admin1;
     case 'country':
       return _$claimPlacePrecisionEnum_country;
+    case 'unknownDefaultOpenApi':
+      return _$claimPlacePrecisionEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$claimPlacePrecisionEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -36,6 +40,7 @@ final BuiltSet<ClaimPlacePrecisionEnum> _$claimPlacePrecisionEnumValues =
       _$claimPlacePrecisionEnum_locality,
       _$claimPlacePrecisionEnum_admin1,
       _$claimPlacePrecisionEnum_country,
+      _$claimPlacePrecisionEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<ClaimPlacePrecisionEnum> _$claimPlacePrecisionEnumSerializer =
@@ -48,12 +53,14 @@ class _$ClaimPlacePrecisionEnumSerializer
     'locality': 'locality',
     'admin1': 'admin1',
     'country': 'country',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'point': 'point',
     'locality': 'locality',
     'admin1': 'admin1',
     'country': 'country',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

@@ -20,6 +20,8 @@ const PropagationEdgeTypeEnum _$propagationEdgeTypeEnum_mediaMatch =
     const PropagationEdgeTypeEnum._('mediaMatch');
 const PropagationEdgeTypeEnum _$propagationEdgeTypeEnum_crossPlatform =
     const PropagationEdgeTypeEnum._('crossPlatform');
+const PropagationEdgeTypeEnum _$propagationEdgeTypeEnum_unknownDefaultOpenApi =
+    const PropagationEdgeTypeEnum._('unknownDefaultOpenApi');
 
 PropagationEdgeTypeEnum _$propagationEdgeTypeEnumValueOf(String name) {
   switch (name) {
@@ -37,8 +39,10 @@ PropagationEdgeTypeEnum _$propagationEdgeTypeEnumValueOf(String name) {
       return _$propagationEdgeTypeEnum_mediaMatch;
     case 'crossPlatform':
       return _$propagationEdgeTypeEnum_crossPlatform;
+    case 'unknownDefaultOpenApi':
+      return _$propagationEdgeTypeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$propagationEdgeTypeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -51,6 +55,7 @@ final BuiltSet<PropagationEdgeTypeEnum> _$propagationEdgeTypeEnumValues =
       _$propagationEdgeTypeEnum_textMatch,
       _$propagationEdgeTypeEnum_mediaMatch,
       _$propagationEdgeTypeEnum_crossPlatform,
+      _$propagationEdgeTypeEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<PropagationEdgeTypeEnum> _$propagationEdgeTypeEnumSerializer =
@@ -66,6 +71,7 @@ class _$PropagationEdgeTypeEnumSerializer
     'textMatch': 'text-match',
     'mediaMatch': 'media-match',
     'crossPlatform': 'cross-platform',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'repost': 'repost',
@@ -75,6 +81,7 @@ class _$PropagationEdgeTypeEnumSerializer
     'text-match': 'textMatch',
     'media-match': 'mediaMatch',
     'cross-platform': 'crossPlatform',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

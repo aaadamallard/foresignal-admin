@@ -10,6 +10,9 @@ const ExchangePackageInputDeliverEnum _$exchangePackageInputDeliverEnum_peer =
     const ExchangePackageInputDeliverEnum._('peer');
 const ExchangePackageInputDeliverEnum _$exchangePackageInputDeliverEnum_file =
     const ExchangePackageInputDeliverEnum._('file');
+const ExchangePackageInputDeliverEnum
+_$exchangePackageInputDeliverEnum_unknownDefaultOpenApi =
+    const ExchangePackageInputDeliverEnum._('unknownDefaultOpenApi');
 
 ExchangePackageInputDeliverEnum _$exchangePackageInputDeliverEnumValueOf(
   String name,
@@ -19,8 +22,10 @@ ExchangePackageInputDeliverEnum _$exchangePackageInputDeliverEnumValueOf(
       return _$exchangePackageInputDeliverEnum_peer;
     case 'file':
       return _$exchangePackageInputDeliverEnum_file;
+    case 'unknownDefaultOpenApi':
+      return _$exchangePackageInputDeliverEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$exchangePackageInputDeliverEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -30,6 +35,7 @@ _$exchangePackageInputDeliverEnumValues =
       const <ExchangePackageInputDeliverEnum>[
         _$exchangePackageInputDeliverEnum_peer,
         _$exchangePackageInputDeliverEnum_file,
+        _$exchangePackageInputDeliverEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -42,10 +48,12 @@ class _$ExchangePackageInputDeliverEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'peer': 'peer',
     'file': 'file',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'peer': 'peer',
     'file': 'file',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

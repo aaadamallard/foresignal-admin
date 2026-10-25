@@ -233,6 +233,9 @@ class SearchResultsModeEnum extends EnumClass {
       _$searchResultsModeEnum_semantic;
   @BuiltValueEnumConst(wireName: r'text')
   static const SearchResultsModeEnum text = _$searchResultsModeEnum_text;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const SearchResultsModeEnum unknownDefaultOpenApi =
+      _$searchResultsModeEnum_unknownDefaultOpenApi;
 
   static Serializer<SearchResultsModeEnum> get serializer =>
       _$searchResultsModeEnumSerializer;

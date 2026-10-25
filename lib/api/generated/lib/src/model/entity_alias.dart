@@ -209,6 +209,9 @@ class EntityAliasAliasTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'OPERATOR_LABEL')
   static const EntityAliasAliasTypeEnum OPERATOR_LABEL =
       _$entityAliasAliasTypeEnum_OPERATOR_LABEL;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const EntityAliasAliasTypeEnum unknownDefaultOpenApi =
+      _$entityAliasAliasTypeEnum_unknownDefaultOpenApi;
 
   static Serializer<EntityAliasAliasTypeEnum> get serializer =>
       _$entityAliasAliasTypeEnumSerializer;
@@ -234,6 +237,9 @@ class EntityAliasOriginEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'OPERATOR')
   static const EntityAliasOriginEnum OPERATOR =
       _$entityAliasOriginEnum_OPERATOR;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const EntityAliasOriginEnum unknownDefaultOpenApi =
+      _$entityAliasOriginEnum_unknownDefaultOpenApi;
 
   static Serializer<EntityAliasOriginEnum> get serializer =>
       _$entityAliasOriginEnumSerializer;

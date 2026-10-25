@@ -294,6 +294,9 @@ class ReplayResultStatusEnum extends EnumClass {
   static const ReplayResultStatusEnum done = _$replayResultStatusEnum_done;
   @BuiltValueEnumConst(wireName: r'failed')
   static const ReplayResultStatusEnum failed = _$replayResultStatusEnum_failed;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ReplayResultStatusEnum unknownDefaultOpenApi =
+      _$replayResultStatusEnum_unknownDefaultOpenApi;
 
   static Serializer<ReplayResultStatusEnum> get serializer =>
       _$replayResultStatusEnumSerializer;
@@ -316,6 +319,9 @@ class ReplayResultOutcomeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'not-replayable')
   static const ReplayResultOutcomeEnum notReplayable =
       _$replayResultOutcomeEnum_notReplayable;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ReplayResultOutcomeEnum unknownDefaultOpenApi =
+      _$replayResultOutcomeEnum_unknownDefaultOpenApi;
 
   static Serializer<ReplayResultOutcomeEnum> get serializer =>
       _$replayResultOutcomeEnumSerializer;
@@ -339,6 +345,9 @@ class ReplayResultReasonEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'llm-output')
   static const ReplayResultReasonEnum llmOutput =
       _$replayResultReasonEnum_llmOutput;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ReplayResultReasonEnum unknownDefaultOpenApi =
+      _$replayResultReasonEnum_unknownDefaultOpenApi;
 
   static Serializer<ReplayResultReasonEnum> get serializer =>
       _$replayResultReasonEnumSerializer;

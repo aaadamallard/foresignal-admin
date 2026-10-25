@@ -160,6 +160,9 @@ class SocialCueTriggerTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'manual')
   static const SocialCueTriggerTypeEnum manual =
       _$socialCueTriggerTypeEnum_manual;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const SocialCueTriggerTypeEnum unknownDefaultOpenApi =
+      _$socialCueTriggerTypeEnum_unknownDefaultOpenApi;
 
   static Serializer<SocialCueTriggerTypeEnum> get serializer =>
       _$socialCueTriggerTypeEnumSerializer;

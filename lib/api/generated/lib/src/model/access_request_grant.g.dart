@@ -15,6 +15,9 @@ _$accessRequestGrantDeliveredAsEnum_report =
 const AccessRequestGrantDeliveredAsEnum
 _$accessRequestGrantDeliveredAsEnum_chronicleExtract =
     const AccessRequestGrantDeliveredAsEnum._('chronicleExtract');
+const AccessRequestGrantDeliveredAsEnum
+_$accessRequestGrantDeliveredAsEnum_unknownDefaultOpenApi =
+    const AccessRequestGrantDeliveredAsEnum._('unknownDefaultOpenApi');
 
 AccessRequestGrantDeliveredAsEnum _$accessRequestGrantDeliveredAsEnumValueOf(
   String name,
@@ -26,8 +29,10 @@ AccessRequestGrantDeliveredAsEnum _$accessRequestGrantDeliveredAsEnumValueOf(
       return _$accessRequestGrantDeliveredAsEnum_report;
     case 'chronicleExtract':
       return _$accessRequestGrantDeliveredAsEnum_chronicleExtract;
+    case 'unknownDefaultOpenApi':
+      return _$accessRequestGrantDeliveredAsEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$accessRequestGrantDeliveredAsEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -38,6 +43,7 @@ _$accessRequestGrantDeliveredAsEnumValues =
         _$accessRequestGrantDeliveredAsEnum_acl,
         _$accessRequestGrantDeliveredAsEnum_report,
         _$accessRequestGrantDeliveredAsEnum_chronicleExtract,
+        _$accessRequestGrantDeliveredAsEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -45,6 +51,9 @@ const AccessRequestGrantRoleEnum _$accessRequestGrantRoleEnum_viewer =
     const AccessRequestGrantRoleEnum._('viewer');
 const AccessRequestGrantRoleEnum _$accessRequestGrantRoleEnum_commenter =
     const AccessRequestGrantRoleEnum._('commenter');
+const AccessRequestGrantRoleEnum
+_$accessRequestGrantRoleEnum_unknownDefaultOpenApi =
+    const AccessRequestGrantRoleEnum._('unknownDefaultOpenApi');
 
 AccessRequestGrantRoleEnum _$accessRequestGrantRoleEnumValueOf(String name) {
   switch (name) {
@@ -52,8 +61,10 @@ AccessRequestGrantRoleEnum _$accessRequestGrantRoleEnumValueOf(String name) {
       return _$accessRequestGrantRoleEnum_viewer;
     case 'commenter':
       return _$accessRequestGrantRoleEnum_commenter;
+    case 'unknownDefaultOpenApi':
+      return _$accessRequestGrantRoleEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$accessRequestGrantRoleEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -61,6 +72,7 @@ final BuiltSet<AccessRequestGrantRoleEnum> _$accessRequestGrantRoleEnumValues =
     BuiltSet<AccessRequestGrantRoleEnum>(const <AccessRequestGrantRoleEnum>[
       _$accessRequestGrantRoleEnum_viewer,
       _$accessRequestGrantRoleEnum_commenter,
+      _$accessRequestGrantRoleEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<AccessRequestGrantDeliveredAsEnum>
@@ -75,11 +87,13 @@ class _$AccessRequestGrantDeliveredAsEnumSerializer
     'acl': 'acl',
     'report': 'report',
     'chronicleExtract': 'chronicle-extract',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'acl': 'acl',
     'report': 'report',
     'chronicle-extract': 'chronicleExtract',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -109,10 +123,12 @@ class _$AccessRequestGrantRoleEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'viewer': 'viewer',
     'commenter': 'commenter',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'viewer': 'viewer',
     'commenter': 'commenter',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

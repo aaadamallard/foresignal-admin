@@ -15,6 +15,9 @@ _$deceptionPayloadChecksInnerCheckEnum_vesselImpliedSpeed =
 const DeceptionPayloadChecksInnerCheckEnum
 _$deceptionPayloadChecksInnerCheckEnum_aircraftImpliedSpeed =
     const DeceptionPayloadChecksInnerCheckEnum._('aircraftImpliedSpeed');
+const DeceptionPayloadChecksInnerCheckEnum
+_$deceptionPayloadChecksInnerCheckEnum_unknownDefaultOpenApi =
+    const DeceptionPayloadChecksInnerCheckEnum._('unknownDefaultOpenApi');
 
 DeceptionPayloadChecksInnerCheckEnum
 _$deceptionPayloadChecksInnerCheckEnumValueOf(String name) {
@@ -25,8 +28,10 @@ _$deceptionPayloadChecksInnerCheckEnumValueOf(String name) {
       return _$deceptionPayloadChecksInnerCheckEnum_vesselImpliedSpeed;
     case 'aircraftImpliedSpeed':
       return _$deceptionPayloadChecksInnerCheckEnum_aircraftImpliedSpeed;
+    case 'unknownDefaultOpenApi':
+      return _$deceptionPayloadChecksInnerCheckEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$deceptionPayloadChecksInnerCheckEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -37,6 +42,7 @@ _$deceptionPayloadChecksInnerCheckEnumValues =
         _$deceptionPayloadChecksInnerCheckEnum_duplicateMmsi,
         _$deceptionPayloadChecksInnerCheckEnum_vesselImpliedSpeed,
         _$deceptionPayloadChecksInnerCheckEnum_aircraftImpliedSpeed,
+        _$deceptionPayloadChecksInnerCheckEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -50,11 +56,13 @@ class _$DeceptionPayloadChecksInnerCheckEnumSerializer
     'duplicateMmsi': 'duplicate-mmsi',
     'vesselImpliedSpeed': 'vessel-implied-speed',
     'aircraftImpliedSpeed': 'aircraft-implied-speed',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'duplicate-mmsi': 'duplicateMmsi',
     'vessel-implied-speed': 'vesselImpliedSpeed',
     'aircraft-implied-speed': 'aircraftImpliedSpeed',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

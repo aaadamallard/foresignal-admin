@@ -336,6 +336,9 @@ class ReferenceDatasetStateEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'failed')
   static const ReferenceDatasetStateEnum failed =
       _$referenceDatasetStateEnum_failed;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ReferenceDatasetStateEnum unknownDefaultOpenApi =
+      _$referenceDatasetStateEnum_unknownDefaultOpenApi;
 
   static Serializer<ReferenceDatasetStateEnum> get serializer =>
       _$referenceDatasetStateEnumSerializer;

@@ -236,6 +236,9 @@ class ProvenanceChainEntryRoleEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'importer')
   static const ProvenanceChainEntryRoleEnum importer =
       _$provenanceChainEntryRoleEnum_importer;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ProvenanceChainEntryRoleEnum unknownDefaultOpenApi =
+      _$provenanceChainEntryRoleEnum_unknownDefaultOpenApi;
 
   static Serializer<ProvenanceChainEntryRoleEnum> get serializer =>
       _$provenanceChainEntryRoleEnumSerializer;

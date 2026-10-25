@@ -10,6 +10,8 @@ const SocialCueBackendEnum _$socialCueBackendEnum_platformApis =
     const SocialCueBackendEnum._('platformApis');
 const SocialCueBackendEnum _$socialCueBackendEnum_xaiXSearch =
     const SocialCueBackendEnum._('xaiXSearch');
+const SocialCueBackendEnum _$socialCueBackendEnum_unknownDefaultOpenApi =
+    const SocialCueBackendEnum._('unknownDefaultOpenApi');
 
 SocialCueBackendEnum _$socialCueBackendEnumValueOf(String name) {
   switch (name) {
@@ -17,8 +19,10 @@ SocialCueBackendEnum _$socialCueBackendEnumValueOf(String name) {
       return _$socialCueBackendEnum_platformApis;
     case 'xaiXSearch':
       return _$socialCueBackendEnum_xaiXSearch;
+    case 'unknownDefaultOpenApi':
+      return _$socialCueBackendEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$socialCueBackendEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -26,6 +30,7 @@ final BuiltSet<SocialCueBackendEnum> _$socialCueBackendEnumValues =
     BuiltSet<SocialCueBackendEnum>(const <SocialCueBackendEnum>[
       _$socialCueBackendEnum_platformApis,
       _$socialCueBackendEnum_xaiXSearch,
+      _$socialCueBackendEnum_unknownDefaultOpenApi,
     ]);
 
 const SocialCueStatusEnum _$socialCueStatusEnum_queued =
@@ -38,6 +43,8 @@ const SocialCueStatusEnum _$socialCueStatusEnum_failed =
     const SocialCueStatusEnum._('failed');
 const SocialCueStatusEnum _$socialCueStatusEnum_budgetRefused =
     const SocialCueStatusEnum._('budgetRefused');
+const SocialCueStatusEnum _$socialCueStatusEnum_unknownDefaultOpenApi =
+    const SocialCueStatusEnum._('unknownDefaultOpenApi');
 
 SocialCueStatusEnum _$socialCueStatusEnumValueOf(String name) {
   switch (name) {
@@ -51,8 +58,10 @@ SocialCueStatusEnum _$socialCueStatusEnumValueOf(String name) {
       return _$socialCueStatusEnum_failed;
     case 'budgetRefused':
       return _$socialCueStatusEnum_budgetRefused;
+    case 'unknownDefaultOpenApi':
+      return _$socialCueStatusEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$socialCueStatusEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -63,6 +72,7 @@ final BuiltSet<SocialCueStatusEnum> _$socialCueStatusEnumValues =
       _$socialCueStatusEnum_done,
       _$socialCueStatusEnum_failed,
       _$socialCueStatusEnum_budgetRefused,
+      _$socialCueStatusEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<SocialCueBackendEnum> _$socialCueBackendEnumSerializer =
@@ -75,10 +85,12 @@ class _$SocialCueBackendEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'platformApis': 'platform-apis',
     'xaiXSearch': 'xai-x-search',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'platform-apis': 'platformApis',
     'xai-x-search': 'xaiXSearch',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -111,6 +123,7 @@ class _$SocialCueStatusEnumSerializer
     'done': 'done',
     'failed': 'failed',
     'budgetRefused': 'budget-refused',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'queued': 'queued',
@@ -118,6 +131,7 @@ class _$SocialCueStatusEnumSerializer
     'done': 'done',
     'failed': 'failed',
     'budget-refused': 'budgetRefused',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

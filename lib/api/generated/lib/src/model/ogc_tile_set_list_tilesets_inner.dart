@@ -211,6 +211,9 @@ class OgcTileSetListTilesetsInnerDataTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'map')
   static const OgcTileSetListTilesetsInnerDataTypeEnum map =
       _$ogcTileSetListTilesetsInnerDataTypeEnum_map;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const OgcTileSetListTilesetsInnerDataTypeEnum unknownDefaultOpenApi =
+      _$ogcTileSetListTilesetsInnerDataTypeEnum_unknownDefaultOpenApi;
 
   static Serializer<OgcTileSetListTilesetsInnerDataTypeEnum> get serializer =>
       _$ogcTileSetListTilesetsInnerDataTypeEnumSerializer;

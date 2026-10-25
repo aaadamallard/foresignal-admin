@@ -16,6 +16,9 @@ _$packageReceivedEventTypeEnum_chronicleExtract =
     const PackageReceivedEventTypeEnum._('chronicleExtract');
 const PackageReceivedEventTypeEnum _$packageReceivedEventTypeEnum_evidence =
     const PackageReceivedEventTypeEnum._('evidence');
+const PackageReceivedEventTypeEnum
+_$packageReceivedEventTypeEnum_unknownDefaultOpenApi =
+    const PackageReceivedEventTypeEnum._('unknownDefaultOpenApi');
 
 PackageReceivedEventTypeEnum _$packageReceivedEventTypeEnumValueOf(
   String name,
@@ -29,8 +32,10 @@ PackageReceivedEventTypeEnum _$packageReceivedEventTypeEnumValueOf(
       return _$packageReceivedEventTypeEnum_chronicleExtract;
     case 'evidence':
       return _$packageReceivedEventTypeEnum_evidence;
+    case 'unknownDefaultOpenApi':
+      return _$packageReceivedEventTypeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$packageReceivedEventTypeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -41,6 +46,7 @@ _$packageReceivedEventTypeEnumValues =
       _$packageReceivedEventTypeEnum_investigation,
       _$packageReceivedEventTypeEnum_chronicleExtract,
       _$packageReceivedEventTypeEnum_evidence,
+      _$packageReceivedEventTypeEnum_unknownDefaultOpenApi,
     ]);
 
 const PackageReceivedEventSignatureStatusEnum
@@ -52,6 +58,9 @@ _$packageReceivedEventSignatureStatusEnum_invalid =
 const PackageReceivedEventSignatureStatusEnum
 _$packageReceivedEventSignatureStatusEnum_unknownKey =
     const PackageReceivedEventSignatureStatusEnum._('unknownKey');
+const PackageReceivedEventSignatureStatusEnum
+_$packageReceivedEventSignatureStatusEnum_unknownDefaultOpenApi =
+    const PackageReceivedEventSignatureStatusEnum._('unknownDefaultOpenApi');
 
 PackageReceivedEventSignatureStatusEnum
 _$packageReceivedEventSignatureStatusEnumValueOf(String name) {
@@ -62,8 +71,10 @@ _$packageReceivedEventSignatureStatusEnumValueOf(String name) {
       return _$packageReceivedEventSignatureStatusEnum_invalid;
     case 'unknownKey':
       return _$packageReceivedEventSignatureStatusEnum_unknownKey;
+    case 'unknownDefaultOpenApi':
+      return _$packageReceivedEventSignatureStatusEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$packageReceivedEventSignatureStatusEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -74,6 +85,7 @@ _$packageReceivedEventSignatureStatusEnumValues =
         _$packageReceivedEventSignatureStatusEnum_valid,
         _$packageReceivedEventSignatureStatusEnum_invalid,
         _$packageReceivedEventSignatureStatusEnum_unknownKey,
+        _$packageReceivedEventSignatureStatusEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -91,12 +103,14 @@ class _$PackageReceivedEventTypeEnumSerializer
     'investigation': 'investigation',
     'chronicleExtract': 'chronicle-extract',
     'evidence': 'evidence',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'report': 'report',
     'investigation': 'investigation',
     'chronicle-extract': 'chronicleExtract',
     'evidence': 'evidence',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -127,11 +141,13 @@ class _$PackageReceivedEventSignatureStatusEnumSerializer
     'valid': 'valid',
     'invalid': 'invalid',
     'unknownKey': 'unknown-key',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'valid': 'valid',
     'invalid': 'invalid',
     'unknown-key': 'unknownKey',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

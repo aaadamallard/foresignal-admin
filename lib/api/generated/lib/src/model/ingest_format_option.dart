@@ -217,6 +217,9 @@ class IngestFormatOptionTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'array')
   static const IngestFormatOptionTypeEnum array =
       _$ingestFormatOptionTypeEnum_array;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const IngestFormatOptionTypeEnum unknownDefaultOpenApi =
+      _$ingestFormatOptionTypeEnum_unknownDefaultOpenApi;
 
   static Serializer<IngestFormatOptionTypeEnum> get serializer =>
       _$ingestFormatOptionTypeEnumSerializer;

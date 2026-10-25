@@ -179,6 +179,9 @@ class _$EdpStatusItemSerializer implements PrimitiveSerializer<EdpStatusItem> {
 class EdpStatusItemTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'status')
   static const EdpStatusItemTypeEnum status = _$edpStatusItemTypeEnum_status;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const EdpStatusItemTypeEnum unknownDefaultOpenApi =
+      _$edpStatusItemTypeEnum_unknownDefaultOpenApi;
 
   static Serializer<EdpStatusItemTypeEnum> get serializer =>
       _$edpStatusItemTypeEnumSerializer;
@@ -206,6 +209,9 @@ class EdpStatusItemHealthEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'geo-restricted')
   static const EdpStatusItemHealthEnum geoRestricted =
       _$edpStatusItemHealthEnum_geoRestricted;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const EdpStatusItemHealthEnum unknownDefaultOpenApi =
+      _$edpStatusItemHealthEnum_unknownDefaultOpenApi;
 
   static Serializer<EdpStatusItemHealthEnum> get serializer =>
       _$edpStatusItemHealthEnumSerializer;

@@ -17,6 +17,9 @@ _$holdingPatternPayloadStatusEnum_noCoverage =
 const HoldingPatternPayloadStatusEnum
 _$holdingPatternPayloadStatusEnum_degradedInput =
     const HoldingPatternPayloadStatusEnum._('degradedInput');
+const HoldingPatternPayloadStatusEnum
+_$holdingPatternPayloadStatusEnum_unknownDefaultOpenApi =
+    const HoldingPatternPayloadStatusEnum._('unknownDefaultOpenApi');
 
 HoldingPatternPayloadStatusEnum _$holdingPatternPayloadStatusEnumValueOf(
   String name,
@@ -30,8 +33,10 @@ HoldingPatternPayloadStatusEnum _$holdingPatternPayloadStatusEnumValueOf(
       return _$holdingPatternPayloadStatusEnum_noCoverage;
     case 'degradedInput':
       return _$holdingPatternPayloadStatusEnum_degradedInput;
+    case 'unknownDefaultOpenApi':
+      return _$holdingPatternPayloadStatusEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$holdingPatternPayloadStatusEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -43,6 +48,7 @@ _$holdingPatternPayloadStatusEnumValues =
         _$holdingPatternPayloadStatusEnum_insufficientData,
         _$holdingPatternPayloadStatusEnum_noCoverage,
         _$holdingPatternPayloadStatusEnum_degradedInput,
+        _$holdingPatternPayloadStatusEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -57,12 +63,14 @@ class _$HoldingPatternPayloadStatusEnumSerializer
     'insufficientData': 'insufficient-data',
     'noCoverage': 'no-coverage',
     'degradedInput': 'degraded-input',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'ok': 'ok',
     'insufficient-data': 'insufficientData',
     'no-coverage': 'noCoverage',
     'degraded-input': 'degradedInput',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

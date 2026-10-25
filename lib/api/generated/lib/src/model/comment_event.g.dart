@@ -10,6 +10,8 @@ const CommentEventReasonEnum _$commentEventReasonEnum_mention =
     const CommentEventReasonEnum._('mention');
 const CommentEventReasonEnum _$commentEventReasonEnum_reply =
     const CommentEventReasonEnum._('reply');
+const CommentEventReasonEnum _$commentEventReasonEnum_unknownDefaultOpenApi =
+    const CommentEventReasonEnum._('unknownDefaultOpenApi');
 
 CommentEventReasonEnum _$commentEventReasonEnumValueOf(String name) {
   switch (name) {
@@ -17,8 +19,10 @@ CommentEventReasonEnum _$commentEventReasonEnumValueOf(String name) {
       return _$commentEventReasonEnum_mention;
     case 'reply':
       return _$commentEventReasonEnum_reply;
+    case 'unknownDefaultOpenApi':
+      return _$commentEventReasonEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$commentEventReasonEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -26,6 +30,7 @@ final BuiltSet<CommentEventReasonEnum> _$commentEventReasonEnumValues =
     BuiltSet<CommentEventReasonEnum>(const <CommentEventReasonEnum>[
       _$commentEventReasonEnum_mention,
       _$commentEventReasonEnum_reply,
+      _$commentEventReasonEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<CommentEventReasonEnum> _$commentEventReasonEnumSerializer =
@@ -36,10 +41,12 @@ class _$CommentEventReasonEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'mention': 'mention',
     'reply': 'reply',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'mention': 'mention',
     'reply': 'reply',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

@@ -21,6 +21,9 @@ _$observabilityEstimateMethodEnum_declared =
 const ObservabilityEstimateMethodEnum
 _$observabilityEstimateMethodEnum_platformVolume =
     const ObservabilityEstimateMethodEnum._('platformVolume');
+const ObservabilityEstimateMethodEnum
+_$observabilityEstimateMethodEnum_unknownDefaultOpenApi =
+    const ObservabilityEstimateMethodEnum._('unknownDefaultOpenApi');
 
 ObservabilityEstimateMethodEnum _$observabilityEstimateMethodEnumValueOf(
   String name,
@@ -36,8 +39,10 @@ ObservabilityEstimateMethodEnum _$observabilityEstimateMethodEnumValueOf(
       return _$observabilityEstimateMethodEnum_declared;
     case 'platformVolume':
       return _$observabilityEstimateMethodEnum_platformVolume;
+    case 'unknownDefaultOpenApi':
+      return _$observabilityEstimateMethodEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$observabilityEstimateMethodEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -50,6 +55,7 @@ _$observabilityEstimateMethodEnumValues =
         _$observabilityEstimateMethodEnum_receiverRange,
         _$observabilityEstimateMethodEnum_declared,
         _$observabilityEstimateMethodEnum_platformVolume,
+        _$observabilityEstimateMethodEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -65,6 +71,7 @@ class _$ObservabilityEstimateMethodEnumSerializer
     'receiverRange': 'receiver-range',
     'declared': 'declared',
     'platformVolume': 'platform-volume',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'capture-recapture': 'captureRecapture',
@@ -72,6 +79,7 @@ class _$ObservabilityEstimateMethodEnumSerializer
     'receiver-range': 'receiverRange',
     'declared': 'declared',
     'platform-volume': 'platformVolume',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

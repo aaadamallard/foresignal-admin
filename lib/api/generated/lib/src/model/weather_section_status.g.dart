@@ -14,6 +14,8 @@ const WeatherSectionStatus _$noCoverage = const WeatherSectionStatus._(
 const WeatherSectionStatus _$unavailable = const WeatherSectionStatus._(
   'unavailable',
 );
+const WeatherSectionStatus _$unknownDefaultOpenApi =
+    const WeatherSectionStatus._('unknownDefaultOpenApi');
 
 WeatherSectionStatus _$valueOf(String name) {
   switch (name) {
@@ -25,13 +27,21 @@ WeatherSectionStatus _$valueOf(String name) {
       return _$noCoverage;
     case 'unavailable':
       return _$unavailable;
+    case 'unknownDefaultOpenApi':
+      return _$unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$unknownDefaultOpenApi;
   }
 }
 
 final BuiltSet<WeatherSectionStatus> _$values = BuiltSet<WeatherSectionStatus>(
-  const <WeatherSectionStatus>[_$ok, _$stale, _$noCoverage, _$unavailable],
+  const <WeatherSectionStatus>[
+    _$ok,
+    _$stale,
+    _$noCoverage,
+    _$unavailable,
+    _$unknownDefaultOpenApi,
+  ],
 );
 
 class _$WeatherSectionStatusMeta {
@@ -40,6 +50,7 @@ class _$WeatherSectionStatusMeta {
   WeatherSectionStatus get stale => _$stale;
   WeatherSectionStatus get noCoverage => _$noCoverage;
   WeatherSectionStatus get unavailable => _$unavailable;
+  WeatherSectionStatus get unknownDefaultOpenApi => _$unknownDefaultOpenApi;
   WeatherSectionStatus valueOf(String name) => _$valueOf(name);
   BuiltSet<WeatherSectionStatus> get values => _$values;
 }
@@ -60,12 +71,14 @@ class _$WeatherSectionStatusSerializer
     'stale': 'stale',
     'noCoverage': 'no-coverage',
     'unavailable': 'unavailable',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'ok': 'ok',
     'stale': 'stale',
     'no-coverage': 'noCoverage',
     'unavailable': 'unavailable',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

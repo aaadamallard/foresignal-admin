@@ -11,6 +11,9 @@ const RegionalOutlookSkillLabelEnum _$regionalOutlookSkillLabelEnum_ok =
 const RegionalOutlookSkillLabelEnum
 _$regionalOutlookSkillLabelEnum_insufficient =
     const RegionalOutlookSkillLabelEnum._('insufficient');
+const RegionalOutlookSkillLabelEnum
+_$regionalOutlookSkillLabelEnum_unknownDefaultOpenApi =
+    const RegionalOutlookSkillLabelEnum._('unknownDefaultOpenApi');
 
 RegionalOutlookSkillLabelEnum _$regionalOutlookSkillLabelEnumValueOf(
   String name,
@@ -20,8 +23,10 @@ RegionalOutlookSkillLabelEnum _$regionalOutlookSkillLabelEnumValueOf(
       return _$regionalOutlookSkillLabelEnum_ok;
     case 'insufficient':
       return _$regionalOutlookSkillLabelEnum_insufficient;
+    case 'unknownDefaultOpenApi':
+      return _$regionalOutlookSkillLabelEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$regionalOutlookSkillLabelEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -30,6 +35,7 @@ _$regionalOutlookSkillLabelEnumValues = BuiltSet<RegionalOutlookSkillLabelEnum>(
   const <RegionalOutlookSkillLabelEnum>[
     _$regionalOutlookSkillLabelEnum_ok,
     _$regionalOutlookSkillLabelEnum_insufficient,
+    _$regionalOutlookSkillLabelEnum_unknownDefaultOpenApi,
   ],
 );
 
@@ -42,10 +48,12 @@ class _$RegionalOutlookSkillLabelEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'ok': 'ok',
     'insufficient': 'insufficient',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'ok': 'ok',
     'insufficient': 'insufficient',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

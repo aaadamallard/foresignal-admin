@@ -8,19 +8,24 @@ part of 'edp_feature_item.dart';
 
 const EdpFeatureItemTypeEnum _$edpFeatureItemTypeEnum_feature =
     const EdpFeatureItemTypeEnum._('feature');
+const EdpFeatureItemTypeEnum _$edpFeatureItemTypeEnum_unknownDefaultOpenApi =
+    const EdpFeatureItemTypeEnum._('unknownDefaultOpenApi');
 
 EdpFeatureItemTypeEnum _$edpFeatureItemTypeEnumValueOf(String name) {
   switch (name) {
     case 'feature':
       return _$edpFeatureItemTypeEnum_feature;
+    case 'unknownDefaultOpenApi':
+      return _$edpFeatureItemTypeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$edpFeatureItemTypeEnum_unknownDefaultOpenApi;
   }
 }
 
 final BuiltSet<EdpFeatureItemTypeEnum> _$edpFeatureItemTypeEnumValues =
     BuiltSet<EdpFeatureItemTypeEnum>(const <EdpFeatureItemTypeEnum>[
       _$edpFeatureItemTypeEnum_feature,
+      _$edpFeatureItemTypeEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<EdpFeatureItemTypeEnum> _$edpFeatureItemTypeEnumSerializer =
@@ -30,9 +35,11 @@ class _$EdpFeatureItemTypeEnumSerializer
     implements PrimitiveSerializer<EdpFeatureItemTypeEnum> {
   static const Map<String, Object> _toWire = const <String, Object>{
     'feature': 'feature',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'feature': 'feature',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

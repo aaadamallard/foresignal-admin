@@ -27,6 +27,8 @@ class SocialPlatformId extends EnumClass {
   static const SocialPlatformId threads = _$threads;
   @BuiltValueEnumConst(wireName: r'instagram-hashtags')
   static const SocialPlatformId instagramHashtags = _$instagramHashtags;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const SocialPlatformId unknownDefaultOpenApi = _$unknownDefaultOpenApi;
 
   static Serializer<SocialPlatformId> get serializer =>
       _$socialPlatformIdSerializer;

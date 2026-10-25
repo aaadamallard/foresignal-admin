@@ -10,6 +10,8 @@ const ExchangeReceiptTypeEnum _$exchangeReceiptTypeEnum_delivered =
     const ExchangeReceiptTypeEnum._('delivered');
 const ExchangeReceiptTypeEnum _$exchangeReceiptTypeEnum_acknowledged =
     const ExchangeReceiptTypeEnum._('acknowledged');
+const ExchangeReceiptTypeEnum _$exchangeReceiptTypeEnum_unknownDefaultOpenApi =
+    const ExchangeReceiptTypeEnum._('unknownDefaultOpenApi');
 
 ExchangeReceiptTypeEnum _$exchangeReceiptTypeEnumValueOf(String name) {
   switch (name) {
@@ -17,8 +19,10 @@ ExchangeReceiptTypeEnum _$exchangeReceiptTypeEnumValueOf(String name) {
       return _$exchangeReceiptTypeEnum_delivered;
     case 'acknowledged':
       return _$exchangeReceiptTypeEnum_acknowledged;
+    case 'unknownDefaultOpenApi':
+      return _$exchangeReceiptTypeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$exchangeReceiptTypeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -26,6 +30,7 @@ final BuiltSet<ExchangeReceiptTypeEnum> _$exchangeReceiptTypeEnumValues =
     BuiltSet<ExchangeReceiptTypeEnum>(const <ExchangeReceiptTypeEnum>[
       _$exchangeReceiptTypeEnum_delivered,
       _$exchangeReceiptTypeEnum_acknowledged,
+      _$exchangeReceiptTypeEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<ExchangeReceiptTypeEnum> _$exchangeReceiptTypeEnumSerializer =
@@ -36,10 +41,12 @@ class _$ExchangeReceiptTypeEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'delivered': 'delivered',
     'acknowledged': 'acknowledged',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'delivered': 'delivered',
     'acknowledged': 'acknowledged',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

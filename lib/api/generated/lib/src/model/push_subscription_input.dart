@@ -246,6 +246,9 @@ class PushSubscriptionInputTransportLabelEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'other')
   static const PushSubscriptionInputTransportLabelEnum other =
       _$pushSubscriptionInputTransportLabelEnum_other;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const PushSubscriptionInputTransportLabelEnum unknownDefaultOpenApi =
+      _$pushSubscriptionInputTransportLabelEnum_unknownDefaultOpenApi;
 
   static Serializer<PushSubscriptionInputTransportLabelEnum> get serializer =>
       _$pushSubscriptionInputTransportLabelEnumSerializer;
@@ -265,6 +268,9 @@ class PushSubscriptionInputPayloadFormatEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'declarative')
   static const PushSubscriptionInputPayloadFormatEnum declarative =
       _$pushSubscriptionInputPayloadFormatEnum_declarative;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const PushSubscriptionInputPayloadFormatEnum unknownDefaultOpenApi =
+      _$pushSubscriptionInputPayloadFormatEnum_unknownDefaultOpenApi;
 
   static Serializer<PushSubscriptionInputPayloadFormatEnum> get serializer =>
       _$pushSubscriptionInputPayloadFormatEnumSerializer;

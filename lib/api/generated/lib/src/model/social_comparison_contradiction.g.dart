@@ -12,6 +12,9 @@ _$socialComparisonContradictionReasonEnum_negatingRecord =
 const SocialComparisonContradictionReasonEnum
 _$socialComparisonContradictionReasonEnum_mediaReuse =
     const SocialComparisonContradictionReasonEnum._('mediaReuse');
+const SocialComparisonContradictionReasonEnum
+_$socialComparisonContradictionReasonEnum_unknownDefaultOpenApi =
+    const SocialComparisonContradictionReasonEnum._('unknownDefaultOpenApi');
 
 SocialComparisonContradictionReasonEnum
 _$socialComparisonContradictionReasonEnumValueOf(String name) {
@@ -20,8 +23,10 @@ _$socialComparisonContradictionReasonEnumValueOf(String name) {
       return _$socialComparisonContradictionReasonEnum_negatingRecord;
     case 'mediaReuse':
       return _$socialComparisonContradictionReasonEnum_mediaReuse;
+    case 'unknownDefaultOpenApi':
+      return _$socialComparisonContradictionReasonEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$socialComparisonContradictionReasonEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -31,6 +36,7 @@ _$socialComparisonContradictionReasonEnumValues =
       const <SocialComparisonContradictionReasonEnum>[
         _$socialComparisonContradictionReasonEnum_negatingRecord,
         _$socialComparisonContradictionReasonEnum_mediaReuse,
+        _$socialComparisonContradictionReasonEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -43,10 +49,12 @@ class _$SocialComparisonContradictionReasonEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'negatingRecord': 'negating-record',
     'mediaReuse': 'media-reuse',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'negating-record': 'negatingRecord',
     'media-reuse': 'mediaReuse',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

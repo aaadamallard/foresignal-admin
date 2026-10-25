@@ -321,6 +321,9 @@ class ReportPatchStatusEnum extends EnumClass {
   static const ReportPatchStatusEnum draft = _$reportPatchStatusEnum_draft;
   @BuiltValueEnumConst(wireName: r'review')
   static const ReportPatchStatusEnum review = _$reportPatchStatusEnum_review;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ReportPatchStatusEnum unknownDefaultOpenApi =
+      _$reportPatchStatusEnum_unknownDefaultOpenApi;
 
   static Serializer<ReportPatchStatusEnum> get serializer =>
       _$reportPatchStatusEnumSerializer;

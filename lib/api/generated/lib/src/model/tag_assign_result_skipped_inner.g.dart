@@ -12,6 +12,9 @@ _$tagAssignResultSkippedInnerReasonEnum_notVisible =
 const TagAssignResultSkippedInnerReasonEnum
 _$tagAssignResultSkippedInnerReasonEnum_invalidRef =
     const TagAssignResultSkippedInnerReasonEnum._('invalidRef');
+const TagAssignResultSkippedInnerReasonEnum
+_$tagAssignResultSkippedInnerReasonEnum_unknownDefaultOpenApi =
+    const TagAssignResultSkippedInnerReasonEnum._('unknownDefaultOpenApi');
 
 TagAssignResultSkippedInnerReasonEnum
 _$tagAssignResultSkippedInnerReasonEnumValueOf(String name) {
@@ -20,8 +23,10 @@ _$tagAssignResultSkippedInnerReasonEnumValueOf(String name) {
       return _$tagAssignResultSkippedInnerReasonEnum_notVisible;
     case 'invalidRef':
       return _$tagAssignResultSkippedInnerReasonEnum_invalidRef;
+    case 'unknownDefaultOpenApi':
+      return _$tagAssignResultSkippedInnerReasonEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$tagAssignResultSkippedInnerReasonEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -31,6 +36,7 @@ _$tagAssignResultSkippedInnerReasonEnumValues =
       const <TagAssignResultSkippedInnerReasonEnum>[
         _$tagAssignResultSkippedInnerReasonEnum_notVisible,
         _$tagAssignResultSkippedInnerReasonEnum_invalidRef,
+        _$tagAssignResultSkippedInnerReasonEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -43,10 +49,12 @@ class _$TagAssignResultSkippedInnerReasonEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'notVisible': 'not-visible',
     'invalidRef': 'invalid-ref',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'not-visible': 'notVisible',
     'invalid-ref': 'invalidRef',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

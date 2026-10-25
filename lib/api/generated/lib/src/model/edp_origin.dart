@@ -197,6 +197,9 @@ class EdpOriginClass_Enum extends EnumClass {
   static const EdpOriginClass_Enum operator_ = _$edpOriginClassEnum_operator_;
   @BuiltValueEnumConst(wireName: r'derived')
   static const EdpOriginClass_Enum derived = _$edpOriginClassEnum_derived;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const EdpOriginClass_Enum unknownDefaultOpenApi =
+      _$edpOriginClassEnum_unknownDefaultOpenApi;
 
   static Serializer<EdpOriginClass_Enum> get serializer =>
       _$edpOriginClassEnumSerializer;

@@ -237,6 +237,9 @@ class GotifyMessageAppidEnum extends EnumClass {
   @BuiltValueEnumConst(wireNumber: 1)
   static const GotifyMessageAppidEnum number1 =
       _$gotifyMessageAppidEnum_number1;
+  @BuiltValueEnumConst(wireNumber: 11184809, fallback: true)
+  static const GotifyMessageAppidEnum unknownDefaultOpenApi =
+      _$gotifyMessageAppidEnum_unknownDefaultOpenApi;
 
   static Serializer<GotifyMessageAppidEnum> get serializer =>
       _$gotifyMessageAppidEnumSerializer;

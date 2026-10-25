@@ -217,6 +217,9 @@ class NativePushPayloadApnsEVEnum extends EnumClass {
   @BuiltValueEnumConst(wireNumber: 1)
   static const NativePushPayloadApnsEVEnum number1 =
       _$nativePushPayloadApnsEVEnum_number1;
+  @BuiltValueEnumConst(wireNumber: 11184809, fallback: true)
+  static const NativePushPayloadApnsEVEnum unknownDefaultOpenApi =
+      _$nativePushPayloadApnsEVEnum_unknownDefaultOpenApi;
 
   static Serializer<NativePushPayloadApnsEVEnum> get serializer =>
       _$nativePushPayloadApnsEVEnumSerializer;
@@ -239,6 +242,9 @@ class NativePushPayloadApnsESEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'critical')
   static const NativePushPayloadApnsESEnum critical =
       _$nativePushPayloadApnsESEnum_critical;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const NativePushPayloadApnsESEnum unknownDefaultOpenApi =
+      _$nativePushPayloadApnsESEnum_unknownDefaultOpenApi;
 
   static Serializer<NativePushPayloadApnsESEnum> get serializer =>
       _$nativePushPayloadApnsESEnumSerializer;
@@ -261,6 +267,9 @@ class NativePushPayloadApnsEEvEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'system')
   static const NativePushPayloadApnsEEvEnum system =
       _$nativePushPayloadApnsEEvEnum_system;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const NativePushPayloadApnsEEvEnum unknownDefaultOpenApi =
+      _$nativePushPayloadApnsEEvEnum_unknownDefaultOpenApi;
 
   static Serializer<NativePushPayloadApnsEEvEnum> get serializer =>
       _$nativePushPayloadApnsEEvEnumSerializer;

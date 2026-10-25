@@ -30,6 +30,9 @@ _$presenceEventClientsInnerClientKindEnum_agent =
 const PresenceEventClientsInnerClientKindEnum
 _$presenceEventClientsInnerClientKindEnum_other =
     const PresenceEventClientsInnerClientKindEnum._('other');
+const PresenceEventClientsInnerClientKindEnum
+_$presenceEventClientsInnerClientKindEnum_unknownDefaultOpenApi =
+    const PresenceEventClientsInnerClientKindEnum._('unknownDefaultOpenApi');
 
 PresenceEventClientsInnerClientKindEnum
 _$presenceEventClientsInnerClientKindEnumValueOf(String name) {
@@ -50,8 +53,10 @@ _$presenceEventClientsInnerClientKindEnumValueOf(String name) {
       return _$presenceEventClientsInnerClientKindEnum_agent;
     case 'other':
       return _$presenceEventClientsInnerClientKindEnum_other;
+    case 'unknownDefaultOpenApi':
+      return _$presenceEventClientsInnerClientKindEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$presenceEventClientsInnerClientKindEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -67,6 +72,7 @@ _$presenceEventClientsInnerClientKindEnumValues =
         _$presenceEventClientsInnerClientKindEnum_mobile,
         _$presenceEventClientsInnerClientKindEnum_agent,
         _$presenceEventClientsInnerClientKindEnum_other,
+        _$presenceEventClientsInnerClientKindEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -85,6 +91,7 @@ class _$PresenceEventClientsInnerClientKindEnumSerializer
     'mobile': 'mobile',
     'agent': 'agent',
     'other': 'other',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'globe': 'globe',
@@ -95,6 +102,7 @@ class _$PresenceEventClientsInnerClientKindEnumSerializer
     'mobile': 'mobile',
     'agent': 'agent',
     'other': 'other',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

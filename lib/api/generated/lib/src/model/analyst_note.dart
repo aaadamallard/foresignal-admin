@@ -359,6 +359,9 @@ class AnalystNotePriorityEnum extends EnumClass {
       _$analystNotePriorityEnum_normal;
   @BuiltValueEnumConst(wireName: r'high')
   static const AnalystNotePriorityEnum high = _$analystNotePriorityEnum_high;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const AnalystNotePriorityEnum unknownDefaultOpenApi =
+      _$analystNotePriorityEnum_unknownDefaultOpenApi;
 
   static Serializer<AnalystNotePriorityEnum> get serializer =>
       _$analystNotePriorityEnumSerializer;
@@ -379,6 +382,9 @@ class AnalystNoteStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'dismissed')
   static const AnalystNoteStatusEnum dismissed =
       _$analystNoteStatusEnum_dismissed;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const AnalystNoteStatusEnum unknownDefaultOpenApi =
+      _$analystNoteStatusEnum_unknownDefaultOpenApi;
 
   static Serializer<AnalystNoteStatusEnum> get serializer =>
       _$analystNoteStatusEnumSerializer;

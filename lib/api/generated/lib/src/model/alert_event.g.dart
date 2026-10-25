@@ -16,6 +16,8 @@ const AlertEventTypeEnum _$alertEventTypeEnum_snoozed =
     const AlertEventTypeEnum._('snoozed');
 const AlertEventTypeEnum _$alertEventTypeEnum_resolved =
     const AlertEventTypeEnum._('resolved');
+const AlertEventTypeEnum _$alertEventTypeEnum_unknownDefaultOpenApi =
+    const AlertEventTypeEnum._('unknownDefaultOpenApi');
 
 AlertEventTypeEnum _$alertEventTypeEnumValueOf(String name) {
   switch (name) {
@@ -29,8 +31,10 @@ AlertEventTypeEnum _$alertEventTypeEnumValueOf(String name) {
       return _$alertEventTypeEnum_snoozed;
     case 'resolved':
       return _$alertEventTypeEnum_resolved;
+    case 'unknownDefaultOpenApi':
+      return _$alertEventTypeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$alertEventTypeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -41,6 +45,7 @@ final BuiltSet<AlertEventTypeEnum> _$alertEventTypeEnumValues =
       _$alertEventTypeEnum_acknowledged,
       _$alertEventTypeEnum_snoozed,
       _$alertEventTypeEnum_resolved,
+      _$alertEventTypeEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<AlertEventTypeEnum> _$alertEventTypeEnumSerializer =
@@ -54,6 +59,7 @@ class _$AlertEventTypeEnumSerializer
     'acknowledged': 'acknowledged',
     'snoozed': 'snoozed',
     'resolved': 'resolved',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'fired': 'fired',
@@ -61,6 +67,7 @@ class _$AlertEventTypeEnumSerializer
     'acknowledged': 'acknowledged',
     'snoozed': 'snoozed',
     'resolved': 'resolved',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

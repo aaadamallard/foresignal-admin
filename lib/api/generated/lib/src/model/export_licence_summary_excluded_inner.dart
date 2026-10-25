@@ -156,6 +156,10 @@ class ExportLicenceSummaryExcludedInnerReasonEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'private')
   static const ExportLicenceSummaryExcludedInnerReasonEnum private =
       _$exportLicenceSummaryExcludedInnerReasonEnum_private;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ExportLicenceSummaryExcludedInnerReasonEnum
+  unknownDefaultOpenApi =
+      _$exportLicenceSummaryExcludedInnerReasonEnum_unknownDefaultOpenApi;
 
   static Serializer<ExportLicenceSummaryExcludedInnerReasonEnum>
   get serializer => _$exportLicenceSummaryExcludedInnerReasonEnumSerializer;

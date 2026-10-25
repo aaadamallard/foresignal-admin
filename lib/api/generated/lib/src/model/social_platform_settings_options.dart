@@ -274,6 +274,10 @@ class SocialPlatformSettingsOptionsFieldsParamEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'tweet')
   static const SocialPlatformSettingsOptionsFieldsParamEnum tweet =
       _$socialPlatformSettingsOptionsFieldsParamEnum_tweet;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const SocialPlatformSettingsOptionsFieldsParamEnum
+  unknownDefaultOpenApi =
+      _$socialPlatformSettingsOptionsFieldsParamEnum_unknownDefaultOpenApi;
 
   static Serializer<SocialPlatformSettingsOptionsFieldsParamEnum>
   get serializer => _$socialPlatformSettingsOptionsFieldsParamEnumSerializer;

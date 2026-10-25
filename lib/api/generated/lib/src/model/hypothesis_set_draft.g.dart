@@ -12,6 +12,9 @@ const HypothesisSetDraftEffortEnum _$hypothesisSetDraftEffortEnum_medium =
     const HypothesisSetDraftEffortEnum._('medium');
 const HypothesisSetDraftEffortEnum _$hypothesisSetDraftEffortEnum_high =
     const HypothesisSetDraftEffortEnum._('high');
+const HypothesisSetDraftEffortEnum
+_$hypothesisSetDraftEffortEnum_unknownDefaultOpenApi =
+    const HypothesisSetDraftEffortEnum._('unknownDefaultOpenApi');
 
 HypothesisSetDraftEffortEnum _$hypothesisSetDraftEffortEnumValueOf(
   String name,
@@ -23,8 +26,10 @@ HypothesisSetDraftEffortEnum _$hypothesisSetDraftEffortEnumValueOf(
       return _$hypothesisSetDraftEffortEnum_medium;
     case 'high':
       return _$hypothesisSetDraftEffortEnum_high;
+    case 'unknownDefaultOpenApi':
+      return _$hypothesisSetDraftEffortEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$hypothesisSetDraftEffortEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -34,10 +39,14 @@ _$hypothesisSetDraftEffortEnumValues =
       _$hypothesisSetDraftEffortEnum_low,
       _$hypothesisSetDraftEffortEnum_medium,
       _$hypothesisSetDraftEffortEnum_high,
+      _$hypothesisSetDraftEffortEnum_unknownDefaultOpenApi,
     ]);
 
 const HypothesisSetDraftTextOriginEnum _$hypothesisSetDraftTextOriginEnum_llm =
     const HypothesisSetDraftTextOriginEnum._('llm');
+const HypothesisSetDraftTextOriginEnum
+_$hypothesisSetDraftTextOriginEnum_unknownDefaultOpenApi =
+    const HypothesisSetDraftTextOriginEnum._('unknownDefaultOpenApi');
 
 HypothesisSetDraftTextOriginEnum _$hypothesisSetDraftTextOriginEnumValueOf(
   String name,
@@ -45,8 +54,10 @@ HypothesisSetDraftTextOriginEnum _$hypothesisSetDraftTextOriginEnumValueOf(
   switch (name) {
     case 'llm':
       return _$hypothesisSetDraftTextOriginEnum_llm;
+    case 'unknownDefaultOpenApi':
+      return _$hypothesisSetDraftTextOriginEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$hypothesisSetDraftTextOriginEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -55,6 +66,7 @@ _$hypothesisSetDraftTextOriginEnumValues =
     BuiltSet<HypothesisSetDraftTextOriginEnum>(
       const <HypothesisSetDraftTextOriginEnum>[
         _$hypothesisSetDraftTextOriginEnum_llm,
+        _$hypothesisSetDraftTextOriginEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -71,11 +83,13 @@ class _$HypothesisSetDraftEffortEnumSerializer
     'low': 'low',
     'medium': 'medium',
     'high': 'high',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'low': 'low',
     'medium': 'medium',
     'high': 'high',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -104,9 +118,11 @@ class _$HypothesisSetDraftTextOriginEnumSerializer
     implements PrimitiveSerializer<HypothesisSetDraftTextOriginEnum> {
   static const Map<String, Object> _toWire = const <String, Object>{
     'llm': 'llm',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'llm': 'llm',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

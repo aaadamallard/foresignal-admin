@@ -14,6 +14,8 @@ const BriefingRunStatusEnum _$briefingRunStatusEnum_fallback =
     const BriefingRunStatusEnum._('fallback');
 const BriefingRunStatusEnum _$briefingRunStatusEnum_failed =
     const BriefingRunStatusEnum._('failed');
+const BriefingRunStatusEnum _$briefingRunStatusEnum_unknownDefaultOpenApi =
+    const BriefingRunStatusEnum._('unknownDefaultOpenApi');
 
 BriefingRunStatusEnum _$briefingRunStatusEnumValueOf(String name) {
   switch (name) {
@@ -25,8 +27,10 @@ BriefingRunStatusEnum _$briefingRunStatusEnumValueOf(String name) {
       return _$briefingRunStatusEnum_fallback;
     case 'failed':
       return _$briefingRunStatusEnum_failed;
+    case 'unknownDefaultOpenApi':
+      return _$briefingRunStatusEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$briefingRunStatusEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -36,12 +40,15 @@ final BuiltSet<BriefingRunStatusEnum> _$briefingRunStatusEnumValues =
       _$briefingRunStatusEnum_succeeded,
       _$briefingRunStatusEnum_fallback,
       _$briefingRunStatusEnum_failed,
+      _$briefingRunStatusEnum_unknownDefaultOpenApi,
     ]);
 
 const BriefingRunModeEnum _$briefingRunModeEnum_digest =
     const BriefingRunModeEnum._('digest');
 const BriefingRunModeEnum _$briefingRunModeEnum_llm =
     const BriefingRunModeEnum._('llm');
+const BriefingRunModeEnum _$briefingRunModeEnum_unknownDefaultOpenApi =
+    const BriefingRunModeEnum._('unknownDefaultOpenApi');
 
 BriefingRunModeEnum _$briefingRunModeEnumValueOf(String name) {
   switch (name) {
@@ -49,8 +56,10 @@ BriefingRunModeEnum _$briefingRunModeEnumValueOf(String name) {
       return _$briefingRunModeEnum_digest;
     case 'llm':
       return _$briefingRunModeEnum_llm;
+    case 'unknownDefaultOpenApi':
+      return _$briefingRunModeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$briefingRunModeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -58,6 +67,7 @@ final BuiltSet<BriefingRunModeEnum> _$briefingRunModeEnumValues =
     BuiltSet<BriefingRunModeEnum>(const <BriefingRunModeEnum>[
       _$briefingRunModeEnum_digest,
       _$briefingRunModeEnum_llm,
+      _$briefingRunModeEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<BriefingRunStatusEnum> _$briefingRunStatusEnumSerializer =
@@ -72,12 +82,14 @@ class _$BriefingRunStatusEnumSerializer
     'succeeded': 'succeeded',
     'fallback': 'fallback',
     'failed': 'failed',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'running': 'running',
     'succeeded': 'succeeded',
     'fallback': 'fallback',
     'failed': 'failed',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -107,10 +119,12 @@ class _$BriefingRunModeEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'digest': 'digest',
     'llm': 'llm',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'digest': 'digest',
     'llm': 'llm',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

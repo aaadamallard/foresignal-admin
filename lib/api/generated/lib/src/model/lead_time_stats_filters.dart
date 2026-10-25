@@ -215,6 +215,9 @@ class LeadTimeStatsFiltersFoundByEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'cue')
   static const LeadTimeStatsFiltersFoundByEnum cue =
       _$leadTimeStatsFiltersFoundByEnum_cue;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const LeadTimeStatsFiltersFoundByEnum unknownDefaultOpenApi =
+      _$leadTimeStatsFiltersFoundByEnum_unknownDefaultOpenApi;
 
   static Serializer<LeadTimeStatsFiltersFoundByEnum> get serializer =>
       _$leadTimeStatsFiltersFoundByEnumSerializer;

@@ -144,6 +144,9 @@ class PresenceEventChangeTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'left')
   static const PresenceEventChangeTypeEnum left =
       _$presenceEventChangeTypeEnum_left;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const PresenceEventChangeTypeEnum unknownDefaultOpenApi =
+      _$presenceEventChangeTypeEnum_unknownDefaultOpenApi;
 
   static Serializer<PresenceEventChangeTypeEnum> get serializer =>
       _$presenceEventChangeTypeEnumSerializer;

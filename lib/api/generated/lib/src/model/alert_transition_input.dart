@@ -160,6 +160,9 @@ class AlertTransitionInputFeedbackEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'false_positive')
   static const AlertTransitionInputFeedbackEnum falsePositive =
       _$alertTransitionInputFeedbackEnum_falsePositive;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const AlertTransitionInputFeedbackEnum unknownDefaultOpenApi =
+      _$alertTransitionInputFeedbackEnum_unknownDefaultOpenApi;
 
   static Serializer<AlertTransitionInputFeedbackEnum> get serializer =>
       _$alertTransitionInputFeedbackEnumSerializer;

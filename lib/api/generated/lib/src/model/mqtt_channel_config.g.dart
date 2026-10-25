@@ -10,6 +10,9 @@ const MqttChannelConfigQosEnum _$mqttChannelConfigQosEnum_number0 =
     const MqttChannelConfigQosEnum._('number0');
 const MqttChannelConfigQosEnum _$mqttChannelConfigQosEnum_number1 =
     const MqttChannelConfigQosEnum._('number1');
+const MqttChannelConfigQosEnum
+_$mqttChannelConfigQosEnum_unknownDefaultOpenApi =
+    const MqttChannelConfigQosEnum._('unknownDefaultOpenApi');
 
 MqttChannelConfigQosEnum _$mqttChannelConfigQosEnumValueOf(String name) {
   switch (name) {
@@ -17,8 +20,10 @@ MqttChannelConfigQosEnum _$mqttChannelConfigQosEnumValueOf(String name) {
       return _$mqttChannelConfigQosEnum_number0;
     case 'number1':
       return _$mqttChannelConfigQosEnum_number1;
+    case 'unknownDefaultOpenApi':
+      return _$mqttChannelConfigQosEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$mqttChannelConfigQosEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -26,6 +31,7 @@ final BuiltSet<MqttChannelConfigQosEnum> _$mqttChannelConfigQosEnumValues =
     BuiltSet<MqttChannelConfigQosEnum>(const <MqttChannelConfigQosEnum>[
       _$mqttChannelConfigQosEnum_number0,
       _$mqttChannelConfigQosEnum_number1,
+      _$mqttChannelConfigQosEnum_unknownDefaultOpenApi,
     ]);
 
 const MqttChannelConfigProtocolVersionEnum
@@ -34,6 +40,9 @@ _$mqttChannelConfigProtocolVersionEnum_n5 =
 const MqttChannelConfigProtocolVersionEnum
 _$mqttChannelConfigProtocolVersionEnum_n3period1Period1 =
     const MqttChannelConfigProtocolVersionEnum._('n3period1Period1');
+const MqttChannelConfigProtocolVersionEnum
+_$mqttChannelConfigProtocolVersionEnum_unknownDefaultOpenApi =
+    const MqttChannelConfigProtocolVersionEnum._('unknownDefaultOpenApi');
 
 MqttChannelConfigProtocolVersionEnum
 _$mqttChannelConfigProtocolVersionEnumValueOf(String name) {
@@ -42,8 +51,10 @@ _$mqttChannelConfigProtocolVersionEnumValueOf(String name) {
       return _$mqttChannelConfigProtocolVersionEnum_n5;
     case 'n3period1Period1':
       return _$mqttChannelConfigProtocolVersionEnum_n3period1Period1;
+    case 'unknownDefaultOpenApi':
+      return _$mqttChannelConfigProtocolVersionEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$mqttChannelConfigProtocolVersionEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -53,6 +64,7 @@ _$mqttChannelConfigProtocolVersionEnumValues =
       const <MqttChannelConfigProtocolVersionEnum>[
         _$mqttChannelConfigProtocolVersionEnum_n5,
         _$mqttChannelConfigProtocolVersionEnum_n3period1Period1,
+        _$mqttChannelConfigProtocolVersionEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -67,10 +79,12 @@ class _$MqttChannelConfigQosEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'number0': 0,
     'number1': 1,
+    'unknownDefaultOpenApi': 11184809,
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     0: 'number0',
     1: 'number1',
+    11184809: 'unknownDefaultOpenApi',
   };
 
   @override
@@ -100,10 +114,12 @@ class _$MqttChannelConfigProtocolVersionEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'n5': '5',
     'n3period1Period1': '3.1.1',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     '5': 'n5',
     '3.1.1': 'n3period1Period1',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

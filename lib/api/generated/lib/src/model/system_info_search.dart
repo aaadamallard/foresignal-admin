@@ -239,6 +239,9 @@ class SystemInfoSearchReindexStateEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'swapping')
   static const SystemInfoSearchReindexStateEnum swapping =
       _$systemInfoSearchReindexStateEnum_swapping;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const SystemInfoSearchReindexStateEnum unknownDefaultOpenApi =
+      _$systemInfoSearchReindexStateEnum_unknownDefaultOpenApi;
 
   static Serializer<SystemInfoSearchReindexStateEnum> get serializer =>
       _$systemInfoSearchReindexStateEnumSerializer;

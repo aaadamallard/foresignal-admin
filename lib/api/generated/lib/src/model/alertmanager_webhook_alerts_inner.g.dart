@@ -12,6 +12,9 @@ _$alertmanagerWebhookAlertsInnerStatusEnum_firing =
 const AlertmanagerWebhookAlertsInnerStatusEnum
 _$alertmanagerWebhookAlertsInnerStatusEnum_resolved =
     const AlertmanagerWebhookAlertsInnerStatusEnum._('resolved');
+const AlertmanagerWebhookAlertsInnerStatusEnum
+_$alertmanagerWebhookAlertsInnerStatusEnum_unknownDefaultOpenApi =
+    const AlertmanagerWebhookAlertsInnerStatusEnum._('unknownDefaultOpenApi');
 
 AlertmanagerWebhookAlertsInnerStatusEnum
 _$alertmanagerWebhookAlertsInnerStatusEnumValueOf(String name) {
@@ -20,8 +23,10 @@ _$alertmanagerWebhookAlertsInnerStatusEnumValueOf(String name) {
       return _$alertmanagerWebhookAlertsInnerStatusEnum_firing;
     case 'resolved':
       return _$alertmanagerWebhookAlertsInnerStatusEnum_resolved;
+    case 'unknownDefaultOpenApi':
+      return _$alertmanagerWebhookAlertsInnerStatusEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$alertmanagerWebhookAlertsInnerStatusEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -31,6 +36,7 @@ _$alertmanagerWebhookAlertsInnerStatusEnumValues =
       const <AlertmanagerWebhookAlertsInnerStatusEnum>[
         _$alertmanagerWebhookAlertsInnerStatusEnum_firing,
         _$alertmanagerWebhookAlertsInnerStatusEnum_resolved,
+        _$alertmanagerWebhookAlertsInnerStatusEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -43,10 +49,12 @@ class _$AlertmanagerWebhookAlertsInnerStatusEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'firing': 'firing',
     'resolved': 'resolved',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'firing': 'firing',
     'resolved': 'resolved',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

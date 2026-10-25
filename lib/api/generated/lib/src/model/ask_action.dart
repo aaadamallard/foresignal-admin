@@ -287,6 +287,9 @@ class AskActionTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'apply_tuning_suggestion')
   static const AskActionTypeEnum applyTuningSuggestion =
       _$askActionTypeEnum_applyTuningSuggestion;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const AskActionTypeEnum unknownDefaultOpenApi =
+      _$askActionTypeEnum_unknownDefaultOpenApi;
 
   static Serializer<AskActionTypeEnum> get serializer =>
       _$askActionTypeEnumSerializer;
@@ -307,6 +310,9 @@ class AskActionStatusEnum extends EnumClass {
   static const AskActionStatusEnum rejected = _$askActionStatusEnum_rejected;
   @BuiltValueEnumConst(wireName: r'failed')
   static const AskActionStatusEnum failed = _$askActionStatusEnum_failed;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const AskActionStatusEnum unknownDefaultOpenApi =
+      _$askActionStatusEnum_unknownDefaultOpenApi;
 
   static Serializer<AskActionStatusEnum> get serializer =>
       _$askActionStatusEnumSerializer;

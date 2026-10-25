@@ -45,6 +45,9 @@ _$notificationPreferenceChannelTypeEnum_email =
 const NotificationPreferenceChannelTypeEnum
 _$notificationPreferenceChannelTypeEnum_webpush =
     const NotificationPreferenceChannelTypeEnum._('webpush');
+const NotificationPreferenceChannelTypeEnum
+_$notificationPreferenceChannelTypeEnum_unknownDefaultOpenApi =
+    const NotificationPreferenceChannelTypeEnum._('unknownDefaultOpenApi');
 
 NotificationPreferenceChannelTypeEnum
 _$notificationPreferenceChannelTypeEnumValueOf(String name) {
@@ -75,8 +78,10 @@ _$notificationPreferenceChannelTypeEnumValueOf(String name) {
       return _$notificationPreferenceChannelTypeEnum_email;
     case 'webpush':
       return _$notificationPreferenceChannelTypeEnum_webpush;
+    case 'unknownDefaultOpenApi':
+      return _$notificationPreferenceChannelTypeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$notificationPreferenceChannelTypeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -97,6 +102,7 @@ _$notificationPreferenceChannelTypeEnumValues =
         _$notificationPreferenceChannelTypeEnum_pushover,
         _$notificationPreferenceChannelTypeEnum_email,
         _$notificationPreferenceChannelTypeEnum_webpush,
+        _$notificationPreferenceChannelTypeEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -120,6 +126,7 @@ class _$NotificationPreferenceChannelTypeEnumSerializer
     'pushover': 'pushover',
     'email': 'email',
     'webpush': 'webpush',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'webhook': 'webhook',
@@ -135,6 +142,7 @@ class _$NotificationPreferenceChannelTypeEnumSerializer
     'pushover': 'pushover',
     'email': 'email',
     'webpush': 'webpush',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

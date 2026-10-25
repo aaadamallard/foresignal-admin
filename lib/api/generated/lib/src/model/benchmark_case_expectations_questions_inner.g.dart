@@ -12,6 +12,11 @@ _$benchmarkCaseExpectationsQuestionsInnerTypeEnum_binary =
 const BenchmarkCaseExpectationsQuestionsInnerTypeEnum
 _$benchmarkCaseExpectationsQuestionsInnerTypeEnum_numeric =
     const BenchmarkCaseExpectationsQuestionsInnerTypeEnum._('numeric');
+const BenchmarkCaseExpectationsQuestionsInnerTypeEnum
+_$benchmarkCaseExpectationsQuestionsInnerTypeEnum_unknownDefaultOpenApi =
+    const BenchmarkCaseExpectationsQuestionsInnerTypeEnum._(
+      'unknownDefaultOpenApi',
+    );
 
 BenchmarkCaseExpectationsQuestionsInnerTypeEnum
 _$benchmarkCaseExpectationsQuestionsInnerTypeEnumValueOf(String name) {
@@ -20,8 +25,10 @@ _$benchmarkCaseExpectationsQuestionsInnerTypeEnumValueOf(String name) {
       return _$benchmarkCaseExpectationsQuestionsInnerTypeEnum_binary;
     case 'numeric':
       return _$benchmarkCaseExpectationsQuestionsInnerTypeEnum_numeric;
+    case 'unknownDefaultOpenApi':
+      return _$benchmarkCaseExpectationsQuestionsInnerTypeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$benchmarkCaseExpectationsQuestionsInnerTypeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -31,6 +38,7 @@ _$benchmarkCaseExpectationsQuestionsInnerTypeEnumValues =
       const <BenchmarkCaseExpectationsQuestionsInnerTypeEnum>[
         _$benchmarkCaseExpectationsQuestionsInnerTypeEnum_binary,
         _$benchmarkCaseExpectationsQuestionsInnerTypeEnum_numeric,
+        _$benchmarkCaseExpectationsQuestionsInnerTypeEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -44,10 +52,12 @@ class _$BenchmarkCaseExpectationsQuestionsInnerTypeEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'binary': 'binary',
     'numeric': 'numeric',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'binary': 'binary',
     'numeric': 'numeric',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

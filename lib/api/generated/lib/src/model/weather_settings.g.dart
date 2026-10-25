@@ -10,6 +10,9 @@ const WeatherSettingsAlertContextEnum _$weatherSettingsAlertContextEnum_auto =
     const WeatherSettingsAlertContextEnum._('auto');
 const WeatherSettingsAlertContextEnum _$weatherSettingsAlertContextEnum_off =
     const WeatherSettingsAlertContextEnum._('off');
+const WeatherSettingsAlertContextEnum
+_$weatherSettingsAlertContextEnum_unknownDefaultOpenApi =
+    const WeatherSettingsAlertContextEnum._('unknownDefaultOpenApi');
 
 WeatherSettingsAlertContextEnum _$weatherSettingsAlertContextEnumValueOf(
   String name,
@@ -19,8 +22,10 @@ WeatherSettingsAlertContextEnum _$weatherSettingsAlertContextEnumValueOf(
       return _$weatherSettingsAlertContextEnum_auto;
     case 'off':
       return _$weatherSettingsAlertContextEnum_off;
+    case 'unknownDefaultOpenApi':
+      return _$weatherSettingsAlertContextEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$weatherSettingsAlertContextEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -30,6 +35,7 @@ _$weatherSettingsAlertContextEnumValues =
       const <WeatherSettingsAlertContextEnum>[
         _$weatherSettingsAlertContextEnum_auto,
         _$weatherSettingsAlertContextEnum_off,
+        _$weatherSettingsAlertContextEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -42,10 +48,12 @@ class _$WeatherSettingsAlertContextEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'auto': 'auto',
     'off': 'off',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'auto': 'auto',
     'off': 'off',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

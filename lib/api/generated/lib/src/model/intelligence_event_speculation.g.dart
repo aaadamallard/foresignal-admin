@@ -9,14 +9,19 @@ part of 'intelligence_event_speculation.dart';
 const IntelligenceEventSpeculationLabelEnum
 _$intelligenceEventSpeculationLabelEnum_speculation =
     const IntelligenceEventSpeculationLabelEnum._('speculation');
+const IntelligenceEventSpeculationLabelEnum
+_$intelligenceEventSpeculationLabelEnum_unknownDefaultOpenApi =
+    const IntelligenceEventSpeculationLabelEnum._('unknownDefaultOpenApi');
 
 IntelligenceEventSpeculationLabelEnum
 _$intelligenceEventSpeculationLabelEnumValueOf(String name) {
   switch (name) {
     case 'speculation':
       return _$intelligenceEventSpeculationLabelEnum_speculation;
+    case 'unknownDefaultOpenApi':
+      return _$intelligenceEventSpeculationLabelEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$intelligenceEventSpeculationLabelEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -25,20 +30,28 @@ _$intelligenceEventSpeculationLabelEnumValues =
     BuiltSet<IntelligenceEventSpeculationLabelEnum>(
       const <IntelligenceEventSpeculationLabelEnum>[
         _$intelligenceEventSpeculationLabelEnum_speculation,
+        _$intelligenceEventSpeculationLabelEnum_unknownDefaultOpenApi,
       ],
     );
 
 const IntelligenceEventSpeculationNarrativeOriginEnum
 _$intelligenceEventSpeculationNarrativeOriginEnum_llm =
     const IntelligenceEventSpeculationNarrativeOriginEnum._('llm');
+const IntelligenceEventSpeculationNarrativeOriginEnum
+_$intelligenceEventSpeculationNarrativeOriginEnum_unknownDefaultOpenApi =
+    const IntelligenceEventSpeculationNarrativeOriginEnum._(
+      'unknownDefaultOpenApi',
+    );
 
 IntelligenceEventSpeculationNarrativeOriginEnum
 _$intelligenceEventSpeculationNarrativeOriginEnumValueOf(String name) {
   switch (name) {
     case 'llm':
       return _$intelligenceEventSpeculationNarrativeOriginEnum_llm;
+    case 'unknownDefaultOpenApi':
+      return _$intelligenceEventSpeculationNarrativeOriginEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$intelligenceEventSpeculationNarrativeOriginEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -47,6 +60,7 @@ _$intelligenceEventSpeculationNarrativeOriginEnumValues =
     BuiltSet<IntelligenceEventSpeculationNarrativeOriginEnum>(
       const <IntelligenceEventSpeculationNarrativeOriginEnum>[
         _$intelligenceEventSpeculationNarrativeOriginEnum_llm,
+        _$intelligenceEventSpeculationNarrativeOriginEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -61,9 +75,11 @@ class _$IntelligenceEventSpeculationLabelEnumSerializer
     implements PrimitiveSerializer<IntelligenceEventSpeculationLabelEnum> {
   static const Map<String, Object> _toWire = const <String, Object>{
     'speculation': 'speculation',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'speculation': 'speculation',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -95,9 +111,11 @@ class _$IntelligenceEventSpeculationNarrativeOriginEnumSerializer
         PrimitiveSerializer<IntelligenceEventSpeculationNarrativeOriginEnum> {
   static const Map<String, Object> _toWire = const <String, Object>{
     'llm': 'llm',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'llm': 'llm',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

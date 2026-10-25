@@ -44,6 +44,8 @@ const ChannelInputTypeEnum _$channelInputTypeEnum_meshtastic =
     const ChannelInputTypeEnum._('meshtastic');
 const ChannelInputTypeEnum _$channelInputTypeEnum_meshcore =
     const ChannelInputTypeEnum._('meshcore');
+const ChannelInputTypeEnum _$channelInputTypeEnum_unknownDefaultOpenApi =
+    const ChannelInputTypeEnum._('unknownDefaultOpenApi');
 
 ChannelInputTypeEnum _$channelInputTypeEnumValueOf(String name) {
   switch (name) {
@@ -85,8 +87,10 @@ ChannelInputTypeEnum _$channelInputTypeEnumValueOf(String name) {
       return _$channelInputTypeEnum_meshtastic;
     case 'meshcore':
       return _$channelInputTypeEnum_meshcore;
+    case 'unknownDefaultOpenApi':
+      return _$channelInputTypeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$channelInputTypeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -111,6 +115,7 @@ final BuiltSet<ChannelInputTypeEnum> _$channelInputTypeEnumValues =
       _$channelInputTypeEnum_mqtt,
       _$channelInputTypeEnum_meshtastic,
       _$channelInputTypeEnum_meshcore,
+      _$channelInputTypeEnum_unknownDefaultOpenApi,
     ]);
 
 const ChannelInputEventsEnum _$channelInputEventsEnum_alert =
@@ -166,6 +171,8 @@ _$channelInputEventsEnum_chroniclePeriodAccessPeriodRequested =
     const ChannelInputEventsEnum._('chroniclePeriodAccessPeriodRequested');
 const ChannelInputEventsEnum _$channelInputEventsEnum_savedSearchPeriodMatches =
     const ChannelInputEventsEnum._('savedSearchPeriodMatches');
+const ChannelInputEventsEnum _$channelInputEventsEnum_unknownDefaultOpenApi =
+    const ChannelInputEventsEnum._('unknownDefaultOpenApi');
 
 ChannelInputEventsEnum _$channelInputEventsEnumValueOf(String name) {
   switch (name) {
@@ -217,8 +224,10 @@ ChannelInputEventsEnum _$channelInputEventsEnumValueOf(String name) {
       return _$channelInputEventsEnum_chroniclePeriodAccessPeriodRequested;
     case 'savedSearchPeriodMatches':
       return _$channelInputEventsEnum_savedSearchPeriodMatches;
+    case 'unknownDefaultOpenApi':
+      return _$channelInputEventsEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$channelInputEventsEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -248,6 +257,7 @@ final BuiltSet<ChannelInputEventsEnum> _$channelInputEventsEnumValues =
       _$channelInputEventsEnum_packagePeriodReceived,
       _$channelInputEventsEnum_chroniclePeriodAccessPeriodRequested,
       _$channelInputEventsEnum_savedSearchPeriodMatches,
+      _$channelInputEventsEnum_unknownDefaultOpenApi,
     ]);
 
 const ChannelInputMinSeverityEnum _$channelInputMinSeverityEnum_info =
@@ -256,6 +266,9 @@ const ChannelInputMinSeverityEnum _$channelInputMinSeverityEnum_warning =
     const ChannelInputMinSeverityEnum._('warning');
 const ChannelInputMinSeverityEnum _$channelInputMinSeverityEnum_critical =
     const ChannelInputMinSeverityEnum._('critical');
+const ChannelInputMinSeverityEnum
+_$channelInputMinSeverityEnum_unknownDefaultOpenApi =
+    const ChannelInputMinSeverityEnum._('unknownDefaultOpenApi');
 
 ChannelInputMinSeverityEnum _$channelInputMinSeverityEnumValueOf(String name) {
   switch (name) {
@@ -265,8 +278,10 @@ ChannelInputMinSeverityEnum _$channelInputMinSeverityEnumValueOf(String name) {
       return _$channelInputMinSeverityEnum_warning;
     case 'critical':
       return _$channelInputMinSeverityEnum_critical;
+    case 'unknownDefaultOpenApi':
+      return _$channelInputMinSeverityEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$channelInputMinSeverityEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -276,6 +291,7 @@ _$channelInputMinSeverityEnumValues =
       _$channelInputMinSeverityEnum_info,
       _$channelInputMinSeverityEnum_warning,
       _$channelInputMinSeverityEnum_critical,
+      _$channelInputMinSeverityEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<ChannelInputTypeEnum> _$channelInputTypeEnumSerializer =
@@ -308,6 +324,7 @@ class _$ChannelInputTypeEnumSerializer
     'mqtt': 'mqtt',
     'meshtastic': 'meshtastic',
     'meshcore': 'meshcore',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'webhook': 'webhook',
@@ -329,6 +346,7 @@ class _$ChannelInputTypeEnumSerializer
     'mqtt': 'mqtt',
     'meshtastic': 'meshtastic',
     'meshcore': 'meshcore',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -380,6 +398,7 @@ class _$ChannelInputEventsEnumSerializer
     'packagePeriodReceived': 'package.received',
     'chroniclePeriodAccessPeriodRequested': 'chronicle.access.requested',
     'savedSearchPeriodMatches': 'saved-search.matches',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'alert': 'alert',
@@ -406,6 +425,7 @@ class _$ChannelInputEventsEnumSerializer
     'package.received': 'packagePeriodReceived',
     'chronicle.access.requested': 'chroniclePeriodAccessPeriodRequested',
     'saved-search.matches': 'savedSearchPeriodMatches',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -436,11 +456,13 @@ class _$ChannelInputMinSeverityEnumSerializer
     'info': 'info',
     'warning': 'warning',
     'critical': 'critical',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'info': 'info',
     'warning': 'warning',
     'critical': 'critical',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

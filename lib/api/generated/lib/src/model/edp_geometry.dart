@@ -149,6 +149,9 @@ class EdpGeometryTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'MultiPolygon')
   static const EdpGeometryTypeEnum multiPolygon =
       _$edpGeometryTypeEnum_multiPolygon;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const EdpGeometryTypeEnum unknownDefaultOpenApi =
+      _$edpGeometryTypeEnum_unknownDefaultOpenApi;
 
   static Serializer<EdpGeometryTypeEnum> get serializer =>
       _$edpGeometryTypeEnumSerializer;

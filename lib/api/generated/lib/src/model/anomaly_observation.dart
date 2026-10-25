@@ -470,6 +470,9 @@ class AnomalyObservationDirectionEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'down')
   static const AnomalyObservationDirectionEnum down =
       _$anomalyObservationDirectionEnum_down;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const AnomalyObservationDirectionEnum unknownDefaultOpenApi =
+      _$anomalyObservationDirectionEnum_unknownDefaultOpenApi;
 
   static Serializer<AnomalyObservationDirectionEnum> get serializer =>
       _$anomalyObservationDirectionEnumSerializer;
@@ -501,6 +504,9 @@ class AnomalyObservationClassificationEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'normal')
   static const AnomalyObservationClassificationEnum normal =
       _$anomalyObservationClassificationEnum_normal;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const AnomalyObservationClassificationEnum unknownDefaultOpenApi =
+      _$anomalyObservationClassificationEnum_unknownDefaultOpenApi;
 
   static Serializer<AnomalyObservationClassificationEnum> get serializer =>
       _$anomalyObservationClassificationEnumSerializer;

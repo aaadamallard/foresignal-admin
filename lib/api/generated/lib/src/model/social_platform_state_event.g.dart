@@ -11,6 +11,9 @@ _$socialPlatformStateEventEventEnum_socialPeriodPlatformPeriodState =
     const SocialPlatformStateEventEventEnum._(
       'socialPeriodPlatformPeriodState',
     );
+const SocialPlatformStateEventEventEnum
+_$socialPlatformStateEventEventEnum_unknownDefaultOpenApi =
+    const SocialPlatformStateEventEventEnum._('unknownDefaultOpenApi');
 
 SocialPlatformStateEventEventEnum _$socialPlatformStateEventEventEnumValueOf(
   String name,
@@ -18,8 +21,10 @@ SocialPlatformStateEventEventEnum _$socialPlatformStateEventEventEnumValueOf(
   switch (name) {
     case 'socialPeriodPlatformPeriodState':
       return _$socialPlatformStateEventEventEnum_socialPeriodPlatformPeriodState;
+    case 'unknownDefaultOpenApi':
+      return _$socialPlatformStateEventEventEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$socialPlatformStateEventEventEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -28,6 +33,7 @@ _$socialPlatformStateEventEventEnumValues =
     BuiltSet<SocialPlatformStateEventEventEnum>(
       const <SocialPlatformStateEventEventEnum>[
         _$socialPlatformStateEventEventEnum_socialPeriodPlatformPeriodState,
+        _$socialPlatformStateEventEventEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -39,9 +45,11 @@ class _$SocialPlatformStateEventEventEnumSerializer
     implements PrimitiveSerializer<SocialPlatformStateEventEventEnum> {
   static const Map<String, Object> _toWire = const <String, Object>{
     'socialPeriodPlatformPeriodState': 'social.platform.state',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'social.platform.state': 'socialPeriodPlatformPeriodState',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

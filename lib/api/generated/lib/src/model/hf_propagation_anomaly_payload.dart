@@ -464,6 +464,9 @@ class HfPropagationAnomalyPayloadStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'degraded-input')
   static const HfPropagationAnomalyPayloadStatusEnum degradedInput =
       _$hfPropagationAnomalyPayloadStatusEnum_degradedInput;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const HfPropagationAnomalyPayloadStatusEnum unknownDefaultOpenApi =
+      _$hfPropagationAnomalyPayloadStatusEnum_unknownDefaultOpenApi;
 
   static Serializer<HfPropagationAnomalyPayloadStatusEnum> get serializer =>
       _$hfPropagationAnomalyPayloadStatusEnumSerializer;

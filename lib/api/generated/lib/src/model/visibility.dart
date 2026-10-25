@@ -16,6 +16,8 @@ class Visibility extends EnumClass {
   static const Visibility shared = _$shared;
   @BuiltValueEnumConst(wireName: r'instance')
   static const Visibility instance = _$instance;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const Visibility unknownDefaultOpenApi = _$unknownDefaultOpenApi;
 
   static Serializer<Visibility> get serializer => _$visibilitySerializer;
 

@@ -141,6 +141,9 @@ class _$IngestPolicyAllSerializer
 class IngestPolicyAllModeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'ALL')
   static const IngestPolicyAllModeEnum ALL = _$ingestPolicyAllModeEnum_ALL;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const IngestPolicyAllModeEnum unknownDefaultOpenApi =
+      _$ingestPolicyAllModeEnum_unknownDefaultOpenApi;
 
   static Serializer<IngestPolicyAllModeEnum> get serializer =>
       _$ingestPolicyAllModeEnumSerializer;

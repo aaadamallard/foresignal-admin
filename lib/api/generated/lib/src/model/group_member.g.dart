@@ -10,6 +10,8 @@ const GroupMemberRoleEnum _$groupMemberRoleEnum_member =
     const GroupMemberRoleEnum._('member');
 const GroupMemberRoleEnum _$groupMemberRoleEnum_manager =
     const GroupMemberRoleEnum._('manager');
+const GroupMemberRoleEnum _$groupMemberRoleEnum_unknownDefaultOpenApi =
+    const GroupMemberRoleEnum._('unknownDefaultOpenApi');
 
 GroupMemberRoleEnum _$groupMemberRoleEnumValueOf(String name) {
   switch (name) {
@@ -17,8 +19,10 @@ GroupMemberRoleEnum _$groupMemberRoleEnumValueOf(String name) {
       return _$groupMemberRoleEnum_member;
     case 'manager':
       return _$groupMemberRoleEnum_manager;
+    case 'unknownDefaultOpenApi':
+      return _$groupMemberRoleEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$groupMemberRoleEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -26,6 +30,7 @@ final BuiltSet<GroupMemberRoleEnum> _$groupMemberRoleEnumValues =
     BuiltSet<GroupMemberRoleEnum>(const <GroupMemberRoleEnum>[
       _$groupMemberRoleEnum_member,
       _$groupMemberRoleEnum_manager,
+      _$groupMemberRoleEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<GroupMemberRoleEnum> _$groupMemberRoleEnumSerializer =
@@ -36,10 +41,12 @@ class _$GroupMemberRoleEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'member': 'member',
     'manager': 'manager',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'member': 'member',
     'manager': 'manager',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

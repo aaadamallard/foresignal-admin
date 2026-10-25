@@ -337,6 +337,9 @@ class ReferenceAreaKindEnum extends EnumClass {
   static const ReferenceAreaKindEnum admin1 = _$referenceAreaKindEnum_admin1;
   @BuiltValueEnumConst(wireName: r'place')
   static const ReferenceAreaKindEnum place = _$referenceAreaKindEnum_place;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ReferenceAreaKindEnum unknownDefaultOpenApi =
+      _$referenceAreaKindEnum_unknownDefaultOpenApi;
 
   static Serializer<ReferenceAreaKindEnum> get serializer =>
       _$referenceAreaKindEnumSerializer;

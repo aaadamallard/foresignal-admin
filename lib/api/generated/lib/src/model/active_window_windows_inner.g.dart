@@ -20,6 +20,9 @@ const ActiveWindowWindowsInnerDaysEnum _$activeWindowWindowsInnerDaysEnum_SAT =
     const ActiveWindowWindowsInnerDaysEnum._('SAT');
 const ActiveWindowWindowsInnerDaysEnum _$activeWindowWindowsInnerDaysEnum_SUN =
     const ActiveWindowWindowsInnerDaysEnum._('SUN');
+const ActiveWindowWindowsInnerDaysEnum
+_$activeWindowWindowsInnerDaysEnum_unknownDefaultOpenApi =
+    const ActiveWindowWindowsInnerDaysEnum._('unknownDefaultOpenApi');
 
 ActiveWindowWindowsInnerDaysEnum _$activeWindowWindowsInnerDaysEnumValueOf(
   String name,
@@ -39,8 +42,10 @@ ActiveWindowWindowsInnerDaysEnum _$activeWindowWindowsInnerDaysEnumValueOf(
       return _$activeWindowWindowsInnerDaysEnum_SAT;
     case 'SUN':
       return _$activeWindowWindowsInnerDaysEnum_SUN;
+    case 'unknownDefaultOpenApi':
+      return _$activeWindowWindowsInnerDaysEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$activeWindowWindowsInnerDaysEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -55,6 +60,7 @@ _$activeWindowWindowsInnerDaysEnumValues =
         _$activeWindowWindowsInnerDaysEnum_FRI,
         _$activeWindowWindowsInnerDaysEnum_SAT,
         _$activeWindowWindowsInnerDaysEnum_SUN,
+        _$activeWindowWindowsInnerDaysEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -72,6 +78,7 @@ class _$ActiveWindowWindowsInnerDaysEnumSerializer
     'FRI': 'FRI',
     'SAT': 'SAT',
     'SUN': 'SUN',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'MON': 'MON',
@@ -81,6 +88,7 @@ class _$ActiveWindowWindowsInnerDaysEnumSerializer
     'FRI': 'FRI',
     'SAT': 'SAT',
     'SUN': 'SUN',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

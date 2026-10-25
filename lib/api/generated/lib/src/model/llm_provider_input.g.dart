@@ -12,6 +12,9 @@ const LlmProviderInputTypeEnum _$llmProviderInputTypeEnum_openaiCompatible =
     const LlmProviderInputTypeEnum._('openaiCompatible');
 const LlmProviderInputTypeEnum _$llmProviderInputTypeEnum_ollama =
     const LlmProviderInputTypeEnum._('ollama');
+const LlmProviderInputTypeEnum
+_$llmProviderInputTypeEnum_unknownDefaultOpenApi =
+    const LlmProviderInputTypeEnum._('unknownDefaultOpenApi');
 
 LlmProviderInputTypeEnum _$llmProviderInputTypeEnumValueOf(String name) {
   switch (name) {
@@ -21,8 +24,10 @@ LlmProviderInputTypeEnum _$llmProviderInputTypeEnumValueOf(String name) {
       return _$llmProviderInputTypeEnum_openaiCompatible;
     case 'ollama':
       return _$llmProviderInputTypeEnum_ollama;
+    case 'unknownDefaultOpenApi':
+      return _$llmProviderInputTypeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$llmProviderInputTypeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -31,6 +36,7 @@ final BuiltSet<LlmProviderInputTypeEnum> _$llmProviderInputTypeEnumValues =
       _$llmProviderInputTypeEnum_anthropic,
       _$llmProviderInputTypeEnum_openaiCompatible,
       _$llmProviderInputTypeEnum_ollama,
+      _$llmProviderInputTypeEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<LlmProviderInputTypeEnum> _$llmProviderInputTypeEnumSerializer =
@@ -42,11 +48,13 @@ class _$LlmProviderInputTypeEnumSerializer
     'anthropic': 'anthropic',
     'openaiCompatible': 'openai-compatible',
     'ollama': 'ollama',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'anthropic': 'anthropic',
     'openai-compatible': 'openaiCompatible',
     'ollama': 'ollama',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

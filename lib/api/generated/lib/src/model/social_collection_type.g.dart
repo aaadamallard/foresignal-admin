@@ -11,6 +11,8 @@ const SocialCollectionType _$complete = const SocialCollectionType._(
 );
 const SocialCollectionType _$paged = const SocialCollectionType._('paged');
 const SocialCollectionType _$sampled = const SocialCollectionType._('sampled');
+const SocialCollectionType _$unknownDefaultOpenApi =
+    const SocialCollectionType._('unknownDefaultOpenApi');
 
 SocialCollectionType _$valueOf(String name) {
   switch (name) {
@@ -20,13 +22,20 @@ SocialCollectionType _$valueOf(String name) {
       return _$paged;
     case 'sampled':
       return _$sampled;
+    case 'unknownDefaultOpenApi':
+      return _$unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$unknownDefaultOpenApi;
   }
 }
 
 final BuiltSet<SocialCollectionType> _$values = BuiltSet<SocialCollectionType>(
-  const <SocialCollectionType>[_$complete, _$paged, _$sampled],
+  const <SocialCollectionType>[
+    _$complete,
+    _$paged,
+    _$sampled,
+    _$unknownDefaultOpenApi,
+  ],
 );
 
 class _$SocialCollectionTypeMeta {
@@ -34,6 +43,7 @@ class _$SocialCollectionTypeMeta {
   SocialCollectionType get complete => _$complete;
   SocialCollectionType get paged => _$paged;
   SocialCollectionType get sampled => _$sampled;
+  SocialCollectionType get unknownDefaultOpenApi => _$unknownDefaultOpenApi;
   SocialCollectionType valueOf(String name) => _$valueOf(name);
   BuiltSet<SocialCollectionType> get values => _$values;
 }
@@ -53,11 +63,13 @@ class _$SocialCollectionTypeSerializer
     'complete': 'complete',
     'paged': 'paged',
     'sampled': 'sampled',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'complete': 'complete',
     'paged': 'paged',
     'sampled': 'sampled',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

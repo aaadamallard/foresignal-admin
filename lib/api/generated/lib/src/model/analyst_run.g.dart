@@ -20,6 +20,8 @@ const AnalystRunStatusEnum _$analystRunStatusEnum_failed =
     const AnalystRunStatusEnum._('failed');
 const AnalystRunStatusEnum _$analystRunStatusEnum_budgetExceeded =
     const AnalystRunStatusEnum._('budgetExceeded');
+const AnalystRunStatusEnum _$analystRunStatusEnum_unknownDefaultOpenApi =
+    const AnalystRunStatusEnum._('unknownDefaultOpenApi');
 
 AnalystRunStatusEnum _$analystRunStatusEnumValueOf(String name) {
   switch (name) {
@@ -37,8 +39,10 @@ AnalystRunStatusEnum _$analystRunStatusEnumValueOf(String name) {
       return _$analystRunStatusEnum_failed;
     case 'budgetExceeded':
       return _$analystRunStatusEnum_budgetExceeded;
+    case 'unknownDefaultOpenApi':
+      return _$analystRunStatusEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$analystRunStatusEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -51,12 +55,15 @@ final BuiltSet<AnalystRunStatusEnum> _$analystRunStatusEnumValues =
       _$analystRunStatusEnum_partial,
       _$analystRunStatusEnum_failed,
       _$analystRunStatusEnum_budgetExceeded,
+      _$analystRunStatusEnum_unknownDefaultOpenApi,
     ]);
 
 const AnalystRunEffortEnum _$analystRunEffortEnum_low =
     const AnalystRunEffortEnum._('low');
 const AnalystRunEffortEnum _$analystRunEffortEnum_medium =
     const AnalystRunEffortEnum._('medium');
+const AnalystRunEffortEnum _$analystRunEffortEnum_unknownDefaultOpenApi =
+    const AnalystRunEffortEnum._('unknownDefaultOpenApi');
 
 AnalystRunEffortEnum _$analystRunEffortEnumValueOf(String name) {
   switch (name) {
@@ -64,8 +71,10 @@ AnalystRunEffortEnum _$analystRunEffortEnumValueOf(String name) {
       return _$analystRunEffortEnum_low;
     case 'medium':
       return _$analystRunEffortEnum_medium;
+    case 'unknownDefaultOpenApi':
+      return _$analystRunEffortEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$analystRunEffortEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -73,6 +82,7 @@ final BuiltSet<AnalystRunEffortEnum> _$analystRunEffortEnumValues =
     BuiltSet<AnalystRunEffortEnum>(const <AnalystRunEffortEnum>[
       _$analystRunEffortEnum_low,
       _$analystRunEffortEnum_medium,
+      _$analystRunEffortEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<AnalystRunStatusEnum> _$analystRunStatusEnumSerializer =
@@ -90,6 +100,7 @@ class _$AnalystRunStatusEnumSerializer
     'partial': 'partial',
     'failed': 'failed',
     'budgetExceeded': 'budget_exceeded',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'queued': 'queued',
@@ -99,6 +110,7 @@ class _$AnalystRunStatusEnumSerializer
     'partial': 'partial',
     'failed': 'failed',
     'budget_exceeded': 'budgetExceeded',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -128,10 +140,12 @@ class _$AnalystRunEffortEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'low': 'low',
     'medium': 'medium',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'low': 'low',
     'medium': 'medium',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

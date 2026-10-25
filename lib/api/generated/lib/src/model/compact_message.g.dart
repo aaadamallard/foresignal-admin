@@ -8,19 +8,24 @@ part of 'compact_message.dart';
 
 const CompactMessageN0Enum _$compactMessageN0Enum_number1 =
     const CompactMessageN0Enum._('number1');
+const CompactMessageN0Enum _$compactMessageN0Enum_unknownDefaultOpenApi =
+    const CompactMessageN0Enum._('unknownDefaultOpenApi');
 
 CompactMessageN0Enum _$compactMessageN0EnumValueOf(String name) {
   switch (name) {
     case 'number1':
       return _$compactMessageN0Enum_number1;
+    case 'unknownDefaultOpenApi':
+      return _$compactMessageN0Enum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$compactMessageN0Enum_unknownDefaultOpenApi;
   }
 }
 
 final BuiltSet<CompactMessageN0Enum> _$compactMessageN0EnumValues =
     BuiltSet<CompactMessageN0Enum>(const <CompactMessageN0Enum>[
       _$compactMessageN0Enum_number1,
+      _$compactMessageN0Enum_unknownDefaultOpenApi,
     ]);
 
 Serializer<CompactMessageN0Enum> _$compactMessageN0EnumSerializer =
@@ -30,9 +35,11 @@ class _$CompactMessageN0EnumSerializer
     implements PrimitiveSerializer<CompactMessageN0Enum> {
   static const Map<String, Object> _toWire = const <String, Object>{
     'number1': 1,
+    'unknownDefaultOpenApi': 11184809,
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     1: 'number1',
+    11184809: 'unknownDefaultOpenApi',
   };
 
   @override

@@ -12,6 +12,9 @@ _$mappingPresetObservedAtModeEnum_UPSTREAM =
 const MappingPresetObservedAtModeEnum
 _$mappingPresetObservedAtModeEnum_RECEIVED =
     const MappingPresetObservedAtModeEnum._('RECEIVED');
+const MappingPresetObservedAtModeEnum
+_$mappingPresetObservedAtModeEnum_unknownDefaultOpenApi =
+    const MappingPresetObservedAtModeEnum._('unknownDefaultOpenApi');
 
 MappingPresetObservedAtModeEnum _$mappingPresetObservedAtModeEnumValueOf(
   String name,
@@ -21,8 +24,10 @@ MappingPresetObservedAtModeEnum _$mappingPresetObservedAtModeEnumValueOf(
       return _$mappingPresetObservedAtModeEnum_UPSTREAM;
     case 'RECEIVED':
       return _$mappingPresetObservedAtModeEnum_RECEIVED;
+    case 'unknownDefaultOpenApi':
+      return _$mappingPresetObservedAtModeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$mappingPresetObservedAtModeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -32,6 +37,7 @@ _$mappingPresetObservedAtModeEnumValues =
       const <MappingPresetObservedAtModeEnum>[
         _$mappingPresetObservedAtModeEnum_UPSTREAM,
         _$mappingPresetObservedAtModeEnum_RECEIVED,
+        _$mappingPresetObservedAtModeEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -44,10 +50,12 @@ class _$MappingPresetObservedAtModeEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'UPSTREAM': 'UPSTREAM',
     'RECEIVED': 'RECEIVED',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'UPSTREAM': 'UPSTREAM',
     'RECEIVED': 'RECEIVED',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

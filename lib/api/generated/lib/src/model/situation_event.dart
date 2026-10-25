@@ -258,6 +258,9 @@ class SituationEventEventEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'situation.merged')
   static const SituationEventEventEnum situationPeriodMerged =
       _$situationEventEventEnum_situationPeriodMerged;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const SituationEventEventEnum unknownDefaultOpenApi =
+      _$situationEventEventEnum_unknownDefaultOpenApi;
 
   static Serializer<SituationEventEventEnum> get serializer =>
       _$situationEventEventEnumSerializer;

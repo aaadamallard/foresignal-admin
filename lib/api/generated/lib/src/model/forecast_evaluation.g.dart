@@ -16,6 +16,9 @@ const ForecastEvaluationStatusEnum _$forecastEvaluationStatusEnum_failed =
     const ForecastEvaluationStatusEnum._('failed');
 const ForecastEvaluationStatusEnum _$forecastEvaluationStatusEnum_cancelled =
     const ForecastEvaluationStatusEnum._('cancelled');
+const ForecastEvaluationStatusEnum
+_$forecastEvaluationStatusEnum_unknownDefaultOpenApi =
+    const ForecastEvaluationStatusEnum._('unknownDefaultOpenApi');
 
 ForecastEvaluationStatusEnum _$forecastEvaluationStatusEnumValueOf(
   String name,
@@ -31,8 +34,10 @@ ForecastEvaluationStatusEnum _$forecastEvaluationStatusEnumValueOf(
       return _$forecastEvaluationStatusEnum_failed;
     case 'cancelled':
       return _$forecastEvaluationStatusEnum_cancelled;
+    case 'unknownDefaultOpenApi':
+      return _$forecastEvaluationStatusEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$forecastEvaluationStatusEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -44,6 +49,7 @@ _$forecastEvaluationStatusEnumValues =
       _$forecastEvaluationStatusEnum_done,
       _$forecastEvaluationStatusEnum_failed,
       _$forecastEvaluationStatusEnum_cancelled,
+      _$forecastEvaluationStatusEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<ForecastEvaluationStatusEnum>
@@ -58,6 +64,7 @@ class _$ForecastEvaluationStatusEnumSerializer
     'done': 'done',
     'failed': 'failed',
     'cancelled': 'cancelled',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'queued': 'queued',
@@ -65,6 +72,7 @@ class _$ForecastEvaluationStatusEnumSerializer
     'done': 'done',
     'failed': 'failed',
     'cancelled': 'cancelled',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

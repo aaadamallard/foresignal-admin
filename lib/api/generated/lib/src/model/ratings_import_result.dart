@@ -247,6 +247,9 @@ class RatingsImportResultProviderEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'operator')
   static const RatingsImportResultProviderEnum operator_ =
       _$ratingsImportResultProviderEnum_operator_;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const RatingsImportResultProviderEnum unknownDefaultOpenApi =
+      _$ratingsImportResultProviderEnum_unknownDefaultOpenApi;
 
   static Serializer<RatingsImportResultProviderEnum> get serializer =>
       _$ratingsImportResultProviderEnumSerializer;

@@ -9,6 +9,9 @@ part of 'ingest_records_request.dart';
 const IngestRecordsRequestTypeEnum
 _$ingestRecordsRequestTypeEnum_featureCollection =
     const IngestRecordsRequestTypeEnum._('featureCollection');
+const IngestRecordsRequestTypeEnum
+_$ingestRecordsRequestTypeEnum_unknownDefaultOpenApi =
+    const IngestRecordsRequestTypeEnum._('unknownDefaultOpenApi');
 
 IngestRecordsRequestTypeEnum _$ingestRecordsRequestTypeEnumValueOf(
   String name,
@@ -16,17 +19,19 @@ IngestRecordsRequestTypeEnum _$ingestRecordsRequestTypeEnumValueOf(
   switch (name) {
     case 'featureCollection':
       return _$ingestRecordsRequestTypeEnum_featureCollection;
+    case 'unknownDefaultOpenApi':
+      return _$ingestRecordsRequestTypeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$ingestRecordsRequestTypeEnum_unknownDefaultOpenApi;
   }
 }
 
 final BuiltSet<IngestRecordsRequestTypeEnum>
-_$ingestRecordsRequestTypeEnumValues = BuiltSet<IngestRecordsRequestTypeEnum>(
-  const <IngestRecordsRequestTypeEnum>[
-    _$ingestRecordsRequestTypeEnum_featureCollection,
-  ],
-);
+_$ingestRecordsRequestTypeEnumValues =
+    BuiltSet<IngestRecordsRequestTypeEnum>(const <IngestRecordsRequestTypeEnum>[
+      _$ingestRecordsRequestTypeEnum_featureCollection,
+      _$ingestRecordsRequestTypeEnum_unknownDefaultOpenApi,
+    ]);
 
 Serializer<IngestRecordsRequestTypeEnum>
 _$ingestRecordsRequestTypeEnumSerializer =
@@ -36,9 +41,11 @@ class _$IngestRecordsRequestTypeEnumSerializer
     implements PrimitiveSerializer<IngestRecordsRequestTypeEnum> {
   static const Map<String, Object> _toWire = const <String, Object>{
     'featureCollection': 'FeatureCollection',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'FeatureCollection': 'featureCollection',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

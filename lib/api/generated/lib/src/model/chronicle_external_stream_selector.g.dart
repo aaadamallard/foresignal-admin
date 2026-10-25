@@ -9,14 +9,19 @@ part of 'chronicle_external_stream_selector.dart';
 const ChronicleExternalStreamSelectorTypeEnum
 _$chronicleExternalStreamSelectorTypeEnum_externalStream =
     const ChronicleExternalStreamSelectorTypeEnum._('externalStream');
+const ChronicleExternalStreamSelectorTypeEnum
+_$chronicleExternalStreamSelectorTypeEnum_unknownDefaultOpenApi =
+    const ChronicleExternalStreamSelectorTypeEnum._('unknownDefaultOpenApi');
 
 ChronicleExternalStreamSelectorTypeEnum
 _$chronicleExternalStreamSelectorTypeEnumValueOf(String name) {
   switch (name) {
     case 'externalStream':
       return _$chronicleExternalStreamSelectorTypeEnum_externalStream;
+    case 'unknownDefaultOpenApi':
+      return _$chronicleExternalStreamSelectorTypeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$chronicleExternalStreamSelectorTypeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -25,6 +30,7 @@ _$chronicleExternalStreamSelectorTypeEnumValues =
     BuiltSet<ChronicleExternalStreamSelectorTypeEnum>(
       const <ChronicleExternalStreamSelectorTypeEnum>[
         _$chronicleExternalStreamSelectorTypeEnum_externalStream,
+        _$chronicleExternalStreamSelectorTypeEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -36,9 +42,11 @@ class _$ChronicleExternalStreamSelectorTypeEnumSerializer
     implements PrimitiveSerializer<ChronicleExternalStreamSelectorTypeEnum> {
   static const Map<String, Object> _toWire = const <String, Object>{
     'externalStream': 'external-stream',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'external-stream': 'externalStream',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

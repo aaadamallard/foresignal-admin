@@ -14,6 +14,9 @@ const CycleRunRolesInnerRoleEnum _$cycleRunRolesInnerRoleEnum_forecaster =
     const CycleRunRolesInnerRoleEnum._('forecaster');
 const CycleRunRolesInnerRoleEnum _$cycleRunRolesInnerRoleEnum_proposer =
     const CycleRunRolesInnerRoleEnum._('proposer');
+const CycleRunRolesInnerRoleEnum
+_$cycleRunRolesInnerRoleEnum_unknownDefaultOpenApi =
+    const CycleRunRolesInnerRoleEnum._('unknownDefaultOpenApi');
 
 CycleRunRolesInnerRoleEnum _$cycleRunRolesInnerRoleEnumValueOf(String name) {
   switch (name) {
@@ -25,8 +28,10 @@ CycleRunRolesInnerRoleEnum _$cycleRunRolesInnerRoleEnumValueOf(String name) {
       return _$cycleRunRolesInnerRoleEnum_forecaster;
     case 'proposer':
       return _$cycleRunRolesInnerRoleEnum_proposer;
+    case 'unknownDefaultOpenApi':
+      return _$cycleRunRolesInnerRoleEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$cycleRunRolesInnerRoleEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -36,6 +41,7 @@ final BuiltSet<CycleRunRolesInnerRoleEnum> _$cycleRunRolesInnerRoleEnumValues =
       _$cycleRunRolesInnerRoleEnum_redTeam,
       _$cycleRunRolesInnerRoleEnum_forecaster,
       _$cycleRunRolesInnerRoleEnum_proposer,
+      _$cycleRunRolesInnerRoleEnum_unknownDefaultOpenApi,
     ]);
 
 const CycleRunRolesInnerStatusEnum _$cycleRunRolesInnerStatusEnum_ok =
@@ -47,6 +53,9 @@ const CycleRunRolesInnerStatusEnum _$cycleRunRolesInnerStatusEnum_failed =
 const CycleRunRolesInnerStatusEnum
 _$cycleRunRolesInnerStatusEnum_notConfigured =
     const CycleRunRolesInnerStatusEnum._('notConfigured');
+const CycleRunRolesInnerStatusEnum
+_$cycleRunRolesInnerStatusEnum_unknownDefaultOpenApi =
+    const CycleRunRolesInnerStatusEnum._('unknownDefaultOpenApi');
 
 CycleRunRolesInnerStatusEnum _$cycleRunRolesInnerStatusEnumValueOf(
   String name,
@@ -60,8 +69,10 @@ CycleRunRolesInnerStatusEnum _$cycleRunRolesInnerStatusEnumValueOf(
       return _$cycleRunRolesInnerStatusEnum_failed;
     case 'notConfigured':
       return _$cycleRunRolesInnerStatusEnum_notConfigured;
+    case 'unknownDefaultOpenApi':
+      return _$cycleRunRolesInnerStatusEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$cycleRunRolesInnerStatusEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -72,6 +83,7 @@ _$cycleRunRolesInnerStatusEnumValues =
       _$cycleRunRolesInnerStatusEnum_skipped,
       _$cycleRunRolesInnerStatusEnum_failed,
       _$cycleRunRolesInnerStatusEnum_notConfigured,
+      _$cycleRunRolesInnerStatusEnum_unknownDefaultOpenApi,
     ]);
 
 const CycleRunRolesInnerEffortEnum _$cycleRunRolesInnerEffortEnum_low =
@@ -80,6 +92,9 @@ const CycleRunRolesInnerEffortEnum _$cycleRunRolesInnerEffortEnum_medium =
     const CycleRunRolesInnerEffortEnum._('medium');
 const CycleRunRolesInnerEffortEnum _$cycleRunRolesInnerEffortEnum_high =
     const CycleRunRolesInnerEffortEnum._('high');
+const CycleRunRolesInnerEffortEnum
+_$cycleRunRolesInnerEffortEnum_unknownDefaultOpenApi =
+    const CycleRunRolesInnerEffortEnum._('unknownDefaultOpenApi');
 
 CycleRunRolesInnerEffortEnum _$cycleRunRolesInnerEffortEnumValueOf(
   String name,
@@ -91,8 +106,10 @@ CycleRunRolesInnerEffortEnum _$cycleRunRolesInnerEffortEnumValueOf(
       return _$cycleRunRolesInnerEffortEnum_medium;
     case 'high':
       return _$cycleRunRolesInnerEffortEnum_high;
+    case 'unknownDefaultOpenApi':
+      return _$cycleRunRolesInnerEffortEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$cycleRunRolesInnerEffortEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -102,6 +119,7 @@ _$cycleRunRolesInnerEffortEnumValues =
       _$cycleRunRolesInnerEffortEnum_low,
       _$cycleRunRolesInnerEffortEnum_medium,
       _$cycleRunRolesInnerEffortEnum_high,
+      _$cycleRunRolesInnerEffortEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<CycleRunRolesInnerRoleEnum> _$cycleRunRolesInnerRoleEnumSerializer =
@@ -120,12 +138,14 @@ class _$CycleRunRolesInnerRoleEnumSerializer
     'redTeam': 'red-team',
     'forecaster': 'forecaster',
     'proposer': 'proposer',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'analyst': 'analyst',
     'red-team': 'redTeam',
     'forecaster': 'forecaster',
     'proposer': 'proposer',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -157,12 +177,14 @@ class _$CycleRunRolesInnerStatusEnumSerializer
     'skipped': 'skipped',
     'failed': 'failed',
     'notConfigured': 'not-configured',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'ok': 'ok',
     'skipped': 'skipped',
     'failed': 'failed',
     'not-configured': 'notConfigured',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -193,11 +215,13 @@ class _$CycleRunRolesInnerEffortEnumSerializer
     'low': 'low',
     'medium': 'medium',
     'high': 'high',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'low': 'low',
     'medium': 'medium',
     'high': 'high',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

@@ -411,6 +411,9 @@ class ChronicleThreadItemTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'comparison-change')
   static const ChronicleThreadItemTypeEnum comparisonChange =
       _$chronicleThreadItemTypeEnum_comparisonChange;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ChronicleThreadItemTypeEnum unknownDefaultOpenApi =
+      _$chronicleThreadItemTypeEnum_unknownDefaultOpenApi;
 
   static Serializer<ChronicleThreadItemTypeEnum> get serializer =>
       _$chronicleThreadItemTypeEnumSerializer;

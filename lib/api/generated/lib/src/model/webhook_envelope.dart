@@ -302,6 +302,9 @@ class WebhookEnvelopeEventEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'personal')
   static const WebhookEnvelopeEventEnum personal =
       _$webhookEnvelopeEventEnum_personal;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const WebhookEnvelopeEventEnum unknownDefaultOpenApi =
+      _$webhookEnvelopeEventEnum_unknownDefaultOpenApi;
 
   static Serializer<WebhookEnvelopeEventEnum> get serializer =>
       _$webhookEnvelopeEventEnumSerializer;

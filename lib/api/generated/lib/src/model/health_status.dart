@@ -20,6 +20,8 @@ class HealthStatus extends EnumClass {
   static const HealthStatus idle = _$idle;
   @BuiltValueEnumConst(wireName: r'disabled')
   static const HealthStatus disabled = _$disabled;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const HealthStatus unknownDefaultOpenApi = _$unknownDefaultOpenApi;
 
   static Serializer<HealthStatus> get serializer => _$healthStatusSerializer;
 

@@ -169,6 +169,9 @@ class MediaMatchResultQuerySource_Enum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'pdq')
   static const MediaMatchResultQuerySource_Enum pdq =
       _$mediaMatchResultQuerySourceEnum_pdq;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const MediaMatchResultQuerySource_Enum unknownDefaultOpenApi =
+      _$mediaMatchResultQuerySourceEnum_unknownDefaultOpenApi;
 
   static Serializer<MediaMatchResultQuerySource_Enum> get serializer =>
       _$mediaMatchResultQuerySourceEnumSerializer;

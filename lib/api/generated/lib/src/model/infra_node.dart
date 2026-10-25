@@ -401,6 +401,9 @@ class InfraNodeFacilityTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'space.spaceport')
   static const InfraNodeFacilityTypeEnum spacePeriodSpaceport =
       _$infraNodeFacilityTypeEnum_spacePeriodSpaceport;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const InfraNodeFacilityTypeEnum unknownDefaultOpenApi =
+      _$infraNodeFacilityTypeEnum_unknownDefaultOpenApi;
 
   static Serializer<InfraNodeFacilityTypeEnum> get serializer =>
       _$infraNodeFacilityTypeEnumSerializer;

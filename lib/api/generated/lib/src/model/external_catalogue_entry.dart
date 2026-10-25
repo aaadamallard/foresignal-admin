@@ -355,6 +355,9 @@ class ExternalCatalogueEntryProtocolEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'xyz')
   static const ExternalCatalogueEntryProtocolEnum xyz =
       _$externalCatalogueEntryProtocolEnum_xyz;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ExternalCatalogueEntryProtocolEnum unknownDefaultOpenApi =
+      _$externalCatalogueEntryProtocolEnum_unknownDefaultOpenApi;
 
   static Serializer<ExternalCatalogueEntryProtocolEnum> get serializer =>
       _$externalCatalogueEntryProtocolEnumSerializer;
@@ -374,6 +377,9 @@ class ExternalCatalogueEntryFormatEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'jpg')
   static const ExternalCatalogueEntryFormatEnum jpg =
       _$externalCatalogueEntryFormatEnum_jpg;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ExternalCatalogueEntryFormatEnum unknownDefaultOpenApi =
+      _$externalCatalogueEntryFormatEnum_unknownDefaultOpenApi;
 
   static Serializer<ExternalCatalogueEntryFormatEnum> get serializer =>
       _$externalCatalogueEntryFormatEnumSerializer;

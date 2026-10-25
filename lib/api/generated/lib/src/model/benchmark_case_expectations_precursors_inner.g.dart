@@ -14,6 +14,11 @@ _$benchmarkCaseExpectationsPrecursorsInnerExpectedEnum_notValidated =
     const BenchmarkCaseExpectationsPrecursorsInnerExpectedEnum._(
       'notValidated',
     );
+const BenchmarkCaseExpectationsPrecursorsInnerExpectedEnum
+_$benchmarkCaseExpectationsPrecursorsInnerExpectedEnum_unknownDefaultOpenApi =
+    const BenchmarkCaseExpectationsPrecursorsInnerExpectedEnum._(
+      'unknownDefaultOpenApi',
+    );
 
 BenchmarkCaseExpectationsPrecursorsInnerExpectedEnum
 _$benchmarkCaseExpectationsPrecursorsInnerExpectedEnumValueOf(String name) {
@@ -22,19 +27,22 @@ _$benchmarkCaseExpectationsPrecursorsInnerExpectedEnumValueOf(String name) {
       return _$benchmarkCaseExpectationsPrecursorsInnerExpectedEnum_validated;
     case 'notValidated':
       return _$benchmarkCaseExpectationsPrecursorsInnerExpectedEnum_notValidated;
+    case 'unknownDefaultOpenApi':
+      return _$benchmarkCaseExpectationsPrecursorsInnerExpectedEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$benchmarkCaseExpectationsPrecursorsInnerExpectedEnum_unknownDefaultOpenApi;
   }
 }
 
 final BuiltSet<BenchmarkCaseExpectationsPrecursorsInnerExpectedEnum>
 _$benchmarkCaseExpectationsPrecursorsInnerExpectedEnumValues =
-    BuiltSet<BenchmarkCaseExpectationsPrecursorsInnerExpectedEnum>(
-      const <BenchmarkCaseExpectationsPrecursorsInnerExpectedEnum>[
-        _$benchmarkCaseExpectationsPrecursorsInnerExpectedEnum_validated,
-        _$benchmarkCaseExpectationsPrecursorsInnerExpectedEnum_notValidated,
-      ],
-    );
+    BuiltSet<BenchmarkCaseExpectationsPrecursorsInnerExpectedEnum>(const <
+      BenchmarkCaseExpectationsPrecursorsInnerExpectedEnum
+    >[
+      _$benchmarkCaseExpectationsPrecursorsInnerExpectedEnum_validated,
+      _$benchmarkCaseExpectationsPrecursorsInnerExpectedEnum_notValidated,
+      _$benchmarkCaseExpectationsPrecursorsInnerExpectedEnum_unknownDefaultOpenApi,
+    ]);
 
 Serializer<BenchmarkCaseExpectationsPrecursorsInnerExpectedEnum>
 _$benchmarkCaseExpectationsPrecursorsInnerExpectedEnumSerializer =
@@ -48,10 +56,12 @@ class _$BenchmarkCaseExpectationsPrecursorsInnerExpectedEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'validated': 'validated',
     'notValidated': 'not-validated',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'validated': 'validated',
     'not-validated': 'notValidated',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

@@ -10,6 +10,9 @@ const CorrelationRecipeOriginEnum _$correlationRecipeOriginEnum_bundled =
     const CorrelationRecipeOriginEnum._('bundled');
 const CorrelationRecipeOriginEnum _$correlationRecipeOriginEnum_operator_ =
     const CorrelationRecipeOriginEnum._('operator_');
+const CorrelationRecipeOriginEnum
+_$correlationRecipeOriginEnum_unknownDefaultOpenApi =
+    const CorrelationRecipeOriginEnum._('unknownDefaultOpenApi');
 
 CorrelationRecipeOriginEnum _$correlationRecipeOriginEnumValueOf(String name) {
   switch (name) {
@@ -17,18 +20,20 @@ CorrelationRecipeOriginEnum _$correlationRecipeOriginEnumValueOf(String name) {
       return _$correlationRecipeOriginEnum_bundled;
     case 'operator_':
       return _$correlationRecipeOriginEnum_operator_;
+    case 'unknownDefaultOpenApi':
+      return _$correlationRecipeOriginEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$correlationRecipeOriginEnum_unknownDefaultOpenApi;
   }
 }
 
 final BuiltSet<CorrelationRecipeOriginEnum>
-_$correlationRecipeOriginEnumValues = BuiltSet<CorrelationRecipeOriginEnum>(
-  const <CorrelationRecipeOriginEnum>[
-    _$correlationRecipeOriginEnum_bundled,
-    _$correlationRecipeOriginEnum_operator_,
-  ],
-);
+_$correlationRecipeOriginEnumValues =
+    BuiltSet<CorrelationRecipeOriginEnum>(const <CorrelationRecipeOriginEnum>[
+      _$correlationRecipeOriginEnum_bundled,
+      _$correlationRecipeOriginEnum_operator_,
+      _$correlationRecipeOriginEnum_unknownDefaultOpenApi,
+    ]);
 
 Serializer<CorrelationRecipeOriginEnum>
 _$correlationRecipeOriginEnumSerializer =
@@ -39,10 +44,12 @@ class _$CorrelationRecipeOriginEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'bundled': 'bundled',
     'operator_': 'operator',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'bundled': 'bundled',
     'operator': 'operator_',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

@@ -12,6 +12,9 @@ _$chronicleSuggestionTextOriginEnum_deterministic =
 const ChronicleSuggestionTextOriginEnum
 _$chronicleSuggestionTextOriginEnum_llm =
     const ChronicleSuggestionTextOriginEnum._('llm');
+const ChronicleSuggestionTextOriginEnum
+_$chronicleSuggestionTextOriginEnum_unknownDefaultOpenApi =
+    const ChronicleSuggestionTextOriginEnum._('unknownDefaultOpenApi');
 
 ChronicleSuggestionTextOriginEnum _$chronicleSuggestionTextOriginEnumValueOf(
   String name,
@@ -21,8 +24,10 @@ ChronicleSuggestionTextOriginEnum _$chronicleSuggestionTextOriginEnumValueOf(
       return _$chronicleSuggestionTextOriginEnum_deterministic;
     case 'llm':
       return _$chronicleSuggestionTextOriginEnum_llm;
+    case 'unknownDefaultOpenApi':
+      return _$chronicleSuggestionTextOriginEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$chronicleSuggestionTextOriginEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -32,6 +37,7 @@ _$chronicleSuggestionTextOriginEnumValues =
       const <ChronicleSuggestionTextOriginEnum>[
         _$chronicleSuggestionTextOriginEnum_deterministic,
         _$chronicleSuggestionTextOriginEnum_llm,
+        _$chronicleSuggestionTextOriginEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -44,10 +50,12 @@ class _$ChronicleSuggestionTextOriginEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'deterministic': 'deterministic',
     'llm': 'llm',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'deterministic': 'deterministic',
     'llm': 'llm',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

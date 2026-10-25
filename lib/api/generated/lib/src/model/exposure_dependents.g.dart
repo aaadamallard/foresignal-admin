@@ -12,6 +12,9 @@ const ExposureDependentsStatusEnum _$exposureDependentsStatusEnum_unavailable =
     const ExposureDependentsStatusEnum._('unavailable');
 const ExposureDependentsStatusEnum _$exposureDependentsStatusEnum_notInstalled =
     const ExposureDependentsStatusEnum._('notInstalled');
+const ExposureDependentsStatusEnum
+_$exposureDependentsStatusEnum_unknownDefaultOpenApi =
+    const ExposureDependentsStatusEnum._('unknownDefaultOpenApi');
 
 ExposureDependentsStatusEnum _$exposureDependentsStatusEnumValueOf(
   String name,
@@ -23,8 +26,10 @@ ExposureDependentsStatusEnum _$exposureDependentsStatusEnumValueOf(
       return _$exposureDependentsStatusEnum_unavailable;
     case 'notInstalled':
       return _$exposureDependentsStatusEnum_notInstalled;
+    case 'unknownDefaultOpenApi':
+      return _$exposureDependentsStatusEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$exposureDependentsStatusEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -34,6 +39,7 @@ _$exposureDependentsStatusEnumValues =
       _$exposureDependentsStatusEnum_ok,
       _$exposureDependentsStatusEnum_unavailable,
       _$exposureDependentsStatusEnum_notInstalled,
+      _$exposureDependentsStatusEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<ExposureDependentsStatusEnum>
@@ -46,11 +52,13 @@ class _$ExposureDependentsStatusEnumSerializer
     'ok': 'ok',
     'unavailable': 'unavailable',
     'notInstalled': 'not-installed',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'ok': 'ok',
     'unavailable': 'unavailable',
     'not-installed': 'notInstalled',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

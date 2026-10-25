@@ -135,6 +135,9 @@ class FindingPatchStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'dismissed')
   static const FindingPatchStatusEnum dismissed =
       _$findingPatchStatusEnum_dismissed;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const FindingPatchStatusEnum unknownDefaultOpenApi =
+      _$findingPatchStatusEnum_unknownDefaultOpenApi;
 
   static Serializer<FindingPatchStatusEnum> get serializer =>
       _$findingPatchStatusEnumSerializer;

@@ -483,6 +483,9 @@ class ForecastEvaluationStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'cancelled')
   static const ForecastEvaluationStatusEnum cancelled =
       _$forecastEvaluationStatusEnum_cancelled;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ForecastEvaluationStatusEnum unknownDefaultOpenApi =
+      _$forecastEvaluationStatusEnum_unknownDefaultOpenApi;
 
   static Serializer<ForecastEvaluationStatusEnum> get serializer =>
       _$forecastEvaluationStatusEnumSerializer;

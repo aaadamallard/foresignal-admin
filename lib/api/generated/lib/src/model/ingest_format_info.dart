@@ -266,6 +266,9 @@ class IngestFormatInfoMethodsEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'PUT')
   static const IngestFormatInfoMethodsEnum PUT =
       _$ingestFormatInfoMethodsEnum_PUT;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const IngestFormatInfoMethodsEnum unknownDefaultOpenApi =
+      _$ingestFormatInfoMethodsEnum_unknownDefaultOpenApi;
 
   static Serializer<IngestFormatInfoMethodsEnum> get serializer =>
       _$ingestFormatInfoMethodsEnumSerializer;
@@ -291,6 +294,9 @@ class IngestFormatInfoVerifiersEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'foresignal')
   static const IngestFormatInfoVerifiersEnum foresignal =
       _$ingestFormatInfoVerifiersEnum_foresignal;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const IngestFormatInfoVerifiersEnum unknownDefaultOpenApi =
+      _$ingestFormatInfoVerifiersEnum_unknownDefaultOpenApi;
 
   static Serializer<IngestFormatInfoVerifiersEnum> get serializer =>
       _$ingestFormatInfoVerifiersEnumSerializer;

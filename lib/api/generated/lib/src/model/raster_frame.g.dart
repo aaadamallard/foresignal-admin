@@ -10,6 +10,8 @@ const RasterFrameStatusEnum _$rasterFrameStatusEnum_partial =
     const RasterFrameStatusEnum._('partial');
 const RasterFrameStatusEnum _$rasterFrameStatusEnum_complete =
     const RasterFrameStatusEnum._('complete');
+const RasterFrameStatusEnum _$rasterFrameStatusEnum_unknownDefaultOpenApi =
+    const RasterFrameStatusEnum._('unknownDefaultOpenApi');
 
 RasterFrameStatusEnum _$rasterFrameStatusEnumValueOf(String name) {
   switch (name) {
@@ -17,8 +19,10 @@ RasterFrameStatusEnum _$rasterFrameStatusEnumValueOf(String name) {
       return _$rasterFrameStatusEnum_partial;
     case 'complete':
       return _$rasterFrameStatusEnum_complete;
+    case 'unknownDefaultOpenApi':
+      return _$rasterFrameStatusEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$rasterFrameStatusEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -26,6 +30,7 @@ final BuiltSet<RasterFrameStatusEnum> _$rasterFrameStatusEnumValues =
     BuiltSet<RasterFrameStatusEnum>(const <RasterFrameStatusEnum>[
       _$rasterFrameStatusEnum_partial,
       _$rasterFrameStatusEnum_complete,
+      _$rasterFrameStatusEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<RasterFrameStatusEnum> _$rasterFrameStatusEnumSerializer =
@@ -36,10 +41,12 @@ class _$RasterFrameStatusEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'partial': 'partial',
     'complete': 'complete',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'partial': 'partial',
     'complete': 'complete',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

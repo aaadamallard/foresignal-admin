@@ -8,19 +8,24 @@ part of 'overland_ack.dart';
 
 const OverlandAckResultEnum _$overlandAckResultEnum_ok =
     const OverlandAckResultEnum._('ok');
+const OverlandAckResultEnum _$overlandAckResultEnum_unknownDefaultOpenApi =
+    const OverlandAckResultEnum._('unknownDefaultOpenApi');
 
 OverlandAckResultEnum _$overlandAckResultEnumValueOf(String name) {
   switch (name) {
     case 'ok':
       return _$overlandAckResultEnum_ok;
+    case 'unknownDefaultOpenApi':
+      return _$overlandAckResultEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$overlandAckResultEnum_unknownDefaultOpenApi;
   }
 }
 
 final BuiltSet<OverlandAckResultEnum> _$overlandAckResultEnumValues =
     BuiltSet<OverlandAckResultEnum>(const <OverlandAckResultEnum>[
       _$overlandAckResultEnum_ok,
+      _$overlandAckResultEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<OverlandAckResultEnum> _$overlandAckResultEnumSerializer =
@@ -28,9 +33,13 @@ Serializer<OverlandAckResultEnum> _$overlandAckResultEnumSerializer =
 
 class _$OverlandAckResultEnumSerializer
     implements PrimitiveSerializer<OverlandAckResultEnum> {
-  static const Map<String, Object> _toWire = const <String, Object>{'ok': 'ok'};
+  static const Map<String, Object> _toWire = const <String, Object>{
+    'ok': 'ok',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
+  };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'ok': 'ok',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

@@ -9,14 +9,21 @@ part of 'chronicle_related_page_items_inner.dart';
 const ChronicleRelatedPageItemsInnerDisclosureEnum
 _$chronicleRelatedPageItemsInnerDisclosureEnum_opaque =
     const ChronicleRelatedPageItemsInnerDisclosureEnum._('opaque');
+const ChronicleRelatedPageItemsInnerDisclosureEnum
+_$chronicleRelatedPageItemsInnerDisclosureEnum_unknownDefaultOpenApi =
+    const ChronicleRelatedPageItemsInnerDisclosureEnum._(
+      'unknownDefaultOpenApi',
+    );
 
 ChronicleRelatedPageItemsInnerDisclosureEnum
 _$chronicleRelatedPageItemsInnerDisclosureEnumValueOf(String name) {
   switch (name) {
     case 'opaque':
       return _$chronicleRelatedPageItemsInnerDisclosureEnum_opaque;
+    case 'unknownDefaultOpenApi':
+      return _$chronicleRelatedPageItemsInnerDisclosureEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$chronicleRelatedPageItemsInnerDisclosureEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -25,6 +32,7 @@ _$chronicleRelatedPageItemsInnerDisclosureEnumValues =
     BuiltSet<ChronicleRelatedPageItemsInnerDisclosureEnum>(
       const <ChronicleRelatedPageItemsInnerDisclosureEnum>[
         _$chronicleRelatedPageItemsInnerDisclosureEnum_opaque,
+        _$chronicleRelatedPageItemsInnerDisclosureEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -37,6 +45,9 @@ _$chronicleRelatedPageItemsInnerStrengthEnum_medium =
 const ChronicleRelatedPageItemsInnerStrengthEnum
 _$chronicleRelatedPageItemsInnerStrengthEnum_high =
     const ChronicleRelatedPageItemsInnerStrengthEnum._('high');
+const ChronicleRelatedPageItemsInnerStrengthEnum
+_$chronicleRelatedPageItemsInnerStrengthEnum_unknownDefaultOpenApi =
+    const ChronicleRelatedPageItemsInnerStrengthEnum._('unknownDefaultOpenApi');
 
 ChronicleRelatedPageItemsInnerStrengthEnum
 _$chronicleRelatedPageItemsInnerStrengthEnumValueOf(String name) {
@@ -47,8 +58,10 @@ _$chronicleRelatedPageItemsInnerStrengthEnumValueOf(String name) {
       return _$chronicleRelatedPageItemsInnerStrengthEnum_medium;
     case 'high':
       return _$chronicleRelatedPageItemsInnerStrengthEnum_high;
+    case 'unknownDefaultOpenApi':
+      return _$chronicleRelatedPageItemsInnerStrengthEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$chronicleRelatedPageItemsInnerStrengthEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -59,6 +72,7 @@ _$chronicleRelatedPageItemsInnerStrengthEnumValues =
         _$chronicleRelatedPageItemsInnerStrengthEnum_low,
         _$chronicleRelatedPageItemsInnerStrengthEnum_medium,
         _$chronicleRelatedPageItemsInnerStrengthEnum_high,
+        _$chronicleRelatedPageItemsInnerStrengthEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -74,6 +88,11 @@ _$chronicleRelatedPageItemsInnerDimensionsEnum_areaTime =
 const ChronicleRelatedPageItemsInnerDimensionsEnum
 _$chronicleRelatedPageItemsInnerDimensionsEnum_topics =
     const ChronicleRelatedPageItemsInnerDimensionsEnum._('topics');
+const ChronicleRelatedPageItemsInnerDimensionsEnum
+_$chronicleRelatedPageItemsInnerDimensionsEnum_unknownDefaultOpenApi =
+    const ChronicleRelatedPageItemsInnerDimensionsEnum._(
+      'unknownDefaultOpenApi',
+    );
 
 ChronicleRelatedPageItemsInnerDimensionsEnum
 _$chronicleRelatedPageItemsInnerDimensionsEnumValueOf(String name) {
@@ -86,8 +105,10 @@ _$chronicleRelatedPageItemsInnerDimensionsEnumValueOf(String name) {
       return _$chronicleRelatedPageItemsInnerDimensionsEnum_areaTime;
     case 'topics':
       return _$chronicleRelatedPageItemsInnerDimensionsEnum_topics;
+    case 'unknownDefaultOpenApi':
+      return _$chronicleRelatedPageItemsInnerDimensionsEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$chronicleRelatedPageItemsInnerDimensionsEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -99,6 +120,7 @@ _$chronicleRelatedPageItemsInnerDimensionsEnumValues =
         _$chronicleRelatedPageItemsInnerDimensionsEnum_entities,
         _$chronicleRelatedPageItemsInnerDimensionsEnum_areaTime,
         _$chronicleRelatedPageItemsInnerDimensionsEnum_topics,
+        _$chronicleRelatedPageItemsInnerDimensionsEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -111,6 +133,9 @@ _$chronicleRelatedPageItemsInnerTemporalEnum_bPrecedesA =
 const ChronicleRelatedPageItemsInnerTemporalEnum
 _$chronicleRelatedPageItemsInnerTemporalEnum_concurrent =
     const ChronicleRelatedPageItemsInnerTemporalEnum._('concurrent');
+const ChronicleRelatedPageItemsInnerTemporalEnum
+_$chronicleRelatedPageItemsInnerTemporalEnum_unknownDefaultOpenApi =
+    const ChronicleRelatedPageItemsInnerTemporalEnum._('unknownDefaultOpenApi');
 
 ChronicleRelatedPageItemsInnerTemporalEnum
 _$chronicleRelatedPageItemsInnerTemporalEnumValueOf(String name) {
@@ -121,8 +146,10 @@ _$chronicleRelatedPageItemsInnerTemporalEnumValueOf(String name) {
       return _$chronicleRelatedPageItemsInnerTemporalEnum_bPrecedesA;
     case 'concurrent':
       return _$chronicleRelatedPageItemsInnerTemporalEnum_concurrent;
+    case 'unknownDefaultOpenApi':
+      return _$chronicleRelatedPageItemsInnerTemporalEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$chronicleRelatedPageItemsInnerTemporalEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -133,6 +160,7 @@ _$chronicleRelatedPageItemsInnerTemporalEnumValues =
         _$chronicleRelatedPageItemsInnerTemporalEnum_aPrecedesB,
         _$chronicleRelatedPageItemsInnerTemporalEnum_bPrecedesA,
         _$chronicleRelatedPageItemsInnerTemporalEnum_concurrent,
+        _$chronicleRelatedPageItemsInnerTemporalEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -145,6 +173,11 @@ _$chronicleRelatedPageItemsInnerTimeOverlapEnum_partial =
 const ChronicleRelatedPageItemsInnerTimeOverlapEnum
 _$chronicleRelatedPageItemsInnerTimeOverlapEnum_full =
     const ChronicleRelatedPageItemsInnerTimeOverlapEnum._('full');
+const ChronicleRelatedPageItemsInnerTimeOverlapEnum
+_$chronicleRelatedPageItemsInnerTimeOverlapEnum_unknownDefaultOpenApi =
+    const ChronicleRelatedPageItemsInnerTimeOverlapEnum._(
+      'unknownDefaultOpenApi',
+    );
 
 ChronicleRelatedPageItemsInnerTimeOverlapEnum
 _$chronicleRelatedPageItemsInnerTimeOverlapEnumValueOf(String name) {
@@ -155,8 +188,10 @@ _$chronicleRelatedPageItemsInnerTimeOverlapEnumValueOf(String name) {
       return _$chronicleRelatedPageItemsInnerTimeOverlapEnum_partial;
     case 'full':
       return _$chronicleRelatedPageItemsInnerTimeOverlapEnum_full;
+    case 'unknownDefaultOpenApi':
+      return _$chronicleRelatedPageItemsInnerTimeOverlapEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$chronicleRelatedPageItemsInnerTimeOverlapEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -167,6 +202,7 @@ _$chronicleRelatedPageItemsInnerTimeOverlapEnumValues =
         _$chronicleRelatedPageItemsInnerTimeOverlapEnum_none,
         _$chronicleRelatedPageItemsInnerTimeOverlapEnum_partial,
         _$chronicleRelatedPageItemsInnerTimeOverlapEnum_full,
+        _$chronicleRelatedPageItemsInnerTimeOverlapEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -176,6 +212,9 @@ _$chronicleRelatedPageItemsInnerStatusEnum_active =
 const ChronicleRelatedPageItemsInnerStatusEnum
 _$chronicleRelatedPageItemsInnerStatusEnum_dismissed =
     const ChronicleRelatedPageItemsInnerStatusEnum._('dismissed');
+const ChronicleRelatedPageItemsInnerStatusEnum
+_$chronicleRelatedPageItemsInnerStatusEnum_unknownDefaultOpenApi =
+    const ChronicleRelatedPageItemsInnerStatusEnum._('unknownDefaultOpenApi');
 
 ChronicleRelatedPageItemsInnerStatusEnum
 _$chronicleRelatedPageItemsInnerStatusEnumValueOf(String name) {
@@ -184,8 +223,10 @@ _$chronicleRelatedPageItemsInnerStatusEnumValueOf(String name) {
       return _$chronicleRelatedPageItemsInnerStatusEnum_active;
     case 'dismissed':
       return _$chronicleRelatedPageItemsInnerStatusEnum_dismissed;
+    case 'unknownDefaultOpenApi':
+      return _$chronicleRelatedPageItemsInnerStatusEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$chronicleRelatedPageItemsInnerStatusEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -195,6 +236,7 @@ _$chronicleRelatedPageItemsInnerStatusEnumValues =
       const <ChronicleRelatedPageItemsInnerStatusEnum>[
         _$chronicleRelatedPageItemsInnerStatusEnum_active,
         _$chronicleRelatedPageItemsInnerStatusEnum_dismissed,
+        _$chronicleRelatedPageItemsInnerStatusEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -207,6 +249,11 @@ _$chronicleRelatedPageItemsInnerAccessRequestStatusEnum_granted =
 const ChronicleRelatedPageItemsInnerAccessRequestStatusEnum
 _$chronicleRelatedPageItemsInnerAccessRequestStatusEnum_declined =
     const ChronicleRelatedPageItemsInnerAccessRequestStatusEnum._('declined');
+const ChronicleRelatedPageItemsInnerAccessRequestStatusEnum
+_$chronicleRelatedPageItemsInnerAccessRequestStatusEnum_unknownDefaultOpenApi =
+    const ChronicleRelatedPageItemsInnerAccessRequestStatusEnum._(
+      'unknownDefaultOpenApi',
+    );
 
 ChronicleRelatedPageItemsInnerAccessRequestStatusEnum
 _$chronicleRelatedPageItemsInnerAccessRequestStatusEnumValueOf(String name) {
@@ -217,20 +264,23 @@ _$chronicleRelatedPageItemsInnerAccessRequestStatusEnumValueOf(String name) {
       return _$chronicleRelatedPageItemsInnerAccessRequestStatusEnum_granted;
     case 'declined':
       return _$chronicleRelatedPageItemsInnerAccessRequestStatusEnum_declined;
+    case 'unknownDefaultOpenApi':
+      return _$chronicleRelatedPageItemsInnerAccessRequestStatusEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$chronicleRelatedPageItemsInnerAccessRequestStatusEnum_unknownDefaultOpenApi;
   }
 }
 
 final BuiltSet<ChronicleRelatedPageItemsInnerAccessRequestStatusEnum>
 _$chronicleRelatedPageItemsInnerAccessRequestStatusEnumValues =
-    BuiltSet<ChronicleRelatedPageItemsInnerAccessRequestStatusEnum>(
-      const <ChronicleRelatedPageItemsInnerAccessRequestStatusEnum>[
-        _$chronicleRelatedPageItemsInnerAccessRequestStatusEnum_pending,
-        _$chronicleRelatedPageItemsInnerAccessRequestStatusEnum_granted,
-        _$chronicleRelatedPageItemsInnerAccessRequestStatusEnum_declined,
-      ],
-    );
+    BuiltSet<ChronicleRelatedPageItemsInnerAccessRequestStatusEnum>(const <
+      ChronicleRelatedPageItemsInnerAccessRequestStatusEnum
+    >[
+      _$chronicleRelatedPageItemsInnerAccessRequestStatusEnum_pending,
+      _$chronicleRelatedPageItemsInnerAccessRequestStatusEnum_granted,
+      _$chronicleRelatedPageItemsInnerAccessRequestStatusEnum_declined,
+      _$chronicleRelatedPageItemsInnerAccessRequestStatusEnum_unknownDefaultOpenApi,
+    ]);
 
 Serializer<ChronicleRelatedPageItemsInnerDisclosureEnum>
 _$chronicleRelatedPageItemsInnerDisclosureEnumSerializer =
@@ -259,9 +309,11 @@ class _$ChronicleRelatedPageItemsInnerDisclosureEnumSerializer
         PrimitiveSerializer<ChronicleRelatedPageItemsInnerDisclosureEnum> {
   static const Map<String, Object> _toWire = const <String, Object>{
     'opaque': 'opaque',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'opaque': 'opaque',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -294,11 +346,13 @@ class _$ChronicleRelatedPageItemsInnerStrengthEnumSerializer
     'low': 'low',
     'medium': 'medium',
     'high': 'high',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'low': 'low',
     'medium': 'medium',
     'high': 'high',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -333,12 +387,14 @@ class _$ChronicleRelatedPageItemsInnerDimensionsEnumSerializer
     'entities': 'entities',
     'areaTime': 'area-time',
     'topics': 'topics',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'evidence': 'evidence',
     'entities': 'entities',
     'area-time': 'areaTime',
     'topics': 'topics',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -371,11 +427,13 @@ class _$ChronicleRelatedPageItemsInnerTemporalEnumSerializer
     'aPrecedesB': 'a-precedes-b',
     'bPrecedesA': 'b-precedes-a',
     'concurrent': 'concurrent',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'a-precedes-b': 'aPrecedesB',
     'b-precedes-a': 'bPrecedesA',
     'concurrent': 'concurrent',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -409,11 +467,13 @@ class _$ChronicleRelatedPageItemsInnerTimeOverlapEnumSerializer
     'none': 'none',
     'partial': 'partial',
     'full': 'full',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'none': 'none',
     'partial': 'partial',
     'full': 'full',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -445,10 +505,12 @@ class _$ChronicleRelatedPageItemsInnerStatusEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'active': 'active',
     'dismissed': 'dismissed',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'active': 'active',
     'dismissed': 'dismissed',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -484,11 +546,13 @@ class _$ChronicleRelatedPageItemsInnerAccessRequestStatusEnumSerializer
     'pending': 'pending',
     'granted': 'granted',
     'declined': 'declined',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'pending': 'pending',
     'granted': 'granted',
     'declined': 'declined',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

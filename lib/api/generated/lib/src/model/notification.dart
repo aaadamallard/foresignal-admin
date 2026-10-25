@@ -339,6 +339,9 @@ class NotificationSeverityEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'critical')
   static const NotificationSeverityEnum critical =
       _$notificationSeverityEnum_critical;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const NotificationSeverityEnum unknownDefaultOpenApi =
+      _$notificationSeverityEnum_unknownDefaultOpenApi;
 
   static Serializer<NotificationSeverityEnum> get serializer =>
       _$notificationSeverityEnumSerializer;
@@ -362,6 +365,9 @@ class NotificationAlertStateEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'resolved')
   static const NotificationAlertStateEnum resolved =
       _$notificationAlertStateEnum_resolved;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const NotificationAlertStateEnum unknownDefaultOpenApi =
+      _$notificationAlertStateEnum_unknownDefaultOpenApi;
 
   static Serializer<NotificationAlertStateEnum> get serializer =>
       _$notificationAlertStateEnumSerializer;

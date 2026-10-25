@@ -334,6 +334,9 @@ class SeriesPointStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'forecast')
   static const SeriesPointStatusEnum forecast =
       _$seriesPointStatusEnum_forecast;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const SeriesPointStatusEnum unknownDefaultOpenApi =
+      _$seriesPointStatusEnum_unknownDefaultOpenApi;
 
   static Serializer<SeriesPointStatusEnum> get serializer =>
       _$seriesPointStatusEnumSerializer;

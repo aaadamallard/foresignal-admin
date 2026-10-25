@@ -186,6 +186,9 @@ class IngestPolicyLatestModeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'LATEST')
   static const IngestPolicyLatestModeEnum LATEST =
       _$ingestPolicyLatestModeEnum_LATEST;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const IngestPolicyLatestModeEnum unknownDefaultOpenApi =
+      _$ingestPolicyLatestModeEnum_unknownDefaultOpenApi;
 
   static Serializer<IngestPolicyLatestModeEnum> get serializer =>
       _$ingestPolicyLatestModeEnumSerializer;

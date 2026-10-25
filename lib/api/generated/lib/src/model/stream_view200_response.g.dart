@@ -15,6 +15,9 @@ _$streamView200ResponseReasonEnum_replayCap =
 const StreamView200ResponseReasonEnum
 _$streamView200ResponseReasonEnum_resyncRequired =
     const StreamView200ResponseReasonEnum._('resyncRequired');
+const StreamView200ResponseReasonEnum
+_$streamView200ResponseReasonEnum_unknownDefaultOpenApi =
+    const StreamView200ResponseReasonEnum._('unknownDefaultOpenApi');
 
 StreamView200ResponseReasonEnum _$streamView200ResponseReasonEnumValueOf(
   String name,
@@ -26,8 +29,10 @@ StreamView200ResponseReasonEnum _$streamView200ResponseReasonEnumValueOf(
       return _$streamView200ResponseReasonEnum_replayCap;
     case 'resyncRequired':
       return _$streamView200ResponseReasonEnum_resyncRequired;
+    case 'unknownDefaultOpenApi':
+      return _$streamView200ResponseReasonEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$streamView200ResponseReasonEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -38,6 +43,7 @@ _$streamView200ResponseReasonEnumValues =
         _$streamView200ResponseReasonEnum_bufferOverflow,
         _$streamView200ResponseReasonEnum_replayCap,
         _$streamView200ResponseReasonEnum_resyncRequired,
+        _$streamView200ResponseReasonEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -51,11 +57,13 @@ class _$StreamView200ResponseReasonEnumSerializer
     'bufferOverflow': 'buffer_overflow',
     'replayCap': 'replay_cap',
     'resyncRequired': 'resync_required',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'buffer_overflow': 'bufferOverflow',
     'replay_cap': 'replayCap',
     'resync_required': 'resyncRequired',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

@@ -325,6 +325,9 @@ class SeriesSampleKindEnum extends EnumClass {
   static const SeriesSampleKindEnum observed = _$seriesSampleKindEnum_observed;
   @BuiltValueEnumConst(wireName: r'forecast')
   static const SeriesSampleKindEnum forecast = _$seriesSampleKindEnum_forecast;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const SeriesSampleKindEnum unknownDefaultOpenApi =
+      _$seriesSampleKindEnum_unknownDefaultOpenApi;
 
   static Serializer<SeriesSampleKindEnum> get serializer =>
       _$seriesSampleKindEnumSerializer;

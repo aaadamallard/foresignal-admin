@@ -290,6 +290,9 @@ class HypothesisInputTypeEnum extends EnumClass {
       _$hypothesisInputTypeEnum_speculativeLink;
   @BuiltValueEnumConst(wireName: r'other')
   static const HypothesisInputTypeEnum other = _$hypothesisInputTypeEnum_other;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const HypothesisInputTypeEnum unknownDefaultOpenApi =
+      _$hypothesisInputTypeEnum_unknownDefaultOpenApi;
 
   static Serializer<HypothesisInputTypeEnum> get serializer =>
       _$hypothesisInputTypeEnumSerializer;

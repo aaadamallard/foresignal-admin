@@ -12,6 +12,9 @@ const OutletConsensusBucketEnum _$outletConsensusBucketEnum_center =
     const OutletConsensusBucketEnum._('center');
 const OutletConsensusBucketEnum _$outletConsensusBucketEnum_right =
     const OutletConsensusBucketEnum._('right');
+const OutletConsensusBucketEnum
+_$outletConsensusBucketEnum_unknownDefaultOpenApi =
+    const OutletConsensusBucketEnum._('unknownDefaultOpenApi');
 
 OutletConsensusBucketEnum _$outletConsensusBucketEnumValueOf(String name) {
   switch (name) {
@@ -21,8 +24,10 @@ OutletConsensusBucketEnum _$outletConsensusBucketEnumValueOf(String name) {
       return _$outletConsensusBucketEnum_center;
     case 'right':
       return _$outletConsensusBucketEnum_right;
+    case 'unknownDefaultOpenApi':
+      return _$outletConsensusBucketEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$outletConsensusBucketEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -31,6 +36,7 @@ final BuiltSet<OutletConsensusBucketEnum> _$outletConsensusBucketEnumValues =
       _$outletConsensusBucketEnum_left,
       _$outletConsensusBucketEnum_center,
       _$outletConsensusBucketEnum_right,
+      _$outletConsensusBucketEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<OutletConsensusBucketEnum> _$outletConsensusBucketEnumSerializer =
@@ -42,11 +48,13 @@ class _$OutletConsensusBucketEnumSerializer
     'left': 'left',
     'center': 'center',
     'right': 'right',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'left': 'left',
     'center': 'center',
     'right': 'right',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

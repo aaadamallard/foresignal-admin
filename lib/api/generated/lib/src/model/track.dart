@@ -157,6 +157,9 @@ class _$TrackSerializer implements PrimitiveSerializer<Track> {
 class TrackTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'Feature')
   static const TrackTypeEnum feature = _$trackTypeEnum_feature;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const TrackTypeEnum unknownDefaultOpenApi =
+      _$trackTypeEnum_unknownDefaultOpenApi;
 
   static Serializer<TrackTypeEnum> get serializer => _$trackTypeEnumSerializer;
 

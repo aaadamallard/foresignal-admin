@@ -14,6 +14,9 @@ _$analysisSeriesDetectorsEnum_changepointBocpd =
     const AnalysisSeriesDetectorsEnum._('changepointBocpd');
 const AnalysisSeriesDetectorsEnum _$analysisSeriesDetectorsEnum_forecast =
     const AnalysisSeriesDetectorsEnum._('forecast');
+const AnalysisSeriesDetectorsEnum
+_$analysisSeriesDetectorsEnum_unknownDefaultOpenApi =
+    const AnalysisSeriesDetectorsEnum._('unknownDefaultOpenApi');
 
 AnalysisSeriesDetectorsEnum _$analysisSeriesDetectorsEnumValueOf(String name) {
   switch (name) {
@@ -23,8 +26,10 @@ AnalysisSeriesDetectorsEnum _$analysisSeriesDetectorsEnumValueOf(String name) {
       return _$analysisSeriesDetectorsEnum_changepointBocpd;
     case 'forecast':
       return _$analysisSeriesDetectorsEnum_forecast;
+    case 'unknownDefaultOpenApi':
+      return _$analysisSeriesDetectorsEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$analysisSeriesDetectorsEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -34,6 +39,7 @@ _$analysisSeriesDetectorsEnumValues =
       _$analysisSeriesDetectorsEnum_changepointCusum,
       _$analysisSeriesDetectorsEnum_changepointBocpd,
       _$analysisSeriesDetectorsEnum_forecast,
+      _$analysisSeriesDetectorsEnum_unknownDefaultOpenApi,
     ]);
 
 const AnalysisSeriesFrequencyEnum _$analysisSeriesFrequencyEnum_hour =
@@ -42,6 +48,9 @@ const AnalysisSeriesFrequencyEnum _$analysisSeriesFrequencyEnum_day =
     const AnalysisSeriesFrequencyEnum._('day');
 const AnalysisSeriesFrequencyEnum _$analysisSeriesFrequencyEnum_week =
     const AnalysisSeriesFrequencyEnum._('week');
+const AnalysisSeriesFrequencyEnum
+_$analysisSeriesFrequencyEnum_unknownDefaultOpenApi =
+    const AnalysisSeriesFrequencyEnum._('unknownDefaultOpenApi');
 
 AnalysisSeriesFrequencyEnum _$analysisSeriesFrequencyEnumValueOf(String name) {
   switch (name) {
@@ -51,8 +60,10 @@ AnalysisSeriesFrequencyEnum _$analysisSeriesFrequencyEnumValueOf(String name) {
       return _$analysisSeriesFrequencyEnum_day;
     case 'week':
       return _$analysisSeriesFrequencyEnum_week;
+    case 'unknownDefaultOpenApi':
+      return _$analysisSeriesFrequencyEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$analysisSeriesFrequencyEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -62,12 +73,16 @@ _$analysisSeriesFrequencyEnumValues =
       _$analysisSeriesFrequencyEnum_hour,
       _$analysisSeriesFrequencyEnum_day,
       _$analysisSeriesFrequencyEnum_week,
+      _$analysisSeriesFrequencyEnum_unknownDefaultOpenApi,
     ]);
 
 const AnalysisSeriesOriginEnum _$analysisSeriesOriginEnum_auto =
     const AnalysisSeriesOriginEnum._('auto');
 const AnalysisSeriesOriginEnum _$analysisSeriesOriginEnum_operator_ =
     const AnalysisSeriesOriginEnum._('operator_');
+const AnalysisSeriesOriginEnum
+_$analysisSeriesOriginEnum_unknownDefaultOpenApi =
+    const AnalysisSeriesOriginEnum._('unknownDefaultOpenApi');
 
 AnalysisSeriesOriginEnum _$analysisSeriesOriginEnumValueOf(String name) {
   switch (name) {
@@ -75,8 +90,10 @@ AnalysisSeriesOriginEnum _$analysisSeriesOriginEnumValueOf(String name) {
       return _$analysisSeriesOriginEnum_auto;
     case 'operator_':
       return _$analysisSeriesOriginEnum_operator_;
+    case 'unknownDefaultOpenApi':
+      return _$analysisSeriesOriginEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$analysisSeriesOriginEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -84,6 +101,7 @@ final BuiltSet<AnalysisSeriesOriginEnum> _$analysisSeriesOriginEnumValues =
     BuiltSet<AnalysisSeriesOriginEnum>(const <AnalysisSeriesOriginEnum>[
       _$analysisSeriesOriginEnum_auto,
       _$analysisSeriesOriginEnum_operator_,
+      _$analysisSeriesOriginEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<AnalysisSeriesDetectorsEnum>
@@ -101,11 +119,13 @@ class _$AnalysisSeriesDetectorsEnumSerializer
     'changepointCusum': 'changepoint-cusum',
     'changepointBocpd': 'changepoint-bocpd',
     'forecast': 'forecast',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'changepoint-cusum': 'changepointCusum',
     'changepoint-bocpd': 'changepointBocpd',
     'forecast': 'forecast',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -136,11 +156,13 @@ class _$AnalysisSeriesFrequencyEnumSerializer
     'hour': 'hour',
     'day': 'day',
     'week': 'week',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'hour': 'hour',
     'day': 'day',
     'week': 'week',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -170,10 +192,12 @@ class _$AnalysisSeriesOriginEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'auto': 'auto',
     'operator_': 'operator',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'auto': 'auto',
     'operator': 'operator_',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

@@ -9,14 +9,19 @@ part of 'trigger_rule_input_conditions_inner.dart';
 const TriggerRuleInputConditionsInnerTypeEnum
 _$triggerRuleInputConditionsInnerTypeEnum_approach =
     const TriggerRuleInputConditionsInnerTypeEnum._('approach');
+const TriggerRuleInputConditionsInnerTypeEnum
+_$triggerRuleInputConditionsInnerTypeEnum_unknownDefaultOpenApi =
+    const TriggerRuleInputConditionsInnerTypeEnum._('unknownDefaultOpenApi');
 
 TriggerRuleInputConditionsInnerTypeEnum
 _$triggerRuleInputConditionsInnerTypeEnumValueOf(String name) {
   switch (name) {
     case 'approach':
       return _$triggerRuleInputConditionsInnerTypeEnum_approach;
+    case 'unknownDefaultOpenApi':
+      return _$triggerRuleInputConditionsInnerTypeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$triggerRuleInputConditionsInnerTypeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -25,6 +30,7 @@ _$triggerRuleInputConditionsInnerTypeEnumValues =
     BuiltSet<TriggerRuleInputConditionsInnerTypeEnum>(
       const <TriggerRuleInputConditionsInnerTypeEnum>[
         _$triggerRuleInputConditionsInnerTypeEnum_approach,
+        _$triggerRuleInputConditionsInnerTypeEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -36,9 +42,11 @@ class _$TriggerRuleInputConditionsInnerTypeEnumSerializer
     implements PrimitiveSerializer<TriggerRuleInputConditionsInnerTypeEnum> {
   static const Map<String, Object> _toWire = const <String, Object>{
     'approach': 'approach',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'approach': 'approach',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

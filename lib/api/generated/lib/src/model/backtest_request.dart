@@ -292,6 +292,9 @@ class BacktestRequestTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'quality')
   static const BacktestRequestTypeEnum quality =
       _$backtestRequestTypeEnum_quality;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const BacktestRequestTypeEnum unknownDefaultOpenApi =
+      _$backtestRequestTypeEnum_unknownDefaultOpenApi;
 
   static Serializer<BacktestRequestTypeEnum> get serializer =>
       _$backtestRequestTypeEnumSerializer;

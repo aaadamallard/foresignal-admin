@@ -9,14 +9,19 @@ part of 'emwin_warning_payload.dart';
 const EmwinWarningPayloadAuthoritativeSourceEnum
 _$emwinWarningPayloadAuthoritativeSourceEnum_nwsAlerts =
     const EmwinWarningPayloadAuthoritativeSourceEnum._('nwsAlerts');
+const EmwinWarningPayloadAuthoritativeSourceEnum
+_$emwinWarningPayloadAuthoritativeSourceEnum_unknownDefaultOpenApi =
+    const EmwinWarningPayloadAuthoritativeSourceEnum._('unknownDefaultOpenApi');
 
 EmwinWarningPayloadAuthoritativeSourceEnum
 _$emwinWarningPayloadAuthoritativeSourceEnumValueOf(String name) {
   switch (name) {
     case 'nwsAlerts':
       return _$emwinWarningPayloadAuthoritativeSourceEnum_nwsAlerts;
+    case 'unknownDefaultOpenApi':
+      return _$emwinWarningPayloadAuthoritativeSourceEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$emwinWarningPayloadAuthoritativeSourceEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -25,12 +30,16 @@ _$emwinWarningPayloadAuthoritativeSourceEnumValues =
     BuiltSet<EmwinWarningPayloadAuthoritativeSourceEnum>(
       const <EmwinWarningPayloadAuthoritativeSourceEnum>[
         _$emwinWarningPayloadAuthoritativeSourceEnum_nwsAlerts,
+        _$emwinWarningPayloadAuthoritativeSourceEnum_unknownDefaultOpenApi,
       ],
     );
 
 const EmwinWarningPayloadReceivedViaEnum
 _$emwinWarningPayloadReceivedViaEnum_receivedViaGOESHRITEMWIN =
     const EmwinWarningPayloadReceivedViaEnum._('receivedViaGOESHRITEMWIN');
+const EmwinWarningPayloadReceivedViaEnum
+_$emwinWarningPayloadReceivedViaEnum_unknownDefaultOpenApi =
+    const EmwinWarningPayloadReceivedViaEnum._('unknownDefaultOpenApi');
 
 EmwinWarningPayloadReceivedViaEnum _$emwinWarningPayloadReceivedViaEnumValueOf(
   String name,
@@ -38,8 +47,10 @@ EmwinWarningPayloadReceivedViaEnum _$emwinWarningPayloadReceivedViaEnumValueOf(
   switch (name) {
     case 'receivedViaGOESHRITEMWIN':
       return _$emwinWarningPayloadReceivedViaEnum_receivedViaGOESHRITEMWIN;
+    case 'unknownDefaultOpenApi':
+      return _$emwinWarningPayloadReceivedViaEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$emwinWarningPayloadReceivedViaEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -48,6 +59,7 @@ _$emwinWarningPayloadReceivedViaEnumValues =
     BuiltSet<EmwinWarningPayloadReceivedViaEnum>(
       const <EmwinWarningPayloadReceivedViaEnum>[
         _$emwinWarningPayloadReceivedViaEnum_receivedViaGOESHRITEMWIN,
+        _$emwinWarningPayloadReceivedViaEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -62,9 +74,11 @@ class _$EmwinWarningPayloadAuthoritativeSourceEnumSerializer
     implements PrimitiveSerializer<EmwinWarningPayloadAuthoritativeSourceEnum> {
   static const Map<String, Object> _toWire = const <String, Object>{
     'nwsAlerts': 'nws-alerts',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'nws-alerts': 'nwsAlerts',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -95,9 +109,11 @@ class _$EmwinWarningPayloadReceivedViaEnumSerializer
     implements PrimitiveSerializer<EmwinWarningPayloadReceivedViaEnum> {
   static const Map<String, Object> _toWire = const <String, Object>{
     'receivedViaGOESHRITEMWIN': 'Received via GOES HRIT EMWIN',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'Received via GOES HRIT EMWIN': 'receivedViaGOESHRITEMWIN',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

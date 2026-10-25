@@ -18,6 +18,11 @@ _$infraImpactResultDependentsInnerPathLabelEnum_possible =
 const InfraImpactResultDependentsInnerPathLabelEnum
 _$infraImpactResultDependentsInnerPathLabelEnum_speculative =
     const InfraImpactResultDependentsInnerPathLabelEnum._('speculative');
+const InfraImpactResultDependentsInnerPathLabelEnum
+_$infraImpactResultDependentsInnerPathLabelEnum_unknownDefaultOpenApi =
+    const InfraImpactResultDependentsInnerPathLabelEnum._(
+      'unknownDefaultOpenApi',
+    );
 
 InfraImpactResultDependentsInnerPathLabelEnum
 _$infraImpactResultDependentsInnerPathLabelEnumValueOf(String name) {
@@ -30,8 +35,10 @@ _$infraImpactResultDependentsInnerPathLabelEnumValueOf(String name) {
       return _$infraImpactResultDependentsInnerPathLabelEnum_possible;
     case 'speculative':
       return _$infraImpactResultDependentsInnerPathLabelEnum_speculative;
+    case 'unknownDefaultOpenApi':
+      return _$infraImpactResultDependentsInnerPathLabelEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$infraImpactResultDependentsInnerPathLabelEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -43,6 +50,7 @@ _$infraImpactResultDependentsInnerPathLabelEnumValues =
         _$infraImpactResultDependentsInnerPathLabelEnum_likely,
         _$infraImpactResultDependentsInnerPathLabelEnum_possible,
         _$infraImpactResultDependentsInnerPathLabelEnum_speculative,
+        _$infraImpactResultDependentsInnerPathLabelEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -58,12 +66,14 @@ class _$InfraImpactResultDependentsInnerPathLabelEnumSerializer
     'likely': 'likely',
     'possible': 'possible',
     'speculative': 'speculative',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'confirmed': 'confirmed',
     'likely': 'likely',
     'possible': 'possible',
     'speculative': 'speculative',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

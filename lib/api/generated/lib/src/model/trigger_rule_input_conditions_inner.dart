@@ -102,6 +102,9 @@ class TriggerRuleInputConditionsInnerTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'approach')
   static const TriggerRuleInputConditionsInnerTypeEnum approach =
       _$triggerRuleInputConditionsInnerTypeEnum_approach;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const TriggerRuleInputConditionsInnerTypeEnum unknownDefaultOpenApi =
+      _$triggerRuleInputConditionsInnerTypeEnum_unknownDefaultOpenApi;
 
   static Serializer<TriggerRuleInputConditionsInnerTypeEnum> get serializer =>
       _$triggerRuleInputConditionsInnerTypeEnumSerializer;

@@ -455,6 +455,9 @@ class ChronicleLinkDisclosureEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'full')
   static const ChronicleLinkDisclosureEnum full =
       _$chronicleLinkDisclosureEnum_full;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ChronicleLinkDisclosureEnum unknownDefaultOpenApi =
+      _$chronicleLinkDisclosureEnum_unknownDefaultOpenApi;
 
   static Serializer<ChronicleLinkDisclosureEnum> get serializer =>
       _$chronicleLinkDisclosureEnumSerializer;
@@ -477,6 +480,9 @@ class ChronicleLinkStrengthEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'high')
   static const ChronicleLinkStrengthEnum high =
       _$chronicleLinkStrengthEnum_high;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ChronicleLinkStrengthEnum unknownDefaultOpenApi =
+      _$chronicleLinkStrengthEnum_unknownDefaultOpenApi;
 
   static Serializer<ChronicleLinkStrengthEnum> get serializer =>
       _$chronicleLinkStrengthEnumSerializer;
@@ -502,6 +508,9 @@ class ChronicleLinkDimensionsEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'topics')
   static const ChronicleLinkDimensionsEnum topics =
       _$chronicleLinkDimensionsEnum_topics;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ChronicleLinkDimensionsEnum unknownDefaultOpenApi =
+      _$chronicleLinkDimensionsEnum_unknownDefaultOpenApi;
 
   static Serializer<ChronicleLinkDimensionsEnum> get serializer =>
       _$chronicleLinkDimensionsEnumSerializer;
@@ -524,6 +533,9 @@ class ChronicleLinkTemporalEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'concurrent')
   static const ChronicleLinkTemporalEnum concurrent =
       _$chronicleLinkTemporalEnum_concurrent;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ChronicleLinkTemporalEnum unknownDefaultOpenApi =
+      _$chronicleLinkTemporalEnum_unknownDefaultOpenApi;
 
   static Serializer<ChronicleLinkTemporalEnum> get serializer =>
       _$chronicleLinkTemporalEnumSerializer;
@@ -546,6 +558,9 @@ class ChronicleLinkTimeOverlapEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'full')
   static const ChronicleLinkTimeOverlapEnum full =
       _$chronicleLinkTimeOverlapEnum_full;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ChronicleLinkTimeOverlapEnum unknownDefaultOpenApi =
+      _$chronicleLinkTimeOverlapEnum_unknownDefaultOpenApi;
 
   static Serializer<ChronicleLinkTimeOverlapEnum> get serializer =>
       _$chronicleLinkTimeOverlapEnumSerializer;
@@ -565,6 +580,9 @@ class ChronicleLinkStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'dismissed')
   static const ChronicleLinkStatusEnum dismissed =
       _$chronicleLinkStatusEnum_dismissed;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ChronicleLinkStatusEnum unknownDefaultOpenApi =
+      _$chronicleLinkStatusEnum_unknownDefaultOpenApi;
 
   static Serializer<ChronicleLinkStatusEnum> get serializer =>
       _$chronicleLinkStatusEnumSerializer;

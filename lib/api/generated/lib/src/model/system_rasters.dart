@@ -368,6 +368,9 @@ class SystemRastersProfileEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'large')
   static const SystemRastersProfileEnum large =
       _$systemRastersProfileEnum_large;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const SystemRastersProfileEnum unknownDefaultOpenApi =
+      _$systemRastersProfileEnum_unknownDefaultOpenApi;
 
   static Serializer<SystemRastersProfileEnum> get serializer =>
       _$systemRastersProfileEnumSerializer;

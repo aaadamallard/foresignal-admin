@@ -173,6 +173,9 @@ class EdpAnalysisRequestAuthEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'basic')
   static const EdpAnalysisRequestAuthEnum basic =
       _$edpAnalysisRequestAuthEnum_basic;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const EdpAnalysisRequestAuthEnum unknownDefaultOpenApi =
+      _$edpAnalysisRequestAuthEnum_unknownDefaultOpenApi;
 
   static Serializer<EdpAnalysisRequestAuthEnum> get serializer =>
       _$edpAnalysisRequestAuthEnumSerializer;

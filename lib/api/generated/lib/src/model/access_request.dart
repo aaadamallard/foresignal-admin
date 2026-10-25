@@ -346,6 +346,9 @@ class AccessRequestDirectionEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'outgoing')
   static const AccessRequestDirectionEnum outgoing =
       _$accessRequestDirectionEnum_outgoing;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const AccessRequestDirectionEnum unknownDefaultOpenApi =
+      _$accessRequestDirectionEnum_unknownDefaultOpenApi;
 
   static Serializer<AccessRequestDirectionEnum> get serializer =>
       _$accessRequestDirectionEnumSerializer;
@@ -368,6 +371,9 @@ class AccessRequestStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'declined')
   static const AccessRequestStatusEnum declined =
       _$accessRequestStatusEnum_declined;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const AccessRequestStatusEnum unknownDefaultOpenApi =
+      _$accessRequestStatusEnum_unknownDefaultOpenApi;
 
   static Serializer<AccessRequestStatusEnum> get serializer =>
       _$accessRequestStatusEnumSerializer;

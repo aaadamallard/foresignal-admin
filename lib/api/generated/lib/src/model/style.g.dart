@@ -15,6 +15,8 @@ const StyleTypeEnum _$styleTypeEnum_discrete = const StyleTypeEnum._(
 const StyleTypeEnum _$styleTypeEnum_categorical = const StyleTypeEnum._(
   'categorical',
 );
+const StyleTypeEnum _$styleTypeEnum_unknownDefaultOpenApi =
+    const StyleTypeEnum._('unknownDefaultOpenApi');
 
 StyleTypeEnum _$styleTypeEnumValueOf(String name) {
   switch (name) {
@@ -24,34 +26,43 @@ StyleTypeEnum _$styleTypeEnumValueOf(String name) {
       return _$styleTypeEnum_discrete;
     case 'categorical':
       return _$styleTypeEnum_categorical;
+    case 'unknownDefaultOpenApi':
+      return _$styleTypeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$styleTypeEnum_unknownDefaultOpenApi;
   }
 }
 
-final BuiltSet<StyleTypeEnum> _$styleTypeEnumValues = BuiltSet<StyleTypeEnum>(
-  const <StyleTypeEnum>[
-    _$styleTypeEnum_continuous,
-    _$styleTypeEnum_discrete,
-    _$styleTypeEnum_categorical,
-  ],
-);
+final BuiltSet<StyleTypeEnum> _$styleTypeEnumValues =
+    BuiltSet<StyleTypeEnum>(const <StyleTypeEnum>[
+      _$styleTypeEnum_continuous,
+      _$styleTypeEnum_discrete,
+      _$styleTypeEnum_categorical,
+      _$styleTypeEnum_unknownDefaultOpenApi,
+    ]);
 
 const StyleDeriveEnum _$styleDeriveEnum_speed = const StyleDeriveEnum._(
   'speed',
 );
+const StyleDeriveEnum _$styleDeriveEnum_unknownDefaultOpenApi =
+    const StyleDeriveEnum._('unknownDefaultOpenApi');
 
 StyleDeriveEnum _$styleDeriveEnumValueOf(String name) {
   switch (name) {
     case 'speed':
       return _$styleDeriveEnum_speed;
+    case 'unknownDefaultOpenApi':
+      return _$styleDeriveEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$styleDeriveEnum_unknownDefaultOpenApi;
   }
 }
 
 final BuiltSet<StyleDeriveEnum> _$styleDeriveEnumValues =
-    BuiltSet<StyleDeriveEnum>(const <StyleDeriveEnum>[_$styleDeriveEnum_speed]);
+    BuiltSet<StyleDeriveEnum>(const <StyleDeriveEnum>[
+      _$styleDeriveEnum_speed,
+      _$styleDeriveEnum_unknownDefaultOpenApi,
+    ]);
 
 Serializer<StyleTypeEnum> _$styleTypeEnumSerializer =
     _$StyleTypeEnumSerializer();
@@ -63,11 +74,13 @@ class _$StyleTypeEnumSerializer implements PrimitiveSerializer<StyleTypeEnum> {
     'continuous': 'continuous',
     'discrete': 'discrete',
     'categorical': 'categorical',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'continuous': 'continuous',
     'discrete': 'discrete',
     'categorical': 'categorical',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -96,9 +109,11 @@ class _$StyleDeriveEnumSerializer
     implements PrimitiveSerializer<StyleDeriveEnum> {
   static const Map<String, Object> _toWire = const <String, Object>{
     'speed': 'speed',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'speed': 'speed',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

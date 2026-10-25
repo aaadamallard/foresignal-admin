@@ -840,6 +840,9 @@ class AlertSeverityEnum extends EnumClass {
   static const AlertSeverityEnum warning = _$alertSeverityEnum_warning;
   @BuiltValueEnumConst(wireName: r'critical')
   static const AlertSeverityEnum critical = _$alertSeverityEnum_critical;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const AlertSeverityEnum unknownDefaultOpenApi =
+      _$alertSeverityEnum_unknownDefaultOpenApi;
 
   static Serializer<AlertSeverityEnum> get serializer =>
       _$alertSeverityEnumSerializer;
@@ -858,6 +861,9 @@ class AlertStateEnum extends EnumClass {
   static const AlertStateEnum acknowledged = _$alertStateEnum_acknowledged;
   @BuiltValueEnumConst(wireName: r'resolved')
   static const AlertStateEnum resolved = _$alertStateEnum_resolved;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const AlertStateEnum unknownDefaultOpenApi =
+      _$alertStateEnum_unknownDefaultOpenApi;
 
   static Serializer<AlertStateEnum> get serializer =>
       _$alertStateEnumSerializer;
@@ -878,6 +884,9 @@ class AlertFeedbackEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'false_positive')
   static const AlertFeedbackEnum falsePositive =
       _$alertFeedbackEnum_falsePositive;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const AlertFeedbackEnum unknownDefaultOpenApi =
+      _$alertFeedbackEnum_unknownDefaultOpenApi;
 
   static Serializer<AlertFeedbackEnum> get serializer =>
       _$alertFeedbackEnumSerializer;
@@ -896,6 +905,9 @@ class AlertSuppressedReasonEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'rule_snoozed')
   static const AlertSuppressedReasonEnum ruleSnoozed =
       _$alertSuppressedReasonEnum_ruleSnoozed;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const AlertSuppressedReasonEnum unknownDefaultOpenApi =
+      _$alertSuppressedReasonEnum_unknownDefaultOpenApi;
 
   static Serializer<AlertSuppressedReasonEnum> get serializer =>
       _$alertSuppressedReasonEnumSerializer;

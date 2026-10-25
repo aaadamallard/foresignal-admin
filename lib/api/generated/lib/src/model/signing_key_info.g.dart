@@ -10,6 +10,8 @@ const SigningKeyInfoAlgEnum _$signingKeyInfoAlgEnum_ed25519 =
     const SigningKeyInfoAlgEnum._('ed25519');
 const SigningKeyInfoAlgEnum _$signingKeyInfoAlgEnum_edDSA =
     const SigningKeyInfoAlgEnum._('edDSA');
+const SigningKeyInfoAlgEnum _$signingKeyInfoAlgEnum_unknownDefaultOpenApi =
+    const SigningKeyInfoAlgEnum._('unknownDefaultOpenApi');
 
 SigningKeyInfoAlgEnum _$signingKeyInfoAlgEnumValueOf(String name) {
   switch (name) {
@@ -17,8 +19,10 @@ SigningKeyInfoAlgEnum _$signingKeyInfoAlgEnumValueOf(String name) {
       return _$signingKeyInfoAlgEnum_ed25519;
     case 'edDSA':
       return _$signingKeyInfoAlgEnum_edDSA;
+    case 'unknownDefaultOpenApi':
+      return _$signingKeyInfoAlgEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$signingKeyInfoAlgEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -26,12 +30,16 @@ final BuiltSet<SigningKeyInfoAlgEnum> _$signingKeyInfoAlgEnumValues =
     BuiltSet<SigningKeyInfoAlgEnum>(const <SigningKeyInfoAlgEnum>[
       _$signingKeyInfoAlgEnum_ed25519,
       _$signingKeyInfoAlgEnum_edDSA,
+      _$signingKeyInfoAlgEnum_unknownDefaultOpenApi,
     ]);
 
 const SigningKeyInfoStatusEnum _$signingKeyInfoStatusEnum_active =
     const SigningKeyInfoStatusEnum._('active');
 const SigningKeyInfoStatusEnum _$signingKeyInfoStatusEnum_retired =
     const SigningKeyInfoStatusEnum._('retired');
+const SigningKeyInfoStatusEnum
+_$signingKeyInfoStatusEnum_unknownDefaultOpenApi =
+    const SigningKeyInfoStatusEnum._('unknownDefaultOpenApi');
 
 SigningKeyInfoStatusEnum _$signingKeyInfoStatusEnumValueOf(String name) {
   switch (name) {
@@ -39,8 +47,10 @@ SigningKeyInfoStatusEnum _$signingKeyInfoStatusEnumValueOf(String name) {
       return _$signingKeyInfoStatusEnum_active;
     case 'retired':
       return _$signingKeyInfoStatusEnum_retired;
+    case 'unknownDefaultOpenApi':
+      return _$signingKeyInfoStatusEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$signingKeyInfoStatusEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -48,6 +58,7 @@ final BuiltSet<SigningKeyInfoStatusEnum> _$signingKeyInfoStatusEnumValues =
     BuiltSet<SigningKeyInfoStatusEnum>(const <SigningKeyInfoStatusEnum>[
       _$signingKeyInfoStatusEnum_active,
       _$signingKeyInfoStatusEnum_retired,
+      _$signingKeyInfoStatusEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<SigningKeyInfoAlgEnum> _$signingKeyInfoAlgEnumSerializer =
@@ -60,10 +71,12 @@ class _$SigningKeyInfoAlgEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'ed25519': 'Ed25519',
     'edDSA': 'EdDSA',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'Ed25519': 'ed25519',
     'EdDSA': 'edDSA',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -93,10 +106,12 @@ class _$SigningKeyInfoStatusEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'active': 'active',
     'retired': 'retired',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'active': 'active',
     'retired': 'retired',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

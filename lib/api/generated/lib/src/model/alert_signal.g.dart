@@ -14,6 +14,8 @@ const AlertSignalTypeEnum _$alertSignalTypeEnum_FLAP =
     const AlertSignalTypeEnum._('FLAP');
 const AlertSignalTypeEnum _$alertSignalTypeEnum_UNOPENED =
     const AlertSignalTypeEnum._('UNOPENED');
+const AlertSignalTypeEnum _$alertSignalTypeEnum_unknownDefaultOpenApi =
+    const AlertSignalTypeEnum._('unknownDefaultOpenApi');
 
 AlertSignalTypeEnum _$alertSignalTypeEnumValueOf(String name) {
   switch (name) {
@@ -25,8 +27,10 @@ AlertSignalTypeEnum _$alertSignalTypeEnumValueOf(String name) {
       return _$alertSignalTypeEnum_FLAP;
     case 'UNOPENED':
       return _$alertSignalTypeEnum_UNOPENED;
+    case 'unknownDefaultOpenApi':
+      return _$alertSignalTypeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$alertSignalTypeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -36,6 +40,7 @@ final BuiltSet<AlertSignalTypeEnum> _$alertSignalTypeEnumValues =
       _$alertSignalTypeEnum_SNOOZED,
       _$alertSignalTypeEnum_FLAP,
       _$alertSignalTypeEnum_UNOPENED,
+      _$alertSignalTypeEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<AlertSignalTypeEnum> _$alertSignalTypeEnumSerializer =
@@ -48,12 +53,14 @@ class _$AlertSignalTypeEnumSerializer
     'SNOOZED': 'SNOOZED',
     'FLAP': 'FLAP',
     'UNOPENED': 'UNOPENED',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'ACK_FAST': 'ACK_FAST',
     'SNOOZED': 'SNOOZED',
     'FLAP': 'FLAP',
     'UNOPENED': 'UNOPENED',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

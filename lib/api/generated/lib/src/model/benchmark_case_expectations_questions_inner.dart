@@ -196,6 +196,10 @@ class BenchmarkCaseExpectationsQuestionsInnerTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'numeric')
   static const BenchmarkCaseExpectationsQuestionsInnerTypeEnum numeric =
       _$benchmarkCaseExpectationsQuestionsInnerTypeEnum_numeric;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const BenchmarkCaseExpectationsQuestionsInnerTypeEnum
+  unknownDefaultOpenApi =
+      _$benchmarkCaseExpectationsQuestionsInnerTypeEnum_unknownDefaultOpenApi;
 
   static Serializer<BenchmarkCaseExpectationsQuestionsInnerTypeEnum>
   get serializer => _$benchmarkCaseExpectationsQuestionsInnerTypeEnumSerializer;

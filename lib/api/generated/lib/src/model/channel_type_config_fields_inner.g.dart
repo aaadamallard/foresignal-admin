@@ -30,6 +30,9 @@ _$channelTypeConfigFieldsInnerTypeEnum_map =
 const ChannelTypeConfigFieldsInnerTypeEnum
 _$channelTypeConfigFieldsInnerTypeEnum_enum_ =
     const ChannelTypeConfigFieldsInnerTypeEnum._('enum_');
+const ChannelTypeConfigFieldsInnerTypeEnum
+_$channelTypeConfigFieldsInnerTypeEnum_unknownDefaultOpenApi =
+    const ChannelTypeConfigFieldsInnerTypeEnum._('unknownDefaultOpenApi');
 
 ChannelTypeConfigFieldsInnerTypeEnum
 _$channelTypeConfigFieldsInnerTypeEnumValueOf(String name) {
@@ -50,8 +53,10 @@ _$channelTypeConfigFieldsInnerTypeEnumValueOf(String name) {
       return _$channelTypeConfigFieldsInnerTypeEnum_map;
     case 'enum_':
       return _$channelTypeConfigFieldsInnerTypeEnum_enum_;
+    case 'unknownDefaultOpenApi':
+      return _$channelTypeConfigFieldsInnerTypeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$channelTypeConfigFieldsInnerTypeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -67,6 +72,7 @@ _$channelTypeConfigFieldsInnerTypeEnumValues =
         _$channelTypeConfigFieldsInnerTypeEnum_stringList,
         _$channelTypeConfigFieldsInnerTypeEnum_map,
         _$channelTypeConfigFieldsInnerTypeEnum_enum_,
+        _$channelTypeConfigFieldsInnerTypeEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -85,6 +91,7 @@ class _$ChannelTypeConfigFieldsInnerTypeEnumSerializer
     'stringList': 'string-list',
     'map': 'map',
     'enum_': 'enum',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'string': 'string',
@@ -95,6 +102,7 @@ class _$ChannelTypeConfigFieldsInnerTypeEnumSerializer
     'string-list': 'stringList',
     'map': 'map',
     'enum': 'enum_',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

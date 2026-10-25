@@ -204,6 +204,9 @@ class SocialCollectionPathPathEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'cue')
   static const SocialCollectionPathPathEnum cue =
       _$socialCollectionPathPathEnum_cue;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const SocialCollectionPathPathEnum unknownDefaultOpenApi =
+      _$socialCollectionPathPathEnum_unknownDefaultOpenApi;
 
   static Serializer<SocialCollectionPathPathEnum> get serializer =>
       _$socialCollectionPathPathEnumSerializer;

@@ -12,6 +12,9 @@ _$pushDeviceUpdateContentLevelEnum_minimal =
 const PushDeviceUpdateContentLevelEnum
 _$pushDeviceUpdateContentLevelEnum_short =
     const PushDeviceUpdateContentLevelEnum._('short');
+const PushDeviceUpdateContentLevelEnum
+_$pushDeviceUpdateContentLevelEnum_unknownDefaultOpenApi =
+    const PushDeviceUpdateContentLevelEnum._('unknownDefaultOpenApi');
 
 PushDeviceUpdateContentLevelEnum _$pushDeviceUpdateContentLevelEnumValueOf(
   String name,
@@ -21,8 +24,10 @@ PushDeviceUpdateContentLevelEnum _$pushDeviceUpdateContentLevelEnumValueOf(
       return _$pushDeviceUpdateContentLevelEnum_minimal;
     case 'short':
       return _$pushDeviceUpdateContentLevelEnum_short;
+    case 'unknownDefaultOpenApi':
+      return _$pushDeviceUpdateContentLevelEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$pushDeviceUpdateContentLevelEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -32,6 +37,7 @@ _$pushDeviceUpdateContentLevelEnumValues =
       const <PushDeviceUpdateContentLevelEnum>[
         _$pushDeviceUpdateContentLevelEnum_minimal,
         _$pushDeviceUpdateContentLevelEnum_short,
+        _$pushDeviceUpdateContentLevelEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -44,10 +50,12 @@ class _$PushDeviceUpdateContentLevelEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'minimal': 'minimal',
     'short': 'short',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'minimal': 'minimal',
     'short': 'short',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

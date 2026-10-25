@@ -412,6 +412,9 @@ class MqttChannelConfigQosEnum extends EnumClass {
   @BuiltValueEnumConst(wireNumber: 1)
   static const MqttChannelConfigQosEnum number1 =
       _$mqttChannelConfigQosEnum_number1;
+  @BuiltValueEnumConst(wireNumber: 11184809, fallback: true)
+  static const MqttChannelConfigQosEnum unknownDefaultOpenApi =
+      _$mqttChannelConfigQosEnum_unknownDefaultOpenApi;
 
   static Serializer<MqttChannelConfigQosEnum> get serializer =>
       _$mqttChannelConfigQosEnumSerializer;
@@ -431,6 +434,9 @@ class MqttChannelConfigProtocolVersionEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'3.1.1')
   static const MqttChannelConfigProtocolVersionEnum n3period1Period1 =
       _$mqttChannelConfigProtocolVersionEnum_n3period1Period1;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const MqttChannelConfigProtocolVersionEnum unknownDefaultOpenApi =
+      _$mqttChannelConfigProtocolVersionEnum_unknownDefaultOpenApi;
 
   static Serializer<MqttChannelConfigProtocolVersionEnum> get serializer =>
       _$mqttChannelConfigProtocolVersionEnumSerializer;

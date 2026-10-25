@@ -14,6 +14,9 @@ const InvestigationPatchStatusEnum _$investigationPatchStatusEnum_closed =
     const InvestigationPatchStatusEnum._('closed');
 const InvestigationPatchStatusEnum _$investigationPatchStatusEnum_archived =
     const InvestigationPatchStatusEnum._('archived');
+const InvestigationPatchStatusEnum
+_$investigationPatchStatusEnum_unknownDefaultOpenApi =
+    const InvestigationPatchStatusEnum._('unknownDefaultOpenApi');
 
 InvestigationPatchStatusEnum _$investigationPatchStatusEnumValueOf(
   String name,
@@ -27,8 +30,10 @@ InvestigationPatchStatusEnum _$investigationPatchStatusEnumValueOf(
       return _$investigationPatchStatusEnum_closed;
     case 'archived':
       return _$investigationPatchStatusEnum_archived;
+    case 'unknownDefaultOpenApi':
+      return _$investigationPatchStatusEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$investigationPatchStatusEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -39,6 +44,7 @@ _$investigationPatchStatusEnumValues =
       _$investigationPatchStatusEnum_active,
       _$investigationPatchStatusEnum_closed,
       _$investigationPatchStatusEnum_archived,
+      _$investigationPatchStatusEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<InvestigationPatchStatusEnum>
@@ -52,12 +58,14 @@ class _$InvestigationPatchStatusEnumSerializer
     'active': 'active',
     'closed': 'closed',
     'archived': 'archived',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'open': 'open',
     'active': 'active',
     'closed': 'closed',
     'archived': 'archived',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

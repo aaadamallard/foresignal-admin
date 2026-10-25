@@ -263,6 +263,9 @@ class AlertmanagerWebhookAlertsInnerStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'resolved')
   static const AlertmanagerWebhookAlertsInnerStatusEnum resolved =
       _$alertmanagerWebhookAlertsInnerStatusEnum_resolved;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const AlertmanagerWebhookAlertsInnerStatusEnum unknownDefaultOpenApi =
+      _$alertmanagerWebhookAlertsInnerStatusEnum_unknownDefaultOpenApi;
 
   static Serializer<AlertmanagerWebhookAlertsInnerStatusEnum> get serializer =>
       _$alertmanagerWebhookAlertsInnerStatusEnumSerializer;

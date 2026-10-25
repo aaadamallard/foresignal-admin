@@ -8,6 +8,9 @@ part of 'sink_cloud_event.dart';
 
 const SinkCloudEventSpecversionEnum _$sinkCloudEventSpecversionEnum_n1period0 =
     const SinkCloudEventSpecversionEnum._('n1period0');
+const SinkCloudEventSpecversionEnum
+_$sinkCloudEventSpecversionEnum_unknownDefaultOpenApi =
+    const SinkCloudEventSpecversionEnum._('unknownDefaultOpenApi');
 
 SinkCloudEventSpecversionEnum _$sinkCloudEventSpecversionEnumValueOf(
   String name,
@@ -15,8 +18,10 @@ SinkCloudEventSpecversionEnum _$sinkCloudEventSpecversionEnumValueOf(
   switch (name) {
     case 'n1period0':
       return _$sinkCloudEventSpecversionEnum_n1period0;
+    case 'unknownDefaultOpenApi':
+      return _$sinkCloudEventSpecversionEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$sinkCloudEventSpecversionEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -24,6 +29,7 @@ final BuiltSet<SinkCloudEventSpecversionEnum>
 _$sinkCloudEventSpecversionEnumValues = BuiltSet<SinkCloudEventSpecversionEnum>(
   const <SinkCloudEventSpecversionEnum>[
     _$sinkCloudEventSpecversionEnum_n1period0,
+    _$sinkCloudEventSpecversionEnum_unknownDefaultOpenApi,
   ],
 );
 
@@ -47,6 +53,8 @@ _$sinkCloudEventTypeEnum_aiPeriodForesignalPeriodRecordPeriodSnapshot =
     const SinkCloudEventTypeEnum._(
       'aiPeriodForesignalPeriodRecordPeriodSnapshot',
     );
+const SinkCloudEventTypeEnum _$sinkCloudEventTypeEnum_unknownDefaultOpenApi =
+    const SinkCloudEventTypeEnum._('unknownDefaultOpenApi');
 
 SinkCloudEventTypeEnum _$sinkCloudEventTypeEnumValueOf(String name) {
   switch (name) {
@@ -58,8 +66,10 @@ SinkCloudEventTypeEnum _$sinkCloudEventTypeEnumValueOf(String name) {
       return _$sinkCloudEventTypeEnum_aiPeriodForesignalPeriodRecordPeriodTombstoned;
     case 'aiPeriodForesignalPeriodRecordPeriodSnapshot':
       return _$sinkCloudEventTypeEnum_aiPeriodForesignalPeriodRecordPeriodSnapshot;
+    case 'unknownDefaultOpenApi':
+      return _$sinkCloudEventTypeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$sinkCloudEventTypeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -69,6 +79,7 @@ final BuiltSet<SinkCloudEventTypeEnum> _$sinkCloudEventTypeEnumValues =
       _$sinkCloudEventTypeEnum_aiPeriodForesignalPeriodRecordPeriodUpdated,
       _$sinkCloudEventTypeEnum_aiPeriodForesignalPeriodRecordPeriodTombstoned,
       _$sinkCloudEventTypeEnum_aiPeriodForesignalPeriodRecordPeriodSnapshot,
+      _$sinkCloudEventTypeEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<SinkCloudEventSpecversionEnum>
@@ -81,9 +92,11 @@ class _$SinkCloudEventSpecversionEnumSerializer
     implements PrimitiveSerializer<SinkCloudEventSpecversionEnum> {
   static const Map<String, Object> _toWire = const <String, Object>{
     'n1period0': '1.0',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     '1.0': 'n1period0',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -119,6 +132,7 @@ class _$SinkCloudEventTypeEnumSerializer
         'ai.foresignal.record.tombstoned',
     'aiPeriodForesignalPeriodRecordPeriodSnapshot':
         'ai.foresignal.record.snapshot',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'ai.foresignal.record.created':
@@ -129,6 +143,7 @@ class _$SinkCloudEventTypeEnumSerializer
         'aiPeriodForesignalPeriodRecordPeriodTombstoned',
     'ai.foresignal.record.snapshot':
         'aiPeriodForesignalPeriodRecordPeriodSnapshot',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

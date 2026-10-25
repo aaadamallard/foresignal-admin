@@ -20,6 +20,8 @@ const IndicatorEventStateEnum _$indicatorEventStateEnum_retired =
     const IndicatorEventStateEnum._('retired');
 const IndicatorEventStateEnum _$indicatorEventStateEnum_reported =
     const IndicatorEventStateEnum._('reported');
+const IndicatorEventStateEnum _$indicatorEventStateEnum_unknownDefaultOpenApi =
+    const IndicatorEventStateEnum._('unknownDefaultOpenApi');
 
 IndicatorEventStateEnum _$indicatorEventStateEnumValueOf(String name) {
   switch (name) {
@@ -37,8 +39,10 @@ IndicatorEventStateEnum _$indicatorEventStateEnumValueOf(String name) {
       return _$indicatorEventStateEnum_retired;
     case 'reported':
       return _$indicatorEventStateEnum_reported;
+    case 'unknownDefaultOpenApi':
+      return _$indicatorEventStateEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$indicatorEventStateEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -51,6 +55,7 @@ final BuiltSet<IndicatorEventStateEnum> _$indicatorEventStateEnumValues =
       _$indicatorEventStateEnum_unknownCoverage,
       _$indicatorEventStateEnum_retired,
       _$indicatorEventStateEnum_reported,
+      _$indicatorEventStateEnum_unknownDefaultOpenApi,
     ]);
 
 const IndicatorEventPreviousStateEnum
@@ -73,6 +78,9 @@ _$indicatorEventPreviousStateEnum_retired =
 const IndicatorEventPreviousStateEnum
 _$indicatorEventPreviousStateEnum_reported =
     const IndicatorEventPreviousStateEnum._('reported');
+const IndicatorEventPreviousStateEnum
+_$indicatorEventPreviousStateEnum_unknownDefaultOpenApi =
+    const IndicatorEventPreviousStateEnum._('unknownDefaultOpenApi');
 
 IndicatorEventPreviousStateEnum _$indicatorEventPreviousStateEnumValueOf(
   String name,
@@ -92,8 +100,10 @@ IndicatorEventPreviousStateEnum _$indicatorEventPreviousStateEnumValueOf(
       return _$indicatorEventPreviousStateEnum_retired;
     case 'reported':
       return _$indicatorEventPreviousStateEnum_reported;
+    case 'unknownDefaultOpenApi':
+      return _$indicatorEventPreviousStateEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$indicatorEventPreviousStateEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -108,6 +118,7 @@ _$indicatorEventPreviousStateEnumValues =
         _$indicatorEventPreviousStateEnum_unknownCoverage,
         _$indicatorEventPreviousStateEnum_retired,
         _$indicatorEventPreviousStateEnum_reported,
+        _$indicatorEventPreviousStateEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -127,6 +138,7 @@ class _$IndicatorEventStateEnumSerializer
     'unknownCoverage': 'unknown-coverage',
     'retired': 'retired',
     'reported': 'reported',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'pending': 'pending',
@@ -136,6 +148,7 @@ class _$IndicatorEventStateEnumSerializer
     'unknown-coverage': 'unknownCoverage',
     'retired': 'retired',
     'reported': 'reported',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -170,6 +183,7 @@ class _$IndicatorEventPreviousStateEnumSerializer
     'unknownCoverage': 'unknown-coverage',
     'retired': 'retired',
     'reported': 'reported',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'pending': 'pending',
@@ -179,6 +193,7 @@ class _$IndicatorEventPreviousStateEnumSerializer
     'unknown-coverage': 'unknownCoverage',
     'retired': 'retired',
     'reported': 'reported',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

@@ -344,6 +344,9 @@ class IndicatorPatchCredibilityEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'L')
   static const IndicatorPatchCredibilityEnum L =
       _$indicatorPatchCredibilityEnum_L;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const IndicatorPatchCredibilityEnum unknownDefaultOpenApi =
+      _$indicatorPatchCredibilityEnum_unknownDefaultOpenApi;
 
   static Serializer<IndicatorPatchCredibilityEnum> get serializer =>
       _$indicatorPatchCredibilityEnumSerializer;
@@ -363,6 +366,9 @@ class IndicatorPatchRelevanceEnum extends EnumClass {
   static const IndicatorPatchRelevanceEnum M = _$indicatorPatchRelevanceEnum_M;
   @BuiltValueEnumConst(wireName: r'L')
   static const IndicatorPatchRelevanceEnum L = _$indicatorPatchRelevanceEnum_L;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const IndicatorPatchRelevanceEnum unknownDefaultOpenApi =
+      _$indicatorPatchRelevanceEnum_unknownDefaultOpenApi;
 
   static Serializer<IndicatorPatchRelevanceEnum> get serializer =>
       _$indicatorPatchRelevanceEnumSerializer;
@@ -383,6 +389,9 @@ class IndicatorPatchStateEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'absent')
   static const IndicatorPatchStateEnum absent =
       _$indicatorPatchStateEnum_absent;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const IndicatorPatchStateEnum unknownDefaultOpenApi =
+      _$indicatorPatchStateEnum_unknownDefaultOpenApi;
 
   static Serializer<IndicatorPatchStateEnum> get serializer =>
       _$indicatorPatchStateEnumSerializer;

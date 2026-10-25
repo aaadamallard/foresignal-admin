@@ -187,6 +187,9 @@ class StatsGridFeaturesInnerTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'Feature')
   static const StatsGridFeaturesInnerTypeEnum feature =
       _$statsGridFeaturesInnerTypeEnum_feature;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const StatsGridFeaturesInnerTypeEnum unknownDefaultOpenApi =
+      _$statsGridFeaturesInnerTypeEnum_unknownDefaultOpenApi;
 
   static Serializer<StatsGridFeaturesInnerTypeEnum> get serializer =>
       _$statsGridFeaturesInnerTypeEnumSerializer;

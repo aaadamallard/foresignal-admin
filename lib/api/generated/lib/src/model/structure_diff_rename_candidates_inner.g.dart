@@ -15,6 +15,11 @@ _$structureDiffRenameCandidatesInnerReasonEnum_snakeCamel =
 const StructureDiffRenameCandidatesInnerReasonEnum
 _$structureDiffRenameCandidatesInnerReasonEnum_valueDistribution =
     const StructureDiffRenameCandidatesInnerReasonEnum._('valueDistribution');
+const StructureDiffRenameCandidatesInnerReasonEnum
+_$structureDiffRenameCandidatesInnerReasonEnum_unknownDefaultOpenApi =
+    const StructureDiffRenameCandidatesInnerReasonEnum._(
+      'unknownDefaultOpenApi',
+    );
 
 StructureDiffRenameCandidatesInnerReasonEnum
 _$structureDiffRenameCandidatesInnerReasonEnumValueOf(String name) {
@@ -25,8 +30,10 @@ _$structureDiffRenameCandidatesInnerReasonEnumValueOf(String name) {
       return _$structureDiffRenameCandidatesInnerReasonEnum_snakeCamel;
     case 'valueDistribution':
       return _$structureDiffRenameCandidatesInnerReasonEnum_valueDistribution;
+    case 'unknownDefaultOpenApi':
+      return _$structureDiffRenameCandidatesInnerReasonEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$structureDiffRenameCandidatesInnerReasonEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -37,6 +44,7 @@ _$structureDiffRenameCandidatesInnerReasonEnumValues =
         _$structureDiffRenameCandidatesInnerReasonEnum_nameSimilarity,
         _$structureDiffRenameCandidatesInnerReasonEnum_snakeCamel,
         _$structureDiffRenameCandidatesInnerReasonEnum_valueDistribution,
+        _$structureDiffRenameCandidatesInnerReasonEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -51,11 +59,13 @@ class _$StructureDiffRenameCandidatesInnerReasonEnumSerializer
     'nameSimilarity': 'name-similarity',
     'snakeCamel': 'snake-camel',
     'valueDistribution': 'value-distribution',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'name-similarity': 'nameSimilarity',
     'snake-camel': 'snakeCamel',
     'value-distribution': 'valueDistribution',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

@@ -355,6 +355,9 @@ class OgcCoverageCollectionItemTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'coverage')
   static const OgcCoverageCollectionItemTypeEnum coverage =
       _$ogcCoverageCollectionItemTypeEnum_coverage;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const OgcCoverageCollectionItemTypeEnum unknownDefaultOpenApi =
+      _$ogcCoverageCollectionItemTypeEnum_unknownDefaultOpenApi;
 
   static Serializer<OgcCoverageCollectionItemTypeEnum> get serializer =>
       _$ogcCoverageCollectionItemTypeEnumSerializer;

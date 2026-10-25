@@ -12,6 +12,9 @@ const ExposureRequestPopulationEnum _$exposureRequestPopulationEnum_off =
     const ExposureRequestPopulationEnum._('off');
 const ExposureRequestPopulationEnum _$exposureRequestPopulationEnum_required_ =
     const ExposureRequestPopulationEnum._('required_');
+const ExposureRequestPopulationEnum
+_$exposureRequestPopulationEnum_unknownDefaultOpenApi =
+    const ExposureRequestPopulationEnum._('unknownDefaultOpenApi');
 
 ExposureRequestPopulationEnum _$exposureRequestPopulationEnumValueOf(
   String name,
@@ -23,8 +26,10 @@ ExposureRequestPopulationEnum _$exposureRequestPopulationEnumValueOf(
       return _$exposureRequestPopulationEnum_off;
     case 'required_':
       return _$exposureRequestPopulationEnum_required_;
+    case 'unknownDefaultOpenApi':
+      return _$exposureRequestPopulationEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$exposureRequestPopulationEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -34,6 +39,7 @@ _$exposureRequestPopulationEnumValues = BuiltSet<ExposureRequestPopulationEnum>(
     _$exposureRequestPopulationEnum_auto,
     _$exposureRequestPopulationEnum_off,
     _$exposureRequestPopulationEnum_required_,
+    _$exposureRequestPopulationEnum_unknownDefaultOpenApi,
   ],
 );
 
@@ -47,11 +53,13 @@ class _$ExposureRequestPopulationEnumSerializer
     'auto': 'auto',
     'off': 'off',
     'required_': 'required',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'auto': 'auto',
     'off': 'off',
     'required': 'required_',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

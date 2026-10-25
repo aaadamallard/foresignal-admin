@@ -157,6 +157,9 @@ class DoctorRunAcceptedStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'running')
   static const DoctorRunAcceptedStatusEnum running =
       _$doctorRunAcceptedStatusEnum_running;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const DoctorRunAcceptedStatusEnum unknownDefaultOpenApi =
+      _$doctorRunAcceptedStatusEnum_unknownDefaultOpenApi;
 
   static Serializer<DoctorRunAcceptedStatusEnum> get serializer =>
       _$doctorRunAcceptedStatusEnumSerializer;

@@ -12,6 +12,8 @@ const PrecursorKindEnum _$precursorKindEnum_event = const PrecursorKindEnum._(
 const PrecursorKindEnum _$precursorKindEnum_series = const PrecursorKindEnum._(
   'series',
 );
+const PrecursorKindEnum _$precursorKindEnum_unknownDefaultOpenApi =
+    const PrecursorKindEnum._('unknownDefaultOpenApi');
 
 PrecursorKindEnum _$precursorKindEnumValueOf(String name) {
   switch (name) {
@@ -19,8 +21,10 @@ PrecursorKindEnum _$precursorKindEnumValueOf(String name) {
       return _$precursorKindEnum_event;
     case 'series':
       return _$precursorKindEnum_series;
+    case 'unknownDefaultOpenApi':
+      return _$precursorKindEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$precursorKindEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -28,12 +32,16 @@ final BuiltSet<PrecursorKindEnum> _$precursorKindEnumValues =
     BuiltSet<PrecursorKindEnum>(const <PrecursorKindEnum>[
       _$precursorKindEnum_event,
       _$precursorKindEnum_series,
+      _$precursorKindEnum_unknownDefaultOpenApi,
     ]);
 
 const PrecursorCorrelationSignEnum _$precursorCorrelationSignEnum_positive =
     const PrecursorCorrelationSignEnum._('positive');
 const PrecursorCorrelationSignEnum _$precursorCorrelationSignEnum_negative =
     const PrecursorCorrelationSignEnum._('negative');
+const PrecursorCorrelationSignEnum
+_$precursorCorrelationSignEnum_unknownDefaultOpenApi =
+    const PrecursorCorrelationSignEnum._('unknownDefaultOpenApi');
 
 PrecursorCorrelationSignEnum _$precursorCorrelationSignEnumValueOf(
   String name,
@@ -43,8 +51,10 @@ PrecursorCorrelationSignEnum _$precursorCorrelationSignEnumValueOf(
       return _$precursorCorrelationSignEnum_positive;
     case 'negative':
       return _$precursorCorrelationSignEnum_negative;
+    case 'unknownDefaultOpenApi':
+      return _$precursorCorrelationSignEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$precursorCorrelationSignEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -53,6 +63,7 @@ _$precursorCorrelationSignEnumValues =
     BuiltSet<PrecursorCorrelationSignEnum>(const <PrecursorCorrelationSignEnum>[
       _$precursorCorrelationSignEnum_positive,
       _$precursorCorrelationSignEnum_negative,
+      _$precursorCorrelationSignEnum_unknownDefaultOpenApi,
     ]);
 
 const PrecursorStatusEnum _$precursorStatusEnum_candidate =
@@ -63,6 +74,8 @@ const PrecursorStatusEnum _$precursorStatusEnum_stale =
     const PrecursorStatusEnum._('stale');
 const PrecursorStatusEnum _$precursorStatusEnum_retired =
     const PrecursorStatusEnum._('retired');
+const PrecursorStatusEnum _$precursorStatusEnum_unknownDefaultOpenApi =
+    const PrecursorStatusEnum._('unknownDefaultOpenApi');
 
 PrecursorStatusEnum _$precursorStatusEnumValueOf(String name) {
   switch (name) {
@@ -74,8 +87,10 @@ PrecursorStatusEnum _$precursorStatusEnumValueOf(String name) {
       return _$precursorStatusEnum_stale;
     case 'retired':
       return _$precursorStatusEnum_retired;
+    case 'unknownDefaultOpenApi':
+      return _$precursorStatusEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$precursorStatusEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -85,12 +100,15 @@ final BuiltSet<PrecursorStatusEnum> _$precursorStatusEnumValues =
       _$precursorStatusEnum_validated,
       _$precursorStatusEnum_stale,
       _$precursorStatusEnum_retired,
+      _$precursorStatusEnum_unknownDefaultOpenApi,
     ]);
 
 const PrecursorOriginEnum _$precursorOriginEnum_auto =
     const PrecursorOriginEnum._('auto');
 const PrecursorOriginEnum _$precursorOriginEnum_operator_ =
     const PrecursorOriginEnum._('operator_');
+const PrecursorOriginEnum _$precursorOriginEnum_unknownDefaultOpenApi =
+    const PrecursorOriginEnum._('unknownDefaultOpenApi');
 
 PrecursorOriginEnum _$precursorOriginEnumValueOf(String name) {
   switch (name) {
@@ -98,8 +116,10 @@ PrecursorOriginEnum _$precursorOriginEnumValueOf(String name) {
       return _$precursorOriginEnum_auto;
     case 'operator_':
       return _$precursorOriginEnum_operator_;
+    case 'unknownDefaultOpenApi':
+      return _$precursorOriginEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$precursorOriginEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -107,6 +127,7 @@ final BuiltSet<PrecursorOriginEnum> _$precursorOriginEnumValues =
     BuiltSet<PrecursorOriginEnum>(const <PrecursorOriginEnum>[
       _$precursorOriginEnum_auto,
       _$precursorOriginEnum_operator_,
+      _$precursorOriginEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<PrecursorKindEnum> _$precursorKindEnumSerializer =
@@ -124,10 +145,12 @@ class _$PrecursorKindEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'event': 'event',
     'series': 'series',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'event': 'event',
     'series': 'series',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -157,10 +180,12 @@ class _$PrecursorCorrelationSignEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'positive': 'positive',
     'negative': 'negative',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'positive': 'positive',
     'negative': 'negative',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -192,12 +217,14 @@ class _$PrecursorStatusEnumSerializer
     'validated': 'validated',
     'stale': 'stale',
     'retired': 'retired',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'candidate': 'candidate',
     'validated': 'validated',
     'stale': 'stale',
     'retired': 'retired',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -227,10 +254,12 @@ class _$PrecursorOriginEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'auto': 'auto',
     'operator_': 'operator',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'auto': 'auto',
     'operator': 'operator_',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

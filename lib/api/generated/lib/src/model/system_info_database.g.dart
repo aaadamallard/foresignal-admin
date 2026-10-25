@@ -10,6 +10,9 @@ const SystemInfoDatabaseStatusEnum _$systemInfoDatabaseStatusEnum_up =
     const SystemInfoDatabaseStatusEnum._('up');
 const SystemInfoDatabaseStatusEnum _$systemInfoDatabaseStatusEnum_down =
     const SystemInfoDatabaseStatusEnum._('down');
+const SystemInfoDatabaseStatusEnum
+_$systemInfoDatabaseStatusEnum_unknownDefaultOpenApi =
+    const SystemInfoDatabaseStatusEnum._('unknownDefaultOpenApi');
 
 SystemInfoDatabaseStatusEnum _$systemInfoDatabaseStatusEnumValueOf(
   String name,
@@ -19,18 +22,20 @@ SystemInfoDatabaseStatusEnum _$systemInfoDatabaseStatusEnumValueOf(
       return _$systemInfoDatabaseStatusEnum_up;
     case 'down':
       return _$systemInfoDatabaseStatusEnum_down;
+    case 'unknownDefaultOpenApi':
+      return _$systemInfoDatabaseStatusEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$systemInfoDatabaseStatusEnum_unknownDefaultOpenApi;
   }
 }
 
 final BuiltSet<SystemInfoDatabaseStatusEnum>
-_$systemInfoDatabaseStatusEnumValues = BuiltSet<SystemInfoDatabaseStatusEnum>(
-  const <SystemInfoDatabaseStatusEnum>[
-    _$systemInfoDatabaseStatusEnum_up,
-    _$systemInfoDatabaseStatusEnum_down,
-  ],
-);
+_$systemInfoDatabaseStatusEnumValues =
+    BuiltSet<SystemInfoDatabaseStatusEnum>(const <SystemInfoDatabaseStatusEnum>[
+      _$systemInfoDatabaseStatusEnum_up,
+      _$systemInfoDatabaseStatusEnum_down,
+      _$systemInfoDatabaseStatusEnum_unknownDefaultOpenApi,
+    ]);
 
 Serializer<SystemInfoDatabaseStatusEnum>
 _$systemInfoDatabaseStatusEnumSerializer =
@@ -41,10 +46,12 @@ class _$SystemInfoDatabaseStatusEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'up': 'up',
     'down': 'down',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'up': 'up',
     'down': 'down',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

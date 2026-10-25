@@ -14,6 +14,9 @@ const ExerciseRunCreateSpeedEnum _$exerciseRunCreateSpeedEnum_x60 =
     const ExerciseRunCreateSpeedEnum._('x60');
 const ExerciseRunCreateSpeedEnum _$exerciseRunCreateSpeedEnum_max =
     const ExerciseRunCreateSpeedEnum._('max');
+const ExerciseRunCreateSpeedEnum
+_$exerciseRunCreateSpeedEnum_unknownDefaultOpenApi =
+    const ExerciseRunCreateSpeedEnum._('unknownDefaultOpenApi');
 
 ExerciseRunCreateSpeedEnum _$exerciseRunCreateSpeedEnumValueOf(String name) {
   switch (name) {
@@ -25,8 +28,10 @@ ExerciseRunCreateSpeedEnum _$exerciseRunCreateSpeedEnumValueOf(String name) {
       return _$exerciseRunCreateSpeedEnum_x60;
     case 'max':
       return _$exerciseRunCreateSpeedEnum_max;
+    case 'unknownDefaultOpenApi':
+      return _$exerciseRunCreateSpeedEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$exerciseRunCreateSpeedEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -36,6 +41,7 @@ final BuiltSet<ExerciseRunCreateSpeedEnum> _$exerciseRunCreateSpeedEnumValues =
       _$exerciseRunCreateSpeedEnum_x10,
       _$exerciseRunCreateSpeedEnum_x60,
       _$exerciseRunCreateSpeedEnum_max,
+      _$exerciseRunCreateSpeedEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<ExerciseRunCreateSpeedEnum> _$exerciseRunCreateSpeedEnumSerializer =
@@ -48,12 +54,14 @@ class _$ExerciseRunCreateSpeedEnumSerializer
     'x10': 'x10',
     'x60': 'x60',
     'max': 'max',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'realtime': 'realtime',
     'x10': 'x10',
     'x60': 'x60',
     'max': 'max',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

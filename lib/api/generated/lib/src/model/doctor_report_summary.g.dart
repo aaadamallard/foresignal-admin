@@ -13,6 +13,9 @@ _$doctorReportSummaryStatusEnum_DEGRADED_INFO =
     const DoctorReportSummaryStatusEnum._('DEGRADED_INFO');
 const DoctorReportSummaryStatusEnum _$doctorReportSummaryStatusEnum_BROKEN =
     const DoctorReportSummaryStatusEnum._('BROKEN');
+const DoctorReportSummaryStatusEnum
+_$doctorReportSummaryStatusEnum_unknownDefaultOpenApi =
+    const DoctorReportSummaryStatusEnum._('unknownDefaultOpenApi');
 
 DoctorReportSummaryStatusEnum _$doctorReportSummaryStatusEnumValueOf(
   String name,
@@ -24,8 +27,10 @@ DoctorReportSummaryStatusEnum _$doctorReportSummaryStatusEnumValueOf(
       return _$doctorReportSummaryStatusEnum_DEGRADED_INFO;
     case 'BROKEN':
       return _$doctorReportSummaryStatusEnum_BROKEN;
+    case 'unknownDefaultOpenApi':
+      return _$doctorReportSummaryStatusEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$doctorReportSummaryStatusEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -35,6 +40,7 @@ _$doctorReportSummaryStatusEnumValues = BuiltSet<DoctorReportSummaryStatusEnum>(
     _$doctorReportSummaryStatusEnum_OK,
     _$doctorReportSummaryStatusEnum_DEGRADED_INFO,
     _$doctorReportSummaryStatusEnum_BROKEN,
+    _$doctorReportSummaryStatusEnum_unknownDefaultOpenApi,
   ],
 );
 
@@ -48,11 +54,13 @@ class _$DoctorReportSummaryStatusEnumSerializer
     'OK': 'OK',
     'DEGRADED_INFO': 'DEGRADED_INFO',
     'BROKEN': 'BROKEN',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'OK': 'OK',
     'DEGRADED_INFO': 'DEGRADED_INFO',
     'BROKEN': 'BROKEN',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

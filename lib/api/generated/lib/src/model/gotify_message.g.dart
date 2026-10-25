@@ -8,19 +8,24 @@ part of 'gotify_message.dart';
 
 const GotifyMessageAppidEnum _$gotifyMessageAppidEnum_number1 =
     const GotifyMessageAppidEnum._('number1');
+const GotifyMessageAppidEnum _$gotifyMessageAppidEnum_unknownDefaultOpenApi =
+    const GotifyMessageAppidEnum._('unknownDefaultOpenApi');
 
 GotifyMessageAppidEnum _$gotifyMessageAppidEnumValueOf(String name) {
   switch (name) {
     case 'number1':
       return _$gotifyMessageAppidEnum_number1;
+    case 'unknownDefaultOpenApi':
+      return _$gotifyMessageAppidEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$gotifyMessageAppidEnum_unknownDefaultOpenApi;
   }
 }
 
 final BuiltSet<GotifyMessageAppidEnum> _$gotifyMessageAppidEnumValues =
     BuiltSet<GotifyMessageAppidEnum>(const <GotifyMessageAppidEnum>[
       _$gotifyMessageAppidEnum_number1,
+      _$gotifyMessageAppidEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<GotifyMessageAppidEnum> _$gotifyMessageAppidEnumSerializer =
@@ -30,9 +35,11 @@ class _$GotifyMessageAppidEnumSerializer
     implements PrimitiveSerializer<GotifyMessageAppidEnum> {
   static const Map<String, Object> _toWire = const <String, Object>{
     'number1': 1,
+    'unknownDefaultOpenApi': 11184809,
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     1: 'number1',
+    11184809: 'unknownDefaultOpenApi',
   };
 
   @override

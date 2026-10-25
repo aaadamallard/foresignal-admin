@@ -25,6 +25,9 @@ _$socialCollectionPathPathEnum_hashtagSearch =
     const SocialCollectionPathPathEnum._('hashtagSearch');
 const SocialCollectionPathPathEnum _$socialCollectionPathPathEnum_cue =
     const SocialCollectionPathPathEnum._('cue');
+const SocialCollectionPathPathEnum
+_$socialCollectionPathPathEnum_unknownDefaultOpenApi =
+    const SocialCollectionPathPathEnum._('unknownDefaultOpenApi');
 
 SocialCollectionPathPathEnum _$socialCollectionPathPathEnumValueOf(
   String name,
@@ -48,8 +51,10 @@ SocialCollectionPathPathEnum _$socialCollectionPathPathEnumValueOf(
       return _$socialCollectionPathPathEnum_hashtagSearch;
     case 'cue':
       return _$socialCollectionPathPathEnum_cue;
+    case 'unknownDefaultOpenApi':
+      return _$socialCollectionPathPathEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$socialCollectionPathPathEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -65,6 +70,7 @@ _$socialCollectionPathPathEnumValues =
       _$socialCollectionPathPathEnum_accountPoll,
       _$socialCollectionPathPathEnum_hashtagSearch,
       _$socialCollectionPathPathEnum_cue,
+      _$socialCollectionPathPathEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<SocialCollectionPathPathEnum>
@@ -83,6 +89,7 @@ class _$SocialCollectionPathPathEnumSerializer
     'accountPoll': 'account-poll',
     'hashtagSearch': 'hashtag-search',
     'cue': 'cue',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'stream': 'stream',
@@ -94,6 +101,7 @@ class _$SocialCollectionPathPathEnumSerializer
     'account-poll': 'accountPoll',
     'hashtag-search': 'hashtagSearch',
     'cue': 'cue',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

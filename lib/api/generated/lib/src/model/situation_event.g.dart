@@ -22,6 +22,8 @@ const SituationEventEventEnum _$situationEventEventEnum_situationPeriodClosed =
     const SituationEventEventEnum._('situationPeriodClosed');
 const SituationEventEventEnum _$situationEventEventEnum_situationPeriodMerged =
     const SituationEventEventEnum._('situationPeriodMerged');
+const SituationEventEventEnum _$situationEventEventEnum_unknownDefaultOpenApi =
+    const SituationEventEventEnum._('unknownDefaultOpenApi');
 
 SituationEventEventEnum _$situationEventEventEnumValueOf(String name) {
   switch (name) {
@@ -39,8 +41,10 @@ SituationEventEventEnum _$situationEventEventEnumValueOf(String name) {
       return _$situationEventEventEnum_situationPeriodClosed;
     case 'situationPeriodMerged':
       return _$situationEventEventEnum_situationPeriodMerged;
+    case 'unknownDefaultOpenApi':
+      return _$situationEventEventEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$situationEventEventEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -53,6 +57,7 @@ final BuiltSet<SituationEventEventEnum> _$situationEventEventEnumValues =
       _$situationEventEventEnum_situationPeriodDormant,
       _$situationEventEventEnum_situationPeriodClosed,
       _$situationEventEventEnum_situationPeriodMerged,
+      _$situationEventEventEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<SituationEventEventEnum> _$situationEventEventEnumSerializer =
@@ -68,6 +73,7 @@ class _$SituationEventEventEnumSerializer
     'situationPeriodDormant': 'situation.dormant',
     'situationPeriodClosed': 'situation.closed',
     'situationPeriodMerged': 'situation.merged',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'situation.created': 'situationPeriodCreated',
@@ -77,6 +83,7 @@ class _$SituationEventEventEnumSerializer
     'situation.dormant': 'situationPeriodDormant',
     'situation.closed': 'situationPeriodClosed',
     'situation.merged': 'situationPeriodMerged',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

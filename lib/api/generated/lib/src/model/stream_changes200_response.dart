@@ -140,6 +140,9 @@ class StreamChanges200ResponseReasonEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'resync_required')
   static const StreamChanges200ResponseReasonEnum resyncRequired =
       _$streamChanges200ResponseReasonEnum_resyncRequired;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const StreamChanges200ResponseReasonEnum unknownDefaultOpenApi =
+      _$streamChanges200ResponseReasonEnum_unknownDefaultOpenApi;
 
   static Serializer<StreamChanges200ResponseReasonEnum> get serializer =>
       _$streamChanges200ResponseReasonEnumSerializer;

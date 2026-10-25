@@ -9,14 +9,19 @@ part of 'storm_track_payload_lightning_jump.dart';
 const StormTrackPayloadLightningJumpMethodEnum
 _$stormTrackPayloadLightningJumpMethodEnum_n2sigmaGlmV1 =
     const StormTrackPayloadLightningJumpMethodEnum._('n2sigmaGlmV1');
+const StormTrackPayloadLightningJumpMethodEnum
+_$stormTrackPayloadLightningJumpMethodEnum_unknownDefaultOpenApi =
+    const StormTrackPayloadLightningJumpMethodEnum._('unknownDefaultOpenApi');
 
 StormTrackPayloadLightningJumpMethodEnum
 _$stormTrackPayloadLightningJumpMethodEnumValueOf(String name) {
   switch (name) {
     case 'n2sigmaGlmV1':
       return _$stormTrackPayloadLightningJumpMethodEnum_n2sigmaGlmV1;
+    case 'unknownDefaultOpenApi':
+      return _$stormTrackPayloadLightningJumpMethodEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$stormTrackPayloadLightningJumpMethodEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -25,6 +30,7 @@ _$stormTrackPayloadLightningJumpMethodEnumValues =
     BuiltSet<StormTrackPayloadLightningJumpMethodEnum>(
       const <StormTrackPayloadLightningJumpMethodEnum>[
         _$stormTrackPayloadLightningJumpMethodEnum_n2sigmaGlmV1,
+        _$stormTrackPayloadLightningJumpMethodEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -36,9 +42,11 @@ class _$StormTrackPayloadLightningJumpMethodEnumSerializer
     implements PrimitiveSerializer<StormTrackPayloadLightningJumpMethodEnum> {
   static const Map<String, Object> _toWire = const <String, Object>{
     'n2sigmaGlmV1': '2sigma-glm-v1',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     '2sigma-glm-v1': 'n2sigmaGlmV1',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

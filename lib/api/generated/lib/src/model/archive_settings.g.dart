@@ -10,6 +10,9 @@ const ArchiveSettingsTargetEnum _$archiveSettingsTargetEnum_local =
     const ArchiveSettingsTargetEnum._('local');
 const ArchiveSettingsTargetEnum _$archiveSettingsTargetEnum_s3 =
     const ArchiveSettingsTargetEnum._('s3');
+const ArchiveSettingsTargetEnum
+_$archiveSettingsTargetEnum_unknownDefaultOpenApi =
+    const ArchiveSettingsTargetEnum._('unknownDefaultOpenApi');
 
 ArchiveSettingsTargetEnum _$archiveSettingsTargetEnumValueOf(String name) {
   switch (name) {
@@ -17,8 +20,10 @@ ArchiveSettingsTargetEnum _$archiveSettingsTargetEnumValueOf(String name) {
       return _$archiveSettingsTargetEnum_local;
     case 's3':
       return _$archiveSettingsTargetEnum_s3;
+    case 'unknownDefaultOpenApi':
+      return _$archiveSettingsTargetEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$archiveSettingsTargetEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -26,6 +31,7 @@ final BuiltSet<ArchiveSettingsTargetEnum> _$archiveSettingsTargetEnumValues =
     BuiltSet<ArchiveSettingsTargetEnum>(const <ArchiveSettingsTargetEnum>[
       _$archiveSettingsTargetEnum_local,
       _$archiveSettingsTargetEnum_s3,
+      _$archiveSettingsTargetEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<ArchiveSettingsTargetEnum> _$archiveSettingsTargetEnumSerializer =
@@ -36,10 +42,12 @@ class _$ArchiveSettingsTargetEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'local': 'local',
     's3': 's3',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'local': 'local',
     's3': 's3',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

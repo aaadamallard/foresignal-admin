@@ -14,6 +14,9 @@ const ReferenceImportDatasetEnum _$referenceImportDatasetEnum_usgsComcat =
     const ReferenceImportDatasetEnum._('usgsComcat');
 const ReferenceImportDatasetEnum _$referenceImportDatasetEnum_gdacs =
     const ReferenceImportDatasetEnum._('gdacs');
+const ReferenceImportDatasetEnum
+_$referenceImportDatasetEnum_unknownDefaultOpenApi =
+    const ReferenceImportDatasetEnum._('unknownDefaultOpenApi');
 
 ReferenceImportDatasetEnum _$referenceImportDatasetEnumValueOf(String name) {
   switch (name) {
@@ -25,8 +28,10 @@ ReferenceImportDatasetEnum _$referenceImportDatasetEnumValueOf(String name) {
       return _$referenceImportDatasetEnum_usgsComcat;
     case 'gdacs':
       return _$referenceImportDatasetEnum_gdacs;
+    case 'unknownDefaultOpenApi':
+      return _$referenceImportDatasetEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$referenceImportDatasetEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -36,6 +41,7 @@ final BuiltSet<ReferenceImportDatasetEnum> _$referenceImportDatasetEnumValues =
       _$referenceImportDatasetEnum_acled,
       _$referenceImportDatasetEnum_usgsComcat,
       _$referenceImportDatasetEnum_gdacs,
+      _$referenceImportDatasetEnum_unknownDefaultOpenApi,
     ]);
 
 const ReferenceImportStatusEnum _$referenceImportStatusEnum_queued =
@@ -50,6 +56,9 @@ const ReferenceImportStatusEnum _$referenceImportStatusEnum_skipped =
     const ReferenceImportStatusEnum._('skipped');
 const ReferenceImportStatusEnum _$referenceImportStatusEnum_cancelled =
     const ReferenceImportStatusEnum._('cancelled');
+const ReferenceImportStatusEnum
+_$referenceImportStatusEnum_unknownDefaultOpenApi =
+    const ReferenceImportStatusEnum._('unknownDefaultOpenApi');
 
 ReferenceImportStatusEnum _$referenceImportStatusEnumValueOf(String name) {
   switch (name) {
@@ -65,8 +74,10 @@ ReferenceImportStatusEnum _$referenceImportStatusEnumValueOf(String name) {
       return _$referenceImportStatusEnum_skipped;
     case 'cancelled':
       return _$referenceImportStatusEnum_cancelled;
+    case 'unknownDefaultOpenApi':
+      return _$referenceImportStatusEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$referenceImportStatusEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -78,12 +89,16 @@ final BuiltSet<ReferenceImportStatusEnum> _$referenceImportStatusEnumValues =
       _$referenceImportStatusEnum_failed,
       _$referenceImportStatusEnum_skipped,
       _$referenceImportStatusEnum_cancelled,
+      _$referenceImportStatusEnum_unknownDefaultOpenApi,
     ]);
 
 const ReferenceImportEgressEnum _$referenceImportEgressEnum_OPEN =
     const ReferenceImportEgressEnum._('OPEN');
 const ReferenceImportEgressEnum _$referenceImportEgressEnum_LOCAL_ONLY =
     const ReferenceImportEgressEnum._('LOCAL_ONLY');
+const ReferenceImportEgressEnum
+_$referenceImportEgressEnum_unknownDefaultOpenApi =
+    const ReferenceImportEgressEnum._('unknownDefaultOpenApi');
 
 ReferenceImportEgressEnum _$referenceImportEgressEnumValueOf(String name) {
   switch (name) {
@@ -91,8 +106,10 @@ ReferenceImportEgressEnum _$referenceImportEgressEnumValueOf(String name) {
       return _$referenceImportEgressEnum_OPEN;
     case 'LOCAL_ONLY':
       return _$referenceImportEgressEnum_LOCAL_ONLY;
+    case 'unknownDefaultOpenApi':
+      return _$referenceImportEgressEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$referenceImportEgressEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -100,6 +117,7 @@ final BuiltSet<ReferenceImportEgressEnum> _$referenceImportEgressEnumValues =
     BuiltSet<ReferenceImportEgressEnum>(const <ReferenceImportEgressEnum>[
       _$referenceImportEgressEnum_OPEN,
       _$referenceImportEgressEnum_LOCAL_ONLY,
+      _$referenceImportEgressEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<ReferenceImportDatasetEnum> _$referenceImportDatasetEnumSerializer =
@@ -116,12 +134,14 @@ class _$ReferenceImportDatasetEnumSerializer
     'acled': 'acled',
     'usgsComcat': 'usgs-comcat',
     'gdacs': 'gdacs',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'ucdp-ged': 'ucdpGed',
     'acled': 'acled',
     'usgs-comcat': 'usgsComcat',
     'gdacs': 'gdacs',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -155,6 +175,7 @@ class _$ReferenceImportStatusEnumSerializer
     'failed': 'failed',
     'skipped': 'skipped',
     'cancelled': 'cancelled',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'queued': 'queued',
@@ -163,6 +184,7 @@ class _$ReferenceImportStatusEnumSerializer
     'failed': 'failed',
     'skipped': 'skipped',
     'cancelled': 'cancelled',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -192,10 +214,12 @@ class _$ReferenceImportEgressEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'OPEN': 'OPEN',
     'LOCAL_ONLY': 'LOCAL_ONLY',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'OPEN': 'OPEN',
     'LOCAL_ONLY': 'LOCAL_ONLY',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

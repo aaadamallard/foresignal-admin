@@ -15,6 +15,9 @@ _$sourceSettingsUpdateRegionTaggingEnum_lazy =
 const SourceSettingsUpdateRegionTaggingEnum
 _$sourceSettingsUpdateRegionTaggingEnum_off =
     const SourceSettingsUpdateRegionTaggingEnum._('off');
+const SourceSettingsUpdateRegionTaggingEnum
+_$sourceSettingsUpdateRegionTaggingEnum_unknownDefaultOpenApi =
+    const SourceSettingsUpdateRegionTaggingEnum._('unknownDefaultOpenApi');
 
 SourceSettingsUpdateRegionTaggingEnum
 _$sourceSettingsUpdateRegionTaggingEnumValueOf(String name) {
@@ -25,8 +28,10 @@ _$sourceSettingsUpdateRegionTaggingEnumValueOf(String name) {
       return _$sourceSettingsUpdateRegionTaggingEnum_lazy;
     case 'off':
       return _$sourceSettingsUpdateRegionTaggingEnum_off;
+    case 'unknownDefaultOpenApi':
+      return _$sourceSettingsUpdateRegionTaggingEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$sourceSettingsUpdateRegionTaggingEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -37,6 +42,7 @@ _$sourceSettingsUpdateRegionTaggingEnumValues =
         _$sourceSettingsUpdateRegionTaggingEnum_eager,
         _$sourceSettingsUpdateRegionTaggingEnum_lazy,
         _$sourceSettingsUpdateRegionTaggingEnum_off,
+        _$sourceSettingsUpdateRegionTaggingEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -45,6 +51,9 @@ const SourceSettingsUpdateEgressEnum _$sourceSettingsUpdateEgressEnum_OPEN =
 const SourceSettingsUpdateEgressEnum
 _$sourceSettingsUpdateEgressEnum_LOCAL_ONLY =
     const SourceSettingsUpdateEgressEnum._('LOCAL_ONLY');
+const SourceSettingsUpdateEgressEnum
+_$sourceSettingsUpdateEgressEnum_unknownDefaultOpenApi =
+    const SourceSettingsUpdateEgressEnum._('unknownDefaultOpenApi');
 
 SourceSettingsUpdateEgressEnum _$sourceSettingsUpdateEgressEnumValueOf(
   String name,
@@ -54,8 +63,10 @@ SourceSettingsUpdateEgressEnum _$sourceSettingsUpdateEgressEnumValueOf(
       return _$sourceSettingsUpdateEgressEnum_OPEN;
     case 'LOCAL_ONLY':
       return _$sourceSettingsUpdateEgressEnum_LOCAL_ONLY;
+    case 'unknownDefaultOpenApi':
+      return _$sourceSettingsUpdateEgressEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$sourceSettingsUpdateEgressEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -65,6 +76,7 @@ _$sourceSettingsUpdateEgressEnumValues =
       const <SourceSettingsUpdateEgressEnum>[
         _$sourceSettingsUpdateEgressEnum_OPEN,
         _$sourceSettingsUpdateEgressEnum_LOCAL_ONLY,
+        _$sourceSettingsUpdateEgressEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -86,6 +98,9 @@ _$sourceSettingsUpdateReliabilityEnum_E =
 const SourceSettingsUpdateReliabilityEnum
 _$sourceSettingsUpdateReliabilityEnum_F =
     const SourceSettingsUpdateReliabilityEnum._('F');
+const SourceSettingsUpdateReliabilityEnum
+_$sourceSettingsUpdateReliabilityEnum_unknownDefaultOpenApi =
+    const SourceSettingsUpdateReliabilityEnum._('unknownDefaultOpenApi');
 
 SourceSettingsUpdateReliabilityEnum
 _$sourceSettingsUpdateReliabilityEnumValueOf(String name) {
@@ -102,8 +117,10 @@ _$sourceSettingsUpdateReliabilityEnumValueOf(String name) {
       return _$sourceSettingsUpdateReliabilityEnum_E;
     case 'F':
       return _$sourceSettingsUpdateReliabilityEnum_F;
+    case 'unknownDefaultOpenApi':
+      return _$sourceSettingsUpdateReliabilityEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$sourceSettingsUpdateReliabilityEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -117,6 +134,7 @@ _$sourceSettingsUpdateReliabilityEnumValues =
         _$sourceSettingsUpdateReliabilityEnum_D,
         _$sourceSettingsUpdateReliabilityEnum_E,
         _$sourceSettingsUpdateReliabilityEnum_F,
+        _$sourceSettingsUpdateReliabilityEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -136,11 +154,13 @@ class _$SourceSettingsUpdateRegionTaggingEnumSerializer
     'eager': 'eager',
     'lazy': 'lazy',
     'off': 'off',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'eager': 'eager',
     'lazy': 'lazy',
     'off': 'off',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -172,10 +192,12 @@ class _$SourceSettingsUpdateEgressEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'OPEN': 'OPEN',
     'LOCAL_ONLY': 'LOCAL_ONLY',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'OPEN': 'OPEN',
     'LOCAL_ONLY': 'LOCAL_ONLY',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -209,6 +231,7 @@ class _$SourceSettingsUpdateReliabilityEnumSerializer
     'D': 'D',
     'E': 'E',
     'F': 'F',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'A': 'A',
@@ -217,6 +240,7 @@ class _$SourceSettingsUpdateReliabilityEnumSerializer
     'D': 'D',
     'E': 'E',
     'F': 'F',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

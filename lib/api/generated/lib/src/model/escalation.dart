@@ -257,6 +257,9 @@ class EscalationStateEnum extends EnumClass {
   static const EscalationStateEnum stopped = _$escalationStateEnum_stopped;
   @BuiltValueEnumConst(wireName: r'exhausted')
   static const EscalationStateEnum exhausted = _$escalationStateEnum_exhausted;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const EscalationStateEnum unknownDefaultOpenApi =
+      _$escalationStateEnum_unknownDefaultOpenApi;
 
   static Serializer<EscalationStateEnum> get serializer =>
       _$escalationStateEnumSerializer;

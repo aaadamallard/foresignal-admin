@@ -8,19 +8,24 @@ part of 'ingest_policy.dart';
 
 const IngestPolicyModeEnum _$ingestPolicyModeEnum_LATEST =
     const IngestPolicyModeEnum._('LATEST');
+const IngestPolicyModeEnum _$ingestPolicyModeEnum_unknownDefaultOpenApi =
+    const IngestPolicyModeEnum._('unknownDefaultOpenApi');
 
 IngestPolicyModeEnum _$ingestPolicyModeEnumValueOf(String name) {
   switch (name) {
     case 'LATEST':
       return _$ingestPolicyModeEnum_LATEST;
+    case 'unknownDefaultOpenApi':
+      return _$ingestPolicyModeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$ingestPolicyModeEnum_unknownDefaultOpenApi;
   }
 }
 
 final BuiltSet<IngestPolicyModeEnum> _$ingestPolicyModeEnumValues =
     BuiltSet<IngestPolicyModeEnum>(const <IngestPolicyModeEnum>[
       _$ingestPolicyModeEnum_LATEST,
+      _$ingestPolicyModeEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<IngestPolicyModeEnum> _$ingestPolicyModeEnumSerializer =
@@ -30,9 +35,11 @@ class _$IngestPolicyModeEnumSerializer
     implements PrimitiveSerializer<IngestPolicyModeEnum> {
   static const Map<String, Object> _toWire = const <String, Object>{
     'LATEST': 'LATEST',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'LATEST': 'LATEST',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

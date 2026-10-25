@@ -20,6 +20,9 @@ _$infraRulesRulesInnerIdEnum_substationCriticalLoad =
 const InfraRulesRulesInnerIdEnum
 _$infraRulesRulesInnerIdEnum_airportPortServes =
     const InfraRulesRulesInnerIdEnum._('airportPortServes');
+const InfraRulesRulesInnerIdEnum
+_$infraRulesRulesInnerIdEnum_unknownDefaultOpenApi =
+    const InfraRulesRulesInnerIdEnum._('unknownDefaultOpenApi');
 
 InfraRulesRulesInnerIdEnum _$infraRulesRulesInnerIdEnumValueOf(String name) {
   switch (name) {
@@ -35,8 +38,10 @@ InfraRulesRulesInnerIdEnum _$infraRulesRulesInnerIdEnumValueOf(String name) {
       return _$infraRulesRulesInnerIdEnum_substationCriticalLoad;
     case 'airportPortServes':
       return _$infraRulesRulesInnerIdEnum_airportPortServes;
+    case 'unknownDefaultOpenApi':
+      return _$infraRulesRulesInnerIdEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$infraRulesRulesInnerIdEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -48,6 +53,7 @@ final BuiltSet<InfraRulesRulesInnerIdEnum> _$infraRulesRulesInnerIdEnumValues =
       _$infraRulesRulesInnerIdEnum_plantSubstation,
       _$infraRulesRulesInnerIdEnum_substationCriticalLoad,
       _$infraRulesRulesInnerIdEnum_airportPortServes,
+      _$infraRulesRulesInnerIdEnum_unknownDefaultOpenApi,
     ]);
 
 const InfraRulesRulesInnerMethodEnum _$infraRulesRulesInnerMethodEnum_declared =
@@ -60,6 +66,9 @@ _$infraRulesRulesInnerMethodEnum_proximity =
     const InfraRulesRulesInnerMethodEnum._('proximity');
 const InfraRulesRulesInnerMethodEnum _$infraRulesRulesInnerMethodEnum_inferred =
     const InfraRulesRulesInnerMethodEnum._('inferred');
+const InfraRulesRulesInnerMethodEnum
+_$infraRulesRulesInnerMethodEnum_unknownDefaultOpenApi =
+    const InfraRulesRulesInnerMethodEnum._('unknownDefaultOpenApi');
 
 InfraRulesRulesInnerMethodEnum _$infraRulesRulesInnerMethodEnumValueOf(
   String name,
@@ -73,8 +82,10 @@ InfraRulesRulesInnerMethodEnum _$infraRulesRulesInnerMethodEnumValueOf(
       return _$infraRulesRulesInnerMethodEnum_proximity;
     case 'inferred':
       return _$infraRulesRulesInnerMethodEnum_inferred;
+    case 'unknownDefaultOpenApi':
+      return _$infraRulesRulesInnerMethodEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$infraRulesRulesInnerMethodEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -86,6 +97,7 @@ _$infraRulesRulesInnerMethodEnumValues =
         _$infraRulesRulesInnerMethodEnum_topological,
         _$infraRulesRulesInnerMethodEnum_proximity,
         _$infraRulesRulesInnerMethodEnum_inferred,
+        _$infraRulesRulesInnerMethodEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -107,6 +119,9 @@ _$infraRulesRulesInnerRelationEnum_hosts =
 const InfraRulesRulesInnerRelationEnum
 _$infraRulesRulesInnerRelationEnum_serves =
     const InfraRulesRulesInnerRelationEnum._('serves');
+const InfraRulesRulesInnerRelationEnum
+_$infraRulesRulesInnerRelationEnum_unknownDefaultOpenApi =
+    const InfraRulesRulesInnerRelationEnum._('unknownDefaultOpenApi');
 
 InfraRulesRulesInnerRelationEnum _$infraRulesRulesInnerRelationEnumValueOf(
   String name,
@@ -124,8 +139,10 @@ InfraRulesRulesInnerRelationEnum _$infraRulesRulesInnerRelationEnumValueOf(
       return _$infraRulesRulesInnerRelationEnum_hosts;
     case 'serves':
       return _$infraRulesRulesInnerRelationEnum_serves;
+    case 'unknownDefaultOpenApi':
+      return _$infraRulesRulesInnerRelationEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$infraRulesRulesInnerRelationEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -139,6 +156,7 @@ _$infraRulesRulesInnerRelationEnumValues =
         _$infraRulesRulesInnerRelationEnum_interconnects,
         _$infraRulesRulesInnerRelationEnum_hosts,
         _$infraRulesRulesInnerRelationEnum_serves,
+        _$infraRulesRulesInnerRelationEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -151,6 +169,9 @@ const InfraRulesRulesInnerLabelEnum _$infraRulesRulesInnerLabelEnum_possible =
 const InfraRulesRulesInnerLabelEnum
 _$infraRulesRulesInnerLabelEnum_speculative =
     const InfraRulesRulesInnerLabelEnum._('speculative');
+const InfraRulesRulesInnerLabelEnum
+_$infraRulesRulesInnerLabelEnum_unknownDefaultOpenApi =
+    const InfraRulesRulesInnerLabelEnum._('unknownDefaultOpenApi');
 
 InfraRulesRulesInnerLabelEnum _$infraRulesRulesInnerLabelEnumValueOf(
   String name,
@@ -164,8 +185,10 @@ InfraRulesRulesInnerLabelEnum _$infraRulesRulesInnerLabelEnumValueOf(
       return _$infraRulesRulesInnerLabelEnum_possible;
     case 'speculative':
       return _$infraRulesRulesInnerLabelEnum_speculative;
+    case 'unknownDefaultOpenApi':
+      return _$infraRulesRulesInnerLabelEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$infraRulesRulesInnerLabelEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -176,6 +199,7 @@ _$infraRulesRulesInnerLabelEnumValues = BuiltSet<InfraRulesRulesInnerLabelEnum>(
     _$infraRulesRulesInnerLabelEnum_likely,
     _$infraRulesRulesInnerLabelEnum_possible,
     _$infraRulesRulesInnerLabelEnum_speculative,
+    _$infraRulesRulesInnerLabelEnum_unknownDefaultOpenApi,
   ],
 );
 
@@ -200,6 +224,7 @@ class _$InfraRulesRulesInnerIdEnumSerializer
     'plantSubstation': 'plant-substation',
     'substationCriticalLoad': 'substation-critical-load',
     'airportPortServes': 'airport-port-serves',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'cable-landing': 'cableLanding',
@@ -208,6 +233,7 @@ class _$InfraRulesRulesInnerIdEnumSerializer
     'plant-substation': 'plantSubstation',
     'substation-critical-load': 'substationCriticalLoad',
     'airport-port-serves': 'airportPortServes',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -239,12 +265,14 @@ class _$InfraRulesRulesInnerMethodEnumSerializer
     'topological': 'topological',
     'proximity': 'proximity',
     'inferred': 'inferred',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'declared': 'declared',
     'topological': 'topological',
     'proximity': 'proximity',
     'inferred': 'inferred',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -278,6 +306,7 @@ class _$InfraRulesRulesInnerRelationEnumSerializer
     'interconnects': 'interconnects',
     'hosts': 'hosts',
     'serves': 'serves',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'supplies_power': 'suppliesPower',
@@ -286,6 +315,7 @@ class _$InfraRulesRulesInnerRelationEnumSerializer
     'interconnects': 'interconnects',
     'hosts': 'hosts',
     'serves': 'serves',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -317,12 +347,14 @@ class _$InfraRulesRulesInnerLabelEnumSerializer
     'likely': 'likely',
     'possible': 'possible',
     'speculative': 'speculative',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'confirmed': 'confirmed',
     'likely': 'likely',
     'possible': 'possible',
     'speculative': 'speculative',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

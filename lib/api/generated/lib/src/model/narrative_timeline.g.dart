@@ -14,6 +14,9 @@ const NarrativeTimelineIntervalEnum _$narrativeTimelineIntervalEnum_PT1H =
     const NarrativeTimelineIntervalEnum._('PT1H');
 const NarrativeTimelineIntervalEnum _$narrativeTimelineIntervalEnum_P1D =
     const NarrativeTimelineIntervalEnum._('P1D');
+const NarrativeTimelineIntervalEnum
+_$narrativeTimelineIntervalEnum_unknownDefaultOpenApi =
+    const NarrativeTimelineIntervalEnum._('unknownDefaultOpenApi');
 
 NarrativeTimelineIntervalEnum _$narrativeTimelineIntervalEnumValueOf(
   String name,
@@ -27,8 +30,10 @@ NarrativeTimelineIntervalEnum _$narrativeTimelineIntervalEnumValueOf(
       return _$narrativeTimelineIntervalEnum_PT1H;
     case 'P1D':
       return _$narrativeTimelineIntervalEnum_P1D;
+    case 'unknownDefaultOpenApi':
+      return _$narrativeTimelineIntervalEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$narrativeTimelineIntervalEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -39,6 +44,7 @@ _$narrativeTimelineIntervalEnumValues = BuiltSet<NarrativeTimelineIntervalEnum>(
     _$narrativeTimelineIntervalEnum_PT15M,
     _$narrativeTimelineIntervalEnum_PT1H,
     _$narrativeTimelineIntervalEnum_P1D,
+    _$narrativeTimelineIntervalEnum_unknownDefaultOpenApi,
   ],
 );
 
@@ -53,12 +59,14 @@ class _$NarrativeTimelineIntervalEnumSerializer
     'PT15M': 'PT15M',
     'PT1H': 'PT1H',
     'P1D': 'P1D',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'PT5M': 'PT5M',
     'PT15M': 'PT15M',
     'PT1H': 'PT1H',
     'P1D': 'P1D',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

@@ -182,6 +182,9 @@ class StormSwathPayloadStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'ended')
   static const StormSwathPayloadStatusEnum ended =
       _$stormSwathPayloadStatusEnum_ended;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const StormSwathPayloadStatusEnum unknownDefaultOpenApi =
+      _$stormSwathPayloadStatusEnum_unknownDefaultOpenApi;
 
   static Serializer<StormSwathPayloadStatusEnum> get serializer =>
       _$stormSwathPayloadStatusEnumSerializer;

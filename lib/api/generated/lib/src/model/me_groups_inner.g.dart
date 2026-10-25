@@ -10,6 +10,8 @@ const MeGroupsInnerRoleEnum _$meGroupsInnerRoleEnum_member =
     const MeGroupsInnerRoleEnum._('member');
 const MeGroupsInnerRoleEnum _$meGroupsInnerRoleEnum_manager =
     const MeGroupsInnerRoleEnum._('manager');
+const MeGroupsInnerRoleEnum _$meGroupsInnerRoleEnum_unknownDefaultOpenApi =
+    const MeGroupsInnerRoleEnum._('unknownDefaultOpenApi');
 
 MeGroupsInnerRoleEnum _$meGroupsInnerRoleEnumValueOf(String name) {
   switch (name) {
@@ -17,8 +19,10 @@ MeGroupsInnerRoleEnum _$meGroupsInnerRoleEnumValueOf(String name) {
       return _$meGroupsInnerRoleEnum_member;
     case 'manager':
       return _$meGroupsInnerRoleEnum_manager;
+    case 'unknownDefaultOpenApi':
+      return _$meGroupsInnerRoleEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$meGroupsInnerRoleEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -26,6 +30,7 @@ final BuiltSet<MeGroupsInnerRoleEnum> _$meGroupsInnerRoleEnumValues =
     BuiltSet<MeGroupsInnerRoleEnum>(const <MeGroupsInnerRoleEnum>[
       _$meGroupsInnerRoleEnum_member,
       _$meGroupsInnerRoleEnum_manager,
+      _$meGroupsInnerRoleEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<MeGroupsInnerRoleEnum> _$meGroupsInnerRoleEnumSerializer =
@@ -36,10 +41,12 @@ class _$MeGroupsInnerRoleEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'member': 'member',
     'manager': 'manager',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'member': 'member',
     'manager': 'manager',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

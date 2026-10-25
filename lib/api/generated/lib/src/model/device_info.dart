@@ -189,6 +189,9 @@ class DeviceInfoPlatformEnum extends EnumClass {
   static const DeviceInfoPlatformEnum web = _$deviceInfoPlatformEnum_web;
   @BuiltValueEnumConst(wireName: r'other')
   static const DeviceInfoPlatformEnum other = _$deviceInfoPlatformEnum_other;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const DeviceInfoPlatformEnum unknownDefaultOpenApi =
+      _$deviceInfoPlatformEnum_unknownDefaultOpenApi;
 
   static Serializer<DeviceInfoPlatformEnum> get serializer =>
       _$deviceInfoPlatformEnumSerializer;

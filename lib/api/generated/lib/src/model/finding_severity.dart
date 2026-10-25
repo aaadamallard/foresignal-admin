@@ -16,6 +16,8 @@ class FindingSeverity extends EnumClass {
   static const FindingSeverity notable = _$notable;
   @BuiltValueEnumConst(wireName: r'significant')
   static const FindingSeverity significant = _$significant;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const FindingSeverity unknownDefaultOpenApi = _$unknownDefaultOpenApi;
 
   static Serializer<FindingSeverity> get serializer =>
       _$findingSeveritySerializer;

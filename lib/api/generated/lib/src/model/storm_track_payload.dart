@@ -325,6 +325,9 @@ class StormTrackPayloadStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'ended')
   static const StormTrackPayloadStatusEnum ended =
       _$stormTrackPayloadStatusEnum_ended;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const StormTrackPayloadStatusEnum unknownDefaultOpenApi =
+      _$stormTrackPayloadStatusEnum_unknownDefaultOpenApi;
 
   static Serializer<StormTrackPayloadStatusEnum> get serializer =>
       _$stormTrackPayloadStatusEnumSerializer;

@@ -12,6 +12,8 @@ const ProductTemporalTypeEnum _$productTemporalTypeEnum_forecast =
     const ProductTemporalTypeEnum._('forecast');
 const ProductTemporalTypeEnum _$productTemporalTypeEnum_pass =
     const ProductTemporalTypeEnum._('pass');
+const ProductTemporalTypeEnum _$productTemporalTypeEnum_unknownDefaultOpenApi =
+    const ProductTemporalTypeEnum._('unknownDefaultOpenApi');
 
 ProductTemporalTypeEnum _$productTemporalTypeEnumValueOf(String name) {
   switch (name) {
@@ -21,8 +23,10 @@ ProductTemporalTypeEnum _$productTemporalTypeEnumValueOf(String name) {
       return _$productTemporalTypeEnum_forecast;
     case 'pass':
       return _$productTemporalTypeEnum_pass;
+    case 'unknownDefaultOpenApi':
+      return _$productTemporalTypeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$productTemporalTypeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -31,6 +35,7 @@ final BuiltSet<ProductTemporalTypeEnum> _$productTemporalTypeEnumValues =
       _$productTemporalTypeEnum_observation,
       _$productTemporalTypeEnum_forecast,
       _$productTemporalTypeEnum_pass,
+      _$productTemporalTypeEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<ProductTemporalTypeEnum> _$productTemporalTypeEnumSerializer =
@@ -42,11 +47,13 @@ class _$ProductTemporalTypeEnumSerializer
     'observation': 'observation',
     'forecast': 'forecast',
     'pass': 'pass',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'observation': 'observation',
     'forecast': 'forecast',
     'pass': 'pass',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

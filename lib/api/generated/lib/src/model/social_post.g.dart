@@ -16,6 +16,9 @@ const SocialPostCollectionEnum _$socialPostCollectionEnum_cue =
     const SocialPostCollectionEnum._('cue');
 const SocialPostCollectionEnum _$socialPostCollectionEnum_import_ =
     const SocialPostCollectionEnum._('import_');
+const SocialPostCollectionEnum
+_$socialPostCollectionEnum_unknownDefaultOpenApi =
+    const SocialPostCollectionEnum._('unknownDefaultOpenApi');
 
 SocialPostCollectionEnum _$socialPostCollectionEnumValueOf(String name) {
   switch (name) {
@@ -29,8 +32,10 @@ SocialPostCollectionEnum _$socialPostCollectionEnumValueOf(String name) {
       return _$socialPostCollectionEnum_cue;
     case 'import_':
       return _$socialPostCollectionEnum_import_;
+    case 'unknownDefaultOpenApi':
+      return _$socialPostCollectionEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$socialPostCollectionEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -41,6 +46,7 @@ final BuiltSet<SocialPostCollectionEnum> _$socialPostCollectionEnumValues =
       _$socialPostCollectionEnum_sample,
       _$socialPostCollectionEnum_cue,
       _$socialPostCollectionEnum_import_,
+      _$socialPostCollectionEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<SocialPostCollectionEnum> _$socialPostCollectionEnumSerializer =
@@ -54,6 +60,7 @@ class _$SocialPostCollectionEnumSerializer
     'sample': 'sample',
     'cue': 'cue',
     'import_': 'import',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'stream': 'stream',
@@ -61,6 +68,7 @@ class _$SocialPostCollectionEnumSerializer
     'sample': 'sample',
     'cue': 'cue',
     'import': 'import_',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

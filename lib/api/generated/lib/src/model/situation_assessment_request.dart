@@ -167,6 +167,9 @@ class SituationAssessmentRequestRolesEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'proposer')
   static const SituationAssessmentRequestRolesEnum proposer =
       _$situationAssessmentRequestRolesEnum_proposer;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const SituationAssessmentRequestRolesEnum unknownDefaultOpenApi =
+      _$situationAssessmentRequestRolesEnum_unknownDefaultOpenApi;
 
   static Serializer<SituationAssessmentRequestRolesEnum> get serializer =>
       _$situationAssessmentRequestRolesEnumSerializer;
@@ -190,6 +193,9 @@ class SituationAssessmentRequestEffortEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'high')
   static const SituationAssessmentRequestEffortEnum high =
       _$situationAssessmentRequestEffortEnum_high;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const SituationAssessmentRequestEffortEnum unknownDefaultOpenApi =
+      _$situationAssessmentRequestEffortEnum_unknownDefaultOpenApi;
 
   static Serializer<SituationAssessmentRequestEffortEnum> get serializer =>
       _$situationAssessmentRequestEffortEnumSerializer;

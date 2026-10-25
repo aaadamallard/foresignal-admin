@@ -12,6 +12,9 @@ const PolSubjectSubjectTypeEnum _$polSubjectSubjectTypeEnum_entity =
     const PolSubjectSubjectTypeEnum._('entity');
 const PolSubjectSubjectTypeEnum _$polSubjectSubjectTypeEnum_watchlist =
     const PolSubjectSubjectTypeEnum._('watchlist');
+const PolSubjectSubjectTypeEnum
+_$polSubjectSubjectTypeEnum_unknownDefaultOpenApi =
+    const PolSubjectSubjectTypeEnum._('unknownDefaultOpenApi');
 
 PolSubjectSubjectTypeEnum _$polSubjectSubjectTypeEnumValueOf(String name) {
   switch (name) {
@@ -21,8 +24,10 @@ PolSubjectSubjectTypeEnum _$polSubjectSubjectTypeEnumValueOf(String name) {
       return _$polSubjectSubjectTypeEnum_entity;
     case 'watchlist':
       return _$polSubjectSubjectTypeEnum_watchlist;
+    case 'unknownDefaultOpenApi':
+      return _$polSubjectSubjectTypeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$polSubjectSubjectTypeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -31,6 +36,7 @@ final BuiltSet<PolSubjectSubjectTypeEnum> _$polSubjectSubjectTypeEnumValues =
       _$polSubjectSubjectTypeEnum_record,
       _$polSubjectSubjectTypeEnum_entity,
       _$polSubjectSubjectTypeEnum_watchlist,
+      _$polSubjectSubjectTypeEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<PolSubjectSubjectTypeEnum> _$polSubjectSubjectTypeEnumSerializer =
@@ -42,11 +48,13 @@ class _$PolSubjectSubjectTypeEnumSerializer
     'record': 'record',
     'entity': 'entity',
     'watchlist': 'watchlist',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'record': 'record',
     'entity': 'entity',
     'watchlist': 'watchlist',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

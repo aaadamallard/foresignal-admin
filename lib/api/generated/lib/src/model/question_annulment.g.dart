@@ -12,6 +12,9 @@ const QuestionAnnulmentCodeEnum _$questionAnnulmentCodeEnum_COVERAGE_GAP =
     const QuestionAnnulmentCodeEnum._('COVERAGE_GAP');
 const QuestionAnnulmentCodeEnum _$questionAnnulmentCodeEnum_OPERATOR =
     const QuestionAnnulmentCodeEnum._('OPERATOR');
+const QuestionAnnulmentCodeEnum
+_$questionAnnulmentCodeEnum_unknownDefaultOpenApi =
+    const QuestionAnnulmentCodeEnum._('unknownDefaultOpenApi');
 
 QuestionAnnulmentCodeEnum _$questionAnnulmentCodeEnumValueOf(String name) {
   switch (name) {
@@ -21,8 +24,10 @@ QuestionAnnulmentCodeEnum _$questionAnnulmentCodeEnumValueOf(String name) {
       return _$questionAnnulmentCodeEnum_COVERAGE_GAP;
     case 'OPERATOR':
       return _$questionAnnulmentCodeEnum_OPERATOR;
+    case 'unknownDefaultOpenApi':
+      return _$questionAnnulmentCodeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$questionAnnulmentCodeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -31,6 +36,7 @@ final BuiltSet<QuestionAnnulmentCodeEnum> _$questionAnnulmentCodeEnumValues =
       _$questionAnnulmentCodeEnum_LOW_DETECTABILITY,
       _$questionAnnulmentCodeEnum_COVERAGE_GAP,
       _$questionAnnulmentCodeEnum_OPERATOR,
+      _$questionAnnulmentCodeEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<QuestionAnnulmentCodeEnum> _$questionAnnulmentCodeEnumSerializer =
@@ -42,11 +48,13 @@ class _$QuestionAnnulmentCodeEnumSerializer
     'LOW_DETECTABILITY': 'LOW_DETECTABILITY',
     'COVERAGE_GAP': 'COVERAGE_GAP',
     'OPERATOR': 'OPERATOR',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'LOW_DETECTABILITY': 'LOW_DETECTABILITY',
     'COVERAGE_GAP': 'COVERAGE_GAP',
     'OPERATOR': 'OPERATOR',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

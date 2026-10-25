@@ -244,6 +244,9 @@ class PrincipalInputKindEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'service')
   static const PrincipalInputKindEnum service =
       _$principalInputKindEnum_service;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const PrincipalInputKindEnum unknownDefaultOpenApi =
+      _$principalInputKindEnum_unknownDefaultOpenApi;
 
   static Serializer<PrincipalInputKindEnum> get serializer =>
       _$principalInputKindEnumSerializer;

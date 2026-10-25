@@ -14,6 +14,8 @@ const MappingFieldTypeEnum _$mappingFieldTypeEnum_string =
     const MappingFieldTypeEnum._('string');
 const MappingFieldTypeEnum _$mappingFieldTypeEnum_boolean =
     const MappingFieldTypeEnum._('boolean');
+const MappingFieldTypeEnum _$mappingFieldTypeEnum_unknownDefaultOpenApi =
+    const MappingFieldTypeEnum._('unknownDefaultOpenApi');
 
 MappingFieldTypeEnum _$mappingFieldTypeEnumValueOf(String name) {
   switch (name) {
@@ -25,8 +27,10 @@ MappingFieldTypeEnum _$mappingFieldTypeEnumValueOf(String name) {
       return _$mappingFieldTypeEnum_string;
     case 'boolean':
       return _$mappingFieldTypeEnum_boolean;
+    case 'unknownDefaultOpenApi':
+      return _$mappingFieldTypeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$mappingFieldTypeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -36,6 +40,7 @@ final BuiltSet<MappingFieldTypeEnum> _$mappingFieldTypeEnumValues =
       _$mappingFieldTypeEnum_integer,
       _$mappingFieldTypeEnum_string,
       _$mappingFieldTypeEnum_boolean,
+      _$mappingFieldTypeEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<MappingFieldTypeEnum> _$mappingFieldTypeEnumSerializer =
@@ -48,12 +53,14 @@ class _$MappingFieldTypeEnumSerializer
     'integer': 'integer',
     'string': 'string',
     'boolean': 'boolean',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'number': 'number',
     'integer': 'integer',
     'string': 'string',
     'boolean': 'boolean',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

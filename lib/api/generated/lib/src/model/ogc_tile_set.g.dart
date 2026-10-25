@@ -8,19 +8,24 @@ part of 'ogc_tile_set.dart';
 
 const OgcTileSetDataTypeEnum _$ogcTileSetDataTypeEnum_map =
     const OgcTileSetDataTypeEnum._('map');
+const OgcTileSetDataTypeEnum _$ogcTileSetDataTypeEnum_unknownDefaultOpenApi =
+    const OgcTileSetDataTypeEnum._('unknownDefaultOpenApi');
 
 OgcTileSetDataTypeEnum _$ogcTileSetDataTypeEnumValueOf(String name) {
   switch (name) {
     case 'map':
       return _$ogcTileSetDataTypeEnum_map;
+    case 'unknownDefaultOpenApi':
+      return _$ogcTileSetDataTypeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$ogcTileSetDataTypeEnum_unknownDefaultOpenApi;
   }
 }
 
 final BuiltSet<OgcTileSetDataTypeEnum> _$ogcTileSetDataTypeEnumValues =
     BuiltSet<OgcTileSetDataTypeEnum>(const <OgcTileSetDataTypeEnum>[
       _$ogcTileSetDataTypeEnum_map,
+      _$ogcTileSetDataTypeEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<OgcTileSetDataTypeEnum> _$ogcTileSetDataTypeEnumSerializer =
@@ -30,9 +35,11 @@ class _$OgcTileSetDataTypeEnumSerializer
     implements PrimitiveSerializer<OgcTileSetDataTypeEnum> {
   static const Map<String, Object> _toWire = const <String, Object>{
     'map': 'map',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'map': 'map',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

@@ -18,6 +18,9 @@ const SeriesForecastModelMethodEnum _$seriesForecastModelMethodEnum_nbGlm =
 const SeriesForecastModelMethodEnum
 _$seriesForecastModelMethodEnum_dampedTrend =
     const SeriesForecastModelMethodEnum._('dampedTrend');
+const SeriesForecastModelMethodEnum
+_$seriesForecastModelMethodEnum_unknownDefaultOpenApi =
+    const SeriesForecastModelMethodEnum._('unknownDefaultOpenApi');
 
 SeriesForecastModelMethodEnum _$seriesForecastModelMethodEnumValueOf(
   String name,
@@ -33,8 +36,10 @@ SeriesForecastModelMethodEnum _$seriesForecastModelMethodEnumValueOf(
       return _$seriesForecastModelMethodEnum_nbGlm;
     case 'dampedTrend':
       return _$seriesForecastModelMethodEnum_dampedTrend;
+    case 'unknownDefaultOpenApi':
+      return _$seriesForecastModelMethodEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$seriesForecastModelMethodEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -46,6 +51,7 @@ _$seriesForecastModelMethodEnumValues = BuiltSet<SeriesForecastModelMethodEnum>(
     _$seriesForecastModelMethodEnum_etsAaa,
     _$seriesForecastModelMethodEnum_nbGlm,
     _$seriesForecastModelMethodEnum_dampedTrend,
+    _$seriesForecastModelMethodEnum_unknownDefaultOpenApi,
   ],
 );
 
@@ -61,6 +67,7 @@ class _$SeriesForecastModelMethodEnumSerializer
     'etsAaa': 'ets-aaa',
     'nbGlm': 'nb-glm',
     'dampedTrend': 'damped-trend',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'seasonal-naive': 'seasonalNaive',
@@ -68,6 +75,7 @@ class _$SeriesForecastModelMethodEnumSerializer
     'ets-aaa': 'etsAaa',
     'nb-glm': 'nbGlm',
     'damped-trend': 'dampedTrend',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

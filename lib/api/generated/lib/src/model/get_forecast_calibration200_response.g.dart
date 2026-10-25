@@ -12,6 +12,9 @@ _$getForecastCalibration200ResponseLabelEnum_ok =
 const GetForecastCalibration200ResponseLabelEnum
 _$getForecastCalibration200ResponseLabelEnum_insufficient =
     const GetForecastCalibration200ResponseLabelEnum._('insufficient');
+const GetForecastCalibration200ResponseLabelEnum
+_$getForecastCalibration200ResponseLabelEnum_unknownDefaultOpenApi =
+    const GetForecastCalibration200ResponseLabelEnum._('unknownDefaultOpenApi');
 
 GetForecastCalibration200ResponseLabelEnum
 _$getForecastCalibration200ResponseLabelEnumValueOf(String name) {
@@ -20,8 +23,10 @@ _$getForecastCalibration200ResponseLabelEnumValueOf(String name) {
       return _$getForecastCalibration200ResponseLabelEnum_ok;
     case 'insufficient':
       return _$getForecastCalibration200ResponseLabelEnum_insufficient;
+    case 'unknownDefaultOpenApi':
+      return _$getForecastCalibration200ResponseLabelEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$getForecastCalibration200ResponseLabelEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -31,6 +36,7 @@ _$getForecastCalibration200ResponseLabelEnumValues =
       const <GetForecastCalibration200ResponseLabelEnum>[
         _$getForecastCalibration200ResponseLabelEnum_ok,
         _$getForecastCalibration200ResponseLabelEnum_insufficient,
+        _$getForecastCalibration200ResponseLabelEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -40,6 +46,11 @@ _$getForecastCalibration200ResponseMethodEnum_corp =
 const GetForecastCalibration200ResponseMethodEnum
 _$getForecastCalibration200ResponseMethodEnum_bins =
     const GetForecastCalibration200ResponseMethodEnum._('bins');
+const GetForecastCalibration200ResponseMethodEnum
+_$getForecastCalibration200ResponseMethodEnum_unknownDefaultOpenApi =
+    const GetForecastCalibration200ResponseMethodEnum._(
+      'unknownDefaultOpenApi',
+    );
 
 GetForecastCalibration200ResponseMethodEnum
 _$getForecastCalibration200ResponseMethodEnumValueOf(String name) {
@@ -48,8 +59,10 @@ _$getForecastCalibration200ResponseMethodEnumValueOf(String name) {
       return _$getForecastCalibration200ResponseMethodEnum_corp;
     case 'bins':
       return _$getForecastCalibration200ResponseMethodEnum_bins;
+    case 'unknownDefaultOpenApi':
+      return _$getForecastCalibration200ResponseMethodEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$getForecastCalibration200ResponseMethodEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -59,20 +72,26 @@ _$getForecastCalibration200ResponseMethodEnumValues =
       const <GetForecastCalibration200ResponseMethodEnum>[
         _$getForecastCalibration200ResponseMethodEnum_corp,
         _$getForecastCalibration200ResponseMethodEnum_bins,
+        _$getForecastCalibration200ResponseMethodEnum_unknownDefaultOpenApi,
       ],
     );
 
 const GetForecastCalibration200ResponseTypeEnum
 _$getForecastCalibration200ResponseTypeEnum_numeric =
     const GetForecastCalibration200ResponseTypeEnum._('numeric');
+const GetForecastCalibration200ResponseTypeEnum
+_$getForecastCalibration200ResponseTypeEnum_unknownDefaultOpenApi =
+    const GetForecastCalibration200ResponseTypeEnum._('unknownDefaultOpenApi');
 
 GetForecastCalibration200ResponseTypeEnum
 _$getForecastCalibration200ResponseTypeEnumValueOf(String name) {
   switch (name) {
     case 'numeric':
       return _$getForecastCalibration200ResponseTypeEnum_numeric;
+    case 'unknownDefaultOpenApi':
+      return _$getForecastCalibration200ResponseTypeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$getForecastCalibration200ResponseTypeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -81,6 +100,7 @@ _$getForecastCalibration200ResponseTypeEnumValues =
     BuiltSet<GetForecastCalibration200ResponseTypeEnum>(
       const <GetForecastCalibration200ResponseTypeEnum>[
         _$getForecastCalibration200ResponseTypeEnum_numeric,
+        _$getForecastCalibration200ResponseTypeEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -99,10 +119,12 @@ class _$GetForecastCalibration200ResponseLabelEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'ok': 'ok',
     'insufficient': 'insufficient',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'ok': 'ok',
     'insufficient': 'insufficient',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -135,10 +157,12 @@ class _$GetForecastCalibration200ResponseMethodEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'corp': 'corp',
     'bins': 'bins',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'corp': 'corp',
     'bins': 'bins',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -169,9 +193,11 @@ class _$GetForecastCalibration200ResponseTypeEnumSerializer
     implements PrimitiveSerializer<GetForecastCalibration200ResponseTypeEnum> {
   static const Map<String, Object> _toWire = const <String, Object>{
     'numeric': 'numeric',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'numeric': 'numeric',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

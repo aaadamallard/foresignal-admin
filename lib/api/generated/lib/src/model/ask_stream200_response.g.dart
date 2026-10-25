@@ -10,6 +10,9 @@ const AskStream200ResponseModeEnum _$askStream200ResponseModeEnum_tools =
     const AskStream200ResponseModeEnum._('tools');
 const AskStream200ResponseModeEnum _$askStream200ResponseModeEnum_retrieval =
     const AskStream200ResponseModeEnum._('retrieval');
+const AskStream200ResponseModeEnum
+_$askStream200ResponseModeEnum_unknownDefaultOpenApi =
+    const AskStream200ResponseModeEnum._('unknownDefaultOpenApi');
 
 AskStream200ResponseModeEnum _$askStream200ResponseModeEnumValueOf(
   String name,
@@ -19,18 +22,20 @@ AskStream200ResponseModeEnum _$askStream200ResponseModeEnumValueOf(
       return _$askStream200ResponseModeEnum_tools;
     case 'retrieval':
       return _$askStream200ResponseModeEnum_retrieval;
+    case 'unknownDefaultOpenApi':
+      return _$askStream200ResponseModeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$askStream200ResponseModeEnum_unknownDefaultOpenApi;
   }
 }
 
 final BuiltSet<AskStream200ResponseModeEnum>
-_$askStream200ResponseModeEnumValues = BuiltSet<AskStream200ResponseModeEnum>(
-  const <AskStream200ResponseModeEnum>[
-    _$askStream200ResponseModeEnum_tools,
-    _$askStream200ResponseModeEnum_retrieval,
-  ],
-);
+_$askStream200ResponseModeEnumValues =
+    BuiltSet<AskStream200ResponseModeEnum>(const <AskStream200ResponseModeEnum>[
+      _$askStream200ResponseModeEnum_tools,
+      _$askStream200ResponseModeEnum_retrieval,
+      _$askStream200ResponseModeEnum_unknownDefaultOpenApi,
+    ]);
 
 const AskStream200ResponseStopReasonEnum
 _$askStream200ResponseStopReasonEnum_end =
@@ -44,6 +49,9 @@ _$askStream200ResponseStopReasonEnum_refusal =
 const AskStream200ResponseStopReasonEnum
 _$askStream200ResponseStopReasonEnum_error =
     const AskStream200ResponseStopReasonEnum._('error');
+const AskStream200ResponseStopReasonEnum
+_$askStream200ResponseStopReasonEnum_unknownDefaultOpenApi =
+    const AskStream200ResponseStopReasonEnum._('unknownDefaultOpenApi');
 
 AskStream200ResponseStopReasonEnum _$askStream200ResponseStopReasonEnumValueOf(
   String name,
@@ -57,8 +65,10 @@ AskStream200ResponseStopReasonEnum _$askStream200ResponseStopReasonEnumValueOf(
       return _$askStream200ResponseStopReasonEnum_refusal;
     case 'error':
       return _$askStream200ResponseStopReasonEnum_error;
+    case 'unknownDefaultOpenApi':
+      return _$askStream200ResponseStopReasonEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$askStream200ResponseStopReasonEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -70,6 +80,7 @@ _$askStream200ResponseStopReasonEnumValues =
         _$askStream200ResponseStopReasonEnum_maxTokens,
         _$askStream200ResponseStopReasonEnum_refusal,
         _$askStream200ResponseStopReasonEnum_error,
+        _$askStream200ResponseStopReasonEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -82,6 +93,9 @@ _$askStream200ResponseRequiredScopeEnum_agent =
 const AskStream200ResponseRequiredScopeEnum
 _$askStream200ResponseRequiredScopeEnum_admin =
     const AskStream200ResponseRequiredScopeEnum._('admin');
+const AskStream200ResponseRequiredScopeEnum
+_$askStream200ResponseRequiredScopeEnum_unknownDefaultOpenApi =
+    const AskStream200ResponseRequiredScopeEnum._('unknownDefaultOpenApi');
 
 AskStream200ResponseRequiredScopeEnum
 _$askStream200ResponseRequiredScopeEnumValueOf(String name) {
@@ -92,8 +106,10 @@ _$askStream200ResponseRequiredScopeEnumValueOf(String name) {
       return _$askStream200ResponseRequiredScopeEnum_agent;
     case 'admin':
       return _$askStream200ResponseRequiredScopeEnum_admin;
+    case 'unknownDefaultOpenApi':
+      return _$askStream200ResponseRequiredScopeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$askStream200ResponseRequiredScopeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -104,6 +120,7 @@ _$askStream200ResponseRequiredScopeEnumValues =
         _$askStream200ResponseRequiredScopeEnum_read,
         _$askStream200ResponseRequiredScopeEnum_agent,
         _$askStream200ResponseRequiredScopeEnum_admin,
+        _$askStream200ResponseRequiredScopeEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -121,6 +138,9 @@ const AskStream200ResponseClass_Enum _$askStream200ResponseClassEnum_anonymous =
     const AskStream200ResponseClass_Enum._('anonymous');
 const AskStream200ResponseClass_Enum _$askStream200ResponseClassEnum_metrics =
     const AskStream200ResponseClass_Enum._('metrics');
+const AskStream200ResponseClass_Enum
+_$askStream200ResponseClassEnum_unknownDefaultOpenApi =
+    const AskStream200ResponseClass_Enum._('unknownDefaultOpenApi');
 
 AskStream200ResponseClass_Enum _$askStream200ResponseClassEnumValueOf(
   String name,
@@ -140,8 +160,10 @@ AskStream200ResponseClass_Enum _$askStream200ResponseClassEnumValueOf(
       return _$askStream200ResponseClassEnum_anonymous;
     case 'metrics':
       return _$askStream200ResponseClassEnum_metrics;
+    case 'unknownDefaultOpenApi':
+      return _$askStream200ResponseClassEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$askStream200ResponseClassEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -156,6 +178,7 @@ _$askStream200ResponseClassEnumValues =
         _$askStream200ResponseClassEnum_write,
         _$askStream200ResponseClassEnum_anonymous,
         _$askStream200ResponseClassEnum_metrics,
+        _$askStream200ResponseClassEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -177,10 +200,12 @@ class _$AskStream200ResponseModeEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'tools': 'tools',
     'retrieval': 'retrieval',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'tools': 'tools',
     'retrieval': 'retrieval',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -212,12 +237,14 @@ class _$AskStream200ResponseStopReasonEnumSerializer
     'maxTokens': 'max_tokens',
     'refusal': 'refusal',
     'error': 'error',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'end': 'end',
     'max_tokens': 'maxTokens',
     'refusal': 'refusal',
     'error': 'error',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -248,11 +275,13 @@ class _$AskStream200ResponseRequiredScopeEnumSerializer
     'read': 'read',
     'agent': 'agent',
     'admin': 'admin',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'read': 'read',
     'agent': 'agent',
     'admin': 'admin',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -289,6 +318,7 @@ class _$AskStream200ResponseClass_EnumSerializer
     'write': 'write',
     'anonymous': 'anonymous',
     'metrics': 'metrics',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'read': 'read',
@@ -298,6 +328,7 @@ class _$AskStream200ResponseClass_EnumSerializer
     'write': 'write',
     'anonymous': 'anonymous',
     'metrics': 'metrics',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

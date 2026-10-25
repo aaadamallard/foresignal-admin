@@ -8,6 +8,9 @@ part of 'field_manifest.dart';
 
 const FieldManifestSchemaVersionEnum _$fieldManifestSchemaVersionEnum_number1 =
     const FieldManifestSchemaVersionEnum._('number1');
+const FieldManifestSchemaVersionEnum
+_$fieldManifestSchemaVersionEnum_unknownDefaultOpenApi =
+    const FieldManifestSchemaVersionEnum._('unknownDefaultOpenApi');
 
 FieldManifestSchemaVersionEnum _$fieldManifestSchemaVersionEnumValueOf(
   String name,
@@ -15,8 +18,10 @@ FieldManifestSchemaVersionEnum _$fieldManifestSchemaVersionEnumValueOf(
   switch (name) {
     case 'number1':
       return _$fieldManifestSchemaVersionEnum_number1;
+    case 'unknownDefaultOpenApi':
+      return _$fieldManifestSchemaVersionEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$fieldManifestSchemaVersionEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -25,6 +30,7 @@ _$fieldManifestSchemaVersionEnumValues =
     BuiltSet<FieldManifestSchemaVersionEnum>(
       const <FieldManifestSchemaVersionEnum>[
         _$fieldManifestSchemaVersionEnum_number1,
+        _$fieldManifestSchemaVersionEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -36,9 +42,11 @@ class _$FieldManifestSchemaVersionEnumSerializer
     implements PrimitiveSerializer<FieldManifestSchemaVersionEnum> {
   static const Map<String, Object> _toWire = const <String, Object>{
     'number1': 1,
+    'unknownDefaultOpenApi': 11184809,
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     1: 'number1',
+    11184809: 'unknownDefaultOpenApi',
   };
 
   @override

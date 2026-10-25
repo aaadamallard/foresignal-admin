@@ -10,6 +10,9 @@ const ExportManifestSignatureAlgEnum _$exportManifestSignatureAlgEnum_ed25519 =
     const ExportManifestSignatureAlgEnum._('ed25519');
 const ExportManifestSignatureAlgEnum _$exportManifestSignatureAlgEnum_edDSA =
     const ExportManifestSignatureAlgEnum._('edDSA');
+const ExportManifestSignatureAlgEnum
+_$exportManifestSignatureAlgEnum_unknownDefaultOpenApi =
+    const ExportManifestSignatureAlgEnum._('unknownDefaultOpenApi');
 
 ExportManifestSignatureAlgEnum _$exportManifestSignatureAlgEnumValueOf(
   String name,
@@ -19,8 +22,10 @@ ExportManifestSignatureAlgEnum _$exportManifestSignatureAlgEnumValueOf(
       return _$exportManifestSignatureAlgEnum_ed25519;
     case 'edDSA':
       return _$exportManifestSignatureAlgEnum_edDSA;
+    case 'unknownDefaultOpenApi':
+      return _$exportManifestSignatureAlgEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$exportManifestSignatureAlgEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -30,6 +35,7 @@ _$exportManifestSignatureAlgEnumValues =
       const <ExportManifestSignatureAlgEnum>[
         _$exportManifestSignatureAlgEnum_ed25519,
         _$exportManifestSignatureAlgEnum_edDSA,
+        _$exportManifestSignatureAlgEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -42,10 +48,12 @@ class _$ExportManifestSignatureAlgEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'ed25519': 'Ed25519',
     'edDSA': 'EdDSA',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'Ed25519': 'ed25519',
     'EdDSA': 'edDSA',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

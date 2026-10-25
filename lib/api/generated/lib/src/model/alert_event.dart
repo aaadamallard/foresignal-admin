@@ -189,6 +189,9 @@ class AlertEventTypeEnum extends EnumClass {
   static const AlertEventTypeEnum snoozed = _$alertEventTypeEnum_snoozed;
   @BuiltValueEnumConst(wireName: r'resolved')
   static const AlertEventTypeEnum resolved = _$alertEventTypeEnum_resolved;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const AlertEventTypeEnum unknownDefaultOpenApi =
+      _$alertEventTypeEnum_unknownDefaultOpenApi;
 
   static Serializer<AlertEventTypeEnum> get serializer =>
       _$alertEventTypeEnumSerializer;

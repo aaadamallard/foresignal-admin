@@ -10,6 +10,9 @@ const ProductLoopFramesInnerKindEnum _$productLoopFramesInnerKindEnum_observed =
     const ProductLoopFramesInnerKindEnum._('observed');
 const ProductLoopFramesInnerKindEnum _$productLoopFramesInnerKindEnum_forecast =
     const ProductLoopFramesInnerKindEnum._('forecast');
+const ProductLoopFramesInnerKindEnum
+_$productLoopFramesInnerKindEnum_unknownDefaultOpenApi =
+    const ProductLoopFramesInnerKindEnum._('unknownDefaultOpenApi');
 
 ProductLoopFramesInnerKindEnum _$productLoopFramesInnerKindEnumValueOf(
   String name,
@@ -19,8 +22,10 @@ ProductLoopFramesInnerKindEnum _$productLoopFramesInnerKindEnumValueOf(
       return _$productLoopFramesInnerKindEnum_observed;
     case 'forecast':
       return _$productLoopFramesInnerKindEnum_forecast;
+    case 'unknownDefaultOpenApi':
+      return _$productLoopFramesInnerKindEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$productLoopFramesInnerKindEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -30,6 +35,7 @@ _$productLoopFramesInnerKindEnumValues =
       const <ProductLoopFramesInnerKindEnum>[
         _$productLoopFramesInnerKindEnum_observed,
         _$productLoopFramesInnerKindEnum_forecast,
+        _$productLoopFramesInnerKindEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -42,10 +48,12 @@ class _$ProductLoopFramesInnerKindEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'observed': 'observed',
     'forecast': 'forecast',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'observed': 'observed',
     'forecast': 'forecast',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

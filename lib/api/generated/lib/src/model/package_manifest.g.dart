@@ -14,6 +14,8 @@ const PackageManifestTypeEnum _$packageManifestTypeEnum_chronicleExtract =
     const PackageManifestTypeEnum._('chronicleExtract');
 const PackageManifestTypeEnum _$packageManifestTypeEnum_evidence =
     const PackageManifestTypeEnum._('evidence');
+const PackageManifestTypeEnum _$packageManifestTypeEnum_unknownDefaultOpenApi =
+    const PackageManifestTypeEnum._('unknownDefaultOpenApi');
 
 PackageManifestTypeEnum _$packageManifestTypeEnumValueOf(String name) {
   switch (name) {
@@ -25,8 +27,10 @@ PackageManifestTypeEnum _$packageManifestTypeEnumValueOf(String name) {
       return _$packageManifestTypeEnum_chronicleExtract;
     case 'evidence':
       return _$packageManifestTypeEnum_evidence;
+    case 'unknownDefaultOpenApi':
+      return _$packageManifestTypeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$packageManifestTypeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -36,6 +40,7 @@ final BuiltSet<PackageManifestTypeEnum> _$packageManifestTypeEnumValues =
       _$packageManifestTypeEnum_investigation,
       _$packageManifestTypeEnum_chronicleExtract,
       _$packageManifestTypeEnum_evidence,
+      _$packageManifestTypeEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<PackageManifestTypeEnum> _$packageManifestTypeEnumSerializer =
@@ -48,12 +53,14 @@ class _$PackageManifestTypeEnumSerializer
     'investigation': 'investigation',
     'chronicleExtract': 'chronicle-extract',
     'evidence': 'evidence',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'report': 'report',
     'investigation': 'investigation',
     'chronicle-extract': 'chronicleExtract',
     'evidence': 'evidence',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

@@ -16,6 +16,9 @@ const EventSelectorMinSeverityEnum _$eventSelectorMinSeverityEnum_notable =
     const EventSelectorMinSeverityEnum._('notable');
 const EventSelectorMinSeverityEnum _$eventSelectorMinSeverityEnum_significant =
     const EventSelectorMinSeverityEnum._('significant');
+const EventSelectorMinSeverityEnum
+_$eventSelectorMinSeverityEnum_unknownDefaultOpenApi =
+    const EventSelectorMinSeverityEnum._('unknownDefaultOpenApi');
 
 EventSelectorMinSeverityEnum _$eventSelectorMinSeverityEnumValueOf(
   String name,
@@ -31,8 +34,10 @@ EventSelectorMinSeverityEnum _$eventSelectorMinSeverityEnumValueOf(
       return _$eventSelectorMinSeverityEnum_notable;
     case 'significant':
       return _$eventSelectorMinSeverityEnum_significant;
+    case 'unknownDefaultOpenApi':
+      return _$eventSelectorMinSeverityEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$eventSelectorMinSeverityEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -44,6 +49,7 @@ _$eventSelectorMinSeverityEnumValues =
       _$eventSelectorMinSeverityEnum_critical,
       _$eventSelectorMinSeverityEnum_notable,
       _$eventSelectorMinSeverityEnum_significant,
+      _$eventSelectorMinSeverityEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<EventSelectorMinSeverityEnum>
@@ -58,6 +64,7 @@ class _$EventSelectorMinSeverityEnumSerializer
     'critical': 'critical',
     'notable': 'notable',
     'significant': 'significant',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'info': 'info',
@@ -65,6 +72,7 @@ class _$EventSelectorMinSeverityEnumSerializer
     'critical': 'critical',
     'notable': 'notable',
     'significant': 'significant',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

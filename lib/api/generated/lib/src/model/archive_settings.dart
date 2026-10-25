@@ -279,6 +279,9 @@ class ArchiveSettingsTargetEnum extends EnumClass {
       _$archiveSettingsTargetEnum_local;
   @BuiltValueEnumConst(wireName: r's3')
   static const ArchiveSettingsTargetEnum s3 = _$archiveSettingsTargetEnum_s3;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ArchiveSettingsTargetEnum unknownDefaultOpenApi =
+      _$archiveSettingsTargetEnum_unknownDefaultOpenApi;
 
   static Serializer<ArchiveSettingsTargetEnum> get serializer =>
       _$archiveSettingsTargetEnumSerializer;

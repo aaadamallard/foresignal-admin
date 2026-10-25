@@ -14,6 +14,8 @@ const ExportSpecFormatEnum _$exportSpecFormatEnum_flatgeobuf =
     const ExportSpecFormatEnum._('flatgeobuf');
 const ExportSpecFormatEnum _$exportSpecFormatEnum_gpx =
     const ExportSpecFormatEnum._('gpx');
+const ExportSpecFormatEnum _$exportSpecFormatEnum_unknownDefaultOpenApi =
+    const ExportSpecFormatEnum._('unknownDefaultOpenApi');
 
 ExportSpecFormatEnum _$exportSpecFormatEnumValueOf(String name) {
   switch (name) {
@@ -25,8 +27,10 @@ ExportSpecFormatEnum _$exportSpecFormatEnumValueOf(String name) {
       return _$exportSpecFormatEnum_flatgeobuf;
     case 'gpx':
       return _$exportSpecFormatEnum_gpx;
+    case 'unknownDefaultOpenApi':
+      return _$exportSpecFormatEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$exportSpecFormatEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -36,6 +40,7 @@ final BuiltSet<ExportSpecFormatEnum> _$exportSpecFormatEnumValues =
       _$exportSpecFormatEnum_geopackage,
       _$exportSpecFormatEnum_flatgeobuf,
       _$exportSpecFormatEnum_gpx,
+      _$exportSpecFormatEnum_unknownDefaultOpenApi,
     ]);
 
 const ExportSpecTimeFieldEnum _$exportSpecTimeFieldEnum_effective =
@@ -46,6 +51,8 @@ const ExportSpecTimeFieldEnum _$exportSpecTimeFieldEnum_event =
     const ExportSpecTimeFieldEnum._('event');
 const ExportSpecTimeFieldEnum _$exportSpecTimeFieldEnum_ingested =
     const ExportSpecTimeFieldEnum._('ingested');
+const ExportSpecTimeFieldEnum _$exportSpecTimeFieldEnum_unknownDefaultOpenApi =
+    const ExportSpecTimeFieldEnum._('unknownDefaultOpenApi');
 
 ExportSpecTimeFieldEnum _$exportSpecTimeFieldEnumValueOf(String name) {
   switch (name) {
@@ -57,8 +64,10 @@ ExportSpecTimeFieldEnum _$exportSpecTimeFieldEnumValueOf(String name) {
       return _$exportSpecTimeFieldEnum_event;
     case 'ingested':
       return _$exportSpecTimeFieldEnum_ingested;
+    case 'unknownDefaultOpenApi':
+      return _$exportSpecTimeFieldEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$exportSpecTimeFieldEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -68,6 +77,7 @@ final BuiltSet<ExportSpecTimeFieldEnum> _$exportSpecTimeFieldEnumValues =
       _$exportSpecTimeFieldEnum_observed,
       _$exportSpecTimeFieldEnum_event,
       _$exportSpecTimeFieldEnum_ingested,
+      _$exportSpecTimeFieldEnum_unknownDefaultOpenApi,
     ]);
 
 const ExportSpecModeEnum _$exportSpecModeEnum_current =
@@ -79,6 +89,8 @@ const ExportSpecModeEnum _$exportSpecModeEnum_asOf = const ExportSpecModeEnum._(
 );
 const ExportSpecModeEnum _$exportSpecModeEnum_atSeq =
     const ExportSpecModeEnum._('atSeq');
+const ExportSpecModeEnum _$exportSpecModeEnum_unknownDefaultOpenApi =
+    const ExportSpecModeEnum._('unknownDefaultOpenApi');
 
 ExportSpecModeEnum _$exportSpecModeEnumValueOf(String name) {
   switch (name) {
@@ -90,8 +102,10 @@ ExportSpecModeEnum _$exportSpecModeEnumValueOf(String name) {
       return _$exportSpecModeEnum_asOf;
     case 'atSeq':
       return _$exportSpecModeEnum_atSeq;
+    case 'unknownDefaultOpenApi':
+      return _$exportSpecModeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$exportSpecModeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -101,6 +115,7 @@ final BuiltSet<ExportSpecModeEnum> _$exportSpecModeEnumValues =
       _$exportSpecModeEnum_history,
       _$exportSpecModeEnum_asOf,
       _$exportSpecModeEnum_atSeq,
+      _$exportSpecModeEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<ExportSpecFormatEnum> _$exportSpecFormatEnumSerializer =
@@ -117,12 +132,14 @@ class _$ExportSpecFormatEnumSerializer
     'geopackage': 'geopackage',
     'flatgeobuf': 'flatgeobuf',
     'gpx': 'gpx',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'geoparquet': 'geoparquet',
     'geopackage': 'geopackage',
     'flatgeobuf': 'flatgeobuf',
     'gpx': 'gpx',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -154,12 +171,14 @@ class _$ExportSpecTimeFieldEnumSerializer
     'observed': 'observed',
     'event': 'event',
     'ingested': 'ingested',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'effective': 'effective',
     'observed': 'observed',
     'event': 'event',
     'ingested': 'ingested',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -191,12 +210,14 @@ class _$ExportSpecModeEnumSerializer
     'history': 'history',
     'asOf': 'asOf',
     'atSeq': 'atSeq',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'current': 'current',
     'history': 'history',
     'asOf': 'asOf',
     'atSeq': 'atSeq',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

@@ -14,6 +14,9 @@ const ForecastAreaPayloadModelEnum _$forecastAreaPayloadModelEnum_ifs =
     const ForecastAreaPayloadModelEnum._('ifs');
 const ForecastAreaPayloadModelEnum _$forecastAreaPayloadModelEnum_aifs =
     const ForecastAreaPayloadModelEnum._('aifs');
+const ForecastAreaPayloadModelEnum
+_$forecastAreaPayloadModelEnum_unknownDefaultOpenApi =
+    const ForecastAreaPayloadModelEnum._('unknownDefaultOpenApi');
 
 ForecastAreaPayloadModelEnum _$forecastAreaPayloadModelEnumValueOf(
   String name,
@@ -27,8 +30,10 @@ ForecastAreaPayloadModelEnum _$forecastAreaPayloadModelEnumValueOf(
       return _$forecastAreaPayloadModelEnum_ifs;
     case 'aifs':
       return _$forecastAreaPayloadModelEnum_aifs;
+    case 'unknownDefaultOpenApi':
+      return _$forecastAreaPayloadModelEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$forecastAreaPayloadModelEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -39,6 +44,7 @@ _$forecastAreaPayloadModelEnumValues =
       _$forecastAreaPayloadModelEnum_hrrr,
       _$forecastAreaPayloadModelEnum_ifs,
       _$forecastAreaPayloadModelEnum_aifs,
+      _$forecastAreaPayloadModelEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<ForecastAreaPayloadModelEnum>
@@ -52,12 +58,14 @@ class _$ForecastAreaPayloadModelEnumSerializer
     'hrrr': 'hrrr',
     'ifs': 'ifs',
     'aifs': 'aifs',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'gfs': 'gfs',
     'hrrr': 'hrrr',
     'ifs': 'ifs',
     'aifs': 'aifs',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

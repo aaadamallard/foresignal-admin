@@ -19,6 +19,8 @@ class SituationStatus extends EnumClass {
   static const SituationStatus dormant = _$dormant;
   @BuiltValueEnumConst(wireName: r'closed')
   static const SituationStatus closed = _$closed;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const SituationStatus unknownDefaultOpenApi = _$unknownDefaultOpenApi;
 
   static Serializer<SituationStatus> get serializer =>
       _$situationStatusSerializer;

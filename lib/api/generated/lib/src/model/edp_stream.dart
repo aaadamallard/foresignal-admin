@@ -517,6 +517,9 @@ class EdpStreamModeEnum extends EnumClass {
   static const EdpStreamModeEnum layer = _$edpStreamModeEnum_layer;
   @BuiltValueEnumConst(wireName: r'atomic')
   static const EdpStreamModeEnum atomic = _$edpStreamModeEnum_atomic;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const EdpStreamModeEnum unknownDefaultOpenApi =
+      _$edpStreamModeEnum_unknownDefaultOpenApi;
 
   static Serializer<EdpStreamModeEnum> get serializer =>
       _$edpStreamModeEnumSerializer;
@@ -542,6 +545,9 @@ class EdpStreamItemTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'forecast')
   static const EdpStreamItemTypeEnum forecast =
       _$edpStreamItemTypeEnum_forecast;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const EdpStreamItemTypeEnum unknownDefaultOpenApi =
+      _$edpStreamItemTypeEnum_unknownDefaultOpenApi;
 
   static Serializer<EdpStreamItemTypeEnum> get serializer =>
       _$edpStreamItemTypeEnumSerializer;
@@ -569,6 +575,9 @@ class EdpStreamGeometryEnum extends EnumClass {
   static const EdpStreamGeometryEnum any = _$edpStreamGeometryEnum_any;
   @BuiltValueEnumConst(wireName: r'none')
   static const EdpStreamGeometryEnum none = _$edpStreamGeometryEnum_none;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const EdpStreamGeometryEnum unknownDefaultOpenApi =
+      _$edpStreamGeometryEnum_unknownDefaultOpenApi;
 
   static Serializer<EdpStreamGeometryEnum> get serializer =>
       _$edpStreamGeometryEnumSerializer;
@@ -587,6 +596,9 @@ class EdpStreamUpdate_Enum extends EnumClass {
       _$edpStreamUpdateEnum_incremental;
   @BuiltValueEnumConst(wireName: r'snapshot')
   static const EdpStreamUpdate_Enum snapshot = _$edpStreamUpdateEnum_snapshot;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const EdpStreamUpdate_Enum unknownDefaultOpenApi =
+      _$edpStreamUpdateEnum_unknownDefaultOpenApi;
 
   static Serializer<EdpStreamUpdate_Enum> get serializer =>
       _$edpStreamUpdateEnumSerializer;
@@ -621,6 +633,9 @@ class EdpStreamRetentionClassEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'social')
   static const EdpStreamRetentionClassEnum social =
       _$edpStreamRetentionClassEnum_social;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const EdpStreamRetentionClassEnum unknownDefaultOpenApi =
+      _$edpStreamRetentionClassEnum_unknownDefaultOpenApi;
 
   static Serializer<EdpStreamRetentionClassEnum> get serializer =>
       _$edpStreamRetentionClassEnumSerializer;
@@ -649,6 +664,9 @@ class EdpStreamDocumentTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'note')
   static const EdpStreamDocumentTypeEnum note =
       _$edpStreamDocumentTypeEnum_note;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const EdpStreamDocumentTypeEnum unknownDefaultOpenApi =
+      _$edpStreamDocumentTypeEnum_unknownDefaultOpenApi;
 
   static Serializer<EdpStreamDocumentTypeEnum> get serializer =>
       _$edpStreamDocumentTypeEnumSerializer;

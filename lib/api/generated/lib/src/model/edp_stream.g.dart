@@ -12,6 +12,8 @@ const EdpStreamModeEnum _$edpStreamModeEnum_layer = const EdpStreamModeEnum._(
 const EdpStreamModeEnum _$edpStreamModeEnum_atomic = const EdpStreamModeEnum._(
   'atomic',
 );
+const EdpStreamModeEnum _$edpStreamModeEnum_unknownDefaultOpenApi =
+    const EdpStreamModeEnum._('unknownDefaultOpenApi');
 
 EdpStreamModeEnum _$edpStreamModeEnumValueOf(String name) {
   switch (name) {
@@ -19,8 +21,10 @@ EdpStreamModeEnum _$edpStreamModeEnumValueOf(String name) {
       return _$edpStreamModeEnum_layer;
     case 'atomic':
       return _$edpStreamModeEnum_atomic;
+    case 'unknownDefaultOpenApi':
+      return _$edpStreamModeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$edpStreamModeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -28,6 +32,7 @@ final BuiltSet<EdpStreamModeEnum> _$edpStreamModeEnumValues =
     BuiltSet<EdpStreamModeEnum>(const <EdpStreamModeEnum>[
       _$edpStreamModeEnum_layer,
       _$edpStreamModeEnum_atomic,
+      _$edpStreamModeEnum_unknownDefaultOpenApi,
     ]);
 
 const EdpStreamItemTypeEnum _$edpStreamItemTypeEnum_feature =
@@ -40,6 +45,8 @@ const EdpStreamItemTypeEnum _$edpStreamItemTypeEnum_document =
     const EdpStreamItemTypeEnum._('document');
 const EdpStreamItemTypeEnum _$edpStreamItemTypeEnum_forecast =
     const EdpStreamItemTypeEnum._('forecast');
+const EdpStreamItemTypeEnum _$edpStreamItemTypeEnum_unknownDefaultOpenApi =
+    const EdpStreamItemTypeEnum._('unknownDefaultOpenApi');
 
 EdpStreamItemTypeEnum _$edpStreamItemTypeEnumValueOf(String name) {
   switch (name) {
@@ -53,8 +60,10 @@ EdpStreamItemTypeEnum _$edpStreamItemTypeEnumValueOf(String name) {
       return _$edpStreamItemTypeEnum_document;
     case 'forecast':
       return _$edpStreamItemTypeEnum_forecast;
+    case 'unknownDefaultOpenApi':
+      return _$edpStreamItemTypeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$edpStreamItemTypeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -65,6 +74,7 @@ final BuiltSet<EdpStreamItemTypeEnum> _$edpStreamItemTypeEnumValues =
       _$edpStreamItemTypeEnum_observation,
       _$edpStreamItemTypeEnum_document,
       _$edpStreamItemTypeEnum_forecast,
+      _$edpStreamItemTypeEnum_unknownDefaultOpenApi,
     ]);
 
 const EdpStreamGeometryEnum _$edpStreamGeometryEnum_point =
@@ -79,6 +89,8 @@ const EdpStreamGeometryEnum _$edpStreamGeometryEnum_any =
     const EdpStreamGeometryEnum._('any');
 const EdpStreamGeometryEnum _$edpStreamGeometryEnum_none =
     const EdpStreamGeometryEnum._('none');
+const EdpStreamGeometryEnum _$edpStreamGeometryEnum_unknownDefaultOpenApi =
+    const EdpStreamGeometryEnum._('unknownDefaultOpenApi');
 
 EdpStreamGeometryEnum _$edpStreamGeometryEnumValueOf(String name) {
   switch (name) {
@@ -94,8 +106,10 @@ EdpStreamGeometryEnum _$edpStreamGeometryEnumValueOf(String name) {
       return _$edpStreamGeometryEnum_any;
     case 'none':
       return _$edpStreamGeometryEnum_none;
+    case 'unknownDefaultOpenApi':
+      return _$edpStreamGeometryEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$edpStreamGeometryEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -107,12 +121,15 @@ final BuiltSet<EdpStreamGeometryEnum> _$edpStreamGeometryEnumValues =
       _$edpStreamGeometryEnum_multiPolygon,
       _$edpStreamGeometryEnum_any,
       _$edpStreamGeometryEnum_none,
+      _$edpStreamGeometryEnum_unknownDefaultOpenApi,
     ]);
 
 const EdpStreamUpdate_Enum _$edpStreamUpdateEnum_incremental =
     const EdpStreamUpdate_Enum._('incremental');
 const EdpStreamUpdate_Enum _$edpStreamUpdateEnum_snapshot =
     const EdpStreamUpdate_Enum._('snapshot');
+const EdpStreamUpdate_Enum _$edpStreamUpdateEnum_unknownDefaultOpenApi =
+    const EdpStreamUpdate_Enum._('unknownDefaultOpenApi');
 
 EdpStreamUpdate_Enum _$edpStreamUpdateEnumValueOf(String name) {
   switch (name) {
@@ -120,8 +137,10 @@ EdpStreamUpdate_Enum _$edpStreamUpdateEnumValueOf(String name) {
       return _$edpStreamUpdateEnum_incremental;
     case 'snapshot':
       return _$edpStreamUpdateEnum_snapshot;
+    case 'unknownDefaultOpenApi':
+      return _$edpStreamUpdateEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$edpStreamUpdateEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -129,6 +148,7 @@ final BuiltSet<EdpStreamUpdate_Enum> _$edpStreamUpdateEnumValues =
     BuiltSet<EdpStreamUpdate_Enum>(const <EdpStreamUpdate_Enum>[
       _$edpStreamUpdateEnum_incremental,
       _$edpStreamUpdateEnum_snapshot,
+      _$edpStreamUpdateEnum_unknownDefaultOpenApi,
     ]);
 
 const EdpStreamRetentionClassEnum _$edpStreamRetentionClassEnum_event =
@@ -145,6 +165,9 @@ const EdpStreamRetentionClassEnum _$edpStreamRetentionClassEnum_reference =
     const EdpStreamRetentionClassEnum._('reference');
 const EdpStreamRetentionClassEnum _$edpStreamRetentionClassEnum_social =
     const EdpStreamRetentionClassEnum._('social');
+const EdpStreamRetentionClassEnum
+_$edpStreamRetentionClassEnum_unknownDefaultOpenApi =
+    const EdpStreamRetentionClassEnum._('unknownDefaultOpenApi');
 
 EdpStreamRetentionClassEnum _$edpStreamRetentionClassEnumValueOf(String name) {
   switch (name) {
@@ -162,8 +185,10 @@ EdpStreamRetentionClassEnum _$edpStreamRetentionClassEnumValueOf(String name) {
       return _$edpStreamRetentionClassEnum_reference;
     case 'social':
       return _$edpStreamRetentionClassEnum_social;
+    case 'unknownDefaultOpenApi':
+      return _$edpStreamRetentionClassEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$edpStreamRetentionClassEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -177,6 +202,7 @@ _$edpStreamRetentionClassEnumValues =
       _$edpStreamRetentionClassEnum_track,
       _$edpStreamRetentionClassEnum_reference,
       _$edpStreamRetentionClassEnum_social,
+      _$edpStreamRetentionClassEnum_unknownDefaultOpenApi,
     ]);
 
 const EdpStreamDocumentTypeEnum _$edpStreamDocumentTypeEnum_socialPost =
@@ -189,6 +215,9 @@ const EdpStreamDocumentTypeEnum _$edpStreamDocumentTypeEnum_transcript =
     const EdpStreamDocumentTypeEnum._('transcript');
 const EdpStreamDocumentTypeEnum _$edpStreamDocumentTypeEnum_note =
     const EdpStreamDocumentTypeEnum._('note');
+const EdpStreamDocumentTypeEnum
+_$edpStreamDocumentTypeEnum_unknownDefaultOpenApi =
+    const EdpStreamDocumentTypeEnum._('unknownDefaultOpenApi');
 
 EdpStreamDocumentTypeEnum _$edpStreamDocumentTypeEnumValueOf(String name) {
   switch (name) {
@@ -202,8 +231,10 @@ EdpStreamDocumentTypeEnum _$edpStreamDocumentTypeEnumValueOf(String name) {
       return _$edpStreamDocumentTypeEnum_transcript;
     case 'note':
       return _$edpStreamDocumentTypeEnum_note;
+    case 'unknownDefaultOpenApi':
+      return _$edpStreamDocumentTypeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$edpStreamDocumentTypeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -214,6 +245,7 @@ final BuiltSet<EdpStreamDocumentTypeEnum> _$edpStreamDocumentTypeEnumValues =
       _$edpStreamDocumentTypeEnum_report,
       _$edpStreamDocumentTypeEnum_transcript,
       _$edpStreamDocumentTypeEnum_note,
+      _$edpStreamDocumentTypeEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<EdpStreamModeEnum> _$edpStreamModeEnumSerializer =
@@ -235,10 +267,12 @@ class _$EdpStreamModeEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'layer': 'layer',
     'atomic': 'atomic',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'layer': 'layer',
     'atomic': 'atomic',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -271,6 +305,7 @@ class _$EdpStreamItemTypeEnumSerializer
     'observation': 'observation',
     'document': 'document',
     'forecast': 'forecast',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'feature': 'feature',
@@ -278,6 +313,7 @@ class _$EdpStreamItemTypeEnumSerializer
     'observation': 'observation',
     'document': 'document',
     'forecast': 'forecast',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -311,6 +347,7 @@ class _$EdpStreamGeometryEnumSerializer
     'multiPolygon': 'MultiPolygon',
     'any': 'any',
     'none': 'none',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'Point': 'point',
@@ -319,6 +356,7 @@ class _$EdpStreamGeometryEnumSerializer
     'MultiPolygon': 'multiPolygon',
     'any': 'any',
     'none': 'none',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -348,10 +386,12 @@ class _$EdpStreamUpdate_EnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'incremental': 'incremental',
     'snapshot': 'snapshot',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'incremental': 'incremental',
     'snapshot': 'snapshot',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -386,6 +426,7 @@ class _$EdpStreamRetentionClassEnumSerializer
     'track': 'track',
     'reference': 'reference',
     'social': 'social',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'event': 'event',
@@ -395,6 +436,7 @@ class _$EdpStreamRetentionClassEnumSerializer
     'track': 'track',
     'reference': 'reference',
     'social': 'social',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -427,6 +469,7 @@ class _$EdpStreamDocumentTypeEnumSerializer
     'report': 'report',
     'transcript': 'transcript',
     'note': 'note',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'social-post': 'socialPost',
@@ -434,6 +477,7 @@ class _$EdpStreamDocumentTypeEnumSerializer
     'report': 'report',
     'transcript': 'transcript',
     'note': 'note',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

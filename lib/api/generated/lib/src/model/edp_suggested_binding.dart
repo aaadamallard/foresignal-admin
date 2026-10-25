@@ -180,6 +180,9 @@ class EdpSuggestedBindingTargetEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'chronicle')
   static const EdpSuggestedBindingTargetEnum chronicle =
       _$edpSuggestedBindingTargetEnum_chronicle;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const EdpSuggestedBindingTargetEnum unknownDefaultOpenApi =
+      _$edpSuggestedBindingTargetEnum_unknownDefaultOpenApi;
 
   static Serializer<EdpSuggestedBindingTargetEnum> get serializer =>
       _$edpSuggestedBindingTargetEnumSerializer;

@@ -464,6 +464,9 @@ class ExportSpecFormatEnum extends EnumClass {
       _$exportSpecFormatEnum_flatgeobuf;
   @BuiltValueEnumConst(wireName: r'gpx')
   static const ExportSpecFormatEnum gpx = _$exportSpecFormatEnum_gpx;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ExportSpecFormatEnum unknownDefaultOpenApi =
+      _$exportSpecFormatEnum_unknownDefaultOpenApi;
 
   static Serializer<ExportSpecFormatEnum> get serializer =>
       _$exportSpecFormatEnumSerializer;
@@ -489,6 +492,9 @@ class ExportSpecTimeFieldEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'ingested')
   static const ExportSpecTimeFieldEnum ingested =
       _$exportSpecTimeFieldEnum_ingested;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ExportSpecTimeFieldEnum unknownDefaultOpenApi =
+      _$exportSpecTimeFieldEnum_unknownDefaultOpenApi;
 
   static Serializer<ExportSpecTimeFieldEnum> get serializer =>
       _$exportSpecTimeFieldEnumSerializer;
@@ -510,6 +516,9 @@ class ExportSpecModeEnum extends EnumClass {
   static const ExportSpecModeEnum asOf = _$exportSpecModeEnum_asOf;
   @BuiltValueEnumConst(wireName: r'atSeq')
   static const ExportSpecModeEnum atSeq = _$exportSpecModeEnum_atSeq;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ExportSpecModeEnum unknownDefaultOpenApi =
+      _$exportSpecModeEnum_unknownDefaultOpenApi;
 
   static Serializer<ExportSpecModeEnum> get serializer =>
       _$exportSpecModeEnumSerializer;

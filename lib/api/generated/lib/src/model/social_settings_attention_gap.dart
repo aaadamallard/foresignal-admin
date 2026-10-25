@@ -200,6 +200,9 @@ class SocialSettingsAttentionGapMinSeverityEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'significant')
   static const SocialSettingsAttentionGapMinSeverityEnum significant =
       _$socialSettingsAttentionGapMinSeverityEnum_significant;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const SocialSettingsAttentionGapMinSeverityEnum unknownDefaultOpenApi =
+      _$socialSettingsAttentionGapMinSeverityEnum_unknownDefaultOpenApi;
 
   static Serializer<SocialSettingsAttentionGapMinSeverityEnum> get serializer =>
       _$socialSettingsAttentionGapMinSeverityEnumSerializer;

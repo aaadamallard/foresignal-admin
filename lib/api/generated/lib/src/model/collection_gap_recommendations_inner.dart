@@ -200,6 +200,9 @@ class CollectionGapRecommendationsInnerTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'none')
   static const CollectionGapRecommendationsInnerTypeEnum none =
       _$collectionGapRecommendationsInnerTypeEnum_none;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const CollectionGapRecommendationsInnerTypeEnum unknownDefaultOpenApi =
+      _$collectionGapRecommendationsInnerTypeEnum_unknownDefaultOpenApi;
 
   static Serializer<CollectionGapRecommendationsInnerTypeEnum> get serializer =>
       _$collectionGapRecommendationsInnerTypeEnumSerializer;

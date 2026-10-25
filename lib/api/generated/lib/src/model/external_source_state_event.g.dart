@@ -21,6 +21,9 @@ _$externalSourceStateEventChangeEnum_manifestChanged =
 const ExternalSourceStateEventChangeEnum
 _$externalSourceStateEventChangeEnum_deleted =
     const ExternalSourceStateEventChangeEnum._('deleted');
+const ExternalSourceStateEventChangeEnum
+_$externalSourceStateEventChangeEnum_unknownDefaultOpenApi =
+    const ExternalSourceStateEventChangeEnum._('unknownDefaultOpenApi');
 
 ExternalSourceStateEventChangeEnum _$externalSourceStateEventChangeEnumValueOf(
   String name,
@@ -36,8 +39,10 @@ ExternalSourceStateEventChangeEnum _$externalSourceStateEventChangeEnumValueOf(
       return _$externalSourceStateEventChangeEnum_manifestChanged;
     case 'deleted':
       return _$externalSourceStateEventChangeEnum_deleted;
+    case 'unknownDefaultOpenApi':
+      return _$externalSourceStateEventChangeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$externalSourceStateEventChangeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -50,6 +55,7 @@ _$externalSourceStateEventChangeEnumValues =
         _$externalSourceStateEventChangeEnum_suspended,
         _$externalSourceStateEventChangeEnum_manifestChanged,
         _$externalSourceStateEventChangeEnum_deleted,
+        _$externalSourceStateEventChangeEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -65,6 +71,7 @@ class _$ExternalSourceStateEventChangeEnumSerializer
     'suspended': 'suspended',
     'manifestChanged': 'manifest-changed',
     'deleted': 'deleted',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'registered': 'registered',
@@ -72,6 +79,7 @@ class _$ExternalSourceStateEventChangeEnumSerializer
     'suspended': 'suspended',
     'manifest-changed': 'manifestChanged',
     'deleted': 'deleted',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

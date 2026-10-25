@@ -286,6 +286,9 @@ class PrecisionComponentsInnerComponentEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'precursor-active')
   static const PrecisionComponentsInnerComponentEnum precursorActive =
       _$precisionComponentsInnerComponentEnum_precursorActive;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const PrecisionComponentsInnerComponentEnum unknownDefaultOpenApi =
+      _$precisionComponentsInnerComponentEnum_unknownDefaultOpenApi;
 
   static Serializer<PrecisionComponentsInnerComponentEnum> get serializer =>
       _$precisionComponentsInnerComponentEnumSerializer;

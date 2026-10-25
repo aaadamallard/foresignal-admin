@@ -18,6 +18,8 @@ const MediaRoleEnum _$mediaRoleEnum_document = const MediaRoleEnum._(
   'document',
 );
 const MediaRoleEnum _$mediaRoleEnum_audio = const MediaRoleEnum._('audio');
+const MediaRoleEnum _$mediaRoleEnum_unknownDefaultOpenApi =
+    const MediaRoleEnum._('unknownDefaultOpenApi');
 
 MediaRoleEnum _$mediaRoleEnumValueOf(String name) {
   switch (name) {
@@ -33,8 +35,10 @@ MediaRoleEnum _$mediaRoleEnumValueOf(String name) {
       return _$mediaRoleEnum_document;
     case 'audio':
       return _$mediaRoleEnum_audio;
+    case 'unknownDefaultOpenApi':
+      return _$mediaRoleEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$mediaRoleEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -46,6 +50,7 @@ final BuiltSet<MediaRoleEnum> _$mediaRoleEnumValues =
       _$mediaRoleEnum_map,
       _$mediaRoleEnum_document,
       _$mediaRoleEnum_audio,
+      _$mediaRoleEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<MediaRoleEnum> _$mediaRoleEnumSerializer =
@@ -59,6 +64,7 @@ class _$MediaRoleEnumSerializer implements PrimitiveSerializer<MediaRoleEnum> {
     'map': 'map',
     'document': 'document',
     'audio': 'audio',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'image': 'image',
@@ -67,6 +73,7 @@ class _$MediaRoleEnumSerializer implements PrimitiveSerializer<MediaRoleEnum> {
     'map': 'map',
     'document': 'document',
     'audio': 'audio',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

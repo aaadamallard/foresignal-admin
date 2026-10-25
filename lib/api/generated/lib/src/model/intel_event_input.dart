@@ -308,6 +308,9 @@ class IntelEventInputTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'custom')
   static const IntelEventInputTypeEnum custom =
       _$intelEventInputTypeEnum_custom;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const IntelEventInputTypeEnum unknownDefaultOpenApi =
+      _$intelEventInputTypeEnum_unknownDefaultOpenApi;
 
   static Serializer<IntelEventInputTypeEnum> get serializer =>
       _$intelEventInputTypeEnumSerializer;
@@ -327,6 +330,9 @@ class IntelEventInputOriginEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'operator')
   static const IntelEventInputOriginEnum operator_ =
       _$intelEventInputOriginEnum_operator_;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const IntelEventInputOriginEnum unknownDefaultOpenApi =
+      _$intelEventInputOriginEnum_unknownDefaultOpenApi;
 
   static Serializer<IntelEventInputOriginEnum> get serializer =>
       _$intelEventInputOriginEnumSerializer;

@@ -282,6 +282,9 @@ class SampleTrackRequestUnitsEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'imperial')
   static const SampleTrackRequestUnitsEnum imperial =
       _$sampleTrackRequestUnitsEnum_imperial;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const SampleTrackRequestUnitsEnum unknownDefaultOpenApi =
+      _$sampleTrackRequestUnitsEnum_unknownDefaultOpenApi;
 
   static Serializer<SampleTrackRequestUnitsEnum> get serializer =>
       _$sampleTrackRequestUnitsEnumSerializer;

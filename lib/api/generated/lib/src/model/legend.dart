@@ -335,6 +335,9 @@ class LegendTypeEnum extends EnumClass {
   static const LegendTypeEnum discrete = _$legendTypeEnum_discrete;
   @BuiltValueEnumConst(wireName: r'categorical')
   static const LegendTypeEnum categorical = _$legendTypeEnum_categorical;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const LegendTypeEnum unknownDefaultOpenApi =
+      _$legendTypeEnum_unknownDefaultOpenApi;
 
   static Serializer<LegendTypeEnum> get serializer =>
       _$legendTypeEnumSerializer;

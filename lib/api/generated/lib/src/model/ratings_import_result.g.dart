@@ -20,6 +20,9 @@ const RatingsImportResultProviderEnum _$ratingsImportResultProviderEnum_mbfc =
 const RatingsImportResultProviderEnum
 _$ratingsImportResultProviderEnum_operator_ =
     const RatingsImportResultProviderEnum._('operator_');
+const RatingsImportResultProviderEnum
+_$ratingsImportResultProviderEnum_unknownDefaultOpenApi =
+    const RatingsImportResultProviderEnum._('unknownDefaultOpenApi');
 
 RatingsImportResultProviderEnum _$ratingsImportResultProviderEnumValueOf(
   String name,
@@ -35,8 +38,10 @@ RatingsImportResultProviderEnum _$ratingsImportResultProviderEnumValueOf(
       return _$ratingsImportResultProviderEnum_mbfc;
     case 'operator_':
       return _$ratingsImportResultProviderEnum_operator_;
+    case 'unknownDefaultOpenApi':
+      return _$ratingsImportResultProviderEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$ratingsImportResultProviderEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -49,6 +54,7 @@ _$ratingsImportResultProviderEnumValues =
         _$ratingsImportResultProviderEnum_allsides,
         _$ratingsImportResultProviderEnum_mbfc,
         _$ratingsImportResultProviderEnum_operator_,
+        _$ratingsImportResultProviderEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -64,6 +70,7 @@ class _$RatingsImportResultProviderEnumSerializer
     'allsides': 'allsides',
     'mbfc': 'mbfc',
     'operator_': 'operator',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'wikidata': 'wikidata',
@@ -71,6 +78,7 @@ class _$RatingsImportResultProviderEnumSerializer
     'allsides': 'allsides',
     'mbfc': 'mbfc',
     'operator': 'operator_',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

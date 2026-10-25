@@ -208,6 +208,9 @@ class PropagationEdgeTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'cross-platform')
   static const PropagationEdgeTypeEnum crossPlatform =
       _$propagationEdgeTypeEnum_crossPlatform;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const PropagationEdgeTypeEnum unknownDefaultOpenApi =
+      _$propagationEdgeTypeEnum_unknownDefaultOpenApi;
 
   static Serializer<PropagationEdgeTypeEnum> get serializer =>
       _$propagationEdgeTypeEnumSerializer;

@@ -545,6 +545,9 @@ class RuleQualityFeedbackMappingEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'neutral')
   static const RuleQualityFeedbackMappingEnum neutral =
       _$ruleQualityFeedbackMappingEnum_neutral;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const RuleQualityFeedbackMappingEnum unknownDefaultOpenApi =
+      _$ruleQualityFeedbackMappingEnum_unknownDefaultOpenApi;
 
   static Serializer<RuleQualityFeedbackMappingEnum> get serializer =>
       _$ruleQualityFeedbackMappingEnumSerializer;

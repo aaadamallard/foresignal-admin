@@ -263,6 +263,9 @@ class LlmTestResultChatStopReasonEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'error')
   static const LlmTestResultChatStopReasonEnum error =
       _$llmTestResultChatStopReasonEnum_error;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const LlmTestResultChatStopReasonEnum unknownDefaultOpenApi =
+      _$llmTestResultChatStopReasonEnum_unknownDefaultOpenApi;
 
   static Serializer<LlmTestResultChatStopReasonEnum> get serializer =>
       _$llmTestResultChatStopReasonEnumSerializer;

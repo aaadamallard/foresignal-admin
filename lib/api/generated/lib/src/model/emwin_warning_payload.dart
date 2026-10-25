@@ -332,6 +332,10 @@ class EmwinWarningPayloadAuthoritativeSourceEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'nws-alerts')
   static const EmwinWarningPayloadAuthoritativeSourceEnum nwsAlerts =
       _$emwinWarningPayloadAuthoritativeSourceEnum_nwsAlerts;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const EmwinWarningPayloadAuthoritativeSourceEnum
+  unknownDefaultOpenApi =
+      _$emwinWarningPayloadAuthoritativeSourceEnum_unknownDefaultOpenApi;
 
   static Serializer<EmwinWarningPayloadAuthoritativeSourceEnum>
   get serializer => _$emwinWarningPayloadAuthoritativeSourceEnumSerializer;
@@ -348,6 +352,9 @@ class EmwinWarningPayloadReceivedViaEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'Received via GOES HRIT EMWIN')
   static const EmwinWarningPayloadReceivedViaEnum receivedViaGOESHRITEMWIN =
       _$emwinWarningPayloadReceivedViaEnum_receivedViaGOESHRITEMWIN;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const EmwinWarningPayloadReceivedViaEnum unknownDefaultOpenApi =
+      _$emwinWarningPayloadReceivedViaEnum_unknownDefaultOpenApi;
 
   static Serializer<EmwinWarningPayloadReceivedViaEnum> get serializer =>
       _$emwinWarningPayloadReceivedViaEnumSerializer;

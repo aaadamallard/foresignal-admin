@@ -195,6 +195,9 @@ class EdpStreamFieldsObservedAtModeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'received')
   static const EdpStreamFieldsObservedAtModeEnum received =
       _$edpStreamFieldsObservedAtModeEnum_received;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const EdpStreamFieldsObservedAtModeEnum unknownDefaultOpenApi =
+      _$edpStreamFieldsObservedAtModeEnum_unknownDefaultOpenApi;
 
   static Serializer<EdpStreamFieldsObservedAtModeEnum> get serializer =>
       _$edpStreamFieldsObservedAtModeEnumSerializer;

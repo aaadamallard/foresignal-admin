@@ -155,6 +155,9 @@ class GeometryTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'GeometryCollection')
   static const GeometryTypeEnum geometryCollection =
       _$geometryTypeEnum_geometryCollection;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const GeometryTypeEnum unknownDefaultOpenApi =
+      _$geometryTypeEnum_unknownDefaultOpenApi;
 
   static Serializer<GeometryTypeEnum> get serializer =>
       _$geometryTypeEnumSerializer;

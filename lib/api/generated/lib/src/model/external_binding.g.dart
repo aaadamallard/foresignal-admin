@@ -26,6 +26,9 @@ const ExternalBindingTargetEnum _$externalBindingTargetEnum_situation =
     const ExternalBindingTargetEnum._('situation');
 const ExternalBindingTargetEnum _$externalBindingTargetEnum_chronicle =
     const ExternalBindingTargetEnum._('chronicle');
+const ExternalBindingTargetEnum
+_$externalBindingTargetEnum_unknownDefaultOpenApi =
+    const ExternalBindingTargetEnum._('unknownDefaultOpenApi');
 
 ExternalBindingTargetEnum _$externalBindingTargetEnumValueOf(String name) {
   switch (name) {
@@ -49,8 +52,10 @@ ExternalBindingTargetEnum _$externalBindingTargetEnumValueOf(String name) {
       return _$externalBindingTargetEnum_situation;
     case 'chronicle':
       return _$externalBindingTargetEnum_chronicle;
+    case 'unknownDefaultOpenApi':
+      return _$externalBindingTargetEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$externalBindingTargetEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -66,6 +71,7 @@ final BuiltSet<ExternalBindingTargetEnum> _$externalBindingTargetEnumValues =
       _$externalBindingTargetEnum_place,
       _$externalBindingTargetEnum_situation,
       _$externalBindingTargetEnum_chronicle,
+      _$externalBindingTargetEnum_unknownDefaultOpenApi,
     ]);
 
 const ExternalBindingStateEnum _$externalBindingStateEnum_active =
@@ -76,6 +82,9 @@ const ExternalBindingStateEnum _$externalBindingStateEnum_backfilling =
     const ExternalBindingStateEnum._('backfilling');
 const ExternalBindingStateEnum _$externalBindingStateEnum_error =
     const ExternalBindingStateEnum._('error');
+const ExternalBindingStateEnum
+_$externalBindingStateEnum_unknownDefaultOpenApi =
+    const ExternalBindingStateEnum._('unknownDefaultOpenApi');
 
 ExternalBindingStateEnum _$externalBindingStateEnumValueOf(String name) {
   switch (name) {
@@ -87,8 +96,10 @@ ExternalBindingStateEnum _$externalBindingStateEnumValueOf(String name) {
       return _$externalBindingStateEnum_backfilling;
     case 'error':
       return _$externalBindingStateEnum_error;
+    case 'unknownDefaultOpenApi':
+      return _$externalBindingStateEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$externalBindingStateEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -98,6 +109,7 @@ final BuiltSet<ExternalBindingStateEnum> _$externalBindingStateEnumValues =
       _$externalBindingStateEnum_disabled,
       _$externalBindingStateEnum_backfilling,
       _$externalBindingStateEnum_error,
+      _$externalBindingStateEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<ExternalBindingTargetEnum> _$externalBindingTargetEnumSerializer =
@@ -118,6 +130,7 @@ class _$ExternalBindingTargetEnumSerializer
     'place': 'place',
     'situation': 'situation',
     'chronicle': 'chronicle',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'series': 'series',
@@ -130,6 +143,7 @@ class _$ExternalBindingTargetEnumSerializer
     'place': 'place',
     'situation': 'situation',
     'chronicle': 'chronicle',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -161,12 +175,14 @@ class _$ExternalBindingStateEnumSerializer
     'disabled': 'disabled',
     'backfilling': 'backfilling',
     'error': 'error',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'active': 'active',
     'disabled': 'disabled',
     'backfilling': 'backfilling',
     'error': 'error',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

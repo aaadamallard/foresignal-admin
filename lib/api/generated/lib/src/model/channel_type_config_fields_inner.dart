@@ -253,6 +253,9 @@ class ChannelTypeConfigFieldsInnerTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'enum')
   static const ChannelTypeConfigFieldsInnerTypeEnum enum_ =
       _$channelTypeConfigFieldsInnerTypeEnum_enum_;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ChannelTypeConfigFieldsInnerTypeEnum unknownDefaultOpenApi =
+      _$channelTypeConfigFieldsInnerTypeEnum_unknownDefaultOpenApi;
 
   static Serializer<ChannelTypeConfigFieldsInnerTypeEnum> get serializer =>
       _$channelTypeConfigFieldsInnerTypeEnumSerializer;

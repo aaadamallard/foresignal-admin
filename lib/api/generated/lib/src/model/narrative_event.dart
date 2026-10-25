@@ -186,6 +186,9 @@ class NarrativeEventEventEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'narrative.updated')
   static const NarrativeEventEventEnum narrativePeriodUpdated =
       _$narrativeEventEventEnum_narrativePeriodUpdated;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const NarrativeEventEventEnum unknownDefaultOpenApi =
+      _$narrativeEventEventEnum_unknownDefaultOpenApi;
 
   static Serializer<NarrativeEventEventEnum> get serializer =>
       _$narrativeEventEventEnumSerializer;
@@ -223,6 +226,9 @@ class NarrativeEventChangedEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'title')
   static const NarrativeEventChangedEnum title =
       _$narrativeEventChangedEnum_title;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const NarrativeEventChangedEnum unknownDefaultOpenApi =
+      _$narrativeEventChangedEnum_unknownDefaultOpenApi;
 
   static Serializer<NarrativeEventChangedEnum> get serializer =>
       _$narrativeEventChangedEnumSerializer;

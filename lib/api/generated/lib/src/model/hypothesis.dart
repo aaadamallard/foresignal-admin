@@ -535,6 +535,9 @@ class HypothesisTypeEnum extends EnumClass {
       _$hypothesisTypeEnum_speculativeLink;
   @BuiltValueEnumConst(wireName: r'other')
   static const HypothesisTypeEnum other = _$hypothesisTypeEnum_other;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const HypothesisTypeEnum unknownDefaultOpenApi =
+      _$hypothesisTypeEnum_unknownDefaultOpenApi;
 
   static Serializer<HypothesisTypeEnum> get serializer =>
       _$hypothesisTypeEnumSerializer;
@@ -556,6 +559,9 @@ class HypothesisStatusEnum extends EnumClass {
   static const HypothesisStatusEnum refuted = _$hypothesisStatusEnum_refuted;
   @BuiltValueEnumConst(wireName: r'expired')
   static const HypothesisStatusEnum expired = _$hypothesisStatusEnum_expired;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const HypothesisStatusEnum unknownDefaultOpenApi =
+      _$hypothesisStatusEnum_unknownDefaultOpenApi;
 
   static Serializer<HypothesisStatusEnum> get serializer =>
       _$hypothesisStatusEnumSerializer;

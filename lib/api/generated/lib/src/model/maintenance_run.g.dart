@@ -12,6 +12,9 @@ const MaintenanceRunTriggerEnum _$maintenanceRunTriggerEnum_manual =
     const MaintenanceRunTriggerEnum._('manual');
 const MaintenanceRunTriggerEnum _$maintenanceRunTriggerEnum_schedule =
     const MaintenanceRunTriggerEnum._('schedule');
+const MaintenanceRunTriggerEnum
+_$maintenanceRunTriggerEnum_unknownDefaultOpenApi =
+    const MaintenanceRunTriggerEnum._('unknownDefaultOpenApi');
 
 MaintenanceRunTriggerEnum _$maintenanceRunTriggerEnumValueOf(String name) {
   switch (name) {
@@ -21,8 +24,10 @@ MaintenanceRunTriggerEnum _$maintenanceRunTriggerEnumValueOf(String name) {
       return _$maintenanceRunTriggerEnum_manual;
     case 'schedule':
       return _$maintenanceRunTriggerEnum_schedule;
+    case 'unknownDefaultOpenApi':
+      return _$maintenanceRunTriggerEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$maintenanceRunTriggerEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -31,6 +36,7 @@ final BuiltSet<MaintenanceRunTriggerEnum> _$maintenanceRunTriggerEnumValues =
       _$maintenanceRunTriggerEnum_monthlyCycle,
       _$maintenanceRunTriggerEnum_manual,
       _$maintenanceRunTriggerEnum_schedule,
+      _$maintenanceRunTriggerEnum_unknownDefaultOpenApi,
     ]);
 
 const MaintenanceRunStatusEnum _$maintenanceRunStatusEnum_running =
@@ -41,6 +47,9 @@ const MaintenanceRunStatusEnum _$maintenanceRunStatusEnum_partial =
     const MaintenanceRunStatusEnum._('partial');
 const MaintenanceRunStatusEnum _$maintenanceRunStatusEnum_failed =
     const MaintenanceRunStatusEnum._('failed');
+const MaintenanceRunStatusEnum
+_$maintenanceRunStatusEnum_unknownDefaultOpenApi =
+    const MaintenanceRunStatusEnum._('unknownDefaultOpenApi');
 
 MaintenanceRunStatusEnum _$maintenanceRunStatusEnumValueOf(String name) {
   switch (name) {
@@ -52,8 +61,10 @@ MaintenanceRunStatusEnum _$maintenanceRunStatusEnumValueOf(String name) {
       return _$maintenanceRunStatusEnum_partial;
     case 'failed':
       return _$maintenanceRunStatusEnum_failed;
+    case 'unknownDefaultOpenApi':
+      return _$maintenanceRunStatusEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$maintenanceRunStatusEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -63,6 +74,7 @@ final BuiltSet<MaintenanceRunStatusEnum> _$maintenanceRunStatusEnumValues =
       _$maintenanceRunStatusEnum_done,
       _$maintenanceRunStatusEnum_partial,
       _$maintenanceRunStatusEnum_failed,
+      _$maintenanceRunStatusEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<MaintenanceRunTriggerEnum> _$maintenanceRunTriggerEnumSerializer =
@@ -76,11 +88,13 @@ class _$MaintenanceRunTriggerEnumSerializer
     'monthlyCycle': 'monthly-cycle',
     'manual': 'manual',
     'schedule': 'schedule',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'monthly-cycle': 'monthlyCycle',
     'manual': 'manual',
     'schedule': 'schedule',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -112,12 +126,14 @@ class _$MaintenanceRunStatusEnumSerializer
     'done': 'done',
     'partial': 'partial',
     'failed': 'failed',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'running': 'running',
     'done': 'done',
     'partial': 'partial',
     'failed': 'failed',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

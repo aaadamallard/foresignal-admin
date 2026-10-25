@@ -347,6 +347,9 @@ class MediaRatingProviderEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'operator')
   static const MediaRatingProviderEnum operator_ =
       _$mediaRatingProviderEnum_operator_;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const MediaRatingProviderEnum unknownDefaultOpenApi =
+      _$mediaRatingProviderEnum_unknownDefaultOpenApi;
 
   static Serializer<MediaRatingProviderEnum> get serializer =>
       _$mediaRatingProviderEnumSerializer;
@@ -365,6 +368,9 @@ class MediaRatingEgressEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'LOCAL_ONLY')
   static const MediaRatingEgressEnum LOCAL_ONLY =
       _$mediaRatingEgressEnum_LOCAL_ONLY;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const MediaRatingEgressEnum unknownDefaultOpenApi =
+      _$mediaRatingEgressEnum_unknownDefaultOpenApi;
 
   static Serializer<MediaRatingEgressEnum> get serializer =>
       _$mediaRatingEgressEnumSerializer;

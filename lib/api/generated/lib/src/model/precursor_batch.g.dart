@@ -10,6 +10,8 @@ const PrecursorBatchModeEnum _$precursorBatchModeEnum_mine =
     const PrecursorBatchModeEnum._('mine');
 const PrecursorBatchModeEnum _$precursorBatchModeEnum_retest =
     const PrecursorBatchModeEnum._('retest');
+const PrecursorBatchModeEnum _$precursorBatchModeEnum_unknownDefaultOpenApi =
+    const PrecursorBatchModeEnum._('unknownDefaultOpenApi');
 
 PrecursorBatchModeEnum _$precursorBatchModeEnumValueOf(String name) {
   switch (name) {
@@ -17,8 +19,10 @@ PrecursorBatchModeEnum _$precursorBatchModeEnumValueOf(String name) {
       return _$precursorBatchModeEnum_mine;
     case 'retest':
       return _$precursorBatchModeEnum_retest;
+    case 'unknownDefaultOpenApi':
+      return _$precursorBatchModeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$precursorBatchModeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -26,6 +30,7 @@ final BuiltSet<PrecursorBatchModeEnum> _$precursorBatchModeEnumValues =
     BuiltSet<PrecursorBatchModeEnum>(const <PrecursorBatchModeEnum>[
       _$precursorBatchModeEnum_mine,
       _$precursorBatchModeEnum_retest,
+      _$precursorBatchModeEnum_unknownDefaultOpenApi,
     ]);
 
 const PrecursorBatchTriggerEnum _$precursorBatchTriggerEnum_schedule =
@@ -34,6 +39,9 @@ const PrecursorBatchTriggerEnum _$precursorBatchTriggerEnum_manual =
     const PrecursorBatchTriggerEnum._('manual');
 const PrecursorBatchTriggerEnum _$precursorBatchTriggerEnum_cycle =
     const PrecursorBatchTriggerEnum._('cycle');
+const PrecursorBatchTriggerEnum
+_$precursorBatchTriggerEnum_unknownDefaultOpenApi =
+    const PrecursorBatchTriggerEnum._('unknownDefaultOpenApi');
 
 PrecursorBatchTriggerEnum _$precursorBatchTriggerEnumValueOf(String name) {
   switch (name) {
@@ -43,8 +51,10 @@ PrecursorBatchTriggerEnum _$precursorBatchTriggerEnumValueOf(String name) {
       return _$precursorBatchTriggerEnum_manual;
     case 'cycle':
       return _$precursorBatchTriggerEnum_cycle;
+    case 'unknownDefaultOpenApi':
+      return _$precursorBatchTriggerEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$precursorBatchTriggerEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -53,6 +63,7 @@ final BuiltSet<PrecursorBatchTriggerEnum> _$precursorBatchTriggerEnumValues =
       _$precursorBatchTriggerEnum_schedule,
       _$precursorBatchTriggerEnum_manual,
       _$precursorBatchTriggerEnum_cycle,
+      _$precursorBatchTriggerEnum_unknownDefaultOpenApi,
     ]);
 
 const PrecursorBatchStatusEnum _$precursorBatchStatusEnum_running =
@@ -63,6 +74,9 @@ const PrecursorBatchStatusEnum _$precursorBatchStatusEnum_failed =
     const PrecursorBatchStatusEnum._('failed');
 const PrecursorBatchStatusEnum _$precursorBatchStatusEnum_cancelled =
     const PrecursorBatchStatusEnum._('cancelled');
+const PrecursorBatchStatusEnum
+_$precursorBatchStatusEnum_unknownDefaultOpenApi =
+    const PrecursorBatchStatusEnum._('unknownDefaultOpenApi');
 
 PrecursorBatchStatusEnum _$precursorBatchStatusEnumValueOf(String name) {
   switch (name) {
@@ -74,8 +88,10 @@ PrecursorBatchStatusEnum _$precursorBatchStatusEnumValueOf(String name) {
       return _$precursorBatchStatusEnum_failed;
     case 'cancelled':
       return _$precursorBatchStatusEnum_cancelled;
+    case 'unknownDefaultOpenApi':
+      return _$precursorBatchStatusEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$precursorBatchStatusEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -85,12 +101,16 @@ final BuiltSet<PrecursorBatchStatusEnum> _$precursorBatchStatusEnumValues =
       _$precursorBatchStatusEnum_done,
       _$precursorBatchStatusEnum_failed,
       _$precursorBatchStatusEnum_cancelled,
+      _$precursorBatchStatusEnum_unknownDefaultOpenApi,
     ]);
 
 const PrecursorBatchMethodEnum _$precursorBatchMethodEnum_BH =
     const PrecursorBatchMethodEnum._('BH');
 const PrecursorBatchMethodEnum _$precursorBatchMethodEnum_BY =
     const PrecursorBatchMethodEnum._('BY');
+const PrecursorBatchMethodEnum
+_$precursorBatchMethodEnum_unknownDefaultOpenApi =
+    const PrecursorBatchMethodEnum._('unknownDefaultOpenApi');
 
 PrecursorBatchMethodEnum _$precursorBatchMethodEnumValueOf(String name) {
   switch (name) {
@@ -98,8 +118,10 @@ PrecursorBatchMethodEnum _$precursorBatchMethodEnumValueOf(String name) {
       return _$precursorBatchMethodEnum_BH;
     case 'BY':
       return _$precursorBatchMethodEnum_BY;
+    case 'unknownDefaultOpenApi':
+      return _$precursorBatchMethodEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$precursorBatchMethodEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -107,6 +129,7 @@ final BuiltSet<PrecursorBatchMethodEnum> _$precursorBatchMethodEnumValues =
     BuiltSet<PrecursorBatchMethodEnum>(const <PrecursorBatchMethodEnum>[
       _$precursorBatchMethodEnum_BH,
       _$precursorBatchMethodEnum_BY,
+      _$precursorBatchMethodEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<PrecursorBatchModeEnum> _$precursorBatchModeEnumSerializer =
@@ -123,10 +146,12 @@ class _$PrecursorBatchModeEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'mine': 'mine',
     'retest': 'retest',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'mine': 'mine',
     'retest': 'retest',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -157,11 +182,13 @@ class _$PrecursorBatchTriggerEnumSerializer
     'schedule': 'schedule',
     'manual': 'manual',
     'cycle': 'cycle',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'schedule': 'schedule',
     'manual': 'manual',
     'cycle': 'cycle',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -193,12 +220,14 @@ class _$PrecursorBatchStatusEnumSerializer
     'done': 'done',
     'failed': 'failed',
     'cancelled': 'cancelled',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'running': 'running',
     'done': 'done',
     'failed': 'failed',
     'cancelled': 'cancelled',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -228,10 +257,12 @@ class _$PrecursorBatchMethodEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'BH': 'BH',
     'BY': 'BY',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'BH': 'BH',
     'BY': 'BY',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

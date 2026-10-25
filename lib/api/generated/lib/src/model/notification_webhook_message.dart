@@ -531,6 +531,9 @@ class NotificationWebhookMessageEventEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'personal')
   static const NotificationWebhookMessageEventEnum personal =
       _$notificationWebhookMessageEventEnum_personal;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const NotificationWebhookMessageEventEnum unknownDefaultOpenApi =
+      _$notificationWebhookMessageEventEnum_unknownDefaultOpenApi;
 
   static Serializer<NotificationWebhookMessageEventEnum> get serializer =>
       _$notificationWebhookMessageEventEnumSerializer;
@@ -553,6 +556,9 @@ class NotificationWebhookMessageSeverityEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'critical')
   static const NotificationWebhookMessageSeverityEnum critical =
       _$notificationWebhookMessageSeverityEnum_critical;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const NotificationWebhookMessageSeverityEnum unknownDefaultOpenApi =
+      _$notificationWebhookMessageSeverityEnum_unknownDefaultOpenApi;
 
   static Serializer<NotificationWebhookMessageSeverityEnum> get serializer =>
       _$notificationWebhookMessageSeverityEnumSerializer;

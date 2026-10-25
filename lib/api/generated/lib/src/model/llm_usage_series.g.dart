@@ -12,6 +12,9 @@ const LlmUsageSeriesResolutionEnum _$llmUsageSeriesResolutionEnum_hour =
     const LlmUsageSeriesResolutionEnum._('hour');
 const LlmUsageSeriesResolutionEnum _$llmUsageSeriesResolutionEnum_day =
     const LlmUsageSeriesResolutionEnum._('day');
+const LlmUsageSeriesResolutionEnum
+_$llmUsageSeriesResolutionEnum_unknownDefaultOpenApi =
+    const LlmUsageSeriesResolutionEnum._('unknownDefaultOpenApi');
 
 LlmUsageSeriesResolutionEnum _$llmUsageSeriesResolutionEnumValueOf(
   String name,
@@ -23,8 +26,10 @@ LlmUsageSeriesResolutionEnum _$llmUsageSeriesResolutionEnumValueOf(
       return _$llmUsageSeriesResolutionEnum_hour;
     case 'day':
       return _$llmUsageSeriesResolutionEnum_day;
+    case 'unknownDefaultOpenApi':
+      return _$llmUsageSeriesResolutionEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$llmUsageSeriesResolutionEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -34,6 +39,7 @@ _$llmUsageSeriesResolutionEnumValues =
       _$llmUsageSeriesResolutionEnum_minute,
       _$llmUsageSeriesResolutionEnum_hour,
       _$llmUsageSeriesResolutionEnum_day,
+      _$llmUsageSeriesResolutionEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<LlmUsageSeriesResolutionEnum>
@@ -46,11 +52,13 @@ class _$LlmUsageSeriesResolutionEnumSerializer
     'minute': 'minute',
     'hour': 'hour',
     'day': 'day',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'minute': 'minute',
     'hour': 'hour',
     'day': 'day',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

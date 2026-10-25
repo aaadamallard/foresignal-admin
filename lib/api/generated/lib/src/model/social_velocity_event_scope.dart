@@ -151,6 +151,9 @@ class SocialVelocityEventScopeTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'entity')
   static const SocialVelocityEventScopeTypeEnum entity =
       _$socialVelocityEventScopeTypeEnum_entity;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const SocialVelocityEventScopeTypeEnum unknownDefaultOpenApi =
+      _$socialVelocityEventScopeTypeEnum_unknownDefaultOpenApi;
 
   static Serializer<SocialVelocityEventScopeTypeEnum> get serializer =>
       _$socialVelocityEventScopeTypeEnumSerializer;

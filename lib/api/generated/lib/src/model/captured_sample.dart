@@ -291,6 +291,9 @@ class CapturedSampleMethodEnum extends EnumClass {
   static const CapturedSampleMethodEnum POST = _$capturedSampleMethodEnum_POST;
   @BuiltValueEnumConst(wireName: r'PUT')
   static const CapturedSampleMethodEnum PUT = _$capturedSampleMethodEnum_PUT;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const CapturedSampleMethodEnum unknownDefaultOpenApi =
+      _$capturedSampleMethodEnum_unknownDefaultOpenApi;
 
   static Serializer<CapturedSampleMethodEnum> get serializer =>
       _$capturedSampleMethodEnumSerializer;

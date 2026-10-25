@@ -356,6 +356,9 @@ class TimelineTimeFieldEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'ingested')
   static const TimelineTimeFieldEnum ingested =
       _$timelineTimeFieldEnum_ingested;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const TimelineTimeFieldEnum unknownDefaultOpenApi =
+      _$timelineTimeFieldEnum_unknownDefaultOpenApi;
 
   static Serializer<TimelineTimeFieldEnum> get serializer =>
       _$timelineTimeFieldEnumSerializer;
@@ -373,6 +376,9 @@ class TimelineMeasureEnum extends EnumClass {
   static const TimelineMeasureEnum versions = _$timelineMeasureEnum_versions;
   @BuiltValueEnumConst(wireName: r'entities')
   static const TimelineMeasureEnum entities = _$timelineMeasureEnum_entities;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const TimelineMeasureEnum unknownDefaultOpenApi =
+      _$timelineMeasureEnum_unknownDefaultOpenApi;
 
   static Serializer<TimelineMeasureEnum> get serializer =>
       _$timelineMeasureEnumSerializer;
@@ -392,6 +398,9 @@ class TimelineGroupByEnum extends EnumClass {
   static const TimelineGroupByEnum kind = _$timelineGroupByEnum_kind;
   @BuiltValueEnumConst(wireName: r'source')
   static const TimelineGroupByEnum source_ = _$timelineGroupByEnum_source_;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const TimelineGroupByEnum unknownDefaultOpenApi =
+      _$timelineGroupByEnum_unknownDefaultOpenApi;
 
   static Serializer<TimelineGroupByEnum> get serializer =>
       _$timelineGroupByEnumSerializer;
@@ -412,6 +421,9 @@ class TimelineBackendEnum extends EnumClass {
   static const TimelineBackendEnum rollup = _$timelineBackendEnum_rollup;
   @BuiltValueEnumConst(wireName: r'mixed')
   static const TimelineBackendEnum mixed = _$timelineBackendEnum_mixed;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const TimelineBackendEnum unknownDefaultOpenApi =
+      _$timelineBackendEnum_unknownDefaultOpenApi;
 
   static Serializer<TimelineBackendEnum> get serializer =>
       _$timelineBackendEnumSerializer;

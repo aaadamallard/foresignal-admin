@@ -298,6 +298,9 @@ class RegionNearCompass16Enum extends EnumClass {
   static const RegionNearCompass16Enum NW = _$regionNearCompass16Enum_NW;
   @BuiltValueEnumConst(wireName: r'NNW')
   static const RegionNearCompass16Enum NNW = _$regionNearCompass16Enum_NNW;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const RegionNearCompass16Enum unknownDefaultOpenApi =
+      _$regionNearCompass16Enum_unknownDefaultOpenApi;
 
   static Serializer<RegionNearCompass16Enum> get serializer =>
       _$regionNearCompass16EnumSerializer;

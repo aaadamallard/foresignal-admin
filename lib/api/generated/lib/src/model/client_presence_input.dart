@@ -169,6 +169,9 @@ class ClientPresenceInputKindEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'web')
   static const ClientPresenceInputKindEnum web =
       _$clientPresenceInputKindEnum_web;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ClientPresenceInputKindEnum unknownDefaultOpenApi =
+      _$clientPresenceInputKindEnum_unknownDefaultOpenApi;
 
   static Serializer<ClientPresenceInputKindEnum> get serializer =>
       _$clientPresenceInputKindEnumSerializer;
@@ -191,6 +194,9 @@ class ClientPresenceInputStateEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'background')
   static const ClientPresenceInputStateEnum background =
       _$clientPresenceInputStateEnum_background;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ClientPresenceInputStateEnum unknownDefaultOpenApi =
+      _$clientPresenceInputStateEnum_unknownDefaultOpenApi;
 
   static Serializer<ClientPresenceInputStateEnum> get serializer =>
       _$clientPresenceInputStateEnumSerializer;

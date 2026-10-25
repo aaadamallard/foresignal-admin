@@ -14,6 +14,9 @@ const CycleRunFailedEventCadenceEnum _$cycleRunFailedEventCadenceEnum_monthly =
     const CycleRunFailedEventCadenceEnum._('monthly');
 const CycleRunFailedEventCadenceEnum _$cycleRunFailedEventCadenceEnum_onDemand =
     const CycleRunFailedEventCadenceEnum._('onDemand');
+const CycleRunFailedEventCadenceEnum
+_$cycleRunFailedEventCadenceEnum_unknownDefaultOpenApi =
+    const CycleRunFailedEventCadenceEnum._('unknownDefaultOpenApi');
 
 CycleRunFailedEventCadenceEnum _$cycleRunFailedEventCadenceEnumValueOf(
   String name,
@@ -27,8 +30,10 @@ CycleRunFailedEventCadenceEnum _$cycleRunFailedEventCadenceEnumValueOf(
       return _$cycleRunFailedEventCadenceEnum_monthly;
     case 'onDemand':
       return _$cycleRunFailedEventCadenceEnum_onDemand;
+    case 'unknownDefaultOpenApi':
+      return _$cycleRunFailedEventCadenceEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$cycleRunFailedEventCadenceEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -40,6 +45,7 @@ _$cycleRunFailedEventCadenceEnumValues =
         _$cycleRunFailedEventCadenceEnum_weekly,
         _$cycleRunFailedEventCadenceEnum_monthly,
         _$cycleRunFailedEventCadenceEnum_onDemand,
+        _$cycleRunFailedEventCadenceEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -54,12 +60,14 @@ class _$CycleRunFailedEventCadenceEnumSerializer
     'weekly': 'weekly',
     'monthly': 'monthly',
     'onDemand': 'on-demand',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'daily': 'daily',
     'weekly': 'weekly',
     'monthly': 'monthly',
     'on-demand': 'onDemand',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

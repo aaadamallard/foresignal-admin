@@ -14,6 +14,8 @@ const SeriesPointStatusEnum _$seriesPointStatusEnum_estimated =
     const SeriesPointStatusEnum._('estimated');
 const SeriesPointStatusEnum _$seriesPointStatusEnum_forecast =
     const SeriesPointStatusEnum._('forecast');
+const SeriesPointStatusEnum _$seriesPointStatusEnum_unknownDefaultOpenApi =
+    const SeriesPointStatusEnum._('unknownDefaultOpenApi');
 
 SeriesPointStatusEnum _$seriesPointStatusEnumValueOf(String name) {
   switch (name) {
@@ -25,8 +27,10 @@ SeriesPointStatusEnum _$seriesPointStatusEnumValueOf(String name) {
       return _$seriesPointStatusEnum_estimated;
     case 'forecast':
       return _$seriesPointStatusEnum_forecast;
+    case 'unknownDefaultOpenApi':
+      return _$seriesPointStatusEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$seriesPointStatusEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -36,6 +40,7 @@ final BuiltSet<SeriesPointStatusEnum> _$seriesPointStatusEnumValues =
       _$seriesPointStatusEnum_preliminary,
       _$seriesPointStatusEnum_estimated,
       _$seriesPointStatusEnum_forecast,
+      _$seriesPointStatusEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<SeriesPointStatusEnum> _$seriesPointStatusEnumSerializer =
@@ -48,12 +53,14 @@ class _$SeriesPointStatusEnumSerializer
     'preliminary': 'preliminary',
     'estimated': 'estimated',
     'forecast': 'forecast',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'final': 'final_',
     'preliminary': 'preliminary',
     'estimated': 'estimated',
     'forecast': 'forecast',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

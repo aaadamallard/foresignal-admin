@@ -10,6 +10,8 @@ const AnnotationInputKindEnum _$annotationInputKindEnum_note =
     const AnnotationInputKindEnum._('note');
 const AnnotationInputKindEnum _$annotationInputKindEnum_verdict =
     const AnnotationInputKindEnum._('verdict');
+const AnnotationInputKindEnum _$annotationInputKindEnum_unknownDefaultOpenApi =
+    const AnnotationInputKindEnum._('unknownDefaultOpenApi');
 
 AnnotationInputKindEnum _$annotationInputKindEnumValueOf(String name) {
   switch (name) {
@@ -17,8 +19,10 @@ AnnotationInputKindEnum _$annotationInputKindEnumValueOf(String name) {
       return _$annotationInputKindEnum_note;
     case 'verdict':
       return _$annotationInputKindEnum_verdict;
+    case 'unknownDefaultOpenApi':
+      return _$annotationInputKindEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$annotationInputKindEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -26,6 +30,7 @@ final BuiltSet<AnnotationInputKindEnum> _$annotationInputKindEnumValues =
     BuiltSet<AnnotationInputKindEnum>(const <AnnotationInputKindEnum>[
       _$annotationInputKindEnum_note,
       _$annotationInputKindEnum_verdict,
+      _$annotationInputKindEnum_unknownDefaultOpenApi,
     ]);
 
 const AnnotationInputVerdictEnum _$annotationInputVerdictEnum_confirmed =
@@ -36,6 +41,9 @@ const AnnotationInputVerdictEnum _$annotationInputVerdictEnum_needsReview =
     const AnnotationInputVerdictEnum._('needsReview');
 const AnnotationInputVerdictEnum _$annotationInputVerdictEnum_duplicateOf =
     const AnnotationInputVerdictEnum._('duplicateOf');
+const AnnotationInputVerdictEnum
+_$annotationInputVerdictEnum_unknownDefaultOpenApi =
+    const AnnotationInputVerdictEnum._('unknownDefaultOpenApi');
 
 AnnotationInputVerdictEnum _$annotationInputVerdictEnumValueOf(String name) {
   switch (name) {
@@ -47,8 +55,10 @@ AnnotationInputVerdictEnum _$annotationInputVerdictEnumValueOf(String name) {
       return _$annotationInputVerdictEnum_needsReview;
     case 'duplicateOf':
       return _$annotationInputVerdictEnum_duplicateOf;
+    case 'unknownDefaultOpenApi':
+      return _$annotationInputVerdictEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$annotationInputVerdictEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -58,6 +68,7 @@ final BuiltSet<AnnotationInputVerdictEnum> _$annotationInputVerdictEnumValues =
       _$annotationInputVerdictEnum_rejected,
       _$annotationInputVerdictEnum_needsReview,
       _$annotationInputVerdictEnum_duplicateOf,
+      _$annotationInputVerdictEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<AnnotationInputKindEnum> _$annotationInputKindEnumSerializer =
@@ -70,10 +81,12 @@ class _$AnnotationInputKindEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'note': 'note',
     'verdict': 'verdict',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'note': 'note',
     'verdict': 'verdict',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -105,12 +118,14 @@ class _$AnnotationInputVerdictEnumSerializer
     'rejected': 'rejected',
     'needsReview': 'needs-review',
     'duplicateOf': 'duplicate-of',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'confirmed': 'confirmed',
     'rejected': 'rejected',
     'needs-review': 'needsReview',
     'duplicate-of': 'duplicateOf',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

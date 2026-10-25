@@ -308,6 +308,9 @@ class ProductLoopFramesInnerKindEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'forecast')
   static const ProductLoopFramesInnerKindEnum forecast =
       _$productLoopFramesInnerKindEnum_forecast;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ProductLoopFramesInnerKindEnum unknownDefaultOpenApi =
+      _$productLoopFramesInnerKindEnum_unknownDefaultOpenApi;
 
   static Serializer<ProductLoopFramesInnerKindEnum> get serializer =>
       _$productLoopFramesInnerKindEnumSerializer;

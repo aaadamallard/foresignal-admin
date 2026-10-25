@@ -215,6 +215,9 @@ class BaseRateDefinitionWindowEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'P90D')
   static const BaseRateDefinitionWindowEnum P90D =
       _$baseRateDefinitionWindowEnum_P90D;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const BaseRateDefinitionWindowEnum unknownDefaultOpenApi =
+      _$baseRateDefinitionWindowEnum_unknownDefaultOpenApi;
 
   static Serializer<BaseRateDefinitionWindowEnum> get serializer =>
       _$baseRateDefinitionWindowEnumSerializer;

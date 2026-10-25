@@ -211,6 +211,9 @@ class SinkTestResultPhaseEnum extends EnumClass {
   static const SinkTestResultPhaseEnum bind = _$sinkTestResultPhaseEnum_bind;
   @BuiltValueEnumConst(wireName: r'send')
   static const SinkTestResultPhaseEnum send = _$sinkTestResultPhaseEnum_send;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const SinkTestResultPhaseEnum unknownDefaultOpenApi =
+      _$sinkTestResultPhaseEnum_unknownDefaultOpenApi;
 
   static Serializer<SinkTestResultPhaseEnum> get serializer =>
       _$sinkTestResultPhaseEnumSerializer;

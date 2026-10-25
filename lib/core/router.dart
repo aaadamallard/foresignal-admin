@@ -16,6 +16,7 @@ import '../features/analysis/analysis_screen.dart';
 import '../features/analysis/cycle_screen.dart';
 import '../features/analysis/event_screen.dart';
 import '../features/analysis/recipe_screen.dart';
+import '../features/analysis/situation_screen.dart';
 import '../features/connect/connect_screen.dart';
 import '../features/forecasting/edp_provider_screen.dart';
 import '../features/forecasting/forecaster_screen.dart';
@@ -138,6 +139,10 @@ Map<String, SectionRoutes> sectionRoutesFor(FormFactor formFactor) {
           GoRoute(
             path: 'events/:eventId',
             builder: (context, state) => EventScreen(eventId: state.pathParameters['eventId']!),
+          ),
+          GoRoute(
+            path: 'situations/:situationId',
+            builder: (context, state) => SituationScreen(situationId: state.pathParameters['situationId']!),
           ),
           GoRoute(path: 'new-cycle', builder: (context, state) => const CycleScreen()),
           GoRoute(

@@ -18,6 +18,9 @@ _$notificationDeliveryStatusEnum_suppressed =
     const NotificationDeliveryStatusEnum._('suppressed');
 const NotificationDeliveryStatusEnum _$notificationDeliveryStatusEnum_unacked =
     const NotificationDeliveryStatusEnum._('unacked');
+const NotificationDeliveryStatusEnum
+_$notificationDeliveryStatusEnum_unknownDefaultOpenApi =
+    const NotificationDeliveryStatusEnum._('unknownDefaultOpenApi');
 
 NotificationDeliveryStatusEnum _$notificationDeliveryStatusEnumValueOf(
   String name,
@@ -33,8 +36,10 @@ NotificationDeliveryStatusEnum _$notificationDeliveryStatusEnumValueOf(
       return _$notificationDeliveryStatusEnum_suppressed;
     case 'unacked':
       return _$notificationDeliveryStatusEnum_unacked;
+    case 'unknownDefaultOpenApi':
+      return _$notificationDeliveryStatusEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$notificationDeliveryStatusEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -47,6 +52,7 @@ _$notificationDeliveryStatusEnumValues =
         _$notificationDeliveryStatusEnum_failed,
         _$notificationDeliveryStatusEnum_suppressed,
         _$notificationDeliveryStatusEnum_unacked,
+        _$notificationDeliveryStatusEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -58,6 +64,9 @@ const NotificationDeliveryKindEnum _$notificationDeliveryKindEnum_followup =
     const NotificationDeliveryKindEnum._('followup');
 const NotificationDeliveryKindEnum _$notificationDeliveryKindEnum_digest =
     const NotificationDeliveryKindEnum._('digest');
+const NotificationDeliveryKindEnum
+_$notificationDeliveryKindEnum_unknownDefaultOpenApi =
+    const NotificationDeliveryKindEnum._('unknownDefaultOpenApi');
 
 NotificationDeliveryKindEnum _$notificationDeliveryKindEnumValueOf(
   String name,
@@ -71,8 +80,10 @@ NotificationDeliveryKindEnum _$notificationDeliveryKindEnumValueOf(
       return _$notificationDeliveryKindEnum_followup;
     case 'digest':
       return _$notificationDeliveryKindEnum_digest;
+    case 'unknownDefaultOpenApi':
+      return _$notificationDeliveryKindEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$notificationDeliveryKindEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -83,6 +94,7 @@ _$notificationDeliveryKindEnumValues =
       _$notificationDeliveryKindEnum_update_,
       _$notificationDeliveryKindEnum_followup,
       _$notificationDeliveryKindEnum_digest,
+      _$notificationDeliveryKindEnum_unknownDefaultOpenApi,
     ]);
 
 const NotificationDeliveryDeferredReasonEnum
@@ -103,6 +115,9 @@ _$notificationDeliveryDeferredReasonEnum_presence =
 const NotificationDeliveryDeferredReasonEnum
 _$notificationDeliveryDeferredReasonEnum_airtime =
     const NotificationDeliveryDeferredReasonEnum._('airtime');
+const NotificationDeliveryDeferredReasonEnum
+_$notificationDeliveryDeferredReasonEnum_unknownDefaultOpenApi =
+    const NotificationDeliveryDeferredReasonEnum._('unknownDefaultOpenApi');
 
 NotificationDeliveryDeferredReasonEnum
 _$notificationDeliveryDeferredReasonEnumValueOf(String name) {
@@ -119,8 +134,10 @@ _$notificationDeliveryDeferredReasonEnumValueOf(String name) {
       return _$notificationDeliveryDeferredReasonEnum_presence;
     case 'airtime':
       return _$notificationDeliveryDeferredReasonEnum_airtime;
+    case 'unknownDefaultOpenApi':
+      return _$notificationDeliveryDeferredReasonEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$notificationDeliveryDeferredReasonEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -134,6 +151,7 @@ _$notificationDeliveryDeferredReasonEnumValues =
         _$notificationDeliveryDeferredReasonEnum_grouping,
         _$notificationDeliveryDeferredReasonEnum_presence,
         _$notificationDeliveryDeferredReasonEnum_airtime,
+        _$notificationDeliveryDeferredReasonEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -149,6 +167,9 @@ _$notificationDeliveryAttachmentLevelEnum_thumbnail =
 const NotificationDeliveryAttachmentLevelEnum
 _$notificationDeliveryAttachmentLevelEnum_textOnly =
     const NotificationDeliveryAttachmentLevelEnum._('textOnly');
+const NotificationDeliveryAttachmentLevelEnum
+_$notificationDeliveryAttachmentLevelEnum_unknownDefaultOpenApi =
+    const NotificationDeliveryAttachmentLevelEnum._('unknownDefaultOpenApi');
 
 NotificationDeliveryAttachmentLevelEnum
 _$notificationDeliveryAttachmentLevelEnumValueOf(String name) {
@@ -161,8 +182,10 @@ _$notificationDeliveryAttachmentLevelEnumValueOf(String name) {
       return _$notificationDeliveryAttachmentLevelEnum_thumbnail;
     case 'textOnly':
       return _$notificationDeliveryAttachmentLevelEnum_textOnly;
+    case 'unknownDefaultOpenApi':
+      return _$notificationDeliveryAttachmentLevelEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$notificationDeliveryAttachmentLevelEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -174,6 +197,7 @@ _$notificationDeliveryAttachmentLevelEnumValues =
         _$notificationDeliveryAttachmentLevelEnum_map600,
         _$notificationDeliveryAttachmentLevelEnum_thumbnail,
         _$notificationDeliveryAttachmentLevelEnum_textOnly,
+        _$notificationDeliveryAttachmentLevelEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -198,6 +222,7 @@ class _$NotificationDeliveryStatusEnumSerializer
     'failed': 'failed',
     'suppressed': 'suppressed',
     'unacked': 'unacked',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'pending': 'pending',
@@ -205,6 +230,7 @@ class _$NotificationDeliveryStatusEnumSerializer
     'failed': 'failed',
     'suppressed': 'suppressed',
     'unacked': 'unacked',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -236,12 +262,14 @@ class _$NotificationDeliveryKindEnumSerializer
     'update_': 'update',
     'followup': 'followup',
     'digest': 'digest',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'send': 'send',
     'update': 'update_',
     'followup': 'followup',
     'digest': 'digest',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -275,6 +303,7 @@ class _$NotificationDeliveryDeferredReasonEnumSerializer
     'grouping': 'grouping',
     'presence': 'presence',
     'airtime': 'airtime',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'quiet_hours': 'quietHours',
@@ -283,6 +312,7 @@ class _$NotificationDeliveryDeferredReasonEnumSerializer
     'grouping': 'grouping',
     'presence': 'presence',
     'airtime': 'airtime',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -316,12 +346,14 @@ class _$NotificationDeliveryAttachmentLevelEnumSerializer
     'map600': 'map-600',
     'thumbnail': 'thumbnail',
     'textOnly': 'text-only',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'map-800': 'map800',
     'map-600': 'map600',
     'thumbnail': 'thumbnail',
     'text-only': 'textOnly',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

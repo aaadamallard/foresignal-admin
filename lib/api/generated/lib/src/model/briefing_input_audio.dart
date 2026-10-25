@@ -147,6 +147,9 @@ class BriefingInputAudioFormatEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'opus')
   static const BriefingInputAudioFormatEnum opus =
       _$briefingInputAudioFormatEnum_opus;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const BriefingInputAudioFormatEnum unknownDefaultOpenApi =
+      _$briefingInputAudioFormatEnum_unknownDefaultOpenApi;
 
   static Serializer<BriefingInputAudioFormatEnum> get serializer =>
       _$briefingInputAudioFormatEnumSerializer;

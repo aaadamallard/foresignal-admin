@@ -335,6 +335,9 @@ class EdpForecastItemTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'forecast')
   static const EdpForecastItemTypeEnum forecast =
       _$edpForecastItemTypeEnum_forecast;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const EdpForecastItemTypeEnum unknownDefaultOpenApi =
+      _$edpForecastItemTypeEnum_unknownDefaultOpenApi;
 
   static Serializer<EdpForecastItemTypeEnum> get serializer =>
       _$edpForecastItemTypeEnumSerializer;

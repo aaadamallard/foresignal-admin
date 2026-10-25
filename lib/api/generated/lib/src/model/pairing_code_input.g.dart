@@ -10,6 +10,9 @@ const PairingCodeInputScopeEnum _$pairingCodeInputScopeEnum_read =
     const PairingCodeInputScopeEnum._('read');
 const PairingCodeInputScopeEnum _$pairingCodeInputScopeEnum_agent =
     const PairingCodeInputScopeEnum._('agent');
+const PairingCodeInputScopeEnum
+_$pairingCodeInputScopeEnum_unknownDefaultOpenApi =
+    const PairingCodeInputScopeEnum._('unknownDefaultOpenApi');
 
 PairingCodeInputScopeEnum _$pairingCodeInputScopeEnumValueOf(String name) {
   switch (name) {
@@ -17,8 +20,10 @@ PairingCodeInputScopeEnum _$pairingCodeInputScopeEnumValueOf(String name) {
       return _$pairingCodeInputScopeEnum_read;
     case 'agent':
       return _$pairingCodeInputScopeEnum_agent;
+    case 'unknownDefaultOpenApi':
+      return _$pairingCodeInputScopeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$pairingCodeInputScopeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -26,6 +31,7 @@ final BuiltSet<PairingCodeInputScopeEnum> _$pairingCodeInputScopeEnumValues =
     BuiltSet<PairingCodeInputScopeEnum>(const <PairingCodeInputScopeEnum>[
       _$pairingCodeInputScopeEnum_read,
       _$pairingCodeInputScopeEnum_agent,
+      _$pairingCodeInputScopeEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<PairingCodeInputScopeEnum> _$pairingCodeInputScopeEnumSerializer =
@@ -36,10 +42,12 @@ class _$PairingCodeInputScopeEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'read': 'read',
     'agent': 'agent',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'read': 'read',
     'agent': 'agent',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

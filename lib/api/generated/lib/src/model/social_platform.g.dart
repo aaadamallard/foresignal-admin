@@ -18,6 +18,8 @@ const SocialPlatformStateEnum _$socialPlatformStateEnum_credentialsRequired =
     const SocialPlatformStateEnum._('credentialsRequired');
 const SocialPlatformStateEnum _$socialPlatformStateEnum_unavailable =
     const SocialPlatformStateEnum._('unavailable');
+const SocialPlatformStateEnum _$socialPlatformStateEnum_unknownDefaultOpenApi =
+    const SocialPlatformStateEnum._('unknownDefaultOpenApi');
 
 SocialPlatformStateEnum _$socialPlatformStateEnumValueOf(String name) {
   switch (name) {
@@ -33,8 +35,10 @@ SocialPlatformStateEnum _$socialPlatformStateEnumValueOf(String name) {
       return _$socialPlatformStateEnum_credentialsRequired;
     case 'unavailable':
       return _$socialPlatformStateEnum_unavailable;
+    case 'unknownDefaultOpenApi':
+      return _$socialPlatformStateEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$socialPlatformStateEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -46,6 +50,7 @@ final BuiltSet<SocialPlatformStateEnum> _$socialPlatformStateEnumValues =
       _$socialPlatformStateEnum_budgetExhausted,
       _$socialPlatformStateEnum_credentialsRequired,
       _$socialPlatformStateEnum_unavailable,
+      _$socialPlatformStateEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<SocialPlatformStateEnum> _$socialPlatformStateEnumSerializer =
@@ -60,6 +65,7 @@ class _$SocialPlatformStateEnumSerializer
     'budgetExhausted': 'budget-exhausted',
     'credentialsRequired': 'credentials-required',
     'unavailable': 'unavailable',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'enabled': 'enabled',
@@ -68,6 +74,7 @@ class _$SocialPlatformStateEnumSerializer
     'budget-exhausted': 'budgetExhausted',
     'credentials-required': 'credentialsRequired',
     'unavailable': 'unavailable',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

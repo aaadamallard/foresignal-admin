@@ -17,6 +17,9 @@ _$doctorReportProbeSkipReasonEnum_noUpstream =
 const DoctorReportProbeSkipReasonEnum
 _$doctorReportProbeSkipReasonEnum_notRequested =
     const DoctorReportProbeSkipReasonEnum._('notRequested');
+const DoctorReportProbeSkipReasonEnum
+_$doctorReportProbeSkipReasonEnum_unknownDefaultOpenApi =
+    const DoctorReportProbeSkipReasonEnum._('unknownDefaultOpenApi');
 
 DoctorReportProbeSkipReasonEnum _$doctorReportProbeSkipReasonEnumValueOf(
   String name,
@@ -30,8 +33,10 @@ DoctorReportProbeSkipReasonEnum _$doctorReportProbeSkipReasonEnumValueOf(
       return _$doctorReportProbeSkipReasonEnum_noUpstream;
     case 'notRequested':
       return _$doctorReportProbeSkipReasonEnum_notRequested;
+    case 'unknownDefaultOpenApi':
+      return _$doctorReportProbeSkipReasonEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$doctorReportProbeSkipReasonEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -43,6 +48,7 @@ _$doctorReportProbeSkipReasonEnumValues =
         _$doctorReportProbeSkipReasonEnum_backoff,
         _$doctorReportProbeSkipReasonEnum_noUpstream,
         _$doctorReportProbeSkipReasonEnum_notRequested,
+        _$doctorReportProbeSkipReasonEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -57,12 +63,14 @@ class _$DoctorReportProbeSkipReasonEnumSerializer
     'backoff': 'backoff',
     'noUpstream': 'no-upstream',
     'notRequested': 'not-requested',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'budget': 'budget',
     'backoff': 'backoff',
     'no-upstream': 'noUpstream',
     'not-requested': 'notRequested',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

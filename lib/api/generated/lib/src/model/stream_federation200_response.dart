@@ -153,6 +153,10 @@ class StreamFederation200ResponsePersistReasonEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'SNAPSHOT')
   static const StreamFederation200ResponsePersistReasonEnum SNAPSHOT =
       _$streamFederation200ResponsePersistReasonEnum_SNAPSHOT;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const StreamFederation200ResponsePersistReasonEnum
+  unknownDefaultOpenApi =
+      _$streamFederation200ResponsePersistReasonEnum_unknownDefaultOpenApi;
 
   static Serializer<StreamFederation200ResponsePersistReasonEnum>
   get serializer => _$streamFederation200ResponsePersistReasonEnumSerializer;
@@ -174,6 +178,10 @@ class StreamFederation200ResponseHistoryTierEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'TRACK')
   static const StreamFederation200ResponseHistoryTierEnum TRACK =
       _$streamFederation200ResponseHistoryTierEnum_TRACK;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const StreamFederation200ResponseHistoryTierEnum
+  unknownDefaultOpenApi =
+      _$streamFederation200ResponseHistoryTierEnum_unknownDefaultOpenApi;
 
   static Serializer<StreamFederation200ResponseHistoryTierEnum>
   get serializer => _$streamFederation200ResponseHistoryTierEnumSerializer;
@@ -196,6 +204,9 @@ class StreamFederation200ResponseReasonEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'resync_required')
   static const StreamFederation200ResponseReasonEnum resyncRequired =
       _$streamFederation200ResponseReasonEnum_resyncRequired;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const StreamFederation200ResponseReasonEnum unknownDefaultOpenApi =
+      _$streamFederation200ResponseReasonEnum_unknownDefaultOpenApi;
 
   static Serializer<StreamFederation200ResponseReasonEnum> get serializer =>
       _$streamFederation200ResponseReasonEnumSerializer;

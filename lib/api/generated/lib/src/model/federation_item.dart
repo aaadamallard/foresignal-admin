@@ -462,6 +462,9 @@ class FederationItemPersistReasonEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'SNAPSHOT')
   static const FederationItemPersistReasonEnum SNAPSHOT =
       _$federationItemPersistReasonEnum_SNAPSHOT;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const FederationItemPersistReasonEnum unknownDefaultOpenApi =
+      _$federationItemPersistReasonEnum_unknownDefaultOpenApi;
 
   static Serializer<FederationItemPersistReasonEnum> get serializer =>
       _$federationItemPersistReasonEnumSerializer;
@@ -482,6 +485,9 @@ class FederationItemHistoryTierEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'TRACK')
   static const FederationItemHistoryTierEnum TRACK =
       _$federationItemHistoryTierEnum_TRACK;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const FederationItemHistoryTierEnum unknownDefaultOpenApi =
+      _$federationItemHistoryTierEnum_unknownDefaultOpenApi;
 
   static Serializer<FederationItemHistoryTierEnum> get serializer =>
       _$federationItemHistoryTierEnumSerializer;

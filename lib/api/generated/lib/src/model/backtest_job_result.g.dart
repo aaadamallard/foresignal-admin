@@ -14,6 +14,9 @@ const BacktestJobResultRuleTypeEnum _$backtestJobResultRuleTypeEnum_absence =
     const BacktestJobResultRuleTypeEnum._('absence');
 const BacktestJobResultRuleTypeEnum _$backtestJobResultRuleTypeEnum_anomaly =
     const BacktestJobResultRuleTypeEnum._('anomaly');
+const BacktestJobResultRuleTypeEnum
+_$backtestJobResultRuleTypeEnum_unknownDefaultOpenApi =
+    const BacktestJobResultRuleTypeEnum._('unknownDefaultOpenApi');
 
 BacktestJobResultRuleTypeEnum _$backtestJobResultRuleTypeEnumValueOf(
   String name,
@@ -27,8 +30,10 @@ BacktestJobResultRuleTypeEnum _$backtestJobResultRuleTypeEnumValueOf(
       return _$backtestJobResultRuleTypeEnum_absence;
     case 'anomaly':
       return _$backtestJobResultRuleTypeEnum_anomaly;
+    case 'unknownDefaultOpenApi':
+      return _$backtestJobResultRuleTypeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$backtestJobResultRuleTypeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -39,12 +44,16 @@ _$backtestJobResultRuleTypeEnumValues = BuiltSet<BacktestJobResultRuleTypeEnum>(
     _$backtestJobResultRuleTypeEnum_count,
     _$backtestJobResultRuleTypeEnum_absence,
     _$backtestJobResultRuleTypeEnum_anomaly,
+    _$backtestJobResultRuleTypeEnum_unknownDefaultOpenApi,
   ],
 );
 
 const BacktestJobResultPermutationsEnum
 _$backtestJobResultPermutationsEnum_number200 =
     const BacktestJobResultPermutationsEnum._('number200');
+const BacktestJobResultPermutationsEnum
+_$backtestJobResultPermutationsEnum_unknownDefaultOpenApi =
+    const BacktestJobResultPermutationsEnum._('unknownDefaultOpenApi');
 
 BacktestJobResultPermutationsEnum _$backtestJobResultPermutationsEnumValueOf(
   String name,
@@ -52,8 +61,10 @@ BacktestJobResultPermutationsEnum _$backtestJobResultPermutationsEnumValueOf(
   switch (name) {
     case 'number200':
       return _$backtestJobResultPermutationsEnum_number200;
+    case 'unknownDefaultOpenApi':
+      return _$backtestJobResultPermutationsEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$backtestJobResultPermutationsEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -62,6 +73,7 @@ _$backtestJobResultPermutationsEnumValues =
     BuiltSet<BacktestJobResultPermutationsEnum>(
       const <BacktestJobResultPermutationsEnum>[
         _$backtestJobResultPermutationsEnum_number200,
+        _$backtestJobResultPermutationsEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -74,6 +86,9 @@ const BacktestJobResultVerdictEnum _$backtestJobResultVerdictEnum_weak =
     const BacktestJobResultVerdictEnum._('weak');
 const BacktestJobResultVerdictEnum _$backtestJobResultVerdictEnum_notable =
     const BacktestJobResultVerdictEnum._('notable');
+const BacktestJobResultVerdictEnum
+_$backtestJobResultVerdictEnum_unknownDefaultOpenApi =
+    const BacktestJobResultVerdictEnum._('unknownDefaultOpenApi');
 
 BacktestJobResultVerdictEnum _$backtestJobResultVerdictEnumValueOf(
   String name,
@@ -87,8 +102,10 @@ BacktestJobResultVerdictEnum _$backtestJobResultVerdictEnumValueOf(
       return _$backtestJobResultVerdictEnum_weak;
     case 'notable':
       return _$backtestJobResultVerdictEnum_notable;
+    case 'unknownDefaultOpenApi':
+      return _$backtestJobResultVerdictEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$backtestJobResultVerdictEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -99,6 +116,7 @@ _$backtestJobResultVerdictEnumValues =
       _$backtestJobResultVerdictEnum_noEvidenceOfPrecedence,
       _$backtestJobResultVerdictEnum_weak,
       _$backtestJobResultVerdictEnum_notable,
+      _$backtestJobResultVerdictEnum_unknownDefaultOpenApi,
     ]);
 
 const BacktestJobResultFeedbackMappingEnum
@@ -110,6 +128,9 @@ _$backtestJobResultFeedbackMappingEnum_negative =
 const BacktestJobResultFeedbackMappingEnum
 _$backtestJobResultFeedbackMappingEnum_neutral =
     const BacktestJobResultFeedbackMappingEnum._('neutral');
+const BacktestJobResultFeedbackMappingEnum
+_$backtestJobResultFeedbackMappingEnum_unknownDefaultOpenApi =
+    const BacktestJobResultFeedbackMappingEnum._('unknownDefaultOpenApi');
 
 BacktestJobResultFeedbackMappingEnum
 _$backtestJobResultFeedbackMappingEnumValueOf(String name) {
@@ -120,8 +141,10 @@ _$backtestJobResultFeedbackMappingEnumValueOf(String name) {
       return _$backtestJobResultFeedbackMappingEnum_negative;
     case 'neutral':
       return _$backtestJobResultFeedbackMappingEnum_neutral;
+    case 'unknownDefaultOpenApi':
+      return _$backtestJobResultFeedbackMappingEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$backtestJobResultFeedbackMappingEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -132,6 +155,7 @@ _$backtestJobResultFeedbackMappingEnumValues =
         _$backtestJobResultFeedbackMappingEnum_positive,
         _$backtestJobResultFeedbackMappingEnum_negative,
         _$backtestJobResultFeedbackMappingEnum_neutral,
+        _$backtestJobResultFeedbackMappingEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -147,6 +171,9 @@ const BacktestJobResultStatusEnum _$backtestJobResultStatusEnum_skipped =
     const BacktestJobResultStatusEnum._('skipped');
 const BacktestJobResultStatusEnum _$backtestJobResultStatusEnum_cancelled =
     const BacktestJobResultStatusEnum._('cancelled');
+const BacktestJobResultStatusEnum
+_$backtestJobResultStatusEnum_unknownDefaultOpenApi =
+    const BacktestJobResultStatusEnum._('unknownDefaultOpenApi');
 
 BacktestJobResultStatusEnum _$backtestJobResultStatusEnumValueOf(String name) {
   switch (name) {
@@ -162,8 +189,10 @@ BacktestJobResultStatusEnum _$backtestJobResultStatusEnumValueOf(String name) {
       return _$backtestJobResultStatusEnum_skipped;
     case 'cancelled':
       return _$backtestJobResultStatusEnum_cancelled;
+    case 'unknownDefaultOpenApi':
+      return _$backtestJobResultStatusEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$backtestJobResultStatusEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -176,6 +205,7 @@ _$backtestJobResultStatusEnumValues =
       _$backtestJobResultStatusEnum_failed,
       _$backtestJobResultStatusEnum_skipped,
       _$backtestJobResultStatusEnum_cancelled,
+      _$backtestJobResultStatusEnum_unknownDefaultOpenApi,
     ]);
 
 const BacktestJobResultOutcomeEnum _$backtestJobResultOutcomeEnum_identical =
@@ -185,6 +215,9 @@ const BacktestJobResultOutcomeEnum _$backtestJobResultOutcomeEnum_differs =
 const BacktestJobResultOutcomeEnum
 _$backtestJobResultOutcomeEnum_notReplayable =
     const BacktestJobResultOutcomeEnum._('notReplayable');
+const BacktestJobResultOutcomeEnum
+_$backtestJobResultOutcomeEnum_unknownDefaultOpenApi =
+    const BacktestJobResultOutcomeEnum._('unknownDefaultOpenApi');
 
 BacktestJobResultOutcomeEnum _$backtestJobResultOutcomeEnumValueOf(
   String name,
@@ -196,8 +229,10 @@ BacktestJobResultOutcomeEnum _$backtestJobResultOutcomeEnumValueOf(
       return _$backtestJobResultOutcomeEnum_differs;
     case 'notReplayable':
       return _$backtestJobResultOutcomeEnum_notReplayable;
+    case 'unknownDefaultOpenApi':
+      return _$backtestJobResultOutcomeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$backtestJobResultOutcomeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -207,6 +242,7 @@ _$backtestJobResultOutcomeEnumValues =
       _$backtestJobResultOutcomeEnum_identical,
       _$backtestJobResultOutcomeEnum_differs,
       _$backtestJobResultOutcomeEnum_notReplayable,
+      _$backtestJobResultOutcomeEnum_unknownDefaultOpenApi,
     ]);
 
 const BacktestJobResultReasonEnum _$backtestJobResultReasonEnum_inputsPurged =
@@ -216,6 +252,9 @@ _$backtestJobResultReasonEnum_componentRemoved =
     const BacktestJobResultReasonEnum._('componentRemoved');
 const BacktestJobResultReasonEnum _$backtestJobResultReasonEnum_llmOutput =
     const BacktestJobResultReasonEnum._('llmOutput');
+const BacktestJobResultReasonEnum
+_$backtestJobResultReasonEnum_unknownDefaultOpenApi =
+    const BacktestJobResultReasonEnum._('unknownDefaultOpenApi');
 
 BacktestJobResultReasonEnum _$backtestJobResultReasonEnumValueOf(String name) {
   switch (name) {
@@ -225,8 +264,10 @@ BacktestJobResultReasonEnum _$backtestJobResultReasonEnumValueOf(String name) {
       return _$backtestJobResultReasonEnum_componentRemoved;
     case 'llmOutput':
       return _$backtestJobResultReasonEnum_llmOutput;
+    case 'unknownDefaultOpenApi':
+      return _$backtestJobResultReasonEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$backtestJobResultReasonEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -236,12 +277,16 @@ _$backtestJobResultReasonEnumValues =
       _$backtestJobResultReasonEnum_inputsPurged,
       _$backtestJobResultReasonEnum_componentRemoved,
       _$backtestJobResultReasonEnum_llmOutput,
+      _$backtestJobResultReasonEnum_unknownDefaultOpenApi,
     ]);
 
 const BacktestJobResultFrequencyEnum _$backtestJobResultFrequencyEnum_day =
     const BacktestJobResultFrequencyEnum._('day');
 const BacktestJobResultFrequencyEnum _$backtestJobResultFrequencyEnum_week =
     const BacktestJobResultFrequencyEnum._('week');
+const BacktestJobResultFrequencyEnum
+_$backtestJobResultFrequencyEnum_unknownDefaultOpenApi =
+    const BacktestJobResultFrequencyEnum._('unknownDefaultOpenApi');
 
 BacktestJobResultFrequencyEnum _$backtestJobResultFrequencyEnumValueOf(
   String name,
@@ -251,8 +296,10 @@ BacktestJobResultFrequencyEnum _$backtestJobResultFrequencyEnumValueOf(
       return _$backtestJobResultFrequencyEnum_day;
     case 'week':
       return _$backtestJobResultFrequencyEnum_week;
+    case 'unknownDefaultOpenApi':
+      return _$backtestJobResultFrequencyEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$backtestJobResultFrequencyEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -262,6 +309,7 @@ _$backtestJobResultFrequencyEnumValues =
       const <BacktestJobResultFrequencyEnum>[
         _$backtestJobResultFrequencyEnum_day,
         _$backtestJobResultFrequencyEnum_week,
+        _$backtestJobResultFrequencyEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -277,6 +325,9 @@ _$backtestJobResultTransformEnum_weeklyDifferenceStandardised =
 const BacktestJobResultTransformEnum
 _$backtestJobResultTransformEnum_anscombeResidual =
     const BacktestJobResultTransformEnum._('anscombeResidual');
+const BacktestJobResultTransformEnum
+_$backtestJobResultTransformEnum_unknownDefaultOpenApi =
+    const BacktestJobResultTransformEnum._('unknownDefaultOpenApi');
 
 BacktestJobResultTransformEnum _$backtestJobResultTransformEnumValueOf(
   String name,
@@ -290,8 +341,10 @@ BacktestJobResultTransformEnum _$backtestJobResultTransformEnumValueOf(
       return _$backtestJobResultTransformEnum_weeklyDifferenceStandardised;
     case 'anscombeResidual':
       return _$backtestJobResultTransformEnum_anscombeResidual;
+    case 'unknownDefaultOpenApi':
+      return _$backtestJobResultTransformEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$backtestJobResultTransformEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -303,6 +356,7 @@ _$backtestJobResultTransformEnumValues =
         _$backtestJobResultTransformEnum_logLevelStandardised,
         _$backtestJobResultTransformEnum_weeklyDifferenceStandardised,
         _$backtestJobResultTransformEnum_anscombeResidual,
+        _$backtestJobResultTransformEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -310,6 +364,9 @@ const BacktestJobResultModeEnum _$backtestJobResultModeEnum_mine =
     const BacktestJobResultModeEnum._('mine');
 const BacktestJobResultModeEnum _$backtestJobResultModeEnum_retest =
     const BacktestJobResultModeEnum._('retest');
+const BacktestJobResultModeEnum
+_$backtestJobResultModeEnum_unknownDefaultOpenApi =
+    const BacktestJobResultModeEnum._('unknownDefaultOpenApi');
 
 BacktestJobResultModeEnum _$backtestJobResultModeEnumValueOf(String name) {
   switch (name) {
@@ -317,8 +374,10 @@ BacktestJobResultModeEnum _$backtestJobResultModeEnumValueOf(String name) {
       return _$backtestJobResultModeEnum_mine;
     case 'retest':
       return _$backtestJobResultModeEnum_retest;
+    case 'unknownDefaultOpenApi':
+      return _$backtestJobResultModeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$backtestJobResultModeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -326,6 +385,7 @@ final BuiltSet<BacktestJobResultModeEnum> _$backtestJobResultModeEnumValues =
     BuiltSet<BacktestJobResultModeEnum>(const <BacktestJobResultModeEnum>[
       _$backtestJobResultModeEnum_mine,
       _$backtestJobResultModeEnum_retest,
+      _$backtestJobResultModeEnum_unknownDefaultOpenApi,
     ]);
 
 const BacktestJobResultTriggerEnum _$backtestJobResultTriggerEnum_schedule =
@@ -334,6 +394,9 @@ const BacktestJobResultTriggerEnum _$backtestJobResultTriggerEnum_manual =
     const BacktestJobResultTriggerEnum._('manual');
 const BacktestJobResultTriggerEnum _$backtestJobResultTriggerEnum_cycle =
     const BacktestJobResultTriggerEnum._('cycle');
+const BacktestJobResultTriggerEnum
+_$backtestJobResultTriggerEnum_unknownDefaultOpenApi =
+    const BacktestJobResultTriggerEnum._('unknownDefaultOpenApi');
 
 BacktestJobResultTriggerEnum _$backtestJobResultTriggerEnumValueOf(
   String name,
@@ -345,8 +408,10 @@ BacktestJobResultTriggerEnum _$backtestJobResultTriggerEnumValueOf(
       return _$backtestJobResultTriggerEnum_manual;
     case 'cycle':
       return _$backtestJobResultTriggerEnum_cycle;
+    case 'unknownDefaultOpenApi':
+      return _$backtestJobResultTriggerEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$backtestJobResultTriggerEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -356,12 +421,16 @@ _$backtestJobResultTriggerEnumValues =
       _$backtestJobResultTriggerEnum_schedule,
       _$backtestJobResultTriggerEnum_manual,
       _$backtestJobResultTriggerEnum_cycle,
+      _$backtestJobResultTriggerEnum_unknownDefaultOpenApi,
     ]);
 
 const BacktestJobResultMethodEnum _$backtestJobResultMethodEnum_BH =
     const BacktestJobResultMethodEnum._('BH');
 const BacktestJobResultMethodEnum _$backtestJobResultMethodEnum_BY =
     const BacktestJobResultMethodEnum._('BY');
+const BacktestJobResultMethodEnum
+_$backtestJobResultMethodEnum_unknownDefaultOpenApi =
+    const BacktestJobResultMethodEnum._('unknownDefaultOpenApi');
 
 BacktestJobResultMethodEnum _$backtestJobResultMethodEnumValueOf(String name) {
   switch (name) {
@@ -369,18 +438,20 @@ BacktestJobResultMethodEnum _$backtestJobResultMethodEnumValueOf(String name) {
       return _$backtestJobResultMethodEnum_BH;
     case 'BY':
       return _$backtestJobResultMethodEnum_BY;
+    case 'unknownDefaultOpenApi':
+      return _$backtestJobResultMethodEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$backtestJobResultMethodEnum_unknownDefaultOpenApi;
   }
 }
 
 final BuiltSet<BacktestJobResultMethodEnum>
-_$backtestJobResultMethodEnumValues = BuiltSet<BacktestJobResultMethodEnum>(
-  const <BacktestJobResultMethodEnum>[
-    _$backtestJobResultMethodEnum_BH,
-    _$backtestJobResultMethodEnum_BY,
-  ],
-);
+_$backtestJobResultMethodEnumValues =
+    BuiltSet<BacktestJobResultMethodEnum>(const <BacktestJobResultMethodEnum>[
+      _$backtestJobResultMethodEnum_BH,
+      _$backtestJobResultMethodEnum_BY,
+      _$backtestJobResultMethodEnum_unknownDefaultOpenApi,
+    ]);
 
 const BacktestJobResultDatasetEnum _$backtestJobResultDatasetEnum_ucdpGed =
     const BacktestJobResultDatasetEnum._('ucdpGed');
@@ -390,6 +461,9 @@ const BacktestJobResultDatasetEnum _$backtestJobResultDatasetEnum_usgsComcat =
     const BacktestJobResultDatasetEnum._('usgsComcat');
 const BacktestJobResultDatasetEnum _$backtestJobResultDatasetEnum_gdacs =
     const BacktestJobResultDatasetEnum._('gdacs');
+const BacktestJobResultDatasetEnum
+_$backtestJobResultDatasetEnum_unknownDefaultOpenApi =
+    const BacktestJobResultDatasetEnum._('unknownDefaultOpenApi');
 
 BacktestJobResultDatasetEnum _$backtestJobResultDatasetEnumValueOf(
   String name,
@@ -403,8 +477,10 @@ BacktestJobResultDatasetEnum _$backtestJobResultDatasetEnumValueOf(
       return _$backtestJobResultDatasetEnum_usgsComcat;
     case 'gdacs':
       return _$backtestJobResultDatasetEnum_gdacs;
+    case 'unknownDefaultOpenApi':
+      return _$backtestJobResultDatasetEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$backtestJobResultDatasetEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -415,12 +491,16 @@ _$backtestJobResultDatasetEnumValues =
       _$backtestJobResultDatasetEnum_acled,
       _$backtestJobResultDatasetEnum_usgsComcat,
       _$backtestJobResultDatasetEnum_gdacs,
+      _$backtestJobResultDatasetEnum_unknownDefaultOpenApi,
     ]);
 
 const BacktestJobResultEgressEnum _$backtestJobResultEgressEnum_OPEN =
     const BacktestJobResultEgressEnum._('OPEN');
 const BacktestJobResultEgressEnum _$backtestJobResultEgressEnum_LOCAL_ONLY =
     const BacktestJobResultEgressEnum._('LOCAL_ONLY');
+const BacktestJobResultEgressEnum
+_$backtestJobResultEgressEnum_unknownDefaultOpenApi =
+    const BacktestJobResultEgressEnum._('unknownDefaultOpenApi');
 
 BacktestJobResultEgressEnum _$backtestJobResultEgressEnumValueOf(String name) {
   switch (name) {
@@ -428,18 +508,20 @@ BacktestJobResultEgressEnum _$backtestJobResultEgressEnumValueOf(String name) {
       return _$backtestJobResultEgressEnum_OPEN;
     case 'LOCAL_ONLY':
       return _$backtestJobResultEgressEnum_LOCAL_ONLY;
+    case 'unknownDefaultOpenApi':
+      return _$backtestJobResultEgressEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$backtestJobResultEgressEnum_unknownDefaultOpenApi;
   }
 }
 
 final BuiltSet<BacktestJobResultEgressEnum>
-_$backtestJobResultEgressEnumValues = BuiltSet<BacktestJobResultEgressEnum>(
-  const <BacktestJobResultEgressEnum>[
-    _$backtestJobResultEgressEnum_OPEN,
-    _$backtestJobResultEgressEnum_LOCAL_ONLY,
-  ],
-);
+_$backtestJobResultEgressEnumValues =
+    BuiltSet<BacktestJobResultEgressEnum>(const <BacktestJobResultEgressEnum>[
+      _$backtestJobResultEgressEnum_OPEN,
+      _$backtestJobResultEgressEnum_LOCAL_ONLY,
+      _$backtestJobResultEgressEnum_unknownDefaultOpenApi,
+    ]);
 
 Serializer<BacktestJobResultRuleTypeEnum>
 _$backtestJobResultRuleTypeEnumSerializer =
@@ -490,12 +572,14 @@ class _$BacktestJobResultRuleTypeEnumSerializer
     'count': 'count',
     'absence': 'absence',
     'anomaly': 'anomaly',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'record': 'record',
     'count': 'count',
     'absence': 'absence',
     'anomaly': 'anomaly',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -524,9 +608,11 @@ class _$BacktestJobResultPermutationsEnumSerializer
     implements PrimitiveSerializer<BacktestJobResultPermutationsEnum> {
   static const Map<String, Object> _toWire = const <String, Object>{
     'number200': 200,
+    'unknownDefaultOpenApi': 11184809,
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     200: 'number200',
+    11184809: 'unknownDefaultOpenApi',
   };
 
   @override
@@ -558,12 +644,14 @@ class _$BacktestJobResultVerdictEnumSerializer
     'noEvidenceOfPrecedence': 'no-evidence-of-precedence',
     'weak': 'weak',
     'notable': 'notable',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'insufficient': 'insufficient',
     'no-evidence-of-precedence': 'noEvidenceOfPrecedence',
     'weak': 'weak',
     'notable': 'notable',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -594,11 +682,13 @@ class _$BacktestJobResultFeedbackMappingEnumSerializer
     'positive': 'positive',
     'negative': 'negative',
     'neutral': 'neutral',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'positive': 'positive',
     'negative': 'negative',
     'neutral': 'neutral',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -634,6 +724,7 @@ class _$BacktestJobResultStatusEnumSerializer
     'failed': 'failed',
     'skipped': 'skipped',
     'cancelled': 'cancelled',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'queued': 'queued',
@@ -642,6 +733,7 @@ class _$BacktestJobResultStatusEnumSerializer
     'failed': 'failed',
     'skipped': 'skipped',
     'cancelled': 'cancelled',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -672,11 +764,13 @@ class _$BacktestJobResultOutcomeEnumSerializer
     'identical': 'identical',
     'differs': 'differs',
     'notReplayable': 'not-replayable',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'identical': 'identical',
     'differs': 'differs',
     'not-replayable': 'notReplayable',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -707,11 +801,13 @@ class _$BacktestJobResultReasonEnumSerializer
     'inputsPurged': 'inputs-purged',
     'componentRemoved': 'component-removed',
     'llmOutput': 'llm-output',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'inputs-purged': 'inputsPurged',
     'component-removed': 'componentRemoved',
     'llm-output': 'llmOutput',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -741,10 +837,12 @@ class _$BacktestJobResultFrequencyEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'day': 'day',
     'week': 'week',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'day': 'day',
     'week': 'week',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -776,12 +874,14 @@ class _$BacktestJobResultTransformEnumSerializer
     'logLevelStandardised': 'log-level-standardised',
     'weeklyDifferenceStandardised': 'weekly-difference-standardised',
     'anscombeResidual': 'anscombe-residual',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'log-return': 'logReturn',
     'log-level-standardised': 'logLevelStandardised',
     'weekly-difference-standardised': 'weeklyDifferenceStandardised',
     'anscombe-residual': 'anscombeResidual',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -811,10 +911,12 @@ class _$BacktestJobResultModeEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'mine': 'mine',
     'retest': 'retest',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'mine': 'mine',
     'retest': 'retest',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -845,11 +947,13 @@ class _$BacktestJobResultTriggerEnumSerializer
     'schedule': 'schedule',
     'manual': 'manual',
     'cycle': 'cycle',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'schedule': 'schedule',
     'manual': 'manual',
     'cycle': 'cycle',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -879,10 +983,12 @@ class _$BacktestJobResultMethodEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'BH': 'BH',
     'BY': 'BY',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'BH': 'BH',
     'BY': 'BY',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -914,12 +1020,14 @@ class _$BacktestJobResultDatasetEnumSerializer
     'acled': 'acled',
     'usgsComcat': 'usgs-comcat',
     'gdacs': 'gdacs',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'ucdp-ged': 'ucdpGed',
     'acled': 'acled',
     'usgs-comcat': 'usgsComcat',
     'gdacs': 'gdacs',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -949,10 +1057,12 @@ class _$BacktestJobResultEgressEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'OPEN': 'OPEN',
     'LOCAL_ONLY': 'LOCAL_ONLY',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'OPEN': 'OPEN',
     'LOCAL_ONLY': 'LOCAL_ONLY',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

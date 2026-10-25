@@ -12,6 +12,9 @@ const IngestFormatInfoMethodsEnum _$ingestFormatInfoMethodsEnum_POST =
     const IngestFormatInfoMethodsEnum._('POST');
 const IngestFormatInfoMethodsEnum _$ingestFormatInfoMethodsEnum_PUT =
     const IngestFormatInfoMethodsEnum._('PUT');
+const IngestFormatInfoMethodsEnum
+_$ingestFormatInfoMethodsEnum_unknownDefaultOpenApi =
+    const IngestFormatInfoMethodsEnum._('unknownDefaultOpenApi');
 
 IngestFormatInfoMethodsEnum _$ingestFormatInfoMethodsEnumValueOf(String name) {
   switch (name) {
@@ -21,8 +24,10 @@ IngestFormatInfoMethodsEnum _$ingestFormatInfoMethodsEnumValueOf(String name) {
       return _$ingestFormatInfoMethodsEnum_POST;
     case 'PUT':
       return _$ingestFormatInfoMethodsEnum_PUT;
+    case 'unknownDefaultOpenApi':
+      return _$ingestFormatInfoMethodsEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$ingestFormatInfoMethodsEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -32,6 +37,7 @@ _$ingestFormatInfoMethodsEnumValues =
       _$ingestFormatInfoMethodsEnum_GET,
       _$ingestFormatInfoMethodsEnum_POST,
       _$ingestFormatInfoMethodsEnum_PUT,
+      _$ingestFormatInfoMethodsEnum_unknownDefaultOpenApi,
     ]);
 
 const IngestFormatInfoVerifiersEnum _$ingestFormatInfoVerifiersEnum_none =
@@ -43,6 +49,9 @@ _$ingestFormatInfoVerifiersEnum_standardWebhooks =
     const IngestFormatInfoVerifiersEnum._('standardWebhooks');
 const IngestFormatInfoVerifiersEnum _$ingestFormatInfoVerifiersEnum_foresignal =
     const IngestFormatInfoVerifiersEnum._('foresignal');
+const IngestFormatInfoVerifiersEnum
+_$ingestFormatInfoVerifiersEnum_unknownDefaultOpenApi =
+    const IngestFormatInfoVerifiersEnum._('unknownDefaultOpenApi');
 
 IngestFormatInfoVerifiersEnum _$ingestFormatInfoVerifiersEnumValueOf(
   String name,
@@ -56,8 +65,10 @@ IngestFormatInfoVerifiersEnum _$ingestFormatInfoVerifiersEnumValueOf(
       return _$ingestFormatInfoVerifiersEnum_standardWebhooks;
     case 'foresignal':
       return _$ingestFormatInfoVerifiersEnum_foresignal;
+    case 'unknownDefaultOpenApi':
+      return _$ingestFormatInfoVerifiersEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$ingestFormatInfoVerifiersEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -68,6 +79,7 @@ _$ingestFormatInfoVerifiersEnumValues = BuiltSet<IngestFormatInfoVerifiersEnum>(
     _$ingestFormatInfoVerifiersEnum_hmacSha256,
     _$ingestFormatInfoVerifiersEnum_standardWebhooks,
     _$ingestFormatInfoVerifiersEnum_foresignal,
+    _$ingestFormatInfoVerifiersEnum_unknownDefaultOpenApi,
   ],
 );
 
@@ -84,11 +96,13 @@ class _$IngestFormatInfoMethodsEnumSerializer
     'GET': 'GET',
     'POST': 'POST',
     'PUT': 'PUT',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'GET': 'GET',
     'POST': 'POST',
     'PUT': 'PUT',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -120,12 +134,14 @@ class _$IngestFormatInfoVerifiersEnumSerializer
     'hmacSha256': 'hmac-sha256',
     'standardWebhooks': 'standard-webhooks',
     'foresignal': 'foresignal',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'none': 'none',
     'hmac-sha256': 'hmacSha256',
     'standard-webhooks': 'standardWebhooks',
     'foresignal': 'foresignal',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

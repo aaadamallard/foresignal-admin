@@ -14,6 +14,8 @@ const PropagationNodeTypeEnum _$propagationNodeTypeEnum_newsArticle =
     const PropagationNodeTypeEnum._('newsArticle');
 const PropagationNodeTypeEnum _$propagationNodeTypeEnum_officialRecord =
     const PropagationNodeTypeEnum._('officialRecord');
+const PropagationNodeTypeEnum _$propagationNodeTypeEnum_unknownDefaultOpenApi =
+    const PropagationNodeTypeEnum._('unknownDefaultOpenApi');
 
 PropagationNodeTypeEnum _$propagationNodeTypeEnumValueOf(String name) {
   switch (name) {
@@ -25,8 +27,10 @@ PropagationNodeTypeEnum _$propagationNodeTypeEnumValueOf(String name) {
       return _$propagationNodeTypeEnum_newsArticle;
     case 'officialRecord':
       return _$propagationNodeTypeEnum_officialRecord;
+    case 'unknownDefaultOpenApi':
+      return _$propagationNodeTypeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$propagationNodeTypeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -36,6 +40,7 @@ final BuiltSet<PropagationNodeTypeEnum> _$propagationNodeTypeEnumValues =
       _$propagationNodeTypeEnum_evidenceGroup,
       _$propagationNodeTypeEnum_newsArticle,
       _$propagationNodeTypeEnum_officialRecord,
+      _$propagationNodeTypeEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<PropagationNodeTypeEnum> _$propagationNodeTypeEnumSerializer =
@@ -48,12 +53,14 @@ class _$PropagationNodeTypeEnumSerializer
     'evidenceGroup': 'evidence-group',
     'newsArticle': 'news-article',
     'officialRecord': 'official-record',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'post': 'post',
     'evidence-group': 'evidenceGroup',
     'news-article': 'newsArticle',
     'official-record': 'officialRecord',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

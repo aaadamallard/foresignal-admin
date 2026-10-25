@@ -278,6 +278,9 @@ class LlmProviderInputOptionsEffortEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'max')
   static const LlmProviderInputOptionsEffortEnum max =
       _$llmProviderInputOptionsEffortEnum_max;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const LlmProviderInputOptionsEffortEnum unknownDefaultOpenApi =
+      _$llmProviderInputOptionsEffortEnum_unknownDefaultOpenApi;
 
   static Serializer<LlmProviderInputOptionsEffortEnum> get serializer =>
       _$llmProviderInputOptionsEffortEnumSerializer;

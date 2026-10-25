@@ -9,6 +9,9 @@ part of 'situation_speculation.dart';
 const SituationSpeculationLabelEnum
 _$situationSpeculationLabelEnum_speculation =
     const SituationSpeculationLabelEnum._('speculation');
+const SituationSpeculationLabelEnum
+_$situationSpeculationLabelEnum_unknownDefaultOpenApi =
+    const SituationSpeculationLabelEnum._('unknownDefaultOpenApi');
 
 SituationSpeculationLabelEnum _$situationSpeculationLabelEnumValueOf(
   String name,
@@ -16,8 +19,10 @@ SituationSpeculationLabelEnum _$situationSpeculationLabelEnumValueOf(
   switch (name) {
     case 'speculation':
       return _$situationSpeculationLabelEnum_speculation;
+    case 'unknownDefaultOpenApi':
+      return _$situationSpeculationLabelEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$situationSpeculationLabelEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -25,12 +30,16 @@ final BuiltSet<SituationSpeculationLabelEnum>
 _$situationSpeculationLabelEnumValues = BuiltSet<SituationSpeculationLabelEnum>(
   const <SituationSpeculationLabelEnum>[
     _$situationSpeculationLabelEnum_speculation,
+    _$situationSpeculationLabelEnum_unknownDefaultOpenApi,
   ],
 );
 
 const SituationSpeculationTextOriginEnum
 _$situationSpeculationTextOriginEnum_llm =
     const SituationSpeculationTextOriginEnum._('llm');
+const SituationSpeculationTextOriginEnum
+_$situationSpeculationTextOriginEnum_unknownDefaultOpenApi =
+    const SituationSpeculationTextOriginEnum._('unknownDefaultOpenApi');
 
 SituationSpeculationTextOriginEnum _$situationSpeculationTextOriginEnumValueOf(
   String name,
@@ -38,8 +47,10 @@ SituationSpeculationTextOriginEnum _$situationSpeculationTextOriginEnumValueOf(
   switch (name) {
     case 'llm':
       return _$situationSpeculationTextOriginEnum_llm;
+    case 'unknownDefaultOpenApi':
+      return _$situationSpeculationTextOriginEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$situationSpeculationTextOriginEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -48,6 +59,7 @@ _$situationSpeculationTextOriginEnumValues =
     BuiltSet<SituationSpeculationTextOriginEnum>(
       const <SituationSpeculationTextOriginEnum>[
         _$situationSpeculationTextOriginEnum_llm,
+        _$situationSpeculationTextOriginEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -62,9 +74,11 @@ class _$SituationSpeculationLabelEnumSerializer
     implements PrimitiveSerializer<SituationSpeculationLabelEnum> {
   static const Map<String, Object> _toWire = const <String, Object>{
     'speculation': 'speculation',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'speculation': 'speculation',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -93,9 +107,11 @@ class _$SituationSpeculationTextOriginEnumSerializer
     implements PrimitiveSerializer<SituationSpeculationTextOriginEnum> {
   static const Map<String, Object> _toWire = const <String, Object>{
     'llm': 'llm',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'llm': 'llm',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

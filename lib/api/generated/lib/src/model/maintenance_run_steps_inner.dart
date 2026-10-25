@@ -284,6 +284,9 @@ class MaintenanceRunStepsInnerStepEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'llm-retrospective-evaluation')
   static const MaintenanceRunStepsInnerStepEnum llmRetrospectiveEvaluation =
       _$maintenanceRunStepsInnerStepEnum_llmRetrospectiveEvaluation;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const MaintenanceRunStepsInnerStepEnum unknownDefaultOpenApi =
+      _$maintenanceRunStepsInnerStepEnum_unknownDefaultOpenApi;
 
   static Serializer<MaintenanceRunStepsInnerStepEnum> get serializer =>
       _$maintenanceRunStepsInnerStepEnumSerializer;
@@ -312,6 +315,9 @@ class MaintenanceRunStepsInnerStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'skipped')
   static const MaintenanceRunStepsInnerStatusEnum skipped =
       _$maintenanceRunStepsInnerStatusEnum_skipped;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const MaintenanceRunStepsInnerStatusEnum unknownDefaultOpenApi =
+      _$maintenanceRunStepsInnerStatusEnum_unknownDefaultOpenApi;
 
   static Serializer<MaintenanceRunStepsInnerStatusEnum> get serializer =>
       _$maintenanceRunStepsInnerStatusEnumSerializer;

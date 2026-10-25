@@ -16,6 +16,8 @@ const SocialQuotaUnitEnum _$socialQuotaUnitEnum_posts =
     const SocialQuotaUnitEnum._('posts');
 const SocialQuotaUnitEnum _$socialQuotaUnitEnum_hashtags =
     const SocialQuotaUnitEnum._('hashtags');
+const SocialQuotaUnitEnum _$socialQuotaUnitEnum_unknownDefaultOpenApi =
+    const SocialQuotaUnitEnum._('unknownDefaultOpenApi');
 
 SocialQuotaUnitEnum _$socialQuotaUnitEnumValueOf(String name) {
   switch (name) {
@@ -29,8 +31,10 @@ SocialQuotaUnitEnum _$socialQuotaUnitEnumValueOf(String name) {
       return _$socialQuotaUnitEnum_posts;
     case 'hashtags':
       return _$socialQuotaUnitEnum_hashtags;
+    case 'unknownDefaultOpenApi':
+      return _$socialQuotaUnitEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$socialQuotaUnitEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -41,6 +45,7 @@ final BuiltSet<SocialQuotaUnitEnum> _$socialQuotaUnitEnumValues =
       _$socialQuotaUnitEnum_queries,
       _$socialQuotaUnitEnum_posts,
       _$socialQuotaUnitEnum_hashtags,
+      _$socialQuotaUnitEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<SocialQuotaUnitEnum> _$socialQuotaUnitEnumSerializer =
@@ -54,6 +59,7 @@ class _$SocialQuotaUnitEnumSerializer
     'queries': 'queries',
     'posts': 'posts',
     'hashtags': 'hashtags',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'requests': 'requests',
@@ -61,6 +67,7 @@ class _$SocialQuotaUnitEnumSerializer
     'queries': 'queries',
     'posts': 'posts',
     'hashtags': 'hashtags',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

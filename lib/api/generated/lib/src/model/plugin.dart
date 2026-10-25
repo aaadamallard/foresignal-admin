@@ -340,6 +340,9 @@ class _$PluginSerializer implements PrimitiveSerializer<Plugin> {
 class PluginAbiEnum extends EnumClass {
   @BuiltValueEnumConst(wireNumber: 1)
   static const PluginAbiEnum number1 = _$pluginAbiEnum_number1;
+  @BuiltValueEnumConst(wireNumber: 11184809, fallback: true)
+  static const PluginAbiEnum unknownDefaultOpenApi =
+      _$pluginAbiEnum_unknownDefaultOpenApi;
 
   static Serializer<PluginAbiEnum> get serializer => _$pluginAbiEnumSerializer;
 
@@ -353,6 +356,9 @@ class PluginAbiEnum extends EnumClass {
 class PluginKindEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'parser')
   static const PluginKindEnum parser = _$pluginKindEnum_parser;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const PluginKindEnum unknownDefaultOpenApi =
+      _$pluginKindEnum_unknownDefaultOpenApi;
 
   static Serializer<PluginKindEnum> get serializer =>
       _$pluginKindEnumSerializer;
@@ -373,6 +379,9 @@ class PluginStateEnum extends EnumClass {
   static const PluginStateEnum hashMismatch = _$pluginStateEnum_hashMismatch;
   @BuiltValueEnumConst(wireName: r'error')
   static const PluginStateEnum error = _$pluginStateEnum_error;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const PluginStateEnum unknownDefaultOpenApi =
+      _$pluginStateEnum_unknownDefaultOpenApi;
 
   static Serializer<PluginStateEnum> get serializer =>
       _$pluginStateEnumSerializer;

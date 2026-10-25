@@ -474,6 +474,9 @@ class EventStudyResultFrequencyEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'week')
   static const EventStudyResultFrequencyEnum week =
       _$eventStudyResultFrequencyEnum_week;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const EventStudyResultFrequencyEnum unknownDefaultOpenApi =
+      _$eventStudyResultFrequencyEnum_unknownDefaultOpenApi;
 
   static Serializer<EventStudyResultFrequencyEnum> get serializer =>
       _$eventStudyResultFrequencyEnumSerializer;
@@ -499,6 +502,9 @@ class EventStudyResultTransformEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'anscombe-residual')
   static const EventStudyResultTransformEnum anscombeResidual =
       _$eventStudyResultTransformEnum_anscombeResidual;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const EventStudyResultTransformEnum unknownDefaultOpenApi =
+      _$eventStudyResultTransformEnum_unknownDefaultOpenApi;
 
   static Serializer<EventStudyResultTransformEnum> get serializer =>
       _$eventStudyResultTransformEnumSerializer;

@@ -190,6 +190,9 @@ class DeceptionPayloadChecksInnerCheckEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'aircraft-implied-speed')
   static const DeceptionPayloadChecksInnerCheckEnum aircraftImpliedSpeed =
       _$deceptionPayloadChecksInnerCheckEnum_aircraftImpliedSpeed;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const DeceptionPayloadChecksInnerCheckEnum unknownDefaultOpenApi =
+      _$deceptionPayloadChecksInnerCheckEnum_unknownDefaultOpenApi;
 
   static Serializer<DeceptionPayloadChecksInnerCheckEnum> get serializer =>
       _$deceptionPayloadChecksInnerCheckEnumSerializer;

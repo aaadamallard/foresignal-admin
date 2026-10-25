@@ -40,6 +40,9 @@ _$chronicleThreadItemTypeEnum_narrativeChange =
 const ChronicleThreadItemTypeEnum
 _$chronicleThreadItemTypeEnum_comparisonChange =
     const ChronicleThreadItemTypeEnum._('comparisonChange');
+const ChronicleThreadItemTypeEnum
+_$chronicleThreadItemTypeEnum_unknownDefaultOpenApi =
+    const ChronicleThreadItemTypeEnum._('unknownDefaultOpenApi');
 
 ChronicleThreadItemTypeEnum _$chronicleThreadItemTypeEnumValueOf(String name) {
   switch (name) {
@@ -71,8 +74,10 @@ ChronicleThreadItemTypeEnum _$chronicleThreadItemTypeEnumValueOf(String name) {
       return _$chronicleThreadItemTypeEnum_narrativeChange;
     case 'comparisonChange':
       return _$chronicleThreadItemTypeEnum_comparisonChange;
+    case 'unknownDefaultOpenApi':
+      return _$chronicleThreadItemTypeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$chronicleThreadItemTypeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -93,6 +98,7 @@ _$chronicleThreadItemTypeEnumValues =
       _$chronicleThreadItemTypeEnum_backfill,
       _$chronicleThreadItemTypeEnum_narrativeChange,
       _$chronicleThreadItemTypeEnum_comparisonChange,
+      _$chronicleThreadItemTypeEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<ChronicleThreadItemTypeEnum>
@@ -116,6 +122,7 @@ class _$ChronicleThreadItemTypeEnumSerializer
     'backfill': 'backfill',
     'narrativeChange': 'narrative-change',
     'comparisonChange': 'comparison-change',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'alert': 'alert',
@@ -132,6 +139,7 @@ class _$ChronicleThreadItemTypeEnumSerializer
     'backfill': 'backfill',
     'narrative-change': 'narrativeChange',
     'comparison-change': 'comparisonChange',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

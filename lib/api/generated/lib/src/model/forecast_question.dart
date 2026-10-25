@@ -753,6 +753,9 @@ class ForecastQuestionTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'numeric')
   static const ForecastQuestionTypeEnum numeric =
       _$forecastQuestionTypeEnum_numeric;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ForecastQuestionTypeEnum unknownDefaultOpenApi =
+      _$forecastQuestionTypeEnum_unknownDefaultOpenApi;
 
   static Serializer<ForecastQuestionTypeEnum> get serializer =>
       _$forecastQuestionTypeEnumSerializer;
@@ -778,6 +781,9 @@ class ForecastQuestionStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'annulled')
   static const ForecastQuestionStatusEnum annulled =
       _$forecastQuestionStatusEnum_annulled;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ForecastQuestionStatusEnum unknownDefaultOpenApi =
+      _$forecastQuestionStatusEnum_unknownDefaultOpenApi;
 
   static Serializer<ForecastQuestionStatusEnum> get serializer =>
       _$forecastQuestionStatusEnumSerializer;
@@ -812,6 +818,9 @@ class ForecastQuestionResolverTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'manual')
   static const ForecastQuestionResolverTypeEnum manual =
       _$forecastQuestionResolverTypeEnum_manual;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ForecastQuestionResolverTypeEnum unknownDefaultOpenApi =
+      _$forecastQuestionResolverTypeEnum_unknownDefaultOpenApi;
 
   static Serializer<ForecastQuestionResolverTypeEnum> get serializer =>
       _$forecastQuestionResolverTypeEnumSerializer;
@@ -837,6 +846,9 @@ class ForecastQuestionOriginEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'analyst')
   static const ForecastQuestionOriginEnum analyst =
       _$forecastQuestionOriginEnum_analyst;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ForecastQuestionOriginEnum unknownDefaultOpenApi =
+      _$forecastQuestionOriginEnum_unknownDefaultOpenApi;
 
   static Serializer<ForecastQuestionOriginEnum> get serializer =>
       _$forecastQuestionOriginEnumSerializer;

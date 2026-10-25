@@ -177,6 +177,9 @@ class ReportSourceTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'workspace')
   static const ReportSourceTypeEnum workspace =
       _$reportSourceTypeEnum_workspace;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ReportSourceTypeEnum unknownDefaultOpenApi =
+      _$reportSourceTypeEnum_unknownDefaultOpenApi;
 
   static Serializer<ReportSourceTypeEnum> get serializer =>
       _$reportSourceTypeEnumSerializer;

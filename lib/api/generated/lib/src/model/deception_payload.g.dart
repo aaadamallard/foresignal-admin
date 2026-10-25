@@ -14,6 +14,9 @@ const DeceptionPayloadStatusEnum _$deceptionPayloadStatusEnum_noCoverage =
     const DeceptionPayloadStatusEnum._('noCoverage');
 const DeceptionPayloadStatusEnum _$deceptionPayloadStatusEnum_degradedInput =
     const DeceptionPayloadStatusEnum._('degradedInput');
+const DeceptionPayloadStatusEnum
+_$deceptionPayloadStatusEnum_unknownDefaultOpenApi =
+    const DeceptionPayloadStatusEnum._('unknownDefaultOpenApi');
 
 DeceptionPayloadStatusEnum _$deceptionPayloadStatusEnumValueOf(String name) {
   switch (name) {
@@ -25,8 +28,10 @@ DeceptionPayloadStatusEnum _$deceptionPayloadStatusEnumValueOf(String name) {
       return _$deceptionPayloadStatusEnum_noCoverage;
     case 'degradedInput':
       return _$deceptionPayloadStatusEnum_degradedInput;
+    case 'unknownDefaultOpenApi':
+      return _$deceptionPayloadStatusEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$deceptionPayloadStatusEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -36,6 +41,7 @@ final BuiltSet<DeceptionPayloadStatusEnum> _$deceptionPayloadStatusEnumValues =
       _$deceptionPayloadStatusEnum_insufficientData,
       _$deceptionPayloadStatusEnum_noCoverage,
       _$deceptionPayloadStatusEnum_degradedInput,
+      _$deceptionPayloadStatusEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<DeceptionPayloadStatusEnum> _$deceptionPayloadStatusEnumSerializer =
@@ -48,12 +54,14 @@ class _$DeceptionPayloadStatusEnumSerializer
     'insufficientData': 'insufficient-data',
     'noCoverage': 'no-coverage',
     'degradedInput': 'degraded-input',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'ok': 'ok',
     'insufficient-data': 'insufficientData',
     'no-coverage': 'noCoverage',
     'degraded-input': 'degradedInput',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

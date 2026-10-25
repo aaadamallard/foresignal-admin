@@ -24,6 +24,9 @@ _$notificationPreferenceEventTypesEnum_assessment =
 const NotificationPreferenceEventTypesEnum
 _$notificationPreferenceEventTypesEnum_commentReply =
     const NotificationPreferenceEventTypesEnum._('commentReply');
+const NotificationPreferenceEventTypesEnum
+_$notificationPreferenceEventTypesEnum_unknownDefaultOpenApi =
+    const NotificationPreferenceEventTypesEnum._('unknownDefaultOpenApi');
 
 NotificationPreferenceEventTypesEnum
 _$notificationPreferenceEventTypesEnumValueOf(String name) {
@@ -40,8 +43,10 @@ _$notificationPreferenceEventTypesEnumValueOf(String name) {
       return _$notificationPreferenceEventTypesEnum_assessment;
     case 'commentReply':
       return _$notificationPreferenceEventTypesEnum_commentReply;
+    case 'unknownDefaultOpenApi':
+      return _$notificationPreferenceEventTypesEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$notificationPreferenceEventTypesEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -55,6 +60,7 @@ _$notificationPreferenceEventTypesEnumValues =
         _$notificationPreferenceEventTypesEnum_chronicle,
         _$notificationPreferenceEventTypesEnum_assessment,
         _$notificationPreferenceEventTypesEnum_commentReply,
+        _$notificationPreferenceEventTypesEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -71,6 +77,7 @@ class _$NotificationPreferenceEventTypesEnumSerializer
     'chronicle': 'chronicle',
     'assessment': 'assessment',
     'commentReply': 'comment-reply',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'mention': 'mention',
@@ -79,6 +86,7 @@ class _$NotificationPreferenceEventTypesEnumSerializer
     'chronicle': 'chronicle',
     'assessment': 'assessment',
     'comment-reply': 'commentReply',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

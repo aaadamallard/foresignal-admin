@@ -471,6 +471,9 @@ class CanonicalEventQualityFlagsEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'LATE_REVISION')
   static const CanonicalEventQualityFlagsEnum LATE_REVISION =
       _$canonicalEventQualityFlagsEnum_LATE_REVISION;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const CanonicalEventQualityFlagsEnum unknownDefaultOpenApi =
+      _$canonicalEventQualityFlagsEnum_unknownDefaultOpenApi;
 
   static Serializer<CanonicalEventQualityFlagsEnum> get serializer =>
       _$canonicalEventQualityFlagsEnumSerializer;
@@ -492,6 +495,9 @@ class CanonicalEventStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'closed')
   static const CanonicalEventStatusEnum closed =
       _$canonicalEventStatusEnum_closed;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const CanonicalEventStatusEnum unknownDefaultOpenApi =
+      _$canonicalEventStatusEnum_unknownDefaultOpenApi;
 
   static Serializer<CanonicalEventStatusEnum> get serializer =>
       _$canonicalEventStatusEnumSerializer;

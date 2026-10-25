@@ -285,6 +285,9 @@ class _$EdpEventItemSerializer implements PrimitiveSerializer<EdpEventItem> {
 class EdpEventItemTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'event')
   static const EdpEventItemTypeEnum event = _$edpEventItemTypeEnum_event;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const EdpEventItemTypeEnum unknownDefaultOpenApi =
+      _$edpEventItemTypeEnum_unknownDefaultOpenApi;
 
   static Serializer<EdpEventItemTypeEnum> get serializer =>
       _$edpEventItemTypeEnumSerializer;

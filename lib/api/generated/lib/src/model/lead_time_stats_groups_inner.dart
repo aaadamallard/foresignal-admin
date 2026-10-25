@@ -294,6 +294,9 @@ class LeadTimeStatsGroupsInnerFoundByEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'cue')
   static const LeadTimeStatsGroupsInnerFoundByEnum cue =
       _$leadTimeStatsGroupsInnerFoundByEnum_cue;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const LeadTimeStatsGroupsInnerFoundByEnum unknownDefaultOpenApi =
+      _$leadTimeStatsGroupsInnerFoundByEnum_unknownDefaultOpenApi;
 
   static Serializer<LeadTimeStatsGroupsInnerFoundByEnum> get serializer =>
       _$leadTimeStatsGroupsInnerFoundByEnumSerializer;

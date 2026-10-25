@@ -156,6 +156,9 @@ class StreamAlerts200ResponseTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'resolved')
   static const StreamAlerts200ResponseTypeEnum resolved =
       _$streamAlerts200ResponseTypeEnum_resolved;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const StreamAlerts200ResponseTypeEnum unknownDefaultOpenApi =
+      _$streamAlerts200ResponseTypeEnum_unknownDefaultOpenApi;
 
   static Serializer<StreamAlerts200ResponseTypeEnum> get serializer =>
       _$streamAlerts200ResponseTypeEnumSerializer;
@@ -178,6 +181,9 @@ class StreamAlerts200ResponseReasonEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'resync_required')
   static const StreamAlerts200ResponseReasonEnum resyncRequired =
       _$streamAlerts200ResponseReasonEnum_resyncRequired;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const StreamAlerts200ResponseReasonEnum unknownDefaultOpenApi =
+      _$streamAlerts200ResponseReasonEnum_unknownDefaultOpenApi;
 
   static Serializer<StreamAlerts200ResponseReasonEnum> get serializer =>
       _$streamAlerts200ResponseReasonEnumSerializer;
@@ -200,6 +206,9 @@ class StreamAlerts200ResponseSeverityEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'critical')
   static const StreamAlerts200ResponseSeverityEnum critical =
       _$streamAlerts200ResponseSeverityEnum_critical;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const StreamAlerts200ResponseSeverityEnum unknownDefaultOpenApi =
+      _$streamAlerts200ResponseSeverityEnum_unknownDefaultOpenApi;
 
   static Serializer<StreamAlerts200ResponseSeverityEnum> get serializer =>
       _$streamAlerts200ResponseSeverityEnumSerializer;
@@ -222,6 +231,9 @@ class StreamAlerts200ResponseStateEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'resolved')
   static const StreamAlerts200ResponseStateEnum resolved =
       _$streamAlerts200ResponseStateEnum_resolved;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const StreamAlerts200ResponseStateEnum unknownDefaultOpenApi =
+      _$streamAlerts200ResponseStateEnum_unknownDefaultOpenApi;
 
   static Serializer<StreamAlerts200ResponseStateEnum> get serializer =>
       _$streamAlerts200ResponseStateEnumSerializer;
@@ -247,6 +259,9 @@ class StreamAlerts200ResponseFeedbackEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'false_positive')
   static const StreamAlerts200ResponseFeedbackEnum falsePositive =
       _$streamAlerts200ResponseFeedbackEnum_falsePositive;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const StreamAlerts200ResponseFeedbackEnum unknownDefaultOpenApi =
+      _$streamAlerts200ResponseFeedbackEnum_unknownDefaultOpenApi;
 
   static Serializer<StreamAlerts200ResponseFeedbackEnum> get serializer =>
       _$streamAlerts200ResponseFeedbackEnumSerializer;
@@ -266,6 +281,10 @@ class StreamAlerts200ResponseSuppressedReasonEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'rule_snoozed')
   static const StreamAlerts200ResponseSuppressedReasonEnum ruleSnoozed =
       _$streamAlerts200ResponseSuppressedReasonEnum_ruleSnoozed;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const StreamAlerts200ResponseSuppressedReasonEnum
+  unknownDefaultOpenApi =
+      _$streamAlerts200ResponseSuppressedReasonEnum_unknownDefaultOpenApi;
 
   static Serializer<StreamAlerts200ResponseSuppressedReasonEnum>
   get serializer => _$streamAlerts200ResponseSuppressedReasonEnumSerializer;

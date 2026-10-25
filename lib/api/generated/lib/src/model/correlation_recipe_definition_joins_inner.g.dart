@@ -12,6 +12,11 @@ _$correlationRecipeDefinitionJoinsInnerSameRegionEnum_country =
 const CorrelationRecipeDefinitionJoinsInnerSameRegionEnum
 _$correlationRecipeDefinitionJoinsInnerSameRegionEnum_admin1 =
     const CorrelationRecipeDefinitionJoinsInnerSameRegionEnum._('admin1');
+const CorrelationRecipeDefinitionJoinsInnerSameRegionEnum
+_$correlationRecipeDefinitionJoinsInnerSameRegionEnum_unknownDefaultOpenApi =
+    const CorrelationRecipeDefinitionJoinsInnerSameRegionEnum._(
+      'unknownDefaultOpenApi',
+    );
 
 CorrelationRecipeDefinitionJoinsInnerSameRegionEnum
 _$correlationRecipeDefinitionJoinsInnerSameRegionEnumValueOf(String name) {
@@ -20,19 +25,22 @@ _$correlationRecipeDefinitionJoinsInnerSameRegionEnumValueOf(String name) {
       return _$correlationRecipeDefinitionJoinsInnerSameRegionEnum_country;
     case 'admin1':
       return _$correlationRecipeDefinitionJoinsInnerSameRegionEnum_admin1;
+    case 'unknownDefaultOpenApi':
+      return _$correlationRecipeDefinitionJoinsInnerSameRegionEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$correlationRecipeDefinitionJoinsInnerSameRegionEnum_unknownDefaultOpenApi;
   }
 }
 
 final BuiltSet<CorrelationRecipeDefinitionJoinsInnerSameRegionEnum>
 _$correlationRecipeDefinitionJoinsInnerSameRegionEnumValues =
-    BuiltSet<CorrelationRecipeDefinitionJoinsInnerSameRegionEnum>(
-      const <CorrelationRecipeDefinitionJoinsInnerSameRegionEnum>[
-        _$correlationRecipeDefinitionJoinsInnerSameRegionEnum_country,
-        _$correlationRecipeDefinitionJoinsInnerSameRegionEnum_admin1,
-      ],
-    );
+    BuiltSet<CorrelationRecipeDefinitionJoinsInnerSameRegionEnum>(const <
+      CorrelationRecipeDefinitionJoinsInnerSameRegionEnum
+    >[
+      _$correlationRecipeDefinitionJoinsInnerSameRegionEnum_country,
+      _$correlationRecipeDefinitionJoinsInnerSameRegionEnum_admin1,
+      _$correlationRecipeDefinitionJoinsInnerSameRegionEnum_unknownDefaultOpenApi,
+    ]);
 
 const CorrelationRecipeDefinitionJoinsInnerRoleEnum
 _$correlationRecipeDefinitionJoinsInnerRoleEnum_supporting =
@@ -43,6 +51,11 @@ _$correlationRecipeDefinitionJoinsInnerRoleEnum_contradicting =
 const CorrelationRecipeDefinitionJoinsInnerRoleEnum
 _$correlationRecipeDefinitionJoinsInnerRoleEnum_context =
     const CorrelationRecipeDefinitionJoinsInnerRoleEnum._('context');
+const CorrelationRecipeDefinitionJoinsInnerRoleEnum
+_$correlationRecipeDefinitionJoinsInnerRoleEnum_unknownDefaultOpenApi =
+    const CorrelationRecipeDefinitionJoinsInnerRoleEnum._(
+      'unknownDefaultOpenApi',
+    );
 
 CorrelationRecipeDefinitionJoinsInnerRoleEnum
 _$correlationRecipeDefinitionJoinsInnerRoleEnumValueOf(String name) {
@@ -53,8 +66,10 @@ _$correlationRecipeDefinitionJoinsInnerRoleEnumValueOf(String name) {
       return _$correlationRecipeDefinitionJoinsInnerRoleEnum_contradicting;
     case 'context':
       return _$correlationRecipeDefinitionJoinsInnerRoleEnum_context;
+    case 'unknownDefaultOpenApi':
+      return _$correlationRecipeDefinitionJoinsInnerRoleEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$correlationRecipeDefinitionJoinsInnerRoleEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -65,6 +80,7 @@ _$correlationRecipeDefinitionJoinsInnerRoleEnumValues =
         _$correlationRecipeDefinitionJoinsInnerRoleEnum_supporting,
         _$correlationRecipeDefinitionJoinsInnerRoleEnum_contradicting,
         _$correlationRecipeDefinitionJoinsInnerRoleEnum_context,
+        _$correlationRecipeDefinitionJoinsInnerRoleEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -83,10 +99,12 @@ class _$CorrelationRecipeDefinitionJoinsInnerSameRegionEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'country': 'country',
     'admin1': 'admin1',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'country': 'country',
     'admin1': 'admin1',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -120,11 +138,13 @@ class _$CorrelationRecipeDefinitionJoinsInnerRoleEnumSerializer
     'supporting': 'supporting',
     'contradicting': 'contradicting',
     'context': 'context',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'supporting': 'supporting',
     'contradicting': 'contradicting',
     'context': 'context',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

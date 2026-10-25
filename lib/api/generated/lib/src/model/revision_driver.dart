@@ -338,6 +338,9 @@ class RevisionDriverKindEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'operator')
   static const RevisionDriverKindEnum operator_ =
       _$revisionDriverKindEnum_operator_;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const RevisionDriverKindEnum unknownDefaultOpenApi =
+      _$revisionDriverKindEnum_unknownDefaultOpenApi;
 
   static Serializer<RevisionDriverKindEnum> get serializer =>
       _$revisionDriverKindEnumSerializer;
@@ -363,6 +366,9 @@ class RevisionDriverSuppressionReasonEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'capped')
   static const RevisionDriverSuppressionReasonEnum capped =
       _$revisionDriverSuppressionReasonEnum_capped;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const RevisionDriverSuppressionReasonEnum unknownDefaultOpenApi =
+      _$revisionDriverSuppressionReasonEnum_unknownDefaultOpenApi;
 
   static Serializer<RevisionDriverSuppressionReasonEnum> get serializer =>
       _$revisionDriverSuppressionReasonEnumSerializer;

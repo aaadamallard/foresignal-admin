@@ -190,6 +190,9 @@ class BacktestCaveatCodeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'NOT_GROUND_TRUTH')
   static const BacktestCaveatCodeEnum NOT_GROUND_TRUTH =
       _$backtestCaveatCodeEnum_NOT_GROUND_TRUTH;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const BacktestCaveatCodeEnum unknownDefaultOpenApi =
+      _$backtestCaveatCodeEnum_unknownDefaultOpenApi;
 
   static Serializer<BacktestCaveatCodeEnum> get serializer =>
       _$backtestCaveatCodeEnumSerializer;

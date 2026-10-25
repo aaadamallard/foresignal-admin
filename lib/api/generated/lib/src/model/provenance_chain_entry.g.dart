@@ -14,6 +14,9 @@ const ProvenanceChainEntryRoleEnum _$provenanceChainEntryRoleEnum_forwarder =
     const ProvenanceChainEntryRoleEnum._('forwarder');
 const ProvenanceChainEntryRoleEnum _$provenanceChainEntryRoleEnum_importer =
     const ProvenanceChainEntryRoleEnum._('importer');
+const ProvenanceChainEntryRoleEnum
+_$provenanceChainEntryRoleEnum_unknownDefaultOpenApi =
+    const ProvenanceChainEntryRoleEnum._('unknownDefaultOpenApi');
 
 ProvenanceChainEntryRoleEnum _$provenanceChainEntryRoleEnumValueOf(
   String name,
@@ -27,8 +30,10 @@ ProvenanceChainEntryRoleEnum _$provenanceChainEntryRoleEnumValueOf(
       return _$provenanceChainEntryRoleEnum_forwarder;
     case 'importer':
       return _$provenanceChainEntryRoleEnum_importer;
+    case 'unknownDefaultOpenApi':
+      return _$provenanceChainEntryRoleEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$provenanceChainEntryRoleEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -39,6 +44,7 @@ _$provenanceChainEntryRoleEnumValues =
       _$provenanceChainEntryRoleEnum_author,
       _$provenanceChainEntryRoleEnum_forwarder,
       _$provenanceChainEntryRoleEnum_importer,
+      _$provenanceChainEntryRoleEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<ProvenanceChainEntryRoleEnum>
@@ -52,12 +58,14 @@ class _$ProvenanceChainEntryRoleEnumSerializer
     'author': 'author',
     'forwarder': 'forwarder',
     'importer': 'importer',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'origin': 'origin',
     'author': 'author',
     'forwarder': 'forwarder',
     'importer': 'importer',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

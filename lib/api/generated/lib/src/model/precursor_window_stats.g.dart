@@ -22,6 +22,9 @@ _$precursorWindowStatsVerdictEnum_validated =
     const PrecursorWindowStatsVerdictEnum._('validated');
 const PrecursorWindowStatsVerdictEnum _$precursorWindowStatsVerdictEnum_failed =
     const PrecursorWindowStatsVerdictEnum._('failed');
+const PrecursorWindowStatsVerdictEnum
+_$precursorWindowStatsVerdictEnum_unknownDefaultOpenApi =
+    const PrecursorWindowStatsVerdictEnum._('unknownDefaultOpenApi');
 
 PrecursorWindowStatsVerdictEnum _$precursorWindowStatsVerdictEnumValueOf(
   String name,
@@ -39,8 +42,10 @@ PrecursorWindowStatsVerdictEnum _$precursorWindowStatsVerdictEnumValueOf(
       return _$precursorWindowStatsVerdictEnum_validated;
     case 'failed':
       return _$precursorWindowStatsVerdictEnum_failed;
+    case 'unknownDefaultOpenApi':
+      return _$precursorWindowStatsVerdictEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$precursorWindowStatsVerdictEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -54,6 +59,7 @@ _$precursorWindowStatsVerdictEnumValues =
         _$precursorWindowStatsVerdictEnum_notable,
         _$precursorWindowStatsVerdictEnum_validated,
         _$precursorWindowStatsVerdictEnum_failed,
+        _$precursorWindowStatsVerdictEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -70,6 +76,7 @@ class _$PrecursorWindowStatsVerdictEnumSerializer
     'notable': 'notable',
     'validated': 'validated',
     'failed': 'failed',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'insufficient': 'insufficient',
@@ -78,6 +85,7 @@ class _$PrecursorWindowStatsVerdictEnumSerializer
     'notable': 'notable',
     'validated': 'validated',
     'failed': 'failed',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

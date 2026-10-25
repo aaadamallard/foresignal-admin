@@ -27,6 +27,9 @@ _$informationValueIndicatorsInnerStateEnum_retired =
 const InformationValueIndicatorsInnerStateEnum
 _$informationValueIndicatorsInnerStateEnum_reported =
     const InformationValueIndicatorsInnerStateEnum._('reported');
+const InformationValueIndicatorsInnerStateEnum
+_$informationValueIndicatorsInnerStateEnum_unknownDefaultOpenApi =
+    const InformationValueIndicatorsInnerStateEnum._('unknownDefaultOpenApi');
 
 InformationValueIndicatorsInnerStateEnum
 _$informationValueIndicatorsInnerStateEnumValueOf(String name) {
@@ -45,8 +48,10 @@ _$informationValueIndicatorsInnerStateEnumValueOf(String name) {
       return _$informationValueIndicatorsInnerStateEnum_retired;
     case 'reported':
       return _$informationValueIndicatorsInnerStateEnum_reported;
+    case 'unknownDefaultOpenApi':
+      return _$informationValueIndicatorsInnerStateEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$informationValueIndicatorsInnerStateEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -61,6 +66,7 @@ _$informationValueIndicatorsInnerStateEnumValues =
         _$informationValueIndicatorsInnerStateEnum_unknownCoverage,
         _$informationValueIndicatorsInnerStateEnum_retired,
         _$informationValueIndicatorsInnerStateEnum_reported,
+        _$informationValueIndicatorsInnerStateEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -78,6 +84,7 @@ class _$InformationValueIndicatorsInnerStateEnumSerializer
     'unknownCoverage': 'unknown-coverage',
     'retired': 'retired',
     'reported': 'reported',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'pending': 'pending',
@@ -87,6 +94,7 @@ class _$InformationValueIndicatorsInnerStateEnumSerializer
     'unknown-coverage': 'unknownCoverage',
     'retired': 'retired',
     'reported': 'reported',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

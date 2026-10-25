@@ -14,6 +14,8 @@ const BacktestRequestTypeEnum _$backtestRequestTypeEnum_precursor =
     const BacktestRequestTypeEnum._('precursor');
 const BacktestRequestTypeEnum _$backtestRequestTypeEnum_quality =
     const BacktestRequestTypeEnum._('quality');
+const BacktestRequestTypeEnum _$backtestRequestTypeEnum_unknownDefaultOpenApi =
+    const BacktestRequestTypeEnum._('unknownDefaultOpenApi');
 
 BacktestRequestTypeEnum _$backtestRequestTypeEnumValueOf(String name) {
   switch (name) {
@@ -25,8 +27,10 @@ BacktestRequestTypeEnum _$backtestRequestTypeEnumValueOf(String name) {
       return _$backtestRequestTypeEnum_precursor;
     case 'quality':
       return _$backtestRequestTypeEnum_quality;
+    case 'unknownDefaultOpenApi':
+      return _$backtestRequestTypeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$backtestRequestTypeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -36,6 +40,7 @@ final BuiltSet<BacktestRequestTypeEnum> _$backtestRequestTypeEnumValues =
       _$backtestRequestTypeEnum_recipe,
       _$backtestRequestTypeEnum_precursor,
       _$backtestRequestTypeEnum_quality,
+      _$backtestRequestTypeEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<BacktestRequestTypeEnum> _$backtestRequestTypeEnumSerializer =
@@ -48,12 +53,14 @@ class _$BacktestRequestTypeEnumSerializer
     'recipe': 'recipe',
     'precursor': 'precursor',
     'quality': 'quality',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'rule': 'rule',
     'recipe': 'recipe',
     'precursor': 'precursor',
     'quality': 'quality',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

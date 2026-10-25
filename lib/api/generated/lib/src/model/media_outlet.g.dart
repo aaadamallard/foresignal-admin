@@ -26,6 +26,8 @@ const MediaOutletTypeEnum _$mediaOutletTypeEnum_official =
     const MediaOutletTypeEnum._('official');
 const MediaOutletTypeEnum _$mediaOutletTypeEnum_other =
     const MediaOutletTypeEnum._('other');
+const MediaOutletTypeEnum _$mediaOutletTypeEnum_unknownDefaultOpenApi =
+    const MediaOutletTypeEnum._('unknownDefaultOpenApi');
 
 MediaOutletTypeEnum _$mediaOutletTypeEnumValueOf(String name) {
   switch (name) {
@@ -49,8 +51,10 @@ MediaOutletTypeEnum _$mediaOutletTypeEnumValueOf(String name) {
       return _$mediaOutletTypeEnum_official;
     case 'other':
       return _$mediaOutletTypeEnum_other;
+    case 'unknownDefaultOpenApi':
+      return _$mediaOutletTypeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$mediaOutletTypeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -66,6 +70,7 @@ final BuiltSet<MediaOutletTypeEnum> _$mediaOutletTypeEnumValues =
       _$mediaOutletTypeEnum_blog,
       _$mediaOutletTypeEnum_official,
       _$mediaOutletTypeEnum_other,
+      _$mediaOutletTypeEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<MediaOutletTypeEnum> _$mediaOutletTypeEnumSerializer =
@@ -84,6 +89,7 @@ class _$MediaOutletTypeEnumSerializer
     'blog': 'blog',
     'official': 'official',
     'other': 'other',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'wire': 'wire',
@@ -96,6 +102,7 @@ class _$MediaOutletTypeEnumSerializer
     'blog': 'blog',
     'official': 'official',
     'other': 'other',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

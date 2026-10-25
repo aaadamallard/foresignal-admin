@@ -613,6 +613,9 @@ class AnalyticFindingFindingTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'attention-gap')
   static const AnalyticFindingFindingTypeEnum attentionGap =
       _$analyticFindingFindingTypeEnum_attentionGap;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const AnalyticFindingFindingTypeEnum unknownDefaultOpenApi =
+      _$analyticFindingFindingTypeEnum_unknownDefaultOpenApi;
 
   static Serializer<AnalyticFindingFindingTypeEnum> get serializer =>
       _$analyticFindingFindingTypeEnumSerializer;
@@ -635,6 +638,9 @@ class AnalyticFindingStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'dismissed')
   static const AnalyticFindingStatusEnum dismissed =
       _$analyticFindingStatusEnum_dismissed;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const AnalyticFindingStatusEnum unknownDefaultOpenApi =
+      _$analyticFindingStatusEnum_unknownDefaultOpenApi;
 
   static Serializer<AnalyticFindingStatusEnum> get serializer =>
       _$analyticFindingStatusEnumSerializer;

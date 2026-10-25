@@ -332,6 +332,9 @@ class FieldSpecTypeEnum extends EnumClass {
   static const FieldSpecTypeEnum OBJECT = _$fieldSpecTypeEnum_OBJECT;
   @BuiltValueEnumConst(wireName: r'ARRAY')
   static const FieldSpecTypeEnum ARRAY = _$fieldSpecTypeEnum_ARRAY;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const FieldSpecTypeEnum unknownDefaultOpenApi =
+      _$fieldSpecTypeEnum_unknownDefaultOpenApi;
 
   static Serializer<FieldSpecTypeEnum> get serializer =>
       _$fieldSpecTypeEnumSerializer;

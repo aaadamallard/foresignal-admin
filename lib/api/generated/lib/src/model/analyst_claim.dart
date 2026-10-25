@@ -204,6 +204,9 @@ class AnalystClaimBasisEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'speculation')
   static const AnalystClaimBasisEnum speculation =
       _$analystClaimBasisEnum_speculation;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const AnalystClaimBasisEnum unknownDefaultOpenApi =
+      _$analystClaimBasisEnum_unknownDefaultOpenApi;
 
   static Serializer<AnalystClaimBasisEnum> get serializer =>
       _$analystClaimBasisEnumSerializer;

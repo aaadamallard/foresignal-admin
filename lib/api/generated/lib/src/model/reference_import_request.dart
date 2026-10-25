@@ -159,6 +159,9 @@ class ReferenceImportRequestDatasetEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'gdacs')
   static const ReferenceImportRequestDatasetEnum gdacs =
       _$referenceImportRequestDatasetEnum_gdacs;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ReferenceImportRequestDatasetEnum unknownDefaultOpenApi =
+      _$referenceImportRequestDatasetEnum_unknownDefaultOpenApi;
 
   static Serializer<ReferenceImportRequestDatasetEnum> get serializer =>
       _$referenceImportRequestDatasetEnumSerializer;

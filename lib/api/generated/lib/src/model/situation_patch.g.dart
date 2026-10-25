@@ -10,6 +10,9 @@ const SituationPatchStatusEnum _$situationPatchStatusEnum_active =
     const SituationPatchStatusEnum._('active');
 const SituationPatchStatusEnum _$situationPatchStatusEnum_closed =
     const SituationPatchStatusEnum._('closed');
+const SituationPatchStatusEnum
+_$situationPatchStatusEnum_unknownDefaultOpenApi =
+    const SituationPatchStatusEnum._('unknownDefaultOpenApi');
 
 SituationPatchStatusEnum _$situationPatchStatusEnumValueOf(String name) {
   switch (name) {
@@ -17,8 +20,10 @@ SituationPatchStatusEnum _$situationPatchStatusEnumValueOf(String name) {
       return _$situationPatchStatusEnum_active;
     case 'closed':
       return _$situationPatchStatusEnum_closed;
+    case 'unknownDefaultOpenApi':
+      return _$situationPatchStatusEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$situationPatchStatusEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -26,6 +31,7 @@ final BuiltSet<SituationPatchStatusEnum> _$situationPatchStatusEnumValues =
     BuiltSet<SituationPatchStatusEnum>(const <SituationPatchStatusEnum>[
       _$situationPatchStatusEnum_active,
       _$situationPatchStatusEnum_closed,
+      _$situationPatchStatusEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<SituationPatchStatusEnum> _$situationPatchStatusEnumSerializer =
@@ -36,10 +42,12 @@ class _$SituationPatchStatusEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'active': 'active',
     'closed': 'closed',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'active': 'active',
     'closed': 'closed',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

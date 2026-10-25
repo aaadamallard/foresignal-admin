@@ -316,6 +316,9 @@ class PairingCodeScopeEnum extends EnumClass {
   static const PairingCodeScopeEnum read = _$pairingCodeScopeEnum_read;
   @BuiltValueEnumConst(wireName: r'agent')
   static const PairingCodeScopeEnum agent = _$pairingCodeScopeEnum_agent;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const PairingCodeScopeEnum unknownDefaultOpenApi =
+      _$pairingCodeScopeEnum_unknownDefaultOpenApi;
 
   static Serializer<PairingCodeScopeEnum> get serializer =>
       _$pairingCodeScopeEnumSerializer;

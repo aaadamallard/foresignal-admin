@@ -327,6 +327,10 @@ class SettingsBundleChannelsInnerConfigAttachMapEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'static')
   static const SettingsBundleChannelsInnerConfigAttachMapEnum static_ =
       _$settingsBundleChannelsInnerConfigAttachMapEnum_static_;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const SettingsBundleChannelsInnerConfigAttachMapEnum
+  unknownDefaultOpenApi =
+      _$settingsBundleChannelsInnerConfigAttachMapEnum_unknownDefaultOpenApi;
 
   static Serializer<SettingsBundleChannelsInnerConfigAttachMapEnum>
   get serializer => _$settingsBundleChannelsInnerConfigAttachMapEnumSerializer;
@@ -348,6 +352,10 @@ class SettingsBundleChannelsInnerConfigUnitsEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'imperial')
   static const SettingsBundleChannelsInnerConfigUnitsEnum imperial =
       _$settingsBundleChannelsInnerConfigUnitsEnum_imperial;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const SettingsBundleChannelsInnerConfigUnitsEnum
+  unknownDefaultOpenApi =
+      _$settingsBundleChannelsInnerConfigUnitsEnum_unknownDefaultOpenApi;
 
   static Serializer<SettingsBundleChannelsInnerConfigUnitsEnum>
   get serializer => _$settingsBundleChannelsInnerConfigUnitsEnumSerializer;

@@ -14,6 +14,8 @@ const SharedItemRoleEnum _$sharedItemRoleEnum_editor =
     const SharedItemRoleEnum._('editor');
 const SharedItemRoleEnum _$sharedItemRoleEnum_owner =
     const SharedItemRoleEnum._('owner');
+const SharedItemRoleEnum _$sharedItemRoleEnum_unknownDefaultOpenApi =
+    const SharedItemRoleEnum._('unknownDefaultOpenApi');
 
 SharedItemRoleEnum _$sharedItemRoleEnumValueOf(String name) {
   switch (name) {
@@ -25,8 +27,10 @@ SharedItemRoleEnum _$sharedItemRoleEnumValueOf(String name) {
       return _$sharedItemRoleEnum_editor;
     case 'owner':
       return _$sharedItemRoleEnum_owner;
+    case 'unknownDefaultOpenApi':
+      return _$sharedItemRoleEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$sharedItemRoleEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -36,6 +40,7 @@ final BuiltSet<SharedItemRoleEnum> _$sharedItemRoleEnumValues =
       _$sharedItemRoleEnum_commenter,
       _$sharedItemRoleEnum_editor,
       _$sharedItemRoleEnum_owner,
+      _$sharedItemRoleEnum_unknownDefaultOpenApi,
     ]);
 
 const SharedItemViaEnum _$sharedItemViaEnum_principal =
@@ -45,6 +50,8 @@ const SharedItemViaEnum _$sharedItemViaEnum_group = const SharedItemViaEnum._(
 );
 const SharedItemViaEnum _$sharedItemViaEnum_instance =
     const SharedItemViaEnum._('instance');
+const SharedItemViaEnum _$sharedItemViaEnum_unknownDefaultOpenApi =
+    const SharedItemViaEnum._('unknownDefaultOpenApi');
 
 SharedItemViaEnum _$sharedItemViaEnumValueOf(String name) {
   switch (name) {
@@ -54,8 +61,10 @@ SharedItemViaEnum _$sharedItemViaEnumValueOf(String name) {
       return _$sharedItemViaEnum_group;
     case 'instance':
       return _$sharedItemViaEnum_instance;
+    case 'unknownDefaultOpenApi':
+      return _$sharedItemViaEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$sharedItemViaEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -64,6 +73,7 @@ final BuiltSet<SharedItemViaEnum> _$sharedItemViaEnumValues =
       _$sharedItemViaEnum_principal,
       _$sharedItemViaEnum_group,
       _$sharedItemViaEnum_instance,
+      _$sharedItemViaEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<SharedItemRoleEnum> _$sharedItemRoleEnumSerializer =
@@ -78,12 +88,14 @@ class _$SharedItemRoleEnumSerializer
     'commenter': 'commenter',
     'editor': 'editor',
     'owner': 'owner',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'viewer': 'viewer',
     'commenter': 'commenter',
     'editor': 'editor',
     'owner': 'owner',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -114,11 +126,13 @@ class _$SharedItemViaEnumSerializer
     'principal': 'principal',
     'group': 'group',
     'instance': 'instance',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'principal': 'principal',
     'group': 'group',
     'instance': 'instance',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

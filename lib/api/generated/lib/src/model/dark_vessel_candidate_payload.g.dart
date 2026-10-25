@@ -18,6 +18,9 @@ _$darkVesselCandidatePayloadStatusEnum_noCoverage =
 const DarkVesselCandidatePayloadStatusEnum
 _$darkVesselCandidatePayloadStatusEnum_degradedInput =
     const DarkVesselCandidatePayloadStatusEnum._('degradedInput');
+const DarkVesselCandidatePayloadStatusEnum
+_$darkVesselCandidatePayloadStatusEnum_unknownDefaultOpenApi =
+    const DarkVesselCandidatePayloadStatusEnum._('unknownDefaultOpenApi');
 
 DarkVesselCandidatePayloadStatusEnum
 _$darkVesselCandidatePayloadStatusEnumValueOf(String name) {
@@ -30,8 +33,10 @@ _$darkVesselCandidatePayloadStatusEnumValueOf(String name) {
       return _$darkVesselCandidatePayloadStatusEnum_noCoverage;
     case 'degradedInput':
       return _$darkVesselCandidatePayloadStatusEnum_degradedInput;
+    case 'unknownDefaultOpenApi':
+      return _$darkVesselCandidatePayloadStatusEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$darkVesselCandidatePayloadStatusEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -43,6 +48,7 @@ _$darkVesselCandidatePayloadStatusEnumValues =
         _$darkVesselCandidatePayloadStatusEnum_insufficientData,
         _$darkVesselCandidatePayloadStatusEnum_noCoverage,
         _$darkVesselCandidatePayloadStatusEnum_degradedInput,
+        _$darkVesselCandidatePayloadStatusEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -57,12 +63,14 @@ class _$DarkVesselCandidatePayloadStatusEnumSerializer
     'insufficientData': 'insufficient-data',
     'noCoverage': 'no-coverage',
     'degradedInput': 'degraded-input',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'ok': 'ok',
     'insufficient-data': 'insufficientData',
     'no-coverage': 'noCoverage',
     'degraded-input': 'degradedInput',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

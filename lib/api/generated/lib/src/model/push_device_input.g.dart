@@ -10,6 +10,9 @@ const PushDeviceInputTransportEnum _$pushDeviceInputTransportEnum_apns =
     const PushDeviceInputTransportEnum._('apns');
 const PushDeviceInputTransportEnum _$pushDeviceInputTransportEnum_fcm =
     const PushDeviceInputTransportEnum._('fcm');
+const PushDeviceInputTransportEnum
+_$pushDeviceInputTransportEnum_unknownDefaultOpenApi =
+    const PushDeviceInputTransportEnum._('unknownDefaultOpenApi');
 
 PushDeviceInputTransportEnum _$pushDeviceInputTransportEnumValueOf(
   String name,
@@ -19,18 +22,20 @@ PushDeviceInputTransportEnum _$pushDeviceInputTransportEnumValueOf(
       return _$pushDeviceInputTransportEnum_apns;
     case 'fcm':
       return _$pushDeviceInputTransportEnum_fcm;
+    case 'unknownDefaultOpenApi':
+      return _$pushDeviceInputTransportEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$pushDeviceInputTransportEnum_unknownDefaultOpenApi;
   }
 }
 
 final BuiltSet<PushDeviceInputTransportEnum>
-_$pushDeviceInputTransportEnumValues = BuiltSet<PushDeviceInputTransportEnum>(
-  const <PushDeviceInputTransportEnum>[
-    _$pushDeviceInputTransportEnum_apns,
-    _$pushDeviceInputTransportEnum_fcm,
-  ],
-);
+_$pushDeviceInputTransportEnumValues =
+    BuiltSet<PushDeviceInputTransportEnum>(const <PushDeviceInputTransportEnum>[
+      _$pushDeviceInputTransportEnum_apns,
+      _$pushDeviceInputTransportEnum_fcm,
+      _$pushDeviceInputTransportEnum_unknownDefaultOpenApi,
+    ]);
 
 const PushDeviceInputPlatformEnum _$pushDeviceInputPlatformEnum_ios =
     const PushDeviceInputPlatformEnum._('ios');
@@ -40,6 +45,9 @@ const PushDeviceInputPlatformEnum _$pushDeviceInputPlatformEnum_macos =
     const PushDeviceInputPlatformEnum._('macos');
 const PushDeviceInputPlatformEnum _$pushDeviceInputPlatformEnum_android =
     const PushDeviceInputPlatformEnum._('android');
+const PushDeviceInputPlatformEnum
+_$pushDeviceInputPlatformEnum_unknownDefaultOpenApi =
+    const PushDeviceInputPlatformEnum._('unknownDefaultOpenApi');
 
 PushDeviceInputPlatformEnum _$pushDeviceInputPlatformEnumValueOf(String name) {
   switch (name) {
@@ -51,8 +59,10 @@ PushDeviceInputPlatformEnum _$pushDeviceInputPlatformEnumValueOf(String name) {
       return _$pushDeviceInputPlatformEnum_macos;
     case 'android':
       return _$pushDeviceInputPlatformEnum_android;
+    case 'unknownDefaultOpenApi':
+      return _$pushDeviceInputPlatformEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$pushDeviceInputPlatformEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -63,6 +73,7 @@ _$pushDeviceInputPlatformEnumValues =
       _$pushDeviceInputPlatformEnum_ipados,
       _$pushDeviceInputPlatformEnum_macos,
       _$pushDeviceInputPlatformEnum_android,
+      _$pushDeviceInputPlatformEnum_unknownDefaultOpenApi,
     ]);
 
 const PushDeviceInputEnvironmentEnum _$pushDeviceInputEnvironmentEnum_sandbox =
@@ -70,6 +81,9 @@ const PushDeviceInputEnvironmentEnum _$pushDeviceInputEnvironmentEnum_sandbox =
 const PushDeviceInputEnvironmentEnum
 _$pushDeviceInputEnvironmentEnum_production =
     const PushDeviceInputEnvironmentEnum._('production');
+const PushDeviceInputEnvironmentEnum
+_$pushDeviceInputEnvironmentEnum_unknownDefaultOpenApi =
+    const PushDeviceInputEnvironmentEnum._('unknownDefaultOpenApi');
 
 PushDeviceInputEnvironmentEnum _$pushDeviceInputEnvironmentEnumValueOf(
   String name,
@@ -79,8 +93,10 @@ PushDeviceInputEnvironmentEnum _$pushDeviceInputEnvironmentEnumValueOf(
       return _$pushDeviceInputEnvironmentEnum_sandbox;
     case 'production':
       return _$pushDeviceInputEnvironmentEnum_production;
+    case 'unknownDefaultOpenApi':
+      return _$pushDeviceInputEnvironmentEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$pushDeviceInputEnvironmentEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -90,6 +106,7 @@ _$pushDeviceInputEnvironmentEnumValues =
       const <PushDeviceInputEnvironmentEnum>[
         _$pushDeviceInputEnvironmentEnum_sandbox,
         _$pushDeviceInputEnvironmentEnum_production,
+        _$pushDeviceInputEnvironmentEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -98,6 +115,9 @@ _$pushDeviceInputContentLevelEnum_minimal =
     const PushDeviceInputContentLevelEnum._('minimal');
 const PushDeviceInputContentLevelEnum _$pushDeviceInputContentLevelEnum_short =
     const PushDeviceInputContentLevelEnum._('short');
+const PushDeviceInputContentLevelEnum
+_$pushDeviceInputContentLevelEnum_unknownDefaultOpenApi =
+    const PushDeviceInputContentLevelEnum._('unknownDefaultOpenApi');
 
 PushDeviceInputContentLevelEnum _$pushDeviceInputContentLevelEnumValueOf(
   String name,
@@ -107,8 +127,10 @@ PushDeviceInputContentLevelEnum _$pushDeviceInputContentLevelEnumValueOf(
       return _$pushDeviceInputContentLevelEnum_minimal;
     case 'short':
       return _$pushDeviceInputContentLevelEnum_short;
+    case 'unknownDefaultOpenApi':
+      return _$pushDeviceInputContentLevelEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$pushDeviceInputContentLevelEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -118,6 +140,7 @@ _$pushDeviceInputContentLevelEnumValues =
       const <PushDeviceInputContentLevelEnum>[
         _$pushDeviceInputContentLevelEnum_minimal,
         _$pushDeviceInputContentLevelEnum_short,
+        _$pushDeviceInputContentLevelEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -139,10 +162,12 @@ class _$PushDeviceInputTransportEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'apns': 'apns',
     'fcm': 'fcm',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'apns': 'apns',
     'fcm': 'fcm',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -174,12 +199,14 @@ class _$PushDeviceInputPlatformEnumSerializer
     'ipados': 'ipados',
     'macos': 'macos',
     'android': 'android',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'ios': 'ios',
     'ipados': 'ipados',
     'macos': 'macos',
     'android': 'android',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -209,10 +236,12 @@ class _$PushDeviceInputEnvironmentEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'sandbox': 'sandbox',
     'production': 'production',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'sandbox': 'sandbox',
     'production': 'production',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -242,10 +271,12 @@ class _$PushDeviceInputContentLevelEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'minimal': 'minimal',
     'short': 'short',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'minimal': 'minimal',
     'short': 'short',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

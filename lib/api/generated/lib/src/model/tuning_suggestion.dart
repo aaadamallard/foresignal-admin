@@ -257,6 +257,9 @@ class TuningSuggestionKindEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'SEVERITY_DOWN')
   static const TuningSuggestionKindEnum SEVERITY_DOWN =
       _$tuningSuggestionKindEnum_SEVERITY_DOWN;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const TuningSuggestionKindEnum unknownDefaultOpenApi =
+      _$tuningSuggestionKindEnum_unknownDefaultOpenApi;
 
   static Serializer<TuningSuggestionKindEnum> get serializer =>
       _$tuningSuggestionKindEnumSerializer;

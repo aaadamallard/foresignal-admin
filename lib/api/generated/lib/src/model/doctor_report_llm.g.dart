@@ -18,6 +18,9 @@ const DoctorReportLlmStatusEnum _$doctorReportLlmStatusEnum_timeout =
     const DoctorReportLlmStatusEnum._('timeout');
 const DoctorReportLlmStatusEnum _$doctorReportLlmStatusEnum_failed =
     const DoctorReportLlmStatusEnum._('failed');
+const DoctorReportLlmStatusEnum
+_$doctorReportLlmStatusEnum_unknownDefaultOpenApi =
+    const DoctorReportLlmStatusEnum._('unknownDefaultOpenApi');
 
 DoctorReportLlmStatusEnum _$doctorReportLlmStatusEnumValueOf(String name) {
   switch (name) {
@@ -33,8 +36,10 @@ DoctorReportLlmStatusEnum _$doctorReportLlmStatusEnumValueOf(String name) {
       return _$doctorReportLlmStatusEnum_timeout;
     case 'failed':
       return _$doctorReportLlmStatusEnum_failed;
+    case 'unknownDefaultOpenApi':
+      return _$doctorReportLlmStatusEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$doctorReportLlmStatusEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -46,12 +51,16 @@ final BuiltSet<DoctorReportLlmStatusEnum> _$doctorReportLlmStatusEnumValues =
       _$doctorReportLlmStatusEnum_budgetRefused,
       _$doctorReportLlmStatusEnum_timeout,
       _$doctorReportLlmStatusEnum_failed,
+      _$doctorReportLlmStatusEnum_unknownDefaultOpenApi,
     ]);
 
 const DoctorReportLlmDetailEnum _$doctorReportLlmDetailEnum_compact =
     const DoctorReportLlmDetailEnum._('compact');
 const DoctorReportLlmDetailEnum _$doctorReportLlmDetailEnum_full =
     const DoctorReportLlmDetailEnum._('full');
+const DoctorReportLlmDetailEnum
+_$doctorReportLlmDetailEnum_unknownDefaultOpenApi =
+    const DoctorReportLlmDetailEnum._('unknownDefaultOpenApi');
 
 DoctorReportLlmDetailEnum _$doctorReportLlmDetailEnumValueOf(String name) {
   switch (name) {
@@ -59,8 +68,10 @@ DoctorReportLlmDetailEnum _$doctorReportLlmDetailEnumValueOf(String name) {
       return _$doctorReportLlmDetailEnum_compact;
     case 'full':
       return _$doctorReportLlmDetailEnum_full;
+    case 'unknownDefaultOpenApi':
+      return _$doctorReportLlmDetailEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$doctorReportLlmDetailEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -68,6 +79,7 @@ final BuiltSet<DoctorReportLlmDetailEnum> _$doctorReportLlmDetailEnumValues =
     BuiltSet<DoctorReportLlmDetailEnum>(const <DoctorReportLlmDetailEnum>[
       _$doctorReportLlmDetailEnum_compact,
       _$doctorReportLlmDetailEnum_full,
+      _$doctorReportLlmDetailEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<DoctorReportLlmStatusEnum> _$doctorReportLlmStatusEnumSerializer =
@@ -84,6 +96,7 @@ class _$DoctorReportLlmStatusEnumSerializer
     'budgetRefused': 'budget-refused',
     'timeout': 'timeout',
     'failed': 'failed',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'ok': 'ok',
@@ -92,6 +105,7 @@ class _$DoctorReportLlmStatusEnumSerializer
     'budget-refused': 'budgetRefused',
     'timeout': 'timeout',
     'failed': 'failed',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -121,10 +135,12 @@ class _$DoctorReportLlmDetailEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'compact': 'compact',
     'full': 'full',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'compact': 'compact',
     'full': 'full',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

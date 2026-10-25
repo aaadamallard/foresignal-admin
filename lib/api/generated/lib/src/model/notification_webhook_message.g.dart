@@ -88,6 +88,9 @@ _$notificationWebhookMessageEventEnum_test =
 const NotificationWebhookMessageEventEnum
 _$notificationWebhookMessageEventEnum_personal =
     const NotificationWebhookMessageEventEnum._('personal');
+const NotificationWebhookMessageEventEnum
+_$notificationWebhookMessageEventEnum_unknownDefaultOpenApi =
+    const NotificationWebhookMessageEventEnum._('unknownDefaultOpenApi');
 
 NotificationWebhookMessageEventEnum
 _$notificationWebhookMessageEventEnumValueOf(String name) {
@@ -144,8 +147,10 @@ _$notificationWebhookMessageEventEnumValueOf(String name) {
       return _$notificationWebhookMessageEventEnum_test;
     case 'personal':
       return _$notificationWebhookMessageEventEnum_personal;
+    case 'unknownDefaultOpenApi':
+      return _$notificationWebhookMessageEventEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$notificationWebhookMessageEventEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -180,6 +185,7 @@ _$notificationWebhookMessageEventEnumValues =
       _$notificationWebhookMessageEventEnum_savedSearchPeriodMatches,
       _$notificationWebhookMessageEventEnum_test,
       _$notificationWebhookMessageEventEnum_personal,
+      _$notificationWebhookMessageEventEnum_unknownDefaultOpenApi,
     ]);
 
 const NotificationWebhookMessageSeverityEnum
@@ -191,6 +197,9 @@ _$notificationWebhookMessageSeverityEnum_warning =
 const NotificationWebhookMessageSeverityEnum
 _$notificationWebhookMessageSeverityEnum_critical =
     const NotificationWebhookMessageSeverityEnum._('critical');
+const NotificationWebhookMessageSeverityEnum
+_$notificationWebhookMessageSeverityEnum_unknownDefaultOpenApi =
+    const NotificationWebhookMessageSeverityEnum._('unknownDefaultOpenApi');
 
 NotificationWebhookMessageSeverityEnum
 _$notificationWebhookMessageSeverityEnumValueOf(String name) {
@@ -201,8 +210,10 @@ _$notificationWebhookMessageSeverityEnumValueOf(String name) {
       return _$notificationWebhookMessageSeverityEnum_warning;
     case 'critical':
       return _$notificationWebhookMessageSeverityEnum_critical;
+    case 'unknownDefaultOpenApi':
+      return _$notificationWebhookMessageSeverityEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$notificationWebhookMessageSeverityEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -213,6 +224,7 @@ _$notificationWebhookMessageSeverityEnumValues =
         _$notificationWebhookMessageSeverityEnum_info,
         _$notificationWebhookMessageSeverityEnum_warning,
         _$notificationWebhookMessageSeverityEnum_critical,
+        _$notificationWebhookMessageSeverityEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -252,6 +264,7 @@ class _$NotificationWebhookMessageEventEnumSerializer
     'savedSearchPeriodMatches': 'saved-search.matches',
     'test': 'test',
     'personal': 'personal',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'alert': 'alert',
@@ -280,6 +293,7 @@ class _$NotificationWebhookMessageEventEnumSerializer
     'saved-search.matches': 'savedSearchPeriodMatches',
     'test': 'test',
     'personal': 'personal',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -312,11 +326,13 @@ class _$NotificationWebhookMessageSeverityEnumSerializer
     'info': 'info',
     'warning': 'warning',
     'critical': 'critical',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'info': 'info',
     'warning': 'warning',
     'critical': 'critical',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

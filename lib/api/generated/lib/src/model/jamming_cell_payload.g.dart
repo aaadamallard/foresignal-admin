@@ -16,6 +16,9 @@ const JammingCellPayloadStatusEnum _$jammingCellPayloadStatusEnum_noCoverage =
 const JammingCellPayloadStatusEnum
 _$jammingCellPayloadStatusEnum_degradedInput =
     const JammingCellPayloadStatusEnum._('degradedInput');
+const JammingCellPayloadStatusEnum
+_$jammingCellPayloadStatusEnum_unknownDefaultOpenApi =
+    const JammingCellPayloadStatusEnum._('unknownDefaultOpenApi');
 
 JammingCellPayloadStatusEnum _$jammingCellPayloadStatusEnumValueOf(
   String name,
@@ -29,8 +32,10 @@ JammingCellPayloadStatusEnum _$jammingCellPayloadStatusEnumValueOf(
       return _$jammingCellPayloadStatusEnum_noCoverage;
     case 'degradedInput':
       return _$jammingCellPayloadStatusEnum_degradedInput;
+    case 'unknownDefaultOpenApi':
+      return _$jammingCellPayloadStatusEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$jammingCellPayloadStatusEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -41,12 +46,16 @@ _$jammingCellPayloadStatusEnumValues =
       _$jammingCellPayloadStatusEnum_insufficientData,
       _$jammingCellPayloadStatusEnum_noCoverage,
       _$jammingCellPayloadStatusEnum_degradedInput,
+      _$jammingCellPayloadStatusEnum_unknownDefaultOpenApi,
     ]);
 
 const JammingCellPayloadLevelEnum _$jammingCellPayloadLevelEnum_medium =
     const JammingCellPayloadLevelEnum._('medium');
 const JammingCellPayloadLevelEnum _$jammingCellPayloadLevelEnum_high =
     const JammingCellPayloadLevelEnum._('high');
+const JammingCellPayloadLevelEnum
+_$jammingCellPayloadLevelEnum_unknownDefaultOpenApi =
+    const JammingCellPayloadLevelEnum._('unknownDefaultOpenApi');
 
 JammingCellPayloadLevelEnum _$jammingCellPayloadLevelEnumValueOf(String name) {
   switch (name) {
@@ -54,23 +63,28 @@ JammingCellPayloadLevelEnum _$jammingCellPayloadLevelEnumValueOf(String name) {
       return _$jammingCellPayloadLevelEnum_medium;
     case 'high':
       return _$jammingCellPayloadLevelEnum_high;
+    case 'unknownDefaultOpenApi':
+      return _$jammingCellPayloadLevelEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$jammingCellPayloadLevelEnum_unknownDefaultOpenApi;
   }
 }
 
 final BuiltSet<JammingCellPayloadLevelEnum>
-_$jammingCellPayloadLevelEnumValues = BuiltSet<JammingCellPayloadLevelEnum>(
-  const <JammingCellPayloadLevelEnum>[
-    _$jammingCellPayloadLevelEnum_medium,
-    _$jammingCellPayloadLevelEnum_high,
-  ],
-);
+_$jammingCellPayloadLevelEnumValues =
+    BuiltSet<JammingCellPayloadLevelEnum>(const <JammingCellPayloadLevelEnum>[
+      _$jammingCellPayloadLevelEnum_medium,
+      _$jammingCellPayloadLevelEnum_high,
+      _$jammingCellPayloadLevelEnum_unknownDefaultOpenApi,
+    ]);
 
 const JammingCellPayloadGridEnum _$jammingCellPayloadGridEnum_h3 =
     const JammingCellPayloadGridEnum._('h3');
 const JammingCellPayloadGridEnum _$jammingCellPayloadGridEnum_deg1 =
     const JammingCellPayloadGridEnum._('deg1');
+const JammingCellPayloadGridEnum
+_$jammingCellPayloadGridEnum_unknownDefaultOpenApi =
+    const JammingCellPayloadGridEnum._('unknownDefaultOpenApi');
 
 JammingCellPayloadGridEnum _$jammingCellPayloadGridEnumValueOf(String name) {
   switch (name) {
@@ -78,8 +92,10 @@ JammingCellPayloadGridEnum _$jammingCellPayloadGridEnumValueOf(String name) {
       return _$jammingCellPayloadGridEnum_h3;
     case 'deg1':
       return _$jammingCellPayloadGridEnum_deg1;
+    case 'unknownDefaultOpenApi':
+      return _$jammingCellPayloadGridEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$jammingCellPayloadGridEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -87,6 +103,7 @@ final BuiltSet<JammingCellPayloadGridEnum> _$jammingCellPayloadGridEnumValues =
     BuiltSet<JammingCellPayloadGridEnum>(const <JammingCellPayloadGridEnum>[
       _$jammingCellPayloadGridEnum_h3,
       _$jammingCellPayloadGridEnum_deg1,
+      _$jammingCellPayloadGridEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<JammingCellPayloadStatusEnum>
@@ -105,12 +122,14 @@ class _$JammingCellPayloadStatusEnumSerializer
     'insufficientData': 'insufficient-data',
     'noCoverage': 'no-coverage',
     'degradedInput': 'degraded-input',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'ok': 'ok',
     'insufficient-data': 'insufficientData',
     'no-coverage': 'noCoverage',
     'degraded-input': 'degradedInput',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -140,10 +159,12 @@ class _$JammingCellPayloadLevelEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'medium': 'medium',
     'high': 'high',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'medium': 'medium',
     'high': 'high',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -173,10 +194,12 @@ class _$JammingCellPayloadGridEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'h3': 'h3',
     'deg1': 'deg1',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'h3': 'h3',
     'deg1': 'deg1',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

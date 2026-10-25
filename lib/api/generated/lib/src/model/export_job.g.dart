@@ -19,6 +19,8 @@ const ExportJobKindEnum _$exportJobKindEnum_RASTER = const ExportJobKindEnum._(
 );
 const ExportJobKindEnum _$exportJobKindEnum_PLACE_PACK =
     const ExportJobKindEnum._('PLACE_PACK');
+const ExportJobKindEnum _$exportJobKindEnum_unknownDefaultOpenApi =
+    const ExportJobKindEnum._('unknownDefaultOpenApi');
 
 ExportJobKindEnum _$exportJobKindEnumValueOf(String name) {
   switch (name) {
@@ -32,8 +34,10 @@ ExportJobKindEnum _$exportJobKindEnumValueOf(String name) {
       return _$exportJobKindEnum_RASTER;
     case 'PLACE_PACK':
       return _$exportJobKindEnum_PLACE_PACK;
+    case 'unknownDefaultOpenApi':
+      return _$exportJobKindEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$exportJobKindEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -44,6 +48,7 @@ final BuiltSet<ExportJobKindEnum> _$exportJobKindEnumValues =
       _$exportJobKindEnum_PACK,
       _$exportJobKindEnum_RASTER,
       _$exportJobKindEnum_PLACE_PACK,
+      _$exportJobKindEnum_unknownDefaultOpenApi,
     ]);
 
 const ExportJobFormatEnum _$exportJobFormatEnum_geoparquet =
@@ -64,6 +69,8 @@ const ExportJobFormatEnum _$exportJobFormatEnum_zip =
     const ExportJobFormatEnum._('zip');
 const ExportJobFormatEnum _$exportJobFormatEnum_jsonBundle =
     const ExportJobFormatEnum._('jsonBundle');
+const ExportJobFormatEnum _$exportJobFormatEnum_unknownDefaultOpenApi =
+    const ExportJobFormatEnum._('unknownDefaultOpenApi');
 
 ExportJobFormatEnum _$exportJobFormatEnumValueOf(String name) {
   switch (name) {
@@ -85,8 +92,10 @@ ExportJobFormatEnum _$exportJobFormatEnumValueOf(String name) {
       return _$exportJobFormatEnum_zip;
     case 'jsonBundle':
       return _$exportJobFormatEnum_jsonBundle;
+    case 'unknownDefaultOpenApi':
+      return _$exportJobFormatEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$exportJobFormatEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -101,6 +110,7 @@ final BuiltSet<ExportJobFormatEnum> _$exportJobFormatEnumValues =
       _$exportJobFormatEnum_cog,
       _$exportJobFormatEnum_zip,
       _$exportJobFormatEnum_jsonBundle,
+      _$exportJobFormatEnum_unknownDefaultOpenApi,
     ]);
 
 const ExportJobStatusEnum _$exportJobStatusEnum_QUEUED =
@@ -115,6 +125,8 @@ const ExportJobStatusEnum _$exportJobStatusEnum_CANCELLED =
     const ExportJobStatusEnum._('CANCELLED');
 const ExportJobStatusEnum _$exportJobStatusEnum_EXPIRED =
     const ExportJobStatusEnum._('EXPIRED');
+const ExportJobStatusEnum _$exportJobStatusEnum_unknownDefaultOpenApi =
+    const ExportJobStatusEnum._('unknownDefaultOpenApi');
 
 ExportJobStatusEnum _$exportJobStatusEnumValueOf(String name) {
   switch (name) {
@@ -130,8 +142,10 @@ ExportJobStatusEnum _$exportJobStatusEnumValueOf(String name) {
       return _$exportJobStatusEnum_CANCELLED;
     case 'EXPIRED':
       return _$exportJobStatusEnum_EXPIRED;
+    case 'unknownDefaultOpenApi':
+      return _$exportJobStatusEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$exportJobStatusEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -143,6 +157,7 @@ final BuiltSet<ExportJobStatusEnum> _$exportJobStatusEnumValues =
       _$exportJobStatusEnum_FAILED,
       _$exportJobStatusEnum_CANCELLED,
       _$exportJobStatusEnum_EXPIRED,
+      _$exportJobStatusEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<ExportJobKindEnum> _$exportJobKindEnumSerializer =
@@ -160,6 +175,7 @@ class _$ExportJobKindEnumSerializer
     'PACK': 'PACK',
     'RASTER': 'RASTER',
     'PLACE_PACK': 'PLACE_PACK',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'EXPORT': 'EXPORT',
@@ -167,6 +183,7 @@ class _$ExportJobKindEnumSerializer
     'PACK': 'PACK',
     'RASTER': 'RASTER',
     'PLACE_PACK': 'PLACE_PACK',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -203,6 +220,7 @@ class _$ExportJobFormatEnumSerializer
     'cog': 'cog',
     'zip': 'zip',
     'jsonBundle': 'json-bundle',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'geoparquet': 'geoparquet',
@@ -214,6 +232,7 @@ class _$ExportJobFormatEnumSerializer
     'cog': 'cog',
     'zip': 'zip',
     'json-bundle': 'jsonBundle',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -247,6 +266,7 @@ class _$ExportJobStatusEnumSerializer
     'FAILED': 'FAILED',
     'CANCELLED': 'CANCELLED',
     'EXPIRED': 'EXPIRED',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'QUEUED': 'QUEUED',
@@ -255,6 +275,7 @@ class _$ExportJobStatusEnumSerializer
     'FAILED': 'FAILED',
     'CANCELLED': 'CANCELLED',
     'EXPIRED': 'EXPIRED',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

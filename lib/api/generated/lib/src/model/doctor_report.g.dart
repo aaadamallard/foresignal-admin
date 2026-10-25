@@ -12,6 +12,8 @@ const DoctorReportTriggerEnum _$doctorReportTriggerEnum_AUTO =
     const DoctorReportTriggerEnum._('AUTO');
 const DoctorReportTriggerEnum _$doctorReportTriggerEnum_MCP =
     const DoctorReportTriggerEnum._('MCP');
+const DoctorReportTriggerEnum _$doctorReportTriggerEnum_unknownDefaultOpenApi =
+    const DoctorReportTriggerEnum._('unknownDefaultOpenApi');
 
 DoctorReportTriggerEnum _$doctorReportTriggerEnumValueOf(String name) {
   switch (name) {
@@ -21,8 +23,10 @@ DoctorReportTriggerEnum _$doctorReportTriggerEnumValueOf(String name) {
       return _$doctorReportTriggerEnum_AUTO;
     case 'MCP':
       return _$doctorReportTriggerEnum_MCP;
+    case 'unknownDefaultOpenApi':
+      return _$doctorReportTriggerEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$doctorReportTriggerEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -31,6 +35,7 @@ final BuiltSet<DoctorReportTriggerEnum> _$doctorReportTriggerEnumValues =
       _$doctorReportTriggerEnum_MANUAL,
       _$doctorReportTriggerEnum_AUTO,
       _$doctorReportTriggerEnum_MCP,
+      _$doctorReportTriggerEnum_unknownDefaultOpenApi,
     ]);
 
 const DoctorReportStatusEnum _$doctorReportStatusEnum_OK =
@@ -39,6 +44,8 @@ const DoctorReportStatusEnum _$doctorReportStatusEnum_DEGRADED_INFO =
     const DoctorReportStatusEnum._('DEGRADED_INFO');
 const DoctorReportStatusEnum _$doctorReportStatusEnum_BROKEN =
     const DoctorReportStatusEnum._('BROKEN');
+const DoctorReportStatusEnum _$doctorReportStatusEnum_unknownDefaultOpenApi =
+    const DoctorReportStatusEnum._('unknownDefaultOpenApi');
 
 DoctorReportStatusEnum _$doctorReportStatusEnumValueOf(String name) {
   switch (name) {
@@ -48,8 +55,10 @@ DoctorReportStatusEnum _$doctorReportStatusEnumValueOf(String name) {
       return _$doctorReportStatusEnum_DEGRADED_INFO;
     case 'BROKEN':
       return _$doctorReportStatusEnum_BROKEN;
+    case 'unknownDefaultOpenApi':
+      return _$doctorReportStatusEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$doctorReportStatusEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -58,6 +67,7 @@ final BuiltSet<DoctorReportStatusEnum> _$doctorReportStatusEnumValues =
       _$doctorReportStatusEnum_OK,
       _$doctorReportStatusEnum_DEGRADED_INFO,
       _$doctorReportStatusEnum_BROKEN,
+      _$doctorReportStatusEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<DoctorReportTriggerEnum> _$doctorReportTriggerEnumSerializer =
@@ -71,11 +81,13 @@ class _$DoctorReportTriggerEnumSerializer
     'MANUAL': 'MANUAL',
     'AUTO': 'AUTO',
     'MCP': 'MCP',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'MANUAL': 'MANUAL',
     'AUTO': 'AUTO',
     'MCP': 'MCP',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -106,11 +118,13 @@ class _$DoctorReportStatusEnumSerializer
     'OK': 'OK',
     'DEGRADED_INFO': 'DEGRADED_INFO',
     'BROKEN': 'BROKEN',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'OK': 'OK',
     'DEGRADED_INFO': 'DEGRADED_INFO',
     'BROKEN': 'BROKEN',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

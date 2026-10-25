@@ -10,6 +10,9 @@ const BriefingInputAudioFormatEnum _$briefingInputAudioFormatEnum_mp3 =
     const BriefingInputAudioFormatEnum._('mp3');
 const BriefingInputAudioFormatEnum _$briefingInputAudioFormatEnum_opus =
     const BriefingInputAudioFormatEnum._('opus');
+const BriefingInputAudioFormatEnum
+_$briefingInputAudioFormatEnum_unknownDefaultOpenApi =
+    const BriefingInputAudioFormatEnum._('unknownDefaultOpenApi');
 
 BriefingInputAudioFormatEnum _$briefingInputAudioFormatEnumValueOf(
   String name,
@@ -19,18 +22,20 @@ BriefingInputAudioFormatEnum _$briefingInputAudioFormatEnumValueOf(
       return _$briefingInputAudioFormatEnum_mp3;
     case 'opus':
       return _$briefingInputAudioFormatEnum_opus;
+    case 'unknownDefaultOpenApi':
+      return _$briefingInputAudioFormatEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$briefingInputAudioFormatEnum_unknownDefaultOpenApi;
   }
 }
 
 final BuiltSet<BriefingInputAudioFormatEnum>
-_$briefingInputAudioFormatEnumValues = BuiltSet<BriefingInputAudioFormatEnum>(
-  const <BriefingInputAudioFormatEnum>[
-    _$briefingInputAudioFormatEnum_mp3,
-    _$briefingInputAudioFormatEnum_opus,
-  ],
-);
+_$briefingInputAudioFormatEnumValues =
+    BuiltSet<BriefingInputAudioFormatEnum>(const <BriefingInputAudioFormatEnum>[
+      _$briefingInputAudioFormatEnum_mp3,
+      _$briefingInputAudioFormatEnum_opus,
+      _$briefingInputAudioFormatEnum_unknownDefaultOpenApi,
+    ]);
 
 Serializer<BriefingInputAudioFormatEnum>
 _$briefingInputAudioFormatEnumSerializer =
@@ -41,10 +46,12 @@ class _$BriefingInputAudioFormatEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'mp3': 'mp3',
     'opus': 'opus',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'mp3': 'mp3',
     'opus': 'opus',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

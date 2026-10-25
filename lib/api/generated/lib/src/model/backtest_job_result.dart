@@ -238,6 +238,9 @@ class BacktestJobResultRuleTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'anomaly')
   static const BacktestJobResultRuleTypeEnum anomaly =
       _$backtestJobResultRuleTypeEnum_anomaly;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const BacktestJobResultRuleTypeEnum unknownDefaultOpenApi =
+      _$backtestJobResultRuleTypeEnum_unknownDefaultOpenApi;
 
   static Serializer<BacktestJobResultRuleTypeEnum> get serializer =>
       _$backtestJobResultRuleTypeEnumSerializer;
@@ -254,6 +257,9 @@ class BacktestJobResultPermutationsEnum extends EnumClass {
   @BuiltValueEnumConst(wireNumber: 200)
   static const BacktestJobResultPermutationsEnum number200 =
       _$backtestJobResultPermutationsEnum_number200;
+  @BuiltValueEnumConst(wireNumber: 11184809, fallback: true)
+  static const BacktestJobResultPermutationsEnum unknownDefaultOpenApi =
+      _$backtestJobResultPermutationsEnum_unknownDefaultOpenApi;
 
   static Serializer<BacktestJobResultPermutationsEnum> get serializer =>
       _$backtestJobResultPermutationsEnumSerializer;
@@ -279,6 +285,9 @@ class BacktestJobResultVerdictEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'notable')
   static const BacktestJobResultVerdictEnum notable =
       _$backtestJobResultVerdictEnum_notable;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const BacktestJobResultVerdictEnum unknownDefaultOpenApi =
+      _$backtestJobResultVerdictEnum_unknownDefaultOpenApi;
 
   static Serializer<BacktestJobResultVerdictEnum> get serializer =>
       _$backtestJobResultVerdictEnumSerializer;
@@ -301,6 +310,9 @@ class BacktestJobResultFeedbackMappingEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'neutral')
   static const BacktestJobResultFeedbackMappingEnum neutral =
       _$backtestJobResultFeedbackMappingEnum_neutral;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const BacktestJobResultFeedbackMappingEnum unknownDefaultOpenApi =
+      _$backtestJobResultFeedbackMappingEnum_unknownDefaultOpenApi;
 
   static Serializer<BacktestJobResultFeedbackMappingEnum> get serializer =>
       _$backtestJobResultFeedbackMappingEnumSerializer;
@@ -332,6 +344,9 @@ class BacktestJobResultStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'cancelled')
   static const BacktestJobResultStatusEnum cancelled =
       _$backtestJobResultStatusEnum_cancelled;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const BacktestJobResultStatusEnum unknownDefaultOpenApi =
+      _$backtestJobResultStatusEnum_unknownDefaultOpenApi;
 
   static Serializer<BacktestJobResultStatusEnum> get serializer =>
       _$backtestJobResultStatusEnumSerializer;
@@ -354,6 +369,9 @@ class BacktestJobResultOutcomeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'not-replayable')
   static const BacktestJobResultOutcomeEnum notReplayable =
       _$backtestJobResultOutcomeEnum_notReplayable;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const BacktestJobResultOutcomeEnum unknownDefaultOpenApi =
+      _$backtestJobResultOutcomeEnum_unknownDefaultOpenApi;
 
   static Serializer<BacktestJobResultOutcomeEnum> get serializer =>
       _$backtestJobResultOutcomeEnumSerializer;
@@ -377,6 +395,9 @@ class BacktestJobResultReasonEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'llm-output')
   static const BacktestJobResultReasonEnum llmOutput =
       _$backtestJobResultReasonEnum_llmOutput;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const BacktestJobResultReasonEnum unknownDefaultOpenApi =
+      _$backtestJobResultReasonEnum_unknownDefaultOpenApi;
 
   static Serializer<BacktestJobResultReasonEnum> get serializer =>
       _$backtestJobResultReasonEnumSerializer;
@@ -396,6 +417,9 @@ class BacktestJobResultFrequencyEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'week')
   static const BacktestJobResultFrequencyEnum week =
       _$backtestJobResultFrequencyEnum_week;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const BacktestJobResultFrequencyEnum unknownDefaultOpenApi =
+      _$backtestJobResultFrequencyEnum_unknownDefaultOpenApi;
 
   static Serializer<BacktestJobResultFrequencyEnum> get serializer =>
       _$backtestJobResultFrequencyEnumSerializer;
@@ -421,6 +445,9 @@ class BacktestJobResultTransformEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'anscombe-residual')
   static const BacktestJobResultTransformEnum anscombeResidual =
       _$backtestJobResultTransformEnum_anscombeResidual;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const BacktestJobResultTransformEnum unknownDefaultOpenApi =
+      _$backtestJobResultTransformEnum_unknownDefaultOpenApi;
 
   static Serializer<BacktestJobResultTransformEnum> get serializer =>
       _$backtestJobResultTransformEnumSerializer;
@@ -440,6 +467,9 @@ class BacktestJobResultModeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'retest')
   static const BacktestJobResultModeEnum retest =
       _$backtestJobResultModeEnum_retest;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const BacktestJobResultModeEnum unknownDefaultOpenApi =
+      _$backtestJobResultModeEnum_unknownDefaultOpenApi;
 
   static Serializer<BacktestJobResultModeEnum> get serializer =>
       _$backtestJobResultModeEnumSerializer;
@@ -462,6 +492,9 @@ class BacktestJobResultTriggerEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'cycle')
   static const BacktestJobResultTriggerEnum cycle =
       _$backtestJobResultTriggerEnum_cycle;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const BacktestJobResultTriggerEnum unknownDefaultOpenApi =
+      _$backtestJobResultTriggerEnum_unknownDefaultOpenApi;
 
   static Serializer<BacktestJobResultTriggerEnum> get serializer =>
       _$backtestJobResultTriggerEnumSerializer;
@@ -481,6 +514,9 @@ class BacktestJobResultMethodEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'BY')
   static const BacktestJobResultMethodEnum BY =
       _$backtestJobResultMethodEnum_BY;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const BacktestJobResultMethodEnum unknownDefaultOpenApi =
+      _$backtestJobResultMethodEnum_unknownDefaultOpenApi;
 
   static Serializer<BacktestJobResultMethodEnum> get serializer =>
       _$backtestJobResultMethodEnumSerializer;
@@ -506,6 +542,9 @@ class BacktestJobResultDatasetEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'gdacs')
   static const BacktestJobResultDatasetEnum gdacs =
       _$backtestJobResultDatasetEnum_gdacs;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const BacktestJobResultDatasetEnum unknownDefaultOpenApi =
+      _$backtestJobResultDatasetEnum_unknownDefaultOpenApi;
 
   static Serializer<BacktestJobResultDatasetEnum> get serializer =>
       _$backtestJobResultDatasetEnumSerializer;
@@ -525,6 +564,9 @@ class BacktestJobResultEgressEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'LOCAL_ONLY')
   static const BacktestJobResultEgressEnum LOCAL_ONLY =
       _$backtestJobResultEgressEnum_LOCAL_ONLY;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const BacktestJobResultEgressEnum unknownDefaultOpenApi =
+      _$backtestJobResultEgressEnum_unknownDefaultOpenApi;
 
   static Serializer<BacktestJobResultEgressEnum> get serializer =>
       _$backtestJobResultEgressEnumSerializer;

@@ -493,6 +493,9 @@ class ProblemRequiredScopeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'admin')
   static const ProblemRequiredScopeEnum admin =
       _$problemRequiredScopeEnum_admin;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ProblemRequiredScopeEnum unknownDefaultOpenApi =
+      _$problemRequiredScopeEnum_unknownDefaultOpenApi;
 
   static Serializer<ProblemRequiredScopeEnum> get serializer =>
       _$problemRequiredScopeEnumSerializer;
@@ -521,6 +524,9 @@ class ProblemClass_Enum extends EnumClass {
   static const ProblemClass_Enum anonymous = _$problemClassEnum_anonymous;
   @BuiltValueEnumConst(wireName: r'metrics')
   static const ProblemClass_Enum metrics = _$problemClassEnum_metrics;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ProblemClass_Enum unknownDefaultOpenApi =
+      _$problemClassEnum_unknownDefaultOpenApi;
 
   static Serializer<ProblemClass_Enum> get serializer =>
       _$problemClassEnumSerializer;

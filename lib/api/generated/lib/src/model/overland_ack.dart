@@ -115,6 +115,9 @@ class _$OverlandAckSerializer implements PrimitiveSerializer<OverlandAck> {
 class OverlandAckResultEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'ok')
   static const OverlandAckResultEnum ok = _$overlandAckResultEnum_ok;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const OverlandAckResultEnum unknownDefaultOpenApi =
+      _$overlandAckResultEnum_unknownDefaultOpenApi;
 
   static Serializer<OverlandAckResultEnum> get serializer =>
       _$overlandAckResultEnumSerializer;

@@ -689,6 +689,9 @@ class AssessmentCadenceEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'on-demand')
   static const AssessmentCadenceEnum onDemand =
       _$assessmentCadenceEnum_onDemand;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const AssessmentCadenceEnum unknownDefaultOpenApi =
+      _$assessmentCadenceEnum_unknownDefaultOpenApi;
 
   static Serializer<AssessmentCadenceEnum> get serializer =>
       _$assessmentCadenceEnumSerializer;
@@ -711,6 +714,9 @@ class AssessmentStatusEnum extends EnumClass {
       _$assessmentStatusEnum_digestOnly;
   @BuiltValueEnumConst(wireName: r'failed')
   static const AssessmentStatusEnum failed = _$assessmentStatusEnum_failed;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const AssessmentStatusEnum unknownDefaultOpenApi =
+      _$assessmentStatusEnum_unknownDefaultOpenApi;
 
   static Serializer<AssessmentStatusEnum> get serializer =>
       _$assessmentStatusEnumSerializer;
@@ -731,6 +737,9 @@ class AssessmentEffortEnum extends EnumClass {
   static const AssessmentEffortEnum medium = _$assessmentEffortEnum_medium;
   @BuiltValueEnumConst(wireName: r'high')
   static const AssessmentEffortEnum high = _$assessmentEffortEnum_high;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const AssessmentEffortEnum unknownDefaultOpenApi =
+      _$assessmentEffortEnum_unknownDefaultOpenApi;
 
   static Serializer<AssessmentEffortEnum> get serializer =>
       _$assessmentEffortEnumSerializer;

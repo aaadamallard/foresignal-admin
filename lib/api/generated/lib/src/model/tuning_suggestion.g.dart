@@ -27,6 +27,9 @@ const TuningSuggestionKindEnum _$tuningSuggestionKindEnum_SEVERITY_UP =
     const TuningSuggestionKindEnum._('SEVERITY_UP');
 const TuningSuggestionKindEnum _$tuningSuggestionKindEnum_SEVERITY_DOWN =
     const TuningSuggestionKindEnum._('SEVERITY_DOWN');
+const TuningSuggestionKindEnum
+_$tuningSuggestionKindEnum_unknownDefaultOpenApi =
+    const TuningSuggestionKindEnum._('unknownDefaultOpenApi');
 
 TuningSuggestionKindEnum _$tuningSuggestionKindEnumValueOf(String name) {
   switch (name) {
@@ -50,8 +53,10 @@ TuningSuggestionKindEnum _$tuningSuggestionKindEnumValueOf(String name) {
       return _$tuningSuggestionKindEnum_SEVERITY_UP;
     case 'SEVERITY_DOWN':
       return _$tuningSuggestionKindEnum_SEVERITY_DOWN;
+    case 'unknownDefaultOpenApi':
+      return _$tuningSuggestionKindEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$tuningSuggestionKindEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -67,6 +72,7 @@ final BuiltSet<TuningSuggestionKindEnum> _$tuningSuggestionKindEnumValues =
       _$tuningSuggestionKindEnum_ACTIVE_WINDOW,
       _$tuningSuggestionKindEnum_SEVERITY_UP,
       _$tuningSuggestionKindEnum_SEVERITY_DOWN,
+      _$tuningSuggestionKindEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<TuningSuggestionKindEnum> _$tuningSuggestionKindEnumSerializer =
@@ -85,6 +91,7 @@ class _$TuningSuggestionKindEnumSerializer
     'ACTIVE_WINDOW': 'ACTIVE_WINDOW',
     'SEVERITY_UP': 'SEVERITY_UP',
     'SEVERITY_DOWN': 'SEVERITY_DOWN',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'raise-threshold': 'raiseThreshold',
@@ -97,6 +104,7 @@ class _$TuningSuggestionKindEnumSerializer
     'ACTIVE_WINDOW': 'ACTIVE_WINDOW',
     'SEVERITY_UP': 'SEVERITY_UP',
     'SEVERITY_DOWN': 'SEVERITY_DOWN',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

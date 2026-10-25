@@ -184,6 +184,9 @@ class ActiveWindowWindowsInnerDaysEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'SUN')
   static const ActiveWindowWindowsInnerDaysEnum SUN =
       _$activeWindowWindowsInnerDaysEnum_SUN;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ActiveWindowWindowsInnerDaysEnum unknownDefaultOpenApi =
+      _$activeWindowWindowsInnerDaysEnum_unknownDefaultOpenApi;
 
   static Serializer<ActiveWindowWindowsInnerDaysEnum> get serializer =>
       _$activeWindowWindowsInnerDaysEnumSerializer;

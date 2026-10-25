@@ -172,6 +172,9 @@ class ObjectAclEntryInputRoleEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'owner')
   static const ObjectAclEntryInputRoleEnum owner =
       _$objectAclEntryInputRoleEnum_owner;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ObjectAclEntryInputRoleEnum unknownDefaultOpenApi =
+      _$objectAclEntryInputRoleEnum_unknownDefaultOpenApi;
 
   static Serializer<ObjectAclEntryInputRoleEnum> get serializer =>
       _$objectAclEntryInputRoleEnumSerializer;

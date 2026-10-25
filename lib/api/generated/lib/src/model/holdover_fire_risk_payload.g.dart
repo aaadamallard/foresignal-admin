@@ -17,6 +17,9 @@ _$holdoverFireRiskPayloadStatusEnum_noCoverage =
 const HoldoverFireRiskPayloadStatusEnum
 _$holdoverFireRiskPayloadStatusEnum_degradedInput =
     const HoldoverFireRiskPayloadStatusEnum._('degradedInput');
+const HoldoverFireRiskPayloadStatusEnum
+_$holdoverFireRiskPayloadStatusEnum_unknownDefaultOpenApi =
+    const HoldoverFireRiskPayloadStatusEnum._('unknownDefaultOpenApi');
 
 HoldoverFireRiskPayloadStatusEnum _$holdoverFireRiskPayloadStatusEnumValueOf(
   String name,
@@ -30,8 +33,10 @@ HoldoverFireRiskPayloadStatusEnum _$holdoverFireRiskPayloadStatusEnumValueOf(
       return _$holdoverFireRiskPayloadStatusEnum_noCoverage;
     case 'degradedInput':
       return _$holdoverFireRiskPayloadStatusEnum_degradedInput;
+    case 'unknownDefaultOpenApi':
+      return _$holdoverFireRiskPayloadStatusEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$holdoverFireRiskPayloadStatusEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -43,6 +48,7 @@ _$holdoverFireRiskPayloadStatusEnumValues =
         _$holdoverFireRiskPayloadStatusEnum_insufficientData,
         _$holdoverFireRiskPayloadStatusEnum_noCoverage,
         _$holdoverFireRiskPayloadStatusEnum_degradedInput,
+        _$holdoverFireRiskPayloadStatusEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -52,6 +58,9 @@ _$holdoverFireRiskPayloadPrecipSourceEnum_mrms =
 const HoldoverFireRiskPayloadPrecipSourceEnum
 _$holdoverFireRiskPayloadPrecipSourceEnum_model =
     const HoldoverFireRiskPayloadPrecipSourceEnum._('model');
+const HoldoverFireRiskPayloadPrecipSourceEnum
+_$holdoverFireRiskPayloadPrecipSourceEnum_unknownDefaultOpenApi =
+    const HoldoverFireRiskPayloadPrecipSourceEnum._('unknownDefaultOpenApi');
 
 HoldoverFireRiskPayloadPrecipSourceEnum
 _$holdoverFireRiskPayloadPrecipSourceEnumValueOf(String name) {
@@ -60,8 +69,10 @@ _$holdoverFireRiskPayloadPrecipSourceEnumValueOf(String name) {
       return _$holdoverFireRiskPayloadPrecipSourceEnum_mrms;
     case 'model':
       return _$holdoverFireRiskPayloadPrecipSourceEnum_model;
+    case 'unknownDefaultOpenApi':
+      return _$holdoverFireRiskPayloadPrecipSourceEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$holdoverFireRiskPayloadPrecipSourceEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -71,6 +82,7 @@ _$holdoverFireRiskPayloadPrecipSourceEnumValues =
       const <HoldoverFireRiskPayloadPrecipSourceEnum>[
         _$holdoverFireRiskPayloadPrecipSourceEnum_mrms,
         _$holdoverFireRiskPayloadPrecipSourceEnum_model,
+        _$holdoverFireRiskPayloadPrecipSourceEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -88,12 +100,14 @@ class _$HoldoverFireRiskPayloadStatusEnumSerializer
     'insufficientData': 'insufficient-data',
     'noCoverage': 'no-coverage',
     'degradedInput': 'degraded-input',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'ok': 'ok',
     'insufficient-data': 'insufficientData',
     'no-coverage': 'noCoverage',
     'degraded-input': 'degradedInput',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -123,10 +137,12 @@ class _$HoldoverFireRiskPayloadPrecipSourceEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'mrms': 'mrms',
     'model': 'model',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'mrms': 'mrms',
     'model': 'model',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

@@ -10,6 +10,8 @@ const TagInputNamespaceEnum _$tagInputNamespaceEnum_personal =
     const TagInputNamespaceEnum._('personal');
 const TagInputNamespaceEnum _$tagInputNamespaceEnum_shared =
     const TagInputNamespaceEnum._('shared');
+const TagInputNamespaceEnum _$tagInputNamespaceEnum_unknownDefaultOpenApi =
+    const TagInputNamespaceEnum._('unknownDefaultOpenApi');
 
 TagInputNamespaceEnum _$tagInputNamespaceEnumValueOf(String name) {
   switch (name) {
@@ -17,8 +19,10 @@ TagInputNamespaceEnum _$tagInputNamespaceEnumValueOf(String name) {
       return _$tagInputNamespaceEnum_personal;
     case 'shared':
       return _$tagInputNamespaceEnum_shared;
+    case 'unknownDefaultOpenApi':
+      return _$tagInputNamespaceEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$tagInputNamespaceEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -26,6 +30,7 @@ final BuiltSet<TagInputNamespaceEnum> _$tagInputNamespaceEnumValues =
     BuiltSet<TagInputNamespaceEnum>(const <TagInputNamespaceEnum>[
       _$tagInputNamespaceEnum_personal,
       _$tagInputNamespaceEnum_shared,
+      _$tagInputNamespaceEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<TagInputNamespaceEnum> _$tagInputNamespaceEnumSerializer =
@@ -36,10 +41,12 @@ class _$TagInputNamespaceEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'personal': 'personal',
     'shared': 'shared',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'personal': 'personal',
     'shared': 'shared',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

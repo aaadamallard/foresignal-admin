@@ -203,6 +203,9 @@ class StatsRollupRebuildStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'running')
   static const StatsRollupRebuildStatusEnum running =
       _$statsRollupRebuildStatusEnum_running;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const StatsRollupRebuildStatusEnum unknownDefaultOpenApi =
+      _$statsRollupRebuildStatusEnum_unknownDefaultOpenApi;
 
   static Serializer<StatsRollupRebuildStatusEnum> get serializer =>
       _$statsRollupRebuildStatusEnumSerializer;

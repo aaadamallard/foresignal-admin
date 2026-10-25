@@ -19,6 +19,9 @@ const IntelligenceEventTypeEnum _$intelligenceEventTypeEnum_seismic =
     const IntelligenceEventTypeEnum._('seismic');
 const IntelligenceEventTypeEnum _$intelligenceEventTypeEnum_custom =
     const IntelligenceEventTypeEnum._('custom');
+const IntelligenceEventTypeEnum
+_$intelligenceEventTypeEnum_unknownDefaultOpenApi =
+    const IntelligenceEventTypeEnum._('unknownDefaultOpenApi');
 
 IntelligenceEventTypeEnum _$intelligenceEventTypeEnumValueOf(String name) {
   switch (name) {
@@ -34,8 +37,10 @@ IntelligenceEventTypeEnum _$intelligenceEventTypeEnumValueOf(String name) {
       return _$intelligenceEventTypeEnum_seismic;
     case 'custom':
       return _$intelligenceEventTypeEnum_custom;
+    case 'unknownDefaultOpenApi':
+      return _$intelligenceEventTypeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$intelligenceEventTypeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -47,6 +52,7 @@ final BuiltSet<IntelligenceEventTypeEnum> _$intelligenceEventTypeEnumValues =
       _$intelligenceEventTypeEnum_weatherImpact,
       _$intelligenceEventTypeEnum_seismic,
       _$intelligenceEventTypeEnum_custom,
+      _$intelligenceEventTypeEnum_unknownDefaultOpenApi,
     ]);
 
 const IntelligenceEventStatusEnum _$intelligenceEventStatusEnum_emerging =
@@ -57,6 +63,9 @@ const IntelligenceEventStatusEnum _$intelligenceEventStatusEnum_resolved =
     const IntelligenceEventStatusEnum._('resolved');
 const IntelligenceEventStatusEnum _$intelligenceEventStatusEnum_dismissed =
     const IntelligenceEventStatusEnum._('dismissed');
+const IntelligenceEventStatusEnum
+_$intelligenceEventStatusEnum_unknownDefaultOpenApi =
+    const IntelligenceEventStatusEnum._('unknownDefaultOpenApi');
 
 IntelligenceEventStatusEnum _$intelligenceEventStatusEnumValueOf(String name) {
   switch (name) {
@@ -68,8 +77,10 @@ IntelligenceEventStatusEnum _$intelligenceEventStatusEnumValueOf(String name) {
       return _$intelligenceEventStatusEnum_resolved;
     case 'dismissed':
       return _$intelligenceEventStatusEnum_dismissed;
+    case 'unknownDefaultOpenApi':
+      return _$intelligenceEventStatusEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$intelligenceEventStatusEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -80,6 +91,7 @@ _$intelligenceEventStatusEnumValues =
       _$intelligenceEventStatusEnum_active,
       _$intelligenceEventStatusEnum_resolved,
       _$intelligenceEventStatusEnum_dismissed,
+      _$intelligenceEventStatusEnum_unknownDefaultOpenApi,
     ]);
 
 const IntelligenceEventOriginEnum _$intelligenceEventOriginEnum_recipe =
@@ -90,6 +102,9 @@ const IntelligenceEventOriginEnum _$intelligenceEventOriginEnum_agent =
     const IntelligenceEventOriginEnum._('agent');
 const IntelligenceEventOriginEnum _$intelligenceEventOriginEnum_operator_ =
     const IntelligenceEventOriginEnum._('operator_');
+const IntelligenceEventOriginEnum
+_$intelligenceEventOriginEnum_unknownDefaultOpenApi =
+    const IntelligenceEventOriginEnum._('unknownDefaultOpenApi');
 
 IntelligenceEventOriginEnum _$intelligenceEventOriginEnumValueOf(String name) {
   switch (name) {
@@ -101,8 +116,10 @@ IntelligenceEventOriginEnum _$intelligenceEventOriginEnumValueOf(String name) {
       return _$intelligenceEventOriginEnum_agent;
     case 'operator_':
       return _$intelligenceEventOriginEnum_operator_;
+    case 'unknownDefaultOpenApi':
+      return _$intelligenceEventOriginEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$intelligenceEventOriginEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -113,6 +130,7 @@ _$intelligenceEventOriginEnumValues =
       _$intelligenceEventOriginEnum_analyst,
       _$intelligenceEventOriginEnum_agent,
       _$intelligenceEventOriginEnum_operator_,
+      _$intelligenceEventOriginEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<IntelligenceEventTypeEnum> _$intelligenceEventTypeEnumSerializer =
@@ -133,6 +151,7 @@ class _$IntelligenceEventTypeEnumSerializer
     'weatherImpact': 'weather-impact',
     'seismic': 'seismic',
     'custom': 'custom',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'maritime-disruption': 'maritimeDisruption',
@@ -141,6 +160,7 @@ class _$IntelligenceEventTypeEnumSerializer
     'weather-impact': 'weatherImpact',
     'seismic': 'seismic',
     'custom': 'custom',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -172,12 +192,14 @@ class _$IntelligenceEventStatusEnumSerializer
     'active': 'active',
     'resolved': 'resolved',
     'dismissed': 'dismissed',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'emerging': 'emerging',
     'active': 'active',
     'resolved': 'resolved',
     'dismissed': 'dismissed',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -209,12 +231,14 @@ class _$IntelligenceEventOriginEnumSerializer
     'analyst': 'analyst',
     'agent': 'agent',
     'operator_': 'operator',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'recipe': 'recipe',
     'analyst': 'analyst',
     'agent': 'agent',
     'operator': 'operator_',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

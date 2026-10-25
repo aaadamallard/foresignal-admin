@@ -346,6 +346,9 @@ class RuleBacktestResultRuleTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'anomaly')
   static const RuleBacktestResultRuleTypeEnum anomaly =
       _$ruleBacktestResultRuleTypeEnum_anomaly;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const RuleBacktestResultRuleTypeEnum unknownDefaultOpenApi =
+      _$ruleBacktestResultRuleTypeEnum_unknownDefaultOpenApi;
 
   static Serializer<RuleBacktestResultRuleTypeEnum> get serializer =>
       _$ruleBacktestResultRuleTypeEnumSerializer;

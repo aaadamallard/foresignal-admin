@@ -12,6 +12,9 @@ _$chronicleClusterMembersInnerDisclosureEnum_full =
 const ChronicleClusterMembersInnerDisclosureEnum
 _$chronicleClusterMembersInnerDisclosureEnum_opaque =
     const ChronicleClusterMembersInnerDisclosureEnum._('opaque');
+const ChronicleClusterMembersInnerDisclosureEnum
+_$chronicleClusterMembersInnerDisclosureEnum_unknownDefaultOpenApi =
+    const ChronicleClusterMembersInnerDisclosureEnum._('unknownDefaultOpenApi');
 
 ChronicleClusterMembersInnerDisclosureEnum
 _$chronicleClusterMembersInnerDisclosureEnumValueOf(String name) {
@@ -20,8 +23,10 @@ _$chronicleClusterMembersInnerDisclosureEnumValueOf(String name) {
       return _$chronicleClusterMembersInnerDisclosureEnum_full;
     case 'opaque':
       return _$chronicleClusterMembersInnerDisclosureEnum_opaque;
+    case 'unknownDefaultOpenApi':
+      return _$chronicleClusterMembersInnerDisclosureEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$chronicleClusterMembersInnerDisclosureEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -31,6 +36,7 @@ _$chronicleClusterMembersInnerDisclosureEnumValues =
       const <ChronicleClusterMembersInnerDisclosureEnum>[
         _$chronicleClusterMembersInnerDisclosureEnum_full,
         _$chronicleClusterMembersInnerDisclosureEnum_opaque,
+        _$chronicleClusterMembersInnerDisclosureEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -43,6 +49,9 @@ _$chronicleClusterMembersInnerStrengthEnum_medium =
 const ChronicleClusterMembersInnerStrengthEnum
 _$chronicleClusterMembersInnerStrengthEnum_high =
     const ChronicleClusterMembersInnerStrengthEnum._('high');
+const ChronicleClusterMembersInnerStrengthEnum
+_$chronicleClusterMembersInnerStrengthEnum_unknownDefaultOpenApi =
+    const ChronicleClusterMembersInnerStrengthEnum._('unknownDefaultOpenApi');
 
 ChronicleClusterMembersInnerStrengthEnum
 _$chronicleClusterMembersInnerStrengthEnumValueOf(String name) {
@@ -53,8 +62,10 @@ _$chronicleClusterMembersInnerStrengthEnumValueOf(String name) {
       return _$chronicleClusterMembersInnerStrengthEnum_medium;
     case 'high':
       return _$chronicleClusterMembersInnerStrengthEnum_high;
+    case 'unknownDefaultOpenApi':
+      return _$chronicleClusterMembersInnerStrengthEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$chronicleClusterMembersInnerStrengthEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -65,6 +76,7 @@ _$chronicleClusterMembersInnerStrengthEnumValues =
         _$chronicleClusterMembersInnerStrengthEnum_low,
         _$chronicleClusterMembersInnerStrengthEnum_medium,
         _$chronicleClusterMembersInnerStrengthEnum_high,
+        _$chronicleClusterMembersInnerStrengthEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -80,10 +92,12 @@ class _$ChronicleClusterMembersInnerDisclosureEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'full': 'full',
     'opaque': 'opaque',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'full': 'full',
     'opaque': 'opaque',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -116,11 +130,13 @@ class _$ChronicleClusterMembersInnerStrengthEnumSerializer
     'low': 'low',
     'medium': 'medium',
     'high': 'high',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'low': 'low',
     'medium': 'medium',
     'high': 'high',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

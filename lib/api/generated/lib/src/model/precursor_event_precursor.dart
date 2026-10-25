@@ -229,6 +229,9 @@ class PrecursorEventPrecursorKindEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'series')
   static const PrecursorEventPrecursorKindEnum series =
       _$precursorEventPrecursorKindEnum_series;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const PrecursorEventPrecursorKindEnum unknownDefaultOpenApi =
+      _$precursorEventPrecursorKindEnum_unknownDefaultOpenApi;
 
   static Serializer<PrecursorEventPrecursorKindEnum> get serializer =>
       _$precursorEventPrecursorKindEnumSerializer;
@@ -254,6 +257,9 @@ class PrecursorEventPrecursorStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'retired')
   static const PrecursorEventPrecursorStatusEnum retired =
       _$precursorEventPrecursorStatusEnum_retired;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const PrecursorEventPrecursorStatusEnum unknownDefaultOpenApi =
+      _$precursorEventPrecursorStatusEnum_unknownDefaultOpenApi;
 
   static Serializer<PrecursorEventPrecursorStatusEnum> get serializer =>
       _$precursorEventPrecursorStatusEnumSerializer;

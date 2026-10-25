@@ -15,7 +15,7 @@ part 'intel_event_log_entry.g.dart';
 /// Properties:
 /// * [at]
 /// * [actor] - Token id or `recipe:<id>`
-/// * [action]
+/// * [action] - What happened. The list grows as the server adds actions; a client shows an action it does not know as its text.
 /// * [before]
 /// * [after]
 @BuiltValue()
@@ -28,9 +28,9 @@ abstract class IntelEventLogEntry
   @BuiltValueField(wireName: r'actor')
   String get actor;
 
+  /// What happened. The list grows as the server adds actions; a client shows an action it does not know as its text.
   @BuiltValueField(wireName: r'action')
-  IntelEventLogEntryActionEnum get action;
-  // enum actionEnum {  created,  member_added,  member_removed,  status,  merged,  edited,  reopened,  };
+  String get action;
 
   @BuiltValueField(wireName: r'before')
   BuiltMap<String, JsonObject?>? get before;
@@ -77,7 +77,7 @@ class _$IntelEventLogEntrySerializer
     yield r'action';
     yield serializers.serialize(
       object.action,
-      specifiedType: const FullType(IntelEventLogEntryActionEnum),
+      specifiedType: const FullType(String),
     );
     if (object.before != null) {
       yield r'before';
@@ -148,9 +148,9 @@ class _$IntelEventLogEntrySerializer
           final valueDes =
               serializers.deserialize(
                     value,
-                    specifiedType: const FullType(IntelEventLogEntryActionEnum),
+                    specifiedType: const FullType(String),
                   )
-                  as IntelEventLogEntryActionEnum;
+                  as String;
           result.action = valueDes;
           break;
         case r'before':
@@ -206,38 +206,4 @@ class _$IntelEventLogEntrySerializer
     );
     return result.build();
   }
-}
-
-class IntelEventLogEntryActionEnum extends EnumClass {
-  @BuiltValueEnumConst(wireName: r'created')
-  static const IntelEventLogEntryActionEnum created =
-      _$intelEventLogEntryActionEnum_created;
-  @BuiltValueEnumConst(wireName: r'member_added')
-  static const IntelEventLogEntryActionEnum memberAdded =
-      _$intelEventLogEntryActionEnum_memberAdded;
-  @BuiltValueEnumConst(wireName: r'member_removed')
-  static const IntelEventLogEntryActionEnum memberRemoved =
-      _$intelEventLogEntryActionEnum_memberRemoved;
-  @BuiltValueEnumConst(wireName: r'status')
-  static const IntelEventLogEntryActionEnum status =
-      _$intelEventLogEntryActionEnum_status;
-  @BuiltValueEnumConst(wireName: r'merged')
-  static const IntelEventLogEntryActionEnum merged =
-      _$intelEventLogEntryActionEnum_merged;
-  @BuiltValueEnumConst(wireName: r'edited')
-  static const IntelEventLogEntryActionEnum edited =
-      _$intelEventLogEntryActionEnum_edited;
-  @BuiltValueEnumConst(wireName: r'reopened')
-  static const IntelEventLogEntryActionEnum reopened =
-      _$intelEventLogEntryActionEnum_reopened;
-
-  static Serializer<IntelEventLogEntryActionEnum> get serializer =>
-      _$intelEventLogEntryActionEnumSerializer;
-
-  const IntelEventLogEntryActionEnum._(String name) : super(name);
-
-  static BuiltSet<IntelEventLogEntryActionEnum> get values =>
-      _$intelEventLogEntryActionEnumValues;
-  static IntelEventLogEntryActionEnum valueOf(String name) =>
-      _$intelEventLogEntryActionEnumValueOf(name);
 }

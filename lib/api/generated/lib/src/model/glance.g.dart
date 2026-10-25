@@ -13,6 +13,8 @@ const GlanceStatusEnum _$glanceStatusEnum_degraded = const GlanceStatusEnum._(
 const GlanceStatusEnum _$glanceStatusEnum_failing = const GlanceStatusEnum._(
   'failing',
 );
+const GlanceStatusEnum _$glanceStatusEnum_unknownDefaultOpenApi =
+    const GlanceStatusEnum._('unknownDefaultOpenApi');
 
 GlanceStatusEnum _$glanceStatusEnumValueOf(String name) {
   switch (name) {
@@ -22,8 +24,10 @@ GlanceStatusEnum _$glanceStatusEnumValueOf(String name) {
       return _$glanceStatusEnum_degraded;
     case 'failing':
       return _$glanceStatusEnum_failing;
+    case 'unknownDefaultOpenApi':
+      return _$glanceStatusEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$glanceStatusEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -32,6 +36,7 @@ final BuiltSet<GlanceStatusEnum> _$glanceStatusEnumValues =
       _$glanceStatusEnum_ok,
       _$glanceStatusEnum_degraded,
       _$glanceStatusEnum_failing,
+      _$glanceStatusEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<GlanceStatusEnum> _$glanceStatusEnumSerializer =
@@ -43,11 +48,13 @@ class _$GlanceStatusEnumSerializer
     'ok': 'ok',
     'degraded': 'degraded',
     'failing': 'failing',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'ok': 'ok',
     'degraded': 'degraded',
     'failing': 'failing',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

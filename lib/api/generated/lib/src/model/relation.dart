@@ -351,6 +351,9 @@ class RelationLabelEnum extends EnumClass {
   static const RelationLabelEnum possible = _$relationLabelEnum_possible;
   @BuiltValueEnumConst(wireName: r'speculative')
   static const RelationLabelEnum speculative = _$relationLabelEnum_speculative;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const RelationLabelEnum unknownDefaultOpenApi =
+      _$relationLabelEnum_unknownDefaultOpenApi;
 
   static Serializer<RelationLabelEnum> get serializer =>
       _$relationLabelEnumSerializer;

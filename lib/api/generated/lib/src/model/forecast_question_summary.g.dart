@@ -17,6 +17,9 @@ _$forecastQuestionSummaryTypeEnum_ordered =
 const ForecastQuestionSummaryTypeEnum
 _$forecastQuestionSummaryTypeEnum_numeric =
     const ForecastQuestionSummaryTypeEnum._('numeric');
+const ForecastQuestionSummaryTypeEnum
+_$forecastQuestionSummaryTypeEnum_unknownDefaultOpenApi =
+    const ForecastQuestionSummaryTypeEnum._('unknownDefaultOpenApi');
 
 ForecastQuestionSummaryTypeEnum _$forecastQuestionSummaryTypeEnumValueOf(
   String name,
@@ -30,8 +33,10 @@ ForecastQuestionSummaryTypeEnum _$forecastQuestionSummaryTypeEnumValueOf(
       return _$forecastQuestionSummaryTypeEnum_ordered;
     case 'numeric':
       return _$forecastQuestionSummaryTypeEnum_numeric;
+    case 'unknownDefaultOpenApi':
+      return _$forecastQuestionSummaryTypeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$forecastQuestionSummaryTypeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -43,6 +48,7 @@ _$forecastQuestionSummaryTypeEnumValues =
         _$forecastQuestionSummaryTypeEnum_multiple,
         _$forecastQuestionSummaryTypeEnum_ordered,
         _$forecastQuestionSummaryTypeEnum_numeric,
+        _$forecastQuestionSummaryTypeEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -58,6 +64,9 @@ _$forecastQuestionSummaryStatusEnum_resolved =
 const ForecastQuestionSummaryStatusEnum
 _$forecastQuestionSummaryStatusEnum_annulled =
     const ForecastQuestionSummaryStatusEnum._('annulled');
+const ForecastQuestionSummaryStatusEnum
+_$forecastQuestionSummaryStatusEnum_unknownDefaultOpenApi =
+    const ForecastQuestionSummaryStatusEnum._('unknownDefaultOpenApi');
 
 ForecastQuestionSummaryStatusEnum _$forecastQuestionSummaryStatusEnumValueOf(
   String name,
@@ -71,8 +80,10 @@ ForecastQuestionSummaryStatusEnum _$forecastQuestionSummaryStatusEnumValueOf(
       return _$forecastQuestionSummaryStatusEnum_resolved;
     case 'annulled':
       return _$forecastQuestionSummaryStatusEnum_annulled;
+    case 'unknownDefaultOpenApi':
+      return _$forecastQuestionSummaryStatusEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$forecastQuestionSummaryStatusEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -84,6 +95,7 @@ _$forecastQuestionSummaryStatusEnumValues =
         _$forecastQuestionSummaryStatusEnum_closed,
         _$forecastQuestionSummaryStatusEnum_resolved,
         _$forecastQuestionSummaryStatusEnum_annulled,
+        _$forecastQuestionSummaryStatusEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -108,6 +120,9 @@ _$forecastQuestionSummaryResolverTypeEnum_hypothesisOutcome =
 const ForecastQuestionSummaryResolverTypeEnum
 _$forecastQuestionSummaryResolverTypeEnum_manual =
     const ForecastQuestionSummaryResolverTypeEnum._('manual');
+const ForecastQuestionSummaryResolverTypeEnum
+_$forecastQuestionSummaryResolverTypeEnum_unknownDefaultOpenApi =
+    const ForecastQuestionSummaryResolverTypeEnum._('unknownDefaultOpenApi');
 
 ForecastQuestionSummaryResolverTypeEnum
 _$forecastQuestionSummaryResolverTypeEnumValueOf(String name) {
@@ -126,8 +141,10 @@ _$forecastQuestionSummaryResolverTypeEnumValueOf(String name) {
       return _$forecastQuestionSummaryResolverTypeEnum_hypothesisOutcome;
     case 'manual':
       return _$forecastQuestionSummaryResolverTypeEnum_manual;
+    case 'unknownDefaultOpenApi':
+      return _$forecastQuestionSummaryResolverTypeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$forecastQuestionSummaryResolverTypeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -142,6 +159,7 @@ _$forecastQuestionSummaryResolverTypeEnumValues =
         _$forecastQuestionSummaryResolverTypeEnum_situationStatus,
         _$forecastQuestionSummaryResolverTypeEnum_hypothesisOutcome,
         _$forecastQuestionSummaryResolverTypeEnum_manual,
+        _$forecastQuestionSummaryResolverTypeEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -157,6 +175,9 @@ _$forecastQuestionSummaryOriginEnum_system =
 const ForecastQuestionSummaryOriginEnum
 _$forecastQuestionSummaryOriginEnum_analyst =
     const ForecastQuestionSummaryOriginEnum._('analyst');
+const ForecastQuestionSummaryOriginEnum
+_$forecastQuestionSummaryOriginEnum_unknownDefaultOpenApi =
+    const ForecastQuestionSummaryOriginEnum._('unknownDefaultOpenApi');
 
 ForecastQuestionSummaryOriginEnum _$forecastQuestionSummaryOriginEnumValueOf(
   String name,
@@ -170,8 +191,10 @@ ForecastQuestionSummaryOriginEnum _$forecastQuestionSummaryOriginEnumValueOf(
       return _$forecastQuestionSummaryOriginEnum_system;
     case 'analyst':
       return _$forecastQuestionSummaryOriginEnum_analyst;
+    case 'unknownDefaultOpenApi':
+      return _$forecastQuestionSummaryOriginEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$forecastQuestionSummaryOriginEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -183,6 +206,7 @@ _$forecastQuestionSummaryOriginEnumValues =
         _$forecastQuestionSummaryOriginEnum_agent,
         _$forecastQuestionSummaryOriginEnum_system,
         _$forecastQuestionSummaryOriginEnum_analyst,
+        _$forecastQuestionSummaryOriginEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -206,12 +230,14 @@ class _$ForecastQuestionSummaryTypeEnumSerializer
     'multiple': 'multiple',
     'ordered': 'ordered',
     'numeric': 'numeric',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'binary': 'binary',
     'multiple': 'multiple',
     'ordered': 'ordered',
     'numeric': 'numeric',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -243,12 +269,14 @@ class _$ForecastQuestionSummaryStatusEnumSerializer
     'closed': 'closed',
     'resolved': 'resolved',
     'annulled': 'annulled',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'open': 'open',
     'closed': 'closed',
     'resolved': 'resolved',
     'annulled': 'annulled',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -283,6 +311,7 @@ class _$ForecastQuestionSummaryResolverTypeEnumSerializer
     'situationStatus': 'situation-status',
     'hypothesisOutcome': 'hypothesis-outcome',
     'manual': 'manual',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'event-exists': 'eventExists',
@@ -292,6 +321,7 @@ class _$ForecastQuestionSummaryResolverTypeEnumSerializer
     'situation-status': 'situationStatus',
     'hypothesis-outcome': 'hypothesisOutcome',
     'manual': 'manual',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -325,12 +355,14 @@ class _$ForecastQuestionSummaryOriginEnumSerializer
     'agent': 'agent',
     'system': 'system',
     'analyst': 'analyst',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'operator': 'operator_',
     'agent': 'agent',
     'system': 'system',
     'analyst': 'analyst',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

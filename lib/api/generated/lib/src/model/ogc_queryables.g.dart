@@ -8,19 +8,24 @@ part of 'ogc_queryables.dart';
 
 const OgcQueryablesTypeEnum _$ogcQueryablesTypeEnum_object =
     const OgcQueryablesTypeEnum._('object');
+const OgcQueryablesTypeEnum _$ogcQueryablesTypeEnum_unknownDefaultOpenApi =
+    const OgcQueryablesTypeEnum._('unknownDefaultOpenApi');
 
 OgcQueryablesTypeEnum _$ogcQueryablesTypeEnumValueOf(String name) {
   switch (name) {
     case 'object':
       return _$ogcQueryablesTypeEnum_object;
+    case 'unknownDefaultOpenApi':
+      return _$ogcQueryablesTypeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$ogcQueryablesTypeEnum_unknownDefaultOpenApi;
   }
 }
 
 final BuiltSet<OgcQueryablesTypeEnum> _$ogcQueryablesTypeEnumValues =
     BuiltSet<OgcQueryablesTypeEnum>(const <OgcQueryablesTypeEnum>[
       _$ogcQueryablesTypeEnum_object,
+      _$ogcQueryablesTypeEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<OgcQueryablesTypeEnum> _$ogcQueryablesTypeEnumSerializer =
@@ -30,9 +35,11 @@ class _$OgcQueryablesTypeEnumSerializer
     implements PrimitiveSerializer<OgcQueryablesTypeEnum> {
   static const Map<String, Object> _toWire = const <String, Object>{
     'object': 'object',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'object': 'object',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

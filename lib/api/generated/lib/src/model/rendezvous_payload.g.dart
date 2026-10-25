@@ -15,6 +15,9 @@ const RendezvousPayloadStatusEnum _$rendezvousPayloadStatusEnum_noCoverage =
     const RendezvousPayloadStatusEnum._('noCoverage');
 const RendezvousPayloadStatusEnum _$rendezvousPayloadStatusEnum_degradedInput =
     const RendezvousPayloadStatusEnum._('degradedInput');
+const RendezvousPayloadStatusEnum
+_$rendezvousPayloadStatusEnum_unknownDefaultOpenApi =
+    const RendezvousPayloadStatusEnum._('unknownDefaultOpenApi');
 
 RendezvousPayloadStatusEnum _$rendezvousPayloadStatusEnumValueOf(String name) {
   switch (name) {
@@ -26,8 +29,10 @@ RendezvousPayloadStatusEnum _$rendezvousPayloadStatusEnumValueOf(String name) {
       return _$rendezvousPayloadStatusEnum_noCoverage;
     case 'degradedInput':
       return _$rendezvousPayloadStatusEnum_degradedInput;
+    case 'unknownDefaultOpenApi':
+      return _$rendezvousPayloadStatusEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$rendezvousPayloadStatusEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -38,6 +43,7 @@ _$rendezvousPayloadStatusEnumValues =
       _$rendezvousPayloadStatusEnum_insufficientData,
       _$rendezvousPayloadStatusEnum_noCoverage,
       _$rendezvousPayloadStatusEnum_degradedInput,
+      _$rendezvousPayloadStatusEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<RendezvousPayloadStatusEnum>
@@ -51,12 +57,14 @@ class _$RendezvousPayloadStatusEnumSerializer
     'insufficientData': 'insufficient-data',
     'noCoverage': 'no-coverage',
     'degradedInput': 'degraded-input',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'ok': 'ok',
     'insufficient-data': 'insufficientData',
     'no-coverage': 'noCoverage',
     'degraded-input': 'degradedInput',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

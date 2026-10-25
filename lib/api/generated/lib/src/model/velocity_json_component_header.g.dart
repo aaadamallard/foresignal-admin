@@ -9,24 +9,32 @@ part of 'velocity_json_component_header.dart';
 const VelocityJsonComponentHeaderParameterCategoryEnum
 _$velocityJsonComponentHeaderParameterCategoryEnum_number2 =
     const VelocityJsonComponentHeaderParameterCategoryEnum._('number2');
+const VelocityJsonComponentHeaderParameterCategoryEnum
+_$velocityJsonComponentHeaderParameterCategoryEnum_unknownDefaultOpenApi =
+    const VelocityJsonComponentHeaderParameterCategoryEnum._(
+      'unknownDefaultOpenApi',
+    );
 
 VelocityJsonComponentHeaderParameterCategoryEnum
 _$velocityJsonComponentHeaderParameterCategoryEnumValueOf(String name) {
   switch (name) {
     case 'number2':
       return _$velocityJsonComponentHeaderParameterCategoryEnum_number2;
+    case 'unknownDefaultOpenApi':
+      return _$velocityJsonComponentHeaderParameterCategoryEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$velocityJsonComponentHeaderParameterCategoryEnum_unknownDefaultOpenApi;
   }
 }
 
 final BuiltSet<VelocityJsonComponentHeaderParameterCategoryEnum>
 _$velocityJsonComponentHeaderParameterCategoryEnumValues =
-    BuiltSet<VelocityJsonComponentHeaderParameterCategoryEnum>(
-      const <VelocityJsonComponentHeaderParameterCategoryEnum>[
-        _$velocityJsonComponentHeaderParameterCategoryEnum_number2,
-      ],
-    );
+    BuiltSet<VelocityJsonComponentHeaderParameterCategoryEnum>(const <
+      VelocityJsonComponentHeaderParameterCategoryEnum
+    >[
+      _$velocityJsonComponentHeaderParameterCategoryEnum_number2,
+      _$velocityJsonComponentHeaderParameterCategoryEnum_unknownDefaultOpenApi,
+    ]);
 
 const VelocityJsonComponentHeaderParameterNumberEnum
 _$velocityJsonComponentHeaderParameterNumberEnum_number2 =
@@ -34,6 +42,11 @@ _$velocityJsonComponentHeaderParameterNumberEnum_number2 =
 const VelocityJsonComponentHeaderParameterNumberEnum
 _$velocityJsonComponentHeaderParameterNumberEnum_number3 =
     const VelocityJsonComponentHeaderParameterNumberEnum._('number3');
+const VelocityJsonComponentHeaderParameterNumberEnum
+_$velocityJsonComponentHeaderParameterNumberEnum_unknownDefaultOpenApi =
+    const VelocityJsonComponentHeaderParameterNumberEnum._(
+      'unknownDefaultOpenApi',
+    );
 
 VelocityJsonComponentHeaderParameterNumberEnum
 _$velocityJsonComponentHeaderParameterNumberEnumValueOf(String name) {
@@ -42,8 +55,10 @@ _$velocityJsonComponentHeaderParameterNumberEnumValueOf(String name) {
       return _$velocityJsonComponentHeaderParameterNumberEnum_number2;
     case 'number3':
       return _$velocityJsonComponentHeaderParameterNumberEnum_number3;
+    case 'unknownDefaultOpenApi':
+      return _$velocityJsonComponentHeaderParameterNumberEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$velocityJsonComponentHeaderParameterNumberEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -53,6 +68,7 @@ _$velocityJsonComponentHeaderParameterNumberEnumValues =
       const <VelocityJsonComponentHeaderParameterNumberEnum>[
         _$velocityJsonComponentHeaderParameterNumberEnum_number2,
         _$velocityJsonComponentHeaderParameterNumberEnum_number3,
+        _$velocityJsonComponentHeaderParameterNumberEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -68,9 +84,11 @@ class _$VelocityJsonComponentHeaderParameterCategoryEnumSerializer
         PrimitiveSerializer<VelocityJsonComponentHeaderParameterCategoryEnum> {
   static const Map<String, Object> _toWire = const <String, Object>{
     'number2': 2,
+    'unknownDefaultOpenApi': 11184809,
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     2: 'number2',
+    11184809: 'unknownDefaultOpenApi',
   };
 
   @override
@@ -103,10 +121,12 @@ class _$VelocityJsonComponentHeaderParameterNumberEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'number2': 2,
     'number3': 3,
+    'unknownDefaultOpenApi': 11184809,
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     2: 'number2',
     3: 'number3',
+    11184809: 'unknownDefaultOpenApi',
   };
 
   @override

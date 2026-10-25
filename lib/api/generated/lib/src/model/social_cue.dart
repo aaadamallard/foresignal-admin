@@ -468,6 +468,9 @@ class SocialCueBackendEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'xai-x-search')
   static const SocialCueBackendEnum xaiXSearch =
       _$socialCueBackendEnum_xaiXSearch;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const SocialCueBackendEnum unknownDefaultOpenApi =
+      _$socialCueBackendEnum_unknownDefaultOpenApi;
 
   static Serializer<SocialCueBackendEnum> get serializer =>
       _$socialCueBackendEnumSerializer;
@@ -492,6 +495,9 @@ class SocialCueStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'budget-refused')
   static const SocialCueStatusEnum budgetRefused =
       _$socialCueStatusEnum_budgetRefused;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const SocialCueStatusEnum unknownDefaultOpenApi =
+      _$socialCueStatusEnum_unknownDefaultOpenApi;
 
   static Serializer<SocialCueStatusEnum> get serializer =>
       _$socialCueStatusEnumSerializer;

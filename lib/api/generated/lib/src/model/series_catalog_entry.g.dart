@@ -24,6 +24,9 @@ const SeriesCatalogEntryFrequencyEnum _$seriesCatalogEntryFrequencyEnum_P3M =
     const SeriesCatalogEntryFrequencyEnum._('P3M');
 const SeriesCatalogEntryFrequencyEnum _$seriesCatalogEntryFrequencyEnum_P1Y =
     const SeriesCatalogEntryFrequencyEnum._('P1Y');
+const SeriesCatalogEntryFrequencyEnum
+_$seriesCatalogEntryFrequencyEnum_unknownDefaultOpenApi =
+    const SeriesCatalogEntryFrequencyEnum._('unknownDefaultOpenApi');
 
 SeriesCatalogEntryFrequencyEnum _$seriesCatalogEntryFrequencyEnumValueOf(
   String name,
@@ -47,8 +50,10 @@ SeriesCatalogEntryFrequencyEnum _$seriesCatalogEntryFrequencyEnumValueOf(
       return _$seriesCatalogEntryFrequencyEnum_P3M;
     case 'P1Y':
       return _$seriesCatalogEntryFrequencyEnum_P1Y;
+    case 'unknownDefaultOpenApi':
+      return _$seriesCatalogEntryFrequencyEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$seriesCatalogEntryFrequencyEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -65,6 +70,7 @@ _$seriesCatalogEntryFrequencyEnumValues =
         _$seriesCatalogEntryFrequencyEnum_P1M,
         _$seriesCatalogEntryFrequencyEnum_P3M,
         _$seriesCatalogEntryFrequencyEnum_P1Y,
+        _$seriesCatalogEntryFrequencyEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -76,6 +82,9 @@ const SeriesCatalogEntryStatusEnum _$seriesCatalogEntryStatusEnum_estimated =
     const SeriesCatalogEntryStatusEnum._('estimated');
 const SeriesCatalogEntryStatusEnum _$seriesCatalogEntryStatusEnum_forecast =
     const SeriesCatalogEntryStatusEnum._('forecast');
+const SeriesCatalogEntryStatusEnum
+_$seriesCatalogEntryStatusEnum_unknownDefaultOpenApi =
+    const SeriesCatalogEntryStatusEnum._('unknownDefaultOpenApi');
 
 SeriesCatalogEntryStatusEnum _$seriesCatalogEntryStatusEnumValueOf(
   String name,
@@ -89,8 +98,10 @@ SeriesCatalogEntryStatusEnum _$seriesCatalogEntryStatusEnumValueOf(
       return _$seriesCatalogEntryStatusEnum_estimated;
     case 'forecast':
       return _$seriesCatalogEntryStatusEnum_forecast;
+    case 'unknownDefaultOpenApi':
+      return _$seriesCatalogEntryStatusEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$seriesCatalogEntryStatusEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -101,6 +112,7 @@ _$seriesCatalogEntryStatusEnumValues =
       _$seriesCatalogEntryStatusEnum_preliminary,
       _$seriesCatalogEntryStatusEnum_estimated,
       _$seriesCatalogEntryStatusEnum_forecast,
+      _$seriesCatalogEntryStatusEnum_unknownDefaultOpenApi,
     ]);
 
 const SeriesCatalogEntryFamilyEnum _$seriesCatalogEntryFamilyEnum_price =
@@ -123,6 +135,9 @@ const SeriesCatalogEntryFamilyEnum _$seriesCatalogEntryFamilyEnum_index =
     const SeriesCatalogEntryFamilyEnum._('index');
 const SeriesCatalogEntryFamilyEnum _$seriesCatalogEntryFamilyEnum_structural =
     const SeriesCatalogEntryFamilyEnum._('structural');
+const SeriesCatalogEntryFamilyEnum
+_$seriesCatalogEntryFamilyEnum_unknownDefaultOpenApi =
+    const SeriesCatalogEntryFamilyEnum._('unknownDefaultOpenApi');
 
 SeriesCatalogEntryFamilyEnum _$seriesCatalogEntryFamilyEnumValueOf(
   String name,
@@ -148,8 +163,10 @@ SeriesCatalogEntryFamilyEnum _$seriesCatalogEntryFamilyEnumValueOf(
       return _$seriesCatalogEntryFamilyEnum_index;
     case 'structural':
       return _$seriesCatalogEntryFamilyEnum_structural;
+    case 'unknownDefaultOpenApi':
+      return _$seriesCatalogEntryFamilyEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$seriesCatalogEntryFamilyEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -166,6 +183,7 @@ _$seriesCatalogEntryFamilyEnumValues =
       _$seriesCatalogEntryFamilyEnum_count,
       _$seriesCatalogEntryFamilyEnum_index,
       _$seriesCatalogEntryFamilyEnum_structural,
+      _$seriesCatalogEntryFamilyEnum_unknownDefaultOpenApi,
     ]);
 
 const SeriesCatalogEntryTransformEnum
@@ -179,6 +197,9 @@ _$seriesCatalogEntryTransformEnum_difference =
     const SeriesCatalogEntryTransformEnum._('difference');
 const SeriesCatalogEntryTransformEnum _$seriesCatalogEntryTransformEnum_level =
     const SeriesCatalogEntryTransformEnum._('level');
+const SeriesCatalogEntryTransformEnum
+_$seriesCatalogEntryTransformEnum_unknownDefaultOpenApi =
+    const SeriesCatalogEntryTransformEnum._('unknownDefaultOpenApi');
 
 SeriesCatalogEntryTransformEnum _$seriesCatalogEntryTransformEnumValueOf(
   String name,
@@ -192,8 +213,10 @@ SeriesCatalogEntryTransformEnum _$seriesCatalogEntryTransformEnumValueOf(
       return _$seriesCatalogEntryTransformEnum_difference;
     case 'level':
       return _$seriesCatalogEntryTransformEnum_level;
+    case 'unknownDefaultOpenApi':
+      return _$seriesCatalogEntryTransformEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$seriesCatalogEntryTransformEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -205,6 +228,7 @@ _$seriesCatalogEntryTransformEnumValues =
         _$seriesCatalogEntryTransformEnum_logLevel,
         _$seriesCatalogEntryTransformEnum_difference,
         _$seriesCatalogEntryTransformEnum_level,
+        _$seriesCatalogEntryTransformEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -212,6 +236,9 @@ const SeriesCatalogEntryEgressEnum _$seriesCatalogEntryEgressEnum_OPEN =
     const SeriesCatalogEntryEgressEnum._('OPEN');
 const SeriesCatalogEntryEgressEnum _$seriesCatalogEntryEgressEnum_LOCAL_ONLY =
     const SeriesCatalogEntryEgressEnum._('LOCAL_ONLY');
+const SeriesCatalogEntryEgressEnum
+_$seriesCatalogEntryEgressEnum_unknownDefaultOpenApi =
+    const SeriesCatalogEntryEgressEnum._('unknownDefaultOpenApi');
 
 SeriesCatalogEntryEgressEnum _$seriesCatalogEntryEgressEnumValueOf(
   String name,
@@ -221,18 +248,20 @@ SeriesCatalogEntryEgressEnum _$seriesCatalogEntryEgressEnumValueOf(
       return _$seriesCatalogEntryEgressEnum_OPEN;
     case 'LOCAL_ONLY':
       return _$seriesCatalogEntryEgressEnum_LOCAL_ONLY;
+    case 'unknownDefaultOpenApi':
+      return _$seriesCatalogEntryEgressEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$seriesCatalogEntryEgressEnum_unknownDefaultOpenApi;
   }
 }
 
 final BuiltSet<SeriesCatalogEntryEgressEnum>
-_$seriesCatalogEntryEgressEnumValues = BuiltSet<SeriesCatalogEntryEgressEnum>(
-  const <SeriesCatalogEntryEgressEnum>[
-    _$seriesCatalogEntryEgressEnum_OPEN,
-    _$seriesCatalogEntryEgressEnum_LOCAL_ONLY,
-  ],
-);
+_$seriesCatalogEntryEgressEnumValues =
+    BuiltSet<SeriesCatalogEntryEgressEnum>(const <SeriesCatalogEntryEgressEnum>[
+      _$seriesCatalogEntryEgressEnum_OPEN,
+      _$seriesCatalogEntryEgressEnum_LOCAL_ONLY,
+      _$seriesCatalogEntryEgressEnum_unknownDefaultOpenApi,
+    ]);
 
 Serializer<SeriesCatalogEntryFrequencyEnum>
 _$seriesCatalogEntryFrequencyEnumSerializer =
@@ -262,6 +291,7 @@ class _$SeriesCatalogEntryFrequencyEnumSerializer
     'P1M': 'P1M',
     'P3M': 'P3M',
     'P1Y': 'P1Y',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'PT15S': 'PT15S',
@@ -273,6 +303,7 @@ class _$SeriesCatalogEntryFrequencyEnumSerializer
     'P1M': 'P1M',
     'P3M': 'P3M',
     'P1Y': 'P1Y',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -304,12 +335,14 @@ class _$SeriesCatalogEntryStatusEnumSerializer
     'preliminary': 'preliminary',
     'estimated': 'estimated',
     'forecast': 'forecast',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'final': 'final_',
     'preliminary': 'preliminary',
     'estimated': 'estimated',
     'forecast': 'forecast',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -347,6 +380,7 @@ class _$SeriesCatalogEntryFamilyEnumSerializer
     'count': 'count',
     'index': 'index',
     'structural': 'structural',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'price': 'price',
@@ -359,6 +393,7 @@ class _$SeriesCatalogEntryFamilyEnumSerializer
     'count': 'count',
     'index': 'index',
     'structural': 'structural',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -390,12 +425,14 @@ class _$SeriesCatalogEntryTransformEnumSerializer
     'logLevel': 'log-level',
     'difference': 'difference',
     'level': 'level',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'log-return': 'logReturn',
     'log-level': 'logLevel',
     'difference': 'difference',
     'level': 'level',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -425,10 +462,12 @@ class _$SeriesCatalogEntryEgressEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'OPEN': 'OPEN',
     'LOCAL_ONLY': 'LOCAL_ONLY',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'OPEN': 'OPEN',
     'LOCAL_ONLY': 'LOCAL_ONLY',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

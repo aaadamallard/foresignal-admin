@@ -178,6 +178,9 @@ class ReportSendRecipientsInnerStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'failed')
   static const ReportSendRecipientsInnerStatusEnum failed =
       _$reportSendRecipientsInnerStatusEnum_failed;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ReportSendRecipientsInnerStatusEnum unknownDefaultOpenApi =
+      _$reportSendRecipientsInnerStatusEnum_unknownDefaultOpenApi;
 
   static Serializer<ReportSendRecipientsInnerStatusEnum> get serializer =>
       _$reportSendRecipientsInnerStatusEnumSerializer;

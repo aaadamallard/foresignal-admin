@@ -8,19 +8,24 @@ part of 'edp_event_item.dart';
 
 const EdpEventItemTypeEnum _$edpEventItemTypeEnum_event =
     const EdpEventItemTypeEnum._('event');
+const EdpEventItemTypeEnum _$edpEventItemTypeEnum_unknownDefaultOpenApi =
+    const EdpEventItemTypeEnum._('unknownDefaultOpenApi');
 
 EdpEventItemTypeEnum _$edpEventItemTypeEnumValueOf(String name) {
   switch (name) {
     case 'event':
       return _$edpEventItemTypeEnum_event;
+    case 'unknownDefaultOpenApi':
+      return _$edpEventItemTypeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$edpEventItemTypeEnum_unknownDefaultOpenApi;
   }
 }
 
 final BuiltSet<EdpEventItemTypeEnum> _$edpEventItemTypeEnumValues =
     BuiltSet<EdpEventItemTypeEnum>(const <EdpEventItemTypeEnum>[
       _$edpEventItemTypeEnum_event,
+      _$edpEventItemTypeEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<EdpEventItemTypeEnum> _$edpEventItemTypeEnumSerializer =
@@ -30,9 +35,11 @@ class _$EdpEventItemTypeEnumSerializer
     implements PrimitiveSerializer<EdpEventItemTypeEnum> {
   static const Map<String, Object> _toWire = const <String, Object>{
     'event': 'event',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'event': 'event',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

@@ -14,6 +14,8 @@ const SavedViewTimeFieldEnum _$savedViewTimeFieldEnum_event =
     const SavedViewTimeFieldEnum._('event');
 const SavedViewTimeFieldEnum _$savedViewTimeFieldEnum_ingested =
     const SavedViewTimeFieldEnum._('ingested');
+const SavedViewTimeFieldEnum _$savedViewTimeFieldEnum_unknownDefaultOpenApi =
+    const SavedViewTimeFieldEnum._('unknownDefaultOpenApi');
 
 SavedViewTimeFieldEnum _$savedViewTimeFieldEnumValueOf(String name) {
   switch (name) {
@@ -25,8 +27,10 @@ SavedViewTimeFieldEnum _$savedViewTimeFieldEnumValueOf(String name) {
       return _$savedViewTimeFieldEnum_event;
     case 'ingested':
       return _$savedViewTimeFieldEnum_ingested;
+    case 'unknownDefaultOpenApi':
+      return _$savedViewTimeFieldEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$savedViewTimeFieldEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -36,6 +40,7 @@ final BuiltSet<SavedViewTimeFieldEnum> _$savedViewTimeFieldEnumValues =
       _$savedViewTimeFieldEnum_observed,
       _$savedViewTimeFieldEnum_event,
       _$savedViewTimeFieldEnum_ingested,
+      _$savedViewTimeFieldEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<SavedViewTimeFieldEnum> _$savedViewTimeFieldEnumSerializer =
@@ -48,12 +53,14 @@ class _$SavedViewTimeFieldEnumSerializer
     'observed': 'observed',
     'event': 'event',
     'ingested': 'ingested',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'effective': 'effective',
     'observed': 'observed',
     'event': 'event',
     'ingested': 'ingested',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

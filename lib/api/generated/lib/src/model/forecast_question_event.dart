@@ -172,6 +172,9 @@ class ForecastQuestionEventEventEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'question.annulled')
   static const ForecastQuestionEventEventEnum questionPeriodAnnulled =
       _$forecastQuestionEventEventEnum_questionPeriodAnnulled;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ForecastQuestionEventEventEnum unknownDefaultOpenApi =
+      _$forecastQuestionEventEventEnum_unknownDefaultOpenApi;
 
   static Serializer<ForecastQuestionEventEventEnum> get serializer =>
       _$forecastQuestionEventEventEnumSerializer;

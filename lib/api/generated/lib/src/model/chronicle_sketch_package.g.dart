@@ -18,6 +18,9 @@ _$chronicleSketchPackageKeyTypesEnum_areaTime =
 const ChronicleSketchPackageKeyTypesEnum
 _$chronicleSketchPackageKeyTypesEnum_topics =
     const ChronicleSketchPackageKeyTypesEnum._('topics');
+const ChronicleSketchPackageKeyTypesEnum
+_$chronicleSketchPackageKeyTypesEnum_unknownDefaultOpenApi =
+    const ChronicleSketchPackageKeyTypesEnum._('unknownDefaultOpenApi');
 
 ChronicleSketchPackageKeyTypesEnum _$chronicleSketchPackageKeyTypesEnumValueOf(
   String name,
@@ -31,8 +34,10 @@ ChronicleSketchPackageKeyTypesEnum _$chronicleSketchPackageKeyTypesEnumValueOf(
       return _$chronicleSketchPackageKeyTypesEnum_areaTime;
     case 'topics':
       return _$chronicleSketchPackageKeyTypesEnum_topics;
+    case 'unknownDefaultOpenApi':
+      return _$chronicleSketchPackageKeyTypesEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$chronicleSketchPackageKeyTypesEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -44,6 +49,7 @@ _$chronicleSketchPackageKeyTypesEnumValues =
         _$chronicleSketchPackageKeyTypesEnum_entities,
         _$chronicleSketchPackageKeyTypesEnum_areaTime,
         _$chronicleSketchPackageKeyTypesEnum_topics,
+        _$chronicleSketchPackageKeyTypesEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -58,12 +64,14 @@ class _$ChronicleSketchPackageKeyTypesEnumSerializer
     'entities': 'entities',
     'areaTime': 'area-time',
     'topics': 'topics',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'evidence': 'evidence',
     'entities': 'entities',
     'area-time': 'areaTime',
     'topics': 'topics',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

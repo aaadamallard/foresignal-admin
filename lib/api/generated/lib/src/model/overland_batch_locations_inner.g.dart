@@ -9,14 +9,19 @@ part of 'overland_batch_locations_inner.dart';
 const OverlandBatchLocationsInnerTypeEnum
 _$overlandBatchLocationsInnerTypeEnum_feature =
     const OverlandBatchLocationsInnerTypeEnum._('feature');
+const OverlandBatchLocationsInnerTypeEnum
+_$overlandBatchLocationsInnerTypeEnum_unknownDefaultOpenApi =
+    const OverlandBatchLocationsInnerTypeEnum._('unknownDefaultOpenApi');
 
 OverlandBatchLocationsInnerTypeEnum
 _$overlandBatchLocationsInnerTypeEnumValueOf(String name) {
   switch (name) {
     case 'feature':
       return _$overlandBatchLocationsInnerTypeEnum_feature;
+    case 'unknownDefaultOpenApi':
+      return _$overlandBatchLocationsInnerTypeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$overlandBatchLocationsInnerTypeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -25,6 +30,7 @@ _$overlandBatchLocationsInnerTypeEnumValues =
     BuiltSet<OverlandBatchLocationsInnerTypeEnum>(
       const <OverlandBatchLocationsInnerTypeEnum>[
         _$overlandBatchLocationsInnerTypeEnum_feature,
+        _$overlandBatchLocationsInnerTypeEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -36,9 +42,11 @@ class _$OverlandBatchLocationsInnerTypeEnumSerializer
     implements PrimitiveSerializer<OverlandBatchLocationsInnerTypeEnum> {
   static const Map<String, Object> _toWire = const <String, Object>{
     'feature': 'Feature',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'Feature': 'feature',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

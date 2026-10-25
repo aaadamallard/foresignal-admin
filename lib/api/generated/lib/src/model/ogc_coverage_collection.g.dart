@@ -9,6 +9,9 @@ part of 'ogc_coverage_collection.dart';
 const OgcCoverageCollectionItemTypeEnum
 _$ogcCoverageCollectionItemTypeEnum_coverage =
     const OgcCoverageCollectionItemTypeEnum._('coverage');
+const OgcCoverageCollectionItemTypeEnum
+_$ogcCoverageCollectionItemTypeEnum_unknownDefaultOpenApi =
+    const OgcCoverageCollectionItemTypeEnum._('unknownDefaultOpenApi');
 
 OgcCoverageCollectionItemTypeEnum _$ogcCoverageCollectionItemTypeEnumValueOf(
   String name,
@@ -16,8 +19,10 @@ OgcCoverageCollectionItemTypeEnum _$ogcCoverageCollectionItemTypeEnumValueOf(
   switch (name) {
     case 'coverage':
       return _$ogcCoverageCollectionItemTypeEnum_coverage;
+    case 'unknownDefaultOpenApi':
+      return _$ogcCoverageCollectionItemTypeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$ogcCoverageCollectionItemTypeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -26,6 +31,7 @@ _$ogcCoverageCollectionItemTypeEnumValues =
     BuiltSet<OgcCoverageCollectionItemTypeEnum>(
       const <OgcCoverageCollectionItemTypeEnum>[
         _$ogcCoverageCollectionItemTypeEnum_coverage,
+        _$ogcCoverageCollectionItemTypeEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -37,9 +43,11 @@ class _$OgcCoverageCollectionItemTypeEnumSerializer
     implements PrimitiveSerializer<OgcCoverageCollectionItemTypeEnum> {
   static const Map<String, Object> _toWire = const <String, Object>{
     'coverage': 'coverage',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'coverage': 'coverage',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

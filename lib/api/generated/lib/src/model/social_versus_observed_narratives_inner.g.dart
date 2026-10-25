@@ -29,6 +29,11 @@ _$socialVersusObservedNarrativesInnerStatusEnum_insufficientCoverage =
     const SocialVersusObservedNarrativesInnerStatusEnum._(
       'insufficientCoverage',
     );
+const SocialVersusObservedNarrativesInnerStatusEnum
+_$socialVersusObservedNarrativesInnerStatusEnum_unknownDefaultOpenApi =
+    const SocialVersusObservedNarrativesInnerStatusEnum._(
+      'unknownDefaultOpenApi',
+    );
 
 SocialVersusObservedNarrativesInnerStatusEnum
 _$socialVersusObservedNarrativesInnerStatusEnumValueOf(String name) {
@@ -47,8 +52,10 @@ _$socialVersusObservedNarrativesInnerStatusEnumValueOf(String name) {
       return _$socialVersusObservedNarrativesInnerStatusEnum_mixed;
     case 'insufficientCoverage':
       return _$socialVersusObservedNarrativesInnerStatusEnum_insufficientCoverage;
+    case 'unknownDefaultOpenApi':
+      return _$socialVersusObservedNarrativesInnerStatusEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$socialVersusObservedNarrativesInnerStatusEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -63,6 +70,7 @@ _$socialVersusObservedNarrativesInnerStatusEnumValues =
         _$socialVersusObservedNarrativesInnerStatusEnum_contradicted,
         _$socialVersusObservedNarrativesInnerStatusEnum_mixed,
         _$socialVersusObservedNarrativesInnerStatusEnum_insufficientCoverage,
+        _$socialVersusObservedNarrativesInnerStatusEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -81,6 +89,7 @@ class _$SocialVersusObservedNarrativesInnerStatusEnumSerializer
     'contradicted': 'contradicted',
     'mixed': 'mixed',
     'insufficientCoverage': 'insufficient-coverage',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'unassessed': 'unassessed',
@@ -90,6 +99,7 @@ class _$SocialVersusObservedNarrativesInnerStatusEnumSerializer
     'contradicted': 'contradicted',
     'mixed': 'mixed',
     'insufficient-coverage': 'insufficientCoverage',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

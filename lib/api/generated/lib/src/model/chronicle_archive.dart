@@ -214,6 +214,9 @@ class ChronicleArchiveStateEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'failed')
   static const ChronicleArchiveStateEnum failed =
       _$chronicleArchiveStateEnum_failed;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ChronicleArchiveStateEnum unknownDefaultOpenApi =
+      _$chronicleArchiveStateEnum_unknownDefaultOpenApi;
 
   static Serializer<ChronicleArchiveStateEnum> get serializer =>
       _$chronicleArchiveStateEnumSerializer;

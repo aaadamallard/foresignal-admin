@@ -15,6 +15,9 @@ _$systemInfoWarningsInnerSeverityEnum_warning =
 const SystemInfoWarningsInnerSeverityEnum
 _$systemInfoWarningsInnerSeverityEnum_critical =
     const SystemInfoWarningsInnerSeverityEnum._('critical');
+const SystemInfoWarningsInnerSeverityEnum
+_$systemInfoWarningsInnerSeverityEnum_unknownDefaultOpenApi =
+    const SystemInfoWarningsInnerSeverityEnum._('unknownDefaultOpenApi');
 
 SystemInfoWarningsInnerSeverityEnum
 _$systemInfoWarningsInnerSeverityEnumValueOf(String name) {
@@ -25,8 +28,10 @@ _$systemInfoWarningsInnerSeverityEnumValueOf(String name) {
       return _$systemInfoWarningsInnerSeverityEnum_warning;
     case 'critical':
       return _$systemInfoWarningsInnerSeverityEnum_critical;
+    case 'unknownDefaultOpenApi':
+      return _$systemInfoWarningsInnerSeverityEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$systemInfoWarningsInnerSeverityEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -37,6 +42,7 @@ _$systemInfoWarningsInnerSeverityEnumValues =
         _$systemInfoWarningsInnerSeverityEnum_info,
         _$systemInfoWarningsInnerSeverityEnum_warning,
         _$systemInfoWarningsInnerSeverityEnum_critical,
+        _$systemInfoWarningsInnerSeverityEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -50,11 +56,13 @@ class _$SystemInfoWarningsInnerSeverityEnumSerializer
     'info': 'info',
     'warning': 'warning',
     'critical': 'critical',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'info': 'info',
     'warning': 'warning',
     'critical': 'critical',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

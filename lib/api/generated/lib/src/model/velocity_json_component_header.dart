@@ -283,6 +283,10 @@ class VelocityJsonComponentHeaderParameterCategoryEnum extends EnumClass {
   @BuiltValueEnumConst(wireNumber: 2)
   static const VelocityJsonComponentHeaderParameterCategoryEnum number2 =
       _$velocityJsonComponentHeaderParameterCategoryEnum_number2;
+  @BuiltValueEnumConst(wireNumber: 11184809, fallback: true)
+  static const VelocityJsonComponentHeaderParameterCategoryEnum
+  unknownDefaultOpenApi =
+      _$velocityJsonComponentHeaderParameterCategoryEnum_unknownDefaultOpenApi;
 
   static Serializer<VelocityJsonComponentHeaderParameterCategoryEnum>
   get serializer =>
@@ -306,6 +310,10 @@ class VelocityJsonComponentHeaderParameterNumberEnum extends EnumClass {
   @BuiltValueEnumConst(wireNumber: 3)
   static const VelocityJsonComponentHeaderParameterNumberEnum number3 =
       _$velocityJsonComponentHeaderParameterNumberEnum_number3;
+  @BuiltValueEnumConst(wireNumber: 11184809, fallback: true)
+  static const VelocityJsonComponentHeaderParameterNumberEnum
+  unknownDefaultOpenApi =
+      _$velocityJsonComponentHeaderParameterNumberEnum_unknownDefaultOpenApi;
 
   static Serializer<VelocityJsonComponentHeaderParameterNumberEnum>
   get serializer => _$velocityJsonComponentHeaderParameterNumberEnumSerializer;

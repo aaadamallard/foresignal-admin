@@ -229,6 +229,9 @@ class SituationJoinReasonMethodEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'analyst')
   static const SituationJoinReasonMethodEnum analyst =
       _$situationJoinReasonMethodEnum_analyst;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const SituationJoinReasonMethodEnum unknownDefaultOpenApi =
+      _$situationJoinReasonMethodEnum_unknownDefaultOpenApi;
 
   static Serializer<SituationJoinReasonMethodEnum> get serializer =>
       _$situationJoinReasonMethodEnumSerializer;

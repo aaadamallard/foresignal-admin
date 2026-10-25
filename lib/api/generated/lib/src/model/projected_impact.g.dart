@@ -10,6 +10,9 @@ const ProjectedImpactStatusEnum _$projectedImpactStatusEnum_active =
     const ProjectedImpactStatusEnum._('active');
 const ProjectedImpactStatusEnum _$projectedImpactStatusEnum_superseded =
     const ProjectedImpactStatusEnum._('superseded');
+const ProjectedImpactStatusEnum
+_$projectedImpactStatusEnum_unknownDefaultOpenApi =
+    const ProjectedImpactStatusEnum._('unknownDefaultOpenApi');
 
 ProjectedImpactStatusEnum _$projectedImpactStatusEnumValueOf(String name) {
   switch (name) {
@@ -17,8 +20,10 @@ ProjectedImpactStatusEnum _$projectedImpactStatusEnumValueOf(String name) {
       return _$projectedImpactStatusEnum_active;
     case 'superseded':
       return _$projectedImpactStatusEnum_superseded;
+    case 'unknownDefaultOpenApi':
+      return _$projectedImpactStatusEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$projectedImpactStatusEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -26,6 +31,7 @@ final BuiltSet<ProjectedImpactStatusEnum> _$projectedImpactStatusEnumValues =
     BuiltSet<ProjectedImpactStatusEnum>(const <ProjectedImpactStatusEnum>[
       _$projectedImpactStatusEnum_active,
       _$projectedImpactStatusEnum_superseded,
+      _$projectedImpactStatusEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<ProjectedImpactStatusEnum> _$projectedImpactStatusEnumSerializer =
@@ -36,10 +42,12 @@ class _$ProjectedImpactStatusEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'active': 'active',
     'superseded': 'superseded',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'active': 'active',
     'superseded': 'superseded',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

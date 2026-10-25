@@ -690,6 +690,9 @@ class TileJsonTilejsonEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'3.0.0')
   static const TileJsonTilejsonEnum n3period0Period0 =
       _$tileJsonTilejsonEnum_n3period0Period0;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const TileJsonTilejsonEnum unknownDefaultOpenApi =
+      _$tileJsonTilejsonEnum_unknownDefaultOpenApi;
 
   static Serializer<TileJsonTilejsonEnum> get serializer =>
       _$tileJsonTilejsonEnumSerializer;
@@ -705,6 +708,9 @@ class TileJsonTilejsonEnum extends EnumClass {
 class TileJsonSchemeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'xyz')
   static const TileJsonSchemeEnum xyz = _$tileJsonSchemeEnum_xyz;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const TileJsonSchemeEnum unknownDefaultOpenApi =
+      _$tileJsonSchemeEnum_unknownDefaultOpenApi;
 
   static Serializer<TileJsonSchemeEnum> get serializer =>
       _$tileJsonSchemeEnumSerializer;
@@ -724,6 +730,9 @@ class TileJsonTileSizeEnum extends EnumClass {
   @BuiltValueEnumConst(wireNumber: 512)
   static const TileJsonTileSizeEnum number512 =
       _$tileJsonTileSizeEnum_number512;
+  @BuiltValueEnumConst(wireNumber: 11184809, fallback: true)
+  static const TileJsonTileSizeEnum unknownDefaultOpenApi =
+      _$tileJsonTileSizeEnum_unknownDefaultOpenApi;
 
   static Serializer<TileJsonTileSizeEnum> get serializer =>
       _$tileJsonTileSizeEnumSerializer;
@@ -743,6 +752,9 @@ class TileJsonTmsEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'WorldCRS84Quad')
   static const TileJsonTmsEnum worldCRS84Quad =
       _$tileJsonTmsEnum_worldCRS84Quad;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const TileJsonTmsEnum unknownDefaultOpenApi =
+      _$tileJsonTmsEnum_unknownDefaultOpenApi;
 
   static Serializer<TileJsonTmsEnum> get serializer =>
       _$tileJsonTmsEnumSerializer;
@@ -760,6 +772,9 @@ class TileJsonEncodingEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'terrarium')
   static const TileJsonEncodingEnum terrarium =
       _$tileJsonEncodingEnum_terrarium;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const TileJsonEncodingEnum unknownDefaultOpenApi =
+      _$tileJsonEncodingEnum_unknownDefaultOpenApi;
 
   static Serializer<TileJsonEncodingEnum> get serializer =>
       _$tileJsonEncodingEnumSerializer;

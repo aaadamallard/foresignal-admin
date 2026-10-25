@@ -321,6 +321,9 @@ class AnomalyRecordPayloadStateEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'learning')
   static const AnomalyRecordPayloadStateEnum learning =
       _$anomalyRecordPayloadStateEnum_learning;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const AnomalyRecordPayloadStateEnum unknownDefaultOpenApi =
+      _$anomalyRecordPayloadStateEnum_unknownDefaultOpenApi;
 
   static Serializer<AnomalyRecordPayloadStateEnum> get serializer =>
       _$anomalyRecordPayloadStateEnumSerializer;
@@ -352,6 +355,9 @@ class AnomalyRecordPayloadClassificationEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'normal')
   static const AnomalyRecordPayloadClassificationEnum normal =
       _$anomalyRecordPayloadClassificationEnum_normal;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const AnomalyRecordPayloadClassificationEnum unknownDefaultOpenApi =
+      _$anomalyRecordPayloadClassificationEnum_unknownDefaultOpenApi;
 
   static Serializer<AnomalyRecordPayloadClassificationEnum> get serializer =>
       _$anomalyRecordPayloadClassificationEnumSerializer;

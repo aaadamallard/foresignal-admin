@@ -15,6 +15,11 @@ _$intelBoardLatestAssessmentsInnerCadenceEnum_weekly =
 const IntelBoardLatestAssessmentsInnerCadenceEnum
 _$intelBoardLatestAssessmentsInnerCadenceEnum_monthly =
     const IntelBoardLatestAssessmentsInnerCadenceEnum._('monthly');
+const IntelBoardLatestAssessmentsInnerCadenceEnum
+_$intelBoardLatestAssessmentsInnerCadenceEnum_unknownDefaultOpenApi =
+    const IntelBoardLatestAssessmentsInnerCadenceEnum._(
+      'unknownDefaultOpenApi',
+    );
 
 IntelBoardLatestAssessmentsInnerCadenceEnum
 _$intelBoardLatestAssessmentsInnerCadenceEnumValueOf(String name) {
@@ -25,8 +30,10 @@ _$intelBoardLatestAssessmentsInnerCadenceEnumValueOf(String name) {
       return _$intelBoardLatestAssessmentsInnerCadenceEnum_weekly;
     case 'monthly':
       return _$intelBoardLatestAssessmentsInnerCadenceEnum_monthly;
+    case 'unknownDefaultOpenApi':
+      return _$intelBoardLatestAssessmentsInnerCadenceEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$intelBoardLatestAssessmentsInnerCadenceEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -37,6 +44,7 @@ _$intelBoardLatestAssessmentsInnerCadenceEnumValues =
         _$intelBoardLatestAssessmentsInnerCadenceEnum_daily,
         _$intelBoardLatestAssessmentsInnerCadenceEnum_weekly,
         _$intelBoardLatestAssessmentsInnerCadenceEnum_monthly,
+        _$intelBoardLatestAssessmentsInnerCadenceEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -51,11 +59,13 @@ class _$IntelBoardLatestAssessmentsInnerCadenceEnumSerializer
     'daily': 'daily',
     'weekly': 'weekly',
     'monthly': 'monthly',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'daily': 'daily',
     'weekly': 'weekly',
     'monthly': 'monthly',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

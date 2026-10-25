@@ -201,6 +201,9 @@ class IntelligenceEventSpeculationLabelEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'speculation')
   static const IntelligenceEventSpeculationLabelEnum speculation =
       _$intelligenceEventSpeculationLabelEnum_speculation;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const IntelligenceEventSpeculationLabelEnum unknownDefaultOpenApi =
+      _$intelligenceEventSpeculationLabelEnum_unknownDefaultOpenApi;
 
   static Serializer<IntelligenceEventSpeculationLabelEnum> get serializer =>
       _$intelligenceEventSpeculationLabelEnumSerializer;
@@ -217,6 +220,10 @@ class IntelligenceEventSpeculationNarrativeOriginEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'llm')
   static const IntelligenceEventSpeculationNarrativeOriginEnum llm =
       _$intelligenceEventSpeculationNarrativeOriginEnum_llm;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const IntelligenceEventSpeculationNarrativeOriginEnum
+  unknownDefaultOpenApi =
+      _$intelligenceEventSpeculationNarrativeOriginEnum_unknownDefaultOpenApi;
 
   static Serializer<IntelligenceEventSpeculationNarrativeOriginEnum>
   get serializer => _$intelligenceEventSpeculationNarrativeOriginEnumSerializer;

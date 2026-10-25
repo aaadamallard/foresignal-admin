@@ -15,6 +15,9 @@ _$streamNotifications200ResponseSeverityEnum_warning =
 const StreamNotifications200ResponseSeverityEnum
 _$streamNotifications200ResponseSeverityEnum_critical =
     const StreamNotifications200ResponseSeverityEnum._('critical');
+const StreamNotifications200ResponseSeverityEnum
+_$streamNotifications200ResponseSeverityEnum_unknownDefaultOpenApi =
+    const StreamNotifications200ResponseSeverityEnum._('unknownDefaultOpenApi');
 
 StreamNotifications200ResponseSeverityEnum
 _$streamNotifications200ResponseSeverityEnumValueOf(String name) {
@@ -25,8 +28,10 @@ _$streamNotifications200ResponseSeverityEnumValueOf(String name) {
       return _$streamNotifications200ResponseSeverityEnum_warning;
     case 'critical':
       return _$streamNotifications200ResponseSeverityEnum_critical;
+    case 'unknownDefaultOpenApi':
+      return _$streamNotifications200ResponseSeverityEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$streamNotifications200ResponseSeverityEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -37,6 +42,7 @@ _$streamNotifications200ResponseSeverityEnumValues =
         _$streamNotifications200ResponseSeverityEnum_info,
         _$streamNotifications200ResponseSeverityEnum_warning,
         _$streamNotifications200ResponseSeverityEnum_critical,
+        _$streamNotifications200ResponseSeverityEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -49,6 +55,11 @@ _$streamNotifications200ResponseAlertStateEnum_acknowledged =
 const StreamNotifications200ResponseAlertStateEnum
 _$streamNotifications200ResponseAlertStateEnum_resolved =
     const StreamNotifications200ResponseAlertStateEnum._('resolved');
+const StreamNotifications200ResponseAlertStateEnum
+_$streamNotifications200ResponseAlertStateEnum_unknownDefaultOpenApi =
+    const StreamNotifications200ResponseAlertStateEnum._(
+      'unknownDefaultOpenApi',
+    );
 
 StreamNotifications200ResponseAlertStateEnum
 _$streamNotifications200ResponseAlertStateEnumValueOf(String name) {
@@ -59,8 +70,10 @@ _$streamNotifications200ResponseAlertStateEnumValueOf(String name) {
       return _$streamNotifications200ResponseAlertStateEnum_acknowledged;
     case 'resolved':
       return _$streamNotifications200ResponseAlertStateEnum_resolved;
+    case 'unknownDefaultOpenApi':
+      return _$streamNotifications200ResponseAlertStateEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$streamNotifications200ResponseAlertStateEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -71,6 +84,7 @@ _$streamNotifications200ResponseAlertStateEnumValues =
         _$streamNotifications200ResponseAlertStateEnum_firing,
         _$streamNotifications200ResponseAlertStateEnum_acknowledged,
         _$streamNotifications200ResponseAlertStateEnum_resolved,
+        _$streamNotifications200ResponseAlertStateEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -87,11 +101,13 @@ class _$StreamNotifications200ResponseSeverityEnumSerializer
     'info': 'info',
     'warning': 'warning',
     'critical': 'critical',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'info': 'info',
     'warning': 'warning',
     'critical': 'critical',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -125,11 +141,13 @@ class _$StreamNotifications200ResponseAlertStateEnumSerializer
     'firing': 'firing',
     'acknowledged': 'acknowledged',
     'resolved': 'resolved',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'firing': 'firing',
     'acknowledged': 'acknowledged',
     'resolved': 'resolved',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

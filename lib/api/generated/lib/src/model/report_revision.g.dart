@@ -10,6 +10,9 @@ const ReportRevisionStatusEnum _$reportRevisionStatusEnum_published =
     const ReportRevisionStatusEnum._('published');
 const ReportRevisionStatusEnum _$reportRevisionStatusEnum_retracted =
     const ReportRevisionStatusEnum._('retracted');
+const ReportRevisionStatusEnum
+_$reportRevisionStatusEnum_unknownDefaultOpenApi =
+    const ReportRevisionStatusEnum._('unknownDefaultOpenApi');
 
 ReportRevisionStatusEnum _$reportRevisionStatusEnumValueOf(String name) {
   switch (name) {
@@ -17,8 +20,10 @@ ReportRevisionStatusEnum _$reportRevisionStatusEnumValueOf(String name) {
       return _$reportRevisionStatusEnum_published;
     case 'retracted':
       return _$reportRevisionStatusEnum_retracted;
+    case 'unknownDefaultOpenApi':
+      return _$reportRevisionStatusEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$reportRevisionStatusEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -26,6 +31,7 @@ final BuiltSet<ReportRevisionStatusEnum> _$reportRevisionStatusEnumValues =
     BuiltSet<ReportRevisionStatusEnum>(const <ReportRevisionStatusEnum>[
       _$reportRevisionStatusEnum_published,
       _$reportRevisionStatusEnum_retracted,
+      _$reportRevisionStatusEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<ReportRevisionStatusEnum> _$reportRevisionStatusEnumSerializer =
@@ -36,10 +42,12 @@ class _$ReportRevisionStatusEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'published': 'published',
     'retracted': 'retracted',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'published': 'published',
     'retracted': 'retracted',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

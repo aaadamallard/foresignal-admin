@@ -196,6 +196,9 @@ class AnomalyObservationBaselineSlotModeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'hour-of-day')
   static const AnomalyObservationBaselineSlotModeEnum hourOfDay =
       _$anomalyObservationBaselineSlotModeEnum_hourOfDay;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const AnomalyObservationBaselineSlotModeEnum unknownDefaultOpenApi =
+      _$anomalyObservationBaselineSlotModeEnum_unknownDefaultOpenApi;
 
   static Serializer<AnomalyObservationBaselineSlotModeEnum> get serializer =>
       _$anomalyObservationBaselineSlotModeEnumSerializer;
@@ -215,6 +218,9 @@ class AnomalyObservationBaselineModelEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'nb')
   static const AnomalyObservationBaselineModelEnum nb =
       _$anomalyObservationBaselineModelEnum_nb;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const AnomalyObservationBaselineModelEnum unknownDefaultOpenApi =
+      _$anomalyObservationBaselineModelEnum_unknownDefaultOpenApi;
 
   static Serializer<AnomalyObservationBaselineModelEnum> get serializer =>
       _$anomalyObservationBaselineModelEnumSerializer;

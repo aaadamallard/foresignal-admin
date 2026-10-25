@@ -159,6 +159,9 @@ class _$StixBundleSerializer implements PrimitiveSerializer<StixBundle> {
 class StixBundleTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'bundle')
   static const StixBundleTypeEnum bundle = _$stixBundleTypeEnum_bundle;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const StixBundleTypeEnum unknownDefaultOpenApi =
+      _$stixBundleTypeEnum_unknownDefaultOpenApi;
 
   static Serializer<StixBundleTypeEnum> get serializer =>
       _$stixBundleTypeEnumSerializer;

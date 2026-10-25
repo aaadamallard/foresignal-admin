@@ -12,6 +12,9 @@ const ClientPresenceInputKindEnum _$clientPresenceInputKindEnum_mobile =
     const ClientPresenceInputKindEnum._('mobile');
 const ClientPresenceInputKindEnum _$clientPresenceInputKindEnum_web =
     const ClientPresenceInputKindEnum._('web');
+const ClientPresenceInputKindEnum
+_$clientPresenceInputKindEnum_unknownDefaultOpenApi =
+    const ClientPresenceInputKindEnum._('unknownDefaultOpenApi');
 
 ClientPresenceInputKindEnum _$clientPresenceInputKindEnumValueOf(String name) {
   switch (name) {
@@ -21,8 +24,10 @@ ClientPresenceInputKindEnum _$clientPresenceInputKindEnumValueOf(String name) {
       return _$clientPresenceInputKindEnum_mobile;
     case 'web':
       return _$clientPresenceInputKindEnum_web;
+    case 'unknownDefaultOpenApi':
+      return _$clientPresenceInputKindEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$clientPresenceInputKindEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -32,6 +37,7 @@ _$clientPresenceInputKindEnumValues =
       _$clientPresenceInputKindEnum_desktop,
       _$clientPresenceInputKindEnum_mobile,
       _$clientPresenceInputKindEnum_web,
+      _$clientPresenceInputKindEnum_unknownDefaultOpenApi,
     ]);
 
 const ClientPresenceInputStateEnum _$clientPresenceInputStateEnum_active =
@@ -40,6 +46,9 @@ const ClientPresenceInputStateEnum _$clientPresenceInputStateEnum_idle =
     const ClientPresenceInputStateEnum._('idle');
 const ClientPresenceInputStateEnum _$clientPresenceInputStateEnum_background =
     const ClientPresenceInputStateEnum._('background');
+const ClientPresenceInputStateEnum
+_$clientPresenceInputStateEnum_unknownDefaultOpenApi =
+    const ClientPresenceInputStateEnum._('unknownDefaultOpenApi');
 
 ClientPresenceInputStateEnum _$clientPresenceInputStateEnumValueOf(
   String name,
@@ -51,8 +60,10 @@ ClientPresenceInputStateEnum _$clientPresenceInputStateEnumValueOf(
       return _$clientPresenceInputStateEnum_idle;
     case 'background':
       return _$clientPresenceInputStateEnum_background;
+    case 'unknownDefaultOpenApi':
+      return _$clientPresenceInputStateEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$clientPresenceInputStateEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -62,6 +73,7 @@ _$clientPresenceInputStateEnumValues =
       _$clientPresenceInputStateEnum_active,
       _$clientPresenceInputStateEnum_idle,
       _$clientPresenceInputStateEnum_background,
+      _$clientPresenceInputStateEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<ClientPresenceInputKindEnum>
@@ -77,11 +89,13 @@ class _$ClientPresenceInputKindEnumSerializer
     'desktop': 'desktop',
     'mobile': 'mobile',
     'web': 'web',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'desktop': 'desktop',
     'mobile': 'mobile',
     'web': 'web',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -112,11 +126,13 @@ class _$ClientPresenceInputStateEnumSerializer
     'active': 'active',
     'idle': 'idle',
     'background': 'background',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'active': 'active',
     'idle': 'idle',
     'background': 'background',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

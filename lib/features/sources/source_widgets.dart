@@ -25,6 +25,9 @@ class HealthLabel extends StatelessWidget {
 
   /// [status] as a capitalized word.
   static String labelOf(HealthStatus status) {
+    if (isUnknownEnum(status)) {
+      return 'Unknown value';
+    }
     final name = status.name;
     return name.isEmpty ? name : '${name[0].toUpperCase()}${name.substring(1)}';
   }

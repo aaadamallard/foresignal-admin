@@ -10,6 +10,8 @@ const ScorecardEntryLabelEnum _$scorecardEntryLabelEnum_ok =
     const ScorecardEntryLabelEnum._('ok');
 const ScorecardEntryLabelEnum _$scorecardEntryLabelEnum_insufficient =
     const ScorecardEntryLabelEnum._('insufficient');
+const ScorecardEntryLabelEnum _$scorecardEntryLabelEnum_unknownDefaultOpenApi =
+    const ScorecardEntryLabelEnum._('unknownDefaultOpenApi');
 
 ScorecardEntryLabelEnum _$scorecardEntryLabelEnumValueOf(String name) {
   switch (name) {
@@ -17,8 +19,10 @@ ScorecardEntryLabelEnum _$scorecardEntryLabelEnumValueOf(String name) {
       return _$scorecardEntryLabelEnum_ok;
     case 'insufficient':
       return _$scorecardEntryLabelEnum_insufficient;
+    case 'unknownDefaultOpenApi':
+      return _$scorecardEntryLabelEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$scorecardEntryLabelEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -26,6 +30,7 @@ final BuiltSet<ScorecardEntryLabelEnum> _$scorecardEntryLabelEnumValues =
     BuiltSet<ScorecardEntryLabelEnum>(const <ScorecardEntryLabelEnum>[
       _$scorecardEntryLabelEnum_ok,
       _$scorecardEntryLabelEnum_insufficient,
+      _$scorecardEntryLabelEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<ScorecardEntryLabelEnum> _$scorecardEntryLabelEnumSerializer =
@@ -36,10 +41,12 @@ class _$ScorecardEntryLabelEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'ok': 'ok',
     'insufficient': 'insufficient',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'ok': 'ok',
     'insufficient': 'insufficient',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

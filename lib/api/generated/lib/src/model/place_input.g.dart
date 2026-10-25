@@ -12,6 +12,8 @@ const PlaceInputShapeEnum _$placeInputShapeEnum_polygon =
     const PlaceInputShapeEnum._('polygon');
 const PlaceInputShapeEnum _$placeInputShapeEnum_route =
     const PlaceInputShapeEnum._('route');
+const PlaceInputShapeEnum _$placeInputShapeEnum_unknownDefaultOpenApi =
+    const PlaceInputShapeEnum._('unknownDefaultOpenApi');
 
 PlaceInputShapeEnum _$placeInputShapeEnumValueOf(String name) {
   switch (name) {
@@ -21,8 +23,10 @@ PlaceInputShapeEnum _$placeInputShapeEnumValueOf(String name) {
       return _$placeInputShapeEnum_polygon;
     case 'route':
       return _$placeInputShapeEnum_route;
+    case 'unknownDefaultOpenApi':
+      return _$placeInputShapeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$placeInputShapeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -31,6 +35,7 @@ final BuiltSet<PlaceInputShapeEnum> _$placeInputShapeEnumValues =
       _$placeInputShapeEnum_point,
       _$placeInputShapeEnum_polygon,
       _$placeInputShapeEnum_route,
+      _$placeInputShapeEnum_unknownDefaultOpenApi,
     ]);
 
 const PlaceInputKindEnum _$placeInputKindEnum_user = const PlaceInputKindEnum._(
@@ -40,6 +45,8 @@ const PlaceInputKindEnum _$placeInputKindEnum_airport =
     const PlaceInputKindEnum._('airport');
 const PlaceInputKindEnum _$placeInputKindEnum_asset =
     const PlaceInputKindEnum._('asset');
+const PlaceInputKindEnum _$placeInputKindEnum_unknownDefaultOpenApi =
+    const PlaceInputKindEnum._('unknownDefaultOpenApi');
 
 PlaceInputKindEnum _$placeInputKindEnumValueOf(String name) {
   switch (name) {
@@ -49,8 +56,10 @@ PlaceInputKindEnum _$placeInputKindEnumValueOf(String name) {
       return _$placeInputKindEnum_airport;
     case 'asset':
       return _$placeInputKindEnum_asset;
+    case 'unknownDefaultOpenApi':
+      return _$placeInputKindEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$placeInputKindEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -59,6 +68,7 @@ final BuiltSet<PlaceInputKindEnum> _$placeInputKindEnumValues =
       _$placeInputKindEnum_user,
       _$placeInputKindEnum_airport,
       _$placeInputKindEnum_asset,
+      _$placeInputKindEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<PlaceInputShapeEnum> _$placeInputShapeEnumSerializer =
@@ -72,11 +82,13 @@ class _$PlaceInputShapeEnumSerializer
     'point': 'point',
     'polygon': 'polygon',
     'route': 'route',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'point': 'point',
     'polygon': 'polygon',
     'route': 'route',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -107,11 +119,13 @@ class _$PlaceInputKindEnumSerializer
     'user': 'user',
     'airport': 'airport',
     'asset': 'asset',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'user': 'user',
     'airport': 'airport',
     'asset': 'asset',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

@@ -22,6 +22,11 @@ _$commonDependenciesDependenciesInnerWeakestEdgeLabelEnum_speculative =
     const CommonDependenciesDependenciesInnerWeakestEdgeLabelEnum._(
       'speculative',
     );
+const CommonDependenciesDependenciesInnerWeakestEdgeLabelEnum
+_$commonDependenciesDependenciesInnerWeakestEdgeLabelEnum_unknownDefaultOpenApi =
+    const CommonDependenciesDependenciesInnerWeakestEdgeLabelEnum._(
+      'unknownDefaultOpenApi',
+    );
 
 CommonDependenciesDependenciesInnerWeakestEdgeLabelEnum
 _$commonDependenciesDependenciesInnerWeakestEdgeLabelEnumValueOf(String name) {
@@ -34,21 +39,24 @@ _$commonDependenciesDependenciesInnerWeakestEdgeLabelEnumValueOf(String name) {
       return _$commonDependenciesDependenciesInnerWeakestEdgeLabelEnum_possible;
     case 'speculative':
       return _$commonDependenciesDependenciesInnerWeakestEdgeLabelEnum_speculative;
+    case 'unknownDefaultOpenApi':
+      return _$commonDependenciesDependenciesInnerWeakestEdgeLabelEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$commonDependenciesDependenciesInnerWeakestEdgeLabelEnum_unknownDefaultOpenApi;
   }
 }
 
 final BuiltSet<CommonDependenciesDependenciesInnerWeakestEdgeLabelEnum>
 _$commonDependenciesDependenciesInnerWeakestEdgeLabelEnumValues =
-    BuiltSet<CommonDependenciesDependenciesInnerWeakestEdgeLabelEnum>(
-      const <CommonDependenciesDependenciesInnerWeakestEdgeLabelEnum>[
-        _$commonDependenciesDependenciesInnerWeakestEdgeLabelEnum_confirmed,
-        _$commonDependenciesDependenciesInnerWeakestEdgeLabelEnum_likely,
-        _$commonDependenciesDependenciesInnerWeakestEdgeLabelEnum_possible,
-        _$commonDependenciesDependenciesInnerWeakestEdgeLabelEnum_speculative,
-      ],
-    );
+    BuiltSet<CommonDependenciesDependenciesInnerWeakestEdgeLabelEnum>(const <
+      CommonDependenciesDependenciesInnerWeakestEdgeLabelEnum
+    >[
+      _$commonDependenciesDependenciesInnerWeakestEdgeLabelEnum_confirmed,
+      _$commonDependenciesDependenciesInnerWeakestEdgeLabelEnum_likely,
+      _$commonDependenciesDependenciesInnerWeakestEdgeLabelEnum_possible,
+      _$commonDependenciesDependenciesInnerWeakestEdgeLabelEnum_speculative,
+      _$commonDependenciesDependenciesInnerWeakestEdgeLabelEnum_unknownDefaultOpenApi,
+    ]);
 
 Serializer<CommonDependenciesDependenciesInnerWeakestEdgeLabelEnum>
 _$commonDependenciesDependenciesInnerWeakestEdgeLabelEnumSerializer =
@@ -64,12 +72,14 @@ class _$CommonDependenciesDependenciesInnerWeakestEdgeLabelEnumSerializer
     'likely': 'likely',
     'possible': 'possible',
     'speculative': 'speculative',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'confirmed': 'confirmed',
     'likely': 'likely',
     'possible': 'possible',
     'speculative': 'speculative',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

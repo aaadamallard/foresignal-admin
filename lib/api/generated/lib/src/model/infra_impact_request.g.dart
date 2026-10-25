@@ -16,6 +16,9 @@ const InfraImpactRequestMinLabelEnum _$infraImpactRequestMinLabelEnum_possible =
 const InfraImpactRequestMinLabelEnum
 _$infraImpactRequestMinLabelEnum_speculative =
     const InfraImpactRequestMinLabelEnum._('speculative');
+const InfraImpactRequestMinLabelEnum
+_$infraImpactRequestMinLabelEnum_unknownDefaultOpenApi =
+    const InfraImpactRequestMinLabelEnum._('unknownDefaultOpenApi');
 
 InfraImpactRequestMinLabelEnum _$infraImpactRequestMinLabelEnumValueOf(
   String name,
@@ -29,8 +32,10 @@ InfraImpactRequestMinLabelEnum _$infraImpactRequestMinLabelEnumValueOf(
       return _$infraImpactRequestMinLabelEnum_possible;
     case 'speculative':
       return _$infraImpactRequestMinLabelEnum_speculative;
+    case 'unknownDefaultOpenApi':
+      return _$infraImpactRequestMinLabelEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$infraImpactRequestMinLabelEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -42,6 +47,7 @@ _$infraImpactRequestMinLabelEnumValues =
         _$infraImpactRequestMinLabelEnum_likely,
         _$infraImpactRequestMinLabelEnum_possible,
         _$infraImpactRequestMinLabelEnum_speculative,
+        _$infraImpactRequestMinLabelEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -87,6 +93,9 @@ _$infraImpactRequestTypesEnum_waterPeriodTreatment =
 const InfraImpactRequestTypesEnum
 _$infraImpactRequestTypesEnum_spacePeriodSpaceport =
     const InfraImpactRequestTypesEnum._('spacePeriodSpaceport');
+const InfraImpactRequestTypesEnum
+_$infraImpactRequestTypesEnum_unknownDefaultOpenApi =
+    const InfraImpactRequestTypesEnum._('unknownDefaultOpenApi');
 
 InfraImpactRequestTypesEnum _$infraImpactRequestTypesEnumValueOf(String name) {
   switch (name) {
@@ -118,8 +127,10 @@ InfraImpactRequestTypesEnum _$infraImpactRequestTypesEnumValueOf(String name) {
       return _$infraImpactRequestTypesEnum_waterPeriodTreatment;
     case 'spacePeriodSpaceport':
       return _$infraImpactRequestTypesEnum_spacePeriodSpaceport;
+    case 'unknownDefaultOpenApi':
+      return _$infraImpactRequestTypesEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$infraImpactRequestTypesEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -140,6 +151,7 @@ _$infraImpactRequestTypesEnumValues =
       _$infraImpactRequestTypesEnum_healthPeriodHospital,
       _$infraImpactRequestTypesEnum_waterPeriodTreatment,
       _$infraImpactRequestTypesEnum_spacePeriodSpaceport,
+      _$infraImpactRequestTypesEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<InfraImpactRequestMinLabelEnum>
@@ -156,12 +168,14 @@ class _$InfraImpactRequestMinLabelEnumSerializer
     'likely': 'likely',
     'possible': 'possible',
     'speculative': 'speculative',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'confirmed': 'confirmed',
     'likely': 'likely',
     'possible': 'possible',
     'speculative': 'speculative',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -203,6 +217,7 @@ class _$InfraImpactRequestTypesEnumSerializer
     'healthPeriodHospital': 'health.hospital',
     'waterPeriodTreatment': 'water.treatment',
     'spacePeriodSpaceport': 'space.spaceport',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'power.generation': 'powerPeriodGeneration',
@@ -219,6 +234,7 @@ class _$InfraImpactRequestTypesEnumSerializer
     'health.hospital': 'healthPeriodHospital',
     'water.treatment': 'waterPeriodTreatment',
     'space.spaceport': 'spacePeriodSpaceport',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

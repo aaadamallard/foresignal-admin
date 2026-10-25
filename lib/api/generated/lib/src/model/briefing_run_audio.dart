@@ -325,6 +325,9 @@ class BriefingRunAudioStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'skipped')
   static const BriefingRunAudioStatusEnum skipped =
       _$briefingRunAudioStatusEnum_skipped;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const BriefingRunAudioStatusEnum unknownDefaultOpenApi =
+      _$briefingRunAudioStatusEnum_unknownDefaultOpenApi;
 
   static Serializer<BriefingRunAudioStatusEnum> get serializer =>
       _$briefingRunAudioStatusEnumSerializer;
@@ -344,6 +347,9 @@ class BriefingRunAudioFormatEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'opus')
   static const BriefingRunAudioFormatEnum opus =
       _$briefingRunAudioFormatEnum_opus;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const BriefingRunAudioFormatEnum unknownDefaultOpenApi =
+      _$briefingRunAudioFormatEnum_unknownDefaultOpenApi;
 
   static Serializer<BriefingRunAudioFormatEnum> get serializer =>
       _$briefingRunAudioFormatEnumSerializer;

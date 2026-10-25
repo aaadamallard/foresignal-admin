@@ -12,6 +12,9 @@ const HypothesisPriorBasisTypeEnum _$hypothesisPriorBasisTypeEnum_analogs =
     const HypothesisPriorBasisTypeEnum._('analogs');
 const HypothesisPriorBasisTypeEnum _$hypothesisPriorBasisTypeEnum_operator_ =
     const HypothesisPriorBasisTypeEnum._('operator_');
+const HypothesisPriorBasisTypeEnum
+_$hypothesisPriorBasisTypeEnum_unknownDefaultOpenApi =
+    const HypothesisPriorBasisTypeEnum._('unknownDefaultOpenApi');
 
 HypothesisPriorBasisTypeEnum _$hypothesisPriorBasisTypeEnumValueOf(
   String name,
@@ -23,8 +26,10 @@ HypothesisPriorBasisTypeEnum _$hypothesisPriorBasisTypeEnumValueOf(
       return _$hypothesisPriorBasisTypeEnum_analogs;
     case 'operator_':
       return _$hypothesisPriorBasisTypeEnum_operator_;
+    case 'unknownDefaultOpenApi':
+      return _$hypothesisPriorBasisTypeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$hypothesisPriorBasisTypeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -34,6 +39,7 @@ _$hypothesisPriorBasisTypeEnumValues =
       _$hypothesisPriorBasisTypeEnum_baseRate,
       _$hypothesisPriorBasisTypeEnum_analogs,
       _$hypothesisPriorBasisTypeEnum_operator_,
+      _$hypothesisPriorBasisTypeEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<HypothesisPriorBasisTypeEnum>
@@ -46,11 +52,13 @@ class _$HypothesisPriorBasisTypeEnumSerializer
     'baseRate': 'base-rate',
     'analogs': 'analogs',
     'operator_': 'operator',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'base-rate': 'baseRate',
     'analogs': 'analogs',
     'operator': 'operator_',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

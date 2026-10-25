@@ -268,6 +268,9 @@ class AnalysisSeriesInputDetectorsEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'forecast')
   static const AnalysisSeriesInputDetectorsEnum forecast =
       _$analysisSeriesInputDetectorsEnum_forecast;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const AnalysisSeriesInputDetectorsEnum unknownDefaultOpenApi =
+      _$analysisSeriesInputDetectorsEnum_unknownDefaultOpenApi;
 
   static Serializer<AnalysisSeriesInputDetectorsEnum> get serializer =>
       _$analysisSeriesInputDetectorsEnumSerializer;
@@ -290,6 +293,9 @@ class AnalysisSeriesInputFrequencyEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'week')
   static const AnalysisSeriesInputFrequencyEnum week =
       _$analysisSeriesInputFrequencyEnum_week;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const AnalysisSeriesInputFrequencyEnum unknownDefaultOpenApi =
+      _$analysisSeriesInputFrequencyEnum_unknownDefaultOpenApi;
 
   static Serializer<AnalysisSeriesInputFrequencyEnum> get serializer =>
       _$analysisSeriesInputFrequencyEnumSerializer;

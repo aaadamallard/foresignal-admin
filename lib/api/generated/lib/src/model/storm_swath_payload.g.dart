@@ -10,6 +10,9 @@ const StormSwathPayloadStatusEnum _$stormSwathPayloadStatusEnum_active =
     const StormSwathPayloadStatusEnum._('active');
 const StormSwathPayloadStatusEnum _$stormSwathPayloadStatusEnum_ended =
     const StormSwathPayloadStatusEnum._('ended');
+const StormSwathPayloadStatusEnum
+_$stormSwathPayloadStatusEnum_unknownDefaultOpenApi =
+    const StormSwathPayloadStatusEnum._('unknownDefaultOpenApi');
 
 StormSwathPayloadStatusEnum _$stormSwathPayloadStatusEnumValueOf(String name) {
   switch (name) {
@@ -17,18 +20,20 @@ StormSwathPayloadStatusEnum _$stormSwathPayloadStatusEnumValueOf(String name) {
       return _$stormSwathPayloadStatusEnum_active;
     case 'ended':
       return _$stormSwathPayloadStatusEnum_ended;
+    case 'unknownDefaultOpenApi':
+      return _$stormSwathPayloadStatusEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$stormSwathPayloadStatusEnum_unknownDefaultOpenApi;
   }
 }
 
 final BuiltSet<StormSwathPayloadStatusEnum>
-_$stormSwathPayloadStatusEnumValues = BuiltSet<StormSwathPayloadStatusEnum>(
-  const <StormSwathPayloadStatusEnum>[
-    _$stormSwathPayloadStatusEnum_active,
-    _$stormSwathPayloadStatusEnum_ended,
-  ],
-);
+_$stormSwathPayloadStatusEnumValues =
+    BuiltSet<StormSwathPayloadStatusEnum>(const <StormSwathPayloadStatusEnum>[
+      _$stormSwathPayloadStatusEnum_active,
+      _$stormSwathPayloadStatusEnum_ended,
+      _$stormSwathPayloadStatusEnum_unknownDefaultOpenApi,
+    ]);
 
 Serializer<StormSwathPayloadStatusEnum>
 _$stormSwathPayloadStatusEnumSerializer =
@@ -39,10 +44,12 @@ class _$StormSwathPayloadStatusEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'active': 'active',
     'ended': 'ended',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'active': 'active',
     'ended': 'ended',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

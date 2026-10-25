@@ -102,6 +102,9 @@ class PushProviderInputConfigKeyEnvironmentEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'both')
   static const PushProviderInputConfigKeyEnvironmentEnum both =
       _$pushProviderInputConfigKeyEnvironmentEnum_both;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const PushProviderInputConfigKeyEnvironmentEnum unknownDefaultOpenApi =
+      _$pushProviderInputConfigKeyEnvironmentEnum_unknownDefaultOpenApi;
 
   static Serializer<PushProviderInputConfigKeyEnvironmentEnum> get serializer =>
       _$pushProviderInputConfigKeyEnvironmentEnumSerializer;

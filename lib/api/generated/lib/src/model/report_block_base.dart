@@ -259,6 +259,9 @@ class ReportBlockBaseTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'sources')
   static const ReportBlockBaseTypeEnum sources =
       _$reportBlockBaseTypeEnum_sources;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ReportBlockBaseTypeEnum unknownDefaultOpenApi =
+      _$reportBlockBaseTypeEnum_unknownDefaultOpenApi;
 
   static Serializer<ReportBlockBaseTypeEnum> get serializer =>
       _$reportBlockBaseTypeEnumSerializer;
@@ -282,6 +285,9 @@ class ReportBlockBaseTextOriginEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'llm')
   static const ReportBlockBaseTextOriginEnum llm =
       _$reportBlockBaseTextOriginEnum_llm;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ReportBlockBaseTextOriginEnum unknownDefaultOpenApi =
+      _$reportBlockBaseTextOriginEnum_unknownDefaultOpenApi;
 
   static Serializer<ReportBlockBaseTextOriginEnum> get serializer =>
       _$reportBlockBaseTextOriginEnumSerializer;

@@ -6,6 +6,7 @@ import '../../api/api.dart';
 import '../../core/error_reporter.dart';
 import '../../core/form_factor.dart';
 import '../../core/nav.dart';
+import '../../core/routes.dart';
 import '../../core/theme.dart';
 import '../../core/theme_mode.dart';
 import '../../core/ui/ui.dart';
@@ -50,6 +51,7 @@ class AppShell extends ConsumerWidget {
         const PresenceReporter(),
         const _GlobalErrorSurface(),
         if (formFactor == FormFactor.mobile) const PushArrivalBanner(),
+        _PageBackBar(roots: <String>[for (final d in destinations) d.path], mobile: formFactor == FormFactor.mobile),
         Expanded(child: child),
       ],
     );
@@ -83,6 +85,38 @@ class AppShell extends ConsumerWidget {
           Expanded(child: body),
         ],
       ),
+    );
+  }
+}
+
+/// The Back control above a page pushed from another; nothing on a section's
+/// own page (a left-nav destination or one of its tabs). It follows the
+/// router rather than the shell's [AppShell.location], which a pop leaves
+/// unchanged.
+class _PageBackBar extends StatelessWidget {
+  const _PageBackBar({required this.roots, required this.mobile});
+
+  /// The left-nav destinations' paths.
+  final List<String> roots;
+
+  /// Whether this is the mobile companion's layout.
+  final bool mobile;
+
+  @override
+  Widget build(BuildContext context) {
+    final router = GoRouter.of(context);
+    return ListenableBuilder(
+      listenable: router.routerDelegate,
+      builder: (context, _) {
+        final location = router.state.matchedLocation;
+        if (isSectionHome(location, roots)) {
+          return const SizedBox.shrink();
+        }
+        return Padding(
+          padding: mobile ? const EdgeInsets.fromLTRB(12, 8, 16, 0) : const EdgeInsets.fromLTRB(24, 14, 28, 0),
+          child: BackLink(location: location),
+        );
+      },
     );
   }
 }

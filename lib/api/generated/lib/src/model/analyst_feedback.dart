@@ -237,6 +237,9 @@ class AnalystFeedbackTargetEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'proposal')
   static const AnalystFeedbackTargetEnum proposal =
       _$analystFeedbackTargetEnum_proposal;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const AnalystFeedbackTargetEnum unknownDefaultOpenApi =
+      _$analystFeedbackTargetEnum_unknownDefaultOpenApi;
 
   static Serializer<AnalystFeedbackTargetEnum> get serializer =>
       _$analystFeedbackTargetEnumSerializer;
@@ -259,6 +262,9 @@ class AnalystFeedbackRatingEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'wrong')
   static const AnalystFeedbackRatingEnum wrong =
       _$analystFeedbackRatingEnum_wrong;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const AnalystFeedbackRatingEnum unknownDefaultOpenApi =
+      _$analystFeedbackRatingEnum_unknownDefaultOpenApi;
 
   static Serializer<AnalystFeedbackRatingEnum> get serializer =>
       _$analystFeedbackRatingEnumSerializer;

@@ -360,6 +360,9 @@ class PairingCodeCreatedScopeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'agent')
   static const PairingCodeCreatedScopeEnum agent =
       _$pairingCodeCreatedScopeEnum_agent;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const PairingCodeCreatedScopeEnum unknownDefaultOpenApi =
+      _$pairingCodeCreatedScopeEnum_unknownDefaultOpenApi;
 
   static Serializer<PairingCodeCreatedScopeEnum> get serializer =>
       _$pairingCodeCreatedScopeEnumSerializer;

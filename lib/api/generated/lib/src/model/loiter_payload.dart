@@ -332,6 +332,9 @@ class LoiterPayloadStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'degraded-input')
   static const LoiterPayloadStatusEnum degradedInput =
       _$loiterPayloadStatusEnum_degradedInput;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const LoiterPayloadStatusEnum unknownDefaultOpenApi =
+      _$loiterPayloadStatusEnum_unknownDefaultOpenApi;
 
   static Serializer<LoiterPayloadStatusEnum> get serializer =>
       _$loiterPayloadStatusEnumSerializer;

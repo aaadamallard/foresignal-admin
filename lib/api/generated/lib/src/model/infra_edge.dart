@@ -350,6 +350,9 @@ class InfraEdgeRelationEnum extends EnumClass {
   static const InfraEdgeRelationEnum hosts = _$infraEdgeRelationEnum_hosts;
   @BuiltValueEnumConst(wireName: r'serves')
   static const InfraEdgeRelationEnum serves = _$infraEdgeRelationEnum_serves;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const InfraEdgeRelationEnum unknownDefaultOpenApi =
+      _$infraEdgeRelationEnum_unknownDefaultOpenApi;
 
   static Serializer<InfraEdgeRelationEnum> get serializer =>
       _$infraEdgeRelationEnumSerializer;
@@ -372,6 +375,9 @@ class InfraEdgeMethodEnum extends EnumClass {
   static const InfraEdgeMethodEnum proximity = _$infraEdgeMethodEnum_proximity;
   @BuiltValueEnumConst(wireName: r'inferred')
   static const InfraEdgeMethodEnum inferred = _$infraEdgeMethodEnum_inferred;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const InfraEdgeMethodEnum unknownDefaultOpenApi =
+      _$infraEdgeMethodEnum_unknownDefaultOpenApi;
 
   static Serializer<InfraEdgeMethodEnum> get serializer =>
       _$infraEdgeMethodEnumSerializer;
@@ -394,6 +400,9 @@ class InfraEdgeLabelEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'speculative')
   static const InfraEdgeLabelEnum speculative =
       _$infraEdgeLabelEnum_speculative;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const InfraEdgeLabelEnum unknownDefaultOpenApi =
+      _$infraEdgeLabelEnum_unknownDefaultOpenApi;
 
   static Serializer<InfraEdgeLabelEnum> get serializer =>
       _$infraEdgeLabelEnumSerializer;

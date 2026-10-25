@@ -12,6 +12,9 @@ const WindowStatePayloadTypeEnum _$windowStatePayloadTypeEnum_absence =
     const WindowStatePayloadTypeEnum._('absence');
 const WindowStatePayloadTypeEnum _$windowStatePayloadTypeEnum_anomaly =
     const WindowStatePayloadTypeEnum._('anomaly');
+const WindowStatePayloadTypeEnum
+_$windowStatePayloadTypeEnum_unknownDefaultOpenApi =
+    const WindowStatePayloadTypeEnum._('unknownDefaultOpenApi');
 
 WindowStatePayloadTypeEnum _$windowStatePayloadTypeEnumValueOf(String name) {
   switch (name) {
@@ -21,8 +24,10 @@ WindowStatePayloadTypeEnum _$windowStatePayloadTypeEnumValueOf(String name) {
       return _$windowStatePayloadTypeEnum_absence;
     case 'anomaly':
       return _$windowStatePayloadTypeEnum_anomaly;
+    case 'unknownDefaultOpenApi':
+      return _$windowStatePayloadTypeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$windowStatePayloadTypeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -31,6 +36,7 @@ final BuiltSet<WindowStatePayloadTypeEnum> _$windowStatePayloadTypeEnumValues =
       _$windowStatePayloadTypeEnum_count,
       _$windowStatePayloadTypeEnum_absence,
       _$windowStatePayloadTypeEnum_anomaly,
+      _$windowStatePayloadTypeEnum_unknownDefaultOpenApi,
     ]);
 
 const WindowStatePayloadStateEnum _$windowStatePayloadStateEnum_active =
@@ -41,6 +47,9 @@ const WindowStatePayloadStateEnum _$windowStatePayloadStateEnum_unknown =
     const WindowStatePayloadStateEnum._('unknown');
 const WindowStatePayloadStateEnum _$windowStatePayloadStateEnum_learning =
     const WindowStatePayloadStateEnum._('learning');
+const WindowStatePayloadStateEnum
+_$windowStatePayloadStateEnum_unknownDefaultOpenApi =
+    const WindowStatePayloadStateEnum._('unknownDefaultOpenApi');
 
 WindowStatePayloadStateEnum _$windowStatePayloadStateEnumValueOf(String name) {
   switch (name) {
@@ -52,8 +61,10 @@ WindowStatePayloadStateEnum _$windowStatePayloadStateEnumValueOf(String name) {
       return _$windowStatePayloadStateEnum_unknown;
     case 'learning':
       return _$windowStatePayloadStateEnum_learning;
+    case 'unknownDefaultOpenApi':
+      return _$windowStatePayloadStateEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$windowStatePayloadStateEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -64,6 +75,7 @@ _$windowStatePayloadStateEnumValues =
       _$windowStatePayloadStateEnum_clear,
       _$windowStatePayloadStateEnum_unknown,
       _$windowStatePayloadStateEnum_learning,
+      _$windowStatePayloadStateEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<WindowStatePayloadTypeEnum> _$windowStatePayloadTypeEnumSerializer =
@@ -78,11 +90,13 @@ class _$WindowStatePayloadTypeEnumSerializer
     'count': 'count',
     'absence': 'absence',
     'anomaly': 'anomaly',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'count': 'count',
     'absence': 'absence',
     'anomaly': 'anomaly',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -114,12 +128,14 @@ class _$WindowStatePayloadStateEnumSerializer
     'clear': 'clear',
     'unknown': 'unknown',
     'learning': 'learning',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'active': 'active',
     'clear': 'clear',
     'unknown': 'unknown',
     'learning': 'learning',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

@@ -193,6 +193,9 @@ class DoctorReportSummaryTopFindingCodeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'PROBE_SKIPPED_BUDGET')
   static const DoctorReportSummaryTopFindingCodeEnum PROBE_SKIPPED_BUDGET =
       _$doctorReportSummaryTopFindingCodeEnum_PROBE_SKIPPED_BUDGET;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const DoctorReportSummaryTopFindingCodeEnum unknownDefaultOpenApi =
+      _$doctorReportSummaryTopFindingCodeEnum_unknownDefaultOpenApi;
 
   static Serializer<DoctorReportSummaryTopFindingCodeEnum> get serializer =>
       _$doctorReportSummaryTopFindingCodeEnumSerializer;

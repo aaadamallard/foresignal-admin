@@ -12,6 +12,11 @@ _$channelInteractiveStatusChatsInnerScopeEnum_read =
 const ChannelInteractiveStatusChatsInnerScopeEnum
 _$channelInteractiveStatusChatsInnerScopeEnum_agent =
     const ChannelInteractiveStatusChatsInnerScopeEnum._('agent');
+const ChannelInteractiveStatusChatsInnerScopeEnum
+_$channelInteractiveStatusChatsInnerScopeEnum_unknownDefaultOpenApi =
+    const ChannelInteractiveStatusChatsInnerScopeEnum._(
+      'unknownDefaultOpenApi',
+    );
 
 ChannelInteractiveStatusChatsInnerScopeEnum
 _$channelInteractiveStatusChatsInnerScopeEnumValueOf(String name) {
@@ -20,8 +25,10 @@ _$channelInteractiveStatusChatsInnerScopeEnumValueOf(String name) {
       return _$channelInteractiveStatusChatsInnerScopeEnum_read;
     case 'agent':
       return _$channelInteractiveStatusChatsInnerScopeEnum_agent;
+    case 'unknownDefaultOpenApi':
+      return _$channelInteractiveStatusChatsInnerScopeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$channelInteractiveStatusChatsInnerScopeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -31,6 +38,7 @@ _$channelInteractiveStatusChatsInnerScopeEnumValues =
       const <ChannelInteractiveStatusChatsInnerScopeEnum>[
         _$channelInteractiveStatusChatsInnerScopeEnum_read,
         _$channelInteractiveStatusChatsInnerScopeEnum_agent,
+        _$channelInteractiveStatusChatsInnerScopeEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -44,10 +52,12 @@ class _$ChannelInteractiveStatusChatsInnerScopeEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'read': 'read',
     'agent': 'agent',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'read': 'read',
     'agent': 'agent',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

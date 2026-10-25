@@ -9,14 +9,19 @@ part of 'chronicle_social_narratives_selector.dart';
 const ChronicleSocialNarrativesSelectorTypeEnum
 _$chronicleSocialNarrativesSelectorTypeEnum_socialNarratives =
     const ChronicleSocialNarrativesSelectorTypeEnum._('socialNarratives');
+const ChronicleSocialNarrativesSelectorTypeEnum
+_$chronicleSocialNarrativesSelectorTypeEnum_unknownDefaultOpenApi =
+    const ChronicleSocialNarrativesSelectorTypeEnum._('unknownDefaultOpenApi');
 
 ChronicleSocialNarrativesSelectorTypeEnum
 _$chronicleSocialNarrativesSelectorTypeEnumValueOf(String name) {
   switch (name) {
     case 'socialNarratives':
       return _$chronicleSocialNarrativesSelectorTypeEnum_socialNarratives;
+    case 'unknownDefaultOpenApi':
+      return _$chronicleSocialNarrativesSelectorTypeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$chronicleSocialNarrativesSelectorTypeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -25,6 +30,7 @@ _$chronicleSocialNarrativesSelectorTypeEnumValues =
     BuiltSet<ChronicleSocialNarrativesSelectorTypeEnum>(
       const <ChronicleSocialNarrativesSelectorTypeEnum>[
         _$chronicleSocialNarrativesSelectorTypeEnum_socialNarratives,
+        _$chronicleSocialNarrativesSelectorTypeEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -51,6 +57,11 @@ _$chronicleSocialNarrativesSelectorStatusesEnum_insufficientCoverage =
     const ChronicleSocialNarrativesSelectorStatusesEnum._(
       'insufficientCoverage',
     );
+const ChronicleSocialNarrativesSelectorStatusesEnum
+_$chronicleSocialNarrativesSelectorStatusesEnum_unknownDefaultOpenApi =
+    const ChronicleSocialNarrativesSelectorStatusesEnum._(
+      'unknownDefaultOpenApi',
+    );
 
 ChronicleSocialNarrativesSelectorStatusesEnum
 _$chronicleSocialNarrativesSelectorStatusesEnumValueOf(String name) {
@@ -69,8 +80,10 @@ _$chronicleSocialNarrativesSelectorStatusesEnumValueOf(String name) {
       return _$chronicleSocialNarrativesSelectorStatusesEnum_mixed;
     case 'insufficientCoverage':
       return _$chronicleSocialNarrativesSelectorStatusesEnum_insufficientCoverage;
+    case 'unknownDefaultOpenApi':
+      return _$chronicleSocialNarrativesSelectorStatusesEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$chronicleSocialNarrativesSelectorStatusesEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -85,6 +98,7 @@ _$chronicleSocialNarrativesSelectorStatusesEnumValues =
         _$chronicleSocialNarrativesSelectorStatusesEnum_contradicted,
         _$chronicleSocialNarrativesSelectorStatusesEnum_mixed,
         _$chronicleSocialNarrativesSelectorStatusesEnum_insufficientCoverage,
+        _$chronicleSocialNarrativesSelectorStatusesEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -99,9 +113,11 @@ class _$ChronicleSocialNarrativesSelectorTypeEnumSerializer
     implements PrimitiveSerializer<ChronicleSocialNarrativesSelectorTypeEnum> {
   static const Map<String, Object> _toWire = const <String, Object>{
     'socialNarratives': 'social-narratives',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'social-narratives': 'socialNarratives',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -139,6 +155,7 @@ class _$ChronicleSocialNarrativesSelectorStatusesEnumSerializer
     'contradicted': 'contradicted',
     'mixed': 'mixed',
     'insufficientCoverage': 'insufficient-coverage',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'unassessed': 'unassessed',
@@ -148,6 +165,7 @@ class _$ChronicleSocialNarrativesSelectorStatusesEnumSerializer
     'contradicted': 'contradicted',
     'mixed': 'mixed',
     'insufficient-coverage': 'insufficientCoverage',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

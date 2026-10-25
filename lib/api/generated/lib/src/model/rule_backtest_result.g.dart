@@ -14,6 +14,9 @@ const RuleBacktestResultRuleTypeEnum _$ruleBacktestResultRuleTypeEnum_absence =
     const RuleBacktestResultRuleTypeEnum._('absence');
 const RuleBacktestResultRuleTypeEnum _$ruleBacktestResultRuleTypeEnum_anomaly =
     const RuleBacktestResultRuleTypeEnum._('anomaly');
+const RuleBacktestResultRuleTypeEnum
+_$ruleBacktestResultRuleTypeEnum_unknownDefaultOpenApi =
+    const RuleBacktestResultRuleTypeEnum._('unknownDefaultOpenApi');
 
 RuleBacktestResultRuleTypeEnum _$ruleBacktestResultRuleTypeEnumValueOf(
   String name,
@@ -27,8 +30,10 @@ RuleBacktestResultRuleTypeEnum _$ruleBacktestResultRuleTypeEnumValueOf(
       return _$ruleBacktestResultRuleTypeEnum_absence;
     case 'anomaly':
       return _$ruleBacktestResultRuleTypeEnum_anomaly;
+    case 'unknownDefaultOpenApi':
+      return _$ruleBacktestResultRuleTypeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$ruleBacktestResultRuleTypeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -40,6 +45,7 @@ _$ruleBacktestResultRuleTypeEnumValues =
         _$ruleBacktestResultRuleTypeEnum_count,
         _$ruleBacktestResultRuleTypeEnum_absence,
         _$ruleBacktestResultRuleTypeEnum_anomaly,
+        _$ruleBacktestResultRuleTypeEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -54,12 +60,14 @@ class _$RuleBacktestResultRuleTypeEnumSerializer
     'count': 'count',
     'absence': 'absence',
     'anomaly': 'anomaly',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'record': 'record',
     'count': 'count',
     'absence': 'absence',
     'anomaly': 'anomaly',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

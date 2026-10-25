@@ -14,6 +14,8 @@ const ReceivedPackageTypeEnum _$receivedPackageTypeEnum_chronicleExtract =
     const ReceivedPackageTypeEnum._('chronicleExtract');
 const ReceivedPackageTypeEnum _$receivedPackageTypeEnum_evidence =
     const ReceivedPackageTypeEnum._('evidence');
+const ReceivedPackageTypeEnum _$receivedPackageTypeEnum_unknownDefaultOpenApi =
+    const ReceivedPackageTypeEnum._('unknownDefaultOpenApi');
 
 ReceivedPackageTypeEnum _$receivedPackageTypeEnumValueOf(String name) {
   switch (name) {
@@ -25,8 +27,10 @@ ReceivedPackageTypeEnum _$receivedPackageTypeEnumValueOf(String name) {
       return _$receivedPackageTypeEnum_chronicleExtract;
     case 'evidence':
       return _$receivedPackageTypeEnum_evidence;
+    case 'unknownDefaultOpenApi':
+      return _$receivedPackageTypeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$receivedPackageTypeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -36,6 +40,7 @@ final BuiltSet<ReceivedPackageTypeEnum> _$receivedPackageTypeEnumValues =
       _$receivedPackageTypeEnum_investigation,
       _$receivedPackageTypeEnum_chronicleExtract,
       _$receivedPackageTypeEnum_evidence,
+      _$receivedPackageTypeEnum_unknownDefaultOpenApi,
     ]);
 
 const ReceivedPackageSignatureStatusEnum
@@ -47,6 +52,9 @@ _$receivedPackageSignatureStatusEnum_invalid =
 const ReceivedPackageSignatureStatusEnum
 _$receivedPackageSignatureStatusEnum_unknownKey =
     const ReceivedPackageSignatureStatusEnum._('unknownKey');
+const ReceivedPackageSignatureStatusEnum
+_$receivedPackageSignatureStatusEnum_unknownDefaultOpenApi =
+    const ReceivedPackageSignatureStatusEnum._('unknownDefaultOpenApi');
 
 ReceivedPackageSignatureStatusEnum _$receivedPackageSignatureStatusEnumValueOf(
   String name,
@@ -58,8 +66,10 @@ ReceivedPackageSignatureStatusEnum _$receivedPackageSignatureStatusEnumValueOf(
       return _$receivedPackageSignatureStatusEnum_invalid;
     case 'unknownKey':
       return _$receivedPackageSignatureStatusEnum_unknownKey;
+    case 'unknownDefaultOpenApi':
+      return _$receivedPackageSignatureStatusEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$receivedPackageSignatureStatusEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -70,6 +80,7 @@ _$receivedPackageSignatureStatusEnumValues =
         _$receivedPackageSignatureStatusEnum_valid,
         _$receivedPackageSignatureStatusEnum_invalid,
         _$receivedPackageSignatureStatusEnum_unknownKey,
+        _$receivedPackageSignatureStatusEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -77,6 +88,9 @@ const ReceivedPackageKeySourceEnum _$receivedPackageKeySourceEnum_peerJwks =
     const ReceivedPackageKeySourceEnum._('peerJwks');
 const ReceivedPackageKeySourceEnum _$receivedPackageKeySourceEnum_pinned =
     const ReceivedPackageKeySourceEnum._('pinned');
+const ReceivedPackageKeySourceEnum
+_$receivedPackageKeySourceEnum_unknownDefaultOpenApi =
+    const ReceivedPackageKeySourceEnum._('unknownDefaultOpenApi');
 
 ReceivedPackageKeySourceEnum _$receivedPackageKeySourceEnumValueOf(
   String name,
@@ -86,23 +100,28 @@ ReceivedPackageKeySourceEnum _$receivedPackageKeySourceEnumValueOf(
       return _$receivedPackageKeySourceEnum_peerJwks;
     case 'pinned':
       return _$receivedPackageKeySourceEnum_pinned;
+    case 'unknownDefaultOpenApi':
+      return _$receivedPackageKeySourceEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$receivedPackageKeySourceEnum_unknownDefaultOpenApi;
   }
 }
 
 final BuiltSet<ReceivedPackageKeySourceEnum>
-_$receivedPackageKeySourceEnumValues = BuiltSet<ReceivedPackageKeySourceEnum>(
-  const <ReceivedPackageKeySourceEnum>[
-    _$receivedPackageKeySourceEnum_peerJwks,
-    _$receivedPackageKeySourceEnum_pinned,
-  ],
-);
+_$receivedPackageKeySourceEnumValues =
+    BuiltSet<ReceivedPackageKeySourceEnum>(const <ReceivedPackageKeySourceEnum>[
+      _$receivedPackageKeySourceEnum_peerJwks,
+      _$receivedPackageKeySourceEnum_pinned,
+      _$receivedPackageKeySourceEnum_unknownDefaultOpenApi,
+    ]);
 
 const ReceivedPackageReceivedViaEnum _$receivedPackageReceivedViaEnum_peer =
     const ReceivedPackageReceivedViaEnum._('peer');
 const ReceivedPackageReceivedViaEnum _$receivedPackageReceivedViaEnum_import_ =
     const ReceivedPackageReceivedViaEnum._('import_');
+const ReceivedPackageReceivedViaEnum
+_$receivedPackageReceivedViaEnum_unknownDefaultOpenApi =
+    const ReceivedPackageReceivedViaEnum._('unknownDefaultOpenApi');
 
 ReceivedPackageReceivedViaEnum _$receivedPackageReceivedViaEnumValueOf(
   String name,
@@ -112,8 +131,10 @@ ReceivedPackageReceivedViaEnum _$receivedPackageReceivedViaEnumValueOf(
       return _$receivedPackageReceivedViaEnum_peer;
     case 'import_':
       return _$receivedPackageReceivedViaEnum_import_;
+    case 'unknownDefaultOpenApi':
+      return _$receivedPackageReceivedViaEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$receivedPackageReceivedViaEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -123,6 +144,7 @@ _$receivedPackageReceivedViaEnumValues =
       const <ReceivedPackageReceivedViaEnum>[
         _$receivedPackageReceivedViaEnum_peer,
         _$receivedPackageReceivedViaEnum_import_,
+        _$receivedPackageReceivedViaEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -145,12 +167,14 @@ class _$ReceivedPackageTypeEnumSerializer
     'investigation': 'investigation',
     'chronicleExtract': 'chronicle-extract',
     'evidence': 'evidence',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'report': 'report',
     'investigation': 'investigation',
     'chronicle-extract': 'chronicleExtract',
     'evidence': 'evidence',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -181,11 +205,13 @@ class _$ReceivedPackageSignatureStatusEnumSerializer
     'valid': 'valid',
     'invalid': 'invalid',
     'unknownKey': 'unknown-key',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'valid': 'valid',
     'invalid': 'invalid',
     'unknown-key': 'unknownKey',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -215,10 +241,12 @@ class _$ReceivedPackageKeySourceEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'peerJwks': 'peer-jwks',
     'pinned': 'pinned',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'peer-jwks': 'peerJwks',
     'pinned': 'pinned',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -248,10 +276,12 @@ class _$ReceivedPackageReceivedViaEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'peer': 'peer',
     'import_': 'import',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'peer': 'peer',
     'import': 'import_',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

@@ -12,6 +12,8 @@ const ShareRequestRoleEnum _$shareRequestRoleEnum_commenter =
     const ShareRequestRoleEnum._('commenter');
 const ShareRequestRoleEnum _$shareRequestRoleEnum_editor =
     const ShareRequestRoleEnum._('editor');
+const ShareRequestRoleEnum _$shareRequestRoleEnum_unknownDefaultOpenApi =
+    const ShareRequestRoleEnum._('unknownDefaultOpenApi');
 
 ShareRequestRoleEnum _$shareRequestRoleEnumValueOf(String name) {
   switch (name) {
@@ -21,8 +23,10 @@ ShareRequestRoleEnum _$shareRequestRoleEnumValueOf(String name) {
       return _$shareRequestRoleEnum_commenter;
     case 'editor':
       return _$shareRequestRoleEnum_editor;
+    case 'unknownDefaultOpenApi':
+      return _$shareRequestRoleEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$shareRequestRoleEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -31,6 +35,7 @@ final BuiltSet<ShareRequestRoleEnum> _$shareRequestRoleEnumValues =
       _$shareRequestRoleEnum_viewer,
       _$shareRequestRoleEnum_commenter,
       _$shareRequestRoleEnum_editor,
+      _$shareRequestRoleEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<ShareRequestRoleEnum> _$shareRequestRoleEnumSerializer =
@@ -42,11 +47,13 @@ class _$ShareRequestRoleEnumSerializer
     'viewer': 'viewer',
     'commenter': 'commenter',
     'editor': 'editor',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'viewer': 'viewer',
     'commenter': 'commenter',
     'editor': 'editor',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

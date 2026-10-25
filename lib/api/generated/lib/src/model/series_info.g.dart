@@ -24,6 +24,8 @@ const SeriesInfoFrequencyEnum _$seriesInfoFrequencyEnum_P3M =
     const SeriesInfoFrequencyEnum._('P3M');
 const SeriesInfoFrequencyEnum _$seriesInfoFrequencyEnum_P1Y =
     const SeriesInfoFrequencyEnum._('P1Y');
+const SeriesInfoFrequencyEnum _$seriesInfoFrequencyEnum_unknownDefaultOpenApi =
+    const SeriesInfoFrequencyEnum._('unknownDefaultOpenApi');
 
 SeriesInfoFrequencyEnum _$seriesInfoFrequencyEnumValueOf(String name) {
   switch (name) {
@@ -45,8 +47,10 @@ SeriesInfoFrequencyEnum _$seriesInfoFrequencyEnumValueOf(String name) {
       return _$seriesInfoFrequencyEnum_P3M;
     case 'P1Y':
       return _$seriesInfoFrequencyEnum_P1Y;
+    case 'unknownDefaultOpenApi':
+      return _$seriesInfoFrequencyEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$seriesInfoFrequencyEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -61,6 +65,7 @@ final BuiltSet<SeriesInfoFrequencyEnum> _$seriesInfoFrequencyEnumValues =
       _$seriesInfoFrequencyEnum_P1M,
       _$seriesInfoFrequencyEnum_P3M,
       _$seriesInfoFrequencyEnum_P1Y,
+      _$seriesInfoFrequencyEnum_unknownDefaultOpenApi,
     ]);
 
 const SeriesInfoStatusEnum _$seriesInfoStatusEnum_final_ =
@@ -71,6 +76,8 @@ const SeriesInfoStatusEnum _$seriesInfoStatusEnum_estimated =
     const SeriesInfoStatusEnum._('estimated');
 const SeriesInfoStatusEnum _$seriesInfoStatusEnum_forecast =
     const SeriesInfoStatusEnum._('forecast');
+const SeriesInfoStatusEnum _$seriesInfoStatusEnum_unknownDefaultOpenApi =
+    const SeriesInfoStatusEnum._('unknownDefaultOpenApi');
 
 SeriesInfoStatusEnum _$seriesInfoStatusEnumValueOf(String name) {
   switch (name) {
@@ -82,8 +89,10 @@ SeriesInfoStatusEnum _$seriesInfoStatusEnumValueOf(String name) {
       return _$seriesInfoStatusEnum_estimated;
     case 'forecast':
       return _$seriesInfoStatusEnum_forecast;
+    case 'unknownDefaultOpenApi':
+      return _$seriesInfoStatusEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$seriesInfoStatusEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -93,6 +102,7 @@ final BuiltSet<SeriesInfoStatusEnum> _$seriesInfoStatusEnumValues =
       _$seriesInfoStatusEnum_preliminary,
       _$seriesInfoStatusEnum_estimated,
       _$seriesInfoStatusEnum_forecast,
+      _$seriesInfoStatusEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<SeriesInfoFrequencyEnum> _$seriesInfoFrequencyEnumSerializer =
@@ -112,6 +122,7 @@ class _$SeriesInfoFrequencyEnumSerializer
     'P1M': 'P1M',
     'P3M': 'P3M',
     'P1Y': 'P1Y',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'PT15S': 'PT15S',
@@ -123,6 +134,7 @@ class _$SeriesInfoFrequencyEnumSerializer
     'P1M': 'P1M',
     'P3M': 'P3M',
     'P1Y': 'P1Y',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -154,12 +166,14 @@ class _$SeriesInfoStatusEnumSerializer
     'preliminary': 'preliminary',
     'estimated': 'estimated',
     'forecast': 'forecast',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'final': 'final_',
     'preliminary': 'preliminary',
     'estimated': 'estimated',
     'forecast': 'forecast',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

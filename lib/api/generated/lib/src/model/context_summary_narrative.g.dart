@@ -9,14 +9,19 @@ part of 'context_summary_narrative.dart';
 const ContextSummaryNarrativeTextOriginEnum
 _$contextSummaryNarrativeTextOriginEnum_llm =
     const ContextSummaryNarrativeTextOriginEnum._('llm');
+const ContextSummaryNarrativeTextOriginEnum
+_$contextSummaryNarrativeTextOriginEnum_unknownDefaultOpenApi =
+    const ContextSummaryNarrativeTextOriginEnum._('unknownDefaultOpenApi');
 
 ContextSummaryNarrativeTextOriginEnum
 _$contextSummaryNarrativeTextOriginEnumValueOf(String name) {
   switch (name) {
     case 'llm':
       return _$contextSummaryNarrativeTextOriginEnum_llm;
+    case 'unknownDefaultOpenApi':
+      return _$contextSummaryNarrativeTextOriginEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$contextSummaryNarrativeTextOriginEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -25,6 +30,7 @@ _$contextSummaryNarrativeTextOriginEnumValues =
     BuiltSet<ContextSummaryNarrativeTextOriginEnum>(
       const <ContextSummaryNarrativeTextOriginEnum>[
         _$contextSummaryNarrativeTextOriginEnum_llm,
+        _$contextSummaryNarrativeTextOriginEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -36,9 +42,11 @@ class _$ContextSummaryNarrativeTextOriginEnumSerializer
     implements PrimitiveSerializer<ContextSummaryNarrativeTextOriginEnum> {
   static const Map<String, Object> _toWire = const <String, Object>{
     'llm': 'llm',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'llm': 'llm',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

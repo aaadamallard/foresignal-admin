@@ -457,6 +457,9 @@ class AnalystProposalTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'propose_situation_merge')
   static const AnalystProposalTypeEnum proposeSituationMerge =
       _$analystProposalTypeEnum_proposeSituationMerge;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const AnalystProposalTypeEnum unknownDefaultOpenApi =
+      _$analystProposalTypeEnum_unknownDefaultOpenApi;
 
   static Serializer<AnalystProposalTypeEnum> get serializer =>
       _$analystProposalTypeEnumSerializer;
@@ -485,6 +488,9 @@ class AnalystProposalStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'failed')
   static const AnalystProposalStatusEnum failed =
       _$analystProposalStatusEnum_failed;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const AnalystProposalStatusEnum unknownDefaultOpenApi =
+      _$analystProposalStatusEnum_unknownDefaultOpenApi;
 
   static Serializer<AnalystProposalStatusEnum> get serializer =>
       _$analystProposalStatusEnumSerializer;

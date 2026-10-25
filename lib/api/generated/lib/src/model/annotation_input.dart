@@ -255,6 +255,9 @@ class AnnotationInputKindEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'verdict')
   static const AnnotationInputKindEnum verdict =
       _$annotationInputKindEnum_verdict;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const AnnotationInputKindEnum unknownDefaultOpenApi =
+      _$annotationInputKindEnum_unknownDefaultOpenApi;
 
   static Serializer<AnnotationInputKindEnum> get serializer =>
       _$annotationInputKindEnumSerializer;
@@ -280,6 +283,9 @@ class AnnotationInputVerdictEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'duplicate-of')
   static const AnnotationInputVerdictEnum duplicateOf =
       _$annotationInputVerdictEnum_duplicateOf;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const AnnotationInputVerdictEnum unknownDefaultOpenApi =
+      _$annotationInputVerdictEnum_unknownDefaultOpenApi;
 
   static Serializer<AnnotationInputVerdictEnum> get serializer =>
       _$annotationInputVerdictEnumSerializer;

@@ -18,6 +18,9 @@ _$situationAssessmentRequestRolesEnum_forecaster =
 const SituationAssessmentRequestRolesEnum
 _$situationAssessmentRequestRolesEnum_proposer =
     const SituationAssessmentRequestRolesEnum._('proposer');
+const SituationAssessmentRequestRolesEnum
+_$situationAssessmentRequestRolesEnum_unknownDefaultOpenApi =
+    const SituationAssessmentRequestRolesEnum._('unknownDefaultOpenApi');
 
 SituationAssessmentRequestRolesEnum
 _$situationAssessmentRequestRolesEnumValueOf(String name) {
@@ -30,8 +33,10 @@ _$situationAssessmentRequestRolesEnumValueOf(String name) {
       return _$situationAssessmentRequestRolesEnum_forecaster;
     case 'proposer':
       return _$situationAssessmentRequestRolesEnum_proposer;
+    case 'unknownDefaultOpenApi':
+      return _$situationAssessmentRequestRolesEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$situationAssessmentRequestRolesEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -43,6 +48,7 @@ _$situationAssessmentRequestRolesEnumValues =
         _$situationAssessmentRequestRolesEnum_redTeam,
         _$situationAssessmentRequestRolesEnum_forecaster,
         _$situationAssessmentRequestRolesEnum_proposer,
+        _$situationAssessmentRequestRolesEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -55,6 +61,9 @@ _$situationAssessmentRequestEffortEnum_medium =
 const SituationAssessmentRequestEffortEnum
 _$situationAssessmentRequestEffortEnum_high =
     const SituationAssessmentRequestEffortEnum._('high');
+const SituationAssessmentRequestEffortEnum
+_$situationAssessmentRequestEffortEnum_unknownDefaultOpenApi =
+    const SituationAssessmentRequestEffortEnum._('unknownDefaultOpenApi');
 
 SituationAssessmentRequestEffortEnum
 _$situationAssessmentRequestEffortEnumValueOf(String name) {
@@ -65,8 +74,10 @@ _$situationAssessmentRequestEffortEnumValueOf(String name) {
       return _$situationAssessmentRequestEffortEnum_medium;
     case 'high':
       return _$situationAssessmentRequestEffortEnum_high;
+    case 'unknownDefaultOpenApi':
+      return _$situationAssessmentRequestEffortEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$situationAssessmentRequestEffortEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -77,6 +88,7 @@ _$situationAssessmentRequestEffortEnumValues =
         _$situationAssessmentRequestEffortEnum_low,
         _$situationAssessmentRequestEffortEnum_medium,
         _$situationAssessmentRequestEffortEnum_high,
+        _$situationAssessmentRequestEffortEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -94,12 +106,14 @@ class _$SituationAssessmentRequestRolesEnumSerializer
     'redTeam': 'red-team',
     'forecaster': 'forecaster',
     'proposer': 'proposer',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'analyst': 'analyst',
     'red-team': 'redTeam',
     'forecaster': 'forecaster',
     'proposer': 'proposer',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -132,11 +146,13 @@ class _$SituationAssessmentRequestEffortEnumSerializer
     'low': 'low',
     'medium': 'medium',
     'high': 'high',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'low': 'low',
     'medium': 'medium',
     'high': 'high',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

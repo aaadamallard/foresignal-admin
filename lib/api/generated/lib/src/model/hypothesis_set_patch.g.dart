@@ -12,6 +12,9 @@ const HypothesisSetPatchCadenceEnum _$hypothesisSetPatchCadenceEnum_weekly =
     const HypothesisSetPatchCadenceEnum._('weekly');
 const HypothesisSetPatchCadenceEnum _$hypothesisSetPatchCadenceEnum_monthly =
     const HypothesisSetPatchCadenceEnum._('monthly');
+const HypothesisSetPatchCadenceEnum
+_$hypothesisSetPatchCadenceEnum_unknownDefaultOpenApi =
+    const HypothesisSetPatchCadenceEnum._('unknownDefaultOpenApi');
 
 HypothesisSetPatchCadenceEnum _$hypothesisSetPatchCadenceEnumValueOf(
   String name,
@@ -23,8 +26,10 @@ HypothesisSetPatchCadenceEnum _$hypothesisSetPatchCadenceEnumValueOf(
       return _$hypothesisSetPatchCadenceEnum_weekly;
     case 'monthly':
       return _$hypothesisSetPatchCadenceEnum_monthly;
+    case 'unknownDefaultOpenApi':
+      return _$hypothesisSetPatchCadenceEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$hypothesisSetPatchCadenceEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -34,6 +39,7 @@ _$hypothesisSetPatchCadenceEnumValues = BuiltSet<HypothesisSetPatchCadenceEnum>(
     _$hypothesisSetPatchCadenceEnum_daily,
     _$hypothesisSetPatchCadenceEnum_weekly,
     _$hypothesisSetPatchCadenceEnum_monthly,
+    _$hypothesisSetPatchCadenceEnum_unknownDefaultOpenApi,
   ],
 );
 
@@ -41,6 +47,9 @@ const HypothesisSetPatchStatusEnum _$hypothesisSetPatchStatusEnum_active =
     const HypothesisSetPatchStatusEnum._('active');
 const HypothesisSetPatchStatusEnum _$hypothesisSetPatchStatusEnum_archived =
     const HypothesisSetPatchStatusEnum._('archived');
+const HypothesisSetPatchStatusEnum
+_$hypothesisSetPatchStatusEnum_unknownDefaultOpenApi =
+    const HypothesisSetPatchStatusEnum._('unknownDefaultOpenApi');
 
 HypothesisSetPatchStatusEnum _$hypothesisSetPatchStatusEnumValueOf(
   String name,
@@ -50,18 +59,20 @@ HypothesisSetPatchStatusEnum _$hypothesisSetPatchStatusEnumValueOf(
       return _$hypothesisSetPatchStatusEnum_active;
     case 'archived':
       return _$hypothesisSetPatchStatusEnum_archived;
+    case 'unknownDefaultOpenApi':
+      return _$hypothesisSetPatchStatusEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$hypothesisSetPatchStatusEnum_unknownDefaultOpenApi;
   }
 }
 
 final BuiltSet<HypothesisSetPatchStatusEnum>
-_$hypothesisSetPatchStatusEnumValues = BuiltSet<HypothesisSetPatchStatusEnum>(
-  const <HypothesisSetPatchStatusEnum>[
-    _$hypothesisSetPatchStatusEnum_active,
-    _$hypothesisSetPatchStatusEnum_archived,
-  ],
-);
+_$hypothesisSetPatchStatusEnumValues =
+    BuiltSet<HypothesisSetPatchStatusEnum>(const <HypothesisSetPatchStatusEnum>[
+      _$hypothesisSetPatchStatusEnum_active,
+      _$hypothesisSetPatchStatusEnum_archived,
+      _$hypothesisSetPatchStatusEnum_unknownDefaultOpenApi,
+    ]);
 
 Serializer<HypothesisSetPatchCadenceEnum>
 _$hypothesisSetPatchCadenceEnumSerializer =
@@ -76,11 +87,13 @@ class _$HypothesisSetPatchCadenceEnumSerializer
     'daily': 'daily',
     'weekly': 'weekly',
     'monthly': 'monthly',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'daily': 'daily',
     'weekly': 'weekly',
     'monthly': 'monthly',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -110,10 +123,12 @@ class _$HypothesisSetPatchStatusEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'active': 'active',
     'archived': 'archived',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'active': 'active',
     'archived': 'archived',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

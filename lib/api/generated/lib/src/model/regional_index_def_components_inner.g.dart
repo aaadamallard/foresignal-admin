@@ -18,6 +18,11 @@ _$regionalIndexDefComponentsInnerTransformEnum_pctrank =
 const RegionalIndexDefComponentsInnerTransformEnum
 _$regionalIndexDefComponentsInnerTransformEnum_level =
     const RegionalIndexDefComponentsInnerTransformEnum._('level');
+const RegionalIndexDefComponentsInnerTransformEnum
+_$regionalIndexDefComponentsInnerTransformEnum_unknownDefaultOpenApi =
+    const RegionalIndexDefComponentsInnerTransformEnum._(
+      'unknownDefaultOpenApi',
+    );
 
 RegionalIndexDefComponentsInnerTransformEnum
 _$regionalIndexDefComponentsInnerTransformEnumValueOf(String name) {
@@ -30,8 +35,10 @@ _$regionalIndexDefComponentsInnerTransformEnumValueOf(String name) {
       return _$regionalIndexDefComponentsInnerTransformEnum_pctrank;
     case 'level':
       return _$regionalIndexDefComponentsInnerTransformEnum_level;
+    case 'unknownDefaultOpenApi':
+      return _$regionalIndexDefComponentsInnerTransformEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$regionalIndexDefComponentsInnerTransformEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -43,6 +50,7 @@ _$regionalIndexDefComponentsInnerTransformEnumValues =
         _$regionalIndexDefComponentsInnerTransformEnum_zscore,
         _$regionalIndexDefComponentsInnerTransformEnum_pctrank,
         _$regionalIndexDefComponentsInnerTransformEnum_level,
+        _$regionalIndexDefComponentsInnerTransformEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -55,6 +63,9 @@ _$regionalIndexDefComponentsInnerWindowEnum_P28D =
 const RegionalIndexDefComponentsInnerWindowEnum
 _$regionalIndexDefComponentsInnerWindowEnum_P90D =
     const RegionalIndexDefComponentsInnerWindowEnum._('P90D');
+const RegionalIndexDefComponentsInnerWindowEnum
+_$regionalIndexDefComponentsInnerWindowEnum_unknownDefaultOpenApi =
+    const RegionalIndexDefComponentsInnerWindowEnum._('unknownDefaultOpenApi');
 
 RegionalIndexDefComponentsInnerWindowEnum
 _$regionalIndexDefComponentsInnerWindowEnumValueOf(String name) {
@@ -65,8 +76,10 @@ _$regionalIndexDefComponentsInnerWindowEnumValueOf(String name) {
       return _$regionalIndexDefComponentsInnerWindowEnum_P28D;
     case 'P90D':
       return _$regionalIndexDefComponentsInnerWindowEnum_P90D;
+    case 'unknownDefaultOpenApi':
+      return _$regionalIndexDefComponentsInnerWindowEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$regionalIndexDefComponentsInnerWindowEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -77,6 +90,7 @@ _$regionalIndexDefComponentsInnerWindowEnumValues =
         _$regionalIndexDefComponentsInnerWindowEnum_P7D,
         _$regionalIndexDefComponentsInnerWindowEnum_P28D,
         _$regionalIndexDefComponentsInnerWindowEnum_P90D,
+        _$regionalIndexDefComponentsInnerWindowEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -86,6 +100,11 @@ _$regionalIndexDefComponentsInnerDirectionEnum_number1 =
 const RegionalIndexDefComponentsInnerDirectionEnum
 _$regionalIndexDefComponentsInnerDirectionEnum_numberNegative1 =
     const RegionalIndexDefComponentsInnerDirectionEnum._('numberNegative1');
+const RegionalIndexDefComponentsInnerDirectionEnum
+_$regionalIndexDefComponentsInnerDirectionEnum_unknownDefaultOpenApi =
+    const RegionalIndexDefComponentsInnerDirectionEnum._(
+      'unknownDefaultOpenApi',
+    );
 
 RegionalIndexDefComponentsInnerDirectionEnum
 _$regionalIndexDefComponentsInnerDirectionEnumValueOf(String name) {
@@ -94,8 +113,10 @@ _$regionalIndexDefComponentsInnerDirectionEnumValueOf(String name) {
       return _$regionalIndexDefComponentsInnerDirectionEnum_number1;
     case 'numberNegative1':
       return _$regionalIndexDefComponentsInnerDirectionEnum_numberNegative1;
+    case 'unknownDefaultOpenApi':
+      return _$regionalIndexDefComponentsInnerDirectionEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$regionalIndexDefComponentsInnerDirectionEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -105,6 +126,7 @@ _$regionalIndexDefComponentsInnerDirectionEnumValues =
       const <RegionalIndexDefComponentsInnerDirectionEnum>[
         _$regionalIndexDefComponentsInnerDirectionEnum_number1,
         _$regionalIndexDefComponentsInnerDirectionEnum_numberNegative1,
+        _$regionalIndexDefComponentsInnerDirectionEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -126,12 +148,14 @@ class _$RegionalIndexDefComponentsInnerTransformEnumSerializer
     'zscore': 'zscore',
     'pctrank': 'pctrank',
     'level': 'level',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'log1p': 'log1p',
     'zscore': 'zscore',
     'pctrank': 'pctrank',
     'level': 'level',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -164,11 +188,13 @@ class _$RegionalIndexDefComponentsInnerWindowEnumSerializer
     'P7D': 'P7D',
     'P28D': 'P28D',
     'P90D': 'P90D',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'P7D': 'P7D',
     'P28D': 'P28D',
     'P90D': 'P90D',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -201,10 +227,12 @@ class _$RegionalIndexDefComponentsInnerDirectionEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'number1': 1,
     'numberNegative1': -1,
+    'unknownDefaultOpenApi': 11184809,
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     1: 'number1',
     -1: 'numberNegative1',
+    11184809: 'unknownDefaultOpenApi',
   };
 
   @override

@@ -16,6 +16,9 @@ const DetectabilityMethodsEnum _$detectabilityMethodsEnum_declared =
     const DetectabilityMethodsEnum._('declared');
 const DetectabilityMethodsEnum _$detectabilityMethodsEnum_platformVolume =
     const DetectabilityMethodsEnum._('platformVolume');
+const DetectabilityMethodsEnum
+_$detectabilityMethodsEnum_unknownDefaultOpenApi =
+    const DetectabilityMethodsEnum._('unknownDefaultOpenApi');
 
 DetectabilityMethodsEnum _$detectabilityMethodsEnumValueOf(String name) {
   switch (name) {
@@ -29,8 +32,10 @@ DetectabilityMethodsEnum _$detectabilityMethodsEnumValueOf(String name) {
       return _$detectabilityMethodsEnum_declared;
     case 'platformVolume':
       return _$detectabilityMethodsEnum_platformVolume;
+    case 'unknownDefaultOpenApi':
+      return _$detectabilityMethodsEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$detectabilityMethodsEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -41,6 +46,7 @@ final BuiltSet<DetectabilityMethodsEnum> _$detectabilityMethodsEnumValues =
       _$detectabilityMethodsEnum_receiverRange,
       _$detectabilityMethodsEnum_declared,
       _$detectabilityMethodsEnum_platformVolume,
+      _$detectabilityMethodsEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<DetectabilityMethodsEnum> _$detectabilityMethodsEnumSerializer =
@@ -54,6 +60,7 @@ class _$DetectabilityMethodsEnumSerializer
     'receiverRange': 'receiver-range',
     'declared': 'declared',
     'platformVolume': 'platform-volume',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'capture-recapture': 'captureRecapture',
@@ -61,6 +68,7 @@ class _$DetectabilityMethodsEnumSerializer
     'receiver-range': 'receiverRange',
     'declared': 'declared',
     'platform-volume': 'platformVolume',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

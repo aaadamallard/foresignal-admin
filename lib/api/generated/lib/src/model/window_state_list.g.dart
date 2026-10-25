@@ -12,6 +12,8 @@ const WindowStateListTypeEnum _$windowStateListTypeEnum_absence =
     const WindowStateListTypeEnum._('absence');
 const WindowStateListTypeEnum _$windowStateListTypeEnum_anomaly =
     const WindowStateListTypeEnum._('anomaly');
+const WindowStateListTypeEnum _$windowStateListTypeEnum_unknownDefaultOpenApi =
+    const WindowStateListTypeEnum._('unknownDefaultOpenApi');
 
 WindowStateListTypeEnum _$windowStateListTypeEnumValueOf(String name) {
   switch (name) {
@@ -21,8 +23,10 @@ WindowStateListTypeEnum _$windowStateListTypeEnumValueOf(String name) {
       return _$windowStateListTypeEnum_absence;
     case 'anomaly':
       return _$windowStateListTypeEnum_anomaly;
+    case 'unknownDefaultOpenApi':
+      return _$windowStateListTypeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$windowStateListTypeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -31,6 +35,7 @@ final BuiltSet<WindowStateListTypeEnum> _$windowStateListTypeEnumValues =
       _$windowStateListTypeEnum_count,
       _$windowStateListTypeEnum_absence,
       _$windowStateListTypeEnum_anomaly,
+      _$windowStateListTypeEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<WindowStateListTypeEnum> _$windowStateListTypeEnumSerializer =
@@ -42,11 +47,13 @@ class _$WindowStateListTypeEnumSerializer
     'count': 'count',
     'absence': 'absence',
     'anomaly': 'anomaly',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'count': 'count',
     'absence': 'absence',
     'anomaly': 'anomaly',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

@@ -382,6 +382,9 @@ class MeshChannelCommonConfigRegionEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'OTHER')
   static const MeshChannelCommonConfigRegionEnum OTHER =
       _$meshChannelCommonConfigRegionEnum_OTHER;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const MeshChannelCommonConfigRegionEnum unknownDefaultOpenApi =
+      _$meshChannelCommonConfigRegionEnum_unknownDefaultOpenApi;
 
   static Serializer<MeshChannelCommonConfigRegionEnum> get serializer =>
       _$meshChannelCommonConfigRegionEnumSerializer;
@@ -405,6 +408,9 @@ class MeshChannelCommonConfigAirtimePresetEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'custom')
   static const MeshChannelCommonConfigAirtimePresetEnum custom =
       _$meshChannelCommonConfigAirtimePresetEnum_custom;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const MeshChannelCommonConfigAirtimePresetEnum unknownDefaultOpenApi =
+      _$meshChannelCommonConfigAirtimePresetEnum_unknownDefaultOpenApi;
 
   static Serializer<MeshChannelCommonConfigAirtimePresetEnum> get serializer =>
       _$meshChannelCommonConfigAirtimePresetEnumSerializer;
@@ -424,6 +430,9 @@ class MeshChannelCommonConfigProfileEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'cbor')
   static const MeshChannelCommonConfigProfileEnum cbor =
       _$meshChannelCommonConfigProfileEnum_cbor;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const MeshChannelCommonConfigProfileEnum unknownDefaultOpenApi =
+      _$meshChannelCommonConfigProfileEnum_unknownDefaultOpenApi;
 
   static Serializer<MeshChannelCommonConfigProfileEnum> get serializer =>
       _$meshChannelCommonConfigProfileEnumSerializer;
@@ -447,6 +456,9 @@ class MeshChannelCommonConfigMinSeverityEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'critical')
   static const MeshChannelCommonConfigMinSeverityEnum critical =
       _$meshChannelCommonConfigMinSeverityEnum_critical;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const MeshChannelCommonConfigMinSeverityEnum unknownDefaultOpenApi =
+      _$meshChannelCommonConfigMinSeverityEnum_unknownDefaultOpenApi;
 
   static Serializer<MeshChannelCommonConfigMinSeverityEnum> get serializer =>
       _$meshChannelCommonConfigMinSeverityEnumSerializer;
@@ -466,6 +478,9 @@ class MeshChannelCommonConfigAllowedSendersEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'ack')
   static const MeshChannelCommonConfigAllowedSendersEnum ack =
       _$meshChannelCommonConfigAllowedSendersEnum_ack;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const MeshChannelCommonConfigAllowedSendersEnum unknownDefaultOpenApi =
+      _$meshChannelCommonConfigAllowedSendersEnum_unknownDefaultOpenApi;
 
   static Serializer<MeshChannelCommonConfigAllowedSendersEnum> get serializer =>
       _$meshChannelCommonConfigAllowedSendersEnumSerializer;

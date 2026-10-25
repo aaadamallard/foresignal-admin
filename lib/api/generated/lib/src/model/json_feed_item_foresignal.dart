@@ -223,6 +223,9 @@ class JsonFeedItemForesignalSeverityEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'critical')
   static const JsonFeedItemForesignalSeverityEnum critical =
       _$jsonFeedItemForesignalSeverityEnum_critical;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const JsonFeedItemForesignalSeverityEnum unknownDefaultOpenApi =
+      _$jsonFeedItemForesignalSeverityEnum_unknownDefaultOpenApi;
 
   static Serializer<JsonFeedItemForesignalSeverityEnum> get serializer =>
       _$jsonFeedItemForesignalSeverityEnumSerializer;
@@ -245,6 +248,9 @@ class JsonFeedItemForesignalStateEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'resolved')
   static const JsonFeedItemForesignalStateEnum resolved =
       _$jsonFeedItemForesignalStateEnum_resolved;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const JsonFeedItemForesignalStateEnum unknownDefaultOpenApi =
+      _$jsonFeedItemForesignalStateEnum_unknownDefaultOpenApi;
 
   static Serializer<JsonFeedItemForesignalStateEnum> get serializer =>
       _$jsonFeedItemForesignalStateEnumSerializer;

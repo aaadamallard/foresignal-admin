@@ -8,6 +8,9 @@ part of 'peer.dart';
 
 const PeerModeEnum _$peerModeEnum_PULL = const PeerModeEnum._('PULL');
 const PeerModeEnum _$peerModeEnum_RECEIVE = const PeerModeEnum._('RECEIVE');
+const PeerModeEnum _$peerModeEnum_unknownDefaultOpenApi = const PeerModeEnum._(
+  'unknownDefaultOpenApi',
+);
 
 PeerModeEnum _$peerModeEnumValueOf(String name) {
   switch (name) {
@@ -15,13 +18,19 @@ PeerModeEnum _$peerModeEnumValueOf(String name) {
       return _$peerModeEnum_PULL;
     case 'RECEIVE':
       return _$peerModeEnum_RECEIVE;
+    case 'unknownDefaultOpenApi':
+      return _$peerModeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$peerModeEnum_unknownDefaultOpenApi;
   }
 }
 
 final BuiltSet<PeerModeEnum> _$peerModeEnumValues = BuiltSet<PeerModeEnum>(
-  const <PeerModeEnum>[_$peerModeEnum_PULL, _$peerModeEnum_RECEIVE],
+  const <PeerModeEnum>[
+    _$peerModeEnum_PULL,
+    _$peerModeEnum_RECEIVE,
+    _$peerModeEnum_unknownDefaultOpenApi,
+  ],
 );
 
 const PeerHealthReasonEnum _$peerHealthReasonEnum_PEER_KEY_MISMATCH =
@@ -30,6 +39,8 @@ const PeerHealthReasonEnum _$peerHealthReasonEnum_PEER_UNREACHABLE =
     const PeerHealthReasonEnum._('PEER_UNREACHABLE');
 const PeerHealthReasonEnum _$peerHealthReasonEnum_PEER_RESYNC =
     const PeerHealthReasonEnum._('PEER_RESYNC');
+const PeerHealthReasonEnum _$peerHealthReasonEnum_unknownDefaultOpenApi =
+    const PeerHealthReasonEnum._('unknownDefaultOpenApi');
 
 PeerHealthReasonEnum _$peerHealthReasonEnumValueOf(String name) {
   switch (name) {
@@ -39,8 +50,10 @@ PeerHealthReasonEnum _$peerHealthReasonEnumValueOf(String name) {
       return _$peerHealthReasonEnum_PEER_UNREACHABLE;
     case 'PEER_RESYNC':
       return _$peerHealthReasonEnum_PEER_RESYNC;
+    case 'unknownDefaultOpenApi':
+      return _$peerHealthReasonEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$peerHealthReasonEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -49,6 +62,7 @@ final BuiltSet<PeerHealthReasonEnum> _$peerHealthReasonEnumValues =
       _$peerHealthReasonEnum_PEER_KEY_MISMATCH,
       _$peerHealthReasonEnum_PEER_UNREACHABLE,
       _$peerHealthReasonEnum_PEER_RESYNC,
+      _$peerHealthReasonEnum_unknownDefaultOpenApi,
     ]);
 
 const PeerReliabilityEnum _$peerReliabilityEnum_A = const PeerReliabilityEnum._(
@@ -69,6 +83,8 @@ const PeerReliabilityEnum _$peerReliabilityEnum_E = const PeerReliabilityEnum._(
 const PeerReliabilityEnum _$peerReliabilityEnum_F = const PeerReliabilityEnum._(
   'F',
 );
+const PeerReliabilityEnum _$peerReliabilityEnum_unknownDefaultOpenApi =
+    const PeerReliabilityEnum._('unknownDefaultOpenApi');
 
 PeerReliabilityEnum _$peerReliabilityEnumValueOf(String name) {
   switch (name) {
@@ -84,8 +100,10 @@ PeerReliabilityEnum _$peerReliabilityEnumValueOf(String name) {
       return _$peerReliabilityEnum_E;
     case 'F':
       return _$peerReliabilityEnum_F;
+    case 'unknownDefaultOpenApi':
+      return _$peerReliabilityEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$peerReliabilityEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -97,6 +115,7 @@ final BuiltSet<PeerReliabilityEnum> _$peerReliabilityEnumValues =
       _$peerReliabilityEnum_D,
       _$peerReliabilityEnum_E,
       _$peerReliabilityEnum_F,
+      _$peerReliabilityEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<PeerModeEnum> _$peerModeEnumSerializer = _$PeerModeEnumSerializer();
@@ -109,10 +128,12 @@ class _$PeerModeEnumSerializer implements PrimitiveSerializer<PeerModeEnum> {
   static const Map<String, Object> _toWire = const <String, Object>{
     'PULL': 'PULL',
     'RECEIVE': 'RECEIVE',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'PULL': 'PULL',
     'RECEIVE': 'RECEIVE',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -143,11 +164,13 @@ class _$PeerHealthReasonEnumSerializer
     'PEER_KEY_MISMATCH': 'PEER_KEY_MISMATCH',
     'PEER_UNREACHABLE': 'PEER_UNREACHABLE',
     'PEER_RESYNC': 'PEER_RESYNC',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'PEER_KEY_MISMATCH': 'PEER_KEY_MISMATCH',
     'PEER_UNREACHABLE': 'PEER_UNREACHABLE',
     'PEER_RESYNC': 'PEER_RESYNC',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -181,6 +204,7 @@ class _$PeerReliabilityEnumSerializer
     'D': 'D',
     'E': 'E',
     'F': 'F',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'A': 'A',
@@ -189,6 +213,7 @@ class _$PeerReliabilityEnumSerializer
     'D': 'D',
     'E': 'E',
     'F': 'F',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

@@ -262,6 +262,9 @@ class SocialQuotaUnitEnum extends EnumClass {
   static const SocialQuotaUnitEnum posts = _$socialQuotaUnitEnum_posts;
   @BuiltValueEnumConst(wireName: r'hashtags')
   static const SocialQuotaUnitEnum hashtags = _$socialQuotaUnitEnum_hashtags;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const SocialQuotaUnitEnum unknownDefaultOpenApi =
+      _$socialQuotaUnitEnum_unknownDefaultOpenApi;
 
   static Serializer<SocialQuotaUnitEnum> get serializer =>
       _$socialQuotaUnitEnumSerializer;

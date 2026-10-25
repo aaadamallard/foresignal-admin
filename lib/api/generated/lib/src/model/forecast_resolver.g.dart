@@ -20,6 +20,9 @@ const ForecastResolverTypeEnum _$forecastResolverTypeEnum_hypothesisOutcome =
     const ForecastResolverTypeEnum._('hypothesisOutcome');
 const ForecastResolverTypeEnum _$forecastResolverTypeEnum_manual =
     const ForecastResolverTypeEnum._('manual');
+const ForecastResolverTypeEnum
+_$forecastResolverTypeEnum_unknownDefaultOpenApi =
+    const ForecastResolverTypeEnum._('unknownDefaultOpenApi');
 
 ForecastResolverTypeEnum _$forecastResolverTypeEnumValueOf(String name) {
   switch (name) {
@@ -37,8 +40,10 @@ ForecastResolverTypeEnum _$forecastResolverTypeEnumValueOf(String name) {
       return _$forecastResolverTypeEnum_hypothesisOutcome;
     case 'manual':
       return _$forecastResolverTypeEnum_manual;
+    case 'unknownDefaultOpenApi':
+      return _$forecastResolverTypeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$forecastResolverTypeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -51,6 +56,7 @@ final BuiltSet<ForecastResolverTypeEnum> _$forecastResolverTypeEnumValues =
       _$forecastResolverTypeEnum_situationStatus,
       _$forecastResolverTypeEnum_hypothesisOutcome,
       _$forecastResolverTypeEnum_manual,
+      _$forecastResolverTypeEnum_unknownDefaultOpenApi,
     ]);
 
 const ForecastResolverOpEnum _$forecastResolverOpEnum_gt =
@@ -63,6 +69,8 @@ const ForecastResolverOpEnum _$forecastResolverOpEnum_lte =
     const ForecastResolverOpEnum._('lte');
 const ForecastResolverOpEnum _$forecastResolverOpEnum_eq =
     const ForecastResolverOpEnum._('eq');
+const ForecastResolverOpEnum _$forecastResolverOpEnum_unknownDefaultOpenApi =
+    const ForecastResolverOpEnum._('unknownDefaultOpenApi');
 
 ForecastResolverOpEnum _$forecastResolverOpEnumValueOf(String name) {
   switch (name) {
@@ -76,8 +84,10 @@ ForecastResolverOpEnum _$forecastResolverOpEnumValueOf(String name) {
       return _$forecastResolverOpEnum_lte;
     case 'eq':
       return _$forecastResolverOpEnum_eq;
+    case 'unknownDefaultOpenApi':
+      return _$forecastResolverOpEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$forecastResolverOpEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -88,6 +98,7 @@ final BuiltSet<ForecastResolverOpEnum> _$forecastResolverOpEnumValues =
       _$forecastResolverOpEnum_lt,
       _$forecastResolverOpEnum_lte,
       _$forecastResolverOpEnum_eq,
+      _$forecastResolverOpEnum_unknownDefaultOpenApi,
     ]);
 
 const ForecastResolverAggregateEnum _$forecastResolverAggregateEnum_last =
@@ -98,6 +109,9 @@ const ForecastResolverAggregateEnum _$forecastResolverAggregateEnum_max =
     const ForecastResolverAggregateEnum._('max');
 const ForecastResolverAggregateEnum _$forecastResolverAggregateEnum_sum =
     const ForecastResolverAggregateEnum._('sum');
+const ForecastResolverAggregateEnum
+_$forecastResolverAggregateEnum_unknownDefaultOpenApi =
+    const ForecastResolverAggregateEnum._('unknownDefaultOpenApi');
 
 ForecastResolverAggregateEnum _$forecastResolverAggregateEnumValueOf(
   String name,
@@ -111,8 +125,10 @@ ForecastResolverAggregateEnum _$forecastResolverAggregateEnumValueOf(
       return _$forecastResolverAggregateEnum_max;
     case 'sum':
       return _$forecastResolverAggregateEnum_sum;
+    case 'unknownDefaultOpenApi':
+      return _$forecastResolverAggregateEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$forecastResolverAggregateEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -123,6 +139,7 @@ _$forecastResolverAggregateEnumValues = BuiltSet<ForecastResolverAggregateEnum>(
     _$forecastResolverAggregateEnum_mean,
     _$forecastResolverAggregateEnum_max,
     _$forecastResolverAggregateEnum_sum,
+    _$forecastResolverAggregateEnum_unknownDefaultOpenApi,
   ],
 );
 
@@ -144,6 +161,7 @@ class _$ForecastResolverTypeEnumSerializer
     'situationStatus': 'situation-status',
     'hypothesisOutcome': 'hypothesis-outcome',
     'manual': 'manual',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'event-exists': 'eventExists',
@@ -153,6 +171,7 @@ class _$ForecastResolverTypeEnumSerializer
     'situation-status': 'situationStatus',
     'hypothesis-outcome': 'hypothesisOutcome',
     'manual': 'manual',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -185,6 +204,7 @@ class _$ForecastResolverOpEnumSerializer
     'lt': 'lt',
     'lte': 'lte',
     'eq': 'eq',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'gt': 'gt',
@@ -192,6 +212,7 @@ class _$ForecastResolverOpEnumSerializer
     'lt': 'lt',
     'lte': 'lte',
     'eq': 'eq',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -223,12 +244,14 @@ class _$ForecastResolverAggregateEnumSerializer
     'mean': 'mean',
     'max': 'max',
     'sum': 'sum',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'last': 'last',
     'mean': 'mean',
     'max': 'max',
     'sum': 'sum',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

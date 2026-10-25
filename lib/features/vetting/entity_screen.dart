@@ -178,7 +178,7 @@ class _EntitiesPanelState extends ConsumerState<EntitiesPanel> {
                   TableColumnSpec<Entity>(
                     label: 'Status',
                     cell: (e) => StatusLabel(
-                      label: wireLabel(e.status),
+                      label: wireLabel(e.status, e, 'status'),
                       tone: e.status == EntityStatusEnum.MERGED
                           ? StatusTone.neutral
                           : StatusTone.ok,
@@ -382,7 +382,7 @@ class EntityScreen extends ConsumerWidget {
                   titleTrailing: <Widget>[
                     StatusLabel(
                       key: const Key('entity.status'),
-                      label: wireLabel(e.status),
+                      label: wireLabel(e.status, e, 'status'),
                       tone: e.status == EntityStatusEnum.MERGED
                           ? StatusTone.neutral
                           : StatusTone.ok,
@@ -618,7 +618,7 @@ class _EntityKeysCardState extends ConsumerState<EntityKeysCard> {
                   ),
                 ),
               ),
-              TableColumnSpec<EntityKey>(label: 'Role', cell: (k) => Text(wireLabel(k.role))),
+              TableColumnSpec<EntityKey>(label: 'Role', cell: (k) => Text(wireLabel(k.role, k, 'role'))),
               TableColumnSpec<EntityKey>(
                 label: 'Confidence',
                 numeric: true,
@@ -626,7 +626,7 @@ class _EntityKeysCardState extends ConsumerState<EntityKeysCard> {
               ),
               TableColumnSpec<EntityKey>(
                 label: 'Origin',
-                cell: (k) => Tooltip(message: k.originRef ?? '', child: Text(wireLabel(k.origin))),
+                cell: (k) => Tooltip(message: k.originRef ?? '', child: Text(wireLabel(k.origin, k, 'origin'))),
               ),
               TableColumnSpec<EntityKey>(
                 label: 'Valid',
@@ -755,8 +755,8 @@ class _AliasesCard extends StatelessWidget {
         empty: 'No aliases.',
         columns: <TableColumnSpec<EntityAlias>>[
           TableColumnSpec<EntityAlias>(label: 'Alias', cell: (a) => Text(a.alias)),
-          TableColumnSpec<EntityAlias>(label: 'Type', cell: (a) => Text(wireLabel(a.aliasType))),
-          TableColumnSpec<EntityAlias>(label: 'Origin', cell: (a) => Text(wireLabel(a.origin))),
+          TableColumnSpec<EntityAlias>(label: 'Type', cell: (a) => Text(wireLabel(a.aliasType, a, 'aliasType'))),
+          TableColumnSpec<EntityAlias>(label: 'Origin', cell: (a) => Text(wireLabel(a.origin, a, 'origin'))),
           TableColumnSpec<EntityAlias>(
             label: 'Valid',
             cell: (a) => Text(
@@ -1197,8 +1197,8 @@ class _ChainView extends StatelessWidget {
         TableColumnSpec<OwnershipChainNode>(
           label: 'Weakest edge',
           cell: (n) => StatusLabel(
-            label: wireLabel(n.weakestEdgeLabel),
-            tone: edgeTone(wireOf(n.weakestEdgeLabel)),
+            label: wireLabel(n.weakestEdgeLabel, n, 'weakestEdgeLabel'),
+            tone: edgeTone(wireOf(n.weakestEdgeLabel, n, 'weakestEdgeLabel')),
           ),
         ),
         TableColumnSpec<OwnershipChainNode>(
@@ -1296,7 +1296,7 @@ class _GraphView extends StatelessWidget {
             ),
             TableColumnSpec<Relation>(
               label: 'Label',
-              cell: (r) => StatusLabel(label: wireLabel(r.label), tone: edgeTone(wireOf(r.label))),
+              cell: (r) => StatusLabel(label: wireLabel(r.label, r, 'label'), tone: edgeTone(wireOf(r.label, r, 'label'))),
             ),
             TableColumnSpec<Relation>(
               label: 'Valid',

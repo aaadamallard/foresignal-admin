@@ -8,19 +8,24 @@ part of 'edp_document_item.dart';
 
 const EdpDocumentItemTypeEnum _$edpDocumentItemTypeEnum_document =
     const EdpDocumentItemTypeEnum._('document');
+const EdpDocumentItemTypeEnum _$edpDocumentItemTypeEnum_unknownDefaultOpenApi =
+    const EdpDocumentItemTypeEnum._('unknownDefaultOpenApi');
 
 EdpDocumentItemTypeEnum _$edpDocumentItemTypeEnumValueOf(String name) {
   switch (name) {
     case 'document':
       return _$edpDocumentItemTypeEnum_document;
+    case 'unknownDefaultOpenApi':
+      return _$edpDocumentItemTypeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$edpDocumentItemTypeEnum_unknownDefaultOpenApi;
   }
 }
 
 final BuiltSet<EdpDocumentItemTypeEnum> _$edpDocumentItemTypeEnumValues =
     BuiltSet<EdpDocumentItemTypeEnum>(const <EdpDocumentItemTypeEnum>[
       _$edpDocumentItemTypeEnum_document,
+      _$edpDocumentItemTypeEnum_unknownDefaultOpenApi,
     ]);
 
 const EdpDocumentItemDocumentTypeEnum
@@ -36,6 +41,9 @@ _$edpDocumentItemDocumentTypeEnum_transcript =
     const EdpDocumentItemDocumentTypeEnum._('transcript');
 const EdpDocumentItemDocumentTypeEnum _$edpDocumentItemDocumentTypeEnum_note =
     const EdpDocumentItemDocumentTypeEnum._('note');
+const EdpDocumentItemDocumentTypeEnum
+_$edpDocumentItemDocumentTypeEnum_unknownDefaultOpenApi =
+    const EdpDocumentItemDocumentTypeEnum._('unknownDefaultOpenApi');
 
 EdpDocumentItemDocumentTypeEnum _$edpDocumentItemDocumentTypeEnumValueOf(
   String name,
@@ -51,8 +59,10 @@ EdpDocumentItemDocumentTypeEnum _$edpDocumentItemDocumentTypeEnumValueOf(
       return _$edpDocumentItemDocumentTypeEnum_transcript;
     case 'note':
       return _$edpDocumentItemDocumentTypeEnum_note;
+    case 'unknownDefaultOpenApi':
+      return _$edpDocumentItemDocumentTypeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$edpDocumentItemDocumentTypeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -65,6 +75,7 @@ _$edpDocumentItemDocumentTypeEnumValues =
         _$edpDocumentItemDocumentTypeEnum_report,
         _$edpDocumentItemDocumentTypeEnum_transcript,
         _$edpDocumentItemDocumentTypeEnum_note,
+        _$edpDocumentItemDocumentTypeEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -78,9 +89,11 @@ class _$EdpDocumentItemTypeEnumSerializer
     implements PrimitiveSerializer<EdpDocumentItemTypeEnum> {
   static const Map<String, Object> _toWire = const <String, Object>{
     'document': 'document',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'document': 'document',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -113,6 +126,7 @@ class _$EdpDocumentItemDocumentTypeEnumSerializer
     'report': 'report',
     'transcript': 'transcript',
     'note': 'note',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'social-post': 'socialPost',
@@ -120,6 +134,7 @@ class _$EdpDocumentItemDocumentTypeEnumSerializer
     'report': 'report',
     'transcript': 'transcript',
     'note': 'note',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

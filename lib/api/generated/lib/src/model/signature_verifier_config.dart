@@ -224,6 +224,9 @@ class SignatureVerifierConfigSchemeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'foresignal')
   static const SignatureVerifierConfigSchemeEnum foresignal =
       _$signatureVerifierConfigSchemeEnum_foresignal;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const SignatureVerifierConfigSchemeEnum unknownDefaultOpenApi =
+      _$signatureVerifierConfigSchemeEnum_unknownDefaultOpenApi;
 
   static Serializer<SignatureVerifierConfigSchemeEnum> get serializer =>
       _$signatureVerifierConfigSchemeEnumSerializer;

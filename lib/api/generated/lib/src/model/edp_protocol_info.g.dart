@@ -10,6 +10,9 @@ const EdpProtocolInfoModesEnum _$edpProtocolInfoModesEnum_layer =
     const EdpProtocolInfoModesEnum._('layer');
 const EdpProtocolInfoModesEnum _$edpProtocolInfoModesEnum_atomic =
     const EdpProtocolInfoModesEnum._('atomic');
+const EdpProtocolInfoModesEnum
+_$edpProtocolInfoModesEnum_unknownDefaultOpenApi =
+    const EdpProtocolInfoModesEnum._('unknownDefaultOpenApi');
 
 EdpProtocolInfoModesEnum _$edpProtocolInfoModesEnumValueOf(String name) {
   switch (name) {
@@ -17,8 +20,10 @@ EdpProtocolInfoModesEnum _$edpProtocolInfoModesEnumValueOf(String name) {
       return _$edpProtocolInfoModesEnum_layer;
     case 'atomic':
       return _$edpProtocolInfoModesEnum_atomic;
+    case 'unknownDefaultOpenApi':
+      return _$edpProtocolInfoModesEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$edpProtocolInfoModesEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -26,6 +31,7 @@ final BuiltSet<EdpProtocolInfoModesEnum> _$edpProtocolInfoModesEnumValues =
     BuiltSet<EdpProtocolInfoModesEnum>(const <EdpProtocolInfoModesEnum>[
       _$edpProtocolInfoModesEnum_layer,
       _$edpProtocolInfoModesEnum_atomic,
+      _$edpProtocolInfoModesEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<EdpProtocolInfoModesEnum> _$edpProtocolInfoModesEnumSerializer =
@@ -36,10 +42,12 @@ class _$EdpProtocolInfoModesEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'layer': 'layer',
     'atomic': 'atomic',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'layer': 'layer',
     'atomic': 'atomic',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

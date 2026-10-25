@@ -9,36 +9,49 @@ part of 'protected_resource_metadata.dart';
 const ProtectedResourceMetadataBearerMethodsSupportedEnum
 _$protectedResourceMetadataBearerMethodsSupportedEnum_header =
     const ProtectedResourceMetadataBearerMethodsSupportedEnum._('header');
+const ProtectedResourceMetadataBearerMethodsSupportedEnum
+_$protectedResourceMetadataBearerMethodsSupportedEnum_unknownDefaultOpenApi =
+    const ProtectedResourceMetadataBearerMethodsSupportedEnum._(
+      'unknownDefaultOpenApi',
+    );
 
 ProtectedResourceMetadataBearerMethodsSupportedEnum
 _$protectedResourceMetadataBearerMethodsSupportedEnumValueOf(String name) {
   switch (name) {
     case 'header':
       return _$protectedResourceMetadataBearerMethodsSupportedEnum_header;
+    case 'unknownDefaultOpenApi':
+      return _$protectedResourceMetadataBearerMethodsSupportedEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$protectedResourceMetadataBearerMethodsSupportedEnum_unknownDefaultOpenApi;
   }
 }
 
 final BuiltSet<ProtectedResourceMetadataBearerMethodsSupportedEnum>
 _$protectedResourceMetadataBearerMethodsSupportedEnumValues =
-    BuiltSet<ProtectedResourceMetadataBearerMethodsSupportedEnum>(
-      const <ProtectedResourceMetadataBearerMethodsSupportedEnum>[
-        _$protectedResourceMetadataBearerMethodsSupportedEnum_header,
-      ],
-    );
+    BuiltSet<ProtectedResourceMetadataBearerMethodsSupportedEnum>(const <
+      ProtectedResourceMetadataBearerMethodsSupportedEnum
+    >[
+      _$protectedResourceMetadataBearerMethodsSupportedEnum_header,
+      _$protectedResourceMetadataBearerMethodsSupportedEnum_unknownDefaultOpenApi,
+    ]);
 
 const ProtectedResourceMetadataResourceNameEnum
 _$protectedResourceMetadataResourceNameEnum_foresignal =
     const ProtectedResourceMetadataResourceNameEnum._('foresignal');
+const ProtectedResourceMetadataResourceNameEnum
+_$protectedResourceMetadataResourceNameEnum_unknownDefaultOpenApi =
+    const ProtectedResourceMetadataResourceNameEnum._('unknownDefaultOpenApi');
 
 ProtectedResourceMetadataResourceNameEnum
 _$protectedResourceMetadataResourceNameEnumValueOf(String name) {
   switch (name) {
     case 'foresignal':
       return _$protectedResourceMetadataResourceNameEnum_foresignal;
+    case 'unknownDefaultOpenApi':
+      return _$protectedResourceMetadataResourceNameEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$protectedResourceMetadataResourceNameEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -47,6 +60,7 @@ _$protectedResourceMetadataResourceNameEnumValues =
     BuiltSet<ProtectedResourceMetadataResourceNameEnum>(
       const <ProtectedResourceMetadataResourceNameEnum>[
         _$protectedResourceMetadataResourceNameEnum_foresignal,
+        _$protectedResourceMetadataResourceNameEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -64,9 +78,11 @@ class _$ProtectedResourceMetadataBearerMethodsSupportedEnumSerializer
         > {
   static const Map<String, Object> _toWire = const <String, Object>{
     'header': 'header',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'header': 'header',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -97,9 +113,11 @@ class _$ProtectedResourceMetadataResourceNameEnumSerializer
     implements PrimitiveSerializer<ProtectedResourceMetadataResourceNameEnum> {
   static const Map<String, Object> _toWire = const <String, Object>{
     'foresignal': 'Foresignal',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'Foresignal': 'foresignal',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

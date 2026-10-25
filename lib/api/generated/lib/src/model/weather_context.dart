@@ -327,6 +327,9 @@ class WeatherContextStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'unavailable')
   static const WeatherContextStatusEnum unavailable =
       _$weatherContextStatusEnum_unavailable;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const WeatherContextStatusEnum unknownDefaultOpenApi =
+      _$weatherContextStatusEnum_unknownDefaultOpenApi;
 
   static Serializer<WeatherContextStatusEnum> get serializer =>
       _$weatherContextStatusEnumSerializer;

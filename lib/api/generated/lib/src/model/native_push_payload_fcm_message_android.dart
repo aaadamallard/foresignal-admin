@@ -180,6 +180,10 @@ class NativePushPayloadFcmMessageAndroidPriorityEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'NORMAL')
   static const NativePushPayloadFcmMessageAndroidPriorityEnum NORMAL =
       _$nativePushPayloadFcmMessageAndroidPriorityEnum_NORMAL;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const NativePushPayloadFcmMessageAndroidPriorityEnum
+  unknownDefaultOpenApi =
+      _$nativePushPayloadFcmMessageAndroidPriorityEnum_unknownDefaultOpenApi;
 
   static Serializer<NativePushPayloadFcmMessageAndroidPriorityEnum>
   get serializer => _$nativePushPayloadFcmMessageAndroidPriorityEnumSerializer;

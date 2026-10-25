@@ -293,6 +293,10 @@ class SituationSocialSectionNarrativesInnerStatusEnum extends EnumClass {
   static const SituationSocialSectionNarrativesInnerStatusEnum
   insufficientCoverage =
       _$situationSocialSectionNarrativesInnerStatusEnum_insufficientCoverage;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const SituationSocialSectionNarrativesInnerStatusEnum
+  unknownDefaultOpenApi =
+      _$situationSocialSectionNarrativesInnerStatusEnum_unknownDefaultOpenApi;
 
   static Serializer<SituationSocialSectionNarrativesInnerStatusEnum>
   get serializer => _$situationSocialSectionNarrativesInnerStatusEnumSerializer;
@@ -313,6 +317,10 @@ class SituationSocialSectionNarrativesInnerFoundByEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'cue')
   static const SituationSocialSectionNarrativesInnerFoundByEnum cue =
       _$situationSocialSectionNarrativesInnerFoundByEnum_cue;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const SituationSocialSectionNarrativesInnerFoundByEnum
+  unknownDefaultOpenApi =
+      _$situationSocialSectionNarrativesInnerFoundByEnum_unknownDefaultOpenApi;
 
   static Serializer<SituationSocialSectionNarrativesInnerFoundByEnum>
   get serializer =>

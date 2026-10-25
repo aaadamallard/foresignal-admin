@@ -10,6 +10,9 @@ const ReferenceAreaOutlineKindEnum _$referenceAreaOutlineKindEnum_country =
     const ReferenceAreaOutlineKindEnum._('country');
 const ReferenceAreaOutlineKindEnum _$referenceAreaOutlineKindEnum_admin1 =
     const ReferenceAreaOutlineKindEnum._('admin1');
+const ReferenceAreaOutlineKindEnum
+_$referenceAreaOutlineKindEnum_unknownDefaultOpenApi =
+    const ReferenceAreaOutlineKindEnum._('unknownDefaultOpenApi');
 
 ReferenceAreaOutlineKindEnum _$referenceAreaOutlineKindEnumValueOf(
   String name,
@@ -19,18 +22,20 @@ ReferenceAreaOutlineKindEnum _$referenceAreaOutlineKindEnumValueOf(
       return _$referenceAreaOutlineKindEnum_country;
     case 'admin1':
       return _$referenceAreaOutlineKindEnum_admin1;
+    case 'unknownDefaultOpenApi':
+      return _$referenceAreaOutlineKindEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$referenceAreaOutlineKindEnum_unknownDefaultOpenApi;
   }
 }
 
 final BuiltSet<ReferenceAreaOutlineKindEnum>
-_$referenceAreaOutlineKindEnumValues = BuiltSet<ReferenceAreaOutlineKindEnum>(
-  const <ReferenceAreaOutlineKindEnum>[
-    _$referenceAreaOutlineKindEnum_country,
-    _$referenceAreaOutlineKindEnum_admin1,
-  ],
-);
+_$referenceAreaOutlineKindEnumValues =
+    BuiltSet<ReferenceAreaOutlineKindEnum>(const <ReferenceAreaOutlineKindEnum>[
+      _$referenceAreaOutlineKindEnum_country,
+      _$referenceAreaOutlineKindEnum_admin1,
+      _$referenceAreaOutlineKindEnum_unknownDefaultOpenApi,
+    ]);
 
 Serializer<ReferenceAreaOutlineKindEnum>
 _$referenceAreaOutlineKindEnumSerializer =
@@ -41,10 +46,12 @@ class _$ReferenceAreaOutlineKindEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'country': 'country',
     'admin1': 'admin1',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'country': 'country',
     'admin1': 'admin1',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

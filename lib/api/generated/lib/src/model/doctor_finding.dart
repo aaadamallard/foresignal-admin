@@ -263,6 +263,9 @@ class DoctorFindingCodeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'PROBE_SKIPPED_BUDGET')
   static const DoctorFindingCodeEnum PROBE_SKIPPED_BUDGET =
       _$doctorFindingCodeEnum_PROBE_SKIPPED_BUDGET;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const DoctorFindingCodeEnum unknownDefaultOpenApi =
+      _$doctorFindingCodeEnum_unknownDefaultOpenApi;
 
   static Serializer<DoctorFindingCodeEnum> get serializer =>
       _$doctorFindingCodeEnumSerializer;

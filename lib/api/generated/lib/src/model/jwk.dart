@@ -211,6 +211,9 @@ class _$JwkSerializer implements PrimitiveSerializer<Jwk> {
 class JwkKtyEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'OKP')
   static const JwkKtyEnum OKP = _$jwkKtyEnum_OKP;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const JwkKtyEnum unknownDefaultOpenApi =
+      _$jwkKtyEnum_unknownDefaultOpenApi;
 
   static Serializer<JwkKtyEnum> get serializer => _$jwkKtyEnumSerializer;
 
@@ -223,6 +226,9 @@ class JwkKtyEnum extends EnumClass {
 class JwkCrvEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'Ed25519')
   static const JwkCrvEnum ed25519 = _$jwkCrvEnum_ed25519;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const JwkCrvEnum unknownDefaultOpenApi =
+      _$jwkCrvEnum_unknownDefaultOpenApi;
 
   static Serializer<JwkCrvEnum> get serializer => _$jwkCrvEnumSerializer;
 
@@ -235,6 +241,9 @@ class JwkCrvEnum extends EnumClass {
 class JwkUseEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'sig')
   static const JwkUseEnum sig = _$jwkUseEnum_sig;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const JwkUseEnum unknownDefaultOpenApi =
+      _$jwkUseEnum_unknownDefaultOpenApi;
 
   static Serializer<JwkUseEnum> get serializer => _$jwkUseEnumSerializer;
 
@@ -250,6 +259,9 @@ class JwkAlgEnum extends EnumClass {
   static const JwkAlgEnum ed25519 = _$jwkAlgEnum_ed25519;
   @BuiltValueEnumConst(wireName: r'EdDSA')
   static const JwkAlgEnum edDSA = _$jwkAlgEnum_edDSA;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const JwkAlgEnum unknownDefaultOpenApi =
+      _$jwkAlgEnum_unknownDefaultOpenApi;
 
   static Serializer<JwkAlgEnum> get serializer => _$jwkAlgEnumSerializer;
 

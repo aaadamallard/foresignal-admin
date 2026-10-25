@@ -12,6 +12,8 @@ const BenchmarkRunSuiteEnum _$benchmarkRunSuiteEnum_historical =
     const BenchmarkRunSuiteEnum._('historical');
 const BenchmarkRunSuiteEnum _$benchmarkRunSuiteEnum_all =
     const BenchmarkRunSuiteEnum._('all');
+const BenchmarkRunSuiteEnum _$benchmarkRunSuiteEnum_unknownDefaultOpenApi =
+    const BenchmarkRunSuiteEnum._('unknownDefaultOpenApi');
 
 BenchmarkRunSuiteEnum _$benchmarkRunSuiteEnumValueOf(String name) {
   switch (name) {
@@ -21,8 +23,10 @@ BenchmarkRunSuiteEnum _$benchmarkRunSuiteEnumValueOf(String name) {
       return _$benchmarkRunSuiteEnum_historical;
     case 'all':
       return _$benchmarkRunSuiteEnum_all;
+    case 'unknownDefaultOpenApi':
+      return _$benchmarkRunSuiteEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$benchmarkRunSuiteEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -31,6 +35,7 @@ final BuiltSet<BenchmarkRunSuiteEnum> _$benchmarkRunSuiteEnumValues =
       _$benchmarkRunSuiteEnum_synthetic,
       _$benchmarkRunSuiteEnum_historical,
       _$benchmarkRunSuiteEnum_all,
+      _$benchmarkRunSuiteEnum_unknownDefaultOpenApi,
     ]);
 
 const BenchmarkRunJobStatusEnum _$benchmarkRunJobStatusEnum_queued =
@@ -43,6 +48,9 @@ const BenchmarkRunJobStatusEnum _$benchmarkRunJobStatusEnum_failed =
     const BenchmarkRunJobStatusEnum._('failed');
 const BenchmarkRunJobStatusEnum _$benchmarkRunJobStatusEnum_cancelled =
     const BenchmarkRunJobStatusEnum._('cancelled');
+const BenchmarkRunJobStatusEnum
+_$benchmarkRunJobStatusEnum_unknownDefaultOpenApi =
+    const BenchmarkRunJobStatusEnum._('unknownDefaultOpenApi');
 
 BenchmarkRunJobStatusEnum _$benchmarkRunJobStatusEnumValueOf(String name) {
   switch (name) {
@@ -56,8 +64,10 @@ BenchmarkRunJobStatusEnum _$benchmarkRunJobStatusEnumValueOf(String name) {
       return _$benchmarkRunJobStatusEnum_failed;
     case 'cancelled':
       return _$benchmarkRunJobStatusEnum_cancelled;
+    case 'unknownDefaultOpenApi':
+      return _$benchmarkRunJobStatusEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$benchmarkRunJobStatusEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -68,6 +78,7 @@ final BuiltSet<BenchmarkRunJobStatusEnum> _$benchmarkRunJobStatusEnumValues =
       _$benchmarkRunJobStatusEnum_done,
       _$benchmarkRunJobStatusEnum_failed,
       _$benchmarkRunJobStatusEnum_cancelled,
+      _$benchmarkRunJobStatusEnum_unknownDefaultOpenApi,
     ]);
 
 const BenchmarkRunStatusEnum _$benchmarkRunStatusEnum_pass =
@@ -76,6 +87,8 @@ const BenchmarkRunStatusEnum _$benchmarkRunStatusEnum_warn =
     const BenchmarkRunStatusEnum._('warn');
 const BenchmarkRunStatusEnum _$benchmarkRunStatusEnum_fail =
     const BenchmarkRunStatusEnum._('fail');
+const BenchmarkRunStatusEnum _$benchmarkRunStatusEnum_unknownDefaultOpenApi =
+    const BenchmarkRunStatusEnum._('unknownDefaultOpenApi');
 
 BenchmarkRunStatusEnum _$benchmarkRunStatusEnumValueOf(String name) {
   switch (name) {
@@ -85,8 +98,10 @@ BenchmarkRunStatusEnum _$benchmarkRunStatusEnumValueOf(String name) {
       return _$benchmarkRunStatusEnum_warn;
     case 'fail':
       return _$benchmarkRunStatusEnum_fail;
+    case 'unknownDefaultOpenApi':
+      return _$benchmarkRunStatusEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$benchmarkRunStatusEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -95,6 +110,7 @@ final BuiltSet<BenchmarkRunStatusEnum> _$benchmarkRunStatusEnumValues =
       _$benchmarkRunStatusEnum_pass,
       _$benchmarkRunStatusEnum_warn,
       _$benchmarkRunStatusEnum_fail,
+      _$benchmarkRunStatusEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<BenchmarkRunSuiteEnum> _$benchmarkRunSuiteEnumSerializer =
@@ -110,11 +126,13 @@ class _$BenchmarkRunSuiteEnumSerializer
     'synthetic': 'synthetic',
     'historical': 'historical',
     'all': 'all',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'synthetic': 'synthetic',
     'historical': 'historical',
     'all': 'all',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -147,6 +165,7 @@ class _$BenchmarkRunJobStatusEnumSerializer
     'done': 'done',
     'failed': 'failed',
     'cancelled': 'cancelled',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'queued': 'queued',
@@ -154,6 +173,7 @@ class _$BenchmarkRunJobStatusEnumSerializer
     'done': 'done',
     'failed': 'failed',
     'cancelled': 'cancelled',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -184,11 +204,13 @@ class _$BenchmarkRunStatusEnumSerializer
     'pass': 'pass',
     'warn': 'warn',
     'fail': 'fail',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'pass': 'pass',
     'warn': 'warn',
     'fail': 'fail',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

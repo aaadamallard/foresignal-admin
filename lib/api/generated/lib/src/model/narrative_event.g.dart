@@ -10,6 +10,8 @@ const NarrativeEventEventEnum _$narrativeEventEventEnum_narrativePeriodEmerged =
     const NarrativeEventEventEnum._('narrativePeriodEmerged');
 const NarrativeEventEventEnum _$narrativeEventEventEnum_narrativePeriodUpdated =
     const NarrativeEventEventEnum._('narrativePeriodUpdated');
+const NarrativeEventEventEnum _$narrativeEventEventEnum_unknownDefaultOpenApi =
+    const NarrativeEventEventEnum._('unknownDefaultOpenApi');
 
 NarrativeEventEventEnum _$narrativeEventEventEnumValueOf(String name) {
   switch (name) {
@@ -17,8 +19,10 @@ NarrativeEventEventEnum _$narrativeEventEventEnumValueOf(String name) {
       return _$narrativeEventEventEnum_narrativePeriodEmerged;
     case 'narrativePeriodUpdated':
       return _$narrativeEventEventEnum_narrativePeriodUpdated;
+    case 'unknownDefaultOpenApi':
+      return _$narrativeEventEventEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$narrativeEventEventEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -26,6 +30,7 @@ final BuiltSet<NarrativeEventEventEnum> _$narrativeEventEventEnumValues =
     BuiltSet<NarrativeEventEventEnum>(const <NarrativeEventEventEnum>[
       _$narrativeEventEventEnum_narrativePeriodEmerged,
       _$narrativeEventEventEnum_narrativePeriodUpdated,
+      _$narrativeEventEventEnum_unknownDefaultOpenApi,
     ]);
 
 const NarrativeEventChangedEnum _$narrativeEventChangedEnum_state =
@@ -44,6 +49,9 @@ const NarrativeEventChangedEnum _$narrativeEventChangedEnum_split =
     const NarrativeEventChangedEnum._('split');
 const NarrativeEventChangedEnum _$narrativeEventChangedEnum_title =
     const NarrativeEventChangedEnum._('title');
+const NarrativeEventChangedEnum
+_$narrativeEventChangedEnum_unknownDefaultOpenApi =
+    const NarrativeEventChangedEnum._('unknownDefaultOpenApi');
 
 NarrativeEventChangedEnum _$narrativeEventChangedEnumValueOf(String name) {
   switch (name) {
@@ -63,8 +71,10 @@ NarrativeEventChangedEnum _$narrativeEventChangedEnumValueOf(String name) {
       return _$narrativeEventChangedEnum_split;
     case 'title':
       return _$narrativeEventChangedEnum_title;
+    case 'unknownDefaultOpenApi':
+      return _$narrativeEventChangedEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$narrativeEventChangedEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -78,6 +88,7 @@ final BuiltSet<NarrativeEventChangedEnum> _$narrativeEventChangedEnumValues =
       _$narrativeEventChangedEnum_merged,
       _$narrativeEventChangedEnum_split,
       _$narrativeEventChangedEnum_title,
+      _$narrativeEventChangedEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<NarrativeEventEventEnum> _$narrativeEventEventEnumSerializer =
@@ -90,10 +101,12 @@ class _$NarrativeEventEventEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'narrativePeriodEmerged': 'narrative.emerged',
     'narrativePeriodUpdated': 'narrative.updated',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'narrative.emerged': 'narrativePeriodEmerged',
     'narrative.updated': 'narrativePeriodUpdated',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -129,6 +142,7 @@ class _$NarrativeEventChangedEnumSerializer
     'merged': 'merged',
     'split': 'split',
     'title': 'title',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'state': 'state',
@@ -139,6 +153,7 @@ class _$NarrativeEventChangedEnumSerializer
     'merged': 'merged',
     'split': 'split',
     'title': 'title',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

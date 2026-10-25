@@ -15,6 +15,9 @@ _$historyFrameRemovalsInnerReasonEnum_expired =
 const HistoryFrameRemovalsInnerReasonEnum
 _$historyFrameRemovalsInnerReasonEnum_left =
     const HistoryFrameRemovalsInnerReasonEnum._('left');
+const HistoryFrameRemovalsInnerReasonEnum
+_$historyFrameRemovalsInnerReasonEnum_unknownDefaultOpenApi =
+    const HistoryFrameRemovalsInnerReasonEnum._('unknownDefaultOpenApi');
 
 HistoryFrameRemovalsInnerReasonEnum
 _$historyFrameRemovalsInnerReasonEnumValueOf(String name) {
@@ -25,8 +28,10 @@ _$historyFrameRemovalsInnerReasonEnumValueOf(String name) {
       return _$historyFrameRemovalsInnerReasonEnum_expired;
     case 'left':
       return _$historyFrameRemovalsInnerReasonEnum_left;
+    case 'unknownDefaultOpenApi':
+      return _$historyFrameRemovalsInnerReasonEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$historyFrameRemovalsInnerReasonEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -37,6 +42,7 @@ _$historyFrameRemovalsInnerReasonEnumValues =
         _$historyFrameRemovalsInnerReasonEnum_tombstone,
         _$historyFrameRemovalsInnerReasonEnum_expired,
         _$historyFrameRemovalsInnerReasonEnum_left,
+        _$historyFrameRemovalsInnerReasonEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -50,11 +56,13 @@ class _$HistoryFrameRemovalsInnerReasonEnumSerializer
     'tombstone': 'tombstone',
     'expired': 'expired',
     'left': 'left',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'tombstone': 'tombstone',
     'expired': 'expired',
     'left': 'left',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

@@ -172,6 +172,9 @@ class BenchmarkRunInputSuiteEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'all')
   static const BenchmarkRunInputSuiteEnum all =
       _$benchmarkRunInputSuiteEnum_all;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const BenchmarkRunInputSuiteEnum unknownDefaultOpenApi =
+      _$benchmarkRunInputSuiteEnum_unknownDefaultOpenApi;
 
   static Serializer<BenchmarkRunInputSuiteEnum> get serializer =>
       _$benchmarkRunInputSuiteEnumSerializer;

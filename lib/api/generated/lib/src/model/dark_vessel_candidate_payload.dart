@@ -394,6 +394,9 @@ class DarkVesselCandidatePayloadStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'degraded-input')
   static const DarkVesselCandidatePayloadStatusEnum degradedInput =
       _$darkVesselCandidatePayloadStatusEnum_degradedInput;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const DarkVesselCandidatePayloadStatusEnum unknownDefaultOpenApi =
+      _$darkVesselCandidatePayloadStatusEnum_unknownDefaultOpenApi;
 
   static Serializer<DarkVesselCandidatePayloadStatusEnum> get serializer =>
       _$darkVesselCandidatePayloadStatusEnumSerializer;

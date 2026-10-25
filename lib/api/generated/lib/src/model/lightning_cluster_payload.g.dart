@@ -27,6 +27,9 @@ _$lightningClusterPayloadFlashes5mEnum_number100 =
 const LightningClusterPayloadFlashes5mEnum
 _$lightningClusterPayloadFlashes5mEnum_number200 =
     const LightningClusterPayloadFlashes5mEnum._('number200');
+const LightningClusterPayloadFlashes5mEnum
+_$lightningClusterPayloadFlashes5mEnum_unknownDefaultOpenApi =
+    const LightningClusterPayloadFlashes5mEnum._('unknownDefaultOpenApi');
 
 LightningClusterPayloadFlashes5mEnum
 _$lightningClusterPayloadFlashes5mEnumValueOf(String name) {
@@ -45,8 +48,10 @@ _$lightningClusterPayloadFlashes5mEnumValueOf(String name) {
       return _$lightningClusterPayloadFlashes5mEnum_number100;
     case 'number200':
       return _$lightningClusterPayloadFlashes5mEnum_number200;
+    case 'unknownDefaultOpenApi':
+      return _$lightningClusterPayloadFlashes5mEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$lightningClusterPayloadFlashes5mEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -61,6 +66,7 @@ _$lightningClusterPayloadFlashes5mEnumValues =
         _$lightningClusterPayloadFlashes5mEnum_number50,
         _$lightningClusterPayloadFlashes5mEnum_number100,
         _$lightningClusterPayloadFlashes5mEnum_number200,
+        _$lightningClusterPayloadFlashes5mEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -78,6 +84,7 @@ class _$LightningClusterPayloadFlashes5mEnumSerializer
     'number50': 50,
     'number100': 100,
     'number200': 200,
+    'unknownDefaultOpenApi': 11184809,
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     3: 'number3',
@@ -87,6 +94,7 @@ class _$LightningClusterPayloadFlashes5mEnumSerializer
     50: 'number50',
     100: 'number100',
     200: 'number200',
+    11184809: 'unknownDefaultOpenApi',
   };
 
   @override

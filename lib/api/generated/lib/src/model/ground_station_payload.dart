@@ -352,6 +352,9 @@ class GroundStationPayloadStateEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'unknown')
   static const GroundStationPayloadStateEnum unknown =
       _$groundStationPayloadStateEnum_unknown;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const GroundStationPayloadStateEnum unknownDefaultOpenApi =
+      _$groundStationPayloadStateEnum_unknownDefaultOpenApi;
 
   static Serializer<GroundStationPayloadStateEnum> get serializer =>
       _$groundStationPayloadStateEnumSerializer;
@@ -371,6 +374,9 @@ class GroundStationPayloadSatdumpModeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'autotrack')
   static const GroundStationPayloadSatdumpModeEnum autotrack =
       _$groundStationPayloadSatdumpModeEnum_autotrack;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const GroundStationPayloadSatdumpModeEnum unknownDefaultOpenApi =
+      _$groundStationPayloadSatdumpModeEnum_unknownDefaultOpenApi;
 
   static Serializer<GroundStationPayloadSatdumpModeEnum> get serializer =>
       _$groundStationPayloadSatdumpModeEnumSerializer;

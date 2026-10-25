@@ -12,6 +12,11 @@ _$socialPlatformSettingsOptionsFieldsParamEnum_post =
 const SocialPlatformSettingsOptionsFieldsParamEnum
 _$socialPlatformSettingsOptionsFieldsParamEnum_tweet =
     const SocialPlatformSettingsOptionsFieldsParamEnum._('tweet');
+const SocialPlatformSettingsOptionsFieldsParamEnum
+_$socialPlatformSettingsOptionsFieldsParamEnum_unknownDefaultOpenApi =
+    const SocialPlatformSettingsOptionsFieldsParamEnum._(
+      'unknownDefaultOpenApi',
+    );
 
 SocialPlatformSettingsOptionsFieldsParamEnum
 _$socialPlatformSettingsOptionsFieldsParamEnumValueOf(String name) {
@@ -20,8 +25,10 @@ _$socialPlatformSettingsOptionsFieldsParamEnumValueOf(String name) {
       return _$socialPlatformSettingsOptionsFieldsParamEnum_post;
     case 'tweet':
       return _$socialPlatformSettingsOptionsFieldsParamEnum_tweet;
+    case 'unknownDefaultOpenApi':
+      return _$socialPlatformSettingsOptionsFieldsParamEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$socialPlatformSettingsOptionsFieldsParamEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -31,6 +38,7 @@ _$socialPlatformSettingsOptionsFieldsParamEnumValues =
       const <SocialPlatformSettingsOptionsFieldsParamEnum>[
         _$socialPlatformSettingsOptionsFieldsParamEnum_post,
         _$socialPlatformSettingsOptionsFieldsParamEnum_tweet,
+        _$socialPlatformSettingsOptionsFieldsParamEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -44,10 +52,12 @@ class _$SocialPlatformSettingsOptionsFieldsParamEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'post': 'post',
     'tweet': 'tweet',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'post': 'post',
     'tweet': 'tweet',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

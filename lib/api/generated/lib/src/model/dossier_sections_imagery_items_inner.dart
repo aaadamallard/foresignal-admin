@@ -283,6 +283,9 @@ class DossierSectionsImageryItemsInnerKindEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'stac-scene')
   static const DossierSectionsImageryItemsInnerKindEnum stacScene =
       _$dossierSectionsImageryItemsInnerKindEnum_stacScene;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const DossierSectionsImageryItemsInnerKindEnum unknownDefaultOpenApi =
+      _$dossierSectionsImageryItemsInnerKindEnum_unknownDefaultOpenApi;
 
   static Serializer<DossierSectionsImageryItemsInnerKindEnum> get serializer =>
       _$dossierSectionsImageryItemsInnerKindEnumSerializer;

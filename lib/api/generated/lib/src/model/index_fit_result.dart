@@ -470,6 +470,9 @@ class IndexFitResultStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'failed')
   static const IndexFitResultStatusEnum failed =
       _$indexFitResultStatusEnum_failed;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const IndexFitResultStatusEnum unknownDefaultOpenApi =
+      _$indexFitResultStatusEnum_unknownDefaultOpenApi;
 
   static Serializer<IndexFitResultStatusEnum> get serializer =>
       _$indexFitResultStatusEnumSerializer;

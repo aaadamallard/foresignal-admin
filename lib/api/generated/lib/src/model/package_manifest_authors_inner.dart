@@ -187,6 +187,9 @@ class PackageManifestAuthorsInnerRoleEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'forwarder')
   static const PackageManifestAuthorsInnerRoleEnum forwarder =
       _$packageManifestAuthorsInnerRoleEnum_forwarder;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const PackageManifestAuthorsInnerRoleEnum unknownDefaultOpenApi =
+      _$packageManifestAuthorsInnerRoleEnum_unknownDefaultOpenApi;
 
   static Serializer<PackageManifestAuthorsInnerRoleEnum> get serializer =>
       _$packageManifestAuthorsInnerRoleEnumSerializer;

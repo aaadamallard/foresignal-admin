@@ -272,6 +272,9 @@ class PropagationNodeTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'official-record')
   static const PropagationNodeTypeEnum officialRecord =
       _$propagationNodeTypeEnum_officialRecord;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const PropagationNodeTypeEnum unknownDefaultOpenApi =
+      _$propagationNodeTypeEnum_unknownDefaultOpenApi;
 
   static Serializer<PropagationNodeTypeEnum> get serializer =>
       _$propagationNodeTypeEnumSerializer;

@@ -12,6 +12,9 @@ const ProblemRequiredScopeEnum _$problemRequiredScopeEnum_agent =
     const ProblemRequiredScopeEnum._('agent');
 const ProblemRequiredScopeEnum _$problemRequiredScopeEnum_admin =
     const ProblemRequiredScopeEnum._('admin');
+const ProblemRequiredScopeEnum
+_$problemRequiredScopeEnum_unknownDefaultOpenApi =
+    const ProblemRequiredScopeEnum._('unknownDefaultOpenApi');
 
 ProblemRequiredScopeEnum _$problemRequiredScopeEnumValueOf(String name) {
   switch (name) {
@@ -21,8 +24,10 @@ ProblemRequiredScopeEnum _$problemRequiredScopeEnumValueOf(String name) {
       return _$problemRequiredScopeEnum_agent;
     case 'admin':
       return _$problemRequiredScopeEnum_admin;
+    case 'unknownDefaultOpenApi':
+      return _$problemRequiredScopeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$problemRequiredScopeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -31,6 +36,7 @@ final BuiltSet<ProblemRequiredScopeEnum> _$problemRequiredScopeEnumValues =
       _$problemRequiredScopeEnum_read,
       _$problemRequiredScopeEnum_agent,
       _$problemRequiredScopeEnum_admin,
+      _$problemRequiredScopeEnum_unknownDefaultOpenApi,
     ]);
 
 const ProblemClass_Enum _$problemClassEnum_read = const ProblemClass_Enum._(
@@ -52,6 +58,8 @@ const ProblemClass_Enum _$problemClassEnum_anonymous =
 const ProblemClass_Enum _$problemClassEnum_metrics = const ProblemClass_Enum._(
   'metrics',
 );
+const ProblemClass_Enum _$problemClassEnum_unknownDefaultOpenApi =
+    const ProblemClass_Enum._('unknownDefaultOpenApi');
 
 ProblemClass_Enum _$problemClassEnumValueOf(String name) {
   switch (name) {
@@ -69,8 +77,10 @@ ProblemClass_Enum _$problemClassEnumValueOf(String name) {
       return _$problemClassEnum_anonymous;
     case 'metrics':
       return _$problemClassEnum_metrics;
+    case 'unknownDefaultOpenApi':
+      return _$problemClassEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$problemClassEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -83,6 +93,7 @@ final BuiltSet<ProblemClass_Enum> _$problemClassEnumValues =
       _$problemClassEnum_write,
       _$problemClassEnum_anonymous,
       _$problemClassEnum_metrics,
+      _$problemClassEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<ProblemRequiredScopeEnum> _$problemRequiredScopeEnumSerializer =
@@ -96,11 +107,13 @@ class _$ProblemRequiredScopeEnumSerializer
     'read': 'read',
     'agent': 'agent',
     'admin': 'admin',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'read': 'read',
     'agent': 'agent',
     'admin': 'admin',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -135,6 +148,7 @@ class _$ProblemClass_EnumSerializer
     'write': 'write',
     'anonymous': 'anonymous',
     'metrics': 'metrics',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'read': 'read',
@@ -144,6 +158,7 @@ class _$ProblemClass_EnumSerializer
     'write': 'write',
     'anonymous': 'anonymous',
     'metrics': 'metrics',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

@@ -24,6 +24,9 @@ _$analystProfileScopeEventTypesEnum_seismic =
 const AnalystProfileScopeEventTypesEnum
 _$analystProfileScopeEventTypesEnum_custom =
     const AnalystProfileScopeEventTypesEnum._('custom');
+const AnalystProfileScopeEventTypesEnum
+_$analystProfileScopeEventTypesEnum_unknownDefaultOpenApi =
+    const AnalystProfileScopeEventTypesEnum._('unknownDefaultOpenApi');
 
 AnalystProfileScopeEventTypesEnum _$analystProfileScopeEventTypesEnumValueOf(
   String name,
@@ -41,8 +44,10 @@ AnalystProfileScopeEventTypesEnum _$analystProfileScopeEventTypesEnumValueOf(
       return _$analystProfileScopeEventTypesEnum_seismic;
     case 'custom':
       return _$analystProfileScopeEventTypesEnum_custom;
+    case 'unknownDefaultOpenApi':
+      return _$analystProfileScopeEventTypesEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$analystProfileScopeEventTypesEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -56,6 +61,7 @@ _$analystProfileScopeEventTypesEnumValues =
         _$analystProfileScopeEventTypesEnum_weatherImpact,
         _$analystProfileScopeEventTypesEnum_seismic,
         _$analystProfileScopeEventTypesEnum_custom,
+        _$analystProfileScopeEventTypesEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -72,6 +78,7 @@ class _$AnalystProfileScopeEventTypesEnumSerializer
     'weatherImpact': 'weather-impact',
     'seismic': 'seismic',
     'custom': 'custom',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'maritime-disruption': 'maritimeDisruption',
@@ -80,6 +87,7 @@ class _$AnalystProfileScopeEventTypesEnumSerializer
     'weather-impact': 'weatherImpact',
     'seismic': 'seismic',
     'custom': 'custom',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

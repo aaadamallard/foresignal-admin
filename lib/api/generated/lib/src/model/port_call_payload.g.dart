@@ -14,6 +14,9 @@ const PortCallPayloadStatusEnum _$portCallPayloadStatusEnum_noCoverage =
     const PortCallPayloadStatusEnum._('noCoverage');
 const PortCallPayloadStatusEnum _$portCallPayloadStatusEnum_degradedInput =
     const PortCallPayloadStatusEnum._('degradedInput');
+const PortCallPayloadStatusEnum
+_$portCallPayloadStatusEnum_unknownDefaultOpenApi =
+    const PortCallPayloadStatusEnum._('unknownDefaultOpenApi');
 
 PortCallPayloadStatusEnum _$portCallPayloadStatusEnumValueOf(String name) {
   switch (name) {
@@ -25,8 +28,10 @@ PortCallPayloadStatusEnum _$portCallPayloadStatusEnumValueOf(String name) {
       return _$portCallPayloadStatusEnum_noCoverage;
     case 'degradedInput':
       return _$portCallPayloadStatusEnum_degradedInput;
+    case 'unknownDefaultOpenApi':
+      return _$portCallPayloadStatusEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$portCallPayloadStatusEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -36,6 +41,7 @@ final BuiltSet<PortCallPayloadStatusEnum> _$portCallPayloadStatusEnumValues =
       _$portCallPayloadStatusEnum_insufficientData,
       _$portCallPayloadStatusEnum_noCoverage,
       _$portCallPayloadStatusEnum_degradedInput,
+      _$portCallPayloadStatusEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<PortCallPayloadStatusEnum> _$portCallPayloadStatusEnumSerializer =
@@ -48,12 +54,14 @@ class _$PortCallPayloadStatusEnumSerializer
     'insufficientData': 'insufficient-data',
     'noCoverage': 'no-coverage',
     'degradedInput': 'degraded-input',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'ok': 'ok',
     'insufficient-data': 'insufficientData',
     'no-coverage': 'noCoverage',
     'degraded-input': 'degradedInput',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

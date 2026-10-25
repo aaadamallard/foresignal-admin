@@ -200,6 +200,9 @@ class MapAttachmentConfigAttachMapEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'static')
   static const MapAttachmentConfigAttachMapEnum static_ =
       _$mapAttachmentConfigAttachMapEnum_static_;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const MapAttachmentConfigAttachMapEnum unknownDefaultOpenApi =
+      _$mapAttachmentConfigAttachMapEnum_unknownDefaultOpenApi;
 
   static Serializer<MapAttachmentConfigAttachMapEnum> get serializer =>
       _$mapAttachmentConfigAttachMapEnumSerializer;

@@ -176,6 +176,9 @@ class DoctorOptionsLlmEnum extends EnumClass {
   static const DoctorOptionsLlmEnum on_ = _$doctorOptionsLlmEnum_on_;
   @BuiltValueEnumConst(wireName: r'off')
   static const DoctorOptionsLlmEnum off = _$doctorOptionsLlmEnum_off;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const DoctorOptionsLlmEnum unknownDefaultOpenApi =
+      _$doctorOptionsLlmEnum_unknownDefaultOpenApi;
 
   static Serializer<DoctorOptionsLlmEnum> get serializer =>
       _$doctorOptionsLlmEnumSerializer;
@@ -195,6 +198,9 @@ class DoctorOptionsDetailEnum extends EnumClass {
       _$doctorOptionsDetailEnum_compact;
   @BuiltValueEnumConst(wireName: r'full')
   static const DoctorOptionsDetailEnum full = _$doctorOptionsDetailEnum_full;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const DoctorOptionsDetailEnum unknownDefaultOpenApi =
+      _$doctorOptionsDetailEnum_unknownDefaultOpenApi;
 
   static Serializer<DoctorOptionsDetailEnum> get serializer =>
       _$doctorOptionsDetailEnumSerializer;

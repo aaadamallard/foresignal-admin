@@ -23,6 +23,8 @@ class SampleStatus extends EnumClass {
   static const SampleStatus unavailable = _$unavailable;
   @BuiltValueEnumConst(wireName: r'stale-position')
   static const SampleStatus stalePosition = _$stalePosition;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const SampleStatus unknownDefaultOpenApi = _$unknownDefaultOpenApi;
 
   static Serializer<SampleStatus> get serializer => _$sampleStatusSerializer;
 

@@ -192,7 +192,7 @@ class _ProviderLifecycleCardState extends ConsumerState<ProviderLifecycleCard>
               : external.suspendExternalSource(sourceId: _id),
         ),
         reread: () => callApiRequired(() => external.getExternalSource(sourceId: _id)),
-        confirm: (s) => wireOf(s.state) == want ? null : 'the provider reads back ${wireOf(s.state)}',
+        confirm: (s) => wireOf(s.state, s, 'state') == want ? null : 'the provider reads back ${wireOf(s.state, s, 'state')}',
       ),
     );
     if (got != null && mounted) {
@@ -471,9 +471,9 @@ class _BindingsCardState extends ConsumerState<BindingsCard> with WriteTracking<
                 () => external.updateExternalBinding(bindingId: editing, externalBindingInput: input),
               ),
               reread: () => callApiRequired(() => external.getExternalBinding(bindingId: editing)),
-              confirm: (b) => wireOf(b.target) == _draft.target && b.streamId == _draft.streamId
+              confirm: (b) => wireOf(b.target, b, 'target') == _draft.target && b.streamId == _draft.streamId
                   ? null
-                  : 'the binding reads back ${b.streamId} → ${wireOf(b.target)}',
+                  : 'the binding reads back ${b.streamId} → ${wireOf(b.target, b, 'target')}',
             ),
     );
     if (got != null && mounted) {

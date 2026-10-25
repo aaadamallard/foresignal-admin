@@ -15,6 +15,8 @@ const MeTokenScopeEnum _$meTokenScopeEnum_agent = const MeTokenScopeEnum._(
 const MeTokenScopeEnum _$meTokenScopeEnum_admin = const MeTokenScopeEnum._(
   'admin',
 );
+const MeTokenScopeEnum _$meTokenScopeEnum_unknownDefaultOpenApi =
+    const MeTokenScopeEnum._('unknownDefaultOpenApi');
 
 MeTokenScopeEnum _$meTokenScopeEnumValueOf(String name) {
   switch (name) {
@@ -24,8 +26,10 @@ MeTokenScopeEnum _$meTokenScopeEnumValueOf(String name) {
       return _$meTokenScopeEnum_agent;
     case 'admin':
       return _$meTokenScopeEnum_admin;
+    case 'unknownDefaultOpenApi':
+      return _$meTokenScopeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$meTokenScopeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -34,6 +38,7 @@ final BuiltSet<MeTokenScopeEnum> _$meTokenScopeEnumValues =
       _$meTokenScopeEnum_read,
       _$meTokenScopeEnum_agent,
       _$meTokenScopeEnum_admin,
+      _$meTokenScopeEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<MeTokenScopeEnum> _$meTokenScopeEnumSerializer =
@@ -45,11 +50,13 @@ class _$MeTokenScopeEnumSerializer
     'read': 'read',
     'agent': 'agent',
     'admin': 'admin',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'read': 'read',
     'agent': 'agent',
     'admin': 'admin',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

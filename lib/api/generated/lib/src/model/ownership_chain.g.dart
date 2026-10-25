@@ -12,6 +12,9 @@ const OwnershipChainDirectionEnum _$ownershipChainDirectionEnum_out_ =
     const OwnershipChainDirectionEnum._('out_');
 const OwnershipChainDirectionEnum _$ownershipChainDirectionEnum_both =
     const OwnershipChainDirectionEnum._('both');
+const OwnershipChainDirectionEnum
+_$ownershipChainDirectionEnum_unknownDefaultOpenApi =
+    const OwnershipChainDirectionEnum._('unknownDefaultOpenApi');
 
 OwnershipChainDirectionEnum _$ownershipChainDirectionEnumValueOf(String name) {
   switch (name) {
@@ -21,8 +24,10 @@ OwnershipChainDirectionEnum _$ownershipChainDirectionEnumValueOf(String name) {
       return _$ownershipChainDirectionEnum_out_;
     case 'both':
       return _$ownershipChainDirectionEnum_both;
+    case 'unknownDefaultOpenApi':
+      return _$ownershipChainDirectionEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$ownershipChainDirectionEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -32,6 +37,7 @@ _$ownershipChainDirectionEnumValues =
       _$ownershipChainDirectionEnum_in_,
       _$ownershipChainDirectionEnum_out_,
       _$ownershipChainDirectionEnum_both,
+      _$ownershipChainDirectionEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<OwnershipChainDirectionEnum>
@@ -44,11 +50,13 @@ class _$OwnershipChainDirectionEnumSerializer
     'in_': 'in',
     'out_': 'out',
     'both': 'both',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'in': 'in_',
     'out': 'out_',
     'both': 'both',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

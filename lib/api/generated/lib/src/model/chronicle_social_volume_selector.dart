@@ -202,6 +202,9 @@ class ChronicleSocialVolumeSelectorTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'social-volume')
   static const ChronicleSocialVolumeSelectorTypeEnum socialVolume =
       _$chronicleSocialVolumeSelectorTypeEnum_socialVolume;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ChronicleSocialVolumeSelectorTypeEnum unknownDefaultOpenApi =
+      _$chronicleSocialVolumeSelectorTypeEnum_unknownDefaultOpenApi;
 
   static Serializer<ChronicleSocialVolumeSelectorTypeEnum> get serializer =>
       _$chronicleSocialVolumeSelectorTypeEnumSerializer;
@@ -227,6 +230,9 @@ class ChronicleSocialVolumeSelectorMetricsEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'engagement')
   static const ChronicleSocialVolumeSelectorMetricsEnum engagement =
       _$chronicleSocialVolumeSelectorMetricsEnum_engagement;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ChronicleSocialVolumeSelectorMetricsEnum unknownDefaultOpenApi =
+      _$chronicleSocialVolumeSelectorMetricsEnum_unknownDefaultOpenApi;
 
   static Serializer<ChronicleSocialVolumeSelectorMetricsEnum> get serializer =>
       _$chronicleSocialVolumeSelectorMetricsEnumSerializer;

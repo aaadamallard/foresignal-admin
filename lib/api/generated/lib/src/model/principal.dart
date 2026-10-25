@@ -340,6 +340,9 @@ class PrincipalKindEnum extends EnumClass {
   static const PrincipalKindEnum agent = _$principalKindEnum_agent;
   @BuiltValueEnumConst(wireName: r'service')
   static const PrincipalKindEnum service = _$principalKindEnum_service;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const PrincipalKindEnum unknownDefaultOpenApi =
+      _$principalKindEnum_unknownDefaultOpenApi;
 
   static Serializer<PrincipalKindEnum> get serializer =>
       _$principalKindEnumSerializer;

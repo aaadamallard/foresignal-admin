@@ -18,6 +18,8 @@ const EdpSearchAuthEnum _$edpSearchAuthEnum_header = const EdpSearchAuthEnum._(
 const EdpSearchAuthEnum _$edpSearchAuthEnum_basic = const EdpSearchAuthEnum._(
   'basic',
 );
+const EdpSearchAuthEnum _$edpSearchAuthEnum_unknownDefaultOpenApi =
+    const EdpSearchAuthEnum._('unknownDefaultOpenApi');
 
 EdpSearchAuthEnum _$edpSearchAuthEnumValueOf(String name) {
   switch (name) {
@@ -29,8 +31,10 @@ EdpSearchAuthEnum _$edpSearchAuthEnumValueOf(String name) {
       return _$edpSearchAuthEnum_header;
     case 'basic':
       return _$edpSearchAuthEnum_basic;
+    case 'unknownDefaultOpenApi':
+      return _$edpSearchAuthEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$edpSearchAuthEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -40,6 +44,7 @@ final BuiltSet<EdpSearchAuthEnum> _$edpSearchAuthEnumValues =
       _$edpSearchAuthEnum_bearer,
       _$edpSearchAuthEnum_header,
       _$edpSearchAuthEnum_basic,
+      _$edpSearchAuthEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<EdpSearchAuthEnum> _$edpSearchAuthEnumSerializer =
@@ -52,12 +57,14 @@ class _$EdpSearchAuthEnumSerializer
     'bearer': 'bearer',
     'header': 'header',
     'basic': 'basic',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'none': 'none',
     'bearer': 'bearer',
     'header': 'header',
     'basic': 'basic',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

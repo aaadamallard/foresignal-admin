@@ -9,6 +9,9 @@ part of 'claim_extracted_event.dart';
 const ClaimExtractedEventEventEnum
 _$claimExtractedEventEventEnum_claimPeriodExtracted =
     const ClaimExtractedEventEventEnum._('claimPeriodExtracted');
+const ClaimExtractedEventEventEnum
+_$claimExtractedEventEventEnum_unknownDefaultOpenApi =
+    const ClaimExtractedEventEventEnum._('unknownDefaultOpenApi');
 
 ClaimExtractedEventEventEnum _$claimExtractedEventEventEnumValueOf(
   String name,
@@ -16,17 +19,19 @@ ClaimExtractedEventEventEnum _$claimExtractedEventEventEnumValueOf(
   switch (name) {
     case 'claimPeriodExtracted':
       return _$claimExtractedEventEventEnum_claimPeriodExtracted;
+    case 'unknownDefaultOpenApi':
+      return _$claimExtractedEventEventEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$claimExtractedEventEventEnum_unknownDefaultOpenApi;
   }
 }
 
 final BuiltSet<ClaimExtractedEventEventEnum>
-_$claimExtractedEventEventEnumValues = BuiltSet<ClaimExtractedEventEventEnum>(
-  const <ClaimExtractedEventEventEnum>[
-    _$claimExtractedEventEventEnum_claimPeriodExtracted,
-  ],
-);
+_$claimExtractedEventEventEnumValues =
+    BuiltSet<ClaimExtractedEventEventEnum>(const <ClaimExtractedEventEventEnum>[
+      _$claimExtractedEventEventEnum_claimPeriodExtracted,
+      _$claimExtractedEventEventEnum_unknownDefaultOpenApi,
+    ]);
 
 Serializer<ClaimExtractedEventEventEnum>
 _$claimExtractedEventEventEnumSerializer =
@@ -36,9 +41,11 @@ class _$ClaimExtractedEventEventEnumSerializer
     implements PrimitiveSerializer<ClaimExtractedEventEventEnum> {
   static const Map<String, Object> _toWire = const <String, Object>{
     'claimPeriodExtracted': 'claim.extracted',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'claim.extracted': 'claimPeriodExtracted',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

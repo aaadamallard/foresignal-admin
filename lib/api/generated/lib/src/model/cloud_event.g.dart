@@ -8,19 +8,25 @@ part of 'cloud_event.dart';
 
 const CloudEventSpecversionEnum _$cloudEventSpecversionEnum_n1period0 =
     const CloudEventSpecversionEnum._('n1period0');
+const CloudEventSpecversionEnum
+_$cloudEventSpecversionEnum_unknownDefaultOpenApi =
+    const CloudEventSpecversionEnum._('unknownDefaultOpenApi');
 
 CloudEventSpecversionEnum _$cloudEventSpecversionEnumValueOf(String name) {
   switch (name) {
     case 'n1period0':
       return _$cloudEventSpecversionEnum_n1period0;
+    case 'unknownDefaultOpenApi':
+      return _$cloudEventSpecversionEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$cloudEventSpecversionEnum_unknownDefaultOpenApi;
   }
 }
 
 final BuiltSet<CloudEventSpecversionEnum> _$cloudEventSpecversionEnumValues =
     BuiltSet<CloudEventSpecversionEnum>(const <CloudEventSpecversionEnum>[
       _$cloudEventSpecversionEnum_n1period0,
+      _$cloudEventSpecversionEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<CloudEventSpecversionEnum> _$cloudEventSpecversionEnumSerializer =
@@ -30,9 +36,11 @@ class _$CloudEventSpecversionEnumSerializer
     implements PrimitiveSerializer<CloudEventSpecversionEnum> {
   static const Map<String, Object> _toWire = const <String, Object>{
     'n1period0': '1.0',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     '1.0': 'n1period0',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

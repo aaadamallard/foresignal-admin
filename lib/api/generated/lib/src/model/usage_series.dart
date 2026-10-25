@@ -181,6 +181,9 @@ class UsageSeriesResolutionEnum extends EnumClass {
       _$usageSeriesResolutionEnum_hour;
   @BuiltValueEnumConst(wireName: r'day')
   static const UsageSeriesResolutionEnum day = _$usageSeriesResolutionEnum_day;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const UsageSeriesResolutionEnum unknownDefaultOpenApi =
+      _$usageSeriesResolutionEnum_unknownDefaultOpenApi;
 
   static Serializer<UsageSeriesResolutionEnum> get serializer =>
       _$usageSeriesResolutionEnumSerializer;

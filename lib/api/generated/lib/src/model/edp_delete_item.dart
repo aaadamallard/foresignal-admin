@@ -204,6 +204,9 @@ class _$EdpDeleteItemSerializer implements PrimitiveSerializer<EdpDeleteItem> {
 class EdpDeleteItemTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'delete')
   static const EdpDeleteItemTypeEnum delete = _$edpDeleteItemTypeEnum_delete;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const EdpDeleteItemTypeEnum unknownDefaultOpenApi =
+      _$edpDeleteItemTypeEnum_unknownDefaultOpenApi;
 
   static Serializer<EdpDeleteItemTypeEnum> get serializer =>
       _$edpDeleteItemTypeEnumSerializer;

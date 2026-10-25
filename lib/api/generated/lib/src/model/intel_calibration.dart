@@ -292,6 +292,9 @@ class IntelCalibrationScopeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'precursor-active')
   static const IntelCalibrationScopeEnum precursorActive =
       _$intelCalibrationScopeEnum_precursorActive;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const IntelCalibrationScopeEnum unknownDefaultOpenApi =
+      _$intelCalibrationScopeEnum_unknownDefaultOpenApi;
 
   static Serializer<IntelCalibrationScopeEnum> get serializer =>
       _$intelCalibrationScopeEnumSerializer;

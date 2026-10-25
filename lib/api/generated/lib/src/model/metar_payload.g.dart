@@ -10,6 +10,9 @@ const MetarPayloadMetarTypeEnum _$metarPayloadMetarTypeEnum_METAR =
     const MetarPayloadMetarTypeEnum._('METAR');
 const MetarPayloadMetarTypeEnum _$metarPayloadMetarTypeEnum_SPECI =
     const MetarPayloadMetarTypeEnum._('SPECI');
+const MetarPayloadMetarTypeEnum
+_$metarPayloadMetarTypeEnum_unknownDefaultOpenApi =
+    const MetarPayloadMetarTypeEnum._('unknownDefaultOpenApi');
 
 MetarPayloadMetarTypeEnum _$metarPayloadMetarTypeEnumValueOf(String name) {
   switch (name) {
@@ -17,8 +20,10 @@ MetarPayloadMetarTypeEnum _$metarPayloadMetarTypeEnumValueOf(String name) {
       return _$metarPayloadMetarTypeEnum_METAR;
     case 'SPECI':
       return _$metarPayloadMetarTypeEnum_SPECI;
+    case 'unknownDefaultOpenApi':
+      return _$metarPayloadMetarTypeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$metarPayloadMetarTypeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -26,6 +31,7 @@ final BuiltSet<MetarPayloadMetarTypeEnum> _$metarPayloadMetarTypeEnumValues =
     BuiltSet<MetarPayloadMetarTypeEnum>(const <MetarPayloadMetarTypeEnum>[
       _$metarPayloadMetarTypeEnum_METAR,
       _$metarPayloadMetarTypeEnum_SPECI,
+      _$metarPayloadMetarTypeEnum_unknownDefaultOpenApi,
     ]);
 
 const MetarPayloadFlightCategoryEnum _$metarPayloadFlightCategoryEnum_VFR =
@@ -36,6 +42,9 @@ const MetarPayloadFlightCategoryEnum _$metarPayloadFlightCategoryEnum_IFR =
     const MetarPayloadFlightCategoryEnum._('IFR');
 const MetarPayloadFlightCategoryEnum _$metarPayloadFlightCategoryEnum_LIFR =
     const MetarPayloadFlightCategoryEnum._('LIFR');
+const MetarPayloadFlightCategoryEnum
+_$metarPayloadFlightCategoryEnum_unknownDefaultOpenApi =
+    const MetarPayloadFlightCategoryEnum._('unknownDefaultOpenApi');
 
 MetarPayloadFlightCategoryEnum _$metarPayloadFlightCategoryEnumValueOf(
   String name,
@@ -49,8 +58,10 @@ MetarPayloadFlightCategoryEnum _$metarPayloadFlightCategoryEnumValueOf(
       return _$metarPayloadFlightCategoryEnum_IFR;
     case 'LIFR':
       return _$metarPayloadFlightCategoryEnum_LIFR;
+    case 'unknownDefaultOpenApi':
+      return _$metarPayloadFlightCategoryEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$metarPayloadFlightCategoryEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -62,6 +73,7 @@ _$metarPayloadFlightCategoryEnumValues =
         _$metarPayloadFlightCategoryEnum_MVFR,
         _$metarPayloadFlightCategoryEnum_IFR,
         _$metarPayloadFlightCategoryEnum_LIFR,
+        _$metarPayloadFlightCategoryEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -76,10 +88,12 @@ class _$MetarPayloadMetarTypeEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'METAR': 'METAR',
     'SPECI': 'SPECI',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'METAR': 'METAR',
     'SPECI': 'SPECI',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -111,12 +125,14 @@ class _$MetarPayloadFlightCategoryEnumSerializer
     'MVFR': 'MVFR',
     'IFR': 'IFR',
     'LIFR': 'LIFR',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'VFR': 'VFR',
     'MVFR': 'MVFR',
     'IFR': 'IFR',
     'LIFR': 'LIFR',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

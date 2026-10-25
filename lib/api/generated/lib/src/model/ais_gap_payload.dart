@@ -433,6 +433,9 @@ class AisGapPayloadStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'degraded-input')
   static const AisGapPayloadStatusEnum degradedInput =
       _$aisGapPayloadStatusEnum_degradedInput;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const AisGapPayloadStatusEnum unknownDefaultOpenApi =
+      _$aisGapPayloadStatusEnum_unknownDefaultOpenApi;
 
   static Serializer<AisGapPayloadStatusEnum> get serializer =>
       _$aisGapPayloadStatusEnumSerializer;

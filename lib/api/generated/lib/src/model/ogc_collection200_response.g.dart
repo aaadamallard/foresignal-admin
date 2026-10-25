@@ -9,14 +9,19 @@ part of 'ogc_collection200_response.dart';
 const OgcCollection200ResponseItemTypeEnum
 _$ogcCollection200ResponseItemTypeEnum_coverage =
     const OgcCollection200ResponseItemTypeEnum._('coverage');
+const OgcCollection200ResponseItemTypeEnum
+_$ogcCollection200ResponseItemTypeEnum_unknownDefaultOpenApi =
+    const OgcCollection200ResponseItemTypeEnum._('unknownDefaultOpenApi');
 
 OgcCollection200ResponseItemTypeEnum
 _$ogcCollection200ResponseItemTypeEnumValueOf(String name) {
   switch (name) {
     case 'coverage':
       return _$ogcCollection200ResponseItemTypeEnum_coverage;
+    case 'unknownDefaultOpenApi':
+      return _$ogcCollection200ResponseItemTypeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$ogcCollection200ResponseItemTypeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -25,6 +30,7 @@ _$ogcCollection200ResponseItemTypeEnumValues =
     BuiltSet<OgcCollection200ResponseItemTypeEnum>(
       const <OgcCollection200ResponseItemTypeEnum>[
         _$ogcCollection200ResponseItemTypeEnum_coverage,
+        _$ogcCollection200ResponseItemTypeEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -36,9 +42,11 @@ class _$OgcCollection200ResponseItemTypeEnumSerializer
     implements PrimitiveSerializer<OgcCollection200ResponseItemTypeEnum> {
   static const Map<String, Object> _toWire = const <String, Object>{
     'coverage': 'coverage',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'coverage': 'coverage',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

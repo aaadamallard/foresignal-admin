@@ -246,7 +246,7 @@ class RecipeDraft {
   /// Whether the definition can be edited: operator-authored recipes only.
   bool get definitionEditable =>
       stored == null ||
-      (stored!.origin == null ? stored!.builtIn != true : wireOf(stored!.origin!) == 'operator');
+      (stored!.origin == null ? stored!.builtIn != true : wireOf(stored!.origin!, stored!, 'origin') == 'operator');
 
   /// The recipe id (a slug).
   String id = '';
@@ -648,7 +648,7 @@ class CycleDraft {
     final schedule = sent['schedule']! as Map<String, Object?>;
     final differs = <String>[
       if (reread.name != sent['name']) 'name',
-      if (wireOf(reread.cadence) != sent['cadence']) 'cadence',
+      if (wireOf(reread.cadence, reread, 'cadence') != sent['cadence']) 'cadence',
       if (reread.schedule.cron != schedule['cron']) 'cron',
       if (reread.schedule.timezone != schedule['timezone']) 'timezone',
       if (reread.enabled != sent['enabled']) 'enabled',

@@ -14,6 +14,8 @@ const CyclePacketCadenceEnum _$cyclePacketCadenceEnum_monthly =
     const CyclePacketCadenceEnum._('monthly');
 const CyclePacketCadenceEnum _$cyclePacketCadenceEnum_onDemand =
     const CyclePacketCadenceEnum._('onDemand');
+const CyclePacketCadenceEnum _$cyclePacketCadenceEnum_unknownDefaultOpenApi =
+    const CyclePacketCadenceEnum._('unknownDefaultOpenApi');
 
 CyclePacketCadenceEnum _$cyclePacketCadenceEnumValueOf(String name) {
   switch (name) {
@@ -25,8 +27,10 @@ CyclePacketCadenceEnum _$cyclePacketCadenceEnumValueOf(String name) {
       return _$cyclePacketCadenceEnum_monthly;
     case 'onDemand':
       return _$cyclePacketCadenceEnum_onDemand;
+    case 'unknownDefaultOpenApi':
+      return _$cyclePacketCadenceEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$cyclePacketCadenceEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -36,6 +40,7 @@ final BuiltSet<CyclePacketCadenceEnum> _$cyclePacketCadenceEnumValues =
       _$cyclePacketCadenceEnum_weekly,
       _$cyclePacketCadenceEnum_monthly,
       _$cyclePacketCadenceEnum_onDemand,
+      _$cyclePacketCadenceEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<CyclePacketCadenceEnum> _$cyclePacketCadenceEnumSerializer =
@@ -48,12 +53,14 @@ class _$CyclePacketCadenceEnumSerializer
     'weekly': 'weekly',
     'monthly': 'monthly',
     'onDemand': 'on-demand',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'daily': 'daily',
     'weekly': 'weekly',
     'monthly': 'monthly',
     'on-demand': 'onDemand',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

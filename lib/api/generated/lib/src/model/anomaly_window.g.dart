@@ -10,6 +10,8 @@ const AnomalyWindowBucketEnum _$anomalyWindowBucketEnum_n15m =
     const AnomalyWindowBucketEnum._('n15m');
 const AnomalyWindowBucketEnum _$anomalyWindowBucketEnum_n1h =
     const AnomalyWindowBucketEnum._('n1h');
+const AnomalyWindowBucketEnum _$anomalyWindowBucketEnum_unknownDefaultOpenApi =
+    const AnomalyWindowBucketEnum._('unknownDefaultOpenApi');
 
 AnomalyWindowBucketEnum _$anomalyWindowBucketEnumValueOf(String name) {
   switch (name) {
@@ -17,8 +19,10 @@ AnomalyWindowBucketEnum _$anomalyWindowBucketEnumValueOf(String name) {
       return _$anomalyWindowBucketEnum_n15m;
     case 'n1h':
       return _$anomalyWindowBucketEnum_n1h;
+    case 'unknownDefaultOpenApi':
+      return _$anomalyWindowBucketEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$anomalyWindowBucketEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -26,12 +30,16 @@ final BuiltSet<AnomalyWindowBucketEnum> _$anomalyWindowBucketEnumValues =
     BuiltSet<AnomalyWindowBucketEnum>(const <AnomalyWindowBucketEnum>[
       _$anomalyWindowBucketEnum_n15m,
       _$anomalyWindowBucketEnum_n1h,
+      _$anomalyWindowBucketEnum_unknownDefaultOpenApi,
     ]);
 
 const AnomalyWindowSlotModeEnum _$anomalyWindowSlotModeEnum_hourOfWeek =
     const AnomalyWindowSlotModeEnum._('hourOfWeek');
 const AnomalyWindowSlotModeEnum _$anomalyWindowSlotModeEnum_hourOfDay =
     const AnomalyWindowSlotModeEnum._('hourOfDay');
+const AnomalyWindowSlotModeEnum
+_$anomalyWindowSlotModeEnum_unknownDefaultOpenApi =
+    const AnomalyWindowSlotModeEnum._('unknownDefaultOpenApi');
 
 AnomalyWindowSlotModeEnum _$anomalyWindowSlotModeEnumValueOf(String name) {
   switch (name) {
@@ -39,8 +47,10 @@ AnomalyWindowSlotModeEnum _$anomalyWindowSlotModeEnumValueOf(String name) {
       return _$anomalyWindowSlotModeEnum_hourOfWeek;
     case 'hourOfDay':
       return _$anomalyWindowSlotModeEnum_hourOfDay;
+    case 'unknownDefaultOpenApi':
+      return _$anomalyWindowSlotModeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$anomalyWindowSlotModeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -48,6 +58,7 @@ final BuiltSet<AnomalyWindowSlotModeEnum> _$anomalyWindowSlotModeEnumValues =
     BuiltSet<AnomalyWindowSlotModeEnum>(const <AnomalyWindowSlotModeEnum>[
       _$anomalyWindowSlotModeEnum_hourOfWeek,
       _$anomalyWindowSlotModeEnum_hourOfDay,
+      _$anomalyWindowSlotModeEnum_unknownDefaultOpenApi,
     ]);
 
 const AnomalyWindowDirectionEnum _$anomalyWindowDirectionEnum_up =
@@ -56,6 +67,9 @@ const AnomalyWindowDirectionEnum _$anomalyWindowDirectionEnum_down =
     const AnomalyWindowDirectionEnum._('down');
 const AnomalyWindowDirectionEnum _$anomalyWindowDirectionEnum_both =
     const AnomalyWindowDirectionEnum._('both');
+const AnomalyWindowDirectionEnum
+_$anomalyWindowDirectionEnum_unknownDefaultOpenApi =
+    const AnomalyWindowDirectionEnum._('unknownDefaultOpenApi');
 
 AnomalyWindowDirectionEnum _$anomalyWindowDirectionEnumValueOf(String name) {
   switch (name) {
@@ -65,8 +79,10 @@ AnomalyWindowDirectionEnum _$anomalyWindowDirectionEnumValueOf(String name) {
       return _$anomalyWindowDirectionEnum_down;
     case 'both':
       return _$anomalyWindowDirectionEnum_both;
+    case 'unknownDefaultOpenApi':
+      return _$anomalyWindowDirectionEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$anomalyWindowDirectionEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -75,6 +91,7 @@ final BuiltSet<AnomalyWindowDirectionEnum> _$anomalyWindowDirectionEnumValues =
       _$anomalyWindowDirectionEnum_up,
       _$anomalyWindowDirectionEnum_down,
       _$anomalyWindowDirectionEnum_both,
+      _$anomalyWindowDirectionEnum_unknownDefaultOpenApi,
     ]);
 
 const AnomalyWindowSensitivityEnum _$anomalyWindowSensitivityEnum_low =
@@ -83,6 +100,9 @@ const AnomalyWindowSensitivityEnum _$anomalyWindowSensitivityEnum_medium =
     const AnomalyWindowSensitivityEnum._('medium');
 const AnomalyWindowSensitivityEnum _$anomalyWindowSensitivityEnum_high =
     const AnomalyWindowSensitivityEnum._('high');
+const AnomalyWindowSensitivityEnum
+_$anomalyWindowSensitivityEnum_unknownDefaultOpenApi =
+    const AnomalyWindowSensitivityEnum._('unknownDefaultOpenApi');
 
 AnomalyWindowSensitivityEnum _$anomalyWindowSensitivityEnumValueOf(
   String name,
@@ -94,8 +114,10 @@ AnomalyWindowSensitivityEnum _$anomalyWindowSensitivityEnumValueOf(
       return _$anomalyWindowSensitivityEnum_medium;
     case 'high':
       return _$anomalyWindowSensitivityEnum_high;
+    case 'unknownDefaultOpenApi':
+      return _$anomalyWindowSensitivityEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$anomalyWindowSensitivityEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -105,6 +127,7 @@ _$anomalyWindowSensitivityEnumValues =
       _$anomalyWindowSensitivityEnum_low,
       _$anomalyWindowSensitivityEnum_medium,
       _$anomalyWindowSensitivityEnum_high,
+      _$anomalyWindowSensitivityEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<AnomalyWindowBucketEnum> _$anomalyWindowBucketEnumSerializer =
@@ -122,10 +145,12 @@ class _$AnomalyWindowBucketEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'n15m': '15m',
     'n1h': '1h',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     '15m': 'n15m',
     '1h': 'n1h',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -155,10 +180,12 @@ class _$AnomalyWindowSlotModeEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'hourOfWeek': 'hour-of-week',
     'hourOfDay': 'hour-of-day',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'hour-of-week': 'hourOfWeek',
     'hour-of-day': 'hourOfDay',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -189,11 +216,13 @@ class _$AnomalyWindowDirectionEnumSerializer
     'up': 'up',
     'down': 'down',
     'both': 'both',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'up': 'up',
     'down': 'down',
     'both': 'both',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -224,11 +253,13 @@ class _$AnomalyWindowSensitivityEnumSerializer
     'low': 'low',
     'medium': 'medium',
     'high': 'high',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'low': 'low',
     'medium': 'medium',
     'high': 'high',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

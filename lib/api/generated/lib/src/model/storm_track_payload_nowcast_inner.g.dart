@@ -15,6 +15,11 @@ _$stormTrackPayloadNowcastInnerLeadMinutesEnum_number30 =
 const StormTrackPayloadNowcastInnerLeadMinutesEnum
 _$stormTrackPayloadNowcastInnerLeadMinutesEnum_number60 =
     const StormTrackPayloadNowcastInnerLeadMinutesEnum._('number60');
+const StormTrackPayloadNowcastInnerLeadMinutesEnum
+_$stormTrackPayloadNowcastInnerLeadMinutesEnum_unknownDefaultOpenApi =
+    const StormTrackPayloadNowcastInnerLeadMinutesEnum._(
+      'unknownDefaultOpenApi',
+    );
 
 StormTrackPayloadNowcastInnerLeadMinutesEnum
 _$stormTrackPayloadNowcastInnerLeadMinutesEnumValueOf(String name) {
@@ -25,8 +30,10 @@ _$stormTrackPayloadNowcastInnerLeadMinutesEnumValueOf(String name) {
       return _$stormTrackPayloadNowcastInnerLeadMinutesEnum_number30;
     case 'number60':
       return _$stormTrackPayloadNowcastInnerLeadMinutesEnum_number60;
+    case 'unknownDefaultOpenApi':
+      return _$stormTrackPayloadNowcastInnerLeadMinutesEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$stormTrackPayloadNowcastInnerLeadMinutesEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -37,20 +44,26 @@ _$stormTrackPayloadNowcastInnerLeadMinutesEnumValues =
         _$stormTrackPayloadNowcastInnerLeadMinutesEnum_number15,
         _$stormTrackPayloadNowcastInnerLeadMinutesEnum_number30,
         _$stormTrackPayloadNowcastInnerLeadMinutesEnum_number60,
+        _$stormTrackPayloadNowcastInnerLeadMinutesEnum_unknownDefaultOpenApi,
       ],
     );
 
 const StormTrackPayloadNowcastInnerMethodEnum
 _$stormTrackPayloadNowcastInnerMethodEnum_linearAdvection =
     const StormTrackPayloadNowcastInnerMethodEnum._('linearAdvection');
+const StormTrackPayloadNowcastInnerMethodEnum
+_$stormTrackPayloadNowcastInnerMethodEnum_unknownDefaultOpenApi =
+    const StormTrackPayloadNowcastInnerMethodEnum._('unknownDefaultOpenApi');
 
 StormTrackPayloadNowcastInnerMethodEnum
 _$stormTrackPayloadNowcastInnerMethodEnumValueOf(String name) {
   switch (name) {
     case 'linearAdvection':
       return _$stormTrackPayloadNowcastInnerMethodEnum_linearAdvection;
+    case 'unknownDefaultOpenApi':
+      return _$stormTrackPayloadNowcastInnerMethodEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$stormTrackPayloadNowcastInnerMethodEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -59,6 +72,7 @@ _$stormTrackPayloadNowcastInnerMethodEnumValues =
     BuiltSet<StormTrackPayloadNowcastInnerMethodEnum>(
       const <StormTrackPayloadNowcastInnerMethodEnum>[
         _$stormTrackPayloadNowcastInnerMethodEnum_linearAdvection,
+        _$stormTrackPayloadNowcastInnerMethodEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -76,11 +90,13 @@ class _$StormTrackPayloadNowcastInnerLeadMinutesEnumSerializer
     'number15': 15,
     'number30': 30,
     'number60': 60,
+    'unknownDefaultOpenApi': 11184809,
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     15: 'number15',
     30: 'number30',
     60: 'number60',
+    11184809: 'unknownDefaultOpenApi',
   };
 
   @override
@@ -111,9 +127,11 @@ class _$StormTrackPayloadNowcastInnerMethodEnumSerializer
     implements PrimitiveSerializer<StormTrackPayloadNowcastInnerMethodEnum> {
   static const Map<String, Object> _toWire = const <String, Object>{
     'linearAdvection': 'linear-advection',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'linear-advection': 'linearAdvection',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

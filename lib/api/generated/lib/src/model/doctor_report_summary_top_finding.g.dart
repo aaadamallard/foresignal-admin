@@ -51,6 +51,9 @@ _$doctorReportSummaryTopFindingCodeEnum_NO_CHANGE_DETECTED =
 const DoctorReportSummaryTopFindingCodeEnum
 _$doctorReportSummaryTopFindingCodeEnum_PROBE_SKIPPED_BUDGET =
     const DoctorReportSummaryTopFindingCodeEnum._('PROBE_SKIPPED_BUDGET');
+const DoctorReportSummaryTopFindingCodeEnum
+_$doctorReportSummaryTopFindingCodeEnum_unknownDefaultOpenApi =
+    const DoctorReportSummaryTopFindingCodeEnum._('unknownDefaultOpenApi');
 
 DoctorReportSummaryTopFindingCodeEnum
 _$doctorReportSummaryTopFindingCodeEnumValueOf(String name) {
@@ -85,8 +88,10 @@ _$doctorReportSummaryTopFindingCodeEnumValueOf(String name) {
       return _$doctorReportSummaryTopFindingCodeEnum_NO_CHANGE_DETECTED;
     case 'PROBE_SKIPPED_BUDGET':
       return _$doctorReportSummaryTopFindingCodeEnum_PROBE_SKIPPED_BUDGET;
+    case 'unknownDefaultOpenApi':
+      return _$doctorReportSummaryTopFindingCodeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$doctorReportSummaryTopFindingCodeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -109,6 +114,7 @@ _$doctorReportSummaryTopFindingCodeEnumValues =
         _$doctorReportSummaryTopFindingCodeEnum_COVERAGE_DROPPED,
         _$doctorReportSummaryTopFindingCodeEnum_NO_CHANGE_DETECTED,
         _$doctorReportSummaryTopFindingCodeEnum_PROBE_SKIPPED_BUDGET,
+        _$doctorReportSummaryTopFindingCodeEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -134,6 +140,7 @@ class _$DoctorReportSummaryTopFindingCodeEnumSerializer
     'COVERAGE_DROPPED': 'COVERAGE_DROPPED',
     'NO_CHANGE_DETECTED': 'NO_CHANGE_DETECTED',
     'PROBE_SKIPPED_BUDGET': 'PROBE_SKIPPED_BUDGET',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'AUTH_FAILED': 'AUTH_FAILED',
@@ -151,6 +158,7 @@ class _$DoctorReportSummaryTopFindingCodeEnumSerializer
     'COVERAGE_DROPPED': 'COVERAGE_DROPPED',
     'NO_CHANGE_DETECTED': 'NO_CHANGE_DETECTED',
     'PROBE_SKIPPED_BUDGET': 'PROBE_SKIPPED_BUDGET',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

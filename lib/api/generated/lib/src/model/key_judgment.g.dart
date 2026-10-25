@@ -10,6 +10,9 @@ const KeyJudgmentTextOriginEnum _$keyJudgmentTextOriginEnum_deterministic =
     const KeyJudgmentTextOriginEnum._('deterministic');
 const KeyJudgmentTextOriginEnum _$keyJudgmentTextOriginEnum_llm =
     const KeyJudgmentTextOriginEnum._('llm');
+const KeyJudgmentTextOriginEnum
+_$keyJudgmentTextOriginEnum_unknownDefaultOpenApi =
+    const KeyJudgmentTextOriginEnum._('unknownDefaultOpenApi');
 
 KeyJudgmentTextOriginEnum _$keyJudgmentTextOriginEnumValueOf(String name) {
   switch (name) {
@@ -17,8 +20,10 @@ KeyJudgmentTextOriginEnum _$keyJudgmentTextOriginEnumValueOf(String name) {
       return _$keyJudgmentTextOriginEnum_deterministic;
     case 'llm':
       return _$keyJudgmentTextOriginEnum_llm;
+    case 'unknownDefaultOpenApi':
+      return _$keyJudgmentTextOriginEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$keyJudgmentTextOriginEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -26,6 +31,7 @@ final BuiltSet<KeyJudgmentTextOriginEnum> _$keyJudgmentTextOriginEnumValues =
     BuiltSet<KeyJudgmentTextOriginEnum>(const <KeyJudgmentTextOriginEnum>[
       _$keyJudgmentTextOriginEnum_deterministic,
       _$keyJudgmentTextOriginEnum_llm,
+      _$keyJudgmentTextOriginEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<KeyJudgmentTextOriginEnum> _$keyJudgmentTextOriginEnumSerializer =
@@ -36,10 +42,12 @@ class _$KeyJudgmentTextOriginEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'deterministic': 'deterministic',
     'llm': 'llm',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'deterministic': 'deterministic',
     'llm': 'llm',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

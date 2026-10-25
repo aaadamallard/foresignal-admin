@@ -12,6 +12,9 @@ _$timelineTickFramesInnerAvailabilityEnum_available =
 const TimelineTickFramesInnerAvailabilityEnum
 _$timelineTickFramesInnerAvailabilityEnum_unverified =
     const TimelineTickFramesInnerAvailabilityEnum._('unverified');
+const TimelineTickFramesInnerAvailabilityEnum
+_$timelineTickFramesInnerAvailabilityEnum_unknownDefaultOpenApi =
+    const TimelineTickFramesInnerAvailabilityEnum._('unknownDefaultOpenApi');
 
 TimelineTickFramesInnerAvailabilityEnum
 _$timelineTickFramesInnerAvailabilityEnumValueOf(String name) {
@@ -20,8 +23,10 @@ _$timelineTickFramesInnerAvailabilityEnumValueOf(String name) {
       return _$timelineTickFramesInnerAvailabilityEnum_available;
     case 'unverified':
       return _$timelineTickFramesInnerAvailabilityEnum_unverified;
+    case 'unknownDefaultOpenApi':
+      return _$timelineTickFramesInnerAvailabilityEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$timelineTickFramesInnerAvailabilityEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -31,6 +36,7 @@ _$timelineTickFramesInnerAvailabilityEnumValues =
       const <TimelineTickFramesInnerAvailabilityEnum>[
         _$timelineTickFramesInnerAvailabilityEnum_available,
         _$timelineTickFramesInnerAvailabilityEnum_unverified,
+        _$timelineTickFramesInnerAvailabilityEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -43,10 +49,12 @@ class _$TimelineTickFramesInnerAvailabilityEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'available': 'available',
     'unverified': 'unverified',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'available': 'available',
     'unverified': 'unverified',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

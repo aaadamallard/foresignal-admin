@@ -10,6 +10,9 @@ const SystemInfoArchiveTargetEnum _$systemInfoArchiveTargetEnum_local =
     const SystemInfoArchiveTargetEnum._('local');
 const SystemInfoArchiveTargetEnum _$systemInfoArchiveTargetEnum_s3 =
     const SystemInfoArchiveTargetEnum._('s3');
+const SystemInfoArchiveTargetEnum
+_$systemInfoArchiveTargetEnum_unknownDefaultOpenApi =
+    const SystemInfoArchiveTargetEnum._('unknownDefaultOpenApi');
 
 SystemInfoArchiveTargetEnum _$systemInfoArchiveTargetEnumValueOf(String name) {
   switch (name) {
@@ -17,18 +20,20 @@ SystemInfoArchiveTargetEnum _$systemInfoArchiveTargetEnumValueOf(String name) {
       return _$systemInfoArchiveTargetEnum_local;
     case 's3':
       return _$systemInfoArchiveTargetEnum_s3;
+    case 'unknownDefaultOpenApi':
+      return _$systemInfoArchiveTargetEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$systemInfoArchiveTargetEnum_unknownDefaultOpenApi;
   }
 }
 
 final BuiltSet<SystemInfoArchiveTargetEnum>
-_$systemInfoArchiveTargetEnumValues = BuiltSet<SystemInfoArchiveTargetEnum>(
-  const <SystemInfoArchiveTargetEnum>[
-    _$systemInfoArchiveTargetEnum_local,
-    _$systemInfoArchiveTargetEnum_s3,
-  ],
-);
+_$systemInfoArchiveTargetEnumValues =
+    BuiltSet<SystemInfoArchiveTargetEnum>(const <SystemInfoArchiveTargetEnum>[
+      _$systemInfoArchiveTargetEnum_local,
+      _$systemInfoArchiveTargetEnum_s3,
+      _$systemInfoArchiveTargetEnum_unknownDefaultOpenApi,
+    ]);
 
 Serializer<SystemInfoArchiveTargetEnum>
 _$systemInfoArchiveTargetEnumSerializer =
@@ -39,10 +44,12 @@ class _$SystemInfoArchiveTargetEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'local': 'local',
     's3': 's3',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'local': 'local',
     's3': 's3',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

@@ -552,6 +552,9 @@ class _$PushPayloadSerializer implements PrimitiveSerializer<PushPayload> {
 class PushPayloadVEnum extends EnumClass {
   @BuiltValueEnumConst(wireNumber: 1)
   static const PushPayloadVEnum number1 = _$pushPayloadVEnum_number1;
+  @BuiltValueEnumConst(wireNumber: 11184809, fallback: true)
+  static const PushPayloadVEnum unknownDefaultOpenApi =
+      _$pushPayloadVEnum_unknownDefaultOpenApi;
 
   static Serializer<PushPayloadVEnum> get serializer =>
       _$pushPayloadVEnumSerializer;
@@ -572,6 +575,9 @@ class PushPayloadEventEnum extends EnumClass {
   static const PushPayloadEventEnum system = _$pushPayloadEventEnum_system;
   @BuiltValueEnumConst(wireName: r'verify')
   static const PushPayloadEventEnum verify = _$pushPayloadEventEnum_verify;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const PushPayloadEventEnum unknownDefaultOpenApi =
+      _$pushPayloadEventEnum_unknownDefaultOpenApi;
 
   static Serializer<PushPayloadEventEnum> get serializer =>
       _$pushPayloadEventEnumSerializer;
@@ -593,6 +599,9 @@ class PushPayloadSeverityEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'critical')
   static const PushPayloadSeverityEnum critical =
       _$pushPayloadSeverityEnum_critical;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const PushPayloadSeverityEnum unknownDefaultOpenApi =
+      _$pushPayloadSeverityEnum_unknownDefaultOpenApi;
 
   static Serializer<PushPayloadSeverityEnum> get serializer =>
       _$pushPayloadSeverityEnumSerializer;

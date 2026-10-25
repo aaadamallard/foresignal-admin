@@ -18,6 +18,9 @@ _$chokepointActivityPayloadStatusEnum_noCoverage =
 const ChokepointActivityPayloadStatusEnum
 _$chokepointActivityPayloadStatusEnum_degradedInput =
     const ChokepointActivityPayloadStatusEnum._('degradedInput');
+const ChokepointActivityPayloadStatusEnum
+_$chokepointActivityPayloadStatusEnum_unknownDefaultOpenApi =
+    const ChokepointActivityPayloadStatusEnum._('unknownDefaultOpenApi');
 
 ChokepointActivityPayloadStatusEnum
 _$chokepointActivityPayloadStatusEnumValueOf(String name) {
@@ -30,8 +33,10 @@ _$chokepointActivityPayloadStatusEnumValueOf(String name) {
       return _$chokepointActivityPayloadStatusEnum_noCoverage;
     case 'degradedInput':
       return _$chokepointActivityPayloadStatusEnum_degradedInput;
+    case 'unknownDefaultOpenApi':
+      return _$chokepointActivityPayloadStatusEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$chokepointActivityPayloadStatusEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -43,6 +48,7 @@ _$chokepointActivityPayloadStatusEnumValues =
         _$chokepointActivityPayloadStatusEnum_insufficientData,
         _$chokepointActivityPayloadStatusEnum_noCoverage,
         _$chokepointActivityPayloadStatusEnum_degradedInput,
+        _$chokepointActivityPayloadStatusEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -58,6 +64,11 @@ _$chokepointActivityPayloadCoverageStatusEnum_noCoverage =
 const ChokepointActivityPayloadCoverageStatusEnum
 _$chokepointActivityPayloadCoverageStatusEnum_degradedInput =
     const ChokepointActivityPayloadCoverageStatusEnum._('degradedInput');
+const ChokepointActivityPayloadCoverageStatusEnum
+_$chokepointActivityPayloadCoverageStatusEnum_unknownDefaultOpenApi =
+    const ChokepointActivityPayloadCoverageStatusEnum._(
+      'unknownDefaultOpenApi',
+    );
 
 ChokepointActivityPayloadCoverageStatusEnum
 _$chokepointActivityPayloadCoverageStatusEnumValueOf(String name) {
@@ -70,8 +81,10 @@ _$chokepointActivityPayloadCoverageStatusEnumValueOf(String name) {
       return _$chokepointActivityPayloadCoverageStatusEnum_noCoverage;
     case 'degradedInput':
       return _$chokepointActivityPayloadCoverageStatusEnum_degradedInput;
+    case 'unknownDefaultOpenApi':
+      return _$chokepointActivityPayloadCoverageStatusEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$chokepointActivityPayloadCoverageStatusEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -83,6 +96,7 @@ _$chokepointActivityPayloadCoverageStatusEnumValues =
         _$chokepointActivityPayloadCoverageStatusEnum_insufficientData,
         _$chokepointActivityPayloadCoverageStatusEnum_noCoverage,
         _$chokepointActivityPayloadCoverageStatusEnum_degradedInput,
+        _$chokepointActivityPayloadCoverageStatusEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -100,12 +114,14 @@ class _$ChokepointActivityPayloadStatusEnumSerializer
     'insufficientData': 'insufficient-data',
     'noCoverage': 'no-coverage',
     'degradedInput': 'degraded-input',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'ok': 'ok',
     'insufficient-data': 'insufficientData',
     'no-coverage': 'noCoverage',
     'degraded-input': 'degradedInput',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -140,12 +156,14 @@ class _$ChokepointActivityPayloadCoverageStatusEnumSerializer
     'insufficientData': 'insufficient-data',
     'noCoverage': 'no-coverage',
     'degradedInput': 'degraded-input',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'ok': 'ok',
     'insufficient-data': 'insufficientData',
     'no-coverage': 'noCoverage',
     'degraded-input': 'degradedInput',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

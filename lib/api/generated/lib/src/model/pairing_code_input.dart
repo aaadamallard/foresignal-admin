@@ -232,6 +232,9 @@ class PairingCodeInputScopeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'agent')
   static const PairingCodeInputScopeEnum agent =
       _$pairingCodeInputScopeEnum_agent;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const PairingCodeInputScopeEnum unknownDefaultOpenApi =
+      _$pairingCodeInputScopeEnum_unknownDefaultOpenApi;
 
   static Serializer<PairingCodeInputScopeEnum> get serializer =>
       _$pairingCodeInputScopeEnumSerializer;

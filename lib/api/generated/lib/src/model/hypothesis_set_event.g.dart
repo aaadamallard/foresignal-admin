@@ -12,6 +12,9 @@ const HypothesisSetEventStatusEnum _$hypothesisSetEventStatusEnum_resolved =
     const HypothesisSetEventStatusEnum._('resolved');
 const HypothesisSetEventStatusEnum _$hypothesisSetEventStatusEnum_archived =
     const HypothesisSetEventStatusEnum._('archived');
+const HypothesisSetEventStatusEnum
+_$hypothesisSetEventStatusEnum_unknownDefaultOpenApi =
+    const HypothesisSetEventStatusEnum._('unknownDefaultOpenApi');
 
 HypothesisSetEventStatusEnum _$hypothesisSetEventStatusEnumValueOf(
   String name,
@@ -23,8 +26,10 @@ HypothesisSetEventStatusEnum _$hypothesisSetEventStatusEnumValueOf(
       return _$hypothesisSetEventStatusEnum_resolved;
     case 'archived':
       return _$hypothesisSetEventStatusEnum_archived;
+    case 'unknownDefaultOpenApi':
+      return _$hypothesisSetEventStatusEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$hypothesisSetEventStatusEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -34,6 +39,7 @@ _$hypothesisSetEventStatusEnumValues =
       _$hypothesisSetEventStatusEnum_active,
       _$hypothesisSetEventStatusEnum_resolved,
       _$hypothesisSetEventStatusEnum_archived,
+      _$hypothesisSetEventStatusEnum_unknownDefaultOpenApi,
     ]);
 
 const HypothesisSetEventCauseEnum
@@ -56,6 +62,9 @@ const HypothesisSetEventCauseEnum _$hypothesisSetEventCauseEnum_operator_ =
     const HypothesisSetEventCauseEnum._('operator_');
 const HypothesisSetEventCauseEnum _$hypothesisSetEventCauseEnum_created =
     const HypothesisSetEventCauseEnum._('created');
+const HypothesisSetEventCauseEnum
+_$hypothesisSetEventCauseEnum_unknownDefaultOpenApi =
+    const HypothesisSetEventCauseEnum._('unknownDefaultOpenApi');
 
 HypothesisSetEventCauseEnum _$hypothesisSetEventCauseEnumValueOf(String name) {
   switch (name) {
@@ -75,8 +84,10 @@ HypothesisSetEventCauseEnum _$hypothesisSetEventCauseEnumValueOf(String name) {
       return _$hypothesisSetEventCauseEnum_operator_;
     case 'created':
       return _$hypothesisSetEventCauseEnum_created;
+    case 'unknownDefaultOpenApi':
+      return _$hypothesisSetEventCauseEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$hypothesisSetEventCauseEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -91,6 +102,7 @@ _$hypothesisSetEventCauseEnumValues =
       _$hypothesisSetEventCauseEnum_review,
       _$hypothesisSetEventCauseEnum_operator_,
       _$hypothesisSetEventCauseEnum_created,
+      _$hypothesisSetEventCauseEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<HypothesisSetEventStatusEnum>
@@ -106,11 +118,13 @@ class _$HypothesisSetEventStatusEnumSerializer
     'active': 'active',
     'resolved': 'resolved',
     'archived': 'archived',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'active': 'active',
     'resolved': 'resolved',
     'archived': 'archived',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -146,6 +160,7 @@ class _$HypothesisSetEventCauseEnumSerializer
     'review': 'review',
     'operator_': 'operator',
     'created': 'created',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'indicator-observed': 'indicatorObserved',
@@ -156,6 +171,7 @@ class _$HypothesisSetEventCauseEnumSerializer
     'review': 'review',
     'operator': 'operator_',
     'created': 'created',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

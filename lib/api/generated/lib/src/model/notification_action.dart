@@ -247,6 +247,9 @@ class NotificationActionMethodEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'POST')
   static const NotificationActionMethodEnum POST =
       _$notificationActionMethodEnum_POST;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const NotificationActionMethodEnum unknownDefaultOpenApi =
+      _$notificationActionMethodEnum_unknownDefaultOpenApi;
 
   static Serializer<NotificationActionMethodEnum> get serializer =>
       _$notificationActionMethodEnumSerializer;

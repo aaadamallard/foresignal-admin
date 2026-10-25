@@ -569,6 +569,9 @@ class LlmProviderTypeEnum extends EnumClass {
       _$llmProviderTypeEnum_openaiCompatible;
   @BuiltValueEnumConst(wireName: r'ollama')
   static const LlmProviderTypeEnum ollama = _$llmProviderTypeEnum_ollama;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const LlmProviderTypeEnum unknownDefaultOpenApi =
+      _$llmProviderTypeEnum_unknownDefaultOpenApi;
 
   static Serializer<LlmProviderTypeEnum> get serializer =>
       _$llmProviderTypeEnumSerializer;
@@ -589,6 +592,9 @@ class LlmProviderRolesEnum extends EnumClass {
       _$llmProviderRolesEnum_embedding;
   @BuiltValueEnumConst(wireName: r'tts')
   static const LlmProviderRolesEnum tts = _$llmProviderRolesEnum_tts;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const LlmProviderRolesEnum unknownDefaultOpenApi =
+      _$llmProviderRolesEnum_unknownDefaultOpenApi;
 
   static Serializer<LlmProviderRolesEnum> get serializer =>
       _$llmProviderRolesEnumSerializer;
@@ -614,6 +620,9 @@ class LlmProviderStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'disabled')
   static const LlmProviderStatusEnum disabled =
       _$llmProviderStatusEnum_disabled;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const LlmProviderStatusEnum unknownDefaultOpenApi =
+      _$llmProviderStatusEnum_unknownDefaultOpenApi;
 
   static Serializer<LlmProviderStatusEnum> get serializer =>
       _$llmProviderStatusEnumSerializer;

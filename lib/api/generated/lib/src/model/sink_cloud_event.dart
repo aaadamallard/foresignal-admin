@@ -321,6 +321,9 @@ class SinkCloudEventSpecversionEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'1.0')
   static const SinkCloudEventSpecversionEnum n1period0 =
       _$sinkCloudEventSpecversionEnum_n1period0;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const SinkCloudEventSpecversionEnum unknownDefaultOpenApi =
+      _$sinkCloudEventSpecversionEnum_unknownDefaultOpenApi;
 
   static Serializer<SinkCloudEventSpecversionEnum> get serializer =>
       _$sinkCloudEventSpecversionEnumSerializer;
@@ -350,6 +353,9 @@ class SinkCloudEventTypeEnum extends EnumClass {
   static const SinkCloudEventTypeEnum
   aiPeriodForesignalPeriodRecordPeriodSnapshot =
       _$sinkCloudEventTypeEnum_aiPeriodForesignalPeriodRecordPeriodSnapshot;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const SinkCloudEventTypeEnum unknownDefaultOpenApi =
+      _$sinkCloudEventTypeEnum_unknownDefaultOpenApi;
 
   static Serializer<SinkCloudEventTypeEnum> get serializer =>
       _$sinkCloudEventTypeEnumSerializer;

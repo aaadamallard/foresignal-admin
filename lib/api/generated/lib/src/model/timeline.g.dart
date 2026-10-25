@@ -14,6 +14,8 @@ const TimelineTimeFieldEnum _$timelineTimeFieldEnum_event =
     const TimelineTimeFieldEnum._('event');
 const TimelineTimeFieldEnum _$timelineTimeFieldEnum_ingested =
     const TimelineTimeFieldEnum._('ingested');
+const TimelineTimeFieldEnum _$timelineTimeFieldEnum_unknownDefaultOpenApi =
+    const TimelineTimeFieldEnum._('unknownDefaultOpenApi');
 
 TimelineTimeFieldEnum _$timelineTimeFieldEnumValueOf(String name) {
   switch (name) {
@@ -25,8 +27,10 @@ TimelineTimeFieldEnum _$timelineTimeFieldEnumValueOf(String name) {
       return _$timelineTimeFieldEnum_event;
     case 'ingested':
       return _$timelineTimeFieldEnum_ingested;
+    case 'unknownDefaultOpenApi':
+      return _$timelineTimeFieldEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$timelineTimeFieldEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -36,12 +40,15 @@ final BuiltSet<TimelineTimeFieldEnum> _$timelineTimeFieldEnumValues =
       _$timelineTimeFieldEnum_observed,
       _$timelineTimeFieldEnum_event,
       _$timelineTimeFieldEnum_ingested,
+      _$timelineTimeFieldEnum_unknownDefaultOpenApi,
     ]);
 
 const TimelineMeasureEnum _$timelineMeasureEnum_versions =
     const TimelineMeasureEnum._('versions');
 const TimelineMeasureEnum _$timelineMeasureEnum_entities =
     const TimelineMeasureEnum._('entities');
+const TimelineMeasureEnum _$timelineMeasureEnum_unknownDefaultOpenApi =
+    const TimelineMeasureEnum._('unknownDefaultOpenApi');
 
 TimelineMeasureEnum _$timelineMeasureEnumValueOf(String name) {
   switch (name) {
@@ -49,8 +56,10 @@ TimelineMeasureEnum _$timelineMeasureEnumValueOf(String name) {
       return _$timelineMeasureEnum_versions;
     case 'entities':
       return _$timelineMeasureEnum_entities;
+    case 'unknownDefaultOpenApi':
+      return _$timelineMeasureEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$timelineMeasureEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -58,6 +67,7 @@ final BuiltSet<TimelineMeasureEnum> _$timelineMeasureEnumValues =
     BuiltSet<TimelineMeasureEnum>(const <TimelineMeasureEnum>[
       _$timelineMeasureEnum_versions,
       _$timelineMeasureEnum_entities,
+      _$timelineMeasureEnum_unknownDefaultOpenApi,
     ]);
 
 const TimelineGroupByEnum _$timelineGroupByEnum_none =
@@ -66,6 +76,8 @@ const TimelineGroupByEnum _$timelineGroupByEnum_kind =
     const TimelineGroupByEnum._('kind');
 const TimelineGroupByEnum _$timelineGroupByEnum_source_ =
     const TimelineGroupByEnum._('source_');
+const TimelineGroupByEnum _$timelineGroupByEnum_unknownDefaultOpenApi =
+    const TimelineGroupByEnum._('unknownDefaultOpenApi');
 
 TimelineGroupByEnum _$timelineGroupByEnumValueOf(String name) {
   switch (name) {
@@ -75,8 +87,10 @@ TimelineGroupByEnum _$timelineGroupByEnumValueOf(String name) {
       return _$timelineGroupByEnum_kind;
     case 'source_':
       return _$timelineGroupByEnum_source_;
+    case 'unknownDefaultOpenApi':
+      return _$timelineGroupByEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$timelineGroupByEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -85,6 +99,7 @@ final BuiltSet<TimelineGroupByEnum> _$timelineGroupByEnumValues =
       _$timelineGroupByEnum_none,
       _$timelineGroupByEnum_kind,
       _$timelineGroupByEnum_source_,
+      _$timelineGroupByEnum_unknownDefaultOpenApi,
     ]);
 
 const TimelineBackendEnum _$timelineBackendEnum_raw =
@@ -93,6 +108,8 @@ const TimelineBackendEnum _$timelineBackendEnum_rollup =
     const TimelineBackendEnum._('rollup');
 const TimelineBackendEnum _$timelineBackendEnum_mixed =
     const TimelineBackendEnum._('mixed');
+const TimelineBackendEnum _$timelineBackendEnum_unknownDefaultOpenApi =
+    const TimelineBackendEnum._('unknownDefaultOpenApi');
 
 TimelineBackendEnum _$timelineBackendEnumValueOf(String name) {
   switch (name) {
@@ -102,8 +119,10 @@ TimelineBackendEnum _$timelineBackendEnumValueOf(String name) {
       return _$timelineBackendEnum_rollup;
     case 'mixed':
       return _$timelineBackendEnum_mixed;
+    case 'unknownDefaultOpenApi':
+      return _$timelineBackendEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$timelineBackendEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -112,6 +131,7 @@ final BuiltSet<TimelineBackendEnum> _$timelineBackendEnumValues =
       _$timelineBackendEnum_raw,
       _$timelineBackendEnum_rollup,
       _$timelineBackendEnum_mixed,
+      _$timelineBackendEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<TimelineTimeFieldEnum> _$timelineTimeFieldEnumSerializer =
@@ -130,12 +150,14 @@ class _$TimelineTimeFieldEnumSerializer
     'observed': 'observed',
     'event': 'event',
     'ingested': 'ingested',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'effective': 'effective',
     'observed': 'observed',
     'event': 'event',
     'ingested': 'ingested',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -165,10 +187,12 @@ class _$TimelineMeasureEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'versions': 'versions',
     'entities': 'entities',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'versions': 'versions',
     'entities': 'entities',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -199,11 +223,13 @@ class _$TimelineGroupByEnumSerializer
     'none': 'none',
     'kind': 'kind',
     'source_': 'source',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'none': 'none',
     'kind': 'kind',
     'source': 'source_',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -234,11 +260,13 @@ class _$TimelineBackendEnumSerializer
     'raw': 'raw',
     'rollup': 'rollup',
     'mixed': 'mixed',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'raw': 'raw',
     'rollup': 'rollup',
     'mixed': 'mixed',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

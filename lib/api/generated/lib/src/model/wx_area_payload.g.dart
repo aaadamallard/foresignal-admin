@@ -18,6 +18,8 @@ const WxAreaPayloadFieldEnum _$wxAreaPayloadFieldEnum_qpe1h =
     const WxAreaPayloadFieldEnum._('qpe1h');
 const WxAreaPayloadFieldEnum _$wxAreaPayloadFieldEnum_ffg =
     const WxAreaPayloadFieldEnum._('ffg');
+const WxAreaPayloadFieldEnum _$wxAreaPayloadFieldEnum_unknownDefaultOpenApi =
+    const WxAreaPayloadFieldEnum._('unknownDefaultOpenApi');
 
 WxAreaPayloadFieldEnum _$wxAreaPayloadFieldEnumValueOf(String name) {
   switch (name) {
@@ -33,8 +35,10 @@ WxAreaPayloadFieldEnum _$wxAreaPayloadFieldEnumValueOf(String name) {
       return _$wxAreaPayloadFieldEnum_qpe1h;
     case 'ffg':
       return _$wxAreaPayloadFieldEnum_ffg;
+    case 'unknownDefaultOpenApi':
+      return _$wxAreaPayloadFieldEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$wxAreaPayloadFieldEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -46,6 +50,7 @@ final BuiltSet<WxAreaPayloadFieldEnum> _$wxAreaPayloadFieldEnumValues =
       _$wxAreaPayloadFieldEnum_rotation,
       _$wxAreaPayloadFieldEnum_qpe1h,
       _$wxAreaPayloadFieldEnum_ffg,
+      _$wxAreaPayloadFieldEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<WxAreaPayloadFieldEnum> _$wxAreaPayloadFieldEnumSerializer =
@@ -60,6 +65,7 @@ class _$WxAreaPayloadFieldEnumSerializer
     'rotation': 'rotation',
     'qpe1h': 'qpe1h',
     'ffg': 'ffg',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'refl': 'refl',
@@ -68,6 +74,7 @@ class _$WxAreaPayloadFieldEnumSerializer
     'rotation': 'rotation',
     'qpe1h': 'qpe1h',
     'ffg': 'ffg',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

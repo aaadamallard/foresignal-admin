@@ -10,6 +10,9 @@ const PrecursorPatchStatusEnum _$precursorPatchStatusEnum_retired =
     const PrecursorPatchStatusEnum._('retired');
 const PrecursorPatchStatusEnum _$precursorPatchStatusEnum_validated =
     const PrecursorPatchStatusEnum._('validated');
+const PrecursorPatchStatusEnum
+_$precursorPatchStatusEnum_unknownDefaultOpenApi =
+    const PrecursorPatchStatusEnum._('unknownDefaultOpenApi');
 
 PrecursorPatchStatusEnum _$precursorPatchStatusEnumValueOf(String name) {
   switch (name) {
@@ -17,8 +20,10 @@ PrecursorPatchStatusEnum _$precursorPatchStatusEnumValueOf(String name) {
       return _$precursorPatchStatusEnum_retired;
     case 'validated':
       return _$precursorPatchStatusEnum_validated;
+    case 'unknownDefaultOpenApi':
+      return _$precursorPatchStatusEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$precursorPatchStatusEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -26,6 +31,7 @@ final BuiltSet<PrecursorPatchStatusEnum> _$precursorPatchStatusEnumValues =
     BuiltSet<PrecursorPatchStatusEnum>(const <PrecursorPatchStatusEnum>[
       _$precursorPatchStatusEnum_retired,
       _$precursorPatchStatusEnum_validated,
+      _$precursorPatchStatusEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<PrecursorPatchStatusEnum> _$precursorPatchStatusEnumSerializer =
@@ -36,10 +42,12 @@ class _$PrecursorPatchStatusEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'retired': 'retired',
     'validated': 'validated',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'retired': 'retired',
     'validated': 'validated',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

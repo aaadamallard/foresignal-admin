@@ -239,6 +239,9 @@ class ForecastSeriesProviderEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'nws')
   static const ForecastSeriesProviderEnum nws =
       _$forecastSeriesProviderEnum_nws;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ForecastSeriesProviderEnum unknownDefaultOpenApi =
+      _$forecastSeriesProviderEnum_unknownDefaultOpenApi;
 
   static Serializer<ForecastSeriesProviderEnum> get serializer =>
       _$forecastSeriesProviderEnumSerializer;

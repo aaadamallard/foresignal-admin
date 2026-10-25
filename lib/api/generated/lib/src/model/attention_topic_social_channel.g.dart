@@ -18,6 +18,9 @@ _$attentionTopicSocialChannelTypeEnum_mastodonHashtag =
 const AttentionTopicSocialChannelTypeEnum
 _$attentionTopicSocialChannelTypeEnum_youtubeChannel =
     const AttentionTopicSocialChannelTypeEnum._('youtubeChannel');
+const AttentionTopicSocialChannelTypeEnum
+_$attentionTopicSocialChannelTypeEnum_unknownDefaultOpenApi =
+    const AttentionTopicSocialChannelTypeEnum._('unknownDefaultOpenApi');
 
 AttentionTopicSocialChannelTypeEnum
 _$attentionTopicSocialChannelTypeEnumValueOf(String name) {
@@ -30,8 +33,10 @@ _$attentionTopicSocialChannelTypeEnumValueOf(String name) {
       return _$attentionTopicSocialChannelTypeEnum_mastodonHashtag;
     case 'youtubeChannel':
       return _$attentionTopicSocialChannelTypeEnum_youtubeChannel;
+    case 'unknownDefaultOpenApi':
+      return _$attentionTopicSocialChannelTypeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$attentionTopicSocialChannelTypeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -43,6 +48,7 @@ _$attentionTopicSocialChannelTypeEnumValues =
         _$attentionTopicSocialChannelTypeEnum_mastodonInstance,
         _$attentionTopicSocialChannelTypeEnum_mastodonHashtag,
         _$attentionTopicSocialChannelTypeEnum_youtubeChannel,
+        _$attentionTopicSocialChannelTypeEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -57,12 +63,14 @@ class _$AttentionTopicSocialChannelTypeEnumSerializer
     'mastodonInstance': 'mastodon-instance',
     'mastodonHashtag': 'mastodon-hashtag',
     'youtubeChannel': 'youtube-channel',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'subreddit': 'subreddit',
     'mastodon-instance': 'mastodonInstance',
     'mastodon-hashtag': 'mastodonHashtag',
     'youtube-channel': 'youtubeChannel',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

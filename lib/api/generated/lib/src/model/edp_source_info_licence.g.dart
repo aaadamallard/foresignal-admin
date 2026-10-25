@@ -15,6 +15,9 @@ _$edpSourceInfoLicenceRedistributionEnum_localOnly =
 const EdpSourceInfoLicenceRedistributionEnum
 _$edpSourceInfoLicenceRedistributionEnum_unknown =
     const EdpSourceInfoLicenceRedistributionEnum._('unknown');
+const EdpSourceInfoLicenceRedistributionEnum
+_$edpSourceInfoLicenceRedistributionEnum_unknownDefaultOpenApi =
+    const EdpSourceInfoLicenceRedistributionEnum._('unknownDefaultOpenApi');
 
 EdpSourceInfoLicenceRedistributionEnum
 _$edpSourceInfoLicenceRedistributionEnumValueOf(String name) {
@@ -25,8 +28,10 @@ _$edpSourceInfoLicenceRedistributionEnumValueOf(String name) {
       return _$edpSourceInfoLicenceRedistributionEnum_localOnly;
     case 'unknown':
       return _$edpSourceInfoLicenceRedistributionEnum_unknown;
+    case 'unknownDefaultOpenApi':
+      return _$edpSourceInfoLicenceRedistributionEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$edpSourceInfoLicenceRedistributionEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -37,6 +42,7 @@ _$edpSourceInfoLicenceRedistributionEnumValues =
         _$edpSourceInfoLicenceRedistributionEnum_allowed,
         _$edpSourceInfoLicenceRedistributionEnum_localOnly,
         _$edpSourceInfoLicenceRedistributionEnum_unknown,
+        _$edpSourceInfoLicenceRedistributionEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -50,11 +56,13 @@ class _$EdpSourceInfoLicenceRedistributionEnumSerializer
     'allowed': 'allowed',
     'localOnly': 'local-only',
     'unknown': 'unknown',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'allowed': 'allowed',
     'local-only': 'localOnly',
     'unknown': 'unknown',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

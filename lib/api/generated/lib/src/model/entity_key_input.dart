@@ -259,6 +259,9 @@ class EntityKeyInputKeyTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'person-key')
   static const EntityKeyInputKeyTypeEnum personKey =
       _$entityKeyInputKeyTypeEnum_personKey;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const EntityKeyInputKeyTypeEnum unknownDefaultOpenApi =
+      _$entityKeyInputKeyTypeEnum_unknownDefaultOpenApi;
 
   static Serializer<EntityKeyInputKeyTypeEnum> get serializer =>
       _$entityKeyInputKeyTypeEnumSerializer;

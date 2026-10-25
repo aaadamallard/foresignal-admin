@@ -525,6 +525,9 @@ class PeerModeEnum extends EnumClass {
   static const PeerModeEnum PULL = _$peerModeEnum_PULL;
   @BuiltValueEnumConst(wireName: r'RECEIVE')
   static const PeerModeEnum RECEIVE = _$peerModeEnum_RECEIVE;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const PeerModeEnum unknownDefaultOpenApi =
+      _$peerModeEnum_unknownDefaultOpenApi;
 
   static Serializer<PeerModeEnum> get serializer => _$peerModeEnumSerializer;
 
@@ -544,6 +547,9 @@ class PeerHealthReasonEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'PEER_RESYNC')
   static const PeerHealthReasonEnum PEER_RESYNC =
       _$peerHealthReasonEnum_PEER_RESYNC;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const PeerHealthReasonEnum unknownDefaultOpenApi =
+      _$peerHealthReasonEnum_unknownDefaultOpenApi;
 
   static Serializer<PeerHealthReasonEnum> get serializer =>
       _$peerHealthReasonEnumSerializer;
@@ -570,6 +576,9 @@ class PeerReliabilityEnum extends EnumClass {
   static const PeerReliabilityEnum E = _$peerReliabilityEnum_E;
   @BuiltValueEnumConst(wireName: r'F')
   static const PeerReliabilityEnum F = _$peerReliabilityEnum_F;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const PeerReliabilityEnum unknownDefaultOpenApi =
+      _$peerReliabilityEnum_unknownDefaultOpenApi;
 
   static Serializer<PeerReliabilityEnum> get serializer =>
       _$peerReliabilityEnumSerializer;

@@ -20,6 +20,8 @@ const IndicatorSignalTypeEnum _$indicatorSignalTypeEnum_question =
     const IndicatorSignalTypeEnum._('question');
 const IndicatorSignalTypeEnum _$indicatorSignalTypeEnum_manual =
     const IndicatorSignalTypeEnum._('manual');
+const IndicatorSignalTypeEnum _$indicatorSignalTypeEnum_unknownDefaultOpenApi =
+    const IndicatorSignalTypeEnum._('unknownDefaultOpenApi');
 
 IndicatorSignalTypeEnum _$indicatorSignalTypeEnumValueOf(String name) {
   switch (name) {
@@ -37,8 +39,10 @@ IndicatorSignalTypeEnum _$indicatorSignalTypeEnumValueOf(String name) {
       return _$indicatorSignalTypeEnum_question;
     case 'manual':
       return _$indicatorSignalTypeEnum_manual;
+    case 'unknownDefaultOpenApi':
+      return _$indicatorSignalTypeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$indicatorSignalTypeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -51,6 +55,7 @@ final BuiltSet<IndicatorSignalTypeEnum> _$indicatorSignalTypeEnumValues =
       _$indicatorSignalTypeEnum_situation,
       _$indicatorSignalTypeEnum_question,
       _$indicatorSignalTypeEnum_manual,
+      _$indicatorSignalTypeEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<IndicatorSignalTypeEnum> _$indicatorSignalTypeEnumSerializer =
@@ -66,6 +71,7 @@ class _$IndicatorSignalTypeEnumSerializer
     'situation': 'situation',
     'question': 'question',
     'manual': 'manual',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'rule': 'rule',
@@ -75,6 +81,7 @@ class _$IndicatorSignalTypeEnumSerializer
     'situation': 'situation',
     'question': 'question',
     'manual': 'manual',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

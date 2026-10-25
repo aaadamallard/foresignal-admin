@@ -24,6 +24,8 @@ const InboxItemCategoryEnum _$inboxItemCategoryEnum_savedSearch =
     const InboxItemCategoryEnum._('savedSearch');
 const InboxItemCategoryEnum _$inboxItemCategoryEnum_system =
     const InboxItemCategoryEnum._('system');
+const InboxItemCategoryEnum _$inboxItemCategoryEnum_unknownDefaultOpenApi =
+    const InboxItemCategoryEnum._('unknownDefaultOpenApi');
 
 InboxItemCategoryEnum _$inboxItemCategoryEnumValueOf(String name) {
   switch (name) {
@@ -45,8 +47,10 @@ InboxItemCategoryEnum _$inboxItemCategoryEnumValueOf(String name) {
       return _$inboxItemCategoryEnum_savedSearch;
     case 'system':
       return _$inboxItemCategoryEnum_system;
+    case 'unknownDefaultOpenApi':
+      return _$inboxItemCategoryEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$inboxItemCategoryEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -61,6 +65,7 @@ final BuiltSet<InboxItemCategoryEnum> _$inboxItemCategoryEnumValues =
       _$inboxItemCategoryEnum_accessRequest,
       _$inboxItemCategoryEnum_savedSearch,
       _$inboxItemCategoryEnum_system,
+      _$inboxItemCategoryEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<InboxItemCategoryEnum> _$inboxItemCategoryEnumSerializer =
@@ -78,6 +83,7 @@ class _$InboxItemCategoryEnumSerializer
     'accessRequest': 'access-request',
     'savedSearch': 'saved-search',
     'system': 'system',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'mention': 'mention',
@@ -89,6 +95,7 @@ class _$InboxItemCategoryEnumSerializer
     'access-request': 'accessRequest',
     'saved-search': 'savedSearch',
     'system': 'system',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

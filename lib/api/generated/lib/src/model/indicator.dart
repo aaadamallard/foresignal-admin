@@ -454,6 +454,9 @@ class IndicatorCredibilityEnum extends EnumClass {
   static const IndicatorCredibilityEnum M = _$indicatorCredibilityEnum_M;
   @BuiltValueEnumConst(wireName: r'L')
   static const IndicatorCredibilityEnum L = _$indicatorCredibilityEnum_L;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const IndicatorCredibilityEnum unknownDefaultOpenApi =
+      _$indicatorCredibilityEnum_unknownDefaultOpenApi;
 
   static Serializer<IndicatorCredibilityEnum> get serializer =>
       _$indicatorCredibilityEnumSerializer;
@@ -473,6 +476,9 @@ class IndicatorRelevanceEnum extends EnumClass {
   static const IndicatorRelevanceEnum M = _$indicatorRelevanceEnum_M;
   @BuiltValueEnumConst(wireName: r'L')
   static const IndicatorRelevanceEnum L = _$indicatorRelevanceEnum_L;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const IndicatorRelevanceEnum unknownDefaultOpenApi =
+      _$indicatorRelevanceEnum_unknownDefaultOpenApi;
 
   static Serializer<IndicatorRelevanceEnum> get serializer =>
       _$indicatorRelevanceEnumSerializer;
@@ -501,6 +507,9 @@ class IndicatorStateEnum extends EnumClass {
   static const IndicatorStateEnum retired = _$indicatorStateEnum_retired;
   @BuiltValueEnumConst(wireName: r'reported')
   static const IndicatorStateEnum reported = _$indicatorStateEnum_reported;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const IndicatorStateEnum unknownDefaultOpenApi =
+      _$indicatorStateEnum_unknownDefaultOpenApi;
 
   static Serializer<IndicatorStateEnum> get serializer =>
       _$indicatorStateEnumSerializer;
@@ -519,6 +528,9 @@ class IndicatorOriginEnum extends EnumClass {
   static const IndicatorOriginEnum agent = _$indicatorOriginEnum_agent;
   @BuiltValueEnumConst(wireName: r'analyst')
   static const IndicatorOriginEnum analyst = _$indicatorOriginEnum_analyst;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const IndicatorOriginEnum unknownDefaultOpenApi =
+      _$indicatorOriginEnum_unknownDefaultOpenApi;
 
   static Serializer<IndicatorOriginEnum> get serializer =>
       _$indicatorOriginEnumSerializer;

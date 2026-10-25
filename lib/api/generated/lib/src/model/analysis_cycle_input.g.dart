@@ -12,6 +12,9 @@ const AnalysisCycleInputCadenceEnum _$analysisCycleInputCadenceEnum_weekly =
     const AnalysisCycleInputCadenceEnum._('weekly');
 const AnalysisCycleInputCadenceEnum _$analysisCycleInputCadenceEnum_monthly =
     const AnalysisCycleInputCadenceEnum._('monthly');
+const AnalysisCycleInputCadenceEnum
+_$analysisCycleInputCadenceEnum_unknownDefaultOpenApi =
+    const AnalysisCycleInputCadenceEnum._('unknownDefaultOpenApi');
 
 AnalysisCycleInputCadenceEnum _$analysisCycleInputCadenceEnumValueOf(
   String name,
@@ -23,8 +26,10 @@ AnalysisCycleInputCadenceEnum _$analysisCycleInputCadenceEnumValueOf(
       return _$analysisCycleInputCadenceEnum_weekly;
     case 'monthly':
       return _$analysisCycleInputCadenceEnum_monthly;
+    case 'unknownDefaultOpenApi':
+      return _$analysisCycleInputCadenceEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$analysisCycleInputCadenceEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -34,6 +39,7 @@ _$analysisCycleInputCadenceEnumValues = BuiltSet<AnalysisCycleInputCadenceEnum>(
     _$analysisCycleInputCadenceEnum_daily,
     _$analysisCycleInputCadenceEnum_weekly,
     _$analysisCycleInputCadenceEnum_monthly,
+    _$analysisCycleInputCadenceEnum_unknownDefaultOpenApi,
   ],
 );
 
@@ -45,6 +51,9 @@ const AnalysisCycleInputRolesEnum _$analysisCycleInputRolesEnum_forecaster =
     const AnalysisCycleInputRolesEnum._('forecaster');
 const AnalysisCycleInputRolesEnum _$analysisCycleInputRolesEnum_proposer =
     const AnalysisCycleInputRolesEnum._('proposer');
+const AnalysisCycleInputRolesEnum
+_$analysisCycleInputRolesEnum_unknownDefaultOpenApi =
+    const AnalysisCycleInputRolesEnum._('unknownDefaultOpenApi');
 
 AnalysisCycleInputRolesEnum _$analysisCycleInputRolesEnumValueOf(String name) {
   switch (name) {
@@ -56,8 +65,10 @@ AnalysisCycleInputRolesEnum _$analysisCycleInputRolesEnumValueOf(String name) {
       return _$analysisCycleInputRolesEnum_forecaster;
     case 'proposer':
       return _$analysisCycleInputRolesEnum_proposer;
+    case 'unknownDefaultOpenApi':
+      return _$analysisCycleInputRolesEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$analysisCycleInputRolesEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -68,6 +79,7 @@ _$analysisCycleInputRolesEnumValues =
       _$analysisCycleInputRolesEnum_redTeam,
       _$analysisCycleInputRolesEnum_forecaster,
       _$analysisCycleInputRolesEnum_proposer,
+      _$analysisCycleInputRolesEnum_unknownDefaultOpenApi,
     ]);
 
 const AnalysisCycleInputNotifyMinPriorityEnum
@@ -79,6 +91,9 @@ _$analysisCycleInputNotifyMinPriorityEnum_normal =
 const AnalysisCycleInputNotifyMinPriorityEnum
 _$analysisCycleInputNotifyMinPriorityEnum_high =
     const AnalysisCycleInputNotifyMinPriorityEnum._('high');
+const AnalysisCycleInputNotifyMinPriorityEnum
+_$analysisCycleInputNotifyMinPriorityEnum_unknownDefaultOpenApi =
+    const AnalysisCycleInputNotifyMinPriorityEnum._('unknownDefaultOpenApi');
 
 AnalysisCycleInputNotifyMinPriorityEnum
 _$analysisCycleInputNotifyMinPriorityEnumValueOf(String name) {
@@ -89,8 +104,10 @@ _$analysisCycleInputNotifyMinPriorityEnumValueOf(String name) {
       return _$analysisCycleInputNotifyMinPriorityEnum_normal;
     case 'high':
       return _$analysisCycleInputNotifyMinPriorityEnum_high;
+    case 'unknownDefaultOpenApi':
+      return _$analysisCycleInputNotifyMinPriorityEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$analysisCycleInputNotifyMinPriorityEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -101,6 +118,7 @@ _$analysisCycleInputNotifyMinPriorityEnumValues =
         _$analysisCycleInputNotifyMinPriorityEnum_low,
         _$analysisCycleInputNotifyMinPriorityEnum_normal,
         _$analysisCycleInputNotifyMinPriorityEnum_high,
+        _$analysisCycleInputNotifyMinPriorityEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -120,11 +138,13 @@ class _$AnalysisCycleInputCadenceEnumSerializer
     'daily': 'daily',
     'weekly': 'weekly',
     'monthly': 'monthly',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'daily': 'daily',
     'weekly': 'weekly',
     'monthly': 'monthly',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -156,12 +176,14 @@ class _$AnalysisCycleInputRolesEnumSerializer
     'redTeam': 'red-team',
     'forecaster': 'forecaster',
     'proposer': 'proposer',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'analyst': 'analyst',
     'red-team': 'redTeam',
     'forecaster': 'forecaster',
     'proposer': 'proposer',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -192,11 +214,13 @@ class _$AnalysisCycleInputNotifyMinPriorityEnumSerializer
     'low': 'low',
     'normal': 'normal',
     'high': 'high',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'low': 'low',
     'normal': 'normal',
     'high': 'high',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

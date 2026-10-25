@@ -8,25 +8,32 @@ part of 'stats_grid.dart';
 
 const StatsGridTypeEnum _$statsGridTypeEnum_featureCollection =
     const StatsGridTypeEnum._('featureCollection');
+const StatsGridTypeEnum _$statsGridTypeEnum_unknownDefaultOpenApi =
+    const StatsGridTypeEnum._('unknownDefaultOpenApi');
 
 StatsGridTypeEnum _$statsGridTypeEnumValueOf(String name) {
   switch (name) {
     case 'featureCollection':
       return _$statsGridTypeEnum_featureCollection;
+    case 'unknownDefaultOpenApi':
+      return _$statsGridTypeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$statsGridTypeEnum_unknownDefaultOpenApi;
   }
 }
 
 final BuiltSet<StatsGridTypeEnum> _$statsGridTypeEnumValues =
     BuiltSet<StatsGridTypeEnum>(const <StatsGridTypeEnum>[
       _$statsGridTypeEnum_featureCollection,
+      _$statsGridTypeEnum_unknownDefaultOpenApi,
     ]);
 
 const StatsGridCellSystemEnum _$statsGridCellSystemEnum_h3 =
     const StatsGridCellSystemEnum._('h3');
 const StatsGridCellSystemEnum _$statsGridCellSystemEnum_hex3857 =
     const StatsGridCellSystemEnum._('hex3857');
+const StatsGridCellSystemEnum _$statsGridCellSystemEnum_unknownDefaultOpenApi =
+    const StatsGridCellSystemEnum._('unknownDefaultOpenApi');
 
 StatsGridCellSystemEnum _$statsGridCellSystemEnumValueOf(String name) {
   switch (name) {
@@ -34,8 +41,10 @@ StatsGridCellSystemEnum _$statsGridCellSystemEnumValueOf(String name) {
       return _$statsGridCellSystemEnum_h3;
     case 'hex3857':
       return _$statsGridCellSystemEnum_hex3857;
+    case 'unknownDefaultOpenApi':
+      return _$statsGridCellSystemEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$statsGridCellSystemEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -43,12 +52,15 @@ final BuiltSet<StatsGridCellSystemEnum> _$statsGridCellSystemEnumValues =
     BuiltSet<StatsGridCellSystemEnum>(const <StatsGridCellSystemEnum>[
       _$statsGridCellSystemEnum_h3,
       _$statsGridCellSystemEnum_hex3857,
+      _$statsGridCellSystemEnum_unknownDefaultOpenApi,
     ]);
 
 const StatsGridBackendEnum _$statsGridBackendEnum_rollup =
     const StatsGridBackendEnum._('rollup');
 const StatsGridBackendEnum _$statsGridBackendEnum_raw =
     const StatsGridBackendEnum._('raw');
+const StatsGridBackendEnum _$statsGridBackendEnum_unknownDefaultOpenApi =
+    const StatsGridBackendEnum._('unknownDefaultOpenApi');
 
 StatsGridBackendEnum _$statsGridBackendEnumValueOf(String name) {
   switch (name) {
@@ -56,8 +68,10 @@ StatsGridBackendEnum _$statsGridBackendEnumValueOf(String name) {
       return _$statsGridBackendEnum_rollup;
     case 'raw':
       return _$statsGridBackendEnum_raw;
+    case 'unknownDefaultOpenApi':
+      return _$statsGridBackendEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$statsGridBackendEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -65,6 +79,7 @@ final BuiltSet<StatsGridBackendEnum> _$statsGridBackendEnumValues =
     BuiltSet<StatsGridBackendEnum>(const <StatsGridBackendEnum>[
       _$statsGridBackendEnum_rollup,
       _$statsGridBackendEnum_raw,
+      _$statsGridBackendEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<StatsGridTypeEnum> _$statsGridTypeEnumSerializer =
@@ -78,9 +93,11 @@ class _$StatsGridTypeEnumSerializer
     implements PrimitiveSerializer<StatsGridTypeEnum> {
   static const Map<String, Object> _toWire = const <String, Object>{
     'featureCollection': 'FeatureCollection',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'FeatureCollection': 'featureCollection',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -110,10 +127,12 @@ class _$StatsGridCellSystemEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'h3': 'h3',
     'hex3857': 'hex3857',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'h3': 'h3',
     'hex3857': 'hex3857',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -143,10 +162,12 @@ class _$StatsGridBackendEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'rollup': 'rollup',
     'raw': 'raw',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'rollup': 'rollup',
     'raw': 'raw',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

@@ -144,6 +144,9 @@ class SocialVolumeScopeTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'entity')
   static const SocialVolumeScopeTypeEnum entity =
       _$socialVolumeScopeTypeEnum_entity;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const SocialVolumeScopeTypeEnum unknownDefaultOpenApi =
+      _$socialVolumeScopeTypeEnum_unknownDefaultOpenApi;
 
   static Serializer<SocialVolumeScopeTypeEnum> get serializer =>
       _$socialVolumeScopeTypeEnumSerializer;

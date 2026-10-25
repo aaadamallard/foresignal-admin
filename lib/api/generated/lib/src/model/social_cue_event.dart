@@ -139,6 +139,9 @@ class SocialCueEventEventEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'cue.completed')
   static const SocialCueEventEventEnum cuePeriodCompleted =
       _$socialCueEventEventEnum_cuePeriodCompleted;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const SocialCueEventEventEnum unknownDefaultOpenApi =
+      _$socialCueEventEventEnum_unknownDefaultOpenApi;
 
   static Serializer<SocialCueEventEventEnum> get serializer =>
       _$socialCueEventEventEnumSerializer;

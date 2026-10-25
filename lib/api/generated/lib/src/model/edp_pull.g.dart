@@ -16,6 +16,8 @@ const EdpPullAuthEnum _$edpPullAuthEnum_header = const EdpPullAuthEnum._(
 const EdpPullAuthEnum _$edpPullAuthEnum_basic = const EdpPullAuthEnum._(
   'basic',
 );
+const EdpPullAuthEnum _$edpPullAuthEnum_unknownDefaultOpenApi =
+    const EdpPullAuthEnum._('unknownDefaultOpenApi');
 
 EdpPullAuthEnum _$edpPullAuthEnumValueOf(String name) {
   switch (name) {
@@ -27,8 +29,10 @@ EdpPullAuthEnum _$edpPullAuthEnumValueOf(String name) {
       return _$edpPullAuthEnum_header;
     case 'basic':
       return _$edpPullAuthEnum_basic;
+    case 'unknownDefaultOpenApi':
+      return _$edpPullAuthEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$edpPullAuthEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -38,6 +42,7 @@ final BuiltSet<EdpPullAuthEnum> _$edpPullAuthEnumValues =
       _$edpPullAuthEnum_bearer,
       _$edpPullAuthEnum_header,
       _$edpPullAuthEnum_basic,
+      _$edpPullAuthEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<EdpPullAuthEnum> _$edpPullAuthEnumSerializer =
@@ -50,12 +55,14 @@ class _$EdpPullAuthEnumSerializer
     'bearer': 'bearer',
     'header': 'header',
     'basic': 'basic',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'none': 'none',
     'bearer': 'bearer',
     'header': 'header',
     'basic': 'basic',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

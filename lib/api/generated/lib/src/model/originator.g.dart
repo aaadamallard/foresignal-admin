@@ -22,6 +22,8 @@ const OriginatorClass_Enum _$originatorClassEnum_derived =
     const OriginatorClass_Enum._('derived');
 const OriginatorClass_Enum _$originatorClassEnum_social =
     const OriginatorClass_Enum._('social');
+const OriginatorClass_Enum _$originatorClassEnum_unknownDefaultOpenApi =
+    const OriginatorClass_Enum._('unknownDefaultOpenApi');
 
 OriginatorClass_Enum _$originatorClassEnumValueOf(String name) {
   switch (name) {
@@ -41,8 +43,10 @@ OriginatorClass_Enum _$originatorClassEnumValueOf(String name) {
       return _$originatorClassEnum_derived;
     case 'social':
       return _$originatorClassEnum_social;
+    case 'unknownDefaultOpenApi':
+      return _$originatorClassEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$originatorClassEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -56,6 +60,7 @@ final BuiltSet<OriginatorClass_Enum> _$originatorClassEnumValues =
       _$originatorClassEnum_operator_,
       _$originatorClassEnum_derived,
       _$originatorClassEnum_social,
+      _$originatorClassEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<OriginatorClass_Enum> _$originatorClassEnumSerializer =
@@ -72,6 +77,7 @@ class _$OriginatorClass_EnumSerializer
     'operator_': 'operator',
     'derived': 'derived',
     'social': 'social',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'sensor-network': 'sensorNetwork',
@@ -82,6 +88,7 @@ class _$OriginatorClass_EnumSerializer
     'operator': 'operator_',
     'derived': 'derived',
     'social': 'social',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

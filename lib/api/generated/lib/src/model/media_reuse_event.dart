@@ -255,6 +255,9 @@ class MediaReuseEventEventEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'media.reuse')
   static const MediaReuseEventEventEnum mediaPeriodReuse =
       _$mediaReuseEventEventEnum_mediaPeriodReuse;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const MediaReuseEventEventEnum unknownDefaultOpenApi =
+      _$mediaReuseEventEventEnum_unknownDefaultOpenApi;
 
   static Serializer<MediaReuseEventEventEnum> get serializer =>
       _$mediaReuseEventEventEnumSerializer;
@@ -275,6 +278,9 @@ class MediaReuseEventReasonEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'elsewhere')
   static const MediaReuseEventReasonEnum elsewhere =
       _$mediaReuseEventReasonEnum_elsewhere;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const MediaReuseEventReasonEnum unknownDefaultOpenApi =
+      _$mediaReuseEventReasonEnum_unknownDefaultOpenApi;
 
   static Serializer<MediaReuseEventReasonEnum> get serializer =>
       _$mediaReuseEventReasonEnumSerializer;

@@ -14,6 +14,9 @@ const AnomalyRecordPayloadStateEnum _$anomalyRecordPayloadStateEnum_unknown =
     const AnomalyRecordPayloadStateEnum._('unknown');
 const AnomalyRecordPayloadStateEnum _$anomalyRecordPayloadStateEnum_learning =
     const AnomalyRecordPayloadStateEnum._('learning');
+const AnomalyRecordPayloadStateEnum
+_$anomalyRecordPayloadStateEnum_unknownDefaultOpenApi =
+    const AnomalyRecordPayloadStateEnum._('unknownDefaultOpenApi');
 
 AnomalyRecordPayloadStateEnum _$anomalyRecordPayloadStateEnumValueOf(
   String name,
@@ -27,8 +30,10 @@ AnomalyRecordPayloadStateEnum _$anomalyRecordPayloadStateEnumValueOf(
       return _$anomalyRecordPayloadStateEnum_unknown;
     case 'learning':
       return _$anomalyRecordPayloadStateEnum_learning;
+    case 'unknownDefaultOpenApi':
+      return _$anomalyRecordPayloadStateEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$anomalyRecordPayloadStateEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -39,6 +44,7 @@ _$anomalyRecordPayloadStateEnumValues = BuiltSet<AnomalyRecordPayloadStateEnum>(
     _$anomalyRecordPayloadStateEnum_clear,
     _$anomalyRecordPayloadStateEnum_unknown,
     _$anomalyRecordPayloadStateEnum_learning,
+    _$anomalyRecordPayloadStateEnum_unknownDefaultOpenApi,
   ],
 );
 
@@ -60,6 +66,9 @@ _$anomalyRecordPayloadClassificationEnum_learning =
 const AnomalyRecordPayloadClassificationEnum
 _$anomalyRecordPayloadClassificationEnum_normal =
     const AnomalyRecordPayloadClassificationEnum._('normal');
+const AnomalyRecordPayloadClassificationEnum
+_$anomalyRecordPayloadClassificationEnum_unknownDefaultOpenApi =
+    const AnomalyRecordPayloadClassificationEnum._('unknownDefaultOpenApi');
 
 AnomalyRecordPayloadClassificationEnum
 _$anomalyRecordPayloadClassificationEnumValueOf(String name) {
@@ -76,8 +85,10 @@ _$anomalyRecordPayloadClassificationEnumValueOf(String name) {
       return _$anomalyRecordPayloadClassificationEnum_learning;
     case 'normal':
       return _$anomalyRecordPayloadClassificationEnum_normal;
+    case 'unknownDefaultOpenApi':
+      return _$anomalyRecordPayloadClassificationEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$anomalyRecordPayloadClassificationEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -91,6 +102,7 @@ _$anomalyRecordPayloadClassificationEnumValues =
         _$anomalyRecordPayloadClassificationEnum_insufficientCoverage,
         _$anomalyRecordPayloadClassificationEnum_learning,
         _$anomalyRecordPayloadClassificationEnum_normal,
+        _$anomalyRecordPayloadClassificationEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -108,12 +120,14 @@ class _$AnomalyRecordPayloadStateEnumSerializer
     'clear': 'clear',
     'unknown': 'unknown',
     'learning': 'learning',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'active': 'active',
     'clear': 'clear',
     'unknown': 'unknown',
     'learning': 'learning',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -147,6 +161,7 @@ class _$AnomalyRecordPayloadClassificationEnumSerializer
     'insufficientCoverage': 'insufficient-coverage',
     'learning': 'learning',
     'normal': 'normal',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'activity-up': 'activityUp',
@@ -155,6 +170,7 @@ class _$AnomalyRecordPayloadClassificationEnumSerializer
     'insufficient-coverage': 'insufficientCoverage',
     'learning': 'learning',
     'normal': 'normal',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

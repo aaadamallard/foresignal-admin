@@ -440,6 +440,9 @@ class MediaRoleEnum extends EnumClass {
   static const MediaRoleEnum document = _$mediaRoleEnum_document;
   @BuiltValueEnumConst(wireName: r'audio')
   static const MediaRoleEnum audio = _$mediaRoleEnum_audio;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const MediaRoleEnum unknownDefaultOpenApi =
+      _$mediaRoleEnum_unknownDefaultOpenApi;
 
   static Serializer<MediaRoleEnum> get serializer => _$mediaRoleEnumSerializer;
 

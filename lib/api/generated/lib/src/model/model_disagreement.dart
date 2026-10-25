@@ -174,6 +174,9 @@ class ModelDisagreementFieldsEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r't2mMax')
   static const ModelDisagreementFieldsEnum t2mMax =
       _$modelDisagreementFieldsEnum_t2mMax;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ModelDisagreementFieldsEnum unknownDefaultOpenApi =
+      _$modelDisagreementFieldsEnum_unknownDefaultOpenApi;
 
   static Serializer<ModelDisagreementFieldsEnum> get serializer =>
       _$modelDisagreementFieldsEnumSerializer;

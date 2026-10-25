@@ -466,6 +466,9 @@ class NewsStoryBlindspotEnum extends EnumClass {
   static const NewsStoryBlindspotEnum left = _$newsStoryBlindspotEnum_left;
   @BuiltValueEnumConst(wireName: r'right')
   static const NewsStoryBlindspotEnum right = _$newsStoryBlindspotEnum_right;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const NewsStoryBlindspotEnum unknownDefaultOpenApi =
+      _$newsStoryBlindspotEnum_unknownDefaultOpenApi;
 
   static Serializer<NewsStoryBlindspotEnum> get serializer =>
       _$newsStoryBlindspotEnumSerializer;

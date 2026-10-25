@@ -11,6 +11,9 @@ _$mediaMatchResultQuerySourceEnum_upload =
     const MediaMatchResultQuerySource_Enum._('upload');
 const MediaMatchResultQuerySource_Enum _$mediaMatchResultQuerySourceEnum_pdq =
     const MediaMatchResultQuerySource_Enum._('pdq');
+const MediaMatchResultQuerySource_Enum
+_$mediaMatchResultQuerySourceEnum_unknownDefaultOpenApi =
+    const MediaMatchResultQuerySource_Enum._('unknownDefaultOpenApi');
 
 MediaMatchResultQuerySource_Enum _$mediaMatchResultQuerySourceEnumValueOf(
   String name,
@@ -20,8 +23,10 @@ MediaMatchResultQuerySource_Enum _$mediaMatchResultQuerySourceEnumValueOf(
       return _$mediaMatchResultQuerySourceEnum_upload;
     case 'pdq':
       return _$mediaMatchResultQuerySourceEnum_pdq;
+    case 'unknownDefaultOpenApi':
+      return _$mediaMatchResultQuerySourceEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$mediaMatchResultQuerySourceEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -31,6 +36,7 @@ _$mediaMatchResultQuerySourceEnumValues =
       const <MediaMatchResultQuerySource_Enum>[
         _$mediaMatchResultQuerySourceEnum_upload,
         _$mediaMatchResultQuerySourceEnum_pdq,
+        _$mediaMatchResultQuerySourceEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -43,10 +49,12 @@ class _$MediaMatchResultQuerySource_EnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'upload': 'upload',
     'pdq': 'pdq',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'upload': 'upload',
     'pdq': 'pdq',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

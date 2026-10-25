@@ -8,19 +8,24 @@ part of 'map_style.dart';
 
 const MapStyleVersionEnum _$mapStyleVersionEnum_number8 =
     const MapStyleVersionEnum._('number8');
+const MapStyleVersionEnum _$mapStyleVersionEnum_unknownDefaultOpenApi =
+    const MapStyleVersionEnum._('unknownDefaultOpenApi');
 
 MapStyleVersionEnum _$mapStyleVersionEnumValueOf(String name) {
   switch (name) {
     case 'number8':
       return _$mapStyleVersionEnum_number8;
+    case 'unknownDefaultOpenApi':
+      return _$mapStyleVersionEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$mapStyleVersionEnum_unknownDefaultOpenApi;
   }
 }
 
 final BuiltSet<MapStyleVersionEnum> _$mapStyleVersionEnumValues =
     BuiltSet<MapStyleVersionEnum>(const <MapStyleVersionEnum>[
       _$mapStyleVersionEnum_number8,
+      _$mapStyleVersionEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<MapStyleVersionEnum> _$mapStyleVersionEnumSerializer =
@@ -30,9 +35,11 @@ class _$MapStyleVersionEnumSerializer
     implements PrimitiveSerializer<MapStyleVersionEnum> {
   static const Map<String, Object> _toWire = const <String, Object>{
     'number8': 8,
+    'unknownDefaultOpenApi': 11184809,
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     8: 'number8',
+    11184809: 'unknownDefaultOpenApi',
   };
 
   @override

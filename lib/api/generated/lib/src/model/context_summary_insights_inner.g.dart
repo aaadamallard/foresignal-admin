@@ -15,6 +15,9 @@ _$contextSummaryInsightsInnerKindEnum_forecast =
 const ContextSummaryInsightsInnerKindEnum
 _$contextSummaryInsightsInnerKindEnum_bandChange =
     const ContextSummaryInsightsInnerKindEnum._('bandChange');
+const ContextSummaryInsightsInnerKindEnum
+_$contextSummaryInsightsInnerKindEnum_unknownDefaultOpenApi =
+    const ContextSummaryInsightsInnerKindEnum._('unknownDefaultOpenApi');
 
 ContextSummaryInsightsInnerKindEnum
 _$contextSummaryInsightsInnerKindEnumValueOf(String name) {
@@ -25,8 +28,10 @@ _$contextSummaryInsightsInnerKindEnumValueOf(String name) {
       return _$contextSummaryInsightsInnerKindEnum_forecast;
     case 'bandChange':
       return _$contextSummaryInsightsInnerKindEnum_bandChange;
+    case 'unknownDefaultOpenApi':
+      return _$contextSummaryInsightsInnerKindEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$contextSummaryInsightsInnerKindEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -37,6 +42,7 @@ _$contextSummaryInsightsInnerKindEnumValues =
         _$contextSummaryInsightsInnerKindEnum_finding,
         _$contextSummaryInsightsInnerKindEnum_forecast,
         _$contextSummaryInsightsInnerKindEnum_bandChange,
+        _$contextSummaryInsightsInnerKindEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -46,6 +52,9 @@ _$contextSummaryInsightsInnerTextOriginEnum_deterministic =
 const ContextSummaryInsightsInnerTextOriginEnum
 _$contextSummaryInsightsInnerTextOriginEnum_llm =
     const ContextSummaryInsightsInnerTextOriginEnum._('llm');
+const ContextSummaryInsightsInnerTextOriginEnum
+_$contextSummaryInsightsInnerTextOriginEnum_unknownDefaultOpenApi =
+    const ContextSummaryInsightsInnerTextOriginEnum._('unknownDefaultOpenApi');
 
 ContextSummaryInsightsInnerTextOriginEnum
 _$contextSummaryInsightsInnerTextOriginEnumValueOf(String name) {
@@ -54,8 +63,10 @@ _$contextSummaryInsightsInnerTextOriginEnumValueOf(String name) {
       return _$contextSummaryInsightsInnerTextOriginEnum_deterministic;
     case 'llm':
       return _$contextSummaryInsightsInnerTextOriginEnum_llm;
+    case 'unknownDefaultOpenApi':
+      return _$contextSummaryInsightsInnerTextOriginEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$contextSummaryInsightsInnerTextOriginEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -65,6 +76,7 @@ _$contextSummaryInsightsInnerTextOriginEnumValues =
       const <ContextSummaryInsightsInnerTextOriginEnum>[
         _$contextSummaryInsightsInnerTextOriginEnum_deterministic,
         _$contextSummaryInsightsInnerTextOriginEnum_llm,
+        _$contextSummaryInsightsInnerTextOriginEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -81,11 +93,13 @@ class _$ContextSummaryInsightsInnerKindEnumSerializer
     'finding': 'finding',
     'forecast': 'forecast',
     'bandChange': 'band-change',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'finding': 'finding',
     'forecast': 'forecast',
     'band-change': 'bandChange',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -117,10 +131,12 @@ class _$ContextSummaryInsightsInnerTextOriginEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'deterministic': 'deterministic',
     'llm': 'llm',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'deterministic': 'deterministic',
     'llm': 'llm',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

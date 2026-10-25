@@ -387,6 +387,9 @@ class WorkspaceMembersEnum extends EnumClass {
   static const WorkspaceMembersEnum viewer = _$workspaceMembersEnum_viewer;
   @BuiltValueEnumConst(wireName: r'editor')
   static const WorkspaceMembersEnum editor = _$workspaceMembersEnum_editor;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const WorkspaceMembersEnum unknownDefaultOpenApi =
+      _$workspaceMembersEnum_unknownDefaultOpenApi;
 
   static Serializer<WorkspaceMembersEnum> get serializer =>
       _$workspaceMembersEnumSerializer;
@@ -408,6 +411,9 @@ class WorkspaceCallerRoleEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'viewer')
   static const WorkspaceCallerRoleEnum viewer =
       _$workspaceCallerRoleEnum_viewer;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const WorkspaceCallerRoleEnum unknownDefaultOpenApi =
+      _$workspaceCallerRoleEnum_unknownDefaultOpenApi;
 
   static Serializer<WorkspaceCallerRoleEnum> get serializer =>
       _$workspaceCallerRoleEnumSerializer;

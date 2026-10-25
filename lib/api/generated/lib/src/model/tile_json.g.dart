@@ -8,43 +8,55 @@ part of 'tile_json.dart';
 
 const TileJsonTilejsonEnum _$tileJsonTilejsonEnum_n3period0Period0 =
     const TileJsonTilejsonEnum._('n3period0Period0');
+const TileJsonTilejsonEnum _$tileJsonTilejsonEnum_unknownDefaultOpenApi =
+    const TileJsonTilejsonEnum._('unknownDefaultOpenApi');
 
 TileJsonTilejsonEnum _$tileJsonTilejsonEnumValueOf(String name) {
   switch (name) {
     case 'n3period0Period0':
       return _$tileJsonTilejsonEnum_n3period0Period0;
+    case 'unknownDefaultOpenApi':
+      return _$tileJsonTilejsonEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$tileJsonTilejsonEnum_unknownDefaultOpenApi;
   }
 }
 
 final BuiltSet<TileJsonTilejsonEnum> _$tileJsonTilejsonEnumValues =
     BuiltSet<TileJsonTilejsonEnum>(const <TileJsonTilejsonEnum>[
       _$tileJsonTilejsonEnum_n3period0Period0,
+      _$tileJsonTilejsonEnum_unknownDefaultOpenApi,
     ]);
 
 const TileJsonSchemeEnum _$tileJsonSchemeEnum_xyz = const TileJsonSchemeEnum._(
   'xyz',
 );
+const TileJsonSchemeEnum _$tileJsonSchemeEnum_unknownDefaultOpenApi =
+    const TileJsonSchemeEnum._('unknownDefaultOpenApi');
 
 TileJsonSchemeEnum _$tileJsonSchemeEnumValueOf(String name) {
   switch (name) {
     case 'xyz':
       return _$tileJsonSchemeEnum_xyz;
+    case 'unknownDefaultOpenApi':
+      return _$tileJsonSchemeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$tileJsonSchemeEnum_unknownDefaultOpenApi;
   }
 }
 
 final BuiltSet<TileJsonSchemeEnum> _$tileJsonSchemeEnumValues =
     BuiltSet<TileJsonSchemeEnum>(const <TileJsonSchemeEnum>[
       _$tileJsonSchemeEnum_xyz,
+      _$tileJsonSchemeEnum_unknownDefaultOpenApi,
     ]);
 
 const TileJsonTileSizeEnum _$tileJsonTileSizeEnum_number256 =
     const TileJsonTileSizeEnum._('number256');
 const TileJsonTileSizeEnum _$tileJsonTileSizeEnum_number512 =
     const TileJsonTileSizeEnum._('number512');
+const TileJsonTileSizeEnum _$tileJsonTileSizeEnum_unknownDefaultOpenApi =
+    const TileJsonTileSizeEnum._('unknownDefaultOpenApi');
 
 TileJsonTileSizeEnum _$tileJsonTileSizeEnumValueOf(String name) {
   switch (name) {
@@ -52,8 +64,10 @@ TileJsonTileSizeEnum _$tileJsonTileSizeEnumValueOf(String name) {
       return _$tileJsonTileSizeEnum_number256;
     case 'number512':
       return _$tileJsonTileSizeEnum_number512;
+    case 'unknownDefaultOpenApi':
+      return _$tileJsonTileSizeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$tileJsonTileSizeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -61,12 +75,15 @@ final BuiltSet<TileJsonTileSizeEnum> _$tileJsonTileSizeEnumValues =
     BuiltSet<TileJsonTileSizeEnum>(const <TileJsonTileSizeEnum>[
       _$tileJsonTileSizeEnum_number256,
       _$tileJsonTileSizeEnum_number512,
+      _$tileJsonTileSizeEnum_unknownDefaultOpenApi,
     ]);
 
 const TileJsonTmsEnum _$tileJsonTmsEnum_webMercatorQuad =
     const TileJsonTmsEnum._('webMercatorQuad');
 const TileJsonTmsEnum _$tileJsonTmsEnum_worldCRS84Quad =
     const TileJsonTmsEnum._('worldCRS84Quad');
+const TileJsonTmsEnum _$tileJsonTmsEnum_unknownDefaultOpenApi =
+    const TileJsonTmsEnum._('unknownDefaultOpenApi');
 
 TileJsonTmsEnum _$tileJsonTmsEnumValueOf(String name) {
   switch (name) {
@@ -74,8 +91,10 @@ TileJsonTmsEnum _$tileJsonTmsEnumValueOf(String name) {
       return _$tileJsonTmsEnum_webMercatorQuad;
     case 'worldCRS84Quad':
       return _$tileJsonTmsEnum_worldCRS84Quad;
+    case 'unknownDefaultOpenApi':
+      return _$tileJsonTmsEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$tileJsonTmsEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -83,12 +102,15 @@ final BuiltSet<TileJsonTmsEnum> _$tileJsonTmsEnumValues =
     BuiltSet<TileJsonTmsEnum>(const <TileJsonTmsEnum>[
       _$tileJsonTmsEnum_webMercatorQuad,
       _$tileJsonTmsEnum_worldCRS84Quad,
+      _$tileJsonTmsEnum_unknownDefaultOpenApi,
     ]);
 
 const TileJsonEncodingEnum _$tileJsonEncodingEnum_custom =
     const TileJsonEncodingEnum._('custom');
 const TileJsonEncodingEnum _$tileJsonEncodingEnum_terrarium =
     const TileJsonEncodingEnum._('terrarium');
+const TileJsonEncodingEnum _$tileJsonEncodingEnum_unknownDefaultOpenApi =
+    const TileJsonEncodingEnum._('unknownDefaultOpenApi');
 
 TileJsonEncodingEnum _$tileJsonEncodingEnumValueOf(String name) {
   switch (name) {
@@ -96,8 +118,10 @@ TileJsonEncodingEnum _$tileJsonEncodingEnumValueOf(String name) {
       return _$tileJsonEncodingEnum_custom;
     case 'terrarium':
       return _$tileJsonEncodingEnum_terrarium;
+    case 'unknownDefaultOpenApi':
+      return _$tileJsonEncodingEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$tileJsonEncodingEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -105,6 +129,7 @@ final BuiltSet<TileJsonEncodingEnum> _$tileJsonEncodingEnumValues =
     BuiltSet<TileJsonEncodingEnum>(const <TileJsonEncodingEnum>[
       _$tileJsonEncodingEnum_custom,
       _$tileJsonEncodingEnum_terrarium,
+      _$tileJsonEncodingEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<TileJsonTilejsonEnum> _$tileJsonTilejsonEnumSerializer =
@@ -122,9 +147,11 @@ class _$TileJsonTilejsonEnumSerializer
     implements PrimitiveSerializer<TileJsonTilejsonEnum> {
   static const Map<String, Object> _toWire = const <String, Object>{
     'n3period0Period0': '3.0.0',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     '3.0.0': 'n3period0Period0',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -153,9 +180,11 @@ class _$TileJsonSchemeEnumSerializer
     implements PrimitiveSerializer<TileJsonSchemeEnum> {
   static const Map<String, Object> _toWire = const <String, Object>{
     'xyz': 'xyz',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'xyz': 'xyz',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -185,10 +214,12 @@ class _$TileJsonTileSizeEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'number256': 256,
     'number512': 512,
+    'unknownDefaultOpenApi': 11184809,
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     256: 'number256',
     512: 'number512',
+    11184809: 'unknownDefaultOpenApi',
   };
 
   @override
@@ -218,10 +249,12 @@ class _$TileJsonTmsEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'webMercatorQuad': 'WebMercatorQuad',
     'worldCRS84Quad': 'WorldCRS84Quad',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'WebMercatorQuad': 'webMercatorQuad',
     'WorldCRS84Quad': 'worldCRS84Quad',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -251,10 +284,12 @@ class _$TileJsonEncodingEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'custom': 'custom',
     'terrarium': 'terrarium',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'custom': 'custom',
     'terrarium': 'terrarium',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

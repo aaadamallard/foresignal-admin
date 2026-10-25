@@ -10,6 +10,9 @@ const PrecursorCandidateKindEnum _$precursorCandidateKindEnum_event =
     const PrecursorCandidateKindEnum._('event');
 const PrecursorCandidateKindEnum _$precursorCandidateKindEnum_series =
     const PrecursorCandidateKindEnum._('series');
+const PrecursorCandidateKindEnum
+_$precursorCandidateKindEnum_unknownDefaultOpenApi =
+    const PrecursorCandidateKindEnum._('unknownDefaultOpenApi');
 
 PrecursorCandidateKindEnum _$precursorCandidateKindEnumValueOf(String name) {
   switch (name) {
@@ -17,8 +20,10 @@ PrecursorCandidateKindEnum _$precursorCandidateKindEnumValueOf(String name) {
       return _$precursorCandidateKindEnum_event;
     case 'series':
       return _$precursorCandidateKindEnum_series;
+    case 'unknownDefaultOpenApi':
+      return _$precursorCandidateKindEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$precursorCandidateKindEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -26,6 +31,7 @@ final BuiltSet<PrecursorCandidateKindEnum> _$precursorCandidateKindEnumValues =
     BuiltSet<PrecursorCandidateKindEnum>(const <PrecursorCandidateKindEnum>[
       _$precursorCandidateKindEnum_event,
       _$precursorCandidateKindEnum_series,
+      _$precursorCandidateKindEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<PrecursorCandidateKindEnum> _$precursorCandidateKindEnumSerializer =
@@ -36,10 +42,12 @@ class _$PrecursorCandidateKindEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'event': 'event',
     'series': 'series',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'event': 'event',
     'series': 'series',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

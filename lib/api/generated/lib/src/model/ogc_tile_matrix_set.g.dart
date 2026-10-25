@@ -10,6 +10,8 @@ const OgcTileMatrixSetIdEnum _$ogcTileMatrixSetIdEnum_webMercatorQuad =
     const OgcTileMatrixSetIdEnum._('webMercatorQuad');
 const OgcTileMatrixSetIdEnum _$ogcTileMatrixSetIdEnum_worldCRS84Quad =
     const OgcTileMatrixSetIdEnum._('worldCRS84Quad');
+const OgcTileMatrixSetIdEnum _$ogcTileMatrixSetIdEnum_unknownDefaultOpenApi =
+    const OgcTileMatrixSetIdEnum._('unknownDefaultOpenApi');
 
 OgcTileMatrixSetIdEnum _$ogcTileMatrixSetIdEnumValueOf(String name) {
   switch (name) {
@@ -17,8 +19,10 @@ OgcTileMatrixSetIdEnum _$ogcTileMatrixSetIdEnumValueOf(String name) {
       return _$ogcTileMatrixSetIdEnum_webMercatorQuad;
     case 'worldCRS84Quad':
       return _$ogcTileMatrixSetIdEnum_worldCRS84Quad;
+    case 'unknownDefaultOpenApi':
+      return _$ogcTileMatrixSetIdEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$ogcTileMatrixSetIdEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -26,6 +30,7 @@ final BuiltSet<OgcTileMatrixSetIdEnum> _$ogcTileMatrixSetIdEnumValues =
     BuiltSet<OgcTileMatrixSetIdEnum>(const <OgcTileMatrixSetIdEnum>[
       _$ogcTileMatrixSetIdEnum_webMercatorQuad,
       _$ogcTileMatrixSetIdEnum_worldCRS84Quad,
+      _$ogcTileMatrixSetIdEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<OgcTileMatrixSetIdEnum> _$ogcTileMatrixSetIdEnumSerializer =
@@ -36,10 +41,12 @@ class _$OgcTileMatrixSetIdEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'webMercatorQuad': 'WebMercatorQuad',
     'worldCRS84Quad': 'WorldCRS84Quad',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'WebMercatorQuad': 'webMercatorQuad',
     'WorldCRS84Quad': 'worldCRS84Quad',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

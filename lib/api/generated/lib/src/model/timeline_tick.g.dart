@@ -10,6 +10,8 @@ const TimelineTickKindEnum _$timelineTickKindEnum_observed =
     const TimelineTickKindEnum._('observed');
 const TimelineTickKindEnum _$timelineTickKindEnum_forecast =
     const TimelineTickKindEnum._('forecast');
+const TimelineTickKindEnum _$timelineTickKindEnum_unknownDefaultOpenApi =
+    const TimelineTickKindEnum._('unknownDefaultOpenApi');
 
 TimelineTickKindEnum _$timelineTickKindEnumValueOf(String name) {
   switch (name) {
@@ -17,8 +19,10 @@ TimelineTickKindEnum _$timelineTickKindEnumValueOf(String name) {
       return _$timelineTickKindEnum_observed;
     case 'forecast':
       return _$timelineTickKindEnum_forecast;
+    case 'unknownDefaultOpenApi':
+      return _$timelineTickKindEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$timelineTickKindEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -26,6 +30,7 @@ final BuiltSet<TimelineTickKindEnum> _$timelineTickKindEnumValues =
     BuiltSet<TimelineTickKindEnum>(const <TimelineTickKindEnum>[
       _$timelineTickKindEnum_observed,
       _$timelineTickKindEnum_forecast,
+      _$timelineTickKindEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<TimelineTickKindEnum> _$timelineTickKindEnumSerializer =
@@ -36,10 +41,12 @@ class _$TimelineTickKindEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'observed': 'observed',
     'forecast': 'forecast',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'observed': 'observed',
     'forecast': 'forecast',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

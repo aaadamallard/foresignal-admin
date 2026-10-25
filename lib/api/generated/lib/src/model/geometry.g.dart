@@ -24,6 +24,8 @@ const GeometryTypeEnum _$geometryTypeEnum_multiPolygon =
     const GeometryTypeEnum._('multiPolygon');
 const GeometryTypeEnum _$geometryTypeEnum_geometryCollection =
     const GeometryTypeEnum._('geometryCollection');
+const GeometryTypeEnum _$geometryTypeEnum_unknownDefaultOpenApi =
+    const GeometryTypeEnum._('unknownDefaultOpenApi');
 
 GeometryTypeEnum _$geometryTypeEnumValueOf(String name) {
   switch (name) {
@@ -41,8 +43,10 @@ GeometryTypeEnum _$geometryTypeEnumValueOf(String name) {
       return _$geometryTypeEnum_multiPolygon;
     case 'geometryCollection':
       return _$geometryTypeEnum_geometryCollection;
+    case 'unknownDefaultOpenApi':
+      return _$geometryTypeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$geometryTypeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -55,6 +59,7 @@ final BuiltSet<GeometryTypeEnum> _$geometryTypeEnumValues =
       _$geometryTypeEnum_polygon,
       _$geometryTypeEnum_multiPolygon,
       _$geometryTypeEnum_geometryCollection,
+      _$geometryTypeEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<GeometryTypeEnum> _$geometryTypeEnumSerializer =
@@ -70,6 +75,7 @@ class _$GeometryTypeEnumSerializer
     'polygon': 'Polygon',
     'multiPolygon': 'MultiPolygon',
     'geometryCollection': 'GeometryCollection',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'Point': 'point',
@@ -79,6 +85,7 @@ class _$GeometryTypeEnumSerializer
     'Polygon': 'polygon',
     'MultiPolygon': 'multiPolygon',
     'GeometryCollection': 'geometryCollection',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

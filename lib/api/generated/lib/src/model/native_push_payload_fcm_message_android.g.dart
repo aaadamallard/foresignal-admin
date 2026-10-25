@@ -12,6 +12,11 @@ _$nativePushPayloadFcmMessageAndroidPriorityEnum_HIGH =
 const NativePushPayloadFcmMessageAndroidPriorityEnum
 _$nativePushPayloadFcmMessageAndroidPriorityEnum_NORMAL =
     const NativePushPayloadFcmMessageAndroidPriorityEnum._('NORMAL');
+const NativePushPayloadFcmMessageAndroidPriorityEnum
+_$nativePushPayloadFcmMessageAndroidPriorityEnum_unknownDefaultOpenApi =
+    const NativePushPayloadFcmMessageAndroidPriorityEnum._(
+      'unknownDefaultOpenApi',
+    );
 
 NativePushPayloadFcmMessageAndroidPriorityEnum
 _$nativePushPayloadFcmMessageAndroidPriorityEnumValueOf(String name) {
@@ -20,8 +25,10 @@ _$nativePushPayloadFcmMessageAndroidPriorityEnumValueOf(String name) {
       return _$nativePushPayloadFcmMessageAndroidPriorityEnum_HIGH;
     case 'NORMAL':
       return _$nativePushPayloadFcmMessageAndroidPriorityEnum_NORMAL;
+    case 'unknownDefaultOpenApi':
+      return _$nativePushPayloadFcmMessageAndroidPriorityEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$nativePushPayloadFcmMessageAndroidPriorityEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -31,6 +38,7 @@ _$nativePushPayloadFcmMessageAndroidPriorityEnumValues =
       const <NativePushPayloadFcmMessageAndroidPriorityEnum>[
         _$nativePushPayloadFcmMessageAndroidPriorityEnum_HIGH,
         _$nativePushPayloadFcmMessageAndroidPriorityEnum_NORMAL,
+        _$nativePushPayloadFcmMessageAndroidPriorityEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -44,10 +52,12 @@ class _$NativePushPayloadFcmMessageAndroidPriorityEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'HIGH': 'HIGH',
     'NORMAL': 'NORMAL',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'HIGH': 'HIGH',
     'NORMAL': 'NORMAL',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

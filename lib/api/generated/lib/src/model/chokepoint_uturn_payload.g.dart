@@ -17,6 +17,9 @@ _$chokepointUturnPayloadStatusEnum_noCoverage =
 const ChokepointUturnPayloadStatusEnum
 _$chokepointUturnPayloadStatusEnum_degradedInput =
     const ChokepointUturnPayloadStatusEnum._('degradedInput');
+const ChokepointUturnPayloadStatusEnum
+_$chokepointUturnPayloadStatusEnum_unknownDefaultOpenApi =
+    const ChokepointUturnPayloadStatusEnum._('unknownDefaultOpenApi');
 
 ChokepointUturnPayloadStatusEnum _$chokepointUturnPayloadStatusEnumValueOf(
   String name,
@@ -30,8 +33,10 @@ ChokepointUturnPayloadStatusEnum _$chokepointUturnPayloadStatusEnumValueOf(
       return _$chokepointUturnPayloadStatusEnum_noCoverage;
     case 'degradedInput':
       return _$chokepointUturnPayloadStatusEnum_degradedInput;
+    case 'unknownDefaultOpenApi':
+      return _$chokepointUturnPayloadStatusEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$chokepointUturnPayloadStatusEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -43,6 +48,7 @@ _$chokepointUturnPayloadStatusEnumValues =
         _$chokepointUturnPayloadStatusEnum_insufficientData,
         _$chokepointUturnPayloadStatusEnum_noCoverage,
         _$chokepointUturnPayloadStatusEnum_degradedInput,
+        _$chokepointUturnPayloadStatusEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -55,6 +61,9 @@ _$chokepointUturnPayloadManoeuvreEnum_uTurn =
 const ChokepointUturnPayloadManoeuvreEnum
 _$chokepointUturnPayloadManoeuvreEnum_speedDrop =
     const ChokepointUturnPayloadManoeuvreEnum._('speedDrop');
+const ChokepointUturnPayloadManoeuvreEnum
+_$chokepointUturnPayloadManoeuvreEnum_unknownDefaultOpenApi =
+    const ChokepointUturnPayloadManoeuvreEnum._('unknownDefaultOpenApi');
 
 ChokepointUturnPayloadManoeuvreEnum
 _$chokepointUturnPayloadManoeuvreEnumValueOf(String name) {
@@ -65,8 +74,10 @@ _$chokepointUturnPayloadManoeuvreEnumValueOf(String name) {
       return _$chokepointUturnPayloadManoeuvreEnum_uTurn;
     case 'speedDrop':
       return _$chokepointUturnPayloadManoeuvreEnum_speedDrop;
+    case 'unknownDefaultOpenApi':
+      return _$chokepointUturnPayloadManoeuvreEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$chokepointUturnPayloadManoeuvreEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -77,6 +88,7 @@ _$chokepointUturnPayloadManoeuvreEnumValues =
         _$chokepointUturnPayloadManoeuvreEnum_courseChange,
         _$chokepointUturnPayloadManoeuvreEnum_uTurn,
         _$chokepointUturnPayloadManoeuvreEnum_speedDrop,
+        _$chokepointUturnPayloadManoeuvreEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -94,12 +106,14 @@ class _$ChokepointUturnPayloadStatusEnumSerializer
     'insufficientData': 'insufficient-data',
     'noCoverage': 'no-coverage',
     'degradedInput': 'degraded-input',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'ok': 'ok',
     'insufficient-data': 'insufficientData',
     'no-coverage': 'noCoverage',
     'degraded-input': 'degradedInput',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -130,11 +144,13 @@ class _$ChokepointUturnPayloadManoeuvreEnumSerializer
     'courseChange': 'course-change',
     'uTurn': 'u-turn',
     'speedDrop': 'speed-drop',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'course-change': 'courseChange',
     'u-turn': 'uTurn',
     'speed-drop': 'speedDrop',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

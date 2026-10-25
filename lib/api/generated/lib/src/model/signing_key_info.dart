@@ -232,6 +232,9 @@ class SigningKeyInfoAlgEnum extends EnumClass {
   static const SigningKeyInfoAlgEnum ed25519 = _$signingKeyInfoAlgEnum_ed25519;
   @BuiltValueEnumConst(wireName: r'EdDSA')
   static const SigningKeyInfoAlgEnum edDSA = _$signingKeyInfoAlgEnum_edDSA;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const SigningKeyInfoAlgEnum unknownDefaultOpenApi =
+      _$signingKeyInfoAlgEnum_unknownDefaultOpenApi;
 
   static Serializer<SigningKeyInfoAlgEnum> get serializer =>
       _$signingKeyInfoAlgEnumSerializer;
@@ -251,6 +254,9 @@ class SigningKeyInfoStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'retired')
   static const SigningKeyInfoStatusEnum retired =
       _$signingKeyInfoStatusEnum_retired;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const SigningKeyInfoStatusEnum unknownDefaultOpenApi =
+      _$signingKeyInfoStatusEnum_unknownDefaultOpenApi;
 
   static Serializer<SigningKeyInfoStatusEnum> get serializer =>
       _$signingKeyInfoStatusEnumSerializer;

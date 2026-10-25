@@ -63,6 +63,9 @@ _$settingsBundleChannelsInnerTypeEnum_meshtastic =
 const SettingsBundleChannelsInnerTypeEnum
 _$settingsBundleChannelsInnerTypeEnum_meshcore =
     const SettingsBundleChannelsInnerTypeEnum._('meshcore');
+const SettingsBundleChannelsInnerTypeEnum
+_$settingsBundleChannelsInnerTypeEnum_unknownDefaultOpenApi =
+    const SettingsBundleChannelsInnerTypeEnum._('unknownDefaultOpenApi');
 
 SettingsBundleChannelsInnerTypeEnum
 _$settingsBundleChannelsInnerTypeEnumValueOf(String name) {
@@ -105,8 +108,10 @@ _$settingsBundleChannelsInnerTypeEnumValueOf(String name) {
       return _$settingsBundleChannelsInnerTypeEnum_meshtastic;
     case 'meshcore':
       return _$settingsBundleChannelsInnerTypeEnum_meshcore;
+    case 'unknownDefaultOpenApi':
+      return _$settingsBundleChannelsInnerTypeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$settingsBundleChannelsInnerTypeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -133,6 +138,7 @@ _$settingsBundleChannelsInnerTypeEnumValues =
         _$settingsBundleChannelsInnerTypeEnum_mqtt,
         _$settingsBundleChannelsInnerTypeEnum_meshtastic,
         _$settingsBundleChannelsInnerTypeEnum_meshcore,
+        _$settingsBundleChannelsInnerTypeEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -214,6 +220,9 @@ _$settingsBundleChannelsInnerEventsEnum_chroniclePeriodAccessPeriodRequested =
 const SettingsBundleChannelsInnerEventsEnum
 _$settingsBundleChannelsInnerEventsEnum_savedSearchPeriodMatches =
     const SettingsBundleChannelsInnerEventsEnum._('savedSearchPeriodMatches');
+const SettingsBundleChannelsInnerEventsEnum
+_$settingsBundleChannelsInnerEventsEnum_unknownDefaultOpenApi =
+    const SettingsBundleChannelsInnerEventsEnum._('unknownDefaultOpenApi');
 
 SettingsBundleChannelsInnerEventsEnum
 _$settingsBundleChannelsInnerEventsEnumValueOf(String name) {
@@ -266,8 +275,10 @@ _$settingsBundleChannelsInnerEventsEnumValueOf(String name) {
       return _$settingsBundleChannelsInnerEventsEnum_chroniclePeriodAccessPeriodRequested;
     case 'savedSearchPeriodMatches':
       return _$settingsBundleChannelsInnerEventsEnum_savedSearchPeriodMatches;
+    case 'unknownDefaultOpenApi':
+      return _$settingsBundleChannelsInnerEventsEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$settingsBundleChannelsInnerEventsEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -300,6 +311,7 @@ _$settingsBundleChannelsInnerEventsEnumValues =
       _$settingsBundleChannelsInnerEventsEnum_packagePeriodReceived,
       _$settingsBundleChannelsInnerEventsEnum_chroniclePeriodAccessPeriodRequested,
       _$settingsBundleChannelsInnerEventsEnum_savedSearchPeriodMatches,
+      _$settingsBundleChannelsInnerEventsEnum_unknownDefaultOpenApi,
     ]);
 
 const SettingsBundleChannelsInnerMinSeverityEnum
@@ -311,6 +323,9 @@ _$settingsBundleChannelsInnerMinSeverityEnum_warning =
 const SettingsBundleChannelsInnerMinSeverityEnum
 _$settingsBundleChannelsInnerMinSeverityEnum_critical =
     const SettingsBundleChannelsInnerMinSeverityEnum._('critical');
+const SettingsBundleChannelsInnerMinSeverityEnum
+_$settingsBundleChannelsInnerMinSeverityEnum_unknownDefaultOpenApi =
+    const SettingsBundleChannelsInnerMinSeverityEnum._('unknownDefaultOpenApi');
 
 SettingsBundleChannelsInnerMinSeverityEnum
 _$settingsBundleChannelsInnerMinSeverityEnumValueOf(String name) {
@@ -321,8 +336,10 @@ _$settingsBundleChannelsInnerMinSeverityEnumValueOf(String name) {
       return _$settingsBundleChannelsInnerMinSeverityEnum_warning;
     case 'critical':
       return _$settingsBundleChannelsInnerMinSeverityEnum_critical;
+    case 'unknownDefaultOpenApi':
+      return _$settingsBundleChannelsInnerMinSeverityEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$settingsBundleChannelsInnerMinSeverityEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -333,6 +350,7 @@ _$settingsBundleChannelsInnerMinSeverityEnumValues =
         _$settingsBundleChannelsInnerMinSeverityEnum_info,
         _$settingsBundleChannelsInnerMinSeverityEnum_warning,
         _$settingsBundleChannelsInnerMinSeverityEnum_critical,
+        _$settingsBundleChannelsInnerMinSeverityEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -368,6 +386,7 @@ class _$SettingsBundleChannelsInnerTypeEnumSerializer
     'mqtt': 'mqtt',
     'meshtastic': 'meshtastic',
     'meshcore': 'meshcore',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'webhook': 'webhook',
@@ -389,6 +408,7 @@ class _$SettingsBundleChannelsInnerTypeEnumSerializer
     'mqtt': 'mqtt',
     'meshtastic': 'meshtastic',
     'meshcore': 'meshcore',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -442,6 +462,7 @@ class _$SettingsBundleChannelsInnerEventsEnumSerializer
     'packagePeriodReceived': 'package.received',
     'chroniclePeriodAccessPeriodRequested': 'chronicle.access.requested',
     'savedSearchPeriodMatches': 'saved-search.matches',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'alert': 'alert',
@@ -468,6 +489,7 @@ class _$SettingsBundleChannelsInnerEventsEnumSerializer
     'package.received': 'packagePeriodReceived',
     'chronicle.access.requested': 'chroniclePeriodAccessPeriodRequested',
     'saved-search.matches': 'savedSearchPeriodMatches',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -500,11 +522,13 @@ class _$SettingsBundleChannelsInnerMinSeverityEnumSerializer
     'info': 'info',
     'warning': 'warning',
     'critical': 'critical',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'info': 'info',
     'warning': 'warning',
     'critical': 'critical',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

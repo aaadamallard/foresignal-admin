@@ -15,6 +15,9 @@ _$ownershipChainRequestDirectionEnum_out_ =
 const OwnershipChainRequestDirectionEnum
 _$ownershipChainRequestDirectionEnum_both =
     const OwnershipChainRequestDirectionEnum._('both');
+const OwnershipChainRequestDirectionEnum
+_$ownershipChainRequestDirectionEnum_unknownDefaultOpenApi =
+    const OwnershipChainRequestDirectionEnum._('unknownDefaultOpenApi');
 
 OwnershipChainRequestDirectionEnum _$ownershipChainRequestDirectionEnumValueOf(
   String name,
@@ -26,8 +29,10 @@ OwnershipChainRequestDirectionEnum _$ownershipChainRequestDirectionEnumValueOf(
       return _$ownershipChainRequestDirectionEnum_out_;
     case 'both':
       return _$ownershipChainRequestDirectionEnum_both;
+    case 'unknownDefaultOpenApi':
+      return _$ownershipChainRequestDirectionEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$ownershipChainRequestDirectionEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -38,6 +43,7 @@ _$ownershipChainRequestDirectionEnumValues =
         _$ownershipChainRequestDirectionEnum_in_,
         _$ownershipChainRequestDirectionEnum_out_,
         _$ownershipChainRequestDirectionEnum_both,
+        _$ownershipChainRequestDirectionEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -54,6 +60,9 @@ _$ownershipChainRequestTypesEnum_beneficialOwner =
 const OwnershipChainRequestTypesEnum
 _$ownershipChainRequestTypesEnum_affiliatedWith =
     const OwnershipChainRequestTypesEnum._('affiliatedWith');
+const OwnershipChainRequestTypesEnum
+_$ownershipChainRequestTypesEnum_unknownDefaultOpenApi =
+    const OwnershipChainRequestTypesEnum._('unknownDefaultOpenApi');
 
 OwnershipChainRequestTypesEnum _$ownershipChainRequestTypesEnumValueOf(
   String name,
@@ -69,8 +78,10 @@ OwnershipChainRequestTypesEnum _$ownershipChainRequestTypesEnumValueOf(
       return _$ownershipChainRequestTypesEnum_beneficialOwner;
     case 'affiliatedWith':
       return _$ownershipChainRequestTypesEnum_affiliatedWith;
+    case 'unknownDefaultOpenApi':
+      return _$ownershipChainRequestTypesEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$ownershipChainRequestTypesEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -83,6 +94,7 @@ _$ownershipChainRequestTypesEnumValues =
         _$ownershipChainRequestTypesEnum_officerOf,
         _$ownershipChainRequestTypesEnum_beneficialOwner,
         _$ownershipChainRequestTypesEnum_affiliatedWith,
+        _$ownershipChainRequestTypesEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -99,11 +111,13 @@ class _$OwnershipChainRequestDirectionEnumSerializer
     'in_': 'in',
     'out_': 'out',
     'both': 'both',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'in': 'in_',
     'out': 'out_',
     'both': 'both',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -136,6 +150,7 @@ class _$OwnershipChainRequestTypesEnumSerializer
     'officerOf': 'officer-of',
     'beneficialOwner': 'beneficial-owner',
     'affiliatedWith': 'affiliated-with',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'owns': 'owns',
@@ -143,6 +158,7 @@ class _$OwnershipChainRequestTypesEnumSerializer
     'officer-of': 'officerOf',
     'beneficial-owner': 'beneficialOwner',
     'affiliated-with': 'affiliatedWith',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

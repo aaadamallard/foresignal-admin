@@ -15,6 +15,9 @@ _$indicatorSignalSeriesDirectionEnum_down =
 const IndicatorSignalSeriesDirectionEnum
 _$indicatorSignalSeriesDirectionEnum_any =
     const IndicatorSignalSeriesDirectionEnum._('any');
+const IndicatorSignalSeriesDirectionEnum
+_$indicatorSignalSeriesDirectionEnum_unknownDefaultOpenApi =
+    const IndicatorSignalSeriesDirectionEnum._('unknownDefaultOpenApi');
 
 IndicatorSignalSeriesDirectionEnum _$indicatorSignalSeriesDirectionEnumValueOf(
   String name,
@@ -26,8 +29,10 @@ IndicatorSignalSeriesDirectionEnum _$indicatorSignalSeriesDirectionEnumValueOf(
       return _$indicatorSignalSeriesDirectionEnum_down;
     case 'any':
       return _$indicatorSignalSeriesDirectionEnum_any;
+    case 'unknownDefaultOpenApi':
+      return _$indicatorSignalSeriesDirectionEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$indicatorSignalSeriesDirectionEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -38,6 +43,7 @@ _$indicatorSignalSeriesDirectionEnumValues =
         _$indicatorSignalSeriesDirectionEnum_up,
         _$indicatorSignalSeriesDirectionEnum_down,
         _$indicatorSignalSeriesDirectionEnum_any,
+        _$indicatorSignalSeriesDirectionEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -51,11 +57,13 @@ class _$IndicatorSignalSeriesDirectionEnumSerializer
     'up': 'up',
     'down': 'down',
     'any': 'any',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'up': 'up',
     'down': 'down',
     'any': 'any',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

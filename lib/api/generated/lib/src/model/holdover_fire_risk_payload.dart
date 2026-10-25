@@ -441,6 +441,9 @@ class HoldoverFireRiskPayloadStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'degraded-input')
   static const HoldoverFireRiskPayloadStatusEnum degradedInput =
       _$holdoverFireRiskPayloadStatusEnum_degradedInput;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const HoldoverFireRiskPayloadStatusEnum unknownDefaultOpenApi =
+      _$holdoverFireRiskPayloadStatusEnum_unknownDefaultOpenApi;
 
   static Serializer<HoldoverFireRiskPayloadStatusEnum> get serializer =>
       _$holdoverFireRiskPayloadStatusEnumSerializer;
@@ -460,6 +463,9 @@ class HoldoverFireRiskPayloadPrecipSourceEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'model')
   static const HoldoverFireRiskPayloadPrecipSourceEnum model =
       _$holdoverFireRiskPayloadPrecipSourceEnum_model;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const HoldoverFireRiskPayloadPrecipSourceEnum unknownDefaultOpenApi =
+      _$holdoverFireRiskPayloadPrecipSourceEnum_unknownDefaultOpenApi;
 
   static Serializer<HoldoverFireRiskPayloadPrecipSourceEnum> get serializer =>
       _$holdoverFireRiskPayloadPrecipSourceEnumSerializer;

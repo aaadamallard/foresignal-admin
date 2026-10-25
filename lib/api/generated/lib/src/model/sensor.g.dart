@@ -10,6 +10,8 @@ const SensorTextOriginEnum _$sensorTextOriginEnum_deterministic =
     const SensorTextOriginEnum._('deterministic');
 const SensorTextOriginEnum _$sensorTextOriginEnum_llm =
     const SensorTextOriginEnum._('llm');
+const SensorTextOriginEnum _$sensorTextOriginEnum_unknownDefaultOpenApi =
+    const SensorTextOriginEnum._('unknownDefaultOpenApi');
 
 SensorTextOriginEnum _$sensorTextOriginEnumValueOf(String name) {
   switch (name) {
@@ -17,8 +19,10 @@ SensorTextOriginEnum _$sensorTextOriginEnumValueOf(String name) {
       return _$sensorTextOriginEnum_deterministic;
     case 'llm':
       return _$sensorTextOriginEnum_llm;
+    case 'unknownDefaultOpenApi':
+      return _$sensorTextOriginEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$sensorTextOriginEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -26,6 +30,7 @@ final BuiltSet<SensorTextOriginEnum> _$sensorTextOriginEnumValues =
     BuiltSet<SensorTextOriginEnum>(const <SensorTextOriginEnum>[
       _$sensorTextOriginEnum_deterministic,
       _$sensorTextOriginEnum_llm,
+      _$sensorTextOriginEnum_unknownDefaultOpenApi,
     ]);
 
 const SensorSensorKindEnum _$sensorSensorKindEnum_source_ =
@@ -40,6 +45,8 @@ const SensorSensorKindEnum _$sensorSensorKindEnum_scene =
     const SensorSensorKindEnum._('scene');
 const SensorSensorKindEnum _$sensorSensorKindEnum_rasterProduct =
     const SensorSensorKindEnum._('rasterProduct');
+const SensorSensorKindEnum _$sensorSensorKindEnum_unknownDefaultOpenApi =
+    const SensorSensorKindEnum._('unknownDefaultOpenApi');
 
 SensorSensorKindEnum _$sensorSensorKindEnumValueOf(String name) {
   switch (name) {
@@ -55,8 +62,10 @@ SensorSensorKindEnum _$sensorSensorKindEnumValueOf(String name) {
       return _$sensorSensorKindEnum_scene;
     case 'rasterProduct':
       return _$sensorSensorKindEnum_rasterProduct;
+    case 'unknownDefaultOpenApi':
+      return _$sensorSensorKindEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$sensorSensorKindEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -68,6 +77,7 @@ final BuiltSet<SensorSensorKindEnum> _$sensorSensorKindEnumValues =
       _$sensorSensorKindEnum_satellite,
       _$sensorSensorKindEnum_scene,
       _$sensorSensorKindEnum_rasterProduct,
+      _$sensorSensorKindEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<SensorTextOriginEnum> _$sensorTextOriginEnumSerializer =
@@ -80,10 +90,12 @@ class _$SensorTextOriginEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'deterministic': 'deterministic',
     'llm': 'llm',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'deterministic': 'deterministic',
     'llm': 'llm',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -117,6 +129,7 @@ class _$SensorSensorKindEnumSerializer
     'satellite': 'satellite',
     'scene': 'scene',
     'rasterProduct': 'raster-product',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'source': 'source_',
@@ -125,6 +138,7 @@ class _$SensorSensorKindEnumSerializer
     'satellite': 'satellite',
     'scene': 'scene',
     'raster-product': 'rasterProduct',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

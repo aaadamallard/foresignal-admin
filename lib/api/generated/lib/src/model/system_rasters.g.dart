@@ -10,6 +10,9 @@ const SystemRastersProfileEnum _$systemRastersProfileEnum_small =
     const SystemRastersProfileEnum._('small');
 const SystemRastersProfileEnum _$systemRastersProfileEnum_large =
     const SystemRastersProfileEnum._('large');
+const SystemRastersProfileEnum
+_$systemRastersProfileEnum_unknownDefaultOpenApi =
+    const SystemRastersProfileEnum._('unknownDefaultOpenApi');
 
 SystemRastersProfileEnum _$systemRastersProfileEnumValueOf(String name) {
   switch (name) {
@@ -17,8 +20,10 @@ SystemRastersProfileEnum _$systemRastersProfileEnumValueOf(String name) {
       return _$systemRastersProfileEnum_small;
     case 'large':
       return _$systemRastersProfileEnum_large;
+    case 'unknownDefaultOpenApi':
+      return _$systemRastersProfileEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$systemRastersProfileEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -26,6 +31,7 @@ final BuiltSet<SystemRastersProfileEnum> _$systemRastersProfileEnumValues =
     BuiltSet<SystemRastersProfileEnum>(const <SystemRastersProfileEnum>[
       _$systemRastersProfileEnum_small,
       _$systemRastersProfileEnum_large,
+      _$systemRastersProfileEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<SystemRastersProfileEnum> _$systemRastersProfileEnumSerializer =
@@ -36,10 +42,12 @@ class _$SystemRastersProfileEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'small': 'small',
     'large': 'large',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'small': 'small',
     'large': 'large',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

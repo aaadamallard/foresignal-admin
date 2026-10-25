@@ -479,6 +479,9 @@ class PrecursorWindowStatsVerdictEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'failed')
   static const PrecursorWindowStatsVerdictEnum failed =
       _$precursorWindowStatsVerdictEnum_failed;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const PrecursorWindowStatsVerdictEnum unknownDefaultOpenApi =
+      _$precursorWindowStatsVerdictEnum_unknownDefaultOpenApi;
 
   static Serializer<PrecursorWindowStatsVerdictEnum> get serializer =>
       _$precursorWindowStatsVerdictEnumSerializer;

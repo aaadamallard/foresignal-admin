@@ -12,6 +12,9 @@ _$analysisRequestSubmissionOrientationEnum_same =
 const AnalysisRequestSubmissionOrientationEnum
 _$analysisRequestSubmissionOrientationEnum_inverse =
     const AnalysisRequestSubmissionOrientationEnum._('inverse');
+const AnalysisRequestSubmissionOrientationEnum
+_$analysisRequestSubmissionOrientationEnum_unknownDefaultOpenApi =
+    const AnalysisRequestSubmissionOrientationEnum._('unknownDefaultOpenApi');
 
 AnalysisRequestSubmissionOrientationEnum
 _$analysisRequestSubmissionOrientationEnumValueOf(String name) {
@@ -20,8 +23,10 @@ _$analysisRequestSubmissionOrientationEnumValueOf(String name) {
       return _$analysisRequestSubmissionOrientationEnum_same;
     case 'inverse':
       return _$analysisRequestSubmissionOrientationEnum_inverse;
+    case 'unknownDefaultOpenApi':
+      return _$analysisRequestSubmissionOrientationEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$analysisRequestSubmissionOrientationEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -31,6 +36,7 @@ _$analysisRequestSubmissionOrientationEnumValues =
       const <AnalysisRequestSubmissionOrientationEnum>[
         _$analysisRequestSubmissionOrientationEnum_same,
         _$analysisRequestSubmissionOrientationEnum_inverse,
+        _$analysisRequestSubmissionOrientationEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -43,10 +49,12 @@ class _$AnalysisRequestSubmissionOrientationEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'same': 'same',
     'inverse': 'inverse',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'same': 'same',
     'inverse': 'inverse',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

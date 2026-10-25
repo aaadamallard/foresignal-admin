@@ -478,6 +478,9 @@ class ExerciseRunSpeedEnum extends EnumClass {
   static const ExerciseRunSpeedEnum x60 = _$exerciseRunSpeedEnum_x60;
   @BuiltValueEnumConst(wireName: r'max')
   static const ExerciseRunSpeedEnum max = _$exerciseRunSpeedEnum_max;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ExerciseRunSpeedEnum unknownDefaultOpenApi =
+      _$exerciseRunSpeedEnum_unknownDefaultOpenApi;
 
   static Serializer<ExerciseRunSpeedEnum> get serializer =>
       _$exerciseRunSpeedEnumSerializer;
@@ -502,6 +505,9 @@ class ExerciseRunStatusEnum extends EnumClass {
       _$exerciseRunStatusEnum_CANCELLED;
   @BuiltValueEnumConst(wireName: r'FAILED')
   static const ExerciseRunStatusEnum FAILED = _$exerciseRunStatusEnum_FAILED;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ExerciseRunStatusEnum unknownDefaultOpenApi =
+      _$exerciseRunStatusEnum_unknownDefaultOpenApi;
 
   static Serializer<ExerciseRunStatusEnum> get serializer =>
       _$exerciseRunStatusEnumSerializer;

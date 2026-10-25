@@ -46,6 +46,8 @@ const GraphRequestTypesEnum _$graphRequestTypesEnum_beneficialOwner =
     const GraphRequestTypesEnum._('beneficialOwner');
 const GraphRequestTypesEnum _$graphRequestTypesEnum_affiliatedWith =
     const GraphRequestTypesEnum._('affiliatedWith');
+const GraphRequestTypesEnum _$graphRequestTypesEnum_unknownDefaultOpenApi =
+    const GraphRequestTypesEnum._('unknownDefaultOpenApi');
 
 GraphRequestTypesEnum _$graphRequestTypesEnumValueOf(String name) {
   switch (name) {
@@ -89,8 +91,10 @@ GraphRequestTypesEnum _$graphRequestTypesEnumValueOf(String name) {
       return _$graphRequestTypesEnum_beneficialOwner;
     case 'affiliatedWith':
       return _$graphRequestTypesEnum_affiliatedWith;
+    case 'unknownDefaultOpenApi':
+      return _$graphRequestTypesEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$graphRequestTypesEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -116,6 +120,7 @@ final BuiltSet<GraphRequestTypesEnum> _$graphRequestTypesEnumValues =
       _$graphRequestTypesEnum_officerOf,
       _$graphRequestTypesEnum_beneficialOwner,
       _$graphRequestTypesEnum_affiliatedWith,
+      _$graphRequestTypesEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<GraphRequestTypesEnum> _$graphRequestTypesEnumSerializer =
@@ -144,6 +149,7 @@ class _$GraphRequestTypesEnumSerializer
     'officerOf': 'officer-of',
     'beneficialOwner': 'beneficial-owner',
     'affiliatedWith': 'affiliated-with',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'member-of': 'memberOf',
@@ -166,6 +172,7 @@ class _$GraphRequestTypesEnumSerializer
     'officer-of': 'officerOf',
     'beneficial-owner': 'beneficialOwner',
     'affiliated-with': 'affiliatedWith',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

@@ -29,6 +29,11 @@ _$situationSocialSectionNarrativesInnerStatusEnum_insufficientCoverage =
     const SituationSocialSectionNarrativesInnerStatusEnum._(
       'insufficientCoverage',
     );
+const SituationSocialSectionNarrativesInnerStatusEnum
+_$situationSocialSectionNarrativesInnerStatusEnum_unknownDefaultOpenApi =
+    const SituationSocialSectionNarrativesInnerStatusEnum._(
+      'unknownDefaultOpenApi',
+    );
 
 SituationSocialSectionNarrativesInnerStatusEnum
 _$situationSocialSectionNarrativesInnerStatusEnumValueOf(String name) {
@@ -47,8 +52,10 @@ _$situationSocialSectionNarrativesInnerStatusEnumValueOf(String name) {
       return _$situationSocialSectionNarrativesInnerStatusEnum_mixed;
     case 'insufficientCoverage':
       return _$situationSocialSectionNarrativesInnerStatusEnum_insufficientCoverage;
+    case 'unknownDefaultOpenApi':
+      return _$situationSocialSectionNarrativesInnerStatusEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$situationSocialSectionNarrativesInnerStatusEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -63,6 +70,7 @@ _$situationSocialSectionNarrativesInnerStatusEnumValues =
         _$situationSocialSectionNarrativesInnerStatusEnum_contradicted,
         _$situationSocialSectionNarrativesInnerStatusEnum_mixed,
         _$situationSocialSectionNarrativesInnerStatusEnum_insufficientCoverage,
+        _$situationSocialSectionNarrativesInnerStatusEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -72,6 +80,11 @@ _$situationSocialSectionNarrativesInnerFoundByEnum_organic =
 const SituationSocialSectionNarrativesInnerFoundByEnum
 _$situationSocialSectionNarrativesInnerFoundByEnum_cue =
     const SituationSocialSectionNarrativesInnerFoundByEnum._('cue');
+const SituationSocialSectionNarrativesInnerFoundByEnum
+_$situationSocialSectionNarrativesInnerFoundByEnum_unknownDefaultOpenApi =
+    const SituationSocialSectionNarrativesInnerFoundByEnum._(
+      'unknownDefaultOpenApi',
+    );
 
 SituationSocialSectionNarrativesInnerFoundByEnum
 _$situationSocialSectionNarrativesInnerFoundByEnumValueOf(String name) {
@@ -80,19 +93,22 @@ _$situationSocialSectionNarrativesInnerFoundByEnumValueOf(String name) {
       return _$situationSocialSectionNarrativesInnerFoundByEnum_organic;
     case 'cue':
       return _$situationSocialSectionNarrativesInnerFoundByEnum_cue;
+    case 'unknownDefaultOpenApi':
+      return _$situationSocialSectionNarrativesInnerFoundByEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$situationSocialSectionNarrativesInnerFoundByEnum_unknownDefaultOpenApi;
   }
 }
 
 final BuiltSet<SituationSocialSectionNarrativesInnerFoundByEnum>
 _$situationSocialSectionNarrativesInnerFoundByEnumValues =
-    BuiltSet<SituationSocialSectionNarrativesInnerFoundByEnum>(
-      const <SituationSocialSectionNarrativesInnerFoundByEnum>[
-        _$situationSocialSectionNarrativesInnerFoundByEnum_organic,
-        _$situationSocialSectionNarrativesInnerFoundByEnum_cue,
-      ],
-    );
+    BuiltSet<SituationSocialSectionNarrativesInnerFoundByEnum>(const <
+      SituationSocialSectionNarrativesInnerFoundByEnum
+    >[
+      _$situationSocialSectionNarrativesInnerFoundByEnum_organic,
+      _$situationSocialSectionNarrativesInnerFoundByEnum_cue,
+      _$situationSocialSectionNarrativesInnerFoundByEnum_unknownDefaultOpenApi,
+    ]);
 
 Serializer<SituationSocialSectionNarrativesInnerStatusEnum>
 _$situationSocialSectionNarrativesInnerStatusEnumSerializer =
@@ -112,6 +128,7 @@ class _$SituationSocialSectionNarrativesInnerStatusEnumSerializer
     'contradicted': 'contradicted',
     'mixed': 'mixed',
     'insufficientCoverage': 'insufficient-coverage',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'unassessed': 'unassessed',
@@ -121,6 +138,7 @@ class _$SituationSocialSectionNarrativesInnerStatusEnumSerializer
     'contradicted': 'contradicted',
     'mixed': 'mixed',
     'insufficient-coverage': 'insufficientCoverage',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -153,10 +171,12 @@ class _$SituationSocialSectionNarrativesInnerFoundByEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'organic': 'organic',
     'cue': 'cue',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'organic': 'organic',
     'cue': 'cue',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

@@ -225,6 +225,9 @@ class WatchlistItemOriginEnum extends EnumClass {
   static const WatchlistItemOriginEnum csv = _$watchlistItemOriginEnum_csv;
   @BuiltValueEnumConst(wireName: r'json')
   static const WatchlistItemOriginEnum json = _$watchlistItemOriginEnum_json;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const WatchlistItemOriginEnum unknownDefaultOpenApi =
+      _$watchlistItemOriginEnum_unknownDefaultOpenApi;
 
   static Serializer<WatchlistItemOriginEnum> get serializer =>
       _$watchlistItemOriginEnumSerializer;

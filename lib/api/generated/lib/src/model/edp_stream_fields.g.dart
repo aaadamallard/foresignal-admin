@@ -12,6 +12,9 @@ _$edpStreamFieldsObservedAtModeEnum_upstream =
 const EdpStreamFieldsObservedAtModeEnum
 _$edpStreamFieldsObservedAtModeEnum_received =
     const EdpStreamFieldsObservedAtModeEnum._('received');
+const EdpStreamFieldsObservedAtModeEnum
+_$edpStreamFieldsObservedAtModeEnum_unknownDefaultOpenApi =
+    const EdpStreamFieldsObservedAtModeEnum._('unknownDefaultOpenApi');
 
 EdpStreamFieldsObservedAtModeEnum _$edpStreamFieldsObservedAtModeEnumValueOf(
   String name,
@@ -21,8 +24,10 @@ EdpStreamFieldsObservedAtModeEnum _$edpStreamFieldsObservedAtModeEnumValueOf(
       return _$edpStreamFieldsObservedAtModeEnum_upstream;
     case 'received':
       return _$edpStreamFieldsObservedAtModeEnum_received;
+    case 'unknownDefaultOpenApi':
+      return _$edpStreamFieldsObservedAtModeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$edpStreamFieldsObservedAtModeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -32,6 +37,7 @@ _$edpStreamFieldsObservedAtModeEnumValues =
       const <EdpStreamFieldsObservedAtModeEnum>[
         _$edpStreamFieldsObservedAtModeEnum_upstream,
         _$edpStreamFieldsObservedAtModeEnum_received,
+        _$edpStreamFieldsObservedAtModeEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -44,10 +50,12 @@ class _$EdpStreamFieldsObservedAtModeEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'upstream': 'upstream',
     'received': 'received',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'upstream': 'upstream',
     'received': 'received',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

@@ -9,6 +9,9 @@ part of 'finding_severity.dart';
 const FindingSeverity _$info = const FindingSeverity._('info');
 const FindingSeverity _$notable = const FindingSeverity._('notable');
 const FindingSeverity _$significant = const FindingSeverity._('significant');
+const FindingSeverity _$unknownDefaultOpenApi = const FindingSeverity._(
+  'unknownDefaultOpenApi',
+);
 
 FindingSeverity _$valueOf(String name) {
   switch (name) {
@@ -18,13 +21,20 @@ FindingSeverity _$valueOf(String name) {
       return _$notable;
     case 'significant':
       return _$significant;
+    case 'unknownDefaultOpenApi':
+      return _$unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$unknownDefaultOpenApi;
   }
 }
 
 final BuiltSet<FindingSeverity> _$values = BuiltSet<FindingSeverity>(
-  const <FindingSeverity>[_$info, _$notable, _$significant],
+  const <FindingSeverity>[
+    _$info,
+    _$notable,
+    _$significant,
+    _$unknownDefaultOpenApi,
+  ],
 );
 
 class _$FindingSeverityMeta {
@@ -32,6 +42,7 @@ class _$FindingSeverityMeta {
   FindingSeverity get info => _$info;
   FindingSeverity get notable => _$notable;
   FindingSeverity get significant => _$significant;
+  FindingSeverity get unknownDefaultOpenApi => _$unknownDefaultOpenApi;
   FindingSeverity valueOf(String name) => _$valueOf(name);
   BuiltSet<FindingSeverity> get values => _$values;
 }
@@ -50,11 +61,13 @@ class _$FindingSeveritySerializer
     'info': 'info',
     'notable': 'notable',
     'significant': 'significant',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'info': 'info',
     'notable': 'notable',
     'significant': 'significant',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

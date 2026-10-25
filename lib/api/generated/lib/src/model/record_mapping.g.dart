@@ -8,19 +8,25 @@ part of 'record_mapping.dart';
 
 const RecordMappingVersionEnum _$recordMappingVersionEnum_number1 =
     const RecordMappingVersionEnum._('number1');
+const RecordMappingVersionEnum
+_$recordMappingVersionEnum_unknownDefaultOpenApi =
+    const RecordMappingVersionEnum._('unknownDefaultOpenApi');
 
 RecordMappingVersionEnum _$recordMappingVersionEnumValueOf(String name) {
   switch (name) {
     case 'number1':
       return _$recordMappingVersionEnum_number1;
+    case 'unknownDefaultOpenApi':
+      return _$recordMappingVersionEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$recordMappingVersionEnum_unknownDefaultOpenApi;
   }
 }
 
 final BuiltSet<RecordMappingVersionEnum> _$recordMappingVersionEnumValues =
     BuiltSet<RecordMappingVersionEnum>(const <RecordMappingVersionEnum>[
       _$recordMappingVersionEnum_number1,
+      _$recordMappingVersionEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<RecordMappingVersionEnum> _$recordMappingVersionEnumSerializer =
@@ -30,9 +36,11 @@ class _$RecordMappingVersionEnumSerializer
     implements PrimitiveSerializer<RecordMappingVersionEnum> {
   static const Map<String, Object> _toWire = const <String, Object>{
     'number1': 1,
+    'unknownDefaultOpenApi': 11184809,
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     1: 'number1',
+    11184809: 'unknownDefaultOpenApi',
   };
 
   @override

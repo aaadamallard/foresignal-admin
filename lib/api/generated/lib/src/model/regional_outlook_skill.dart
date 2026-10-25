@@ -295,6 +295,9 @@ class RegionalOutlookSkillLabelEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'insufficient')
   static const RegionalOutlookSkillLabelEnum insufficient =
       _$regionalOutlookSkillLabelEnum_insufficient;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const RegionalOutlookSkillLabelEnum unknownDefaultOpenApi =
+      _$regionalOutlookSkillLabelEnum_unknownDefaultOpenApi;
 
   static Serializer<RegionalOutlookSkillLabelEnum> get serializer =>
       _$regionalOutlookSkillLabelEnumSerializer;

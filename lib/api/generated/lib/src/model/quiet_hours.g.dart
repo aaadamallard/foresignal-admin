@@ -27,6 +27,8 @@ const QuietHoursDaysEnum _$quietHoursDaysEnum_SAT = const QuietHoursDaysEnum._(
 const QuietHoursDaysEnum _$quietHoursDaysEnum_SUN = const QuietHoursDaysEnum._(
   'SUN',
 );
+const QuietHoursDaysEnum _$quietHoursDaysEnum_unknownDefaultOpenApi =
+    const QuietHoursDaysEnum._('unknownDefaultOpenApi');
 
 QuietHoursDaysEnum _$quietHoursDaysEnumValueOf(String name) {
   switch (name) {
@@ -44,8 +46,10 @@ QuietHoursDaysEnum _$quietHoursDaysEnumValueOf(String name) {
       return _$quietHoursDaysEnum_SAT;
     case 'SUN':
       return _$quietHoursDaysEnum_SUN;
+    case 'unknownDefaultOpenApi':
+      return _$quietHoursDaysEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$quietHoursDaysEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -58,6 +62,7 @@ final BuiltSet<QuietHoursDaysEnum> _$quietHoursDaysEnumValues =
       _$quietHoursDaysEnum_FRI,
       _$quietHoursDaysEnum_SAT,
       _$quietHoursDaysEnum_SUN,
+      _$quietHoursDaysEnum_unknownDefaultOpenApi,
     ]);
 
 const QuietHoursBypassSeverityEnum _$quietHoursBypassSeverityEnum_info =
@@ -66,6 +71,9 @@ const QuietHoursBypassSeverityEnum _$quietHoursBypassSeverityEnum_warning =
     const QuietHoursBypassSeverityEnum._('warning');
 const QuietHoursBypassSeverityEnum _$quietHoursBypassSeverityEnum_critical =
     const QuietHoursBypassSeverityEnum._('critical');
+const QuietHoursBypassSeverityEnum
+_$quietHoursBypassSeverityEnum_unknownDefaultOpenApi =
+    const QuietHoursBypassSeverityEnum._('unknownDefaultOpenApi');
 
 QuietHoursBypassSeverityEnum _$quietHoursBypassSeverityEnumValueOf(
   String name,
@@ -77,8 +85,10 @@ QuietHoursBypassSeverityEnum _$quietHoursBypassSeverityEnumValueOf(
       return _$quietHoursBypassSeverityEnum_warning;
     case 'critical':
       return _$quietHoursBypassSeverityEnum_critical;
+    case 'unknownDefaultOpenApi':
+      return _$quietHoursBypassSeverityEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$quietHoursBypassSeverityEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -88,6 +98,7 @@ _$quietHoursBypassSeverityEnumValues =
       _$quietHoursBypassSeverityEnum_info,
       _$quietHoursBypassSeverityEnum_warning,
       _$quietHoursBypassSeverityEnum_critical,
+      _$quietHoursBypassSeverityEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<QuietHoursDaysEnum> _$quietHoursDaysEnumSerializer =
@@ -106,6 +117,7 @@ class _$QuietHoursDaysEnumSerializer
     'FRI': 'FRI',
     'SAT': 'SAT',
     'SUN': 'SUN',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'MON': 'MON',
@@ -115,6 +127,7 @@ class _$QuietHoursDaysEnumSerializer
     'FRI': 'FRI',
     'SAT': 'SAT',
     'SUN': 'SUN',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -145,11 +158,13 @@ class _$QuietHoursBypassSeverityEnumSerializer
     'info': 'info',
     'warning': 'warning',
     'critical': 'critical',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'info': 'info',
     'warning': 'warning',
     'critical': 'critical',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

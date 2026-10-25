@@ -25,6 +25,8 @@ const AnalystProposalTypeEnum _$analystProposalTypeEnum_proposeQuestion =
     const AnalystProposalTypeEnum._('proposeQuestion');
 const AnalystProposalTypeEnum _$analystProposalTypeEnum_proposeSituationMerge =
     const AnalystProposalTypeEnum._('proposeSituationMerge');
+const AnalystProposalTypeEnum _$analystProposalTypeEnum_unknownDefaultOpenApi =
+    const AnalystProposalTypeEnum._('unknownDefaultOpenApi');
 
 AnalystProposalTypeEnum _$analystProposalTypeEnumValueOf(String name) {
   switch (name) {
@@ -46,8 +48,10 @@ AnalystProposalTypeEnum _$analystProposalTypeEnumValueOf(String name) {
       return _$analystProposalTypeEnum_proposeQuestion;
     case 'proposeSituationMerge':
       return _$analystProposalTypeEnum_proposeSituationMerge;
+    case 'unknownDefaultOpenApi':
+      return _$analystProposalTypeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$analystProposalTypeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -62,6 +66,7 @@ final BuiltSet<AnalystProposalTypeEnum> _$analystProposalTypeEnumValues =
       _$analystProposalTypeEnum_proposeIndicator,
       _$analystProposalTypeEnum_proposeQuestion,
       _$analystProposalTypeEnum_proposeSituationMerge,
+      _$analystProposalTypeEnum_unknownDefaultOpenApi,
     ]);
 
 const AnalystProposalStatusEnum _$analystProposalStatusEnum_pending =
@@ -74,6 +79,9 @@ const AnalystProposalStatusEnum _$analystProposalStatusEnum_expired =
     const AnalystProposalStatusEnum._('expired');
 const AnalystProposalStatusEnum _$analystProposalStatusEnum_failed =
     const AnalystProposalStatusEnum._('failed');
+const AnalystProposalStatusEnum
+_$analystProposalStatusEnum_unknownDefaultOpenApi =
+    const AnalystProposalStatusEnum._('unknownDefaultOpenApi');
 
 AnalystProposalStatusEnum _$analystProposalStatusEnumValueOf(String name) {
   switch (name) {
@@ -87,8 +95,10 @@ AnalystProposalStatusEnum _$analystProposalStatusEnumValueOf(String name) {
       return _$analystProposalStatusEnum_expired;
     case 'failed':
       return _$analystProposalStatusEnum_failed;
+    case 'unknownDefaultOpenApi':
+      return _$analystProposalStatusEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$analystProposalStatusEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -99,6 +109,7 @@ final BuiltSet<AnalystProposalStatusEnum> _$analystProposalStatusEnumValues =
       _$analystProposalStatusEnum_rejected,
       _$analystProposalStatusEnum_expired,
       _$analystProposalStatusEnum_failed,
+      _$analystProposalStatusEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<AnalystProposalTypeEnum> _$analystProposalTypeEnumSerializer =
@@ -118,6 +129,7 @@ class _$AnalystProposalTypeEnumSerializer
     'proposeIndicator': 'propose_indicator',
     'proposeQuestion': 'propose_question',
     'proposeSituationMerge': 'propose_situation_merge',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'propose_watch': 'proposeWatch',
@@ -129,6 +141,7 @@ class _$AnalystProposalTypeEnumSerializer
     'propose_indicator': 'proposeIndicator',
     'propose_question': 'proposeQuestion',
     'propose_situation_merge': 'proposeSituationMerge',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -161,6 +174,7 @@ class _$AnalystProposalStatusEnumSerializer
     'rejected': 'rejected',
     'expired': 'expired',
     'failed': 'failed',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'pending': 'pending',
@@ -168,6 +182,7 @@ class _$AnalystProposalStatusEnumSerializer
     'rejected': 'rejected',
     'expired': 'expired',
     'failed': 'failed',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

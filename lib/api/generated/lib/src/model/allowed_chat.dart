@@ -205,6 +205,9 @@ class AllowedChatScopeEnum extends EnumClass {
   static const AllowedChatScopeEnum read = _$allowedChatScopeEnum_read;
   @BuiltValueEnumConst(wireName: r'agent')
   static const AllowedChatScopeEnum agent = _$allowedChatScopeEnum_agent;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const AllowedChatScopeEnum unknownDefaultOpenApi =
+      _$allowedChatScopeEnum_unknownDefaultOpenApi;
 
   static Serializer<AllowedChatScopeEnum> get serializer =>
       _$allowedChatScopeEnumSerializer;

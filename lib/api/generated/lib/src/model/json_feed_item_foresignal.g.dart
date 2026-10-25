@@ -15,6 +15,9 @@ _$jsonFeedItemForesignalSeverityEnum_warning =
 const JsonFeedItemForesignalSeverityEnum
 _$jsonFeedItemForesignalSeverityEnum_critical =
     const JsonFeedItemForesignalSeverityEnum._('critical');
+const JsonFeedItemForesignalSeverityEnum
+_$jsonFeedItemForesignalSeverityEnum_unknownDefaultOpenApi =
+    const JsonFeedItemForesignalSeverityEnum._('unknownDefaultOpenApi');
 
 JsonFeedItemForesignalSeverityEnum _$jsonFeedItemForesignalSeverityEnumValueOf(
   String name,
@@ -26,8 +29,10 @@ JsonFeedItemForesignalSeverityEnum _$jsonFeedItemForesignalSeverityEnumValueOf(
       return _$jsonFeedItemForesignalSeverityEnum_warning;
     case 'critical':
       return _$jsonFeedItemForesignalSeverityEnum_critical;
+    case 'unknownDefaultOpenApi':
+      return _$jsonFeedItemForesignalSeverityEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$jsonFeedItemForesignalSeverityEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -38,6 +43,7 @@ _$jsonFeedItemForesignalSeverityEnumValues =
         _$jsonFeedItemForesignalSeverityEnum_info,
         _$jsonFeedItemForesignalSeverityEnum_warning,
         _$jsonFeedItemForesignalSeverityEnum_critical,
+        _$jsonFeedItemForesignalSeverityEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -49,6 +55,9 @@ _$jsonFeedItemForesignalStateEnum_acknowledged =
 const JsonFeedItemForesignalStateEnum
 _$jsonFeedItemForesignalStateEnum_resolved =
     const JsonFeedItemForesignalStateEnum._('resolved');
+const JsonFeedItemForesignalStateEnum
+_$jsonFeedItemForesignalStateEnum_unknownDefaultOpenApi =
+    const JsonFeedItemForesignalStateEnum._('unknownDefaultOpenApi');
 
 JsonFeedItemForesignalStateEnum _$jsonFeedItemForesignalStateEnumValueOf(
   String name,
@@ -60,8 +69,10 @@ JsonFeedItemForesignalStateEnum _$jsonFeedItemForesignalStateEnumValueOf(
       return _$jsonFeedItemForesignalStateEnum_acknowledged;
     case 'resolved':
       return _$jsonFeedItemForesignalStateEnum_resolved;
+    case 'unknownDefaultOpenApi':
+      return _$jsonFeedItemForesignalStateEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$jsonFeedItemForesignalStateEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -72,6 +83,7 @@ _$jsonFeedItemForesignalStateEnumValues =
         _$jsonFeedItemForesignalStateEnum_firing,
         _$jsonFeedItemForesignalStateEnum_acknowledged,
         _$jsonFeedItemForesignalStateEnum_resolved,
+        _$jsonFeedItemForesignalStateEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -88,11 +100,13 @@ class _$JsonFeedItemForesignalSeverityEnumSerializer
     'info': 'info',
     'warning': 'warning',
     'critical': 'critical',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'info': 'info',
     'warning': 'warning',
     'critical': 'critical',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -123,11 +137,13 @@ class _$JsonFeedItemForesignalStateEnumSerializer
     'firing': 'firing',
     'acknowledged': 'acknowledged',
     'resolved': 'resolved',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'firing': 'firing',
     'acknowledged': 'acknowledged',
     'resolved': 'resolved',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

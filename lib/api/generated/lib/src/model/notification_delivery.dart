@@ -500,6 +500,9 @@ class NotificationDeliveryStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'unacked')
   static const NotificationDeliveryStatusEnum unacked =
       _$notificationDeliveryStatusEnum_unacked;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const NotificationDeliveryStatusEnum unknownDefaultOpenApi =
+      _$notificationDeliveryStatusEnum_unknownDefaultOpenApi;
 
   static Serializer<NotificationDeliveryStatusEnum> get serializer =>
       _$notificationDeliveryStatusEnumSerializer;
@@ -525,6 +528,9 @@ class NotificationDeliveryKindEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'digest')
   static const NotificationDeliveryKindEnum digest =
       _$notificationDeliveryKindEnum_digest;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const NotificationDeliveryKindEnum unknownDefaultOpenApi =
+      _$notificationDeliveryKindEnum_unknownDefaultOpenApi;
 
   static Serializer<NotificationDeliveryKindEnum> get serializer =>
       _$notificationDeliveryKindEnumSerializer;
@@ -557,6 +563,9 @@ class NotificationDeliveryDeferredReasonEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'airtime')
   static const NotificationDeliveryDeferredReasonEnum airtime =
       _$notificationDeliveryDeferredReasonEnum_airtime;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const NotificationDeliveryDeferredReasonEnum unknownDefaultOpenApi =
+      _$notificationDeliveryDeferredReasonEnum_unknownDefaultOpenApi;
 
   static Serializer<NotificationDeliveryDeferredReasonEnum> get serializer =>
       _$notificationDeliveryDeferredReasonEnumSerializer;
@@ -583,6 +592,9 @@ class NotificationDeliveryAttachmentLevelEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'text-only')
   static const NotificationDeliveryAttachmentLevelEnum textOnly =
       _$notificationDeliveryAttachmentLevelEnum_textOnly;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const NotificationDeliveryAttachmentLevelEnum unknownDefaultOpenApi =
+      _$notificationDeliveryAttachmentLevelEnum_unknownDefaultOpenApi;
 
   static Serializer<NotificationDeliveryAttachmentLevelEnum> get serializer =>
       _$notificationDeliveryAttachmentLevelEnumSerializer;

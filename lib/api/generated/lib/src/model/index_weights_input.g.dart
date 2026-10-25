@@ -12,6 +12,9 @@ const IndexWeightsInputSource_Enum _$indexWeightsInputSourceEnum_operator_ =
     const IndexWeightsInputSource_Enum._('operator_');
 const IndexWeightsInputSource_Enum _$indexWeightsInputSourceEnum_default_ =
     const IndexWeightsInputSource_Enum._('default_');
+const IndexWeightsInputSource_Enum
+_$indexWeightsInputSourceEnum_unknownDefaultOpenApi =
+    const IndexWeightsInputSource_Enum._('unknownDefaultOpenApi');
 
 IndexWeightsInputSource_Enum _$indexWeightsInputSourceEnumValueOf(String name) {
   switch (name) {
@@ -21,8 +24,10 @@ IndexWeightsInputSource_Enum _$indexWeightsInputSourceEnumValueOf(String name) {
       return _$indexWeightsInputSourceEnum_operator_;
     case 'default_':
       return _$indexWeightsInputSourceEnum_default_;
+    case 'unknownDefaultOpenApi':
+      return _$indexWeightsInputSourceEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$indexWeightsInputSourceEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -32,6 +37,7 @@ _$indexWeightsInputSourceEnumValues =
       _$indexWeightsInputSourceEnum_fitted,
       _$indexWeightsInputSourceEnum_operator_,
       _$indexWeightsInputSourceEnum_default_,
+      _$indexWeightsInputSourceEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<IndexWeightsInputSource_Enum>
@@ -44,11 +50,13 @@ class _$IndexWeightsInputSource_EnumSerializer
     'fitted': 'fitted',
     'operator_': 'operator',
     'default_': 'default',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'fitted': 'fitted',
     'operator': 'operator_',
     'default': 'default_',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

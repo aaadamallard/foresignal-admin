@@ -15,6 +15,8 @@ const ProductKindEnum _$productKindEnum_field = const ProductKindEnum._(
 const ProductKindEnum _$productKindEnum_external_ = const ProductKindEnum._(
   'external_',
 );
+const ProductKindEnum _$productKindEnum_unknownDefaultOpenApi =
+    const ProductKindEnum._('unknownDefaultOpenApi');
 
 ProductKindEnum _$productKindEnumValueOf(String name) {
   switch (name) {
@@ -24,8 +26,10 @@ ProductKindEnum _$productKindEnumValueOf(String name) {
       return _$productKindEnum_field;
     case 'external_':
       return _$productKindEnum_external_;
+    case 'unknownDefaultOpenApi':
+      return _$productKindEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$productKindEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -34,6 +38,7 @@ final BuiltSet<ProductKindEnum> _$productKindEnumValues =
       _$productKindEnum_raster,
       _$productKindEnum_field,
       _$productKindEnum_external_,
+      _$productKindEnum_unknownDefaultOpenApi,
     ]);
 
 const ProductCategoryEnum _$productCategoryEnum_radar =
@@ -46,6 +51,8 @@ const ProductCategoryEnum _$productCategoryEnum_lightning =
     const ProductCategoryEnum._('lightning');
 const ProductCategoryEnum _$productCategoryEnum_imagery =
     const ProductCategoryEnum._('imagery');
+const ProductCategoryEnum _$productCategoryEnum_unknownDefaultOpenApi =
+    const ProductCategoryEnum._('unknownDefaultOpenApi');
 
 ProductCategoryEnum _$productCategoryEnumValueOf(String name) {
   switch (name) {
@@ -59,8 +66,10 @@ ProductCategoryEnum _$productCategoryEnumValueOf(String name) {
       return _$productCategoryEnum_lightning;
     case 'imagery':
       return _$productCategoryEnum_imagery;
+    case 'unknownDefaultOpenApi':
+      return _$productCategoryEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$productCategoryEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -71,6 +80,7 @@ final BuiltSet<ProductCategoryEnum> _$productCategoryEnumValues =
       _$productCategoryEnum_model,
       _$productCategoryEnum_lightning,
       _$productCategoryEnum_imagery,
+      _$productCategoryEnum_unknownDefaultOpenApi,
     ]);
 
 const ProductDtypeEnum _$productDtypeEnum_u8 = const ProductDtypeEnum._('u8');
@@ -80,6 +90,8 @@ const ProductDtypeEnum _$productDtypeEnum_f32 = const ProductDtypeEnum._('f32');
 const ProductDtypeEnum _$productDtypeEnum_rgba8 = const ProductDtypeEnum._(
   'rgba8',
 );
+const ProductDtypeEnum _$productDtypeEnum_unknownDefaultOpenApi =
+    const ProductDtypeEnum._('unknownDefaultOpenApi');
 
 ProductDtypeEnum _$productDtypeEnumValueOf(String name) {
   switch (name) {
@@ -93,8 +105,10 @@ ProductDtypeEnum _$productDtypeEnumValueOf(String name) {
       return _$productDtypeEnum_f32;
     case 'rgba8':
       return _$productDtypeEnum_rgba8;
+    case 'unknownDefaultOpenApi':
+      return _$productDtypeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$productDtypeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -105,6 +119,7 @@ final BuiltSet<ProductDtypeEnum> _$productDtypeEnumValues =
       _$productDtypeEnum_i16,
       _$productDtypeEnum_f32,
       _$productDtypeEnum_rgba8,
+      _$productDtypeEnum_unknownDefaultOpenApi,
     ]);
 
 const ProductCoverageEnum _$productCoverageEnum_CONUS =
@@ -115,6 +130,8 @@ const ProductCoverageEnum _$productCoverageEnum_stationDisc =
     const ProductCoverageEnum._('stationDisc');
 const ProductCoverageEnum _$productCoverageEnum_swath =
     const ProductCoverageEnum._('swath');
+const ProductCoverageEnum _$productCoverageEnum_unknownDefaultOpenApi =
+    const ProductCoverageEnum._('unknownDefaultOpenApi');
 
 ProductCoverageEnum _$productCoverageEnumValueOf(String name) {
   switch (name) {
@@ -126,8 +143,10 @@ ProductCoverageEnum _$productCoverageEnumValueOf(String name) {
       return _$productCoverageEnum_stationDisc;
     case 'swath':
       return _$productCoverageEnum_swath;
+    case 'unknownDefaultOpenApi':
+      return _$productCoverageEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$productCoverageEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -137,6 +156,7 @@ final BuiltSet<ProductCoverageEnum> _$productCoverageEnumValues =
       _$productCoverageEnum_global,
       _$productCoverageEnum_stationDisc,
       _$productCoverageEnum_swath,
+      _$productCoverageEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<ProductKindEnum> _$productKindEnumSerializer =
@@ -154,11 +174,13 @@ class _$ProductKindEnumSerializer
     'raster': 'raster',
     'field': 'field',
     'external_': 'external',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'raster': 'raster',
     'field': 'field',
     'external': 'external_',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -191,6 +213,7 @@ class _$ProductCategoryEnumSerializer
     'model': 'model',
     'lightning': 'lightning',
     'imagery': 'imagery',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'radar': 'radar',
@@ -198,6 +221,7 @@ class _$ProductCategoryEnumSerializer
     'model': 'model',
     'lightning': 'lightning',
     'imagery': 'imagery',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -230,6 +254,7 @@ class _$ProductDtypeEnumSerializer
     'i16': 'i16',
     'f32': 'f32',
     'rgba8': 'rgba8',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'u8': 'u8',
@@ -237,6 +262,7 @@ class _$ProductDtypeEnumSerializer
     'i16': 'i16',
     'f32': 'f32',
     'rgba8': 'rgba8',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -268,12 +294,14 @@ class _$ProductCoverageEnumSerializer
     'global': 'global',
     'stationDisc': 'station-disc',
     'swath': 'swath',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'CONUS': 'CONUS',
     'global': 'global',
     'station-disc': 'stationDisc',
     'swath': 'swath',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

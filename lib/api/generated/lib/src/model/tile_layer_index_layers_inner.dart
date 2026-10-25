@@ -208,6 +208,9 @@ class TileLayerIndexLayersInnerTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'kind')
   static const TileLayerIndexLayersInnerTypeEnum kind =
       _$tileLayerIndexLayersInnerTypeEnum_kind;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const TileLayerIndexLayersInnerTypeEnum unknownDefaultOpenApi =
+      _$tileLayerIndexLayersInnerTypeEnum_unknownDefaultOpenApi;
 
   static Serializer<TileLayerIndexLayersInnerTypeEnum> get serializer =>
       _$tileLayerIndexLayersInnerTypeEnumSerializer;

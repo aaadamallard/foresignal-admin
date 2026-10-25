@@ -39,6 +39,9 @@ _$maintenanceRunStepsInnerStepEnum_hypothesisArchivalProposals =
 const MaintenanceRunStepsInnerStepEnum
 _$maintenanceRunStepsInnerStepEnum_llmRetrospectiveEvaluation =
     const MaintenanceRunStepsInnerStepEnum._('llmRetrospectiveEvaluation');
+const MaintenanceRunStepsInnerStepEnum
+_$maintenanceRunStepsInnerStepEnum_unknownDefaultOpenApi =
+    const MaintenanceRunStepsInnerStepEnum._('unknownDefaultOpenApi');
 
 MaintenanceRunStepsInnerStepEnum _$maintenanceRunStepsInnerStepEnumValueOf(
   String name,
@@ -66,8 +69,10 @@ MaintenanceRunStepsInnerStepEnum _$maintenanceRunStepsInnerStepEnumValueOf(
       return _$maintenanceRunStepsInnerStepEnum_hypothesisArchivalProposals;
     case 'llmRetrospectiveEvaluation':
       return _$maintenanceRunStepsInnerStepEnum_llmRetrospectiveEvaluation;
+    case 'unknownDefaultOpenApi':
+      return _$maintenanceRunStepsInnerStepEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$maintenanceRunStepsInnerStepEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -86,6 +91,7 @@ _$maintenanceRunStepsInnerStepEnumValues =
         _$maintenanceRunStepsInnerStepEnum_seriesMethodReselection,
         _$maintenanceRunStepsInnerStepEnum_hypothesisArchivalProposals,
         _$maintenanceRunStepsInnerStepEnum_llmRetrospectiveEvaluation,
+        _$maintenanceRunStepsInnerStepEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -104,6 +110,9 @@ _$maintenanceRunStepsInnerStatusEnum_failed =
 const MaintenanceRunStepsInnerStatusEnum
 _$maintenanceRunStepsInnerStatusEnum_skipped =
     const MaintenanceRunStepsInnerStatusEnum._('skipped');
+const MaintenanceRunStepsInnerStatusEnum
+_$maintenanceRunStepsInnerStatusEnum_unknownDefaultOpenApi =
+    const MaintenanceRunStepsInnerStatusEnum._('unknownDefaultOpenApi');
 
 MaintenanceRunStepsInnerStatusEnum _$maintenanceRunStepsInnerStatusEnumValueOf(
   String name,
@@ -119,8 +128,10 @@ MaintenanceRunStepsInnerStatusEnum _$maintenanceRunStepsInnerStatusEnumValueOf(
       return _$maintenanceRunStepsInnerStatusEnum_failed;
     case 'skipped':
       return _$maintenanceRunStepsInnerStatusEnum_skipped;
+    case 'unknownDefaultOpenApi':
+      return _$maintenanceRunStepsInnerStatusEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$maintenanceRunStepsInnerStatusEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -133,6 +144,7 @@ _$maintenanceRunStepsInnerStatusEnumValues =
         _$maintenanceRunStepsInnerStatusEnum_done,
         _$maintenanceRunStepsInnerStatusEnum_failed,
         _$maintenanceRunStepsInnerStatusEnum_skipped,
+        _$maintenanceRunStepsInnerStatusEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -157,6 +169,7 @@ class _$MaintenanceRunStepsInnerStepEnumSerializer
     'seriesMethodReselection': 'series-method-reselection',
     'hypothesisArchivalProposals': 'hypothesis-archival-proposals',
     'llmRetrospectiveEvaluation': 'llm-retrospective-evaluation',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'observability-reestimation': 'observabilityReestimation',
@@ -170,6 +183,7 @@ class _$MaintenanceRunStepsInnerStepEnumSerializer
     'series-method-reselection': 'seriesMethodReselection',
     'hypothesis-archival-proposals': 'hypothesisArchivalProposals',
     'llm-retrospective-evaluation': 'llmRetrospectiveEvaluation',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -202,6 +216,7 @@ class _$MaintenanceRunStepsInnerStatusEnumSerializer
     'done': 'done',
     'failed': 'failed',
     'skipped': 'skipped',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'pending': 'pending',
@@ -209,6 +224,7 @@ class _$MaintenanceRunStepsInnerStatusEnumSerializer
     'done': 'done',
     'failed': 'failed',
     'skipped': 'skipped',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

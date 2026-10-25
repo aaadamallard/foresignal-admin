@@ -12,6 +12,8 @@ const FindingEventEventEnum _$findingEventEventEnum_findingPeriodUpdated =
     const FindingEventEventEnum._('findingPeriodUpdated');
 const FindingEventEventEnum _$findingEventEventEnum_findingPeriodDismissed =
     const FindingEventEventEnum._('findingPeriodDismissed');
+const FindingEventEventEnum _$findingEventEventEnum_unknownDefaultOpenApi =
+    const FindingEventEventEnum._('unknownDefaultOpenApi');
 
 FindingEventEventEnum _$findingEventEventEnumValueOf(String name) {
   switch (name) {
@@ -21,8 +23,10 @@ FindingEventEventEnum _$findingEventEventEnumValueOf(String name) {
       return _$findingEventEventEnum_findingPeriodUpdated;
     case 'findingPeriodDismissed':
       return _$findingEventEventEnum_findingPeriodDismissed;
+    case 'unknownDefaultOpenApi':
+      return _$findingEventEventEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$findingEventEventEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -31,6 +35,7 @@ final BuiltSet<FindingEventEventEnum> _$findingEventEventEnumValues =
       _$findingEventEventEnum_findingPeriodCreated,
       _$findingEventEventEnum_findingPeriodUpdated,
       _$findingEventEventEnum_findingPeriodDismissed,
+      _$findingEventEventEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<FindingEventEventEnum> _$findingEventEventEnumSerializer =
@@ -42,11 +47,13 @@ class _$FindingEventEventEnumSerializer
     'findingPeriodCreated': 'finding.created',
     'findingPeriodUpdated': 'finding.updated',
     'findingPeriodDismissed': 'finding.dismissed',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'finding.created': 'findingPeriodCreated',
     'finding.updated': 'findingPeriodUpdated',
     'finding.dismissed': 'findingPeriodDismissed',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

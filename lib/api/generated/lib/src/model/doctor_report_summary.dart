@@ -192,6 +192,9 @@ class DoctorReportSummaryStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'BROKEN')
   static const DoctorReportSummaryStatusEnum BROKEN =
       _$doctorReportSummaryStatusEnum_BROKEN;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const DoctorReportSummaryStatusEnum unknownDefaultOpenApi =
+      _$doctorReportSummaryStatusEnum_unknownDefaultOpenApi;
 
   static Serializer<DoctorReportSummaryStatusEnum> get serializer =>
       _$doctorReportSummaryStatusEnumSerializer;

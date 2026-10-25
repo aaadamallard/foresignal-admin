@@ -183,6 +183,9 @@ class IndicatorSignalSituationStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'closed')
   static const IndicatorSignalSituationStatusEnum closed =
       _$indicatorSignalSituationStatusEnum_closed;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const IndicatorSignalSituationStatusEnum unknownDefaultOpenApi =
+      _$indicatorSignalSituationStatusEnum_unknownDefaultOpenApi;
 
   static Serializer<IndicatorSignalSituationStatusEnum> get serializer =>
       _$indicatorSignalSituationStatusEnumSerializer;

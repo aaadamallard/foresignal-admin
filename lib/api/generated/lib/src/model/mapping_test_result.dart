@@ -148,6 +148,9 @@ class MappingTestResultMappingSourceEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'proposed')
   static const MappingTestResultMappingSourceEnum proposed =
       _$mappingTestResultMappingSourceEnum_proposed;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const MappingTestResultMappingSourceEnum unknownDefaultOpenApi =
+      _$mappingTestResultMappingSourceEnum_unknownDefaultOpenApi;
 
   static Serializer<MappingTestResultMappingSourceEnum> get serializer =>
       _$mappingTestResultMappingSourceEnumSerializer;

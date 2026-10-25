@@ -335,6 +335,9 @@ class BriefingInputModeEnum extends EnumClass {
   static const BriefingInputModeEnum digest = _$briefingInputModeEnum_digest;
   @BuiltValueEnumConst(wireName: r'llm')
   static const BriefingInputModeEnum llm = _$briefingInputModeEnum_llm;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const BriefingInputModeEnum unknownDefaultOpenApi =
+      _$briefingInputModeEnum_unknownDefaultOpenApi;
 
   static Serializer<BriefingInputModeEnum> get serializer =>
       _$briefingInputModeEnumSerializer;

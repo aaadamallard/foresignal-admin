@@ -14,6 +14,8 @@ const AisGapPayloadStatusEnum _$aisGapPayloadStatusEnum_noCoverage =
     const AisGapPayloadStatusEnum._('noCoverage');
 const AisGapPayloadStatusEnum _$aisGapPayloadStatusEnum_degradedInput =
     const AisGapPayloadStatusEnum._('degradedInput');
+const AisGapPayloadStatusEnum _$aisGapPayloadStatusEnum_unknownDefaultOpenApi =
+    const AisGapPayloadStatusEnum._('unknownDefaultOpenApi');
 
 AisGapPayloadStatusEnum _$aisGapPayloadStatusEnumValueOf(String name) {
   switch (name) {
@@ -25,8 +27,10 @@ AisGapPayloadStatusEnum _$aisGapPayloadStatusEnumValueOf(String name) {
       return _$aisGapPayloadStatusEnum_noCoverage;
     case 'degradedInput':
       return _$aisGapPayloadStatusEnum_degradedInput;
+    case 'unknownDefaultOpenApi':
+      return _$aisGapPayloadStatusEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$aisGapPayloadStatusEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -36,6 +40,7 @@ final BuiltSet<AisGapPayloadStatusEnum> _$aisGapPayloadStatusEnumValues =
       _$aisGapPayloadStatusEnum_insufficientData,
       _$aisGapPayloadStatusEnum_noCoverage,
       _$aisGapPayloadStatusEnum_degradedInput,
+      _$aisGapPayloadStatusEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<AisGapPayloadStatusEnum> _$aisGapPayloadStatusEnumSerializer =
@@ -48,12 +53,14 @@ class _$AisGapPayloadStatusEnumSerializer
     'insufficientData': 'insufficient-data',
     'noCoverage': 'no-coverage',
     'degradedInput': 'degraded-input',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'ok': 'ok',
     'insufficient-data': 'insufficientData',
     'no-coverage': 'noCoverage',
     'degraded-input': 'degradedInput',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

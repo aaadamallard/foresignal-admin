@@ -239,6 +239,9 @@ class DerivedPayloadCommonStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'degraded-input')
   static const DerivedPayloadCommonStatusEnum degradedInput =
       _$derivedPayloadCommonStatusEnum_degradedInput;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const DerivedPayloadCommonStatusEnum unknownDefaultOpenApi =
+      _$derivedPayloadCommonStatusEnum_unknownDefaultOpenApi;
 
   static Serializer<DerivedPayloadCommonStatusEnum> get serializer =>
       _$derivedPayloadCommonStatusEnumSerializer;

@@ -173,6 +173,9 @@ class PrecursorSpatialRuleEnum extends EnumClass {
       _$precursorSpatialRuleEnum_sameRegion;
   @BuiltValueEnumConst(wireName: r'none')
   static const PrecursorSpatialRuleEnum none = _$precursorSpatialRuleEnum_none;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const PrecursorSpatialRuleEnum unknownDefaultOpenApi =
+      _$precursorSpatialRuleEnum_unknownDefaultOpenApi;
 
   static Serializer<PrecursorSpatialRuleEnum> get serializer =>
       _$precursorSpatialRuleEnumSerializer;
@@ -192,6 +195,9 @@ class PrecursorSpatialRegionLevelEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'admin1')
   static const PrecursorSpatialRegionLevelEnum admin1 =
       _$precursorSpatialRegionLevelEnum_admin1;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const PrecursorSpatialRegionLevelEnum unknownDefaultOpenApi =
+      _$precursorSpatialRegionLevelEnum_unknownDefaultOpenApi;
 
   static Serializer<PrecursorSpatialRegionLevelEnum> get serializer =>
       _$precursorSpatialRegionLevelEnumSerializer;

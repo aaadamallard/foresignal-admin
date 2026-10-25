@@ -324,6 +324,9 @@ class BackfillJobStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'cancelled')
   static const BackfillJobStatusEnum cancelled =
       _$backfillJobStatusEnum_cancelled;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const BackfillJobStatusEnum unknownDefaultOpenApi =
+      _$backfillJobStatusEnum_unknownDefaultOpenApi;
 
   static Serializer<BackfillJobStatusEnum> get serializer =>
       _$backfillJobStatusEnumSerializer;

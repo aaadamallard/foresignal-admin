@@ -436,6 +436,9 @@ class ApiTokenScopeEnum extends EnumClass {
   static const ApiTokenScopeEnum agent = _$apiTokenScopeEnum_agent;
   @BuiltValueEnumConst(wireName: r'admin')
   static const ApiTokenScopeEnum admin = _$apiTokenScopeEnum_admin;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ApiTokenScopeEnum unknownDefaultOpenApi =
+      _$apiTokenScopeEnum_unknownDefaultOpenApi;
 
   static Serializer<ApiTokenScopeEnum> get serializer =>
       _$apiTokenScopeEnumSerializer;
@@ -456,6 +459,9 @@ class ApiTokenCreatedViaEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'bootstrap')
   static const ApiTokenCreatedViaEnum bootstrap =
       _$apiTokenCreatedViaEnum_bootstrap;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ApiTokenCreatedViaEnum unknownDefaultOpenApi =
+      _$apiTokenCreatedViaEnum_unknownDefaultOpenApi;
 
   static Serializer<ApiTokenCreatedViaEnum> get serializer =>
       _$apiTokenCreatedViaEnumSerializer;
@@ -478,6 +484,9 @@ class ApiTokenLicencePolicyEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'redistributable')
   static const ApiTokenLicencePolicyEnum redistributable =
       _$apiTokenLicencePolicyEnum_redistributable;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ApiTokenLicencePolicyEnum unknownDefaultOpenApi =
+      _$apiTokenLicencePolicyEnum_unknownDefaultOpenApi;
 
   static Serializer<ApiTokenLicencePolicyEnum> get serializer =>
       _$apiTokenLicencePolicyEnumSerializer;

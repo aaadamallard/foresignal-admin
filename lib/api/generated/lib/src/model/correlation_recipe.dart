@@ -314,6 +314,9 @@ class CorrelationRecipeOriginEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'operator')
   static const CorrelationRecipeOriginEnum operator_ =
       _$correlationRecipeOriginEnum_operator_;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const CorrelationRecipeOriginEnum unknownDefaultOpenApi =
+      _$correlationRecipeOriginEnum_unknownDefaultOpenApi;
 
   static Serializer<CorrelationRecipeOriginEnum> get serializer =>
       _$correlationRecipeOriginEnumSerializer;

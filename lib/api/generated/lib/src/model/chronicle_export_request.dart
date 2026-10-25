@@ -198,6 +198,9 @@ class ChronicleExportRequestFormatEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'json-bundle')
   static const ChronicleExportRequestFormatEnum jsonBundle =
       _$chronicleExportRequestFormatEnum_jsonBundle;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ChronicleExportRequestFormatEnum unknownDefaultOpenApi =
+      _$chronicleExportRequestFormatEnum_unknownDefaultOpenApi;
 
   static Serializer<ChronicleExportRequestFormatEnum> get serializer =>
       _$chronicleExportRequestFormatEnumSerializer;

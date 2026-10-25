@@ -482,6 +482,9 @@ class SampleValueMethodEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'bilinear')
   static const SampleValueMethodEnum bilinear =
       _$sampleValueMethodEnum_bilinear;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const SampleValueMethodEnum unknownDefaultOpenApi =
+      _$sampleValueMethodEnum_unknownDefaultOpenApi;
 
   static Serializer<SampleValueMethodEnum> get serializer =>
       _$sampleValueMethodEnumSerializer;
@@ -505,6 +508,9 @@ class SampleValueCoverageEnum extends EnumClass {
       _$sampleValueCoverageEnum_stationDisc;
   @BuiltValueEnumConst(wireName: r'swath')
   static const SampleValueCoverageEnum swath = _$sampleValueCoverageEnum_swath;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const SampleValueCoverageEnum unknownDefaultOpenApi =
+      _$sampleValueCoverageEnum_unknownDefaultOpenApi;
 
   static Serializer<SampleValueCoverageEnum> get serializer =>
       _$sampleValueCoverageEnumSerializer;

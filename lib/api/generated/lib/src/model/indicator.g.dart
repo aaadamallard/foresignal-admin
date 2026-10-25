@@ -12,6 +12,9 @@ const IndicatorCredibilityEnum _$indicatorCredibilityEnum_M =
     const IndicatorCredibilityEnum._('M');
 const IndicatorCredibilityEnum _$indicatorCredibilityEnum_L =
     const IndicatorCredibilityEnum._('L');
+const IndicatorCredibilityEnum
+_$indicatorCredibilityEnum_unknownDefaultOpenApi =
+    const IndicatorCredibilityEnum._('unknownDefaultOpenApi');
 
 IndicatorCredibilityEnum _$indicatorCredibilityEnumValueOf(String name) {
   switch (name) {
@@ -21,8 +24,10 @@ IndicatorCredibilityEnum _$indicatorCredibilityEnumValueOf(String name) {
       return _$indicatorCredibilityEnum_M;
     case 'L':
       return _$indicatorCredibilityEnum_L;
+    case 'unknownDefaultOpenApi':
+      return _$indicatorCredibilityEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$indicatorCredibilityEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -31,6 +36,7 @@ final BuiltSet<IndicatorCredibilityEnum> _$indicatorCredibilityEnumValues =
       _$indicatorCredibilityEnum_H,
       _$indicatorCredibilityEnum_M,
       _$indicatorCredibilityEnum_L,
+      _$indicatorCredibilityEnum_unknownDefaultOpenApi,
     ]);
 
 const IndicatorRelevanceEnum _$indicatorRelevanceEnum_H =
@@ -39,6 +45,8 @@ const IndicatorRelevanceEnum _$indicatorRelevanceEnum_M =
     const IndicatorRelevanceEnum._('M');
 const IndicatorRelevanceEnum _$indicatorRelevanceEnum_L =
     const IndicatorRelevanceEnum._('L');
+const IndicatorRelevanceEnum _$indicatorRelevanceEnum_unknownDefaultOpenApi =
+    const IndicatorRelevanceEnum._('unknownDefaultOpenApi');
 
 IndicatorRelevanceEnum _$indicatorRelevanceEnumValueOf(String name) {
   switch (name) {
@@ -48,8 +56,10 @@ IndicatorRelevanceEnum _$indicatorRelevanceEnumValueOf(String name) {
       return _$indicatorRelevanceEnum_M;
     case 'L':
       return _$indicatorRelevanceEnum_L;
+    case 'unknownDefaultOpenApi':
+      return _$indicatorRelevanceEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$indicatorRelevanceEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -58,6 +68,7 @@ final BuiltSet<IndicatorRelevanceEnum> _$indicatorRelevanceEnumValues =
       _$indicatorRelevanceEnum_H,
       _$indicatorRelevanceEnum_M,
       _$indicatorRelevanceEnum_L,
+      _$indicatorRelevanceEnum_unknownDefaultOpenApi,
     ]);
 
 const IndicatorStateEnum _$indicatorStateEnum_pending =
@@ -74,6 +85,8 @@ const IndicatorStateEnum _$indicatorStateEnum_retired =
     const IndicatorStateEnum._('retired');
 const IndicatorStateEnum _$indicatorStateEnum_reported =
     const IndicatorStateEnum._('reported');
+const IndicatorStateEnum _$indicatorStateEnum_unknownDefaultOpenApi =
+    const IndicatorStateEnum._('unknownDefaultOpenApi');
 
 IndicatorStateEnum _$indicatorStateEnumValueOf(String name) {
   switch (name) {
@@ -91,8 +104,10 @@ IndicatorStateEnum _$indicatorStateEnumValueOf(String name) {
       return _$indicatorStateEnum_retired;
     case 'reported':
       return _$indicatorStateEnum_reported;
+    case 'unknownDefaultOpenApi':
+      return _$indicatorStateEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$indicatorStateEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -105,6 +120,7 @@ final BuiltSet<IndicatorStateEnum> _$indicatorStateEnumValues =
       _$indicatorStateEnum_unknownCoverage,
       _$indicatorStateEnum_retired,
       _$indicatorStateEnum_reported,
+      _$indicatorStateEnum_unknownDefaultOpenApi,
     ]);
 
 const IndicatorOriginEnum _$indicatorOriginEnum_operator_ =
@@ -113,6 +129,8 @@ const IndicatorOriginEnum _$indicatorOriginEnum_agent =
     const IndicatorOriginEnum._('agent');
 const IndicatorOriginEnum _$indicatorOriginEnum_analyst =
     const IndicatorOriginEnum._('analyst');
+const IndicatorOriginEnum _$indicatorOriginEnum_unknownDefaultOpenApi =
+    const IndicatorOriginEnum._('unknownDefaultOpenApi');
 
 IndicatorOriginEnum _$indicatorOriginEnumValueOf(String name) {
   switch (name) {
@@ -122,8 +140,10 @@ IndicatorOriginEnum _$indicatorOriginEnumValueOf(String name) {
       return _$indicatorOriginEnum_agent;
     case 'analyst':
       return _$indicatorOriginEnum_analyst;
+    case 'unknownDefaultOpenApi':
+      return _$indicatorOriginEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$indicatorOriginEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -132,6 +152,7 @@ final BuiltSet<IndicatorOriginEnum> _$indicatorOriginEnumValues =
       _$indicatorOriginEnum_operator_,
       _$indicatorOriginEnum_agent,
       _$indicatorOriginEnum_analyst,
+      _$indicatorOriginEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<IndicatorCredibilityEnum> _$indicatorCredibilityEnumSerializer =
@@ -149,11 +170,13 @@ class _$IndicatorCredibilityEnumSerializer
     'H': 'H',
     'M': 'M',
     'L': 'L',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'H': 'H',
     'M': 'M',
     'L': 'L',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -184,11 +207,13 @@ class _$IndicatorRelevanceEnumSerializer
     'H': 'H',
     'M': 'M',
     'L': 'L',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'H': 'H',
     'M': 'M',
     'L': 'L',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -223,6 +248,7 @@ class _$IndicatorStateEnumSerializer
     'unknownCoverage': 'unknown-coverage',
     'retired': 'retired',
     'reported': 'reported',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'pending': 'pending',
@@ -232,6 +258,7 @@ class _$IndicatorStateEnumSerializer
     'unknown-coverage': 'unknownCoverage',
     'retired': 'retired',
     'reported': 'reported',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -262,11 +289,13 @@ class _$IndicatorOriginEnumSerializer
     'operator_': 'operator',
     'agent': 'agent',
     'analyst': 'analyst',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'operator': 'operator_',
     'agent': 'agent',
     'analyst': 'analyst',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

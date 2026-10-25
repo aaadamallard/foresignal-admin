@@ -224,6 +224,9 @@ class DossierSectionsTimelineItemsInnerKindEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'other')
   static const DossierSectionsTimelineItemsInnerKindEnum other =
       _$dossierSectionsTimelineItemsInnerKindEnum_other;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const DossierSectionsTimelineItemsInnerKindEnum unknownDefaultOpenApi =
+      _$dossierSectionsTimelineItemsInnerKindEnum_unknownDefaultOpenApi;
 
   static Serializer<DossierSectionsTimelineItemsInnerKindEnum> get serializer =>
       _$dossierSectionsTimelineItemsInnerKindEnumSerializer;

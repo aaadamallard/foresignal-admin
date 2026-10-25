@@ -398,6 +398,9 @@ class DoctorReportLlmStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'failed')
   static const DoctorReportLlmStatusEnum failed =
       _$doctorReportLlmStatusEnum_failed;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const DoctorReportLlmStatusEnum unknownDefaultOpenApi =
+      _$doctorReportLlmStatusEnum_unknownDefaultOpenApi;
 
   static Serializer<DoctorReportLlmStatusEnum> get serializer =>
       _$doctorReportLlmStatusEnumSerializer;
@@ -417,6 +420,9 @@ class DoctorReportLlmDetailEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'full')
   static const DoctorReportLlmDetailEnum full =
       _$doctorReportLlmDetailEnum_full;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const DoctorReportLlmDetailEnum unknownDefaultOpenApi =
+      _$doctorReportLlmDetailEnum_unknownDefaultOpenApi;
 
   static Serializer<DoctorReportLlmDetailEnum> get serializer =>
       _$doctorReportLlmDetailEnumSerializer;

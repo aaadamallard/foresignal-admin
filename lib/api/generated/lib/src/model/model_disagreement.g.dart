@@ -12,6 +12,9 @@ const ModelDisagreementFieldsEnum _$modelDisagreementFieldsEnum_precip24h =
     const ModelDisagreementFieldsEnum._('precip24h');
 const ModelDisagreementFieldsEnum _$modelDisagreementFieldsEnum_t2mMax =
     const ModelDisagreementFieldsEnum._('t2mMax');
+const ModelDisagreementFieldsEnum
+_$modelDisagreementFieldsEnum_unknownDefaultOpenApi =
+    const ModelDisagreementFieldsEnum._('unknownDefaultOpenApi');
 
 ModelDisagreementFieldsEnum _$modelDisagreementFieldsEnumValueOf(String name) {
   switch (name) {
@@ -21,8 +24,10 @@ ModelDisagreementFieldsEnum _$modelDisagreementFieldsEnumValueOf(String name) {
       return _$modelDisagreementFieldsEnum_precip24h;
     case 't2mMax':
       return _$modelDisagreementFieldsEnum_t2mMax;
+    case 'unknownDefaultOpenApi':
+      return _$modelDisagreementFieldsEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$modelDisagreementFieldsEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -32,6 +37,7 @@ _$modelDisagreementFieldsEnumValues =
       _$modelDisagreementFieldsEnum_gust,
       _$modelDisagreementFieldsEnum_precip24h,
       _$modelDisagreementFieldsEnum_t2mMax,
+      _$modelDisagreementFieldsEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<ModelDisagreementFieldsEnum>
@@ -44,11 +50,13 @@ class _$ModelDisagreementFieldsEnumSerializer
     'gust': 'gust',
     'precip24h': 'precip24h',
     't2mMax': 't2mMax',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'gust': 'gust',
     'precip24h': 'precip24h',
     't2mMax': 't2mMax',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

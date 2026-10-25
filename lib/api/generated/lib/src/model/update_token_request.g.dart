@@ -15,6 +15,9 @@ _$updateTokenRequestLicencePolicyEnum_noSa =
 const UpdateTokenRequestLicencePolicyEnum
 _$updateTokenRequestLicencePolicyEnum_redistributable =
     const UpdateTokenRequestLicencePolicyEnum._('redistributable');
+const UpdateTokenRequestLicencePolicyEnum
+_$updateTokenRequestLicencePolicyEnum_unknownDefaultOpenApi =
+    const UpdateTokenRequestLicencePolicyEnum._('unknownDefaultOpenApi');
 
 UpdateTokenRequestLicencePolicyEnum
 _$updateTokenRequestLicencePolicyEnumValueOf(String name) {
@@ -25,8 +28,10 @@ _$updateTokenRequestLicencePolicyEnumValueOf(String name) {
       return _$updateTokenRequestLicencePolicyEnum_noSa;
     case 'redistributable':
       return _$updateTokenRequestLicencePolicyEnum_redistributable;
+    case 'unknownDefaultOpenApi':
+      return _$updateTokenRequestLicencePolicyEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$updateTokenRequestLicencePolicyEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -37,6 +42,7 @@ _$updateTokenRequestLicencePolicyEnumValues =
         _$updateTokenRequestLicencePolicyEnum_noNc,
         _$updateTokenRequestLicencePolicyEnum_noSa,
         _$updateTokenRequestLicencePolicyEnum_redistributable,
+        _$updateTokenRequestLicencePolicyEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -50,11 +56,13 @@ class _$UpdateTokenRequestLicencePolicyEnumSerializer
     'noNc': 'no-nc',
     'noSa': 'no-sa',
     'redistributable': 'redistributable',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'no-nc': 'noNc',
     'no-sa': 'noSa',
     'redistributable': 'redistributable',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

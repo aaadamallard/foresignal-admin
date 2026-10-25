@@ -210,6 +210,10 @@ class SocialVersusObservedNarrativesInnerStatusEnum extends EnumClass {
   static const SocialVersusObservedNarrativesInnerStatusEnum
   insufficientCoverage =
       _$socialVersusObservedNarrativesInnerStatusEnum_insufficientCoverage;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const SocialVersusObservedNarrativesInnerStatusEnum
+  unknownDefaultOpenApi =
+      _$socialVersusObservedNarrativesInnerStatusEnum_unknownDefaultOpenApi;
 
   static Serializer<SocialVersusObservedNarrativesInnerStatusEnum>
   get serializer => _$socialVersusObservedNarrativesInnerStatusEnumSerializer;

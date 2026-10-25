@@ -350,6 +350,9 @@ class PolSubjectSubjectTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'watchlist')
   static const PolSubjectSubjectTypeEnum watchlist =
       _$polSubjectSubjectTypeEnum_watchlist;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const PolSubjectSubjectTypeEnum unknownDefaultOpenApi =
+      _$polSubjectSubjectTypeEnum_unknownDefaultOpenApi;
 
   static Serializer<PolSubjectSubjectTypeEnum> get serializer =>
       _$polSubjectSubjectTypeEnumSerializer;

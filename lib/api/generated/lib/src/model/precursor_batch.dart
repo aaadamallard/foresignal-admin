@@ -445,6 +445,9 @@ class PrecursorBatchModeEnum extends EnumClass {
   static const PrecursorBatchModeEnum mine = _$precursorBatchModeEnum_mine;
   @BuiltValueEnumConst(wireName: r'retest')
   static const PrecursorBatchModeEnum retest = _$precursorBatchModeEnum_retest;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const PrecursorBatchModeEnum unknownDefaultOpenApi =
+      _$precursorBatchModeEnum_unknownDefaultOpenApi;
 
   static Serializer<PrecursorBatchModeEnum> get serializer =>
       _$precursorBatchModeEnumSerializer;
@@ -467,6 +470,9 @@ class PrecursorBatchTriggerEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'cycle')
   static const PrecursorBatchTriggerEnum cycle =
       _$precursorBatchTriggerEnum_cycle;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const PrecursorBatchTriggerEnum unknownDefaultOpenApi =
+      _$precursorBatchTriggerEnum_unknownDefaultOpenApi;
 
   static Serializer<PrecursorBatchTriggerEnum> get serializer =>
       _$precursorBatchTriggerEnumSerializer;
@@ -491,6 +497,9 @@ class PrecursorBatchStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'cancelled')
   static const PrecursorBatchStatusEnum cancelled =
       _$precursorBatchStatusEnum_cancelled;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const PrecursorBatchStatusEnum unknownDefaultOpenApi =
+      _$precursorBatchStatusEnum_unknownDefaultOpenApi;
 
   static Serializer<PrecursorBatchStatusEnum> get serializer =>
       _$precursorBatchStatusEnumSerializer;
@@ -508,6 +517,9 @@ class PrecursorBatchMethodEnum extends EnumClass {
   static const PrecursorBatchMethodEnum BH = _$precursorBatchMethodEnum_BH;
   @BuiltValueEnumConst(wireName: r'BY')
   static const PrecursorBatchMethodEnum BY = _$precursorBatchMethodEnum_BY;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const PrecursorBatchMethodEnum unknownDefaultOpenApi =
+      _$precursorBatchMethodEnum_unknownDefaultOpenApi;
 
   static Serializer<PrecursorBatchMethodEnum> get serializer =>
       _$precursorBatchMethodEnumSerializer;

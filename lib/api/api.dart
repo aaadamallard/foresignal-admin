@@ -13,4 +13,5 @@ export 'contract_version.dart';
 export 'explicit_nulls.dart';
 export 'json_calls.dart';
 export 'sse.dart';
+export 'tolerant_enums.dart';
 export 'wire_names.dart';

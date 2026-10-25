@@ -14,6 +14,8 @@ const AssessmentCadenceEnum _$assessmentCadenceEnum_monthly =
     const AssessmentCadenceEnum._('monthly');
 const AssessmentCadenceEnum _$assessmentCadenceEnum_onDemand =
     const AssessmentCadenceEnum._('onDemand');
+const AssessmentCadenceEnum _$assessmentCadenceEnum_unknownDefaultOpenApi =
+    const AssessmentCadenceEnum._('unknownDefaultOpenApi');
 
 AssessmentCadenceEnum _$assessmentCadenceEnumValueOf(String name) {
   switch (name) {
@@ -25,8 +27,10 @@ AssessmentCadenceEnum _$assessmentCadenceEnumValueOf(String name) {
       return _$assessmentCadenceEnum_monthly;
     case 'onDemand':
       return _$assessmentCadenceEnum_onDemand;
+    case 'unknownDefaultOpenApi':
+      return _$assessmentCadenceEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$assessmentCadenceEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -36,6 +40,7 @@ final BuiltSet<AssessmentCadenceEnum> _$assessmentCadenceEnumValues =
       _$assessmentCadenceEnum_weekly,
       _$assessmentCadenceEnum_monthly,
       _$assessmentCadenceEnum_onDemand,
+      _$assessmentCadenceEnum_unknownDefaultOpenApi,
     ]);
 
 const AssessmentStatusEnum _$assessmentStatusEnum_ok =
@@ -46,6 +51,8 @@ const AssessmentStatusEnum _$assessmentStatusEnum_digestOnly =
     const AssessmentStatusEnum._('digestOnly');
 const AssessmentStatusEnum _$assessmentStatusEnum_failed =
     const AssessmentStatusEnum._('failed');
+const AssessmentStatusEnum _$assessmentStatusEnum_unknownDefaultOpenApi =
+    const AssessmentStatusEnum._('unknownDefaultOpenApi');
 
 AssessmentStatusEnum _$assessmentStatusEnumValueOf(String name) {
   switch (name) {
@@ -57,8 +64,10 @@ AssessmentStatusEnum _$assessmentStatusEnumValueOf(String name) {
       return _$assessmentStatusEnum_digestOnly;
     case 'failed':
       return _$assessmentStatusEnum_failed;
+    case 'unknownDefaultOpenApi':
+      return _$assessmentStatusEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$assessmentStatusEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -68,6 +77,7 @@ final BuiltSet<AssessmentStatusEnum> _$assessmentStatusEnumValues =
       _$assessmentStatusEnum_partial,
       _$assessmentStatusEnum_digestOnly,
       _$assessmentStatusEnum_failed,
+      _$assessmentStatusEnum_unknownDefaultOpenApi,
     ]);
 
 const AssessmentEffortEnum _$assessmentEffortEnum_low =
@@ -76,6 +86,8 @@ const AssessmentEffortEnum _$assessmentEffortEnum_medium =
     const AssessmentEffortEnum._('medium');
 const AssessmentEffortEnum _$assessmentEffortEnum_high =
     const AssessmentEffortEnum._('high');
+const AssessmentEffortEnum _$assessmentEffortEnum_unknownDefaultOpenApi =
+    const AssessmentEffortEnum._('unknownDefaultOpenApi');
 
 AssessmentEffortEnum _$assessmentEffortEnumValueOf(String name) {
   switch (name) {
@@ -85,8 +97,10 @@ AssessmentEffortEnum _$assessmentEffortEnumValueOf(String name) {
       return _$assessmentEffortEnum_medium;
     case 'high':
       return _$assessmentEffortEnum_high;
+    case 'unknownDefaultOpenApi':
+      return _$assessmentEffortEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$assessmentEffortEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -95,6 +109,7 @@ final BuiltSet<AssessmentEffortEnum> _$assessmentEffortEnumValues =
       _$assessmentEffortEnum_low,
       _$assessmentEffortEnum_medium,
       _$assessmentEffortEnum_high,
+      _$assessmentEffortEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<AssessmentCadenceEnum> _$assessmentCadenceEnumSerializer =
@@ -111,12 +126,14 @@ class _$AssessmentCadenceEnumSerializer
     'weekly': 'weekly',
     'monthly': 'monthly',
     'onDemand': 'on-demand',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'daily': 'daily',
     'weekly': 'weekly',
     'monthly': 'monthly',
     'on-demand': 'onDemand',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -148,12 +165,14 @@ class _$AssessmentStatusEnumSerializer
     'partial': 'partial',
     'digestOnly': 'digest-only',
     'failed': 'failed',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'ok': 'ok',
     'partial': 'partial',
     'digest-only': 'digestOnly',
     'failed': 'failed',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -184,11 +203,13 @@ class _$AssessmentEffortEnumSerializer
     'low': 'low',
     'medium': 'medium',
     'high': 'high',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'low': 'low',
     'medium': 'medium',
     'high': 'high',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

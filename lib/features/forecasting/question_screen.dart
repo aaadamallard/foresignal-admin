@@ -644,7 +644,7 @@ class _ResolveCardState extends ConsumerState<ResolveCard> with WriteTracking<Re
           ),
         ),
         reread: () => callApiRequired(() => forecasts.getForecastQuestion(questionId: id)),
-        confirm: (got) => wireOf(got.status) == 'resolved' ? null : 'the question reads back ${wireOf(got.status)}',
+        confirm: (got) => wireOf(got.status, got, 'status') == 'resolved' ? null : 'the question reads back ${wireOf(got.status, got, 'status')}',
       ),
     );
     if (got != null && mounted) {
@@ -764,7 +764,7 @@ class _AnnulCardState extends ConsumerState<AnnulCard> with WriteTracking<AnnulC
           ),
         ),
         reread: () => callApiRequired(() => forecasts.getForecastQuestion(questionId: id)),
-        confirm: (got) => wireOf(got.status) == 'annulled' ? null : 'the question reads back ${wireOf(got.status)}',
+        confirm: (got) => wireOf(got.status, got, 'status') == 'annulled' ? null : 'the question reads back ${wireOf(got.status, got, 'status')}',
       ),
     );
     if (got != null && mounted) {

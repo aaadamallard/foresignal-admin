@@ -18,6 +18,9 @@ _$precisionComponentsInnerComponentEnum_situation =
 const PrecisionComponentsInnerComponentEnum
 _$precisionComponentsInnerComponentEnum_precursorActive =
     const PrecisionComponentsInnerComponentEnum._('precursorActive');
+const PrecisionComponentsInnerComponentEnum
+_$precisionComponentsInnerComponentEnum_unknownDefaultOpenApi =
+    const PrecisionComponentsInnerComponentEnum._('unknownDefaultOpenApi');
 
 PrecisionComponentsInnerComponentEnum
 _$precisionComponentsInnerComponentEnumValueOf(String name) {
@@ -30,8 +33,10 @@ _$precisionComponentsInnerComponentEnumValueOf(String name) {
       return _$precisionComponentsInnerComponentEnum_situation;
     case 'precursorActive':
       return _$precisionComponentsInnerComponentEnum_precursorActive;
+    case 'unknownDefaultOpenApi':
+      return _$precisionComponentsInnerComponentEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$precisionComponentsInnerComponentEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -43,6 +48,7 @@ _$precisionComponentsInnerComponentEnumValues =
         _$precisionComponentsInnerComponentEnum_intelEvent,
         _$precisionComponentsInnerComponentEnum_situation,
         _$precisionComponentsInnerComponentEnum_precursorActive,
+        _$precisionComponentsInnerComponentEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -57,12 +63,14 @@ class _$PrecisionComponentsInnerComponentEnumSerializer
     'intelEvent': 'intel-event',
     'situation': 'situation',
     'precursorActive': 'precursor-active',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'finding': 'finding',
     'intel-event': 'intelEvent',
     'situation': 'situation',
     'precursor-active': 'precursorActive',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

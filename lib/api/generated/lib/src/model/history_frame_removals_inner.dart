@@ -170,6 +170,9 @@ class HistoryFrameRemovalsInnerReasonEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'left')
   static const HistoryFrameRemovalsInnerReasonEnum left =
       _$historyFrameRemovalsInnerReasonEnum_left;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const HistoryFrameRemovalsInnerReasonEnum unknownDefaultOpenApi =
+      _$historyFrameRemovalsInnerReasonEnum_unknownDefaultOpenApi;
 
   static Serializer<HistoryFrameRemovalsInnerReasonEnum> get serializer =>
       _$historyFrameRemovalsInnerReasonEnumSerializer;

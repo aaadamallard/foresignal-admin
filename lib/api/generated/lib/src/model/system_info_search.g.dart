@@ -17,6 +17,9 @@ _$systemInfoSearchReindexStateEnum_indexing =
 const SystemInfoSearchReindexStateEnum
 _$systemInfoSearchReindexStateEnum_swapping =
     const SystemInfoSearchReindexStateEnum._('swapping');
+const SystemInfoSearchReindexStateEnum
+_$systemInfoSearchReindexStateEnum_unknownDefaultOpenApi =
+    const SystemInfoSearchReindexStateEnum._('unknownDefaultOpenApi');
 
 SystemInfoSearchReindexStateEnum _$systemInfoSearchReindexStateEnumValueOf(
   String name,
@@ -30,8 +33,10 @@ SystemInfoSearchReindexStateEnum _$systemInfoSearchReindexStateEnumValueOf(
       return _$systemInfoSearchReindexStateEnum_indexing;
     case 'swapping':
       return _$systemInfoSearchReindexStateEnum_swapping;
+    case 'unknownDefaultOpenApi':
+      return _$systemInfoSearchReindexStateEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$systemInfoSearchReindexStateEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -43,6 +48,7 @@ _$systemInfoSearchReindexStateEnumValues =
         _$systemInfoSearchReindexStateEnum_backfilling,
         _$systemInfoSearchReindexStateEnum_indexing,
         _$systemInfoSearchReindexStateEnum_swapping,
+        _$systemInfoSearchReindexStateEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -57,12 +63,14 @@ class _$SystemInfoSearchReindexStateEnumSerializer
     'backfilling': 'backfilling',
     'indexing': 'indexing',
     'swapping': 'swapping',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'idle': 'idle',
     'backfilling': 'backfilling',
     'indexing': 'indexing',
     'swapping': 'swapping',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

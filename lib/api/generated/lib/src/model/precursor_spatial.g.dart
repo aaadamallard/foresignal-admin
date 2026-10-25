@@ -14,6 +14,9 @@ const PrecursorSpatialRuleEnum _$precursorSpatialRuleEnum_sameRegion =
     const PrecursorSpatialRuleEnum._('sameRegion');
 const PrecursorSpatialRuleEnum _$precursorSpatialRuleEnum_none =
     const PrecursorSpatialRuleEnum._('none');
+const PrecursorSpatialRuleEnum
+_$precursorSpatialRuleEnum_unknownDefaultOpenApi =
+    const PrecursorSpatialRuleEnum._('unknownDefaultOpenApi');
 
 PrecursorSpatialRuleEnum _$precursorSpatialRuleEnumValueOf(String name) {
   switch (name) {
@@ -25,8 +28,10 @@ PrecursorSpatialRuleEnum _$precursorSpatialRuleEnumValueOf(String name) {
       return _$precursorSpatialRuleEnum_sameRegion;
     case 'none':
       return _$precursorSpatialRuleEnum_none;
+    case 'unknownDefaultOpenApi':
+      return _$precursorSpatialRuleEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$precursorSpatialRuleEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -36,6 +41,7 @@ final BuiltSet<PrecursorSpatialRuleEnum> _$precursorSpatialRuleEnumValues =
       _$precursorSpatialRuleEnum_withinKm,
       _$precursorSpatialRuleEnum_sameRegion,
       _$precursorSpatialRuleEnum_none,
+      _$precursorSpatialRuleEnum_unknownDefaultOpenApi,
     ]);
 
 const PrecursorSpatialRegionLevelEnum
@@ -43,6 +49,9 @@ _$precursorSpatialRegionLevelEnum_country =
     const PrecursorSpatialRegionLevelEnum._('country');
 const PrecursorSpatialRegionLevelEnum _$precursorSpatialRegionLevelEnum_admin1 =
     const PrecursorSpatialRegionLevelEnum._('admin1');
+const PrecursorSpatialRegionLevelEnum
+_$precursorSpatialRegionLevelEnum_unknownDefaultOpenApi =
+    const PrecursorSpatialRegionLevelEnum._('unknownDefaultOpenApi');
 
 PrecursorSpatialRegionLevelEnum _$precursorSpatialRegionLevelEnumValueOf(
   String name,
@@ -52,8 +61,10 @@ PrecursorSpatialRegionLevelEnum _$precursorSpatialRegionLevelEnumValueOf(
       return _$precursorSpatialRegionLevelEnum_country;
     case 'admin1':
       return _$precursorSpatialRegionLevelEnum_admin1;
+    case 'unknownDefaultOpenApi':
+      return _$precursorSpatialRegionLevelEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$precursorSpatialRegionLevelEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -63,6 +74,7 @@ _$precursorSpatialRegionLevelEnumValues =
       const <PrecursorSpatialRegionLevelEnum>[
         _$precursorSpatialRegionLevelEnum_country,
         _$precursorSpatialRegionLevelEnum_admin1,
+        _$precursorSpatialRegionLevelEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -79,12 +91,14 @@ class _$PrecursorSpatialRuleEnumSerializer
     'withinKm': 'withinKm',
     'sameRegion': 'sameRegion',
     'none': 'none',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'sameEntity': 'sameEntity',
     'withinKm': 'withinKm',
     'sameRegion': 'sameRegion',
     'none': 'none',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -114,10 +128,12 @@ class _$PrecursorSpatialRegionLevelEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'country': 'country',
     'admin1': 'admin1',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'country': 'country',
     'admin1': 'admin1',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

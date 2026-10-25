@@ -464,6 +464,9 @@ class ScorecardEntryLabelEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'insufficient')
   static const ScorecardEntryLabelEnum insufficient =
       _$scorecardEntryLabelEnum_insufficient;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ScorecardEntryLabelEnum unknownDefaultOpenApi =
+      _$scorecardEntryLabelEnum_unknownDefaultOpenApi;
 
   static Serializer<ScorecardEntryLabelEnum> get serializer =>
       _$scorecardEntryLabelEnumSerializer;

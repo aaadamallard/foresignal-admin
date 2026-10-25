@@ -318,6 +318,9 @@ class InformationValueIndicatorsInnerStateEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'reported')
   static const InformationValueIndicatorsInnerStateEnum reported =
       _$informationValueIndicatorsInnerStateEnum_reported;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const InformationValueIndicatorsInnerStateEnum unknownDefaultOpenApi =
+      _$informationValueIndicatorsInnerStateEnum_unknownDefaultOpenApi;
 
   static Serializer<InformationValueIndicatorsInnerStateEnum> get serializer =>
       _$informationValueIndicatorsInnerStateEnumSerializer;

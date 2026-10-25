@@ -15,6 +15,8 @@ const LegendTypeEnum _$legendTypeEnum_discrete = const LegendTypeEnum._(
 const LegendTypeEnum _$legendTypeEnum_categorical = const LegendTypeEnum._(
   'categorical',
 );
+const LegendTypeEnum _$legendTypeEnum_unknownDefaultOpenApi =
+    const LegendTypeEnum._('unknownDefaultOpenApi');
 
 LegendTypeEnum _$legendTypeEnumValueOf(String name) {
   switch (name) {
@@ -24,8 +26,10 @@ LegendTypeEnum _$legendTypeEnumValueOf(String name) {
       return _$legendTypeEnum_discrete;
     case 'categorical':
       return _$legendTypeEnum_categorical;
+    case 'unknownDefaultOpenApi':
+      return _$legendTypeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$legendTypeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -34,6 +38,7 @@ final BuiltSet<LegendTypeEnum> _$legendTypeEnumValues =
       _$legendTypeEnum_continuous,
       _$legendTypeEnum_discrete,
       _$legendTypeEnum_categorical,
+      _$legendTypeEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<LegendTypeEnum> _$legendTypeEnumSerializer =
@@ -45,11 +50,13 @@ class _$LegendTypeEnumSerializer
     'continuous': 'continuous',
     'discrete': 'discrete',
     'categorical': 'categorical',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'continuous': 'continuous',
     'discrete': 'discrete',
     'categorical': 'categorical',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

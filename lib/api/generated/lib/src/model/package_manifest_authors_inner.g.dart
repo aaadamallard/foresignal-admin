@@ -12,6 +12,9 @@ _$packageManifestAuthorsInnerRoleEnum_author =
 const PackageManifestAuthorsInnerRoleEnum
 _$packageManifestAuthorsInnerRoleEnum_forwarder =
     const PackageManifestAuthorsInnerRoleEnum._('forwarder');
+const PackageManifestAuthorsInnerRoleEnum
+_$packageManifestAuthorsInnerRoleEnum_unknownDefaultOpenApi =
+    const PackageManifestAuthorsInnerRoleEnum._('unknownDefaultOpenApi');
 
 PackageManifestAuthorsInnerRoleEnum
 _$packageManifestAuthorsInnerRoleEnumValueOf(String name) {
@@ -20,8 +23,10 @@ _$packageManifestAuthorsInnerRoleEnumValueOf(String name) {
       return _$packageManifestAuthorsInnerRoleEnum_author;
     case 'forwarder':
       return _$packageManifestAuthorsInnerRoleEnum_forwarder;
+    case 'unknownDefaultOpenApi':
+      return _$packageManifestAuthorsInnerRoleEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$packageManifestAuthorsInnerRoleEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -31,6 +36,7 @@ _$packageManifestAuthorsInnerRoleEnumValues =
       const <PackageManifestAuthorsInnerRoleEnum>[
         _$packageManifestAuthorsInnerRoleEnum_author,
         _$packageManifestAuthorsInnerRoleEnum_forwarder,
+        _$packageManifestAuthorsInnerRoleEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -43,10 +49,12 @@ class _$PackageManifestAuthorsInnerRoleEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'author': 'author',
     'forwarder': 'forwarder',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'author': 'author',
     'forwarder': 'forwarder',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

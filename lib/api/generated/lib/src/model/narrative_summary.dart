@@ -629,6 +629,9 @@ class NarrativeSummaryStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'insufficient-coverage')
   static const NarrativeSummaryStatusEnum insufficientCoverage =
       _$narrativeSummaryStatusEnum_insufficientCoverage;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const NarrativeSummaryStatusEnum unknownDefaultOpenApi =
+      _$narrativeSummaryStatusEnum_unknownDefaultOpenApi;
 
   static Serializer<NarrativeSummaryStatusEnum> get serializer =>
       _$narrativeSummaryStatusEnumSerializer;
@@ -655,6 +658,9 @@ class NarrativeSummaryStateEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'dormant')
   static const NarrativeSummaryStateEnum dormant =
       _$narrativeSummaryStateEnum_dormant;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const NarrativeSummaryStateEnum unknownDefaultOpenApi =
+      _$narrativeSummaryStateEnum_unknownDefaultOpenApi;
 
   static Serializer<NarrativeSummaryStateEnum> get serializer =>
       _$narrativeSummaryStateEnumSerializer;

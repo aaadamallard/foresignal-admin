@@ -349,6 +349,9 @@ class ExerciseRunCreateSpeedEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'max')
   static const ExerciseRunCreateSpeedEnum max =
       _$exerciseRunCreateSpeedEnum_max;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ExerciseRunCreateSpeedEnum unknownDefaultOpenApi =
+      _$exerciseRunCreateSpeedEnum_unknownDefaultOpenApi;
 
   static Serializer<ExerciseRunCreateSpeedEnum> get serializer =>
       _$exerciseRunCreateSpeedEnumSerializer;

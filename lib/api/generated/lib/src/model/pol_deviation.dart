@@ -312,6 +312,9 @@ class PolDeviationDeviationTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'EXPECTED_ABSENT')
   static const PolDeviationDeviationTypeEnum EXPECTED_ABSENT =
       _$polDeviationDeviationTypeEnum_EXPECTED_ABSENT;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const PolDeviationDeviationTypeEnum unknownDefaultOpenApi =
+      _$polDeviationDeviationTypeEnum_unknownDefaultOpenApi;
 
   static Serializer<PolDeviationDeviationTypeEnum> get serializer =>
       _$polDeviationDeviationTypeEnumSerializer;

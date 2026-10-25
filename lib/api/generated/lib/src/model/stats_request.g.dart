@@ -10,6 +10,8 @@ const StatsRequestUnitsEnum _$statsRequestUnitsEnum_metric =
     const StatsRequestUnitsEnum._('metric');
 const StatsRequestUnitsEnum _$statsRequestUnitsEnum_imperial =
     const StatsRequestUnitsEnum._('imperial');
+const StatsRequestUnitsEnum _$statsRequestUnitsEnum_unknownDefaultOpenApi =
+    const StatsRequestUnitsEnum._('unknownDefaultOpenApi');
 
 StatsRequestUnitsEnum _$statsRequestUnitsEnumValueOf(String name) {
   switch (name) {
@@ -17,8 +19,10 @@ StatsRequestUnitsEnum _$statsRequestUnitsEnumValueOf(String name) {
       return _$statsRequestUnitsEnum_metric;
     case 'imperial':
       return _$statsRequestUnitsEnum_imperial;
+    case 'unknownDefaultOpenApi':
+      return _$statsRequestUnitsEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$statsRequestUnitsEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -26,6 +30,7 @@ final BuiltSet<StatsRequestUnitsEnum> _$statsRequestUnitsEnumValues =
     BuiltSet<StatsRequestUnitsEnum>(const <StatsRequestUnitsEnum>[
       _$statsRequestUnitsEnum_metric,
       _$statsRequestUnitsEnum_imperial,
+      _$statsRequestUnitsEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<StatsRequestUnitsEnum> _$statsRequestUnitsEnumSerializer =
@@ -36,10 +41,12 @@ class _$StatsRequestUnitsEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'metric': 'metric',
     'imperial': 'imperial',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'metric': 'metric',
     'imperial': 'imperial',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

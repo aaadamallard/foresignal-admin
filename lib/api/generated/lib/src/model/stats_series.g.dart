@@ -18,6 +18,8 @@ const StatsSeriesMeasureEnum _$statsSeriesMeasureEnum_edges =
     const StatsSeriesMeasureEnum._('edges');
 const StatsSeriesMeasureEnum _$statsSeriesMeasureEnum_alerts =
     const StatsSeriesMeasureEnum._('alerts');
+const StatsSeriesMeasureEnum _$statsSeriesMeasureEnum_unknownDefaultOpenApi =
+    const StatsSeriesMeasureEnum._('unknownDefaultOpenApi');
 
 StatsSeriesMeasureEnum _$statsSeriesMeasureEnumValueOf(String name) {
   switch (name) {
@@ -33,8 +35,10 @@ StatsSeriesMeasureEnum _$statsSeriesMeasureEnumValueOf(String name) {
       return _$statsSeriesMeasureEnum_edges;
     case 'alerts':
       return _$statsSeriesMeasureEnum_alerts;
+    case 'unknownDefaultOpenApi':
+      return _$statsSeriesMeasureEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$statsSeriesMeasureEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -46,6 +50,7 @@ final BuiltSet<StatsSeriesMeasureEnum> _$statsSeriesMeasureEnumValues =
       _$statsSeriesMeasureEnum_tombstones,
       _$statsSeriesMeasureEnum_edges,
       _$statsSeriesMeasureEnum_alerts,
+      _$statsSeriesMeasureEnum_unknownDefaultOpenApi,
     ]);
 
 const StatsSeriesGroupByEnum _$statsSeriesGroupByEnum_none =
@@ -54,6 +59,8 @@ const StatsSeriesGroupByEnum _$statsSeriesGroupByEnum_source_ =
     const StatsSeriesGroupByEnum._('source_');
 const StatsSeriesGroupByEnum _$statsSeriesGroupByEnum_kind =
     const StatsSeriesGroupByEnum._('kind');
+const StatsSeriesGroupByEnum _$statsSeriesGroupByEnum_unknownDefaultOpenApi =
+    const StatsSeriesGroupByEnum._('unknownDefaultOpenApi');
 
 StatsSeriesGroupByEnum _$statsSeriesGroupByEnumValueOf(String name) {
   switch (name) {
@@ -63,8 +70,10 @@ StatsSeriesGroupByEnum _$statsSeriesGroupByEnumValueOf(String name) {
       return _$statsSeriesGroupByEnum_source_;
     case 'kind':
       return _$statsSeriesGroupByEnum_kind;
+    case 'unknownDefaultOpenApi':
+      return _$statsSeriesGroupByEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$statsSeriesGroupByEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -73,6 +82,7 @@ final BuiltSet<StatsSeriesGroupByEnum> _$statsSeriesGroupByEnumValues =
       _$statsSeriesGroupByEnum_none,
       _$statsSeriesGroupByEnum_source_,
       _$statsSeriesGroupByEnum_kind,
+      _$statsSeriesGroupByEnum_unknownDefaultOpenApi,
     ]);
 
 const StatsSeriesTimeFieldEnum _$statsSeriesTimeFieldEnum_ingested =
@@ -83,6 +93,9 @@ const StatsSeriesTimeFieldEnum _$statsSeriesTimeFieldEnum_observed =
     const StatsSeriesTimeFieldEnum._('observed');
 const StatsSeriesTimeFieldEnum _$statsSeriesTimeFieldEnum_event =
     const StatsSeriesTimeFieldEnum._('event');
+const StatsSeriesTimeFieldEnum
+_$statsSeriesTimeFieldEnum_unknownDefaultOpenApi =
+    const StatsSeriesTimeFieldEnum._('unknownDefaultOpenApi');
 
 StatsSeriesTimeFieldEnum _$statsSeriesTimeFieldEnumValueOf(String name) {
   switch (name) {
@@ -94,8 +107,10 @@ StatsSeriesTimeFieldEnum _$statsSeriesTimeFieldEnumValueOf(String name) {
       return _$statsSeriesTimeFieldEnum_observed;
     case 'event':
       return _$statsSeriesTimeFieldEnum_event;
+    case 'unknownDefaultOpenApi':
+      return _$statsSeriesTimeFieldEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$statsSeriesTimeFieldEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -105,6 +120,7 @@ final BuiltSet<StatsSeriesTimeFieldEnum> _$statsSeriesTimeFieldEnumValues =
       _$statsSeriesTimeFieldEnum_effective,
       _$statsSeriesTimeFieldEnum_observed,
       _$statsSeriesTimeFieldEnum_event,
+      _$statsSeriesTimeFieldEnum_unknownDefaultOpenApi,
     ]);
 
 const StatsSeriesBackendEnum _$statsSeriesBackendEnum_rollup =
@@ -113,6 +129,8 @@ const StatsSeriesBackendEnum _$statsSeriesBackendEnum_raw =
     const StatsSeriesBackendEnum._('raw');
 const StatsSeriesBackendEnum _$statsSeriesBackendEnum_mixed =
     const StatsSeriesBackendEnum._('mixed');
+const StatsSeriesBackendEnum _$statsSeriesBackendEnum_unknownDefaultOpenApi =
+    const StatsSeriesBackendEnum._('unknownDefaultOpenApi');
 
 StatsSeriesBackendEnum _$statsSeriesBackendEnumValueOf(String name) {
   switch (name) {
@@ -122,8 +140,10 @@ StatsSeriesBackendEnum _$statsSeriesBackendEnumValueOf(String name) {
       return _$statsSeriesBackendEnum_raw;
     case 'mixed':
       return _$statsSeriesBackendEnum_mixed;
+    case 'unknownDefaultOpenApi':
+      return _$statsSeriesBackendEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$statsSeriesBackendEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -132,6 +152,7 @@ final BuiltSet<StatsSeriesBackendEnum> _$statsSeriesBackendEnumValues =
       _$statsSeriesBackendEnum_rollup,
       _$statsSeriesBackendEnum_raw,
       _$statsSeriesBackendEnum_mixed,
+      _$statsSeriesBackendEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<StatsSeriesMeasureEnum> _$statsSeriesMeasureEnumSerializer =
@@ -152,6 +173,7 @@ class _$StatsSeriesMeasureEnumSerializer
     'tombstones': 'tombstones',
     'edges': 'edges',
     'alerts': 'alerts',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'versions': 'versions',
@@ -160,6 +182,7 @@ class _$StatsSeriesMeasureEnumSerializer
     'tombstones': 'tombstones',
     'edges': 'edges',
     'alerts': 'alerts',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -190,11 +213,13 @@ class _$StatsSeriesGroupByEnumSerializer
     'none': 'none',
     'source_': 'source',
     'kind': 'kind',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'none': 'none',
     'source': 'source_',
     'kind': 'kind',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -226,12 +251,14 @@ class _$StatsSeriesTimeFieldEnumSerializer
     'effective': 'effective',
     'observed': 'observed',
     'event': 'event',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'ingested': 'ingested',
     'effective': 'effective',
     'observed': 'observed',
     'event': 'event',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -262,11 +289,13 @@ class _$StatsSeriesBackendEnumSerializer
     'rollup': 'rollup',
     'raw': 'raw',
     'mixed': 'mixed',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'rollup': 'rollup',
     'raw': 'raw',
     'mixed': 'mixed',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

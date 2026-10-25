@@ -267,6 +267,9 @@ class OgcCollectionItemTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'feature')
   static const OgcCollectionItemTypeEnum feature =
       _$ogcCollectionItemTypeEnum_feature;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const OgcCollectionItemTypeEnum unknownDefaultOpenApi =
+      _$ogcCollectionItemTypeEnum_unknownDefaultOpenApi;
 
   static Serializer<OgcCollectionItemTypeEnum> get serializer =>
       _$ogcCollectionItemTypeEnumSerializer;

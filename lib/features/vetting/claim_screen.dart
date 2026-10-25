@@ -44,8 +44,8 @@ class ClaimScreen extends ConsumerWidget {
                 titleTrailing: <Widget>[
                   StatusLabel(
                     key: const Key('claim.status'),
-                    label: wireLabel(c.status),
-                    tone: vettingTone(wireOf(c.status)),
+                    label: wireLabel(c.status, c, 'status'),
+                    tone: vettingTone(wireOf(c.status, c, 'status')),
                   ),
                 ],
               ),
@@ -57,13 +57,13 @@ class ClaimScreen extends ConsumerWidget {
                   entries: <MapEntry<String, Object>>[
                     MapEntry<String, Object>(
                       'Polarity',
-                      '${wireLabel(c.polarity)}${c.hedged ? ', hedged' : ''}',
+                      '${wireLabel(c.polarity, c, 'polarity')}${c.hedged ? ', hedged' : ''}',
                     ),
                     if (c.actor case final a?) MapEntry<String, Object>('Actor', a),
                     if (c.place case final p?)
                       MapEntry<String, Object>(
                         'Place',
-                        '${p.name}${p.regionCode == null ? '' : ' (${p.regionCode})'} · ${wireLabel(p.precision)} · '
+                        '${p.name}${p.regionCode == null ? '' : ' (${p.regionCode})'} · ${wireLabel(p.precision, p, 'precision')} · '
                             '${p.confidence.toStringAsFixed(2)}',
                       ),
                     if (c.eventTime case final t?)
@@ -82,8 +82,8 @@ class ClaimScreen extends ConsumerWidget {
                         'Framing',
                         StatusLabel(
                           label:
-                              '${wireLabel(f)}${c.framingScore == null ? '' : ' ${c.framingScore!.toStringAsFixed(2)}'}',
-                          tone: framingTone(wireOf(f)),
+                              '${wireLabel(f, c, 'framingLabel')}${c.framingScore == null ? '' : ' ${c.framingScore!.toStringAsFixed(2)}'}',
+                          tone: framingTone(wireOf(f, c, 'framingLabel')),
                         ),
                       ),
                     if (c.entityRefs case final refs? when refs.isNotEmpty)
@@ -115,7 +115,7 @@ class ClaimScreen extends ConsumerWidget {
                 key: const Key('claim.grade'),
                 title: 'Source grade ${c.grade}',
                 subtitle:
-                    'Admiralty grading: source reliability ${wireOf(c.sourceReliability)}, information '
+                    'Admiralty grading: source reliability ${wireOf(c.sourceReliability, c, 'sourceReliability')}, information '
                     'credibility ${c.informationCredibility}.',
                 child: c.reputation == null
                     ? Text(
@@ -177,7 +177,7 @@ class _ComparisonCard extends StatelessWidget {
         children: <Widget>[
           Row(
             children: <Widget>[
-              StatusLabel(label: wireLabel(s.status), tone: vettingTone(wireOf(s.status))),
+              StatusLabel(label: wireLabel(s.status, s, 'status'), tone: vettingTone(wireOf(s.status, s, 'status'))),
               const SizedBox(width: 12),
               Expanded(
                 child: Text(
@@ -203,8 +203,8 @@ class _ComparisonCard extends StatelessWidget {
                     'official ${leadText(l.leadOverOfficialSeconds)}',
               ),
               if (s.contradiction case final x?)
-                MapEntry<String, Object>('Contradicted by', '${wireLabel(x.reason)} · ${x.ref}'),
-              MapEntry<String, Object>('Found by', wireLabel(s.foundBy)),
+                MapEntry<String, Object>('Contradicted by', '${wireLabel(x.reason, x, 'reason')} · ${x.ref}'),
+              MapEntry<String, Object>('Found by', wireLabel(s.foundBy, s, 'foundBy')),
             ],
           ),
           if (s.physicalEvidence.isNotEmpty) ...<Widget>[

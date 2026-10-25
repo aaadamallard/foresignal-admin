@@ -147,6 +147,9 @@ class DossierCoverageStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'unavailable')
   static const DossierCoverageStatusEnum unavailable =
       _$dossierCoverageStatusEnum_unavailable;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const DossierCoverageStatusEnum unknownDefaultOpenApi =
+      _$dossierCoverageStatusEnum_unknownDefaultOpenApi;
 
   static Serializer<DossierCoverageStatusEnum> get serializer =>
       _$dossierCoverageStatusEnumSerializer;

@@ -10,6 +10,9 @@ const DigestHealthItemStatusEnum _$digestHealthItemStatusEnum_degraded =
     const DigestHealthItemStatusEnum._('degraded');
 const DigestHealthItemStatusEnum _$digestHealthItemStatusEnum_failing =
     const DigestHealthItemStatusEnum._('failing');
+const DigestHealthItemStatusEnum
+_$digestHealthItemStatusEnum_unknownDefaultOpenApi =
+    const DigestHealthItemStatusEnum._('unknownDefaultOpenApi');
 
 DigestHealthItemStatusEnum _$digestHealthItemStatusEnumValueOf(String name) {
   switch (name) {
@@ -17,8 +20,10 @@ DigestHealthItemStatusEnum _$digestHealthItemStatusEnumValueOf(String name) {
       return _$digestHealthItemStatusEnum_degraded;
     case 'failing':
       return _$digestHealthItemStatusEnum_failing;
+    case 'unknownDefaultOpenApi':
+      return _$digestHealthItemStatusEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$digestHealthItemStatusEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -26,6 +31,7 @@ final BuiltSet<DigestHealthItemStatusEnum> _$digestHealthItemStatusEnumValues =
     BuiltSet<DigestHealthItemStatusEnum>(const <DigestHealthItemStatusEnum>[
       _$digestHealthItemStatusEnum_degraded,
       _$digestHealthItemStatusEnum_failing,
+      _$digestHealthItemStatusEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<DigestHealthItemStatusEnum> _$digestHealthItemStatusEnumSerializer =
@@ -36,10 +42,12 @@ class _$DigestHealthItemStatusEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'degraded': 'degraded',
     'failing': 'failing',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'degraded': 'degraded',
     'failing': 'failing',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

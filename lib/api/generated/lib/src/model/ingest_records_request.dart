@@ -102,6 +102,9 @@ class IngestRecordsRequestTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'FeatureCollection')
   static const IngestRecordsRequestTypeEnum featureCollection =
       _$ingestRecordsRequestTypeEnum_featureCollection;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const IngestRecordsRequestTypeEnum unknownDefaultOpenApi =
+      _$ingestRecordsRequestTypeEnum_unknownDefaultOpenApi;
 
   static Serializer<IngestRecordsRequestTypeEnum> get serializer =>
       _$ingestRecordsRequestTypeEnumSerializer;

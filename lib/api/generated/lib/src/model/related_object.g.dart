@@ -10,6 +10,9 @@ const RelatedObjectDirectionEnum _$relatedObjectDirectionEnum_out_ =
     const RelatedObjectDirectionEnum._('out_');
 const RelatedObjectDirectionEnum _$relatedObjectDirectionEnum_in_ =
     const RelatedObjectDirectionEnum._('in_');
+const RelatedObjectDirectionEnum
+_$relatedObjectDirectionEnum_unknownDefaultOpenApi =
+    const RelatedObjectDirectionEnum._('unknownDefaultOpenApi');
 
 RelatedObjectDirectionEnum _$relatedObjectDirectionEnumValueOf(String name) {
   switch (name) {
@@ -17,8 +20,10 @@ RelatedObjectDirectionEnum _$relatedObjectDirectionEnumValueOf(String name) {
       return _$relatedObjectDirectionEnum_out_;
     case 'in_':
       return _$relatedObjectDirectionEnum_in_;
+    case 'unknownDefaultOpenApi':
+      return _$relatedObjectDirectionEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$relatedObjectDirectionEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -26,6 +31,7 @@ final BuiltSet<RelatedObjectDirectionEnum> _$relatedObjectDirectionEnumValues =
     BuiltSet<RelatedObjectDirectionEnum>(const <RelatedObjectDirectionEnum>[
       _$relatedObjectDirectionEnum_out_,
       _$relatedObjectDirectionEnum_in_,
+      _$relatedObjectDirectionEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<RelatedObjectDirectionEnum> _$relatedObjectDirectionEnumSerializer =
@@ -36,10 +42,12 @@ class _$RelatedObjectDirectionEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'out_': 'out',
     'in_': 'in',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'out': 'out_',
     'in': 'in_',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

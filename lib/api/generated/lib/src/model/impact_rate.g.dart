@@ -12,6 +12,8 @@ const ImpactRateSource_Enum _$impactRateSourceEnum_referenceImport =
     const ImpactRateSource_Enum._('referenceImport');
 const ImpactRateSource_Enum _$impactRateSourceEnum_mixed =
     const ImpactRateSource_Enum._('mixed');
+const ImpactRateSource_Enum _$impactRateSourceEnum_unknownDefaultOpenApi =
+    const ImpactRateSource_Enum._('unknownDefaultOpenApi');
 
 ImpactRateSource_Enum _$impactRateSourceEnumValueOf(String name) {
   switch (name) {
@@ -21,8 +23,10 @@ ImpactRateSource_Enum _$impactRateSourceEnumValueOf(String name) {
       return _$impactRateSourceEnum_referenceImport;
     case 'mixed':
       return _$impactRateSourceEnum_mixed;
+    case 'unknownDefaultOpenApi':
+      return _$impactRateSourceEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$impactRateSourceEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -31,12 +35,15 @@ final BuiltSet<ImpactRateSource_Enum> _$impactRateSourceEnumValues =
       _$impactRateSourceEnum_ownHistory,
       _$impactRateSourceEnum_referenceImport,
       _$impactRateSourceEnum_mixed,
+      _$impactRateSourceEnum_unknownDefaultOpenApi,
     ]);
 
 const ImpactRateStatusEnum _$impactRateStatusEnum_ok =
     const ImpactRateStatusEnum._('ok');
 const ImpactRateStatusEnum _$impactRateStatusEnum_insufficient =
     const ImpactRateStatusEnum._('insufficient');
+const ImpactRateStatusEnum _$impactRateStatusEnum_unknownDefaultOpenApi =
+    const ImpactRateStatusEnum._('unknownDefaultOpenApi');
 
 ImpactRateStatusEnum _$impactRateStatusEnumValueOf(String name) {
   switch (name) {
@@ -44,8 +51,10 @@ ImpactRateStatusEnum _$impactRateStatusEnumValueOf(String name) {
       return _$impactRateStatusEnum_ok;
     case 'insufficient':
       return _$impactRateStatusEnum_insufficient;
+    case 'unknownDefaultOpenApi':
+      return _$impactRateStatusEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$impactRateStatusEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -53,6 +62,7 @@ final BuiltSet<ImpactRateStatusEnum> _$impactRateStatusEnumValues =
     BuiltSet<ImpactRateStatusEnum>(const <ImpactRateStatusEnum>[
       _$impactRateStatusEnum_ok,
       _$impactRateStatusEnum_insufficient,
+      _$impactRateStatusEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<ImpactRateSource_Enum> _$impactRateSourceEnumSerializer =
@@ -66,11 +76,13 @@ class _$ImpactRateSource_EnumSerializer
     'ownHistory': 'own-history',
     'referenceImport': 'reference-import',
     'mixed': 'mixed',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'own-history': 'ownHistory',
     'reference-import': 'referenceImport',
     'mixed': 'mixed',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -100,10 +112,12 @@ class _$ImpactRateStatusEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'ok': 'ok',
     'insufficient': 'insufficient',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'ok': 'ok',
     'insufficient': 'insufficient',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

@@ -12,6 +12,9 @@ _$externalQuestionLinkOrientationEnum_same =
 const ExternalQuestionLinkOrientationEnum
 _$externalQuestionLinkOrientationEnum_inverse =
     const ExternalQuestionLinkOrientationEnum._('inverse');
+const ExternalQuestionLinkOrientationEnum
+_$externalQuestionLinkOrientationEnum_unknownDefaultOpenApi =
+    const ExternalQuestionLinkOrientationEnum._('unknownDefaultOpenApi');
 
 ExternalQuestionLinkOrientationEnum
 _$externalQuestionLinkOrientationEnumValueOf(String name) {
@@ -20,8 +23,10 @@ _$externalQuestionLinkOrientationEnumValueOf(String name) {
       return _$externalQuestionLinkOrientationEnum_same;
     case 'inverse':
       return _$externalQuestionLinkOrientationEnum_inverse;
+    case 'unknownDefaultOpenApi':
+      return _$externalQuestionLinkOrientationEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$externalQuestionLinkOrientationEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -31,6 +36,7 @@ _$externalQuestionLinkOrientationEnumValues =
       const <ExternalQuestionLinkOrientationEnum>[
         _$externalQuestionLinkOrientationEnum_same,
         _$externalQuestionLinkOrientationEnum_inverse,
+        _$externalQuestionLinkOrientationEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -43,10 +49,12 @@ class _$ExternalQuestionLinkOrientationEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'same': 'same',
     'inverse': 'inverse',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'same': 'same',
     'inverse': 'inverse',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

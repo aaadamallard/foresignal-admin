@@ -14,6 +14,9 @@ const ChronicleExportRequestFormatEnum _$chronicleExportRequestFormatEnum_gpkg =
 const ChronicleExportRequestFormatEnum
 _$chronicleExportRequestFormatEnum_jsonBundle =
     const ChronicleExportRequestFormatEnum._('jsonBundle');
+const ChronicleExportRequestFormatEnum
+_$chronicleExportRequestFormatEnum_unknownDefaultOpenApi =
+    const ChronicleExportRequestFormatEnum._('unknownDefaultOpenApi');
 
 ChronicleExportRequestFormatEnum _$chronicleExportRequestFormatEnumValueOf(
   String name,
@@ -25,8 +28,10 @@ ChronicleExportRequestFormatEnum _$chronicleExportRequestFormatEnumValueOf(
       return _$chronicleExportRequestFormatEnum_gpkg;
     case 'jsonBundle':
       return _$chronicleExportRequestFormatEnum_jsonBundle;
+    case 'unknownDefaultOpenApi':
+      return _$chronicleExportRequestFormatEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$chronicleExportRequestFormatEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -37,6 +42,7 @@ _$chronicleExportRequestFormatEnumValues =
         _$chronicleExportRequestFormatEnum_geoparquet,
         _$chronicleExportRequestFormatEnum_gpkg,
         _$chronicleExportRequestFormatEnum_jsonBundle,
+        _$chronicleExportRequestFormatEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -50,11 +56,13 @@ class _$ChronicleExportRequestFormatEnumSerializer
     'geoparquet': 'geoparquet',
     'gpkg': 'gpkg',
     'jsonBundle': 'json-bundle',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'geoparquet': 'geoparquet',
     'gpkg': 'gpkg',
     'json-bundle': 'jsonBundle',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

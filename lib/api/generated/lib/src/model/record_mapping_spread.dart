@@ -179,6 +179,9 @@ class RecordMappingSpreadTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'boolean')
   static const RecordMappingSpreadTypeEnum boolean =
       _$recordMappingSpreadTypeEnum_boolean;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const RecordMappingSpreadTypeEnum unknownDefaultOpenApi =
+      _$recordMappingSpreadTypeEnum_unknownDefaultOpenApi;
 
   static Serializer<RecordMappingSpreadTypeEnum> get serializer =>
       _$recordMappingSpreadTypeEnumSerializer;

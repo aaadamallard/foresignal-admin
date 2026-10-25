@@ -24,6 +24,8 @@ const AskActionTypeEnum _$askActionTypeEnum_setAlertFeedback =
     const AskActionTypeEnum._('setAlertFeedback');
 const AskActionTypeEnum _$askActionTypeEnum_applyTuningSuggestion =
     const AskActionTypeEnum._('applyTuningSuggestion');
+const AskActionTypeEnum _$askActionTypeEnum_unknownDefaultOpenApi =
+    const AskActionTypeEnum._('unknownDefaultOpenApi');
 
 AskActionTypeEnum _$askActionTypeEnumValueOf(String name) {
   switch (name) {
@@ -45,8 +47,10 @@ AskActionTypeEnum _$askActionTypeEnumValueOf(String name) {
       return _$askActionTypeEnum_setAlertFeedback;
     case 'applyTuningSuggestion':
       return _$askActionTypeEnum_applyTuningSuggestion;
+    case 'unknownDefaultOpenApi':
+      return _$askActionTypeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$askActionTypeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -61,6 +65,7 @@ final BuiltSet<AskActionTypeEnum> _$askActionTypeEnumValues =
       _$askActionTypeEnum_createView,
       _$askActionTypeEnum_setAlertFeedback,
       _$askActionTypeEnum_applyTuningSuggestion,
+      _$askActionTypeEnum_unknownDefaultOpenApi,
     ]);
 
 const AskActionStatusEnum _$askActionStatusEnum_pending =
@@ -71,6 +76,8 @@ const AskActionStatusEnum _$askActionStatusEnum_rejected =
     const AskActionStatusEnum._('rejected');
 const AskActionStatusEnum _$askActionStatusEnum_failed =
     const AskActionStatusEnum._('failed');
+const AskActionStatusEnum _$askActionStatusEnum_unknownDefaultOpenApi =
+    const AskActionStatusEnum._('unknownDefaultOpenApi');
 
 AskActionStatusEnum _$askActionStatusEnumValueOf(String name) {
   switch (name) {
@@ -82,8 +89,10 @@ AskActionStatusEnum _$askActionStatusEnumValueOf(String name) {
       return _$askActionStatusEnum_rejected;
     case 'failed':
       return _$askActionStatusEnum_failed;
+    case 'unknownDefaultOpenApi':
+      return _$askActionStatusEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$askActionStatusEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -93,6 +102,7 @@ final BuiltSet<AskActionStatusEnum> _$askActionStatusEnumValues =
       _$askActionStatusEnum_executed,
       _$askActionStatusEnum_rejected,
       _$askActionStatusEnum_failed,
+      _$askActionStatusEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<AskActionTypeEnum> _$askActionTypeEnumSerializer =
@@ -112,6 +122,7 @@ class _$AskActionTypeEnumSerializer
     'createView': 'create_view',
     'setAlertFeedback': 'set_alert_feedback',
     'applyTuningSuggestion': 'apply_tuning_suggestion',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'create_watch': 'createWatch',
@@ -123,6 +134,7 @@ class _$AskActionTypeEnumSerializer
     'create_view': 'createView',
     'set_alert_feedback': 'setAlertFeedback',
     'apply_tuning_suggestion': 'applyTuningSuggestion',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -154,12 +166,14 @@ class _$AskActionStatusEnumSerializer
     'executed': 'executed',
     'rejected': 'rejected',
     'failed': 'failed',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'pending': 'pending',
     'executed': 'executed',
     'rejected': 'rejected',
     'failed': 'failed',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

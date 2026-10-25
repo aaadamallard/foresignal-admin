@@ -474,6 +474,9 @@ class EdpDocumentItemTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'document')
   static const EdpDocumentItemTypeEnum document =
       _$edpDocumentItemTypeEnum_document;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const EdpDocumentItemTypeEnum unknownDefaultOpenApi =
+      _$edpDocumentItemTypeEnum_unknownDefaultOpenApi;
 
   static Serializer<EdpDocumentItemTypeEnum> get serializer =>
       _$edpDocumentItemTypeEnumSerializer;
@@ -502,6 +505,9 @@ class EdpDocumentItemDocumentTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'note')
   static const EdpDocumentItemDocumentTypeEnum note =
       _$edpDocumentItemDocumentTypeEnum_note;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const EdpDocumentItemDocumentTypeEnum unknownDefaultOpenApi =
+      _$edpDocumentItemDocumentTypeEnum_unknownDefaultOpenApi;
 
   static Serializer<EdpDocumentItemDocumentTypeEnum> get serializer =>
       _$edpDocumentItemDocumentTypeEnumSerializer;

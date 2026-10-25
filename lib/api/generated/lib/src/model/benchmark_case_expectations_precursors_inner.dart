@@ -222,6 +222,10 @@ class BenchmarkCaseExpectationsPrecursorsInnerExpectedEnum extends EnumClass {
   static const BenchmarkCaseExpectationsPrecursorsInnerExpectedEnum
   notValidated =
       _$benchmarkCaseExpectationsPrecursorsInnerExpectedEnum_notValidated;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const BenchmarkCaseExpectationsPrecursorsInnerExpectedEnum
+  unknownDefaultOpenApi =
+      _$benchmarkCaseExpectationsPrecursorsInnerExpectedEnum_unknownDefaultOpenApi;
 
   static Serializer<BenchmarkCaseExpectationsPrecursorsInnerExpectedEnum>
   get serializer =>

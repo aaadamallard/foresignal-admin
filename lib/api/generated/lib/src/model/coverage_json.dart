@@ -236,6 +236,9 @@ class CoverageJsonTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'CoverageCollection')
   static const CoverageJsonTypeEnum coverageCollection =
       _$coverageJsonTypeEnum_coverageCollection;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const CoverageJsonTypeEnum unknownDefaultOpenApi =
+      _$coverageJsonTypeEnum_unknownDefaultOpenApi;
 
   static Serializer<CoverageJsonTypeEnum> get serializer =>
       _$coverageJsonTypeEnumSerializer;

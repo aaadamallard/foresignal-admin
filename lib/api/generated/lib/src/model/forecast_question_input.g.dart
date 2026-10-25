@@ -14,6 +14,9 @@ const ForecastQuestionInputTypeEnum _$forecastQuestionInputTypeEnum_ordered =
     const ForecastQuestionInputTypeEnum._('ordered');
 const ForecastQuestionInputTypeEnum _$forecastQuestionInputTypeEnum_numeric =
     const ForecastQuestionInputTypeEnum._('numeric');
+const ForecastQuestionInputTypeEnum
+_$forecastQuestionInputTypeEnum_unknownDefaultOpenApi =
+    const ForecastQuestionInputTypeEnum._('unknownDefaultOpenApi');
 
 ForecastQuestionInputTypeEnum _$forecastQuestionInputTypeEnumValueOf(
   String name,
@@ -27,8 +30,10 @@ ForecastQuestionInputTypeEnum _$forecastQuestionInputTypeEnumValueOf(
       return _$forecastQuestionInputTypeEnum_ordered;
     case 'numeric':
       return _$forecastQuestionInputTypeEnum_numeric;
+    case 'unknownDefaultOpenApi':
+      return _$forecastQuestionInputTypeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$forecastQuestionInputTypeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -39,6 +44,7 @@ _$forecastQuestionInputTypeEnumValues = BuiltSet<ForecastQuestionInputTypeEnum>(
     _$forecastQuestionInputTypeEnum_multiple,
     _$forecastQuestionInputTypeEnum_ordered,
     _$forecastQuestionInputTypeEnum_numeric,
+    _$forecastQuestionInputTypeEnum_unknownDefaultOpenApi,
   ],
 );
 
@@ -53,12 +59,14 @@ class _$ForecastQuestionInputTypeEnumSerializer
     'multiple': 'multiple',
     'ordered': 'ordered',
     'numeric': 'numeric',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'binary': 'binary',
     'multiple': 'multiple',
     'ordered': 'ordered',
     'numeric': 'numeric',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

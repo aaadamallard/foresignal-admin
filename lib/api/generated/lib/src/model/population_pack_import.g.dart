@@ -9,6 +9,9 @@ part of 'population_pack_import.dart';
 const PopulationPackImportLicenceEnum
 _$populationPackImportLicenceEnum_cCBY4Period0 =
     const PopulationPackImportLicenceEnum._('cCBY4Period0');
+const PopulationPackImportLicenceEnum
+_$populationPackImportLicenceEnum_unknownDefaultOpenApi =
+    const PopulationPackImportLicenceEnum._('unknownDefaultOpenApi');
 
 PopulationPackImportLicenceEnum _$populationPackImportLicenceEnumValueOf(
   String name,
@@ -16,8 +19,10 @@ PopulationPackImportLicenceEnum _$populationPackImportLicenceEnumValueOf(
   switch (name) {
     case 'cCBY4Period0':
       return _$populationPackImportLicenceEnum_cCBY4Period0;
+    case 'unknownDefaultOpenApi':
+      return _$populationPackImportLicenceEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$populationPackImportLicenceEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -26,6 +31,7 @@ _$populationPackImportLicenceEnumValues =
     BuiltSet<PopulationPackImportLicenceEnum>(
       const <PopulationPackImportLicenceEnum>[
         _$populationPackImportLicenceEnum_cCBY4Period0,
+        _$populationPackImportLicenceEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -37,9 +43,11 @@ class _$PopulationPackImportLicenceEnumSerializer
     implements PrimitiveSerializer<PopulationPackImportLicenceEnum> {
   static const Map<String, Object> _toWire = const <String, Object>{
     'cCBY4Period0': 'CC-BY-4.0',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'CC-BY-4.0': 'cCBY4Period0',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

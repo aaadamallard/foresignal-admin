@@ -14,6 +14,9 @@ const ReferenceDatasetStateEnum _$referenceDatasetStateEnum_loaded =
     const ReferenceDatasetStateEnum._('loaded');
 const ReferenceDatasetStateEnum _$referenceDatasetStateEnum_failed =
     const ReferenceDatasetStateEnum._('failed');
+const ReferenceDatasetStateEnum
+_$referenceDatasetStateEnum_unknownDefaultOpenApi =
+    const ReferenceDatasetStateEnum._('unknownDefaultOpenApi');
 
 ReferenceDatasetStateEnum _$referenceDatasetStateEnumValueOf(String name) {
   switch (name) {
@@ -25,8 +28,10 @@ ReferenceDatasetStateEnum _$referenceDatasetStateEnumValueOf(String name) {
       return _$referenceDatasetStateEnum_loaded;
     case 'failed':
       return _$referenceDatasetStateEnum_failed;
+    case 'unknownDefaultOpenApi':
+      return _$referenceDatasetStateEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$referenceDatasetStateEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -36,6 +41,7 @@ final BuiltSet<ReferenceDatasetStateEnum> _$referenceDatasetStateEnumValues =
       _$referenceDatasetStateEnum_loading,
       _$referenceDatasetStateEnum_loaded,
       _$referenceDatasetStateEnum_failed,
+      _$referenceDatasetStateEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<ReferenceDatasetStateEnum> _$referenceDatasetStateEnumSerializer =
@@ -48,12 +54,14 @@ class _$ReferenceDatasetStateEnumSerializer
     'loading': 'loading',
     'loaded': 'loaded',
     'failed': 'failed',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'absent': 'absent',
     'loading': 'loading',
     'loaded': 'loaded',
     'failed': 'failed',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

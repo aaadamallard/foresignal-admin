@@ -10,6 +10,9 @@ const PrecursorEventPrecursorKindEnum _$precursorEventPrecursorKindEnum_event =
     const PrecursorEventPrecursorKindEnum._('event');
 const PrecursorEventPrecursorKindEnum _$precursorEventPrecursorKindEnum_series =
     const PrecursorEventPrecursorKindEnum._('series');
+const PrecursorEventPrecursorKindEnum
+_$precursorEventPrecursorKindEnum_unknownDefaultOpenApi =
+    const PrecursorEventPrecursorKindEnum._('unknownDefaultOpenApi');
 
 PrecursorEventPrecursorKindEnum _$precursorEventPrecursorKindEnumValueOf(
   String name,
@@ -19,8 +22,10 @@ PrecursorEventPrecursorKindEnum _$precursorEventPrecursorKindEnumValueOf(
       return _$precursorEventPrecursorKindEnum_event;
     case 'series':
       return _$precursorEventPrecursorKindEnum_series;
+    case 'unknownDefaultOpenApi':
+      return _$precursorEventPrecursorKindEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$precursorEventPrecursorKindEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -30,6 +35,7 @@ _$precursorEventPrecursorKindEnumValues =
       const <PrecursorEventPrecursorKindEnum>[
         _$precursorEventPrecursorKindEnum_event,
         _$precursorEventPrecursorKindEnum_series,
+        _$precursorEventPrecursorKindEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -45,6 +51,9 @@ _$precursorEventPrecursorStatusEnum_stale =
 const PrecursorEventPrecursorStatusEnum
 _$precursorEventPrecursorStatusEnum_retired =
     const PrecursorEventPrecursorStatusEnum._('retired');
+const PrecursorEventPrecursorStatusEnum
+_$precursorEventPrecursorStatusEnum_unknownDefaultOpenApi =
+    const PrecursorEventPrecursorStatusEnum._('unknownDefaultOpenApi');
 
 PrecursorEventPrecursorStatusEnum _$precursorEventPrecursorStatusEnumValueOf(
   String name,
@@ -58,8 +67,10 @@ PrecursorEventPrecursorStatusEnum _$precursorEventPrecursorStatusEnumValueOf(
       return _$precursorEventPrecursorStatusEnum_stale;
     case 'retired':
       return _$precursorEventPrecursorStatusEnum_retired;
+    case 'unknownDefaultOpenApi':
+      return _$precursorEventPrecursorStatusEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$precursorEventPrecursorStatusEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -71,6 +82,7 @@ _$precursorEventPrecursorStatusEnumValues =
         _$precursorEventPrecursorStatusEnum_validated,
         _$precursorEventPrecursorStatusEnum_stale,
         _$precursorEventPrecursorStatusEnum_retired,
+        _$precursorEventPrecursorStatusEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -86,10 +98,12 @@ class _$PrecursorEventPrecursorKindEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'event': 'event',
     'series': 'series',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'event': 'event',
     'series': 'series',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -121,12 +135,14 @@ class _$PrecursorEventPrecursorStatusEnumSerializer
     'validated': 'validated',
     'stale': 'stale',
     'retired': 'retired',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'candidate': 'candidate',
     'validated': 'validated',
     'stale': 'stale',
     'retired': 'retired',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

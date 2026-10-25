@@ -304,6 +304,9 @@ class EntityKeyRoleEnum extends EnumClass {
   static const EntityKeyRoleEnum ANCHOR = _$entityKeyRoleEnum_ANCHOR;
   @BuiltValueEnumConst(wireName: r'WEAK')
   static const EntityKeyRoleEnum WEAK = _$entityKeyRoleEnum_WEAK;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const EntityKeyRoleEnum unknownDefaultOpenApi =
+      _$entityKeyRoleEnum_unknownDefaultOpenApi;
 
   static Serializer<EntityKeyRoleEnum> get serializer =>
       _$entityKeyRoleEnumSerializer;
@@ -325,6 +328,9 @@ class EntityKeyOriginEnum extends EnumClass {
   static const EntityKeyOriginEnum OBSERVED = _$entityKeyOriginEnum_OBSERVED;
   @BuiltValueEnumConst(wireName: r'OPERATOR')
   static const EntityKeyOriginEnum OPERATOR = _$entityKeyOriginEnum_OPERATOR;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const EntityKeyOriginEnum unknownDefaultOpenApi =
+      _$entityKeyOriginEnum_unknownDefaultOpenApi;
 
   static Serializer<EntityKeyOriginEnum> get serializer =>
       _$entityKeyOriginEnumSerializer;

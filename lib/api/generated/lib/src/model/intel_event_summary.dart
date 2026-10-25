@@ -578,6 +578,9 @@ class IntelEventSummaryTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'custom')
   static const IntelEventSummaryTypeEnum custom =
       _$intelEventSummaryTypeEnum_custom;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const IntelEventSummaryTypeEnum unknownDefaultOpenApi =
+      _$intelEventSummaryTypeEnum_unknownDefaultOpenApi;
 
   static Serializer<IntelEventSummaryTypeEnum> get serializer =>
       _$intelEventSummaryTypeEnumSerializer;
@@ -603,6 +606,9 @@ class IntelEventSummaryStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'dismissed')
   static const IntelEventSummaryStatusEnum dismissed =
       _$intelEventSummaryStatusEnum_dismissed;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const IntelEventSummaryStatusEnum unknownDefaultOpenApi =
+      _$intelEventSummaryStatusEnum_unknownDefaultOpenApi;
 
   static Serializer<IntelEventSummaryStatusEnum> get serializer =>
       _$intelEventSummaryStatusEnumSerializer;
@@ -626,6 +632,9 @@ class IntelEventSummaryConfidenceLabelEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'high')
   static const IntelEventSummaryConfidenceLabelEnum high =
       _$intelEventSummaryConfidenceLabelEnum_high;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const IntelEventSummaryConfidenceLabelEnum unknownDefaultOpenApi =
+      _$intelEventSummaryConfidenceLabelEnum_unknownDefaultOpenApi;
 
   static Serializer<IntelEventSummaryConfidenceLabelEnum> get serializer =>
       _$intelEventSummaryConfidenceLabelEnumSerializer;
@@ -651,6 +660,9 @@ class IntelEventSummaryEvidenceQualityEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'insufficient')
   static const IntelEventSummaryEvidenceQualityEnum insufficient =
       _$intelEventSummaryEvidenceQualityEnum_insufficient;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const IntelEventSummaryEvidenceQualityEnum unknownDefaultOpenApi =
+      _$intelEventSummaryEvidenceQualityEnum_unknownDefaultOpenApi;
 
   static Serializer<IntelEventSummaryEvidenceQualityEnum> get serializer =>
       _$intelEventSummaryEvidenceQualityEnumSerializer;
@@ -676,6 +688,9 @@ class IntelEventSummaryOriginEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'operator')
   static const IntelEventSummaryOriginEnum operator_ =
       _$intelEventSummaryOriginEnum_operator_;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const IntelEventSummaryOriginEnum unknownDefaultOpenApi =
+      _$intelEventSummaryOriginEnum_unknownDefaultOpenApi;
 
   static Serializer<IntelEventSummaryOriginEnum> get serializer =>
       _$intelEventSummaryOriginEnumSerializer;

@@ -15,6 +15,9 @@ _$glanceAlertsLatestInnerSeverityEnum_warning =
 const GlanceAlertsLatestInnerSeverityEnum
 _$glanceAlertsLatestInnerSeverityEnum_critical =
     const GlanceAlertsLatestInnerSeverityEnum._('critical');
+const GlanceAlertsLatestInnerSeverityEnum
+_$glanceAlertsLatestInnerSeverityEnum_unknownDefaultOpenApi =
+    const GlanceAlertsLatestInnerSeverityEnum._('unknownDefaultOpenApi');
 
 GlanceAlertsLatestInnerSeverityEnum
 _$glanceAlertsLatestInnerSeverityEnumValueOf(String name) {
@@ -25,8 +28,10 @@ _$glanceAlertsLatestInnerSeverityEnumValueOf(String name) {
       return _$glanceAlertsLatestInnerSeverityEnum_warning;
     case 'critical':
       return _$glanceAlertsLatestInnerSeverityEnum_critical;
+    case 'unknownDefaultOpenApi':
+      return _$glanceAlertsLatestInnerSeverityEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$glanceAlertsLatestInnerSeverityEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -37,6 +42,7 @@ _$glanceAlertsLatestInnerSeverityEnumValues =
         _$glanceAlertsLatestInnerSeverityEnum_info,
         _$glanceAlertsLatestInnerSeverityEnum_warning,
         _$glanceAlertsLatestInnerSeverityEnum_critical,
+        _$glanceAlertsLatestInnerSeverityEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -50,11 +56,13 @@ class _$GlanceAlertsLatestInnerSeverityEnumSerializer
     'info': 'info',
     'warning': 'warning',
     'critical': 'critical',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'info': 'info',
     'warning': 'warning',
     'critical': 'critical',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

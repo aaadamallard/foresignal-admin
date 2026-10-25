@@ -438,6 +438,9 @@ class HypothesisSetInputKindEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'independent')
   static const HypothesisSetInputKindEnum independent =
       _$hypothesisSetInputKindEnum_independent;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const HypothesisSetInputKindEnum unknownDefaultOpenApi =
+      _$hypothesisSetInputKindEnum_unknownDefaultOpenApi;
 
   static Serializer<HypothesisSetInputKindEnum> get serializer =>
       _$hypothesisSetInputKindEnumSerializer;
@@ -460,6 +463,9 @@ class HypothesisSetInputCadenceEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'monthly')
   static const HypothesisSetInputCadenceEnum monthly =
       _$hypothesisSetInputCadenceEnum_monthly;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const HypothesisSetInputCadenceEnum unknownDefaultOpenApi =
+      _$hypothesisSetInputCadenceEnum_unknownDefaultOpenApi;
 
   static Serializer<HypothesisSetInputCadenceEnum> get serializer =>
       _$hypothesisSetInputCadenceEnumSerializer;

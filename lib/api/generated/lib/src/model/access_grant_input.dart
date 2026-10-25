@@ -195,6 +195,9 @@ class AccessGrantInputRoleEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'commenter')
   static const AccessGrantInputRoleEnum commenter =
       _$accessGrantInputRoleEnum_commenter;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const AccessGrantInputRoleEnum unknownDefaultOpenApi =
+      _$accessGrantInputRoleEnum_unknownDefaultOpenApi;
 
   static Serializer<AccessGrantInputRoleEnum> get serializer =>
       _$accessGrantInputRoleEnumSerializer;
@@ -215,6 +218,9 @@ class AccessGrantInputDeliverAsEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'chronicle-extract')
   static const AccessGrantInputDeliverAsEnum chronicleExtract =
       _$accessGrantInputDeliverAsEnum_chronicleExtract;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const AccessGrantInputDeliverAsEnum unknownDefaultOpenApi =
+      _$accessGrantInputDeliverAsEnum_unknownDefaultOpenApi;
 
   static Serializer<AccessGrantInputDeliverAsEnum> get serializer =>
       _$accessGrantInputDeliverAsEnumSerializer;

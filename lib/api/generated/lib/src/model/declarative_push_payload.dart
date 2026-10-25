@@ -147,6 +147,9 @@ class DeclarativePushPayloadWebPushEnum extends EnumClass {
   @BuiltValueEnumConst(wireNumber: 8030)
   static const DeclarativePushPayloadWebPushEnum number8030 =
       _$declarativePushPayloadWebPushEnum_number8030;
+  @BuiltValueEnumConst(wireNumber: 11184809, fallback: true)
+  static const DeclarativePushPayloadWebPushEnum unknownDefaultOpenApi =
+      _$declarativePushPayloadWebPushEnum_unknownDefaultOpenApi;
 
   static Serializer<DeclarativePushPayloadWebPushEnum> get serializer =>
       _$declarativePushPayloadWebPushEnumSerializer;

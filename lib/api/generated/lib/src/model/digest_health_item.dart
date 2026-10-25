@@ -184,6 +184,9 @@ class DigestHealthItemStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'failing')
   static const DigestHealthItemStatusEnum failing =
       _$digestHealthItemStatusEnum_failing;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const DigestHealthItemStatusEnum unknownDefaultOpenApi =
+      _$digestHealthItemStatusEnum_unknownDefaultOpenApi;
 
   static Serializer<DigestHealthItemStatusEnum> get serializer =>
       _$digestHealthItemStatusEnumSerializer;

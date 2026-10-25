@@ -10,6 +10,8 @@ const SampleValueMethodEnum _$sampleValueMethodEnum_nearest =
     const SampleValueMethodEnum._('nearest');
 const SampleValueMethodEnum _$sampleValueMethodEnum_bilinear =
     const SampleValueMethodEnum._('bilinear');
+const SampleValueMethodEnum _$sampleValueMethodEnum_unknownDefaultOpenApi =
+    const SampleValueMethodEnum._('unknownDefaultOpenApi');
 
 SampleValueMethodEnum _$sampleValueMethodEnumValueOf(String name) {
   switch (name) {
@@ -17,8 +19,10 @@ SampleValueMethodEnum _$sampleValueMethodEnumValueOf(String name) {
       return _$sampleValueMethodEnum_nearest;
     case 'bilinear':
       return _$sampleValueMethodEnum_bilinear;
+    case 'unknownDefaultOpenApi':
+      return _$sampleValueMethodEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$sampleValueMethodEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -26,6 +30,7 @@ final BuiltSet<SampleValueMethodEnum> _$sampleValueMethodEnumValues =
     BuiltSet<SampleValueMethodEnum>(const <SampleValueMethodEnum>[
       _$sampleValueMethodEnum_nearest,
       _$sampleValueMethodEnum_bilinear,
+      _$sampleValueMethodEnum_unknownDefaultOpenApi,
     ]);
 
 const SampleValueCoverageEnum _$sampleValueCoverageEnum_CONUS =
@@ -36,6 +41,8 @@ const SampleValueCoverageEnum _$sampleValueCoverageEnum_stationDisc =
     const SampleValueCoverageEnum._('stationDisc');
 const SampleValueCoverageEnum _$sampleValueCoverageEnum_swath =
     const SampleValueCoverageEnum._('swath');
+const SampleValueCoverageEnum _$sampleValueCoverageEnum_unknownDefaultOpenApi =
+    const SampleValueCoverageEnum._('unknownDefaultOpenApi');
 
 SampleValueCoverageEnum _$sampleValueCoverageEnumValueOf(String name) {
   switch (name) {
@@ -47,8 +54,10 @@ SampleValueCoverageEnum _$sampleValueCoverageEnumValueOf(String name) {
       return _$sampleValueCoverageEnum_stationDisc;
     case 'swath':
       return _$sampleValueCoverageEnum_swath;
+    case 'unknownDefaultOpenApi':
+      return _$sampleValueCoverageEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$sampleValueCoverageEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -58,6 +67,7 @@ final BuiltSet<SampleValueCoverageEnum> _$sampleValueCoverageEnumValues =
       _$sampleValueCoverageEnum_global,
       _$sampleValueCoverageEnum_stationDisc,
       _$sampleValueCoverageEnum_swath,
+      _$sampleValueCoverageEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<SampleValueMethodEnum> _$sampleValueMethodEnumSerializer =
@@ -70,10 +80,12 @@ class _$SampleValueMethodEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'nearest': 'nearest',
     'bilinear': 'bilinear',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'nearest': 'nearest',
     'bilinear': 'bilinear',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -105,12 +117,14 @@ class _$SampleValueCoverageEnumSerializer
     'global': 'global',
     'stationDisc': 'station-disc',
     'swath': 'swath',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'CONUS': 'CONUS',
     'global': 'global',
     'station-disc': 'stationDisc',
     'swath': 'swath',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

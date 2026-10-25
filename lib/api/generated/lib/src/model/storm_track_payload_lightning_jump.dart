@@ -190,6 +190,9 @@ class StormTrackPayloadLightningJumpMethodEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'2sigma-glm-v1')
   static const StormTrackPayloadLightningJumpMethodEnum n2sigmaGlmV1 =
       _$stormTrackPayloadLightningJumpMethodEnum_n2sigmaGlmV1;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const StormTrackPayloadLightningJumpMethodEnum unknownDefaultOpenApi =
+      _$stormTrackPayloadLightningJumpMethodEnum_unknownDefaultOpenApi;
 
   static Serializer<StormTrackPayloadLightningJumpMethodEnum> get serializer =>
       _$stormTrackPayloadLightningJumpMethodEnumSerializer;

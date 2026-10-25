@@ -12,6 +12,8 @@ const EntityStatusEnum _$entityStatusEnum_ACTIVE = const EntityStatusEnum._(
 const EntityStatusEnum _$entityStatusEnum_MERGED = const EntityStatusEnum._(
   'MERGED',
 );
+const EntityStatusEnum _$entityStatusEnum_unknownDefaultOpenApi =
+    const EntityStatusEnum._('unknownDefaultOpenApi');
 
 EntityStatusEnum _$entityStatusEnumValueOf(String name) {
   switch (name) {
@@ -19,8 +21,10 @@ EntityStatusEnum _$entityStatusEnumValueOf(String name) {
       return _$entityStatusEnum_ACTIVE;
     case 'MERGED':
       return _$entityStatusEnum_MERGED;
+    case 'unknownDefaultOpenApi':
+      return _$entityStatusEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$entityStatusEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -28,6 +32,7 @@ final BuiltSet<EntityStatusEnum> _$entityStatusEnumValues =
     BuiltSet<EntityStatusEnum>(const <EntityStatusEnum>[
       _$entityStatusEnum_ACTIVE,
       _$entityStatusEnum_MERGED,
+      _$entityStatusEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<EntityStatusEnum> _$entityStatusEnumSerializer =
@@ -38,10 +43,12 @@ class _$EntityStatusEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'ACTIVE': 'ACTIVE',
     'MERGED': 'MERGED',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'ACTIVE': 'ACTIVE',
     'MERGED': 'MERGED',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

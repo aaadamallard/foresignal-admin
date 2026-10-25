@@ -292,6 +292,9 @@ class EdpFeatureItemTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'feature')
   static const EdpFeatureItemTypeEnum feature =
       _$edpFeatureItemTypeEnum_feature;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const EdpFeatureItemTypeEnum unknownDefaultOpenApi =
+      _$edpFeatureItemTypeEnum_unknownDefaultOpenApi;
 
   static Serializer<EdpFeatureItemTypeEnum> get serializer =>
       _$edpFeatureItemTypeEnumSerializer;

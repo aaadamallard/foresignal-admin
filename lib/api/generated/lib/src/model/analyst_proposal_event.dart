@@ -156,6 +156,9 @@ class AnalystProposalEventChangeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'failed')
   static const AnalystProposalEventChangeEnum failed =
       _$analystProposalEventChangeEnum_failed;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const AnalystProposalEventChangeEnum unknownDefaultOpenApi =
+      _$analystProposalEventChangeEnum_unknownDefaultOpenApi;
 
   static Serializer<AnalystProposalEventChangeEnum> get serializer =>
       _$analystProposalEventChangeEnumSerializer;

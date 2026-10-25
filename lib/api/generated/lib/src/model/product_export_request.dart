@@ -329,6 +329,9 @@ class ProductExportRequestFormatEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'cog')
   static const ProductExportRequestFormatEnum cog =
       _$productExportRequestFormatEnum_cog;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ProductExportRequestFormatEnum unknownDefaultOpenApi =
+      _$productExportRequestFormatEnum_unknownDefaultOpenApi;
 
   static Serializer<ProductExportRequestFormatEnum> get serializer =>
       _$productExportRequestFormatEnumSerializer;
@@ -349,6 +352,9 @@ class ProductExportRequestTmsEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'WorldCRS84Quad')
   static const ProductExportRequestTmsEnum worldCRS84Quad =
       _$productExportRequestTmsEnum_worldCRS84Quad;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ProductExportRequestTmsEnum unknownDefaultOpenApi =
+      _$productExportRequestTmsEnum_unknownDefaultOpenApi;
 
   static Serializer<ProductExportRequestTmsEnum> get serializer =>
       _$productExportRequestTmsEnumSerializer;

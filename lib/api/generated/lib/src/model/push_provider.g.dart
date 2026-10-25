@@ -10,6 +10,8 @@ const PushProviderTypeEnum _$pushProviderTypeEnum_apns =
     const PushProviderTypeEnum._('apns');
 const PushProviderTypeEnum _$pushProviderTypeEnum_fcm =
     const PushProviderTypeEnum._('fcm');
+const PushProviderTypeEnum _$pushProviderTypeEnum_unknownDefaultOpenApi =
+    const PushProviderTypeEnum._('unknownDefaultOpenApi');
 
 PushProviderTypeEnum _$pushProviderTypeEnumValueOf(String name) {
   switch (name) {
@@ -17,8 +19,10 @@ PushProviderTypeEnum _$pushProviderTypeEnumValueOf(String name) {
       return _$pushProviderTypeEnum_apns;
     case 'fcm':
       return _$pushProviderTypeEnum_fcm;
+    case 'unknownDefaultOpenApi':
+      return _$pushProviderTypeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$pushProviderTypeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -26,6 +30,7 @@ final BuiltSet<PushProviderTypeEnum> _$pushProviderTypeEnumValues =
     BuiltSet<PushProviderTypeEnum>(const <PushProviderTypeEnum>[
       _$pushProviderTypeEnum_apns,
       _$pushProviderTypeEnum_fcm,
+      _$pushProviderTypeEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<PushProviderTypeEnum> _$pushProviderTypeEnumSerializer =
@@ -36,10 +41,12 @@ class _$PushProviderTypeEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'apns': 'apns',
     'fcm': 'fcm',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'apns': 'apns',
     'fcm': 'fcm',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

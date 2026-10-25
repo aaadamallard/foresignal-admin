@@ -151,6 +151,9 @@ class WorkspaceContextPlaybackStateEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'paused')
   static const WorkspaceContextPlaybackStateEnum paused =
       _$workspaceContextPlaybackStateEnum_paused;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const WorkspaceContextPlaybackStateEnum unknownDefaultOpenApi =
+      _$workspaceContextPlaybackStateEnum_unknownDefaultOpenApi;
 
   static Serializer<WorkspaceContextPlaybackStateEnum> get serializer =>
       _$workspaceContextPlaybackStateEnumSerializer;

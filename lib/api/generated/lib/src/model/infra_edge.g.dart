@@ -18,6 +18,8 @@ const InfraEdgeRelationEnum _$infraEdgeRelationEnum_hosts =
     const InfraEdgeRelationEnum._('hosts');
 const InfraEdgeRelationEnum _$infraEdgeRelationEnum_serves =
     const InfraEdgeRelationEnum._('serves');
+const InfraEdgeRelationEnum _$infraEdgeRelationEnum_unknownDefaultOpenApi =
+    const InfraEdgeRelationEnum._('unknownDefaultOpenApi');
 
 InfraEdgeRelationEnum _$infraEdgeRelationEnumValueOf(String name) {
   switch (name) {
@@ -33,8 +35,10 @@ InfraEdgeRelationEnum _$infraEdgeRelationEnumValueOf(String name) {
       return _$infraEdgeRelationEnum_hosts;
     case 'serves':
       return _$infraEdgeRelationEnum_serves;
+    case 'unknownDefaultOpenApi':
+      return _$infraEdgeRelationEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$infraEdgeRelationEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -46,6 +50,7 @@ final BuiltSet<InfraEdgeRelationEnum> _$infraEdgeRelationEnumValues =
       _$infraEdgeRelationEnum_interconnects,
       _$infraEdgeRelationEnum_hosts,
       _$infraEdgeRelationEnum_serves,
+      _$infraEdgeRelationEnum_unknownDefaultOpenApi,
     ]);
 
 const InfraEdgeMethodEnum _$infraEdgeMethodEnum_declared =
@@ -56,6 +61,8 @@ const InfraEdgeMethodEnum _$infraEdgeMethodEnum_proximity =
     const InfraEdgeMethodEnum._('proximity');
 const InfraEdgeMethodEnum _$infraEdgeMethodEnum_inferred =
     const InfraEdgeMethodEnum._('inferred');
+const InfraEdgeMethodEnum _$infraEdgeMethodEnum_unknownDefaultOpenApi =
+    const InfraEdgeMethodEnum._('unknownDefaultOpenApi');
 
 InfraEdgeMethodEnum _$infraEdgeMethodEnumValueOf(String name) {
   switch (name) {
@@ -67,8 +74,10 @@ InfraEdgeMethodEnum _$infraEdgeMethodEnumValueOf(String name) {
       return _$infraEdgeMethodEnum_proximity;
     case 'inferred':
       return _$infraEdgeMethodEnum_inferred;
+    case 'unknownDefaultOpenApi':
+      return _$infraEdgeMethodEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$infraEdgeMethodEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -78,6 +87,7 @@ final BuiltSet<InfraEdgeMethodEnum> _$infraEdgeMethodEnumValues =
       _$infraEdgeMethodEnum_topological,
       _$infraEdgeMethodEnum_proximity,
       _$infraEdgeMethodEnum_inferred,
+      _$infraEdgeMethodEnum_unknownDefaultOpenApi,
     ]);
 
 const InfraEdgeLabelEnum _$infraEdgeLabelEnum_confirmed =
@@ -88,6 +98,8 @@ const InfraEdgeLabelEnum _$infraEdgeLabelEnum_possible =
     const InfraEdgeLabelEnum._('possible');
 const InfraEdgeLabelEnum _$infraEdgeLabelEnum_speculative =
     const InfraEdgeLabelEnum._('speculative');
+const InfraEdgeLabelEnum _$infraEdgeLabelEnum_unknownDefaultOpenApi =
+    const InfraEdgeLabelEnum._('unknownDefaultOpenApi');
 
 InfraEdgeLabelEnum _$infraEdgeLabelEnumValueOf(String name) {
   switch (name) {
@@ -99,8 +111,10 @@ InfraEdgeLabelEnum _$infraEdgeLabelEnumValueOf(String name) {
       return _$infraEdgeLabelEnum_possible;
     case 'speculative':
       return _$infraEdgeLabelEnum_speculative;
+    case 'unknownDefaultOpenApi':
+      return _$infraEdgeLabelEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$infraEdgeLabelEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -110,6 +124,7 @@ final BuiltSet<InfraEdgeLabelEnum> _$infraEdgeLabelEnumValues =
       _$infraEdgeLabelEnum_likely,
       _$infraEdgeLabelEnum_possible,
       _$infraEdgeLabelEnum_speculative,
+      _$infraEdgeLabelEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<InfraEdgeRelationEnum> _$infraEdgeRelationEnumSerializer =
@@ -128,6 +143,7 @@ class _$InfraEdgeRelationEnumSerializer
     'interconnects': 'interconnects',
     'hosts': 'hosts',
     'serves': 'serves',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'supplies_power': 'suppliesPower',
@@ -136,6 +152,7 @@ class _$InfraEdgeRelationEnumSerializer
     'interconnects': 'interconnects',
     'hosts': 'hosts',
     'serves': 'serves',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -167,12 +184,14 @@ class _$InfraEdgeMethodEnumSerializer
     'topological': 'topological',
     'proximity': 'proximity',
     'inferred': 'inferred',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'declared': 'declared',
     'topological': 'topological',
     'proximity': 'proximity',
     'inferred': 'inferred',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -204,12 +223,14 @@ class _$InfraEdgeLabelEnumSerializer
     'likely': 'likely',
     'possible': 'possible',
     'speculative': 'speculative',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'confirmed': 'confirmed',
     'likely': 'likely',
     'possible': 'possible',
     'speculative': 'speculative',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

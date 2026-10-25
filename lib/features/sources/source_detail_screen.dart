@@ -507,7 +507,7 @@ class _SourceConfigFormState extends ConsumerState<SourceConfigForm> {
   num? _platformCap() {
     final id = widget.detail.descriptor.id;
     for (final p in ref.watch(socialPlatformsProvider).value ?? const <SocialPlatform>[]) {
-      if (wireOf(p.id) == id) {
+      if (wireOf(p.id, p, 'id') == id) {
         return p.spend?.monthlyCapUsd;
       }
     }

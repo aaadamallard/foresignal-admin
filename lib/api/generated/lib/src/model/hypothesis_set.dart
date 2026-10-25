@@ -662,6 +662,9 @@ class HypothesisSetKindEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'independent')
   static const HypothesisSetKindEnum independent =
       _$hypothesisSetKindEnum_independent;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const HypothesisSetKindEnum unknownDefaultOpenApi =
+      _$hypothesisSetKindEnum_unknownDefaultOpenApi;
 
   static Serializer<HypothesisSetKindEnum> get serializer =>
       _$hypothesisSetKindEnumSerializer;
@@ -684,6 +687,9 @@ class HypothesisSetCadenceEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'monthly')
   static const HypothesisSetCadenceEnum monthly =
       _$hypothesisSetCadenceEnum_monthly;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const HypothesisSetCadenceEnum unknownDefaultOpenApi =
+      _$hypothesisSetCadenceEnum_unknownDefaultOpenApi;
 
   static Serializer<HypothesisSetCadenceEnum> get serializer =>
       _$hypothesisSetCadenceEnumSerializer;
@@ -706,6 +712,9 @@ class HypothesisSetStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'archived')
   static const HypothesisSetStatusEnum archived =
       _$hypothesisSetStatusEnum_archived;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const HypothesisSetStatusEnum unknownDefaultOpenApi =
+      _$hypothesisSetStatusEnum_unknownDefaultOpenApi;
 
   static Serializer<HypothesisSetStatusEnum> get serializer =>
       _$hypothesisSetStatusEnumSerializer;
@@ -727,6 +736,9 @@ class HypothesisSetOriginEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'analyst')
   static const HypothesisSetOriginEnum analyst =
       _$hypothesisSetOriginEnum_analyst;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const HypothesisSetOriginEnum unknownDefaultOpenApi =
+      _$hypothesisSetOriginEnum_unknownDefaultOpenApi;
 
   static Serializer<HypothesisSetOriginEnum> get serializer =>
       _$hypothesisSetOriginEnumSerializer;

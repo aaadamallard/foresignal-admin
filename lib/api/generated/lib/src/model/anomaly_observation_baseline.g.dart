@@ -12,6 +12,9 @@ _$anomalyObservationBaselineSlotModeEnum_hourOfWeek =
 const AnomalyObservationBaselineSlotModeEnum
 _$anomalyObservationBaselineSlotModeEnum_hourOfDay =
     const AnomalyObservationBaselineSlotModeEnum._('hourOfDay');
+const AnomalyObservationBaselineSlotModeEnum
+_$anomalyObservationBaselineSlotModeEnum_unknownDefaultOpenApi =
+    const AnomalyObservationBaselineSlotModeEnum._('unknownDefaultOpenApi');
 
 AnomalyObservationBaselineSlotModeEnum
 _$anomalyObservationBaselineSlotModeEnumValueOf(String name) {
@@ -20,8 +23,10 @@ _$anomalyObservationBaselineSlotModeEnumValueOf(String name) {
       return _$anomalyObservationBaselineSlotModeEnum_hourOfWeek;
     case 'hourOfDay':
       return _$anomalyObservationBaselineSlotModeEnum_hourOfDay;
+    case 'unknownDefaultOpenApi':
+      return _$anomalyObservationBaselineSlotModeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$anomalyObservationBaselineSlotModeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -31,6 +36,7 @@ _$anomalyObservationBaselineSlotModeEnumValues =
       const <AnomalyObservationBaselineSlotModeEnum>[
         _$anomalyObservationBaselineSlotModeEnum_hourOfWeek,
         _$anomalyObservationBaselineSlotModeEnum_hourOfDay,
+        _$anomalyObservationBaselineSlotModeEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -40,6 +46,9 @@ _$anomalyObservationBaselineModelEnum_poisson =
 const AnomalyObservationBaselineModelEnum
 _$anomalyObservationBaselineModelEnum_nb =
     const AnomalyObservationBaselineModelEnum._('nb');
+const AnomalyObservationBaselineModelEnum
+_$anomalyObservationBaselineModelEnum_unknownDefaultOpenApi =
+    const AnomalyObservationBaselineModelEnum._('unknownDefaultOpenApi');
 
 AnomalyObservationBaselineModelEnum
 _$anomalyObservationBaselineModelEnumValueOf(String name) {
@@ -48,8 +57,10 @@ _$anomalyObservationBaselineModelEnumValueOf(String name) {
       return _$anomalyObservationBaselineModelEnum_poisson;
     case 'nb':
       return _$anomalyObservationBaselineModelEnum_nb;
+    case 'unknownDefaultOpenApi':
+      return _$anomalyObservationBaselineModelEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$anomalyObservationBaselineModelEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -59,6 +70,7 @@ _$anomalyObservationBaselineModelEnumValues =
       const <AnomalyObservationBaselineModelEnum>[
         _$anomalyObservationBaselineModelEnum_poisson,
         _$anomalyObservationBaselineModelEnum_nb,
+        _$anomalyObservationBaselineModelEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -74,10 +86,12 @@ class _$AnomalyObservationBaselineSlotModeEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'hourOfWeek': 'hour-of-week',
     'hourOfDay': 'hour-of-day',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'hour-of-week': 'hourOfWeek',
     'hour-of-day': 'hourOfDay',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -109,10 +123,12 @@ class _$AnomalyObservationBaselineModelEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'poisson': 'poisson',
     'nb': 'nb',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'poisson': 'poisson',
     'nb': 'nb',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

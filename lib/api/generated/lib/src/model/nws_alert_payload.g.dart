@@ -16,6 +16,9 @@ const NwsAlertPayloadSeverityEnum _$nwsAlertPayloadSeverityEnum_minor =
     const NwsAlertPayloadSeverityEnum._('minor');
 const NwsAlertPayloadSeverityEnum _$nwsAlertPayloadSeverityEnum_unknown =
     const NwsAlertPayloadSeverityEnum._('unknown');
+const NwsAlertPayloadSeverityEnum
+_$nwsAlertPayloadSeverityEnum_unknownDefaultOpenApi =
+    const NwsAlertPayloadSeverityEnum._('unknownDefaultOpenApi');
 
 NwsAlertPayloadSeverityEnum _$nwsAlertPayloadSeverityEnumValueOf(String name) {
   switch (name) {
@@ -29,8 +32,10 @@ NwsAlertPayloadSeverityEnum _$nwsAlertPayloadSeverityEnumValueOf(String name) {
       return _$nwsAlertPayloadSeverityEnum_minor;
     case 'unknown':
       return _$nwsAlertPayloadSeverityEnum_unknown;
+    case 'unknownDefaultOpenApi':
+      return _$nwsAlertPayloadSeverityEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$nwsAlertPayloadSeverityEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -42,6 +47,7 @@ _$nwsAlertPayloadSeverityEnumValues =
       _$nwsAlertPayloadSeverityEnum_moderate,
       _$nwsAlertPayloadSeverityEnum_minor,
       _$nwsAlertPayloadSeverityEnum_unknown,
+      _$nwsAlertPayloadSeverityEnum_unknownDefaultOpenApi,
     ]);
 
 const NwsAlertPayloadMessageTypeEnum _$nwsAlertPayloadMessageTypeEnum_alert =
@@ -50,6 +56,9 @@ const NwsAlertPayloadMessageTypeEnum _$nwsAlertPayloadMessageTypeEnum_update =
     const NwsAlertPayloadMessageTypeEnum._('update');
 const NwsAlertPayloadMessageTypeEnum _$nwsAlertPayloadMessageTypeEnum_cancel =
     const NwsAlertPayloadMessageTypeEnum._('cancel');
+const NwsAlertPayloadMessageTypeEnum
+_$nwsAlertPayloadMessageTypeEnum_unknownDefaultOpenApi =
+    const NwsAlertPayloadMessageTypeEnum._('unknownDefaultOpenApi');
 
 NwsAlertPayloadMessageTypeEnum _$nwsAlertPayloadMessageTypeEnumValueOf(
   String name,
@@ -61,8 +70,10 @@ NwsAlertPayloadMessageTypeEnum _$nwsAlertPayloadMessageTypeEnumValueOf(
       return _$nwsAlertPayloadMessageTypeEnum_update;
     case 'cancel':
       return _$nwsAlertPayloadMessageTypeEnum_cancel;
+    case 'unknownDefaultOpenApi':
+      return _$nwsAlertPayloadMessageTypeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$nwsAlertPayloadMessageTypeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -73,6 +84,7 @@ _$nwsAlertPayloadMessageTypeEnumValues =
         _$nwsAlertPayloadMessageTypeEnum_alert,
         _$nwsAlertPayloadMessageTypeEnum_update,
         _$nwsAlertPayloadMessageTypeEnum_cancel,
+        _$nwsAlertPayloadMessageTypeEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -85,6 +97,9 @@ _$nwsAlertPayloadGeometrySourceEnum_countyUnion =
 const NwsAlertPayloadGeometrySourceEnum
 _$nwsAlertPayloadGeometrySourceEnum_none =
     const NwsAlertPayloadGeometrySourceEnum._('none');
+const NwsAlertPayloadGeometrySourceEnum
+_$nwsAlertPayloadGeometrySourceEnum_unknownDefaultOpenApi =
+    const NwsAlertPayloadGeometrySourceEnum._('unknownDefaultOpenApi');
 
 NwsAlertPayloadGeometrySourceEnum _$nwsAlertPayloadGeometrySourceEnumValueOf(
   String name,
@@ -96,8 +111,10 @@ NwsAlertPayloadGeometrySourceEnum _$nwsAlertPayloadGeometrySourceEnumValueOf(
       return _$nwsAlertPayloadGeometrySourceEnum_countyUnion;
     case 'none':
       return _$nwsAlertPayloadGeometrySourceEnum_none;
+    case 'unknownDefaultOpenApi':
+      return _$nwsAlertPayloadGeometrySourceEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$nwsAlertPayloadGeometrySourceEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -108,6 +125,7 @@ _$nwsAlertPayloadGeometrySourceEnumValues =
         _$nwsAlertPayloadGeometrySourceEnum_polygon,
         _$nwsAlertPayloadGeometrySourceEnum_countyUnion,
         _$nwsAlertPayloadGeometrySourceEnum_none,
+        _$nwsAlertPayloadGeometrySourceEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -129,6 +147,7 @@ class _$NwsAlertPayloadSeverityEnumSerializer
     'moderate': 'Moderate',
     'minor': 'Minor',
     'unknown': 'Unknown',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'Extreme': 'extreme',
@@ -136,6 +155,7 @@ class _$NwsAlertPayloadSeverityEnumSerializer
     'Moderate': 'moderate',
     'Minor': 'minor',
     'Unknown': 'unknown',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -166,11 +186,13 @@ class _$NwsAlertPayloadMessageTypeEnumSerializer
     'alert': 'Alert',
     'update': 'Update',
     'cancel': 'Cancel',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'Alert': 'alert',
     'Update': 'update',
     'Cancel': 'cancel',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -201,11 +223,13 @@ class _$NwsAlertPayloadGeometrySourceEnumSerializer
     'polygon': 'polygon',
     'countyUnion': 'county-union',
     'none': 'none',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'polygon': 'polygon',
     'county-union': 'countyUnion',
     'none': 'none',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

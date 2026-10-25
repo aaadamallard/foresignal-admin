@@ -15,6 +15,9 @@ _$externalCatalogueEntryProtocolEnum_wms =
 const ExternalCatalogueEntryProtocolEnum
 _$externalCatalogueEntryProtocolEnum_xyz =
     const ExternalCatalogueEntryProtocolEnum._('xyz');
+const ExternalCatalogueEntryProtocolEnum
+_$externalCatalogueEntryProtocolEnum_unknownDefaultOpenApi =
+    const ExternalCatalogueEntryProtocolEnum._('unknownDefaultOpenApi');
 
 ExternalCatalogueEntryProtocolEnum _$externalCatalogueEntryProtocolEnumValueOf(
   String name,
@@ -26,8 +29,10 @@ ExternalCatalogueEntryProtocolEnum _$externalCatalogueEntryProtocolEnumValueOf(
       return _$externalCatalogueEntryProtocolEnum_wms;
     case 'xyz':
       return _$externalCatalogueEntryProtocolEnum_xyz;
+    case 'unknownDefaultOpenApi':
+      return _$externalCatalogueEntryProtocolEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$externalCatalogueEntryProtocolEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -38,6 +43,7 @@ _$externalCatalogueEntryProtocolEnumValues =
         _$externalCatalogueEntryProtocolEnum_wmts,
         _$externalCatalogueEntryProtocolEnum_wms,
         _$externalCatalogueEntryProtocolEnum_xyz,
+        _$externalCatalogueEntryProtocolEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -45,6 +51,9 @@ const ExternalCatalogueEntryFormatEnum _$externalCatalogueEntryFormatEnum_png =
     const ExternalCatalogueEntryFormatEnum._('png');
 const ExternalCatalogueEntryFormatEnum _$externalCatalogueEntryFormatEnum_jpg =
     const ExternalCatalogueEntryFormatEnum._('jpg');
+const ExternalCatalogueEntryFormatEnum
+_$externalCatalogueEntryFormatEnum_unknownDefaultOpenApi =
+    const ExternalCatalogueEntryFormatEnum._('unknownDefaultOpenApi');
 
 ExternalCatalogueEntryFormatEnum _$externalCatalogueEntryFormatEnumValueOf(
   String name,
@@ -54,8 +63,10 @@ ExternalCatalogueEntryFormatEnum _$externalCatalogueEntryFormatEnumValueOf(
       return _$externalCatalogueEntryFormatEnum_png;
     case 'jpg':
       return _$externalCatalogueEntryFormatEnum_jpg;
+    case 'unknownDefaultOpenApi':
+      return _$externalCatalogueEntryFormatEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$externalCatalogueEntryFormatEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -65,6 +76,7 @@ _$externalCatalogueEntryFormatEnumValues =
       const <ExternalCatalogueEntryFormatEnum>[
         _$externalCatalogueEntryFormatEnum_png,
         _$externalCatalogueEntryFormatEnum_jpg,
+        _$externalCatalogueEntryFormatEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -81,11 +93,13 @@ class _$ExternalCatalogueEntryProtocolEnumSerializer
     'wmts': 'wmts',
     'wms': 'wms',
     'xyz': 'xyz',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'wmts': 'wmts',
     'wms': 'wms',
     'xyz': 'xyz',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -115,10 +129,12 @@ class _$ExternalCatalogueEntryFormatEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'png': 'png',
     'jpg': 'jpg',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'png': 'png',
     'jpg': 'jpg',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

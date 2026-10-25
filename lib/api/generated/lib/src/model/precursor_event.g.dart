@@ -13,6 +13,8 @@ const PrecursorEventEventEnum _$precursorEventEventEnum_precursorPeriodStale =
     const PrecursorEventEventEnum._('precursorPeriodStale');
 const PrecursorEventEventEnum _$precursorEventEventEnum_precursorPeriodRetired =
     const PrecursorEventEventEnum._('precursorPeriodRetired');
+const PrecursorEventEventEnum _$precursorEventEventEnum_unknownDefaultOpenApi =
+    const PrecursorEventEventEnum._('unknownDefaultOpenApi');
 
 PrecursorEventEventEnum _$precursorEventEventEnumValueOf(String name) {
   switch (name) {
@@ -22,8 +24,10 @@ PrecursorEventEventEnum _$precursorEventEventEnumValueOf(String name) {
       return _$precursorEventEventEnum_precursorPeriodStale;
     case 'precursorPeriodRetired':
       return _$precursorEventEventEnum_precursorPeriodRetired;
+    case 'unknownDefaultOpenApi':
+      return _$precursorEventEventEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$precursorEventEventEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -32,6 +36,7 @@ final BuiltSet<PrecursorEventEventEnum> _$precursorEventEventEnumValues =
       _$precursorEventEventEnum_precursorPeriodValidated,
       _$precursorEventEventEnum_precursorPeriodStale,
       _$precursorEventEventEnum_precursorPeriodRetired,
+      _$precursorEventEventEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<PrecursorEventEventEnum> _$precursorEventEventEnumSerializer =
@@ -43,11 +48,13 @@ class _$PrecursorEventEventEnumSerializer
     'precursorPeriodValidated': 'precursor.validated',
     'precursorPeriodStale': 'precursor.stale',
     'precursorPeriodRetired': 'precursor.retired',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'precursor.validated': 'precursorPeriodValidated',
     'precursor.stale': 'precursorPeriodStale',
     'precursor.retired': 'precursorPeriodRetired',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

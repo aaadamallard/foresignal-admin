@@ -12,6 +12,9 @@ const DossierCoverageStatusEnum _$dossierCoverageStatusEnum_partial =
     const DossierCoverageStatusEnum._('partial');
 const DossierCoverageStatusEnum _$dossierCoverageStatusEnum_unavailable =
     const DossierCoverageStatusEnum._('unavailable');
+const DossierCoverageStatusEnum
+_$dossierCoverageStatusEnum_unknownDefaultOpenApi =
+    const DossierCoverageStatusEnum._('unknownDefaultOpenApi');
 
 DossierCoverageStatusEnum _$dossierCoverageStatusEnumValueOf(String name) {
   switch (name) {
@@ -21,8 +24,10 @@ DossierCoverageStatusEnum _$dossierCoverageStatusEnumValueOf(String name) {
       return _$dossierCoverageStatusEnum_partial;
     case 'unavailable':
       return _$dossierCoverageStatusEnum_unavailable;
+    case 'unknownDefaultOpenApi':
+      return _$dossierCoverageStatusEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$dossierCoverageStatusEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -31,6 +36,7 @@ final BuiltSet<DossierCoverageStatusEnum> _$dossierCoverageStatusEnumValues =
       _$dossierCoverageStatusEnum_ok,
       _$dossierCoverageStatusEnum_partial,
       _$dossierCoverageStatusEnum_unavailable,
+      _$dossierCoverageStatusEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<DossierCoverageStatusEnum> _$dossierCoverageStatusEnumSerializer =
@@ -42,11 +48,13 @@ class _$DossierCoverageStatusEnumSerializer
     'ok': 'ok',
     'partial': 'partial',
     'unavailable': 'unavailable',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'ok': 'ok',
     'partial': 'partial',
     'unavailable': 'unavailable',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

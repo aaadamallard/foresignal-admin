@@ -12,6 +12,9 @@ _$customSourceInputObservedAtModeEnum_UPSTREAM =
 const CustomSourceInputObservedAtModeEnum
 _$customSourceInputObservedAtModeEnum_RECEIVED =
     const CustomSourceInputObservedAtModeEnum._('RECEIVED');
+const CustomSourceInputObservedAtModeEnum
+_$customSourceInputObservedAtModeEnum_unknownDefaultOpenApi =
+    const CustomSourceInputObservedAtModeEnum._('unknownDefaultOpenApi');
 
 CustomSourceInputObservedAtModeEnum
 _$customSourceInputObservedAtModeEnumValueOf(String name) {
@@ -20,8 +23,10 @@ _$customSourceInputObservedAtModeEnumValueOf(String name) {
       return _$customSourceInputObservedAtModeEnum_UPSTREAM;
     case 'RECEIVED':
       return _$customSourceInputObservedAtModeEnum_RECEIVED;
+    case 'unknownDefaultOpenApi':
+      return _$customSourceInputObservedAtModeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$customSourceInputObservedAtModeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -31,6 +36,7 @@ _$customSourceInputObservedAtModeEnumValues =
       const <CustomSourceInputObservedAtModeEnum>[
         _$customSourceInputObservedAtModeEnum_UPSTREAM,
         _$customSourceInputObservedAtModeEnum_RECEIVED,
+        _$customSourceInputObservedAtModeEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -38,6 +44,9 @@ const CustomSourceInputTtlAnchorEnum _$customSourceInputTtlAnchorEnum_RECEIVED =
     const CustomSourceInputTtlAnchorEnum._('RECEIVED');
 const CustomSourceInputTtlAnchorEnum _$customSourceInputTtlAnchorEnum_OBSERVED =
     const CustomSourceInputTtlAnchorEnum._('OBSERVED');
+const CustomSourceInputTtlAnchorEnum
+_$customSourceInputTtlAnchorEnum_unknownDefaultOpenApi =
+    const CustomSourceInputTtlAnchorEnum._('unknownDefaultOpenApi');
 
 CustomSourceInputTtlAnchorEnum _$customSourceInputTtlAnchorEnumValueOf(
   String name,
@@ -47,8 +56,10 @@ CustomSourceInputTtlAnchorEnum _$customSourceInputTtlAnchorEnumValueOf(
       return _$customSourceInputTtlAnchorEnum_RECEIVED;
     case 'OBSERVED':
       return _$customSourceInputTtlAnchorEnum_OBSERVED;
+    case 'unknownDefaultOpenApi':
+      return _$customSourceInputTtlAnchorEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$customSourceInputTtlAnchorEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -58,12 +69,16 @@ _$customSourceInputTtlAnchorEnumValues =
       const <CustomSourceInputTtlAnchorEnum>[
         _$customSourceInputTtlAnchorEnum_RECEIVED,
         _$customSourceInputTtlAnchorEnum_OBSERVED,
+        _$customSourceInputTtlAnchorEnum_unknownDefaultOpenApi,
       ],
     );
 
 const CustomSourceInputProfileEnum
 _$customSourceInputProfileEnum_personalLocation =
     const CustomSourceInputProfileEnum._('personalLocation');
+const CustomSourceInputProfileEnum
+_$customSourceInputProfileEnum_unknownDefaultOpenApi =
+    const CustomSourceInputProfileEnum._('unknownDefaultOpenApi');
 
 CustomSourceInputProfileEnum _$customSourceInputProfileEnumValueOf(
   String name,
@@ -71,17 +86,19 @@ CustomSourceInputProfileEnum _$customSourceInputProfileEnumValueOf(
   switch (name) {
     case 'personalLocation':
       return _$customSourceInputProfileEnum_personalLocation;
+    case 'unknownDefaultOpenApi':
+      return _$customSourceInputProfileEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$customSourceInputProfileEnum_unknownDefaultOpenApi;
   }
 }
 
 final BuiltSet<CustomSourceInputProfileEnum>
-_$customSourceInputProfileEnumValues = BuiltSet<CustomSourceInputProfileEnum>(
-  const <CustomSourceInputProfileEnum>[
-    _$customSourceInputProfileEnum_personalLocation,
-  ],
-);
+_$customSourceInputProfileEnumValues =
+    BuiltSet<CustomSourceInputProfileEnum>(const <CustomSourceInputProfileEnum>[
+      _$customSourceInputProfileEnum_personalLocation,
+      _$customSourceInputProfileEnum_unknownDefaultOpenApi,
+    ]);
 
 Serializer<CustomSourceInputObservedAtModeEnum>
 _$customSourceInputObservedAtModeEnumSerializer =
@@ -98,10 +115,12 @@ class _$CustomSourceInputObservedAtModeEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'UPSTREAM': 'UPSTREAM',
     'RECEIVED': 'RECEIVED',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'UPSTREAM': 'UPSTREAM',
     'RECEIVED': 'RECEIVED',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -133,10 +152,12 @@ class _$CustomSourceInputTtlAnchorEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'RECEIVED': 'RECEIVED',
     'OBSERVED': 'OBSERVED',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'RECEIVED': 'RECEIVED',
     'OBSERVED': 'OBSERVED',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -165,9 +186,11 @@ class _$CustomSourceInputProfileEnumSerializer
     implements PrimitiveSerializer<CustomSourceInputProfileEnum> {
   static const Map<String, Object> _toWire = const <String, Object>{
     'personalLocation': 'personal-location',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'personal-location': 'personalLocation',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

@@ -240,6 +240,9 @@ class DiscoverabilityDiscoverabilityEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'network')
   static const DiscoverabilityDiscoverabilityEnum network =
       _$discoverabilityDiscoverabilityEnum_network;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const DiscoverabilityDiscoverabilityEnum unknownDefaultOpenApi =
+      _$discoverabilityDiscoverabilityEnum_unknownDefaultOpenApi;
 
   static Serializer<DiscoverabilityDiscoverabilityEnum> get serializer =>
       _$discoverabilityDiscoverabilityEnumSerializer;
@@ -263,6 +266,9 @@ class DiscoverabilityMaxAllowedEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'network')
   static const DiscoverabilityMaxAllowedEnum network =
       _$discoverabilityMaxAllowedEnum_network;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const DiscoverabilityMaxAllowedEnum unknownDefaultOpenApi =
+      _$discoverabilityMaxAllowedEnum_unknownDefaultOpenApi;
 
   static Serializer<DiscoverabilityMaxAllowedEnum> get serializer =>
       _$discoverabilityMaxAllowedEnumSerializer;

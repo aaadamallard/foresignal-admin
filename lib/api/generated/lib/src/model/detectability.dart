@@ -381,6 +381,9 @@ class DetectabilityMethodsEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'platform-volume')
   static const DetectabilityMethodsEnum platformVolume =
       _$detectabilityMethodsEnum_platformVolume;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const DetectabilityMethodsEnum unknownDefaultOpenApi =
+      _$detectabilityMethodsEnum_unknownDefaultOpenApi;
 
   static Serializer<DetectabilityMethodsEnum> get serializer =>
       _$detectabilityMethodsEnumSerializer;

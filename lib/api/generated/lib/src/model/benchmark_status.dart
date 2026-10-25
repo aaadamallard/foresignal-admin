@@ -170,6 +170,9 @@ class BenchmarkStatusOverallEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'unknown')
   static const BenchmarkStatusOverallEnum unknown =
       _$benchmarkStatusOverallEnum_unknown;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const BenchmarkStatusOverallEnum unknownDefaultOpenApi =
+      _$benchmarkStatusOverallEnum_unknownDefaultOpenApi;
 
   static Serializer<BenchmarkStatusOverallEnum> get serializer =>
       _$benchmarkStatusOverallEnumSerializer;

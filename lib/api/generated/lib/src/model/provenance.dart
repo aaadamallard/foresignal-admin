@@ -400,6 +400,9 @@ class ProvenanceLicenceBasisEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'peer-origin')
   static const ProvenanceLicenceBasisEnum peerOrigin =
       _$provenanceLicenceBasisEnum_peerOrigin;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ProvenanceLicenceBasisEnum unknownDefaultOpenApi =
+      _$provenanceLicenceBasisEnum_unknownDefaultOpenApi;
 
   static Serializer<ProvenanceLicenceBasisEnum> get serializer =>
       _$provenanceLicenceBasisEnumSerializer;
@@ -426,6 +429,9 @@ class ProvenanceReliabilityEnum extends EnumClass {
   static const ProvenanceReliabilityEnum E = _$provenanceReliabilityEnum_E;
   @BuiltValueEnumConst(wireName: r'F')
   static const ProvenanceReliabilityEnum F = _$provenanceReliabilityEnum_F;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ProvenanceReliabilityEnum unknownDefaultOpenApi =
+      _$provenanceReliabilityEnum_unknownDefaultOpenApi;
 
   static Serializer<ProvenanceReliabilityEnum> get serializer =>
       _$provenanceReliabilityEnumSerializer;

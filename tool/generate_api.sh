@@ -8,6 +8,10 @@
 # 2. Normalizes the vendored 3.1 contract into the 3.0 shape the dart-dio
 #    generator handles (tool/normalize_openapi.py; the vendored file is untouched).
 # 3. Generates the dart-dio (built_value) package and runs build_runner in it.
+#    enumUnknownDefaultCase gives every enum an `unknownDefaultOpenApi` member
+#    that a value the contract does not list falls back to, so a new server
+#    value no longer fails the whole response (lib/api/tolerant_enums.dart
+#    keeps the value the server sent).
 #
 # The output is committed and never hand-edited: change the contract or this
 # script, then run it again.
@@ -47,7 +51,7 @@ java -jar "$JAR" generate \
   --skip-validate-spec \
   --name-mappings override=override_,update=update_,build=build_ \
   --global-property apiTests=false,modelTests=false,apiDocs=false,modelDocs=false \
-  --additional-properties "pubName=foresignal_api,pubDescription=ForeSignal API client generated from openapi/OpenAPI.json,pubVersion=$(cat "$ROOT/openapi/VERSION"),pubHomepage=https://gitlab.com/adam.allard/foresignal-admin" \
+  --additional-properties "pubName=foresignal_api,pubDescription=ForeSignal API client generated from openapi/OpenAPI.json,pubVersion=$(cat "$ROOT/openapi/VERSION"),pubHomepage=https://gitlab.com/adam.allard/foresignal-admin,enumUnknownDefaultCase=true" \
   > "$WORK/generate.log"
 
 cd "$OUT"

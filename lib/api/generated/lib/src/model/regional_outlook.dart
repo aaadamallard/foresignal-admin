@@ -463,6 +463,9 @@ class RegionalOutlookRegionLevelEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'admin1')
   static const RegionalOutlookRegionLevelEnum admin1 =
       _$regionalOutlookRegionLevelEnum_admin1;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const RegionalOutlookRegionLevelEnum unknownDefaultOpenApi =
+      _$regionalOutlookRegionLevelEnum_unknownDefaultOpenApi;
 
   static Serializer<RegionalOutlookRegionLevelEnum> get serializer =>
       _$regionalOutlookRegionLevelEnumSerializer;

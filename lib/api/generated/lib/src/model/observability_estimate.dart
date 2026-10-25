@@ -389,6 +389,9 @@ class ObservabilityEstimateMethodEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'platform-volume')
   static const ObservabilityEstimateMethodEnum platformVolume =
       _$observabilityEstimateMethodEnum_platformVolume;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ObservabilityEstimateMethodEnum unknownDefaultOpenApi =
+      _$observabilityEstimateMethodEnum_unknownDefaultOpenApi;
 
   static Serializer<ObservabilityEstimateMethodEnum> get serializer =>
       _$observabilityEstimateMethodEnumSerializer;

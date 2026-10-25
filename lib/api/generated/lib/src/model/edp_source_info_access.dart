@@ -159,6 +159,9 @@ class EdpSourceInfoAccessRouteEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'other')
   static const EdpSourceInfoAccessRouteEnum other =
       _$edpSourceInfoAccessRouteEnum_other;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const EdpSourceInfoAccessRouteEnum unknownDefaultOpenApi =
+      _$edpSourceInfoAccessRouteEnum_unknownDefaultOpenApi;
 
   static Serializer<EdpSourceInfoAccessRouteEnum> get serializer =>
       _$edpSourceInfoAccessRouteEnumSerializer;
@@ -181,6 +184,9 @@ class EdpSourceInfoAccessFragilityEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'high')
   static const EdpSourceInfoAccessFragilityEnum high =
       _$edpSourceInfoAccessFragilityEnum_high;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const EdpSourceInfoAccessFragilityEnum unknownDefaultOpenApi =
+      _$edpSourceInfoAccessFragilityEnum_unknownDefaultOpenApi;
 
   static Serializer<EdpSourceInfoAccessFragilityEnum> get serializer =>
       _$edpSourceInfoAccessFragilityEnumSerializer;

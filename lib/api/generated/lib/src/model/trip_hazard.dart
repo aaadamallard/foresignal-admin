@@ -360,6 +360,9 @@ class TripHazardSectionEnum extends EnumClass {
       _$tripHazardSectionEnum_nearRoute;
   @BuiltValueEnumConst(wireName: r'timing')
   static const TripHazardSectionEnum timing = _$tripHazardSectionEnum_timing;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const TripHazardSectionEnum unknownDefaultOpenApi =
+      _$tripHazardSectionEnum_unknownDefaultOpenApi;
 
   static Serializer<TripHazardSectionEnum> get serializer =>
       _$tripHazardSectionEnumSerializer;

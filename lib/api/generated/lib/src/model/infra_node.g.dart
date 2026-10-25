@@ -44,6 +44,9 @@ _$infraNodeFacilityTypeEnum_waterPeriodTreatment =
 const InfraNodeFacilityTypeEnum
 _$infraNodeFacilityTypeEnum_spacePeriodSpaceport =
     const InfraNodeFacilityTypeEnum._('spacePeriodSpaceport');
+const InfraNodeFacilityTypeEnum
+_$infraNodeFacilityTypeEnum_unknownDefaultOpenApi =
+    const InfraNodeFacilityTypeEnum._('unknownDefaultOpenApi');
 
 InfraNodeFacilityTypeEnum _$infraNodeFacilityTypeEnumValueOf(String name) {
   switch (name) {
@@ -75,8 +78,10 @@ InfraNodeFacilityTypeEnum _$infraNodeFacilityTypeEnumValueOf(String name) {
       return _$infraNodeFacilityTypeEnum_waterPeriodTreatment;
     case 'spacePeriodSpaceport':
       return _$infraNodeFacilityTypeEnum_spacePeriodSpaceport;
+    case 'unknownDefaultOpenApi':
+      return _$infraNodeFacilityTypeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$infraNodeFacilityTypeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -96,6 +101,7 @@ final BuiltSet<InfraNodeFacilityTypeEnum> _$infraNodeFacilityTypeEnumValues =
       _$infraNodeFacilityTypeEnum_healthPeriodHospital,
       _$infraNodeFacilityTypeEnum_waterPeriodTreatment,
       _$infraNodeFacilityTypeEnum_spacePeriodSpaceport,
+      _$infraNodeFacilityTypeEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<InfraNodeFacilityTypeEnum> _$infraNodeFacilityTypeEnumSerializer =
@@ -118,6 +124,7 @@ class _$InfraNodeFacilityTypeEnumSerializer
     'healthPeriodHospital': 'health.hospital',
     'waterPeriodTreatment': 'water.treatment',
     'spacePeriodSpaceport': 'space.spaceport',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'power.generation': 'powerPeriodGeneration',
@@ -134,6 +141,7 @@ class _$InfraNodeFacilityTypeEnumSerializer
     'health.hospital': 'healthPeriodHospital',
     'water.treatment': 'waterPeriodTreatment',
     'space.spaceport': 'spacePeriodSpaceport',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

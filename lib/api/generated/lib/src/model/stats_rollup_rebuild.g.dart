@@ -10,6 +10,9 @@ const StatsRollupRebuildStatusEnum _$statsRollupRebuildStatusEnum_queued =
     const StatsRollupRebuildStatusEnum._('queued');
 const StatsRollupRebuildStatusEnum _$statsRollupRebuildStatusEnum_running =
     const StatsRollupRebuildStatusEnum._('running');
+const StatsRollupRebuildStatusEnum
+_$statsRollupRebuildStatusEnum_unknownDefaultOpenApi =
+    const StatsRollupRebuildStatusEnum._('unknownDefaultOpenApi');
 
 StatsRollupRebuildStatusEnum _$statsRollupRebuildStatusEnumValueOf(
   String name,
@@ -19,18 +22,20 @@ StatsRollupRebuildStatusEnum _$statsRollupRebuildStatusEnumValueOf(
       return _$statsRollupRebuildStatusEnum_queued;
     case 'running':
       return _$statsRollupRebuildStatusEnum_running;
+    case 'unknownDefaultOpenApi':
+      return _$statsRollupRebuildStatusEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$statsRollupRebuildStatusEnum_unknownDefaultOpenApi;
   }
 }
 
 final BuiltSet<StatsRollupRebuildStatusEnum>
-_$statsRollupRebuildStatusEnumValues = BuiltSet<StatsRollupRebuildStatusEnum>(
-  const <StatsRollupRebuildStatusEnum>[
-    _$statsRollupRebuildStatusEnum_queued,
-    _$statsRollupRebuildStatusEnum_running,
-  ],
-);
+_$statsRollupRebuildStatusEnumValues =
+    BuiltSet<StatsRollupRebuildStatusEnum>(const <StatsRollupRebuildStatusEnum>[
+      _$statsRollupRebuildStatusEnum_queued,
+      _$statsRollupRebuildStatusEnum_running,
+      _$statsRollupRebuildStatusEnum_unknownDefaultOpenApi,
+    ]);
 
 Serializer<StatsRollupRebuildStatusEnum>
 _$statsRollupRebuildStatusEnumSerializer =
@@ -41,10 +46,12 @@ class _$StatsRollupRebuildStatusEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'queued': 'queued',
     'running': 'running',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'queued': 'queued',
     'running': 'running',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

@@ -199,6 +199,9 @@ class PushFiltersEventsEnum extends EnumClass {
       _$pushFiltersEventsEnum_briefing;
   @BuiltValueEnumConst(wireName: r'system')
   static const PushFiltersEventsEnum system = _$pushFiltersEventsEnum_system;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const PushFiltersEventsEnum unknownDefaultOpenApi =
+      _$pushFiltersEventsEnum_unknownDefaultOpenApi;
 
   static Serializer<PushFiltersEventsEnum> get serializer =>
       _$pushFiltersEventsEnumSerializer;
@@ -221,6 +224,9 @@ class PushFiltersMinSeverityEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'critical')
   static const PushFiltersMinSeverityEnum critical =
       _$pushFiltersMinSeverityEnum_critical;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const PushFiltersMinSeverityEnum unknownDefaultOpenApi =
+      _$pushFiltersMinSeverityEnum_unknownDefaultOpenApi;
 
   static Serializer<PushFiltersMinSeverityEnum> get serializer =>
       _$pushFiltersMinSeverityEnumSerializer;

@@ -237,6 +237,9 @@ class CommentEventReasonEnum extends EnumClass {
       _$commentEventReasonEnum_mention;
   @BuiltValueEnumConst(wireName: r'reply')
   static const CommentEventReasonEnum reply = _$commentEventReasonEnum_reply;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const CommentEventReasonEnum unknownDefaultOpenApi =
+      _$commentEventReasonEnum_unknownDefaultOpenApi;
 
   static Serializer<CommentEventReasonEnum> get serializer =>
       _$commentEventReasonEnumSerializer;

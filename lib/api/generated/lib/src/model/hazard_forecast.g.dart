@@ -34,6 +34,9 @@ const HazardForecastHazardTypeEnum _$hazardForecastHazardTypeEnum_riverFlood =
     const HazardForecastHazardTypeEnum._('riverFlood');
 const HazardForecastHazardTypeEnum _$hazardForecastHazardTypeEnum_stormCell =
     const HazardForecastHazardTypeEnum._('stormCell');
+const HazardForecastHazardTypeEnum
+_$hazardForecastHazardTypeEnum_unknownDefaultOpenApi =
+    const HazardForecastHazardTypeEnum._('unknownDefaultOpenApi');
 
 HazardForecastHazardTypeEnum _$hazardForecastHazardTypeEnumValueOf(
   String name,
@@ -61,8 +64,10 @@ HazardForecastHazardTypeEnum _$hazardForecastHazardTypeEnumValueOf(
       return _$hazardForecastHazardTypeEnum_riverFlood;
     case 'stormCell':
       return _$hazardForecastHazardTypeEnum_stormCell;
+    case 'unknownDefaultOpenApi':
+      return _$hazardForecastHazardTypeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$hazardForecastHazardTypeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -80,6 +85,7 @@ _$hazardForecastHazardTypeEnumValues =
       _$hazardForecastHazardTypeEnum_excessiveRain,
       _$hazardForecastHazardTypeEnum_riverFlood,
       _$hazardForecastHazardTypeEnum_stormCell,
+      _$hazardForecastHazardTypeEnum_unknownDefaultOpenApi,
     ]);
 
 const HazardForecastProbabilityModelEnum
@@ -100,6 +106,9 @@ _$hazardForecastProbabilityModelEnum_trackErrorEllipse =
 const HazardForecastProbabilityModelEnum
 _$hazardForecastProbabilityModelEnum_none =
     const HazardForecastProbabilityModelEnum._('none');
+const HazardForecastProbabilityModelEnum
+_$hazardForecastProbabilityModelEnum_unknownDefaultOpenApi =
+    const HazardForecastProbabilityModelEnum._('unknownDefaultOpenApi');
 
 HazardForecastProbabilityModelEnum _$hazardForecastProbabilityModelEnumValueOf(
   String name,
@@ -117,8 +126,10 @@ HazardForecastProbabilityModelEnum _$hazardForecastProbabilityModelEnumValueOf(
       return _$hazardForecastProbabilityModelEnum_trackErrorEllipse;
     case 'none':
       return _$hazardForecastProbabilityModelEnum_none;
+    case 'unknownDefaultOpenApi':
+      return _$hazardForecastProbabilityModelEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$hazardForecastProbabilityModelEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -132,6 +143,7 @@ _$hazardForecastProbabilityModelEnumValues =
         _$hazardForecastProbabilityModelEnum_gaugeCategory,
         _$hazardForecastProbabilityModelEnum_trackErrorEllipse,
         _$hazardForecastProbabilityModelEnum_none,
+        _$hazardForecastProbabilityModelEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -156,6 +168,7 @@ class _$HazardForecastHazardTypeEnumSerializer
     'excessiveRain': 'excessive-rain',
     'riverFlood': 'river-flood',
     'stormCell': 'storm-cell',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'tropical-wind-34': 'tropicalWind34',
@@ -169,6 +182,7 @@ class _$HazardForecastHazardTypeEnumSerializer
     'excessive-rain': 'excessiveRain',
     'river-flood': 'riverFlood',
     'storm-cell': 'stormCell',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -202,6 +216,7 @@ class _$HazardForecastProbabilityModelEnumSerializer
     'gaugeCategory': 'gauge-category',
     'trackErrorEllipse': 'track-error-ellipse',
     'none': 'none',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'published-polygons': 'publishedPolygons',
@@ -210,6 +225,7 @@ class _$HazardForecastProbabilityModelEnumSerializer
     'gauge-category': 'gaugeCategory',
     'track-error-ellipse': 'trackErrorEllipse',
     'none': 'none',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

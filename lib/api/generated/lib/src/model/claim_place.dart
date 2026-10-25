@@ -225,6 +225,9 @@ class ClaimPlacePrecisionEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'country')
   static const ClaimPlacePrecisionEnum country =
       _$claimPlacePrecisionEnum_country;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ClaimPlacePrecisionEnum unknownDefaultOpenApi =
+      _$claimPlacePrecisionEnum_unknownDefaultOpenApi;
 
   static Serializer<ClaimPlacePrecisionEnum> get serializer =>
       _$claimPlacePrecisionEnumSerializer;

@@ -12,6 +12,9 @@ const IndicatorInputCredibilityEnum _$indicatorInputCredibilityEnum_M =
     const IndicatorInputCredibilityEnum._('M');
 const IndicatorInputCredibilityEnum _$indicatorInputCredibilityEnum_L =
     const IndicatorInputCredibilityEnum._('L');
+const IndicatorInputCredibilityEnum
+_$indicatorInputCredibilityEnum_unknownDefaultOpenApi =
+    const IndicatorInputCredibilityEnum._('unknownDefaultOpenApi');
 
 IndicatorInputCredibilityEnum _$indicatorInputCredibilityEnumValueOf(
   String name,
@@ -23,8 +26,10 @@ IndicatorInputCredibilityEnum _$indicatorInputCredibilityEnumValueOf(
       return _$indicatorInputCredibilityEnum_M;
     case 'L':
       return _$indicatorInputCredibilityEnum_L;
+    case 'unknownDefaultOpenApi':
+      return _$indicatorInputCredibilityEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$indicatorInputCredibilityEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -34,6 +39,7 @@ _$indicatorInputCredibilityEnumValues = BuiltSet<IndicatorInputCredibilityEnum>(
     _$indicatorInputCredibilityEnum_H,
     _$indicatorInputCredibilityEnum_M,
     _$indicatorInputCredibilityEnum_L,
+    _$indicatorInputCredibilityEnum_unknownDefaultOpenApi,
   ],
 );
 
@@ -43,6 +49,9 @@ const IndicatorInputRelevanceEnum _$indicatorInputRelevanceEnum_M =
     const IndicatorInputRelevanceEnum._('M');
 const IndicatorInputRelevanceEnum _$indicatorInputRelevanceEnum_L =
     const IndicatorInputRelevanceEnum._('L');
+const IndicatorInputRelevanceEnum
+_$indicatorInputRelevanceEnum_unknownDefaultOpenApi =
+    const IndicatorInputRelevanceEnum._('unknownDefaultOpenApi');
 
 IndicatorInputRelevanceEnum _$indicatorInputRelevanceEnumValueOf(String name) {
   switch (name) {
@@ -52,8 +61,10 @@ IndicatorInputRelevanceEnum _$indicatorInputRelevanceEnumValueOf(String name) {
       return _$indicatorInputRelevanceEnum_M;
     case 'L':
       return _$indicatorInputRelevanceEnum_L;
+    case 'unknownDefaultOpenApi':
+      return _$indicatorInputRelevanceEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$indicatorInputRelevanceEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -63,6 +74,7 @@ _$indicatorInputRelevanceEnumValues =
       _$indicatorInputRelevanceEnum_H,
       _$indicatorInputRelevanceEnum_M,
       _$indicatorInputRelevanceEnum_L,
+      _$indicatorInputRelevanceEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<IndicatorInputCredibilityEnum>
@@ -78,11 +90,13 @@ class _$IndicatorInputCredibilityEnumSerializer
     'H': 'H',
     'M': 'M',
     'L': 'L',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'H': 'H',
     'M': 'M',
     'L': 'L',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -113,11 +127,13 @@ class _$IndicatorInputRelevanceEnumSerializer
     'H': 'H',
     'M': 'M',
     'L': 'L',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'H': 'H',
     'M': 'M',
     'L': 'L',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

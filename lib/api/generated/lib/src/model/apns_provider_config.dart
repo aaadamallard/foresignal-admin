@@ -186,6 +186,9 @@ class ApnsProviderConfigKeyEnvironmentEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'both')
   static const ApnsProviderConfigKeyEnvironmentEnum both =
       _$apnsProviderConfigKeyEnvironmentEnum_both;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ApnsProviderConfigKeyEnvironmentEnum unknownDefaultOpenApi =
+      _$apnsProviderConfigKeyEnvironmentEnum_unknownDefaultOpenApi;
 
   static Serializer<ApnsProviderConfigKeyEnvironmentEnum> get serializer =>
       _$apnsProviderConfigKeyEnvironmentEnumSerializer;

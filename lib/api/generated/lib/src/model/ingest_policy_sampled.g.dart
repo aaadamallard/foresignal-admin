@@ -8,20 +8,27 @@ part of 'ingest_policy_sampled.dart';
 
 const IngestPolicySampledModeEnum _$ingestPolicySampledModeEnum_SAMPLED =
     const IngestPolicySampledModeEnum._('SAMPLED');
+const IngestPolicySampledModeEnum
+_$ingestPolicySampledModeEnum_unknownDefaultOpenApi =
+    const IngestPolicySampledModeEnum._('unknownDefaultOpenApi');
 
 IngestPolicySampledModeEnum _$ingestPolicySampledModeEnumValueOf(String name) {
   switch (name) {
     case 'SAMPLED':
       return _$ingestPolicySampledModeEnum_SAMPLED;
+    case 'unknownDefaultOpenApi':
+      return _$ingestPolicySampledModeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$ingestPolicySampledModeEnum_unknownDefaultOpenApi;
   }
 }
 
 final BuiltSet<IngestPolicySampledModeEnum>
-_$ingestPolicySampledModeEnumValues = BuiltSet<IngestPolicySampledModeEnum>(
-  const <IngestPolicySampledModeEnum>[_$ingestPolicySampledModeEnum_SAMPLED],
-);
+_$ingestPolicySampledModeEnumValues =
+    BuiltSet<IngestPolicySampledModeEnum>(const <IngestPolicySampledModeEnum>[
+      _$ingestPolicySampledModeEnum_SAMPLED,
+      _$ingestPolicySampledModeEnum_unknownDefaultOpenApi,
+    ]);
 
 Serializer<IngestPolicySampledModeEnum>
 _$ingestPolicySampledModeEnumSerializer =
@@ -31,9 +38,11 @@ class _$IngestPolicySampledModeEnumSerializer
     implements PrimitiveSerializer<IngestPolicySampledModeEnum> {
   static const Map<String, Object> _toWire = const <String, Object>{
     'SAMPLED': 'SAMPLED',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'SAMPLED': 'SAMPLED',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

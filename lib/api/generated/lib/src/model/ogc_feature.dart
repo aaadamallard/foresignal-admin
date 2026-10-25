@@ -198,6 +198,9 @@ class _$OgcFeatureSerializer implements PrimitiveSerializer<OgcFeature> {
 class OgcFeatureTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'Feature')
   static const OgcFeatureTypeEnum feature = _$ogcFeatureTypeEnum_feature;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const OgcFeatureTypeEnum unknownDefaultOpenApi =
+      _$ogcFeatureTypeEnum_unknownDefaultOpenApi;
 
   static Serializer<OgcFeatureTypeEnum> get serializer =>
       _$ogcFeatureTypeEnumSerializer;

@@ -11,6 +11,9 @@ _$objectEnvelopeTextOriginEnum_deterministic =
     const ObjectEnvelopeTextOriginEnum._('deterministic');
 const ObjectEnvelopeTextOriginEnum _$objectEnvelopeTextOriginEnum_llm =
     const ObjectEnvelopeTextOriginEnum._('llm');
+const ObjectEnvelopeTextOriginEnum
+_$objectEnvelopeTextOriginEnum_unknownDefaultOpenApi =
+    const ObjectEnvelopeTextOriginEnum._('unknownDefaultOpenApi');
 
 ObjectEnvelopeTextOriginEnum _$objectEnvelopeTextOriginEnumValueOf(
   String name,
@@ -20,8 +23,10 @@ ObjectEnvelopeTextOriginEnum _$objectEnvelopeTextOriginEnumValueOf(
       return _$objectEnvelopeTextOriginEnum_deterministic;
     case 'llm':
       return _$objectEnvelopeTextOriginEnum_llm;
+    case 'unknownDefaultOpenApi':
+      return _$objectEnvelopeTextOriginEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$objectEnvelopeTextOriginEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -30,6 +35,7 @@ _$objectEnvelopeTextOriginEnumValues =
     BuiltSet<ObjectEnvelopeTextOriginEnum>(const <ObjectEnvelopeTextOriginEnum>[
       _$objectEnvelopeTextOriginEnum_deterministic,
       _$objectEnvelopeTextOriginEnum_llm,
+      _$objectEnvelopeTextOriginEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<ObjectEnvelopeTextOriginEnum>
@@ -41,10 +47,12 @@ class _$ObjectEnvelopeTextOriginEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'deterministic': 'deterministic',
     'llm': 'llm',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'deterministic': 'deterministic',
     'llm': 'llm',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

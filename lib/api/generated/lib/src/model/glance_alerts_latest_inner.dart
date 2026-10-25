@@ -205,6 +205,9 @@ class GlanceAlertsLatestInnerSeverityEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'critical')
   static const GlanceAlertsLatestInnerSeverityEnum critical =
       _$glanceAlertsLatestInnerSeverityEnum_critical;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const GlanceAlertsLatestInnerSeverityEnum unknownDefaultOpenApi =
+      _$glanceAlertsLatestInnerSeverityEnum_unknownDefaultOpenApi;
 
   static Serializer<GlanceAlertsLatestInnerSeverityEnum> get serializer =>
       _$glanceAlertsLatestInnerSeverityEnumSerializer;

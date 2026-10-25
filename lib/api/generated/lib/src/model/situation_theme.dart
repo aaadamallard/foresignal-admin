@@ -31,6 +31,8 @@ class SituationTheme extends EnumClass {
   static const SituationTheme space = _$space;
   @BuiltValueEnumConst(wireName: r'mixed')
   static const SituationTheme mixed = _$mixed;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const SituationTheme unknownDefaultOpenApi = _$unknownDefaultOpenApi;
 
   static Serializer<SituationTheme> get serializer =>
       _$situationThemeSerializer;

@@ -233,6 +233,9 @@ class ForecastHistoryTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'numeric')
   static const ForecastHistoryTypeEnum numeric =
       _$forecastHistoryTypeEnum_numeric;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ForecastHistoryTypeEnum unknownDefaultOpenApi =
+      _$forecastHistoryTypeEnum_unknownDefaultOpenApi;
 
   static Serializer<ForecastHistoryTypeEnum> get serializer =>
       _$forecastHistoryTypeEnumSerializer;
@@ -248,6 +251,9 @@ class ForecastHistoryTypeEnum extends EnumClass {
 class ForecastHistoryStepEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'P1D')
   static const ForecastHistoryStepEnum P1D = _$forecastHistoryStepEnum_P1D;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ForecastHistoryStepEnum unknownDefaultOpenApi =
+      _$forecastHistoryStepEnum_unknownDefaultOpenApi;
 
   static Serializer<ForecastHistoryStepEnum> get serializer =>
       _$forecastHistoryStepEnumSerializer;

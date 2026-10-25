@@ -17,6 +17,9 @@ const SocialPostPayloadCollectionEnum _$socialPostPayloadCollectionEnum_cue =
 const SocialPostPayloadCollectionEnum
 _$socialPostPayloadCollectionEnum_import_ =
     const SocialPostPayloadCollectionEnum._('import_');
+const SocialPostPayloadCollectionEnum
+_$socialPostPayloadCollectionEnum_unknownDefaultOpenApi =
+    const SocialPostPayloadCollectionEnum._('unknownDefaultOpenApi');
 
 SocialPostPayloadCollectionEnum _$socialPostPayloadCollectionEnumValueOf(
   String name,
@@ -32,8 +35,10 @@ SocialPostPayloadCollectionEnum _$socialPostPayloadCollectionEnumValueOf(
       return _$socialPostPayloadCollectionEnum_cue;
     case 'import_':
       return _$socialPostPayloadCollectionEnum_import_;
+    case 'unknownDefaultOpenApi':
+      return _$socialPostPayloadCollectionEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$socialPostPayloadCollectionEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -46,6 +51,7 @@ _$socialPostPayloadCollectionEnumValues =
         _$socialPostPayloadCollectionEnum_sample,
         _$socialPostPayloadCollectionEnum_cue,
         _$socialPostPayloadCollectionEnum_import_,
+        _$socialPostPayloadCollectionEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -61,6 +67,7 @@ class _$SocialPostPayloadCollectionEnumSerializer
     'sample': 'sample',
     'cue': 'cue',
     'import_': 'import',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'stream': 'stream',
@@ -68,6 +75,7 @@ class _$SocialPostPayloadCollectionEnumSerializer
     'sample': 'sample',
     'cue': 'cue',
     'import': 'import_',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

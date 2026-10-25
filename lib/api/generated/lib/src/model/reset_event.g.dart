@@ -12,6 +12,8 @@ const ResetEventReasonEnum _$resetEventReasonEnum_replayCap =
     const ResetEventReasonEnum._('replayCap');
 const ResetEventReasonEnum _$resetEventReasonEnum_resyncRequired =
     const ResetEventReasonEnum._('resyncRequired');
+const ResetEventReasonEnum _$resetEventReasonEnum_unknownDefaultOpenApi =
+    const ResetEventReasonEnum._('unknownDefaultOpenApi');
 
 ResetEventReasonEnum _$resetEventReasonEnumValueOf(String name) {
   switch (name) {
@@ -21,8 +23,10 @@ ResetEventReasonEnum _$resetEventReasonEnumValueOf(String name) {
       return _$resetEventReasonEnum_replayCap;
     case 'resyncRequired':
       return _$resetEventReasonEnum_resyncRequired;
+    case 'unknownDefaultOpenApi':
+      return _$resetEventReasonEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$resetEventReasonEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -31,6 +35,7 @@ final BuiltSet<ResetEventReasonEnum> _$resetEventReasonEnumValues =
       _$resetEventReasonEnum_bufferOverflow,
       _$resetEventReasonEnum_replayCap,
       _$resetEventReasonEnum_resyncRequired,
+      _$resetEventReasonEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<ResetEventReasonEnum> _$resetEventReasonEnumSerializer =
@@ -42,11 +47,13 @@ class _$ResetEventReasonEnumSerializer
     'bufferOverflow': 'buffer_overflow',
     'replayCap': 'replay_cap',
     'resyncRequired': 'resync_required',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'buffer_overflow': 'bufferOverflow',
     'replay_cap': 'replayCap',
     'resync_required': 'resyncRequired',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

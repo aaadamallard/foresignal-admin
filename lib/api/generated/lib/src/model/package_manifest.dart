@@ -363,6 +363,9 @@ class PackageManifestTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'evidence')
   static const PackageManifestTypeEnum evidence =
       _$packageManifestTypeEnum_evidence;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const PackageManifestTypeEnum unknownDefaultOpenApi =
+      _$packageManifestTypeEnum_unknownDefaultOpenApi;
 
   static Serializer<PackageManifestTypeEnum> get serializer =>
       _$packageManifestTypeEnumSerializer;

@@ -15,6 +15,9 @@ _$seriesForecastForecastsInnerHorizonEnum_number7 =
 const SeriesForecastForecastsInnerHorizonEnum
 _$seriesForecastForecastsInnerHorizonEnum_number28 =
     const SeriesForecastForecastsInnerHorizonEnum._('number28');
+const SeriesForecastForecastsInnerHorizonEnum
+_$seriesForecastForecastsInnerHorizonEnum_unknownDefaultOpenApi =
+    const SeriesForecastForecastsInnerHorizonEnum._('unknownDefaultOpenApi');
 
 SeriesForecastForecastsInnerHorizonEnum
 _$seriesForecastForecastsInnerHorizonEnumValueOf(String name) {
@@ -25,8 +28,10 @@ _$seriesForecastForecastsInnerHorizonEnumValueOf(String name) {
       return _$seriesForecastForecastsInnerHorizonEnum_number7;
     case 'number28':
       return _$seriesForecastForecastsInnerHorizonEnum_number28;
+    case 'unknownDefaultOpenApi':
+      return _$seriesForecastForecastsInnerHorizonEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$seriesForecastForecastsInnerHorizonEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -37,6 +42,7 @@ _$seriesForecastForecastsInnerHorizonEnumValues =
         _$seriesForecastForecastsInnerHorizonEnum_number1,
         _$seriesForecastForecastsInnerHorizonEnum_number7,
         _$seriesForecastForecastsInnerHorizonEnum_number28,
+        _$seriesForecastForecastsInnerHorizonEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -50,11 +56,13 @@ class _$SeriesForecastForecastsInnerHorizonEnumSerializer
     'number1': 1,
     'number7': 7,
     'number28': 28,
+    'unknownDefaultOpenApi': 11184809,
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     1: 'number1',
     7: 'number7',
     28: 'number28',
+    11184809: 'unknownDefaultOpenApi',
   };
 
   @override

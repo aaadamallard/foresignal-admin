@@ -347,6 +347,9 @@ class EvidenceEventStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'closed')
   static const EvidenceEventStatusEnum closed =
       _$evidenceEventStatusEnum_closed;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const EvidenceEventStatusEnum unknownDefaultOpenApi =
+      _$evidenceEventStatusEnum_unknownDefaultOpenApi;
 
   static Serializer<EvidenceEventStatusEnum> get serializer =>
       _$evidenceEventStatusEnumSerializer;
@@ -372,6 +375,9 @@ class EvidenceEventQualityFlagsEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'LATE_REVISION')
   static const EvidenceEventQualityFlagsEnum LATE_REVISION =
       _$evidenceEventQualityFlagsEnum_LATE_REVISION;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const EvidenceEventQualityFlagsEnum unknownDefaultOpenApi =
+      _$evidenceEventQualityFlagsEnum_unknownDefaultOpenApi;
 
   static Serializer<EvidenceEventQualityFlagsEnum> get serializer =>
       _$evidenceEventQualityFlagsEnumSerializer;
@@ -397,6 +403,9 @@ class EvidenceEventFlagsAddedEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'LATE_REVISION')
   static const EvidenceEventFlagsAddedEnum LATE_REVISION =
       _$evidenceEventFlagsAddedEnum_LATE_REVISION;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const EvidenceEventFlagsAddedEnum unknownDefaultOpenApi =
+      _$evidenceEventFlagsAddedEnum_unknownDefaultOpenApi;
 
   static Serializer<EvidenceEventFlagsAddedEnum> get serializer =>
       _$evidenceEventFlagsAddedEnumSerializer;

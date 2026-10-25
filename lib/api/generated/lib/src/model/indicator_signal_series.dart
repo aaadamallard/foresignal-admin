@@ -201,6 +201,9 @@ class IndicatorSignalSeriesDirectionEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'any')
   static const IndicatorSignalSeriesDirectionEnum any =
       _$indicatorSignalSeriesDirectionEnum_any;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const IndicatorSignalSeriesDirectionEnum unknownDefaultOpenApi =
+      _$indicatorSignalSeriesDirectionEnum_unknownDefaultOpenApi;
 
   static Serializer<IndicatorSignalSeriesDirectionEnum> get serializer =>
       _$indicatorSignalSeriesDirectionEnumSerializer;

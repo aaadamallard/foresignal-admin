@@ -9,6 +9,9 @@ part of 'me.dart';
 const MeScopesEnum _$meScopesEnum_read = const MeScopesEnum._('read');
 const MeScopesEnum _$meScopesEnum_agent = const MeScopesEnum._('agent');
 const MeScopesEnum _$meScopesEnum_admin = const MeScopesEnum._('admin');
+const MeScopesEnum _$meScopesEnum_unknownDefaultOpenApi = const MeScopesEnum._(
+  'unknownDefaultOpenApi',
+);
 
 MeScopesEnum _$meScopesEnumValueOf(String name) {
   switch (name) {
@@ -18,18 +21,20 @@ MeScopesEnum _$meScopesEnumValueOf(String name) {
       return _$meScopesEnum_agent;
     case 'admin':
       return _$meScopesEnum_admin;
+    case 'unknownDefaultOpenApi':
+      return _$meScopesEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$meScopesEnum_unknownDefaultOpenApi;
   }
 }
 
-final BuiltSet<MeScopesEnum> _$meScopesEnumValues = BuiltSet<MeScopesEnum>(
-  const <MeScopesEnum>[
-    _$meScopesEnum_read,
-    _$meScopesEnum_agent,
-    _$meScopesEnum_admin,
-  ],
-);
+final BuiltSet<MeScopesEnum> _$meScopesEnumValues =
+    BuiltSet<MeScopesEnum>(const <MeScopesEnum>[
+      _$meScopesEnum_read,
+      _$meScopesEnum_agent,
+      _$meScopesEnum_admin,
+      _$meScopesEnum_unknownDefaultOpenApi,
+    ]);
 
 Serializer<MeScopesEnum> _$meScopesEnumSerializer = _$MeScopesEnumSerializer();
 
@@ -38,11 +43,13 @@ class _$MeScopesEnumSerializer implements PrimitiveSerializer<MeScopesEnum> {
     'read': 'read',
     'agent': 'agent',
     'admin': 'admin',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'read': 'read',
     'agent': 'agent',
     'admin': 'admin',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

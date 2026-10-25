@@ -610,6 +610,9 @@ class SettingsBundleChannelsInnerTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'meshcore')
   static const SettingsBundleChannelsInnerTypeEnum meshcore =
       _$settingsBundleChannelsInnerTypeEnum_meshcore;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const SettingsBundleChannelsInnerTypeEnum unknownDefaultOpenApi =
+      _$settingsBundleChannelsInnerTypeEnum_unknownDefaultOpenApi;
 
   static Serializer<SettingsBundleChannelsInnerTypeEnum> get serializer =>
       _$settingsBundleChannelsInnerTypeEnumSerializer;
@@ -698,6 +701,9 @@ class SettingsBundleChannelsInnerEventsEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'saved-search.matches')
   static const SettingsBundleChannelsInnerEventsEnum savedSearchPeriodMatches =
       _$settingsBundleChannelsInnerEventsEnum_savedSearchPeriodMatches;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const SettingsBundleChannelsInnerEventsEnum unknownDefaultOpenApi =
+      _$settingsBundleChannelsInnerEventsEnum_unknownDefaultOpenApi;
 
   static Serializer<SettingsBundleChannelsInnerEventsEnum> get serializer =>
       _$settingsBundleChannelsInnerEventsEnumSerializer;
@@ -720,6 +726,10 @@ class SettingsBundleChannelsInnerMinSeverityEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'critical')
   static const SettingsBundleChannelsInnerMinSeverityEnum critical =
       _$settingsBundleChannelsInnerMinSeverityEnum_critical;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const SettingsBundleChannelsInnerMinSeverityEnum
+  unknownDefaultOpenApi =
+      _$settingsBundleChannelsInnerMinSeverityEnum_unknownDefaultOpenApi;
 
   static Serializer<SettingsBundleChannelsInnerMinSeverityEnum>
   get serializer => _$settingsBundleChannelsInnerMinSeverityEnumSerializer;

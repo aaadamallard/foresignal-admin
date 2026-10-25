@@ -12,6 +12,9 @@ const PrincipalSummaryKindEnum _$principalSummaryKindEnum_agent =
     const PrincipalSummaryKindEnum._('agent');
 const PrincipalSummaryKindEnum _$principalSummaryKindEnum_service =
     const PrincipalSummaryKindEnum._('service');
+const PrincipalSummaryKindEnum
+_$principalSummaryKindEnum_unknownDefaultOpenApi =
+    const PrincipalSummaryKindEnum._('unknownDefaultOpenApi');
 
 PrincipalSummaryKindEnum _$principalSummaryKindEnumValueOf(String name) {
   switch (name) {
@@ -21,8 +24,10 @@ PrincipalSummaryKindEnum _$principalSummaryKindEnumValueOf(String name) {
       return _$principalSummaryKindEnum_agent;
     case 'service':
       return _$principalSummaryKindEnum_service;
+    case 'unknownDefaultOpenApi':
+      return _$principalSummaryKindEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$principalSummaryKindEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -31,6 +36,7 @@ final BuiltSet<PrincipalSummaryKindEnum> _$principalSummaryKindEnumValues =
       _$principalSummaryKindEnum_person,
       _$principalSummaryKindEnum_agent,
       _$principalSummaryKindEnum_service,
+      _$principalSummaryKindEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<PrincipalSummaryKindEnum> _$principalSummaryKindEnumSerializer =
@@ -42,11 +48,13 @@ class _$PrincipalSummaryKindEnumSerializer
     'person': 'person',
     'agent': 'agent',
     'service': 'service',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'person': 'person',
     'agent': 'agent',
     'service': 'service',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

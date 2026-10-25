@@ -12,6 +12,9 @@ _$productTemporalRunsInnerStatusEnum_complete =
 const ProductTemporalRunsInnerStatusEnum
 _$productTemporalRunsInnerStatusEnum_partial =
     const ProductTemporalRunsInnerStatusEnum._('partial');
+const ProductTemporalRunsInnerStatusEnum
+_$productTemporalRunsInnerStatusEnum_unknownDefaultOpenApi =
+    const ProductTemporalRunsInnerStatusEnum._('unknownDefaultOpenApi');
 
 ProductTemporalRunsInnerStatusEnum _$productTemporalRunsInnerStatusEnumValueOf(
   String name,
@@ -21,8 +24,10 @@ ProductTemporalRunsInnerStatusEnum _$productTemporalRunsInnerStatusEnumValueOf(
       return _$productTemporalRunsInnerStatusEnum_complete;
     case 'partial':
       return _$productTemporalRunsInnerStatusEnum_partial;
+    case 'unknownDefaultOpenApi':
+      return _$productTemporalRunsInnerStatusEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$productTemporalRunsInnerStatusEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -32,6 +37,7 @@ _$productTemporalRunsInnerStatusEnumValues =
       const <ProductTemporalRunsInnerStatusEnum>[
         _$productTemporalRunsInnerStatusEnum_complete,
         _$productTemporalRunsInnerStatusEnum_partial,
+        _$productTemporalRunsInnerStatusEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -44,10 +50,12 @@ class _$ProductTemporalRunsInnerStatusEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'complete': 'complete',
     'partial': 'partial',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'complete': 'complete',
     'partial': 'partial',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

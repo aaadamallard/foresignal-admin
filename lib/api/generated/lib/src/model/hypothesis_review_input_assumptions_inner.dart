@@ -181,6 +181,10 @@ class HypothesisReviewInputAssumptionsInnerStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'broken')
   static const HypothesisReviewInputAssumptionsInnerStatusEnum broken =
       _$hypothesisReviewInputAssumptionsInnerStatusEnum_broken;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const HypothesisReviewInputAssumptionsInnerStatusEnum
+  unknownDefaultOpenApi =
+      _$hypothesisReviewInputAssumptionsInnerStatusEnum_unknownDefaultOpenApi;
 
   static Serializer<HypothesisReviewInputAssumptionsInnerStatusEnum>
   get serializer => _$hypothesisReviewInputAssumptionsInnerStatusEnumSerializer;

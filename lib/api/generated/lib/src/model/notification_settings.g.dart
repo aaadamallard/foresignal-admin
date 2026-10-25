@@ -15,6 +15,11 @@ _$notificationSettingsPauseBypassSeverityEnum_warning =
 const NotificationSettingsPauseBypassSeverityEnum
 _$notificationSettingsPauseBypassSeverityEnum_critical =
     const NotificationSettingsPauseBypassSeverityEnum._('critical');
+const NotificationSettingsPauseBypassSeverityEnum
+_$notificationSettingsPauseBypassSeverityEnum_unknownDefaultOpenApi =
+    const NotificationSettingsPauseBypassSeverityEnum._(
+      'unknownDefaultOpenApi',
+    );
 
 NotificationSettingsPauseBypassSeverityEnum
 _$notificationSettingsPauseBypassSeverityEnumValueOf(String name) {
@@ -25,8 +30,10 @@ _$notificationSettingsPauseBypassSeverityEnumValueOf(String name) {
       return _$notificationSettingsPauseBypassSeverityEnum_warning;
     case 'critical':
       return _$notificationSettingsPauseBypassSeverityEnum_critical;
+    case 'unknownDefaultOpenApi':
+      return _$notificationSettingsPauseBypassSeverityEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$notificationSettingsPauseBypassSeverityEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -37,6 +44,7 @@ _$notificationSettingsPauseBypassSeverityEnumValues =
         _$notificationSettingsPauseBypassSeverityEnum_info,
         _$notificationSettingsPauseBypassSeverityEnum_warning,
         _$notificationSettingsPauseBypassSeverityEnum_critical,
+        _$notificationSettingsPauseBypassSeverityEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -51,11 +59,13 @@ class _$NotificationSettingsPauseBypassSeverityEnumSerializer
     'info': 'info',
     'warning': 'warning',
     'critical': 'critical',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'info': 'info',
     'warning': 'warning',
     'critical': 'critical',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

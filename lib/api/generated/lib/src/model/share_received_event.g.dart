@@ -14,6 +14,9 @@ const ShareReceivedEventRoleEnum _$shareReceivedEventRoleEnum_editor =
     const ShareReceivedEventRoleEnum._('editor');
 const ShareReceivedEventRoleEnum _$shareReceivedEventRoleEnum_owner =
     const ShareReceivedEventRoleEnum._('owner');
+const ShareReceivedEventRoleEnum
+_$shareReceivedEventRoleEnum_unknownDefaultOpenApi =
+    const ShareReceivedEventRoleEnum._('unknownDefaultOpenApi');
 
 ShareReceivedEventRoleEnum _$shareReceivedEventRoleEnumValueOf(String name) {
   switch (name) {
@@ -25,8 +28,10 @@ ShareReceivedEventRoleEnum _$shareReceivedEventRoleEnumValueOf(String name) {
       return _$shareReceivedEventRoleEnum_editor;
     case 'owner':
       return _$shareReceivedEventRoleEnum_owner;
+    case 'unknownDefaultOpenApi':
+      return _$shareReceivedEventRoleEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$shareReceivedEventRoleEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -36,6 +41,7 @@ final BuiltSet<ShareReceivedEventRoleEnum> _$shareReceivedEventRoleEnumValues =
       _$shareReceivedEventRoleEnum_commenter,
       _$shareReceivedEventRoleEnum_editor,
       _$shareReceivedEventRoleEnum_owner,
+      _$shareReceivedEventRoleEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<ShareReceivedEventRoleEnum> _$shareReceivedEventRoleEnumSerializer =
@@ -48,12 +54,14 @@ class _$ShareReceivedEventRoleEnumSerializer
     'commenter': 'commenter',
     'editor': 'editor',
     'owner': 'owner',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'viewer': 'viewer',
     'commenter': 'commenter',
     'editor': 'editor',
     'owner': 'owner',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

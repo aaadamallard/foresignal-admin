@@ -126,6 +126,9 @@ class AnalystNotePatchStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'dismissed')
   static const AnalystNotePatchStatusEnum dismissed =
       _$analystNotePatchStatusEnum_dismissed;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const AnalystNotePatchStatusEnum unknownDefaultOpenApi =
+      _$analystNotePatchStatusEnum_unknownDefaultOpenApi;
 
   static Serializer<AnalystNotePatchStatusEnum> get serializer =>
       _$analystNotePatchStatusEnumSerializer;

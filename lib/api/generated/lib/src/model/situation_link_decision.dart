@@ -330,6 +330,9 @@ class SituationLinkDecisionMemberTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'investigation')
   static const SituationLinkDecisionMemberTypeEnum investigation =
       _$situationLinkDecisionMemberTypeEnum_investigation;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const SituationLinkDecisionMemberTypeEnum unknownDefaultOpenApi =
+      _$situationLinkDecisionMemberTypeEnum_unknownDefaultOpenApi;
 
   static Serializer<SituationLinkDecisionMemberTypeEnum> get serializer =>
       _$situationLinkDecisionMemberTypeEnumSerializer;
@@ -355,6 +358,9 @@ class SituationLinkDecisionActionEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'already-member')
   static const SituationLinkDecisionActionEnum alreadyMember =
       _$situationLinkDecisionActionEnum_alreadyMember;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const SituationLinkDecisionActionEnum unknownDefaultOpenApi =
+      _$situationLinkDecisionActionEnum_unknownDefaultOpenApi;
 
   static Serializer<SituationLinkDecisionActionEnum> get serializer =>
       _$situationLinkDecisionActionEnumSerializer;

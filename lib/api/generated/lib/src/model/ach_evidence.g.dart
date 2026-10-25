@@ -22,6 +22,8 @@ const AchEvidenceSource_Enum _$achEvidenceSourceEnum_evidenceItem =
     const AchEvidenceSource_Enum._('evidenceItem');
 const AchEvidenceSource_Enum _$achEvidenceSourceEnum_socialClaim =
     const AchEvidenceSource_Enum._('socialClaim');
+const AchEvidenceSource_Enum _$achEvidenceSourceEnum_unknownDefaultOpenApi =
+    const AchEvidenceSource_Enum._('unknownDefaultOpenApi');
 
 AchEvidenceSource_Enum _$achEvidenceSourceEnumValueOf(String name) {
   switch (name) {
@@ -41,8 +43,10 @@ AchEvidenceSource_Enum _$achEvidenceSourceEnumValueOf(String name) {
       return _$achEvidenceSourceEnum_evidenceItem;
     case 'socialClaim':
       return _$achEvidenceSourceEnum_socialClaim;
+    case 'unknownDefaultOpenApi':
+      return _$achEvidenceSourceEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$achEvidenceSourceEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -56,6 +60,7 @@ final BuiltSet<AchEvidenceSource_Enum> _$achEvidenceSourceEnumValues =
       _$achEvidenceSourceEnum_manual,
       _$achEvidenceSourceEnum_evidenceItem,
       _$achEvidenceSourceEnum_socialClaim,
+      _$achEvidenceSourceEnum_unknownDefaultOpenApi,
     ]);
 
 const AchEvidenceCredibilityEnum _$achEvidenceCredibilityEnum_H =
@@ -64,6 +69,9 @@ const AchEvidenceCredibilityEnum _$achEvidenceCredibilityEnum_M =
     const AchEvidenceCredibilityEnum._('M');
 const AchEvidenceCredibilityEnum _$achEvidenceCredibilityEnum_L =
     const AchEvidenceCredibilityEnum._('L');
+const AchEvidenceCredibilityEnum
+_$achEvidenceCredibilityEnum_unknownDefaultOpenApi =
+    const AchEvidenceCredibilityEnum._('unknownDefaultOpenApi');
 
 AchEvidenceCredibilityEnum _$achEvidenceCredibilityEnumValueOf(String name) {
   switch (name) {
@@ -73,8 +81,10 @@ AchEvidenceCredibilityEnum _$achEvidenceCredibilityEnumValueOf(String name) {
       return _$achEvidenceCredibilityEnum_M;
     case 'L':
       return _$achEvidenceCredibilityEnum_L;
+    case 'unknownDefaultOpenApi':
+      return _$achEvidenceCredibilityEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$achEvidenceCredibilityEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -83,6 +93,7 @@ final BuiltSet<AchEvidenceCredibilityEnum> _$achEvidenceCredibilityEnumValues =
       _$achEvidenceCredibilityEnum_H,
       _$achEvidenceCredibilityEnum_M,
       _$achEvidenceCredibilityEnum_L,
+      _$achEvidenceCredibilityEnum_unknownDefaultOpenApi,
     ]);
 
 const AchEvidenceRelevanceEnum _$achEvidenceRelevanceEnum_H =
@@ -91,6 +102,9 @@ const AchEvidenceRelevanceEnum _$achEvidenceRelevanceEnum_M =
     const AchEvidenceRelevanceEnum._('M');
 const AchEvidenceRelevanceEnum _$achEvidenceRelevanceEnum_L =
     const AchEvidenceRelevanceEnum._('L');
+const AchEvidenceRelevanceEnum
+_$achEvidenceRelevanceEnum_unknownDefaultOpenApi =
+    const AchEvidenceRelevanceEnum._('unknownDefaultOpenApi');
 
 AchEvidenceRelevanceEnum _$achEvidenceRelevanceEnumValueOf(String name) {
   switch (name) {
@@ -100,8 +114,10 @@ AchEvidenceRelevanceEnum _$achEvidenceRelevanceEnumValueOf(String name) {
       return _$achEvidenceRelevanceEnum_M;
     case 'L':
       return _$achEvidenceRelevanceEnum_L;
+    case 'unknownDefaultOpenApi':
+      return _$achEvidenceRelevanceEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$achEvidenceRelevanceEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -110,6 +126,7 @@ final BuiltSet<AchEvidenceRelevanceEnum> _$achEvidenceRelevanceEnumValues =
       _$achEvidenceRelevanceEnum_H,
       _$achEvidenceRelevanceEnum_M,
       _$achEvidenceRelevanceEnum_L,
+      _$achEvidenceRelevanceEnum_unknownDefaultOpenApi,
     ]);
 
 const AchEvidenceRatingsEnum _$achEvidenceRatingsEnum_CC =
@@ -124,6 +141,8 @@ const AchEvidenceRatingsEnum _$achEvidenceRatingsEnum_I =
     const AchEvidenceRatingsEnum._('I');
 const AchEvidenceRatingsEnum _$achEvidenceRatingsEnum_II =
     const AchEvidenceRatingsEnum._('II');
+const AchEvidenceRatingsEnum _$achEvidenceRatingsEnum_unknownDefaultOpenApi =
+    const AchEvidenceRatingsEnum._('unknownDefaultOpenApi');
 
 AchEvidenceRatingsEnum _$achEvidenceRatingsEnumValueOf(String name) {
   switch (name) {
@@ -139,8 +158,10 @@ AchEvidenceRatingsEnum _$achEvidenceRatingsEnumValueOf(String name) {
       return _$achEvidenceRatingsEnum_I;
     case 'II':
       return _$achEvidenceRatingsEnum_II;
+    case 'unknownDefaultOpenApi':
+      return _$achEvidenceRatingsEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$achEvidenceRatingsEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -152,23 +173,29 @@ final BuiltSet<AchEvidenceRatingsEnum> _$achEvidenceRatingsEnumValues =
       _$achEvidenceRatingsEnum_NA,
       _$achEvidenceRatingsEnum_I,
       _$achEvidenceRatingsEnum_II,
+      _$achEvidenceRatingsEnum_unknownDefaultOpenApi,
     ]);
 
 const AchEvidenceCaveatsEnum _$achEvidenceCaveatsEnum_CIRCULAR_REPORTING =
     const AchEvidenceCaveatsEnum._('CIRCULAR_REPORTING');
+const AchEvidenceCaveatsEnum _$achEvidenceCaveatsEnum_unknownDefaultOpenApi =
+    const AchEvidenceCaveatsEnum._('unknownDefaultOpenApi');
 
 AchEvidenceCaveatsEnum _$achEvidenceCaveatsEnumValueOf(String name) {
   switch (name) {
     case 'CIRCULAR_REPORTING':
       return _$achEvidenceCaveatsEnum_CIRCULAR_REPORTING;
+    case 'unknownDefaultOpenApi':
+      return _$achEvidenceCaveatsEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$achEvidenceCaveatsEnum_unknownDefaultOpenApi;
   }
 }
 
 final BuiltSet<AchEvidenceCaveatsEnum> _$achEvidenceCaveatsEnumValues =
     BuiltSet<AchEvidenceCaveatsEnum>(const <AchEvidenceCaveatsEnum>[
       _$achEvidenceCaveatsEnum_CIRCULAR_REPORTING,
+      _$achEvidenceCaveatsEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<AchEvidenceSource_Enum> _$achEvidenceSourceEnumSerializer =
@@ -193,6 +220,7 @@ class _$AchEvidenceSource_EnumSerializer
     'manual': 'manual',
     'evidenceItem': 'evidence-item',
     'socialClaim': 'social-claim',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'indicator': 'indicator',
@@ -203,6 +231,7 @@ class _$AchEvidenceSource_EnumSerializer
     'manual': 'manual',
     'evidence-item': 'evidenceItem',
     'social-claim': 'socialClaim',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -233,11 +262,13 @@ class _$AchEvidenceCredibilityEnumSerializer
     'H': 'H',
     'M': 'M',
     'L': 'L',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'H': 'H',
     'M': 'M',
     'L': 'L',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -268,11 +299,13 @@ class _$AchEvidenceRelevanceEnumSerializer
     'H': 'H',
     'M': 'M',
     'L': 'L',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'H': 'H',
     'M': 'M',
     'L': 'L',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -306,6 +339,7 @@ class _$AchEvidenceRatingsEnumSerializer
     'NA': 'NA',
     'I': 'I',
     'II': 'II',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'CC': 'CC',
@@ -314,6 +348,7 @@ class _$AchEvidenceRatingsEnumSerializer
     'NA': 'NA',
     'I': 'I',
     'II': 'II',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -342,9 +377,11 @@ class _$AchEvidenceCaveatsEnumSerializer
     implements PrimitiveSerializer<AchEvidenceCaveatsEnum> {
   static const Map<String, Object> _toWire = const <String, Object>{
     'CIRCULAR_REPORTING': 'CIRCULAR_REPORTING',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'CIRCULAR_REPORTING': 'CIRCULAR_REPORTING',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

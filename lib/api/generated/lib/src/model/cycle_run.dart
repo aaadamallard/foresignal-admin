@@ -501,6 +501,9 @@ class CycleRunCadenceEnum extends EnumClass {
   static const CycleRunCadenceEnum monthly = _$cycleRunCadenceEnum_monthly;
   @BuiltValueEnumConst(wireName: r'on-demand')
   static const CycleRunCadenceEnum onDemand = _$cycleRunCadenceEnum_onDemand;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const CycleRunCadenceEnum unknownDefaultOpenApi =
+      _$cycleRunCadenceEnum_unknownDefaultOpenApi;
 
   static Serializer<CycleRunCadenceEnum> get serializer =>
       _$cycleRunCadenceEnumSerializer;
@@ -522,6 +525,9 @@ class CycleRunTriggerEnum extends EnumClass {
   static const CycleRunTriggerEnum manual = _$cycleRunTriggerEnum_manual;
   @BuiltValueEnumConst(wireName: r'situation')
   static const CycleRunTriggerEnum situation = _$cycleRunTriggerEnum_situation;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const CycleRunTriggerEnum unknownDefaultOpenApi =
+      _$cycleRunTriggerEnum_unknownDefaultOpenApi;
 
   static Serializer<CycleRunTriggerEnum> get serializer =>
       _$cycleRunTriggerEnumSerializer;
@@ -547,6 +553,9 @@ class CycleRunStatusEnum extends EnumClass {
   static const CycleRunStatusEnum digestOnly = _$cycleRunStatusEnum_digestOnly;
   @BuiltValueEnumConst(wireName: r'failed')
   static const CycleRunStatusEnum failed = _$cycleRunStatusEnum_failed;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const CycleRunStatusEnum unknownDefaultOpenApi =
+      _$cycleRunStatusEnum_unknownDefaultOpenApi;
 
   static Serializer<CycleRunStatusEnum> get serializer =>
       _$cycleRunStatusEnumSerializer;

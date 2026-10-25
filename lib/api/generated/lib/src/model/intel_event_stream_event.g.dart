@@ -17,6 +17,9 @@ _$intelEventStreamEventChangeEnum_resolved =
     const IntelEventStreamEventChangeEnum._('resolved');
 const IntelEventStreamEventChangeEnum _$intelEventStreamEventChangeEnum_merged =
     const IntelEventStreamEventChangeEnum._('merged');
+const IntelEventStreamEventChangeEnum
+_$intelEventStreamEventChangeEnum_unknownDefaultOpenApi =
+    const IntelEventStreamEventChangeEnum._('unknownDefaultOpenApi');
 
 IntelEventStreamEventChangeEnum _$intelEventStreamEventChangeEnumValueOf(
   String name,
@@ -30,8 +33,10 @@ IntelEventStreamEventChangeEnum _$intelEventStreamEventChangeEnumValueOf(
       return _$intelEventStreamEventChangeEnum_resolved;
     case 'merged':
       return _$intelEventStreamEventChangeEnum_merged;
+    case 'unknownDefaultOpenApi':
+      return _$intelEventStreamEventChangeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$intelEventStreamEventChangeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -43,6 +48,7 @@ _$intelEventStreamEventChangeEnumValues =
         _$intelEventStreamEventChangeEnum_updated,
         _$intelEventStreamEventChangeEnum_resolved,
         _$intelEventStreamEventChangeEnum_merged,
+        _$intelEventStreamEventChangeEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -57,12 +63,14 @@ class _$IntelEventStreamEventChangeEnumSerializer
     'updated': 'updated',
     'resolved': 'resolved',
     'merged': 'merged',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'created': 'created',
     'updated': 'updated',
     'resolved': 'resolved',
     'merged': 'merged',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

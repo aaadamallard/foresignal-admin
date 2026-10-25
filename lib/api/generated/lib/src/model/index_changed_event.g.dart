@@ -15,6 +15,9 @@ _$indexChangedEventWeightsOriginEnum_fitted =
 const IndexChangedEventWeightsOriginEnum
 _$indexChangedEventWeightsOriginEnum_operator_ =
     const IndexChangedEventWeightsOriginEnum._('operator_');
+const IndexChangedEventWeightsOriginEnum
+_$indexChangedEventWeightsOriginEnum_unknownDefaultOpenApi =
+    const IndexChangedEventWeightsOriginEnum._('unknownDefaultOpenApi');
 
 IndexChangedEventWeightsOriginEnum _$indexChangedEventWeightsOriginEnumValueOf(
   String name,
@@ -26,8 +29,10 @@ IndexChangedEventWeightsOriginEnum _$indexChangedEventWeightsOriginEnumValueOf(
       return _$indexChangedEventWeightsOriginEnum_fitted;
     case 'operator_':
       return _$indexChangedEventWeightsOriginEnum_operator_;
+    case 'unknownDefaultOpenApi':
+      return _$indexChangedEventWeightsOriginEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$indexChangedEventWeightsOriginEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -38,6 +43,7 @@ _$indexChangedEventWeightsOriginEnumValues =
         _$indexChangedEventWeightsOriginEnum_default_,
         _$indexChangedEventWeightsOriginEnum_fitted,
         _$indexChangedEventWeightsOriginEnum_operator_,
+        _$indexChangedEventWeightsOriginEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -51,11 +57,13 @@ class _$IndexChangedEventWeightsOriginEnumSerializer
     'default_': 'default',
     'fitted': 'fitted',
     'operator_': 'operator',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'default': 'default_',
     'fitted': 'fitted',
     'operator': 'operator_',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

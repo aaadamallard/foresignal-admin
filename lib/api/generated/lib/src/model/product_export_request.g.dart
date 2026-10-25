@@ -12,6 +12,9 @@ const ProductExportRequestFormatEnum _$productExportRequestFormatEnum_pmtiles =
     const ProductExportRequestFormatEnum._('pmtiles');
 const ProductExportRequestFormatEnum _$productExportRequestFormatEnum_cog =
     const ProductExportRequestFormatEnum._('cog');
+const ProductExportRequestFormatEnum
+_$productExportRequestFormatEnum_unknownDefaultOpenApi =
+    const ProductExportRequestFormatEnum._('unknownDefaultOpenApi');
 
 ProductExportRequestFormatEnum _$productExportRequestFormatEnumValueOf(
   String name,
@@ -23,8 +26,10 @@ ProductExportRequestFormatEnum _$productExportRequestFormatEnumValueOf(
       return _$productExportRequestFormatEnum_pmtiles;
     case 'cog':
       return _$productExportRequestFormatEnum_cog;
+    case 'unknownDefaultOpenApi':
+      return _$productExportRequestFormatEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$productExportRequestFormatEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -35,6 +40,7 @@ _$productExportRequestFormatEnumValues =
         _$productExportRequestFormatEnum_mbtiles,
         _$productExportRequestFormatEnum_pmtiles,
         _$productExportRequestFormatEnum_cog,
+        _$productExportRequestFormatEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -43,6 +49,9 @@ _$productExportRequestTmsEnum_webMercatorQuad =
     const ProductExportRequestTmsEnum._('webMercatorQuad');
 const ProductExportRequestTmsEnum _$productExportRequestTmsEnum_worldCRS84Quad =
     const ProductExportRequestTmsEnum._('worldCRS84Quad');
+const ProductExportRequestTmsEnum
+_$productExportRequestTmsEnum_unknownDefaultOpenApi =
+    const ProductExportRequestTmsEnum._('unknownDefaultOpenApi');
 
 ProductExportRequestTmsEnum _$productExportRequestTmsEnumValueOf(String name) {
   switch (name) {
@@ -50,8 +59,10 @@ ProductExportRequestTmsEnum _$productExportRequestTmsEnumValueOf(String name) {
       return _$productExportRequestTmsEnum_webMercatorQuad;
     case 'worldCRS84Quad':
       return _$productExportRequestTmsEnum_worldCRS84Quad;
+    case 'unknownDefaultOpenApi':
+      return _$productExportRequestTmsEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$productExportRequestTmsEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -60,6 +71,7 @@ _$productExportRequestTmsEnumValues =
     BuiltSet<ProductExportRequestTmsEnum>(const <ProductExportRequestTmsEnum>[
       _$productExportRequestTmsEnum_webMercatorQuad,
       _$productExportRequestTmsEnum_worldCRS84Quad,
+      _$productExportRequestTmsEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<ProductExportRequestFormatEnum>
@@ -75,11 +87,13 @@ class _$ProductExportRequestFormatEnumSerializer
     'mbtiles': 'mbtiles',
     'pmtiles': 'pmtiles',
     'cog': 'cog',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'mbtiles': 'mbtiles',
     'pmtiles': 'pmtiles',
     'cog': 'cog',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -109,10 +123,12 @@ class _$ProductExportRequestTmsEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'webMercatorQuad': 'WebMercatorQuad',
     'worldCRS84Quad': 'WorldCRS84Quad',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'WebMercatorQuad': 'webMercatorQuad',
     'WorldCRS84Quad': 'worldCRS84Quad',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

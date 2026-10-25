@@ -10,6 +10,8 @@ const ProductTimelineModeEnum _$productTimelineModeEnum_products =
     const ProductTimelineModeEnum._('products');
 const ProductTimelineModeEnum _$productTimelineModeEnum_seamless =
     const ProductTimelineModeEnum._('seamless');
+const ProductTimelineModeEnum _$productTimelineModeEnum_unknownDefaultOpenApi =
+    const ProductTimelineModeEnum._('unknownDefaultOpenApi');
 
 ProductTimelineModeEnum _$productTimelineModeEnumValueOf(String name) {
   switch (name) {
@@ -17,8 +19,10 @@ ProductTimelineModeEnum _$productTimelineModeEnumValueOf(String name) {
       return _$productTimelineModeEnum_products;
     case 'seamless':
       return _$productTimelineModeEnum_seamless;
+    case 'unknownDefaultOpenApi':
+      return _$productTimelineModeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$productTimelineModeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -26,6 +30,7 @@ final BuiltSet<ProductTimelineModeEnum> _$productTimelineModeEnumValues =
     BuiltSet<ProductTimelineModeEnum>(const <ProductTimelineModeEnum>[
       _$productTimelineModeEnum_products,
       _$productTimelineModeEnum_seamless,
+      _$productTimelineModeEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<ProductTimelineModeEnum> _$productTimelineModeEnumSerializer =
@@ -36,10 +41,12 @@ class _$ProductTimelineModeEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'products': 'products',
     'seamless': 'seamless',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'products': 'products',
     'seamless': 'seamless',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

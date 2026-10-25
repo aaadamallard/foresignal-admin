@@ -210,6 +210,9 @@ class IntelEventStreamEventChangeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'merged')
   static const IntelEventStreamEventChangeEnum merged =
       _$intelEventStreamEventChangeEnum_merged;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const IntelEventStreamEventChangeEnum unknownDefaultOpenApi =
+      _$intelEventStreamEventChangeEnum_unknownDefaultOpenApi;
 
   static Serializer<IntelEventStreamEventChangeEnum> get serializer =>
       _$intelEventStreamEventChangeEnumSerializer;

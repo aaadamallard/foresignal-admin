@@ -356,6 +356,9 @@ class AttentionTopicSocialModeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'cue-only')
   static const AttentionTopicSocialModeEnum cueOnly =
       _$attentionTopicSocialModeEnum_cueOnly;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const AttentionTopicSocialModeEnum unknownDefaultOpenApi =
+      _$attentionTopicSocialModeEnum_unknownDefaultOpenApi;
 
   static Serializer<AttentionTopicSocialModeEnum> get serializer =>
       _$attentionTopicSocialModeEnumSerializer;

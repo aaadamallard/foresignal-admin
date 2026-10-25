@@ -9,6 +9,9 @@ part of 'severity.dart';
 const Severity _$info = const Severity._('info');
 const Severity _$warning = const Severity._('warning');
 const Severity _$critical = const Severity._('critical');
+const Severity _$unknownDefaultOpenApi = const Severity._(
+  'unknownDefaultOpenApi',
+);
 
 Severity _$valueOf(String name) {
   switch (name) {
@@ -18,8 +21,10 @@ Severity _$valueOf(String name) {
       return _$warning;
     case 'critical':
       return _$critical;
+    case 'unknownDefaultOpenApi':
+      return _$unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$unknownDefaultOpenApi;
   }
 }
 
@@ -27,6 +32,7 @@ final BuiltSet<Severity> _$values = BuiltSet<Severity>(const <Severity>[
   _$info,
   _$warning,
   _$critical,
+  _$unknownDefaultOpenApi,
 ]);
 
 class _$SeverityMeta {
@@ -34,6 +40,7 @@ class _$SeverityMeta {
   Severity get info => _$info;
   Severity get warning => _$warning;
   Severity get critical => _$critical;
+  Severity get unknownDefaultOpenApi => _$unknownDefaultOpenApi;
   Severity valueOf(String name) => _$valueOf(name);
   BuiltSet<Severity> get values => _$values;
 }
@@ -50,11 +57,13 @@ class _$SeveritySerializer implements PrimitiveSerializer<Severity> {
     'info': 'info',
     'warning': 'warning',
     'critical': 'critical',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'info': 'info',
     'warning': 'warning',
     'critical': 'critical',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

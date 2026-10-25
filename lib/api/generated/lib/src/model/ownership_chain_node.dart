@@ -196,6 +196,9 @@ class OwnershipChainNodeWeakestEdgeLabelEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'speculative')
   static const OwnershipChainNodeWeakestEdgeLabelEnum speculative =
       _$ownershipChainNodeWeakestEdgeLabelEnum_speculative;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const OwnershipChainNodeWeakestEdgeLabelEnum unknownDefaultOpenApi =
+      _$ownershipChainNodeWeakestEdgeLabelEnum_unknownDefaultOpenApi;
 
   static Serializer<OwnershipChainNodeWeakestEdgeLabelEnum> get serializer =>
       _$ownershipChainNodeWeakestEdgeLabelEnumSerializer;

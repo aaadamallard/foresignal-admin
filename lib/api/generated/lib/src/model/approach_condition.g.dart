@@ -8,19 +8,25 @@ part of 'approach_condition.dart';
 
 const ApproachConditionTypeEnum _$approachConditionTypeEnum_approach =
     const ApproachConditionTypeEnum._('approach');
+const ApproachConditionTypeEnum
+_$approachConditionTypeEnum_unknownDefaultOpenApi =
+    const ApproachConditionTypeEnum._('unknownDefaultOpenApi');
 
 ApproachConditionTypeEnum _$approachConditionTypeEnumValueOf(String name) {
   switch (name) {
     case 'approach':
       return _$approachConditionTypeEnum_approach;
+    case 'unknownDefaultOpenApi':
+      return _$approachConditionTypeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$approachConditionTypeEnum_unknownDefaultOpenApi;
   }
 }
 
 final BuiltSet<ApproachConditionTypeEnum> _$approachConditionTypeEnumValues =
     BuiltSet<ApproachConditionTypeEnum>(const <ApproachConditionTypeEnum>[
       _$approachConditionTypeEnum_approach,
+      _$approachConditionTypeEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<ApproachConditionTypeEnum> _$approachConditionTypeEnumSerializer =
@@ -30,9 +36,11 @@ class _$ApproachConditionTypeEnumSerializer
     implements PrimitiveSerializer<ApproachConditionTypeEnum> {
   static const Map<String, Object> _toWire = const <String, Object>{
     'approach': 'approach',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'approach': 'approach',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

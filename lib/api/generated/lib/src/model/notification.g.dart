@@ -12,6 +12,9 @@ const NotificationSeverityEnum _$notificationSeverityEnum_warning =
     const NotificationSeverityEnum._('warning');
 const NotificationSeverityEnum _$notificationSeverityEnum_critical =
     const NotificationSeverityEnum._('critical');
+const NotificationSeverityEnum
+_$notificationSeverityEnum_unknownDefaultOpenApi =
+    const NotificationSeverityEnum._('unknownDefaultOpenApi');
 
 NotificationSeverityEnum _$notificationSeverityEnumValueOf(String name) {
   switch (name) {
@@ -21,8 +24,10 @@ NotificationSeverityEnum _$notificationSeverityEnumValueOf(String name) {
       return _$notificationSeverityEnum_warning;
     case 'critical':
       return _$notificationSeverityEnum_critical;
+    case 'unknownDefaultOpenApi':
+      return _$notificationSeverityEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$notificationSeverityEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -31,6 +36,7 @@ final BuiltSet<NotificationSeverityEnum> _$notificationSeverityEnumValues =
       _$notificationSeverityEnum_info,
       _$notificationSeverityEnum_warning,
       _$notificationSeverityEnum_critical,
+      _$notificationSeverityEnum_unknownDefaultOpenApi,
     ]);
 
 const NotificationAlertStateEnum _$notificationAlertStateEnum_firing =
@@ -39,6 +45,9 @@ const NotificationAlertStateEnum _$notificationAlertStateEnum_acknowledged =
     const NotificationAlertStateEnum._('acknowledged');
 const NotificationAlertStateEnum _$notificationAlertStateEnum_resolved =
     const NotificationAlertStateEnum._('resolved');
+const NotificationAlertStateEnum
+_$notificationAlertStateEnum_unknownDefaultOpenApi =
+    const NotificationAlertStateEnum._('unknownDefaultOpenApi');
 
 NotificationAlertStateEnum _$notificationAlertStateEnumValueOf(String name) {
   switch (name) {
@@ -48,8 +57,10 @@ NotificationAlertStateEnum _$notificationAlertStateEnumValueOf(String name) {
       return _$notificationAlertStateEnum_acknowledged;
     case 'resolved':
       return _$notificationAlertStateEnum_resolved;
+    case 'unknownDefaultOpenApi':
+      return _$notificationAlertStateEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$notificationAlertStateEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -58,6 +69,7 @@ final BuiltSet<NotificationAlertStateEnum> _$notificationAlertStateEnumValues =
       _$notificationAlertStateEnum_firing,
       _$notificationAlertStateEnum_acknowledged,
       _$notificationAlertStateEnum_resolved,
+      _$notificationAlertStateEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<NotificationSeverityEnum> _$notificationSeverityEnumSerializer =
@@ -71,11 +83,13 @@ class _$NotificationSeverityEnumSerializer
     'info': 'info',
     'warning': 'warning',
     'critical': 'critical',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'info': 'info',
     'warning': 'warning',
     'critical': 'critical',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -106,11 +120,13 @@ class _$NotificationAlertStateEnumSerializer
     'firing': 'firing',
     'acknowledged': 'acknowledged',
     'resolved': 'resolved',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'firing': 'firing',
     'acknowledged': 'acknowledged',
     'resolved': 'resolved',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

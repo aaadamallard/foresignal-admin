@@ -14,6 +14,9 @@ const RecordMappingSpreadTypeEnum _$recordMappingSpreadTypeEnum_string =
     const RecordMappingSpreadTypeEnum._('string');
 const RecordMappingSpreadTypeEnum _$recordMappingSpreadTypeEnum_boolean =
     const RecordMappingSpreadTypeEnum._('boolean');
+const RecordMappingSpreadTypeEnum
+_$recordMappingSpreadTypeEnum_unknownDefaultOpenApi =
+    const RecordMappingSpreadTypeEnum._('unknownDefaultOpenApi');
 
 RecordMappingSpreadTypeEnum _$recordMappingSpreadTypeEnumValueOf(String name) {
   switch (name) {
@@ -25,8 +28,10 @@ RecordMappingSpreadTypeEnum _$recordMappingSpreadTypeEnumValueOf(String name) {
       return _$recordMappingSpreadTypeEnum_string;
     case 'boolean':
       return _$recordMappingSpreadTypeEnum_boolean;
+    case 'unknownDefaultOpenApi':
+      return _$recordMappingSpreadTypeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$recordMappingSpreadTypeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -37,6 +42,7 @@ _$recordMappingSpreadTypeEnumValues =
       _$recordMappingSpreadTypeEnum_integer,
       _$recordMappingSpreadTypeEnum_string,
       _$recordMappingSpreadTypeEnum_boolean,
+      _$recordMappingSpreadTypeEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<RecordMappingSpreadTypeEnum>
@@ -50,12 +56,14 @@ class _$RecordMappingSpreadTypeEnumSerializer
     'integer': 'integer',
     'string': 'string',
     'boolean': 'boolean',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'number': 'number',
     'integer': 'integer',
     'string': 'string',
     'boolean': 'boolean',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

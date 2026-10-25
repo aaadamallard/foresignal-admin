@@ -403,6 +403,9 @@ class EvidenceItemPatchSourceReliabilityEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'F')
   static const EvidenceItemPatchSourceReliabilityEnum F =
       _$evidenceItemPatchSourceReliabilityEnum_F;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const EvidenceItemPatchSourceReliabilityEnum unknownDefaultOpenApi =
+      _$evidenceItemPatchSourceReliabilityEnum_unknownDefaultOpenApi;
 
   static Serializer<EvidenceItemPatchSourceReliabilityEnum> get serializer =>
       _$evidenceItemPatchSourceReliabilityEnumSerializer;

@@ -16,6 +16,8 @@ const ReportInputTemplateEnum _$reportInputTemplateEnum_weeklyAssessment =
     const ReportInputTemplateEnum._('weeklyAssessment');
 const ReportInputTemplateEnum _$reportInputTemplateEnum_custom =
     const ReportInputTemplateEnum._('custom');
+const ReportInputTemplateEnum _$reportInputTemplateEnum_unknownDefaultOpenApi =
+    const ReportInputTemplateEnum._('unknownDefaultOpenApi');
 
 ReportInputTemplateEnum _$reportInputTemplateEnumValueOf(String name) {
   switch (name) {
@@ -29,8 +31,10 @@ ReportInputTemplateEnum _$reportInputTemplateEnumValueOf(String name) {
       return _$reportInputTemplateEnum_weeklyAssessment;
     case 'custom':
       return _$reportInputTemplateEnum_custom;
+    case 'unknownDefaultOpenApi':
+      return _$reportInputTemplateEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$reportInputTemplateEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -41,6 +45,7 @@ final BuiltSet<ReportInputTemplateEnum> _$reportInputTemplateEnumValues =
       _$reportInputTemplateEnum_chronicleRecap,
       _$reportInputTemplateEnum_weeklyAssessment,
       _$reportInputTemplateEnum_custom,
+      _$reportInputTemplateEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<ReportInputTemplateEnum> _$reportInputTemplateEnumSerializer =
@@ -54,6 +59,7 @@ class _$ReportInputTemplateEnumSerializer
     'chronicleRecap': 'chronicle-recap',
     'weeklyAssessment': 'weekly-assessment',
     'custom': 'custom',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'situation-brief': 'situationBrief',
@@ -61,6 +67,7 @@ class _$ReportInputTemplateEnumSerializer
     'chronicle-recap': 'chronicleRecap',
     'weekly-assessment': 'weeklyAssessment',
     'custom': 'custom',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

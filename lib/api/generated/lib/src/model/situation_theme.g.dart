@@ -18,6 +18,9 @@ const SituationTheme _$markets = const SituationTheme._('markets');
 const SituationTheme _$health = const SituationTheme._('health');
 const SituationTheme _$space = const SituationTheme._('space');
 const SituationTheme _$mixed = const SituationTheme._('mixed');
+const SituationTheme _$unknownDefaultOpenApi = const SituationTheme._(
+  'unknownDefaultOpenApi',
+);
 
 SituationTheme _$valueOf(String name) {
   switch (name) {
@@ -41,8 +44,10 @@ SituationTheme _$valueOf(String name) {
       return _$space;
     case 'mixed':
       return _$mixed;
+    case 'unknownDefaultOpenApi':
+      return _$unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$unknownDefaultOpenApi;
   }
 }
 
@@ -58,6 +63,7 @@ final BuiltSet<SituationTheme> _$values =
       _$health,
       _$space,
       _$mixed,
+      _$unknownDefaultOpenApi,
     ]);
 
 class _$SituationThemeMeta {
@@ -72,6 +78,7 @@ class _$SituationThemeMeta {
   SituationTheme get health => _$health;
   SituationTheme get space => _$space;
   SituationTheme get mixed => _$mixed;
+  SituationTheme get unknownDefaultOpenApi => _$unknownDefaultOpenApi;
   SituationTheme valueOf(String name) => _$valueOf(name);
   BuiltSet<SituationTheme> get values => _$values;
 }
@@ -97,6 +104,7 @@ class _$SituationThemeSerializer
     'health': 'health',
     'space': 'space',
     'mixed': 'mixed',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'maritime': 'maritime',
@@ -109,6 +117,7 @@ class _$SituationThemeSerializer
     'health': 'health',
     'space': 'space',
     'mixed': 'mixed',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

@@ -9,6 +9,9 @@ part of 'visibility.dart';
 const Visibility _$private = const Visibility._('private');
 const Visibility _$shared = const Visibility._('shared');
 const Visibility _$instance = const Visibility._('instance');
+const Visibility _$unknownDefaultOpenApi = const Visibility._(
+  'unknownDefaultOpenApi',
+);
 
 Visibility _$valueOf(String name) {
   switch (name) {
@@ -18,8 +21,10 @@ Visibility _$valueOf(String name) {
       return _$shared;
     case 'instance':
       return _$instance;
+    case 'unknownDefaultOpenApi':
+      return _$unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$unknownDefaultOpenApi;
   }
 }
 
@@ -27,6 +32,7 @@ final BuiltSet<Visibility> _$values = BuiltSet<Visibility>(const <Visibility>[
   _$private,
   _$shared,
   _$instance,
+  _$unknownDefaultOpenApi,
 ]);
 
 class _$VisibilityMeta {
@@ -34,6 +40,7 @@ class _$VisibilityMeta {
   Visibility get private => _$private;
   Visibility get shared => _$shared;
   Visibility get instance => _$instance;
+  Visibility get unknownDefaultOpenApi => _$unknownDefaultOpenApi;
   Visibility valueOf(String name) => _$valueOf(name);
   BuiltSet<Visibility> get values => _$values;
 }
@@ -50,11 +57,13 @@ class _$VisibilitySerializer implements PrimitiveSerializer<Visibility> {
     'private': 'private',
     'shared': 'shared',
     'instance': 'instance',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'private': 'private',
     'shared': 'shared',
     'instance': 'instance',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

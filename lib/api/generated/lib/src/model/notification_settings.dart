@@ -226,6 +226,10 @@ class NotificationSettingsPauseBypassSeverityEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'critical')
   static const NotificationSettingsPauseBypassSeverityEnum critical =
       _$notificationSettingsPauseBypassSeverityEnum_critical;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const NotificationSettingsPauseBypassSeverityEnum
+  unknownDefaultOpenApi =
+      _$notificationSettingsPauseBypassSeverityEnum_unknownDefaultOpenApi;
 
   static Serializer<NotificationSettingsPauseBypassSeverityEnum>
   get serializer => _$notificationSettingsPauseBypassSeverityEnumSerializer;

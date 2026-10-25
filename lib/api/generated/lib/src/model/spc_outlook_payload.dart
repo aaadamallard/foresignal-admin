@@ -288,6 +288,9 @@ class SpcOutlookPayloadTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'sigprob')
   static const SpcOutlookPayloadTypeEnum sigprob =
       _$spcOutlookPayloadTypeEnum_sigprob;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const SpcOutlookPayloadTypeEnum unknownDefaultOpenApi =
+      _$spcOutlookPayloadTypeEnum_unknownDefaultOpenApi;
 
   static Serializer<SpcOutlookPayloadTypeEnum> get serializer =>
       _$spcOutlookPayloadTypeEnumSerializer;

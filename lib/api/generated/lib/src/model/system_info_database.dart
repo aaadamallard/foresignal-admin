@@ -170,6 +170,9 @@ class SystemInfoDatabaseStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'down')
   static const SystemInfoDatabaseStatusEnum down =
       _$systemInfoDatabaseStatusEnum_down;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const SystemInfoDatabaseStatusEnum unknownDefaultOpenApi =
+      _$systemInfoDatabaseStatusEnum_unknownDefaultOpenApi;
 
   static Serializer<SystemInfoDatabaseStatusEnum> get serializer =>
       _$systemInfoDatabaseStatusEnumSerializer;

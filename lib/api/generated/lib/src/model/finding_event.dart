@@ -160,6 +160,9 @@ class FindingEventEventEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'finding.dismissed')
   static const FindingEventEventEnum findingPeriodDismissed =
       _$findingEventEventEnum_findingPeriodDismissed;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const FindingEventEventEnum unknownDefaultOpenApi =
+      _$findingEventEventEnum_unknownDefaultOpenApi;
 
   static Serializer<FindingEventEventEnum> get serializer =>
       _$findingEventEventEnumSerializer;

@@ -19,6 +19,9 @@ const FindingBaseRateMethodEnum _$findingBaseRateMethodEnum_precursorBaseRate =
     const FindingBaseRateMethodEnum._('precursorBaseRate');
 const FindingBaseRateMethodEnum _$findingBaseRateMethodEnum_other =
     const FindingBaseRateMethodEnum._('other');
+const FindingBaseRateMethodEnum
+_$findingBaseRateMethodEnum_unknownDefaultOpenApi =
+    const FindingBaseRateMethodEnum._('unknownDefaultOpenApi');
 
 FindingBaseRateMethodEnum _$findingBaseRateMethodEnumValueOf(String name) {
   switch (name) {
@@ -32,8 +35,10 @@ FindingBaseRateMethodEnum _$findingBaseRateMethodEnumValueOf(String name) {
       return _$findingBaseRateMethodEnum_precursorBaseRate;
     case 'other':
       return _$findingBaseRateMethodEnum_other;
+    case 'unknownDefaultOpenApi':
+      return _$findingBaseRateMethodEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$findingBaseRateMethodEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -44,6 +49,7 @@ final BuiltSet<FindingBaseRateMethodEnum> _$findingBaseRateMethodEnumValues =
       _$findingBaseRateMethodEnum_independenceBaseline,
       _$findingBaseRateMethodEnum_precursorBaseRate,
       _$findingBaseRateMethodEnum_other,
+      _$findingBaseRateMethodEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<FindingBaseRateMethodEnum> _$findingBaseRateMethodEnumSerializer =
@@ -57,6 +63,7 @@ class _$FindingBaseRateMethodEnumSerializer
     'independenceBaseline': 'independence-baseline',
     'precursorBaseRate': 'precursor-base-rate',
     'other': 'other',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'detector-false-alarm-rate': 'detectorFalseAlarmRate',
@@ -64,6 +71,7 @@ class _$FindingBaseRateMethodEnumSerializer
     'independence-baseline': 'independenceBaseline',
     'precursor-base-rate': 'precursorBaseRate',
     'other': 'other',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

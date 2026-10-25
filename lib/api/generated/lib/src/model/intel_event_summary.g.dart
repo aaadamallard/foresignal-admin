@@ -19,6 +19,9 @@ const IntelEventSummaryTypeEnum _$intelEventSummaryTypeEnum_seismic =
     const IntelEventSummaryTypeEnum._('seismic');
 const IntelEventSummaryTypeEnum _$intelEventSummaryTypeEnum_custom =
     const IntelEventSummaryTypeEnum._('custom');
+const IntelEventSummaryTypeEnum
+_$intelEventSummaryTypeEnum_unknownDefaultOpenApi =
+    const IntelEventSummaryTypeEnum._('unknownDefaultOpenApi');
 
 IntelEventSummaryTypeEnum _$intelEventSummaryTypeEnumValueOf(String name) {
   switch (name) {
@@ -34,8 +37,10 @@ IntelEventSummaryTypeEnum _$intelEventSummaryTypeEnumValueOf(String name) {
       return _$intelEventSummaryTypeEnum_seismic;
     case 'custom':
       return _$intelEventSummaryTypeEnum_custom;
+    case 'unknownDefaultOpenApi':
+      return _$intelEventSummaryTypeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$intelEventSummaryTypeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -47,6 +52,7 @@ final BuiltSet<IntelEventSummaryTypeEnum> _$intelEventSummaryTypeEnumValues =
       _$intelEventSummaryTypeEnum_weatherImpact,
       _$intelEventSummaryTypeEnum_seismic,
       _$intelEventSummaryTypeEnum_custom,
+      _$intelEventSummaryTypeEnum_unknownDefaultOpenApi,
     ]);
 
 const IntelEventSummaryStatusEnum _$intelEventSummaryStatusEnum_emerging =
@@ -57,6 +63,9 @@ const IntelEventSummaryStatusEnum _$intelEventSummaryStatusEnum_resolved =
     const IntelEventSummaryStatusEnum._('resolved');
 const IntelEventSummaryStatusEnum _$intelEventSummaryStatusEnum_dismissed =
     const IntelEventSummaryStatusEnum._('dismissed');
+const IntelEventSummaryStatusEnum
+_$intelEventSummaryStatusEnum_unknownDefaultOpenApi =
+    const IntelEventSummaryStatusEnum._('unknownDefaultOpenApi');
 
 IntelEventSummaryStatusEnum _$intelEventSummaryStatusEnumValueOf(String name) {
   switch (name) {
@@ -68,8 +77,10 @@ IntelEventSummaryStatusEnum _$intelEventSummaryStatusEnumValueOf(String name) {
       return _$intelEventSummaryStatusEnum_resolved;
     case 'dismissed':
       return _$intelEventSummaryStatusEnum_dismissed;
+    case 'unknownDefaultOpenApi':
+      return _$intelEventSummaryStatusEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$intelEventSummaryStatusEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -80,6 +91,7 @@ _$intelEventSummaryStatusEnumValues =
       _$intelEventSummaryStatusEnum_active,
       _$intelEventSummaryStatusEnum_resolved,
       _$intelEventSummaryStatusEnum_dismissed,
+      _$intelEventSummaryStatusEnum_unknownDefaultOpenApi,
     ]);
 
 const IntelEventSummaryConfidenceLabelEnum
@@ -91,6 +103,9 @@ _$intelEventSummaryConfidenceLabelEnum_moderate =
 const IntelEventSummaryConfidenceLabelEnum
 _$intelEventSummaryConfidenceLabelEnum_high =
     const IntelEventSummaryConfidenceLabelEnum._('high');
+const IntelEventSummaryConfidenceLabelEnum
+_$intelEventSummaryConfidenceLabelEnum_unknownDefaultOpenApi =
+    const IntelEventSummaryConfidenceLabelEnum._('unknownDefaultOpenApi');
 
 IntelEventSummaryConfidenceLabelEnum
 _$intelEventSummaryConfidenceLabelEnumValueOf(String name) {
@@ -101,8 +116,10 @@ _$intelEventSummaryConfidenceLabelEnumValueOf(String name) {
       return _$intelEventSummaryConfidenceLabelEnum_moderate;
     case 'high':
       return _$intelEventSummaryConfidenceLabelEnum_high;
+    case 'unknownDefaultOpenApi':
+      return _$intelEventSummaryConfidenceLabelEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$intelEventSummaryConfidenceLabelEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -113,6 +130,7 @@ _$intelEventSummaryConfidenceLabelEnumValues =
         _$intelEventSummaryConfidenceLabelEnum_low,
         _$intelEventSummaryConfidenceLabelEnum_moderate,
         _$intelEventSummaryConfidenceLabelEnum_high,
+        _$intelEventSummaryConfidenceLabelEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -128,6 +146,9 @@ _$intelEventSummaryEvidenceQualityEnum_weak =
 const IntelEventSummaryEvidenceQualityEnum
 _$intelEventSummaryEvidenceQualityEnum_insufficient =
     const IntelEventSummaryEvidenceQualityEnum._('insufficient');
+const IntelEventSummaryEvidenceQualityEnum
+_$intelEventSummaryEvidenceQualityEnum_unknownDefaultOpenApi =
+    const IntelEventSummaryEvidenceQualityEnum._('unknownDefaultOpenApi');
 
 IntelEventSummaryEvidenceQualityEnum
 _$intelEventSummaryEvidenceQualityEnumValueOf(String name) {
@@ -140,8 +161,10 @@ _$intelEventSummaryEvidenceQualityEnumValueOf(String name) {
       return _$intelEventSummaryEvidenceQualityEnum_weak;
     case 'insufficient':
       return _$intelEventSummaryEvidenceQualityEnum_insufficient;
+    case 'unknownDefaultOpenApi':
+      return _$intelEventSummaryEvidenceQualityEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$intelEventSummaryEvidenceQualityEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -153,6 +176,7 @@ _$intelEventSummaryEvidenceQualityEnumValues =
         _$intelEventSummaryEvidenceQualityEnum_moderate,
         _$intelEventSummaryEvidenceQualityEnum_weak,
         _$intelEventSummaryEvidenceQualityEnum_insufficient,
+        _$intelEventSummaryEvidenceQualityEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -164,6 +188,9 @@ const IntelEventSummaryOriginEnum _$intelEventSummaryOriginEnum_agent =
     const IntelEventSummaryOriginEnum._('agent');
 const IntelEventSummaryOriginEnum _$intelEventSummaryOriginEnum_operator_ =
     const IntelEventSummaryOriginEnum._('operator_');
+const IntelEventSummaryOriginEnum
+_$intelEventSummaryOriginEnum_unknownDefaultOpenApi =
+    const IntelEventSummaryOriginEnum._('unknownDefaultOpenApi');
 
 IntelEventSummaryOriginEnum _$intelEventSummaryOriginEnumValueOf(String name) {
   switch (name) {
@@ -175,8 +202,10 @@ IntelEventSummaryOriginEnum _$intelEventSummaryOriginEnumValueOf(String name) {
       return _$intelEventSummaryOriginEnum_agent;
     case 'operator_':
       return _$intelEventSummaryOriginEnum_operator_;
+    case 'unknownDefaultOpenApi':
+      return _$intelEventSummaryOriginEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$intelEventSummaryOriginEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -187,6 +216,7 @@ _$intelEventSummaryOriginEnumValues =
       _$intelEventSummaryOriginEnum_analyst,
       _$intelEventSummaryOriginEnum_agent,
       _$intelEventSummaryOriginEnum_operator_,
+      _$intelEventSummaryOriginEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<IntelEventSummaryTypeEnum> _$intelEventSummaryTypeEnumSerializer =
@@ -213,6 +243,7 @@ class _$IntelEventSummaryTypeEnumSerializer
     'weatherImpact': 'weather-impact',
     'seismic': 'seismic',
     'custom': 'custom',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'maritime-disruption': 'maritimeDisruption',
@@ -221,6 +252,7 @@ class _$IntelEventSummaryTypeEnumSerializer
     'weather-impact': 'weatherImpact',
     'seismic': 'seismic',
     'custom': 'custom',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -252,12 +284,14 @@ class _$IntelEventSummaryStatusEnumSerializer
     'active': 'active',
     'resolved': 'resolved',
     'dismissed': 'dismissed',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'emerging': 'emerging',
     'active': 'active',
     'resolved': 'resolved',
     'dismissed': 'dismissed',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -288,11 +322,13 @@ class _$IntelEventSummaryConfidenceLabelEnumSerializer
     'low': 'low',
     'moderate': 'moderate',
     'high': 'high',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'low': 'low',
     'moderate': 'moderate',
     'high': 'high',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -326,12 +362,14 @@ class _$IntelEventSummaryEvidenceQualityEnumSerializer
     'moderate': 'moderate',
     'weak': 'weak',
     'insufficient': 'insufficient',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'strong': 'strong',
     'moderate': 'moderate',
     'weak': 'weak',
     'insufficient': 'insufficient',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -365,12 +403,14 @@ class _$IntelEventSummaryOriginEnumSerializer
     'analyst': 'analyst',
     'agent': 'agent',
     'operator_': 'operator',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'recipe': 'recipe',
     'analyst': 'analyst',
     'agent': 'agent',
     'operator': 'operator_',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

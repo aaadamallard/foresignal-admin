@@ -424,6 +424,9 @@ class TuningSuggestionRecordKindEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'SEVERITY_DOWN')
   static const TuningSuggestionRecordKindEnum SEVERITY_DOWN =
       _$tuningSuggestionRecordKindEnum_SEVERITY_DOWN;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const TuningSuggestionRecordKindEnum unknownDefaultOpenApi =
+      _$tuningSuggestionRecordKindEnum_unknownDefaultOpenApi;
 
   static Serializer<TuningSuggestionRecordKindEnum> get serializer =>
       _$tuningSuggestionRecordKindEnumSerializer;
@@ -449,6 +452,9 @@ class TuningSuggestionRecordStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'STALE')
   static const TuningSuggestionRecordStatusEnum STALE =
       _$tuningSuggestionRecordStatusEnum_STALE;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const TuningSuggestionRecordStatusEnum unknownDefaultOpenApi =
+      _$tuningSuggestionRecordStatusEnum_unknownDefaultOpenApi;
 
   static Serializer<TuningSuggestionRecordStatusEnum> get serializer =>
       _$tuningSuggestionRecordStatusEnumSerializer;

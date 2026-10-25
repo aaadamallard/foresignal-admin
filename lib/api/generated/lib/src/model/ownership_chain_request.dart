@@ -248,6 +248,9 @@ class OwnershipChainRequestDirectionEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'both')
   static const OwnershipChainRequestDirectionEnum both =
       _$ownershipChainRequestDirectionEnum_both;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const OwnershipChainRequestDirectionEnum unknownDefaultOpenApi =
+      _$ownershipChainRequestDirectionEnum_unknownDefaultOpenApi;
 
   static Serializer<OwnershipChainRequestDirectionEnum> get serializer =>
       _$ownershipChainRequestDirectionEnumSerializer;
@@ -276,6 +279,9 @@ class OwnershipChainRequestTypesEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'affiliated-with')
   static const OwnershipChainRequestTypesEnum affiliatedWith =
       _$ownershipChainRequestTypesEnum_affiliatedWith;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const OwnershipChainRequestTypesEnum unknownDefaultOpenApi =
+      _$ownershipChainRequestTypesEnum_unknownDefaultOpenApi;
 
   static Serializer<OwnershipChainRequestTypesEnum> get serializer =>
       _$ownershipChainRequestTypesEnumSerializer;

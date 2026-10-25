@@ -27,6 +27,9 @@ _$ingestRecordsPathKeyRequestTypeEnum_status =
 const IngestRecordsPathKeyRequestTypeEnum
 _$ingestRecordsPathKeyRequestTypeEnum_encrypted =
     const IngestRecordsPathKeyRequestTypeEnum._('encrypted');
+const IngestRecordsPathKeyRequestTypeEnum
+_$ingestRecordsPathKeyRequestTypeEnum_unknownDefaultOpenApi =
+    const IngestRecordsPathKeyRequestTypeEnum._('unknownDefaultOpenApi');
 
 IngestRecordsPathKeyRequestTypeEnum
 _$ingestRecordsPathKeyRequestTypeEnumValueOf(String name) {
@@ -45,8 +48,10 @@ _$ingestRecordsPathKeyRequestTypeEnumValueOf(String name) {
       return _$ingestRecordsPathKeyRequestTypeEnum_status;
     case 'encrypted':
       return _$ingestRecordsPathKeyRequestTypeEnum_encrypted;
+    case 'unknownDefaultOpenApi':
+      return _$ingestRecordsPathKeyRequestTypeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$ingestRecordsPathKeyRequestTypeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -61,6 +66,7 @@ _$ingestRecordsPathKeyRequestTypeEnumValues =
         _$ingestRecordsPathKeyRequestTypeEnum_card,
         _$ingestRecordsPathKeyRequestTypeEnum_status,
         _$ingestRecordsPathKeyRequestTypeEnum_encrypted,
+        _$ingestRecordsPathKeyRequestTypeEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -78,6 +84,7 @@ class _$IngestRecordsPathKeyRequestTypeEnumSerializer
     'card': 'card',
     'status': 'status',
     'encrypted': 'encrypted',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'location': 'location',
@@ -87,6 +94,7 @@ class _$IngestRecordsPathKeyRequestTypeEnumSerializer
     'card': 'card',
     'status': 'status',
     'encrypted': 'encrypted',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

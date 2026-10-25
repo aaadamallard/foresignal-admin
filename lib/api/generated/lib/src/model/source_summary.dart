@@ -480,6 +480,9 @@ class SourceSummaryModeEnum extends EnumClass {
   static const SourceSummaryModeEnum push = _$sourceSummaryModeEnum_push;
   @BuiltValueEnumConst(wireName: r'derived')
   static const SourceSummaryModeEnum derived = _$sourceSummaryModeEnum_derived;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const SourceSummaryModeEnum unknownDefaultOpenApi =
+      _$sourceSummaryModeEnum_unknownDefaultOpenApi;
 
   static Serializer<SourceSummaryModeEnum> get serializer =>
       _$sourceSummaryModeEnumSerializer;

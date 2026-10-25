@@ -22,6 +22,9 @@ const SinkTypeEnum _$sinkTypeEnum_cloudevents = const SinkTypeEnum._(
 const SinkTypeEnum _$sinkTypeEnum_federationPush = const SinkTypeEnum._(
   'federationPush',
 );
+const SinkTypeEnum _$sinkTypeEnum_unknownDefaultOpenApi = const SinkTypeEnum._(
+  'unknownDefaultOpenApi',
+);
 
 SinkTypeEnum _$sinkTypeEnumValueOf(String name) {
   switch (name) {
@@ -41,8 +44,10 @@ SinkTypeEnum _$sinkTypeEnumValueOf(String name) {
       return _$sinkTypeEnum_cloudevents;
     case 'federationPush':
       return _$sinkTypeEnum_federationPush;
+    case 'unknownDefaultOpenApi':
+      return _$sinkTypeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$sinkTypeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -56,6 +61,7 @@ final BuiltSet<SinkTypeEnum> _$sinkTypeEnumValues =
       _$sinkTypeEnum_aprsIsServe,
       _$sinkTypeEnum_cloudevents,
       _$sinkTypeEnum_federationPush,
+      _$sinkTypeEnum_unknownDefaultOpenApi,
     ]);
 
 const SinkKindEnum _$sinkKindEnum_CHANGE_FEED = const SinkKindEnum._(
@@ -64,6 +70,9 @@ const SinkKindEnum _$sinkKindEnum_CHANGE_FEED = const SinkKindEnum._(
 const SinkKindEnum _$sinkKindEnum_STATE_MIRROR = const SinkKindEnum._(
   'STATE_MIRROR',
 );
+const SinkKindEnum _$sinkKindEnum_unknownDefaultOpenApi = const SinkKindEnum._(
+  'unknownDefaultOpenApi',
+);
 
 SinkKindEnum _$sinkKindEnumValueOf(String name) {
   switch (name) {
@@ -71,17 +80,25 @@ SinkKindEnum _$sinkKindEnumValueOf(String name) {
       return _$sinkKindEnum_CHANGE_FEED;
     case 'STATE_MIRROR':
       return _$sinkKindEnum_STATE_MIRROR;
+    case 'unknownDefaultOpenApi':
+      return _$sinkKindEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$sinkKindEnum_unknownDefaultOpenApi;
   }
 }
 
-final BuiltSet<SinkKindEnum> _$sinkKindEnumValues = BuiltSet<SinkKindEnum>(
-  const <SinkKindEnum>[_$sinkKindEnum_CHANGE_FEED, _$sinkKindEnum_STATE_MIRROR],
-);
+final BuiltSet<SinkKindEnum> _$sinkKindEnumValues =
+    BuiltSet<SinkKindEnum>(const <SinkKindEnum>[
+      _$sinkKindEnum_CHANGE_FEED,
+      _$sinkKindEnum_STATE_MIRROR,
+      _$sinkKindEnum_unknownDefaultOpenApi,
+    ]);
 
 const SinkModeEnum _$sinkModeEnum_PUSH = const SinkModeEnum._('PUSH');
 const SinkModeEnum _$sinkModeEnum_SERVE = const SinkModeEnum._('SERVE');
+const SinkModeEnum _$sinkModeEnum_unknownDefaultOpenApi = const SinkModeEnum._(
+  'unknownDefaultOpenApi',
+);
 
 SinkModeEnum _$sinkModeEnumValueOf(String name) {
   switch (name) {
@@ -89,13 +106,19 @@ SinkModeEnum _$sinkModeEnumValueOf(String name) {
       return _$sinkModeEnum_PUSH;
     case 'SERVE':
       return _$sinkModeEnum_SERVE;
+    case 'unknownDefaultOpenApi':
+      return _$sinkModeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$sinkModeEnum_unknownDefaultOpenApi;
   }
 }
 
 final BuiltSet<SinkModeEnum> _$sinkModeEnumValues = BuiltSet<SinkModeEnum>(
-  const <SinkModeEnum>[_$sinkModeEnum_PUSH, _$sinkModeEnum_SERVE],
+  const <SinkModeEnum>[
+    _$sinkModeEnum_PUSH,
+    _$sinkModeEnum_SERVE,
+    _$sinkModeEnum_unknownDefaultOpenApi,
+  ],
 );
 
 const SinkStateEnum _$sinkStateEnum_RUNNING = const SinkStateEnum._('RUNNING');
@@ -104,6 +127,8 @@ const SinkStateEnum _$sinkStateEnum_RESYNCING = const SinkStateEnum._(
 );
 const SinkStateEnum _$sinkStateEnum_FAILING = const SinkStateEnum._('FAILING');
 const SinkStateEnum _$sinkStateEnum_STOPPED = const SinkStateEnum._('STOPPED');
+const SinkStateEnum _$sinkStateEnum_unknownDefaultOpenApi =
+    const SinkStateEnum._('unknownDefaultOpenApi');
 
 SinkStateEnum _$sinkStateEnumValueOf(String name) {
   switch (name) {
@@ -115,8 +140,10 @@ SinkStateEnum _$sinkStateEnumValueOf(String name) {
       return _$sinkStateEnum_FAILING;
     case 'STOPPED':
       return _$sinkStateEnum_STOPPED;
+    case 'unknownDefaultOpenApi':
+      return _$sinkStateEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$sinkStateEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -126,6 +153,7 @@ final BuiltSet<SinkStateEnum> _$sinkStateEnumValues =
       _$sinkStateEnum_RESYNCING,
       _$sinkStateEnum_FAILING,
       _$sinkStateEnum_STOPPED,
+      _$sinkStateEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<SinkTypeEnum> _$sinkTypeEnumSerializer = _$SinkTypeEnumSerializer();
@@ -144,6 +172,7 @@ class _$SinkTypeEnumSerializer implements PrimitiveSerializer<SinkTypeEnum> {
     'aprsIsServe': 'aprs-is-serve',
     'cloudevents': 'cloudevents',
     'federationPush': 'federation-push',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'mqtt-state': 'mqttState',
@@ -154,6 +183,7 @@ class _$SinkTypeEnumSerializer implements PrimitiveSerializer<SinkTypeEnum> {
     'aprs-is-serve': 'aprsIsServe',
     'cloudevents': 'cloudevents',
     'federation-push': 'federationPush',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -182,10 +212,12 @@ class _$SinkKindEnumSerializer implements PrimitiveSerializer<SinkKindEnum> {
   static const Map<String, Object> _toWire = const <String, Object>{
     'CHANGE_FEED': 'CHANGE_FEED',
     'STATE_MIRROR': 'STATE_MIRROR',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'CHANGE_FEED': 'CHANGE_FEED',
     'STATE_MIRROR': 'STATE_MIRROR',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -214,10 +246,12 @@ class _$SinkModeEnumSerializer implements PrimitiveSerializer<SinkModeEnum> {
   static const Map<String, Object> _toWire = const <String, Object>{
     'PUSH': 'PUSH',
     'SERVE': 'SERVE',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'PUSH': 'PUSH',
     'SERVE': 'SERVE',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -248,12 +282,14 @@ class _$SinkStateEnumSerializer implements PrimitiveSerializer<SinkStateEnum> {
     'RESYNCING': 'RESYNCING',
     'FAILING': 'FAILING',
     'STOPPED': 'STOPPED',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'RUNNING': 'RUNNING',
     'RESYNCING': 'RESYNCING',
     'FAILING': 'FAILING',
     'STOPPED': 'STOPPED',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

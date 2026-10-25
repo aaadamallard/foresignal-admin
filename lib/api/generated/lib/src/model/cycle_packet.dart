@@ -470,6 +470,9 @@ class CyclePacketCadenceEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'on-demand')
   static const CyclePacketCadenceEnum onDemand =
       _$cyclePacketCadenceEnum_onDemand;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const CyclePacketCadenceEnum unknownDefaultOpenApi =
+      _$cyclePacketCadenceEnum_unknownDefaultOpenApi;
 
   static Serializer<CyclePacketCadenceEnum> get serializer =>
       _$cyclePacketCadenceEnumSerializer;

@@ -14,6 +14,8 @@ const SinkStatusStateEnum _$sinkStatusStateEnum_FAILING =
     const SinkStatusStateEnum._('FAILING');
 const SinkStatusStateEnum _$sinkStatusStateEnum_STOPPED =
     const SinkStatusStateEnum._('STOPPED');
+const SinkStatusStateEnum _$sinkStatusStateEnum_unknownDefaultOpenApi =
+    const SinkStatusStateEnum._('unknownDefaultOpenApi');
 
 SinkStatusStateEnum _$sinkStatusStateEnumValueOf(String name) {
   switch (name) {
@@ -25,8 +27,10 @@ SinkStatusStateEnum _$sinkStatusStateEnumValueOf(String name) {
       return _$sinkStatusStateEnum_FAILING;
     case 'STOPPED':
       return _$sinkStatusStateEnum_STOPPED;
+    case 'unknownDefaultOpenApi':
+      return _$sinkStatusStateEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$sinkStatusStateEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -36,6 +40,7 @@ final BuiltSet<SinkStatusStateEnum> _$sinkStatusStateEnumValues =
       _$sinkStatusStateEnum_RESYNCING,
       _$sinkStatusStateEnum_FAILING,
       _$sinkStatusStateEnum_STOPPED,
+      _$sinkStatusStateEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<SinkStatusStateEnum> _$sinkStatusStateEnumSerializer =
@@ -48,12 +53,14 @@ class _$SinkStatusStateEnumSerializer
     'RESYNCING': 'RESYNCING',
     'FAILING': 'FAILING',
     'STOPPED': 'STOPPED',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'RUNNING': 'RUNNING',
     'RESYNCING': 'RESYNCING',
     'FAILING': 'FAILING',
     'STOPPED': 'STOPPED',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

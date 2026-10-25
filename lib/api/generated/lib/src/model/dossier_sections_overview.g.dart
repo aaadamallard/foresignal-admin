@@ -17,6 +17,9 @@ _$dossierSectionsOverviewStatusEnum_unavailable =
 const DossierSectionsOverviewStatusEnum
 _$dossierSectionsOverviewStatusEnum_notInstalled =
     const DossierSectionsOverviewStatusEnum._('notInstalled');
+const DossierSectionsOverviewStatusEnum
+_$dossierSectionsOverviewStatusEnum_unknownDefaultOpenApi =
+    const DossierSectionsOverviewStatusEnum._('unknownDefaultOpenApi');
 
 DossierSectionsOverviewStatusEnum _$dossierSectionsOverviewStatusEnumValueOf(
   String name,
@@ -30,8 +33,10 @@ DossierSectionsOverviewStatusEnum _$dossierSectionsOverviewStatusEnumValueOf(
       return _$dossierSectionsOverviewStatusEnum_unavailable;
     case 'notInstalled':
       return _$dossierSectionsOverviewStatusEnum_notInstalled;
+    case 'unknownDefaultOpenApi':
+      return _$dossierSectionsOverviewStatusEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$dossierSectionsOverviewStatusEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -43,6 +48,7 @@ _$dossierSectionsOverviewStatusEnumValues =
         _$dossierSectionsOverviewStatusEnum_empty,
         _$dossierSectionsOverviewStatusEnum_unavailable,
         _$dossierSectionsOverviewStatusEnum_notInstalled,
+        _$dossierSectionsOverviewStatusEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -57,12 +63,14 @@ class _$DossierSectionsOverviewStatusEnumSerializer
     'empty': 'empty',
     'unavailable': 'unavailable',
     'notInstalled': 'not-installed',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'ok': 'ok',
     'empty': 'empty',
     'unavailable': 'unavailable',
     'not-installed': 'notInstalled',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

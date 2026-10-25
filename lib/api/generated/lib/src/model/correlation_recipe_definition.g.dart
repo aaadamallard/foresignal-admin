@@ -24,6 +24,9 @@ _$correlationRecipeDefinitionTypeEnum_seismic =
 const CorrelationRecipeDefinitionTypeEnum
 _$correlationRecipeDefinitionTypeEnum_custom =
     const CorrelationRecipeDefinitionTypeEnum._('custom');
+const CorrelationRecipeDefinitionTypeEnum
+_$correlationRecipeDefinitionTypeEnum_unknownDefaultOpenApi =
+    const CorrelationRecipeDefinitionTypeEnum._('unknownDefaultOpenApi');
 
 CorrelationRecipeDefinitionTypeEnum
 _$correlationRecipeDefinitionTypeEnumValueOf(String name) {
@@ -40,8 +43,10 @@ _$correlationRecipeDefinitionTypeEnumValueOf(String name) {
       return _$correlationRecipeDefinitionTypeEnum_seismic;
     case 'custom':
       return _$correlationRecipeDefinitionTypeEnum_custom;
+    case 'unknownDefaultOpenApi':
+      return _$correlationRecipeDefinitionTypeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$correlationRecipeDefinitionTypeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -55,6 +60,7 @@ _$correlationRecipeDefinitionTypeEnumValues =
         _$correlationRecipeDefinitionTypeEnum_weatherImpact,
         _$correlationRecipeDefinitionTypeEnum_seismic,
         _$correlationRecipeDefinitionTypeEnum_custom,
+        _$correlationRecipeDefinitionTypeEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -71,6 +77,7 @@ class _$CorrelationRecipeDefinitionTypeEnumSerializer
     'weatherImpact': 'weather-impact',
     'seismic': 'seismic',
     'custom': 'custom',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'maritime-disruption': 'maritimeDisruption',
@@ -79,6 +86,7 @@ class _$CorrelationRecipeDefinitionTypeEnumSerializer
     'weather-impact': 'weatherImpact',
     'seismic': 'seismic',
     'custom': 'custom',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

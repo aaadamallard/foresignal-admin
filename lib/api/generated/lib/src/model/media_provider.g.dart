@@ -16,6 +16,8 @@ const MediaProviderIdEnum _$mediaProviderIdEnum_mbfc =
     const MediaProviderIdEnum._('mbfc');
 const MediaProviderIdEnum _$mediaProviderIdEnum_operator_ =
     const MediaProviderIdEnum._('operator_');
+const MediaProviderIdEnum _$mediaProviderIdEnum_unknownDefaultOpenApi =
+    const MediaProviderIdEnum._('unknownDefaultOpenApi');
 
 MediaProviderIdEnum _$mediaProviderIdEnumValueOf(String name) {
   switch (name) {
@@ -29,8 +31,10 @@ MediaProviderIdEnum _$mediaProviderIdEnumValueOf(String name) {
       return _$mediaProviderIdEnum_mbfc;
     case 'operator_':
       return _$mediaProviderIdEnum_operator_;
+    case 'unknownDefaultOpenApi':
+      return _$mediaProviderIdEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$mediaProviderIdEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -41,12 +45,15 @@ final BuiltSet<MediaProviderIdEnum> _$mediaProviderIdEnumValues =
       _$mediaProviderIdEnum_allsides,
       _$mediaProviderIdEnum_mbfc,
       _$mediaProviderIdEnum_operator_,
+      _$mediaProviderIdEnum_unknownDefaultOpenApi,
     ]);
 
 const MediaProviderEgressEnum _$mediaProviderEgressEnum_OPEN =
     const MediaProviderEgressEnum._('OPEN');
 const MediaProviderEgressEnum _$mediaProviderEgressEnum_LOCAL_ONLY =
     const MediaProviderEgressEnum._('LOCAL_ONLY');
+const MediaProviderEgressEnum _$mediaProviderEgressEnum_unknownDefaultOpenApi =
+    const MediaProviderEgressEnum._('unknownDefaultOpenApi');
 
 MediaProviderEgressEnum _$mediaProviderEgressEnumValueOf(String name) {
   switch (name) {
@@ -54,8 +61,10 @@ MediaProviderEgressEnum _$mediaProviderEgressEnumValueOf(String name) {
       return _$mediaProviderEgressEnum_OPEN;
     case 'LOCAL_ONLY':
       return _$mediaProviderEgressEnum_LOCAL_ONLY;
+    case 'unknownDefaultOpenApi':
+      return _$mediaProviderEgressEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$mediaProviderEgressEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -63,6 +72,7 @@ final BuiltSet<MediaProviderEgressEnum> _$mediaProviderEgressEnumValues =
     BuiltSet<MediaProviderEgressEnum>(const <MediaProviderEgressEnum>[
       _$mediaProviderEgressEnum_OPEN,
       _$mediaProviderEgressEnum_LOCAL_ONLY,
+      _$mediaProviderEgressEnum_unknownDefaultOpenApi,
     ]);
 
 const MediaProviderLastImportStatusEnum _$mediaProviderLastImportStatusEnum_ok =
@@ -73,6 +83,9 @@ _$mediaProviderLastImportStatusEnum_partial =
 const MediaProviderLastImportStatusEnum
 _$mediaProviderLastImportStatusEnum_failed =
     const MediaProviderLastImportStatusEnum._('failed');
+const MediaProviderLastImportStatusEnum
+_$mediaProviderLastImportStatusEnum_unknownDefaultOpenApi =
+    const MediaProviderLastImportStatusEnum._('unknownDefaultOpenApi');
 
 MediaProviderLastImportStatusEnum _$mediaProviderLastImportStatusEnumValueOf(
   String name,
@@ -84,8 +97,10 @@ MediaProviderLastImportStatusEnum _$mediaProviderLastImportStatusEnumValueOf(
       return _$mediaProviderLastImportStatusEnum_partial;
     case 'failed':
       return _$mediaProviderLastImportStatusEnum_failed;
+    case 'unknownDefaultOpenApi':
+      return _$mediaProviderLastImportStatusEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$mediaProviderLastImportStatusEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -96,6 +111,7 @@ _$mediaProviderLastImportStatusEnumValues =
         _$mediaProviderLastImportStatusEnum_ok,
         _$mediaProviderLastImportStatusEnum_partial,
         _$mediaProviderLastImportStatusEnum_failed,
+        _$mediaProviderLastImportStatusEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -115,6 +131,7 @@ class _$MediaProviderIdEnumSerializer
     'allsides': 'allsides',
     'mbfc': 'mbfc',
     'operator_': 'operator',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'wikidata': 'wikidata',
@@ -122,6 +139,7 @@ class _$MediaProviderIdEnumSerializer
     'allsides': 'allsides',
     'mbfc': 'mbfc',
     'operator': 'operator_',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -151,10 +169,12 @@ class _$MediaProviderEgressEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'OPEN': 'OPEN',
     'LOCAL_ONLY': 'LOCAL_ONLY',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'OPEN': 'OPEN',
     'LOCAL_ONLY': 'LOCAL_ONLY',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -185,11 +205,13 @@ class _$MediaProviderLastImportStatusEnumSerializer
     'ok': 'ok',
     'partial': 'partial',
     'failed': 'failed',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'ok': 'ok',
     'partial': 'partial',
     'failed': 'failed',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

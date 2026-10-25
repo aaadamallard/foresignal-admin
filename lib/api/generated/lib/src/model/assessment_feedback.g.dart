@@ -12,6 +12,9 @@ const AssessmentFeedbackRatingEnum _$assessmentFeedbackRatingEnum_notUseful =
     const AssessmentFeedbackRatingEnum._('notUseful');
 const AssessmentFeedbackRatingEnum _$assessmentFeedbackRatingEnum_wrong =
     const AssessmentFeedbackRatingEnum._('wrong');
+const AssessmentFeedbackRatingEnum
+_$assessmentFeedbackRatingEnum_unknownDefaultOpenApi =
+    const AssessmentFeedbackRatingEnum._('unknownDefaultOpenApi');
 
 AssessmentFeedbackRatingEnum _$assessmentFeedbackRatingEnumValueOf(
   String name,
@@ -23,8 +26,10 @@ AssessmentFeedbackRatingEnum _$assessmentFeedbackRatingEnumValueOf(
       return _$assessmentFeedbackRatingEnum_notUseful;
     case 'wrong':
       return _$assessmentFeedbackRatingEnum_wrong;
+    case 'unknownDefaultOpenApi':
+      return _$assessmentFeedbackRatingEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$assessmentFeedbackRatingEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -34,6 +39,7 @@ _$assessmentFeedbackRatingEnumValues =
       _$assessmentFeedbackRatingEnum_useful,
       _$assessmentFeedbackRatingEnum_notUseful,
       _$assessmentFeedbackRatingEnum_wrong,
+      _$assessmentFeedbackRatingEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<AssessmentFeedbackRatingEnum>
@@ -46,11 +52,13 @@ class _$AssessmentFeedbackRatingEnumSerializer
     'useful': 'useful',
     'notUseful': 'not_useful',
     'wrong': 'wrong',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'useful': 'useful',
     'not_useful': 'notUseful',
     'wrong': 'wrong',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

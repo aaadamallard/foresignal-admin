@@ -273,6 +273,9 @@ class MappingFieldTypeEnum extends EnumClass {
   static const MappingFieldTypeEnum string = _$mappingFieldTypeEnum_string;
   @BuiltValueEnumConst(wireName: r'boolean')
   static const MappingFieldTypeEnum boolean = _$mappingFieldTypeEnum_boolean;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const MappingFieldTypeEnum unknownDefaultOpenApi =
+      _$mappingFieldTypeEnum_unknownDefaultOpenApi;
 
   static Serializer<MappingFieldTypeEnum> get serializer =>
       _$mappingFieldTypeEnumSerializer;

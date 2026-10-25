@@ -154,6 +154,9 @@ class IntelBoardBenchmarksInnerStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'unknown')
   static const IntelBoardBenchmarksInnerStatusEnum unknown =
       _$intelBoardBenchmarksInnerStatusEnum_unknown;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const IntelBoardBenchmarksInnerStatusEnum unknownDefaultOpenApi =
+      _$intelBoardBenchmarksInnerStatusEnum_unknownDefaultOpenApi;
 
   static Serializer<IntelBoardBenchmarksInnerStatusEnum> get serializer =>
       _$intelBoardBenchmarksInnerStatusEnumSerializer;

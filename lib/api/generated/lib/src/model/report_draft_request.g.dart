@@ -20,6 +20,9 @@ _$reportDraftRequestTemplateEnum_weeklyAssessment =
     const ReportDraftRequestTemplateEnum._('weeklyAssessment');
 const ReportDraftRequestTemplateEnum _$reportDraftRequestTemplateEnum_custom =
     const ReportDraftRequestTemplateEnum._('custom');
+const ReportDraftRequestTemplateEnum
+_$reportDraftRequestTemplateEnum_unknownDefaultOpenApi =
+    const ReportDraftRequestTemplateEnum._('unknownDefaultOpenApi');
 
 ReportDraftRequestTemplateEnum _$reportDraftRequestTemplateEnumValueOf(
   String name,
@@ -35,8 +38,10 @@ ReportDraftRequestTemplateEnum _$reportDraftRequestTemplateEnumValueOf(
       return _$reportDraftRequestTemplateEnum_weeklyAssessment;
     case 'custom':
       return _$reportDraftRequestTemplateEnum_custom;
+    case 'unknownDefaultOpenApi':
+      return _$reportDraftRequestTemplateEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$reportDraftRequestTemplateEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -49,6 +54,7 @@ _$reportDraftRequestTemplateEnumValues =
         _$reportDraftRequestTemplateEnum_chronicleRecap,
         _$reportDraftRequestTemplateEnum_weeklyAssessment,
         _$reportDraftRequestTemplateEnum_custom,
+        _$reportDraftRequestTemplateEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -64,6 +70,7 @@ class _$ReportDraftRequestTemplateEnumSerializer
     'chronicleRecap': 'chronicle-recap',
     'weeklyAssessment': 'weekly-assessment',
     'custom': 'custom',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'situation-brief': 'situationBrief',
@@ -71,6 +78,7 @@ class _$ReportDraftRequestTemplateEnumSerializer
     'chronicle-recap': 'chronicleRecap',
     'weekly-assessment': 'weeklyAssessment',
     'custom': 'custom',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

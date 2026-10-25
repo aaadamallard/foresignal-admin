@@ -463,6 +463,9 @@ class MetarPayloadMetarTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'SPECI')
   static const MetarPayloadMetarTypeEnum SPECI =
       _$metarPayloadMetarTypeEnum_SPECI;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const MetarPayloadMetarTypeEnum unknownDefaultOpenApi =
+      _$metarPayloadMetarTypeEnum_unknownDefaultOpenApi;
 
   static Serializer<MetarPayloadMetarTypeEnum> get serializer =>
       _$metarPayloadMetarTypeEnumSerializer;
@@ -488,6 +491,9 @@ class MetarPayloadFlightCategoryEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'LIFR')
   static const MetarPayloadFlightCategoryEnum LIFR =
       _$metarPayloadFlightCategoryEnum_LIFR;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const MetarPayloadFlightCategoryEnum unknownDefaultOpenApi =
+      _$metarPayloadFlightCategoryEnum_unknownDefaultOpenApi;
 
   static Serializer<MetarPayloadFlightCategoryEnum> get serializer =>
       _$metarPayloadFlightCategoryEnumSerializer;

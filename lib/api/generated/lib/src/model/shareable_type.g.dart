@@ -15,6 +15,9 @@ const ShareableType _$annotation = const ShareableType._('annotation');
 const ShareableType _$attachment = const ShareableType._('attachment');
 const ShareableType _$evidenceItem = const ShareableType._('evidenceItem');
 const ShareableType _$tag = const ShareableType._('tag');
+const ShareableType _$unknownDefaultOpenApi = const ShareableType._(
+  'unknownDefaultOpenApi',
+);
 
 ShareableType _$valueOf(String name) {
   switch (name) {
@@ -36,8 +39,10 @@ ShareableType _$valueOf(String name) {
       return _$evidenceItem;
     case 'tag':
       return _$tag;
+    case 'unknownDefaultOpenApi':
+      return _$unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$unknownDefaultOpenApi;
   }
 }
 
@@ -52,6 +57,7 @@ final BuiltSet<ShareableType> _$values =
       _$attachment,
       _$evidenceItem,
       _$tag,
+      _$unknownDefaultOpenApi,
     ]);
 
 class _$ShareableTypeMeta {
@@ -65,6 +71,7 @@ class _$ShareableTypeMeta {
   ShareableType get attachment => _$attachment;
   ShareableType get evidenceItem => _$evidenceItem;
   ShareableType get tag => _$tag;
+  ShareableType get unknownDefaultOpenApi => _$unknownDefaultOpenApi;
   ShareableType valueOf(String name) => _$valueOf(name);
   BuiltSet<ShareableType> get values => _$values;
 }
@@ -88,6 +95,7 @@ class _$ShareableTypeSerializer implements PrimitiveSerializer<ShareableType> {
     'attachment': 'attachment',
     'evidenceItem': 'evidence-item',
     'tag': 'tag',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'investigation': 'investigation',
@@ -99,6 +107,7 @@ class _$ShareableTypeSerializer implements PrimitiveSerializer<ShareableType> {
     'attachment': 'attachment',
     'evidence-item': 'evidenceItem',
     'tag': 'tag',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

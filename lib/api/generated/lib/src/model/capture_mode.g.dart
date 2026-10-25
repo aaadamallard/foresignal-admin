@@ -18,6 +18,8 @@ const CaptureModeModeEnum _$captureModeModeEnum_rollupOnly =
     const CaptureModeModeEnum._('rollupOnly');
 const CaptureModeModeEnum _$captureModeModeEnum_frames =
     const CaptureModeModeEnum._('frames');
+const CaptureModeModeEnum _$captureModeModeEnum_unknownDefaultOpenApi =
+    const CaptureModeModeEnum._('unknownDefaultOpenApi');
 
 CaptureModeModeEnum _$captureModeModeEnumValueOf(String name) {
   switch (name) {
@@ -33,8 +35,10 @@ CaptureModeModeEnum _$captureModeModeEnumValueOf(String name) {
       return _$captureModeModeEnum_rollupOnly;
     case 'frames':
       return _$captureModeModeEnum_frames;
+    case 'unknownDefaultOpenApi':
+      return _$captureModeModeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$captureModeModeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -46,6 +50,7 @@ final BuiltSet<CaptureModeModeEnum> _$captureModeModeEnumValues =
       _$captureModeModeEnum_latestPerInterval,
       _$captureModeModeEnum_rollupOnly,
       _$captureModeModeEnum_frames,
+      _$captureModeModeEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<CaptureModeModeEnum> _$captureModeModeEnumSerializer =
@@ -60,6 +65,7 @@ class _$CaptureModeModeEnumSerializer
     'latestPerInterval': 'latest-per-interval',
     'rollupOnly': 'rollup-only',
     'frames': 'frames',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'full': 'full',
@@ -68,6 +74,7 @@ class _$CaptureModeModeEnumSerializer
     'latest-per-interval': 'latestPerInterval',
     'rollup-only': 'rollupOnly',
     'frames': 'frames',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

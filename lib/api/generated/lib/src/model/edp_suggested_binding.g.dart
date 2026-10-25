@@ -27,6 +27,9 @@ const EdpSuggestedBindingTargetEnum _$edpSuggestedBindingTargetEnum_situation =
     const EdpSuggestedBindingTargetEnum._('situation');
 const EdpSuggestedBindingTargetEnum _$edpSuggestedBindingTargetEnum_chronicle =
     const EdpSuggestedBindingTargetEnum._('chronicle');
+const EdpSuggestedBindingTargetEnum
+_$edpSuggestedBindingTargetEnum_unknownDefaultOpenApi =
+    const EdpSuggestedBindingTargetEnum._('unknownDefaultOpenApi');
 
 EdpSuggestedBindingTargetEnum _$edpSuggestedBindingTargetEnumValueOf(
   String name,
@@ -52,8 +55,10 @@ EdpSuggestedBindingTargetEnum _$edpSuggestedBindingTargetEnumValueOf(
       return _$edpSuggestedBindingTargetEnum_situation;
     case 'chronicle':
       return _$edpSuggestedBindingTargetEnum_chronicle;
+    case 'unknownDefaultOpenApi':
+      return _$edpSuggestedBindingTargetEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$edpSuggestedBindingTargetEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -70,6 +75,7 @@ _$edpSuggestedBindingTargetEnumValues = BuiltSet<EdpSuggestedBindingTargetEnum>(
     _$edpSuggestedBindingTargetEnum_place,
     _$edpSuggestedBindingTargetEnum_situation,
     _$edpSuggestedBindingTargetEnum_chronicle,
+    _$edpSuggestedBindingTargetEnum_unknownDefaultOpenApi,
   ],
 );
 
@@ -90,6 +96,7 @@ class _$EdpSuggestedBindingTargetEnumSerializer
     'place': 'place',
     'situation': 'situation',
     'chronicle': 'chronicle',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'series': 'series',
@@ -102,6 +109,7 @@ class _$EdpSuggestedBindingTargetEnumSerializer
     'place': 'place',
     'situation': 'situation',
     'chronicle': 'chronicle',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

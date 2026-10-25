@@ -102,6 +102,9 @@ class Search200ResponseModeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'text')
   static const Search200ResponseModeEnum text =
       _$search200ResponseModeEnum_text;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const Search200ResponseModeEnum unknownDefaultOpenApi =
+      _$search200ResponseModeEnum_unknownDefaultOpenApi;
 
   static Serializer<Search200ResponseModeEnum> get serializer =>
       _$search200ResponseModeEnumSerializer;

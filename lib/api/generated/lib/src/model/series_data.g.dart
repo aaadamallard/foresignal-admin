@@ -16,6 +16,8 @@ const SeriesDataFrequencyEnum _$seriesDataFrequencyEnum_month =
     const SeriesDataFrequencyEnum._('month');
 const SeriesDataFrequencyEnum _$seriesDataFrequencyEnum_irregular =
     const SeriesDataFrequencyEnum._('irregular');
+const SeriesDataFrequencyEnum _$seriesDataFrequencyEnum_unknownDefaultOpenApi =
+    const SeriesDataFrequencyEnum._('unknownDefaultOpenApi');
 
 SeriesDataFrequencyEnum _$seriesDataFrequencyEnumValueOf(String name) {
   switch (name) {
@@ -29,8 +31,10 @@ SeriesDataFrequencyEnum _$seriesDataFrequencyEnumValueOf(String name) {
       return _$seriesDataFrequencyEnum_month;
     case 'irregular':
       return _$seriesDataFrequencyEnum_irregular;
+    case 'unknownDefaultOpenApi':
+      return _$seriesDataFrequencyEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$seriesDataFrequencyEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -41,6 +45,7 @@ final BuiltSet<SeriesDataFrequencyEnum> _$seriesDataFrequencyEnumValues =
       _$seriesDataFrequencyEnum_week,
       _$seriesDataFrequencyEnum_month,
       _$seriesDataFrequencyEnum_irregular,
+      _$seriesDataFrequencyEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<SeriesDataFrequencyEnum> _$seriesDataFrequencyEnumSerializer =
@@ -54,6 +59,7 @@ class _$SeriesDataFrequencyEnumSerializer
     'week': 'week',
     'month': 'month',
     'irregular': 'irregular',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'hour': 'hour',
@@ -61,6 +67,7 @@ class _$SeriesDataFrequencyEnumSerializer
     'week': 'week',
     'month': 'month',
     'irregular': 'irregular',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

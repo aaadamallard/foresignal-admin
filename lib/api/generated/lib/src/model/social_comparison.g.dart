@@ -17,6 +17,9 @@ const SocialComparisonStatusEnum _$socialComparisonStatusEnum_contradicted =
 const SocialComparisonStatusEnum
 _$socialComparisonStatusEnum_insufficientCoverage =
     const SocialComparisonStatusEnum._('insufficientCoverage');
+const SocialComparisonStatusEnum
+_$socialComparisonStatusEnum_unknownDefaultOpenApi =
+    const SocialComparisonStatusEnum._('unknownDefaultOpenApi');
 
 SocialComparisonStatusEnum _$socialComparisonStatusEnumValueOf(String name) {
   switch (name) {
@@ -30,8 +33,10 @@ SocialComparisonStatusEnum _$socialComparisonStatusEnumValueOf(String name) {
       return _$socialComparisonStatusEnum_contradicted;
     case 'insufficientCoverage':
       return _$socialComparisonStatusEnum_insufficientCoverage;
+    case 'unknownDefaultOpenApi':
+      return _$socialComparisonStatusEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$socialComparisonStatusEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -42,12 +47,16 @@ final BuiltSet<SocialComparisonStatusEnum> _$socialComparisonStatusEnumValues =
       _$socialComparisonStatusEnum_unobserved,
       _$socialComparisonStatusEnum_contradicted,
       _$socialComparisonStatusEnum_insufficientCoverage,
+      _$socialComparisonStatusEnum_unknownDefaultOpenApi,
     ]);
 
 const SocialComparisonFoundByEnum _$socialComparisonFoundByEnum_organic =
     const SocialComparisonFoundByEnum._('organic');
 const SocialComparisonFoundByEnum _$socialComparisonFoundByEnum_cue =
     const SocialComparisonFoundByEnum._('cue');
+const SocialComparisonFoundByEnum
+_$socialComparisonFoundByEnum_unknownDefaultOpenApi =
+    const SocialComparisonFoundByEnum._('unknownDefaultOpenApi');
 
 SocialComparisonFoundByEnum _$socialComparisonFoundByEnumValueOf(String name) {
   switch (name) {
@@ -55,18 +64,20 @@ SocialComparisonFoundByEnum _$socialComparisonFoundByEnumValueOf(String name) {
       return _$socialComparisonFoundByEnum_organic;
     case 'cue':
       return _$socialComparisonFoundByEnum_cue;
+    case 'unknownDefaultOpenApi':
+      return _$socialComparisonFoundByEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$socialComparisonFoundByEnum_unknownDefaultOpenApi;
   }
 }
 
 final BuiltSet<SocialComparisonFoundByEnum>
-_$socialComparisonFoundByEnumValues = BuiltSet<SocialComparisonFoundByEnum>(
-  const <SocialComparisonFoundByEnum>[
-    _$socialComparisonFoundByEnum_organic,
-    _$socialComparisonFoundByEnum_cue,
-  ],
-);
+_$socialComparisonFoundByEnumValues =
+    BuiltSet<SocialComparisonFoundByEnum>(const <SocialComparisonFoundByEnum>[
+      _$socialComparisonFoundByEnum_organic,
+      _$socialComparisonFoundByEnum_cue,
+      _$socialComparisonFoundByEnum_unknownDefaultOpenApi,
+    ]);
 
 Serializer<SocialComparisonStatusEnum> _$socialComparisonStatusEnumSerializer =
     _$SocialComparisonStatusEnumSerializer();
@@ -82,6 +93,7 @@ class _$SocialComparisonStatusEnumSerializer
     'unobserved': 'unobserved',
     'contradicted': 'contradicted',
     'insufficientCoverage': 'insufficient-coverage',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'pending': 'pending',
@@ -89,6 +101,7 @@ class _$SocialComparisonStatusEnumSerializer
     'unobserved': 'unobserved',
     'contradicted': 'contradicted',
     'insufficient-coverage': 'insufficientCoverage',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -118,10 +131,12 @@ class _$SocialComparisonFoundByEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'organic': 'organic',
     'cue': 'cue',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'organic': 'organic',
     'cue': 'cue',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

@@ -33,6 +33,8 @@ const ParamSpecTypeEnum _$paramSpecTypeEnum_inboxPath =
 const ParamSpecTypeEnum _$paramSpecTypeEnum_json = const ParamSpecTypeEnum._(
   'json',
 );
+const ParamSpecTypeEnum _$paramSpecTypeEnum_unknownDefaultOpenApi =
+    const ParamSpecTypeEnum._('unknownDefaultOpenApi');
 
 ParamSpecTypeEnum _$paramSpecTypeEnumValueOf(String name) {
   switch (name) {
@@ -56,8 +58,10 @@ ParamSpecTypeEnum _$paramSpecTypeEnumValueOf(String name) {
       return _$paramSpecTypeEnum_inboxPath;
     case 'json':
       return _$paramSpecTypeEnum_json;
+    case 'unknownDefaultOpenApi':
+      return _$paramSpecTypeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$paramSpecTypeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -73,6 +77,7 @@ final BuiltSet<ParamSpecTypeEnum> _$paramSpecTypeEnumValues =
       _$paramSpecTypeEnum_lanUrl,
       _$paramSpecTypeEnum_inboxPath,
       _$paramSpecTypeEnum_json,
+      _$paramSpecTypeEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<ParamSpecTypeEnum> _$paramSpecTypeEnumSerializer =
@@ -91,6 +96,7 @@ class _$ParamSpecTypeEnumSerializer
     'lanUrl': 'lan-url',
     'inboxPath': 'inbox-path',
     'json': 'json',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'string': 'string',
@@ -103,6 +109,7 @@ class _$ParamSpecTypeEnumSerializer
     'lan-url': 'lanUrl',
     'inbox-path': 'inboxPath',
     'json': 'json',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

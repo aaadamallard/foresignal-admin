@@ -748,6 +748,9 @@ class SystemInfoStatusEnum extends EnumClass {
   static const SystemInfoStatusEnum degraded = _$systemInfoStatusEnum_degraded;
   @BuiltValueEnumConst(wireName: r'down')
   static const SystemInfoStatusEnum down = _$systemInfoStatusEnum_down;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const SystemInfoStatusEnum unknownDefaultOpenApi =
+      _$systemInfoStatusEnum_unknownDefaultOpenApi;
 
   static Serializer<SystemInfoStatusEnum> get serializer =>
       _$systemInfoStatusEnumSerializer;
@@ -766,6 +769,9 @@ class SystemInfoModeEnum extends EnumClass {
   static const SystemInfoModeEnum full = _$systemInfoModeEnum_full;
   @BuiltValueEnumConst(wireName: r'edge')
   static const SystemInfoModeEnum edge = _$systemInfoModeEnum_edge;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const SystemInfoModeEnum unknownDefaultOpenApi =
+      _$systemInfoModeEnum_unknownDefaultOpenApi;
 
   static Serializer<SystemInfoModeEnum> get serializer =>
       _$systemInfoModeEnumSerializer;

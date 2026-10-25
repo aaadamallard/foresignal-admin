@@ -16,6 +16,9 @@ const ChronicleStatusEventStatusEnum _$chronicleStatusEventStatusEnum_stopped =
     const ChronicleStatusEventStatusEnum._('stopped');
 const ChronicleStatusEventStatusEnum _$chronicleStatusEventStatusEnum_archived =
     const ChronicleStatusEventStatusEnum._('archived');
+const ChronicleStatusEventStatusEnum
+_$chronicleStatusEventStatusEnum_unknownDefaultOpenApi =
+    const ChronicleStatusEventStatusEnum._('unknownDefaultOpenApi');
 
 ChronicleStatusEventStatusEnum _$chronicleStatusEventStatusEnumValueOf(
   String name,
@@ -31,8 +34,10 @@ ChronicleStatusEventStatusEnum _$chronicleStatusEventStatusEnumValueOf(
       return _$chronicleStatusEventStatusEnum_stopped;
     case 'archived':
       return _$chronicleStatusEventStatusEnum_archived;
+    case 'unknownDefaultOpenApi':
+      return _$chronicleStatusEventStatusEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$chronicleStatusEventStatusEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -45,6 +50,7 @@ _$chronicleStatusEventStatusEnumValues =
         _$chronicleStatusEventStatusEnum_paused,
         _$chronicleStatusEventStatusEnum_stopped,
         _$chronicleStatusEventStatusEnum_archived,
+        _$chronicleStatusEventStatusEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -63,6 +69,9 @@ _$chronicleStatusEventPreviousStatusEnum_stopped =
 const ChronicleStatusEventPreviousStatusEnum
 _$chronicleStatusEventPreviousStatusEnum_archived =
     const ChronicleStatusEventPreviousStatusEnum._('archived');
+const ChronicleStatusEventPreviousStatusEnum
+_$chronicleStatusEventPreviousStatusEnum_unknownDefaultOpenApi =
+    const ChronicleStatusEventPreviousStatusEnum._('unknownDefaultOpenApi');
 
 ChronicleStatusEventPreviousStatusEnum
 _$chronicleStatusEventPreviousStatusEnumValueOf(String name) {
@@ -77,8 +86,10 @@ _$chronicleStatusEventPreviousStatusEnumValueOf(String name) {
       return _$chronicleStatusEventPreviousStatusEnum_stopped;
     case 'archived':
       return _$chronicleStatusEventPreviousStatusEnum_archived;
+    case 'unknownDefaultOpenApi':
+      return _$chronicleStatusEventPreviousStatusEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$chronicleStatusEventPreviousStatusEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -91,6 +102,7 @@ _$chronicleStatusEventPreviousStatusEnumValues =
         _$chronicleStatusEventPreviousStatusEnum_paused,
         _$chronicleStatusEventPreviousStatusEnum_stopped,
         _$chronicleStatusEventPreviousStatusEnum_archived,
+        _$chronicleStatusEventPreviousStatusEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -102,6 +114,9 @@ _$chronicleStatusEventCapStateEnum_warning =
 const ChronicleStatusEventCapStateEnum
 _$chronicleStatusEventCapStateEnum_exceeded =
     const ChronicleStatusEventCapStateEnum._('exceeded');
+const ChronicleStatusEventCapStateEnum
+_$chronicleStatusEventCapStateEnum_unknownDefaultOpenApi =
+    const ChronicleStatusEventCapStateEnum._('unknownDefaultOpenApi');
 
 ChronicleStatusEventCapStateEnum _$chronicleStatusEventCapStateEnumValueOf(
   String name,
@@ -113,8 +128,10 @@ ChronicleStatusEventCapStateEnum _$chronicleStatusEventCapStateEnumValueOf(
       return _$chronicleStatusEventCapStateEnum_warning;
     case 'exceeded':
       return _$chronicleStatusEventCapStateEnum_exceeded;
+    case 'unknownDefaultOpenApi':
+      return _$chronicleStatusEventCapStateEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$chronicleStatusEventCapStateEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -125,6 +142,7 @@ _$chronicleStatusEventCapStateEnumValues =
         _$chronicleStatusEventCapStateEnum_ok,
         _$chronicleStatusEventCapStateEnum_warning,
         _$chronicleStatusEventCapStateEnum_exceeded,
+        _$chronicleStatusEventCapStateEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -146,6 +164,7 @@ class _$ChronicleStatusEventStatusEnumSerializer
     'paused': 'paused',
     'stopped': 'stopped',
     'archived': 'archived',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'proposed': 'proposed',
@@ -153,6 +172,7 @@ class _$ChronicleStatusEventStatusEnumSerializer
     'paused': 'paused',
     'stopped': 'stopped',
     'archived': 'archived',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -185,6 +205,7 @@ class _$ChronicleStatusEventPreviousStatusEnumSerializer
     'paused': 'paused',
     'stopped': 'stopped',
     'archived': 'archived',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'proposed': 'proposed',
@@ -192,6 +213,7 @@ class _$ChronicleStatusEventPreviousStatusEnumSerializer
     'paused': 'paused',
     'stopped': 'stopped',
     'archived': 'archived',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -224,11 +246,13 @@ class _$ChronicleStatusEventCapStateEnumSerializer
     'ok': 'ok',
     'warning': 'warning',
     'exceeded': 'exceeded',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'ok': 'ok',
     'warning': 'warning',
     'exceeded': 'exceeded',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

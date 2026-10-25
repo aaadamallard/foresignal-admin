@@ -9,14 +9,19 @@ part of 'ogc_tile_set_list_tilesets_inner.dart';
 const OgcTileSetListTilesetsInnerDataTypeEnum
 _$ogcTileSetListTilesetsInnerDataTypeEnum_map =
     const OgcTileSetListTilesetsInnerDataTypeEnum._('map');
+const OgcTileSetListTilesetsInnerDataTypeEnum
+_$ogcTileSetListTilesetsInnerDataTypeEnum_unknownDefaultOpenApi =
+    const OgcTileSetListTilesetsInnerDataTypeEnum._('unknownDefaultOpenApi');
 
 OgcTileSetListTilesetsInnerDataTypeEnum
 _$ogcTileSetListTilesetsInnerDataTypeEnumValueOf(String name) {
   switch (name) {
     case 'map':
       return _$ogcTileSetListTilesetsInnerDataTypeEnum_map;
+    case 'unknownDefaultOpenApi':
+      return _$ogcTileSetListTilesetsInnerDataTypeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$ogcTileSetListTilesetsInnerDataTypeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -25,6 +30,7 @@ _$ogcTileSetListTilesetsInnerDataTypeEnumValues =
     BuiltSet<OgcTileSetListTilesetsInnerDataTypeEnum>(
       const <OgcTileSetListTilesetsInnerDataTypeEnum>[
         _$ogcTileSetListTilesetsInnerDataTypeEnum_map,
+        _$ogcTileSetListTilesetsInnerDataTypeEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -36,9 +42,11 @@ class _$OgcTileSetListTilesetsInnerDataTypeEnumSerializer
     implements PrimitiveSerializer<OgcTileSetListTilesetsInnerDataTypeEnum> {
   static const Map<String, Object> _toWire = const <String, Object>{
     'map': 'map',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'map': 'map',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

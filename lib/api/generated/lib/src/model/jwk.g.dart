@@ -7,52 +7,70 @@ part of 'jwk.dart';
 // **************************************************************************
 
 const JwkKtyEnum _$jwkKtyEnum_OKP = const JwkKtyEnum._('OKP');
+const JwkKtyEnum _$jwkKtyEnum_unknownDefaultOpenApi = const JwkKtyEnum._(
+  'unknownDefaultOpenApi',
+);
 
 JwkKtyEnum _$jwkKtyEnumValueOf(String name) {
   switch (name) {
     case 'OKP':
       return _$jwkKtyEnum_OKP;
+    case 'unknownDefaultOpenApi':
+      return _$jwkKtyEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$jwkKtyEnum_unknownDefaultOpenApi;
   }
 }
 
 final BuiltSet<JwkKtyEnum> _$jwkKtyEnumValues = BuiltSet<JwkKtyEnum>(
-  const <JwkKtyEnum>[_$jwkKtyEnum_OKP],
+  const <JwkKtyEnum>[_$jwkKtyEnum_OKP, _$jwkKtyEnum_unknownDefaultOpenApi],
 );
 
 const JwkCrvEnum _$jwkCrvEnum_ed25519 = const JwkCrvEnum._('ed25519');
+const JwkCrvEnum _$jwkCrvEnum_unknownDefaultOpenApi = const JwkCrvEnum._(
+  'unknownDefaultOpenApi',
+);
 
 JwkCrvEnum _$jwkCrvEnumValueOf(String name) {
   switch (name) {
     case 'ed25519':
       return _$jwkCrvEnum_ed25519;
+    case 'unknownDefaultOpenApi':
+      return _$jwkCrvEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$jwkCrvEnum_unknownDefaultOpenApi;
   }
 }
 
 final BuiltSet<JwkCrvEnum> _$jwkCrvEnumValues = BuiltSet<JwkCrvEnum>(
-  const <JwkCrvEnum>[_$jwkCrvEnum_ed25519],
+  const <JwkCrvEnum>[_$jwkCrvEnum_ed25519, _$jwkCrvEnum_unknownDefaultOpenApi],
 );
 
 const JwkUseEnum _$jwkUseEnum_sig = const JwkUseEnum._('sig');
+const JwkUseEnum _$jwkUseEnum_unknownDefaultOpenApi = const JwkUseEnum._(
+  'unknownDefaultOpenApi',
+);
 
 JwkUseEnum _$jwkUseEnumValueOf(String name) {
   switch (name) {
     case 'sig':
       return _$jwkUseEnum_sig;
+    case 'unknownDefaultOpenApi':
+      return _$jwkUseEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$jwkUseEnum_unknownDefaultOpenApi;
   }
 }
 
 final BuiltSet<JwkUseEnum> _$jwkUseEnumValues = BuiltSet<JwkUseEnum>(
-  const <JwkUseEnum>[_$jwkUseEnum_sig],
+  const <JwkUseEnum>[_$jwkUseEnum_sig, _$jwkUseEnum_unknownDefaultOpenApi],
 );
 
 const JwkAlgEnum _$jwkAlgEnum_ed25519 = const JwkAlgEnum._('ed25519');
 const JwkAlgEnum _$jwkAlgEnum_edDSA = const JwkAlgEnum._('edDSA');
+const JwkAlgEnum _$jwkAlgEnum_unknownDefaultOpenApi = const JwkAlgEnum._(
+  'unknownDefaultOpenApi',
+);
 
 JwkAlgEnum _$jwkAlgEnumValueOf(String name) {
   switch (name) {
@@ -60,13 +78,19 @@ JwkAlgEnum _$jwkAlgEnumValueOf(String name) {
       return _$jwkAlgEnum_ed25519;
     case 'edDSA':
       return _$jwkAlgEnum_edDSA;
+    case 'unknownDefaultOpenApi':
+      return _$jwkAlgEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$jwkAlgEnum_unknownDefaultOpenApi;
   }
 }
 
 final BuiltSet<JwkAlgEnum> _$jwkAlgEnumValues = BuiltSet<JwkAlgEnum>(
-  const <JwkAlgEnum>[_$jwkAlgEnum_ed25519, _$jwkAlgEnum_edDSA],
+  const <JwkAlgEnum>[
+    _$jwkAlgEnum_ed25519,
+    _$jwkAlgEnum_edDSA,
+    _$jwkAlgEnum_unknownDefaultOpenApi,
+  ],
 );
 
 Serializer<JwkKtyEnum> _$jwkKtyEnumSerializer = _$JwkKtyEnumSerializer();
@@ -77,9 +101,11 @@ Serializer<JwkAlgEnum> _$jwkAlgEnumSerializer = _$JwkAlgEnumSerializer();
 class _$JwkKtyEnumSerializer implements PrimitiveSerializer<JwkKtyEnum> {
   static const Map<String, Object> _toWire = const <String, Object>{
     'OKP': 'OKP',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'OKP': 'OKP',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -107,9 +133,11 @@ class _$JwkKtyEnumSerializer implements PrimitiveSerializer<JwkKtyEnum> {
 class _$JwkCrvEnumSerializer implements PrimitiveSerializer<JwkCrvEnum> {
   static const Map<String, Object> _toWire = const <String, Object>{
     'ed25519': 'Ed25519',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'Ed25519': 'ed25519',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -137,9 +165,11 @@ class _$JwkCrvEnumSerializer implements PrimitiveSerializer<JwkCrvEnum> {
 class _$JwkUseEnumSerializer implements PrimitiveSerializer<JwkUseEnum> {
   static const Map<String, Object> _toWire = const <String, Object>{
     'sig': 'sig',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'sig': 'sig',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -168,10 +198,12 @@ class _$JwkAlgEnumSerializer implements PrimitiveSerializer<JwkAlgEnum> {
   static const Map<String, Object> _toWire = const <String, Object>{
     'ed25519': 'Ed25519',
     'edDSA': 'EdDSA',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'Ed25519': 'ed25519',
     'EdDSA': 'edDSA',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

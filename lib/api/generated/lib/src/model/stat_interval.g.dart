@@ -14,6 +14,8 @@ const StatIntervalMethodEnum _$statIntervalMethodEnum_pairedBootstrap =
     const StatIntervalMethodEnum._('pairedBootstrap');
 const StatIntervalMethodEnum _$statIntervalMethodEnum_empirical =
     const StatIntervalMethodEnum._('empirical');
+const StatIntervalMethodEnum _$statIntervalMethodEnum_unknownDefaultOpenApi =
+    const StatIntervalMethodEnum._('unknownDefaultOpenApi');
 
 StatIntervalMethodEnum _$statIntervalMethodEnumValueOf(String name) {
   switch (name) {
@@ -25,8 +27,10 @@ StatIntervalMethodEnum _$statIntervalMethodEnumValueOf(String name) {
       return _$statIntervalMethodEnum_pairedBootstrap;
     case 'empirical':
       return _$statIntervalMethodEnum_empirical;
+    case 'unknownDefaultOpenApi':
+      return _$statIntervalMethodEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$statIntervalMethodEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -36,6 +40,7 @@ final BuiltSet<StatIntervalMethodEnum> _$statIntervalMethodEnumValues =
       _$statIntervalMethodEnum_jeffreys,
       _$statIntervalMethodEnum_pairedBootstrap,
       _$statIntervalMethodEnum_empirical,
+      _$statIntervalMethodEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<StatIntervalMethodEnum> _$statIntervalMethodEnumSerializer =
@@ -48,12 +53,14 @@ class _$StatIntervalMethodEnumSerializer
     'jeffreys': 'jeffreys',
     'pairedBootstrap': 'paired-bootstrap',
     'empirical': 'empirical',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'wilson': 'wilson',
     'jeffreys': 'jeffreys',
     'paired-bootstrap': 'pairedBootstrap',
     'empirical': 'empirical',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

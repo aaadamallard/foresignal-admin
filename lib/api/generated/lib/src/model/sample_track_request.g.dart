@@ -10,6 +10,9 @@ const SampleTrackRequestUnitsEnum _$sampleTrackRequestUnitsEnum_metric =
     const SampleTrackRequestUnitsEnum._('metric');
 const SampleTrackRequestUnitsEnum _$sampleTrackRequestUnitsEnum_imperial =
     const SampleTrackRequestUnitsEnum._('imperial');
+const SampleTrackRequestUnitsEnum
+_$sampleTrackRequestUnitsEnum_unknownDefaultOpenApi =
+    const SampleTrackRequestUnitsEnum._('unknownDefaultOpenApi');
 
 SampleTrackRequestUnitsEnum _$sampleTrackRequestUnitsEnumValueOf(String name) {
   switch (name) {
@@ -17,18 +20,20 @@ SampleTrackRequestUnitsEnum _$sampleTrackRequestUnitsEnumValueOf(String name) {
       return _$sampleTrackRequestUnitsEnum_metric;
     case 'imperial':
       return _$sampleTrackRequestUnitsEnum_imperial;
+    case 'unknownDefaultOpenApi':
+      return _$sampleTrackRequestUnitsEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$sampleTrackRequestUnitsEnum_unknownDefaultOpenApi;
   }
 }
 
 final BuiltSet<SampleTrackRequestUnitsEnum>
-_$sampleTrackRequestUnitsEnumValues = BuiltSet<SampleTrackRequestUnitsEnum>(
-  const <SampleTrackRequestUnitsEnum>[
-    _$sampleTrackRequestUnitsEnum_metric,
-    _$sampleTrackRequestUnitsEnum_imperial,
-  ],
-);
+_$sampleTrackRequestUnitsEnumValues =
+    BuiltSet<SampleTrackRequestUnitsEnum>(const <SampleTrackRequestUnitsEnum>[
+      _$sampleTrackRequestUnitsEnum_metric,
+      _$sampleTrackRequestUnitsEnum_imperial,
+      _$sampleTrackRequestUnitsEnum_unknownDefaultOpenApi,
+    ]);
 
 Serializer<SampleTrackRequestUnitsEnum>
 _$sampleTrackRequestUnitsEnumSerializer =
@@ -39,10 +44,12 @@ class _$SampleTrackRequestUnitsEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'metric': 'metric',
     'imperial': 'imperial',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'metric': 'metric',
     'imperial': 'imperial',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

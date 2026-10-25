@@ -277,6 +277,9 @@ class CloudEventSpecversionEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'1.0')
   static const CloudEventSpecversionEnum n1period0 =
       _$cloudEventSpecversionEnum_n1period0;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const CloudEventSpecversionEnum unknownDefaultOpenApi =
+      _$cloudEventSpecversionEnum_unknownDefaultOpenApi;
 
   static Serializer<CloudEventSpecversionEnum> get serializer =>
       _$cloudEventSpecversionEnumSerializer;

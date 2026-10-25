@@ -419,6 +419,9 @@ class SavedViewTimeFieldEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'ingested')
   static const SavedViewTimeFieldEnum ingested =
       _$savedViewTimeFieldEnum_ingested;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const SavedViewTimeFieldEnum unknownDefaultOpenApi =
+      _$savedViewTimeFieldEnum_unknownDefaultOpenApi;
 
   static Serializer<SavedViewTimeFieldEnum> get serializer =>
       _$savedViewTimeFieldEnumSerializer;

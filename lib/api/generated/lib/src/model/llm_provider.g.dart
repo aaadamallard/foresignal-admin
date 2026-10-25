@@ -12,6 +12,8 @@ const LlmProviderTypeEnum _$llmProviderTypeEnum_openaiCompatible =
     const LlmProviderTypeEnum._('openaiCompatible');
 const LlmProviderTypeEnum _$llmProviderTypeEnum_ollama =
     const LlmProviderTypeEnum._('ollama');
+const LlmProviderTypeEnum _$llmProviderTypeEnum_unknownDefaultOpenApi =
+    const LlmProviderTypeEnum._('unknownDefaultOpenApi');
 
 LlmProviderTypeEnum _$llmProviderTypeEnumValueOf(String name) {
   switch (name) {
@@ -21,8 +23,10 @@ LlmProviderTypeEnum _$llmProviderTypeEnumValueOf(String name) {
       return _$llmProviderTypeEnum_openaiCompatible;
     case 'ollama':
       return _$llmProviderTypeEnum_ollama;
+    case 'unknownDefaultOpenApi':
+      return _$llmProviderTypeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$llmProviderTypeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -31,6 +35,7 @@ final BuiltSet<LlmProviderTypeEnum> _$llmProviderTypeEnumValues =
       _$llmProviderTypeEnum_anthropic,
       _$llmProviderTypeEnum_openaiCompatible,
       _$llmProviderTypeEnum_ollama,
+      _$llmProviderTypeEnum_unknownDefaultOpenApi,
     ]);
 
 const LlmProviderRolesEnum _$llmProviderRolesEnum_chat =
@@ -39,6 +44,8 @@ const LlmProviderRolesEnum _$llmProviderRolesEnum_embedding =
     const LlmProviderRolesEnum._('embedding');
 const LlmProviderRolesEnum _$llmProviderRolesEnum_tts =
     const LlmProviderRolesEnum._('tts');
+const LlmProviderRolesEnum _$llmProviderRolesEnum_unknownDefaultOpenApi =
+    const LlmProviderRolesEnum._('unknownDefaultOpenApi');
 
 LlmProviderRolesEnum _$llmProviderRolesEnumValueOf(String name) {
   switch (name) {
@@ -48,8 +55,10 @@ LlmProviderRolesEnum _$llmProviderRolesEnumValueOf(String name) {
       return _$llmProviderRolesEnum_embedding;
     case 'tts':
       return _$llmProviderRolesEnum_tts;
+    case 'unknownDefaultOpenApi':
+      return _$llmProviderRolesEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$llmProviderRolesEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -58,6 +67,7 @@ final BuiltSet<LlmProviderRolesEnum> _$llmProviderRolesEnumValues =
       _$llmProviderRolesEnum_chat,
       _$llmProviderRolesEnum_embedding,
       _$llmProviderRolesEnum_tts,
+      _$llmProviderRolesEnum_unknownDefaultOpenApi,
     ]);
 
 const LlmProviderStatusEnum _$llmProviderStatusEnum_healthy =
@@ -70,6 +80,8 @@ const LlmProviderStatusEnum _$llmProviderStatusEnum_idle =
     const LlmProviderStatusEnum._('idle');
 const LlmProviderStatusEnum _$llmProviderStatusEnum_disabled =
     const LlmProviderStatusEnum._('disabled');
+const LlmProviderStatusEnum _$llmProviderStatusEnum_unknownDefaultOpenApi =
+    const LlmProviderStatusEnum._('unknownDefaultOpenApi');
 
 LlmProviderStatusEnum _$llmProviderStatusEnumValueOf(String name) {
   switch (name) {
@@ -83,8 +95,10 @@ LlmProviderStatusEnum _$llmProviderStatusEnumValueOf(String name) {
       return _$llmProviderStatusEnum_idle;
     case 'disabled':
       return _$llmProviderStatusEnum_disabled;
+    case 'unknownDefaultOpenApi':
+      return _$llmProviderStatusEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$llmProviderStatusEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -95,6 +109,7 @@ final BuiltSet<LlmProviderStatusEnum> _$llmProviderStatusEnumValues =
       _$llmProviderStatusEnum_failing,
       _$llmProviderStatusEnum_idle,
       _$llmProviderStatusEnum_disabled,
+      _$llmProviderStatusEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<LlmProviderTypeEnum> _$llmProviderTypeEnumSerializer =
@@ -110,11 +125,13 @@ class _$LlmProviderTypeEnumSerializer
     'anthropic': 'anthropic',
     'openaiCompatible': 'openai-compatible',
     'ollama': 'ollama',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'anthropic': 'anthropic',
     'openai-compatible': 'openaiCompatible',
     'ollama': 'ollama',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -145,11 +162,13 @@ class _$LlmProviderRolesEnumSerializer
     'chat': 'chat',
     'embedding': 'embedding',
     'tts': 'tts',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'chat': 'chat',
     'embedding': 'embedding',
     'tts': 'tts',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -182,6 +201,7 @@ class _$LlmProviderStatusEnumSerializer
     'failing': 'failing',
     'idle': 'idle',
     'disabled': 'disabled',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'healthy': 'healthy',
@@ -189,6 +209,7 @@ class _$LlmProviderStatusEnumSerializer
     'failing': 'failing',
     'idle': 'idle',
     'disabled': 'disabled',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

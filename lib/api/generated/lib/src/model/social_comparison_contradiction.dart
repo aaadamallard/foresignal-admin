@@ -152,6 +152,9 @@ class SocialComparisonContradictionReasonEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'media-reuse')
   static const SocialComparisonContradictionReasonEnum mediaReuse =
       _$socialComparisonContradictionReasonEnum_mediaReuse;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const SocialComparisonContradictionReasonEnum unknownDefaultOpenApi =
+      _$socialComparisonContradictionReasonEnum_unknownDefaultOpenApi;
 
   static Serializer<SocialComparisonContradictionReasonEnum> get serializer =>
       _$socialComparisonContradictionReasonEnumSerializer;

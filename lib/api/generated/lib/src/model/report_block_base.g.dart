@@ -28,6 +28,8 @@ const ReportBlockBaseTypeEnum _$reportBlockBaseTypeEnum_attachments =
     const ReportBlockBaseTypeEnum._('attachments');
 const ReportBlockBaseTypeEnum _$reportBlockBaseTypeEnum_sources =
     const ReportBlockBaseTypeEnum._('sources');
+const ReportBlockBaseTypeEnum _$reportBlockBaseTypeEnum_unknownDefaultOpenApi =
+    const ReportBlockBaseTypeEnum._('unknownDefaultOpenApi');
 
 ReportBlockBaseTypeEnum _$reportBlockBaseTypeEnumValueOf(String name) {
   switch (name) {
@@ -53,8 +55,10 @@ ReportBlockBaseTypeEnum _$reportBlockBaseTypeEnumValueOf(String name) {
       return _$reportBlockBaseTypeEnum_attachments;
     case 'sources':
       return _$reportBlockBaseTypeEnum_sources;
+    case 'unknownDefaultOpenApi':
+      return _$reportBlockBaseTypeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$reportBlockBaseTypeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -71,6 +75,7 @@ final BuiltSet<ReportBlockBaseTypeEnum> _$reportBlockBaseTypeEnumValues =
       _$reportBlockBaseTypeEnum_coverage,
       _$reportBlockBaseTypeEnum_attachments,
       _$reportBlockBaseTypeEnum_sources,
+      _$reportBlockBaseTypeEnum_unknownDefaultOpenApi,
     ]);
 
 const ReportBlockBaseTextOriginEnum _$reportBlockBaseTextOriginEnum_author =
@@ -80,6 +85,9 @@ _$reportBlockBaseTextOriginEnum_deterministic =
     const ReportBlockBaseTextOriginEnum._('deterministic');
 const ReportBlockBaseTextOriginEnum _$reportBlockBaseTextOriginEnum_llm =
     const ReportBlockBaseTextOriginEnum._('llm');
+const ReportBlockBaseTextOriginEnum
+_$reportBlockBaseTextOriginEnum_unknownDefaultOpenApi =
+    const ReportBlockBaseTextOriginEnum._('unknownDefaultOpenApi');
 
 ReportBlockBaseTextOriginEnum _$reportBlockBaseTextOriginEnumValueOf(
   String name,
@@ -91,8 +99,10 @@ ReportBlockBaseTextOriginEnum _$reportBlockBaseTextOriginEnumValueOf(
       return _$reportBlockBaseTextOriginEnum_deterministic;
     case 'llm':
       return _$reportBlockBaseTextOriginEnum_llm;
+    case 'unknownDefaultOpenApi':
+      return _$reportBlockBaseTextOriginEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$reportBlockBaseTextOriginEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -102,6 +112,7 @@ _$reportBlockBaseTextOriginEnumValues = BuiltSet<ReportBlockBaseTextOriginEnum>(
     _$reportBlockBaseTextOriginEnum_author,
     _$reportBlockBaseTextOriginEnum_deterministic,
     _$reportBlockBaseTextOriginEnum_llm,
+    _$reportBlockBaseTextOriginEnum_unknownDefaultOpenApi,
   ],
 );
 
@@ -125,6 +136,7 @@ class _$ReportBlockBaseTypeEnumSerializer
     'coverage': 'coverage',
     'attachments': 'attachments',
     'sources': 'sources',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'markdown': 'markdown',
@@ -138,6 +150,7 @@ class _$ReportBlockBaseTypeEnumSerializer
     'coverage': 'coverage',
     'attachments': 'attachments',
     'sources': 'sources',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -168,11 +181,13 @@ class _$ReportBlockBaseTextOriginEnumSerializer
     'author': 'author',
     'deterministic': 'deterministic',
     'llm': 'llm',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'author': 'author',
     'deterministic': 'deterministic',
     'llm': 'llm',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

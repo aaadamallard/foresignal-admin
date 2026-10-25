@@ -12,6 +12,9 @@ _$workspaceContextPlaybackStateEnum_playing =
 const WorkspaceContextPlaybackStateEnum
 _$workspaceContextPlaybackStateEnum_paused =
     const WorkspaceContextPlaybackStateEnum._('paused');
+const WorkspaceContextPlaybackStateEnum
+_$workspaceContextPlaybackStateEnum_unknownDefaultOpenApi =
+    const WorkspaceContextPlaybackStateEnum._('unknownDefaultOpenApi');
 
 WorkspaceContextPlaybackStateEnum _$workspaceContextPlaybackStateEnumValueOf(
   String name,
@@ -21,8 +24,10 @@ WorkspaceContextPlaybackStateEnum _$workspaceContextPlaybackStateEnumValueOf(
       return _$workspaceContextPlaybackStateEnum_playing;
     case 'paused':
       return _$workspaceContextPlaybackStateEnum_paused;
+    case 'unknownDefaultOpenApi':
+      return _$workspaceContextPlaybackStateEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$workspaceContextPlaybackStateEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -32,6 +37,7 @@ _$workspaceContextPlaybackStateEnumValues =
       const <WorkspaceContextPlaybackStateEnum>[
         _$workspaceContextPlaybackStateEnum_playing,
         _$workspaceContextPlaybackStateEnum_paused,
+        _$workspaceContextPlaybackStateEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -44,10 +50,12 @@ class _$WorkspaceContextPlaybackStateEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'playing': 'playing',
     'paused': 'paused',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'playing': 'playing',
     'paused': 'paused',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

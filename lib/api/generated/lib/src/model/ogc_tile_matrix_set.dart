@@ -250,6 +250,9 @@ class OgcTileMatrixSetIdEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'WorldCRS84Quad')
   static const OgcTileMatrixSetIdEnum worldCRS84Quad =
       _$ogcTileMatrixSetIdEnum_worldCRS84Quad;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const OgcTileMatrixSetIdEnum unknownDefaultOpenApi =
+      _$ogcTileMatrixSetIdEnum_unknownDefaultOpenApi;
 
   static Serializer<OgcTileMatrixSetIdEnum> get serializer =>
       _$ogcTileMatrixSetIdEnumSerializer;

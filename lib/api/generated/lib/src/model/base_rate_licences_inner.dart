@@ -168,6 +168,9 @@ class BaseRateLicencesInnerEgressEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'LOCAL_ONLY')
   static const BaseRateLicencesInnerEgressEnum LOCAL_ONLY =
       _$baseRateLicencesInnerEgressEnum_LOCAL_ONLY;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const BaseRateLicencesInnerEgressEnum unknownDefaultOpenApi =
+      _$baseRateLicencesInnerEgressEnum_unknownDefaultOpenApi;
 
   static Serializer<BaseRateLicencesInnerEgressEnum> get serializer =>
       _$baseRateLicencesInnerEgressEnumSerializer;

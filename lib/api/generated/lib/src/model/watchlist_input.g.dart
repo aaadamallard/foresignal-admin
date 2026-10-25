@@ -20,6 +20,9 @@ const WatchlistInputIdentityEnum _$watchlistInputIdentityEnum_entity =
     const WatchlistInputIdentityEnum._('entity');
 const WatchlistInputIdentityEnum _$watchlistInputIdentityEnum_custom =
     const WatchlistInputIdentityEnum._('custom');
+const WatchlistInputIdentityEnum
+_$watchlistInputIdentityEnum_unknownDefaultOpenApi =
+    const WatchlistInputIdentityEnum._('unknownDefaultOpenApi');
 
 WatchlistInputIdentityEnum _$watchlistInputIdentityEnumValueOf(String name) {
   switch (name) {
@@ -37,8 +40,10 @@ WatchlistInputIdentityEnum _$watchlistInputIdentityEnumValueOf(String name) {
       return _$watchlistInputIdentityEnum_entity;
     case 'custom':
       return _$watchlistInputIdentityEnum_custom;
+    case 'unknownDefaultOpenApi':
+      return _$watchlistInputIdentityEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$watchlistInputIdentityEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -51,6 +56,7 @@ final BuiltSet<WatchlistInputIdentityEnum> _$watchlistInputIdentityEnumValues =
       _$watchlistInputIdentityEnum_imo,
       _$watchlistInputIdentityEnum_entity,
       _$watchlistInputIdentityEnum_custom,
+      _$watchlistInputIdentityEnum_unknownDefaultOpenApi,
     ]);
 
 const WatchlistInputNormalizeEnum _$watchlistInputNormalizeEnum_upper =
@@ -61,6 +67,9 @@ const WatchlistInputNormalizeEnum _$watchlistInputNormalizeEnum_digits =
     const WatchlistInputNormalizeEnum._('digits');
 const WatchlistInputNormalizeEnum _$watchlistInputNormalizeEnum_none =
     const WatchlistInputNormalizeEnum._('none');
+const WatchlistInputNormalizeEnum
+_$watchlistInputNormalizeEnum_unknownDefaultOpenApi =
+    const WatchlistInputNormalizeEnum._('unknownDefaultOpenApi');
 
 WatchlistInputNormalizeEnum _$watchlistInputNormalizeEnumValueOf(String name) {
   switch (name) {
@@ -72,8 +81,10 @@ WatchlistInputNormalizeEnum _$watchlistInputNormalizeEnumValueOf(String name) {
       return _$watchlistInputNormalizeEnum_digits;
     case 'none':
       return _$watchlistInputNormalizeEnum_none;
+    case 'unknownDefaultOpenApi':
+      return _$watchlistInputNormalizeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$watchlistInputNormalizeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -84,6 +95,7 @@ _$watchlistInputNormalizeEnumValues =
       _$watchlistInputNormalizeEnum_lower,
       _$watchlistInputNormalizeEnum_digits,
       _$watchlistInputNormalizeEnum_none,
+      _$watchlistInputNormalizeEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<WatchlistInputIdentityEnum> _$watchlistInputIdentityEnumSerializer =
@@ -102,6 +114,7 @@ class _$WatchlistInputIdentityEnumSerializer
     'imo': 'imo',
     'entity': 'entity',
     'custom': 'custom',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'icao24': 'icao24',
@@ -111,6 +124,7 @@ class _$WatchlistInputIdentityEnumSerializer
     'imo': 'imo',
     'entity': 'entity',
     'custom': 'custom',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -142,12 +156,14 @@ class _$WatchlistInputNormalizeEnumSerializer
     'lower': 'lower',
     'digits': 'digits',
     'none': 'none',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'upper': 'upper',
     'lower': 'lower',
     'digits': 'digits',
     'none': 'none',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

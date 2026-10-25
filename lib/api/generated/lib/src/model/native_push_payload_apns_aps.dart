@@ -268,6 +268,9 @@ class NativePushPayloadApnsApsSoundEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'default')
   static const NativePushPayloadApnsApsSoundEnum default_ =
       _$nativePushPayloadApnsApsSoundEnum_default_;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const NativePushPayloadApnsApsSoundEnum unknownDefaultOpenApi =
+      _$nativePushPayloadApnsApsSoundEnum_unknownDefaultOpenApi;
 
   static Serializer<NativePushPayloadApnsApsSoundEnum> get serializer =>
       _$nativePushPayloadApnsApsSoundEnumSerializer;
@@ -284,6 +287,10 @@ class NativePushPayloadApnsApsMutableContentEnum extends EnumClass {
   @BuiltValueEnumConst(wireNumber: 1)
   static const NativePushPayloadApnsApsMutableContentEnum number1 =
       _$nativePushPayloadApnsApsMutableContentEnum_number1;
+  @BuiltValueEnumConst(wireNumber: 11184809, fallback: true)
+  static const NativePushPayloadApnsApsMutableContentEnum
+  unknownDefaultOpenApi =
+      _$nativePushPayloadApnsApsMutableContentEnum_unknownDefaultOpenApi;
 
   static Serializer<NativePushPayloadApnsApsMutableContentEnum>
   get serializer => _$nativePushPayloadApnsApsMutableContentEnumSerializer;
@@ -306,6 +313,10 @@ class NativePushPayloadApnsApsInterruptionLevelEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'time-sensitive')
   static const NativePushPayloadApnsApsInterruptionLevelEnum timeSensitive =
       _$nativePushPayloadApnsApsInterruptionLevelEnum_timeSensitive;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const NativePushPayloadApnsApsInterruptionLevelEnum
+  unknownDefaultOpenApi =
+      _$nativePushPayloadApnsApsInterruptionLevelEnum_unknownDefaultOpenApi;
 
   static Serializer<NativePushPayloadApnsApsInterruptionLevelEnum>
   get serializer => _$nativePushPayloadApnsApsInterruptionLevelEnumSerializer;

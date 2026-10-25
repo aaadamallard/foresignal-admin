@@ -14,6 +14,8 @@ const HypothesisTypeEnum _$hypothesisTypeEnum_speculativeLink =
     const HypothesisTypeEnum._('speculativeLink');
 const HypothesisTypeEnum _$hypothesisTypeEnum_other =
     const HypothesisTypeEnum._('other');
+const HypothesisTypeEnum _$hypothesisTypeEnum_unknownDefaultOpenApi =
+    const HypothesisTypeEnum._('unknownDefaultOpenApi');
 
 HypothesisTypeEnum _$hypothesisTypeEnumValueOf(String name) {
   switch (name) {
@@ -25,8 +27,10 @@ HypothesisTypeEnum _$hypothesisTypeEnumValueOf(String name) {
       return _$hypothesisTypeEnum_speculativeLink;
     case 'other':
       return _$hypothesisTypeEnum_other;
+    case 'unknownDefaultOpenApi':
+      return _$hypothesisTypeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$hypothesisTypeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -36,6 +40,7 @@ final BuiltSet<HypothesisTypeEnum> _$hypothesisTypeEnumValues =
       _$hypothesisTypeEnum_explanation,
       _$hypothesisTypeEnum_speculativeLink,
       _$hypothesisTypeEnum_other,
+      _$hypothesisTypeEnum_unknownDefaultOpenApi,
     ]);
 
 const HypothesisStatusEnum _$hypothesisStatusEnum_open =
@@ -46,6 +51,8 @@ const HypothesisStatusEnum _$hypothesisStatusEnum_refuted =
     const HypothesisStatusEnum._('refuted');
 const HypothesisStatusEnum _$hypothesisStatusEnum_expired =
     const HypothesisStatusEnum._('expired');
+const HypothesisStatusEnum _$hypothesisStatusEnum_unknownDefaultOpenApi =
+    const HypothesisStatusEnum._('unknownDefaultOpenApi');
 
 HypothesisStatusEnum _$hypothesisStatusEnumValueOf(String name) {
   switch (name) {
@@ -57,8 +64,10 @@ HypothesisStatusEnum _$hypothesisStatusEnumValueOf(String name) {
       return _$hypothesisStatusEnum_refuted;
     case 'expired':
       return _$hypothesisStatusEnum_expired;
+    case 'unknownDefaultOpenApi':
+      return _$hypothesisStatusEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$hypothesisStatusEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -68,6 +77,7 @@ final BuiltSet<HypothesisStatusEnum> _$hypothesisStatusEnumValues =
       _$hypothesisStatusEnum_confirmed,
       _$hypothesisStatusEnum_refuted,
       _$hypothesisStatusEnum_expired,
+      _$hypothesisStatusEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<HypothesisTypeEnum> _$hypothesisTypeEnumSerializer =
@@ -82,12 +92,14 @@ class _$HypothesisTypeEnumSerializer
     'explanation': 'explanation',
     'speculativeLink': 'speculative-link',
     'other': 'other',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'outcome': 'outcome',
     'explanation': 'explanation',
     'speculative-link': 'speculativeLink',
     'other': 'other',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -119,12 +131,14 @@ class _$HypothesisStatusEnumSerializer
     'confirmed': 'confirmed',
     'refuted': 'refuted',
     'expired': 'expired',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'open': 'open',
     'confirmed': 'confirmed',
     'refuted': 'refuted',
     'expired': 'expired',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

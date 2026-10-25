@@ -258,6 +258,9 @@ class StatsRequestUnitsEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'imperial')
   static const StatsRequestUnitsEnum imperial =
       _$statsRequestUnitsEnum_imperial;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const StatsRequestUnitsEnum unknownDefaultOpenApi =
+      _$statsRequestUnitsEnum_unknownDefaultOpenApi;
 
   static Serializer<StatsRequestUnitsEnum> get serializer =>
       _$statsRequestUnitsEnumSerializer;

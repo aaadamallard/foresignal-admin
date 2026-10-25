@@ -152,6 +152,9 @@ class AskStream200ResponseModeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'retrieval')
   static const AskStream200ResponseModeEnum retrieval =
       _$askStream200ResponseModeEnum_retrieval;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const AskStream200ResponseModeEnum unknownDefaultOpenApi =
+      _$askStream200ResponseModeEnum_unknownDefaultOpenApi;
 
   static Serializer<AskStream200ResponseModeEnum> get serializer =>
       _$askStream200ResponseModeEnumSerializer;
@@ -177,6 +180,9 @@ class AskStream200ResponseStopReasonEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'error')
   static const AskStream200ResponseStopReasonEnum error =
       _$askStream200ResponseStopReasonEnum_error;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const AskStream200ResponseStopReasonEnum unknownDefaultOpenApi =
+      _$askStream200ResponseStopReasonEnum_unknownDefaultOpenApi;
 
   static Serializer<AskStream200ResponseStopReasonEnum> get serializer =>
       _$askStream200ResponseStopReasonEnumSerializer;
@@ -200,6 +206,9 @@ class AskStream200ResponseRequiredScopeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'admin')
   static const AskStream200ResponseRequiredScopeEnum admin =
       _$askStream200ResponseRequiredScopeEnum_admin;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const AskStream200ResponseRequiredScopeEnum unknownDefaultOpenApi =
+      _$askStream200ResponseRequiredScopeEnum_unknownDefaultOpenApi;
 
   static Serializer<AskStream200ResponseRequiredScopeEnum> get serializer =>
       _$askStream200ResponseRequiredScopeEnumSerializer;
@@ -235,6 +244,9 @@ class AskStream200ResponseClass_Enum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'metrics')
   static const AskStream200ResponseClass_Enum metrics =
       _$askStream200ResponseClassEnum_metrics;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const AskStream200ResponseClass_Enum unknownDefaultOpenApi =
+      _$askStream200ResponseClassEnum_unknownDefaultOpenApi;
 
   static Serializer<AskStream200ResponseClass_Enum> get serializer =>
       _$askStream200ResponseClassEnumSerializer;

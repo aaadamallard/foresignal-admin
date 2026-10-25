@@ -8,25 +8,34 @@ part of 'media_reuse_event.dart';
 
 const MediaReuseEventEventEnum _$mediaReuseEventEventEnum_mediaPeriodReuse =
     const MediaReuseEventEventEnum._('mediaPeriodReuse');
+const MediaReuseEventEventEnum
+_$mediaReuseEventEventEnum_unknownDefaultOpenApi =
+    const MediaReuseEventEventEnum._('unknownDefaultOpenApi');
 
 MediaReuseEventEventEnum _$mediaReuseEventEventEnumValueOf(String name) {
   switch (name) {
     case 'mediaPeriodReuse':
       return _$mediaReuseEventEventEnum_mediaPeriodReuse;
+    case 'unknownDefaultOpenApi':
+      return _$mediaReuseEventEventEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$mediaReuseEventEventEnum_unknownDefaultOpenApi;
   }
 }
 
 final BuiltSet<MediaReuseEventEventEnum> _$mediaReuseEventEventEnumValues =
     BuiltSet<MediaReuseEventEventEnum>(const <MediaReuseEventEventEnum>[
       _$mediaReuseEventEventEnum_mediaPeriodReuse,
+      _$mediaReuseEventEventEnum_unknownDefaultOpenApi,
     ]);
 
 const MediaReuseEventReasonEnum _$mediaReuseEventReasonEnum_earlier =
     const MediaReuseEventReasonEnum._('earlier');
 const MediaReuseEventReasonEnum _$mediaReuseEventReasonEnum_elsewhere =
     const MediaReuseEventReasonEnum._('elsewhere');
+const MediaReuseEventReasonEnum
+_$mediaReuseEventReasonEnum_unknownDefaultOpenApi =
+    const MediaReuseEventReasonEnum._('unknownDefaultOpenApi');
 
 MediaReuseEventReasonEnum _$mediaReuseEventReasonEnumValueOf(String name) {
   switch (name) {
@@ -34,8 +43,10 @@ MediaReuseEventReasonEnum _$mediaReuseEventReasonEnumValueOf(String name) {
       return _$mediaReuseEventReasonEnum_earlier;
     case 'elsewhere':
       return _$mediaReuseEventReasonEnum_elsewhere;
+    case 'unknownDefaultOpenApi':
+      return _$mediaReuseEventReasonEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$mediaReuseEventReasonEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -43,6 +54,7 @@ final BuiltSet<MediaReuseEventReasonEnum> _$mediaReuseEventReasonEnumValues =
     BuiltSet<MediaReuseEventReasonEnum>(const <MediaReuseEventReasonEnum>[
       _$mediaReuseEventReasonEnum_earlier,
       _$mediaReuseEventReasonEnum_elsewhere,
+      _$mediaReuseEventReasonEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<MediaReuseEventEventEnum> _$mediaReuseEventEventEnumSerializer =
@@ -54,9 +66,11 @@ class _$MediaReuseEventEventEnumSerializer
     implements PrimitiveSerializer<MediaReuseEventEventEnum> {
   static const Map<String, Object> _toWire = const <String, Object>{
     'mediaPeriodReuse': 'media.reuse',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'media.reuse': 'mediaPeriodReuse',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -86,10 +100,12 @@ class _$MediaReuseEventReasonEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'earlier': 'earlier',
     'elsewhere': 'elsewhere',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'earlier': 'earlier',
     'elsewhere': 'elsewhere',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

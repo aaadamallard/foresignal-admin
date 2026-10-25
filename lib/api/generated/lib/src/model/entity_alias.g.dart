@@ -12,6 +12,9 @@ const EntityAliasAliasTypeEnum _$entityAliasAliasTypeEnum_FORMER_NAME =
     const EntityAliasAliasTypeEnum._('FORMER_NAME');
 const EntityAliasAliasTypeEnum _$entityAliasAliasTypeEnum_OPERATOR_LABEL =
     const EntityAliasAliasTypeEnum._('OPERATOR_LABEL');
+const EntityAliasAliasTypeEnum
+_$entityAliasAliasTypeEnum_unknownDefaultOpenApi =
+    const EntityAliasAliasTypeEnum._('unknownDefaultOpenApi');
 
 EntityAliasAliasTypeEnum _$entityAliasAliasTypeEnumValueOf(String name) {
   switch (name) {
@@ -21,8 +24,10 @@ EntityAliasAliasTypeEnum _$entityAliasAliasTypeEnumValueOf(String name) {
       return _$entityAliasAliasTypeEnum_FORMER_NAME;
     case 'OPERATOR_LABEL':
       return _$entityAliasAliasTypeEnum_OPERATOR_LABEL;
+    case 'unknownDefaultOpenApi':
+      return _$entityAliasAliasTypeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$entityAliasAliasTypeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -31,6 +36,7 @@ final BuiltSet<EntityAliasAliasTypeEnum> _$entityAliasAliasTypeEnumValues =
       _$entityAliasAliasTypeEnum_NAME,
       _$entityAliasAliasTypeEnum_FORMER_NAME,
       _$entityAliasAliasTypeEnum_OPERATOR_LABEL,
+      _$entityAliasAliasTypeEnum_unknownDefaultOpenApi,
     ]);
 
 const EntityAliasOriginEnum _$entityAliasOriginEnum_REGISTRY =
@@ -41,6 +47,8 @@ const EntityAliasOriginEnum _$entityAliasOriginEnum_OBSERVED =
     const EntityAliasOriginEnum._('OBSERVED');
 const EntityAliasOriginEnum _$entityAliasOriginEnum_OPERATOR =
     const EntityAliasOriginEnum._('OPERATOR');
+const EntityAliasOriginEnum _$entityAliasOriginEnum_unknownDefaultOpenApi =
+    const EntityAliasOriginEnum._('unknownDefaultOpenApi');
 
 EntityAliasOriginEnum _$entityAliasOriginEnumValueOf(String name) {
   switch (name) {
@@ -52,8 +60,10 @@ EntityAliasOriginEnum _$entityAliasOriginEnumValueOf(String name) {
       return _$entityAliasOriginEnum_OBSERVED;
     case 'OPERATOR':
       return _$entityAliasOriginEnum_OPERATOR;
+    case 'unknownDefaultOpenApi':
+      return _$entityAliasOriginEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$entityAliasOriginEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -63,6 +73,7 @@ final BuiltSet<EntityAliasOriginEnum> _$entityAliasOriginEnumValues =
       _$entityAliasOriginEnum_CO_ASSERTED,
       _$entityAliasOriginEnum_OBSERVED,
       _$entityAliasOriginEnum_OPERATOR,
+      _$entityAliasOriginEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<EntityAliasAliasTypeEnum> _$entityAliasAliasTypeEnumSerializer =
@@ -76,11 +87,13 @@ class _$EntityAliasAliasTypeEnumSerializer
     'NAME': 'NAME',
     'FORMER_NAME': 'FORMER_NAME',
     'OPERATOR_LABEL': 'OPERATOR_LABEL',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'NAME': 'NAME',
     'FORMER_NAME': 'FORMER_NAME',
     'OPERATOR_LABEL': 'OPERATOR_LABEL',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -112,12 +125,14 @@ class _$EntityAliasOriginEnumSerializer
     'CO_ASSERTED': 'CO_ASSERTED',
     'OBSERVED': 'OBSERVED',
     'OPERATOR': 'OPERATOR',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'REGISTRY': 'REGISTRY',
     'CO_ASSERTED': 'CO_ASSERTED',
     'OBSERVED': 'OBSERVED',
     'OPERATOR': 'OPERATOR',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

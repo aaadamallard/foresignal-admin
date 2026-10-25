@@ -326,6 +326,9 @@ class ContextSummaryInsightsInnerKindEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'band-change')
   static const ContextSummaryInsightsInnerKindEnum bandChange =
       _$contextSummaryInsightsInnerKindEnum_bandChange;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ContextSummaryInsightsInnerKindEnum unknownDefaultOpenApi =
+      _$contextSummaryInsightsInnerKindEnum_unknownDefaultOpenApi;
 
   static Serializer<ContextSummaryInsightsInnerKindEnum> get serializer =>
       _$contextSummaryInsightsInnerKindEnumSerializer;
@@ -345,6 +348,9 @@ class ContextSummaryInsightsInnerTextOriginEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'llm')
   static const ContextSummaryInsightsInnerTextOriginEnum llm =
       _$contextSummaryInsightsInnerTextOriginEnum_llm;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ContextSummaryInsightsInnerTextOriginEnum unknownDefaultOpenApi =
+      _$contextSummaryInsightsInnerTextOriginEnum_unknownDefaultOpenApi;
 
   static Serializer<ContextSummaryInsightsInnerTextOriginEnum> get serializer =>
       _$contextSummaryInsightsInnerTextOriginEnumSerializer;

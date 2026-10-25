@@ -12,6 +12,9 @@ const SmokePolygonPayloadDensityEnum _$smokePolygonPayloadDensityEnum_medium =
     const SmokePolygonPayloadDensityEnum._('medium');
 const SmokePolygonPayloadDensityEnum _$smokePolygonPayloadDensityEnum_heavy =
     const SmokePolygonPayloadDensityEnum._('heavy');
+const SmokePolygonPayloadDensityEnum
+_$smokePolygonPayloadDensityEnum_unknownDefaultOpenApi =
+    const SmokePolygonPayloadDensityEnum._('unknownDefaultOpenApi');
 
 SmokePolygonPayloadDensityEnum _$smokePolygonPayloadDensityEnumValueOf(
   String name,
@@ -23,8 +26,10 @@ SmokePolygonPayloadDensityEnum _$smokePolygonPayloadDensityEnumValueOf(
       return _$smokePolygonPayloadDensityEnum_medium;
     case 'heavy':
       return _$smokePolygonPayloadDensityEnum_heavy;
+    case 'unknownDefaultOpenApi':
+      return _$smokePolygonPayloadDensityEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$smokePolygonPayloadDensityEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -35,6 +40,7 @@ _$smokePolygonPayloadDensityEnumValues =
         _$smokePolygonPayloadDensityEnum_light,
         _$smokePolygonPayloadDensityEnum_medium,
         _$smokePolygonPayloadDensityEnum_heavy,
+        _$smokePolygonPayloadDensityEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -48,11 +54,13 @@ class _$SmokePolygonPayloadDensityEnumSerializer
     'light': 'light',
     'medium': 'medium',
     'heavy': 'heavy',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'light': 'light',
     'medium': 'medium',
     'heavy': 'heavy',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

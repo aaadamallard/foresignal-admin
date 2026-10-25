@@ -9,19 +9,24 @@ part of 'push_payload.dart';
 const PushPayloadVEnum _$pushPayloadVEnum_number1 = const PushPayloadVEnum._(
   'number1',
 );
+const PushPayloadVEnum _$pushPayloadVEnum_unknownDefaultOpenApi =
+    const PushPayloadVEnum._('unknownDefaultOpenApi');
 
 PushPayloadVEnum _$pushPayloadVEnumValueOf(String name) {
   switch (name) {
     case 'number1':
       return _$pushPayloadVEnum_number1;
+    case 'unknownDefaultOpenApi':
+      return _$pushPayloadVEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$pushPayloadVEnum_unknownDefaultOpenApi;
   }
 }
 
 final BuiltSet<PushPayloadVEnum> _$pushPayloadVEnumValues =
     BuiltSet<PushPayloadVEnum>(const <PushPayloadVEnum>[
       _$pushPayloadVEnum_number1,
+      _$pushPayloadVEnum_unknownDefaultOpenApi,
     ]);
 
 const PushPayloadEventEnum _$pushPayloadEventEnum_alert =
@@ -32,6 +37,8 @@ const PushPayloadEventEnum _$pushPayloadEventEnum_system =
     const PushPayloadEventEnum._('system');
 const PushPayloadEventEnum _$pushPayloadEventEnum_verify =
     const PushPayloadEventEnum._('verify');
+const PushPayloadEventEnum _$pushPayloadEventEnum_unknownDefaultOpenApi =
+    const PushPayloadEventEnum._('unknownDefaultOpenApi');
 
 PushPayloadEventEnum _$pushPayloadEventEnumValueOf(String name) {
   switch (name) {
@@ -43,8 +50,10 @@ PushPayloadEventEnum _$pushPayloadEventEnumValueOf(String name) {
       return _$pushPayloadEventEnum_system;
     case 'verify':
       return _$pushPayloadEventEnum_verify;
+    case 'unknownDefaultOpenApi':
+      return _$pushPayloadEventEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$pushPayloadEventEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -54,6 +63,7 @@ final BuiltSet<PushPayloadEventEnum> _$pushPayloadEventEnumValues =
       _$pushPayloadEventEnum_briefing,
       _$pushPayloadEventEnum_system,
       _$pushPayloadEventEnum_verify,
+      _$pushPayloadEventEnum_unknownDefaultOpenApi,
     ]);
 
 const PushPayloadSeverityEnum _$pushPayloadSeverityEnum_info =
@@ -62,6 +72,8 @@ const PushPayloadSeverityEnum _$pushPayloadSeverityEnum_warning =
     const PushPayloadSeverityEnum._('warning');
 const PushPayloadSeverityEnum _$pushPayloadSeverityEnum_critical =
     const PushPayloadSeverityEnum._('critical');
+const PushPayloadSeverityEnum _$pushPayloadSeverityEnum_unknownDefaultOpenApi =
+    const PushPayloadSeverityEnum._('unknownDefaultOpenApi');
 
 PushPayloadSeverityEnum _$pushPayloadSeverityEnumValueOf(String name) {
   switch (name) {
@@ -71,8 +83,10 @@ PushPayloadSeverityEnum _$pushPayloadSeverityEnumValueOf(String name) {
       return _$pushPayloadSeverityEnum_warning;
     case 'critical':
       return _$pushPayloadSeverityEnum_critical;
+    case 'unknownDefaultOpenApi':
+      return _$pushPayloadSeverityEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$pushPayloadSeverityEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -81,6 +95,7 @@ final BuiltSet<PushPayloadSeverityEnum> _$pushPayloadSeverityEnumValues =
       _$pushPayloadSeverityEnum_info,
       _$pushPayloadSeverityEnum_warning,
       _$pushPayloadSeverityEnum_critical,
+      _$pushPayloadSeverityEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<PushPayloadVEnum> _$pushPayloadVEnumSerializer =
@@ -94,9 +109,11 @@ class _$PushPayloadVEnumSerializer
     implements PrimitiveSerializer<PushPayloadVEnum> {
   static const Map<String, Object> _toWire = const <String, Object>{
     'number1': 1,
+    'unknownDefaultOpenApi': 11184809,
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     1: 'number1',
+    11184809: 'unknownDefaultOpenApi',
   };
 
   @override
@@ -128,12 +145,14 @@ class _$PushPayloadEventEnumSerializer
     'briefing': 'briefing',
     'system': 'system',
     'verify': 'verify',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'alert': 'alert',
     'briefing': 'briefing',
     'system': 'system',
     'verify': 'verify',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -164,11 +183,13 @@ class _$PushPayloadSeverityEnumSerializer
     'info': 'info',
     'warning': 'warning',
     'critical': 'critical',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'info': 'info',
     'warning': 'warning',
     'critical': 'critical',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

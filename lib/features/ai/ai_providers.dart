@@ -168,6 +168,6 @@ class LlmUsage {
           for (final p in entry.value.points) p.t.toUtc(): p.inputTokens + p.outputTokens,
         },
     },
-    step: byProvider.isEmpty ? null : usageStep(wireOf(byProvider.values.first.resolution)),
+    step: byProvider.isEmpty ? null : usageStep(wireOf(byProvider.values.first.resolution, byProvider.values.first, 'resolution')),
   );
 }

@@ -15,6 +15,9 @@ _$regionalIndexDefWeightsOriginEnum_fitted =
 const RegionalIndexDefWeightsOriginEnum
 _$regionalIndexDefWeightsOriginEnum_operator_ =
     const RegionalIndexDefWeightsOriginEnum._('operator_');
+const RegionalIndexDefWeightsOriginEnum
+_$regionalIndexDefWeightsOriginEnum_unknownDefaultOpenApi =
+    const RegionalIndexDefWeightsOriginEnum._('unknownDefaultOpenApi');
 
 RegionalIndexDefWeightsOriginEnum _$regionalIndexDefWeightsOriginEnumValueOf(
   String name,
@@ -26,8 +29,10 @@ RegionalIndexDefWeightsOriginEnum _$regionalIndexDefWeightsOriginEnumValueOf(
       return _$regionalIndexDefWeightsOriginEnum_fitted;
     case 'operator_':
       return _$regionalIndexDefWeightsOriginEnum_operator_;
+    case 'unknownDefaultOpenApi':
+      return _$regionalIndexDefWeightsOriginEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$regionalIndexDefWeightsOriginEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -38,6 +43,7 @@ _$regionalIndexDefWeightsOriginEnumValues =
         _$regionalIndexDefWeightsOriginEnum_default_,
         _$regionalIndexDefWeightsOriginEnum_fitted,
         _$regionalIndexDefWeightsOriginEnum_operator_,
+        _$regionalIndexDefWeightsOriginEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -51,11 +57,13 @@ class _$RegionalIndexDefWeightsOriginEnumSerializer
     'default_': 'default',
     'fitted': 'fitted',
     'operator_': 'operator',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'default': 'default_',
     'fitted': 'fitted',
     'operator': 'operator_',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

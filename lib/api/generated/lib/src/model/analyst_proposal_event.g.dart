@@ -16,6 +16,9 @@ const AnalystProposalEventChangeEnum _$analystProposalEventChangeEnum_expired =
     const AnalystProposalEventChangeEnum._('expired');
 const AnalystProposalEventChangeEnum _$analystProposalEventChangeEnum_failed =
     const AnalystProposalEventChangeEnum._('failed');
+const AnalystProposalEventChangeEnum
+_$analystProposalEventChangeEnum_unknownDefaultOpenApi =
+    const AnalystProposalEventChangeEnum._('unknownDefaultOpenApi');
 
 AnalystProposalEventChangeEnum _$analystProposalEventChangeEnumValueOf(
   String name,
@@ -31,8 +34,10 @@ AnalystProposalEventChangeEnum _$analystProposalEventChangeEnumValueOf(
       return _$analystProposalEventChangeEnum_expired;
     case 'failed':
       return _$analystProposalEventChangeEnum_failed;
+    case 'unknownDefaultOpenApi':
+      return _$analystProposalEventChangeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$analystProposalEventChangeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -45,6 +50,7 @@ _$analystProposalEventChangeEnumValues =
         _$analystProposalEventChangeEnum_rejected,
         _$analystProposalEventChangeEnum_expired,
         _$analystProposalEventChangeEnum_failed,
+        _$analystProposalEventChangeEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -60,6 +66,7 @@ class _$AnalystProposalEventChangeEnumSerializer
     'rejected': 'rejected',
     'expired': 'expired',
     'failed': 'failed',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'created': 'created',
@@ -67,6 +74,7 @@ class _$AnalystProposalEventChangeEnumSerializer
     'rejected': 'rejected',
     'expired': 'expired',
     'failed': 'failed',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

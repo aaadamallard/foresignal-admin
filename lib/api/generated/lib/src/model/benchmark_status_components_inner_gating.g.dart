@@ -16,6 +16,11 @@ _$benchmarkStatusComponentsInnerGatingProposerAutoExecutionEnum_degraded =
     const BenchmarkStatusComponentsInnerGatingProposerAutoExecutionEnum._(
       'degraded',
     );
+const BenchmarkStatusComponentsInnerGatingProposerAutoExecutionEnum
+_$benchmarkStatusComponentsInnerGatingProposerAutoExecutionEnum_unknownDefaultOpenApi =
+    const BenchmarkStatusComponentsInnerGatingProposerAutoExecutionEnum._(
+      'unknownDefaultOpenApi',
+    );
 
 BenchmarkStatusComponentsInnerGatingProposerAutoExecutionEnum
 _$benchmarkStatusComponentsInnerGatingProposerAutoExecutionEnumValueOf(
@@ -26,8 +31,10 @@ _$benchmarkStatusComponentsInnerGatingProposerAutoExecutionEnumValueOf(
       return _$benchmarkStatusComponentsInnerGatingProposerAutoExecutionEnum_allowed;
     case 'degraded':
       return _$benchmarkStatusComponentsInnerGatingProposerAutoExecutionEnum_degraded;
+    case 'unknownDefaultOpenApi':
+      return _$benchmarkStatusComponentsInnerGatingProposerAutoExecutionEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$benchmarkStatusComponentsInnerGatingProposerAutoExecutionEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -38,6 +45,7 @@ _$benchmarkStatusComponentsInnerGatingProposerAutoExecutionEnumValues =
     >(const <BenchmarkStatusComponentsInnerGatingProposerAutoExecutionEnum>[
       _$benchmarkStatusComponentsInnerGatingProposerAutoExecutionEnum_allowed,
       _$benchmarkStatusComponentsInnerGatingProposerAutoExecutionEnum_degraded,
+      _$benchmarkStatusComponentsInnerGatingProposerAutoExecutionEnum_unknownDefaultOpenApi,
     ]);
 
 const BenchmarkStatusComponentsInnerGatingLlmEnsembleWeightEnum
@@ -50,6 +58,11 @@ _$benchmarkStatusComponentsInnerGatingLlmEnsembleWeightEnum_degraded =
     const BenchmarkStatusComponentsInnerGatingLlmEnsembleWeightEnum._(
       'degraded',
     );
+const BenchmarkStatusComponentsInnerGatingLlmEnsembleWeightEnum
+_$benchmarkStatusComponentsInnerGatingLlmEnsembleWeightEnum_unknownDefaultOpenApi =
+    const BenchmarkStatusComponentsInnerGatingLlmEnsembleWeightEnum._(
+      'unknownDefaultOpenApi',
+    );
 
 BenchmarkStatusComponentsInnerGatingLlmEnsembleWeightEnum
 _$benchmarkStatusComponentsInnerGatingLlmEnsembleWeightEnumValueOf(
@@ -60,19 +73,22 @@ _$benchmarkStatusComponentsInnerGatingLlmEnsembleWeightEnumValueOf(
       return _$benchmarkStatusComponentsInnerGatingLlmEnsembleWeightEnum_allowed;
     case 'degraded':
       return _$benchmarkStatusComponentsInnerGatingLlmEnsembleWeightEnum_degraded;
+    case 'unknownDefaultOpenApi':
+      return _$benchmarkStatusComponentsInnerGatingLlmEnsembleWeightEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$benchmarkStatusComponentsInnerGatingLlmEnsembleWeightEnum_unknownDefaultOpenApi;
   }
 }
 
 final BuiltSet<BenchmarkStatusComponentsInnerGatingLlmEnsembleWeightEnum>
 _$benchmarkStatusComponentsInnerGatingLlmEnsembleWeightEnumValues =
-    BuiltSet<BenchmarkStatusComponentsInnerGatingLlmEnsembleWeightEnum>(
-      const <BenchmarkStatusComponentsInnerGatingLlmEnsembleWeightEnum>[
-        _$benchmarkStatusComponentsInnerGatingLlmEnsembleWeightEnum_allowed,
-        _$benchmarkStatusComponentsInnerGatingLlmEnsembleWeightEnum_degraded,
-      ],
-    );
+    BuiltSet<BenchmarkStatusComponentsInnerGatingLlmEnsembleWeightEnum>(const <
+      BenchmarkStatusComponentsInnerGatingLlmEnsembleWeightEnum
+    >[
+      _$benchmarkStatusComponentsInnerGatingLlmEnsembleWeightEnum_allowed,
+      _$benchmarkStatusComponentsInnerGatingLlmEnsembleWeightEnum_degraded,
+      _$benchmarkStatusComponentsInnerGatingLlmEnsembleWeightEnum_unknownDefaultOpenApi,
+    ]);
 
 Serializer<BenchmarkStatusComponentsInnerGatingProposerAutoExecutionEnum>
 _$benchmarkStatusComponentsInnerGatingProposerAutoExecutionEnumSerializer =
@@ -89,10 +105,12 @@ class _$BenchmarkStatusComponentsInnerGatingProposerAutoExecutionEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'allowed': 'allowed',
     'degraded': 'degraded',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'allowed': 'allowed',
     'degraded': 'degraded',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -128,10 +146,12 @@ class _$BenchmarkStatusComponentsInnerGatingLlmEnsembleWeightEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'allowed': 'allowed',
     'degraded': 'degraded',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'allowed': 'allowed',
     'degraded': 'degraded',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

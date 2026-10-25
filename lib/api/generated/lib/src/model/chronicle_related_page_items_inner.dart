@@ -187,6 +187,10 @@ class ChronicleRelatedPageItemsInnerDisclosureEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'opaque')
   static const ChronicleRelatedPageItemsInnerDisclosureEnum opaque =
       _$chronicleRelatedPageItemsInnerDisclosureEnum_opaque;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ChronicleRelatedPageItemsInnerDisclosureEnum
+  unknownDefaultOpenApi =
+      _$chronicleRelatedPageItemsInnerDisclosureEnum_unknownDefaultOpenApi;
 
   static Serializer<ChronicleRelatedPageItemsInnerDisclosureEnum>
   get serializer => _$chronicleRelatedPageItemsInnerDisclosureEnumSerializer;
@@ -211,6 +215,10 @@ class ChronicleRelatedPageItemsInnerStrengthEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'high')
   static const ChronicleRelatedPageItemsInnerStrengthEnum high =
       _$chronicleRelatedPageItemsInnerStrengthEnum_high;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ChronicleRelatedPageItemsInnerStrengthEnum
+  unknownDefaultOpenApi =
+      _$chronicleRelatedPageItemsInnerStrengthEnum_unknownDefaultOpenApi;
 
   static Serializer<ChronicleRelatedPageItemsInnerStrengthEnum>
   get serializer => _$chronicleRelatedPageItemsInnerStrengthEnumSerializer;
@@ -236,6 +244,10 @@ class ChronicleRelatedPageItemsInnerDimensionsEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'topics')
   static const ChronicleRelatedPageItemsInnerDimensionsEnum topics =
       _$chronicleRelatedPageItemsInnerDimensionsEnum_topics;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ChronicleRelatedPageItemsInnerDimensionsEnum
+  unknownDefaultOpenApi =
+      _$chronicleRelatedPageItemsInnerDimensionsEnum_unknownDefaultOpenApi;
 
   static Serializer<ChronicleRelatedPageItemsInnerDimensionsEnum>
   get serializer => _$chronicleRelatedPageItemsInnerDimensionsEnumSerializer;
@@ -259,6 +271,10 @@ class ChronicleRelatedPageItemsInnerTemporalEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'concurrent')
   static const ChronicleRelatedPageItemsInnerTemporalEnum concurrent =
       _$chronicleRelatedPageItemsInnerTemporalEnum_concurrent;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ChronicleRelatedPageItemsInnerTemporalEnum
+  unknownDefaultOpenApi =
+      _$chronicleRelatedPageItemsInnerTemporalEnum_unknownDefaultOpenApi;
 
   static Serializer<ChronicleRelatedPageItemsInnerTemporalEnum>
   get serializer => _$chronicleRelatedPageItemsInnerTemporalEnumSerializer;
@@ -281,6 +297,10 @@ class ChronicleRelatedPageItemsInnerTimeOverlapEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'full')
   static const ChronicleRelatedPageItemsInnerTimeOverlapEnum full =
       _$chronicleRelatedPageItemsInnerTimeOverlapEnum_full;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ChronicleRelatedPageItemsInnerTimeOverlapEnum
+  unknownDefaultOpenApi =
+      _$chronicleRelatedPageItemsInnerTimeOverlapEnum_unknownDefaultOpenApi;
 
   static Serializer<ChronicleRelatedPageItemsInnerTimeOverlapEnum>
   get serializer => _$chronicleRelatedPageItemsInnerTimeOverlapEnumSerializer;
@@ -301,6 +321,9 @@ class ChronicleRelatedPageItemsInnerStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'dismissed')
   static const ChronicleRelatedPageItemsInnerStatusEnum dismissed =
       _$chronicleRelatedPageItemsInnerStatusEnum_dismissed;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ChronicleRelatedPageItemsInnerStatusEnum unknownDefaultOpenApi =
+      _$chronicleRelatedPageItemsInnerStatusEnum_unknownDefaultOpenApi;
 
   static Serializer<ChronicleRelatedPageItemsInnerStatusEnum> get serializer =>
       _$chronicleRelatedPageItemsInnerStatusEnumSerializer;
@@ -323,6 +346,10 @@ class ChronicleRelatedPageItemsInnerAccessRequestStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'declined')
   static const ChronicleRelatedPageItemsInnerAccessRequestStatusEnum declined =
       _$chronicleRelatedPageItemsInnerAccessRequestStatusEnum_declined;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ChronicleRelatedPageItemsInnerAccessRequestStatusEnum
+  unknownDefaultOpenApi =
+      _$chronicleRelatedPageItemsInnerAccessRequestStatusEnum_unknownDefaultOpenApi;
 
   static Serializer<ChronicleRelatedPageItemsInnerAccessRequestStatusEnum>
   get serializer =>

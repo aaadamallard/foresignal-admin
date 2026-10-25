@@ -36,6 +36,9 @@ _$tuningSuggestionRecordKindEnum_SEVERITY_UP =
 const TuningSuggestionRecordKindEnum
 _$tuningSuggestionRecordKindEnum_SEVERITY_DOWN =
     const TuningSuggestionRecordKindEnum._('SEVERITY_DOWN');
+const TuningSuggestionRecordKindEnum
+_$tuningSuggestionRecordKindEnum_unknownDefaultOpenApi =
+    const TuningSuggestionRecordKindEnum._('unknownDefaultOpenApi');
 
 TuningSuggestionRecordKindEnum _$tuningSuggestionRecordKindEnumValueOf(
   String name,
@@ -61,8 +64,10 @@ TuningSuggestionRecordKindEnum _$tuningSuggestionRecordKindEnumValueOf(
       return _$tuningSuggestionRecordKindEnum_SEVERITY_UP;
     case 'SEVERITY_DOWN':
       return _$tuningSuggestionRecordKindEnum_SEVERITY_DOWN;
+    case 'unknownDefaultOpenApi':
+      return _$tuningSuggestionRecordKindEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$tuningSuggestionRecordKindEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -80,6 +85,7 @@ _$tuningSuggestionRecordKindEnumValues =
         _$tuningSuggestionRecordKindEnum_ACTIVE_WINDOW,
         _$tuningSuggestionRecordKindEnum_SEVERITY_UP,
         _$tuningSuggestionRecordKindEnum_SEVERITY_DOWN,
+        _$tuningSuggestionRecordKindEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -94,6 +100,9 @@ _$tuningSuggestionRecordStatusEnum_DISMISSED =
 const TuningSuggestionRecordStatusEnum
 _$tuningSuggestionRecordStatusEnum_STALE =
     const TuningSuggestionRecordStatusEnum._('STALE');
+const TuningSuggestionRecordStatusEnum
+_$tuningSuggestionRecordStatusEnum_unknownDefaultOpenApi =
+    const TuningSuggestionRecordStatusEnum._('unknownDefaultOpenApi');
 
 TuningSuggestionRecordStatusEnum _$tuningSuggestionRecordStatusEnumValueOf(
   String name,
@@ -107,8 +116,10 @@ TuningSuggestionRecordStatusEnum _$tuningSuggestionRecordStatusEnumValueOf(
       return _$tuningSuggestionRecordStatusEnum_DISMISSED;
     case 'STALE':
       return _$tuningSuggestionRecordStatusEnum_STALE;
+    case 'unknownDefaultOpenApi':
+      return _$tuningSuggestionRecordStatusEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$tuningSuggestionRecordStatusEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -120,6 +131,7 @@ _$tuningSuggestionRecordStatusEnumValues =
         _$tuningSuggestionRecordStatusEnum_APPLIED,
         _$tuningSuggestionRecordStatusEnum_DISMISSED,
         _$tuningSuggestionRecordStatusEnum_STALE,
+        _$tuningSuggestionRecordStatusEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -143,6 +155,7 @@ class _$TuningSuggestionRecordKindEnumSerializer
     'ACTIVE_WINDOW': 'ACTIVE_WINDOW',
     'SEVERITY_UP': 'SEVERITY_UP',
     'SEVERITY_DOWN': 'SEVERITY_DOWN',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'raise-threshold': 'raiseThreshold',
@@ -155,6 +168,7 @@ class _$TuningSuggestionRecordKindEnumSerializer
     'ACTIVE_WINDOW': 'ACTIVE_WINDOW',
     'SEVERITY_UP': 'SEVERITY_UP',
     'SEVERITY_DOWN': 'SEVERITY_DOWN',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -186,12 +200,14 @@ class _$TuningSuggestionRecordStatusEnumSerializer
     'APPLIED': 'APPLIED',
     'DISMISSED': 'DISMISSED',
     'STALE': 'STALE',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'OPEN': 'OPEN',
     'APPLIED': 'APPLIED',
     'DISMISSED': 'DISMISSED',
     'STALE': 'STALE',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

@@ -200,6 +200,9 @@ class ObjectActionMethodEnum extends EnumClass {
   static const ObjectActionMethodEnum PATCH = _$objectActionMethodEnum_PATCH;
   @BuiltValueEnumConst(wireName: r'DELETE')
   static const ObjectActionMethodEnum DELETE = _$objectActionMethodEnum_DELETE;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ObjectActionMethodEnum unknownDefaultOpenApi =
+      _$objectActionMethodEnum_unknownDefaultOpenApi;
 
   static Serializer<ObjectActionMethodEnum> get serializer =>
       _$objectActionMethodEnumSerializer;
@@ -219,6 +222,9 @@ class ObjectActionScopeEnum extends EnumClass {
   static const ObjectActionScopeEnum agent = _$objectActionScopeEnum_agent;
   @BuiltValueEnumConst(wireName: r'admin')
   static const ObjectActionScopeEnum admin = _$objectActionScopeEnum_admin;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ObjectActionScopeEnum unknownDefaultOpenApi =
+      _$objectActionScopeEnum_unknownDefaultOpenApi;
 
   static Serializer<ObjectActionScopeEnum> get serializer =>
       _$objectActionScopeEnumSerializer;

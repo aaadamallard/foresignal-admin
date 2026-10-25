@@ -251,6 +251,9 @@ class TimelineTickFramesInnerAvailabilityEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'unverified')
   static const TimelineTickFramesInnerAvailabilityEnum unverified =
       _$timelineTickFramesInnerAvailabilityEnum_unverified;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const TimelineTickFramesInnerAvailabilityEnum unknownDefaultOpenApi =
+      _$timelineTickFramesInnerAvailabilityEnum_unknownDefaultOpenApi;
 
   static Serializer<TimelineTickFramesInnerAvailabilityEnum> get serializer =>
       _$timelineTickFramesInnerAvailabilityEnumSerializer;

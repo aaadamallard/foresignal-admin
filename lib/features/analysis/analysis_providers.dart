@@ -137,3 +137,36 @@ final cycleProvider = FutureProvider.family<AnalysisCycle, String>((ref, cycleId
   final api = ref.watch(foresignalApiProvider);
   return callApiRequired(() => api.getAssessmentsApi().getAnalysisCycle(cycleId: cycleId));
 });
+
+/// One situation (`getSituation`).
+final situationProvider = FutureProvider.family<Situation, String>((ref, id) async {
+  final api = ref.watch(foresignalApiProvider);
+  return callApiRequired(() => api.getSituationsApi().getSituation(situationId: id));
+});
+
+/// A situation's members (`listSituationMembers`), the first page.
+final situationMembersProvider = FutureProvider.family<List<SituationMember>, String>((ref, id) async {
+  final api = ref.watch(foresignalApiProvider);
+  final page = await callApiRequired(
+    () => api.getSituationsApi().listSituationMembers(situationId: id, limit: 200),
+  );
+  return page.items.toList();
+});
+
+/// A situation's timeline (`getSituationTimeline`), newest first.
+final situationTimelineProvider = FutureProvider.family<List<SituationTimelineEntry>, String>((ref, id) async {
+  final api = ref.watch(foresignalApiProvider);
+  final page = await callApiRequired(
+    () => api.getSituationsApi().getSituationTimeline(situationId: id, limit: 200),
+  );
+  return page.items.toList()..sort((a, b) => b.at.compareTo(a.at));
+});
+
+/// A situation's assessments (`listSituationAssessments`), newest first.
+final situationAssessmentsProvider = FutureProvider.family<List<Assessment>, String>((ref, id) async {
+  final api = ref.watch(foresignalApiProvider);
+  final page = await callApiRequired(
+    () => api.getAssessmentsApi().listSituationAssessments(situationId: id, limit: 20),
+  );
+  return page.items.toList()..sort((a, b) => b.createdAt.compareTo(a.createdAt));
+});

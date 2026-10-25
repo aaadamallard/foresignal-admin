@@ -543,6 +543,9 @@ class BacktestJobTypeEnum extends EnumClass {
       _$backtestJobTypeEnum_manifestReplay;
   @BuiltValueEnumConst(wireName: r'benchmark')
   static const BacktestJobTypeEnum benchmark = _$backtestJobTypeEnum_benchmark;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const BacktestJobTypeEnum unknownDefaultOpenApi =
+      _$backtestJobTypeEnum_unknownDefaultOpenApi;
 
   static Serializer<BacktestJobTypeEnum> get serializer =>
       _$backtestJobTypeEnumSerializer;
@@ -567,6 +570,9 @@ class BacktestJobStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'cancelled')
   static const BacktestJobStatusEnum cancelled =
       _$backtestJobStatusEnum_cancelled;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const BacktestJobStatusEnum unknownDefaultOpenApi =
+      _$backtestJobStatusEnum_unknownDefaultOpenApi;
 
   static Serializer<BacktestJobStatusEnum> get serializer =>
       _$backtestJobStatusEnumSerializer;

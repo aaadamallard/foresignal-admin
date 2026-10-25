@@ -15,6 +15,9 @@ _$socialVelocityEventScopeTypeEnum_place =
 const SocialVelocityEventScopeTypeEnum
 _$socialVelocityEventScopeTypeEnum_entity =
     const SocialVelocityEventScopeTypeEnum._('entity');
+const SocialVelocityEventScopeTypeEnum
+_$socialVelocityEventScopeTypeEnum_unknownDefaultOpenApi =
+    const SocialVelocityEventScopeTypeEnum._('unknownDefaultOpenApi');
 
 SocialVelocityEventScopeTypeEnum _$socialVelocityEventScopeTypeEnumValueOf(
   String name,
@@ -26,8 +29,10 @@ SocialVelocityEventScopeTypeEnum _$socialVelocityEventScopeTypeEnumValueOf(
       return _$socialVelocityEventScopeTypeEnum_place;
     case 'entity':
       return _$socialVelocityEventScopeTypeEnum_entity;
+    case 'unknownDefaultOpenApi':
+      return _$socialVelocityEventScopeTypeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$socialVelocityEventScopeTypeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -38,6 +43,7 @@ _$socialVelocityEventScopeTypeEnumValues =
         _$socialVelocityEventScopeTypeEnum_topic,
         _$socialVelocityEventScopeTypeEnum_place,
         _$socialVelocityEventScopeTypeEnum_entity,
+        _$socialVelocityEventScopeTypeEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -51,11 +57,13 @@ class _$SocialVelocityEventScopeTypeEnumSerializer
     'topic': 'topic',
     'place': 'place',
     'entity': 'entity',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'topic': 'topic',
     'place': 'place',
     'entity': 'entity',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

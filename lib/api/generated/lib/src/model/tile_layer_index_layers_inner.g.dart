@@ -12,6 +12,9 @@ _$tileLayerIndexLayersInnerTypeEnum_source_ =
 const TileLayerIndexLayersInnerTypeEnum
 _$tileLayerIndexLayersInnerTypeEnum_kind =
     const TileLayerIndexLayersInnerTypeEnum._('kind');
+const TileLayerIndexLayersInnerTypeEnum
+_$tileLayerIndexLayersInnerTypeEnum_unknownDefaultOpenApi =
+    const TileLayerIndexLayersInnerTypeEnum._('unknownDefaultOpenApi');
 
 TileLayerIndexLayersInnerTypeEnum _$tileLayerIndexLayersInnerTypeEnumValueOf(
   String name,
@@ -21,8 +24,10 @@ TileLayerIndexLayersInnerTypeEnum _$tileLayerIndexLayersInnerTypeEnumValueOf(
       return _$tileLayerIndexLayersInnerTypeEnum_source_;
     case 'kind':
       return _$tileLayerIndexLayersInnerTypeEnum_kind;
+    case 'unknownDefaultOpenApi':
+      return _$tileLayerIndexLayersInnerTypeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$tileLayerIndexLayersInnerTypeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -32,6 +37,7 @@ _$tileLayerIndexLayersInnerTypeEnumValues =
       const <TileLayerIndexLayersInnerTypeEnum>[
         _$tileLayerIndexLayersInnerTypeEnum_source_,
         _$tileLayerIndexLayersInnerTypeEnum_kind,
+        _$tileLayerIndexLayersInnerTypeEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -44,10 +50,12 @@ class _$TileLayerIndexLayersInnerTypeEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'source_': 'source',
     'kind': 'kind',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'source': 'source_',
     'kind': 'kind',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

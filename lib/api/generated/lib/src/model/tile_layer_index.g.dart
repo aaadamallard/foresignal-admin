@@ -8,19 +8,25 @@ part of 'tile_layer_index.dart';
 
 const TileLayerIndexTilejsonEnum _$tileLayerIndexTilejsonEnum_n3period0Period0 =
     const TileLayerIndexTilejsonEnum._('n3period0Period0');
+const TileLayerIndexTilejsonEnum
+_$tileLayerIndexTilejsonEnum_unknownDefaultOpenApi =
+    const TileLayerIndexTilejsonEnum._('unknownDefaultOpenApi');
 
 TileLayerIndexTilejsonEnum _$tileLayerIndexTilejsonEnumValueOf(String name) {
   switch (name) {
     case 'n3period0Period0':
       return _$tileLayerIndexTilejsonEnum_n3period0Period0;
+    case 'unknownDefaultOpenApi':
+      return _$tileLayerIndexTilejsonEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$tileLayerIndexTilejsonEnum_unknownDefaultOpenApi;
   }
 }
 
 final BuiltSet<TileLayerIndexTilejsonEnum> _$tileLayerIndexTilejsonEnumValues =
     BuiltSet<TileLayerIndexTilejsonEnum>(const <TileLayerIndexTilejsonEnum>[
       _$tileLayerIndexTilejsonEnum_n3period0Period0,
+      _$tileLayerIndexTilejsonEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<TileLayerIndexTilejsonEnum> _$tileLayerIndexTilejsonEnumSerializer =
@@ -30,9 +36,11 @@ class _$TileLayerIndexTilejsonEnumSerializer
     implements PrimitiveSerializer<TileLayerIndexTilejsonEnum> {
   static const Map<String, Object> _toWire = const <String, Object>{
     'n3period0Period0': '3.0.0',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     '3.0.0': 'n3period0Period0',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

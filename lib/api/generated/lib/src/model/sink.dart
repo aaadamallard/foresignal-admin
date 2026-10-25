@@ -347,6 +347,9 @@ class SinkTypeEnum extends EnumClass {
   static const SinkTypeEnum cloudevents = _$sinkTypeEnum_cloudevents;
   @BuiltValueEnumConst(wireName: r'federation-push')
   static const SinkTypeEnum federationPush = _$sinkTypeEnum_federationPush;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const SinkTypeEnum unknownDefaultOpenApi =
+      _$sinkTypeEnum_unknownDefaultOpenApi;
 
   static Serializer<SinkTypeEnum> get serializer => _$sinkTypeEnumSerializer;
 
@@ -361,6 +364,9 @@ class SinkKindEnum extends EnumClass {
   static const SinkKindEnum CHANGE_FEED = _$sinkKindEnum_CHANGE_FEED;
   @BuiltValueEnumConst(wireName: r'STATE_MIRROR')
   static const SinkKindEnum STATE_MIRROR = _$sinkKindEnum_STATE_MIRROR;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const SinkKindEnum unknownDefaultOpenApi =
+      _$sinkKindEnum_unknownDefaultOpenApi;
 
   static Serializer<SinkKindEnum> get serializer => _$sinkKindEnumSerializer;
 
@@ -375,6 +381,9 @@ class SinkModeEnum extends EnumClass {
   static const SinkModeEnum PUSH = _$sinkModeEnum_PUSH;
   @BuiltValueEnumConst(wireName: r'SERVE')
   static const SinkModeEnum SERVE = _$sinkModeEnum_SERVE;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const SinkModeEnum unknownDefaultOpenApi =
+      _$sinkModeEnum_unknownDefaultOpenApi;
 
   static Serializer<SinkModeEnum> get serializer => _$sinkModeEnumSerializer;
 
@@ -393,6 +402,9 @@ class SinkStateEnum extends EnumClass {
   static const SinkStateEnum FAILING = _$sinkStateEnum_FAILING;
   @BuiltValueEnumConst(wireName: r'STOPPED')
   static const SinkStateEnum STOPPED = _$sinkStateEnum_STOPPED;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const SinkStateEnum unknownDefaultOpenApi =
+      _$sinkStateEnum_unknownDefaultOpenApi;
 
   static Serializer<SinkStateEnum> get serializer => _$sinkStateEnumSerializer;
 

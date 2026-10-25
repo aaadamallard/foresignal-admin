@@ -51,6 +51,36 @@ void main() {
     expect(find.text('precursors: warn'), findsOneWidget);
   });
 
+  testWidgets('a top situation opens its page: why it is warning, evidence, assessment and timeline', (tester) async {
+    final a = PreviewAnalysis();
+    final id = a.situations.keys.first;
+    final adapter = await openAt(tester, analysisPath, adapter: analysisBackend(a));
+
+    await tapVisible(tester, find.byKey(Key('board.situation.$id')));
+
+    expect(find.text('Felixstowe port disruption'), findsWidgets);
+    expect(find.text('Why it is warning'), findsOneWidget);
+    expect(find.textContaining('Max core-member severity: warning'), findsOneWidget);
+    expect(find.textContaining('3 signal families, 2 independent evidence groups'), findsOneWidget);
+    expect(find.text('Port congestion at Felixstowe'), findsOneWidget);
+    expect(find.text('Felixstowe throughput likely to stay reduced for 48 hours'), findsOneWidget);
+    expect(find.textContaining('Edited by admin'), findsOneWidget);
+    expect(
+      adapter.requests.map((r) => r.uri.path).toSet(),
+      containsAll(<String>[
+        '/v1/situations/$id',
+        '/v1/situations/$id/members',
+        '/v1/situations/$id/timeline',
+        '/v1/situations/$id/assessments',
+      ]),
+    );
+    // Read-only: nothing is written from the page.
+    expect(adapter.requests.where((r) => r.method != 'GET'), isEmpty);
+
+    await tapVisible(tester, find.byKey(const Key('page.back')));
+    expect(find.byKey(Key('board.situation.$id')), findsOneWidget);
+  });
+
   testWidgets('the recipes table marks a failing recipe as an error', (tester) async {
     await openAt(tester, analysisPath, adapter: analysisBackend(PreviewAnalysis()));
     await _tab(tester, 'recipes');
@@ -119,6 +149,22 @@ void main() {
     expect(patch.body, <String, Object?>{'notes': 'Checked with the harbor master.'});
     expect(patch.options.headers['If-Match'], '4');
     expect(a.events[_event]!['version'], 5);
+  });
+
+  testWidgets('an event with values the app does not know still opens and shows them as sent', (tester) async {
+    final a = PreviewAnalysis();
+    final event = a.events[_event]!;
+    event['status'] = 'quarantined';
+    event['log'] = <Object?>[
+      ...(event['log']! as List<Object?>),
+      <String, Object?>{'at': '2026-10-24T09:00:00Z', 'actor': 'recipe:port-activity', 'action': 'upgraded'},
+    ];
+    await openAt(tester, analysisEventPath(_event), adapter: analysisBackend(a));
+
+    expect(tester.takeException(), isNull);
+    expect(find.textContaining('Unexpected reply'), findsNothing);
+    expect(find.text('quarantined'), findsWidgets);
+    expect(find.textContaining('Upgraded by recipe:port-activity'), findsOneWidget);
   });
 
   testWidgets('a stale version is refused and offers a reload', (tester) async {

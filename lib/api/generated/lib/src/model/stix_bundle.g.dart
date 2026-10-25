@@ -8,19 +8,24 @@ part of 'stix_bundle.dart';
 
 const StixBundleTypeEnum _$stixBundleTypeEnum_bundle =
     const StixBundleTypeEnum._('bundle');
+const StixBundleTypeEnum _$stixBundleTypeEnum_unknownDefaultOpenApi =
+    const StixBundleTypeEnum._('unknownDefaultOpenApi');
 
 StixBundleTypeEnum _$stixBundleTypeEnumValueOf(String name) {
   switch (name) {
     case 'bundle':
       return _$stixBundleTypeEnum_bundle;
+    case 'unknownDefaultOpenApi':
+      return _$stixBundleTypeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$stixBundleTypeEnum_unknownDefaultOpenApi;
   }
 }
 
 final BuiltSet<StixBundleTypeEnum> _$stixBundleTypeEnumValues =
     BuiltSet<StixBundleTypeEnum>(const <StixBundleTypeEnum>[
       _$stixBundleTypeEnum_bundle,
+      _$stixBundleTypeEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<StixBundleTypeEnum> _$stixBundleTypeEnumSerializer =
@@ -30,9 +35,11 @@ class _$StixBundleTypeEnumSerializer
     implements PrimitiveSerializer<StixBundleTypeEnum> {
   static const Map<String, Object> _toWire = const <String, Object>{
     'bundle': 'bundle',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'bundle': 'bundle',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

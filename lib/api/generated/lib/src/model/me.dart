@@ -226,6 +226,9 @@ class MeScopesEnum extends EnumClass {
   static const MeScopesEnum agent = _$meScopesEnum_agent;
   @BuiltValueEnumConst(wireName: r'admin')
   static const MeScopesEnum admin = _$meScopesEnum_admin;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const MeScopesEnum unknownDefaultOpenApi =
+      _$meScopesEnum_unknownDefaultOpenApi;
 
   static Serializer<MeScopesEnum> get serializer => _$meScopesEnumSerializer;
 

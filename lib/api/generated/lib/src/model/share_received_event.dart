@@ -228,6 +228,9 @@ class ShareReceivedEventRoleEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'owner')
   static const ShareReceivedEventRoleEnum owner =
       _$shareReceivedEventRoleEnum_owner;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ShareReceivedEventRoleEnum unknownDefaultOpenApi =
+      _$shareReceivedEventRoleEnum_unknownDefaultOpenApi;
 
   static Serializer<ShareReceivedEventRoleEnum> get serializer =>
       _$shareReceivedEventRoleEnumSerializer;

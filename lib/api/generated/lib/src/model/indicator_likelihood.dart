@@ -222,6 +222,9 @@ class IndicatorLikelihoodClass_Enum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'neutral')
   static const IndicatorLikelihoodClass_Enum neutral =
       _$indicatorLikelihoodClassEnum_neutral;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const IndicatorLikelihoodClass_Enum unknownDefaultOpenApi =
+      _$indicatorLikelihoodClassEnum_unknownDefaultOpenApi;
 
   static Serializer<IndicatorLikelihoodClass_Enum> get serializer =>
       _$indicatorLikelihoodClassEnumSerializer;
@@ -241,6 +244,9 @@ class IndicatorLikelihoodDirectionEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'weakens')
   static const IndicatorLikelihoodDirectionEnum weakens =
       _$indicatorLikelihoodDirectionEnum_weakens;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const IndicatorLikelihoodDirectionEnum unknownDefaultOpenApi =
+      _$indicatorLikelihoodDirectionEnum_unknownDefaultOpenApi;
 
   static Serializer<IndicatorLikelihoodDirectionEnum> get serializer =>
       _$indicatorLikelihoodDirectionEnumSerializer;

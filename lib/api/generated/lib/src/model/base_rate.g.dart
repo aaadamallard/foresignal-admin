@@ -13,6 +13,8 @@ const BaseRateOriginEnum _$baseRateOriginEnum_operator_ =
     const BaseRateOriginEnum._('operator_');
 const BaseRateOriginEnum _$baseRateOriginEnum_agent =
     const BaseRateOriginEnum._('agent');
+const BaseRateOriginEnum _$baseRateOriginEnum_unknownDefaultOpenApi =
+    const BaseRateOriginEnum._('unknownDefaultOpenApi');
 
 BaseRateOriginEnum _$baseRateOriginEnumValueOf(String name) {
   switch (name) {
@@ -22,8 +24,10 @@ BaseRateOriginEnum _$baseRateOriginEnumValueOf(String name) {
       return _$baseRateOriginEnum_operator_;
     case 'agent':
       return _$baseRateOriginEnum_agent;
+    case 'unknownDefaultOpenApi':
+      return _$baseRateOriginEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$baseRateOriginEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -32,6 +36,7 @@ final BuiltSet<BaseRateOriginEnum> _$baseRateOriginEnumValues =
       _$baseRateOriginEnum_auto,
       _$baseRateOriginEnum_operator_,
       _$baseRateOriginEnum_agent,
+      _$baseRateOriginEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<BaseRateOriginEnum> _$baseRateOriginEnumSerializer =
@@ -43,11 +48,13 @@ class _$BaseRateOriginEnumSerializer
     'auto': 'auto',
     'operator_': 'operator',
     'agent': 'agent',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'auto': 'auto',
     'operator': 'operator_',
     'agent': 'agent',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

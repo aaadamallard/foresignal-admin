@@ -30,6 +30,9 @@ _$externalBindingInputTargetEnum_situation =
 const ExternalBindingInputTargetEnum
 _$externalBindingInputTargetEnum_chronicle =
     const ExternalBindingInputTargetEnum._('chronicle');
+const ExternalBindingInputTargetEnum
+_$externalBindingInputTargetEnum_unknownDefaultOpenApi =
+    const ExternalBindingInputTargetEnum._('unknownDefaultOpenApi');
 
 ExternalBindingInputTargetEnum _$externalBindingInputTargetEnumValueOf(
   String name,
@@ -55,8 +58,10 @@ ExternalBindingInputTargetEnum _$externalBindingInputTargetEnumValueOf(
       return _$externalBindingInputTargetEnum_situation;
     case 'chronicle':
       return _$externalBindingInputTargetEnum_chronicle;
+    case 'unknownDefaultOpenApi':
+      return _$externalBindingInputTargetEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$externalBindingInputTargetEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -74,6 +79,7 @@ _$externalBindingInputTargetEnumValues =
         _$externalBindingInputTargetEnum_place,
         _$externalBindingInputTargetEnum_situation,
         _$externalBindingInputTargetEnum_chronicle,
+        _$externalBindingInputTargetEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -94,6 +100,7 @@ class _$ExternalBindingInputTargetEnumSerializer
     'place': 'place',
     'situation': 'situation',
     'chronicle': 'chronicle',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'series': 'series',
@@ -106,6 +113,7 @@ class _$ExternalBindingInputTargetEnumSerializer
     'place': 'place',
     'situation': 'situation',
     'chronicle': 'chronicle',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

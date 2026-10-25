@@ -156,6 +156,9 @@ class AlertSignalTypeEnum extends EnumClass {
   static const AlertSignalTypeEnum FLAP = _$alertSignalTypeEnum_FLAP;
   @BuiltValueEnumConst(wireName: r'UNOPENED')
   static const AlertSignalTypeEnum UNOPENED = _$alertSignalTypeEnum_UNOPENED;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const AlertSignalTypeEnum unknownDefaultOpenApi =
+      _$alertSignalTypeEnum_unknownDefaultOpenApi;
 
   static Serializer<AlertSignalTypeEnum> get serializer =>
       _$alertSignalTypeEnumSerializer;

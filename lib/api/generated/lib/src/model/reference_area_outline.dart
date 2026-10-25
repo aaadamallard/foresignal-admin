@@ -242,6 +242,9 @@ class ReferenceAreaOutlineKindEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'admin1')
   static const ReferenceAreaOutlineKindEnum admin1 =
       _$referenceAreaOutlineKindEnum_admin1;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ReferenceAreaOutlineKindEnum unknownDefaultOpenApi =
+      _$referenceAreaOutlineKindEnum_unknownDefaultOpenApi;
 
   static Serializer<ReferenceAreaOutlineKindEnum> get serializer =>
       _$referenceAreaOutlineKindEnumSerializer;

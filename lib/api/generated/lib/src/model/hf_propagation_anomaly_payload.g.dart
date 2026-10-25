@@ -18,6 +18,9 @@ _$hfPropagationAnomalyPayloadStatusEnum_noCoverage =
 const HfPropagationAnomalyPayloadStatusEnum
 _$hfPropagationAnomalyPayloadStatusEnum_degradedInput =
     const HfPropagationAnomalyPayloadStatusEnum._('degradedInput');
+const HfPropagationAnomalyPayloadStatusEnum
+_$hfPropagationAnomalyPayloadStatusEnum_unknownDefaultOpenApi =
+    const HfPropagationAnomalyPayloadStatusEnum._('unknownDefaultOpenApi');
 
 HfPropagationAnomalyPayloadStatusEnum
 _$hfPropagationAnomalyPayloadStatusEnumValueOf(String name) {
@@ -30,8 +33,10 @@ _$hfPropagationAnomalyPayloadStatusEnumValueOf(String name) {
       return _$hfPropagationAnomalyPayloadStatusEnum_noCoverage;
     case 'degradedInput':
       return _$hfPropagationAnomalyPayloadStatusEnum_degradedInput;
+    case 'unknownDefaultOpenApi':
+      return _$hfPropagationAnomalyPayloadStatusEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$hfPropagationAnomalyPayloadStatusEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -43,6 +48,7 @@ _$hfPropagationAnomalyPayloadStatusEnumValues =
         _$hfPropagationAnomalyPayloadStatusEnum_insufficientData,
         _$hfPropagationAnomalyPayloadStatusEnum_noCoverage,
         _$hfPropagationAnomalyPayloadStatusEnum_degradedInput,
+        _$hfPropagationAnomalyPayloadStatusEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -57,12 +63,14 @@ class _$HfPropagationAnomalyPayloadStatusEnumSerializer
     'insufficientData': 'insufficient-data',
     'noCoverage': 'no-coverage',
     'degradedInput': 'degraded-input',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'ok': 'ok',
     'insufficient-data': 'insufficientData',
     'no-coverage': 'noCoverage',
     'degraded-input': 'degradedInput',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

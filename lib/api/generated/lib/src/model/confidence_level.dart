@@ -17,6 +17,8 @@ class ConfidenceLevel extends EnumClass {
   static const ConfidenceLevel moderate = _$moderate;
   @BuiltValueEnumConst(wireName: r'high')
   static const ConfidenceLevel high = _$high;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ConfidenceLevel unknownDefaultOpenApi = _$unknownDefaultOpenApi;
 
   static Serializer<ConfidenceLevel> get serializer =>
       _$confidenceLevelSerializer;

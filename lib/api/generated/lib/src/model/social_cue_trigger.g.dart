@@ -20,6 +20,9 @@ const SocialCueTriggerTypeEnum _$socialCueTriggerTypeEnum_canonicalEvent =
     const SocialCueTriggerTypeEnum._('canonicalEvent');
 const SocialCueTriggerTypeEnum _$socialCueTriggerTypeEnum_manual =
     const SocialCueTriggerTypeEnum._('manual');
+const SocialCueTriggerTypeEnum
+_$socialCueTriggerTypeEnum_unknownDefaultOpenApi =
+    const SocialCueTriggerTypeEnum._('unknownDefaultOpenApi');
 
 SocialCueTriggerTypeEnum _$socialCueTriggerTypeEnumValueOf(String name) {
   switch (name) {
@@ -37,8 +40,10 @@ SocialCueTriggerTypeEnum _$socialCueTriggerTypeEnumValueOf(String name) {
       return _$socialCueTriggerTypeEnum_canonicalEvent;
     case 'manual':
       return _$socialCueTriggerTypeEnum_manual;
+    case 'unknownDefaultOpenApi':
+      return _$socialCueTriggerTypeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$socialCueTriggerTypeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -51,6 +56,7 @@ final BuiltSet<SocialCueTriggerTypeEnum> _$socialCueTriggerTypeEnumValues =
       _$socialCueTriggerTypeEnum_alert,
       _$socialCueTriggerTypeEnum_canonicalEvent,
       _$socialCueTriggerTypeEnum_manual,
+      _$socialCueTriggerTypeEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<SocialCueTriggerTypeEnum> _$socialCueTriggerTypeEnumSerializer =
@@ -66,6 +72,7 @@ class _$SocialCueTriggerTypeEnumSerializer
     'alert': 'alert',
     'canonicalEvent': 'canonical-event',
     'manual': 'manual',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'situation-activated': 'situationActivated',
@@ -75,6 +82,7 @@ class _$SocialCueTriggerTypeEnumSerializer
     'alert': 'alert',
     'canonical-event': 'canonicalEvent',
     'manual': 'manual',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

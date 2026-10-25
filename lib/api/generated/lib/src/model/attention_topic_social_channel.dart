@@ -174,6 +174,9 @@ class AttentionTopicSocialChannelTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'youtube-channel')
   static const AttentionTopicSocialChannelTypeEnum youtubeChannel =
       _$attentionTopicSocialChannelTypeEnum_youtubeChannel;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const AttentionTopicSocialChannelTypeEnum unknownDefaultOpenApi =
+      _$attentionTopicSocialChannelTypeEnum_unknownDefaultOpenApi;
 
   static Serializer<AttentionTopicSocialChannelTypeEnum> get serializer =>
       _$attentionTopicSocialChannelTypeEnumSerializer;

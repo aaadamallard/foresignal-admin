@@ -10,6 +10,9 @@ const TriggerRuleInputWindowBucketEnum _$triggerRuleInputWindowBucketEnum_n15m =
     const TriggerRuleInputWindowBucketEnum._('n15m');
 const TriggerRuleInputWindowBucketEnum _$triggerRuleInputWindowBucketEnum_n1h =
     const TriggerRuleInputWindowBucketEnum._('n1h');
+const TriggerRuleInputWindowBucketEnum
+_$triggerRuleInputWindowBucketEnum_unknownDefaultOpenApi =
+    const TriggerRuleInputWindowBucketEnum._('unknownDefaultOpenApi');
 
 TriggerRuleInputWindowBucketEnum _$triggerRuleInputWindowBucketEnumValueOf(
   String name,
@@ -19,8 +22,10 @@ TriggerRuleInputWindowBucketEnum _$triggerRuleInputWindowBucketEnumValueOf(
       return _$triggerRuleInputWindowBucketEnum_n15m;
     case 'n1h':
       return _$triggerRuleInputWindowBucketEnum_n1h;
+    case 'unknownDefaultOpenApi':
+      return _$triggerRuleInputWindowBucketEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$triggerRuleInputWindowBucketEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -30,6 +35,7 @@ _$triggerRuleInputWindowBucketEnumValues =
       const <TriggerRuleInputWindowBucketEnum>[
         _$triggerRuleInputWindowBucketEnum_n15m,
         _$triggerRuleInputWindowBucketEnum_n1h,
+        _$triggerRuleInputWindowBucketEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -39,6 +45,9 @@ _$triggerRuleInputWindowSlotModeEnum_hourOfWeek =
 const TriggerRuleInputWindowSlotModeEnum
 _$triggerRuleInputWindowSlotModeEnum_hourOfDay =
     const TriggerRuleInputWindowSlotModeEnum._('hourOfDay');
+const TriggerRuleInputWindowSlotModeEnum
+_$triggerRuleInputWindowSlotModeEnum_unknownDefaultOpenApi =
+    const TriggerRuleInputWindowSlotModeEnum._('unknownDefaultOpenApi');
 
 TriggerRuleInputWindowSlotModeEnum _$triggerRuleInputWindowSlotModeEnumValueOf(
   String name,
@@ -48,8 +57,10 @@ TriggerRuleInputWindowSlotModeEnum _$triggerRuleInputWindowSlotModeEnumValueOf(
       return _$triggerRuleInputWindowSlotModeEnum_hourOfWeek;
     case 'hourOfDay':
       return _$triggerRuleInputWindowSlotModeEnum_hourOfDay;
+    case 'unknownDefaultOpenApi':
+      return _$triggerRuleInputWindowSlotModeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$triggerRuleInputWindowSlotModeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -59,6 +70,7 @@ _$triggerRuleInputWindowSlotModeEnumValues =
       const <TriggerRuleInputWindowSlotModeEnum>[
         _$triggerRuleInputWindowSlotModeEnum_hourOfWeek,
         _$triggerRuleInputWindowSlotModeEnum_hourOfDay,
+        _$triggerRuleInputWindowSlotModeEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -71,6 +83,9 @@ _$triggerRuleInputWindowDirectionEnum_down =
 const TriggerRuleInputWindowDirectionEnum
 _$triggerRuleInputWindowDirectionEnum_both =
     const TriggerRuleInputWindowDirectionEnum._('both');
+const TriggerRuleInputWindowDirectionEnum
+_$triggerRuleInputWindowDirectionEnum_unknownDefaultOpenApi =
+    const TriggerRuleInputWindowDirectionEnum._('unknownDefaultOpenApi');
 
 TriggerRuleInputWindowDirectionEnum
 _$triggerRuleInputWindowDirectionEnumValueOf(String name) {
@@ -81,8 +96,10 @@ _$triggerRuleInputWindowDirectionEnumValueOf(String name) {
       return _$triggerRuleInputWindowDirectionEnum_down;
     case 'both':
       return _$triggerRuleInputWindowDirectionEnum_both;
+    case 'unknownDefaultOpenApi':
+      return _$triggerRuleInputWindowDirectionEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$triggerRuleInputWindowDirectionEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -93,6 +110,7 @@ _$triggerRuleInputWindowDirectionEnumValues =
         _$triggerRuleInputWindowDirectionEnum_up,
         _$triggerRuleInputWindowDirectionEnum_down,
         _$triggerRuleInputWindowDirectionEnum_both,
+        _$triggerRuleInputWindowDirectionEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -105,6 +123,9 @@ _$triggerRuleInputWindowSensitivityEnum_medium =
 const TriggerRuleInputWindowSensitivityEnum
 _$triggerRuleInputWindowSensitivityEnum_high =
     const TriggerRuleInputWindowSensitivityEnum._('high');
+const TriggerRuleInputWindowSensitivityEnum
+_$triggerRuleInputWindowSensitivityEnum_unknownDefaultOpenApi =
+    const TriggerRuleInputWindowSensitivityEnum._('unknownDefaultOpenApi');
 
 TriggerRuleInputWindowSensitivityEnum
 _$triggerRuleInputWindowSensitivityEnumValueOf(String name) {
@@ -115,8 +136,10 @@ _$triggerRuleInputWindowSensitivityEnumValueOf(String name) {
       return _$triggerRuleInputWindowSensitivityEnum_medium;
     case 'high':
       return _$triggerRuleInputWindowSensitivityEnum_high;
+    case 'unknownDefaultOpenApi':
+      return _$triggerRuleInputWindowSensitivityEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$triggerRuleInputWindowSensitivityEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -127,6 +150,7 @@ _$triggerRuleInputWindowSensitivityEnumValues =
         _$triggerRuleInputWindowSensitivityEnum_low,
         _$triggerRuleInputWindowSensitivityEnum_medium,
         _$triggerRuleInputWindowSensitivityEnum_high,
+        _$triggerRuleInputWindowSensitivityEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -148,10 +172,12 @@ class _$TriggerRuleInputWindowBucketEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'n15m': '15m',
     'n1h': '1h',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     '15m': 'n15m',
     '1h': 'n1h',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -181,10 +207,12 @@ class _$TriggerRuleInputWindowSlotModeEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'hourOfWeek': 'hour-of-week',
     'hourOfDay': 'hour-of-day',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'hour-of-week': 'hourOfWeek',
     'hour-of-day': 'hourOfDay',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -215,11 +243,13 @@ class _$TriggerRuleInputWindowDirectionEnumSerializer
     'up': 'up',
     'down': 'down',
     'both': 'both',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'up': 'up',
     'down': 'down',
     'both': 'both',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -252,11 +282,13 @@ class _$TriggerRuleInputWindowSensitivityEnumSerializer
     'low': 'low',
     'medium': 'medium',
     'high': 'high',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'low': 'low',
     'medium': 'medium',
     'high': 'high',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

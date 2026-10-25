@@ -208,6 +208,9 @@ class RuleBacktestResultSamplesInnerEdgeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'window')
   static const RuleBacktestResultSamplesInnerEdgeEnum window =
       _$ruleBacktestResultSamplesInnerEdgeEnum_window;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const RuleBacktestResultSamplesInnerEdgeEnum unknownDefaultOpenApi =
+      _$ruleBacktestResultSamplesInnerEdgeEnum_unknownDefaultOpenApi;
 
   static Serializer<RuleBacktestResultSamplesInnerEdgeEnum> get serializer =>
       _$ruleBacktestResultSamplesInnerEdgeEnumSerializer;

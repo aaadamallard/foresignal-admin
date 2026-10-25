@@ -200,6 +200,9 @@ class IntelEventPatchStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'dismissed')
   static const IntelEventPatchStatusEnum dismissed =
       _$intelEventPatchStatusEnum_dismissed;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const IntelEventPatchStatusEnum unknownDefaultOpenApi =
+      _$intelEventPatchStatusEnum_unknownDefaultOpenApi;
 
   static Serializer<IntelEventPatchStatusEnum> get serializer =>
       _$intelEventPatchStatusEnumSerializer;

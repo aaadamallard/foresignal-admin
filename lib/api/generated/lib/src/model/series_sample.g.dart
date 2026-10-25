@@ -10,6 +10,8 @@ const SeriesSampleKindEnum _$seriesSampleKindEnum_observed =
     const SeriesSampleKindEnum._('observed');
 const SeriesSampleKindEnum _$seriesSampleKindEnum_forecast =
     const SeriesSampleKindEnum._('forecast');
+const SeriesSampleKindEnum _$seriesSampleKindEnum_unknownDefaultOpenApi =
+    const SeriesSampleKindEnum._('unknownDefaultOpenApi');
 
 SeriesSampleKindEnum _$seriesSampleKindEnumValueOf(String name) {
   switch (name) {
@@ -17,8 +19,10 @@ SeriesSampleKindEnum _$seriesSampleKindEnumValueOf(String name) {
       return _$seriesSampleKindEnum_observed;
     case 'forecast':
       return _$seriesSampleKindEnum_forecast;
+    case 'unknownDefaultOpenApi':
+      return _$seriesSampleKindEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$seriesSampleKindEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -26,6 +30,7 @@ final BuiltSet<SeriesSampleKindEnum> _$seriesSampleKindEnumValues =
     BuiltSet<SeriesSampleKindEnum>(const <SeriesSampleKindEnum>[
       _$seriesSampleKindEnum_observed,
       _$seriesSampleKindEnum_forecast,
+      _$seriesSampleKindEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<SeriesSampleKindEnum> _$seriesSampleKindEnumSerializer =
@@ -36,10 +41,12 @@ class _$SeriesSampleKindEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'observed': 'observed',
     'forecast': 'forecast',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'observed': 'observed',
     'forecast': 'forecast',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

@@ -344,6 +344,10 @@ class CorrelationRecipeDefinitionJoinsInnerSameRegionEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'admin1')
   static const CorrelationRecipeDefinitionJoinsInnerSameRegionEnum admin1 =
       _$correlationRecipeDefinitionJoinsInnerSameRegionEnum_admin1;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const CorrelationRecipeDefinitionJoinsInnerSameRegionEnum
+  unknownDefaultOpenApi =
+      _$correlationRecipeDefinitionJoinsInnerSameRegionEnum_unknownDefaultOpenApi;
 
   static Serializer<CorrelationRecipeDefinitionJoinsInnerSameRegionEnum>
   get serializer =>
@@ -369,6 +373,10 @@ class CorrelationRecipeDefinitionJoinsInnerRoleEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'context')
   static const CorrelationRecipeDefinitionJoinsInnerRoleEnum context =
       _$correlationRecipeDefinitionJoinsInnerRoleEnum_context;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const CorrelationRecipeDefinitionJoinsInnerRoleEnum
+  unknownDefaultOpenApi =
+      _$correlationRecipeDefinitionJoinsInnerRoleEnum_unknownDefaultOpenApi;
 
   static Serializer<CorrelationRecipeDefinitionJoinsInnerRoleEnum>
   get serializer => _$correlationRecipeDefinitionJoinsInnerRoleEnumSerializer;

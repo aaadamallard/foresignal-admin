@@ -295,6 +295,9 @@ class StormReportPayloadTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'hail')
   static const StormReportPayloadTypeEnum hail =
       _$stormReportPayloadTypeEnum_hail;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const StormReportPayloadTypeEnum unknownDefaultOpenApi =
+      _$stormReportPayloadTypeEnum_unknownDefaultOpenApi;
 
   static Serializer<StormReportPayloadTypeEnum> get serializer =>
       _$stormReportPayloadTypeEnumSerializer;
@@ -318,6 +321,9 @@ class StormReportPayloadMagnitudeUnitsEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'in')
   static const StormReportPayloadMagnitudeUnitsEnum in_ =
       _$stormReportPayloadMagnitudeUnitsEnum_in_;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const StormReportPayloadMagnitudeUnitsEnum unknownDefaultOpenApi =
+      _$stormReportPayloadMagnitudeUnitsEnum_unknownDefaultOpenApi;
 
   static Serializer<StormReportPayloadMagnitudeUnitsEnum> get serializer =>
       _$stormReportPayloadMagnitudeUnitsEnumSerializer;

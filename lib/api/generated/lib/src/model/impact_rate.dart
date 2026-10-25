@@ -337,6 +337,9 @@ class ImpactRateSource_Enum extends EnumClass {
       _$impactRateSourceEnum_referenceImport;
   @BuiltValueEnumConst(wireName: r'mixed')
   static const ImpactRateSource_Enum mixed = _$impactRateSourceEnum_mixed;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ImpactRateSource_Enum unknownDefaultOpenApi =
+      _$impactRateSourceEnum_unknownDefaultOpenApi;
 
   static Serializer<ImpactRateSource_Enum> get serializer =>
       _$impactRateSourceEnumSerializer;
@@ -356,6 +359,9 @@ class ImpactRateStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'insufficient')
   static const ImpactRateStatusEnum insufficient =
       _$impactRateStatusEnum_insufficient;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ImpactRateStatusEnum unknownDefaultOpenApi =
+      _$impactRateStatusEnum_unknownDefaultOpenApi;
 
   static Serializer<ImpactRateStatusEnum> get serializer =>
       _$impactRateStatusEnumSerializer;

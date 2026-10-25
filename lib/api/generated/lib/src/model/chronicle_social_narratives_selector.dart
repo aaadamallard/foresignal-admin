@@ -270,6 +270,9 @@ class ChronicleSocialNarrativesSelectorTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'social-narratives')
   static const ChronicleSocialNarrativesSelectorTypeEnum socialNarratives =
       _$chronicleSocialNarrativesSelectorTypeEnum_socialNarratives;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ChronicleSocialNarrativesSelectorTypeEnum unknownDefaultOpenApi =
+      _$chronicleSocialNarrativesSelectorTypeEnum_unknownDefaultOpenApi;
 
   static Serializer<ChronicleSocialNarrativesSelectorTypeEnum> get serializer =>
       _$chronicleSocialNarrativesSelectorTypeEnumSerializer;
@@ -305,6 +308,10 @@ class ChronicleSocialNarrativesSelectorStatusesEnum extends EnumClass {
   static const ChronicleSocialNarrativesSelectorStatusesEnum
   insufficientCoverage =
       _$chronicleSocialNarrativesSelectorStatusesEnum_insufficientCoverage;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ChronicleSocialNarrativesSelectorStatusesEnum
+  unknownDefaultOpenApi =
+      _$chronicleSocialNarrativesSelectorStatusesEnum_unknownDefaultOpenApi;
 
   static Serializer<ChronicleSocialNarrativesSelectorStatusesEnum>
   get serializer => _$chronicleSocialNarrativesSelectorStatusesEnumSerializer;

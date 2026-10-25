@@ -207,6 +207,9 @@ class PushProviderInputTypeEnum extends EnumClass {
       _$pushProviderInputTypeEnum_apns;
   @BuiltValueEnumConst(wireName: r'fcm')
   static const PushProviderInputTypeEnum fcm = _$pushProviderInputTypeEnum_fcm;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const PushProviderInputTypeEnum unknownDefaultOpenApi =
+      _$pushProviderInputTypeEnum_unknownDefaultOpenApi;
 
   static Serializer<PushProviderInputTypeEnum> get serializer =>
       _$pushProviderInputTypeEnumSerializer;

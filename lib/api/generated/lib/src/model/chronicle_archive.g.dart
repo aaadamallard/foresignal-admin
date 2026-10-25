@@ -14,6 +14,9 @@ const ChronicleArchiveStateEnum _$chronicleArchiveStateEnum_restoring =
     const ChronicleArchiveStateEnum._('restoring');
 const ChronicleArchiveStateEnum _$chronicleArchiveStateEnum_failed =
     const ChronicleArchiveStateEnum._('failed');
+const ChronicleArchiveStateEnum
+_$chronicleArchiveStateEnum_unknownDefaultOpenApi =
+    const ChronicleArchiveStateEnum._('unknownDefaultOpenApi');
 
 ChronicleArchiveStateEnum _$chronicleArchiveStateEnumValueOf(String name) {
   switch (name) {
@@ -25,8 +28,10 @@ ChronicleArchiveStateEnum _$chronicleArchiveStateEnumValueOf(String name) {
       return _$chronicleArchiveStateEnum_restoring;
     case 'failed':
       return _$chronicleArchiveStateEnum_failed;
+    case 'unknownDefaultOpenApi':
+      return _$chronicleArchiveStateEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$chronicleArchiveStateEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -36,6 +41,7 @@ final BuiltSet<ChronicleArchiveStateEnum> _$chronicleArchiveStateEnumValues =
       _$chronicleArchiveStateEnum_archived,
       _$chronicleArchiveStateEnum_restoring,
       _$chronicleArchiveStateEnum_failed,
+      _$chronicleArchiveStateEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<ChronicleArchiveStateEnum> _$chronicleArchiveStateEnumSerializer =
@@ -48,12 +54,14 @@ class _$ChronicleArchiveStateEnumSerializer
     'archived': 'archived',
     'restoring': 'restoring',
     'failed': 'failed',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'pending': 'pending',
     'archived': 'archived',
     'restoring': 'restoring',
     'failed': 'failed',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

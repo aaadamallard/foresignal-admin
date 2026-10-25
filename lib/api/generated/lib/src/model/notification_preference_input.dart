@@ -230,6 +230,9 @@ class NotificationPreferenceInputEventTypesEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'comment-reply')
   static const NotificationPreferenceInputEventTypesEnum commentReply =
       _$notificationPreferenceInputEventTypesEnum_commentReply;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const NotificationPreferenceInputEventTypesEnum unknownDefaultOpenApi =
+      _$notificationPreferenceInputEventTypesEnum_unknownDefaultOpenApi;
 
   static Serializer<NotificationPreferenceInputEventTypesEnum> get serializer =>
       _$notificationPreferenceInputEventTypesEnumSerializer;

@@ -302,6 +302,9 @@ class AnomalyBaselineSlotModeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'hour-of-day')
   static const AnomalyBaselineSlotModeEnum hourOfDay =
       _$anomalyBaselineSlotModeEnum_hourOfDay;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const AnomalyBaselineSlotModeEnum unknownDefaultOpenApi =
+      _$anomalyBaselineSlotModeEnum_unknownDefaultOpenApi;
 
   static Serializer<AnomalyBaselineSlotModeEnum> get serializer =>
       _$anomalyBaselineSlotModeEnumSerializer;
@@ -320,6 +323,9 @@ class AnomalyBaselineBucketEnum extends EnumClass {
       _$anomalyBaselineBucketEnum_n15m;
   @BuiltValueEnumConst(wireName: r'1h')
   static const AnomalyBaselineBucketEnum n1h = _$anomalyBaselineBucketEnum_n1h;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const AnomalyBaselineBucketEnum unknownDefaultOpenApi =
+      _$anomalyBaselineBucketEnum_unknownDefaultOpenApi;
 
   static Serializer<AnomalyBaselineBucketEnum> get serializer =>
       _$anomalyBaselineBucketEnumSerializer;
@@ -340,6 +346,9 @@ class AnomalyBaselineSamplePathEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'activity_rollup')
   static const AnomalyBaselineSamplePathEnum activityRollup =
       _$anomalyBaselineSamplePathEnum_activityRollup;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const AnomalyBaselineSamplePathEnum unknownDefaultOpenApi =
+      _$anomalyBaselineSamplePathEnum_unknownDefaultOpenApi;
 
   static Serializer<AnomalyBaselineSamplePathEnum> get serializer =>
       _$anomalyBaselineSamplePathEnumSerializer;

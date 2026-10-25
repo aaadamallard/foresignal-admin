@@ -207,6 +207,9 @@ class ExposureAreaSource_Enum extends EnumClass {
   static const ExposureAreaSource_Enum place = _$exposureAreaSourceEnum_place;
   @BuiltValueEnumConst(wireName: r'event')
   static const ExposureAreaSource_Enum event = _$exposureAreaSourceEnum_event;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ExposureAreaSource_Enum unknownDefaultOpenApi =
+      _$exposureAreaSourceEnum_unknownDefaultOpenApi;
 
   static Serializer<ExposureAreaSource_Enum> get serializer =>
       _$exposureAreaSourceEnumSerializer;

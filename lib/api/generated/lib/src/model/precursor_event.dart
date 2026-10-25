@@ -163,6 +163,9 @@ class PrecursorEventEventEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'precursor.retired')
   static const PrecursorEventEventEnum precursorPeriodRetired =
       _$precursorEventEventEnum_precursorPeriodRetired;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const PrecursorEventEventEnum unknownDefaultOpenApi =
+      _$precursorEventEventEnum_unknownDefaultOpenApi;
 
   static Serializer<PrecursorEventEventEnum> get serializer =>
       _$precursorEventEventEnumSerializer;

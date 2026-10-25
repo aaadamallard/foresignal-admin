@@ -8,19 +8,24 @@ part of 'context_link.dart';
 
 const ContextLinkVersionEnum _$contextLinkVersionEnum_number1 =
     const ContextLinkVersionEnum._('number1');
+const ContextLinkVersionEnum _$contextLinkVersionEnum_unknownDefaultOpenApi =
+    const ContextLinkVersionEnum._('unknownDefaultOpenApi');
 
 ContextLinkVersionEnum _$contextLinkVersionEnumValueOf(String name) {
   switch (name) {
     case 'number1':
       return _$contextLinkVersionEnum_number1;
+    case 'unknownDefaultOpenApi':
+      return _$contextLinkVersionEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$contextLinkVersionEnum_unknownDefaultOpenApi;
   }
 }
 
 final BuiltSet<ContextLinkVersionEnum> _$contextLinkVersionEnumValues =
     BuiltSet<ContextLinkVersionEnum>(const <ContextLinkVersionEnum>[
       _$contextLinkVersionEnum_number1,
+      _$contextLinkVersionEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<ContextLinkVersionEnum> _$contextLinkVersionEnumSerializer =
@@ -30,9 +35,11 @@ class _$ContextLinkVersionEnumSerializer
     implements PrimitiveSerializer<ContextLinkVersionEnum> {
   static const Map<String, Object> _toWire = const <String, Object>{
     'number1': 1,
+    'unknownDefaultOpenApi': 11184809,
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     1: 'number1',
+    11184809: 'unknownDefaultOpenApi',
   };
 
   @override

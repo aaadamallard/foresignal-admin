@@ -214,6 +214,9 @@ class NarrativePostLinkReasonEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'media')
   static const NarrativePostLinkReasonEnum media =
       _$narrativePostLinkReasonEnum_media;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const NarrativePostLinkReasonEnum unknownDefaultOpenApi =
+      _$narrativePostLinkReasonEnum_unknownDefaultOpenApi;
 
   static Serializer<NarrativePostLinkReasonEnum> get serializer =>
       _$narrativePostLinkReasonEnumSerializer;

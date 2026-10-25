@@ -21,6 +21,9 @@ _$socialComparisonRevisionStatusEnum_contradicted =
 const SocialComparisonRevisionStatusEnum
 _$socialComparisonRevisionStatusEnum_insufficientCoverage =
     const SocialComparisonRevisionStatusEnum._('insufficientCoverage');
+const SocialComparisonRevisionStatusEnum
+_$socialComparisonRevisionStatusEnum_unknownDefaultOpenApi =
+    const SocialComparisonRevisionStatusEnum._('unknownDefaultOpenApi');
 
 SocialComparisonRevisionStatusEnum _$socialComparisonRevisionStatusEnumValueOf(
   String name,
@@ -36,8 +39,10 @@ SocialComparisonRevisionStatusEnum _$socialComparisonRevisionStatusEnumValueOf(
       return _$socialComparisonRevisionStatusEnum_contradicted;
     case 'insufficientCoverage':
       return _$socialComparisonRevisionStatusEnum_insufficientCoverage;
+    case 'unknownDefaultOpenApi':
+      return _$socialComparisonRevisionStatusEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$socialComparisonRevisionStatusEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -50,6 +55,7 @@ _$socialComparisonRevisionStatusEnumValues =
         _$socialComparisonRevisionStatusEnum_unobserved,
         _$socialComparisonRevisionStatusEnum_contradicted,
         _$socialComparisonRevisionStatusEnum_insufficientCoverage,
+        _$socialComparisonRevisionStatusEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -68,6 +74,9 @@ _$socialComparisonRevisionPreviousStatusEnum_contradicted =
 const SocialComparisonRevisionPreviousStatusEnum
 _$socialComparisonRevisionPreviousStatusEnum_insufficientCoverage =
     const SocialComparisonRevisionPreviousStatusEnum._('insufficientCoverage');
+const SocialComparisonRevisionPreviousStatusEnum
+_$socialComparisonRevisionPreviousStatusEnum_unknownDefaultOpenApi =
+    const SocialComparisonRevisionPreviousStatusEnum._('unknownDefaultOpenApi');
 
 SocialComparisonRevisionPreviousStatusEnum
 _$socialComparisonRevisionPreviousStatusEnumValueOf(String name) {
@@ -82,8 +91,10 @@ _$socialComparisonRevisionPreviousStatusEnumValueOf(String name) {
       return _$socialComparisonRevisionPreviousStatusEnum_contradicted;
     case 'insufficientCoverage':
       return _$socialComparisonRevisionPreviousStatusEnum_insufficientCoverage;
+    case 'unknownDefaultOpenApi':
+      return _$socialComparisonRevisionPreviousStatusEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$socialComparisonRevisionPreviousStatusEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -96,6 +107,7 @@ _$socialComparisonRevisionPreviousStatusEnumValues =
         _$socialComparisonRevisionPreviousStatusEnum_unobserved,
         _$socialComparisonRevisionPreviousStatusEnum_contradicted,
         _$socialComparisonRevisionPreviousStatusEnum_insufficientCoverage,
+        _$socialComparisonRevisionPreviousStatusEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -114,6 +126,7 @@ class _$SocialComparisonRevisionStatusEnumSerializer
     'unobserved': 'unobserved',
     'contradicted': 'contradicted',
     'insufficientCoverage': 'insufficient-coverage',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'pending': 'pending',
@@ -121,6 +134,7 @@ class _$SocialComparisonRevisionStatusEnumSerializer
     'unobserved': 'unobserved',
     'contradicted': 'contradicted',
     'insufficient-coverage': 'insufficientCoverage',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -153,6 +167,7 @@ class _$SocialComparisonRevisionPreviousStatusEnumSerializer
     'unobserved': 'unobserved',
     'contradicted': 'contradicted',
     'insufficientCoverage': 'insufficient-coverage',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'pending': 'pending',
@@ -160,6 +175,7 @@ class _$SocialComparisonRevisionPreviousStatusEnumSerializer
     'unobserved': 'unobserved',
     'contradicted': 'contradicted',
     'insufficient-coverage': 'insufficientCoverage',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

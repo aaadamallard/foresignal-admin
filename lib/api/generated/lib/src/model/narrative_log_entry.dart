@@ -13,7 +13,7 @@ part 'narrative_log_entry.g.dart';
 ///
 /// Properties:
 /// * [at]
-/// * [action]
+/// * [action] - What happened. The list grows as the server adds actions; a client shows an action it does not know as its text.
 /// * [by] - `system` or principal id
 /// * [relatedNarrativeIds]
 /// * [from]
@@ -25,9 +25,9 @@ abstract class NarrativeLogEntry
   @BuiltValueField(wireName: r'at')
   DateTime get at;
 
+  /// What happened. The list grows as the server adds actions; a client shows an action it does not know as its text.
   @BuiltValueField(wireName: r'action')
-  NarrativeLogEntryActionEnum get action;
-  // enum actionEnum {  created,  merged,  merged-into,  split,  split-from,  state-changed,  status-changed,  title-changed,  };
+  String get action;
 
   /// `system` or principal id
   @BuiltValueField(wireName: r'by')
@@ -79,7 +79,7 @@ class _$NarrativeLogEntrySerializer
     yield r'action';
     yield serializers.serialize(
       object.action,
-      specifiedType: const FullType(NarrativeLogEntryActionEnum),
+      specifiedType: const FullType(String),
     );
     yield r'by';
     yield serializers.serialize(
@@ -154,9 +154,9 @@ class _$NarrativeLogEntrySerializer
           final valueDes =
               serializers.deserialize(
                     value,
-                    specifiedType: const FullType(NarrativeLogEntryActionEnum),
+                    specifiedType: const FullType(String),
                   )
-                  as NarrativeLogEntryActionEnum;
+                  as String;
           result.action = valueDes;
           break;
         case r'by':
@@ -237,41 +237,4 @@ class _$NarrativeLogEntrySerializer
     );
     return result.build();
   }
-}
-
-class NarrativeLogEntryActionEnum extends EnumClass {
-  @BuiltValueEnumConst(wireName: r'created')
-  static const NarrativeLogEntryActionEnum created =
-      _$narrativeLogEntryActionEnum_created;
-  @BuiltValueEnumConst(wireName: r'merged')
-  static const NarrativeLogEntryActionEnum merged =
-      _$narrativeLogEntryActionEnum_merged;
-  @BuiltValueEnumConst(wireName: r'merged-into')
-  static const NarrativeLogEntryActionEnum mergedInto =
-      _$narrativeLogEntryActionEnum_mergedInto;
-  @BuiltValueEnumConst(wireName: r'split')
-  static const NarrativeLogEntryActionEnum split =
-      _$narrativeLogEntryActionEnum_split;
-  @BuiltValueEnumConst(wireName: r'split-from')
-  static const NarrativeLogEntryActionEnum splitFrom =
-      _$narrativeLogEntryActionEnum_splitFrom;
-  @BuiltValueEnumConst(wireName: r'state-changed')
-  static const NarrativeLogEntryActionEnum stateChanged =
-      _$narrativeLogEntryActionEnum_stateChanged;
-  @BuiltValueEnumConst(wireName: r'status-changed')
-  static const NarrativeLogEntryActionEnum statusChanged =
-      _$narrativeLogEntryActionEnum_statusChanged;
-  @BuiltValueEnumConst(wireName: r'title-changed')
-  static const NarrativeLogEntryActionEnum titleChanged =
-      _$narrativeLogEntryActionEnum_titleChanged;
-
-  static Serializer<NarrativeLogEntryActionEnum> get serializer =>
-      _$narrativeLogEntryActionEnumSerializer;
-
-  const NarrativeLogEntryActionEnum._(String name) : super(name);
-
-  static BuiltSet<NarrativeLogEntryActionEnum> get values =>
-      _$narrativeLogEntryActionEnumValues;
-  static NarrativeLogEntryActionEnum valueOf(String name) =>
-      _$narrativeLogEntryActionEnumValueOf(name);
 }

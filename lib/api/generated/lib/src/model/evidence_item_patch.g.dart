@@ -24,6 +24,9 @@ _$evidenceItemPatchSourceReliabilityEnum_E =
 const EvidenceItemPatchSourceReliabilityEnum
 _$evidenceItemPatchSourceReliabilityEnum_F =
     const EvidenceItemPatchSourceReliabilityEnum._('F');
+const EvidenceItemPatchSourceReliabilityEnum
+_$evidenceItemPatchSourceReliabilityEnum_unknownDefaultOpenApi =
+    const EvidenceItemPatchSourceReliabilityEnum._('unknownDefaultOpenApi');
 
 EvidenceItemPatchSourceReliabilityEnum
 _$evidenceItemPatchSourceReliabilityEnumValueOf(String name) {
@@ -40,8 +43,10 @@ _$evidenceItemPatchSourceReliabilityEnumValueOf(String name) {
       return _$evidenceItemPatchSourceReliabilityEnum_E;
     case 'F':
       return _$evidenceItemPatchSourceReliabilityEnum_F;
+    case 'unknownDefaultOpenApi':
+      return _$evidenceItemPatchSourceReliabilityEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$evidenceItemPatchSourceReliabilityEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -55,6 +60,7 @@ _$evidenceItemPatchSourceReliabilityEnumValues =
         _$evidenceItemPatchSourceReliabilityEnum_D,
         _$evidenceItemPatchSourceReliabilityEnum_E,
         _$evidenceItemPatchSourceReliabilityEnum_F,
+        _$evidenceItemPatchSourceReliabilityEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -71,6 +77,7 @@ class _$EvidenceItemPatchSourceReliabilityEnumSerializer
     'D': 'D',
     'E': 'E',
     'F': 'F',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'A': 'A',
@@ -79,6 +86,7 @@ class _$EvidenceItemPatchSourceReliabilityEnumSerializer
     'D': 'D',
     'E': 'E',
     'F': 'F',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

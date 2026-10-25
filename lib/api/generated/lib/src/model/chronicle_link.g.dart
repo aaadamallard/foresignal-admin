@@ -8,20 +8,27 @@ part of 'chronicle_link.dart';
 
 const ChronicleLinkDisclosureEnum _$chronicleLinkDisclosureEnum_full =
     const ChronicleLinkDisclosureEnum._('full');
+const ChronicleLinkDisclosureEnum
+_$chronicleLinkDisclosureEnum_unknownDefaultOpenApi =
+    const ChronicleLinkDisclosureEnum._('unknownDefaultOpenApi');
 
 ChronicleLinkDisclosureEnum _$chronicleLinkDisclosureEnumValueOf(String name) {
   switch (name) {
     case 'full':
       return _$chronicleLinkDisclosureEnum_full;
+    case 'unknownDefaultOpenApi':
+      return _$chronicleLinkDisclosureEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$chronicleLinkDisclosureEnum_unknownDefaultOpenApi;
   }
 }
 
 final BuiltSet<ChronicleLinkDisclosureEnum>
-_$chronicleLinkDisclosureEnumValues = BuiltSet<ChronicleLinkDisclosureEnum>(
-  const <ChronicleLinkDisclosureEnum>[_$chronicleLinkDisclosureEnum_full],
-);
+_$chronicleLinkDisclosureEnumValues =
+    BuiltSet<ChronicleLinkDisclosureEnum>(const <ChronicleLinkDisclosureEnum>[
+      _$chronicleLinkDisclosureEnum_full,
+      _$chronicleLinkDisclosureEnum_unknownDefaultOpenApi,
+    ]);
 
 const ChronicleLinkStrengthEnum _$chronicleLinkStrengthEnum_low =
     const ChronicleLinkStrengthEnum._('low');
@@ -29,6 +36,9 @@ const ChronicleLinkStrengthEnum _$chronicleLinkStrengthEnum_medium =
     const ChronicleLinkStrengthEnum._('medium');
 const ChronicleLinkStrengthEnum _$chronicleLinkStrengthEnum_high =
     const ChronicleLinkStrengthEnum._('high');
+const ChronicleLinkStrengthEnum
+_$chronicleLinkStrengthEnum_unknownDefaultOpenApi =
+    const ChronicleLinkStrengthEnum._('unknownDefaultOpenApi');
 
 ChronicleLinkStrengthEnum _$chronicleLinkStrengthEnumValueOf(String name) {
   switch (name) {
@@ -38,8 +48,10 @@ ChronicleLinkStrengthEnum _$chronicleLinkStrengthEnumValueOf(String name) {
       return _$chronicleLinkStrengthEnum_medium;
     case 'high':
       return _$chronicleLinkStrengthEnum_high;
+    case 'unknownDefaultOpenApi':
+      return _$chronicleLinkStrengthEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$chronicleLinkStrengthEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -48,6 +60,7 @@ final BuiltSet<ChronicleLinkStrengthEnum> _$chronicleLinkStrengthEnumValues =
       _$chronicleLinkStrengthEnum_low,
       _$chronicleLinkStrengthEnum_medium,
       _$chronicleLinkStrengthEnum_high,
+      _$chronicleLinkStrengthEnum_unknownDefaultOpenApi,
     ]);
 
 const ChronicleLinkDimensionsEnum _$chronicleLinkDimensionsEnum_evidence =
@@ -58,6 +71,9 @@ const ChronicleLinkDimensionsEnum _$chronicleLinkDimensionsEnum_areaTime =
     const ChronicleLinkDimensionsEnum._('areaTime');
 const ChronicleLinkDimensionsEnum _$chronicleLinkDimensionsEnum_topics =
     const ChronicleLinkDimensionsEnum._('topics');
+const ChronicleLinkDimensionsEnum
+_$chronicleLinkDimensionsEnum_unknownDefaultOpenApi =
+    const ChronicleLinkDimensionsEnum._('unknownDefaultOpenApi');
 
 ChronicleLinkDimensionsEnum _$chronicleLinkDimensionsEnumValueOf(String name) {
   switch (name) {
@@ -69,8 +85,10 @@ ChronicleLinkDimensionsEnum _$chronicleLinkDimensionsEnumValueOf(String name) {
       return _$chronicleLinkDimensionsEnum_areaTime;
     case 'topics':
       return _$chronicleLinkDimensionsEnum_topics;
+    case 'unknownDefaultOpenApi':
+      return _$chronicleLinkDimensionsEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$chronicleLinkDimensionsEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -81,6 +99,7 @@ _$chronicleLinkDimensionsEnumValues =
       _$chronicleLinkDimensionsEnum_entities,
       _$chronicleLinkDimensionsEnum_areaTime,
       _$chronicleLinkDimensionsEnum_topics,
+      _$chronicleLinkDimensionsEnum_unknownDefaultOpenApi,
     ]);
 
 const ChronicleLinkTemporalEnum _$chronicleLinkTemporalEnum_aPrecedesB =
@@ -89,6 +108,9 @@ const ChronicleLinkTemporalEnum _$chronicleLinkTemporalEnum_bPrecedesA =
     const ChronicleLinkTemporalEnum._('bPrecedesA');
 const ChronicleLinkTemporalEnum _$chronicleLinkTemporalEnum_concurrent =
     const ChronicleLinkTemporalEnum._('concurrent');
+const ChronicleLinkTemporalEnum
+_$chronicleLinkTemporalEnum_unknownDefaultOpenApi =
+    const ChronicleLinkTemporalEnum._('unknownDefaultOpenApi');
 
 ChronicleLinkTemporalEnum _$chronicleLinkTemporalEnumValueOf(String name) {
   switch (name) {
@@ -98,8 +120,10 @@ ChronicleLinkTemporalEnum _$chronicleLinkTemporalEnumValueOf(String name) {
       return _$chronicleLinkTemporalEnum_bPrecedesA;
     case 'concurrent':
       return _$chronicleLinkTemporalEnum_concurrent;
+    case 'unknownDefaultOpenApi':
+      return _$chronicleLinkTemporalEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$chronicleLinkTemporalEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -108,6 +132,7 @@ final BuiltSet<ChronicleLinkTemporalEnum> _$chronicleLinkTemporalEnumValues =
       _$chronicleLinkTemporalEnum_aPrecedesB,
       _$chronicleLinkTemporalEnum_bPrecedesA,
       _$chronicleLinkTemporalEnum_concurrent,
+      _$chronicleLinkTemporalEnum_unknownDefaultOpenApi,
     ]);
 
 const ChronicleLinkTimeOverlapEnum _$chronicleLinkTimeOverlapEnum_none =
@@ -116,6 +141,9 @@ const ChronicleLinkTimeOverlapEnum _$chronicleLinkTimeOverlapEnum_partial =
     const ChronicleLinkTimeOverlapEnum._('partial');
 const ChronicleLinkTimeOverlapEnum _$chronicleLinkTimeOverlapEnum_full =
     const ChronicleLinkTimeOverlapEnum._('full');
+const ChronicleLinkTimeOverlapEnum
+_$chronicleLinkTimeOverlapEnum_unknownDefaultOpenApi =
+    const ChronicleLinkTimeOverlapEnum._('unknownDefaultOpenApi');
 
 ChronicleLinkTimeOverlapEnum _$chronicleLinkTimeOverlapEnumValueOf(
   String name,
@@ -127,8 +155,10 @@ ChronicleLinkTimeOverlapEnum _$chronicleLinkTimeOverlapEnumValueOf(
       return _$chronicleLinkTimeOverlapEnum_partial;
     case 'full':
       return _$chronicleLinkTimeOverlapEnum_full;
+    case 'unknownDefaultOpenApi':
+      return _$chronicleLinkTimeOverlapEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$chronicleLinkTimeOverlapEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -138,12 +168,15 @@ _$chronicleLinkTimeOverlapEnumValues =
       _$chronicleLinkTimeOverlapEnum_none,
       _$chronicleLinkTimeOverlapEnum_partial,
       _$chronicleLinkTimeOverlapEnum_full,
+      _$chronicleLinkTimeOverlapEnum_unknownDefaultOpenApi,
     ]);
 
 const ChronicleLinkStatusEnum _$chronicleLinkStatusEnum_active =
     const ChronicleLinkStatusEnum._('active');
 const ChronicleLinkStatusEnum _$chronicleLinkStatusEnum_dismissed =
     const ChronicleLinkStatusEnum._('dismissed');
+const ChronicleLinkStatusEnum _$chronicleLinkStatusEnum_unknownDefaultOpenApi =
+    const ChronicleLinkStatusEnum._('unknownDefaultOpenApi');
 
 ChronicleLinkStatusEnum _$chronicleLinkStatusEnumValueOf(String name) {
   switch (name) {
@@ -151,8 +184,10 @@ ChronicleLinkStatusEnum _$chronicleLinkStatusEnumValueOf(String name) {
       return _$chronicleLinkStatusEnum_active;
     case 'dismissed':
       return _$chronicleLinkStatusEnum_dismissed;
+    case 'unknownDefaultOpenApi':
+      return _$chronicleLinkStatusEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$chronicleLinkStatusEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -160,6 +195,7 @@ final BuiltSet<ChronicleLinkStatusEnum> _$chronicleLinkStatusEnumValues =
     BuiltSet<ChronicleLinkStatusEnum>(const <ChronicleLinkStatusEnum>[
       _$chronicleLinkStatusEnum_active,
       _$chronicleLinkStatusEnum_dismissed,
+      _$chronicleLinkStatusEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<ChronicleLinkDisclosureEnum>
@@ -182,9 +218,11 @@ class _$ChronicleLinkDisclosureEnumSerializer
     implements PrimitiveSerializer<ChronicleLinkDisclosureEnum> {
   static const Map<String, Object> _toWire = const <String, Object>{
     'full': 'full',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'full': 'full',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -215,11 +253,13 @@ class _$ChronicleLinkStrengthEnumSerializer
     'low': 'low',
     'medium': 'medium',
     'high': 'high',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'low': 'low',
     'medium': 'medium',
     'high': 'high',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -251,12 +291,14 @@ class _$ChronicleLinkDimensionsEnumSerializer
     'entities': 'entities',
     'areaTime': 'area-time',
     'topics': 'topics',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'evidence': 'evidence',
     'entities': 'entities',
     'area-time': 'areaTime',
     'topics': 'topics',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -287,11 +329,13 @@ class _$ChronicleLinkTemporalEnumSerializer
     'aPrecedesB': 'a-precedes-b',
     'bPrecedesA': 'b-precedes-a',
     'concurrent': 'concurrent',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'a-precedes-b': 'aPrecedesB',
     'b-precedes-a': 'bPrecedesA',
     'concurrent': 'concurrent',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -322,11 +366,13 @@ class _$ChronicleLinkTimeOverlapEnumSerializer
     'none': 'none',
     'partial': 'partial',
     'full': 'full',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'none': 'none',
     'partial': 'partial',
     'full': 'full',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -356,10 +402,12 @@ class _$ChronicleLinkStatusEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'active': 'active',
     'dismissed': 'dismissed',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'active': 'active',
     'dismissed': 'dismissed',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

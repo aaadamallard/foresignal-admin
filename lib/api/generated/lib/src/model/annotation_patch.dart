@@ -221,6 +221,9 @@ class AnnotationPatchVerdictEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'duplicate-of')
   static const AnnotationPatchVerdictEnum duplicateOf =
       _$annotationPatchVerdictEnum_duplicateOf;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const AnnotationPatchVerdictEnum unknownDefaultOpenApi =
+      _$annotationPatchVerdictEnum_unknownDefaultOpenApi;
 
   static Serializer<AnnotationPatchVerdictEnum> get serializer =>
       _$annotationPatchVerdictEnumSerializer;

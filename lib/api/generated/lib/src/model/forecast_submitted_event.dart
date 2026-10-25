@@ -265,6 +265,9 @@ class ForecastSubmittedEventEventEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'forecast.submitted')
   static const ForecastSubmittedEventEventEnum forecastPeriodSubmitted =
       _$forecastSubmittedEventEventEnum_forecastPeriodSubmitted;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ForecastSubmittedEventEventEnum unknownDefaultOpenApi =
+      _$forecastSubmittedEventEventEnum_unknownDefaultOpenApi;
 
   static Serializer<ForecastSubmittedEventEventEnum> get serializer =>
       _$forecastSubmittedEventEventEnumSerializer;

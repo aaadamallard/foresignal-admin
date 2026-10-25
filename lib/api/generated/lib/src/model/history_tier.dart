@@ -15,6 +15,8 @@ class HistoryTier extends EnumClass {
   static const HistoryTier STANDARD = _$STANDARD;
   @BuiltValueEnumConst(wireName: r'TRACK')
   static const HistoryTier TRACK = _$TRACK;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const HistoryTier unknownDefaultOpenApi = _$unknownDefaultOpenApi;
 
   static Serializer<HistoryTier> get serializer => _$historyTierSerializer;
 

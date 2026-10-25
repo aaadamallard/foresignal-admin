@@ -174,6 +174,9 @@ class NormalizedRecordPreviewGeometryTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'GeometryCollection')
   static const NormalizedRecordPreviewGeometryTypeEnum geometryCollection =
       _$normalizedRecordPreviewGeometryTypeEnum_geometryCollection;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const NormalizedRecordPreviewGeometryTypeEnum unknownDefaultOpenApi =
+      _$normalizedRecordPreviewGeometryTypeEnum_unknownDefaultOpenApi;
 
   static Serializer<NormalizedRecordPreviewGeometryTypeEnum> get serializer =>
       _$normalizedRecordPreviewGeometryTypeEnumSerializer;

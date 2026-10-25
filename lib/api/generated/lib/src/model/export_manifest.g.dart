@@ -9,6 +9,9 @@ part of 'export_manifest.dart';
 const ExportManifestManifestVersionEnum
 _$exportManifestManifestVersionEnum_number1 =
     const ExportManifestManifestVersionEnum._('number1');
+const ExportManifestManifestVersionEnum
+_$exportManifestManifestVersionEnum_unknownDefaultOpenApi =
+    const ExportManifestManifestVersionEnum._('unknownDefaultOpenApi');
 
 ExportManifestManifestVersionEnum _$exportManifestManifestVersionEnumValueOf(
   String name,
@@ -16,8 +19,10 @@ ExportManifestManifestVersionEnum _$exportManifestManifestVersionEnumValueOf(
   switch (name) {
     case 'number1':
       return _$exportManifestManifestVersionEnum_number1;
+    case 'unknownDefaultOpenApi':
+      return _$exportManifestManifestVersionEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$exportManifestManifestVersionEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -26,6 +31,7 @@ _$exportManifestManifestVersionEnumValues =
     BuiltSet<ExportManifestManifestVersionEnum>(
       const <ExportManifestManifestVersionEnum>[
         _$exportManifestManifestVersionEnum_number1,
+        _$exportManifestManifestVersionEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -35,6 +41,8 @@ const ExportManifestKindEnum _$exportManifestKindEnum_SNAPSHOT =
     const ExportManifestKindEnum._('SNAPSHOT');
 const ExportManifestKindEnum _$exportManifestKindEnum_PACK =
     const ExportManifestKindEnum._('PACK');
+const ExportManifestKindEnum _$exportManifestKindEnum_unknownDefaultOpenApi =
+    const ExportManifestKindEnum._('unknownDefaultOpenApi');
 
 ExportManifestKindEnum _$exportManifestKindEnumValueOf(String name) {
   switch (name) {
@@ -44,8 +52,10 @@ ExportManifestKindEnum _$exportManifestKindEnumValueOf(String name) {
       return _$exportManifestKindEnum_SNAPSHOT;
     case 'PACK':
       return _$exportManifestKindEnum_PACK;
+    case 'unknownDefaultOpenApi':
+      return _$exportManifestKindEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$exportManifestKindEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -54,6 +64,7 @@ final BuiltSet<ExportManifestKindEnum> _$exportManifestKindEnumValues =
       _$exportManifestKindEnum_EXPORT,
       _$exportManifestKindEnum_SNAPSHOT,
       _$exportManifestKindEnum_PACK,
+      _$exportManifestKindEnum_unknownDefaultOpenApi,
     ]);
 
 const ExportManifestFormatEnum _$exportManifestFormatEnum_geoparquet =
@@ -66,6 +77,9 @@ const ExportManifestFormatEnum _$exportManifestFormatEnum_gpx =
     const ExportManifestFormatEnum._('gpx');
 const ExportManifestFormatEnum _$exportManifestFormatEnum_pmtiles =
     const ExportManifestFormatEnum._('pmtiles');
+const ExportManifestFormatEnum
+_$exportManifestFormatEnum_unknownDefaultOpenApi =
+    const ExportManifestFormatEnum._('unknownDefaultOpenApi');
 
 ExportManifestFormatEnum _$exportManifestFormatEnumValueOf(String name) {
   switch (name) {
@@ -79,8 +93,10 @@ ExportManifestFormatEnum _$exportManifestFormatEnumValueOf(String name) {
       return _$exportManifestFormatEnum_gpx;
     case 'pmtiles':
       return _$exportManifestFormatEnum_pmtiles;
+    case 'unknownDefaultOpenApi':
+      return _$exportManifestFormatEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$exportManifestFormatEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -91,6 +107,7 @@ final BuiltSet<ExportManifestFormatEnum> _$exportManifestFormatEnumValues =
       _$exportManifestFormatEnum_flatgeobuf,
       _$exportManifestFormatEnum_gpx,
       _$exportManifestFormatEnum_pmtiles,
+      _$exportManifestFormatEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<ExportManifestManifestVersionEnum>
@@ -105,9 +122,11 @@ class _$ExportManifestManifestVersionEnumSerializer
     implements PrimitiveSerializer<ExportManifestManifestVersionEnum> {
   static const Map<String, Object> _toWire = const <String, Object>{
     'number1': 1,
+    'unknownDefaultOpenApi': 11184809,
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     1: 'number1',
+    11184809: 'unknownDefaultOpenApi',
   };
 
   @override
@@ -138,11 +157,13 @@ class _$ExportManifestKindEnumSerializer
     'EXPORT': 'EXPORT',
     'SNAPSHOT': 'SNAPSHOT',
     'PACK': 'PACK',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'EXPORT': 'EXPORT',
     'SNAPSHOT': 'SNAPSHOT',
     'PACK': 'PACK',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -175,6 +196,7 @@ class _$ExportManifestFormatEnumSerializer
     'flatgeobuf': 'flatgeobuf',
     'gpx': 'gpx',
     'pmtiles': 'pmtiles',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'geoparquet': 'geoparquet',
@@ -182,6 +204,7 @@ class _$ExportManifestFormatEnumSerializer
     'flatgeobuf': 'flatgeobuf',
     'gpx': 'gpx',
     'pmtiles': 'pmtiles',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

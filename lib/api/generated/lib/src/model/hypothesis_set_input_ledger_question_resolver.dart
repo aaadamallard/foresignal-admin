@@ -180,6 +180,10 @@ class HypothesisSetInputLedgerQuestionResolverTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'manual')
   static const HypothesisSetInputLedgerQuestionResolverTypeEnum manual =
       _$hypothesisSetInputLedgerQuestionResolverTypeEnum_manual;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const HypothesisSetInputLedgerQuestionResolverTypeEnum
+  unknownDefaultOpenApi =
+      _$hypothesisSetInputLedgerQuestionResolverTypeEnum_unknownDefaultOpenApi;
 
   static Serializer<HypothesisSetInputLedgerQuestionResolverTypeEnum>
   get serializer =>

@@ -12,6 +12,8 @@ const ExternalSourceStateEnum _$externalSourceStateEnum_active =
     const ExternalSourceStateEnum._('active');
 const ExternalSourceStateEnum _$externalSourceStateEnum_suspended =
     const ExternalSourceStateEnum._('suspended');
+const ExternalSourceStateEnum _$externalSourceStateEnum_unknownDefaultOpenApi =
+    const ExternalSourceStateEnum._('unknownDefaultOpenApi');
 
 ExternalSourceStateEnum _$externalSourceStateEnumValueOf(String name) {
   switch (name) {
@@ -21,8 +23,10 @@ ExternalSourceStateEnum _$externalSourceStateEnumValueOf(String name) {
       return _$externalSourceStateEnum_active;
     case 'suspended':
       return _$externalSourceStateEnum_suspended;
+    case 'unknownDefaultOpenApi':
+      return _$externalSourceStateEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$externalSourceStateEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -31,6 +35,7 @@ final BuiltSet<ExternalSourceStateEnum> _$externalSourceStateEnumValues =
       _$externalSourceStateEnum_pending,
       _$externalSourceStateEnum_active,
       _$externalSourceStateEnum_suspended,
+      _$externalSourceStateEnum_unknownDefaultOpenApi,
     ]);
 
 const ExternalSourceRegisteredViaEnum
@@ -39,6 +44,9 @@ _$externalSourceRegisteredViaEnum_operator_ =
 const ExternalSourceRegisteredViaEnum
 _$externalSourceRegisteredViaEnum_registrationToken =
     const ExternalSourceRegisteredViaEnum._('registrationToken');
+const ExternalSourceRegisteredViaEnum
+_$externalSourceRegisteredViaEnum_unknownDefaultOpenApi =
+    const ExternalSourceRegisteredViaEnum._('unknownDefaultOpenApi');
 
 ExternalSourceRegisteredViaEnum _$externalSourceRegisteredViaEnumValueOf(
   String name,
@@ -48,8 +56,10 @@ ExternalSourceRegisteredViaEnum _$externalSourceRegisteredViaEnumValueOf(
       return _$externalSourceRegisteredViaEnum_operator_;
     case 'registrationToken':
       return _$externalSourceRegisteredViaEnum_registrationToken;
+    case 'unknownDefaultOpenApi':
+      return _$externalSourceRegisteredViaEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$externalSourceRegisteredViaEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -59,6 +69,7 @@ _$externalSourceRegisteredViaEnumValues =
       const <ExternalSourceRegisteredViaEnum>[
         _$externalSourceRegisteredViaEnum_operator_,
         _$externalSourceRegisteredViaEnum_registrationToken,
+        _$externalSourceRegisteredViaEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -74,11 +85,13 @@ class _$ExternalSourceStateEnumSerializer
     'pending': 'pending',
     'active': 'active',
     'suspended': 'suspended',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'pending': 'pending',
     'active': 'active',
     'suspended': 'suspended',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -108,10 +121,12 @@ class _$ExternalSourceRegisteredViaEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'operator_': 'operator',
     'registrationToken': 'registration-token',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'operator': 'operator_',
     'registration-token': 'registrationToken',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

@@ -20,6 +20,9 @@ const SocialPlatformId _$threads = const SocialPlatformId._('threads');
 const SocialPlatformId _$instagramHashtags = const SocialPlatformId._(
   'instagramHashtags',
 );
+const SocialPlatformId _$unknownDefaultOpenApi = const SocialPlatformId._(
+  'unknownDefaultOpenApi',
+);
 
 SocialPlatformId _$valueOf(String name) {
   switch (name) {
@@ -39,8 +42,10 @@ SocialPlatformId _$valueOf(String name) {
       return _$threads;
     case 'instagramHashtags':
       return _$instagramHashtags;
+    case 'unknownDefaultOpenApi':
+      return _$unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$unknownDefaultOpenApi;
   }
 }
 
@@ -54,6 +59,7 @@ final BuiltSet<SocialPlatformId> _$values =
       _$x,
       _$threads,
       _$instagramHashtags,
+      _$unknownDefaultOpenApi,
     ]);
 
 class _$SocialPlatformIdMeta {
@@ -66,6 +72,7 @@ class _$SocialPlatformIdMeta {
   SocialPlatformId get x => _$x;
   SocialPlatformId get threads => _$threads;
   SocialPlatformId get instagramHashtags => _$instagramHashtags;
+  SocialPlatformId get unknownDefaultOpenApi => _$unknownDefaultOpenApi;
   SocialPlatformId valueOf(String name) => _$valueOf(name);
   BuiltSet<SocialPlatformId> get values => _$values;
 }
@@ -89,6 +96,7 @@ class _$SocialPlatformIdSerializer
     'x': 'x',
     'threads': 'threads',
     'instagramHashtags': 'instagram-hashtags',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'bluesky-jetstream': 'blueskyJetstream',
@@ -99,6 +107,7 @@ class _$SocialPlatformIdSerializer
     'x': 'x',
     'threads': 'threads',
     'instagram-hashtags': 'instagramHashtags',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

@@ -11,6 +11,9 @@ const HypothesisReviewInputCauseEnum _$hypothesisReviewInputCauseEnum_review =
 const HypothesisReviewInputCauseEnum
 _$hypothesisReviewInputCauseEnum_operator_ =
     const HypothesisReviewInputCauseEnum._('operator_');
+const HypothesisReviewInputCauseEnum
+_$hypothesisReviewInputCauseEnum_unknownDefaultOpenApi =
+    const HypothesisReviewInputCauseEnum._('unknownDefaultOpenApi');
 
 HypothesisReviewInputCauseEnum _$hypothesisReviewInputCauseEnumValueOf(
   String name,
@@ -20,8 +23,10 @@ HypothesisReviewInputCauseEnum _$hypothesisReviewInputCauseEnumValueOf(
       return _$hypothesisReviewInputCauseEnum_review;
     case 'operator_':
       return _$hypothesisReviewInputCauseEnum_operator_;
+    case 'unknownDefaultOpenApi':
+      return _$hypothesisReviewInputCauseEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$hypothesisReviewInputCauseEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -31,6 +36,7 @@ _$hypothesisReviewInputCauseEnumValues =
       const <HypothesisReviewInputCauseEnum>[
         _$hypothesisReviewInputCauseEnum_review,
         _$hypothesisReviewInputCauseEnum_operator_,
+        _$hypothesisReviewInputCauseEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -43,10 +49,12 @@ class _$HypothesisReviewInputCauseEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'review': 'review',
     'operator_': 'operator',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'review': 'review',
     'operator': 'operator_',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

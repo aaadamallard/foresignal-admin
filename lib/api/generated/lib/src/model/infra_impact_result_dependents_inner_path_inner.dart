@@ -212,6 +212,10 @@ class InfraImpactResultDependentsInnerPathInnerRelationEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'serves')
   static const InfraImpactResultDependentsInnerPathInnerRelationEnum serves =
       _$infraImpactResultDependentsInnerPathInnerRelationEnum_serves;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const InfraImpactResultDependentsInnerPathInnerRelationEnum
+  unknownDefaultOpenApi =
+      _$infraImpactResultDependentsInnerPathInnerRelationEnum_unknownDefaultOpenApi;
 
   static Serializer<InfraImpactResultDependentsInnerPathInnerRelationEnum>
   get serializer =>
@@ -240,6 +244,10 @@ class InfraImpactResultDependentsInnerPathInnerMethodEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'inferred')
   static const InfraImpactResultDependentsInnerPathInnerMethodEnum inferred =
       _$infraImpactResultDependentsInnerPathInnerMethodEnum_inferred;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const InfraImpactResultDependentsInnerPathInnerMethodEnum
+  unknownDefaultOpenApi =
+      _$infraImpactResultDependentsInnerPathInnerMethodEnum_unknownDefaultOpenApi;
 
   static Serializer<InfraImpactResultDependentsInnerPathInnerMethodEnum>
   get serializer =>
@@ -268,6 +276,10 @@ class InfraImpactResultDependentsInnerPathInnerLabelEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'speculative')
   static const InfraImpactResultDependentsInnerPathInnerLabelEnum speculative =
       _$infraImpactResultDependentsInnerPathInnerLabelEnum_speculative;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const InfraImpactResultDependentsInnerPathInnerLabelEnum
+  unknownDefaultOpenApi =
+      _$infraImpactResultDependentsInnerPathInnerLabelEnum_unknownDefaultOpenApi;
 
   static Serializer<InfraImpactResultDependentsInnerPathInnerLabelEnum>
   get serializer =>

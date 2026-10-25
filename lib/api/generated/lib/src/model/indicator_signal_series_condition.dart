@@ -154,6 +154,9 @@ class IndicatorSignalSeriesConditionOpEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'lte')
   static const IndicatorSignalSeriesConditionOpEnum lte =
       _$indicatorSignalSeriesConditionOpEnum_lte;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const IndicatorSignalSeriesConditionOpEnum unknownDefaultOpenApi =
+      _$indicatorSignalSeriesConditionOpEnum_unknownDefaultOpenApi;
 
   static Serializer<IndicatorSignalSeriesConditionOpEnum> get serializer =>
       _$indicatorSignalSeriesConditionOpEnumSerializer;

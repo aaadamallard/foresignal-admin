@@ -17,6 +17,9 @@ _$corroborationPayloadStatusEnum_noCoverage =
 const CorroborationPayloadStatusEnum
 _$corroborationPayloadStatusEnum_degradedInput =
     const CorroborationPayloadStatusEnum._('degradedInput');
+const CorroborationPayloadStatusEnum
+_$corroborationPayloadStatusEnum_unknownDefaultOpenApi =
+    const CorroborationPayloadStatusEnum._('unknownDefaultOpenApi');
 
 CorroborationPayloadStatusEnum _$corroborationPayloadStatusEnumValueOf(
   String name,
@@ -30,8 +33,10 @@ CorroborationPayloadStatusEnum _$corroborationPayloadStatusEnumValueOf(
       return _$corroborationPayloadStatusEnum_noCoverage;
     case 'degradedInput':
       return _$corroborationPayloadStatusEnum_degradedInput;
+    case 'unknownDefaultOpenApi':
+      return _$corroborationPayloadStatusEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$corroborationPayloadStatusEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -43,6 +48,7 @@ _$corroborationPayloadStatusEnumValues =
         _$corroborationPayloadStatusEnum_insufficientData,
         _$corroborationPayloadStatusEnum_noCoverage,
         _$corroborationPayloadStatusEnum_degradedInput,
+        _$corroborationPayloadStatusEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -58,6 +64,9 @@ _$corroborationPayloadKindFamilyEnum_conflict =
 const CorroborationPayloadKindFamilyEnum
 _$corroborationPayloadKindFamilyEnum_outage =
     const CorroborationPayloadKindFamilyEnum._('outage');
+const CorroborationPayloadKindFamilyEnum
+_$corroborationPayloadKindFamilyEnum_unknownDefaultOpenApi =
+    const CorroborationPayloadKindFamilyEnum._('unknownDefaultOpenApi');
 
 CorroborationPayloadKindFamilyEnum _$corroborationPayloadKindFamilyEnumValueOf(
   String name,
@@ -71,8 +80,10 @@ CorroborationPayloadKindFamilyEnum _$corroborationPayloadKindFamilyEnumValueOf(
       return _$corroborationPayloadKindFamilyEnum_conflict;
     case 'outage':
       return _$corroborationPayloadKindFamilyEnum_outage;
+    case 'unknownDefaultOpenApi':
+      return _$corroborationPayloadKindFamilyEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$corroborationPayloadKindFamilyEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -84,6 +95,7 @@ _$corroborationPayloadKindFamilyEnumValues =
         _$corroborationPayloadKindFamilyEnum_fire,
         _$corroborationPayloadKindFamilyEnum_conflict,
         _$corroborationPayloadKindFamilyEnum_outage,
+        _$corroborationPayloadKindFamilyEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -105,6 +117,9 @@ _$corroborationPayloadReliabilityEnum_E =
 const CorroborationPayloadReliabilityEnum
 _$corroborationPayloadReliabilityEnum_F =
     const CorroborationPayloadReliabilityEnum._('F');
+const CorroborationPayloadReliabilityEnum
+_$corroborationPayloadReliabilityEnum_unknownDefaultOpenApi =
+    const CorroborationPayloadReliabilityEnum._('unknownDefaultOpenApi');
 
 CorroborationPayloadReliabilityEnum
 _$corroborationPayloadReliabilityEnumValueOf(String name) {
@@ -121,8 +136,10 @@ _$corroborationPayloadReliabilityEnumValueOf(String name) {
       return _$corroborationPayloadReliabilityEnum_E;
     case 'F':
       return _$corroborationPayloadReliabilityEnum_F;
+    case 'unknownDefaultOpenApi':
+      return _$corroborationPayloadReliabilityEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$corroborationPayloadReliabilityEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -136,6 +153,7 @@ _$corroborationPayloadReliabilityEnumValues =
         _$corroborationPayloadReliabilityEnum_D,
         _$corroborationPayloadReliabilityEnum_E,
         _$corroborationPayloadReliabilityEnum_F,
+        _$corroborationPayloadReliabilityEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -156,12 +174,14 @@ class _$CorroborationPayloadStatusEnumSerializer
     'insufficientData': 'insufficient-data',
     'noCoverage': 'no-coverage',
     'degradedInput': 'degraded-input',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'ok': 'ok',
     'insufficient-data': 'insufficientData',
     'no-coverage': 'noCoverage',
     'degraded-input': 'degradedInput',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -193,12 +213,14 @@ class _$CorroborationPayloadKindFamilyEnumSerializer
     'fire': 'fire',
     'conflict': 'conflict',
     'outage': 'outage',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'earthquake': 'earthquake',
     'fire': 'fire',
     'conflict': 'conflict',
     'outage': 'outage',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -232,6 +254,7 @@ class _$CorroborationPayloadReliabilityEnumSerializer
     'D': 'D',
     'E': 'E',
     'F': 'F',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'A': 'A',
@@ -240,6 +263,7 @@ class _$CorroborationPayloadReliabilityEnumSerializer
     'D': 'D',
     'E': 'E',
     'F': 'F',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

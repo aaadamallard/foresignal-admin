@@ -24,6 +24,9 @@ _$recipeBacktestResultEventsInnerTypeEnum_seismic =
 const RecipeBacktestResultEventsInnerTypeEnum
 _$recipeBacktestResultEventsInnerTypeEnum_custom =
     const RecipeBacktestResultEventsInnerTypeEnum._('custom');
+const RecipeBacktestResultEventsInnerTypeEnum
+_$recipeBacktestResultEventsInnerTypeEnum_unknownDefaultOpenApi =
+    const RecipeBacktestResultEventsInnerTypeEnum._('unknownDefaultOpenApi');
 
 RecipeBacktestResultEventsInnerTypeEnum
 _$recipeBacktestResultEventsInnerTypeEnumValueOf(String name) {
@@ -40,8 +43,10 @@ _$recipeBacktestResultEventsInnerTypeEnumValueOf(String name) {
       return _$recipeBacktestResultEventsInnerTypeEnum_seismic;
     case 'custom':
       return _$recipeBacktestResultEventsInnerTypeEnum_custom;
+    case 'unknownDefaultOpenApi':
+      return _$recipeBacktestResultEventsInnerTypeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$recipeBacktestResultEventsInnerTypeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -55,6 +60,7 @@ _$recipeBacktestResultEventsInnerTypeEnumValues =
         _$recipeBacktestResultEventsInnerTypeEnum_weatherImpact,
         _$recipeBacktestResultEventsInnerTypeEnum_seismic,
         _$recipeBacktestResultEventsInnerTypeEnum_custom,
+        _$recipeBacktestResultEventsInnerTypeEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -70,6 +76,11 @@ _$recipeBacktestResultEventsInnerEvidenceQualityEnum_weak =
 const RecipeBacktestResultEventsInnerEvidenceQualityEnum
 _$recipeBacktestResultEventsInnerEvidenceQualityEnum_insufficient =
     const RecipeBacktestResultEventsInnerEvidenceQualityEnum._('insufficient');
+const RecipeBacktestResultEventsInnerEvidenceQualityEnum
+_$recipeBacktestResultEventsInnerEvidenceQualityEnum_unknownDefaultOpenApi =
+    const RecipeBacktestResultEventsInnerEvidenceQualityEnum._(
+      'unknownDefaultOpenApi',
+    );
 
 RecipeBacktestResultEventsInnerEvidenceQualityEnum
 _$recipeBacktestResultEventsInnerEvidenceQualityEnumValueOf(String name) {
@@ -82,21 +93,24 @@ _$recipeBacktestResultEventsInnerEvidenceQualityEnumValueOf(String name) {
       return _$recipeBacktestResultEventsInnerEvidenceQualityEnum_weak;
     case 'insufficient':
       return _$recipeBacktestResultEventsInnerEvidenceQualityEnum_insufficient;
+    case 'unknownDefaultOpenApi':
+      return _$recipeBacktestResultEventsInnerEvidenceQualityEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$recipeBacktestResultEventsInnerEvidenceQualityEnum_unknownDefaultOpenApi;
   }
 }
 
 final BuiltSet<RecipeBacktestResultEventsInnerEvidenceQualityEnum>
 _$recipeBacktestResultEventsInnerEvidenceQualityEnumValues =
-    BuiltSet<RecipeBacktestResultEventsInnerEvidenceQualityEnum>(
-      const <RecipeBacktestResultEventsInnerEvidenceQualityEnum>[
-        _$recipeBacktestResultEventsInnerEvidenceQualityEnum_strong,
-        _$recipeBacktestResultEventsInnerEvidenceQualityEnum_moderate,
-        _$recipeBacktestResultEventsInnerEvidenceQualityEnum_weak,
-        _$recipeBacktestResultEventsInnerEvidenceQualityEnum_insufficient,
-      ],
-    );
+    BuiltSet<RecipeBacktestResultEventsInnerEvidenceQualityEnum>(const <
+      RecipeBacktestResultEventsInnerEvidenceQualityEnum
+    >[
+      _$recipeBacktestResultEventsInnerEvidenceQualityEnum_strong,
+      _$recipeBacktestResultEventsInnerEvidenceQualityEnum_moderate,
+      _$recipeBacktestResultEventsInnerEvidenceQualityEnum_weak,
+      _$recipeBacktestResultEventsInnerEvidenceQualityEnum_insufficient,
+      _$recipeBacktestResultEventsInnerEvidenceQualityEnum_unknownDefaultOpenApi,
+    ]);
 
 Serializer<RecipeBacktestResultEventsInnerTypeEnum>
 _$recipeBacktestResultEventsInnerTypeEnumSerializer =
@@ -114,6 +128,7 @@ class _$RecipeBacktestResultEventsInnerTypeEnumSerializer
     'weatherImpact': 'weather-impact',
     'seismic': 'seismic',
     'custom': 'custom',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'maritime-disruption': 'maritimeDisruption',
@@ -122,6 +137,7 @@ class _$RecipeBacktestResultEventsInnerTypeEnumSerializer
     'weather-impact': 'weatherImpact',
     'seismic': 'seismic',
     'custom': 'custom',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -158,12 +174,14 @@ class _$RecipeBacktestResultEventsInnerEvidenceQualityEnumSerializer
     'moderate': 'moderate',
     'weak': 'weak',
     'insufficient': 'insufficient',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'strong': 'strong',
     'moderate': 'moderate',
     'weak': 'weak',
     'insufficient': 'insufficient',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

@@ -14,6 +14,9 @@ const SourceDescriptorModeEnum _$sourceDescriptorModeEnum_push =
     const SourceDescriptorModeEnum._('push');
 const SourceDescriptorModeEnum _$sourceDescriptorModeEnum_derived =
     const SourceDescriptorModeEnum._('derived');
+const SourceDescriptorModeEnum
+_$sourceDescriptorModeEnum_unknownDefaultOpenApi =
+    const SourceDescriptorModeEnum._('unknownDefaultOpenApi');
 
 SourceDescriptorModeEnum _$sourceDescriptorModeEnumValueOf(String name) {
   switch (name) {
@@ -25,8 +28,10 @@ SourceDescriptorModeEnum _$sourceDescriptorModeEnumValueOf(String name) {
       return _$sourceDescriptorModeEnum_push;
     case 'derived':
       return _$sourceDescriptorModeEnum_derived;
+    case 'unknownDefaultOpenApi':
+      return _$sourceDescriptorModeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$sourceDescriptorModeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -36,6 +41,7 @@ final BuiltSet<SourceDescriptorModeEnum> _$sourceDescriptorModeEnumValues =
       _$sourceDescriptorModeEnum_streaming,
       _$sourceDescriptorModeEnum_push,
       _$sourceDescriptorModeEnum_derived,
+      _$sourceDescriptorModeEnum_unknownDefaultOpenApi,
     ]);
 
 const SourceDescriptorObservedAtModeEnum
@@ -44,6 +50,9 @@ _$sourceDescriptorObservedAtModeEnum_UPSTREAM =
 const SourceDescriptorObservedAtModeEnum
 _$sourceDescriptorObservedAtModeEnum_RECEIVED =
     const SourceDescriptorObservedAtModeEnum._('RECEIVED');
+const SourceDescriptorObservedAtModeEnum
+_$sourceDescriptorObservedAtModeEnum_unknownDefaultOpenApi =
+    const SourceDescriptorObservedAtModeEnum._('unknownDefaultOpenApi');
 
 SourceDescriptorObservedAtModeEnum _$sourceDescriptorObservedAtModeEnumValueOf(
   String name,
@@ -53,8 +62,10 @@ SourceDescriptorObservedAtModeEnum _$sourceDescriptorObservedAtModeEnumValueOf(
       return _$sourceDescriptorObservedAtModeEnum_UPSTREAM;
     case 'RECEIVED':
       return _$sourceDescriptorObservedAtModeEnum_RECEIVED;
+    case 'unknownDefaultOpenApi':
+      return _$sourceDescriptorObservedAtModeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$sourceDescriptorObservedAtModeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -64,6 +75,7 @@ _$sourceDescriptorObservedAtModeEnumValues =
       const <SourceDescriptorObservedAtModeEnum>[
         _$sourceDescriptorObservedAtModeEnum_UPSTREAM,
         _$sourceDescriptorObservedAtModeEnum_RECEIVED,
+        _$sourceDescriptorObservedAtModeEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -71,6 +83,9 @@ const SourceDescriptorTtlAnchorEnum _$sourceDescriptorTtlAnchorEnum_OBSERVED =
     const SourceDescriptorTtlAnchorEnum._('OBSERVED');
 const SourceDescriptorTtlAnchorEnum _$sourceDescriptorTtlAnchorEnum_RECEIVED =
     const SourceDescriptorTtlAnchorEnum._('RECEIVED');
+const SourceDescriptorTtlAnchorEnum
+_$sourceDescriptorTtlAnchorEnum_unknownDefaultOpenApi =
+    const SourceDescriptorTtlAnchorEnum._('unknownDefaultOpenApi');
 
 SourceDescriptorTtlAnchorEnum _$sourceDescriptorTtlAnchorEnumValueOf(
   String name,
@@ -80,8 +95,10 @@ SourceDescriptorTtlAnchorEnum _$sourceDescriptorTtlAnchorEnumValueOf(
       return _$sourceDescriptorTtlAnchorEnum_OBSERVED;
     case 'RECEIVED':
       return _$sourceDescriptorTtlAnchorEnum_RECEIVED;
+    case 'unknownDefaultOpenApi':
+      return _$sourceDescriptorTtlAnchorEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$sourceDescriptorTtlAnchorEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -90,6 +107,7 @@ _$sourceDescriptorTtlAnchorEnumValues = BuiltSet<SourceDescriptorTtlAnchorEnum>(
   const <SourceDescriptorTtlAnchorEnum>[
     _$sourceDescriptorTtlAnchorEnum_OBSERVED,
     _$sourceDescriptorTtlAnchorEnum_RECEIVED,
+    _$sourceDescriptorTtlAnchorEnum_unknownDefaultOpenApi,
   ],
 );
 
@@ -97,6 +115,9 @@ const SourceDescriptorEgressEnum _$sourceDescriptorEgressEnum_OPEN =
     const SourceDescriptorEgressEnum._('OPEN');
 const SourceDescriptorEgressEnum _$sourceDescriptorEgressEnum_LOCAL_ONLY =
     const SourceDescriptorEgressEnum._('LOCAL_ONLY');
+const SourceDescriptorEgressEnum
+_$sourceDescriptorEgressEnum_unknownDefaultOpenApi =
+    const SourceDescriptorEgressEnum._('unknownDefaultOpenApi');
 
 SourceDescriptorEgressEnum _$sourceDescriptorEgressEnumValueOf(String name) {
   switch (name) {
@@ -104,8 +125,10 @@ SourceDescriptorEgressEnum _$sourceDescriptorEgressEnumValueOf(String name) {
       return _$sourceDescriptorEgressEnum_OPEN;
     case 'LOCAL_ONLY':
       return _$sourceDescriptorEgressEnum_LOCAL_ONLY;
+    case 'unknownDefaultOpenApi':
+      return _$sourceDescriptorEgressEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$sourceDescriptorEgressEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -113,6 +136,7 @@ final BuiltSet<SourceDescriptorEgressEnum> _$sourceDescriptorEgressEnumValues =
     BuiltSet<SourceDescriptorEgressEnum>(const <SourceDescriptorEgressEnum>[
       _$sourceDescriptorEgressEnum_OPEN,
       _$sourceDescriptorEgressEnum_LOCAL_ONLY,
+      _$sourceDescriptorEgressEnum_unknownDefaultOpenApi,
     ]);
 
 const SourceDescriptorReliabilityEnum _$sourceDescriptorReliabilityEnum_A =
@@ -127,6 +151,9 @@ const SourceDescriptorReliabilityEnum _$sourceDescriptorReliabilityEnum_E =
     const SourceDescriptorReliabilityEnum._('E');
 const SourceDescriptorReliabilityEnum _$sourceDescriptorReliabilityEnum_F =
     const SourceDescriptorReliabilityEnum._('F');
+const SourceDescriptorReliabilityEnum
+_$sourceDescriptorReliabilityEnum_unknownDefaultOpenApi =
+    const SourceDescriptorReliabilityEnum._('unknownDefaultOpenApi');
 
 SourceDescriptorReliabilityEnum _$sourceDescriptorReliabilityEnumValueOf(
   String name,
@@ -144,8 +171,10 @@ SourceDescriptorReliabilityEnum _$sourceDescriptorReliabilityEnumValueOf(
       return _$sourceDescriptorReliabilityEnum_E;
     case 'F':
       return _$sourceDescriptorReliabilityEnum_F;
+    case 'unknownDefaultOpenApi':
+      return _$sourceDescriptorReliabilityEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$sourceDescriptorReliabilityEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -159,6 +188,7 @@ _$sourceDescriptorReliabilityEnumValues =
         _$sourceDescriptorReliabilityEnum_D,
         _$sourceDescriptorReliabilityEnum_E,
         _$sourceDescriptorReliabilityEnum_F,
+        _$sourceDescriptorReliabilityEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -183,12 +213,14 @@ class _$SourceDescriptorModeEnumSerializer
     'streaming': 'streaming',
     'push': 'push',
     'derived': 'derived',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'polling': 'polling',
     'streaming': 'streaming',
     'push': 'push',
     'derived': 'derived',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -218,10 +250,12 @@ class _$SourceDescriptorObservedAtModeEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'UPSTREAM': 'UPSTREAM',
     'RECEIVED': 'RECEIVED',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'UPSTREAM': 'UPSTREAM',
     'RECEIVED': 'RECEIVED',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -251,10 +285,12 @@ class _$SourceDescriptorTtlAnchorEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'OBSERVED': 'OBSERVED',
     'RECEIVED': 'RECEIVED',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'OBSERVED': 'OBSERVED',
     'RECEIVED': 'RECEIVED',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -284,10 +320,12 @@ class _$SourceDescriptorEgressEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'OPEN': 'OPEN',
     'LOCAL_ONLY': 'LOCAL_ONLY',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'OPEN': 'OPEN',
     'LOCAL_ONLY': 'LOCAL_ONLY',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -321,6 +359,7 @@ class _$SourceDescriptorReliabilityEnumSerializer
     'D': 'D',
     'E': 'E',
     'F': 'F',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'A': 'A',
@@ -329,6 +368,7 @@ class _$SourceDescriptorReliabilityEnumSerializer
     'D': 'D',
     'E': 'E',
     'F': 'F',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

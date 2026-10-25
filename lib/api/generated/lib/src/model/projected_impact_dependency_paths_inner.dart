@@ -229,6 +229,10 @@ class ProjectedImpactDependencyPathsInnerWeakestEdgeLabelEnum
   static const ProjectedImpactDependencyPathsInnerWeakestEdgeLabelEnum
   speculative =
       _$projectedImpactDependencyPathsInnerWeakestEdgeLabelEnum_speculative;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ProjectedImpactDependencyPathsInnerWeakestEdgeLabelEnum
+  unknownDefaultOpenApi =
+      _$projectedImpactDependencyPathsInnerWeakestEdgeLabelEnum_unknownDefaultOpenApi;
 
   static Serializer<ProjectedImpactDependencyPathsInnerWeakestEdgeLabelEnum>
   get serializer =>

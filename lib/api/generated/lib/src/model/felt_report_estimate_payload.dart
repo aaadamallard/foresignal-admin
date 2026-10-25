@@ -378,6 +378,9 @@ class FeltReportEstimatePayloadStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'degraded-input')
   static const FeltReportEstimatePayloadStatusEnum degradedInput =
       _$feltReportEstimatePayloadStatusEnum_degradedInput;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const FeltReportEstimatePayloadStatusEnum unknownDefaultOpenApi =
+      _$feltReportEstimatePayloadStatusEnum_unknownDefaultOpenApi;
 
   static Serializer<FeltReportEstimatePayloadStatusEnum> get serializer =>
       _$feltReportEstimatePayloadStatusEnumSerializer;
@@ -397,6 +400,9 @@ class FeltReportEstimatePayloadMethodEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'ipe-aw2007')
   static const FeltReportEstimatePayloadMethodEnum ipeAw2007 =
       _$feltReportEstimatePayloadMethodEnum_ipeAw2007;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const FeltReportEstimatePayloadMethodEnum unknownDefaultOpenApi =
+      _$feltReportEstimatePayloadMethodEnum_unknownDefaultOpenApi;
 
   static Serializer<FeltReportEstimatePayloadMethodEnum> get serializer =>
       _$feltReportEstimatePayloadMethodEnumSerializer;
@@ -416,6 +422,10 @@ class FeltReportEstimatePayloadCoefficientSetEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'ceus')
   static const FeltReportEstimatePayloadCoefficientSetEnum ceus =
       _$feltReportEstimatePayloadCoefficientSetEnum_ceus;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const FeltReportEstimatePayloadCoefficientSetEnum
+  unknownDefaultOpenApi =
+      _$feltReportEstimatePayloadCoefficientSetEnum_unknownDefaultOpenApi;
 
   static Serializer<FeltReportEstimatePayloadCoefficientSetEnum>
   get serializer => _$feltReportEstimatePayloadCoefficientSetEnumSerializer;

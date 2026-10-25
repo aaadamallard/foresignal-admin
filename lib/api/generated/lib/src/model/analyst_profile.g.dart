@@ -10,6 +10,9 @@ const AnalystProfileEffortEnum _$analystProfileEffortEnum_low =
     const AnalystProfileEffortEnum._('low');
 const AnalystProfileEffortEnum _$analystProfileEffortEnum_medium =
     const AnalystProfileEffortEnum._('medium');
+const AnalystProfileEffortEnum
+_$analystProfileEffortEnum_unknownDefaultOpenApi =
+    const AnalystProfileEffortEnum._('unknownDefaultOpenApi');
 
 AnalystProfileEffortEnum _$analystProfileEffortEnumValueOf(String name) {
   switch (name) {
@@ -17,8 +20,10 @@ AnalystProfileEffortEnum _$analystProfileEffortEnumValueOf(String name) {
       return _$analystProfileEffortEnum_low;
     case 'medium':
       return _$analystProfileEffortEnum_medium;
+    case 'unknownDefaultOpenApi':
+      return _$analystProfileEffortEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$analystProfileEffortEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -26,6 +31,7 @@ final BuiltSet<AnalystProfileEffortEnum> _$analystProfileEffortEnumValues =
     BuiltSet<AnalystProfileEffortEnum>(const <AnalystProfileEffortEnum>[
       _$analystProfileEffortEnum_low,
       _$analystProfileEffortEnum_medium,
+      _$analystProfileEffortEnum_unknownDefaultOpenApi,
     ]);
 
 const AnalystProfileAllowedActionsEnum
@@ -55,6 +61,9 @@ _$analystProfileAllowedActionsEnum_proposeSituationMerge =
 const AnalystProfileAllowedActionsEnum
 _$analystProfileAllowedActionsEnum_proposeChronicle =
     const AnalystProfileAllowedActionsEnum._('proposeChronicle');
+const AnalystProfileAllowedActionsEnum
+_$analystProfileAllowedActionsEnum_unknownDefaultOpenApi =
+    const AnalystProfileAllowedActionsEnum._('unknownDefaultOpenApi');
 
 AnalystProfileAllowedActionsEnum _$analystProfileAllowedActionsEnumValueOf(
   String name,
@@ -78,8 +87,10 @@ AnalystProfileAllowedActionsEnum _$analystProfileAllowedActionsEnumValueOf(
       return _$analystProfileAllowedActionsEnum_proposeSituationMerge;
     case 'proposeChronicle':
       return _$analystProfileAllowedActionsEnum_proposeChronicle;
+    case 'unknownDefaultOpenApi':
+      return _$analystProfileAllowedActionsEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$analystProfileAllowedActionsEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -96,6 +107,7 @@ _$analystProfileAllowedActionsEnumValues =
         _$analystProfileAllowedActionsEnum_proposeQuestion,
         _$analystProfileAllowedActionsEnum_proposeSituationMerge,
         _$analystProfileAllowedActionsEnum_proposeChronicle,
+        _$analystProfileAllowedActionsEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -108,6 +120,9 @@ _$analystProfileNotifyMinPriorityEnum_normal =
 const AnalystProfileNotifyMinPriorityEnum
 _$analystProfileNotifyMinPriorityEnum_high =
     const AnalystProfileNotifyMinPriorityEnum._('high');
+const AnalystProfileNotifyMinPriorityEnum
+_$analystProfileNotifyMinPriorityEnum_unknownDefaultOpenApi =
+    const AnalystProfileNotifyMinPriorityEnum._('unknownDefaultOpenApi');
 
 AnalystProfileNotifyMinPriorityEnum
 _$analystProfileNotifyMinPriorityEnumValueOf(String name) {
@@ -118,8 +133,10 @@ _$analystProfileNotifyMinPriorityEnumValueOf(String name) {
       return _$analystProfileNotifyMinPriorityEnum_normal;
     case 'high':
       return _$analystProfileNotifyMinPriorityEnum_high;
+    case 'unknownDefaultOpenApi':
+      return _$analystProfileNotifyMinPriorityEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$analystProfileNotifyMinPriorityEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -130,6 +147,7 @@ _$analystProfileNotifyMinPriorityEnumValues =
         _$analystProfileNotifyMinPriorityEnum_low,
         _$analystProfileNotifyMinPriorityEnum_normal,
         _$analystProfileNotifyMinPriorityEnum_high,
+        _$analystProfileNotifyMinPriorityEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -147,10 +165,12 @@ class _$AnalystProfileEffortEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'low': 'low',
     'medium': 'medium',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'low': 'low',
     'medium': 'medium',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -187,6 +207,7 @@ class _$AnalystProfileAllowedActionsEnumSerializer
     'proposeQuestion': 'propose_question',
     'proposeSituationMerge': 'propose_situation_merge',
     'proposeChronicle': 'propose_chronicle',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'propose_watch': 'proposeWatch',
@@ -198,6 +219,7 @@ class _$AnalystProfileAllowedActionsEnumSerializer
     'propose_question': 'proposeQuestion',
     'propose_situation_merge': 'proposeSituationMerge',
     'propose_chronicle': 'proposeChronicle',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -228,11 +250,13 @@ class _$AnalystProfileNotifyMinPriorityEnumSerializer
     'low': 'low',
     'normal': 'normal',
     'high': 'high',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'low': 'low',
     'normal': 'normal',
     'high': 'high',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

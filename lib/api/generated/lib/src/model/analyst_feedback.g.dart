@@ -10,6 +10,9 @@ const AnalystFeedbackTargetEnum _$analystFeedbackTargetEnum_note =
     const AnalystFeedbackTargetEnum._('note');
 const AnalystFeedbackTargetEnum _$analystFeedbackTargetEnum_proposal =
     const AnalystFeedbackTargetEnum._('proposal');
+const AnalystFeedbackTargetEnum
+_$analystFeedbackTargetEnum_unknownDefaultOpenApi =
+    const AnalystFeedbackTargetEnum._('unknownDefaultOpenApi');
 
 AnalystFeedbackTargetEnum _$analystFeedbackTargetEnumValueOf(String name) {
   switch (name) {
@@ -17,8 +20,10 @@ AnalystFeedbackTargetEnum _$analystFeedbackTargetEnumValueOf(String name) {
       return _$analystFeedbackTargetEnum_note;
     case 'proposal':
       return _$analystFeedbackTargetEnum_proposal;
+    case 'unknownDefaultOpenApi':
+      return _$analystFeedbackTargetEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$analystFeedbackTargetEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -26,6 +31,7 @@ final BuiltSet<AnalystFeedbackTargetEnum> _$analystFeedbackTargetEnumValues =
     BuiltSet<AnalystFeedbackTargetEnum>(const <AnalystFeedbackTargetEnum>[
       _$analystFeedbackTargetEnum_note,
       _$analystFeedbackTargetEnum_proposal,
+      _$analystFeedbackTargetEnum_unknownDefaultOpenApi,
     ]);
 
 const AnalystFeedbackRatingEnum _$analystFeedbackRatingEnum_useful =
@@ -34,6 +40,9 @@ const AnalystFeedbackRatingEnum _$analystFeedbackRatingEnum_notUseful =
     const AnalystFeedbackRatingEnum._('notUseful');
 const AnalystFeedbackRatingEnum _$analystFeedbackRatingEnum_wrong =
     const AnalystFeedbackRatingEnum._('wrong');
+const AnalystFeedbackRatingEnum
+_$analystFeedbackRatingEnum_unknownDefaultOpenApi =
+    const AnalystFeedbackRatingEnum._('unknownDefaultOpenApi');
 
 AnalystFeedbackRatingEnum _$analystFeedbackRatingEnumValueOf(String name) {
   switch (name) {
@@ -43,8 +52,10 @@ AnalystFeedbackRatingEnum _$analystFeedbackRatingEnumValueOf(String name) {
       return _$analystFeedbackRatingEnum_notUseful;
     case 'wrong':
       return _$analystFeedbackRatingEnum_wrong;
+    case 'unknownDefaultOpenApi':
+      return _$analystFeedbackRatingEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$analystFeedbackRatingEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -53,6 +64,7 @@ final BuiltSet<AnalystFeedbackRatingEnum> _$analystFeedbackRatingEnumValues =
       _$analystFeedbackRatingEnum_useful,
       _$analystFeedbackRatingEnum_notUseful,
       _$analystFeedbackRatingEnum_wrong,
+      _$analystFeedbackRatingEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<AnalystFeedbackTargetEnum> _$analystFeedbackTargetEnumSerializer =
@@ -65,10 +77,12 @@ class _$AnalystFeedbackTargetEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'note': 'note',
     'proposal': 'proposal',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'note': 'note',
     'proposal': 'proposal',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -99,11 +113,13 @@ class _$AnalystFeedbackRatingEnumSerializer
     'useful': 'useful',
     'notUseful': 'not_useful',
     'wrong': 'wrong',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'useful': 'useful',
     'not_useful': 'notUseful',
     'wrong': 'wrong',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

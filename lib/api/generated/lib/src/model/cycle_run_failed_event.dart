@@ -233,6 +233,9 @@ class CycleRunFailedEventCadenceEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'on-demand')
   static const CycleRunFailedEventCadenceEnum onDemand =
       _$cycleRunFailedEventCadenceEnum_onDemand;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const CycleRunFailedEventCadenceEnum unknownDefaultOpenApi =
+      _$cycleRunFailedEventCadenceEnum_unknownDefaultOpenApi;
 
   static Serializer<CycleRunFailedEventCadenceEnum> get serializer =>
       _$cycleRunFailedEventCadenceEnumSerializer;

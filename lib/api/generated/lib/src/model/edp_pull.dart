@@ -184,6 +184,9 @@ class EdpPullAuthEnum extends EnumClass {
   static const EdpPullAuthEnum header = _$edpPullAuthEnum_header;
   @BuiltValueEnumConst(wireName: r'basic')
   static const EdpPullAuthEnum basic = _$edpPullAuthEnum_basic;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const EdpPullAuthEnum unknownDefaultOpenApi =
+      _$edpPullAuthEnum_unknownDefaultOpenApi;
 
   static Serializer<EdpPullAuthEnum> get serializer =>
       _$edpPullAuthEnumSerializer;

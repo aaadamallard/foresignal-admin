@@ -10,6 +10,8 @@ const AllowedChatScopeEnum _$allowedChatScopeEnum_read =
     const AllowedChatScopeEnum._('read');
 const AllowedChatScopeEnum _$allowedChatScopeEnum_agent =
     const AllowedChatScopeEnum._('agent');
+const AllowedChatScopeEnum _$allowedChatScopeEnum_unknownDefaultOpenApi =
+    const AllowedChatScopeEnum._('unknownDefaultOpenApi');
 
 AllowedChatScopeEnum _$allowedChatScopeEnumValueOf(String name) {
   switch (name) {
@@ -17,8 +19,10 @@ AllowedChatScopeEnum _$allowedChatScopeEnumValueOf(String name) {
       return _$allowedChatScopeEnum_read;
     case 'agent':
       return _$allowedChatScopeEnum_agent;
+    case 'unknownDefaultOpenApi':
+      return _$allowedChatScopeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$allowedChatScopeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -26,6 +30,7 @@ final BuiltSet<AllowedChatScopeEnum> _$allowedChatScopeEnumValues =
     BuiltSet<AllowedChatScopeEnum>(const <AllowedChatScopeEnum>[
       _$allowedChatScopeEnum_read,
       _$allowedChatScopeEnum_agent,
+      _$allowedChatScopeEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<AllowedChatScopeEnum> _$allowedChatScopeEnumSerializer =
@@ -36,10 +41,12 @@ class _$AllowedChatScopeEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'read': 'read',
     'agent': 'agent',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'read': 'read',
     'agent': 'agent',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

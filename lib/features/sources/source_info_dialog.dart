@@ -111,7 +111,7 @@ class SourceInfoDialog extends ConsumerWidget {
         : (d.credentialFields.isEmpty ? 'No' : 'Optional');
     return <MapEntry<String, Object>>[
       MapEntry<String, Object>('Kinds', kinds.isEmpty ? '—' : kinds.join(', ')),
-      MapEntry<String, Object>('Mode', wireOf(d?.mode ?? source.mode)),
+      MapEntry<String, Object>('Mode', d == null ? wireOf(source.mode, source, 'mode') : wireOf(d.mode, d, 'mode')),
       if (d?.description case final text? when text.isNotEmpty)
         MapEntry<String, Object>('Provides', text),
       MapEntry<String, Object>('Needs credentials', needsKey),
@@ -137,8 +137,8 @@ class SourceInfoDialog extends ConsumerWidget {
       if (licence != null) MapEntry<String, Object>('License', licence),
       if (terms != null) ...<MapEntry<String, Object>>[
         MapEntry<String, Object>('Terms', terms.name),
-        MapEntry<String, Object>('Commercial use', wireText(wireOf(terms.commercialUse))),
-        MapEntry<String, Object>('Redistribution', wireText(wireOf(terms.redistribution))),
+        MapEntry<String, Object>('Commercial use', wireText(wireOf(terms.commercialUse, terms, 'commercialUse'))),
+        MapEntry<String, Object>('Redistribution', wireText(wireOf(terms.redistribution, terms, 'redistribution'))),
         MapEntry<String, Object>('Attribution required', terms.attributionRequired ? 'Yes' : 'No'),
       ],
       if (d.termsUrl case final url?) MapEntry<String, Object>('Terms URL', url),
@@ -171,7 +171,7 @@ class SourceInfoDialog extends ConsumerWidget {
                   _Item(
                     name: p.name,
                     facts: <String>[
-                      wireOf(p.type),
+                      wireOf(p.type, p, 'type'),
                       p.required_ == true ? 'required' : 'optional',
                       if (p.default_?.value case final value?) 'default ${_value(value)}',
                       if (p.allowed case final allowed? when allowed.isNotEmpty)

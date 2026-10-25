@@ -497,6 +497,9 @@ class AchEvidenceSource_Enum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'social-claim')
   static const AchEvidenceSource_Enum socialClaim =
       _$achEvidenceSourceEnum_socialClaim;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const AchEvidenceSource_Enum unknownDefaultOpenApi =
+      _$achEvidenceSourceEnum_unknownDefaultOpenApi;
 
   static Serializer<AchEvidenceSource_Enum> get serializer =>
       _$achEvidenceSourceEnumSerializer;
@@ -516,6 +519,9 @@ class AchEvidenceCredibilityEnum extends EnumClass {
   static const AchEvidenceCredibilityEnum M = _$achEvidenceCredibilityEnum_M;
   @BuiltValueEnumConst(wireName: r'L')
   static const AchEvidenceCredibilityEnum L = _$achEvidenceCredibilityEnum_L;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const AchEvidenceCredibilityEnum unknownDefaultOpenApi =
+      _$achEvidenceCredibilityEnum_unknownDefaultOpenApi;
 
   static Serializer<AchEvidenceCredibilityEnum> get serializer =>
       _$achEvidenceCredibilityEnumSerializer;
@@ -535,6 +541,9 @@ class AchEvidenceRelevanceEnum extends EnumClass {
   static const AchEvidenceRelevanceEnum M = _$achEvidenceRelevanceEnum_M;
   @BuiltValueEnumConst(wireName: r'L')
   static const AchEvidenceRelevanceEnum L = _$achEvidenceRelevanceEnum_L;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const AchEvidenceRelevanceEnum unknownDefaultOpenApi =
+      _$achEvidenceRelevanceEnum_unknownDefaultOpenApi;
 
   static Serializer<AchEvidenceRelevanceEnum> get serializer =>
       _$achEvidenceRelevanceEnumSerializer;
@@ -561,6 +570,9 @@ class AchEvidenceRatingsEnum extends EnumClass {
   static const AchEvidenceRatingsEnum I = _$achEvidenceRatingsEnum_I;
   @BuiltValueEnumConst(wireName: r'II')
   static const AchEvidenceRatingsEnum II = _$achEvidenceRatingsEnum_II;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const AchEvidenceRatingsEnum unknownDefaultOpenApi =
+      _$achEvidenceRatingsEnum_unknownDefaultOpenApi;
 
   static Serializer<AchEvidenceRatingsEnum> get serializer =>
       _$achEvidenceRatingsEnumSerializer;
@@ -577,6 +589,9 @@ class AchEvidenceCaveatsEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'CIRCULAR_REPORTING')
   static const AchEvidenceCaveatsEnum CIRCULAR_REPORTING =
       _$achEvidenceCaveatsEnum_CIRCULAR_REPORTING;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const AchEvidenceCaveatsEnum unknownDefaultOpenApi =
+      _$achEvidenceCaveatsEnum_unknownDefaultOpenApi;
 
   static Serializer<AchEvidenceCaveatsEnum> get serializer =>
       _$achEvidenceCaveatsEnumSerializer;

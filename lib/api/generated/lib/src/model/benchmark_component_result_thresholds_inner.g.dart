@@ -18,6 +18,11 @@ _$benchmarkComponentResultThresholdsInnerComparatorEnum_eq =
 const BenchmarkComponentResultThresholdsInnerComparatorEnum
 _$benchmarkComponentResultThresholdsInnerComparatorEnum_within =
     const BenchmarkComponentResultThresholdsInnerComparatorEnum._('within');
+const BenchmarkComponentResultThresholdsInnerComparatorEnum
+_$benchmarkComponentResultThresholdsInnerComparatorEnum_unknownDefaultOpenApi =
+    const BenchmarkComponentResultThresholdsInnerComparatorEnum._(
+      'unknownDefaultOpenApi',
+    );
 
 BenchmarkComponentResultThresholdsInnerComparatorEnum
 _$benchmarkComponentResultThresholdsInnerComparatorEnumValueOf(String name) {
@@ -30,21 +35,24 @@ _$benchmarkComponentResultThresholdsInnerComparatorEnumValueOf(String name) {
       return _$benchmarkComponentResultThresholdsInnerComparatorEnum_eq;
     case 'within':
       return _$benchmarkComponentResultThresholdsInnerComparatorEnum_within;
+    case 'unknownDefaultOpenApi':
+      return _$benchmarkComponentResultThresholdsInnerComparatorEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$benchmarkComponentResultThresholdsInnerComparatorEnum_unknownDefaultOpenApi;
   }
 }
 
 final BuiltSet<BenchmarkComponentResultThresholdsInnerComparatorEnum>
 _$benchmarkComponentResultThresholdsInnerComparatorEnumValues =
-    BuiltSet<BenchmarkComponentResultThresholdsInnerComparatorEnum>(
-      const <BenchmarkComponentResultThresholdsInnerComparatorEnum>[
-        _$benchmarkComponentResultThresholdsInnerComparatorEnum_le,
-        _$benchmarkComponentResultThresholdsInnerComparatorEnum_ge,
-        _$benchmarkComponentResultThresholdsInnerComparatorEnum_eq,
-        _$benchmarkComponentResultThresholdsInnerComparatorEnum_within,
-      ],
-    );
+    BuiltSet<BenchmarkComponentResultThresholdsInnerComparatorEnum>(const <
+      BenchmarkComponentResultThresholdsInnerComparatorEnum
+    >[
+      _$benchmarkComponentResultThresholdsInnerComparatorEnum_le,
+      _$benchmarkComponentResultThresholdsInnerComparatorEnum_ge,
+      _$benchmarkComponentResultThresholdsInnerComparatorEnum_eq,
+      _$benchmarkComponentResultThresholdsInnerComparatorEnum_within,
+      _$benchmarkComponentResultThresholdsInnerComparatorEnum_unknownDefaultOpenApi,
+    ]);
 
 const BenchmarkComponentResultThresholdsInnerStatusEnum
 _$benchmarkComponentResultThresholdsInnerStatusEnum_pass =
@@ -55,6 +63,11 @@ _$benchmarkComponentResultThresholdsInnerStatusEnum_warn =
 const BenchmarkComponentResultThresholdsInnerStatusEnum
 _$benchmarkComponentResultThresholdsInnerStatusEnum_fail =
     const BenchmarkComponentResultThresholdsInnerStatusEnum._('fail');
+const BenchmarkComponentResultThresholdsInnerStatusEnum
+_$benchmarkComponentResultThresholdsInnerStatusEnum_unknownDefaultOpenApi =
+    const BenchmarkComponentResultThresholdsInnerStatusEnum._(
+      'unknownDefaultOpenApi',
+    );
 
 BenchmarkComponentResultThresholdsInnerStatusEnum
 _$benchmarkComponentResultThresholdsInnerStatusEnumValueOf(String name) {
@@ -65,20 +78,23 @@ _$benchmarkComponentResultThresholdsInnerStatusEnumValueOf(String name) {
       return _$benchmarkComponentResultThresholdsInnerStatusEnum_warn;
     case 'fail':
       return _$benchmarkComponentResultThresholdsInnerStatusEnum_fail;
+    case 'unknownDefaultOpenApi':
+      return _$benchmarkComponentResultThresholdsInnerStatusEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$benchmarkComponentResultThresholdsInnerStatusEnum_unknownDefaultOpenApi;
   }
 }
 
 final BuiltSet<BenchmarkComponentResultThresholdsInnerStatusEnum>
 _$benchmarkComponentResultThresholdsInnerStatusEnumValues =
-    BuiltSet<BenchmarkComponentResultThresholdsInnerStatusEnum>(
-      const <BenchmarkComponentResultThresholdsInnerStatusEnum>[
-        _$benchmarkComponentResultThresholdsInnerStatusEnum_pass,
-        _$benchmarkComponentResultThresholdsInnerStatusEnum_warn,
-        _$benchmarkComponentResultThresholdsInnerStatusEnum_fail,
-      ],
-    );
+    BuiltSet<BenchmarkComponentResultThresholdsInnerStatusEnum>(const <
+      BenchmarkComponentResultThresholdsInnerStatusEnum
+    >[
+      _$benchmarkComponentResultThresholdsInnerStatusEnum_pass,
+      _$benchmarkComponentResultThresholdsInnerStatusEnum_warn,
+      _$benchmarkComponentResultThresholdsInnerStatusEnum_fail,
+      _$benchmarkComponentResultThresholdsInnerStatusEnum_unknownDefaultOpenApi,
+    ]);
 
 Serializer<BenchmarkComponentResultThresholdsInnerComparatorEnum>
 _$benchmarkComponentResultThresholdsInnerComparatorEnumSerializer =
@@ -97,12 +113,14 @@ class _$BenchmarkComponentResultThresholdsInnerComparatorEnumSerializer
     'ge': 'ge',
     'eq': 'eq',
     'within': 'within',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'le': 'le',
     'ge': 'ge',
     'eq': 'eq',
     'within': 'within',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -137,11 +155,13 @@ class _$BenchmarkComponentResultThresholdsInnerStatusEnumSerializer
     'pass': 'pass',
     'warn': 'warn',
     'fail': 'fail',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'pass': 'pass',
     'warn': 'warn',
     'fail': 'fail',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

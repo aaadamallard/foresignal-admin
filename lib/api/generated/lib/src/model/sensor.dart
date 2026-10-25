@@ -635,6 +635,9 @@ class SensorTextOriginEnum extends EnumClass {
       _$sensorTextOriginEnum_deterministic;
   @BuiltValueEnumConst(wireName: r'llm')
   static const SensorTextOriginEnum llm = _$sensorTextOriginEnum_llm;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const SensorTextOriginEnum unknownDefaultOpenApi =
+      _$sensorTextOriginEnum_unknownDefaultOpenApi;
 
   static Serializer<SensorTextOriginEnum> get serializer =>
       _$sensorTextOriginEnumSerializer;
@@ -662,6 +665,9 @@ class SensorSensorKindEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'raster-product')
   static const SensorSensorKindEnum rasterProduct =
       _$sensorSensorKindEnum_rasterProduct;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const SensorSensorKindEnum unknownDefaultOpenApi =
+      _$sensorSensorKindEnum_unknownDefaultOpenApi;
 
   static Serializer<SensorSensorKindEnum> get serializer =>
       _$sensorSensorKindEnumSerializer;

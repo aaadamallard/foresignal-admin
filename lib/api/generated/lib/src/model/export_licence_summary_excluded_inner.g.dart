@@ -15,6 +15,11 @@ _$exportLicenceSummaryExcludedInnerReasonEnum_licenceLocalOnly =
 const ExportLicenceSummaryExcludedInnerReasonEnum
 _$exportLicenceSummaryExcludedInnerReasonEnum_private =
     const ExportLicenceSummaryExcludedInnerReasonEnum._('private');
+const ExportLicenceSummaryExcludedInnerReasonEnum
+_$exportLicenceSummaryExcludedInnerReasonEnum_unknownDefaultOpenApi =
+    const ExportLicenceSummaryExcludedInnerReasonEnum._(
+      'unknownDefaultOpenApi',
+    );
 
 ExportLicenceSummaryExcludedInnerReasonEnum
 _$exportLicenceSummaryExcludedInnerReasonEnumValueOf(String name) {
@@ -25,8 +30,10 @@ _$exportLicenceSummaryExcludedInnerReasonEnumValueOf(String name) {
       return _$exportLicenceSummaryExcludedInnerReasonEnum_licenceLocalOnly;
     case 'private':
       return _$exportLicenceSummaryExcludedInnerReasonEnum_private;
+    case 'unknownDefaultOpenApi':
+      return _$exportLicenceSummaryExcludedInnerReasonEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$exportLicenceSummaryExcludedInnerReasonEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -37,6 +44,7 @@ _$exportLicenceSummaryExcludedInnerReasonEnumValues =
         _$exportLicenceSummaryExcludedInnerReasonEnum_licenceForbidden,
         _$exportLicenceSummaryExcludedInnerReasonEnum_licenceLocalOnly,
         _$exportLicenceSummaryExcludedInnerReasonEnum_private,
+        _$exportLicenceSummaryExcludedInnerReasonEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -51,11 +59,13 @@ class _$ExportLicenceSummaryExcludedInnerReasonEnumSerializer
     'licenceForbidden': 'licence-forbidden',
     'licenceLocalOnly': 'licence-local-only',
     'private': 'private',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'licence-forbidden': 'licenceForbidden',
     'licence-local-only': 'licenceLocalOnly',
     'private': 'private',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

@@ -14,6 +14,8 @@ const HypothesisInputTypeEnum _$hypothesisInputTypeEnum_speculativeLink =
     const HypothesisInputTypeEnum._('speculativeLink');
 const HypothesisInputTypeEnum _$hypothesisInputTypeEnum_other =
     const HypothesisInputTypeEnum._('other');
+const HypothesisInputTypeEnum _$hypothesisInputTypeEnum_unknownDefaultOpenApi =
+    const HypothesisInputTypeEnum._('unknownDefaultOpenApi');
 
 HypothesisInputTypeEnum _$hypothesisInputTypeEnumValueOf(String name) {
   switch (name) {
@@ -25,8 +27,10 @@ HypothesisInputTypeEnum _$hypothesisInputTypeEnumValueOf(String name) {
       return _$hypothesisInputTypeEnum_speculativeLink;
     case 'other':
       return _$hypothesisInputTypeEnum_other;
+    case 'unknownDefaultOpenApi':
+      return _$hypothesisInputTypeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$hypothesisInputTypeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -36,6 +40,7 @@ final BuiltSet<HypothesisInputTypeEnum> _$hypothesisInputTypeEnumValues =
       _$hypothesisInputTypeEnum_explanation,
       _$hypothesisInputTypeEnum_speculativeLink,
       _$hypothesisInputTypeEnum_other,
+      _$hypothesisInputTypeEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<HypothesisInputTypeEnum> _$hypothesisInputTypeEnumSerializer =
@@ -48,12 +53,14 @@ class _$HypothesisInputTypeEnumSerializer
     'explanation': 'explanation',
     'speculativeLink': 'speculative-link',
     'other': 'other',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'outcome': 'outcome',
     'explanation': 'explanation',
     'speculative-link': 'speculativeLink',
     'other': 'other',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

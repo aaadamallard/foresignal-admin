@@ -11,6 +11,9 @@ _$leadTimeStatsFiltersFoundByEnum_organic =
     const LeadTimeStatsFiltersFoundByEnum._('organic');
 const LeadTimeStatsFiltersFoundByEnum _$leadTimeStatsFiltersFoundByEnum_cue =
     const LeadTimeStatsFiltersFoundByEnum._('cue');
+const LeadTimeStatsFiltersFoundByEnum
+_$leadTimeStatsFiltersFoundByEnum_unknownDefaultOpenApi =
+    const LeadTimeStatsFiltersFoundByEnum._('unknownDefaultOpenApi');
 
 LeadTimeStatsFiltersFoundByEnum _$leadTimeStatsFiltersFoundByEnumValueOf(
   String name,
@@ -20,8 +23,10 @@ LeadTimeStatsFiltersFoundByEnum _$leadTimeStatsFiltersFoundByEnumValueOf(
       return _$leadTimeStatsFiltersFoundByEnum_organic;
     case 'cue':
       return _$leadTimeStatsFiltersFoundByEnum_cue;
+    case 'unknownDefaultOpenApi':
+      return _$leadTimeStatsFiltersFoundByEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$leadTimeStatsFiltersFoundByEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -31,6 +36,7 @@ _$leadTimeStatsFiltersFoundByEnumValues =
       const <LeadTimeStatsFiltersFoundByEnum>[
         _$leadTimeStatsFiltersFoundByEnum_organic,
         _$leadTimeStatsFiltersFoundByEnum_cue,
+        _$leadTimeStatsFiltersFoundByEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -43,10 +49,12 @@ class _$LeadTimeStatsFiltersFoundByEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'organic': 'organic',
     'cue': 'cue',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'organic': 'organic',
     'cue': 'cue',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

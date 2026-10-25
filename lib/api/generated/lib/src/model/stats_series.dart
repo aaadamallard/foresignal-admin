@@ -293,6 +293,9 @@ class StatsSeriesMeasureEnum extends EnumClass {
   static const StatsSeriesMeasureEnum edges = _$statsSeriesMeasureEnum_edges;
   @BuiltValueEnumConst(wireName: r'alerts')
   static const StatsSeriesMeasureEnum alerts = _$statsSeriesMeasureEnum_alerts;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const StatsSeriesMeasureEnum unknownDefaultOpenApi =
+      _$statsSeriesMeasureEnum_unknownDefaultOpenApi;
 
   static Serializer<StatsSeriesMeasureEnum> get serializer =>
       _$statsSeriesMeasureEnumSerializer;
@@ -313,6 +316,9 @@ class StatsSeriesGroupByEnum extends EnumClass {
       _$statsSeriesGroupByEnum_source_;
   @BuiltValueEnumConst(wireName: r'kind')
   static const StatsSeriesGroupByEnum kind = _$statsSeriesGroupByEnum_kind;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const StatsSeriesGroupByEnum unknownDefaultOpenApi =
+      _$statsSeriesGroupByEnum_unknownDefaultOpenApi;
 
   static Serializer<StatsSeriesGroupByEnum> get serializer =>
       _$statsSeriesGroupByEnumSerializer;
@@ -338,6 +344,9 @@ class StatsSeriesTimeFieldEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'event')
   static const StatsSeriesTimeFieldEnum event =
       _$statsSeriesTimeFieldEnum_event;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const StatsSeriesTimeFieldEnum unknownDefaultOpenApi =
+      _$statsSeriesTimeFieldEnum_unknownDefaultOpenApi;
 
   static Serializer<StatsSeriesTimeFieldEnum> get serializer =>
       _$statsSeriesTimeFieldEnumSerializer;
@@ -357,6 +366,9 @@ class StatsSeriesBackendEnum extends EnumClass {
   static const StatsSeriesBackendEnum raw = _$statsSeriesBackendEnum_raw;
   @BuiltValueEnumConst(wireName: r'mixed')
   static const StatsSeriesBackendEnum mixed = _$statsSeriesBackendEnum_mixed;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const StatsSeriesBackendEnum unknownDefaultOpenApi =
+      _$statsSeriesBackendEnum_unknownDefaultOpenApi;
 
   static Serializer<StatsSeriesBackendEnum> get serializer =>
       _$statsSeriesBackendEnumSerializer;

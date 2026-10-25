@@ -16,6 +16,8 @@ const RevisionDriverKindEnum _$revisionDriverKindEnum_review =
     const RevisionDriverKindEnum._('review');
 const RevisionDriverKindEnum _$revisionDriverKindEnum_operator_ =
     const RevisionDriverKindEnum._('operator_');
+const RevisionDriverKindEnum _$revisionDriverKindEnum_unknownDefaultOpenApi =
+    const RevisionDriverKindEnum._('unknownDefaultOpenApi');
 
 RevisionDriverKindEnum _$revisionDriverKindEnumValueOf(String name) {
   switch (name) {
@@ -29,8 +31,10 @@ RevisionDriverKindEnum _$revisionDriverKindEnumValueOf(String name) {
       return _$revisionDriverKindEnum_review;
     case 'operator_':
       return _$revisionDriverKindEnum_operator_;
+    case 'unknownDefaultOpenApi':
+      return _$revisionDriverKindEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$revisionDriverKindEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -41,6 +45,7 @@ final BuiltSet<RevisionDriverKindEnum> _$revisionDriverKindEnumValues =
       _$revisionDriverKindEnum_baseRate,
       _$revisionDriverKindEnum_review,
       _$revisionDriverKindEnum_operator_,
+      _$revisionDriverKindEnum_unknownDefaultOpenApi,
     ]);
 
 const RevisionDriverSuppressionReasonEnum
@@ -55,6 +60,9 @@ _$revisionDriverSuppressionReasonEnum_damped =
 const RevisionDriverSuppressionReasonEnum
 _$revisionDriverSuppressionReasonEnum_capped =
     const RevisionDriverSuppressionReasonEnum._('capped');
+const RevisionDriverSuppressionReasonEnum
+_$revisionDriverSuppressionReasonEnum_unknownDefaultOpenApi =
+    const RevisionDriverSuppressionReasonEnum._('unknownDefaultOpenApi');
 
 RevisionDriverSuppressionReasonEnum
 _$revisionDriverSuppressionReasonEnumValueOf(String name) {
@@ -67,8 +75,10 @@ _$revisionDriverSuppressionReasonEnumValueOf(String name) {
       return _$revisionDriverSuppressionReasonEnum_damped;
     case 'capped':
       return _$revisionDriverSuppressionReasonEnum_capped;
+    case 'unknownDefaultOpenApi':
+      return _$revisionDriverSuppressionReasonEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$revisionDriverSuppressionReasonEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -80,6 +90,7 @@ _$revisionDriverSuppressionReasonEnumValues =
         _$revisionDriverSuppressionReasonEnum_sameFamilyDay,
         _$revisionDriverSuppressionReasonEnum_damped,
         _$revisionDriverSuppressionReasonEnum_capped,
+        _$revisionDriverSuppressionReasonEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -97,6 +108,7 @@ class _$RevisionDriverKindEnumSerializer
     'baseRate': 'base-rate',
     'review': 'review',
     'operator_': 'operator',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'indicator': 'indicator',
@@ -104,6 +116,7 @@ class _$RevisionDriverKindEnumSerializer
     'base-rate': 'baseRate',
     'review': 'review',
     'operator': 'operator_',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -135,12 +148,14 @@ class _$RevisionDriverSuppressionReasonEnumSerializer
     'sameFamilyDay': 'same-family-day',
     'damped': 'damped',
     'capped': 'capped',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'same-evidence-group': 'sameEvidenceGroup',
     'same-family-day': 'sameFamilyDay',
     'damped': 'damped',
     'capped': 'capped',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

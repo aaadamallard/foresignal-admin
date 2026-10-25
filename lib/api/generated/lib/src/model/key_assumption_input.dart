@@ -259,6 +259,9 @@ class KeyAssumptionInputStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'broken')
   static const KeyAssumptionInputStatusEnum broken =
       _$keyAssumptionInputStatusEnum_broken;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const KeyAssumptionInputStatusEnum unknownDefaultOpenApi =
+      _$keyAssumptionInputStatusEnum_unknownDefaultOpenApi;
 
   static Serializer<KeyAssumptionInputStatusEnum> get serializer =>
       _$keyAssumptionInputStatusEnumSerializer;

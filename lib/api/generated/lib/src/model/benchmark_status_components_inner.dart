@@ -296,6 +296,9 @@ class BenchmarkStatusComponentsInnerStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'unknown')
   static const BenchmarkStatusComponentsInnerStatusEnum unknown =
       _$benchmarkStatusComponentsInnerStatusEnum_unknown;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const BenchmarkStatusComponentsInnerStatusEnum unknownDefaultOpenApi =
+      _$benchmarkStatusComponentsInnerStatusEnum_unknownDefaultOpenApi;
 
   static Serializer<BenchmarkStatusComponentsInnerStatusEnum> get serializer =>
       _$benchmarkStatusComponentsInnerStatusEnumSerializer;
@@ -318,6 +321,9 @@ class BenchmarkStatusComponentsInnerSuiteEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'all')
   static const BenchmarkStatusComponentsInnerSuiteEnum all =
       _$benchmarkStatusComponentsInnerSuiteEnum_all;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const BenchmarkStatusComponentsInnerSuiteEnum unknownDefaultOpenApi =
+      _$benchmarkStatusComponentsInnerSuiteEnum_unknownDefaultOpenApi;
 
   static Serializer<BenchmarkStatusComponentsInnerSuiteEnum> get serializer =>
       _$benchmarkStatusComponentsInnerSuiteEnumSerializer;

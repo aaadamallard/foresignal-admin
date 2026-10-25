@@ -148,6 +148,9 @@ class TagAssignResultSkippedInnerReasonEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'invalid-ref')
   static const TagAssignResultSkippedInnerReasonEnum invalidRef =
       _$tagAssignResultSkippedInnerReasonEnum_invalidRef;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const TagAssignResultSkippedInnerReasonEnum unknownDefaultOpenApi =
+      _$tagAssignResultSkippedInnerReasonEnum_unknownDefaultOpenApi;
 
   static Serializer<TagAssignResultSkippedInnerReasonEnum> get serializer =>
       _$tagAssignResultSkippedInnerReasonEnumSerializer;

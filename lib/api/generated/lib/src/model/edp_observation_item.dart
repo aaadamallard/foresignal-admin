@@ -329,6 +329,9 @@ class EdpObservationItemTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'observation')
   static const EdpObservationItemTypeEnum observation =
       _$edpObservationItemTypeEnum_observation;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const EdpObservationItemTypeEnum unknownDefaultOpenApi =
+      _$edpObservationItemTypeEnum_unknownDefaultOpenApi;
 
   static Serializer<EdpObservationItemTypeEnum> get serializer =>
       _$edpObservationItemTypeEnumSerializer;

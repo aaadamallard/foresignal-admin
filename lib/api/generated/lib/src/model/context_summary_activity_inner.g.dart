@@ -18,6 +18,9 @@ _$contextSummaryActivityInnerTypeEnum_situationChange =
 const ContextSummaryActivityInnerTypeEnum
 _$contextSummaryActivityInnerTypeEnum_record =
     const ContextSummaryActivityInnerTypeEnum._('record');
+const ContextSummaryActivityInnerTypeEnum
+_$contextSummaryActivityInnerTypeEnum_unknownDefaultOpenApi =
+    const ContextSummaryActivityInnerTypeEnum._('unknownDefaultOpenApi');
 
 ContextSummaryActivityInnerTypeEnum
 _$contextSummaryActivityInnerTypeEnumValueOf(String name) {
@@ -30,8 +33,10 @@ _$contextSummaryActivityInnerTypeEnumValueOf(String name) {
       return _$contextSummaryActivityInnerTypeEnum_situationChange;
     case 'record':
       return _$contextSummaryActivityInnerTypeEnum_record;
+    case 'unknownDefaultOpenApi':
+      return _$contextSummaryActivityInnerTypeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$contextSummaryActivityInnerTypeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -43,6 +48,7 @@ _$contextSummaryActivityInnerTypeEnumValues =
         _$contextSummaryActivityInnerTypeEnum_finding,
         _$contextSummaryActivityInnerTypeEnum_situationChange,
         _$contextSummaryActivityInnerTypeEnum_record,
+        _$contextSummaryActivityInnerTypeEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -57,12 +63,14 @@ class _$ContextSummaryActivityInnerTypeEnumSerializer
     'finding': 'finding',
     'situationChange': 'situation-change',
     'record': 'record',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'alert': 'alert',
     'finding': 'finding',
     'situation-change': 'situationChange',
     'record': 'record',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

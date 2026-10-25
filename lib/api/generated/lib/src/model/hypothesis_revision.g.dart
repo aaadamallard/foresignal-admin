@@ -26,6 +26,9 @@ const HypothesisRevisionCauseEnum _$hypothesisRevisionCauseEnum_operator_ =
     const HypothesisRevisionCauseEnum._('operator_');
 const HypothesisRevisionCauseEnum _$hypothesisRevisionCauseEnum_created =
     const HypothesisRevisionCauseEnum._('created');
+const HypothesisRevisionCauseEnum
+_$hypothesisRevisionCauseEnum_unknownDefaultOpenApi =
+    const HypothesisRevisionCauseEnum._('unknownDefaultOpenApi');
 
 HypothesisRevisionCauseEnum _$hypothesisRevisionCauseEnumValueOf(String name) {
   switch (name) {
@@ -45,8 +48,10 @@ HypothesisRevisionCauseEnum _$hypothesisRevisionCauseEnumValueOf(String name) {
       return _$hypothesisRevisionCauseEnum_operator_;
     case 'created':
       return _$hypothesisRevisionCauseEnum_created;
+    case 'unknownDefaultOpenApi':
+      return _$hypothesisRevisionCauseEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$hypothesisRevisionCauseEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -61,6 +66,7 @@ _$hypothesisRevisionCauseEnumValues =
       _$hypothesisRevisionCauseEnum_review,
       _$hypothesisRevisionCauseEnum_operator_,
       _$hypothesisRevisionCauseEnum_created,
+      _$hypothesisRevisionCauseEnum_unknownDefaultOpenApi,
     ]);
 
 const HypothesisRevisionRationaleOriginEnum
@@ -72,6 +78,9 @@ _$hypothesisRevisionRationaleOriginEnum_operator_ =
 const HypothesisRevisionRationaleOriginEnum
 _$hypothesisRevisionRationaleOriginEnum_analyst =
     const HypothesisRevisionRationaleOriginEnum._('analyst');
+const HypothesisRevisionRationaleOriginEnum
+_$hypothesisRevisionRationaleOriginEnum_unknownDefaultOpenApi =
+    const HypothesisRevisionRationaleOriginEnum._('unknownDefaultOpenApi');
 
 HypothesisRevisionRationaleOriginEnum
 _$hypothesisRevisionRationaleOriginEnumValueOf(String name) {
@@ -82,8 +91,10 @@ _$hypothesisRevisionRationaleOriginEnumValueOf(String name) {
       return _$hypothesisRevisionRationaleOriginEnum_operator_;
     case 'analyst':
       return _$hypothesisRevisionRationaleOriginEnum_analyst;
+    case 'unknownDefaultOpenApi':
+      return _$hypothesisRevisionRationaleOriginEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$hypothesisRevisionRationaleOriginEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -94,6 +105,7 @@ _$hypothesisRevisionRationaleOriginEnumValues =
         _$hypothesisRevisionRationaleOriginEnum_deterministic,
         _$hypothesisRevisionRationaleOriginEnum_operator_,
         _$hypothesisRevisionRationaleOriginEnum_analyst,
+        _$hypothesisRevisionRationaleOriginEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -115,6 +127,7 @@ class _$HypothesisRevisionCauseEnumSerializer
     'review': 'review',
     'operator_': 'operator',
     'created': 'created',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'indicator-observed': 'indicatorObserved',
@@ -125,6 +138,7 @@ class _$HypothesisRevisionCauseEnumSerializer
     'review': 'review',
     'operator': 'operator_',
     'created': 'created',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -155,11 +169,13 @@ class _$HypothesisRevisionRationaleOriginEnumSerializer
     'deterministic': 'deterministic',
     'operator_': 'operator',
     'analyst': 'analyst',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'deterministic': 'deterministic',
     'operator': 'operator_',
     'analyst': 'analyst',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

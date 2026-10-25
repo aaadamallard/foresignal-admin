@@ -17,6 +17,9 @@ _$canonicalEventQualityFlagsEnum_SINGLE_ORIGINATOR =
 const CanonicalEventQualityFlagsEnum
 _$canonicalEventQualityFlagsEnum_LATE_REVISION =
     const CanonicalEventQualityFlagsEnum._('LATE_REVISION');
+const CanonicalEventQualityFlagsEnum
+_$canonicalEventQualityFlagsEnum_unknownDefaultOpenApi =
+    const CanonicalEventQualityFlagsEnum._('unknownDefaultOpenApi');
 
 CanonicalEventQualityFlagsEnum _$canonicalEventQualityFlagsEnumValueOf(
   String name,
@@ -30,8 +33,10 @@ CanonicalEventQualityFlagsEnum _$canonicalEventQualityFlagsEnumValueOf(
       return _$canonicalEventQualityFlagsEnum_SINGLE_ORIGINATOR;
     case 'LATE_REVISION':
       return _$canonicalEventQualityFlagsEnum_LATE_REVISION;
+    case 'unknownDefaultOpenApi':
+      return _$canonicalEventQualityFlagsEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$canonicalEventQualityFlagsEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -43,6 +48,7 @@ _$canonicalEventQualityFlagsEnumValues =
         _$canonicalEventQualityFlagsEnum_TIMESTAMP_CONFLICT,
         _$canonicalEventQualityFlagsEnum_SINGLE_ORIGINATOR,
         _$canonicalEventQualityFlagsEnum_LATE_REVISION,
+        _$canonicalEventQualityFlagsEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -52,6 +58,9 @@ const CanonicalEventStatusEnum _$canonicalEventStatusEnum_merged =
     const CanonicalEventStatusEnum._('merged');
 const CanonicalEventStatusEnum _$canonicalEventStatusEnum_closed =
     const CanonicalEventStatusEnum._('closed');
+const CanonicalEventStatusEnum
+_$canonicalEventStatusEnum_unknownDefaultOpenApi =
+    const CanonicalEventStatusEnum._('unknownDefaultOpenApi');
 
 CanonicalEventStatusEnum _$canonicalEventStatusEnumValueOf(String name) {
   switch (name) {
@@ -61,8 +70,10 @@ CanonicalEventStatusEnum _$canonicalEventStatusEnumValueOf(String name) {
       return _$canonicalEventStatusEnum_merged;
     case 'closed':
       return _$canonicalEventStatusEnum_closed;
+    case 'unknownDefaultOpenApi':
+      return _$canonicalEventStatusEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$canonicalEventStatusEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -71,6 +82,7 @@ final BuiltSet<CanonicalEventStatusEnum> _$canonicalEventStatusEnumValues =
       _$canonicalEventStatusEnum_open,
       _$canonicalEventStatusEnum_merged,
       _$canonicalEventStatusEnum_closed,
+      _$canonicalEventStatusEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<CanonicalEventQualityFlagsEnum>
@@ -86,12 +98,14 @@ class _$CanonicalEventQualityFlagsEnumSerializer
     'TIMESTAMP_CONFLICT': 'TIMESTAMP_CONFLICT',
     'SINGLE_ORIGINATOR': 'SINGLE_ORIGINATOR',
     'LATE_REVISION': 'LATE_REVISION',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'ECHO': 'ECHO',
     'TIMESTAMP_CONFLICT': 'TIMESTAMP_CONFLICT',
     'SINGLE_ORIGINATOR': 'SINGLE_ORIGINATOR',
     'LATE_REVISION': 'LATE_REVISION',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -122,11 +136,13 @@ class _$CanonicalEventStatusEnumSerializer
     'open': 'open',
     'merged': 'merged',
     'closed': 'closed',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'open': 'open',
     'merged': 'merged',
     'closed': 'closed',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

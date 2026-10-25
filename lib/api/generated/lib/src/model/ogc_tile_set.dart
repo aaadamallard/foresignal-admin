@@ -243,6 +243,9 @@ class _$OgcTileSetSerializer implements PrimitiveSerializer<OgcTileSet> {
 class OgcTileSetDataTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'map')
   static const OgcTileSetDataTypeEnum map = _$ogcTileSetDataTypeEnum_map;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const OgcTileSetDataTypeEnum unknownDefaultOpenApi =
+      _$ogcTileSetDataTypeEnum_unknownDefaultOpenApi;
 
   static Serializer<OgcTileSetDataTypeEnum> get serializer =>
       _$ogcTileSetDataTypeEnumSerializer;

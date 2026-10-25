@@ -46,6 +46,8 @@ const RelationInputTypeEnum _$relationInputTypeEnum_beneficialOwner =
     const RelationInputTypeEnum._('beneficialOwner');
 const RelationInputTypeEnum _$relationInputTypeEnum_affiliatedWith =
     const RelationInputTypeEnum._('affiliatedWith');
+const RelationInputTypeEnum _$relationInputTypeEnum_unknownDefaultOpenApi =
+    const RelationInputTypeEnum._('unknownDefaultOpenApi');
 
 RelationInputTypeEnum _$relationInputTypeEnumValueOf(String name) {
   switch (name) {
@@ -89,8 +91,10 @@ RelationInputTypeEnum _$relationInputTypeEnumValueOf(String name) {
       return _$relationInputTypeEnum_beneficialOwner;
     case 'affiliatedWith':
       return _$relationInputTypeEnum_affiliatedWith;
+    case 'unknownDefaultOpenApi':
+      return _$relationInputTypeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$relationInputTypeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -116,6 +120,7 @@ final BuiltSet<RelationInputTypeEnum> _$relationInputTypeEnumValues =
       _$relationInputTypeEnum_officerOf,
       _$relationInputTypeEnum_beneficialOwner,
       _$relationInputTypeEnum_affiliatedWith,
+      _$relationInputTypeEnum_unknownDefaultOpenApi,
     ]);
 
 const RelationInputLabelEnum _$relationInputLabelEnum_confirmed =
@@ -126,6 +131,8 @@ const RelationInputLabelEnum _$relationInputLabelEnum_possible =
     const RelationInputLabelEnum._('possible');
 const RelationInputLabelEnum _$relationInputLabelEnum_speculative =
     const RelationInputLabelEnum._('speculative');
+const RelationInputLabelEnum _$relationInputLabelEnum_unknownDefaultOpenApi =
+    const RelationInputLabelEnum._('unknownDefaultOpenApi');
 
 RelationInputLabelEnum _$relationInputLabelEnumValueOf(String name) {
   switch (name) {
@@ -137,8 +144,10 @@ RelationInputLabelEnum _$relationInputLabelEnumValueOf(String name) {
       return _$relationInputLabelEnum_possible;
     case 'speculative':
       return _$relationInputLabelEnum_speculative;
+    case 'unknownDefaultOpenApi':
+      return _$relationInputLabelEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$relationInputLabelEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -148,6 +157,7 @@ final BuiltSet<RelationInputLabelEnum> _$relationInputLabelEnumValues =
       _$relationInputLabelEnum_likely,
       _$relationInputLabelEnum_possible,
       _$relationInputLabelEnum_speculative,
+      _$relationInputLabelEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<RelationInputTypeEnum> _$relationInputTypeEnumSerializer =
@@ -178,6 +188,7 @@ class _$RelationInputTypeEnumSerializer
     'officerOf': 'officer-of',
     'beneficialOwner': 'beneficial-owner',
     'affiliatedWith': 'affiliated-with',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'member-of': 'memberOf',
@@ -200,6 +211,7 @@ class _$RelationInputTypeEnumSerializer
     'officer-of': 'officerOf',
     'beneficial-owner': 'beneficialOwner',
     'affiliated-with': 'affiliatedWith',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -231,12 +243,14 @@ class _$RelationInputLabelEnumSerializer
     'likely': 'likely',
     'possible': 'possible',
     'speculative': 'speculative',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'confirmed': 'confirmed',
     'likely': 'likely',
     'possible': 'possible',
     'speculative': 'speculative',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

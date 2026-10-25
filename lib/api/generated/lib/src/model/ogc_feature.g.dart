@@ -8,19 +8,24 @@ part of 'ogc_feature.dart';
 
 const OgcFeatureTypeEnum _$ogcFeatureTypeEnum_feature =
     const OgcFeatureTypeEnum._('feature');
+const OgcFeatureTypeEnum _$ogcFeatureTypeEnum_unknownDefaultOpenApi =
+    const OgcFeatureTypeEnum._('unknownDefaultOpenApi');
 
 OgcFeatureTypeEnum _$ogcFeatureTypeEnumValueOf(String name) {
   switch (name) {
     case 'feature':
       return _$ogcFeatureTypeEnum_feature;
+    case 'unknownDefaultOpenApi':
+      return _$ogcFeatureTypeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$ogcFeatureTypeEnum_unknownDefaultOpenApi;
   }
 }
 
 final BuiltSet<OgcFeatureTypeEnum> _$ogcFeatureTypeEnumValues =
     BuiltSet<OgcFeatureTypeEnum>(const <OgcFeatureTypeEnum>[
       _$ogcFeatureTypeEnum_feature,
+      _$ogcFeatureTypeEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<OgcFeatureTypeEnum> _$ogcFeatureTypeEnumSerializer =
@@ -30,9 +35,11 @@ class _$OgcFeatureTypeEnumSerializer
     implements PrimitiveSerializer<OgcFeatureTypeEnum> {
   static const Map<String, Object> _toWire = const <String, Object>{
     'feature': 'Feature',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'Feature': 'feature',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

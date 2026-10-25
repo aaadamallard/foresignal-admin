@@ -12,6 +12,9 @@ const NotificationDetailSeverityEnum _$notificationDetailSeverityEnum_warning =
     const NotificationDetailSeverityEnum._('warning');
 const NotificationDetailSeverityEnum _$notificationDetailSeverityEnum_critical =
     const NotificationDetailSeverityEnum._('critical');
+const NotificationDetailSeverityEnum
+_$notificationDetailSeverityEnum_unknownDefaultOpenApi =
+    const NotificationDetailSeverityEnum._('unknownDefaultOpenApi');
 
 NotificationDetailSeverityEnum _$notificationDetailSeverityEnumValueOf(
   String name,
@@ -23,8 +26,10 @@ NotificationDetailSeverityEnum _$notificationDetailSeverityEnumValueOf(
       return _$notificationDetailSeverityEnum_warning;
     case 'critical':
       return _$notificationDetailSeverityEnum_critical;
+    case 'unknownDefaultOpenApi':
+      return _$notificationDetailSeverityEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$notificationDetailSeverityEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -35,6 +40,7 @@ _$notificationDetailSeverityEnumValues =
         _$notificationDetailSeverityEnum_info,
         _$notificationDetailSeverityEnum_warning,
         _$notificationDetailSeverityEnum_critical,
+        _$notificationDetailSeverityEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -47,6 +53,9 @@ _$notificationDetailAlertStateEnum_acknowledged =
 const NotificationDetailAlertStateEnum
 _$notificationDetailAlertStateEnum_resolved =
     const NotificationDetailAlertStateEnum._('resolved');
+const NotificationDetailAlertStateEnum
+_$notificationDetailAlertStateEnum_unknownDefaultOpenApi =
+    const NotificationDetailAlertStateEnum._('unknownDefaultOpenApi');
 
 NotificationDetailAlertStateEnum _$notificationDetailAlertStateEnumValueOf(
   String name,
@@ -58,8 +67,10 @@ NotificationDetailAlertStateEnum _$notificationDetailAlertStateEnumValueOf(
       return _$notificationDetailAlertStateEnum_acknowledged;
     case 'resolved':
       return _$notificationDetailAlertStateEnum_resolved;
+    case 'unknownDefaultOpenApi':
+      return _$notificationDetailAlertStateEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$notificationDetailAlertStateEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -70,6 +81,7 @@ _$notificationDetailAlertStateEnumValues =
         _$notificationDetailAlertStateEnum_firing,
         _$notificationDetailAlertStateEnum_acknowledged,
         _$notificationDetailAlertStateEnum_resolved,
+        _$notificationDetailAlertStateEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -86,11 +98,13 @@ class _$NotificationDetailSeverityEnumSerializer
     'info': 'info',
     'warning': 'warning',
     'critical': 'critical',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'info': 'info',
     'warning': 'warning',
     'critical': 'critical',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -121,11 +135,13 @@ class _$NotificationDetailAlertStateEnumSerializer
     'firing': 'firing',
     'acknowledged': 'acknowledged',
     'resolved': 'resolved',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'firing': 'firing',
     'acknowledged': 'acknowledged',
     'resolved': 'resolved',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

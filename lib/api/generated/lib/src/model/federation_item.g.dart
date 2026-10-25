@@ -33,6 +33,9 @@ _$federationItemPersistReasonEnum_TRIGGER_EDGE =
 const FederationItemPersistReasonEnum
 _$federationItemPersistReasonEnum_SNAPSHOT =
     const FederationItemPersistReasonEnum._('SNAPSHOT');
+const FederationItemPersistReasonEnum
+_$federationItemPersistReasonEnum_unknownDefaultOpenApi =
+    const FederationItemPersistReasonEnum._('unknownDefaultOpenApi');
 
 FederationItemPersistReasonEnum _$federationItemPersistReasonEnumValueOf(
   String name,
@@ -58,8 +61,10 @@ FederationItemPersistReasonEnum _$federationItemPersistReasonEnumValueOf(
       return _$federationItemPersistReasonEnum_TRIGGER_EDGE;
     case 'SNAPSHOT':
       return _$federationItemPersistReasonEnum_SNAPSHOT;
+    case 'unknownDefaultOpenApi':
+      return _$federationItemPersistReasonEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$federationItemPersistReasonEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -77,6 +82,7 @@ _$federationItemPersistReasonEnumValues =
         _$federationItemPersistReasonEnum_HEARTBEAT,
         _$federationItemPersistReasonEnum_TRIGGER_EDGE,
         _$federationItemPersistReasonEnum_SNAPSHOT,
+        _$federationItemPersistReasonEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -84,6 +90,9 @@ const FederationItemHistoryTierEnum _$federationItemHistoryTierEnum_STANDARD =
     const FederationItemHistoryTierEnum._('STANDARD');
 const FederationItemHistoryTierEnum _$federationItemHistoryTierEnum_TRACK =
     const FederationItemHistoryTierEnum._('TRACK');
+const FederationItemHistoryTierEnum
+_$federationItemHistoryTierEnum_unknownDefaultOpenApi =
+    const FederationItemHistoryTierEnum._('unknownDefaultOpenApi');
 
 FederationItemHistoryTierEnum _$federationItemHistoryTierEnumValueOf(
   String name,
@@ -93,8 +102,10 @@ FederationItemHistoryTierEnum _$federationItemHistoryTierEnumValueOf(
       return _$federationItemHistoryTierEnum_STANDARD;
     case 'TRACK':
       return _$federationItemHistoryTierEnum_TRACK;
+    case 'unknownDefaultOpenApi':
+      return _$federationItemHistoryTierEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$federationItemHistoryTierEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -103,6 +114,7 @@ _$federationItemHistoryTierEnumValues = BuiltSet<FederationItemHistoryTierEnum>(
   const <FederationItemHistoryTierEnum>[
     _$federationItemHistoryTierEnum_STANDARD,
     _$federationItemHistoryTierEnum_TRACK,
+    _$federationItemHistoryTierEnum_unknownDefaultOpenApi,
   ],
 );
 
@@ -126,6 +138,7 @@ class _$FederationItemPersistReasonEnumSerializer
     'HEARTBEAT': 'HEARTBEAT',
     'TRIGGER_EDGE': 'TRIGGER_EDGE',
     'SNAPSHOT': 'SNAPSHOT',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'FIRST': 'FIRST',
@@ -138,6 +151,7 @@ class _$FederationItemPersistReasonEnumSerializer
     'HEARTBEAT': 'HEARTBEAT',
     'TRIGGER_EDGE': 'TRIGGER_EDGE',
     'SNAPSHOT': 'SNAPSHOT',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -167,10 +181,12 @@ class _$FederationItemHistoryTierEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'STANDARD': 'STANDARD',
     'TRACK': 'TRACK',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'STANDARD': 'STANDARD',
     'TRACK': 'TRACK',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

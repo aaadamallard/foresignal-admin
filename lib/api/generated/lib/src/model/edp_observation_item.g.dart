@@ -8,19 +8,25 @@ part of 'edp_observation_item.dart';
 
 const EdpObservationItemTypeEnum _$edpObservationItemTypeEnum_observation =
     const EdpObservationItemTypeEnum._('observation');
+const EdpObservationItemTypeEnum
+_$edpObservationItemTypeEnum_unknownDefaultOpenApi =
+    const EdpObservationItemTypeEnum._('unknownDefaultOpenApi');
 
 EdpObservationItemTypeEnum _$edpObservationItemTypeEnumValueOf(String name) {
   switch (name) {
     case 'observation':
       return _$edpObservationItemTypeEnum_observation;
+    case 'unknownDefaultOpenApi':
+      return _$edpObservationItemTypeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$edpObservationItemTypeEnum_unknownDefaultOpenApi;
   }
 }
 
 final BuiltSet<EdpObservationItemTypeEnum> _$edpObservationItemTypeEnumValues =
     BuiltSet<EdpObservationItemTypeEnum>(const <EdpObservationItemTypeEnum>[
       _$edpObservationItemTypeEnum_observation,
+      _$edpObservationItemTypeEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<EdpObservationItemTypeEnum> _$edpObservationItemTypeEnumSerializer =
@@ -30,9 +36,11 @@ class _$EdpObservationItemTypeEnumSerializer
     implements PrimitiveSerializer<EdpObservationItemTypeEnum> {
   static const Map<String, Object> _toWire = const <String, Object>{
     'observation': 'observation',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'observation': 'observation',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

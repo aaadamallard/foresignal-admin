@@ -21,6 +21,9 @@ _$llmProviderInputOptionsEffortEnum_xhigh =
 const LlmProviderInputOptionsEffortEnum
 _$llmProviderInputOptionsEffortEnum_max =
     const LlmProviderInputOptionsEffortEnum._('max');
+const LlmProviderInputOptionsEffortEnum
+_$llmProviderInputOptionsEffortEnum_unknownDefaultOpenApi =
+    const LlmProviderInputOptionsEffortEnum._('unknownDefaultOpenApi');
 
 LlmProviderInputOptionsEffortEnum _$llmProviderInputOptionsEffortEnumValueOf(
   String name,
@@ -36,8 +39,10 @@ LlmProviderInputOptionsEffortEnum _$llmProviderInputOptionsEffortEnumValueOf(
       return _$llmProviderInputOptionsEffortEnum_xhigh;
     case 'max':
       return _$llmProviderInputOptionsEffortEnum_max;
+    case 'unknownDefaultOpenApi':
+      return _$llmProviderInputOptionsEffortEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$llmProviderInputOptionsEffortEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -50,6 +55,7 @@ _$llmProviderInputOptionsEffortEnumValues =
         _$llmProviderInputOptionsEffortEnum_high,
         _$llmProviderInputOptionsEffortEnum_xhigh,
         _$llmProviderInputOptionsEffortEnum_max,
+        _$llmProviderInputOptionsEffortEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -65,6 +71,7 @@ class _$LlmProviderInputOptionsEffortEnumSerializer
     'high': 'high',
     'xhigh': 'xhigh',
     'max': 'max',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'low': 'low',
@@ -72,6 +79,7 @@ class _$LlmProviderInputOptionsEffortEnumSerializer
     'high': 'high',
     'xhigh': 'xhigh',
     'max': 'max',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

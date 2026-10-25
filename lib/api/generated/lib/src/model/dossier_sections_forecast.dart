@@ -277,6 +277,9 @@ class DossierSectionsForecastStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'not-installed')
   static const DossierSectionsForecastStatusEnum notInstalled =
       _$dossierSectionsForecastStatusEnum_notInstalled;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const DossierSectionsForecastStatusEnum unknownDefaultOpenApi =
+      _$dossierSectionsForecastStatusEnum_unknownDefaultOpenApi;
 
   static Serializer<DossierSectionsForecastStatusEnum> get serializer =>
       _$dossierSectionsForecastStatusEnumSerializer;

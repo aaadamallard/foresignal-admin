@@ -355,6 +355,9 @@ class StyleTypeEnum extends EnumClass {
   static const StyleTypeEnum discrete = _$styleTypeEnum_discrete;
   @BuiltValueEnumConst(wireName: r'categorical')
   static const StyleTypeEnum categorical = _$styleTypeEnum_categorical;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const StyleTypeEnum unknownDefaultOpenApi =
+      _$styleTypeEnum_unknownDefaultOpenApi;
 
   static Serializer<StyleTypeEnum> get serializer => _$styleTypeEnumSerializer;
 
@@ -368,6 +371,9 @@ class StyleTypeEnum extends EnumClass {
 class StyleDeriveEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'speed')
   static const StyleDeriveEnum speed = _$styleDeriveEnum_speed;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const StyleDeriveEnum unknownDefaultOpenApi =
+      _$styleDeriveEnum_unknownDefaultOpenApi;
 
   static Serializer<StyleDeriveEnum> get serializer =>
       _$styleDeriveEnumSerializer;

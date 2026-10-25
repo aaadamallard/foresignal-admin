@@ -12,6 +12,8 @@ const EscalationStateEnum _$escalationStateEnum_stopped =
     const EscalationStateEnum._('stopped');
 const EscalationStateEnum _$escalationStateEnum_exhausted =
     const EscalationStateEnum._('exhausted');
+const EscalationStateEnum _$escalationStateEnum_unknownDefaultOpenApi =
+    const EscalationStateEnum._('unknownDefaultOpenApi');
 
 EscalationStateEnum _$escalationStateEnumValueOf(String name) {
   switch (name) {
@@ -21,8 +23,10 @@ EscalationStateEnum _$escalationStateEnumValueOf(String name) {
       return _$escalationStateEnum_stopped;
     case 'exhausted':
       return _$escalationStateEnum_exhausted;
+    case 'unknownDefaultOpenApi':
+      return _$escalationStateEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$escalationStateEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -31,6 +35,7 @@ final BuiltSet<EscalationStateEnum> _$escalationStateEnumValues =
       _$escalationStateEnum_active,
       _$escalationStateEnum_stopped,
       _$escalationStateEnum_exhausted,
+      _$escalationStateEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<EscalationStateEnum> _$escalationStateEnumSerializer =
@@ -42,11 +47,13 @@ class _$EscalationStateEnumSerializer
     'active': 'active',
     'stopped': 'stopped',
     'exhausted': 'exhausted',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'active': 'active',
     'stopped': 'stopped',
     'exhausted': 'exhausted',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

@@ -36,6 +36,9 @@ const ClusterTimelineItemTypeEnum _$clusterTimelineItemTypeEnum_backfill =
     const ClusterTimelineItemTypeEnum._('backfill');
 const ClusterTimelineItemTypeEnum _$clusterTimelineItemTypeEnum_record =
     const ClusterTimelineItemTypeEnum._('record');
+const ClusterTimelineItemTypeEnum
+_$clusterTimelineItemTypeEnum_unknownDefaultOpenApi =
+    const ClusterTimelineItemTypeEnum._('unknownDefaultOpenApi');
 
 ClusterTimelineItemTypeEnum _$clusterTimelineItemTypeEnumValueOf(String name) {
   switch (name) {
@@ -65,8 +68,10 @@ ClusterTimelineItemTypeEnum _$clusterTimelineItemTypeEnumValueOf(String name) {
       return _$clusterTimelineItemTypeEnum_backfill;
     case 'record':
       return _$clusterTimelineItemTypeEnum_record;
+    case 'unknownDefaultOpenApi':
+      return _$clusterTimelineItemTypeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$clusterTimelineItemTypeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -86,6 +91,7 @@ _$clusterTimelineItemTypeEnumValues =
       _$clusterTimelineItemTypeEnum_statusChange,
       _$clusterTimelineItemTypeEnum_backfill,
       _$clusterTimelineItemTypeEnum_record,
+      _$clusterTimelineItemTypeEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<ClusterTimelineItemTypeEnum>
@@ -108,6 +114,7 @@ class _$ClusterTimelineItemTypeEnumSerializer
     'statusChange': 'status-change',
     'backfill': 'backfill',
     'record': 'record',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'alert': 'alert',
@@ -123,6 +130,7 @@ class _$ClusterTimelineItemTypeEnumSerializer
     'status-change': 'statusChange',
     'backfill': 'backfill',
     'record': 'record',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

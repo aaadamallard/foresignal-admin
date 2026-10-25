@@ -15,6 +15,9 @@ const PersistReason _$SAMPLE = const PersistReason._('SAMPLE');
 const PersistReason _$KEYFRAME = const PersistReason._('KEYFRAME');
 const PersistReason _$HEARTBEAT = const PersistReason._('HEARTBEAT');
 const PersistReason _$TRIGGER_EDGE = const PersistReason._('TRIGGER_EDGE');
+const PersistReason _$unknownDefaultOpenApi = const PersistReason._(
+  'unknownDefaultOpenApi',
+);
 
 PersistReason _$valueOf(String name) {
   switch (name) {
@@ -36,8 +39,10 @@ PersistReason _$valueOf(String name) {
       return _$HEARTBEAT;
     case 'TRIGGER_EDGE':
       return _$TRIGGER_EDGE;
+    case 'unknownDefaultOpenApi':
+      return _$unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$unknownDefaultOpenApi;
   }
 }
 
@@ -52,6 +57,7 @@ final BuiltSet<PersistReason> _$values =
       _$KEYFRAME,
       _$HEARTBEAT,
       _$TRIGGER_EDGE,
+      _$unknownDefaultOpenApi,
     ]);
 
 class _$PersistReasonMeta {
@@ -65,6 +71,7 @@ class _$PersistReasonMeta {
   PersistReason get KEYFRAME => _$KEYFRAME;
   PersistReason get HEARTBEAT => _$HEARTBEAT;
   PersistReason get TRIGGER_EDGE => _$TRIGGER_EDGE;
+  PersistReason get unknownDefaultOpenApi => _$unknownDefaultOpenApi;
   PersistReason valueOf(String name) => _$valueOf(name);
   BuiltSet<PersistReason> get values => _$values;
 }
@@ -88,6 +95,7 @@ class _$PersistReasonSerializer implements PrimitiveSerializer<PersistReason> {
     'KEYFRAME': 'KEYFRAME',
     'HEARTBEAT': 'HEARTBEAT',
     'TRIGGER_EDGE': 'TRIGGER_EDGE',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'FIRST': 'FIRST',
@@ -99,6 +107,7 @@ class _$PersistReasonSerializer implements PrimitiveSerializer<PersistReason> {
     'KEYFRAME': 'KEYFRAME',
     'HEARTBEAT': 'HEARTBEAT',
     'TRIGGER_EDGE': 'TRIGGER_EDGE',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

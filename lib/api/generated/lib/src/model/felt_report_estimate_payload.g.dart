@@ -18,6 +18,9 @@ _$feltReportEstimatePayloadStatusEnum_noCoverage =
 const FeltReportEstimatePayloadStatusEnum
 _$feltReportEstimatePayloadStatusEnum_degradedInput =
     const FeltReportEstimatePayloadStatusEnum._('degradedInput');
+const FeltReportEstimatePayloadStatusEnum
+_$feltReportEstimatePayloadStatusEnum_unknownDefaultOpenApi =
+    const FeltReportEstimatePayloadStatusEnum._('unknownDefaultOpenApi');
 
 FeltReportEstimatePayloadStatusEnum
 _$feltReportEstimatePayloadStatusEnumValueOf(String name) {
@@ -30,8 +33,10 @@ _$feltReportEstimatePayloadStatusEnumValueOf(String name) {
       return _$feltReportEstimatePayloadStatusEnum_noCoverage;
     case 'degradedInput':
       return _$feltReportEstimatePayloadStatusEnum_degradedInput;
+    case 'unknownDefaultOpenApi':
+      return _$feltReportEstimatePayloadStatusEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$feltReportEstimatePayloadStatusEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -43,6 +48,7 @@ _$feltReportEstimatePayloadStatusEnumValues =
         _$feltReportEstimatePayloadStatusEnum_insufficientData,
         _$feltReportEstimatePayloadStatusEnum_noCoverage,
         _$feltReportEstimatePayloadStatusEnum_degradedInput,
+        _$feltReportEstimatePayloadStatusEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -52,6 +58,9 @@ _$feltReportEstimatePayloadMethodEnum_shakemap =
 const FeltReportEstimatePayloadMethodEnum
 _$feltReportEstimatePayloadMethodEnum_ipeAw2007 =
     const FeltReportEstimatePayloadMethodEnum._('ipeAw2007');
+const FeltReportEstimatePayloadMethodEnum
+_$feltReportEstimatePayloadMethodEnum_unknownDefaultOpenApi =
+    const FeltReportEstimatePayloadMethodEnum._('unknownDefaultOpenApi');
 
 FeltReportEstimatePayloadMethodEnum
 _$feltReportEstimatePayloadMethodEnumValueOf(String name) {
@@ -60,8 +69,10 @@ _$feltReportEstimatePayloadMethodEnumValueOf(String name) {
       return _$feltReportEstimatePayloadMethodEnum_shakemap;
     case 'ipeAw2007':
       return _$feltReportEstimatePayloadMethodEnum_ipeAw2007;
+    case 'unknownDefaultOpenApi':
+      return _$feltReportEstimatePayloadMethodEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$feltReportEstimatePayloadMethodEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -71,6 +82,7 @@ _$feltReportEstimatePayloadMethodEnumValues =
       const <FeltReportEstimatePayloadMethodEnum>[
         _$feltReportEstimatePayloadMethodEnum_shakemap,
         _$feltReportEstimatePayloadMethodEnum_ipeAw2007,
+        _$feltReportEstimatePayloadMethodEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -80,6 +92,11 @@ _$feltReportEstimatePayloadCoefficientSetEnum_california =
 const FeltReportEstimatePayloadCoefficientSetEnum
 _$feltReportEstimatePayloadCoefficientSetEnum_ceus =
     const FeltReportEstimatePayloadCoefficientSetEnum._('ceus');
+const FeltReportEstimatePayloadCoefficientSetEnum
+_$feltReportEstimatePayloadCoefficientSetEnum_unknownDefaultOpenApi =
+    const FeltReportEstimatePayloadCoefficientSetEnum._(
+      'unknownDefaultOpenApi',
+    );
 
 FeltReportEstimatePayloadCoefficientSetEnum
 _$feltReportEstimatePayloadCoefficientSetEnumValueOf(String name) {
@@ -88,8 +105,10 @@ _$feltReportEstimatePayloadCoefficientSetEnumValueOf(String name) {
       return _$feltReportEstimatePayloadCoefficientSetEnum_california;
     case 'ceus':
       return _$feltReportEstimatePayloadCoefficientSetEnum_ceus;
+    case 'unknownDefaultOpenApi':
+      return _$feltReportEstimatePayloadCoefficientSetEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$feltReportEstimatePayloadCoefficientSetEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -99,6 +118,7 @@ _$feltReportEstimatePayloadCoefficientSetEnumValues =
       const <FeltReportEstimatePayloadCoefficientSetEnum>[
         _$feltReportEstimatePayloadCoefficientSetEnum_california,
         _$feltReportEstimatePayloadCoefficientSetEnum_ceus,
+        _$feltReportEstimatePayloadCoefficientSetEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -119,12 +139,14 @@ class _$FeltReportEstimatePayloadStatusEnumSerializer
     'insufficientData': 'insufficient-data',
     'noCoverage': 'no-coverage',
     'degradedInput': 'degraded-input',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'ok': 'ok',
     'insufficient-data': 'insufficientData',
     'no-coverage': 'noCoverage',
     'degraded-input': 'degradedInput',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -156,10 +178,12 @@ class _$FeltReportEstimatePayloadMethodEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'shakemap': 'shakemap',
     'ipeAw2007': 'ipe-aw2007',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'shakemap': 'shakemap',
     'ipe-aw2007': 'ipeAw2007',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -192,10 +216,12 @@ class _$FeltReportEstimatePayloadCoefficientSetEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'california': 'california',
     'ceus': 'ceus',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'california': 'california',
     'ceus': 'ceus',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

@@ -266,6 +266,9 @@ class WorkspaceInputMembersEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'editor')
   static const WorkspaceInputMembersEnum editor =
       _$workspaceInputMembersEnum_editor;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const WorkspaceInputMembersEnum unknownDefaultOpenApi =
+      _$workspaceInputMembersEnum_unknownDefaultOpenApi;
 
   static Serializer<WorkspaceInputMembersEnum> get serializer =>
       _$workspaceInputMembersEnumSerializer;

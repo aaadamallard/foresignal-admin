@@ -174,6 +174,9 @@ class SavedSearchHitMatchedByEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'filter')
   static const SavedSearchHitMatchedByEnum filter =
       _$savedSearchHitMatchedByEnum_filter;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const SavedSearchHitMatchedByEnum unknownDefaultOpenApi =
+      _$savedSearchHitMatchedByEnum_unknownDefaultOpenApi;
 
   static Serializer<SavedSearchHitMatchedByEnum> get serializer =>
       _$savedSearchHitMatchedByEnumSerializer;

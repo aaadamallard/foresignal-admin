@@ -12,6 +12,9 @@ const SocialVolumeScopeTypeEnum _$socialVolumeScopeTypeEnum_place =
     const SocialVolumeScopeTypeEnum._('place');
 const SocialVolumeScopeTypeEnum _$socialVolumeScopeTypeEnum_entity =
     const SocialVolumeScopeTypeEnum._('entity');
+const SocialVolumeScopeTypeEnum
+_$socialVolumeScopeTypeEnum_unknownDefaultOpenApi =
+    const SocialVolumeScopeTypeEnum._('unknownDefaultOpenApi');
 
 SocialVolumeScopeTypeEnum _$socialVolumeScopeTypeEnumValueOf(String name) {
   switch (name) {
@@ -21,8 +24,10 @@ SocialVolumeScopeTypeEnum _$socialVolumeScopeTypeEnumValueOf(String name) {
       return _$socialVolumeScopeTypeEnum_place;
     case 'entity':
       return _$socialVolumeScopeTypeEnum_entity;
+    case 'unknownDefaultOpenApi':
+      return _$socialVolumeScopeTypeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$socialVolumeScopeTypeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -31,6 +36,7 @@ final BuiltSet<SocialVolumeScopeTypeEnum> _$socialVolumeScopeTypeEnumValues =
       _$socialVolumeScopeTypeEnum_topic,
       _$socialVolumeScopeTypeEnum_place,
       _$socialVolumeScopeTypeEnum_entity,
+      _$socialVolumeScopeTypeEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<SocialVolumeScopeTypeEnum> _$socialVolumeScopeTypeEnumSerializer =
@@ -42,11 +48,13 @@ class _$SocialVolumeScopeTypeEnumSerializer
     'topic': 'topic',
     'place': 'place',
     'entity': 'entity',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'topic': 'topic',
     'place': 'place',
     'entity': 'entity',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

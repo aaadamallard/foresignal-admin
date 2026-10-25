@@ -577,6 +577,9 @@ class AnalystProfileEffortEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'medium')
   static const AnalystProfileEffortEnum medium =
       _$analystProfileEffortEnum_medium;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const AnalystProfileEffortEnum unknownDefaultOpenApi =
+      _$analystProfileEffortEnum_unknownDefaultOpenApi;
 
   static Serializer<AnalystProfileEffortEnum> get serializer =>
       _$analystProfileEffortEnumSerializer;
@@ -617,6 +620,9 @@ class AnalystProfileAllowedActionsEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'propose_chronicle')
   static const AnalystProfileAllowedActionsEnum proposeChronicle =
       _$analystProfileAllowedActionsEnum_proposeChronicle;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const AnalystProfileAllowedActionsEnum unknownDefaultOpenApi =
+      _$analystProfileAllowedActionsEnum_unknownDefaultOpenApi;
 
   static Serializer<AnalystProfileAllowedActionsEnum> get serializer =>
       _$analystProfileAllowedActionsEnumSerializer;
@@ -639,6 +645,9 @@ class AnalystProfileNotifyMinPriorityEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'high')
   static const AnalystProfileNotifyMinPriorityEnum high =
       _$analystProfileNotifyMinPriorityEnum_high;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const AnalystProfileNotifyMinPriorityEnum unknownDefaultOpenApi =
+      _$analystProfileNotifyMinPriorityEnum_unknownDefaultOpenApi;
 
   static Serializer<AnalystProfileNotifyMinPriorityEnum> get serializer =>
       _$analystProfileNotifyMinPriorityEnumSerializer;

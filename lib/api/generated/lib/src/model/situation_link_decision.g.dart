@@ -24,6 +24,9 @@ _$situationLinkDecisionMemberTypeEnum_record =
 const SituationLinkDecisionMemberTypeEnum
 _$situationLinkDecisionMemberTypeEnum_investigation =
     const SituationLinkDecisionMemberTypeEnum._('investigation');
+const SituationLinkDecisionMemberTypeEnum
+_$situationLinkDecisionMemberTypeEnum_unknownDefaultOpenApi =
+    const SituationLinkDecisionMemberTypeEnum._('unknownDefaultOpenApi');
 
 SituationLinkDecisionMemberTypeEnum
 _$situationLinkDecisionMemberTypeEnumValueOf(String name) {
@@ -40,8 +43,10 @@ _$situationLinkDecisionMemberTypeEnumValueOf(String name) {
       return _$situationLinkDecisionMemberTypeEnum_record;
     case 'investigation':
       return _$situationLinkDecisionMemberTypeEnum_investigation;
+    case 'unknownDefaultOpenApi':
+      return _$situationLinkDecisionMemberTypeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$situationLinkDecisionMemberTypeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -55,6 +60,7 @@ _$situationLinkDecisionMemberTypeEnumValues =
         _$situationLinkDecisionMemberTypeEnum_anomaly,
         _$situationLinkDecisionMemberTypeEnum_record,
         _$situationLinkDecisionMemberTypeEnum_investigation,
+        _$situationLinkDecisionMemberTypeEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -67,6 +73,9 @@ const SituationLinkDecisionActionEnum _$situationLinkDecisionActionEnum_skip =
 const SituationLinkDecisionActionEnum
 _$situationLinkDecisionActionEnum_alreadyMember =
     const SituationLinkDecisionActionEnum._('alreadyMember');
+const SituationLinkDecisionActionEnum
+_$situationLinkDecisionActionEnum_unknownDefaultOpenApi =
+    const SituationLinkDecisionActionEnum._('unknownDefaultOpenApi');
 
 SituationLinkDecisionActionEnum _$situationLinkDecisionActionEnumValueOf(
   String name,
@@ -80,8 +89,10 @@ SituationLinkDecisionActionEnum _$situationLinkDecisionActionEnumValueOf(
       return _$situationLinkDecisionActionEnum_skip;
     case 'alreadyMember':
       return _$situationLinkDecisionActionEnum_alreadyMember;
+    case 'unknownDefaultOpenApi':
+      return _$situationLinkDecisionActionEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$situationLinkDecisionActionEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -93,6 +104,7 @@ _$situationLinkDecisionActionEnumValues =
         _$situationLinkDecisionActionEnum_seed,
         _$situationLinkDecisionActionEnum_skip,
         _$situationLinkDecisionActionEnum_alreadyMember,
+        _$situationLinkDecisionActionEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -112,6 +124,7 @@ class _$SituationLinkDecisionMemberTypeEnumSerializer
     'anomaly': 'anomaly',
     'record': 'record',
     'investigation': 'investigation',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'intel_event': 'intelEvent',
@@ -120,6 +133,7 @@ class _$SituationLinkDecisionMemberTypeEnumSerializer
     'anomaly': 'anomaly',
     'record': 'record',
     'investigation': 'investigation',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -153,12 +167,14 @@ class _$SituationLinkDecisionActionEnumSerializer
     'seed': 'seed',
     'skip': 'skip',
     'alreadyMember': 'already-member',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'join': 'join',
     'seed': 'seed',
     'skip': 'skip',
     'already-member': 'alreadyMember',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

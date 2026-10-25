@@ -15,6 +15,9 @@ _$pushProviderInputConfigKeyEnvironmentEnum_production =
 const PushProviderInputConfigKeyEnvironmentEnum
 _$pushProviderInputConfigKeyEnvironmentEnum_both =
     const PushProviderInputConfigKeyEnvironmentEnum._('both');
+const PushProviderInputConfigKeyEnvironmentEnum
+_$pushProviderInputConfigKeyEnvironmentEnum_unknownDefaultOpenApi =
+    const PushProviderInputConfigKeyEnvironmentEnum._('unknownDefaultOpenApi');
 
 PushProviderInputConfigKeyEnvironmentEnum
 _$pushProviderInputConfigKeyEnvironmentEnumValueOf(String name) {
@@ -25,8 +28,10 @@ _$pushProviderInputConfigKeyEnvironmentEnumValueOf(String name) {
       return _$pushProviderInputConfigKeyEnvironmentEnum_production;
     case 'both':
       return _$pushProviderInputConfigKeyEnvironmentEnum_both;
+    case 'unknownDefaultOpenApi':
+      return _$pushProviderInputConfigKeyEnvironmentEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$pushProviderInputConfigKeyEnvironmentEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -37,6 +42,7 @@ _$pushProviderInputConfigKeyEnvironmentEnumValues =
         _$pushProviderInputConfigKeyEnvironmentEnum_sandbox,
         _$pushProviderInputConfigKeyEnvironmentEnum_production,
         _$pushProviderInputConfigKeyEnvironmentEnum_both,
+        _$pushProviderInputConfigKeyEnvironmentEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -50,11 +56,13 @@ class _$PushProviderInputConfigKeyEnvironmentEnumSerializer
     'sandbox': 'sandbox',
     'production': 'production',
     'both': 'both',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'sandbox': 'sandbox',
     'production': 'production',
     'both': 'both',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

@@ -174,6 +174,9 @@ class AccessRequestGrantDeliveredAsEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'chronicle-extract')
   static const AccessRequestGrantDeliveredAsEnum chronicleExtract =
       _$accessRequestGrantDeliveredAsEnum_chronicleExtract;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const AccessRequestGrantDeliveredAsEnum unknownDefaultOpenApi =
+      _$accessRequestGrantDeliveredAsEnum_unknownDefaultOpenApi;
 
   static Serializer<AccessRequestGrantDeliveredAsEnum> get serializer =>
       _$accessRequestGrantDeliveredAsEnumSerializer;
@@ -193,6 +196,9 @@ class AccessRequestGrantRoleEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'commenter')
   static const AccessRequestGrantRoleEnum commenter =
       _$accessRequestGrantRoleEnum_commenter;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const AccessRequestGrantRoleEnum unknownDefaultOpenApi =
+      _$accessRequestGrantRoleEnum_unknownDefaultOpenApi;
 
   static Serializer<AccessRequestGrantRoleEnum> get serializer =>
       _$accessRequestGrantRoleEnumSerializer;

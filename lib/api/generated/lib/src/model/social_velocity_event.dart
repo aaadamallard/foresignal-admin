@@ -290,6 +290,9 @@ class SocialVelocityEventEventEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'social.velocity')
   static const SocialVelocityEventEventEnum socialPeriodVelocity =
       _$socialVelocityEventEventEnum_socialPeriodVelocity;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const SocialVelocityEventEventEnum unknownDefaultOpenApi =
+      _$socialVelocityEventEventEnum_unknownDefaultOpenApi;
 
   static Serializer<SocialVelocityEventEventEnum> get serializer =>
       _$socialVelocityEventEventEnumSerializer;

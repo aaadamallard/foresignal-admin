@@ -18,6 +18,9 @@ _$alertTransitionInputFeedbackEnum_late_ =
 const AlertTransitionInputFeedbackEnum
 _$alertTransitionInputFeedbackEnum_falsePositive =
     const AlertTransitionInputFeedbackEnum._('falsePositive');
+const AlertTransitionInputFeedbackEnum
+_$alertTransitionInputFeedbackEnum_unknownDefaultOpenApi =
+    const AlertTransitionInputFeedbackEnum._('unknownDefaultOpenApi');
 
 AlertTransitionInputFeedbackEnum _$alertTransitionInputFeedbackEnumValueOf(
   String name,
@@ -31,8 +34,10 @@ AlertTransitionInputFeedbackEnum _$alertTransitionInputFeedbackEnumValueOf(
       return _$alertTransitionInputFeedbackEnum_late_;
     case 'falsePositive':
       return _$alertTransitionInputFeedbackEnum_falsePositive;
+    case 'unknownDefaultOpenApi':
+      return _$alertTransitionInputFeedbackEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$alertTransitionInputFeedbackEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -44,6 +49,7 @@ _$alertTransitionInputFeedbackEnumValues =
         _$alertTransitionInputFeedbackEnum_noise,
         _$alertTransitionInputFeedbackEnum_late_,
         _$alertTransitionInputFeedbackEnum_falsePositive,
+        _$alertTransitionInputFeedbackEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -58,12 +64,14 @@ class _$AlertTransitionInputFeedbackEnumSerializer
     'noise': 'noise',
     'late_': 'late',
     'falsePositive': 'false_positive',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'useful': 'useful',
     'noise': 'noise',
     'late': 'late_',
     'false_positive': 'falsePositive',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

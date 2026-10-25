@@ -692,6 +692,9 @@ class AnalystRunStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'budget_exceeded')
   static const AnalystRunStatusEnum budgetExceeded =
       _$analystRunStatusEnum_budgetExceeded;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const AnalystRunStatusEnum unknownDefaultOpenApi =
+      _$analystRunStatusEnum_unknownDefaultOpenApi;
 
   static Serializer<AnalystRunStatusEnum> get serializer =>
       _$analystRunStatusEnumSerializer;
@@ -709,6 +712,9 @@ class AnalystRunEffortEnum extends EnumClass {
   static const AnalystRunEffortEnum low = _$analystRunEffortEnum_low;
   @BuiltValueEnumConst(wireName: r'medium')
   static const AnalystRunEffortEnum medium = _$analystRunEffortEnum_medium;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const AnalystRunEffortEnum unknownDefaultOpenApi =
+      _$analystRunEffortEnum_unknownDefaultOpenApi;
 
   static Serializer<AnalystRunEffortEnum> get serializer =>
       _$analystRunEffortEnumSerializer;

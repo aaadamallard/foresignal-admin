@@ -9,14 +9,19 @@ part of 'precursor_test_result_hit_rate_ci.dart';
 const PrecursorTestResultHitRateCiMethodEnum
 _$precursorTestResultHitRateCiMethodEnum_wilson95 =
     const PrecursorTestResultHitRateCiMethodEnum._('wilson95');
+const PrecursorTestResultHitRateCiMethodEnum
+_$precursorTestResultHitRateCiMethodEnum_unknownDefaultOpenApi =
+    const PrecursorTestResultHitRateCiMethodEnum._('unknownDefaultOpenApi');
 
 PrecursorTestResultHitRateCiMethodEnum
 _$precursorTestResultHitRateCiMethodEnumValueOf(String name) {
   switch (name) {
     case 'wilson95':
       return _$precursorTestResultHitRateCiMethodEnum_wilson95;
+    case 'unknownDefaultOpenApi':
+      return _$precursorTestResultHitRateCiMethodEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$precursorTestResultHitRateCiMethodEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -25,6 +30,7 @@ _$precursorTestResultHitRateCiMethodEnumValues =
     BuiltSet<PrecursorTestResultHitRateCiMethodEnum>(
       const <PrecursorTestResultHitRateCiMethodEnum>[
         _$precursorTestResultHitRateCiMethodEnum_wilson95,
+        _$precursorTestResultHitRateCiMethodEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -36,9 +42,11 @@ class _$PrecursorTestResultHitRateCiMethodEnumSerializer
     implements PrimitiveSerializer<PrecursorTestResultHitRateCiMethodEnum> {
   static const Map<String, Object> _toWire = const <String, Object>{
     'wilson95': 'wilson-95',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'wilson-95': 'wilson95',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

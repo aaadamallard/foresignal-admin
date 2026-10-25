@@ -228,6 +228,9 @@ class MaintenanceRunTriggerEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'schedule')
   static const MaintenanceRunTriggerEnum schedule =
       _$maintenanceRunTriggerEnum_schedule;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const MaintenanceRunTriggerEnum unknownDefaultOpenApi =
+      _$maintenanceRunTriggerEnum_unknownDefaultOpenApi;
 
   static Serializer<MaintenanceRunTriggerEnum> get serializer =>
       _$maintenanceRunTriggerEnumSerializer;
@@ -252,6 +255,9 @@ class MaintenanceRunStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'failed')
   static const MaintenanceRunStatusEnum failed =
       _$maintenanceRunStatusEnum_failed;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const MaintenanceRunStatusEnum unknownDefaultOpenApi =
+      _$maintenanceRunStatusEnum_unknownDefaultOpenApi;
 
   static Serializer<MaintenanceRunStatusEnum> get serializer =>
       _$maintenanceRunStatusEnumSerializer;

@@ -16,6 +16,9 @@ const ExchangePackageStatusEnum _$exchangePackageStatusEnum_delivered =
     const ExchangePackageStatusEnum._('delivered');
 const ExchangePackageStatusEnum _$exchangePackageStatusEnum_failed =
     const ExchangePackageStatusEnum._('failed');
+const ExchangePackageStatusEnum
+_$exchangePackageStatusEnum_unknownDefaultOpenApi =
+    const ExchangePackageStatusEnum._('unknownDefaultOpenApi');
 
 ExchangePackageStatusEnum _$exchangePackageStatusEnumValueOf(String name) {
   switch (name) {
@@ -29,8 +32,10 @@ ExchangePackageStatusEnum _$exchangePackageStatusEnumValueOf(String name) {
       return _$exchangePackageStatusEnum_delivered;
     case 'failed':
       return _$exchangePackageStatusEnum_failed;
+    case 'unknownDefaultOpenApi':
+      return _$exchangePackageStatusEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$exchangePackageStatusEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -41,6 +46,7 @@ final BuiltSet<ExchangePackageStatusEnum> _$exchangePackageStatusEnumValues =
       _$exchangePackageStatusEnum_delivering,
       _$exchangePackageStatusEnum_delivered,
       _$exchangePackageStatusEnum_failed,
+      _$exchangePackageStatusEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<ExchangePackageStatusEnum> _$exchangePackageStatusEnumSerializer =
@@ -54,6 +60,7 @@ class _$ExchangePackageStatusEnumSerializer
     'delivering': 'delivering',
     'delivered': 'delivered',
     'failed': 'failed',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'building': 'building',
@@ -61,6 +68,7 @@ class _$ExchangePackageStatusEnumSerializer
     'delivering': 'delivering',
     'delivered': 'delivered',
     'failed': 'failed',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

@@ -9,6 +9,9 @@ part of 'forecast_submitted_event.dart';
 const ForecastSubmittedEventEventEnum
 _$forecastSubmittedEventEventEnum_forecastPeriodSubmitted =
     const ForecastSubmittedEventEventEnum._('forecastPeriodSubmitted');
+const ForecastSubmittedEventEventEnum
+_$forecastSubmittedEventEventEnum_unknownDefaultOpenApi =
+    const ForecastSubmittedEventEventEnum._('unknownDefaultOpenApi');
 
 ForecastSubmittedEventEventEnum _$forecastSubmittedEventEventEnumValueOf(
   String name,
@@ -16,8 +19,10 @@ ForecastSubmittedEventEventEnum _$forecastSubmittedEventEventEnumValueOf(
   switch (name) {
     case 'forecastPeriodSubmitted':
       return _$forecastSubmittedEventEventEnum_forecastPeriodSubmitted;
+    case 'unknownDefaultOpenApi':
+      return _$forecastSubmittedEventEventEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$forecastSubmittedEventEventEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -26,6 +31,7 @@ _$forecastSubmittedEventEventEnumValues =
     BuiltSet<ForecastSubmittedEventEventEnum>(
       const <ForecastSubmittedEventEventEnum>[
         _$forecastSubmittedEventEventEnum_forecastPeriodSubmitted,
+        _$forecastSubmittedEventEventEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -37,9 +43,11 @@ class _$ForecastSubmittedEventEventEnumSerializer
     implements PrimitiveSerializer<ForecastSubmittedEventEventEnum> {
   static const Map<String, Object> _toWire = const <String, Object>{
     'forecastPeriodSubmitted': 'forecast.submitted',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'forecast.submitted': 'forecastPeriodSubmitted',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

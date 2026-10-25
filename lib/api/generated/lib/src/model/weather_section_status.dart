@@ -19,6 +19,9 @@ class WeatherSectionStatus extends EnumClass {
   static const WeatherSectionStatus noCoverage = _$noCoverage;
   @BuiltValueEnumConst(wireName: r'unavailable')
   static const WeatherSectionStatus unavailable = _$unavailable;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const WeatherSectionStatus unknownDefaultOpenApi =
+      _$unknownDefaultOpenApi;
 
   static Serializer<WeatherSectionStatus> get serializer =>
       _$weatherSectionStatusSerializer;

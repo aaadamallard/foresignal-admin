@@ -293,6 +293,9 @@ class PushDeviceInputTransportEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'fcm')
   static const PushDeviceInputTransportEnum fcm =
       _$pushDeviceInputTransportEnum_fcm;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const PushDeviceInputTransportEnum unknownDefaultOpenApi =
+      _$pushDeviceInputTransportEnum_unknownDefaultOpenApi;
 
   static Serializer<PushDeviceInputTransportEnum> get serializer =>
       _$pushDeviceInputTransportEnumSerializer;
@@ -318,6 +321,9 @@ class PushDeviceInputPlatformEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'android')
   static const PushDeviceInputPlatformEnum android =
       _$pushDeviceInputPlatformEnum_android;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const PushDeviceInputPlatformEnum unknownDefaultOpenApi =
+      _$pushDeviceInputPlatformEnum_unknownDefaultOpenApi;
 
   static Serializer<PushDeviceInputPlatformEnum> get serializer =>
       _$pushDeviceInputPlatformEnumSerializer;
@@ -338,6 +344,9 @@ class PushDeviceInputEnvironmentEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'production')
   static const PushDeviceInputEnvironmentEnum production =
       _$pushDeviceInputEnvironmentEnum_production;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const PushDeviceInputEnvironmentEnum unknownDefaultOpenApi =
+      _$pushDeviceInputEnvironmentEnum_unknownDefaultOpenApi;
 
   static Serializer<PushDeviceInputEnvironmentEnum> get serializer =>
       _$pushDeviceInputEnvironmentEnumSerializer;
@@ -358,6 +367,9 @@ class PushDeviceInputContentLevelEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'short')
   static const PushDeviceInputContentLevelEnum short =
       _$pushDeviceInputContentLevelEnum_short;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const PushDeviceInputContentLevelEnum unknownDefaultOpenApi =
+      _$pushDeviceInputContentLevelEnum_unknownDefaultOpenApi;
 
   static Serializer<PushDeviceInputContentLevelEnum> get serializer =>
       _$pushDeviceInputContentLevelEnumSerializer;

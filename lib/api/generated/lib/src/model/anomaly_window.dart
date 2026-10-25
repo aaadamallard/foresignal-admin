@@ -367,6 +367,9 @@ class AnomalyWindowBucketEnum extends EnumClass {
   static const AnomalyWindowBucketEnum n15m = _$anomalyWindowBucketEnum_n15m;
   @BuiltValueEnumConst(wireName: r'1h')
   static const AnomalyWindowBucketEnum n1h = _$anomalyWindowBucketEnum_n1h;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const AnomalyWindowBucketEnum unknownDefaultOpenApi =
+      _$anomalyWindowBucketEnum_unknownDefaultOpenApi;
 
   static Serializer<AnomalyWindowBucketEnum> get serializer =>
       _$anomalyWindowBucketEnumSerializer;
@@ -386,6 +389,9 @@ class AnomalyWindowSlotModeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'hour-of-day')
   static const AnomalyWindowSlotModeEnum hourOfDay =
       _$anomalyWindowSlotModeEnum_hourOfDay;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const AnomalyWindowSlotModeEnum unknownDefaultOpenApi =
+      _$anomalyWindowSlotModeEnum_unknownDefaultOpenApi;
 
   static Serializer<AnomalyWindowSlotModeEnum> get serializer =>
       _$anomalyWindowSlotModeEnumSerializer;
@@ -407,6 +413,9 @@ class AnomalyWindowDirectionEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'both')
   static const AnomalyWindowDirectionEnum both =
       _$anomalyWindowDirectionEnum_both;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const AnomalyWindowDirectionEnum unknownDefaultOpenApi =
+      _$anomalyWindowDirectionEnum_unknownDefaultOpenApi;
 
   static Serializer<AnomalyWindowDirectionEnum> get serializer =>
       _$anomalyWindowDirectionEnumSerializer;
@@ -430,6 +439,9 @@ class AnomalyWindowSensitivityEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'high')
   static const AnomalyWindowSensitivityEnum high =
       _$anomalyWindowSensitivityEnum_high;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const AnomalyWindowSensitivityEnum unknownDefaultOpenApi =
+      _$anomalyWindowSensitivityEnum_unknownDefaultOpenApi;
 
   static Serializer<AnomalyWindowSensitivityEnum> get serializer =>
       _$anomalyWindowSensitivityEnumSerializer;

@@ -456,6 +456,9 @@ class ShareLinkCreatedTargetTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'report')
   static const ShareLinkCreatedTargetTypeEnum report =
       _$shareLinkCreatedTargetTypeEnum_report;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ShareLinkCreatedTargetTypeEnum unknownDefaultOpenApi =
+      _$shareLinkCreatedTargetTypeEnum_unknownDefaultOpenApi;
 
   static Serializer<ShareLinkCreatedTargetTypeEnum> get serializer =>
       _$shareLinkCreatedTargetTypeEnumSerializer;
@@ -481,6 +484,9 @@ class ShareLinkCreatedStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'exhausted')
   static const ShareLinkCreatedStatusEnum exhausted =
       _$shareLinkCreatedStatusEnum_exhausted;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ShareLinkCreatedStatusEnum unknownDefaultOpenApi =
+      _$shareLinkCreatedStatusEnum_unknownDefaultOpenApi;
 
   static Serializer<ShareLinkCreatedStatusEnum> get serializer =>
       _$shareLinkCreatedStatusEnumSerializer;

@@ -9,6 +9,9 @@ part of 'native_push_payload_apns_aps.dart';
 const NativePushPayloadApnsApsSoundEnum
 _$nativePushPayloadApnsApsSoundEnum_default_ =
     const NativePushPayloadApnsApsSoundEnum._('default_');
+const NativePushPayloadApnsApsSoundEnum
+_$nativePushPayloadApnsApsSoundEnum_unknownDefaultOpenApi =
+    const NativePushPayloadApnsApsSoundEnum._('unknownDefaultOpenApi');
 
 NativePushPayloadApnsApsSoundEnum _$nativePushPayloadApnsApsSoundEnumValueOf(
   String name,
@@ -16,8 +19,10 @@ NativePushPayloadApnsApsSoundEnum _$nativePushPayloadApnsApsSoundEnumValueOf(
   switch (name) {
     case 'default_':
       return _$nativePushPayloadApnsApsSoundEnum_default_;
+    case 'unknownDefaultOpenApi':
+      return _$nativePushPayloadApnsApsSoundEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$nativePushPayloadApnsApsSoundEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -26,20 +31,26 @@ _$nativePushPayloadApnsApsSoundEnumValues =
     BuiltSet<NativePushPayloadApnsApsSoundEnum>(
       const <NativePushPayloadApnsApsSoundEnum>[
         _$nativePushPayloadApnsApsSoundEnum_default_,
+        _$nativePushPayloadApnsApsSoundEnum_unknownDefaultOpenApi,
       ],
     );
 
 const NativePushPayloadApnsApsMutableContentEnum
 _$nativePushPayloadApnsApsMutableContentEnum_number1 =
     const NativePushPayloadApnsApsMutableContentEnum._('number1');
+const NativePushPayloadApnsApsMutableContentEnum
+_$nativePushPayloadApnsApsMutableContentEnum_unknownDefaultOpenApi =
+    const NativePushPayloadApnsApsMutableContentEnum._('unknownDefaultOpenApi');
 
 NativePushPayloadApnsApsMutableContentEnum
 _$nativePushPayloadApnsApsMutableContentEnumValueOf(String name) {
   switch (name) {
     case 'number1':
       return _$nativePushPayloadApnsApsMutableContentEnum_number1;
+    case 'unknownDefaultOpenApi':
+      return _$nativePushPayloadApnsApsMutableContentEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$nativePushPayloadApnsApsMutableContentEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -48,6 +59,7 @@ _$nativePushPayloadApnsApsMutableContentEnumValues =
     BuiltSet<NativePushPayloadApnsApsMutableContentEnum>(
       const <NativePushPayloadApnsApsMutableContentEnum>[
         _$nativePushPayloadApnsApsMutableContentEnum_number1,
+        _$nativePushPayloadApnsApsMutableContentEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -60,6 +72,11 @@ _$nativePushPayloadApnsApsInterruptionLevelEnum_active =
 const NativePushPayloadApnsApsInterruptionLevelEnum
 _$nativePushPayloadApnsApsInterruptionLevelEnum_timeSensitive =
     const NativePushPayloadApnsApsInterruptionLevelEnum._('timeSensitive');
+const NativePushPayloadApnsApsInterruptionLevelEnum
+_$nativePushPayloadApnsApsInterruptionLevelEnum_unknownDefaultOpenApi =
+    const NativePushPayloadApnsApsInterruptionLevelEnum._(
+      'unknownDefaultOpenApi',
+    );
 
 NativePushPayloadApnsApsInterruptionLevelEnum
 _$nativePushPayloadApnsApsInterruptionLevelEnumValueOf(String name) {
@@ -70,8 +87,10 @@ _$nativePushPayloadApnsApsInterruptionLevelEnumValueOf(String name) {
       return _$nativePushPayloadApnsApsInterruptionLevelEnum_active;
     case 'timeSensitive':
       return _$nativePushPayloadApnsApsInterruptionLevelEnum_timeSensitive;
+    case 'unknownDefaultOpenApi':
+      return _$nativePushPayloadApnsApsInterruptionLevelEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$nativePushPayloadApnsApsInterruptionLevelEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -82,6 +101,7 @@ _$nativePushPayloadApnsApsInterruptionLevelEnumValues =
         _$nativePushPayloadApnsApsInterruptionLevelEnum_passive,
         _$nativePushPayloadApnsApsInterruptionLevelEnum_active,
         _$nativePushPayloadApnsApsInterruptionLevelEnum_timeSensitive,
+        _$nativePushPayloadApnsApsInterruptionLevelEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -99,9 +119,11 @@ class _$NativePushPayloadApnsApsSoundEnumSerializer
     implements PrimitiveSerializer<NativePushPayloadApnsApsSoundEnum> {
   static const Map<String, Object> _toWire = const <String, Object>{
     'default_': 'default',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'default': 'default_',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -130,9 +152,11 @@ class _$NativePushPayloadApnsApsMutableContentEnumSerializer
     implements PrimitiveSerializer<NativePushPayloadApnsApsMutableContentEnum> {
   static const Map<String, Object> _toWire = const <String, Object>{
     'number1': 1,
+    'unknownDefaultOpenApi': 11184809,
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     1: 'number1',
+    11184809: 'unknownDefaultOpenApi',
   };
 
   @override
@@ -166,11 +190,13 @@ class _$NativePushPayloadApnsApsInterruptionLevelEnumSerializer
     'passive': 'passive',
     'active': 'active',
     'timeSensitive': 'time-sensitive',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'passive': 'passive',
     'active': 'active',
     'time-sensitive': 'timeSensitive',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

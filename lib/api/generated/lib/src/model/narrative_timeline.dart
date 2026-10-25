@@ -173,6 +173,9 @@ class NarrativeTimelineIntervalEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'P1D')
   static const NarrativeTimelineIntervalEnum P1D =
       _$narrativeTimelineIntervalEnum_P1D;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const NarrativeTimelineIntervalEnum unknownDefaultOpenApi =
+      _$narrativeTimelineIntervalEnum_unknownDefaultOpenApi;
 
   static Serializer<NarrativeTimelineIntervalEnum> get serializer =>
       _$narrativeTimelineIntervalEnumSerializer;

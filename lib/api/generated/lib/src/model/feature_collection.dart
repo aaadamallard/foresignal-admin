@@ -318,6 +318,9 @@ class FeatureCollectionTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'FeatureCollection')
   static const FeatureCollectionTypeEnum featureCollection =
       _$featureCollectionTypeEnum_featureCollection;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const FeatureCollectionTypeEnum unknownDefaultOpenApi =
+      _$featureCollectionTypeEnum_unknownDefaultOpenApi;
 
   static Serializer<FeatureCollectionTypeEnum> get serializer =>
       _$featureCollectionTypeEnumSerializer;

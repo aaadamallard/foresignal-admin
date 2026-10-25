@@ -14,6 +14,9 @@ const IndexFitResultStatusEnum _$indexFitResultStatusEnum_done =
     const IndexFitResultStatusEnum._('done');
 const IndexFitResultStatusEnum _$indexFitResultStatusEnum_failed =
     const IndexFitResultStatusEnum._('failed');
+const IndexFitResultStatusEnum
+_$indexFitResultStatusEnum_unknownDefaultOpenApi =
+    const IndexFitResultStatusEnum._('unknownDefaultOpenApi');
 
 IndexFitResultStatusEnum _$indexFitResultStatusEnumValueOf(String name) {
   switch (name) {
@@ -25,8 +28,10 @@ IndexFitResultStatusEnum _$indexFitResultStatusEnumValueOf(String name) {
       return _$indexFitResultStatusEnum_done;
     case 'failed':
       return _$indexFitResultStatusEnum_failed;
+    case 'unknownDefaultOpenApi':
+      return _$indexFitResultStatusEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$indexFitResultStatusEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -36,6 +41,7 @@ final BuiltSet<IndexFitResultStatusEnum> _$indexFitResultStatusEnumValues =
       _$indexFitResultStatusEnum_running,
       _$indexFitResultStatusEnum_done,
       _$indexFitResultStatusEnum_failed,
+      _$indexFitResultStatusEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<IndexFitResultStatusEnum> _$indexFitResultStatusEnumSerializer =
@@ -48,12 +54,14 @@ class _$IndexFitResultStatusEnumSerializer
     'running': 'running',
     'done': 'done',
     'failed': 'failed',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'queued': 'queued',
     'running': 'running',
     'done': 'done',
     'failed': 'failed',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

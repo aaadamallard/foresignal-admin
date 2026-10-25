@@ -203,6 +203,9 @@ class AnomalyBaselineSlotModelEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'nb')
   static const AnomalyBaselineSlotModelEnum nb =
       _$anomalyBaselineSlotModelEnum_nb;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const AnomalyBaselineSlotModelEnum unknownDefaultOpenApi =
+      _$anomalyBaselineSlotModelEnum_unknownDefaultOpenApi;
 
   static Serializer<AnomalyBaselineSlotModelEnum> get serializer =>
       _$anomalyBaselineSlotModelEnumSerializer;

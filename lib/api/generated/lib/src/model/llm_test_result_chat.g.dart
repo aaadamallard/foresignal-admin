@@ -19,6 +19,9 @@ _$llmTestResultChatStopReasonEnum_refusal =
     const LlmTestResultChatStopReasonEnum._('refusal');
 const LlmTestResultChatStopReasonEnum _$llmTestResultChatStopReasonEnum_error =
     const LlmTestResultChatStopReasonEnum._('error');
+const LlmTestResultChatStopReasonEnum
+_$llmTestResultChatStopReasonEnum_unknownDefaultOpenApi =
+    const LlmTestResultChatStopReasonEnum._('unknownDefaultOpenApi');
 
 LlmTestResultChatStopReasonEnum _$llmTestResultChatStopReasonEnumValueOf(
   String name,
@@ -34,8 +37,10 @@ LlmTestResultChatStopReasonEnum _$llmTestResultChatStopReasonEnumValueOf(
       return _$llmTestResultChatStopReasonEnum_refusal;
     case 'error':
       return _$llmTestResultChatStopReasonEnum_error;
+    case 'unknownDefaultOpenApi':
+      return _$llmTestResultChatStopReasonEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$llmTestResultChatStopReasonEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -48,6 +53,7 @@ _$llmTestResultChatStopReasonEnumValues =
         _$llmTestResultChatStopReasonEnum_maxTokens,
         _$llmTestResultChatStopReasonEnum_refusal,
         _$llmTestResultChatStopReasonEnum_error,
+        _$llmTestResultChatStopReasonEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -63,6 +69,7 @@ class _$LlmTestResultChatStopReasonEnumSerializer
     'maxTokens': 'max_tokens',
     'refusal': 'refusal',
     'error': 'error',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'end': 'end',
@@ -70,6 +77,7 @@ class _$LlmTestResultChatStopReasonEnumSerializer
     'max_tokens': 'maxTokens',
     'refusal': 'refusal',
     'error': 'error',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

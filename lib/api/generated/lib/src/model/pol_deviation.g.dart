@@ -14,6 +14,9 @@ _$polDeviationDeviationTypeEnum_UNUSUAL_TIME =
 const PolDeviationDeviationTypeEnum
 _$polDeviationDeviationTypeEnum_EXPECTED_ABSENT =
     const PolDeviationDeviationTypeEnum._('EXPECTED_ABSENT');
+const PolDeviationDeviationTypeEnum
+_$polDeviationDeviationTypeEnum_unknownDefaultOpenApi =
+    const PolDeviationDeviationTypeEnum._('unknownDefaultOpenApi');
 
 PolDeviationDeviationTypeEnum _$polDeviationDeviationTypeEnumValueOf(
   String name,
@@ -25,8 +28,10 @@ PolDeviationDeviationTypeEnum _$polDeviationDeviationTypeEnumValueOf(
       return _$polDeviationDeviationTypeEnum_UNUSUAL_TIME;
     case 'EXPECTED_ABSENT':
       return _$polDeviationDeviationTypeEnum_EXPECTED_ABSENT;
+    case 'unknownDefaultOpenApi':
+      return _$polDeviationDeviationTypeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$polDeviationDeviationTypeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -36,6 +41,7 @@ _$polDeviationDeviationTypeEnumValues = BuiltSet<PolDeviationDeviationTypeEnum>(
     _$polDeviationDeviationTypeEnum_NEW_PLACE,
     _$polDeviationDeviationTypeEnum_UNUSUAL_TIME,
     _$polDeviationDeviationTypeEnum_EXPECTED_ABSENT,
+    _$polDeviationDeviationTypeEnum_unknownDefaultOpenApi,
   ],
 );
 
@@ -49,11 +55,13 @@ class _$PolDeviationDeviationTypeEnumSerializer
     'NEW_PLACE': 'NEW_PLACE',
     'UNUSUAL_TIME': 'UNUSUAL_TIME',
     'EXPECTED_ABSENT': 'EXPECTED_ABSENT',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'NEW_PLACE': 'NEW_PLACE',
     'UNUSUAL_TIME': 'UNUSUAL_TIME',
     'EXPECTED_ABSENT': 'EXPECTED_ABSENT',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

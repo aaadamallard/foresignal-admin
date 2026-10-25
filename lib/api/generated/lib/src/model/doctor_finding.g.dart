@@ -36,6 +36,8 @@ const DoctorFindingCodeEnum _$doctorFindingCodeEnum_NO_CHANGE_DETECTED =
     const DoctorFindingCodeEnum._('NO_CHANGE_DETECTED');
 const DoctorFindingCodeEnum _$doctorFindingCodeEnum_PROBE_SKIPPED_BUDGET =
     const DoctorFindingCodeEnum._('PROBE_SKIPPED_BUDGET');
+const DoctorFindingCodeEnum _$doctorFindingCodeEnum_unknownDefaultOpenApi =
+    const DoctorFindingCodeEnum._('unknownDefaultOpenApi');
 
 DoctorFindingCodeEnum _$doctorFindingCodeEnumValueOf(String name) {
   switch (name) {
@@ -69,8 +71,10 @@ DoctorFindingCodeEnum _$doctorFindingCodeEnumValueOf(String name) {
       return _$doctorFindingCodeEnum_NO_CHANGE_DETECTED;
     case 'PROBE_SKIPPED_BUDGET':
       return _$doctorFindingCodeEnum_PROBE_SKIPPED_BUDGET;
+    case 'unknownDefaultOpenApi':
+      return _$doctorFindingCodeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$doctorFindingCodeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -91,6 +95,7 @@ final BuiltSet<DoctorFindingCodeEnum> _$doctorFindingCodeEnumValues =
       _$doctorFindingCodeEnum_COVERAGE_DROPPED,
       _$doctorFindingCodeEnum_NO_CHANGE_DETECTED,
       _$doctorFindingCodeEnum_PROBE_SKIPPED_BUDGET,
+      _$doctorFindingCodeEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<DoctorFindingCodeEnum> _$doctorFindingCodeEnumSerializer =
@@ -114,6 +119,7 @@ class _$DoctorFindingCodeEnumSerializer
     'COVERAGE_DROPPED': 'COVERAGE_DROPPED',
     'NO_CHANGE_DETECTED': 'NO_CHANGE_DETECTED',
     'PROBE_SKIPPED_BUDGET': 'PROBE_SKIPPED_BUDGET',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'AUTH_FAILED': 'AUTH_FAILED',
@@ -131,6 +137,7 @@ class _$DoctorFindingCodeEnumSerializer
     'COVERAGE_DROPPED': 'COVERAGE_DROPPED',
     'NO_CHANGE_DETECTED': 'NO_CHANGE_DETECTED',
     'PROBE_SKIPPED_BUDGET': 'PROBE_SKIPPED_BUDGET',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

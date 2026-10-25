@@ -9,14 +9,19 @@ part of 'chronicle_social_volume_selector.dart';
 const ChronicleSocialVolumeSelectorTypeEnum
 _$chronicleSocialVolumeSelectorTypeEnum_socialVolume =
     const ChronicleSocialVolumeSelectorTypeEnum._('socialVolume');
+const ChronicleSocialVolumeSelectorTypeEnum
+_$chronicleSocialVolumeSelectorTypeEnum_unknownDefaultOpenApi =
+    const ChronicleSocialVolumeSelectorTypeEnum._('unknownDefaultOpenApi');
 
 ChronicleSocialVolumeSelectorTypeEnum
 _$chronicleSocialVolumeSelectorTypeEnumValueOf(String name) {
   switch (name) {
     case 'socialVolume':
       return _$chronicleSocialVolumeSelectorTypeEnum_socialVolume;
+    case 'unknownDefaultOpenApi':
+      return _$chronicleSocialVolumeSelectorTypeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$chronicleSocialVolumeSelectorTypeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -25,6 +30,7 @@ _$chronicleSocialVolumeSelectorTypeEnumValues =
     BuiltSet<ChronicleSocialVolumeSelectorTypeEnum>(
       const <ChronicleSocialVolumeSelectorTypeEnum>[
         _$chronicleSocialVolumeSelectorTypeEnum_socialVolume,
+        _$chronicleSocialVolumeSelectorTypeEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -40,6 +46,9 @@ _$chronicleSocialVolumeSelectorMetricsEnum_reposts =
 const ChronicleSocialVolumeSelectorMetricsEnum
 _$chronicleSocialVolumeSelectorMetricsEnum_engagement =
     const ChronicleSocialVolumeSelectorMetricsEnum._('engagement');
+const ChronicleSocialVolumeSelectorMetricsEnum
+_$chronicleSocialVolumeSelectorMetricsEnum_unknownDefaultOpenApi =
+    const ChronicleSocialVolumeSelectorMetricsEnum._('unknownDefaultOpenApi');
 
 ChronicleSocialVolumeSelectorMetricsEnum
 _$chronicleSocialVolumeSelectorMetricsEnumValueOf(String name) {
@@ -52,8 +61,10 @@ _$chronicleSocialVolumeSelectorMetricsEnumValueOf(String name) {
       return _$chronicleSocialVolumeSelectorMetricsEnum_reposts;
     case 'engagement':
       return _$chronicleSocialVolumeSelectorMetricsEnum_engagement;
+    case 'unknownDefaultOpenApi':
+      return _$chronicleSocialVolumeSelectorMetricsEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$chronicleSocialVolumeSelectorMetricsEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -65,6 +76,7 @@ _$chronicleSocialVolumeSelectorMetricsEnumValues =
         _$chronicleSocialVolumeSelectorMetricsEnum_uniqueAuthors,
         _$chronicleSocialVolumeSelectorMetricsEnum_reposts,
         _$chronicleSocialVolumeSelectorMetricsEnum_engagement,
+        _$chronicleSocialVolumeSelectorMetricsEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -79,9 +91,11 @@ class _$ChronicleSocialVolumeSelectorTypeEnumSerializer
     implements PrimitiveSerializer<ChronicleSocialVolumeSelectorTypeEnum> {
   static const Map<String, Object> _toWire = const <String, Object>{
     'socialVolume': 'social-volume',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'social-volume': 'socialVolume',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -115,12 +129,14 @@ class _$ChronicleSocialVolumeSelectorMetricsEnumSerializer
     'uniqueAuthors': 'uniqueAuthors',
     'reposts': 'reposts',
     'engagement': 'engagement',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'posts': 'posts',
     'uniqueAuthors': 'uniqueAuthors',
     'reposts': 'reposts',
     'engagement': 'engagement',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

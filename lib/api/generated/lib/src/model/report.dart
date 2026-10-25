@@ -592,6 +592,9 @@ class ReportStatusEnum extends EnumClass {
   static const ReportStatusEnum published = _$reportStatusEnum_published;
   @BuiltValueEnumConst(wireName: r'retracted')
   static const ReportStatusEnum retracted = _$reportStatusEnum_retracted;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ReportStatusEnum unknownDefaultOpenApi =
+      _$reportStatusEnum_unknownDefaultOpenApi;
 
   static Serializer<ReportStatusEnum> get serializer =>
       _$reportStatusEnumSerializer;
@@ -618,6 +621,9 @@ class ReportTemplateEnum extends EnumClass {
       _$reportTemplateEnum_weeklyAssessment;
   @BuiltValueEnumConst(wireName: r'custom')
   static const ReportTemplateEnum custom = _$reportTemplateEnum_custom;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ReportTemplateEnum unknownDefaultOpenApi =
+      _$reportTemplateEnum_unknownDefaultOpenApi;
 
   static Serializer<ReportTemplateEnum> get serializer =>
       _$reportTemplateEnumSerializer;

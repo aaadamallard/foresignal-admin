@@ -8,19 +8,24 @@ part of 'ntfy_message.dart';
 
 const NtfyMessageEventEnum _$ntfyMessageEventEnum_message =
     const NtfyMessageEventEnum._('message');
+const NtfyMessageEventEnum _$ntfyMessageEventEnum_unknownDefaultOpenApi =
+    const NtfyMessageEventEnum._('unknownDefaultOpenApi');
 
 NtfyMessageEventEnum _$ntfyMessageEventEnumValueOf(String name) {
   switch (name) {
     case 'message':
       return _$ntfyMessageEventEnum_message;
+    case 'unknownDefaultOpenApi':
+      return _$ntfyMessageEventEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$ntfyMessageEventEnum_unknownDefaultOpenApi;
   }
 }
 
 final BuiltSet<NtfyMessageEventEnum> _$ntfyMessageEventEnumValues =
     BuiltSet<NtfyMessageEventEnum>(const <NtfyMessageEventEnum>[
       _$ntfyMessageEventEnum_message,
+      _$ntfyMessageEventEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<NtfyMessageEventEnum> _$ntfyMessageEventEnumSerializer =
@@ -30,9 +35,11 @@ class _$NtfyMessageEventEnumSerializer
     implements PrimitiveSerializer<NtfyMessageEventEnum> {
   static const Map<String, Object> _toWire = const <String, Object>{
     'message': 'message',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'message': 'message',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

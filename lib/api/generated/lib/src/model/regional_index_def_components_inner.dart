@@ -243,6 +243,10 @@ class RegionalIndexDefComponentsInnerTransformEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'level')
   static const RegionalIndexDefComponentsInnerTransformEnum level =
       _$regionalIndexDefComponentsInnerTransformEnum_level;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const RegionalIndexDefComponentsInnerTransformEnum
+  unknownDefaultOpenApi =
+      _$regionalIndexDefComponentsInnerTransformEnum_unknownDefaultOpenApi;
 
   static Serializer<RegionalIndexDefComponentsInnerTransformEnum>
   get serializer => _$regionalIndexDefComponentsInnerTransformEnumSerializer;
@@ -266,6 +270,9 @@ class RegionalIndexDefComponentsInnerWindowEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'P90D')
   static const RegionalIndexDefComponentsInnerWindowEnum P90D =
       _$regionalIndexDefComponentsInnerWindowEnum_P90D;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const RegionalIndexDefComponentsInnerWindowEnum unknownDefaultOpenApi =
+      _$regionalIndexDefComponentsInnerWindowEnum_unknownDefaultOpenApi;
 
   static Serializer<RegionalIndexDefComponentsInnerWindowEnum> get serializer =>
       _$regionalIndexDefComponentsInnerWindowEnumSerializer;
@@ -285,6 +292,10 @@ class RegionalIndexDefComponentsInnerDirectionEnum extends EnumClass {
   @BuiltValueEnumConst(wireNumber: -1)
   static const RegionalIndexDefComponentsInnerDirectionEnum numberNegative1 =
       _$regionalIndexDefComponentsInnerDirectionEnum_numberNegative1;
+  @BuiltValueEnumConst(wireNumber: 11184809, fallback: true)
+  static const RegionalIndexDefComponentsInnerDirectionEnum
+  unknownDefaultOpenApi =
+      _$regionalIndexDefComponentsInnerDirectionEnum_unknownDefaultOpenApi;
 
   static Serializer<RegionalIndexDefComponentsInnerDirectionEnum>
   get serializer => _$regionalIndexDefComponentsInnerDirectionEnumSerializer;

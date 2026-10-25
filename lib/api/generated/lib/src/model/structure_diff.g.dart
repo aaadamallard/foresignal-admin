@@ -20,6 +20,8 @@ const StructureDiffFormatEnum _$structureDiffFormatEnum_html =
     const StructureDiffFormatEnum._('html');
 const StructureDiffFormatEnum _$structureDiffFormatEnum_text =
     const StructureDiffFormatEnum._('text');
+const StructureDiffFormatEnum _$structureDiffFormatEnum_unknownDefaultOpenApi =
+    const StructureDiffFormatEnum._('unknownDefaultOpenApi');
 
 StructureDiffFormatEnum _$structureDiffFormatEnumValueOf(String name) {
   switch (name) {
@@ -37,8 +39,10 @@ StructureDiffFormatEnum _$structureDiffFormatEnumValueOf(String name) {
       return _$structureDiffFormatEnum_html;
     case 'text':
       return _$structureDiffFormatEnum_text;
+    case 'unknownDefaultOpenApi':
+      return _$structureDiffFormatEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$structureDiffFormatEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -51,6 +55,7 @@ final BuiltSet<StructureDiffFormatEnum> _$structureDiffFormatEnumValues =
       _$structureDiffFormatEnum_binary,
       _$structureDiffFormatEnum_html,
       _$structureDiffFormatEnum_text,
+      _$structureDiffFormatEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<StructureDiffFormatEnum> _$structureDiffFormatEnumSerializer =
@@ -66,6 +71,7 @@ class _$StructureDiffFormatEnumSerializer
     'binary': 'binary',
     'html': 'html',
     'text': 'text',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'json': 'json',
@@ -75,6 +81,7 @@ class _$StructureDiffFormatEnumSerializer
     'binary': 'binary',
     'html': 'html',
     'text': 'text',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

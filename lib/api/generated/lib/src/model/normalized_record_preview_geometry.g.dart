@@ -27,6 +27,9 @@ _$normalizedRecordPreviewGeometryTypeEnum_multiPolygon =
 const NormalizedRecordPreviewGeometryTypeEnum
 _$normalizedRecordPreviewGeometryTypeEnum_geometryCollection =
     const NormalizedRecordPreviewGeometryTypeEnum._('geometryCollection');
+const NormalizedRecordPreviewGeometryTypeEnum
+_$normalizedRecordPreviewGeometryTypeEnum_unknownDefaultOpenApi =
+    const NormalizedRecordPreviewGeometryTypeEnum._('unknownDefaultOpenApi');
 
 NormalizedRecordPreviewGeometryTypeEnum
 _$normalizedRecordPreviewGeometryTypeEnumValueOf(String name) {
@@ -45,8 +48,10 @@ _$normalizedRecordPreviewGeometryTypeEnumValueOf(String name) {
       return _$normalizedRecordPreviewGeometryTypeEnum_multiPolygon;
     case 'geometryCollection':
       return _$normalizedRecordPreviewGeometryTypeEnum_geometryCollection;
+    case 'unknownDefaultOpenApi':
+      return _$normalizedRecordPreviewGeometryTypeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$normalizedRecordPreviewGeometryTypeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -61,6 +66,7 @@ _$normalizedRecordPreviewGeometryTypeEnumValues =
         _$normalizedRecordPreviewGeometryTypeEnum_polygon,
         _$normalizedRecordPreviewGeometryTypeEnum_multiPolygon,
         _$normalizedRecordPreviewGeometryTypeEnum_geometryCollection,
+        _$normalizedRecordPreviewGeometryTypeEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -78,6 +84,7 @@ class _$NormalizedRecordPreviewGeometryTypeEnumSerializer
     'polygon': 'Polygon',
     'multiPolygon': 'MultiPolygon',
     'geometryCollection': 'GeometryCollection',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'Point': 'point',
@@ -87,6 +94,7 @@ class _$NormalizedRecordPreviewGeometryTypeEnumSerializer
     'Polygon': 'polygon',
     'MultiPolygon': 'multiPolygon',
     'GeometryCollection': 'geometryCollection',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

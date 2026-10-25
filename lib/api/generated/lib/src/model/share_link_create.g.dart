@@ -19,6 +19,9 @@ _$shareLinkCreateTargetTypeEnum_briefingRun =
     const ShareLinkCreateTargetTypeEnum._('briefingRun');
 const ShareLinkCreateTargetTypeEnum _$shareLinkCreateTargetTypeEnum_export_ =
     const ShareLinkCreateTargetTypeEnum._('export_');
+const ShareLinkCreateTargetTypeEnum
+_$shareLinkCreateTargetTypeEnum_unknownDefaultOpenApi =
+    const ShareLinkCreateTargetTypeEnum._('unknownDefaultOpenApi');
 
 ShareLinkCreateTargetTypeEnum _$shareLinkCreateTargetTypeEnumValueOf(
   String name,
@@ -36,8 +39,10 @@ ShareLinkCreateTargetTypeEnum _$shareLinkCreateTargetTypeEnumValueOf(
       return _$shareLinkCreateTargetTypeEnum_briefingRun;
     case 'export_':
       return _$shareLinkCreateTargetTypeEnum_export_;
+    case 'unknownDefaultOpenApi':
+      return _$shareLinkCreateTargetTypeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$shareLinkCreateTargetTypeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -50,6 +55,7 @@ _$shareLinkCreateTargetTypeEnumValues = BuiltSet<ShareLinkCreateTargetTypeEnum>(
     _$shareLinkCreateTargetTypeEnum_track,
     _$shareLinkCreateTargetTypeEnum_briefingRun,
     _$shareLinkCreateTargetTypeEnum_export_,
+    _$shareLinkCreateTargetTypeEnum_unknownDefaultOpenApi,
   ],
 );
 
@@ -66,6 +72,7 @@ class _$ShareLinkCreateTargetTypeEnumSerializer
     'track': 'track',
     'briefingRun': 'briefing-run',
     'export_': 'export',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'record': 'record',
@@ -74,6 +81,7 @@ class _$ShareLinkCreateTargetTypeEnumSerializer
     'track': 'track',
     'briefing-run': 'briefingRun',
     'export': 'export_',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

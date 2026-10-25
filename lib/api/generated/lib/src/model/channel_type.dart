@@ -285,6 +285,9 @@ class ChannelTypeIdEnum extends EnumClass {
   static const ChannelTypeIdEnum meshtastic = _$channelTypeIdEnum_meshtastic;
   @BuiltValueEnumConst(wireName: r'meshcore')
   static const ChannelTypeIdEnum meshcore = _$channelTypeIdEnum_meshcore;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ChannelTypeIdEnum unknownDefaultOpenApi =
+      _$channelTypeIdEnum_unknownDefaultOpenApi;
 
   static Serializer<ChannelTypeIdEnum> get serializer =>
       _$channelTypeIdEnumSerializer;

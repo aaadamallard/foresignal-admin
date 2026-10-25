@@ -11,6 +11,8 @@ const AskMessageRoleEnum _$askMessageRoleEnum_user = const AskMessageRoleEnum._(
 );
 const AskMessageRoleEnum _$askMessageRoleEnum_assistant =
     const AskMessageRoleEnum._('assistant');
+const AskMessageRoleEnum _$askMessageRoleEnum_unknownDefaultOpenApi =
+    const AskMessageRoleEnum._('unknownDefaultOpenApi');
 
 AskMessageRoleEnum _$askMessageRoleEnumValueOf(String name) {
   switch (name) {
@@ -18,8 +20,10 @@ AskMessageRoleEnum _$askMessageRoleEnumValueOf(String name) {
       return _$askMessageRoleEnum_user;
     case 'assistant':
       return _$askMessageRoleEnum_assistant;
+    case 'unknownDefaultOpenApi':
+      return _$askMessageRoleEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$askMessageRoleEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -27,6 +31,7 @@ final BuiltSet<AskMessageRoleEnum> _$askMessageRoleEnumValues =
     BuiltSet<AskMessageRoleEnum>(const <AskMessageRoleEnum>[
       _$askMessageRoleEnum_user,
       _$askMessageRoleEnum_assistant,
+      _$askMessageRoleEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<AskMessageRoleEnum> _$askMessageRoleEnumSerializer =
@@ -37,10 +42,12 @@ class _$AskMessageRoleEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'user': 'user',
     'assistant': 'assistant',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'user': 'user',
     'assistant': 'assistant',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

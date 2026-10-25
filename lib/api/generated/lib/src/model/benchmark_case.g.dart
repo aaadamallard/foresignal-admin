@@ -12,6 +12,8 @@ const BenchmarkCaseSource_Enum _$benchmarkCaseSourceEnum_agent =
     const BenchmarkCaseSource_Enum._('agent');
 const BenchmarkCaseSource_Enum _$benchmarkCaseSourceEnum_auto =
     const BenchmarkCaseSource_Enum._('auto');
+const BenchmarkCaseSource_Enum _$benchmarkCaseSourceEnum_unknownDefaultOpenApi =
+    const BenchmarkCaseSource_Enum._('unknownDefaultOpenApi');
 
 BenchmarkCaseSource_Enum _$benchmarkCaseSourceEnumValueOf(String name) {
   switch (name) {
@@ -21,8 +23,10 @@ BenchmarkCaseSource_Enum _$benchmarkCaseSourceEnumValueOf(String name) {
       return _$benchmarkCaseSourceEnum_agent;
     case 'auto':
       return _$benchmarkCaseSourceEnum_auto;
+    case 'unknownDefaultOpenApi':
+      return _$benchmarkCaseSourceEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$benchmarkCaseSourceEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -31,6 +35,7 @@ final BuiltSet<BenchmarkCaseSource_Enum> _$benchmarkCaseSourceEnumValues =
       _$benchmarkCaseSourceEnum_operator_,
       _$benchmarkCaseSourceEnum_agent,
       _$benchmarkCaseSourceEnum_auto,
+      _$benchmarkCaseSourceEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<BenchmarkCaseSource_Enum> _$benchmarkCaseSourceEnumSerializer =
@@ -42,11 +47,13 @@ class _$BenchmarkCaseSource_EnumSerializer
     'operator_': 'operator',
     'agent': 'agent',
     'auto': 'auto',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'operator': 'operator_',
     'agent': 'agent',
     'auto': 'auto',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

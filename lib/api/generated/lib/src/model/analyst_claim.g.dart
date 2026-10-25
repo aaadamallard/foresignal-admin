@@ -12,6 +12,8 @@ const AnalystClaimBasisEnum _$analystClaimBasisEnum_inference =
     const AnalystClaimBasisEnum._('inference');
 const AnalystClaimBasisEnum _$analystClaimBasisEnum_speculation =
     const AnalystClaimBasisEnum._('speculation');
+const AnalystClaimBasisEnum _$analystClaimBasisEnum_unknownDefaultOpenApi =
+    const AnalystClaimBasisEnum._('unknownDefaultOpenApi');
 
 AnalystClaimBasisEnum _$analystClaimBasisEnumValueOf(String name) {
   switch (name) {
@@ -21,8 +23,10 @@ AnalystClaimBasisEnum _$analystClaimBasisEnumValueOf(String name) {
       return _$analystClaimBasisEnum_inference;
     case 'speculation':
       return _$analystClaimBasisEnum_speculation;
+    case 'unknownDefaultOpenApi':
+      return _$analystClaimBasisEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$analystClaimBasisEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -31,6 +35,7 @@ final BuiltSet<AnalystClaimBasisEnum> _$analystClaimBasisEnumValues =
       _$analystClaimBasisEnum_evidence,
       _$analystClaimBasisEnum_inference,
       _$analystClaimBasisEnum_speculation,
+      _$analystClaimBasisEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<AnalystClaimBasisEnum> _$analystClaimBasisEnumSerializer =
@@ -42,11 +47,13 @@ class _$AnalystClaimBasisEnumSerializer
     'evidence': 'evidence',
     'inference': 'inference',
     'speculation': 'speculation',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'evidence': 'evidence',
     'inference': 'inference',
     'speculation': 'speculation',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

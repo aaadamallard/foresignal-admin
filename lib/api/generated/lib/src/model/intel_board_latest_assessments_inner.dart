@@ -196,6 +196,10 @@ class IntelBoardLatestAssessmentsInnerCadenceEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'monthly')
   static const IntelBoardLatestAssessmentsInnerCadenceEnum monthly =
       _$intelBoardLatestAssessmentsInnerCadenceEnum_monthly;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const IntelBoardLatestAssessmentsInnerCadenceEnum
+  unknownDefaultOpenApi =
+      _$intelBoardLatestAssessmentsInnerCadenceEnum_unknownDefaultOpenApi;
 
   static Serializer<IntelBoardLatestAssessmentsInnerCadenceEnum>
   get serializer => _$intelBoardLatestAssessmentsInnerCadenceEnumSerializer;

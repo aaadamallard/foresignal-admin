@@ -18,6 +18,9 @@ _$exchangePackageDeliveriesInnerStatusEnum_acknowledged =
 const ExchangePackageDeliveriesInnerStatusEnum
 _$exchangePackageDeliveriesInnerStatusEnum_failed =
     const ExchangePackageDeliveriesInnerStatusEnum._('failed');
+const ExchangePackageDeliveriesInnerStatusEnum
+_$exchangePackageDeliveriesInnerStatusEnum_unknownDefaultOpenApi =
+    const ExchangePackageDeliveriesInnerStatusEnum._('unknownDefaultOpenApi');
 
 ExchangePackageDeliveriesInnerStatusEnum
 _$exchangePackageDeliveriesInnerStatusEnumValueOf(String name) {
@@ -30,8 +33,10 @@ _$exchangePackageDeliveriesInnerStatusEnumValueOf(String name) {
       return _$exchangePackageDeliveriesInnerStatusEnum_acknowledged;
     case 'failed':
       return _$exchangePackageDeliveriesInnerStatusEnum_failed;
+    case 'unknownDefaultOpenApi':
+      return _$exchangePackageDeliveriesInnerStatusEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$exchangePackageDeliveriesInnerStatusEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -43,6 +48,7 @@ _$exchangePackageDeliveriesInnerStatusEnumValues =
         _$exchangePackageDeliveriesInnerStatusEnum_delivered,
         _$exchangePackageDeliveriesInnerStatusEnum_acknowledged,
         _$exchangePackageDeliveriesInnerStatusEnum_failed,
+        _$exchangePackageDeliveriesInnerStatusEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -57,12 +63,14 @@ class _$ExchangePackageDeliveriesInnerStatusEnumSerializer
     'delivered': 'delivered',
     'acknowledged': 'acknowledged',
     'failed': 'failed',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'pending': 'pending',
     'delivered': 'delivered',
     'acknowledged': 'acknowledged',
     'failed': 'failed',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

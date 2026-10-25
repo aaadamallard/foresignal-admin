@@ -10,6 +10,8 @@ const AskResponseModeEnum _$askResponseModeEnum_tools =
     const AskResponseModeEnum._('tools');
 const AskResponseModeEnum _$askResponseModeEnum_retrieval =
     const AskResponseModeEnum._('retrieval');
+const AskResponseModeEnum _$askResponseModeEnum_unknownDefaultOpenApi =
+    const AskResponseModeEnum._('unknownDefaultOpenApi');
 
 AskResponseModeEnum _$askResponseModeEnumValueOf(String name) {
   switch (name) {
@@ -17,8 +19,10 @@ AskResponseModeEnum _$askResponseModeEnumValueOf(String name) {
       return _$askResponseModeEnum_tools;
     case 'retrieval':
       return _$askResponseModeEnum_retrieval;
+    case 'unknownDefaultOpenApi':
+      return _$askResponseModeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$askResponseModeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -26,6 +30,7 @@ final BuiltSet<AskResponseModeEnum> _$askResponseModeEnumValues =
     BuiltSet<AskResponseModeEnum>(const <AskResponseModeEnum>[
       _$askResponseModeEnum_tools,
       _$askResponseModeEnum_retrieval,
+      _$askResponseModeEnum_unknownDefaultOpenApi,
     ]);
 
 const AskResponseStopReasonEnum _$askResponseStopReasonEnum_end =
@@ -36,6 +41,9 @@ const AskResponseStopReasonEnum _$askResponseStopReasonEnum_refusal =
     const AskResponseStopReasonEnum._('refusal');
 const AskResponseStopReasonEnum _$askResponseStopReasonEnum_error =
     const AskResponseStopReasonEnum._('error');
+const AskResponseStopReasonEnum
+_$askResponseStopReasonEnum_unknownDefaultOpenApi =
+    const AskResponseStopReasonEnum._('unknownDefaultOpenApi');
 
 AskResponseStopReasonEnum _$askResponseStopReasonEnumValueOf(String name) {
   switch (name) {
@@ -47,8 +55,10 @@ AskResponseStopReasonEnum _$askResponseStopReasonEnumValueOf(String name) {
       return _$askResponseStopReasonEnum_refusal;
     case 'error':
       return _$askResponseStopReasonEnum_error;
+    case 'unknownDefaultOpenApi':
+      return _$askResponseStopReasonEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$askResponseStopReasonEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -58,6 +68,7 @@ final BuiltSet<AskResponseStopReasonEnum> _$askResponseStopReasonEnumValues =
       _$askResponseStopReasonEnum_maxTokens,
       _$askResponseStopReasonEnum_refusal,
       _$askResponseStopReasonEnum_error,
+      _$askResponseStopReasonEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<AskResponseModeEnum> _$askResponseModeEnumSerializer =
@@ -70,10 +81,12 @@ class _$AskResponseModeEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'tools': 'tools',
     'retrieval': 'retrieval',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'tools': 'tools',
     'retrieval': 'retrieval',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -105,12 +118,14 @@ class _$AskResponseStopReasonEnumSerializer
     'maxTokens': 'max_tokens',
     'refusal': 'refusal',
     'error': 'error',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'end': 'end',
     'max_tokens': 'maxTokens',
     'refusal': 'refusal',
     'error': 'error',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

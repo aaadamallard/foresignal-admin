@@ -56,7 +56,7 @@ class RecipeScreen extends ConsumerWidget {
                   PageHeader(
                     title: r.id,
                     crumbs: <Crumb>[crumb, Crumb(r.id)],
-                    subtitle: '${wireLabel(r.definition.type)} · version ${r.version}',
+                    subtitle: '${wireLabel(r.definition.type, r.definition, 'type')} · version ${r.version}',
                     titleTrailing: <Widget>[
                       StatusLabel(
                         key: const Key('recipe.status'),
@@ -666,7 +666,7 @@ class _RecipeTestCardState extends ConsumerState<RecipeTestCard> {
                             SizedBox(
                               width: 90,
                               child: StatusLabel(
-                                label: wireLabel(e.severity),
+                                label: wireLabel(e.severity, e, 'severity'),
                                 tone: severityTone(e.severity),
                               ),
                             ),

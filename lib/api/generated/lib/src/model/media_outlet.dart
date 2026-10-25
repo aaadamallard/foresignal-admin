@@ -470,6 +470,9 @@ class MediaOutletTypeEnum extends EnumClass {
   static const MediaOutletTypeEnum official = _$mediaOutletTypeEnum_official;
   @BuiltValueEnumConst(wireName: r'other')
   static const MediaOutletTypeEnum other = _$mediaOutletTypeEnum_other;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const MediaOutletTypeEnum unknownDefaultOpenApi =
+      _$mediaOutletTypeEnum_unknownDefaultOpenApi;
 
   static Serializer<MediaOutletTypeEnum> get serializer =>
       _$mediaOutletTypeEnumSerializer;

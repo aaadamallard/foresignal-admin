@@ -18,6 +18,9 @@ const IngestFormatOptionTypeEnum _$ingestFormatOptionTypeEnum_object =
     const IngestFormatOptionTypeEnum._('object');
 const IngestFormatOptionTypeEnum _$ingestFormatOptionTypeEnum_array =
     const IngestFormatOptionTypeEnum._('array');
+const IngestFormatOptionTypeEnum
+_$ingestFormatOptionTypeEnum_unknownDefaultOpenApi =
+    const IngestFormatOptionTypeEnum._('unknownDefaultOpenApi');
 
 IngestFormatOptionTypeEnum _$ingestFormatOptionTypeEnumValueOf(String name) {
   switch (name) {
@@ -33,8 +36,10 @@ IngestFormatOptionTypeEnum _$ingestFormatOptionTypeEnumValueOf(String name) {
       return _$ingestFormatOptionTypeEnum_object;
     case 'array':
       return _$ingestFormatOptionTypeEnum_array;
+    case 'unknownDefaultOpenApi':
+      return _$ingestFormatOptionTypeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$ingestFormatOptionTypeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -46,6 +51,7 @@ final BuiltSet<IngestFormatOptionTypeEnum> _$ingestFormatOptionTypeEnumValues =
       _$ingestFormatOptionTypeEnum_boolean,
       _$ingestFormatOptionTypeEnum_object,
       _$ingestFormatOptionTypeEnum_array,
+      _$ingestFormatOptionTypeEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<IngestFormatOptionTypeEnum> _$ingestFormatOptionTypeEnumSerializer =
@@ -60,6 +66,7 @@ class _$IngestFormatOptionTypeEnumSerializer
     'boolean': 'boolean',
     'object': 'object',
     'array': 'array',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'string': 'string',
@@ -68,6 +75,7 @@ class _$IngestFormatOptionTypeEnumSerializer
     'boolean': 'boolean',
     'object': 'object',
     'array': 'array',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

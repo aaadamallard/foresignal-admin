@@ -315,6 +315,9 @@ class HypothesisReviewInputCauseEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'operator')
   static const HypothesisReviewInputCauseEnum operator_ =
       _$hypothesisReviewInputCauseEnum_operator_;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const HypothesisReviewInputCauseEnum unknownDefaultOpenApi =
+      _$hypothesisReviewInputCauseEnum_unknownDefaultOpenApi;
 
   static Serializer<HypothesisReviewInputCauseEnum> get serializer =>
       _$hypothesisReviewInputCauseEnumSerializer;

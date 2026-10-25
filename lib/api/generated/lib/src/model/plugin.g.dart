@@ -7,33 +7,47 @@ part of 'plugin.dart';
 // **************************************************************************
 
 const PluginAbiEnum _$pluginAbiEnum_number1 = const PluginAbiEnum._('number1');
+const PluginAbiEnum _$pluginAbiEnum_unknownDefaultOpenApi =
+    const PluginAbiEnum._('unknownDefaultOpenApi');
 
 PluginAbiEnum _$pluginAbiEnumValueOf(String name) {
   switch (name) {
     case 'number1':
       return _$pluginAbiEnum_number1;
+    case 'unknownDefaultOpenApi':
+      return _$pluginAbiEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$pluginAbiEnum_unknownDefaultOpenApi;
   }
 }
 
 final BuiltSet<PluginAbiEnum> _$pluginAbiEnumValues = BuiltSet<PluginAbiEnum>(
-  const <PluginAbiEnum>[_$pluginAbiEnum_number1],
+  const <PluginAbiEnum>[
+    _$pluginAbiEnum_number1,
+    _$pluginAbiEnum_unknownDefaultOpenApi,
+  ],
 );
 
 const PluginKindEnum _$pluginKindEnum_parser = const PluginKindEnum._('parser');
+const PluginKindEnum _$pluginKindEnum_unknownDefaultOpenApi =
+    const PluginKindEnum._('unknownDefaultOpenApi');
 
 PluginKindEnum _$pluginKindEnumValueOf(String name) {
   switch (name) {
     case 'parser':
       return _$pluginKindEnum_parser;
+    case 'unknownDefaultOpenApi':
+      return _$pluginKindEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$pluginKindEnum_unknownDefaultOpenApi;
   }
 }
 
 final BuiltSet<PluginKindEnum> _$pluginKindEnumValues =
-    BuiltSet<PluginKindEnum>(const <PluginKindEnum>[_$pluginKindEnum_parser]);
+    BuiltSet<PluginKindEnum>(const <PluginKindEnum>[
+      _$pluginKindEnum_parser,
+      _$pluginKindEnum_unknownDefaultOpenApi,
+    ]);
 
 const PluginStateEnum _$pluginStateEnum_disabled = const PluginStateEnum._(
   'disabled',
@@ -47,6 +61,8 @@ const PluginStateEnum _$pluginStateEnum_hashMismatch = const PluginStateEnum._(
 const PluginStateEnum _$pluginStateEnum_error = const PluginStateEnum._(
   'error',
 );
+const PluginStateEnum _$pluginStateEnum_unknownDefaultOpenApi =
+    const PluginStateEnum._('unknownDefaultOpenApi');
 
 PluginStateEnum _$pluginStateEnumValueOf(String name) {
   switch (name) {
@@ -58,8 +74,10 @@ PluginStateEnum _$pluginStateEnumValueOf(String name) {
       return _$pluginStateEnum_hashMismatch;
     case 'error':
       return _$pluginStateEnum_error;
+    case 'unknownDefaultOpenApi':
+      return _$pluginStateEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$pluginStateEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -69,6 +87,7 @@ final BuiltSet<PluginStateEnum> _$pluginStateEnumValues =
       _$pluginStateEnum_enabled,
       _$pluginStateEnum_hashMismatch,
       _$pluginStateEnum_error,
+      _$pluginStateEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<PluginAbiEnum> _$pluginAbiEnumSerializer =
@@ -81,9 +100,11 @@ Serializer<PluginStateEnum> _$pluginStateEnumSerializer =
 class _$PluginAbiEnumSerializer implements PrimitiveSerializer<PluginAbiEnum> {
   static const Map<String, Object> _toWire = const <String, Object>{
     'number1': 1,
+    'unknownDefaultOpenApi': 11184809,
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     1: 'number1',
+    11184809: 'unknownDefaultOpenApi',
   };
 
   @override
@@ -112,9 +133,11 @@ class _$PluginKindEnumSerializer
     implements PrimitiveSerializer<PluginKindEnum> {
   static const Map<String, Object> _toWire = const <String, Object>{
     'parser': 'parser',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'parser': 'parser',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -146,12 +169,14 @@ class _$PluginStateEnumSerializer
     'enabled': 'enabled',
     'hashMismatch': 'hash-mismatch',
     'error': 'error',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'disabled': 'disabled',
     'enabled': 'enabled',
     'hash-mismatch': 'hashMismatch',
     'error': 'error',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

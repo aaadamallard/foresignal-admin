@@ -8,19 +8,24 @@ part of 'social_spend.dart';
 
 const SocialSpendCurrencyEnum _$socialSpendCurrencyEnum_USD =
     const SocialSpendCurrencyEnum._('USD');
+const SocialSpendCurrencyEnum _$socialSpendCurrencyEnum_unknownDefaultOpenApi =
+    const SocialSpendCurrencyEnum._('unknownDefaultOpenApi');
 
 SocialSpendCurrencyEnum _$socialSpendCurrencyEnumValueOf(String name) {
   switch (name) {
     case 'USD':
       return _$socialSpendCurrencyEnum_USD;
+    case 'unknownDefaultOpenApi':
+      return _$socialSpendCurrencyEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$socialSpendCurrencyEnum_unknownDefaultOpenApi;
   }
 }
 
 final BuiltSet<SocialSpendCurrencyEnum> _$socialSpendCurrencyEnumValues =
     BuiltSet<SocialSpendCurrencyEnum>(const <SocialSpendCurrencyEnum>[
       _$socialSpendCurrencyEnum_USD,
+      _$socialSpendCurrencyEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<SocialSpendCurrencyEnum> _$socialSpendCurrencyEnumSerializer =
@@ -30,9 +35,11 @@ class _$SocialSpendCurrencyEnumSerializer
     implements PrimitiveSerializer<SocialSpendCurrencyEnum> {
   static const Map<String, Object> _toWire = const <String, Object>{
     'USD': 'USD',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'USD': 'USD',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

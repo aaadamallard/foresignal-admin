@@ -14,6 +14,9 @@ const KeyAssumptionEventStatusEnum _$keyAssumptionEventStatusEnum_unsupported =
     const KeyAssumptionEventStatusEnum._('unsupported');
 const KeyAssumptionEventStatusEnum _$keyAssumptionEventStatusEnum_broken =
     const KeyAssumptionEventStatusEnum._('broken');
+const KeyAssumptionEventStatusEnum
+_$keyAssumptionEventStatusEnum_unknownDefaultOpenApi =
+    const KeyAssumptionEventStatusEnum._('unknownDefaultOpenApi');
 
 KeyAssumptionEventStatusEnum _$keyAssumptionEventStatusEnumValueOf(
   String name,
@@ -27,8 +30,10 @@ KeyAssumptionEventStatusEnum _$keyAssumptionEventStatusEnumValueOf(
       return _$keyAssumptionEventStatusEnum_unsupported;
     case 'broken':
       return _$keyAssumptionEventStatusEnum_broken;
+    case 'unknownDefaultOpenApi':
+      return _$keyAssumptionEventStatusEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$keyAssumptionEventStatusEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -39,6 +44,7 @@ _$keyAssumptionEventStatusEnumValues =
       _$keyAssumptionEventStatusEnum_caveated,
       _$keyAssumptionEventStatusEnum_unsupported,
       _$keyAssumptionEventStatusEnum_broken,
+      _$keyAssumptionEventStatusEnum_unknownDefaultOpenApi,
     ]);
 
 const KeyAssumptionEventPreviousStatusEnum
@@ -53,6 +59,9 @@ _$keyAssumptionEventPreviousStatusEnum_unsupported =
 const KeyAssumptionEventPreviousStatusEnum
 _$keyAssumptionEventPreviousStatusEnum_broken =
     const KeyAssumptionEventPreviousStatusEnum._('broken');
+const KeyAssumptionEventPreviousStatusEnum
+_$keyAssumptionEventPreviousStatusEnum_unknownDefaultOpenApi =
+    const KeyAssumptionEventPreviousStatusEnum._('unknownDefaultOpenApi');
 
 KeyAssumptionEventPreviousStatusEnum
 _$keyAssumptionEventPreviousStatusEnumValueOf(String name) {
@@ -65,8 +74,10 @@ _$keyAssumptionEventPreviousStatusEnumValueOf(String name) {
       return _$keyAssumptionEventPreviousStatusEnum_unsupported;
     case 'broken':
       return _$keyAssumptionEventPreviousStatusEnum_broken;
+    case 'unknownDefaultOpenApi':
+      return _$keyAssumptionEventPreviousStatusEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$keyAssumptionEventPreviousStatusEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -78,6 +89,7 @@ _$keyAssumptionEventPreviousStatusEnumValues =
         _$keyAssumptionEventPreviousStatusEnum_caveated,
         _$keyAssumptionEventPreviousStatusEnum_unsupported,
         _$keyAssumptionEventPreviousStatusEnum_broken,
+        _$keyAssumptionEventPreviousStatusEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -95,12 +107,14 @@ class _$KeyAssumptionEventStatusEnumSerializer
     'caveated': 'caveated',
     'unsupported': 'unsupported',
     'broken': 'broken',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'solid': 'solid',
     'caveated': 'caveated',
     'unsupported': 'unsupported',
     'broken': 'broken',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -132,12 +146,14 @@ class _$KeyAssumptionEventPreviousStatusEnumSerializer
     'caveated': 'caveated',
     'unsupported': 'unsupported',
     'broken': 'broken',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'solid': 'solid',
     'caveated': 'caveated',
     'unsupported': 'unsupported',
     'broken': 'broken',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

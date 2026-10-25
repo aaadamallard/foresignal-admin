@@ -233,6 +233,9 @@ class ContextSummaryActivityInnerTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'record')
   static const ContextSummaryActivityInnerTypeEnum record =
       _$contextSummaryActivityInnerTypeEnum_record;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ContextSummaryActivityInnerTypeEnum unknownDefaultOpenApi =
+      _$contextSummaryActivityInnerTypeEnum_unknownDefaultOpenApi;
 
   static Serializer<ContextSummaryActivityInnerTypeEnum> get serializer =>
       _$contextSummaryActivityInnerTypeEnumSerializer;

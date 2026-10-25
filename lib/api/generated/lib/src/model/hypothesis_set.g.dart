@@ -10,6 +10,8 @@ const HypothesisSetKindEnum _$hypothesisSetKindEnum_exclusive =
     const HypothesisSetKindEnum._('exclusive');
 const HypothesisSetKindEnum _$hypothesisSetKindEnum_independent =
     const HypothesisSetKindEnum._('independent');
+const HypothesisSetKindEnum _$hypothesisSetKindEnum_unknownDefaultOpenApi =
+    const HypothesisSetKindEnum._('unknownDefaultOpenApi');
 
 HypothesisSetKindEnum _$hypothesisSetKindEnumValueOf(String name) {
   switch (name) {
@@ -17,8 +19,10 @@ HypothesisSetKindEnum _$hypothesisSetKindEnumValueOf(String name) {
       return _$hypothesisSetKindEnum_exclusive;
     case 'independent':
       return _$hypothesisSetKindEnum_independent;
+    case 'unknownDefaultOpenApi':
+      return _$hypothesisSetKindEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$hypothesisSetKindEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -26,6 +30,7 @@ final BuiltSet<HypothesisSetKindEnum> _$hypothesisSetKindEnumValues =
     BuiltSet<HypothesisSetKindEnum>(const <HypothesisSetKindEnum>[
       _$hypothesisSetKindEnum_exclusive,
       _$hypothesisSetKindEnum_independent,
+      _$hypothesisSetKindEnum_unknownDefaultOpenApi,
     ]);
 
 const HypothesisSetCadenceEnum _$hypothesisSetCadenceEnum_daily =
@@ -34,6 +39,9 @@ const HypothesisSetCadenceEnum _$hypothesisSetCadenceEnum_weekly =
     const HypothesisSetCadenceEnum._('weekly');
 const HypothesisSetCadenceEnum _$hypothesisSetCadenceEnum_monthly =
     const HypothesisSetCadenceEnum._('monthly');
+const HypothesisSetCadenceEnum
+_$hypothesisSetCadenceEnum_unknownDefaultOpenApi =
+    const HypothesisSetCadenceEnum._('unknownDefaultOpenApi');
 
 HypothesisSetCadenceEnum _$hypothesisSetCadenceEnumValueOf(String name) {
   switch (name) {
@@ -43,8 +51,10 @@ HypothesisSetCadenceEnum _$hypothesisSetCadenceEnumValueOf(String name) {
       return _$hypothesisSetCadenceEnum_weekly;
     case 'monthly':
       return _$hypothesisSetCadenceEnum_monthly;
+    case 'unknownDefaultOpenApi':
+      return _$hypothesisSetCadenceEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$hypothesisSetCadenceEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -53,6 +63,7 @@ final BuiltSet<HypothesisSetCadenceEnum> _$hypothesisSetCadenceEnumValues =
       _$hypothesisSetCadenceEnum_daily,
       _$hypothesisSetCadenceEnum_weekly,
       _$hypothesisSetCadenceEnum_monthly,
+      _$hypothesisSetCadenceEnum_unknownDefaultOpenApi,
     ]);
 
 const HypothesisSetStatusEnum _$hypothesisSetStatusEnum_active =
@@ -61,6 +72,8 @@ const HypothesisSetStatusEnum _$hypothesisSetStatusEnum_resolved =
     const HypothesisSetStatusEnum._('resolved');
 const HypothesisSetStatusEnum _$hypothesisSetStatusEnum_archived =
     const HypothesisSetStatusEnum._('archived');
+const HypothesisSetStatusEnum _$hypothesisSetStatusEnum_unknownDefaultOpenApi =
+    const HypothesisSetStatusEnum._('unknownDefaultOpenApi');
 
 HypothesisSetStatusEnum _$hypothesisSetStatusEnumValueOf(String name) {
   switch (name) {
@@ -70,8 +83,10 @@ HypothesisSetStatusEnum _$hypothesisSetStatusEnumValueOf(String name) {
       return _$hypothesisSetStatusEnum_resolved;
     case 'archived':
       return _$hypothesisSetStatusEnum_archived;
+    case 'unknownDefaultOpenApi':
+      return _$hypothesisSetStatusEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$hypothesisSetStatusEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -80,6 +95,7 @@ final BuiltSet<HypothesisSetStatusEnum> _$hypothesisSetStatusEnumValues =
       _$hypothesisSetStatusEnum_active,
       _$hypothesisSetStatusEnum_resolved,
       _$hypothesisSetStatusEnum_archived,
+      _$hypothesisSetStatusEnum_unknownDefaultOpenApi,
     ]);
 
 const HypothesisSetOriginEnum _$hypothesisSetOriginEnum_operator_ =
@@ -88,6 +104,8 @@ const HypothesisSetOriginEnum _$hypothesisSetOriginEnum_agent =
     const HypothesisSetOriginEnum._('agent');
 const HypothesisSetOriginEnum _$hypothesisSetOriginEnum_analyst =
     const HypothesisSetOriginEnum._('analyst');
+const HypothesisSetOriginEnum _$hypothesisSetOriginEnum_unknownDefaultOpenApi =
+    const HypothesisSetOriginEnum._('unknownDefaultOpenApi');
 
 HypothesisSetOriginEnum _$hypothesisSetOriginEnumValueOf(String name) {
   switch (name) {
@@ -97,8 +115,10 @@ HypothesisSetOriginEnum _$hypothesisSetOriginEnumValueOf(String name) {
       return _$hypothesisSetOriginEnum_agent;
     case 'analyst':
       return _$hypothesisSetOriginEnum_analyst;
+    case 'unknownDefaultOpenApi':
+      return _$hypothesisSetOriginEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$hypothesisSetOriginEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -107,6 +127,7 @@ final BuiltSet<HypothesisSetOriginEnum> _$hypothesisSetOriginEnumValues =
       _$hypothesisSetOriginEnum_operator_,
       _$hypothesisSetOriginEnum_agent,
       _$hypothesisSetOriginEnum_analyst,
+      _$hypothesisSetOriginEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<HypothesisSetKindEnum> _$hypothesisSetKindEnumSerializer =
@@ -123,10 +144,12 @@ class _$HypothesisSetKindEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'exclusive': 'exclusive',
     'independent': 'independent',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'exclusive': 'exclusive',
     'independent': 'independent',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -157,11 +180,13 @@ class _$HypothesisSetCadenceEnumSerializer
     'daily': 'daily',
     'weekly': 'weekly',
     'monthly': 'monthly',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'daily': 'daily',
     'weekly': 'weekly',
     'monthly': 'monthly',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -192,11 +217,13 @@ class _$HypothesisSetStatusEnumSerializer
     'active': 'active',
     'resolved': 'resolved',
     'archived': 'archived',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'active': 'active',
     'resolved': 'resolved',
     'archived': 'archived',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -227,11 +254,13 @@ class _$HypothesisSetOriginEnumSerializer
     'operator_': 'operator',
     'agent': 'agent',
     'analyst': 'analyst',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'operator': 'operator_',
     'agent': 'agent',
     'analyst': 'analyst',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

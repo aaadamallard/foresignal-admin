@@ -544,6 +544,9 @@ class FireDetectionPayloadConfidenceClassEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'high')
   static const FireDetectionPayloadConfidenceClassEnum high =
       _$fireDetectionPayloadConfidenceClassEnum_high;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const FireDetectionPayloadConfidenceClassEnum unknownDefaultOpenApi =
+      _$fireDetectionPayloadConfidenceClassEnum_unknownDefaultOpenApi;
 
   static Serializer<FireDetectionPayloadConfidenceClassEnum> get serializer =>
       _$fireDetectionPayloadConfidenceClassEnumSerializer;

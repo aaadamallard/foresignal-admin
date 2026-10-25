@@ -279,6 +279,9 @@ class PopulationPackImportLicenceEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'CC-BY-4.0')
   static const PopulationPackImportLicenceEnum cCBY4Period0 =
       _$populationPackImportLicenceEnum_cCBY4Period0;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const PopulationPackImportLicenceEnum unknownDefaultOpenApi =
+      _$populationPackImportLicenceEnum_unknownDefaultOpenApi;
 
   static Serializer<PopulationPackImportLicenceEnum> get serializer =>
       _$populationPackImportLicenceEnumSerializer;

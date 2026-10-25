@@ -18,6 +18,9 @@ const PeerUpdateReliabilityEnum _$peerUpdateReliabilityEnum_E =
     const PeerUpdateReliabilityEnum._('E');
 const PeerUpdateReliabilityEnum _$peerUpdateReliabilityEnum_F =
     const PeerUpdateReliabilityEnum._('F');
+const PeerUpdateReliabilityEnum
+_$peerUpdateReliabilityEnum_unknownDefaultOpenApi =
+    const PeerUpdateReliabilityEnum._('unknownDefaultOpenApi');
 
 PeerUpdateReliabilityEnum _$peerUpdateReliabilityEnumValueOf(String name) {
   switch (name) {
@@ -33,8 +36,10 @@ PeerUpdateReliabilityEnum _$peerUpdateReliabilityEnumValueOf(String name) {
       return _$peerUpdateReliabilityEnum_E;
     case 'F':
       return _$peerUpdateReliabilityEnum_F;
+    case 'unknownDefaultOpenApi':
+      return _$peerUpdateReliabilityEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$peerUpdateReliabilityEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -46,6 +51,7 @@ final BuiltSet<PeerUpdateReliabilityEnum> _$peerUpdateReliabilityEnumValues =
       _$peerUpdateReliabilityEnum_D,
       _$peerUpdateReliabilityEnum_E,
       _$peerUpdateReliabilityEnum_F,
+      _$peerUpdateReliabilityEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<PeerUpdateReliabilityEnum> _$peerUpdateReliabilityEnumSerializer =
@@ -60,6 +66,7 @@ class _$PeerUpdateReliabilityEnumSerializer
     'D': 'D',
     'E': 'E',
     'F': 'F',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'A': 'A',
@@ -68,6 +75,7 @@ class _$PeerUpdateReliabilityEnumSerializer
     'D': 'D',
     'E': 'E',
     'F': 'F',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

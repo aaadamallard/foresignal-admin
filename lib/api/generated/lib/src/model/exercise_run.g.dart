@@ -14,6 +14,8 @@ const ExerciseRunSpeedEnum _$exerciseRunSpeedEnum_x60 =
     const ExerciseRunSpeedEnum._('x60');
 const ExerciseRunSpeedEnum _$exerciseRunSpeedEnum_max =
     const ExerciseRunSpeedEnum._('max');
+const ExerciseRunSpeedEnum _$exerciseRunSpeedEnum_unknownDefaultOpenApi =
+    const ExerciseRunSpeedEnum._('unknownDefaultOpenApi');
 
 ExerciseRunSpeedEnum _$exerciseRunSpeedEnumValueOf(String name) {
   switch (name) {
@@ -25,8 +27,10 @@ ExerciseRunSpeedEnum _$exerciseRunSpeedEnumValueOf(String name) {
       return _$exerciseRunSpeedEnum_x60;
     case 'max':
       return _$exerciseRunSpeedEnum_max;
+    case 'unknownDefaultOpenApi':
+      return _$exerciseRunSpeedEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$exerciseRunSpeedEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -36,6 +40,7 @@ final BuiltSet<ExerciseRunSpeedEnum> _$exerciseRunSpeedEnumValues =
       _$exerciseRunSpeedEnum_x10,
       _$exerciseRunSpeedEnum_x60,
       _$exerciseRunSpeedEnum_max,
+      _$exerciseRunSpeedEnum_unknownDefaultOpenApi,
     ]);
 
 const ExerciseRunStatusEnum _$exerciseRunStatusEnum_PLANNED =
@@ -48,6 +53,8 @@ const ExerciseRunStatusEnum _$exerciseRunStatusEnum_CANCELLED =
     const ExerciseRunStatusEnum._('CANCELLED');
 const ExerciseRunStatusEnum _$exerciseRunStatusEnum_FAILED =
     const ExerciseRunStatusEnum._('FAILED');
+const ExerciseRunStatusEnum _$exerciseRunStatusEnum_unknownDefaultOpenApi =
+    const ExerciseRunStatusEnum._('unknownDefaultOpenApi');
 
 ExerciseRunStatusEnum _$exerciseRunStatusEnumValueOf(String name) {
   switch (name) {
@@ -61,8 +68,10 @@ ExerciseRunStatusEnum _$exerciseRunStatusEnumValueOf(String name) {
       return _$exerciseRunStatusEnum_CANCELLED;
     case 'FAILED':
       return _$exerciseRunStatusEnum_FAILED;
+    case 'unknownDefaultOpenApi':
+      return _$exerciseRunStatusEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$exerciseRunStatusEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -73,6 +82,7 @@ final BuiltSet<ExerciseRunStatusEnum> _$exerciseRunStatusEnumValues =
       _$exerciseRunStatusEnum_DONE,
       _$exerciseRunStatusEnum_CANCELLED,
       _$exerciseRunStatusEnum_FAILED,
+      _$exerciseRunStatusEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<ExerciseRunSpeedEnum> _$exerciseRunSpeedEnumSerializer =
@@ -87,12 +97,14 @@ class _$ExerciseRunSpeedEnumSerializer
     'x10': 'x10',
     'x60': 'x60',
     'max': 'max',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'realtime': 'realtime',
     'x10': 'x10',
     'x60': 'x60',
     'max': 'max',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override
@@ -125,6 +137,7 @@ class _$ExerciseRunStatusEnumSerializer
     'DONE': 'DONE',
     'CANCELLED': 'CANCELLED',
     'FAILED': 'FAILED',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'PLANNED': 'PLANNED',
@@ -132,6 +145,7 @@ class _$ExerciseRunStatusEnumSerializer
     'DONE': 'DONE',
     'CANCELLED': 'CANCELLED',
     'FAILED': 'FAILED',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

@@ -135,6 +135,9 @@ class StormTrackPayloadTrendMaxDbzEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'falling')
   static const StormTrackPayloadTrendMaxDbzEnum falling =
       _$stormTrackPayloadTrendMaxDbzEnum_falling;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const StormTrackPayloadTrendMaxDbzEnum unknownDefaultOpenApi =
+      _$stormTrackPayloadTrendMaxDbzEnum_unknownDefaultOpenApi;
 
   static Serializer<StormTrackPayloadTrendMaxDbzEnum> get serializer =>
       _$stormTrackPayloadTrendMaxDbzEnumSerializer;

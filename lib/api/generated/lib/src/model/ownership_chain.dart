@@ -231,6 +231,9 @@ class OwnershipChainDirectionEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'both')
   static const OwnershipChainDirectionEnum both =
       _$ownershipChainDirectionEnum_both;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const OwnershipChainDirectionEnum unknownDefaultOpenApi =
+      _$ownershipChainDirectionEnum_unknownDefaultOpenApi;
 
   static Serializer<OwnershipChainDirectionEnum> get serializer =>
       _$ownershipChainDirectionEnumSerializer;

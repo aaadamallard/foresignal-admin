@@ -516,6 +516,9 @@ class BaseRateOriginEnum extends EnumClass {
   static const BaseRateOriginEnum operator_ = _$baseRateOriginEnum_operator_;
   @BuiltValueEnumConst(wireName: r'agent')
   static const BaseRateOriginEnum agent = _$baseRateOriginEnum_agent;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const BaseRateOriginEnum unknownDefaultOpenApi =
+      _$baseRateOriginEnum_unknownDefaultOpenApi;
 
   static Serializer<BaseRateOriginEnum> get serializer =>
       _$baseRateOriginEnumSerializer;

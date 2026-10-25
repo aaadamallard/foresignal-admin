@@ -12,6 +12,11 @@ _$ogcTileMatrixSetListTileMatrixSetsInnerIdEnum_webMercatorQuad =
 const OgcTileMatrixSetListTileMatrixSetsInnerIdEnum
 _$ogcTileMatrixSetListTileMatrixSetsInnerIdEnum_worldCRS84Quad =
     const OgcTileMatrixSetListTileMatrixSetsInnerIdEnum._('worldCRS84Quad');
+const OgcTileMatrixSetListTileMatrixSetsInnerIdEnum
+_$ogcTileMatrixSetListTileMatrixSetsInnerIdEnum_unknownDefaultOpenApi =
+    const OgcTileMatrixSetListTileMatrixSetsInnerIdEnum._(
+      'unknownDefaultOpenApi',
+    );
 
 OgcTileMatrixSetListTileMatrixSetsInnerIdEnum
 _$ogcTileMatrixSetListTileMatrixSetsInnerIdEnumValueOf(String name) {
@@ -20,8 +25,10 @@ _$ogcTileMatrixSetListTileMatrixSetsInnerIdEnumValueOf(String name) {
       return _$ogcTileMatrixSetListTileMatrixSetsInnerIdEnum_webMercatorQuad;
     case 'worldCRS84Quad':
       return _$ogcTileMatrixSetListTileMatrixSetsInnerIdEnum_worldCRS84Quad;
+    case 'unknownDefaultOpenApi':
+      return _$ogcTileMatrixSetListTileMatrixSetsInnerIdEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$ogcTileMatrixSetListTileMatrixSetsInnerIdEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -31,6 +38,7 @@ _$ogcTileMatrixSetListTileMatrixSetsInnerIdEnumValues =
       const <OgcTileMatrixSetListTileMatrixSetsInnerIdEnum>[
         _$ogcTileMatrixSetListTileMatrixSetsInnerIdEnum_webMercatorQuad,
         _$ogcTileMatrixSetListTileMatrixSetsInnerIdEnum_worldCRS84Quad,
+        _$ogcTileMatrixSetListTileMatrixSetsInnerIdEnum_unknownDefaultOpenApi,
       ],
     );
 
@@ -44,10 +52,12 @@ class _$OgcTileMatrixSetListTileMatrixSetsInnerIdEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'webMercatorQuad': 'WebMercatorQuad',
     'worldCRS84Quad': 'WorldCRS84Quad',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'WebMercatorQuad': 'webMercatorQuad',
     'WorldCRS84Quad': 'worldCRS84Quad',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

@@ -12,6 +12,9 @@ const CapturedSampleMethodEnum _$capturedSampleMethodEnum_POST =
     const CapturedSampleMethodEnum._('POST');
 const CapturedSampleMethodEnum _$capturedSampleMethodEnum_PUT =
     const CapturedSampleMethodEnum._('PUT');
+const CapturedSampleMethodEnum
+_$capturedSampleMethodEnum_unknownDefaultOpenApi =
+    const CapturedSampleMethodEnum._('unknownDefaultOpenApi');
 
 CapturedSampleMethodEnum _$capturedSampleMethodEnumValueOf(String name) {
   switch (name) {
@@ -21,8 +24,10 @@ CapturedSampleMethodEnum _$capturedSampleMethodEnumValueOf(String name) {
       return _$capturedSampleMethodEnum_POST;
     case 'PUT':
       return _$capturedSampleMethodEnum_PUT;
+    case 'unknownDefaultOpenApi':
+      return _$capturedSampleMethodEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$capturedSampleMethodEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -31,6 +36,7 @@ final BuiltSet<CapturedSampleMethodEnum> _$capturedSampleMethodEnumValues =
       _$capturedSampleMethodEnum_GET,
       _$capturedSampleMethodEnum_POST,
       _$capturedSampleMethodEnum_PUT,
+      _$capturedSampleMethodEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<CapturedSampleMethodEnum> _$capturedSampleMethodEnumSerializer =
@@ -42,11 +48,13 @@ class _$CapturedSampleMethodEnumSerializer
     'GET': 'GET',
     'POST': 'POST',
     'PUT': 'PUT',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'GET': 'GET',
     'POST': 'POST',
     'PUT': 'PUT',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

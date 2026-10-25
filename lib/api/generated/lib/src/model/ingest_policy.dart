@@ -173,6 +173,9 @@ class _$IngestPolicySerializer implements PrimitiveSerializer<IngestPolicy> {
 class IngestPolicyModeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'LATEST')
   static const IngestPolicyModeEnum LATEST = _$ingestPolicyModeEnum_LATEST;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const IngestPolicyModeEnum unknownDefaultOpenApi =
+      _$ingestPolicyModeEnum_unknownDefaultOpenApi;
 
   static Serializer<IngestPolicyModeEnum> get serializer =>
       _$ingestPolicyModeEnumSerializer;

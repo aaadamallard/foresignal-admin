@@ -275,6 +275,9 @@ class DeceptionPayloadStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'degraded-input')
   static const DeceptionPayloadStatusEnum degradedInput =
       _$deceptionPayloadStatusEnum_degradedInput;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const DeceptionPayloadStatusEnum unknownDefaultOpenApi =
+      _$deceptionPayloadStatusEnum_unknownDefaultOpenApi;
 
   static Serializer<DeceptionPayloadStatusEnum> get serializer =>
       _$deceptionPayloadStatusEnumSerializer;

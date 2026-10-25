@@ -309,6 +309,9 @@ class HypothesisSetDraftEffortEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'high')
   static const HypothesisSetDraftEffortEnum high =
       _$hypothesisSetDraftEffortEnum_high;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const HypothesisSetDraftEffortEnum unknownDefaultOpenApi =
+      _$hypothesisSetDraftEffortEnum_unknownDefaultOpenApi;
 
   static Serializer<HypothesisSetDraftEffortEnum> get serializer =>
       _$hypothesisSetDraftEffortEnumSerializer;
@@ -325,6 +328,9 @@ class HypothesisSetDraftTextOriginEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'llm')
   static const HypothesisSetDraftTextOriginEnum llm =
       _$hypothesisSetDraftTextOriginEnum_llm;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const HypothesisSetDraftTextOriginEnum unknownDefaultOpenApi =
+      _$hypothesisSetDraftTextOriginEnum_unknownDefaultOpenApi;
 
   static Serializer<HypothesisSetDraftTextOriginEnum> get serializer =>
       _$hypothesisSetDraftTextOriginEnumSerializer;

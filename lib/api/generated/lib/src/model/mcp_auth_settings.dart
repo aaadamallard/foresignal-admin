@@ -272,6 +272,9 @@ class McpAuthSettingsModeEnum extends EnumClass {
   static const McpAuthSettingsModeEnum oauth = _$mcpAuthSettingsModeEnum_oauth;
   @BuiltValueEnumConst(wireName: r'both')
   static const McpAuthSettingsModeEnum both = _$mcpAuthSettingsModeEnum_both;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const McpAuthSettingsModeEnum unknownDefaultOpenApi =
+      _$mcpAuthSettingsModeEnum_unknownDefaultOpenApi;
 
   static Serializer<McpAuthSettingsModeEnum> get serializer =>
       _$mcpAuthSettingsModeEnumSerializer;
@@ -291,6 +294,9 @@ class McpAuthSettingsScopeMapEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'agent')
   static const McpAuthSettingsScopeMapEnum agent =
       _$mcpAuthSettingsScopeMapEnum_agent;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const McpAuthSettingsScopeMapEnum unknownDefaultOpenApi =
+      _$mcpAuthSettingsScopeMapEnum_unknownDefaultOpenApi;
 
   static Serializer<McpAuthSettingsScopeMapEnum> get serializer =>
       _$mcpAuthSettingsScopeMapEnumSerializer;
@@ -311,6 +317,9 @@ class McpAuthSettingsScopeClaimEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'scp')
   static const McpAuthSettingsScopeClaimEnum scp =
       _$mcpAuthSettingsScopeClaimEnum_scp;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const McpAuthSettingsScopeClaimEnum unknownDefaultOpenApi =
+      _$mcpAuthSettingsScopeClaimEnum_unknownDefaultOpenApi;
 
   static Serializer<McpAuthSettingsScopeClaimEnum> get serializer =>
       _$mcpAuthSettingsScopeClaimEnumSerializer;
@@ -336,6 +345,9 @@ class McpAuthSettingsAllowedAlgsEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'Ed25519')
   static const McpAuthSettingsAllowedAlgsEnum ed25519 =
       _$mcpAuthSettingsAllowedAlgsEnum_ed25519;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const McpAuthSettingsAllowedAlgsEnum unknownDefaultOpenApi =
+      _$mcpAuthSettingsAllowedAlgsEnum_unknownDefaultOpenApi;
 
   static Serializer<McpAuthSettingsAllowedAlgsEnum> get serializer =>
       _$mcpAuthSettingsAllowedAlgsEnumSerializer;

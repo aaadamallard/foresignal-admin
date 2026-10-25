@@ -290,6 +290,9 @@ class AskResponseModeEnum extends EnumClass {
   static const AskResponseModeEnum tools = _$askResponseModeEnum_tools;
   @BuiltValueEnumConst(wireName: r'retrieval')
   static const AskResponseModeEnum retrieval = _$askResponseModeEnum_retrieval;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const AskResponseModeEnum unknownDefaultOpenApi =
+      _$askResponseModeEnum_unknownDefaultOpenApi;
 
   static Serializer<AskResponseModeEnum> get serializer =>
       _$askResponseModeEnumSerializer;
@@ -314,6 +317,9 @@ class AskResponseStopReasonEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'error')
   static const AskResponseStopReasonEnum error =
       _$askResponseStopReasonEnum_error;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const AskResponseStopReasonEnum unknownDefaultOpenApi =
+      _$askResponseStopReasonEnum_unknownDefaultOpenApi;
 
   static Serializer<AskResponseStopReasonEnum> get serializer =>
       _$askResponseStopReasonEnumSerializer;

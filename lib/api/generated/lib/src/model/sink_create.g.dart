@@ -24,6 +24,8 @@ const SinkCreateTypeEnum _$sinkCreateTypeEnum_cloudevents =
     const SinkCreateTypeEnum._('cloudevents');
 const SinkCreateTypeEnum _$sinkCreateTypeEnum_federationPush =
     const SinkCreateTypeEnum._('federationPush');
+const SinkCreateTypeEnum _$sinkCreateTypeEnum_unknownDefaultOpenApi =
+    const SinkCreateTypeEnum._('unknownDefaultOpenApi');
 
 SinkCreateTypeEnum _$sinkCreateTypeEnumValueOf(String name) {
   switch (name) {
@@ -43,8 +45,10 @@ SinkCreateTypeEnum _$sinkCreateTypeEnumValueOf(String name) {
       return _$sinkCreateTypeEnum_cloudevents;
     case 'federationPush':
       return _$sinkCreateTypeEnum_federationPush;
+    case 'unknownDefaultOpenApi':
+      return _$sinkCreateTypeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$sinkCreateTypeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -58,6 +62,7 @@ final BuiltSet<SinkCreateTypeEnum> _$sinkCreateTypeEnumValues =
       _$sinkCreateTypeEnum_aprsIsServe,
       _$sinkCreateTypeEnum_cloudevents,
       _$sinkCreateTypeEnum_federationPush,
+      _$sinkCreateTypeEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<SinkCreateTypeEnum> _$sinkCreateTypeEnumSerializer =
@@ -74,6 +79,7 @@ class _$SinkCreateTypeEnumSerializer
     'aprsIsServe': 'aprs-is-serve',
     'cloudevents': 'cloudevents',
     'federationPush': 'federation-push',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'mqtt-state': 'mqttState',
@@ -84,6 +90,7 @@ class _$SinkCreateTypeEnumSerializer
     'aprs-is-serve': 'aprsIsServe',
     'cloudevents': 'cloudevents',
     'federation-push': 'federationPush',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

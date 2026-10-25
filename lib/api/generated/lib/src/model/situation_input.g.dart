@@ -10,6 +10,9 @@ const SituationInputStatusEnum _$situationInputStatusEnum_emerging =
     const SituationInputStatusEnum._('emerging');
 const SituationInputStatusEnum _$situationInputStatusEnum_active =
     const SituationInputStatusEnum._('active');
+const SituationInputStatusEnum
+_$situationInputStatusEnum_unknownDefaultOpenApi =
+    const SituationInputStatusEnum._('unknownDefaultOpenApi');
 
 SituationInputStatusEnum _$situationInputStatusEnumValueOf(String name) {
   switch (name) {
@@ -17,8 +20,10 @@ SituationInputStatusEnum _$situationInputStatusEnumValueOf(String name) {
       return _$situationInputStatusEnum_emerging;
     case 'active':
       return _$situationInputStatusEnum_active;
+    case 'unknownDefaultOpenApi':
+      return _$situationInputStatusEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$situationInputStatusEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -26,6 +31,7 @@ final BuiltSet<SituationInputStatusEnum> _$situationInputStatusEnumValues =
     BuiltSet<SituationInputStatusEnum>(const <SituationInputStatusEnum>[
       _$situationInputStatusEnum_emerging,
       _$situationInputStatusEnum_active,
+      _$situationInputStatusEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<SituationInputStatusEnum> _$situationInputStatusEnumSerializer =
@@ -36,10 +42,12 @@ class _$SituationInputStatusEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'emerging': 'emerging',
     'active': 'active',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'emerging': 'emerging',
     'active': 'active',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

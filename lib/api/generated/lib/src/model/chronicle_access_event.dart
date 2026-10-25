@@ -252,6 +252,9 @@ class ChronicleAccessEventStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'declined')
   static const ChronicleAccessEventStatusEnum declined =
       _$chronicleAccessEventStatusEnum_declined;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ChronicleAccessEventStatusEnum unknownDefaultOpenApi =
+      _$chronicleAccessEventStatusEnum_unknownDefaultOpenApi;
 
   static Serializer<ChronicleAccessEventStatusEnum> get serializer =>
       _$chronicleAccessEventStatusEnumSerializer;

@@ -10,6 +10,8 @@ const BriefingModeEnum _$briefingModeEnum_digest = const BriefingModeEnum._(
   'digest',
 );
 const BriefingModeEnum _$briefingModeEnum_llm = const BriefingModeEnum._('llm');
+const BriefingModeEnum _$briefingModeEnum_unknownDefaultOpenApi =
+    const BriefingModeEnum._('unknownDefaultOpenApi');
 
 BriefingModeEnum _$briefingModeEnumValueOf(String name) {
   switch (name) {
@@ -17,8 +19,10 @@ BriefingModeEnum _$briefingModeEnumValueOf(String name) {
       return _$briefingModeEnum_digest;
     case 'llm':
       return _$briefingModeEnum_llm;
+    case 'unknownDefaultOpenApi':
+      return _$briefingModeEnum_unknownDefaultOpenApi;
     default:
-      throw ArgumentError(name);
+      return _$briefingModeEnum_unknownDefaultOpenApi;
   }
 }
 
@@ -26,6 +30,7 @@ final BuiltSet<BriefingModeEnum> _$briefingModeEnumValues =
     BuiltSet<BriefingModeEnum>(const <BriefingModeEnum>[
       _$briefingModeEnum_digest,
       _$briefingModeEnum_llm,
+      _$briefingModeEnum_unknownDefaultOpenApi,
     ]);
 
 Serializer<BriefingModeEnum> _$briefingModeEnumSerializer =
@@ -36,10 +41,12 @@ class _$BriefingModeEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'digest': 'digest',
     'llm': 'llm',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'digest': 'digest',
     'llm': 'llm',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
   @override

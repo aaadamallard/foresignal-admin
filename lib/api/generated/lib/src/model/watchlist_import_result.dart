@@ -255,6 +255,9 @@ class WatchlistImportResultModeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'replace')
   static const WatchlistImportResultModeEnum replace =
       _$watchlistImportResultModeEnum_replace;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const WatchlistImportResultModeEnum unknownDefaultOpenApi =
+      _$watchlistImportResultModeEnum_unknownDefaultOpenApi;
 
   static Serializer<WatchlistImportResultModeEnum> get serializer =>
       _$watchlistImportResultModeEnumSerializer;

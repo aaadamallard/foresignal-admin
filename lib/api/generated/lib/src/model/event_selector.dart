@@ -441,6 +441,9 @@ class EventSelectorMinSeverityEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'significant')
   static const EventSelectorMinSeverityEnum significant =
       _$eventSelectorMinSeverityEnum_significant;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const EventSelectorMinSeverityEnum unknownDefaultOpenApi =
+      _$eventSelectorMinSeverityEnum_unknownDefaultOpenApi;
 
   static Serializer<EventSelectorMinSeverityEnum> get serializer =>
       _$eventSelectorMinSeverityEnumSerializer;

@@ -366,6 +366,9 @@ class ReportRevisionStatusEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'retracted')
   static const ReportRevisionStatusEnum retracted =
       _$reportRevisionStatusEnum_retracted;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ReportRevisionStatusEnum unknownDefaultOpenApi =
+      _$reportRevisionStatusEnum_unknownDefaultOpenApi;
 
   static Serializer<ReportRevisionStatusEnum> get serializer =>
       _$reportRevisionStatusEnumSerializer;

@@ -135,6 +135,9 @@ class ResyncEventReasonEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'live_dropped')
   static const ResyncEventReasonEnum liveDropped =
       _$resyncEventReasonEnum_liveDropped;
+  @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
+  static const ResyncEventReasonEnum unknownDefaultOpenApi =
+      _$resyncEventReasonEnum_unknownDefaultOpenApi;
 
   static Serializer<ResyncEventReasonEnum> get serializer =>
       _$resyncEventReasonEnumSerializer;
