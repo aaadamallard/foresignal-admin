@@ -112,3 +112,7 @@ flutter run -d linux
 contract. Use it to show screens without a live ForeSignal; see the comment at its top for the flags.
 
 Planning lives in `docs/`, build units in `prompts/`, and their reports in `completion-reports/`.
+
+## License
+
+MIT © RemoteID Systems, LLC. See [LICENSE](LICENSE).

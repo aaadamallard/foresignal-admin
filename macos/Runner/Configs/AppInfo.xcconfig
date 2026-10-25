@@ -11,4 +11,4 @@ PRODUCT_NAME = foresignal_admin
 PRODUCT_BUNDLE_IDENTIFIER = com.foresignal.foresignalAdmin
 
 // The copyright displayed in application information
-PRODUCT_COPYRIGHT = Copyright © 2026 com.foresignal. All rights reserved.
+PRODUCT_COPYRIGHT = Copyright © 2026 RemoteID Systems, LLC.
