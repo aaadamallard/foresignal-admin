@@ -75,3 +75,42 @@ screen group in [Screens.md](Screens.md) and every backend capability it needs i
 
 Not started. 17 prompts, built in one pass (dependency order, no phasing). Planning docs reviewed by the
 owner; mocks optional per §1.4.
+
+## 5. Version 2.0 (Release 2)
+
+v2.0 turns the admin app from a single-token control plane into the **multi-user** console over the
+v2.0 backend: email/password **login**, a **current-user + effective-permissions** context that gates
+the nav and every control, an admin-only **Users & Roles** section, existing config screens scoped to
+the signed-in user (global/infrastructure screens behind Operator/Admin), a **profile & preferences**
+screen, and the new **Storage**, **Network / Sourcing**, **Account-Security** and **Onboarding**
+screens. The backend design is in the foresignal repo's [RBAC-Design](../../foresignal/docs/RBAC-Design.md),
+[Storage-Lifecycle](../../foresignal/docs/Storage-Lifecycle.md) and
+[Network-Sourcing](../../foresignal/docs/Network-Sourcing.md); the new screens are in
+[Screens.md](Screens.md) group L (and the gated-nav note in the navigation section).
+
+- **The only backend contract is the re-vendored `openapi/OpenAPI.json`** (API **2.0.0**), as always;
+  the generated client (`lib/api/generated/`) is never hand-edited. Admin prompts run **after** the
+  backend endpoints they consume exist and the contract is re-vendored.
+- **Numbering:** admin v2.0 prompts continue from **019** (v1 ended at 018). The Release-2 driver labels
+  them **R2-001 … R2-011** in `prompts/000-Run-Sequence.md`; each R2-NNN is prompt 18 + NNN.
+- Same guardrails as §2: `flutter analyze` clean + build; tests written not run; secrets never in the
+  app (the session bearer and admin token go to the platform secure store, provider keys to the vault);
+  US English; no `.gitlab-ci.yml`; no `CLAUDE.md` edits. §1.4 still holds — a control a mock shows but
+  the API can't back is omitted, not stalled as an owner question.
+
+| R2 | Prompt | Screens.md | What it delivers |
+|---|---|---|---|
+| R2-001 | 019 Login-And-Session | L | email+password login; session → secure store; forgot-password; admin token kept as machine fallback. Ops: `login`, `logout`, `requestPasswordReset`, `resetPassword`, `activateAccount` |
+| R2-002 | 020 Current-User-And-Permission-Gating | L | effective-permissions provider from `getMe`; nav + control gating; permission-denied/empty states |
+| R2-003 | 021 Users-Screen | L | admin-only user CRUD: list/add/edit-roles/suspend/delete/reset/resend, add→welcome email. Ops: `listUsers`, `createUser`, `getUser`, `updateUser`, `deleteUser`, `setUserRoles`, `suspendUser`, `unsuspendUser`, `adminResetUserPassword`, `resendUserInvite` |
+| R2-004 | 022 Roles-Screen | L | built-in + custom roles with a permission editor. Ops: `listRoles`, `getRole`, `createRole`, `updateRole`, `deleteRole`, `listPermissions` |
+| R2-005 | 023 Per-User-Config-Scoping | L | existing screens scoped to the current user; global/infrastructure screens behind Operator/Admin. Ops: `getMySources`, `updateMySources` |
+| R2-006 | 024 Profile-And-Preferences | L | name, password, timezone, notification prefs. Ops: `getMe`, `getMyPreferences`, `updateMyPreferences`, `listMyNotificationPreferences`, `replaceMyNotificationPreferences` |
+| R2-007 | 025 Per-User-And-Shared-LLM-And-Channels | D/G | per-user vs shared LLM providers and channels, with per-user budget. Ops: existing LLM/channel sets + `getMyLlmBudget` |
+| R2-008 | 026 Storage-Screens | L | disk/memory/DB gauges + threshold slider; retention cap control + preview; archival config + inventory; backup/restore. Ops: `getResourceStatus`, `getRetention`, `updateRetention`, `previewRetention`, `runRetention`, `getArchiveSettings`, `updateArchiveSettings`, `getArchiveCatalog`, `getBackupSettings`, `updateBackupSettings` |
+| R2-009 | 027 Network-Sourcing-Screen | L | egress pool + Test-shows-exit-IP; rotation policy; per-source assignment; egress health; first-party aggregators (ADS-B/AIS/datalink/satellite/ground sensors) with the default-off toggle for each superseded public source. Ops: `listEgressRoutes`, `createEgressRoute`, `getEgressRoute`, `updateEgressRoute`, `deleteEgressRoute`, `testEgressRoute`, `getEgressRouteHealth`, `getEgressSettings`, `updateEgressSettings`, `assignSourceEgress`, `listSources`, `updateSource` |
+| R2-010 | 028 Account-Security-UI | L | MFA setup; session list/revoke; API-token management. Ops: `enrollMfa`, `verifyMfa`, `disableMfa`, `getMfaRecoveryCodes`, `listSessions`, `revokeSession`, `revokeAllSessions`, `listMyTokens`, `createMyToken`, `revokeMyToken` |
+| R2-011 | 029 Onboarding-And-Polish | A, L | onboarding wizard (first admin → SMTP → starter sources → retention/disk thresholds); finish + commit the mobile companion push; permission-denied/empty-state polish; final re-vendor; both suites green. Ops: `getFirstRunStatus` + the screens it chains |
+
+**Status:** not started. 11 prompts (019–029), built in one pass after the backend endpoints land and
+the contract is re-vendored. No phasing.

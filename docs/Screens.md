@@ -211,6 +211,76 @@ pages (one alert, one notification) have the same **‹ Back** link as the deskt
 
 ---
 
+## L. Identity, accounts, storage & network (v2.0)
+
+The screens the v2.0 backend adds (API 2.0.0): the app becomes multi-user. Design:
+[RBAC-Design](../../foresignal/docs/RBAC-Design.md), [Storage-Lifecycle](../../foresignal/docs/Storage-Lifecycle.md),
+[Network-Sourcing](../../foresignal/docs/Network-Sourcing.md). The **Connect** screen (group A) keeps the
+admin token as a machine fallback; login below is the normal way in.
+
+- **Login (D/M).** Email + password (+ MFA code when enrolled) → a session bearer (`fss_…`) stored in
+  the platform secure store, the same store the admin token uses. A **Forgot password** link requests a
+  reset email; the reset/activation links land on a set-password screen. A failed login or a version
+  mismatch is shown here, not buried. Ops: `login`, `logout`, `requestPasswordReset`, `resetPassword`,
+  `activateAccount`.
+- **Permission-gated navigation (D/M).** On sign-in the app reads `getMe` once and keeps the effective
+  permissions and scopes in a context. The left-nav destinations and every control gate on a permission:
+  **Users & Roles** needs `users.manage` / `roles.manage`; **Storage** needs `storage.manage`;
+  **Network / Sourcing** needs `network.manage`; the global config screens (collector, server, security,
+  shared LLM, global channels) need Operator/Admin; the self-service screens (own sources, alerts,
+  channels, LLM, views, profile) are always available to a signed-in user. A value the build has not
+  seen never fails a page (same rule as the top of this doc); a permission the build does not recognize
+  is treated as not held. Pages the caller may not use are hidden, and a denied call shows a
+  permission-denied state rather than a raw error. Ops: `getMe`, `listPermissions`.
+- **Users (D, admin-only).** List users with status (`invited`/`active`/`suspended`/`disabled`), roles,
+  MFA state and last login; add a user (email, full name, role(s) → welcome email with activation link);
+  edit roles, suspend/unsuspend, send a password reset, resend the invite, and delete (default
+  **reassign** the user's owned config to an admin, surfaced per delete). Per-user quota lives here too.
+  Ops: `listUsers`, `createUser`, `getUser`, `updateUser`, `deleteUser`, `setUserRoles`, `suspendUser`,
+  `unsuspendUser`, `adminResetUserPassword`, `resendUserInvite`, `getUserQuota`, `updateUserQuota`.
+- **Roles (D, admin-only).** List built-in (Admin/Operator/Editor/Viewer/Auditor — read-only,
+  undeletable) and custom roles with their user counts; a **permission editor** (the catalog grouped by
+  Identity / Platform / Self-service / Data) creates and edits custom roles; deleting a role users still
+  hold is refused. Ops: `listRoles`, `getRole`, `createRole`, `updateRole`, `deleteRole`,
+  `listPermissions`.
+- **Profile & preferences (D/M).** The signed-in user's own account: name, change password, timezone,
+  UI and notification preferences, and the per-user enabled-source view (which sources appear in this
+  user's views, alerts and map, with an optional per-source label/color). Ops: `getMe`,
+  `getMyPreferences`, `updateMyPreferences`, `listMyNotificationPreferences`,
+  `replaceMyNotificationPreferences`, `getMySources`, `updateMySources`, `getMyQuota`, `getMyLlmBudget`.
+- **Account security (D config / M view).** MFA enrollment (TOTP QR + verify, recovery codes; required
+  for Admin/Operator); the user's active sessions with revoke (one or all others); and the user-owned
+  API tokens (mint with the existing area/path/tile restrictions, list, revoke). Ops: `enrollMfa`,
+  `verifyMfa`, `disableMfa`, `getMfaRecoveryCodes`, `listSessions`, `revokeSession`, `revokeAllSessions`,
+  `listMyTokens`, `createMyToken`, `revokeMyToken`.
+- **Storage (D, `storage.manage`).** Live **disk / memory / DB gauges** (each `ok`/`warn`/`critical`)
+  and the **threshold slider** (warn / critical free-disk levels); the **retention cap** control
+  (checkbox to cap history, keep-at-most-N-days / keep-DB-under-N-GB overwrite-oldest) with a **preview**
+  of what would be pruned before committing; **cold-archival** config (local/external first, S3/Glacier
+  behind the same form) and the archive inventory with sizes; and **backup/restore** (run-now, schedule,
+  history, restore, config export/import). Ops: `getResourceStatus`, `getRetention`, `updateRetention`,
+  `previewRetention`, `runRetention`, `getArchiveSettings`, `updateArchiveSettings`, `getArchiveCatalog`,
+  `getBackupSettings`, `updateBackupSettings`, `exportSettings`, `importSettings`.
+- **Network / Sourcing (D, `network.manage`).** Two panels in one screen. **Egress:** manage the pool
+  (add a proxy URL + write-only credentials, or import a WireGuard config; **Test** shows the public
+  exit IP the route presents), set the rotation policy (`direct` / round-robin / random /
+  per-source-sticky / rotate-on-rate-limit) and the default route, assign per-source egress or exclude a
+  source from rotation, and watch live per-route health (reachable, latency, exit IP, backoff).
+  **First-party aggregators:** per domain (ADS-B / AIS / datalink / satellite / ground sensors) the
+  setup notes, the local endpoint, live status, and the **default-off toggle** for each superseded
+  public mirror — nothing is removed, only disabled by default once a first-party feed is live. Ops:
+  `listEgressRoutes`, `createEgressRoute`, `getEgressRoute`, `updateEgressRoute`, `deleteEgressRoute`,
+  `testEgressRoute`, `getEgressRouteHealth`, `getEgressSettings`, `updateEgressSettings`,
+  `assignSourceEgress`, `listSources`, `getSource`, `updateSource`, `listSourceHealth`.
+- **Onboarding (D).** The v2.0 first-run wizard extends the group-A path: **create the first admin**
+  (via the bootstrap admin token), configure **SMTP**, enable a starter source set, and set the
+  **retention / disk thresholds** — so a fresh instance is usable without hand-editing anything. It
+  composes the screens above and owns no logic. Ops: `getFirstRunStatus`, `rotateAdminToken`,
+  `createUser`, `getServerSettings`, `updateServerSettings` (+ the Sources and Storage screens it
+  chains).
+
+---
+
 ## Backend gaps (owner questions — the interlock with the backend roadmap)
 
 Config this app will want that the API may not fully express today. Each is a candidate backend
