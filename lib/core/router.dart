@@ -46,6 +46,7 @@ import '../features/sources/source_test_screen.dart';
 import '../features/sources/sources_catalog_screen.dart';
 import '../features/system/system_screen.dart';
 import '../features/usage/usage_screen.dart';
+import '../features/users/role_screen.dart';
 import '../features/users/user_screen.dart';
 import '../features/users/users_screen.dart';
 import '../features/vetting/claim_screen.dart';
@@ -342,7 +343,18 @@ Map<String, SectionRoutes> sectionRoutesFor(FormFactor formFactor) {
         builder: (context, state) => UsersRolesScreen(roleFilter: state.uri.queryParameters['role']),
         routes: <RouteBase>[
           // Before `:userId`: a user id is a UUID, never `roles`.
-          GoRoute(path: 'roles', builder: (context, state) => const UsersRolesScreen(tab: UsersTab.roles)),
+          GoRoute(
+            path: 'roles',
+            builder: (context, state) => const UsersRolesScreen(tab: UsersTab.roles),
+            routes: <RouteBase>[
+              // Before `:roleId`: a role id is a UUID, never `new`.
+              GoRoute(path: 'new', builder: (context, state) => const RoleScreen()),
+              GoRoute(
+                path: ':roleId',
+                builder: (context, state) => RoleScreen(roleId: state.pathParameters['roleId']!),
+              ),
+            ],
+          ),
           GoRoute(
             path: ':userId',
             builder: (context, state) => UserScreen(userId: state.pathParameters['userId']!),

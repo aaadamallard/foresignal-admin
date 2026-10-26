@@ -228,6 +228,12 @@ const String usersRolesPath = '$usersPath/roles';
 /// One user's editor.
 String userPath(String userId) => '$usersPath/${Uri.encodeComponent(userId)}';
 
+/// A new custom role.
+const String usersNewRolePath = '$usersRolesPath/new';
+
+/// One role's editor.
+String usersRolePath(String roleId) => '$usersRolesPath/${Uri.encodeComponent(roleId)}';
+
 /// The Users list filtered to the holders of [roleId].
 String usersWithRolePath(String roleId) => Uri(path: usersPath, queryParameters: <String, String>{'role': roleId}).toString();
 

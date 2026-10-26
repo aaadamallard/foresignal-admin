@@ -6,6 +6,128 @@ part of 'archive_settings_s3.dart';
 // BuiltValueGenerator
 // **************************************************************************
 
+const ArchiveSettingsS3StorageClassEnum
+_$archiveSettingsS3StorageClassEnum_STANDARD =
+    const ArchiveSettingsS3StorageClassEnum._('STANDARD');
+const ArchiveSettingsS3StorageClassEnum
+_$archiveSettingsS3StorageClassEnum_REDUCED_REDUNDANCY =
+    const ArchiveSettingsS3StorageClassEnum._('REDUCED_REDUNDANCY');
+const ArchiveSettingsS3StorageClassEnum
+_$archiveSettingsS3StorageClassEnum_STANDARD_IA =
+    const ArchiveSettingsS3StorageClassEnum._('STANDARD_IA');
+const ArchiveSettingsS3StorageClassEnum
+_$archiveSettingsS3StorageClassEnum_ONEZONE_IA =
+    const ArchiveSettingsS3StorageClassEnum._('ONEZONE_IA');
+const ArchiveSettingsS3StorageClassEnum
+_$archiveSettingsS3StorageClassEnum_INTELLIGENT_TIERING =
+    const ArchiveSettingsS3StorageClassEnum._('INTELLIGENT_TIERING');
+const ArchiveSettingsS3StorageClassEnum
+_$archiveSettingsS3StorageClassEnum_GLACIER_IR =
+    const ArchiveSettingsS3StorageClassEnum._('GLACIER_IR');
+const ArchiveSettingsS3StorageClassEnum
+_$archiveSettingsS3StorageClassEnum_GLACIER =
+    const ArchiveSettingsS3StorageClassEnum._('GLACIER');
+const ArchiveSettingsS3StorageClassEnum
+_$archiveSettingsS3StorageClassEnum_DEEP_ARCHIVE =
+    const ArchiveSettingsS3StorageClassEnum._('DEEP_ARCHIVE');
+const ArchiveSettingsS3StorageClassEnum
+_$archiveSettingsS3StorageClassEnum_unknownDefaultOpenApi =
+    const ArchiveSettingsS3StorageClassEnum._('unknownDefaultOpenApi');
+
+ArchiveSettingsS3StorageClassEnum _$archiveSettingsS3StorageClassEnumValueOf(
+  String name,
+) {
+  switch (name) {
+    case 'STANDARD':
+      return _$archiveSettingsS3StorageClassEnum_STANDARD;
+    case 'REDUCED_REDUNDANCY':
+      return _$archiveSettingsS3StorageClassEnum_REDUCED_REDUNDANCY;
+    case 'STANDARD_IA':
+      return _$archiveSettingsS3StorageClassEnum_STANDARD_IA;
+    case 'ONEZONE_IA':
+      return _$archiveSettingsS3StorageClassEnum_ONEZONE_IA;
+    case 'INTELLIGENT_TIERING':
+      return _$archiveSettingsS3StorageClassEnum_INTELLIGENT_TIERING;
+    case 'GLACIER_IR':
+      return _$archiveSettingsS3StorageClassEnum_GLACIER_IR;
+    case 'GLACIER':
+      return _$archiveSettingsS3StorageClassEnum_GLACIER;
+    case 'DEEP_ARCHIVE':
+      return _$archiveSettingsS3StorageClassEnum_DEEP_ARCHIVE;
+    case 'unknownDefaultOpenApi':
+      return _$archiveSettingsS3StorageClassEnum_unknownDefaultOpenApi;
+    default:
+      return _$archiveSettingsS3StorageClassEnum_unknownDefaultOpenApi;
+  }
+}
+
+final BuiltSet<ArchiveSettingsS3StorageClassEnum>
+_$archiveSettingsS3StorageClassEnumValues =
+    BuiltSet<ArchiveSettingsS3StorageClassEnum>(
+      const <ArchiveSettingsS3StorageClassEnum>[
+        _$archiveSettingsS3StorageClassEnum_STANDARD,
+        _$archiveSettingsS3StorageClassEnum_REDUCED_REDUNDANCY,
+        _$archiveSettingsS3StorageClassEnum_STANDARD_IA,
+        _$archiveSettingsS3StorageClassEnum_ONEZONE_IA,
+        _$archiveSettingsS3StorageClassEnum_INTELLIGENT_TIERING,
+        _$archiveSettingsS3StorageClassEnum_GLACIER_IR,
+        _$archiveSettingsS3StorageClassEnum_GLACIER,
+        _$archiveSettingsS3StorageClassEnum_DEEP_ARCHIVE,
+        _$archiveSettingsS3StorageClassEnum_unknownDefaultOpenApi,
+      ],
+    );
+
+Serializer<ArchiveSettingsS3StorageClassEnum>
+_$archiveSettingsS3StorageClassEnumSerializer =
+    _$ArchiveSettingsS3StorageClassEnumSerializer();
+
+class _$ArchiveSettingsS3StorageClassEnumSerializer
+    implements PrimitiveSerializer<ArchiveSettingsS3StorageClassEnum> {
+  static const Map<String, Object> _toWire = const <String, Object>{
+    'STANDARD': 'STANDARD',
+    'REDUCED_REDUNDANCY': 'REDUCED_REDUNDANCY',
+    'STANDARD_IA': 'STANDARD_IA',
+    'ONEZONE_IA': 'ONEZONE_IA',
+    'INTELLIGENT_TIERING': 'INTELLIGENT_TIERING',
+    'GLACIER_IR': 'GLACIER_IR',
+    'GLACIER': 'GLACIER',
+    'DEEP_ARCHIVE': 'DEEP_ARCHIVE',
+    'unknownDefaultOpenApi': 'unknown_default_open_api',
+  };
+  static const Map<Object, String> _fromWire = const <Object, String>{
+    'STANDARD': 'STANDARD',
+    'REDUCED_REDUNDANCY': 'REDUCED_REDUNDANCY',
+    'STANDARD_IA': 'STANDARD_IA',
+    'ONEZONE_IA': 'ONEZONE_IA',
+    'INTELLIGENT_TIERING': 'INTELLIGENT_TIERING',
+    'GLACIER_IR': 'GLACIER_IR',
+    'GLACIER': 'GLACIER',
+    'DEEP_ARCHIVE': 'DEEP_ARCHIVE',
+    'unknown_default_open_api': 'unknownDefaultOpenApi',
+  };
+
+  @override
+  final Iterable<Type> types = const <Type>[ArchiveSettingsS3StorageClassEnum];
+  @override
+  final String wireName = 'ArchiveSettingsS3StorageClassEnum';
+
+  @override
+  Object serialize(
+    Serializers serializers,
+    ArchiveSettingsS3StorageClassEnum object, {
+    FullType specifiedType = FullType.unspecified,
+  }) => _toWire[object.name] ?? object.name;
+
+  @override
+  ArchiveSettingsS3StorageClassEnum deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) => ArchiveSettingsS3StorageClassEnum.valueOf(
+    _fromWire[serialized] ?? (serialized is String ? serialized : ''),
+  );
+}
+
 class _$ArchiveSettingsS3 extends ArchiveSettingsS3 {
   @override
   final String endpoint;
@@ -17,6 +139,8 @@ class _$ArchiveSettingsS3 extends ArchiveSettingsS3 {
   final String? region;
   @override
   final bool? pathStyle;
+  @override
+  final ArchiveSettingsS3StorageClassEnum? storageClass;
 
   factory _$ArchiveSettingsS3([
     void Function(ArchiveSettingsS3Builder)? updates,
@@ -28,6 +152,7 @@ class _$ArchiveSettingsS3 extends ArchiveSettingsS3 {
     this.prefix,
     this.region,
     this.pathStyle,
+    this.storageClass,
   }) : super._();
   @override
   ArchiveSettingsS3 rebuild(void Function(ArchiveSettingsS3Builder) updates) =>
@@ -45,7 +170,8 @@ class _$ArchiveSettingsS3 extends ArchiveSettingsS3 {
         bucket == other.bucket &&
         prefix == other.prefix &&
         region == other.region &&
-        pathStyle == other.pathStyle;
+        pathStyle == other.pathStyle &&
+        storageClass == other.storageClass;
   }
 
   @override
@@ -56,6 +182,7 @@ class _$ArchiveSettingsS3 extends ArchiveSettingsS3 {
     _$hash = $jc(_$hash, prefix.hashCode);
     _$hash = $jc(_$hash, region.hashCode);
     _$hash = $jc(_$hash, pathStyle.hashCode);
+    _$hash = $jc(_$hash, storageClass.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -67,7 +194,8 @@ class _$ArchiveSettingsS3 extends ArchiveSettingsS3 {
           ..add('bucket', bucket)
           ..add('prefix', prefix)
           ..add('region', region)
-          ..add('pathStyle', pathStyle))
+          ..add('pathStyle', pathStyle)
+          ..add('storageClass', storageClass))
         .toString();
   }
 }
@@ -96,6 +224,11 @@ class ArchiveSettingsS3Builder
   bool? get pathStyle => _$this._pathStyle;
   set pathStyle(bool? pathStyle) => _$this._pathStyle = pathStyle;
 
+  ArchiveSettingsS3StorageClassEnum? _storageClass;
+  ArchiveSettingsS3StorageClassEnum? get storageClass => _$this._storageClass;
+  set storageClass(ArchiveSettingsS3StorageClassEnum? storageClass) =>
+      _$this._storageClass = storageClass;
+
   ArchiveSettingsS3Builder() {
     ArchiveSettingsS3._defaults(this);
   }
@@ -108,6 +241,7 @@ class ArchiveSettingsS3Builder
       _prefix = $v.prefix;
       _region = $v.region;
       _pathStyle = $v.pathStyle;
+      _storageClass = $v.storageClass;
       _$v = null;
     }
     return this;
@@ -143,6 +277,7 @@ class ArchiveSettingsS3Builder
           prefix: prefix,
           region: region,
           pathStyle: pathStyle,
+          storageClass: storageClass,
         );
     replace(_$result);
     return _$result;

@@ -10,6 +10,7 @@ import '../../core/theme.dart';
 import '../../core/ui/ui.dart';
 import '../forecasting/forecasting_widgets.dart' show whenText;
 import 'add_user_dialog.dart';
+import 'roles_panel.dart';
 import 'user_widgets.dart';
 import 'users_providers.dart';
 
@@ -98,23 +99,11 @@ class UsersRolesScreen extends ConsumerWidget {
         const SizedBox(height: 20),
         switch (shown) {
           UsersTab.users => UsersPanel(initialRole: roleFilter),
-          UsersTab.roles => const RolesTabPlaceholder(),
+          UsersTab.roles => const RolesPanel(),
         },
       ],
     );
   }
-}
-
-/// Where the Roles tab goes.
-class RolesTabPlaceholder extends StatelessWidget {
-  /// Creates the placeholder.
-  const RolesTabPlaceholder({super.key});
-
-  @override
-  Widget build(BuildContext context) => const SectionCard(
-    title: 'Roles',
-    child: Text('The roles and their permissions are managed here.'),
-  );
 }
 
 /// The user list: a table from `listUsers` with status, roles, MFA and last

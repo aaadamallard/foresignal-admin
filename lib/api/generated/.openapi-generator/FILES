@@ -211,6 +211,7 @@ lib/src/model/apns_provider_config.dart
 lib/src/model/approach_condition.dart
 lib/src/model/approach_condition_target.dart
 lib/src/model/archive.dart
+lib/src/model/archive_files_inner.dart
 lib/src/model/archive_page.dart
 lib/src/model/archive_partition.dart
 lib/src/model/archive_partition_files_inner.dart

@@ -12,21 +12,21 @@ part 'archive_run_request.g.dart';
 /// Run an archival pass now
 ///
 /// Properties:
-/// * [cutoff] - Override the configured cutoff; archive data older than this
-/// * [sources] - Restrict to these sources; empty uses the configured allowlist
-/// * [dryRun] - Compute what would be archived without exporting or purging
+/// * [cutoff] - Override the configured cutoff; archive STANDARD data older than this (must be in the past)
+/// * [sources] - Restrict to these sources, each of which the archive must cover (400 otherwise); empty uses the configured allowlist
+/// * [dryRun] - Count what would be archived without exporting or purging; the answer is an Archive with status `pending` and `itemCount`, not stored
 @BuiltValue()
 abstract class ArchiveRunRequest
     implements Built<ArchiveRunRequest, ArchiveRunRequestBuilder> {
-  /// Override the configured cutoff; archive data older than this
+  /// Override the configured cutoff; archive STANDARD data older than this (must be in the past)
   @BuiltValueField(wireName: r'cutoff')
   DateTime? get cutoff;
 
-  /// Restrict to these sources; empty uses the configured allowlist
+  /// Restrict to these sources, each of which the archive must cover (400 otherwise); empty uses the configured allowlist
   @BuiltValueField(wireName: r'sources')
   BuiltList<String>? get sources;
 
-  /// Compute what would be archived without exporting or purging
+  /// Count what would be archived without exporting or purging; the answer is an Archive with status `pending` and `itemCount`, not stored
   @BuiltValueField(wireName: r'dryRun')
   bool? get dryRun;
 

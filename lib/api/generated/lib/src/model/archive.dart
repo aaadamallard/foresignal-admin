@@ -3,37 +3,52 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:built_collection/built_collection.dart';
+import 'package:foresignal_api/src/model/archive_files_inner.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
 part 'archive.g.dart';
 
-/// A cold-storage archive segment: data phased out of the hot DB, verified, then purged locally (B3/179)
+/// A cold-storage archive segment: data phased out of the hot DB, verified, then purged locally (B3/179). Restored rows go to the restore area `record_version_restored`, not back into record_version.
 ///
 /// Properties:
 /// * [id]
-/// * [status]
+/// * [status] - pending (accepted), running (exporting), verifying (offloading and checking each file on the tier), complete (verified and recorded), purged (and gone from the hot store), failed (nothing was purged), restoring, restored
 /// * [createdAt]
-/// * [cutoff] - Data older than this was archived
+/// * [cutoff] - Data older than this was archived; null when the run took only what retention removed anyway
 /// * [target] - Archive tier target
-/// * [location] - Path or object key of the archive
-/// * [sizeBytes]
-/// * [itemCount]
-/// * [checksum] - Verification checksum of the archived export
+/// * [location] - The segment's directory (`local`) or `s3://bucket/prefix/segments/{id}`
+/// * [sizeBytes] - Compressed size of every file
+/// * [itemCount] - Rows archived (for a dry run: rows that would be)
+/// * [checksum] - SHA-256 over each file's `key:sha256` line, in key order; every file's own SHA-256 is in `files`
 /// * [purgedFromHot] - True once the archived data was purged from the hot store
 /// * [restoredAt]
+/// * [trigger] - What started the run: runArchive, `archive.schedule`, or the retention size cap (R2-015)
+/// * [domain] - What was archived: `record_version`
+/// * [sources] - Sources in the segment
+/// * [fromSeq]
+/// * [toSeq]
+/// * [fromTime] - Earliest ingested_at archived
+/// * [toTime] - Latest ingested_at archived
+/// * [files] - One gzip-compressed NDJSON file per source, one record_version row per line
+/// * [error] - Why it failed, or a note (rows the purge kept back, a pending Glacier thaw, rows restored)
+/// * [updatedAt]
+/// * [completedAt]
+/// * [purgedAt]
 @BuiltValue()
 abstract class Archive implements Built<Archive, ArchiveBuilder> {
   @BuiltValueField(wireName: r'id')
   String get id;
 
+  /// pending (accepted), running (exporting), verifying (offloading and checking each file on the tier), complete (verified and recorded), purged (and gone from the hot store), failed (nothing was purged), restoring, restored
   @BuiltValueField(wireName: r'status')
   String get status;
 
   @BuiltValueField(wireName: r'createdAt')
   DateTime get createdAt;
 
-  /// Data older than this was archived
+  /// Data older than this was archived; null when the run took only what retention removed anyway
   @BuiltValueField(wireName: r'cutoff')
   DateTime? get cutoff;
 
@@ -41,17 +56,19 @@ abstract class Archive implements Built<Archive, ArchiveBuilder> {
   @BuiltValueField(wireName: r'target')
   String get target;
 
-  /// Path or object key of the archive
+  /// The segment's directory (`local`) or `s3://bucket/prefix/segments/{id}`
   @BuiltValueField(wireName: r'location')
   String? get location;
 
+  /// Compressed size of every file
   @BuiltValueField(wireName: r'sizeBytes')
   int? get sizeBytes;
 
+  /// Rows archived (for a dry run: rows that would be)
   @BuiltValueField(wireName: r'itemCount')
   int? get itemCount;
 
-  /// Verification checksum of the archived export
+  /// SHA-256 over each file's `key:sha256` line, in key order; every file's own SHA-256 is in `files`
   @BuiltValueField(wireName: r'checksum')
   String? get checksum;
 
@@ -61,6 +78,49 @@ abstract class Archive implements Built<Archive, ArchiveBuilder> {
 
   @BuiltValueField(wireName: r'restoredAt')
   DateTime? get restoredAt;
+
+  /// What started the run: runArchive, `archive.schedule`, or the retention size cap (R2-015)
+  @BuiltValueField(wireName: r'trigger')
+  String? get trigger;
+
+  /// What was archived: `record_version`
+  @BuiltValueField(wireName: r'domain')
+  String? get domain;
+
+  /// Sources in the segment
+  @BuiltValueField(wireName: r'sources')
+  BuiltList<String>? get sources;
+
+  @BuiltValueField(wireName: r'fromSeq')
+  int? get fromSeq;
+
+  @BuiltValueField(wireName: r'toSeq')
+  int? get toSeq;
+
+  /// Earliest ingested_at archived
+  @BuiltValueField(wireName: r'fromTime')
+  DateTime? get fromTime;
+
+  /// Latest ingested_at archived
+  @BuiltValueField(wireName: r'toTime')
+  DateTime? get toTime;
+
+  /// One gzip-compressed NDJSON file per source, one record_version row per line
+  @BuiltValueField(wireName: r'files')
+  BuiltList<ArchiveFilesInner>? get files;
+
+  /// Why it failed, or a note (rows the purge kept back, a pending Glacier thaw, rows restored)
+  @BuiltValueField(wireName: r'error')
+  String? get error;
+
+  @BuiltValueField(wireName: r'updatedAt')
+  DateTime? get updatedAt;
+
+  @BuiltValueField(wireName: r'completedAt')
+  DateTime? get completedAt;
+
+  @BuiltValueField(wireName: r'purgedAt')
+  DateTime? get purgedAt;
 
   Archive._();
 
@@ -151,6 +211,90 @@ class _$ArchiveSerializer implements PrimitiveSerializer<Archive> {
       yield r'restoredAt';
       yield serializers.serialize(
         object.restoredAt,
+        specifiedType: const FullType.nullable(DateTime),
+      );
+    }
+    if (object.trigger != null) {
+      yield r'trigger';
+      yield serializers.serialize(
+        object.trigger,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.domain != null) {
+      yield r'domain';
+      yield serializers.serialize(
+        object.domain,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.sources != null) {
+      yield r'sources';
+      yield serializers.serialize(
+        object.sources,
+        specifiedType: const FullType(BuiltList, [FullType(String)]),
+      );
+    }
+    if (object.fromSeq != null) {
+      yield r'fromSeq';
+      yield serializers.serialize(
+        object.fromSeq,
+        specifiedType: const FullType.nullable(int),
+      );
+    }
+    if (object.toSeq != null) {
+      yield r'toSeq';
+      yield serializers.serialize(
+        object.toSeq,
+        specifiedType: const FullType.nullable(int),
+      );
+    }
+    if (object.fromTime != null) {
+      yield r'fromTime';
+      yield serializers.serialize(
+        object.fromTime,
+        specifiedType: const FullType.nullable(DateTime),
+      );
+    }
+    if (object.toTime != null) {
+      yield r'toTime';
+      yield serializers.serialize(
+        object.toTime,
+        specifiedType: const FullType.nullable(DateTime),
+      );
+    }
+    if (object.files != null) {
+      yield r'files';
+      yield serializers.serialize(
+        object.files,
+        specifiedType: const FullType(BuiltList, [FullType(ArchiveFilesInner)]),
+      );
+    }
+    if (object.error != null) {
+      yield r'error';
+      yield serializers.serialize(
+        object.error,
+        specifiedType: const FullType.nullable(String),
+      );
+    }
+    if (object.updatedAt != null) {
+      yield r'updatedAt';
+      yield serializers.serialize(
+        object.updatedAt,
+        specifiedType: const FullType(DateTime),
+      );
+    }
+    if (object.completedAt != null) {
+      yield r'completedAt';
+      yield serializers.serialize(
+        object.completedAt,
+        specifiedType: const FullType.nullable(DateTime),
+      );
+    }
+    if (object.purgedAt != null) {
+      yield r'purgedAt';
+      yield serializers.serialize(
+        object.purgedAt,
         specifiedType: const FullType.nullable(DateTime),
       );
     }
@@ -286,6 +430,130 @@ class _$ArchiveSerializer implements PrimitiveSerializer<Archive> {
                   as DateTime?;
           if (valueDes == null) continue;
           result.restoredAt = valueDes;
+          break;
+        case r'trigger':
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
+          if (valueDes == null) continue;
+          result.trigger = valueDes;
+          break;
+        case r'domain':
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
+          if (valueDes == null) continue;
+          result.domain = valueDes;
+          break;
+        case r'sources':
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>?;
+          if (valueDes == null) continue;
+          result.sources.replace(valueDes);
+          break;
+        case r'fromSeq':
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
+          if (valueDes == null) continue;
+          result.fromSeq = valueDes;
+          break;
+        case r'toSeq':
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
+          if (valueDes == null) continue;
+          result.toSeq = valueDes;
+          break;
+        case r'fromTime':
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(DateTime),
+                  )
+                  as DateTime?;
+          if (valueDes == null) continue;
+          result.fromTime = valueDes;
+          break;
+        case r'toTime':
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(DateTime),
+                  )
+                  as DateTime?;
+          if (valueDes == null) continue;
+          result.toTime = valueDes;
+          break;
+        case r'files':
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(ArchiveFilesInner),
+                    ]),
+                  )
+                  as BuiltList<ArchiveFilesInner>?;
+          if (valueDes == null) continue;
+          result.files.replace(valueDes);
+          break;
+        case r'error':
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
+          if (valueDes == null) continue;
+          result.error = valueDes;
+          break;
+        case r'updatedAt':
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(DateTime),
+                  )
+                  as DateTime?;
+          if (valueDes == null) continue;
+          result.updatedAt = valueDes;
+          break;
+        case r'completedAt':
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(DateTime),
+                  )
+                  as DateTime?;
+          if (valueDes == null) continue;
+          result.completedAt = valueDes;
+          break;
+        case r'purgedAt':
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(DateTime),
+                  )
+                  as DateTime?;
+          if (valueDes == null) continue;
+          result.purgedAt = valueDes;
           break;
         default:
           unhandled.add(key);

@@ -10,6 +10,8 @@ const ArchiveSettingsTargetEnum _$archiveSettingsTargetEnum_local =
     const ArchiveSettingsTargetEnum._('local');
 const ArchiveSettingsTargetEnum _$archiveSettingsTargetEnum_s3 =
     const ArchiveSettingsTargetEnum._('s3');
+const ArchiveSettingsTargetEnum _$archiveSettingsTargetEnum_glacier =
+    const ArchiveSettingsTargetEnum._('glacier');
 const ArchiveSettingsTargetEnum
 _$archiveSettingsTargetEnum_unknownDefaultOpenApi =
     const ArchiveSettingsTargetEnum._('unknownDefaultOpenApi');
@@ -20,6 +22,8 @@ ArchiveSettingsTargetEnum _$archiveSettingsTargetEnumValueOf(String name) {
       return _$archiveSettingsTargetEnum_local;
     case 's3':
       return _$archiveSettingsTargetEnum_s3;
+    case 'glacier':
+      return _$archiveSettingsTargetEnum_glacier;
     case 'unknownDefaultOpenApi':
       return _$archiveSettingsTargetEnum_unknownDefaultOpenApi;
     default:
@@ -31,6 +35,7 @@ final BuiltSet<ArchiveSettingsTargetEnum> _$archiveSettingsTargetEnumValues =
     BuiltSet<ArchiveSettingsTargetEnum>(const <ArchiveSettingsTargetEnum>[
       _$archiveSettingsTargetEnum_local,
       _$archiveSettingsTargetEnum_s3,
+      _$archiveSettingsTargetEnum_glacier,
       _$archiveSettingsTargetEnum_unknownDefaultOpenApi,
     ]);
 
@@ -42,11 +47,13 @@ class _$ArchiveSettingsTargetEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'local': 'local',
     's3': 's3',
+    'glacier': 'glacier',
     'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'local': 'local',
     's3': 's3',
+    'glacier': 'glacier',
     'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 
@@ -89,6 +96,10 @@ class _$ArchiveSettings extends ArchiveSettings {
   final BuiltList<String>? secretsSet;
   @override
   final bool? keepLocal;
+  @override
+  final String? cutoff;
+  @override
+  final String? schedule;
 
   factory _$ArchiveSettings([void Function(ArchiveSettingsBuilder)? updates]) =>
       (ArchiveSettingsBuilder()..update(updates))._build();
@@ -102,6 +113,8 @@ class _$ArchiveSettings extends ArchiveSettings {
     this.secrets,
     this.secretsSet,
     this.keepLocal,
+    this.cutoff,
+    this.schedule,
   }) : super._();
   @override
   ArchiveSettings rebuild(void Function(ArchiveSettingsBuilder) updates) =>
@@ -121,7 +134,9 @@ class _$ArchiveSettings extends ArchiveSettings {
         s3 == other.s3 &&
         secrets == other.secrets &&
         secretsSet == other.secretsSet &&
-        keepLocal == other.keepLocal;
+        keepLocal == other.keepLocal &&
+        cutoff == other.cutoff &&
+        schedule == other.schedule;
   }
 
   @override
@@ -135,6 +150,8 @@ class _$ArchiveSettings extends ArchiveSettings {
     _$hash = $jc(_$hash, secrets.hashCode);
     _$hash = $jc(_$hash, secretsSet.hashCode);
     _$hash = $jc(_$hash, keepLocal.hashCode);
+    _$hash = $jc(_$hash, cutoff.hashCode);
+    _$hash = $jc(_$hash, schedule.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -149,7 +166,9 @@ class _$ArchiveSettings extends ArchiveSettings {
           ..add('s3', s3)
           ..add('secrets', secrets)
           ..add('secretsSet', secretsSet)
-          ..add('keepLocal', keepLocal))
+          ..add('keepLocal', keepLocal)
+          ..add('cutoff', cutoff)
+          ..add('schedule', schedule))
         .toString();
   }
 }
@@ -194,6 +213,14 @@ class ArchiveSettingsBuilder
   bool? get keepLocal => _$this._keepLocal;
   set keepLocal(bool? keepLocal) => _$this._keepLocal = keepLocal;
 
+  String? _cutoff;
+  String? get cutoff => _$this._cutoff;
+  set cutoff(String? cutoff) => _$this._cutoff = cutoff;
+
+  String? _schedule;
+  String? get schedule => _$this._schedule;
+  set schedule(String? schedule) => _$this._schedule = schedule;
+
   ArchiveSettingsBuilder() {
     ArchiveSettings._defaults(this);
   }
@@ -209,6 +236,8 @@ class ArchiveSettingsBuilder
       _secrets = $v.secrets?.toBuilder();
       _secretsSet = $v.secretsSet?.toBuilder();
       _keepLocal = $v.keepLocal;
+      _cutoff = $v.cutoff;
+      _schedule = $v.schedule;
       _$v = null;
     }
     return this;
@@ -249,6 +278,8 @@ class ArchiveSettingsBuilder
             secrets: _secrets?.build(),
             secretsSet: _secretsSet?.build(),
             keepLocal: keepLocal,
+            cutoff: cutoff,
+            schedule: schedule,
           );
     } catch (_) {
       late String _$failedField;

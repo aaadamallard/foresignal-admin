@@ -212,6 +212,7 @@ export 'package:foresignal_api/src/model/apns_provider_config.dart';
 export 'package:foresignal_api/src/model/approach_condition.dart';
 export 'package:foresignal_api/src/model/approach_condition_target.dart';
 export 'package:foresignal_api/src/model/archive.dart';
+export 'package:foresignal_api/src/model/archive_files_inner.dart';
 export 'package:foresignal_api/src/model/archive_page.dart';
 export 'package:foresignal_api/src/model/archive_partition.dart';
 export 'package:foresignal_api/src/model/archive_partition_files_inner.dart';

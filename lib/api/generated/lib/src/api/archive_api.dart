@@ -365,7 +365,7 @@ class ArchiveApi {
   }
 
   /// List archive segments
-  /// Lists cold-storage archive segments with sizes and status (B3/179). This is the archival-tier inventory; the compliance cold-archive catalog of legal holds is getArchiveCatalog. Requires &#x60;storage.manage&#x60;.  **Scope:** &#x60;admin&#x60;.
+  /// Lists cold-storage archive segments with sizes and status, newest first (B3/179). This is the archival-tier inventory (&#x60;archive_manifest&#x60;); the compliance cold-archive catalog of legal holds is getArchiveCatalog. Requires &#x60;storage.manage&#x60;.  **Scope:** &#x60;admin&#x60;.  **R2-016:** an unknown &#x60;status&#x60; or a cursor this endpoint did not issue is 400 VALIDATION_FAILED.
   ///
   /// Parameters:
   /// * [status] - Filter by status
@@ -669,7 +669,7 @@ class ArchiveApi {
   }
 
   /// Restore an archive
-  /// Pulls an archive segment back from cold storage into the hot store (B3/179). Requires &#x60;storage.manage&#x60;.  **Scope:** &#x60;admin&#x60;.
+  /// Pulls an archive segment back from cold storage into the hot store (B3/179). Requires &#x60;storage.manage&#x60;.  **Scope:** &#x60;admin&#x60;.  **R2-016:** &#x60;confirm: true&#x60; is required (400 otherwise). Each file is pulled from its tier and its SHA-256 checked, then its rows are loaded into the restore area &#x60;record_version_restored&#x60; (keyed by the archive id), not back into record_version, whose partitions for those seqs are gone and whose retention would delete them again. A Glacier segment stays &#x60;restoring&#x60; while S3 thaws its objects (typically hours); the runner asks again each minute. A restore may be large and slow. 409 ALREADY_RESTORED, ALREADY_RUNNING (the segment or another restore is in progress), ARCHIVE_NOT_RESTORABLE (a failed segment) or ARCHIVE_NOT_CONFIGURED (s3/glacier settings missing).
   ///
   /// Parameters:
   /// * [id] - Archive segment id
@@ -771,7 +771,7 @@ class ArchiveApi {
   }
 
   /// Run an archival pass
-  /// Starts an archival pass now: select data older than the cutoff, export to the target with a verified checksum, mark archived, then purge from the hot store (B3/179). Returns the created segment. Requires &#x60;storage.manage&#x60;.  **Scope:** &#x60;admin&#x60;.
+  /// Starts an archival pass now: select data older than the cutoff, export to the target with a verified checksum, mark archived, then purge from the hot store (B3/179). Returns the created segment. Requires &#x60;storage.manage&#x60;.  **Scope:** &#x60;admin&#x60;.  **R2-016:** the pass plans a retention run with the archived sources&#39; STANDARD windows capped to now − cutoff (no other source&#39;s window moves), writes exactly the rows that plan removes (and the rows of TRACK partitions about to be dropped) as one gzip NDJSON file per source, offloads each to the tier and verifies it there (SHA-256 read back on the external disk; ETag and size on S3/Glacier), records the manifest (&#x60;complete&#x60;), and only then runs the planned retention pass, so the purge goes through the existing delete, drop and head-purge paths. A failed export or verification purges nothing, marks the segment &#x60;failed&#x60; and raises the operational alert &#x60;system.archive_failed&#x60;. The pass holds the retention job&#39;s single-run guard: while retention or another archive pass runs, the answer is 409 ALREADY_RUNNING. 409 ARCHIVE_NOT_CONFIGURED when the archive is off, or an s3/glacier target lacks its settings or secrets.
   ///
   /// Parameters:
   /// * [archiveRunRequest]
@@ -866,7 +866,7 @@ class ArchiveApi {
   }
 
   /// Update cold archive settings
-  /// When enabled, ArchiveStep writes TRACK leaves and STANDARD chunks as hive-partitioned GeoParquet before retention deletes them, verifies the row count, then uploads to S3 when configured (SigV4; endpoint checked by the outbound URL policy, URL_NOT_ALLOWED). Omitted secrets keep their stored values.  **Scope:** &#x60;admin&#x60;.
+  /// When enabled, ArchiveStep writes TRACK leaves and STANDARD chunks as hive-partitioned GeoParquet before retention deletes them, verifies the row count, then uploads to S3 when configured (SigV4; endpoint checked by the outbound URL policy, URL_NOT_ALLOWED). Omitted secrets keep their stored values.  **Scope:** &#x60;admin&#x60;.  **R2-016:** also holds the cold-storage tier: target &#x60;glacier&#x60;, &#x60;s3.storageClass&#x60;, the archive-run &#x60;cutoff&#x60; (≥ 1d) and &#x60;schedule&#x60; (six-field cron); see runArchive.
   ///
   /// Parameters:
   /// * [archiveSettings]

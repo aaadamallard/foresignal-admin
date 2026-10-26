@@ -125,6 +125,7 @@ import 'package:foresignal_api/src/model/apns_provider_config.dart';
 import 'package:foresignal_api/src/model/approach_condition.dart';
 import 'package:foresignal_api/src/model/approach_condition_target.dart';
 import 'package:foresignal_api/src/model/archive.dart';
+import 'package:foresignal_api/src/model/archive_files_inner.dart';
 import 'package:foresignal_api/src/model/archive_page.dart';
 import 'package:foresignal_api/src/model/archive_partition.dart';
 import 'package:foresignal_api/src/model/archive_partition_files_inner.dart';
@@ -1930,6 +1931,7 @@ part 'serializers.g.dart';
   ApproachCondition,
   ApproachConditionTarget,
   Archive,
+  ArchiveFilesInner,
   ArchivePage,
   ArchivePartition,
   ArchivePartitionFilesInner,
@@ -5190,6 +5192,10 @@ Serializers serializers =
           ..addBuilderFactory(
             const FullType(BuiltList, [FullType(PromptTemplateSummary)]),
             () => ListBuilder<PromptTemplateSummary>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(ArchiveFilesInner)]),
+            () => ListBuilder<ArchiveFilesInner>(),
           )
           ..addBuilderFactory(
             const FullType(BuiltList, [FullType(ReferenceImport)]),

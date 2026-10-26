@@ -214,6 +214,8 @@ Serializers _$serializers =
           ..add(ApproachConditionTarget.serializer)
           ..add(ApproachConditionTypeEnum.serializer)
           ..add(Archive.serializer)
+          ..add(ArchiveFilesInner.serializer)
+          ..add(ArchiveFilesInnerTierEnum.serializer)
           ..add(ArchivePage.serializer)
           ..add(ArchivePartition.serializer)
           ..add(ArchivePartitionFilesInner.serializer)
@@ -223,6 +225,7 @@ Serializers _$serializers =
           ..add(ArchiveRunRequest.serializer)
           ..add(ArchiveSettings.serializer)
           ..add(ArchiveSettingsS3.serializer)
+          ..add(ArchiveSettingsS3StorageClassEnum.serializer)
           ..add(ArchiveSettingsSecrets.serializer)
           ..add(ArchiveSettingsTargetEnum.serializer)
           ..add(AskAction.serializer)
@@ -6495,6 +6498,16 @@ Serializers _$serializers =
           ..addBuilderFactory(
             const FullType(BuiltList, const [const FullType(String)]),
             () => ListBuilder<String>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, const [const FullType(String)]),
+            () => ListBuilder<String>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, const [
+              const FullType(ArchiveFilesInner),
+            ]),
+            () => ListBuilder<ArchiveFilesInner>(),
           )
           ..addBuilderFactory(
             const FullType(BuiltList, const [const FullType(String)]),

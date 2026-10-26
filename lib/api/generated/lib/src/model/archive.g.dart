@@ -29,6 +29,30 @@ class _$Archive extends Archive {
   final bool? purgedFromHot;
   @override
   final DateTime? restoredAt;
+  @override
+  final String? trigger;
+  @override
+  final String? domain;
+  @override
+  final BuiltList<String>? sources;
+  @override
+  final int? fromSeq;
+  @override
+  final int? toSeq;
+  @override
+  final DateTime? fromTime;
+  @override
+  final DateTime? toTime;
+  @override
+  final BuiltList<ArchiveFilesInner>? files;
+  @override
+  final String? error;
+  @override
+  final DateTime? updatedAt;
+  @override
+  final DateTime? completedAt;
+  @override
+  final DateTime? purgedAt;
 
   factory _$Archive([void Function(ArchiveBuilder)? updates]) =>
       (ArchiveBuilder()..update(updates))._build();
@@ -45,6 +69,18 @@ class _$Archive extends Archive {
     this.checksum,
     this.purgedFromHot,
     this.restoredAt,
+    this.trigger,
+    this.domain,
+    this.sources,
+    this.fromSeq,
+    this.toSeq,
+    this.fromTime,
+    this.toTime,
+    this.files,
+    this.error,
+    this.updatedAt,
+    this.completedAt,
+    this.purgedAt,
   }) : super._();
   @override
   Archive rebuild(void Function(ArchiveBuilder) updates) =>
@@ -67,7 +103,19 @@ class _$Archive extends Archive {
         itemCount == other.itemCount &&
         checksum == other.checksum &&
         purgedFromHot == other.purgedFromHot &&
-        restoredAt == other.restoredAt;
+        restoredAt == other.restoredAt &&
+        trigger == other.trigger &&
+        domain == other.domain &&
+        sources == other.sources &&
+        fromSeq == other.fromSeq &&
+        toSeq == other.toSeq &&
+        fromTime == other.fromTime &&
+        toTime == other.toTime &&
+        files == other.files &&
+        error == other.error &&
+        updatedAt == other.updatedAt &&
+        completedAt == other.completedAt &&
+        purgedAt == other.purgedAt;
   }
 
   @override
@@ -84,6 +132,18 @@ class _$Archive extends Archive {
     _$hash = $jc(_$hash, checksum.hashCode);
     _$hash = $jc(_$hash, purgedFromHot.hashCode);
     _$hash = $jc(_$hash, restoredAt.hashCode);
+    _$hash = $jc(_$hash, trigger.hashCode);
+    _$hash = $jc(_$hash, domain.hashCode);
+    _$hash = $jc(_$hash, sources.hashCode);
+    _$hash = $jc(_$hash, fromSeq.hashCode);
+    _$hash = $jc(_$hash, toSeq.hashCode);
+    _$hash = $jc(_$hash, fromTime.hashCode);
+    _$hash = $jc(_$hash, toTime.hashCode);
+    _$hash = $jc(_$hash, files.hashCode);
+    _$hash = $jc(_$hash, error.hashCode);
+    _$hash = $jc(_$hash, updatedAt.hashCode);
+    _$hash = $jc(_$hash, completedAt.hashCode);
+    _$hash = $jc(_$hash, purgedAt.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -101,7 +161,19 @@ class _$Archive extends Archive {
           ..add('itemCount', itemCount)
           ..add('checksum', checksum)
           ..add('purgedFromHot', purgedFromHot)
-          ..add('restoredAt', restoredAt))
+          ..add('restoredAt', restoredAt)
+          ..add('trigger', trigger)
+          ..add('domain', domain)
+          ..add('sources', sources)
+          ..add('fromSeq', fromSeq)
+          ..add('toSeq', toSeq)
+          ..add('fromTime', fromTime)
+          ..add('toTime', toTime)
+          ..add('files', files)
+          ..add('error', error)
+          ..add('updatedAt', updatedAt)
+          ..add('completedAt', completedAt)
+          ..add('purgedAt', purgedAt))
         .toString();
   }
 }
@@ -154,6 +226,55 @@ class ArchiveBuilder implements Builder<Archive, ArchiveBuilder> {
   DateTime? get restoredAt => _$this._restoredAt;
   set restoredAt(DateTime? restoredAt) => _$this._restoredAt = restoredAt;
 
+  String? _trigger;
+  String? get trigger => _$this._trigger;
+  set trigger(String? trigger) => _$this._trigger = trigger;
+
+  String? _domain;
+  String? get domain => _$this._domain;
+  set domain(String? domain) => _$this._domain = domain;
+
+  ListBuilder<String>? _sources;
+  ListBuilder<String> get sources => _$this._sources ??= ListBuilder<String>();
+  set sources(ListBuilder<String>? sources) => _$this._sources = sources;
+
+  int? _fromSeq;
+  int? get fromSeq => _$this._fromSeq;
+  set fromSeq(int? fromSeq) => _$this._fromSeq = fromSeq;
+
+  int? _toSeq;
+  int? get toSeq => _$this._toSeq;
+  set toSeq(int? toSeq) => _$this._toSeq = toSeq;
+
+  DateTime? _fromTime;
+  DateTime? get fromTime => _$this._fromTime;
+  set fromTime(DateTime? fromTime) => _$this._fromTime = fromTime;
+
+  DateTime? _toTime;
+  DateTime? get toTime => _$this._toTime;
+  set toTime(DateTime? toTime) => _$this._toTime = toTime;
+
+  ListBuilder<ArchiveFilesInner>? _files;
+  ListBuilder<ArchiveFilesInner> get files =>
+      _$this._files ??= ListBuilder<ArchiveFilesInner>();
+  set files(ListBuilder<ArchiveFilesInner>? files) => _$this._files = files;
+
+  String? _error;
+  String? get error => _$this._error;
+  set error(String? error) => _$this._error = error;
+
+  DateTime? _updatedAt;
+  DateTime? get updatedAt => _$this._updatedAt;
+  set updatedAt(DateTime? updatedAt) => _$this._updatedAt = updatedAt;
+
+  DateTime? _completedAt;
+  DateTime? get completedAt => _$this._completedAt;
+  set completedAt(DateTime? completedAt) => _$this._completedAt = completedAt;
+
+  DateTime? _purgedAt;
+  DateTime? get purgedAt => _$this._purgedAt;
+  set purgedAt(DateTime? purgedAt) => _$this._purgedAt = purgedAt;
+
   ArchiveBuilder() {
     Archive._defaults(this);
   }
@@ -172,6 +293,18 @@ class ArchiveBuilder implements Builder<Archive, ArchiveBuilder> {
       _checksum = $v.checksum;
       _purgedFromHot = $v.purgedFromHot;
       _restoredAt = $v.restoredAt;
+      _trigger = $v.trigger;
+      _domain = $v.domain;
+      _sources = $v.sources?.toBuilder();
+      _fromSeq = $v.fromSeq;
+      _toSeq = $v.toSeq;
+      _fromTime = $v.fromTime;
+      _toTime = $v.toTime;
+      _files = $v.files?.toBuilder();
+      _error = $v.error;
+      _updatedAt = $v.updatedAt;
+      _completedAt = $v.completedAt;
+      _purgedAt = $v.purgedAt;
       _$v = null;
     }
     return this;
@@ -191,33 +324,64 @@ class ArchiveBuilder implements Builder<Archive, ArchiveBuilder> {
   Archive build() => _build();
 
   _$Archive _build() {
-    final _$result =
-        _$v ??
-        _$Archive._(
-          id: BuiltValueNullFieldError.checkNotNull(id, r'Archive', 'id'),
-          status: BuiltValueNullFieldError.checkNotNull(
-            status,
-            r'Archive',
-            'status',
-          ),
-          createdAt: BuiltValueNullFieldError.checkNotNull(
-            createdAt,
-            r'Archive',
-            'createdAt',
-          ),
-          cutoff: cutoff,
-          target: BuiltValueNullFieldError.checkNotNull(
-            target,
-            r'Archive',
-            'target',
-          ),
-          location: location,
-          sizeBytes: sizeBytes,
-          itemCount: itemCount,
-          checksum: checksum,
-          purgedFromHot: purgedFromHot,
-          restoredAt: restoredAt,
+    _$Archive _$result;
+    try {
+      _$result =
+          _$v ??
+          _$Archive._(
+            id: BuiltValueNullFieldError.checkNotNull(id, r'Archive', 'id'),
+            status: BuiltValueNullFieldError.checkNotNull(
+              status,
+              r'Archive',
+              'status',
+            ),
+            createdAt: BuiltValueNullFieldError.checkNotNull(
+              createdAt,
+              r'Archive',
+              'createdAt',
+            ),
+            cutoff: cutoff,
+            target: BuiltValueNullFieldError.checkNotNull(
+              target,
+              r'Archive',
+              'target',
+            ),
+            location: location,
+            sizeBytes: sizeBytes,
+            itemCount: itemCount,
+            checksum: checksum,
+            purgedFromHot: purgedFromHot,
+            restoredAt: restoredAt,
+            trigger: trigger,
+            domain: domain,
+            sources: _sources?.build(),
+            fromSeq: fromSeq,
+            toSeq: toSeq,
+            fromTime: fromTime,
+            toTime: toTime,
+            files: _files?.build(),
+            error: error,
+            updatedAt: updatedAt,
+            completedAt: completedAt,
+            purgedAt: purgedAt,
+          );
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'sources';
+        _sources?.build();
+
+        _$failedField = 'files';
+        _files?.build();
+      } catch (e) {
+        throw BuiltValueNestedFieldError(
+          r'Archive',
+          _$failedField,
+          e.toString(),
         );
+      }
+      rethrow;
+    }
     replace(_$result);
     return _$result;
   }

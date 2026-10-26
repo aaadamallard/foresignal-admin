@@ -11,11 +11,11 @@ part 'archive_restore_request.g.dart';
 /// Restore an archive back into the hot store
 ///
 /// Properties:
-/// * [confirm] - Must be true to restore
+/// * [confirm] - Must be true to restore (400 otherwise): a restore may be large and slow, and a Glacier segment waits hours for its thaw
 @BuiltValue()
 abstract class ArchiveRestoreRequest
     implements Built<ArchiveRestoreRequest, ArchiveRestoreRequestBuilder> {
-  /// Must be true to restore
+  /// Must be true to restore (400 otherwise): a restore may be large and slow, and a Glacier segment waits hours for its thaw
   @BuiltValueField(wireName: r'confirm')
   bool get confirm;
 

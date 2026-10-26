@@ -1091,6 +1091,7 @@ Class | Method | HTTP request | Description
  - [ApproachCondition](doc/ApproachCondition.md)
  - [ApproachConditionTarget](doc/ApproachConditionTarget.md)
  - [Archive](doc/Archive.md)
+ - [ArchiveFilesInner](doc/ArchiveFilesInner.md)
  - [ArchivePage](doc/ArchivePage.md)
  - [ArchivePartition](doc/ArchivePartition.md)
  - [ArchivePartitionFilesInner](doc/ArchivePartitionFilesInner.md)

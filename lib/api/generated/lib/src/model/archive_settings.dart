@@ -11,17 +11,19 @@ import 'package:built_value/serializer.dart';
 
 part 'archive_settings.g.dart';
 
-/// Cold archive settings (settings key `archive`); secrets are write-only (111)
+/// Cold archive settings (settings key `archive`); secrets are write-only (111). R2-016 adds the `glacier` target, `s3.storageClass`, and the archive-run `cutoff` and `schedule`; an explicit null or empty string clears either.
 ///
 /// Properties:
 /// * [enabled] - Default false
 /// * [sources] - Allowlist; empty = all non-private STANDARD and TRACK sources
-/// * [root] - Default ${FORESIGNAL_DATA_DIR}/archive; an absolute path, or a path relative to the data directory
-/// * [target]
+/// * [root] - Default ${FORESIGNAL_DATA_DIR}/archive; an absolute path, or a path relative to the data directory. For the `local` target, point it at a mounted external disk: archive segments are written under `segments/` there.
+/// * [target] - Where archive segments go (R2-016): `local` is the external-disk tier (files under `root`, meant to be a mounted external disk), `s3` an S3-compatible bucket, `glacier` the same API with an archival storage class (objects are thawed before a restore). The prompt 111 GeoParquet copies upload only for `s3`.
 /// * [s3]
 /// * [secrets]
 /// * [secretsSet] - Names of secrets that have a stored value
 /// * [keepLocal] - Keep the local copy after a verified upload
+/// * [cutoff] - Archive runs (R2-016) move STANDARD history of the archived sources older than this age (a duration of at least 1d, such as `365d`) to the cold tier, then purge it. Null: a run takes only what retention removes anyway. TRACK history is archived as its partitions reach `retention.trackWindow`.
+/// * [schedule] - Six-field cron expression (second minute hour day-of-month month day-of-week, UTC) of scheduled archive runs (R2-016), such as `0 0 3 * * SUN`. Null: archive runs happen only through runArchive or the retention size cap.
 @BuiltValue()
 abstract class ArchiveSettings
     implements Built<ArchiveSettings, ArchiveSettingsBuilder> {
@@ -33,13 +35,14 @@ abstract class ArchiveSettings
   @BuiltValueField(wireName: r'sources')
   BuiltList<String>? get sources;
 
-  /// Default ${FORESIGNAL_DATA_DIR}/archive; an absolute path, or a path relative to the data directory
+  /// Default ${FORESIGNAL_DATA_DIR}/archive; an absolute path, or a path relative to the data directory. For the `local` target, point it at a mounted external disk: archive segments are written under `segments/` there.
   @BuiltValueField(wireName: r'root')
   String? get root;
 
+  /// Where archive segments go (R2-016): `local` is the external-disk tier (files under `root`, meant to be a mounted external disk), `s3` an S3-compatible bucket, `glacier` the same API with an archival storage class (objects are thawed before a restore). The prompt 111 GeoParquet copies upload only for `s3`.
   @BuiltValueField(wireName: r'target')
   ArchiveSettingsTargetEnum get target;
-  // enum targetEnum {  local,  s3,  };
+  // enum targetEnum {  local,  s3,  glacier,  };
 
   @BuiltValueField(wireName: r's3')
   ArchiveSettingsS3? get s3;
@@ -54,6 +57,14 @@ abstract class ArchiveSettings
   /// Keep the local copy after a verified upload
   @BuiltValueField(wireName: r'keepLocal')
   bool? get keepLocal;
+
+  /// Archive runs (R2-016) move STANDARD history of the archived sources older than this age (a duration of at least 1d, such as `365d`) to the cold tier, then purge it. Null: a run takes only what retention removes anyway. TRACK history is archived as its partitions reach `retention.trackWindow`.
+  @BuiltValueField(wireName: r'cutoff')
+  String? get cutoff;
+
+  /// Six-field cron expression (second minute hour day-of-month month day-of-week, UTC) of scheduled archive runs (R2-016), such as `0 0 3 * * SUN`. Null: archive runs happen only through runArchive or the retention size cap.
+  @BuiltValueField(wireName: r'schedule')
+  String? get schedule;
 
   ArchiveSettings._();
 
@@ -131,6 +142,20 @@ class _$ArchiveSettingsSerializer
       yield serializers.serialize(
         object.keepLocal,
         specifiedType: const FullType(bool),
+      );
+    }
+    if (object.cutoff != null) {
+      yield r'cutoff';
+      yield serializers.serialize(
+        object.cutoff,
+        specifiedType: const FullType.nullable(String),
+      );
+    }
+    if (object.schedule != null) {
+      yield r'schedule';
+      yield serializers.serialize(
+        object.schedule,
+        specifiedType: const FullType.nullable(String),
       );
     }
   }
@@ -244,6 +269,26 @@ class _$ArchiveSettingsSerializer
           if (valueDes == null) continue;
           result.keepLocal = valueDes;
           break;
+        case r'cutoff':
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
+          if (valueDes == null) continue;
+          result.cutoff = valueDes;
+          break;
+        case r'schedule':
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
+          if (valueDes == null) continue;
+          result.schedule = valueDes;
+          break;
         default:
           unhandled.add(key);
           unhandled.add(value);
@@ -273,12 +318,16 @@ class _$ArchiveSettingsSerializer
   }
 }
 
+/// Where archive segments go (R2-016): `local` is the external-disk tier (files under `root`, meant to be a mounted external disk), `s3` an S3-compatible bucket, `glacier` the same API with an archival storage class (objects are thawed before a restore). The prompt 111 GeoParquet copies upload only for `s3`.
 class ArchiveSettingsTargetEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'local')
   static const ArchiveSettingsTargetEnum local =
       _$archiveSettingsTargetEnum_local;
   @BuiltValueEnumConst(wireName: r's3')
   static const ArchiveSettingsTargetEnum s3 = _$archiveSettingsTargetEnum_s3;
+  @BuiltValueEnumConst(wireName: r'glacier')
+  static const ArchiveSettingsTargetEnum glacier =
+      _$archiveSettingsTargetEnum_glacier;
   @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
   static const ArchiveSettingsTargetEnum unknownDefaultOpenApi =
       _$archiveSettingsTargetEnum_unknownDefaultOpenApi;
