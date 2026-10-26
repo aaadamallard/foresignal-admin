@@ -92,6 +92,8 @@ class _ArchiveSettingsFormState extends ConsumerState<ArchiveSettingsForm> with 
     _ctl('bucket').text = _d.bucket;
     _ctl('prefix').text = _d.prefix;
     _ctl('region').text = _d.region;
+    _ctl('cutoff').text = _d.cutoff;
+    _ctl('schedule').text = _d.schedule;
     _ctl('accessKey').clear();
     _ctl('secretKey').clear();
   }
@@ -112,6 +114,8 @@ class _ArchiveSettingsFormState extends ConsumerState<ArchiveSettingsForm> with 
       ..bucket = _c['bucket']!.text
       ..prefix = _c['prefix']!.text
       ..region = _c['region']!.text
+      ..cutoff = _c['cutoff']!.text
+      ..schedule = _c['schedule']!.text
       ..accessKey = _c['accessKey']!.text
       ..secretKey = _c['secretKey']!.text;
     setState(() => _errors = _d.validate());
@@ -165,7 +169,7 @@ class _ArchiveSettingsFormState extends ConsumerState<ArchiveSettingsForm> with 
   @override
   Widget build(BuildContext context) {
     final d = _d;
-    final s3 = d.target == 's3';
+    final s3 = d.onS3;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: <Widget>[
@@ -178,12 +182,35 @@ class _ArchiveSettingsFormState extends ConsumerState<ArchiveSettingsForm> with 
           field: WireDropdown(
             key: const Key('archive.target'),
             value: d.target,
-            values: const <String>['local', 's3'],
-            labels: const <String, String>{'local': 'Local disk', 's3': 'S3'},
+            values: <String>[
+              'local',
+              's3',
+              'glacier',
+              // A target a newer server offers stays listed and selected.
+              if (!const <String>{'local', 's3', 'glacier'}.contains(d.target)) d.target,
+            ],
+            labels: const <String, String>{'local': 'External disk', 's3': 'S3', 'glacier': 'S3 Glacier'},
             onChanged: (v) => setState(() => d.target = v),
           ),
         ),
-        _field('Directory', 'root', help: 'Absolute, or relative to the data directory; empty for the default.'),
+        _field(
+          'Directory',
+          'root',
+          help: 'For the external disk, a mounted disk\'s absolute path. Absolute, or relative to the data '
+              'directory; empty for the default.',
+        ),
+        _field(
+          'Archive data older than',
+          'cutoff',
+          hint: '365d',
+          help: 'STANDARD history past this age moves to the archive; empty archives only what retention removes.',
+        ),
+        _field(
+          'Schedule',
+          'schedule',
+          hint: '0 0 3 * * SUN',
+          help: 'Six-field cron in UTC; empty runs only on request.',
+        ),
         _field('Sources', 'sources', help: 'Source ids, comma-separated; empty for every public standard and track source.'),
         LabeledField(
           label: 'Keep local copy',
@@ -195,6 +222,31 @@ class _ArchiveSettingsFormState extends ConsumerState<ArchiveSettingsForm> with 
           _field('Bucket', 'bucket'),
           _field('Prefix', 'prefix', help: 'Optional.'),
           _field('Region', 'region', help: 'Optional.'),
+          LabeledField(
+            label: 'Storage class',
+            help: d.target == 'glacier'
+                ? 'GLACIER (the default) or DEEP_ARCHIVE; a restore waits hours for the thaw.'
+                : 'Empty uses the bucket default.',
+            field: Align(
+              alignment: Alignment.centerLeft,
+              child: SizedBox(
+                width: 280,
+                child: WireDropdown(
+                  key: const Key('archive.storageClass'),
+                  value: d.storageClass,
+                  values: <String>[
+                    ...ArchiveDraft.storageClasses,
+                    if (d.storageClass != null && !ArchiveDraft.storageClasses.contains(d.storageClass))
+                      d.storageClass!,
+                  ],
+                  labels: const <String, String>{},
+                  hint: 'Bucket default',
+                  error: _errors['storageClass'],
+                  onChanged: (v) => setState(() => d.storageClass = v),
+                ),
+              ),
+            ),
+          ),
           LabeledField(
             label: 'Path-style',
             help: 'Bucket in the path rather than the host name.',
@@ -213,6 +265,19 @@ class _ArchiveSettingsFormState extends ConsumerState<ArchiveSettingsForm> with 
             help: _secretsSet.contains('secretKey') ? 'Set. Type a new one to replace it; leave empty to keep.' : 'Write-only.',
           ),
         ],
+        if (d.enabled)
+          const Padding(
+            padding: EdgeInsets.only(top: 8),
+            child: ResultPanel(
+              key: Key('archive.purgeNote'),
+              title: 'Archive, then purge',
+              tone: StatusTone.info,
+              message:
+                  'With a target set, data leaves the live database only after its archive is written '
+                  'and verified: it is archived, then purged, never just deleted. A segment can be '
+                  'restored later.',
+            ),
+          ),
         FormActions(
           busy: busy,
           onSave: _save,

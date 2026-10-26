@@ -158,6 +158,15 @@ const List<NavSection> allNavSections = <NavSection>[
     writePermissions: _serving,
   ),
   NavSection(
+    path: '/storage',
+    label: 'Storage',
+    icon: Icons.storage,
+    summary: 'Disk, memory and database gauges, the history cap, archival and backup.',
+    formFactors: _desktop,
+    readPermissions: <String>{Permissions.storageManage},
+    writePermissions: <String>{Permissions.storageManage},
+  ),
+  NavSection(
     path: '/users',
     label: 'Users & Roles',
     barLabel: 'Users',

@@ -45,6 +45,7 @@ import '../features/sources/custom/custom_sources_screen.dart';
 import '../features/sources/source_detail_screen.dart';
 import '../features/sources/source_test_screen.dart';
 import '../features/sources/sources_catalog_screen.dart';
+import '../features/storage/storage_screen.dart';
 import '../features/system/system_screen.dart';
 import '../features/usage/usage_screen.dart';
 import '../features/users/role_screen.dart';
@@ -369,6 +370,17 @@ Map<String, SectionRoutes> sectionRoutesFor(FormFactor formFactor) {
             path: ':userId',
             builder: (context, state) => UserScreen(userId: state.pathParameters['userId']!),
           ),
+        ],
+      ),
+    if (desktop)
+      storagePath: SectionRoutes(
+        builder: (context, state) => const StorageScreen(),
+        routes: <RouteBase>[
+          for (final tab in StorageTab.values.skip(1))
+            GoRoute(
+              path: tab.path.substring(storagePath.length + 1),
+              builder: (context, state) => StorageScreen(tab: tab),
+            ),
         ],
       ),
     if (desktop)

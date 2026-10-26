@@ -15,8 +15,8 @@ part 'aggregator_config.g.dart';
 /// Properties:
 /// * [enabled]
 /// * [mode]
-/// * [endpoint] - Required to enable. adsb: an http or https URL of the readsb aircraft.json on this host or the LAN (it must resolve to a loopback, private or unique-local address, and is pinned); no credentials, query or fragment (R2-019)
-/// * [config] - Domain-specific settings (adsb: `band`, 1090 or 978, default 1090); an unknown member is a 400 (R2-019)
+/// * [endpoint] - Required to enable. adsb: an http or https URL of the readsb aircraft.json on this host or the LAN (it must resolve to a loopback, private or unique-local address, and is pinned); no credentials, query or fragment (R2-019). ais: the AIS decoder's NMEA feed, either tcp://host:port (its TCP server, for example AIS-catcher -S 5012; a loopback, private or unique-local address, pinned) or udp://bindHost:port (where this server listens for its datagrams, which needs config.allowSenders); the port is always explicit (R2-020). datalink: tcp://host, the host the decoders run on, with no port; each decoder's port is in config (R2-021). satellite: SatDump's web server, an http or https URL (any base path is kept; its /api is read), on this host or the LAN (R2-022)
+/// * [config] - Domain-specific settings; an unknown member is a 400 (R2-019). adsb: `band`, 1090 or 978, default 1090. ais (R2-020): `allowSenders`, a list of IPs or CIDRs in private space whose datagrams are read, required with a udp:// endpoint; `stationName`, the observer of every record, default `local`. datalink (R2-021): the decoders `acars`, `vdlm2`, `hfdl` (acars_router's TCP servers) and `aprs` (the igate's KISS TCP port), each a port on the endpoint host or a whole tcp://host:port, at least one to enable; `stationId` (ACARS observer), `stationCallsign` (APRS observer), `includeMessages` (boolean). satellite (R2-022): `location` (required with an endpoint: lat,lon[,altM] or a place id), `inboxPath` (SatDump's output directory under FORESIGNAL_INBOX_DIR), `satdumpVersion` (1.2 or 2.0), `predictNorad` (NORAD numbers of the polar satellites to predict), `goes` (east or west: the GOES the dish receives, whose ABI imagery pull is superseded)
 /// * [disableSupersededSources] - Default the public/mirror sources off once this aggregator is live (nothing is removed); the sources it turned off are turned back on when it stops being live or this is set to false (R2-019)
 @BuiltValue()
 abstract class AggregatorConfig
@@ -27,11 +27,11 @@ abstract class AggregatorConfig
   @BuiltValueField(wireName: r'mode')
   String? get mode;
 
-  /// Required to enable. adsb: an http or https URL of the readsb aircraft.json on this host or the LAN (it must resolve to a loopback, private or unique-local address, and is pinned); no credentials, query or fragment (R2-019)
+  /// Required to enable. adsb: an http or https URL of the readsb aircraft.json on this host or the LAN (it must resolve to a loopback, private or unique-local address, and is pinned); no credentials, query or fragment (R2-019). ais: the AIS decoder's NMEA feed, either tcp://host:port (its TCP server, for example AIS-catcher -S 5012; a loopback, private or unique-local address, pinned) or udp://bindHost:port (where this server listens for its datagrams, which needs config.allowSenders); the port is always explicit (R2-020). datalink: tcp://host, the host the decoders run on, with no port; each decoder's port is in config (R2-021). satellite: SatDump's web server, an http or https URL (any base path is kept; its /api is read), on this host or the LAN (R2-022)
   @BuiltValueField(wireName: r'endpoint')
   String? get endpoint;
 
-  /// Domain-specific settings (adsb: `band`, 1090 or 978, default 1090); an unknown member is a 400 (R2-019)
+  /// Domain-specific settings; an unknown member is a 400 (R2-019). adsb: `band`, 1090 or 978, default 1090. ais (R2-020): `allowSenders`, a list of IPs or CIDRs in private space whose datagrams are read, required with a udp:// endpoint; `stationName`, the observer of every record, default `local`. datalink (R2-021): the decoders `acars`, `vdlm2`, `hfdl` (acars_router's TCP servers) and `aprs` (the igate's KISS TCP port), each a port on the endpoint host or a whole tcp://host:port, at least one to enable; `stationId` (ACARS observer), `stationCallsign` (APRS observer), `includeMessages` (boolean). satellite (R2-022): `location` (required with an endpoint: lat,lon[,altM] or a place id), `inboxPath` (SatDump's output directory under FORESIGNAL_INBOX_DIR), `satdumpVersion` (1.2 or 2.0), `predictNorad` (NORAD numbers of the polar satellites to predict), `goes` (east or west: the GOES the dish receives, whose ABI imagery pull is superseded)
   @BuiltValueField(wireName: r'config')
   BuiltMap<String, JsonObject?>? get config;
 

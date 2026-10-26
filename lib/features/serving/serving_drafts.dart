@@ -579,7 +579,8 @@ class HoldDraft {
 class ArchiveDraft {
   /// A draft of stored [settings].
   ArchiveDraft.of(Json settings)
-    : enabled = settings['enabled'] == true,
+    : stored = settings,
+      enabled = settings['enabled'] == true,
       target = settings['target'] as String? ?? 'local',
       root = settings['root'] as String? ?? '',
       sources = listText(settings['sources']),
@@ -588,13 +589,50 @@ class ArchiveDraft {
       bucket = jsonMap(settings, 's3')?['bucket'] as String? ?? '',
       prefix = jsonMap(settings, 's3')?['prefix'] as String? ?? '',
       region = jsonMap(settings, 's3')?['region'] as String? ?? '',
-      pathStyle = jsonMap(settings, 's3')?['pathStyle'] == true;
+      pathStyle = jsonMap(settings, 's3')?['pathStyle'] == true,
+      storageClass = jsonMap(settings, 's3')?['storageClass'] as String?,
+      cutoff = settings['cutoff'] as String? ?? '',
+      schedule = settings['schedule'] as String? ?? '';
+
+  /// The settings as read: a member this draft does not edit is sent back
+  /// as it was.
+  final Json stored;
+
+  /// The storage classes the contract names for uploads.
+  static const List<String> storageClasses = <String>[
+    'STANDARD',
+    'REDUCED_REDUNDANCY',
+    'STANDARD_IA',
+    'ONEZONE_IA',
+    'INTELLIGENT_TIERING',
+    'GLACIER_IR',
+    'GLACIER',
+    'DEEP_ARCHIVE',
+  ];
+
+  /// The classes whose objects cannot be read until thawed: the only ones a
+  /// `glacier` target takes, and ones an `s3` target may not use.
+  static const Set<String> frozenClasses = <String>{'GLACIER', 'DEEP_ARCHIVE'};
+
+  /// Whether the target is an S3 bucket (`s3`, or `glacier` on S3).
+  bool get onS3 => target == 's3' || target == 'glacier';
 
   /// Whether archiving runs.
   bool enabled;
 
-  /// `local` or `s3`.
+  /// `local` (an external disk), `s3`, or `glacier`.
   String target;
+
+  /// `s3.storageClass`; `null` uses the bucket default (GLACIER for a
+  /// `glacier` target).
+  String? storageClass;
+
+  /// How old STANDARD history must be to be archived, such as `365d`;
+  /// empty for none (only what retention removes is archived).
+  String cutoff;
+
+  /// The six-field UTC cron of scheduled runs; empty for runs on request.
+  String schedule;
 
   /// The archive directory; empty for the default.
   String root;
@@ -628,8 +666,16 @@ class ArchiveDraft {
 
   /// Problems by field.
   Map<String, String> validate() => <String, String>{
-    if (target == 's3' && Uri.tryParse(endpoint.trim())?.hasScheme != true) 'endpoint': 'A URL with its scheme.',
-    if (target == 's3' && bucket.trim().isEmpty) 'bucket': 'Required for S3.',
+    if (onS3 && Uri.tryParse(endpoint.trim())?.hasScheme != true) 'endpoint': 'A URL with its scheme.',
+    if (onS3 && bucket.trim().isEmpty) 'bucket': 'Required for S3.',
+    if (target == 'glacier' && storageClass != null && !frozenClasses.contains(storageClass))
+      'storageClass': 'A Glacier target takes GLACIER or DEEP_ARCHIVE.',
+    if (target == 's3' && frozenClasses.contains(storageClass))
+      'storageClass': 'Use the Glacier target for $storageClass: those objects cannot be read until thawed.',
+    if (cutoff.trim().isNotEmpty && !RegExp(r'^(\d+[dw]|P\S+)$').hasMatch(cutoff.trim()))
+      'cutoff': 'An age of at least a day, such as 365d.',
+    if (schedule.trim().isNotEmpty && schedule.trim().split(RegExp(r'\s+')).length != 6)
+      'schedule': 'Six fields: second minute hour day month weekday (UTC).',
   };
 
   /// The `ArchiveSettings` body. Call only when [validate] is empty.
@@ -639,20 +685,26 @@ class ArchiveDraft {
       if (secretKey.isNotEmpty) 'secretKey': secretKey,
     };
     return <String, Object?>{
+      for (final e in stored.entries)
+        if (e.key != 'secretsSet' && e.key != 'secrets' && e.key != 'root') e.key: e.value,
       'enabled': enabled,
       'target': target,
       if (root.trim().isNotEmpty) 'root': root.trim(),
       'sources': commaList(sources),
       'keepLocal': keepLocal,
-      's3': target == 's3'
+      's3': onS3
           ? <String, Object?>{
+              ...?jsonMap(stored, 's3'),
               'endpoint': endpoint.trim(),
               'bucket': bucket.trim(),
               if (prefix.trim().isNotEmpty) 'prefix': prefix.trim(),
               if (region.trim().isNotEmpty) 'region': region.trim(),
               'pathStyle': pathStyle,
+              'storageClass': storageClass,
             }
           : null,
+      'cutoff': cutoff.trim().isEmpty ? null : cutoff.trim(),
+      'schedule': schedule.trim().isEmpty ? null : schedule.trim(),
       if (typed.isNotEmpty) 'secrets': typed,
     };
   }

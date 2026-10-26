@@ -19,7 +19,7 @@ part 'aggregator.g.dart';
 /// * [mode] - Own receiver, aggregated feed, or both
 /// * [endpoint] - Local endpoint the adapter reads. For adsb, the readsb aircraft.json, for example http://readsb/data/aircraft.json (R2-019)
 /// * [status] - ok when the aggregator's source is healthy, degraded when degraded or not yet run, down when failing, unconfigured when not enabled with an endpoint (R2-019)
-/// * [supersededSources] - Public/mirror source ids this aggregator supersedes; defaulted off when it is live
+/// * [supersededSources] - Public/mirror source ids this aggregator supersedes under its current configuration; defaulted off when it is live (R2-022: for satellite, only the ABI imagery of the GOES named by config.goes)
 /// * [lastSeenAt] - When the aggregator's source last brought data (R2-019)
 /// * [config] - Domain-specific settings as stored (adsb: `band`, 1090 or 978) (R2-019)
 /// * [disableSupersededSources] - Whether the superseded sources are kept off while the aggregator is live (R2-019)
@@ -49,7 +49,7 @@ abstract class Aggregator implements Built<Aggregator, AggregatorBuilder> {
   @BuiltValueField(wireName: r'status')
   String? get status;
 
-  /// Public/mirror source ids this aggregator supersedes; defaulted off when it is live
+  /// Public/mirror source ids this aggregator supersedes under its current configuration; defaulted off when it is live (R2-022: for satellite, only the ABI imagery of the GOES named by config.goes)
   @BuiltValueField(wireName: r'supersededSources')
   BuiltList<String>? get supersededSources;
 

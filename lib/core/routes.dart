@@ -244,6 +244,18 @@ String usersWithRolePath(String roleId) => Uri(path: usersPath, queryParameters:
 /// The signed-in user's own profile and preferences.
 const String profilePath = '/profile';
 
+/// Storage: live disk, memory and database gauges with their thresholds.
+const String storagePath = '/storage';
+
+/// Storage: the history cap and its preview.
+const String storageRetentionPath = '$storagePath/retention';
+
+/// Storage: cold-storage archival.
+const String storageArchivePath = '$storagePath/archive';
+
+/// Storage: database backup and restore.
+const String storageBackupPath = '$storagePath/backup';
+
 /// System: the instance's health and the client contract.
 const String systemPath = '/system';
 
@@ -295,6 +307,9 @@ const Set<String> sectionTabPaths = <String>{
   systemPluginsPath,
   systemOperationsPath,
   systemBackupPath,
+  storageRetentionPath,
+  storageArchivePath,
+  storageBackupPath,
 };
 
 /// Whether [location] is the home of a section — one of the [roots] (the
