@@ -4,6 +4,7 @@ import 'package:dio/dio.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../api/api.dart';
+import '../../core/access.dart';
 import '../../core/connection_store.dart';
 
 /// What the stored (or entered) admin token is good for.
@@ -162,6 +163,7 @@ class ConnectController extends Notifier<ConnectState> {
         }
         ref.read(backendEndpointProvider.notifier).set(baseUrl);
         ref.invalidate(backendDioProvider);
+        ref.invalidate(adminTokenPresentProvider);
       }
       state = ConnectTested(report, saved: saved);
     } on Object catch (error) {
@@ -173,6 +175,7 @@ class ConnectController extends Notifier<ConnectState> {
   Future<void> forgetToken() async {
     await ref.read(connectionStoreProvider).clear();
     ref.invalidate(backendDioProvider);
+    ref.invalidate(adminTokenPresentProvider);
     state = const ConnectIdle();
   }
 

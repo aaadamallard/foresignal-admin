@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
 import '../../api/api_errors.dart';
+import '../access.dart';
 import '../theme.dart';
+import 'permission_gate.dart';
 
 /// Shows a failed backend call where it happened: a refusal or failure
 /// (ProblemDetail) with its status, code and field errors, a request that
@@ -24,6 +26,17 @@ class ErrorBanner extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // A signed-in user refused for a permission: the shared denied panel,
+    // naming what the action needed.
+    if (isPermissionDenied(error)) {
+      final problem = error as ProblemException;
+      final needed = requiredPermissionOf(problem);
+      return PermissionDeniedPanel(
+        permissions: needed == null ? const <String>{} : <String>{needed},
+        detail: problem.detail,
+        title: title ?? 'Permission needed',
+      );
+    }
     final theme = Theme.of(context);
     final api = error is ApiException ? error as ApiException : null;
     final lines = <String>[];

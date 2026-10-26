@@ -12,6 +12,7 @@ export 'key_value_list.dart';
 export 'labeled_field.dart';
 export 'one_time_secret.dart';
 export 'page_header.dart';
+export 'permission_gate.dart';
 export 'reliability_bar.dart';
 export 'result_panel.dart';
 export 'section_card.dart';

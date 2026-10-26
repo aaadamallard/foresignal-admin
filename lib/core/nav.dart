@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'form_factor.dart';
+import 'permissions.dart';
 
 /// One top-level screen group in the navigation.
 class NavSection {
@@ -12,6 +13,8 @@ class NavSection {
     required this.summary,
     required this.formFactors,
     this.barLabel,
+    this.readPermissions = const <String>{},
+    this.writePermissions = const <String>{},
   });
 
   /// The route path, e.g. `/sources`.
@@ -32,13 +35,44 @@ class NavSection {
   /// A shorter label for the phone's bottom bar, where [label] would wrap;
   /// `null` uses [label].
   final String? barLabel;
+
+  /// The permissions that mount the section: a signed-in user sees it when
+  /// they hold at least one. Empty means everyone.
+  final Set<String> readPermissions;
+
+  /// The permissions that let a signed-in user change what the section
+  /// configures: without any of them, the section is view-only. Empty means
+  /// everyone who can see it.
+  final Set<String> writePermissions;
 }
 
 const Set<FormFactor> _desktop = <FormFactor>{FormFactor.desktop};
+
+/// Usage: the collector, budgets, rate limits and retention.
+const Set<String> _usage = <String>{
+  Permissions.collectorSettings,
+  Permissions.collectionManage,
+  Permissions.storageManage,
+  Permissions.systemSettings,
+};
+
+/// AI: the shared and personal LLM providers.
+const Set<String> _ai = <String>{Permissions.llmSharedManage, Permissions.selfLlm};
+
+/// Serving: sinks, exports, archive and peers.
+const Set<String> _serving = <String>{
+  Permissions.systemSettings,
+  Permissions.dataExport,
+  Permissions.storageManage,
+  Permissions.networkManage,
+};
+
 const Set<FormFactor> _both = <FormFactor>{FormFactor.desktop, FormFactor.mobile};
 
 /// Every navigation section, in rail order. The desktop mounts all of those
 /// tagged desktop; the mobile companion only those tagged mobile (Screens.md §K).
+/// Each names the permissions that show it and that let a user change it,
+/// from the `x-foresignal-permission` of the operations it calls.
 const List<NavSection> allNavSections = <NavSection>[
   NavSection(
     path: '/sources',
@@ -46,6 +80,8 @@ const List<NavSection> allNavSections = <NavSection>[
     icon: Icons.sensors,
     summary: 'The source catalog: enable, configure, set keys, and test each source.',
     formFactors: _both,
+    readPermissions: <String>{Permissions.dataRead, Permissions.collectionManage, Permissions.selfSources},
+    writePermissions: <String>{Permissions.collectionManage, Permissions.selfSources},
   ),
   NavSection(
     path: '/usage',
@@ -53,6 +89,8 @@ const List<NavSection> allNavSections = <NavSection>[
     icon: Icons.speed,
     summary: 'Data usage against budgets, the collector governor, rate limits and retention.',
     formFactors: _desktop,
+    readPermissions: _usage,
+    writePermissions: _usage,
   ),
   NavSection(
     path: '/ai',
@@ -60,6 +98,8 @@ const List<NavSection> allNavSections = <NavSection>[
     icon: Icons.psychology,
     summary: 'LLM providers, roles, prompt templates and spend.',
     formFactors: _desktop,
+    readPermissions: _ai,
+    writePermissions: _ai,
   ),
   NavSection(
     path: '/analysis',
@@ -68,6 +108,8 @@ const List<NavSection> allNavSections = <NavSection>[
     summary:
         'Correlation recipes, analysis cycles, assessment feedback, calibration and corroboration.',
     formFactors: _desktop,
+    readPermissions: <String>{Permissions.intelRead},
+    writePermissions: <String>{Permissions.systemSettings},
   ),
   NavSection(
     path: '/vetting',
@@ -75,6 +117,8 @@ const List<NavSection> allNavSections = <NavSection>[
     icon: Icons.fact_check,
     summary: 'Social and news vetting, entity resolution and ownership chains.',
     formFactors: _desktop,
+    readPermissions: <String>{Permissions.intelRead, Permissions.dataRead},
+    writePermissions: <String>{Permissions.systemSettings},
   ),
   NavSection(
     path: '/forecasting',
@@ -82,6 +126,8 @@ const List<NavSection> allNavSections = <NavSection>[
     icon: Icons.insights,
     summary: 'Forecasters, calibration, forecast questions and external add-ins (EDP).',
     formFactors: _desktop,
+    readPermissions: <String>{Permissions.forecastRead},
+    writePermissions: <String>{Permissions.systemSettings},
   ),
   NavSection(
     path: '/alerts',
@@ -89,6 +135,8 @@ const List<NavSection> allNavSections = <NavSection>[
     icon: Icons.notifications_active,
     summary: 'Trigger rules, the alert inbox, escalation, channels and watchlists.',
     formFactors: _both,
+    readPermissions: <String>{Permissions.dataRead, Permissions.selfAlerts, Permissions.selfChannels, Permissions.channelsGlobal},
+    writePermissions: <String>{Permissions.selfAlerts, Permissions.selfChannels, Permissions.channelsGlobal},
   ),
   NavSection(
     path: '/notifications',
@@ -97,6 +145,8 @@ const List<NavSection> allNavSections = <NavSection>[
     icon: Icons.inbox,
     summary: 'The notification inbox, Web Push and native push.',
     formFactors: _both,
+    readPermissions: <String>{Permissions.dataRead, Permissions.selfPreferences},
+    writePermissions: <String>{Permissions.selfPreferences, Permissions.systemSettings},
   ),
   NavSection(
     path: '/serving',
@@ -104,6 +154,8 @@ const List<NavSection> allNavSections = <NavSection>[
     icon: Icons.output,
     summary: 'Sinks, exports and archive, peers and federation.',
     formFactors: _desktop,
+    readPermissions: _serving,
+    writePermissions: _serving,
   ),
   NavSection(
     path: '/system',
@@ -111,6 +163,8 @@ const List<NavSection> allNavSections = <NavSection>[
     icon: Icons.settings,
     summary: 'Server and security settings, tokens, signing, plugins, diagnostics and backup.',
     formFactors: _desktop,
+    readPermissions: <String>{Permissions.systemSettings, Permissions.usersManage, Permissions.auditRead, Permissions.storageManage},
+    writePermissions: <String>{Permissions.systemSettings, Permissions.usersManage},
   ),
   NavSection(
     path: '/device',

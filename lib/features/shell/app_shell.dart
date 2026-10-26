@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../api/api.dart';
+import '../../core/access.dart';
 import '../../core/error_reporter.dart';
 import '../../core/form_factor.dart';
 import '../../core/nav.dart';
@@ -28,10 +29,12 @@ class AppShell extends ConsumerWidget {
   /// The current screen.
   final Widget child;
 
-  /// The navigation entries for [formFactor]: Connect, then the sections.
-  static List<NavSection> destinationsFor(FormFactor formFactor) => <NavSection>[
+  /// The navigation entries for [formFactor]: Connect, then the sections
+  /// [access] may see (all of them when no [access] is given).
+  static List<NavSection> destinationsFor(FormFactor formFactor, [AccessState? access]) => <NavSection>[
     connectSection,
-    ...navSectionsFor(formFactor),
+    for (final section in navSectionsFor(formFactor))
+      if (access == null || access.canSee(section)) section,
   ];
 
   /// The index of the entry [location] belongs to.
@@ -45,7 +48,8 @@ class AppShell extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final formFactor = ref.watch(formFactorProvider);
-    final destinations = destinationsFor(formFactor);
+    final access = ref.watch(accessProvider);
+    final destinations = destinationsFor(formFactor, access);
     final selected = selectedIndex(destinations, location);
     final body = Column(
       children: <Widget>[
@@ -56,7 +60,9 @@ class AppShell extends ConsumerWidget {
           roots: <String>[for (final d in destinations) d.path],
           mobile: formFactor == FormFactor.mobile,
         ),
-        Expanded(child: child),
+        Expanded(
+          child: SectionAccessGuard(location: location, child: child),
+        ),
       ],
     );
 
@@ -351,7 +357,8 @@ class AccountControl extends ConsumerWidget {
         label: const Text('Sign in'),
       );
     }
-    final who = session.email ?? session.tokenPrefix ?? 'Signed in';
+    final user = ref.watch(accessProvider).user;
+    final who = user?.fullName ?? session.email ?? session.tokenPrefix ?? 'Signed in';
     if (!expanded) {
       return PopupMenuButton<String>(
         key: const Key('shell.account'),
@@ -384,6 +391,71 @@ class AccountControl extends ConsumerWidget {
         ),
       ],
     );
+  }
+}
+
+/// Guards the page at [location] by its section's permissions: a section
+/// the signed-in user may not see renders the permission-denied panel (a
+/// deep link resolves there, not to a blank page), and one they may see but
+/// not change carries a quiet "view only" line above the page.
+class SectionAccessGuard extends ConsumerWidget {
+  /// Creates the guard around [child], the page at [location].
+  const SectionAccessGuard({super.key, required this.location, required this.child});
+
+  /// The current route location.
+  final String location;
+
+  /// The page.
+  final Widget child;
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final root = sectionRootOf(location);
+    NavSection? section;
+    for (final s in allNavSections) {
+      if (s.path == root) {
+        section = s;
+      }
+    }
+    if (section == null) {
+      return child;
+    }
+    final access = ref.watch(accessProvider);
+    if (!access.canSee(section)) {
+      return SingleChildScrollView(
+        padding: const EdgeInsets.all(28),
+        child: PermissionDeniedPanel(
+          key: const Key('section.denied'),
+          title: '${section.label} is not available to your account',
+          permissions: section.readPermissions,
+        ),
+      );
+    }
+    if (access.kind == AccessKind.session && !access.canChange(section)) {
+      return Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: <Widget>[
+          Padding(
+            padding: const EdgeInsets.fromLTRB(24, 10, 28, 0),
+            child: Row(
+              key: const Key('section.viewOnly'),
+              children: <Widget>[
+                Icon(Icons.visibility, size: 14, color: AdminPalette.of(context).muted),
+                const SizedBox(width: 6),
+                Expanded(
+                  child: Text(
+                    'View only. Changes here need ${PermissionGate.describe(section.writePermissions)}.',
+                    style: TextStyle(fontSize: 12, color: AdminPalette.of(context).muted),
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Expanded(child: child),
+        ],
+      );
+    }
+    return child;
   }
 }
 
