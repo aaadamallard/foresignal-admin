@@ -1147,6 +1147,7 @@ Class | Method | HTTP request | Description
  - [BacktestJobResult](doc/BacktestJobResult.md)
  - [BacktestRequest](doc/BacktestRequest.md)
  - [Backup](doc/Backup.md)
+ - [BackupFilesInner](doc/BackupFilesInner.md)
  - [BackupPage](doc/BackupPage.md)
  - [BackupRestoreRequest](doc/BackupRestoreRequest.md)
  - [BackupRunRequest](doc/BackupRunRequest.md)

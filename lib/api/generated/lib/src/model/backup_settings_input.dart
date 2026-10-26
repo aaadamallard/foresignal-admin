@@ -10,7 +10,7 @@ import 'package:built_value/serializer.dart';
 
 part 'backup_settings_input.g.dart';
 
-/// Backup settings with write-only S3 credentials
+/// Backup settings with write-only S3 credentials. Replaces the settings: an omitted member takes its default, except `secrets`, where an omitted member keeps the stored value and an empty string or null clears it. Unknown members are a 400; the read-only `secretsSet` and `lastRunAt` of a GET may be sent back and are ignored.
 ///
 /// Properties:
 /// * [enabled]
@@ -19,6 +19,7 @@ part 'backup_settings_input.g.dart';
 /// * [root]
 /// * [s3]
 /// * [keepBackups]
+/// * [includeConfig]
 /// * [secrets]
 @BuiltValue()
 abstract class BackupSettingsInput
@@ -40,6 +41,9 @@ abstract class BackupSettingsInput
 
   @BuiltValueField(wireName: r'keepBackups')
   int? get keepBackups;
+
+  @BuiltValueField(wireName: r'includeConfig')
+  bool? get includeConfig;
 
   @BuiltValueField(wireName: r'secrets')
   ArchiveSettingsSecrets? get secrets;
@@ -109,6 +113,13 @@ class _$BackupSettingsInputSerializer
       yield serializers.serialize(
         object.keepBackups,
         specifiedType: const FullType.nullable(int),
+      );
+    }
+    if (object.includeConfig != null) {
+      yield r'includeConfig';
+      yield serializers.serialize(
+        object.includeConfig,
+        specifiedType: const FullType(bool),
       );
     }
     if (object.secrets != null) {
@@ -202,6 +213,16 @@ class _$BackupSettingsInputSerializer
                   as int?;
           if (valueDes == null) continue;
           result.keepBackups = valueDes;
+          break;
+        case r'includeConfig':
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
+          if (valueDes == null) continue;
+          result.includeConfig = valueDes;
           break;
         case r'secrets':
           final valueDes =

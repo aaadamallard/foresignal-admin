@@ -267,6 +267,7 @@ lib/src/model/backtest_job_page.dart
 lib/src/model/backtest_job_result.dart
 lib/src/model/backtest_request.dart
 lib/src/model/backup.dart
+lib/src/model/backup_files_inner.dart
 lib/src/model/backup_page.dart
 lib/src/model/backup_restore_request.dart
 lib/src/model/backup_run_request.dart

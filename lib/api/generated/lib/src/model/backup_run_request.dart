@@ -11,11 +11,12 @@ part 'backup_run_request.g.dart';
 /// Run a backup now
 ///
 /// Properties:
-/// * [type]
+/// * [type] - Omitted: `full` when `includeConfig` is on, else `database`
 /// * [label]
 @BuiltValue()
 abstract class BackupRunRequest
     implements Built<BackupRunRequest, BackupRunRequestBuilder> {
+  /// Omitted: `full` when `includeConfig` is on, else `database`
   @BuiltValueField(wireName: r'type')
   String? get type;
 

@@ -30,6 +30,7 @@ dependencies:
   latlong2: 0.10.1
   foresignal_api:
     path: lib/api/generated
+  timezone: ^0.11.2
 
 dev_dependencies:
   flutter_test:

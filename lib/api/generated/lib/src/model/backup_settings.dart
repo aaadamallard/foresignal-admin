@@ -10,40 +10,47 @@ import 'package:built_value/serializer.dart';
 
 part 'backup_settings.g.dart';
 
-/// Backup settings (settings key `backup`); secrets are write-only (B4/180)
+/// Backup settings (settings key `backup`, prompt R2-017); secrets are write-only (B4/180). Backups land through the cold-archive tiers of R2-016: `local` and `external` on the external-disk tier (copied, fsynced, SHA-256 read back), `s3` on the S3 tier (ETag and size checked), each backup under `backups/{id}/`.
 ///
 /// Properties:
-/// * [enabled]
-/// * [schedule] - Cron expression for scheduled backups
-/// * [target]
-/// * [root] - Local/external backup directory
+/// * [enabled] - Master switch: off, `runBackup` is 409 BACKUP_NOT_CONFIGURED and the schedule does not fire
+/// * [schedule] - Cron expression for scheduled backups: six fields (second minute hour day month weekday), evaluated in UTC; null for backups only on request
+/// * [target] - `local`: under `root`, or the data directory when `root` is empty; `external`: a mounted disk at the absolute `root`; `s3`: the `s3` bucket
+/// * [root] - Local/external backup directory; required and absolute for `external`; a relative `local` root is under the data directory
 /// * [s3]
-/// * [keepBackups] - How many backups to retain; older ones are pruned
+/// * [keepBackups] - How many complete backups of each type to retain; older ones are pruned with their files, and failed ones older than the oldest kept are dropped. Null keeps every backup. 1 to 10000
+/// * [includeConfig] - A scheduled backup, and a `runBackup` that names no type, also writes the config bundle (type `full`); off, they are `database` only
 /// * [secretsSet] - Names of secrets that have a stored value
 /// * [lastRunAt]
 @BuiltValue()
 abstract class BackupSettings
     implements Built<BackupSettings, BackupSettingsBuilder> {
+  /// Master switch: off, `runBackup` is 409 BACKUP_NOT_CONFIGURED and the schedule does not fire
   @BuiltValueField(wireName: r'enabled')
   bool get enabled;
 
-  /// Cron expression for scheduled backups
+  /// Cron expression for scheduled backups: six fields (second minute hour day month weekday), evaluated in UTC; null for backups only on request
   @BuiltValueField(wireName: r'schedule')
   String? get schedule;
 
+  /// `local`: under `root`, or the data directory when `root` is empty; `external`: a mounted disk at the absolute `root`; `s3`: the `s3` bucket
   @BuiltValueField(wireName: r'target')
   String get target;
 
-  /// Local/external backup directory
+  /// Local/external backup directory; required and absolute for `external`; a relative `local` root is under the data directory
   @BuiltValueField(wireName: r'root')
   String? get root;
 
   @BuiltValueField(wireName: r's3')
   S3Target? get s3;
 
-  /// How many backups to retain; older ones are pruned
+  /// How many complete backups of each type to retain; older ones are pruned with their files, and failed ones older than the oldest kept are dropped. Null keeps every backup. 1 to 10000
   @BuiltValueField(wireName: r'keepBackups')
   int? get keepBackups;
+
+  /// A scheduled backup, and a `runBackup` that names no type, also writes the config bundle (type `full`); off, they are `database` only
+  @BuiltValueField(wireName: r'includeConfig')
+  bool? get includeConfig;
 
   /// Names of secrets that have a stored value
   @BuiltValueField(wireName: r'secretsSet')
@@ -114,6 +121,13 @@ class _$BackupSettingsSerializer
       yield serializers.serialize(
         object.keepBackups,
         specifiedType: const FullType.nullable(int),
+      );
+    }
+    if (object.includeConfig != null) {
+      yield r'includeConfig';
+      yield serializers.serialize(
+        object.includeConfig,
+        specifiedType: const FullType(bool),
       );
     }
     if (object.secretsSet != null) {
@@ -214,6 +228,16 @@ class _$BackupSettingsSerializer
                   as int?;
           if (valueDes == null) continue;
           result.keepBackups = valueDes;
+          break;
+        case r'includeConfig':
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
+          if (valueDes == null) continue;
+          result.includeConfig = valueDes;
           break;
         case r'secretsSet':
           final valueDes =

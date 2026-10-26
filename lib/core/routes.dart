@@ -237,6 +237,9 @@ String usersRolePath(String roleId) => '$usersRolesPath/${Uri.encodeComponent(ro
 /// The Users list filtered to the holders of [roleId].
 String usersWithRolePath(String roleId) => Uri(path: usersPath, queryParameters: <String, String>{'role': roleId}).toString();
 
+/// The signed-in user's own profile and preferences.
+const String profilePath = '/profile';
+
 /// System: the instance's health and the client contract.
 const String systemPath = '/system';
 

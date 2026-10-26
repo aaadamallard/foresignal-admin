@@ -364,9 +364,11 @@ class AccountControl extends ConsumerWidget {
         key: const Key('shell.account'),
         tooltip: who,
         icon: const Icon(Icons.account_circle),
-        onSelected: (_) => _signOut(context, ref),
+        onSelected: (choice) =>
+            choice == 'profile' ? context.go(profilePath) : _signOut(context, ref),
         itemBuilder: (context) => <PopupMenuEntry<String>>[
           PopupMenuItem<String>(enabled: false, child: Text(who)),
+          const PopupMenuItem<String>(key: Key('shell.profile'), value: 'profile', child: Text('Profile')),
           const PopupMenuItem<String>(key: Key('shell.signOut'), value: 'signOut', child: Text('Sign out')),
         ],
       );
@@ -376,11 +378,18 @@ class AccountControl extends ConsumerWidget {
         Icon(Icons.account_circle, size: 18, color: muted),
         const SizedBox(width: 8),
         Expanded(
-          child: Text(
-            who,
-            key: const Key('shell.user'),
-            overflow: TextOverflow.ellipsis,
-            style: TextStyle(fontSize: 12, color: muted),
+          child: InkWell(
+            key: const Key('shell.profile'),
+            onTap: () => context.go(profilePath),
+            child: Tooltip(
+              message: 'Your profile',
+              child: Text(
+                who,
+                key: const Key('shell.user'),
+                overflow: TextOverflow.ellipsis,
+                style: TextStyle(fontSize: 12, color: muted),
+              ),
+            ),
           ),
         ),
         IconButton(

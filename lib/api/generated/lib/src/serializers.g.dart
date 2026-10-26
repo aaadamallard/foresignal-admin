@@ -300,6 +300,7 @@ Serializers _$serializers =
           ..add(BacktestRequest.serializer)
           ..add(BacktestRequestTypeEnum.serializer)
           ..add(Backup.serializer)
+          ..add(BackupFilesInner.serializer)
           ..add(BackupPage.serializer)
           ..add(BackupRestoreRequest.serializer)
           ..add(BackupRunRequest.serializer)
@@ -3286,6 +3287,10 @@ Serializers _$serializers =
           ..addBuilderFactory(
             const FullType(BuiltList, const [const FullType(Backup)]),
             () => ListBuilder<Backup>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, const [const FullType(BackupFilesInner)]),
+            () => ListBuilder<BackupFilesInner>(),
           )
           ..addBuilderFactory(
             const FullType(BuiltList, const [const FullType(BaseRate)]),

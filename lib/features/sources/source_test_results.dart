@@ -3,18 +3,15 @@ import 'package:built_value/json_object.dart';
 import 'package:flutter/material.dart';
 
 import '../../api/api.dart';
+import '../../core/format/display_zone.dart';
 import '../../core/theme.dart';
 import '../../core/ui/ui.dart';
 import 'source_widgets.dart';
 
-/// A UTC timestamp as `2026-10-22 16:30:00`.
-String utcText(DateTime? t) {
-  if (t == null) {
-    return '—';
-  }
-  final s = t.toUtc().toIso8601String();
-  return '${s.substring(0, 10)} ${s.substring(11, 19)}';
-}
+/// An instant as `2026-10-22 16:30:00` in UTC, or, once the signed-in
+/// user's timezone is known, in that zone with its abbreviation (see
+/// [DisplayZone]); `—` for `null`.
+String utcText(DateTime? t) => t == null ? '—' : DisplayZone.format(t);
 
 /// [ms] as `340 ms` or `3.4 s`.
 String durationMsText(int? ms) {

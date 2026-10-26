@@ -181,6 +181,7 @@ import 'package:foresignal_api/src/model/backtest_job_page.dart';
 import 'package:foresignal_api/src/model/backtest_job_result.dart';
 import 'package:foresignal_api/src/model/backtest_request.dart';
 import 'package:foresignal_api/src/model/backup.dart';
+import 'package:foresignal_api/src/model/backup_files_inner.dart';
 import 'package:foresignal_api/src/model/backup_page.dart';
 import 'package:foresignal_api/src/model/backup_restore_request.dart';
 import 'package:foresignal_api/src/model/backup_run_request.dart';
@@ -1987,6 +1988,7 @@ part 'serializers.g.dart';
   BacktestJobResult,
   BacktestRequest,
   Backup,
+  BackupFilesInner,
   BackupPage,
   BackupRestoreRequest,
   BackupRunRequest,
@@ -3796,6 +3798,10 @@ Serializers serializers =
           ..addBuilderFactory(
             const FullType(BuiltList, [FullType(SocialPlatform)]),
             () => ListBuilder<SocialPlatform>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(BackupFilesInner)]),
+            () => ListBuilder<BackupFilesInner>(),
           )
           ..addBuilderFactory(
             const FullType(BuiltList, [FullType(PrincipalSummary)]),

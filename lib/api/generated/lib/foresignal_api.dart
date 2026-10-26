@@ -268,6 +268,7 @@ export 'package:foresignal_api/src/model/backtest_job_page.dart';
 export 'package:foresignal_api/src/model/backtest_job_result.dart';
 export 'package:foresignal_api/src/model/backtest_request.dart';
 export 'package:foresignal_api/src/model/backup.dart';
+export 'package:foresignal_api/src/model/backup_files_inner.dart';
 export 'package:foresignal_api/src/model/backup_page.dart';
 export 'package:foresignal_api/src/model/backup_restore_request.dart';
 export 'package:foresignal_api/src/model/backup_run_request.dart';

@@ -25,6 +25,20 @@ class _$Backup extends Backup {
   final String? checksum;
   @override
   final String? label;
+  @override
+  final String? trigger;
+  @override
+  final BuiltList<BackupFilesInner>? files;
+  @override
+  final String? error;
+  @override
+  final DateTime? startedAt;
+  @override
+  final DateTime? finishedAt;
+  @override
+  final DateTime? restoredAt;
+  @override
+  final ImportReport? importReport;
 
   factory _$Backup([void Function(BackupBuilder)? updates]) =>
       (BackupBuilder()..update(updates))._build();
@@ -39,6 +53,13 @@ class _$Backup extends Backup {
     this.location,
     this.checksum,
     this.label,
+    this.trigger,
+    this.files,
+    this.error,
+    this.startedAt,
+    this.finishedAt,
+    this.restoredAt,
+    this.importReport,
   }) : super._();
   @override
   Backup rebuild(void Function(BackupBuilder) updates) =>
@@ -59,7 +80,14 @@ class _$Backup extends Backup {
         target == other.target &&
         location == other.location &&
         checksum == other.checksum &&
-        label == other.label;
+        label == other.label &&
+        trigger == other.trigger &&
+        files == other.files &&
+        error == other.error &&
+        startedAt == other.startedAt &&
+        finishedAt == other.finishedAt &&
+        restoredAt == other.restoredAt &&
+        importReport == other.importReport;
   }
 
   @override
@@ -74,6 +102,13 @@ class _$Backup extends Backup {
     _$hash = $jc(_$hash, location.hashCode);
     _$hash = $jc(_$hash, checksum.hashCode);
     _$hash = $jc(_$hash, label.hashCode);
+    _$hash = $jc(_$hash, trigger.hashCode);
+    _$hash = $jc(_$hash, files.hashCode);
+    _$hash = $jc(_$hash, error.hashCode);
+    _$hash = $jc(_$hash, startedAt.hashCode);
+    _$hash = $jc(_$hash, finishedAt.hashCode);
+    _$hash = $jc(_$hash, restoredAt.hashCode);
+    _$hash = $jc(_$hash, importReport.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -89,7 +124,14 @@ class _$Backup extends Backup {
           ..add('target', target)
           ..add('location', location)
           ..add('checksum', checksum)
-          ..add('label', label))
+          ..add('label', label)
+          ..add('trigger', trigger)
+          ..add('files', files)
+          ..add('error', error)
+          ..add('startedAt', startedAt)
+          ..add('finishedAt', finishedAt)
+          ..add('restoredAt', restoredAt)
+          ..add('importReport', importReport))
         .toString();
   }
 }
@@ -133,6 +175,37 @@ class BackupBuilder implements Builder<Backup, BackupBuilder> {
   String? get label => _$this._label;
   set label(String? label) => _$this._label = label;
 
+  String? _trigger;
+  String? get trigger => _$this._trigger;
+  set trigger(String? trigger) => _$this._trigger = trigger;
+
+  ListBuilder<BackupFilesInner>? _files;
+  ListBuilder<BackupFilesInner> get files =>
+      _$this._files ??= ListBuilder<BackupFilesInner>();
+  set files(ListBuilder<BackupFilesInner>? files) => _$this._files = files;
+
+  String? _error;
+  String? get error => _$this._error;
+  set error(String? error) => _$this._error = error;
+
+  DateTime? _startedAt;
+  DateTime? get startedAt => _$this._startedAt;
+  set startedAt(DateTime? startedAt) => _$this._startedAt = startedAt;
+
+  DateTime? _finishedAt;
+  DateTime? get finishedAt => _$this._finishedAt;
+  set finishedAt(DateTime? finishedAt) => _$this._finishedAt = finishedAt;
+
+  DateTime? _restoredAt;
+  DateTime? get restoredAt => _$this._restoredAt;
+  set restoredAt(DateTime? restoredAt) => _$this._restoredAt = restoredAt;
+
+  ImportReportBuilder? _importReport;
+  ImportReportBuilder get importReport =>
+      _$this._importReport ??= ImportReportBuilder();
+  set importReport(ImportReportBuilder? importReport) =>
+      _$this._importReport = importReport;
+
   BackupBuilder() {
     Backup._defaults(this);
   }
@@ -149,6 +222,13 @@ class BackupBuilder implements Builder<Backup, BackupBuilder> {
       _location = $v.location;
       _checksum = $v.checksum;
       _label = $v.label;
+      _trigger = $v.trigger;
+      _files = $v.files?.toBuilder();
+      _error = $v.error;
+      _startedAt = $v.startedAt;
+      _finishedAt = $v.finishedAt;
+      _restoredAt = $v.restoredAt;
+      _importReport = $v.importReport?.toBuilder();
       _$v = null;
     }
     return this;
@@ -168,27 +248,57 @@ class BackupBuilder implements Builder<Backup, BackupBuilder> {
   Backup build() => _build();
 
   _$Backup _build() {
-    final _$result =
-        _$v ??
-        _$Backup._(
-          id: BuiltValueNullFieldError.checkNotNull(id, r'Backup', 'id'),
-          type: BuiltValueNullFieldError.checkNotNull(type, r'Backup', 'type'),
-          status: BuiltValueNullFieldError.checkNotNull(
-            status,
-            r'Backup',
-            'status',
-          ),
-          createdAt: BuiltValueNullFieldError.checkNotNull(
-            createdAt,
-            r'Backup',
-            'createdAt',
-          ),
-          sizeBytes: sizeBytes,
-          target: target,
-          location: location,
-          checksum: checksum,
-          label: label,
+    _$Backup _$result;
+    try {
+      _$result =
+          _$v ??
+          _$Backup._(
+            id: BuiltValueNullFieldError.checkNotNull(id, r'Backup', 'id'),
+            type: BuiltValueNullFieldError.checkNotNull(
+              type,
+              r'Backup',
+              'type',
+            ),
+            status: BuiltValueNullFieldError.checkNotNull(
+              status,
+              r'Backup',
+              'status',
+            ),
+            createdAt: BuiltValueNullFieldError.checkNotNull(
+              createdAt,
+              r'Backup',
+              'createdAt',
+            ),
+            sizeBytes: sizeBytes,
+            target: target,
+            location: location,
+            checksum: checksum,
+            label: label,
+            trigger: trigger,
+            files: _files?.build(),
+            error: error,
+            startedAt: startedAt,
+            finishedAt: finishedAt,
+            restoredAt: restoredAt,
+            importReport: _importReport?.build(),
+          );
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'files';
+        _files?.build();
+
+        _$failedField = 'importReport';
+        _importReport?.build();
+      } catch (e) {
+        throw BuiltValueNestedFieldError(
+          r'Backup',
+          _$failedField,
+          e.toString(),
         );
+      }
+      rethrow;
+    }
     replace(_$result);
     return _$result;
   }

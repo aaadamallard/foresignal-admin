@@ -3,31 +3,43 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:foresignal_api/src/model/backup_files_inner.dart';
+import 'package:built_collection/built_collection.dart';
+import 'package:foresignal_api/src/model/import_report.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
 part 'backup.g.dart';
 
-/// A single backup artifact (180)
+/// A single backup artifact (180; prompt R2-017): one `backup_run` row and its files on the target
 ///
 /// Properties:
 /// * [id]
-/// * [type]
-/// * [status]
+/// * [type] - `database`: a `pg_dump --format=custom` archive; `config`: the `exportSettings` bundle (no secrets); `full`: both
+/// * [status] - pending → running → complete or failed; a restore goes restoring → restored (a failed restore puts the previous status back with `error`)
 /// * [createdAt]
 /// * [sizeBytes]
 /// * [target]
-/// * [location] - Path or object key
-/// * [checksum]
+/// * [location] - The directory or `s3://` prefix holding the files
+/// * [checksum] - SHA-256 of the one file, or of the `key:sha256` lines of both files sorted by key
 /// * [label]
+/// * [trigger] - `manual` (runBackup) or `scheduled` (backup.schedule)
+/// * [files] - The stored files
+/// * [error] - Why the backup, or its last restore, failed
+/// * [startedAt]
+/// * [finishedAt]
+/// * [restoredAt] - When it was last restored
+/// * [importReport] - Present on the answer of `restoreBackup` for a `config` backup: what the import applied
 @BuiltValue()
 abstract class Backup implements Built<Backup, BackupBuilder> {
   @BuiltValueField(wireName: r'id')
   String get id;
 
+  /// `database`: a `pg_dump --format=custom` archive; `config`: the `exportSettings` bundle (no secrets); `full`: both
   @BuiltValueField(wireName: r'type')
   String get type;
 
+  /// pending → running → complete or failed; a restore goes restoring → restored (a failed restore puts the previous status back with `error`)
   @BuiltValueField(wireName: r'status')
   String get status;
 
@@ -40,15 +52,42 @@ abstract class Backup implements Built<Backup, BackupBuilder> {
   @BuiltValueField(wireName: r'target')
   String? get target;
 
-  /// Path or object key
+  /// The directory or `s3://` prefix holding the files
   @BuiltValueField(wireName: r'location')
   String? get location;
 
+  /// SHA-256 of the one file, or of the `key:sha256` lines of both files sorted by key
   @BuiltValueField(wireName: r'checksum')
   String? get checksum;
 
   @BuiltValueField(wireName: r'label')
   String? get label;
+
+  /// `manual` (runBackup) or `scheduled` (backup.schedule)
+  @BuiltValueField(wireName: r'trigger')
+  String? get trigger;
+
+  /// The stored files
+  @BuiltValueField(wireName: r'files')
+  BuiltList<BackupFilesInner>? get files;
+
+  /// Why the backup, or its last restore, failed
+  @BuiltValueField(wireName: r'error')
+  String? get error;
+
+  @BuiltValueField(wireName: r'startedAt')
+  DateTime? get startedAt;
+
+  @BuiltValueField(wireName: r'finishedAt')
+  DateTime? get finishedAt;
+
+  /// When it was last restored
+  @BuiltValueField(wireName: r'restoredAt')
+  DateTime? get restoredAt;
+
+  /// Present on the answer of `restoreBackup` for a `config` backup: what the import applied
+  @BuiltValueField(wireName: r'importReport')
+  ImportReport? get importReport;
 
   Backup._();
 
@@ -126,6 +165,55 @@ class _$BackupSerializer implements PrimitiveSerializer<Backup> {
       yield serializers.serialize(
         object.label,
         specifiedType: const FullType.nullable(String),
+      );
+    }
+    if (object.trigger != null) {
+      yield r'trigger';
+      yield serializers.serialize(
+        object.trigger,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.files != null) {
+      yield r'files';
+      yield serializers.serialize(
+        object.files,
+        specifiedType: const FullType(BuiltList, [FullType(BackupFilesInner)]),
+      );
+    }
+    if (object.error != null) {
+      yield r'error';
+      yield serializers.serialize(
+        object.error,
+        specifiedType: const FullType.nullable(String),
+      );
+    }
+    if (object.startedAt != null) {
+      yield r'startedAt';
+      yield serializers.serialize(
+        object.startedAt,
+        specifiedType: const FullType.nullable(DateTime),
+      );
+    }
+    if (object.finishedAt != null) {
+      yield r'finishedAt';
+      yield serializers.serialize(
+        object.finishedAt,
+        specifiedType: const FullType.nullable(DateTime),
+      );
+    }
+    if (object.restoredAt != null) {
+      yield r'restoredAt';
+      yield serializers.serialize(
+        object.restoredAt,
+        specifiedType: const FullType.nullable(DateTime),
+      );
+    }
+    if (object.importReport != null) {
+      yield r'importReport';
+      yield serializers.serialize(
+        object.importReport,
+        specifiedType: const FullType.nullable(ImportReport),
       );
     }
   }
@@ -240,6 +328,78 @@ class _$BackupSerializer implements PrimitiveSerializer<Backup> {
                   as String?;
           if (valueDes == null) continue;
           result.label = valueDes;
+          break;
+        case r'trigger':
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
+          if (valueDes == null) continue;
+          result.trigger = valueDes;
+          break;
+        case r'files':
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(BackupFilesInner),
+                    ]),
+                  )
+                  as BuiltList<BackupFilesInner>?;
+          if (valueDes == null) continue;
+          result.files.replace(valueDes);
+          break;
+        case r'error':
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
+          if (valueDes == null) continue;
+          result.error = valueDes;
+          break;
+        case r'startedAt':
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(DateTime),
+                  )
+                  as DateTime?;
+          if (valueDes == null) continue;
+          result.startedAt = valueDes;
+          break;
+        case r'finishedAt':
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(DateTime),
+                  )
+                  as DateTime?;
+          if (valueDes == null) continue;
+          result.finishedAt = valueDes;
+          break;
+        case r'restoredAt':
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(DateTime),
+                  )
+                  as DateTime?;
+          if (valueDes == null) continue;
+          result.restoredAt = valueDes;
+          break;
+        case r'importReport':
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(ImportReport),
+                  )
+                  as ImportReport?;
+          if (valueDes == null) continue;
+          result.importReport.replace(valueDes);
           break;
         default:
           unhandled.add(key);

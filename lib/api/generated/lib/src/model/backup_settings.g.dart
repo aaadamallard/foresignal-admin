@@ -20,6 +20,8 @@ class _$BackupSettings extends BackupSettings {
   @override
   final int? keepBackups;
   @override
+  final bool? includeConfig;
+  @override
   final BuiltList<String>? secretsSet;
   @override
   final DateTime? lastRunAt;
@@ -34,6 +36,7 @@ class _$BackupSettings extends BackupSettings {
     this.root,
     this.s3,
     this.keepBackups,
+    this.includeConfig,
     this.secretsSet,
     this.lastRunAt,
   }) : super._();
@@ -54,6 +57,7 @@ class _$BackupSettings extends BackupSettings {
         root == other.root &&
         s3 == other.s3 &&
         keepBackups == other.keepBackups &&
+        includeConfig == other.includeConfig &&
         secretsSet == other.secretsSet &&
         lastRunAt == other.lastRunAt;
   }
@@ -67,6 +71,7 @@ class _$BackupSettings extends BackupSettings {
     _$hash = $jc(_$hash, root.hashCode);
     _$hash = $jc(_$hash, s3.hashCode);
     _$hash = $jc(_$hash, keepBackups.hashCode);
+    _$hash = $jc(_$hash, includeConfig.hashCode);
     _$hash = $jc(_$hash, secretsSet.hashCode);
     _$hash = $jc(_$hash, lastRunAt.hashCode);
     _$hash = $jf(_$hash);
@@ -82,6 +87,7 @@ class _$BackupSettings extends BackupSettings {
           ..add('root', root)
           ..add('s3', s3)
           ..add('keepBackups', keepBackups)
+          ..add('includeConfig', includeConfig)
           ..add('secretsSet', secretsSet)
           ..add('lastRunAt', lastRunAt))
         .toString();
@@ -116,6 +122,11 @@ class BackupSettingsBuilder
   int? get keepBackups => _$this._keepBackups;
   set keepBackups(int? keepBackups) => _$this._keepBackups = keepBackups;
 
+  bool? _includeConfig;
+  bool? get includeConfig => _$this._includeConfig;
+  set includeConfig(bool? includeConfig) =>
+      _$this._includeConfig = includeConfig;
+
   ListBuilder<String>? _secretsSet;
   ListBuilder<String> get secretsSet =>
       _$this._secretsSet ??= ListBuilder<String>();
@@ -139,6 +150,7 @@ class BackupSettingsBuilder
       _root = $v.root;
       _s3 = $v.s3?.toBuilder();
       _keepBackups = $v.keepBackups;
+      _includeConfig = $v.includeConfig;
       _secretsSet = $v.secretsSet?.toBuilder();
       _lastRunAt = $v.lastRunAt;
       _$v = null;
@@ -179,6 +191,7 @@ class BackupSettingsBuilder
             root: root,
             s3: _s3?.build(),
             keepBackups: keepBackups,
+            includeConfig: includeConfig,
             secretsSet: _secretsSet?.build(),
             lastRunAt: lastRunAt,
           );

@@ -20,6 +20,8 @@ class _$BackupSettingsInput extends BackupSettingsInput {
   @override
   final int? keepBackups;
   @override
+  final bool? includeConfig;
+  @override
   final ArchiveSettingsSecrets? secrets;
 
   factory _$BackupSettingsInput([
@@ -33,6 +35,7 @@ class _$BackupSettingsInput extends BackupSettingsInput {
     this.root,
     this.s3,
     this.keepBackups,
+    this.includeConfig,
     this.secrets,
   }) : super._();
   @override
@@ -54,6 +57,7 @@ class _$BackupSettingsInput extends BackupSettingsInput {
         root == other.root &&
         s3 == other.s3 &&
         keepBackups == other.keepBackups &&
+        includeConfig == other.includeConfig &&
         secrets == other.secrets;
   }
 
@@ -66,6 +70,7 @@ class _$BackupSettingsInput extends BackupSettingsInput {
     _$hash = $jc(_$hash, root.hashCode);
     _$hash = $jc(_$hash, s3.hashCode);
     _$hash = $jc(_$hash, keepBackups.hashCode);
+    _$hash = $jc(_$hash, includeConfig.hashCode);
     _$hash = $jc(_$hash, secrets.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
@@ -80,6 +85,7 @@ class _$BackupSettingsInput extends BackupSettingsInput {
           ..add('root', root)
           ..add('s3', s3)
           ..add('keepBackups', keepBackups)
+          ..add('includeConfig', includeConfig)
           ..add('secrets', secrets))
         .toString();
   }
@@ -113,6 +119,11 @@ class BackupSettingsInputBuilder
   int? get keepBackups => _$this._keepBackups;
   set keepBackups(int? keepBackups) => _$this._keepBackups = keepBackups;
 
+  bool? _includeConfig;
+  bool? get includeConfig => _$this._includeConfig;
+  set includeConfig(bool? includeConfig) =>
+      _$this._includeConfig = includeConfig;
+
   ArchiveSettingsSecretsBuilder? _secrets;
   ArchiveSettingsSecretsBuilder get secrets =>
       _$this._secrets ??= ArchiveSettingsSecretsBuilder();
@@ -132,6 +143,7 @@ class BackupSettingsInputBuilder
       _root = $v.root;
       _s3 = $v.s3?.toBuilder();
       _keepBackups = $v.keepBackups;
+      _includeConfig = $v.includeConfig;
       _secrets = $v.secrets?.toBuilder();
       _$v = null;
     }
@@ -171,6 +183,7 @@ class BackupSettingsInputBuilder
             root: root,
             s3: _s3?.build(),
             keepBackups: keepBackups,
+            includeConfig: includeConfig,
             secrets: _secrets?.build(),
           );
     } catch (_) {

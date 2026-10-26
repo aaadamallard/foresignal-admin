@@ -100,7 +100,7 @@ class BackupsApi {
   }
 
   /// List backups
-  /// Lists backup artifacts with type, size and status (180). Requires &#x60;storage.manage&#x60;.  **Scope:** &#x60;admin&#x60;.
+  /// Lists backup artifacts with type, size and status (180). Requires &#x60;storage.manage&#x60;.  **Scope:** &#x60;admin&#x60;.  **R2-017:** newest first; &#x60;type&#x60; filters to one type.
   ///
   /// Parameters:
   /// * [type] - Filter by type
@@ -203,7 +203,7 @@ class BackupsApi {
   }
 
   /// Restore from a backup
-  /// Restores the instance from a backup; destructive, so &#x60;confirm&#x60; must be true (180). Requires &#x60;storage.manage&#x60;.  **Scope:** &#x60;admin&#x60;.
+  /// Restores the instance from a backup; destructive, so &#x60;confirm&#x60; must be true (180). Requires &#x60;storage.manage&#x60;.  **Scope:** &#x60;admin&#x60;.  **R2-017:** a &#x60;config&#x60; backup is imported at once through &#x60;importSettings&#x60; (atomic: a 400 listing every error applies nothing); the answer is the &#x60;restored&#x60; backup with its &#x60;importReport&#x60;. A &#x60;database&#x60; or &#x60;full&#x60; backup is restored in the background (the answer is the &#x60;restoring&#x60; backup) with &#x60;pg_restore --clean --if-exists --single-transaction&#x60; into the live database: it replaces every table, the backup history included, then brings the schema forward with the server&#39;s migrations and marks the backup &#x60;restored&#x60;. **Operational caveat:** the restore takes locks on every table, so ingest and API writes wait on it, and anything written after the backup was taken is lost; pause collection first and restart the server afterwards so every cache is rebuilt. While it runs, no retention or archive pass starts. A failed restore puts the backup&#39;s previous status back with &#x60;error&#x60; and raises &#x60;system.backup_failed&#x60;. 409 ALREADY_RUNNING while a backup, restore, retention or archive pass runs; 409 BACKUP_NOT_RESTORABLE for a failed backup, or a config bundle whose stored copy is missing or does not match its checksum (the reason is kept in &#x60;error&#x60;); 409 BACKUP_NOT_CONFIGURED for an &#x60;s3&#x60; backup when the settings have no bucket or secrets.
   ///
   /// Parameters:
   /// * [id] - Backup id
@@ -306,7 +306,7 @@ class BackupsApi {
   }
 
   /// Run a backup now
-  /// Starts a DB (pg_dump/base) or config-export backup to the configured target (B4/180). Requires &#x60;storage.manage&#x60;.  **Scope:** &#x60;admin&#x60;.
+  /// Starts a DB (pg_dump/base) or config-export backup to the configured target (B4/180). Requires &#x60;storage.manage&#x60;.  **Scope:** &#x60;admin&#x60;.  **R2-017:** returns the &#x60;pending&#x60; backup; a worker then runs &#x60;pg_dump --format&#x3D;custom&#x60; of the application database (the password goes to it as &#x60;PGPASSWORD&#x60;, never on its command line) and/or writes the &#x60;exportSettings&#x60; bundle, stores each file on the target through the R2-016 archive tiers and verifies it there, marks the backup &#x60;complete&#x60;, and prunes complete backups of that type beyond &#x60;keepBackups&#x60;. A failure marks it &#x60;failed&#x60; with &#x60;error&#x60; and raises the operational alert &#x60;system.backup_failed&#x60;; when &#x60;pg_dump&#x60; is not on the server&#39;s PATH, a database backup fails with that reason and the server carries on. 409 BACKUP_NOT_CONFIGURED while backups are off, or an &#x60;s3&#x60; target lacks its bucket or secrets, or an &#x60;external&#x60; target its root; 409 ALREADY_RUNNING while another backup or restore runs.
   ///
   /// Parameters:
   /// * [backupRunRequest]
@@ -401,7 +401,7 @@ class BackupsApi {
   }
 
   /// Update backup settings
-  /// Replaces backup settings; an omitted secret keeps the stored one. Requires &#x60;storage.manage&#x60;.  **Scope:** &#x60;admin&#x60;.
+  /// Replaces backup settings; an omitted secret keeps the stored one. Requires &#x60;storage.manage&#x60;.  **Scope:** &#x60;admin&#x60;.  **R2-017:** every problem is one 400: &#x60;enabled&#x60; and &#x60;target&#x60; are required, &#x60;schedule&#x60; must be a six-field cron expression, &#x60;external&#x60; needs an absolute &#x60;root&#x60;, &#x60;s3&#x60; needs &#x60;s3.endpoint&#x60; and &#x60;s3.bucket&#x60;, &#x60;keepBackups&#x60; is 1 to 10000 or null. The S3 endpoint must pass the outbound URL policy (400 URL_NOT_ALLOWED). Secrets are stored encrypted and never returned.
   ///
   /// Parameters:
   /// * [backupSettingsInput]

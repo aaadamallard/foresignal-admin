@@ -31,6 +31,7 @@ import '../features/notifications/notification_inbox.dart';
 import '../features/notifications/notifications_screen.dart';
 import '../features/notifications/push_native.dart';
 import '../features/notifications/this_device.dart';
+import '../features/profile/profile_screen.dart';
 import '../features/serving/exports.dart';
 import '../features/serving/peers.dart';
 import '../features/serving/serving_screen.dart';
@@ -441,6 +442,7 @@ final routerProvider = Provider<GoRouter>((ref) {
               routes: registry[section.path]?.routes ?? const <RouteBase>[],
             ),
           GoRoute(path: connectPath, builder: (context, state) => const ConnectScreen()),
+          GoRoute(path: profilePath, builder: (context, state) => const ProfileScreen()),
           if (formFactor == FormFactor.desktop)
             GoRoute(path: setupPath, builder: (context, state) => const SetupWizardScreen()),
         ],
