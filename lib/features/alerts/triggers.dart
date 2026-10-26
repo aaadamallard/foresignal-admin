@@ -5,7 +5,10 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../api/api.dart';
+import '../../core/access.dart';
 import '../../core/format/instant_text.dart';
+import '../../core/ownership.dart';
+import '../../core/permissions.dart';
 import '../../core/routes.dart';
 import '../../core/theme.dart';
 import '../../core/ui/ui.dart';
@@ -57,7 +60,9 @@ String? triggerProblemText(String? code) => switch (code) {
 };
 
 /// The trigger rules (Screens §G): name, type, severity, scope, status and
-/// counts, with **New Trigger**.
+/// counts, with **New Trigger**. A rule belongs to the user who created it
+/// (`ownerPrincipalId`): a signed-in user lists only their own, and an admin
+/// who manages users sees every rule with whose it is.
 class TriggersPanel extends ConsumerWidget {
   /// Creates the panel.
   const TriggersPanel({super.key});
@@ -65,6 +70,7 @@ class TriggersPanel extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final muted = AdminPalette.of(context).muted;
+    final access = ref.watch(accessProvider);
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: <Widget>[
@@ -84,11 +90,14 @@ class TriggersPanel extends ConsumerWidget {
               onPressed: () => context.go(alertBuilderPath),
             ),
             const SizedBox(width: 8),
-            FilledButton.icon(
-              key: const Key('triggers.new'),
-              onPressed: () => context.go(alertNewTriggerPath),
-              icon: const Icon(Icons.add, size: 18),
-              label: const Text('New Trigger'),
+            PermissionGate(
+              permission: Permissions.selfAlerts,
+              child: FilledButton.icon(
+                key: const Key('triggers.new'),
+                onPressed: () => context.go(alertNewTriggerPath),
+                icon: const Icon(Icons.add, size: 18),
+                label: const Text('New Trigger'),
+              ),
             ),
           ],
         ),
@@ -98,8 +107,8 @@ class TriggersPanel extends ConsumerWidget {
           onRetry: () => ref.invalidate(triggersProvider),
           data: (rules) => DataTableCard<Json>(
             key: const Key('triggers.table'),
-            rows: rules,
-            empty: 'No trigger rules yet.',
+            rows: ownedByCaller(access, rules, (r) => r['ownerPrincipalId'] as String?),
+            empty: seesEveryOwner(access) ? 'No trigger rules yet.' : 'You have no trigger rules yet.',
             onTap: (r) => context.go(alertTriggerPath('${r['id']}')),
             columns: <TableColumnSpec<Json>>[
               TableColumnSpec<Json>(
@@ -122,6 +131,14 @@ class TriggersPanel extends ConsumerWidget {
                 },
               ),
               TableColumnSpec<Json>(label: 'Severity', cell: (r) => severityLabel(r['severity'] ?? 'warning')),
+              TableColumnSpec<Json>(
+                label: 'Owner',
+                cell: (r) => OwnershipChip(
+                  key: Key('triggers.owner.${r['id']}'),
+                  ownership: ownershipOf(access, r['ownerPrincipalId'] as String?),
+                  ownerPrincipalId: r['ownerPrincipalId'] as String?,
+                ),
+              ),
               TableColumnSpec<Json>(
                 label: 'Sources',
                 cell: (r) {

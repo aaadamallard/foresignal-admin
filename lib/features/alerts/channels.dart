@@ -5,6 +5,9 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../api/api.dart';
+import '../../core/access.dart';
+import '../../core/ownership.dart';
+import '../../core/permissions.dart';
 import '../../core/routes.dart';
 import '../../core/theme.dart';
 import '../../core/ui/ui.dart';
@@ -129,7 +132,10 @@ class _ChannelTestButtonState extends ConsumerState<ChannelTestButton> {
 }
 
 /// The notification channels (Screens §G): name, type, events, minimum
-/// severity, status and recent failures, with Test and **New Channel**.
+/// severity, status and recent failures, with Test and **New Channel**. A
+/// channel is personal (`ownerPrincipalId`) or global (`global`): a signed-in
+/// user lists their own and the global ones; an admin who manages users sees
+/// every channel with whose it is.
 class ChannelsPanel extends ConsumerWidget {
   /// Creates the panel.
   const ChannelsPanel({super.key});
@@ -138,6 +144,7 @@ class ChannelsPanel extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final types = ref.watch(channelTypesProvider).value ?? const <Json>[];
     final muted = AdminPalette.of(context).muted;
+    final access = ref.watch(accessProvider);
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: <Widget>[
@@ -150,11 +157,14 @@ class ChannelsPanel extends ConsumerWidget {
               icon: const Icon(Icons.refresh),
             ),
             const SizedBox(width: 8),
-            FilledButton.icon(
-              key: const Key('channels.new'),
-              onPressed: () => context.go(alertNewChannelPath),
-              icon: const Icon(Icons.add, size: 18),
-              label: const Text('New Channel'),
+            PermissionGate.any(
+              anyOf: const <String>{Permissions.selfChannels, Permissions.channelsGlobal},
+              child: FilledButton.icon(
+                key: const Key('channels.new'),
+                onPressed: () => context.go(alertNewChannelPath),
+                icon: const Icon(Icons.add, size: 18),
+                label: const Text('New Channel'),
+              ),
             ),
           ],
         ),
@@ -164,7 +174,7 @@ class ChannelsPanel extends ConsumerWidget {
           onRetry: () => ref.invalidate(channelsProvider),
           data: (channels) => DataTableCard<Json>(
             key: const Key('channels.table'),
-            rows: channels,
+            rows: ownedByCaller(access, channels, (c) => c['ownerPrincipalId'] as String?, keepUnowned: true),
             empty: 'No channels yet.',
             onTap: (c) => context.go(alertChannelPath('${c['id']}')),
             columns: <TableColumnSpec<Json>>[
@@ -175,6 +185,14 @@ class ChannelsPanel extends ConsumerWidget {
               TableColumnSpec<Json>(
                 label: 'Type',
                 cell: (c) => Text('${channelTypeOf(types, c['type'])?['name'] ?? c['type']}'),
+              ),
+              TableColumnSpec<Json>(
+                label: 'Owner',
+                cell: (c) => OwnershipChip(
+                  key: Key('channels.owner.${c['id']}'),
+                  ownership: ownershipOf(access, c['ownerPrincipalId'] as String?, global: c['global'] != false),
+                  ownerPrincipalId: c['ownerPrincipalId'] as String?,
+                ),
               ),
               TableColumnSpec<Json>(
                 label: 'Events',
@@ -328,6 +346,18 @@ class _ChannelScreenState extends ConsumerState<ChannelScreen> {
                 children: <Widget>[
                   for (final w in jsonList(c, 'warnings')) ...<Widget>[
                     ResultPanel(title: '${w['code']}', tone: StatusTone.warning, message: '${w['message']}'),
+                    const SizedBox(height: 12),
+                  ],
+                  if (c['ownerPrincipalId'] == null &&
+                      c['global'] != false &&
+                      !ref.watch(accessProvider).can(Permissions.channelsGlobal)) ...<Widget>[
+                    const ResultPanel(
+                      key: Key('channel.globalReadOnly'),
+                      title: 'Global channel',
+                      tone: StatusTone.info,
+                      message: 'This channel serves the whole instance. Your alerts can use it, but changing '
+                          'it needs the channels.global permission; the server refuses a change without it.',
+                    ),
                     const SizedBox(height: 12),
                   ],
                   Row(

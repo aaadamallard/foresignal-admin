@@ -26,6 +26,7 @@ class AccessState {
     this.permissions = const <String>{},
     this.user,
     this.email,
+    this.principalId,
   });
 
   /// Full access on the admin token.
@@ -46,6 +47,10 @@ class AccessState {
 
   /// The email the user signed in with.
   final String? email;
+
+  /// The signed-in user's principal id from `getMe` — what an owned item's
+  /// `ownerPrincipalId` is compared with; `null` until `getMe` answers.
+  final String? principalId;
 
   /// Whether the current principal may do what [permission] guards. The
   /// admin token may do everything; with no credential, nothing is allowed
@@ -129,6 +134,7 @@ final accessProvider = Provider<AccessState>((ref) {
       permissions: Set<String>.unmodifiable(fromMe ?? session.permissions),
       user: me?.user,
       email: me?.user?.email ?? session.email,
+      principalId: me?.principal.id,
     );
   }
   final hasToken = ref.watch(adminTokenPresentProvider).value ?? false;

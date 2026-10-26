@@ -3,14 +3,17 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../api/api.dart';
+import '../../core/access.dart';
 import '../../core/form_factor.dart';
 import '../../core/format/duration_text.dart';
+import '../../core/permissions.dart';
 import '../../core/routes.dart';
 import '../../core/ui/ui.dart';
 import '../usage/usage_screen.dart';
 import 'source_filter.dart';
 import 'source_info_dialog.dart';
 import 'source_providers.dart';
+import 'source_scope.dart';
 import 'source_widgets.dart';
 
 /// The source catalog (Screens §B, mock B1): every registered source with its
@@ -18,6 +21,10 @@ import 'source_widgets.dart';
 /// filtered by tab, search, kind, mode, credentials and health. Desktop adds
 /// the bulk actions and opens a source's detail on tap; mobile browses,
 /// enables and disables, and shows health.
+///
+/// A signed-in user sees the scopes [sourcesScopesFor] grants: their own
+/// **My sources** view, and for whoever manages the collection the instance
+/// **Collection** next to this catalog, whose switches stay theirs.
 class SourcesCatalogScreen extends ConsumerStatefulWidget {
   /// Creates the screen.
   const SourcesCatalogScreen({super.key});
@@ -32,6 +39,7 @@ class _SourcesCatalogScreenState extends ConsumerState<SourcesCatalogScreen> {
   Object? _error;
   _BulkResult? _bulk;
   bool _bulkBusy = false;
+  SourcesScope? _scope;
 
   bool get _desktop => ref.read(formFactorProvider) == FormFactor.desktop;
 
@@ -82,31 +90,40 @@ class _SourcesCatalogScreenState extends ConsumerState<SourcesCatalogScreen> {
     final sources = ref.watch(sourceListProvider);
     final health = ref.watch(sourceHealthProvider).value ?? const <String, SourceHealth>{};
     final writes = ref.read(sourceWritesProvider);
+    final scopes = sourcesScopesFor(ref.watch(accessProvider));
+    final shown = scopes.contains(_scope) ? _scope! : scopes.first;
+    final catalog = shown == SourcesScope.catalog;
     return ListView(
       padding: EdgeInsets.all(_desktop ? 28 : 16),
       children: <Widget>[
         PageHeader(
           title: 'Sources',
           actions: <Widget>[
-            if (_desktop) ...<Widget>[
-              FilledButton.icon(
-                key: const Key('sources.enableCore'),
-                onPressed: _bulkBusy
-                    ? null
-                    : () => _runBulk(() async => _BulkResult.core(await writes.enableCore())),
-                icon: const Icon(Icons.add, size: 18),
-                label: const Text('Enable Core Sources'),
+            if (_desktop && catalog) ...<Widget>[
+              PermissionGate(
+                permission: Permissions.collectionManage,
+                child: FilledButton.icon(
+                  key: const Key('sources.enableCore'),
+                  onPressed: _bulkBusy
+                      ? null
+                      : () => _runBulk(() async => _BulkResult.core(await writes.enableCore())),
+                  icon: const Icon(Icons.add, size: 18),
+                  label: const Text('Enable Core Sources'),
+                ),
               ),
-              FilledButton.icon(
-                key: const Key('sources.enableFree'),
-                onPressed: _bulkBusy
-                    ? null
-                    : () => _runBulk(() async => _BulkResult.free(await writes.enableFree())),
-                icon: const Icon(Icons.add, size: 18),
-                label: const Text('Enable Free Sources'),
+              PermissionGate(
+                permission: Permissions.collectionManage,
+                child: FilledButton.icon(
+                  key: const Key('sources.enableFree'),
+                  onPressed: _bulkBusy
+                      ? null
+                      : () => _runBulk(() async => _BulkResult.free(await writes.enableFree())),
+                  icon: const Icon(Icons.add, size: 18),
+                  label: const Text('Enable Free Sources'),
+                ),
               ),
             ],
-            if (_desktop)
+            if (_desktop && catalog)
               OutlinedButton.icon(
                 key: const Key('sources.custom'),
                 onPressed: () => context.go(customSourcesPath),
@@ -139,11 +156,31 @@ class _SourcesCatalogScreenState extends ConsumerState<SourcesCatalogScreen> {
           const SizedBox(height: 16),
         ],
         if (!_desktop) ...<Widget>[const UsageGlanceCard(), const SizedBox(height: 16)],
-        AsyncView<List<SourceSummary>>(
-          value: sources,
-          onRetry: () => invalidateSources(ref),
-          data: (list) => _catalog(context, list, health),
-        ),
+        if (scopes.length > 1) ...<Widget>[
+          DefaultTabController(
+            key: ValueKey<String>('${scopes.map((s) => s.name)}'),
+            length: scopes.length,
+            initialIndex: scopes.indexOf(shown),
+            child: TabBar(
+              isScrollable: true,
+              tabAlignment: TabAlignment.start,
+              onTap: (i) => setState(() => _scope = scopes[i]),
+              tabs: <Widget>[
+                for (final scope in scopes) Tab(key: Key('sources.scope.${scope.name}'), text: scope.label),
+              ],
+            ),
+          ),
+          const SizedBox(height: 16),
+        ],
+        switch (shown) {
+          SourcesScope.catalog => AsyncView<List<SourceSummary>>(
+            value: sources,
+            onRetry: () => invalidateSources(ref),
+            data: (list) => _catalog(context, list, health),
+          ),
+          SourcesScope.mine => const MySourcesPanel(),
+          SourcesScope.collection => const CollectionPanel(),
+        },
       ],
     );
   }
@@ -249,10 +286,13 @@ class _SourcesCatalogScreenState extends ConsumerState<SourcesCatalogScreen> {
 
   Widget _enabledSwitch(SourceSummary s) {
     final busy = _toggling.contains(s.id);
+    // The instance enable switch is the collection's: `updateSource` needs
+    // collection.manage.
+    final mayChange = ref.watch(accessProvider).can(Permissions.collectionManage);
     return Switch(
       key: Key('sources.enabled.${s.id}'),
       value: s.enabled,
-      onChanged: busy ? null : (v) => _setEnabled(s, v),
+      onChanged: busy || !mayChange ? null : (v) => _setEnabled(s, v),
     );
   }
 
