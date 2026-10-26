@@ -77,9 +77,11 @@ tool/package/package_android.sh   # the release .apk and .aab
 
 - **Every Android build runs through `tool/capped_build.sh`**, which `package_android.sh` uses:
   `tool/capped_build.sh flutter build apk --release`. The build, its Gradle daemon and its Kotlin
-  daemon run in a systemd user scope with `MemoryMax=8G` (`FORESIGNAL_BUILD_MEM_MAX`) and
+  daemon run in a systemd user scope with `MemoryMax=11G` (`FORESIGNAL_BUILD_MEM_MAX`) and
   `MemorySwapMax=0`, so a build that outgrows the cap is OOM-killed instead of thrashing the host,
-  and no daemon survives the build, even an interrupted or failed one. Never run a bare
+  and no daemon survives the build, even an interrupted or failed one. A release build needs the
+  11G (at 8G it was OOM-killed), and 11G plus the 7.5 GiB Foresignal server is more than the
+  host's RAM: stop the server before building. Never run a bare
   `flutter build apk` or `./gradlew`: two uncapped 8 GB Gradle daemons, one left behind by an
   interrupted build, helped fill 24 GB of swap on 2026-10-25. `android/gradle.properties` caps
   the Gradle daemon at a 4 GB heap and 1 GB metaspace and the Kotlin daemon at 2 GB.

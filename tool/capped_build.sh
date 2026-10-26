@@ -5,11 +5,15 @@
 #   tool/capped_build.sh flutter build appbundle --release
 #
 # The command runs in a systemd user scope, foresignal-admin-build.scope, with MemoryMax
-# (FORESIGNAL_BUILD_MEM_MAX, default 8G) and MemorySwapMax=0. Everything it starts, the Gradle
+# (FORESIGNAL_BUILD_MEM_MAX, default 11G) and MemorySwapMax=0. Everything it starts, the Gradle
 # daemon and the Kotlin compiler daemon included, is inside the cap and cannot swap, so a build
 # that outgrows it is OOM-killed instead of thrashing the host. On 2026-10-25 two uncapped 8 GB
 # Gradle daemons, one left behind by a rejected command, helped fill 24 GB of swap and the host
 # had to be power-cycled.
+#
+# 11G because a release APK build needs it: at 8G the Dart frontend_server reached 7 GB and the
+# build was OOM-killed; at 11G it finished. An 11G build beside the 7.5 GiB server is more than
+# the host's 23 GiB of RAM, so do not build while the server runs; earlyoom covers an accident.
 #
 # Before the command, ./gradlew --stop ends any daemon started outside the cap, which the build
 # would otherwise reuse. Afterwards, on success, failure or interrupt, ./gradlew --stop runs again
@@ -21,7 +25,7 @@ set -eu
 
 cd "$(dirname "$0")/.."
 UNIT=foresignal-admin-build.scope
-MEM_MAX=${FORESIGNAL_BUILD_MEM_MAX:-8G}
+MEM_MAX=${FORESIGNAL_BUILD_MEM_MAX:-11G}
 
 fail() {
   printf 'capped_build: %s\n' "$1" >&2
