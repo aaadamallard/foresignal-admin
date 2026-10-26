@@ -45,6 +45,25 @@ void main() {
     }
   });
 
+  test('Android builds are memory-capped and leave no daemon behind', () {
+    expect(_find('android/gradle.properties', r'^org\.gradle\.jvmargs=(.*)$'),
+        allOf(contains('-Xmx4G'), contains('-XX:MaxMetaspaceSize=1G')));
+    expect(_find('android/gradle.properties', r'^kotlin\.daemon\.jvmargs=(.*)$'), contains('-Xmx2G'));
+
+    const wrapper = 'tool/capped_build.sh';
+    expect(File(wrapper).statSync().mode & 0x40, isNonZero, reason: '$wrapper is executable by its owner');
+    final capped = File(wrapper).readAsStringSync();
+    expect(capped, contains('-p MemoryMax="\$MEM_MAX" -p MemorySwapMax=0'), reason: 'the scope can never swap');
+    expect(capped, contains('./gradlew --stop'));
+    expect(capped, contains('trap cleanup EXIT'), reason: 'the daemons are stopped even when the build fails');
+
+    final android = File('tool/package/package_android.sh').readAsStringSync();
+    expect(RegExp(r'^\s*flutter build', multiLine: true).hasMatch(android), isFalse,
+        reason: 'every build in package_android.sh goes through $wrapper');
+    expect(android, contains('$wrapper flutter build apk --release'));
+    expect(android, contains('$wrapper flutter build appbundle --release'));
+  });
+
   test('packages and signing keys stay out of the repository', () {
     expect(File('.gitignore').readAsStringSync(), contains('/dist/'));
     final android = File('android/.gitignore').readAsStringSync();
