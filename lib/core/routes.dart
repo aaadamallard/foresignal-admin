@@ -219,6 +219,18 @@ String servingPeerPath(String peerId) => '$servingPeersPath/${Uri.encodeComponen
 /// A new peer.
 const String servingNewPeerPath = '$servingPath/new-peer';
 
+/// Users & Roles: the user list.
+const String usersPath = '/users';
+
+/// Users & Roles: the roles.
+const String usersRolesPath = '$usersPath/roles';
+
+/// One user's editor.
+String userPath(String userId) => '$usersPath/${Uri.encodeComponent(userId)}';
+
+/// The Users list filtered to the holders of [roleId].
+String usersWithRolePath(String roleId) => Uri(path: usersPath, queryParameters: <String, String>{'role': roleId}).toString();
+
 /// System: the instance's health and the client contract.
 const String systemPath = '/system';
 
@@ -253,6 +265,7 @@ String sectionRootOf(String path) {
 /// section root, they are the home of their section, not a page pushed
 /// from another one, so they get no Back control.
 const Set<String> sectionTabPaths = <String>{
+  usersRolesPath,
   alertTriggersPath,
   alertEscalationPath,
   alertChannelsPath,

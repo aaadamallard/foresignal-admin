@@ -1354,7 +1354,7 @@ class SettingsApi {
   }
 
   /// Preview what retention would prune
-  /// Dry-run of the current retention policy: how much each subsystem would prune, per kind, with a size estimate and nothing deleted (B2/178). Requires &#x60;storage.manage&#x60;.  **Scope:** &#x60;admin&#x60;.
+  /// Dry run of the current retention policy: what the next run would prune per subsystem (records per kind, TRACK leaves, frames, media, stopped chronicles), with a size estimate and nothing deleted (B2/178). It uses the settings the next run applies, including a window the database-size cap has stepped down to; with &#x60;capHistory&#x60; off it shows today&#39;s per-subsystem windows. Frames pinned by a chronicle are not counted; quota eviction is not previewed. Requires &#x60;storage.manage&#x60;.  **Scope:** &#x60;admin&#x60;.
   ///
   /// Parameters:
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation

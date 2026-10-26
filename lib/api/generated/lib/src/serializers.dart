@@ -1370,9 +1370,11 @@ import 'package:foresignal_api/src/model/resource_thresholds_collector_backlog.d
 import 'package:foresignal_api/src/model/resource_thresholds_source_storm.dart';
 import 'package:foresignal_api/src/model/resync_event.dart';
 import 'package:foresignal_api/src/model/retention_preview.dart';
+import 'package:foresignal_api/src/model/retention_preview_db_cap.dart';
 import 'package:foresignal_api/src/model/retention_preview_item.dart';
 import 'package:foresignal_api/src/model/retention_run_result.dart';
 import 'package:foresignal_api/src/model/retention_run_result_consumer_clamp.dart';
+import 'package:foresignal_api/src/model/retention_run_result_db_cap.dart';
 import 'package:foresignal_api/src/model/retention_run_result_per_source_value.dart';
 import 'package:foresignal_api/src/model/retention_settings.dart';
 import 'package:foresignal_api/src/model/retention_settings_social.dart';
@@ -3174,9 +3176,11 @@ part 'serializers.g.dart';
   ResourceThresholdsSourceStorm,
   ResyncEvent,
   RetentionPreview,
+  RetentionPreviewDbCap,
   RetentionPreviewItem,
   RetentionRunResult,
   RetentionRunResultConsumerClamp,
+  RetentionRunResultDbCap,
   RetentionRunResultPerSourceValue,
   RetentionSettings,
   RetentionSettingsSocial,

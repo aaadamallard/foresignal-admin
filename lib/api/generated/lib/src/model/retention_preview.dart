@@ -5,32 +5,39 @@
 // ignore_for_file: unused_element
 import 'package:built_collection/built_collection.dart';
 import 'package:foresignal_api/src/model/retention_preview_item.dart';
+import 'package:foresignal_api/src/model/retention_preview_db_cap.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
 part 'retention_preview.g.dart';
 
-/// A dry-run of what the current (or supplied) retention policy would prune (B2/178)
+/// A dry run of what the next retention run would prune under the current policy, computed with the run's own plans and selects as counts only; nothing is deleted (B2/178, R2-015)
 ///
 /// Properties:
 /// * [items]
-/// * [totalAffected]
-/// * [totalBytesEstimate]
+/// * [totalAffected] - Sum of the items' counts
+/// * [totalBytesEstimate] - Sum of the items' byte estimates
 /// * [generatedAt]
+/// * [dbCap]
 @BuiltValue()
 abstract class RetentionPreview
     implements Built<RetentionPreview, RetentionPreviewBuilder> {
   @BuiltValueField(wireName: r'items')
   BuiltList<RetentionPreviewItem> get items;
 
+  /// Sum of the items' counts
   @BuiltValueField(wireName: r'totalAffected')
   int get totalAffected;
 
+  /// Sum of the items' byte estimates
   @BuiltValueField(wireName: r'totalBytesEstimate')
   int? get totalBytesEstimate;
 
   @BuiltValueField(wireName: r'generatedAt')
   DateTime get generatedAt;
+
+  @BuiltValueField(wireName: r'dbCap')
+  RetentionPreviewDbCap? get dbCap;
 
   RetentionPreview._();
 
@@ -82,6 +89,13 @@ class _$RetentionPreviewSerializer
       object.generatedAt,
       specifiedType: const FullType(DateTime),
     );
+    if (object.dbCap != null) {
+      yield r'dbCap';
+      yield serializers.serialize(
+        object.dbCap,
+        specifiedType: const FullType.nullable(RetentionPreviewDbCap),
+      );
+    }
   }
 
   @override
@@ -144,6 +158,18 @@ class _$RetentionPreviewSerializer
                   )
                   as DateTime;
           result.generatedAt = valueDes;
+          break;
+        case r'dbCap':
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      RetentionPreviewDbCap,
+                    ),
+                  )
+                  as RetentionPreviewDbCap?;
+          if (valueDes == null) continue;
+          result.dbCap.replace(valueDes);
           break;
         default:
           unhandled.add(key);

@@ -31,6 +31,10 @@ part 'retention_settings.g.dart';
 /// * [trackDownsampleInterval] - One sample per entity per interval in downsampled leaves (30s ≤ interval ≤ trackRawWindow). ISO-8601 duration (P7D, PT15M) or shorthand (7d, 15m, 12h)
 /// * [entityLinks] - How long closed entity links are kept (098; default 365d). ISO-8601 duration (P7D, PT15M) or shorthand (7d, 15m, 12h)
 /// * [social]
+/// * [capHistory] - Cap history (R2-015): one bound over the data history (records, TRACK history, frames, media and stopped chronicles). Off (the default) keeps every window as configured. When on, `maxDays` clamps every window to at most that many days (it never lengthens one, and cutoffs still pass the consumer clamp) and `maxDbGb` keeps the database under that size. Needs `maxDays`, `maxDbGb` or both.
+/// * [maxDays] - With `capHistory`: keep at most this many days of data history. An upper bound over the per-kind, per-source and tier windows, never a replacement.
+/// * [maxDbGb] - With `capHistory`: keep the database (`pg_database_size`) under this many GB (1024³ bytes). When it is over and still growing, each run steps the history window down (halving, whole days, never below 1 day) oldest first; when that cannot reach the cap it raises `system.retention_cap_unmet` and shortens history no further. An entity reported within the window keeps its current record.
+/// * [overwriteOldest] - With `maxDbGb`: step the history window down to stay under the cap (default true); false only reports the breach.
 @BuiltValue()
 abstract class RetentionSettings
     implements Built<RetentionSettings, RetentionSettingsBuilder> {
@@ -99,6 +103,22 @@ abstract class RetentionSettings
 
   @BuiltValueField(wireName: r'social')
   RetentionSettingsSocial? get social;
+
+  /// Cap history (R2-015): one bound over the data history (records, TRACK history, frames, media and stopped chronicles). Off (the default) keeps every window as configured. When on, `maxDays` clamps every window to at most that many days (it never lengthens one, and cutoffs still pass the consumer clamp) and `maxDbGb` keeps the database under that size. Needs `maxDays`, `maxDbGb` or both.
+  @BuiltValueField(wireName: r'capHistory')
+  bool? get capHistory;
+
+  /// With `capHistory`: keep at most this many days of data history. An upper bound over the per-kind, per-source and tier windows, never a replacement.
+  @BuiltValueField(wireName: r'maxDays')
+  int? get maxDays;
+
+  /// With `capHistory`: keep the database (`pg_database_size`) under this many GB (1024³ bytes). When it is over and still growing, each run steps the history window down (halving, whole days, never below 1 day) oldest first; when that cannot reach the cap it raises `system.retention_cap_unmet` and shortens history no further. An entity reported within the window keeps its current record.
+  @BuiltValueField(wireName: r'maxDbGb')
+  num? get maxDbGb;
+
+  /// With `maxDbGb`: step the history window down to stay under the cap (default true); false only reports the breach.
+  @BuiltValueField(wireName: r'overwriteOldest')
+  bool? get overwriteOldest;
 
   RetentionSettings._();
 
@@ -247,6 +267,34 @@ class _$RetentionSettingsSerializer
       yield serializers.serialize(
         object.social,
         specifiedType: const FullType(RetentionSettingsSocial),
+      );
+    }
+    if (object.capHistory != null) {
+      yield r'capHistory';
+      yield serializers.serialize(
+        object.capHistory,
+        specifiedType: const FullType(bool),
+      );
+    }
+    if (object.maxDays != null) {
+      yield r'maxDays';
+      yield serializers.serialize(
+        object.maxDays,
+        specifiedType: const FullType.nullable(int),
+      );
+    }
+    if (object.maxDbGb != null) {
+      yield r'maxDbGb';
+      yield serializers.serialize(
+        object.maxDbGb,
+        specifiedType: const FullType.nullable(num),
+      );
+    }
+    if (object.overwriteOldest != null) {
+      yield r'overwriteOldest';
+      yield serializers.serialize(
+        object.overwriteOldest,
+        specifiedType: const FullType(bool),
       );
     }
   }
@@ -454,6 +502,46 @@ class _$RetentionSettingsSerializer
                   as RetentionSettingsSocial?;
           if (valueDes == null) continue;
           result.social.replace(valueDes);
+          break;
+        case r'capHistory':
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
+          if (valueDes == null) continue;
+          result.capHistory = valueDes;
+          break;
+        case r'maxDays':
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
+          if (valueDes == null) continue;
+          result.maxDays = valueDes;
+          break;
+        case r'maxDbGb':
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
+          if (valueDes == null) continue;
+          result.maxDbGb = valueDes;
+          break;
+        case r'overwriteOldest':
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
+          if (valueDes == null) continue;
+          result.overwriteOldest = valueDes;
           break;
         default:
           unhandled.add(key);

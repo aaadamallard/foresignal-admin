@@ -15,6 +15,8 @@ class _$RetentionPreview extends RetentionPreview {
   final int? totalBytesEstimate;
   @override
   final DateTime generatedAt;
+  @override
+  final RetentionPreviewDbCap? dbCap;
 
   factory _$RetentionPreview([
     void Function(RetentionPreviewBuilder)? updates,
@@ -25,6 +27,7 @@ class _$RetentionPreview extends RetentionPreview {
     required this.totalAffected,
     this.totalBytesEstimate,
     required this.generatedAt,
+    this.dbCap,
   }) : super._();
   @override
   RetentionPreview rebuild(void Function(RetentionPreviewBuilder) updates) =>
@@ -41,7 +44,8 @@ class _$RetentionPreview extends RetentionPreview {
         items == other.items &&
         totalAffected == other.totalAffected &&
         totalBytesEstimate == other.totalBytesEstimate &&
-        generatedAt == other.generatedAt;
+        generatedAt == other.generatedAt &&
+        dbCap == other.dbCap;
   }
 
   @override
@@ -51,6 +55,7 @@ class _$RetentionPreview extends RetentionPreview {
     _$hash = $jc(_$hash, totalAffected.hashCode);
     _$hash = $jc(_$hash, totalBytesEstimate.hashCode);
     _$hash = $jc(_$hash, generatedAt.hashCode);
+    _$hash = $jc(_$hash, dbCap.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -61,7 +66,8 @@ class _$RetentionPreview extends RetentionPreview {
           ..add('items', items)
           ..add('totalAffected', totalAffected)
           ..add('totalBytesEstimate', totalBytesEstimate)
-          ..add('generatedAt', generatedAt))
+          ..add('generatedAt', generatedAt)
+          ..add('dbCap', dbCap))
         .toString();
   }
 }
@@ -89,6 +95,11 @@ class RetentionPreviewBuilder
   DateTime? get generatedAt => _$this._generatedAt;
   set generatedAt(DateTime? generatedAt) => _$this._generatedAt = generatedAt;
 
+  RetentionPreviewDbCapBuilder? _dbCap;
+  RetentionPreviewDbCapBuilder get dbCap =>
+      _$this._dbCap ??= RetentionPreviewDbCapBuilder();
+  set dbCap(RetentionPreviewDbCapBuilder? dbCap) => _$this._dbCap = dbCap;
+
   RetentionPreviewBuilder() {
     RetentionPreview._defaults(this);
   }
@@ -100,6 +111,7 @@ class RetentionPreviewBuilder
       _totalAffected = $v.totalAffected;
       _totalBytesEstimate = $v.totalBytesEstimate;
       _generatedAt = $v.generatedAt;
+      _dbCap = $v.dbCap?.toBuilder();
       _$v = null;
     }
     return this;
@@ -136,12 +148,16 @@ class RetentionPreviewBuilder
               r'RetentionPreview',
               'generatedAt',
             ),
+            dbCap: _dbCap?.build(),
           );
     } catch (_) {
       late String _$failedField;
       try {
         _$failedField = 'items';
         items.build();
+
+        _$failedField = 'dbCap';
+        _dbCap?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
           r'RetentionPreview',

@@ -158,6 +158,16 @@ const List<NavSection> allNavSections = <NavSection>[
     writePermissions: _serving,
   ),
   NavSection(
+    path: '/users',
+    label: 'Users & Roles',
+    barLabel: 'Users',
+    icon: Icons.manage_accounts,
+    summary: 'Who can sign in, their roles and lifecycle, and the roles themselves.',
+    formFactors: _desktop,
+    readPermissions: <String>{Permissions.usersManage, Permissions.rolesManage},
+    writePermissions: <String>{Permissions.usersManage, Permissions.rolesManage},
+  ),
+  NavSection(
     path: '/system',
     label: 'System',
     icon: Icons.settings,

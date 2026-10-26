@@ -11,28 +11,30 @@ part 'retention_preview_item.g.dart';
 /// What a retention policy would prune from one subsystem
 ///
 /// Properties:
-/// * [subsystem] - e.g. records, frames, media, chronicles, audit
-/// * [kind]
-/// * [cutoff] - Oldest data kept
+/// * [subsystem] - `records` (STANDARD history, per kind), `track` (TRACK history leaves), `frames`, `media` or `chronicles` (stopped or archived chronicles whose history would be removed)
+/// * [kind] - The record kind of a `records` item; null for whole-source scopes and other subsystems
+/// * [cutoff] - Oldest data kept (for a `records` kind, under its longest window); null when no single cutoff applies
 /// * [affectedCount]
-/// * [bytesEstimate]
+/// * [bytesEstimate] - Estimated bytes: records from the average row size of record_version, TRACK leaves and frames from their sizes, media from its rows, chronicles from their bytesUsed
 @BuiltValue()
 abstract class RetentionPreviewItem
     implements Built<RetentionPreviewItem, RetentionPreviewItemBuilder> {
-  /// e.g. records, frames, media, chronicles, audit
+  /// `records` (STANDARD history, per kind), `track` (TRACK history leaves), `frames`, `media` or `chronicles` (stopped or archived chronicles whose history would be removed)
   @BuiltValueField(wireName: r'subsystem')
   String get subsystem;
 
+  /// The record kind of a `records` item; null for whole-source scopes and other subsystems
   @BuiltValueField(wireName: r'kind')
   String? get kind;
 
-  /// Oldest data kept
+  /// Oldest data kept (for a `records` kind, under its longest window); null when no single cutoff applies
   @BuiltValueField(wireName: r'cutoff')
   DateTime? get cutoff;
 
   @BuiltValueField(wireName: r'affectedCount')
   int get affectedCount;
 
+  /// Estimated bytes: records from the average row size of record_version, TRACK leaves and frames from their sizes, media from its rows, chronicles from their bytesUsed
   @BuiltValueField(wireName: r'bytesEstimate')
   int? get bytesEstimate;
 

@@ -5,6 +5,7 @@
 // ignore_for_file: unused_element
 import 'package:foresignal_api/src/model/retention_run_result_consumer_clamp.dart';
 import 'package:built_collection/built_collection.dart';
+import 'package:foresignal_api/src/model/retention_run_result_db_cap.dart';
 import 'package:foresignal_api/src/model/retention_run_result_per_source_value.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
@@ -28,6 +29,8 @@ part 'retention_run_result.g.dart';
 /// * [skippedSources] - Sources skipped this run after a failed delete (no HeadPurge)
 /// * [consumerClamp]
 /// * [perSource] - Keyed by source id
+/// * [capWindowDays] - The cap-history window this run applied, in days (R2-015); null when history is not capped by age
+/// * [dbCap]
 @BuiltValue()
 abstract class RetentionRunResult
     implements Built<RetentionRunResult, RetentionRunResultBuilder> {
@@ -75,6 +78,13 @@ abstract class RetentionRunResult
   /// Keyed by source id
   @BuiltValueField(wireName: r'perSource')
   BuiltMap<String, RetentionRunResultPerSourceValue>? get perSource;
+
+  /// The cap-history window this run applied, in days (R2-015); null when history is not capped by age
+  @BuiltValueField(wireName: r'capWindowDays')
+  int? get capWindowDays;
+
+  @BuiltValueField(wireName: r'dbCap')
+  RetentionRunResultDbCap? get dbCap;
 
   RetentionRunResult._();
 
@@ -197,6 +207,20 @@ class _$RetentionRunResultSerializer
           FullType(String),
           FullType(RetentionRunResultPerSourceValue),
         ]),
+      );
+    }
+    if (object.capWindowDays != null) {
+      yield r'capWindowDays';
+      yield serializers.serialize(
+        object.capWindowDays,
+        specifiedType: const FullType.nullable(int),
+      );
+    }
+    if (object.dbCap != null) {
+      yield r'dbCap';
+      yield serializers.serialize(
+        object.dbCap,
+        specifiedType: const FullType.nullable(RetentionRunResultDbCap),
       );
     }
   }
@@ -364,6 +388,28 @@ class _$RetentionRunResultSerializer
                   as BuiltMap<String, RetentionRunResultPerSourceValue>?;
           if (valueDes == null) continue;
           result.perSource.replace(valueDes);
+          break;
+        case r'capWindowDays':
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(int),
+                  )
+                  as int?;
+          if (valueDes == null) continue;
+          result.capWindowDays = valueDes;
+          break;
+        case r'dbCap':
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      RetentionRunResultDbCap,
+                    ),
+                  )
+                  as RetentionRunResultDbCap?;
+          if (valueDes == null) continue;
+          result.dbCap.replace(valueDes);
           break;
         default:
           unhandled.add(key);

@@ -1457,9 +1457,11 @@ lib/src/model/resource_thresholds_collector_backlog.dart
 lib/src/model/resource_thresholds_source_storm.dart
 lib/src/model/resync_event.dart
 lib/src/model/retention_preview.dart
+lib/src/model/retention_preview_db_cap.dart
 lib/src/model/retention_preview_item.dart
 lib/src/model/retention_run_result.dart
 lib/src/model/retention_run_result_consumer_clamp.dart
+lib/src/model/retention_run_result_db_cap.dart
 lib/src/model/retention_run_result_per_source_value.dart
 lib/src/model/retention_settings.dart
 lib/src/model/retention_settings_social.dart

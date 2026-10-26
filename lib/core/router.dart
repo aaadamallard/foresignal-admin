@@ -46,6 +46,8 @@ import '../features/sources/source_test_screen.dart';
 import '../features/sources/sources_catalog_screen.dart';
 import '../features/system/system_screen.dart';
 import '../features/usage/usage_screen.dart';
+import '../features/users/user_screen.dart';
+import '../features/users/users_screen.dart';
 import '../features/vetting/claim_screen.dart';
 import '../features/vetting/entity_screen.dart';
 import '../features/vetting/platform_screen.dart';
@@ -332,6 +334,18 @@ Map<String, SectionRoutes> sectionRoutesFor(FormFactor formFactor) {
                 builder: (context, state) => PeerScreen(peerId: state.pathParameters['peerId']),
               ),
             ],
+          ),
+        ],
+      ),
+    if (desktop)
+      usersPath: SectionRoutes(
+        builder: (context, state) => UsersRolesScreen(roleFilter: state.uri.queryParameters['role']),
+        routes: <RouteBase>[
+          // Before `:userId`: a user id is a UUID, never `roles`.
+          GoRoute(path: 'roles', builder: (context, state) => const UsersRolesScreen(tab: UsersTab.roles)),
+          GoRoute(
+            path: ':userId',
+            builder: (context, state) => UserScreen(userId: state.pathParameters['userId']!),
           ),
         ],
       ),

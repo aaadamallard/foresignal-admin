@@ -1457,9 +1457,11 @@ export 'package:foresignal_api/src/model/resource_thresholds_collector_backlog.d
 export 'package:foresignal_api/src/model/resource_thresholds_source_storm.dart';
 export 'package:foresignal_api/src/model/resync_event.dart';
 export 'package:foresignal_api/src/model/retention_preview.dart';
+export 'package:foresignal_api/src/model/retention_preview_db_cap.dart';
 export 'package:foresignal_api/src/model/retention_preview_item.dart';
 export 'package:foresignal_api/src/model/retention_run_result.dart';
 export 'package:foresignal_api/src/model/retention_run_result_consumer_clamp.dart';
+export 'package:foresignal_api/src/model/retention_run_result_db_cap.dart';
 export 'package:foresignal_api/src/model/retention_run_result_per_source_value.dart';
 export 'package:foresignal_api/src/model/retention_settings.dart';
 export 'package:foresignal_api/src/model/retention_settings_social.dart';

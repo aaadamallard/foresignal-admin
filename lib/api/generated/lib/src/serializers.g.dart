@@ -2207,9 +2207,11 @@ Serializers _$serializers =
           ..add(ResyncEvent.serializer)
           ..add(ResyncEventReasonEnum.serializer)
           ..add(RetentionPreview.serializer)
+          ..add(RetentionPreviewDbCap.serializer)
           ..add(RetentionPreviewItem.serializer)
           ..add(RetentionRunResult.serializer)
           ..add(RetentionRunResultConsumerClamp.serializer)
+          ..add(RetentionRunResultDbCap.serializer)
           ..add(RetentionRunResultPerSourceValue.serializer)
           ..add(RetentionSettings.serializer)
           ..add(RetentionSettingsSocial.serializer)
@@ -9581,6 +9583,13 @@ Serializers _$serializers =
               const FullType(SystemInfoWarningsInner),
             ]),
             () => ListBuilder<SystemInfoWarningsInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltMap, const [
+              const FullType(String),
+              const FullType(int),
+            ]),
+            () => MapBuilder<String, int>(),
           )
           ..addBuilderFactory(
             const FullType(BuiltMap, const [

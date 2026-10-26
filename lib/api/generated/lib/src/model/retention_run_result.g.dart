@@ -35,6 +35,10 @@ class _$RetentionRunResult extends RetentionRunResult {
   final RetentionRunResultConsumerClamp? consumerClamp;
   @override
   final BuiltMap<String, RetentionRunResultPerSourceValue>? perSource;
+  @override
+  final int? capWindowDays;
+  @override
+  final RetentionRunResultDbCap? dbCap;
 
   factory _$RetentionRunResult([
     void Function(RetentionRunResultBuilder)? updates,
@@ -55,6 +59,8 @@ class _$RetentionRunResult extends RetentionRunResult {
     this.skippedSources,
     this.consumerClamp,
     this.perSource,
+    this.capWindowDays,
+    this.dbCap,
   }) : super._();
   @override
   RetentionRunResult rebuild(
@@ -82,7 +88,9 @@ class _$RetentionRunResult extends RetentionRunResult {
         notificationsDeleted == other.notificationsDeleted &&
         skippedSources == other.skippedSources &&
         consumerClamp == other.consumerClamp &&
-        perSource == other.perSource;
+        perSource == other.perSource &&
+        capWindowDays == other.capWindowDays &&
+        dbCap == other.dbCap;
   }
 
   @override
@@ -102,6 +110,8 @@ class _$RetentionRunResult extends RetentionRunResult {
     _$hash = $jc(_$hash, skippedSources.hashCode);
     _$hash = $jc(_$hash, consumerClamp.hashCode);
     _$hash = $jc(_$hash, perSource.hashCode);
+    _$hash = $jc(_$hash, capWindowDays.hashCode);
+    _$hash = $jc(_$hash, dbCap.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -122,7 +132,9 @@ class _$RetentionRunResult extends RetentionRunResult {
           ..add('notificationsDeleted', notificationsDeleted)
           ..add('skippedSources', skippedSources)
           ..add('consumerClamp', consumerClamp)
-          ..add('perSource', perSource))
+          ..add('perSource', perSource)
+          ..add('capWindowDays', capWindowDays)
+          ..add('dbCap', dbCap))
         .toString();
   }
 }
@@ -202,6 +214,16 @@ class RetentionRunResultBuilder
     MapBuilder<String, RetentionRunResultPerSourceValue>? perSource,
   ) => _$this._perSource = perSource;
 
+  int? _capWindowDays;
+  int? get capWindowDays => _$this._capWindowDays;
+  set capWindowDays(int? capWindowDays) =>
+      _$this._capWindowDays = capWindowDays;
+
+  RetentionRunResultDbCapBuilder? _dbCap;
+  RetentionRunResultDbCapBuilder get dbCap =>
+      _$this._dbCap ??= RetentionRunResultDbCapBuilder();
+  set dbCap(RetentionRunResultDbCapBuilder? dbCap) => _$this._dbCap = dbCap;
+
   RetentionRunResultBuilder() {
     RetentionRunResult._defaults(this);
   }
@@ -223,6 +245,8 @@ class RetentionRunResultBuilder
       _skippedSources = $v.skippedSources?.toBuilder();
       _consumerClamp = $v.consumerClamp?.toBuilder();
       _perSource = $v.perSource?.toBuilder();
+      _capWindowDays = $v.capWindowDays;
+      _dbCap = $v.dbCap?.toBuilder();
       _$v = null;
     }
     return this;
@@ -269,6 +293,8 @@ class RetentionRunResultBuilder
             skippedSources: _skippedSources?.build(),
             consumerClamp: _consumerClamp?.build(),
             perSource: _perSource?.build(),
+            capWindowDays: capWindowDays,
+            dbCap: _dbCap?.build(),
           );
     } catch (_) {
       late String _$failedField;
@@ -279,6 +305,9 @@ class RetentionRunResultBuilder
         _consumerClamp?.build();
         _$failedField = 'perSource';
         _perSource?.build();
+
+        _$failedField = 'dbCap';
+        _dbCap?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
           r'RetentionRunResult',

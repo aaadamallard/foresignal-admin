@@ -41,6 +41,14 @@ class _$RetentionSettings extends RetentionSettings {
   final String? entityLinks;
   @override
   final RetentionSettingsSocial? social;
+  @override
+  final bool? capHistory;
+  @override
+  final int? maxDays;
+  @override
+  final num? maxDbGb;
+  @override
+  final bool? overwriteOldest;
 
   factory _$RetentionSettings([
     void Function(RetentionSettingsBuilder)? updates,
@@ -64,6 +72,10 @@ class _$RetentionSettings extends RetentionSettings {
     this.trackDownsampleInterval,
     this.entityLinks,
     this.social,
+    this.capHistory,
+    this.maxDays,
+    this.maxDbGb,
+    this.overwriteOldest,
   }) : super._();
   @override
   RetentionSettings rebuild(void Function(RetentionSettingsBuilder) updates) =>
@@ -93,7 +105,11 @@ class _$RetentionSettings extends RetentionSettings {
         trackRawWindow == other.trackRawWindow &&
         trackDownsampleInterval == other.trackDownsampleInterval &&
         entityLinks == other.entityLinks &&
-        social == other.social;
+        social == other.social &&
+        capHistory == other.capHistory &&
+        maxDays == other.maxDays &&
+        maxDbGb == other.maxDbGb &&
+        overwriteOldest == other.overwriteOldest;
   }
 
   @override
@@ -116,6 +132,10 @@ class _$RetentionSettings extends RetentionSettings {
     _$hash = $jc(_$hash, trackDownsampleInterval.hashCode);
     _$hash = $jc(_$hash, entityLinks.hashCode);
     _$hash = $jc(_$hash, social.hashCode);
+    _$hash = $jc(_$hash, capHistory.hashCode);
+    _$hash = $jc(_$hash, maxDays.hashCode);
+    _$hash = $jc(_$hash, maxDbGb.hashCode);
+    _$hash = $jc(_$hash, overwriteOldest.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -139,7 +159,11 @@ class _$RetentionSettings extends RetentionSettings {
           ..add('trackRawWindow', trackRawWindow)
           ..add('trackDownsampleInterval', trackDownsampleInterval)
           ..add('entityLinks', entityLinks)
-          ..add('social', social))
+          ..add('social', social)
+          ..add('capHistory', capHistory)
+          ..add('maxDays', maxDays)
+          ..add('maxDbGb', maxDbGb)
+          ..add('overwriteOldest', overwriteOldest))
         .toString();
   }
 }
@@ -223,6 +247,23 @@ class RetentionSettingsBuilder
       _$this._social ??= RetentionSettingsSocialBuilder();
   set social(RetentionSettingsSocialBuilder? social) => _$this._social = social;
 
+  bool? _capHistory;
+  bool? get capHistory => _$this._capHistory;
+  set capHistory(bool? capHistory) => _$this._capHistory = capHistory;
+
+  int? _maxDays;
+  int? get maxDays => _$this._maxDays;
+  set maxDays(int? maxDays) => _$this._maxDays = maxDays;
+
+  num? _maxDbGb;
+  num? get maxDbGb => _$this._maxDbGb;
+  set maxDbGb(num? maxDbGb) => _$this._maxDbGb = maxDbGb;
+
+  bool? _overwriteOldest;
+  bool? get overwriteOldest => _$this._overwriteOldest;
+  set overwriteOldest(bool? overwriteOldest) =>
+      _$this._overwriteOldest = overwriteOldest;
+
   RetentionSettingsBuilder() {
     RetentionSettings._defaults(this);
   }
@@ -247,6 +288,10 @@ class RetentionSettingsBuilder
       _trackDownsampleInterval = $v.trackDownsampleInterval;
       _entityLinks = $v.entityLinks;
       _social = $v.social?.toBuilder();
+      _capHistory = $v.capHistory;
+      _maxDays = $v.maxDays;
+      _maxDbGb = $v.maxDbGb;
+      _overwriteOldest = $v.overwriteOldest;
       _$v = null;
     }
     return this;
@@ -292,6 +337,10 @@ class RetentionSettingsBuilder
             trackDownsampleInterval: trackDownsampleInterval,
             entityLinks: entityLinks,
             social: _social?.build(),
+            capHistory: capHistory,
+            maxDays: maxDays,
+            maxDbGb: maxDbGb,
+            overwriteOldest: overwriteOldest,
           );
     } catch (_) {
       late String _$failedField;
