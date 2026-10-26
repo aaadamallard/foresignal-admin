@@ -526,6 +526,8 @@ class _$ChannelInput extends ChannelInput {
   final bool? acceptExercise;
   @override
   final String? language;
+  @override
+  final bool? global;
 
   factory _$ChannelInput([void Function(ChannelInputBuilder)? updates]) =>
       (ChannelInputBuilder()..update(updates))._build();
@@ -550,6 +552,7 @@ class _$ChannelInput extends ChannelInput {
     this.deferWhileActiveSeconds,
     this.acceptExercise,
     this.language,
+    this.global,
   }) : super._();
   @override
   ChannelInput rebuild(void Function(ChannelInputBuilder) updates) =>
@@ -580,7 +583,8 @@ class _$ChannelInput extends ChannelInput {
         editInPlace == other.editInPlace &&
         deferWhileActiveSeconds == other.deferWhileActiveSeconds &&
         acceptExercise == other.acceptExercise &&
-        language == other.language;
+        language == other.language &&
+        global == other.global;
   }
 
   @override
@@ -605,6 +609,7 @@ class _$ChannelInput extends ChannelInput {
     _$hash = $jc(_$hash, deferWhileActiveSeconds.hashCode);
     _$hash = $jc(_$hash, acceptExercise.hashCode);
     _$hash = $jc(_$hash, language.hashCode);
+    _$hash = $jc(_$hash, global.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -630,7 +635,8 @@ class _$ChannelInput extends ChannelInput {
           ..add('editInPlace', editInPlace)
           ..add('deferWhileActiveSeconds', deferWhileActiveSeconds)
           ..add('acceptExercise', acceptExercise)
-          ..add('language', language))
+          ..add('language', language)
+          ..add('global', global))
         .toString();
   }
 }
@@ -728,6 +734,10 @@ class ChannelInputBuilder
   String? get language => _$this._language;
   set language(String? language) => _$this._language = language;
 
+  bool? _global;
+  bool? get global => _$this._global;
+  set global(bool? global) => _$this._global = global;
+
   ChannelInputBuilder() {
     ChannelInput._defaults(this);
   }
@@ -754,6 +764,7 @@ class ChannelInputBuilder
       _deferWhileActiveSeconds = $v.deferWhileActiveSeconds;
       _acceptExercise = $v.acceptExercise;
       _language = $v.language;
+      _global = $v.global;
       _$v = null;
     }
     return this;
@@ -805,6 +816,7 @@ class ChannelInputBuilder
             deferWhileActiveSeconds: deferWhileActiveSeconds,
             acceptExercise: acceptExercise,
             language: language,
+            global: global,
           );
     } catch (_) {
       late String _$failedField;

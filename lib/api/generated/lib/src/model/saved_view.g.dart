@@ -116,6 +116,10 @@ class _$SavedView extends SavedView {
   final DateTime createdAt;
   @override
   final DateTime updatedAt;
+  @override
+  final bool? shared;
+  @override
+  final String? ownerPrincipalId;
 
   factory _$SavedView([void Function(SavedViewBuilder)? updates]) =>
       (SavedViewBuilder()..update(updates))._build();
@@ -136,6 +140,8 @@ class _$SavedView extends SavedView {
     required this.version,
     required this.createdAt,
     required this.updatedAt,
+    this.shared,
+    this.ownerPrincipalId,
   }) : super._();
   @override
   SavedView rebuild(void Function(SavedViewBuilder) updates) =>
@@ -162,7 +168,9 @@ class _$SavedView extends SavedView {
         id == other.id &&
         version == other.version &&
         createdAt == other.createdAt &&
-        updatedAt == other.updatedAt;
+        updatedAt == other.updatedAt &&
+        shared == other.shared &&
+        ownerPrincipalId == other.ownerPrincipalId;
   }
 
   @override
@@ -183,6 +191,8 @@ class _$SavedView extends SavedView {
     _$hash = $jc(_$hash, version.hashCode);
     _$hash = $jc(_$hash, createdAt.hashCode);
     _$hash = $jc(_$hash, updatedAt.hashCode);
+    _$hash = $jc(_$hash, shared.hashCode);
+    _$hash = $jc(_$hash, ownerPrincipalId.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -204,7 +214,9 @@ class _$SavedView extends SavedView {
           ..add('id', id)
           ..add('version', version)
           ..add('createdAt', createdAt)
-          ..add('updatedAt', updatedAt))
+          ..add('updatedAt', updatedAt)
+          ..add('shared', shared)
+          ..add('ownerPrincipalId', ownerPrincipalId))
         .toString();
   }
 }
@@ -277,6 +289,15 @@ class SavedViewBuilder implements Builder<SavedView, SavedViewBuilder> {
   DateTime? get updatedAt => _$this._updatedAt;
   set updatedAt(DateTime? updatedAt) => _$this._updatedAt = updatedAt;
 
+  bool? _shared;
+  bool? get shared => _$this._shared;
+  set shared(bool? shared) => _$this._shared = shared;
+
+  String? _ownerPrincipalId;
+  String? get ownerPrincipalId => _$this._ownerPrincipalId;
+  set ownerPrincipalId(String? ownerPrincipalId) =>
+      _$this._ownerPrincipalId = ownerPrincipalId;
+
   SavedViewBuilder() {
     SavedView._defaults(this);
   }
@@ -299,6 +320,8 @@ class SavedViewBuilder implements Builder<SavedView, SavedViewBuilder> {
       _version = $v.version;
       _createdAt = $v.createdAt;
       _updatedAt = $v.updatedAt;
+      _shared = $v.shared;
+      _ownerPrincipalId = $v.ownerPrincipalId;
       _$v = null;
     }
     return this;
@@ -358,6 +381,8 @@ class SavedViewBuilder implements Builder<SavedView, SavedViewBuilder> {
               r'SavedView',
               'updatedAt',
             ),
+            shared: shared,
+            ownerPrincipalId: ownerPrincipalId,
           );
     } catch (_) {
       late String _$failedField;

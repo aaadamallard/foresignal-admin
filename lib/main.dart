@@ -9,8 +9,8 @@ import 'core/retry_policy.dart';
 import 'core/theme_mode.dart';
 import 'features/notifications/push_arrival.dart';
 
-/// Starts ForeSignal Admin: loads the saved connection from the secure store
-/// and the saved theme, installs the global error surface, and runs the app.
+/// Starts ForeSignal Admin: loads the saved connection and signed-in session
+/// from the secure store and the saved theme, installs the global error surface, and runs the app.
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   installPushBackgroundHandler();
@@ -29,8 +29,14 @@ Future<void> main() async {
     overrides: [
       connectionStoreProvider.overrideWithValue(store),
       adminTokenStoreProvider.overrideWithValue(store),
+      sessionStoreProvider.overrideWithValue(SecureSessionStore()),
     ],
   );
+  try {
+    await container.read(sessionControllerProvider.notifier).restore();
+  } on Object {
+    // An unreadable session means nobody is signed in; Login asks again.
+  }
   if (savedUrl != null) {
     container.read(backendEndpointProvider.notifier).set(savedUrl);
   }

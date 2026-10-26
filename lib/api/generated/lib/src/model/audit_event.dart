@@ -15,7 +15,7 @@ part 'audit_event.g.dart';
 /// Properties:
 /// * [id]
 /// * [at]
-/// * [actorKind] - `action` = a notification action capability (033); `chat` = a command from an allowlisted chat of an interactive channel (061; `tokenName` is the chat principal `chat:{channelId}:{chatId}[:{userId}]`); `mesh` = an `#E ACK` from an allowlisted sender on a private mesh channel (084; `tokenName` is `mesh:{sender}`)
+/// * [actorKind] - `user` = a signed-in user (R2-013; `userId` and `userEmail` say who, `tokenId` is the session); `action` = a notification action capability (033); `chat` = a command from an allowlisted chat of an interactive channel (061; `tokenName` is the chat principal `chat:{channelId}:{chatId}[:{userId}]`); `mesh` = an `#E ACK` from an allowlisted sender on a private mesh channel (084; `tokenName` is `mesh:{sender}`)
 /// * [tokenId]
 /// * [tokenName]
 /// * [principalId] - Principal owning the token (v1.3)
@@ -28,6 +28,8 @@ part 'audit_event.g.dart';
 /// * [targetId]
 /// * [remoteIp]
 /// * [detail] - Context (e.g. MCP tool name, argument names, duration, outcome); never secrets, token values or request bodies
+/// * [userId] - The signed-in user who acted (actor kind `user`, R2-013), or null
+/// * [userEmail] - That user's email when the entry was written (kept after the user is renamed or deleted), or null
 @BuiltValue()
 abstract class AuditEvent implements Built<AuditEvent, AuditEventBuilder> {
   @BuiltValueField(wireName: r'id')
@@ -36,10 +38,10 @@ abstract class AuditEvent implements Built<AuditEvent, AuditEventBuilder> {
   @BuiltValueField(wireName: r'at')
   DateTime get at;
 
-  /// `action` = a notification action capability (033); `chat` = a command from an allowlisted chat of an interactive channel (061; `tokenName` is the chat principal `chat:{channelId}:{chatId}[:{userId}]`); `mesh` = an `#E ACK` from an allowlisted sender on a private mesh channel (084; `tokenName` is `mesh:{sender}`)
+  /// `user` = a signed-in user (R2-013; `userId` and `userEmail` say who, `tokenId` is the session); `action` = a notification action capability (033); `chat` = a command from an allowlisted chat of an interactive channel (061; `tokenName` is the chat principal `chat:{channelId}:{chatId}[:{userId}]`); `mesh` = an `#E ACK` from an allowlisted sender on a private mesh channel (084; `tokenName` is `mesh:{sender}`)
   @BuiltValueField(wireName: r'actorKind')
   AuditEventActorKindEnum get actorKind;
-  // enum actorKindEnum {  token,  ingest_key,  pairing,  system,  action,  chat,  mesh,  };
+  // enum actorKindEnum {  token,  user,  ingest_key,  pairing,  system,  action,  chat,  mesh,  };
 
   @BuiltValueField(wireName: r'tokenId')
   String? get tokenId;
@@ -80,6 +82,14 @@ abstract class AuditEvent implements Built<AuditEvent, AuditEventBuilder> {
   /// Context (e.g. MCP tool name, argument names, duration, outcome); never secrets, token values or request bodies
   @BuiltValueField(wireName: r'detail')
   BuiltMap<String, JsonObject?>? get detail;
+
+  /// The signed-in user who acted (actor kind `user`, R2-013), or null
+  @BuiltValueField(wireName: r'userId')
+  String? get userId;
+
+  /// That user's email when the entry was written (kept after the user is renamed or deleted), or null
+  @BuiltValueField(wireName: r'userEmail')
+  String? get userEmail;
 
   AuditEvent._();
 
@@ -201,6 +211,20 @@ class _$AuditEventSerializer implements PrimitiveSerializer<AuditEvent> {
           FullType(String),
           FullType.nullable(JsonObject),
         ]),
+      );
+    }
+    if (object.userId != null) {
+      yield r'userId';
+      yield serializers.serialize(
+        object.userId,
+        specifiedType: const FullType.nullable(String),
+      );
+    }
+    if (object.userEmail != null) {
+      yield r'userEmail';
+      yield serializers.serialize(
+        object.userEmail,
+        specifiedType: const FullType.nullable(String),
       );
     }
   }
@@ -377,6 +401,26 @@ class _$AuditEventSerializer implements PrimitiveSerializer<AuditEvent> {
           if (valueDes == null) continue;
           result.detail.replace(valueDes);
           break;
+        case r'userId':
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
+          if (valueDes == null) continue;
+          result.userId = valueDes;
+          break;
+        case r'userEmail':
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
+          if (valueDes == null) continue;
+          result.userEmail = valueDes;
+          break;
         default:
           unhandled.add(key);
           unhandled.add(value);
@@ -406,10 +450,12 @@ class _$AuditEventSerializer implements PrimitiveSerializer<AuditEvent> {
   }
 }
 
-/// `action` = a notification action capability (033); `chat` = a command from an allowlisted chat of an interactive channel (061; `tokenName` is the chat principal `chat:{channelId}:{chatId}[:{userId}]`); `mesh` = an `#E ACK` from an allowlisted sender on a private mesh channel (084; `tokenName` is `mesh:{sender}`)
+/// `user` = a signed-in user (R2-013; `userId` and `userEmail` say who, `tokenId` is the session); `action` = a notification action capability (033); `chat` = a command from an allowlisted chat of an interactive channel (061; `tokenName` is the chat principal `chat:{channelId}:{chatId}[:{userId}]`); `mesh` = an `#E ACK` from an allowlisted sender on a private mesh channel (084; `tokenName` is `mesh:{sender}`)
 class AuditEventActorKindEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'token')
   static const AuditEventActorKindEnum token = _$auditEventActorKindEnum_token;
+  @BuiltValueEnumConst(wireName: r'user')
+  static const AuditEventActorKindEnum user = _$auditEventActorKindEnum_user;
   @BuiltValueEnumConst(wireName: r'ingest_key')
   static const AuditEventActorKindEnum ingestKey =
       _$auditEventActorKindEnum_ingestKey;

@@ -331,6 +331,8 @@ class _$Channel extends Channel {
   final String? language;
   @override
   final String? ownerPrincipalId;
+  @override
+  final bool? global;
 
   factory _$Channel([void Function(ChannelBuilder)? updates]) =>
       (ChannelBuilder()..update(updates))._build();
@@ -363,6 +365,7 @@ class _$Channel extends Channel {
     this.acceptExercise,
     this.language,
     this.ownerPrincipalId,
+    this.global,
   }) : super._();
   @override
   Channel rebuild(void Function(ChannelBuilder) updates) =>
@@ -401,7 +404,8 @@ class _$Channel extends Channel {
         interactive == other.interactive &&
         acceptExercise == other.acceptExercise &&
         language == other.language &&
-        ownerPrincipalId == other.ownerPrincipalId;
+        ownerPrincipalId == other.ownerPrincipalId &&
+        global == other.global;
   }
 
   @override
@@ -434,6 +438,7 @@ class _$Channel extends Channel {
     _$hash = $jc(_$hash, acceptExercise.hashCode);
     _$hash = $jc(_$hash, language.hashCode);
     _$hash = $jc(_$hash, ownerPrincipalId.hashCode);
+    _$hash = $jc(_$hash, global.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -467,7 +472,8 @@ class _$Channel extends Channel {
           ..add('interactive', interactive)
           ..add('acceptExercise', acceptExercise)
           ..add('language', language)
-          ..add('ownerPrincipalId', ownerPrincipalId))
+          ..add('ownerPrincipalId', ownerPrincipalId)
+          ..add('global', global))
         .toString();
   }
 }
@@ -602,6 +608,10 @@ class ChannelBuilder implements Builder<Channel, ChannelBuilder> {
   set ownerPrincipalId(String? ownerPrincipalId) =>
       _$this._ownerPrincipalId = ownerPrincipalId;
 
+  bool? _global;
+  bool? get global => _$this._global;
+  set global(bool? global) => _$this._global = global;
+
   ChannelBuilder() {
     Channel._defaults(this);
   }
@@ -636,6 +646,7 @@ class ChannelBuilder implements Builder<Channel, ChannelBuilder> {
       _acceptExercise = $v.acceptExercise;
       _language = $v.language;
       _ownerPrincipalId = $v.ownerPrincipalId;
+      _global = $v.global;
       _$v = null;
     }
     return this;
@@ -699,6 +710,7 @@ class ChannelBuilder implements Builder<Channel, ChannelBuilder> {
             acceptExercise: acceptExercise,
             language: language,
             ownerPrincipalId: ownerPrincipalId,
+            global: global,
           );
     } catch (_) {
       late String _$failedField;

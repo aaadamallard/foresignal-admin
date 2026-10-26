@@ -9,6 +9,7 @@ import 'package:foresignal_api/src/auth/api_key_auth.dart';
 import 'package:foresignal_api/src/auth/basic_auth.dart';
 import 'package:foresignal_api/src/auth/bearer_auth.dart';
 import 'package:foresignal_api/src/auth/oauth.dart';
+import 'package:foresignal_api/src/api/aggregators_api.dart';
 import 'package:foresignal_api/src/api/alerts_api.dart';
 import 'package:foresignal_api/src/api/analysis_api.dart';
 import 'package:foresignal_api/src/api/analyst_api.dart';
@@ -19,6 +20,8 @@ import 'package:foresignal_api/src/api/ask_api.dart';
 import 'package:foresignal_api/src/api/assessments_api.dart';
 import 'package:foresignal_api/src/api/attention_api.dart';
 import 'package:foresignal_api/src/api/audit_api.dart';
+import 'package:foresignal_api/src/api/auth_api.dart';
+import 'package:foresignal_api/src/api/backups_api.dart';
 import 'package:foresignal_api/src/api/briefings_api.dart';
 import 'package:foresignal_api/src/api/cap_api.dart';
 import 'package:foresignal_api/src/api/calendars_api.dart';
@@ -26,6 +29,7 @@ import 'package:foresignal_api/src/api/changes_api.dart';
 import 'package:foresignal_api/src/api/channels_api.dart';
 import 'package:foresignal_api/src/api/chronicles_api.dart';
 import 'package:foresignal_api/src/api/collaboration_api.dart';
+import 'package:foresignal_api/src/api/egress_api.dart';
 import 'package:foresignal_api/src/api/entities_api.dart';
 import 'package:foresignal_api/src/api/escalation_api.dart';
 import 'package:foresignal_api/src/api/events_api.dart';
@@ -47,6 +51,7 @@ import 'package:foresignal_api/src/api/kml_api.dart';
 import 'package:foresignal_api/src/api/kinematics_api.dart';
 import 'package:foresignal_api/src/api/llm_api.dart';
 import 'package:foresignal_api/src/api/mcp_api.dart';
+import 'package:foresignal_api/src/api/mfa_api.dart';
 import 'package:foresignal_api/src/api/map_styles_api.dart';
 import 'package:foresignal_api/src/api/mappings_api.dart';
 import 'package:foresignal_api/src/api/maps_api.dart';
@@ -61,12 +66,16 @@ import 'package:foresignal_api/src/api/pattern_of_life_api.dart';
 import 'package:foresignal_api/src/api/peers_api.dart';
 import 'package:foresignal_api/src/api/places_api.dart';
 import 'package:foresignal_api/src/api/plugins_api.dart';
+import 'package:foresignal_api/src/api/preferences_api.dart';
 import 'package:foresignal_api/src/api/products_api.dart';
 import 'package:foresignal_api/src/api/provenance_api.dart';
 import 'package:foresignal_api/src/api/push_api.dart';
+import 'package:foresignal_api/src/api/quotas_api.dart';
 import 'package:foresignal_api/src/api/records_api.dart';
 import 'package:foresignal_api/src/api/reference_api.dart';
 import 'package:foresignal_api/src/api/reports_api.dart';
+import 'package:foresignal_api/src/api/resources_api.dart';
+import 'package:foresignal_api/src/api/roles_api.dart';
 import 'package:foresignal_api/src/api/sampling_api.dart';
 import 'package:foresignal_api/src/api/search_api.dart';
 import 'package:foresignal_api/src/api/series_api.dart';
@@ -85,6 +94,7 @@ import 'package:foresignal_api/src/api/tokens_api.dart';
 import 'package:foresignal_api/src/api/transit_api.dart';
 import 'package:foresignal_api/src/api/triggers_api.dart';
 import 'package:foresignal_api/src/api/trips_api.dart';
+import 'package:foresignal_api/src/api/users_api.dart';
 import 'package:foresignal_api/src/api/views_api.dart';
 import 'package:foresignal_api/src/api/watchlists_api.dart';
 import 'package:foresignal_api/src/api/web_sub_api.dart';
@@ -217,6 +227,12 @@ class ForesignalApi {
     }
   }
 
+  /// Get AggregatorsApi instance, base route and serializer can be overridden by a given but be careful,
+  /// by doing that all interceptors will not be executed
+  AggregatorsApi getAggregatorsApi() {
+    return AggregatorsApi(dio, serializers);
+  }
+
   /// Get AlertsApi instance, base route and serializer can be overridden by a given but be careful,
   /// by doing that all interceptors will not be executed
   AlertsApi getAlertsApi() {
@@ -277,6 +293,18 @@ class ForesignalApi {
     return AuditApi(dio, serializers);
   }
 
+  /// Get AuthApi instance, base route and serializer can be overridden by a given but be careful,
+  /// by doing that all interceptors will not be executed
+  AuthApi getAuthApi() {
+    return AuthApi(dio, serializers);
+  }
+
+  /// Get BackupsApi instance, base route and serializer can be overridden by a given but be careful,
+  /// by doing that all interceptors will not be executed
+  BackupsApi getBackupsApi() {
+    return BackupsApi(dio, serializers);
+  }
+
   /// Get BriefingsApi instance, base route and serializer can be overridden by a given but be careful,
   /// by doing that all interceptors will not be executed
   BriefingsApi getBriefingsApi() {
@@ -317,6 +345,12 @@ class ForesignalApi {
   /// by doing that all interceptors will not be executed
   CollaborationApi getCollaborationApi() {
     return CollaborationApi(dio, serializers);
+  }
+
+  /// Get EgressApi instance, base route and serializer can be overridden by a given but be careful,
+  /// by doing that all interceptors will not be executed
+  EgressApi getEgressApi() {
+    return EgressApi(dio, serializers);
   }
 
   /// Get EntitiesApi instance, base route and serializer can be overridden by a given but be careful,
@@ -445,6 +479,12 @@ class ForesignalApi {
     return MCPApi(dio, serializers);
   }
 
+  /// Get MFAApi instance, base route and serializer can be overridden by a given but be careful,
+  /// by doing that all interceptors will not be executed
+  MFAApi getMFAApi() {
+    return MFAApi(dio, serializers);
+  }
+
   /// Get MapStylesApi instance, base route and serializer can be overridden by a given but be careful,
   /// by doing that all interceptors will not be executed
   MapStylesApi getMapStylesApi() {
@@ -529,6 +569,12 @@ class ForesignalApi {
     return PluginsApi(dio, serializers);
   }
 
+  /// Get PreferencesApi instance, base route and serializer can be overridden by a given but be careful,
+  /// by doing that all interceptors will not be executed
+  PreferencesApi getPreferencesApi() {
+    return PreferencesApi(dio, serializers);
+  }
+
   /// Get ProductsApi instance, base route and serializer can be overridden by a given but be careful,
   /// by doing that all interceptors will not be executed
   ProductsApi getProductsApi() {
@@ -547,6 +593,12 @@ class ForesignalApi {
     return PushApi(dio, serializers);
   }
 
+  /// Get QuotasApi instance, base route and serializer can be overridden by a given but be careful,
+  /// by doing that all interceptors will not be executed
+  QuotasApi getQuotasApi() {
+    return QuotasApi(dio, serializers);
+  }
+
   /// Get RecordsApi instance, base route and serializer can be overridden by a given but be careful,
   /// by doing that all interceptors will not be executed
   RecordsApi getRecordsApi() {
@@ -563,6 +615,18 @@ class ForesignalApi {
   /// by doing that all interceptors will not be executed
   ReportsApi getReportsApi() {
     return ReportsApi(dio, serializers);
+  }
+
+  /// Get ResourcesApi instance, base route and serializer can be overridden by a given but be careful,
+  /// by doing that all interceptors will not be executed
+  ResourcesApi getResourcesApi() {
+    return ResourcesApi(dio, serializers);
+  }
+
+  /// Get RolesApi instance, base route and serializer can be overridden by a given but be careful,
+  /// by doing that all interceptors will not be executed
+  RolesApi getRolesApi() {
+    return RolesApi(dio, serializers);
   }
 
   /// Get SamplingApi instance, base route and serializer can be overridden by a given but be careful,
@@ -671,6 +735,12 @@ class ForesignalApi {
   /// by doing that all interceptors will not be executed
   TripsApi getTripsApi() {
     return TripsApi(dio, serializers);
+  }
+
+  /// Get UsersApi instance, base route and serializer can be overridden by a given but be careful,
+  /// by doing that all interceptors will not be executed
+  UsersApi getUsersApi() {
+    return UsersApi(dio, serializers);
   }
 
   /// Get ViewsApi instance, base route and serializer can be overridden by a given but be careful,

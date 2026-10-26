@@ -22,6 +22,7 @@ Serializers _$serializers =
           ..add(AccessRequestOfferShare.serializer)
           ..add(AccessRequestPage.serializer)
           ..add(AccessRequestStatusEnum.serializer)
+          ..add(AccountActivation.serializer)
           ..add(AchEvidence.serializer)
           ..add(AchEvidenceCaveatsEnum.serializer)
           ..add(AchEvidenceCredibilityEnum.serializer)
@@ -40,6 +41,10 @@ Serializers _$serializers =
           ..add(ActiveWindowWindowsInner.serializer)
           ..add(ActiveWindowWindowsInnerDaysEnum.serializer)
           ..add(AdminTokenResponse.serializer)
+          ..add(Aggregator.serializer)
+          ..add(AggregatorConfig.serializer)
+          ..add(AggregatorList.serializer)
+          ..add(AggregatorTestResult.serializer)
           ..add(AircraftFusionPayload.serializer)
           ..add(AircraftFusionPayloadDetector.serializer)
           ..add(AircraftFusionPayloadPositionSourceEnum.serializer)
@@ -208,10 +213,14 @@ Serializers _$serializers =
           ..add(ApproachCondition.serializer)
           ..add(ApproachConditionTarget.serializer)
           ..add(ApproachConditionTypeEnum.serializer)
+          ..add(Archive.serializer)
+          ..add(ArchivePage.serializer)
           ..add(ArchivePartition.serializer)
           ..add(ArchivePartitionFilesInner.serializer)
           ..add(ArchivePartitionPage.serializer)
           ..add(ArchivePartitionTierEnum.serializer)
+          ..add(ArchiveRestoreRequest.serializer)
+          ..add(ArchiveRunRequest.serializer)
           ..add(ArchiveSettings.serializer)
           ..add(ArchiveSettingsS3.serializer)
           ..add(ArchiveSettingsSecrets.serializer)
@@ -287,6 +296,12 @@ Serializers _$serializers =
           ..add(BacktestJobTypeEnum.serializer)
           ..add(BacktestRequest.serializer)
           ..add(BacktestRequestTypeEnum.serializer)
+          ..add(Backup.serializer)
+          ..add(BackupPage.serializer)
+          ..add(BackupRestoreRequest.serializer)
+          ..add(BackupRunRequest.serializer)
+          ..add(BackupSettings.serializer)
+          ..add(BackupSettingsInput.serializer)
           ..add(BaseRate.serializer)
           ..add(BaseRateDefinition.serializer)
           ..add(BaseRateDefinitionCondition.serializer)
@@ -516,6 +531,9 @@ Serializers _$serializers =
           ..add(CollectionGapPage.serializer)
           ..add(CollectionGapRecommendationsInner.serializer)
           ..add(CollectionGapRecommendationsInnerTypeEnum.serializer)
+          ..add(CollectionSet.serializer)
+          ..add(CollectionSetUpdate.serializer)
+          ..add(CollectionSource.serializer)
           ..add(CollectorSettings.serializer)
           ..add(CollectorStatus.serializer)
           ..add(CommentEvent.serializer)
@@ -782,6 +800,13 @@ Serializers _$serializers =
           ..add(EdpValidationRequest.serializer)
           ..add(EdrInstanceList.serializer)
           ..add(EdrInstanceListInstancesInner.serializer)
+          ..add(EgressHealth.serializer)
+          ..add(EgressRoute.serializer)
+          ..add(EgressRouteInput.serializer)
+          ..add(EgressRouteInputSecrets.serializer)
+          ..add(EgressRoutePage.serializer)
+          ..add(EgressSettings.serializer)
+          ..add(EgressTestResult.serializer)
           ..add(EmergencySquawkPayload.serializer)
           ..add(EmergencySquawkPayloadMeaningEnum.serializer)
           ..add(EmergencySquawkPayloadStatusEnum.serializer)
@@ -997,6 +1022,7 @@ Serializers _$serializers =
           ..add(FireClusterPayload.serializer)
           ..add(FireDetectionPayload.serializer)
           ..add(FireDetectionPayloadConfidenceClassEnum.serializer)
+          ..add(FirstRunStatus.serializer)
           ..add(Forecast.serializer)
           ..add(ForecastAnnulInput.serializer)
           ..add(ForecastAreaPayload.serializer)
@@ -1416,6 +1442,7 @@ Serializers _$serializers =
           ..add(LightningClusterPayloadFlashes5mEnum.serializer)
           ..add(ListRecords200Response.serializer)
           ..add(LiveEvent.serializer)
+          ..add(LlmBudgetProvider.serializer)
           ..add(LlmModelInfo.serializer)
           ..add(LlmPricing.serializer)
           ..add(LlmProbeResult.serializer)
@@ -1443,6 +1470,7 @@ Serializers _$serializers =
           ..add(LlmUsagePoint.serializer)
           ..add(LlmUsageSeries.serializer)
           ..add(LlmUsageSeriesResolutionEnum.serializer)
+          ..add(LoginRequest.serializer)
           ..add(LoiterPayload.serializer)
           ..add(LoiterPayloadStatusEnum.serializer)
           ..add(MaintenanceRun.serializer)
@@ -1484,6 +1512,7 @@ Serializers _$serializers =
           ..add(Me.serializer)
           ..add(MeGroupsInner.serializer)
           ..add(MeGroupsInnerRoleEnum.serializer)
+          ..add(MeLlmBudget.serializer)
           ..add(MeScopesEnum.serializer)
           ..add(MeToken.serializer)
           ..add(MeTokenScopeEnum.serializer)
@@ -1539,6 +1568,11 @@ Serializers _$serializers =
           ..add(MetricProjection.serializer)
           ..add(MetricProjectionLabelsInner.serializer)
           ..add(MetricSettings.serializer)
+          ..add(MfaDisableRequest.serializer)
+          ..add(MfaEnrollment.serializer)
+          ..add(MfaRecoveryCodes.serializer)
+          ..add(MfaStatus.serializer)
+          ..add(MfaVerifyRequest.serializer)
           ..add(MilNavalCooccurrencePayload.serializer)
           ..add(MilNavalCooccurrencePayloadStatusEnum.serializer)
           ..add(ModelDisagreement.serializer)
@@ -1763,6 +1797,8 @@ Serializers _$serializers =
           ..add(PairingCodeScopeEnum.serializer)
           ..add(ParamSpec.serializer)
           ..add(ParamSpecTypeEnum.serializer)
+          ..add(PasswordReset.serializer)
+          ..add(PasswordResetRequest.serializer)
           ..add(Peer.serializer)
           ..add(PeerCreate.serializer)
           ..add(PeerCreateModeEnum.serializer)
@@ -1776,6 +1812,8 @@ Serializers _$serializers =
           ..add(PeerTestResult.serializer)
           ..add(PeerUpdate.serializer)
           ..add(PeerUpdateReliabilityEnum.serializer)
+          ..add(Permission.serializer)
+          ..add(PermissionList.serializer)
           ..add(PersistReason.serializer)
           ..add(PersistReasonCounts.serializer)
           ..add(Place.serializer)
@@ -2025,6 +2063,8 @@ Serializers _$serializers =
           ..add(QuietHours.serializer)
           ..add(QuietHoursBypassSeverityEnum.serializer)
           ..add(QuietHoursDaysEnum.serializer)
+          ..add(Quota.serializer)
+          ..add(QuotaUsage.serializer)
           ..add(RadarCellPayload.serializer)
           ..add(RadarCellPayloadMotion.serializer)
           ..add(RadarCellPayloadMotionMethodEnum.serializer)
@@ -2157,8 +2197,17 @@ Serializers _$serializers =
           ..add(ResetEvent.serializer)
           ..add(ResetEventReasonEnum.serializer)
           ..add(ResolverArea.serializer)
+          ..add(ResourceGauge.serializer)
+          ..add(ResourceStatus.serializer)
+          ..add(ResourceStatusDatabase.serializer)
+          ..add(ResourceThreshold.serializer)
+          ..add(ResourceThresholds.serializer)
+          ..add(ResourceThresholdsCollectorBacklog.serializer)
+          ..add(ResourceThresholdsSourceStorm.serializer)
           ..add(ResyncEvent.serializer)
           ..add(ResyncEventReasonEnum.serializer)
+          ..add(RetentionPreview.serializer)
+          ..add(RetentionPreviewItem.serializer)
           ..add(RetentionRunResult.serializer)
           ..add(RetentionRunResultConsumerClamp.serializer)
           ..add(RetentionRunResultPerSourceValue.serializer)
@@ -2168,6 +2217,11 @@ Serializers _$serializers =
           ..add(RevisionDriver.serializer)
           ..add(RevisionDriverKindEnum.serializer)
           ..add(RevisionDriverSuppressionReasonEnum.serializer)
+          ..add(Role.serializer)
+          ..add(RoleAssignment.serializer)
+          ..add(RoleInput.serializer)
+          ..add(RolePage.serializer)
+          ..add(RoleRef.serializer)
           ..add(RuleBacktestResult.serializer)
           ..add(RuleBacktestResultActual.serializer)
           ..add(RuleBacktestResultAnomaly.serializer)
@@ -2186,6 +2240,7 @@ Serializers _$serializers =
           ..add(RuleQualityFeedbackMappingEnum.serializer)
           ..add(RuleQualityPrecisionCi.serializer)
           ..add(RuleQualitySignals.serializer)
+          ..add(S3Target.serializer)
           ..add(SampleBatchResponse.serializer)
           ..add(SamplePosition.serializer)
           ..add(SampleRequest.serializer)
@@ -2274,6 +2329,9 @@ Serializers _$serializers =
           ..add(SeriesSample.serializer)
           ..add(SeriesSampleKindEnum.serializer)
           ..add(ServerSettings.serializer)
+          ..add(Session.serializer)
+          ..add(SessionPage.serializer)
+          ..add(SessionToken.serializer)
           ..add(SettingsBundle.serializer)
           ..add(SettingsBundleChannelsInner.serializer)
           ..add(SettingsBundleChannelsInnerConfig.serializer)
@@ -2284,6 +2342,9 @@ Serializers _$serializers =
           ..add(SettingsBundleChannelsInnerTypeEnum.serializer)
           ..add(SettingsBundleWatchlistsInner.serializer)
           ..add(SettingsWarning.serializer)
+          ..add(SetupRequest.serializer)
+          ..add(SetupRequestAdmin.serializer)
+          ..add(SetupResult.serializer)
           ..add(Severity.serializer)
           ..add(ShareLink.serializer)
           ..add(ShareLinkCreate.serializer)
@@ -2397,6 +2458,10 @@ Serializers _$serializers =
           ..add(SituationTimelinePage.serializer)
           ..add(SmokePolygonPayload.serializer)
           ..add(SmokePolygonPayloadDensityEnum.serializer)
+          ..add(SmtpSettings.serializer)
+          ..add(SmtpSettingsInput.serializer)
+          ..add(SmtpTestRequest.serializer)
+          ..add(SmtpTestResult.serializer)
           ..add(Snapshot.serializer)
           ..add(SnapshotFormatEnum.serializer)
           ..add(SnapshotInput.serializer)
@@ -2506,6 +2571,7 @@ Serializers _$serializers =
           ..add(SourceDescriptorReliabilityEnum.serializer)
           ..add(SourceDescriptorTtlAnchorEnum.serializer)
           ..add(SourceDetail.serializer)
+          ..add(SourceEgressAssignment.serializer)
           ..add(SourceHealth.serializer)
           ..add(SourceRelevance.serializer)
           ..add(SourceRelevanceAnalysis.serializer)
@@ -2740,6 +2806,18 @@ Serializers _$serializers =
           ..add(UsagePoint.serializer)
           ..add(UsageSeries.serializer)
           ..add(UsageSeriesResolutionEnum.serializer)
+          ..add(User.serializer)
+          ..add(UserCreate.serializer)
+          ..add(UserDataRestriction.serializer)
+          ..add(UserDeleteResult.serializer)
+          ..add(UserLinkIssued.serializer)
+          ..add(UserPage.serializer)
+          ..add(UserPreferences.serializer)
+          ..add(UserPreferencesNotifications.serializer)
+          ..add(UserSourcePref.serializer)
+          ..add(UserSourceView.serializer)
+          ..add(UserSourceViewUpdate.serializer)
+          ..add(UserUpdate.serializer)
           ..add(UvForecastPayload.serializer)
           ..add(UvForecastPayloadHoursInner.serializer)
           ..add(VelocityJsonComponent.serializer)
@@ -2844,6 +2922,10 @@ Serializers _$serializers =
               const FullType(ActiveWindowWindowsInnerDaysEnum),
             ]),
             () => ListBuilder<ActiveWindowWindowsInnerDaysEnum>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, const [const FullType(Aggregator)]),
+            () => ListBuilder<Aggregator>(),
           )
           ..addBuilderFactory(
             const FullType(BuiltList, const [const FullType(Alert)]),
@@ -2994,6 +3076,10 @@ Serializers _$serializers =
               const FullType(ApiTokenLicencePolicyEnum),
             ]),
             () => ListBuilder<ApiTokenLicencePolicyEnum>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, const [const FullType(Archive)]),
+            () => ListBuilder<Archive>(),
           )
           ..addBuilderFactory(
             const FullType(BuiltList, const [const FullType(ArchivePartition)]),
@@ -3191,6 +3277,10 @@ Serializers _$serializers =
           ..addBuilderFactory(
             const FullType(BuiltList, const [const FullType(BacktestJob)]),
             () => ListBuilder<BacktestJob>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, const [const FullType(Backup)]),
+            () => ListBuilder<Backup>(),
           )
           ..addBuilderFactory(
             const FullType(BuiltList, const [const FullType(BaseRate)]),
@@ -3550,6 +3640,14 @@ Serializers _$serializers =
               const FullType(CollectionGapRecommendationsInner),
             ]),
             () => ListBuilder<CollectionGapRecommendationsInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, const [const FullType(CollectionSource)]),
+            () => ListBuilder<CollectionSource>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, const [const FullType(CollectionSource)]),
+            () => ListBuilder<CollectionSource>(),
           )
           ..addBuilderFactory(
             const FullType(BuiltList, const [
@@ -4049,6 +4147,10 @@ Serializers _$serializers =
           ..addBuilderFactory(
             const FullType(BuiltList, const [const FullType(OgcLink)]),
             () => ListBuilder<OgcLink>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, const [const FullType(EgressRoute)]),
+            () => ListBuilder<EgressRoute>(),
           )
           ..addBuilderFactory(
             const FullType(BuiltList, const [
@@ -4656,6 +4758,12 @@ Serializers _$serializers =
             () => ListBuilder<LedgerQuestionBriefForecastersInner>(),
           )
           ..addBuilderFactory(
+            const FullType(BuiltList, const [
+              const FullType(LlmBudgetProvider),
+            ]),
+            () => ListBuilder<LlmBudgetProvider>(),
+          )
+          ..addBuilderFactory(
             const FullType(BuiltList, const [const FullType(LlmModelInfo)]),
             () => ListBuilder<LlmModelInfo>(),
           )
@@ -4712,6 +4820,10 @@ Serializers _$serializers =
               const FullType(NotificationPreference),
             ]),
             () => ListBuilder<NotificationPreference>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, const [const FullType(String)]),
+            () => ListBuilder<String>(),
           )
           ..addBuilderFactory(
             const FullType(BuiltList, const [const FullType(MediaMatch)]),
@@ -5127,6 +5239,10 @@ Serializers _$serializers =
             () => ListBuilder<Peer>(),
           )
           ..addBuilderFactory(
+            const FullType(BuiltList, const [const FullType(Permission)]),
+            () => ListBuilder<Permission>(),
+          )
+          ..addBuilderFactory(
             const FullType(BuiltList, const [const FullType(Place)]),
             () => ListBuilder<Place>(),
           )
@@ -5515,6 +5631,20 @@ Serializers _$serializers =
           )
           ..addBuilderFactory(
             const FullType(BuiltList, const [
+              const FullType(RetentionPreviewItem),
+            ]),
+            () => ListBuilder<RetentionPreviewItem>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, const [const FullType(Role)]),
+            () => ListBuilder<Role>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, const [const FullType(RoleRef)]),
+            () => ListBuilder<RoleRef>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, const [
               const FullType(RuleBacktestResultPerDayInner),
             ]),
             () => ListBuilder<RuleBacktestResultPerDayInner>(),
@@ -5634,6 +5764,10 @@ Serializers _$serializers =
           ..addBuilderFactory(
             const FullType(BuiltList, const [const FullType(SeriesSample)]),
             () => ListBuilder<SeriesSample>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, const [const FullType(Session)]),
+            () => ListBuilder<Session>(),
           )
           ..addBuilderFactory(
             const FullType(BuiltList, const [const FullType(SettingsWarning)]),
@@ -5863,6 +5997,54 @@ Serializers _$serializers =
               const FullType(StormTrackPayloadNowcastInner),
             ]),
             () => ListBuilder<StormTrackPayloadNowcastInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, const [const FullType(String)]),
+            () => ListBuilder<String>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, const [const FullType(String)]),
+            () => ListBuilder<String>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, const [const FullType(String)]),
+            () => ListBuilder<String>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, const [const FullType(String)]),
+            () => ListBuilder<String>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, const [const FullType(String)]),
+            () => ListBuilder<String>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, const [const FullType(String)]),
+            () => ListBuilder<String>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, const [const FullType(String)]),
+            () => ListBuilder<String>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, const [const FullType(String)]),
+            () => ListBuilder<String>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, const [const FullType(String)]),
+            () => ListBuilder<String>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, const [const FullType(String)]),
+            () => ListBuilder<String>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, const [const FullType(String)]),
+            () => ListBuilder<String>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, const [const FullType(String)]),
+            () => ListBuilder<String>(),
           )
           ..addBuilderFactory(
             const FullType(BuiltList, const [const FullType(String)]),
@@ -6740,6 +6922,14 @@ Serializers _$serializers =
               const FullType(SocialPlatformPrice),
             ]),
             () => ListBuilder<SocialPlatformPrice>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, const [const FullType(String)]),
+            () => ListBuilder<String>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, const [const FullType(String)]),
+            () => ListBuilder<String>(),
           )
           ..addBuilderFactory(
             const FullType(BuiltList, const [const FullType(String)]),
@@ -8147,6 +8337,22 @@ Serializers _$serializers =
             () => ListBuilder<String>(),
           )
           ..addBuilderFactory(
+            const FullType(BuiltList, const [const FullType(num)]),
+            () => ListBuilder<num>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, const [const FullType(String)]),
+            () => ListBuilder<String>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, const [const FullType(String)]),
+            () => ListBuilder<String>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, const [const FullType(String)]),
+            () => ListBuilder<String>(),
+          )
+          ..addBuilderFactory(
             const FullType(BuiltList, const [const FullType(String)]),
             () => ListBuilder<String>(),
           )
@@ -8301,6 +8507,17 @@ Serializers _$serializers =
           ..addBuilderFactory(
             const FullType(BuiltList, const [const FullType(TimelineTick)]),
             () => ListBuilder<TimelineTick>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, const [const FullType(String)]),
+            () => ListBuilder<String>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltMap, const [
+              const FullType(String),
+              const FullType.nullable(JsonObject),
+            ]),
+            () => MapBuilder<String, JsonObject?>(),
           )
           ..addBuilderFactory(
             const FullType(BuiltList, const [const FullType(String)]),
@@ -8525,6 +8742,18 @@ Serializers _$serializers =
           ..addBuilderFactory(
             const FullType(BuiltList, const [const FullType(UsagePoint)]),
             () => ListBuilder<UsagePoint>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, const [const FullType(User)]),
+            () => ListBuilder<User>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, const [const FullType(UserSourcePref)]),
+            () => ListBuilder<UserSourcePref>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, const [const FullType(UserSourcePref)]),
+            () => ListBuilder<UserSourcePref>(),
           )
           ..addBuilderFactory(
             const FullType(BuiltList, const [
@@ -9704,6 +9933,27 @@ Serializers _$serializers =
               const FullType(ForecastCitationsInner),
             ]),
             () => ListBuilder<ForecastCitationsInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltMap, const [
+              const FullType(String),
+              const FullType.nullable(JsonObject),
+            ]),
+            () => MapBuilder<String, JsonObject?>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltMap, const [
+              const FullType(String),
+              const FullType.nullable(JsonObject),
+            ]),
+            () => MapBuilder<String, JsonObject?>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltMap, const [
+              const FullType(String),
+              const FullType.nullable(JsonObject),
+            ]),
+            () => MapBuilder<String, JsonObject?>(),
           )
           ..addBuilderFactory(
             const FullType(BuiltMap, const [

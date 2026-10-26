@@ -42,7 +42,8 @@ part 'channel.g.dart';
 /// * [interactive] - Interactive chat-command status for telegram/matrix channels (061)
 /// * [acceptExercise] - Receives exercise alerts
 /// * [language] - BCP 47; when it differs from `notify.defaultLanguage` (primary language or script) title and body are translated (026 chat role, budget `translate`), cached 24 h, the original with an `[untranslated]` title marker after 8 s or on failure (141)
-/// * [ownerPrincipalId] - Set for principal-owned channels created through notification preferences (130)
+/// * [ownerPrincipalId] - The principal of the user who owns this personal channel (R2-009); null for a global channel.
+/// * [global] - True for a global (instance-wide) channel, managed with `channels.global` (R2-009).
 @BuiltValue()
 abstract class Channel implements Built<Channel, ChannelBuilder> {
   @BuiltValueField(wireName: r'id')
@@ -136,9 +137,13 @@ abstract class Channel implements Built<Channel, ChannelBuilder> {
   @BuiltValueField(wireName: r'language')
   String? get language;
 
-  /// Set for principal-owned channels created through notification preferences (130)
+  /// The principal of the user who owns this personal channel (R2-009); null for a global channel.
   @BuiltValueField(wireName: r'ownerPrincipalId')
   String? get ownerPrincipalId;
+
+  /// True for a global (instance-wide) channel, managed with `channels.global` (R2-009).
+  @BuiltValueField(wireName: r'global')
+  bool? get global;
 
   Channel._();
 
@@ -342,6 +347,13 @@ class _$ChannelSerializer implements PrimitiveSerializer<Channel> {
       yield serializers.serialize(
         object.ownerPrincipalId,
         specifiedType: const FullType.nullable(String),
+      );
+    }
+    if (object.global != null) {
+      yield r'global';
+      yield serializers.serialize(
+        object.global,
+        specifiedType: const FullType(bool),
       );
     }
   }
@@ -649,6 +661,16 @@ class _$ChannelSerializer implements PrimitiveSerializer<Channel> {
                   as String?;
           if (valueDes == null) continue;
           result.ownerPrincipalId = valueDes;
+          break;
+        case r'global':
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
+          if (valueDes == null) continue;
+          result.global = valueDes;
           break;
         default:
           unhandled.add(key);

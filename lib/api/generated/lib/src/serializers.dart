@@ -21,6 +21,7 @@ import 'package:foresignal_api/src/model/access_request_grant.dart';
 import 'package:foresignal_api/src/model/access_request_input.dart';
 import 'package:foresignal_api/src/model/access_request_offer_share.dart';
 import 'package:foresignal_api/src/model/access_request_page.dart';
+import 'package:foresignal_api/src/model/account_activation.dart';
 import 'package:foresignal_api/src/model/ach_evidence.dart';
 import 'package:foresignal_api/src/model/ach_evidence_input.dart';
 import 'package:foresignal_api/src/model/ach_matrix.dart';
@@ -29,6 +30,10 @@ import 'package:foresignal_api/src/model/action_result.dart';
 import 'package:foresignal_api/src/model/active_window.dart';
 import 'package:foresignal_api/src/model/active_window_windows_inner.dart';
 import 'package:foresignal_api/src/model/admin_token_response.dart';
+import 'package:foresignal_api/src/model/aggregator.dart';
+import 'package:foresignal_api/src/model/aggregator_config.dart';
+import 'package:foresignal_api/src/model/aggregator_list.dart';
+import 'package:foresignal_api/src/model/aggregator_test_result.dart';
 import 'package:foresignal_api/src/model/aircraft_fusion_payload.dart';
 import 'package:foresignal_api/src/model/aircraft_fusion_payload_detector.dart';
 import 'package:foresignal_api/src/model/aircraft_registration_payload.dart';
@@ -119,9 +124,13 @@ import 'package:foresignal_api/src/model/api_token_input.dart';
 import 'package:foresignal_api/src/model/apns_provider_config.dart';
 import 'package:foresignal_api/src/model/approach_condition.dart';
 import 'package:foresignal_api/src/model/approach_condition_target.dart';
+import 'package:foresignal_api/src/model/archive.dart';
+import 'package:foresignal_api/src/model/archive_page.dart';
 import 'package:foresignal_api/src/model/archive_partition.dart';
 import 'package:foresignal_api/src/model/archive_partition_files_inner.dart';
 import 'package:foresignal_api/src/model/archive_partition_page.dart';
+import 'package:foresignal_api/src/model/archive_restore_request.dart';
+import 'package:foresignal_api/src/model/archive_run_request.dart';
 import 'package:foresignal_api/src/model/archive_settings.dart';
 import 'package:foresignal_api/src/model/archive_settings_s3.dart';
 import 'package:foresignal_api/src/model/archive_settings_secrets.dart';
@@ -170,6 +179,12 @@ import 'package:foresignal_api/src/model/backtest_job.dart';
 import 'package:foresignal_api/src/model/backtest_job_page.dart';
 import 'package:foresignal_api/src/model/backtest_job_result.dart';
 import 'package:foresignal_api/src/model/backtest_request.dart';
+import 'package:foresignal_api/src/model/backup.dart';
+import 'package:foresignal_api/src/model/backup_page.dart';
+import 'package:foresignal_api/src/model/backup_restore_request.dart';
+import 'package:foresignal_api/src/model/backup_run_request.dart';
+import 'package:foresignal_api/src/model/backup_settings.dart';
+import 'package:foresignal_api/src/model/backup_settings_input.dart';
 import 'package:foresignal_api/src/model/base_rate.dart';
 import 'package:foresignal_api/src/model/base_rate_definition.dart';
 import 'package:foresignal_api/src/model/base_rate_definition_condition.dart';
@@ -303,6 +318,9 @@ import 'package:foresignal_api/src/model/collab_attachment_links.dart';
 import 'package:foresignal_api/src/model/collection_gap.dart';
 import 'package:foresignal_api/src/model/collection_gap_page.dart';
 import 'package:foresignal_api/src/model/collection_gap_recommendations_inner.dart';
+import 'package:foresignal_api/src/model/collection_set.dart';
+import 'package:foresignal_api/src/model/collection_set_update.dart';
+import 'package:foresignal_api/src/model/collection_source.dart';
 import 'package:foresignal_api/src/model/collector_settings.dart';
 import 'package:foresignal_api/src/model/collector_status.dart';
 import 'package:foresignal_api/src/model/comment_event.dart';
@@ -466,6 +484,13 @@ import 'package:foresignal_api/src/model/edp_validation_report.dart';
 import 'package:foresignal_api/src/model/edp_validation_request.dart';
 import 'package:foresignal_api/src/model/edr_instance_list.dart';
 import 'package:foresignal_api/src/model/edr_instance_list_instances_inner.dart';
+import 'package:foresignal_api/src/model/egress_health.dart';
+import 'package:foresignal_api/src/model/egress_route.dart';
+import 'package:foresignal_api/src/model/egress_route_input.dart';
+import 'package:foresignal_api/src/model/egress_route_input_secrets.dart';
+import 'package:foresignal_api/src/model/egress_route_page.dart';
+import 'package:foresignal_api/src/model/egress_settings.dart';
+import 'package:foresignal_api/src/model/egress_test_result.dart';
 import 'package:foresignal_api/src/model/emergency_squawk_payload.dart';
 import 'package:foresignal_api/src/model/emwin_product_payload.dart';
 import 'package:foresignal_api/src/model/emwin_warning_payload.dart';
@@ -603,6 +628,7 @@ import 'package:foresignal_api/src/model/finding_patch.dart';
 import 'package:foresignal_api/src/model/finding_severity.dart';
 import 'package:foresignal_api/src/model/fire_cluster_payload.dart';
 import 'package:foresignal_api/src/model/fire_detection_payload.dart';
+import 'package:foresignal_api/src/model/first_run_status.dart';
 import 'package:foresignal_api/src/model/forecast.dart';
 import 'package:foresignal_api/src/model/forecast_annul_input.dart';
 import 'package:foresignal_api/src/model/forecast_area_payload.dart';
@@ -855,6 +881,7 @@ import 'package:foresignal_api/src/model/licence_terms.dart';
 import 'package:foresignal_api/src/model/lightning_cluster_payload.dart';
 import 'package:foresignal_api/src/model/list_records200_response.dart';
 import 'package:foresignal_api/src/model/live_event.dart';
+import 'package:foresignal_api/src/model/llm_budget_provider.dart';
 import 'package:foresignal_api/src/model/llm_model_info.dart';
 import 'package:foresignal_api/src/model/llm_pricing.dart';
 import 'package:foresignal_api/src/model/llm_probe_result.dart';
@@ -873,6 +900,7 @@ import 'package:foresignal_api/src/model/llm_test_result_chat.dart';
 import 'package:foresignal_api/src/model/llm_test_result_embedding.dart';
 import 'package:foresignal_api/src/model/llm_usage_point.dart';
 import 'package:foresignal_api/src/model/llm_usage_series.dart';
+import 'package:foresignal_api/src/model/login_request.dart';
 import 'package:foresignal_api/src/model/loiter_payload.dart';
 import 'package:foresignal_api/src/model/maintenance_run.dart';
 import 'package:foresignal_api/src/model/maintenance_run_steps_inner.dart';
@@ -899,6 +927,7 @@ import 'package:foresignal_api/src/model/mapping_warning.dart';
 import 'package:foresignal_api/src/model/mcp_auth_settings.dart';
 import 'package:foresignal_api/src/model/me.dart';
 import 'package:foresignal_api/src/model/me_groups_inner.dart';
+import 'package:foresignal_api/src/model/me_llm_budget.dart';
 import 'package:foresignal_api/src/model/me_token.dart';
 import 'package:foresignal_api/src/model/media.dart';
 import 'package:foresignal_api/src/model/media_fingerprint.dart';
@@ -924,6 +953,11 @@ import 'package:foresignal_api/src/model/metar_payload_sky_inner.dart';
 import 'package:foresignal_api/src/model/metric_projection.dart';
 import 'package:foresignal_api/src/model/metric_projection_labels_inner.dart';
 import 'package:foresignal_api/src/model/metric_settings.dart';
+import 'package:foresignal_api/src/model/mfa_disable_request.dart';
+import 'package:foresignal_api/src/model/mfa_enrollment.dart';
+import 'package:foresignal_api/src/model/mfa_recovery_codes.dart';
+import 'package:foresignal_api/src/model/mfa_status.dart';
+import 'package:foresignal_api/src/model/mfa_verify_request.dart';
 import 'package:foresignal_api/src/model/mil_naval_cooccurrence_payload.dart';
 import 'package:foresignal_api/src/model/model_disagreement.dart';
 import 'package:foresignal_api/src/model/motion_spec.dart';
@@ -1063,6 +1097,8 @@ import 'package:foresignal_api/src/model/pairing_code.dart';
 import 'package:foresignal_api/src/model/pairing_code_created.dart';
 import 'package:foresignal_api/src/model/pairing_code_input.dart';
 import 'package:foresignal_api/src/model/param_spec.dart';
+import 'package:foresignal_api/src/model/password_reset.dart';
+import 'package:foresignal_api/src/model/password_reset_request.dart';
 import 'package:foresignal_api/src/model/peer.dart';
 import 'package:foresignal_api/src/model/peer_create.dart';
 import 'package:foresignal_api/src/model/peer_ingest_key.dart';
@@ -1070,6 +1106,8 @@ import 'package:foresignal_api/src/model/peer_page.dart';
 import 'package:foresignal_api/src/model/peer_selection.dart';
 import 'package:foresignal_api/src/model/peer_test_result.dart';
 import 'package:foresignal_api/src/model/peer_update.dart';
+import 'package:foresignal_api/src/model/permission.dart';
+import 'package:foresignal_api/src/model/permission_list.dart';
 import 'package:foresignal_api/src/model/persist_reason.dart';
 import 'package:foresignal_api/src/model/persist_reason_counts.dart';
 import 'package:foresignal_api/src/model/place.dart';
@@ -1233,6 +1271,8 @@ import 'package:foresignal_api/src/model/question_annulment.dart';
 import 'package:foresignal_api/src/model/question_links.dart';
 import 'package:foresignal_api/src/model/question_outcomes.dart';
 import 'package:foresignal_api/src/model/quiet_hours.dart';
+import 'package:foresignal_api/src/model/quota.dart';
+import 'package:foresignal_api/src/model/quota_usage.dart';
 import 'package:foresignal_api/src/model/radar_cell_payload.dart';
 import 'package:foresignal_api/src/model/radar_cell_payload_motion.dart';
 import 'package:foresignal_api/src/model/raster_frame.dart';
@@ -1321,7 +1361,16 @@ import 'package:foresignal_api/src/model/report_share_link_input.dart';
 import 'package:foresignal_api/src/model/report_source.dart';
 import 'package:foresignal_api/src/model/reset_event.dart';
 import 'package:foresignal_api/src/model/resolver_area.dart';
+import 'package:foresignal_api/src/model/resource_gauge.dart';
+import 'package:foresignal_api/src/model/resource_status.dart';
+import 'package:foresignal_api/src/model/resource_status_database.dart';
+import 'package:foresignal_api/src/model/resource_threshold.dart';
+import 'package:foresignal_api/src/model/resource_thresholds.dart';
+import 'package:foresignal_api/src/model/resource_thresholds_collector_backlog.dart';
+import 'package:foresignal_api/src/model/resource_thresholds_source_storm.dart';
 import 'package:foresignal_api/src/model/resync_event.dart';
+import 'package:foresignal_api/src/model/retention_preview.dart';
+import 'package:foresignal_api/src/model/retention_preview_item.dart';
 import 'package:foresignal_api/src/model/retention_run_result.dart';
 import 'package:foresignal_api/src/model/retention_run_result_consumer_clamp.dart';
 import 'package:foresignal_api/src/model/retention_run_result_per_source_value.dart';
@@ -1329,6 +1378,11 @@ import 'package:foresignal_api/src/model/retention_settings.dart';
 import 'package:foresignal_api/src/model/retention_settings_social.dart';
 import 'package:foresignal_api/src/model/retention_settings_stats.dart';
 import 'package:foresignal_api/src/model/revision_driver.dart';
+import 'package:foresignal_api/src/model/role.dart';
+import 'package:foresignal_api/src/model/role_assignment.dart';
+import 'package:foresignal_api/src/model/role_input.dart';
+import 'package:foresignal_api/src/model/role_page.dart';
+import 'package:foresignal_api/src/model/role_ref.dart';
 import 'package:foresignal_api/src/model/rule_backtest_result.dart';
 import 'package:foresignal_api/src/model/rule_backtest_result_actual.dart';
 import 'package:foresignal_api/src/model/rule_backtest_result_anomaly.dart';
@@ -1344,6 +1398,7 @@ import 'package:foresignal_api/src/model/rule_quality_daily_feedback.dart';
 import 'package:foresignal_api/src/model/rule_quality_daily_signals.dart';
 import 'package:foresignal_api/src/model/rule_quality_precision_ci.dart';
 import 'package:foresignal_api/src/model/rule_quality_signals.dart';
+import 'package:foresignal_api/src/model/s3_target.dart';
 import 'package:foresignal_api/src/model/sample_batch_response.dart';
 import 'package:foresignal_api/src/model/sample_position.dart';
 import 'package:foresignal_api/src/model/sample_request.dart';
@@ -1402,11 +1457,17 @@ import 'package:foresignal_api/src/model/series_point.dart';
 import 'package:foresignal_api/src/model/series_point_page.dart';
 import 'package:foresignal_api/src/model/series_sample.dart';
 import 'package:foresignal_api/src/model/server_settings.dart';
+import 'package:foresignal_api/src/model/session.dart';
+import 'package:foresignal_api/src/model/session_page.dart';
+import 'package:foresignal_api/src/model/session_token.dart';
 import 'package:foresignal_api/src/model/settings_bundle.dart';
 import 'package:foresignal_api/src/model/settings_bundle_channels_inner.dart';
 import 'package:foresignal_api/src/model/settings_bundle_channels_inner_config.dart';
 import 'package:foresignal_api/src/model/settings_bundle_watchlists_inner.dart';
 import 'package:foresignal_api/src/model/settings_warning.dart';
+import 'package:foresignal_api/src/model/setup_request.dart';
+import 'package:foresignal_api/src/model/setup_request_admin.dart';
+import 'package:foresignal_api/src/model/setup_result.dart';
 import 'package:foresignal_api/src/model/severity.dart';
 import 'package:foresignal_api/src/model/share_link.dart';
 import 'package:foresignal_api/src/model/share_link_create.dart';
@@ -1474,6 +1535,10 @@ import 'package:foresignal_api/src/model/situation_theme.dart';
 import 'package:foresignal_api/src/model/situation_timeline_entry.dart';
 import 'package:foresignal_api/src/model/situation_timeline_page.dart';
 import 'package:foresignal_api/src/model/smoke_polygon_payload.dart';
+import 'package:foresignal_api/src/model/smtp_settings.dart';
+import 'package:foresignal_api/src/model/smtp_settings_input.dart';
+import 'package:foresignal_api/src/model/smtp_test_request.dart';
+import 'package:foresignal_api/src/model/smtp_test_result.dart';
 import 'package:foresignal_api/src/model/snapshot.dart';
 import 'package:foresignal_api/src/model/snapshot_input.dart';
 import 'package:foresignal_api/src/model/snooze_input.dart';
@@ -1542,6 +1607,7 @@ import 'package:foresignal_api/src/model/social_volume_series.dart';
 import 'package:foresignal_api/src/model/source_access.dart';
 import 'package:foresignal_api/src/model/source_descriptor.dart';
 import 'package:foresignal_api/src/model/source_detail.dart';
+import 'package:foresignal_api/src/model/source_egress_assignment.dart';
 import 'package:foresignal_api/src/model/source_health.dart';
 import 'package:foresignal_api/src/model/source_relevance.dart';
 import 'package:foresignal_api/src/model/source_relevance_analysis.dart';
@@ -1689,6 +1755,18 @@ import 'package:foresignal_api/src/model/tuning_suggestion_record.dart';
 import 'package:foresignal_api/src/model/update_token_request.dart';
 import 'package:foresignal_api/src/model/usage_point.dart';
 import 'package:foresignal_api/src/model/usage_series.dart';
+import 'package:foresignal_api/src/model/user.dart';
+import 'package:foresignal_api/src/model/user_create.dart';
+import 'package:foresignal_api/src/model/user_data_restriction.dart';
+import 'package:foresignal_api/src/model/user_delete_result.dart';
+import 'package:foresignal_api/src/model/user_link_issued.dart';
+import 'package:foresignal_api/src/model/user_page.dart';
+import 'package:foresignal_api/src/model/user_preferences.dart';
+import 'package:foresignal_api/src/model/user_preferences_notifications.dart';
+import 'package:foresignal_api/src/model/user_source_pref.dart';
+import 'package:foresignal_api/src/model/user_source_view.dart';
+import 'package:foresignal_api/src/model/user_source_view_update.dart';
+import 'package:foresignal_api/src/model/user_update.dart';
 import 'package:foresignal_api/src/model/uv_forecast_payload.dart';
 import 'package:foresignal_api/src/model/uv_forecast_payload_hours_inner.dart';
 import 'package:foresignal_api/src/model/velocity_json_component.dart';
@@ -1746,6 +1824,7 @@ part 'serializers.g.dart';
   AccessRequestInput,
   AccessRequestOfferShare,
   AccessRequestPage,
+  AccountActivation,
   AchEvidence,
   AchEvidenceInput,
   AchMatrix,
@@ -1754,6 +1833,10 @@ part 'serializers.g.dart';
   ActiveWindow,
   ActiveWindowWindowsInner,
   AdminTokenResponse,
+  Aggregator,
+  AggregatorConfig,
+  AggregatorList,
+  AggregatorTestResult,
   AircraftFusionPayload,
   AircraftFusionPayloadDetector,
   AircraftRegistrationPayload,
@@ -1844,9 +1927,13 @@ part 'serializers.g.dart';
   ApnsProviderConfig,
   ApproachCondition,
   ApproachConditionTarget,
+  Archive,
+  ArchivePage,
   ArchivePartition,
   ArchivePartitionFilesInner,
   ArchivePartitionPage,
+  ArchiveRestoreRequest,
+  ArchiveRunRequest,
   ArchiveSettings,
   ArchiveSettingsS3,
   ArchiveSettingsSecrets,
@@ -1895,6 +1982,12 @@ part 'serializers.g.dart';
   BacktestJobPage,
   BacktestJobResult,
   BacktestRequest,
+  Backup,
+  BackupPage,
+  BackupRestoreRequest,
+  BackupRunRequest,
+  BackupSettings,
+  BackupSettingsInput,
   BaseRate,
   BaseRateDefinition,
   BaseRateDefinitionCondition,
@@ -2029,6 +2122,9 @@ part 'serializers.g.dart';
   CollectionGap,
   CollectionGapPage,
   CollectionGapRecommendationsInner,
+  CollectionSet,
+  CollectionSetUpdate,
+  CollectionSource,
   CollectorSettings,
   CollectorStatus,
   CommentEvent,
@@ -2192,6 +2288,13 @@ part 'serializers.g.dart';
   EdpValidationRequest,
   EdrInstanceList,
   EdrInstanceListInstancesInner,
+  EgressHealth,
+  EgressRoute,
+  EgressRouteInput,
+  EgressRouteInputSecrets,
+  EgressRoutePage,
+  EgressSettings,
+  EgressTestResult,
   EmergencySquawkPayload,
   EmwinProductPayload,
   EmwinWarningPayload,
@@ -2329,6 +2432,7 @@ part 'serializers.g.dart';
   FindingSeverity,
   FireClusterPayload,
   FireDetectionPayload,
+  FirstRunStatus,
   Forecast,
   ForecastAnnulInput,
   ForecastAreaPayload,
@@ -2581,6 +2685,7 @@ part 'serializers.g.dart';
   LightningClusterPayload,
   ListRecords200Response,
   LiveEvent,
+  LlmBudgetProvider,
   LlmModelInfo,
   LlmPricing,
   LlmProbeResult,
@@ -2599,6 +2704,7 @@ part 'serializers.g.dart';
   LlmTestResultEmbedding,
   LlmUsagePoint,
   LlmUsageSeries,
+  LoginRequest,
   LoiterPayload,
   MaintenanceRun,
   MaintenanceRunStepsInner,
@@ -2625,6 +2731,7 @@ part 'serializers.g.dart';
   McpAuthSettings,
   Me,
   MeGroupsInner,
+  MeLlmBudget,
   MeToken,
   Media,
   MediaFingerprint,
@@ -2650,6 +2757,11 @@ part 'serializers.g.dart';
   MetricProjection,
   MetricProjectionLabelsInner,
   MetricSettings,
+  MfaDisableRequest,
+  MfaEnrollment,
+  MfaRecoveryCodes,
+  MfaStatus,
+  MfaVerifyRequest,
   MilNavalCooccurrencePayload,
   ModelDisagreement,
   MotionSpec,
@@ -2789,6 +2901,8 @@ part 'serializers.g.dart';
   PairingCodeCreated,
   PairingCodeInput,
   ParamSpec,
+  PasswordReset,
+  PasswordResetRequest,
   Peer,
   PeerCreate,
   PeerIngestKey,
@@ -2796,6 +2910,8 @@ part 'serializers.g.dart';
   PeerSelection,
   PeerTestResult,
   PeerUpdate,
+  Permission,
+  PermissionList,
   PersistReason,
   PersistReasonCounts,
   Place,
@@ -2959,6 +3075,8 @@ part 'serializers.g.dart';
   QuestionLinks,
   QuestionOutcomes,
   QuietHours,
+  Quota,
+  QuotaUsage,
   RadarCellPayload,
   RadarCellPayloadMotion,
   RasterFrame,
@@ -3047,7 +3165,16 @@ part 'serializers.g.dart';
   ReportSource,
   ResetEvent,
   ResolverArea,
+  ResourceGauge,
+  ResourceStatus,
+  ResourceStatusDatabase,
+  ResourceThreshold,
+  ResourceThresholds,
+  ResourceThresholdsCollectorBacklog,
+  ResourceThresholdsSourceStorm,
   ResyncEvent,
+  RetentionPreview,
+  RetentionPreviewItem,
   RetentionRunResult,
   RetentionRunResultConsumerClamp,
   RetentionRunResultPerSourceValue,
@@ -3055,6 +3182,11 @@ part 'serializers.g.dart';
   RetentionSettingsSocial,
   RetentionSettingsStats,
   RevisionDriver,
+  Role,
+  RoleAssignment,
+  RoleInput,
+  RolePage,
+  RoleRef,
   RuleBacktestResult,
   RuleBacktestResultActual,
   RuleBacktestResultAnomaly,
@@ -3070,6 +3202,7 @@ part 'serializers.g.dart';
   RuleQualityDailySignals,
   RuleQualityPrecisionCi,
   RuleQualitySignals,
+  S3Target,
   SampleBatchResponse,
   SamplePosition,
   SampleRequest,
@@ -3128,11 +3261,17 @@ part 'serializers.g.dart';
   SeriesPointPage,
   SeriesSample,
   ServerSettings,
+  Session,
+  SessionPage,
+  SessionToken,
   SettingsBundle,
   SettingsBundleChannelsInner,
   SettingsBundleChannelsInnerConfig,
   SettingsBundleWatchlistsInner,
   SettingsWarning,
+  SetupRequest,
+  SetupRequestAdmin,
+  SetupResult,
   Severity,
   ShareLink,
   ShareLinkCreate,
@@ -3200,6 +3339,10 @@ part 'serializers.g.dart';
   SituationTimelineEntry,
   SituationTimelinePage,
   SmokePolygonPayload,
+  SmtpSettings,
+  SmtpSettingsInput,
+  SmtpTestRequest,
+  SmtpTestResult,
   Snapshot,
   SnapshotInput,
   SnoozeInput,
@@ -3268,6 +3411,7 @@ part 'serializers.g.dart';
   SourceAccess,
   SourceDescriptor,
   SourceDetail,
+  SourceEgressAssignment,
   SourceHealth,
   SourceRelevance,
   SourceRelevanceAnalysis,
@@ -3415,6 +3559,18 @@ part 'serializers.g.dart';
   UpdateTokenRequest,
   UsagePoint,
   UsageSeries,
+  User,
+  UserCreate,
+  UserDataRestriction,
+  UserDeleteResult,
+  UserLinkIssued,
+  UserPage,
+  UserPreferences,
+  UserPreferencesNotifications,
+  UserSourcePref,
+  UserSourceView,
+  UserSourceViewUpdate,
+  UserUpdate,
   UvForecastPayload,
   UvForecastPayloadHoursInner,
   VelocityJsonComponent,
@@ -3764,6 +3920,10 @@ Serializers serializers =
             () => ListBuilder<TimelineTickFramesInner>(),
           )
           ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(Aggregator)]),
+            () => ListBuilder<Aggregator>(),
+          )
+          ..addBuilderFactory(
             const FullType(BuiltList, [FullType(HistoryFrame)]),
             () => ListBuilder<HistoryFrame>(),
           )
@@ -3850,6 +4010,10 @@ Serializers serializers =
           ..addBuilderFactory(
             const FullType(BuiltList, [FullType(StyleSpecial)]),
             () => ListBuilder<StyleSpecial>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(Archive)]),
+            () => ListBuilder<Archive>(),
           )
           ..addBuilderFactory(
             const FullType(BuiltMap, [
@@ -4046,6 +4210,10 @@ Serializers serializers =
           ..addBuilderFactory(
             const FullType(BuiltList, [FullType(FederationItem)]),
             () => ListBuilder<FederationItem>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(Role)]),
+            () => ListBuilder<Role>(),
           )
           ..addBuilderFactory(
             const FullType(BuiltList, [FullType(PackageManifestAuthorsInner)]),
@@ -4375,6 +4543,10 @@ Serializers serializers =
             () => ListBuilder<ProblemErrorsInner>(),
           )
           ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(Session)]),
+            () => ListBuilder<Session>(),
+          )
+          ..addBuilderFactory(
             const FullType(BuiltList, [
               FullType(CommonDependenciesDependenciesInner),
             ]),
@@ -4425,6 +4597,10 @@ Serializers serializers =
           ..addBuilderFactory(
             const FullType(BuiltList, [FullType(StyleCategory)]),
             () => ListBuilder<StyleCategory>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(User)]),
+            () => ListBuilder<User>(),
           )
           ..addBuilderFactory(
             const FullType(BuiltMap, [
@@ -4563,6 +4739,10 @@ Serializers serializers =
             () => ListBuilder<NormalizedRecordPreview>(),
           )
           ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(Backup)]),
+            () => ListBuilder<Backup>(),
+          )
+          ..addBuilderFactory(
             const FullType(BuiltList, [FullType(Assessment)]),
             () => ListBuilder<Assessment>(),
           )
@@ -4597,6 +4777,10 @@ Serializers serializers =
           ..addBuilderFactory(
             const FullType(BuiltList, [FullType(int)]),
             () => ListBuilder<int>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(RetentionPreviewItem)]),
+            () => ListBuilder<RetentionPreviewItem>(),
           )
           ..addBuilderFactory(
             const FullType(BuiltList, [FullType(TransitCatalogEntry)]),
@@ -4969,6 +5153,10 @@ Serializers serializers =
               FullType(ProductTemporalRetentionLadderInner),
             ]),
             () => ListBuilder<ProductTemporalRetentionLadderInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(CollectionSource)]),
+            () => ListBuilder<CollectionSource>(),
           )
           ..addBuilderFactory(
             const FullType(BuiltList, [FullType.nullable(num)]),
@@ -5356,6 +5544,10 @@ Serializers serializers =
             () => ListBuilder<HistoryFrameRemovalsInner>(),
           )
           ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(UserSourcePref)]),
+            () => ListBuilder<UserSourcePref>(),
+          )
+          ..addBuilderFactory(
             const FullType(BuiltList, [FullType(PrecursorHistoryInner)]),
             () => ListBuilder<PrecursorHistoryInner>(),
           )
@@ -5398,6 +5590,10 @@ Serializers serializers =
           ..addBuilderFactory(
             const FullType(BuiltList, [FullType(PolStay)]),
             () => ListBuilder<PolStay>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(LlmBudgetProvider)]),
+            () => ListBuilder<LlmBudgetProvider>(),
           )
           ..addBuilderFactory(
             const FullType(BuiltList, [FullType(ChronicleSummaryLayersInner)]),
@@ -5478,6 +5674,10 @@ Serializers serializers =
           ..addBuilderFactory(
             const FullType(BuiltList, [FullType(Style)]),
             () => ListBuilder<Style>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(RoleRef)]),
+            () => ListBuilder<RoleRef>(),
           )
           ..addBuilderFactory(
             const FullType(BuiltList, [
@@ -5603,6 +5803,10 @@ Serializers serializers =
           ..addBuilderFactory(
             const FullType(BuiltList, [FullType(MediaMatch)]),
             () => ListBuilder<MediaMatch>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(EgressRoute)]),
+            () => ListBuilder<EgressRoute>(),
           )
           ..addBuilderFactory(
             const FullType(BuiltList, [FullType(ProductLoopFramesInner)]),
@@ -5866,6 +6070,10 @@ Serializers serializers =
           ..addBuilderFactory(
             const FullType(BuiltMap, [FullType(String), FullType(bool)]),
             () => MapBuilder<String, bool>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(Permission)]),
+            () => ListBuilder<Permission>(),
           )
           ..addBuilderFactory(
             const FullType(BuiltList, [FullType(EscalationPolicy)]),

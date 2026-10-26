@@ -41,6 +41,11 @@ part 'llm_provider.g.dart';
 /// * [hourlyCapUsd] - USD cap of the UTC clock hour (it resets at the top of the hour), or null (162)
 /// * [dailyCapUsd] - USD cap of the UTC day (it resets at 00:00 UTC, as tokensPerDay), or null (162)
 /// * [monthlyCapUsd] - USD cap of the UTC calendar month (it resets at 00:00 UTC on the 1st), or null (162)
+/// * [shared] - True for a shared provider (no owner, managed with `llm.shared.manage`); false for a user's personal provider (R2-011)
+/// * [ownerPrincipalId] - The owning user's principal for a personal provider; null for a shared one (R2-011)
+/// * [perUserHourlyCapUsd] - The most each user may spend on this shared provider in the UTC clock hour (it resets at the top of the hour), in USD, at most 4 decimal places; null means no per-user cap (R2-011). It counts only that user's own calls, so one user cannot exhaust the shared budget while the others continue; the provider's own caps still bound the total. Needs `pricing`; refused for a personal provider, whose own caps are already its owner's. Once reached, that user's calls are refused 429 LLM_BUDGET_EXCEEDED with Retry-After at the window's reset.
+/// * [perUserDailyCapUsd] - The most each user may spend on this shared provider in the UTC day (it resets at 00:00 UTC), in USD, at most 4 decimal places; null means no per-user cap (R2-011). It counts only that user's own calls, so one user cannot exhaust the shared budget while the others continue; the provider's own caps still bound the total. Needs `pricing`; refused for a personal provider, whose own caps are already its owner's. Once reached, that user's calls are refused 429 LLM_BUDGET_EXCEEDED with Retry-After at the window's reset.
+/// * [perUserMonthlyCapUsd] - The most each user may spend on this shared provider in the UTC calendar month (it resets at 00:00 UTC on the 1st), in USD, at most 4 decimal places; null means no per-user cap (R2-011). It counts only that user's own calls, so one user cannot exhaust the shared budget while the others continue; the provider's own caps still bound the total. Needs `pricing`; refused for a personal provider, whose own caps are already its owner's. Once reached, that user's calls are refused 429 LLM_BUDGET_EXCEEDED with Retry-After at the window's reset.
 @BuiltValue()
 abstract class LlmProvider implements Built<LlmProvider, LlmProviderBuilder> {
   @BuiltValueField(wireName: r'id')
@@ -130,6 +135,26 @@ abstract class LlmProvider implements Built<LlmProvider, LlmProviderBuilder> {
   /// USD cap of the UTC calendar month (it resets at 00:00 UTC on the 1st), or null (162)
   @BuiltValueField(wireName: r'monthlyCapUsd')
   num? get monthlyCapUsd;
+
+  /// True for a shared provider (no owner, managed with `llm.shared.manage`); false for a user's personal provider (R2-011)
+  @BuiltValueField(wireName: r'shared')
+  bool? get shared;
+
+  /// The owning user's principal for a personal provider; null for a shared one (R2-011)
+  @BuiltValueField(wireName: r'ownerPrincipalId')
+  String? get ownerPrincipalId;
+
+  /// The most each user may spend on this shared provider in the UTC clock hour (it resets at the top of the hour), in USD, at most 4 decimal places; null means no per-user cap (R2-011). It counts only that user's own calls, so one user cannot exhaust the shared budget while the others continue; the provider's own caps still bound the total. Needs `pricing`; refused for a personal provider, whose own caps are already its owner's. Once reached, that user's calls are refused 429 LLM_BUDGET_EXCEEDED with Retry-After at the window's reset.
+  @BuiltValueField(wireName: r'perUserHourlyCapUsd')
+  num? get perUserHourlyCapUsd;
+
+  /// The most each user may spend on this shared provider in the UTC day (it resets at 00:00 UTC), in USD, at most 4 decimal places; null means no per-user cap (R2-011). It counts only that user's own calls, so one user cannot exhaust the shared budget while the others continue; the provider's own caps still bound the total. Needs `pricing`; refused for a personal provider, whose own caps are already its owner's. Once reached, that user's calls are refused 429 LLM_BUDGET_EXCEEDED with Retry-After at the window's reset.
+  @BuiltValueField(wireName: r'perUserDailyCapUsd')
+  num? get perUserDailyCapUsd;
+
+  /// The most each user may spend on this shared provider in the UTC calendar month (it resets at 00:00 UTC on the 1st), in USD, at most 4 decimal places; null means no per-user cap (R2-011). It counts only that user's own calls, so one user cannot exhaust the shared budget while the others continue; the provider's own caps still bound the total. Needs `pricing`; refused for a personal provider, whose own caps are already its owner's. Once reached, that user's calls are refused 429 LLM_BUDGET_EXCEEDED with Retry-After at the window's reset.
+  @BuiltValueField(wireName: r'perUserMonthlyCapUsd')
+  num? get perUserMonthlyCapUsd;
 
   LlmProvider._();
 
@@ -330,6 +355,41 @@ class _$LlmProviderSerializer implements PrimitiveSerializer<LlmProvider> {
       yield r'monthlyCapUsd';
       yield serializers.serialize(
         object.monthlyCapUsd,
+        specifiedType: const FullType.nullable(num),
+      );
+    }
+    if (object.shared != null) {
+      yield r'shared';
+      yield serializers.serialize(
+        object.shared,
+        specifiedType: const FullType(bool),
+      );
+    }
+    if (object.ownerPrincipalId != null) {
+      yield r'ownerPrincipalId';
+      yield serializers.serialize(
+        object.ownerPrincipalId,
+        specifiedType: const FullType.nullable(String),
+      );
+    }
+    if (object.perUserHourlyCapUsd != null) {
+      yield r'perUserHourlyCapUsd';
+      yield serializers.serialize(
+        object.perUserHourlyCapUsd,
+        specifiedType: const FullType.nullable(num),
+      );
+    }
+    if (object.perUserDailyCapUsd != null) {
+      yield r'perUserDailyCapUsd';
+      yield serializers.serialize(
+        object.perUserDailyCapUsd,
+        specifiedType: const FullType.nullable(num),
+      );
+    }
+    if (object.perUserMonthlyCapUsd != null) {
+      yield r'perUserMonthlyCapUsd';
+      yield serializers.serialize(
+        object.perUserMonthlyCapUsd,
         specifiedType: const FullType.nullable(num),
       );
     }
@@ -620,6 +680,56 @@ class _$LlmProviderSerializer implements PrimitiveSerializer<LlmProvider> {
                   as num?;
           if (valueDes == null) continue;
           result.monthlyCapUsd = valueDes;
+          break;
+        case r'shared':
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
+          if (valueDes == null) continue;
+          result.shared = valueDes;
+          break;
+        case r'ownerPrincipalId':
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
+          if (valueDes == null) continue;
+          result.ownerPrincipalId = valueDes;
+          break;
+        case r'perUserHourlyCapUsd':
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
+          if (valueDes == null) continue;
+          result.perUserHourlyCapUsd = valueDes;
+          break;
+        case r'perUserDailyCapUsd':
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
+          if (valueDes == null) continue;
+          result.perUserDailyCapUsd = valueDes;
+          break;
+        case r'perUserMonthlyCapUsd':
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(num),
+                  )
+                  as num?;
+          if (valueDes == null) continue;
+          result.perUserMonthlyCapUsd = valueDes;
           break;
         default:
           unhandled.add(key);

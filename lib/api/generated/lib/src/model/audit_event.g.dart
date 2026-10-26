@@ -8,6 +8,8 @@ part of 'audit_event.dart';
 
 const AuditEventActorKindEnum _$auditEventActorKindEnum_token =
     const AuditEventActorKindEnum._('token');
+const AuditEventActorKindEnum _$auditEventActorKindEnum_user =
+    const AuditEventActorKindEnum._('user');
 const AuditEventActorKindEnum _$auditEventActorKindEnum_ingestKey =
     const AuditEventActorKindEnum._('ingestKey');
 const AuditEventActorKindEnum _$auditEventActorKindEnum_pairing =
@@ -27,6 +29,8 @@ AuditEventActorKindEnum _$auditEventActorKindEnumValueOf(String name) {
   switch (name) {
     case 'token':
       return _$auditEventActorKindEnum_token;
+    case 'user':
+      return _$auditEventActorKindEnum_user;
     case 'ingestKey':
       return _$auditEventActorKindEnum_ingestKey;
     case 'pairing':
@@ -49,6 +53,7 @@ AuditEventActorKindEnum _$auditEventActorKindEnumValueOf(String name) {
 final BuiltSet<AuditEventActorKindEnum> _$auditEventActorKindEnumValues =
     BuiltSet<AuditEventActorKindEnum>(const <AuditEventActorKindEnum>[
       _$auditEventActorKindEnum_token,
+      _$auditEventActorKindEnum_user,
       _$auditEventActorKindEnum_ingestKey,
       _$auditEventActorKindEnum_pairing,
       _$auditEventActorKindEnum_system,
@@ -99,6 +104,7 @@ class _$AuditEventActorKindEnumSerializer
     implements PrimitiveSerializer<AuditEventActorKindEnum> {
   static const Map<String, Object> _toWire = const <String, Object>{
     'token': 'token',
+    'user': 'user',
     'ingestKey': 'ingest_key',
     'pairing': 'pairing',
     'system': 'system',
@@ -109,6 +115,7 @@ class _$AuditEventActorKindEnumSerializer
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'token': 'token',
+    'user': 'user',
     'ingest_key': 'ingestKey',
     'pairing': 'pairing',
     'system': 'system',
@@ -208,6 +215,10 @@ class _$AuditEvent extends AuditEvent {
   final String? remoteIp;
   @override
   final BuiltMap<String, JsonObject?>? detail;
+  @override
+  final String? userId;
+  @override
+  final String? userEmail;
 
   factory _$AuditEvent([void Function(AuditEventBuilder)? updates]) =>
       (AuditEventBuilder()..update(updates))._build();
@@ -228,6 +239,8 @@ class _$AuditEvent extends AuditEvent {
     this.targetId,
     this.remoteIp,
     this.detail,
+    this.userId,
+    this.userEmail,
   }) : super._();
   @override
   AuditEvent rebuild(void Function(AuditEventBuilder) updates) =>
@@ -254,7 +267,9 @@ class _$AuditEvent extends AuditEvent {
         targetType == other.targetType &&
         targetId == other.targetId &&
         remoteIp == other.remoteIp &&
-        detail == other.detail;
+        detail == other.detail &&
+        userId == other.userId &&
+        userEmail == other.userEmail;
   }
 
   @override
@@ -275,6 +290,8 @@ class _$AuditEvent extends AuditEvent {
     _$hash = $jc(_$hash, targetId.hashCode);
     _$hash = $jc(_$hash, remoteIp.hashCode);
     _$hash = $jc(_$hash, detail.hashCode);
+    _$hash = $jc(_$hash, userId.hashCode);
+    _$hash = $jc(_$hash, userEmail.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -296,7 +313,9 @@ class _$AuditEvent extends AuditEvent {
           ..add('targetType', targetType)
           ..add('targetId', targetId)
           ..add('remoteIp', remoteIp)
-          ..add('detail', detail))
+          ..add('detail', detail)
+          ..add('userId', userId)
+          ..add('userEmail', userEmail))
         .toString();
   }
 }
@@ -367,6 +386,14 @@ class AuditEventBuilder implements Builder<AuditEvent, AuditEventBuilder> {
   set detail(MapBuilder<String, JsonObject?>? detail) =>
       _$this._detail = detail;
 
+  String? _userId;
+  String? get userId => _$this._userId;
+  set userId(String? userId) => _$this._userId = userId;
+
+  String? _userEmail;
+  String? get userEmail => _$this._userEmail;
+  set userEmail(String? userEmail) => _$this._userEmail = userEmail;
+
   AuditEventBuilder() {
     AuditEvent._defaults(this);
   }
@@ -389,6 +416,8 @@ class AuditEventBuilder implements Builder<AuditEvent, AuditEventBuilder> {
       _targetId = $v.targetId;
       _remoteIp = $v.remoteIp;
       _detail = $v.detail?.toBuilder();
+      _userId = $v.userId;
+      _userEmail = $v.userEmail;
       _$v = null;
     }
     return this;
@@ -432,6 +461,8 @@ class AuditEventBuilder implements Builder<AuditEvent, AuditEventBuilder> {
             targetId: targetId,
             remoteIp: remoteIp,
             detail: _detail?.build(),
+            userId: userId,
+            userEmail: userEmail,
           );
     } catch (_) {
       late String _$failedField;

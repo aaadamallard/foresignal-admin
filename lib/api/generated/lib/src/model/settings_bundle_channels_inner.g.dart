@@ -595,6 +595,8 @@ class _$SettingsBundleChannelsInner extends SettingsBundleChannelsInner {
   @override
   final String? language;
   @override
+  final bool? global;
+  @override
   final String id;
 
   factory _$SettingsBundleChannelsInner([
@@ -621,6 +623,7 @@ class _$SettingsBundleChannelsInner extends SettingsBundleChannelsInner {
     this.deferWhileActiveSeconds,
     this.acceptExercise,
     this.language,
+    this.global,
     required this.id,
   }) : super._();
   @override
@@ -655,6 +658,7 @@ class _$SettingsBundleChannelsInner extends SettingsBundleChannelsInner {
         deferWhileActiveSeconds == other.deferWhileActiveSeconds &&
         acceptExercise == other.acceptExercise &&
         language == other.language &&
+        global == other.global &&
         id == other.id;
   }
 
@@ -680,6 +684,7 @@ class _$SettingsBundleChannelsInner extends SettingsBundleChannelsInner {
     _$hash = $jc(_$hash, deferWhileActiveSeconds.hashCode);
     _$hash = $jc(_$hash, acceptExercise.hashCode);
     _$hash = $jc(_$hash, language.hashCode);
+    _$hash = $jc(_$hash, global.hashCode);
     _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
@@ -707,6 +712,7 @@ class _$SettingsBundleChannelsInner extends SettingsBundleChannelsInner {
           ..add('deferWhileActiveSeconds', deferWhileActiveSeconds)
           ..add('acceptExercise', acceptExercise)
           ..add('language', language)
+          ..add('global', global)
           ..add('id', id))
         .toString();
   }
@@ -810,6 +816,10 @@ class SettingsBundleChannelsInnerBuilder
   String? get language => _$this._language;
   set language(String? language) => _$this._language = language;
 
+  bool? _global;
+  bool? get global => _$this._global;
+  set global(bool? global) => _$this._global = global;
+
   String? _id;
   String? get id => _$this._id;
   set id(String? id) => _$this._id = id;
@@ -840,6 +850,7 @@ class SettingsBundleChannelsInnerBuilder
       _deferWhileActiveSeconds = $v.deferWhileActiveSeconds;
       _acceptExercise = $v.acceptExercise;
       _language = $v.language;
+      _global = $v.global;
       _id = $v.id;
       _$v = null;
     }
@@ -892,6 +903,7 @@ class SettingsBundleChannelsInnerBuilder
             deferWhileActiveSeconds: deferWhileActiveSeconds,
             acceptExercise: acceptExercise,
             language: language,
+            global: global,
             id: BuiltValueNullFieldError.checkNotNull(
               id,
               r'SettingsBundleChannelsInner',

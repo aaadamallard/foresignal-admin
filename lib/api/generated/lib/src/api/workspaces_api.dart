@@ -127,7 +127,7 @@ class WorkspacesApi {
   }
 
   /// Create a workspace
-  /// Creates a workspace owned by the caller with an initial context (version 1) and optional opaque layout.  **Scope:** &#x60;read&#x60; (token required).
+  /// Creates a workspace owned by the caller with an initial context (version 1) and optional opaque layout.  **Scope:** &#x60;read&#x60; (token required).  **v2.0 (per-user, R2-012):** a workspace&#39;s &#x60;owner&#x60; is the principal of the caller that created it, which for a signed-in user is the user&#39;s principal, so a user&#39;s workspaces are their own. A signed-in user reaches the workspace operations with &#x60;self.workspaces&#x60;; every operation except createWorkspace and shareWorkspace also accepts &#x60;data.read&#x60;, so a user who may not own workspaces can still open the ones shared with them. Who may read, edit, share and delete one workspace is unchanged: ownership, membership and access-list grants decide. When a user is deleted their workspaces move to the receiving admin (deleteUser). The shapes are unchanged.
   ///
   /// Parameters:
   /// * [workspaceInput]
@@ -220,7 +220,7 @@ class WorkspacesApi {
   }
 
   /// Delete a workspace
-  /// Deletes the workspace (owner or admin).  **Scope:** &#x60;read&#x60; (token required).
+  /// Deletes the workspace (owner or admin).  **Scope:** &#x60;read&#x60; (token required).  **v2.0 (per-user, R2-012):** a workspace&#39;s &#x60;owner&#x60; is the principal of the caller that created it, which for a signed-in user is the user&#39;s principal, so a user&#39;s workspaces are their own. A signed-in user reaches the workspace operations with &#x60;self.workspaces&#x60;; every operation except createWorkspace and shareWorkspace also accepts &#x60;data.read&#x60;, so a user who may not own workspaces can still open the ones shared with them. Who may read, edit, share and delete one workspace is unchanged: ownership, membership and access-list grants decide. When a user is deleted their workspaces move to the receiving admin (deleteUser). The shapes are unchanged.
   ///
   /// Parameters:
   /// * [workspaceId] - Workspace id
@@ -276,7 +276,7 @@ class WorkspacesApi {
   }
 
   /// Get a workspace
-  /// The workspace with its context, &#x60;contextVersion&#x60; (also the ETag for context &#x60;If-Match&#x60;) and layout.  **Scope:** &#x60;read&#x60; (token required).
+  /// The workspace with its context, &#x60;contextVersion&#x60; (also the ETag for context &#x60;If-Match&#x60;) and layout.  **Scope:** &#x60;read&#x60; (token required).  **v2.0 (per-user, R2-012):** a workspace&#39;s &#x60;owner&#x60; is the principal of the caller that created it, which for a signed-in user is the user&#39;s principal, so a user&#39;s workspaces are their own. A signed-in user reaches the workspace operations with &#x60;self.workspaces&#x60;; every operation except createWorkspace and shareWorkspace also accepts &#x60;data.read&#x60;, so a user who may not own workspaces can still open the ones shared with them. Who may read, edit, share and delete one workspace is unchanged: ownership, membership and access-list grants decide. When a user is deleted their workspaces move to the receiving admin (deleteUser). The shapes are unchanged.
   ///
   /// Parameters:
   /// * [workspaceId] - Workspace id
@@ -362,7 +362,7 @@ class WorkspacesApi {
   }
 
   /// Get a deep link to a workspace context
-  /// The Client-Contract §6 payload (version, workspace id, base64url context ≤ 2 KB) for &#x60;#fs&#x3D;&#x60; fragments.  **Scope:** &#x60;read&#x60; (token required).
+  /// The Client-Contract §6 payload (version, workspace id, base64url context ≤ 2 KB) for &#x60;#fs&#x3D;&#x60; fragments.  **Scope:** &#x60;read&#x60; (token required).  **v2.0 (per-user, R2-012):** a workspace&#39;s &#x60;owner&#x60; is the principal of the caller that created it, which for a signed-in user is the user&#39;s principal, so a user&#39;s workspaces are their own. A signed-in user reaches the workspace operations with &#x60;self.workspaces&#x60;; every operation except createWorkspace and shareWorkspace also accepts &#x60;data.read&#x60;, so a user who may not own workspaces can still open the ones shared with them. Who may read, edit, share and delete one workspace is unchanged: ownership, membership and access-list grants decide. When a user is deleted their workspaces move to the receiving admin (deleteUser). The shapes are unchanged.
   ///
   /// Parameters:
   /// * [workspaceId] - Workspace id
@@ -448,7 +448,7 @@ class WorkspacesApi {
   }
 
   /// Summarise a workspace&#39;s current context
-  /// The context summary for the workspace&#39;s current viewport, time range, filters and layers.  **Scope:** &#x60;read&#x60; (token required).
+  /// The context summary for the workspace&#39;s current viewport, time range, filters and layers.  **Scope:** &#x60;read&#x60; (token required).  **v2.0 (per-user, R2-012):** a workspace&#39;s &#x60;owner&#x60; is the principal of the caller that created it, which for a signed-in user is the user&#39;s principal, so a user&#39;s workspaces are their own. A signed-in user reaches the workspace operations with &#x60;self.workspaces&#x60;; every operation except createWorkspace and shareWorkspace also accepts &#x60;data.read&#x60;, so a user who may not own workspaces can still open the ones shared with them. Who may read, edit, share and delete one workspace is unchanged: ownership, membership and access-list grants decide. When a user is deleted their workspaces move to the receiving admin (deleteUser). The shapes are unchanged.
   ///
   /// Parameters:
   /// * [workspaceId] - Workspace id
@@ -534,7 +534,7 @@ class WorkspacesApi {
   }
 
   /// List the caller&#39;s workspaces
-  /// Workspaces the caller owns or is a member of.  **Scope:** &#x60;read&#x60; (token required).
+  /// Workspaces the caller owns or is a member of.  **Scope:** &#x60;read&#x60; (token required).  **v2.0 (per-user, R2-012):** a workspace&#39;s &#x60;owner&#x60; is the principal of the caller that created it, which for a signed-in user is the user&#39;s principal, so a user&#39;s workspaces are their own. A signed-in user reaches the workspace operations with &#x60;self.workspaces&#x60;; every operation except createWorkspace and shareWorkspace also accepts &#x60;data.read&#x60;, so a user who may not own workspaces can still open the ones shared with them. Who may read, edit, share and delete one workspace is unchanged: ownership, membership and access-list grants decide. When a user is deleted their workspaces move to the receiving admin (deleteUser). The shapes are unchanged.
   ///
   /// Parameters:
   /// * [cursor] - Opaque pagination cursor from a previous response's nextCursor
@@ -629,7 +629,7 @@ class WorkspacesApi {
   }
 
   /// Patch a workspace&#39;s shared context
-  /// JSON merge patch with &#x60;If-Match: &lt;contextVersion&gt;&#x60;; 412 &#x60;WORKSPACE_CONTEXT_STALE&#x60; on a stale version. The new version is broadcast as &#x60;workspace.context&#x60; with the sender&#39;s &#x60;originClientId&#x60;. Validated per Client-Contract §5 (well-formed refs, ordered time range, ≤ 200 selected refs).  **Scope:** &#x60;read&#x60; (token required).
+  /// JSON merge patch with &#x60;If-Match: &lt;contextVersion&gt;&#x60;; 412 &#x60;WORKSPACE_CONTEXT_STALE&#x60; on a stale version. The new version is broadcast as &#x60;workspace.context&#x60; with the sender&#39;s &#x60;originClientId&#x60;. Validated per Client-Contract §5 (well-formed refs, ordered time range, ≤ 200 selected refs).  **Scope:** &#x60;read&#x60; (token required).  **v2.0 (per-user, R2-012):** a workspace&#39;s &#x60;owner&#x60; is the principal of the caller that created it, which for a signed-in user is the user&#39;s principal, so a user&#39;s workspaces are their own. A signed-in user reaches the workspace operations with &#x60;self.workspaces&#x60;; every operation except createWorkspace and shareWorkspace also accepts &#x60;data.read&#x60;, so a user who may not own workspaces can still open the ones shared with them. Who may read, edit, share and delete one workspace is unchanged: ownership, membership and access-list grants decide. When a user is deleted their workspaces move to the receiving admin (deleteUser). The shapes are unchanged.
   ///
   /// Parameters:
   /// * [workspaceId] - Workspace id
@@ -745,7 +745,7 @@ class WorkspacesApi {
   }
 
   /// Replace a workspace&#39;s layout
-  /// Stores opaque client layout JSON (≤ 64 KB); Foresignal never interprets it.  **Scope:** &#x60;read&#x60; (token required).
+  /// Stores opaque client layout JSON (≤ 64 KB); Foresignal never interprets it.  **Scope:** &#x60;read&#x60; (token required).  **v2.0 (per-user, R2-012):** a workspace&#39;s &#x60;owner&#x60; is the principal of the caller that created it, which for a signed-in user is the user&#39;s principal, so a user&#39;s workspaces are their own. A signed-in user reaches the workspace operations with &#x60;self.workspaces&#x60;; every operation except createWorkspace and shareWorkspace also accepts &#x60;data.read&#x60;, so a user who may not own workspaces can still open the ones shared with them. Who may read, edit, share and delete one workspace is unchanged: ownership, membership and access-list grants decide. When a user is deleted their workspaces move to the receiving admin (deleteUser). The shapes are unchanged.
   ///
   /// Parameters:
   /// * [workspaceId] - Workspace id
@@ -852,7 +852,7 @@ class WorkspacesApi {
   }
 
   /// Share a workspace context read-only
-  /// Issues a read-only 112 share link (&#x60;/v1/k/{key}/…&#x60;) to the workspace context; the key is shown once. A share link is public, so the workspace&#39;s TLP label must be CLEAR (130, &#x60;TLP_VIOLATION&#x60;).  **Scope:** &#x60;agent&#x60;.
+  /// Issues a read-only 112 share link (&#x60;/v1/k/{key}/…&#x60;) to the workspace context; the key is shown once. A share link is public, so the workspace&#39;s TLP label must be CLEAR (130, &#x60;TLP_VIOLATION&#x60;).  **Scope:** &#x60;agent&#x60;.  **v2.0 (per-user, R2-012):** a workspace&#39;s &#x60;owner&#x60; is the principal of the caller that created it, which for a signed-in user is the user&#39;s principal, so a user&#39;s workspaces are their own. A signed-in user reaches the workspace operations with &#x60;self.workspaces&#x60;; every operation except createWorkspace and shareWorkspace also accepts &#x60;data.read&#x60;, so a user who may not own workspaces can still open the ones shared with them. Who may read, edit, share and delete one workspace is unchanged: ownership, membership and access-list grants decide. When a user is deleted their workspaces move to the receiving admin (deleteUser). The shapes are unchanged.
   ///
   /// Parameters:
   /// * [workspaceId] - Workspace id
@@ -958,7 +958,7 @@ class WorkspacesApi {
   }
 
   /// Update workspace metadata
-  /// JSON merge patch of name, members, saved views, investigation and &#x60;private&#x60;. Needs editor role with agent scope, or the owner&#39;s token.  **Scope:** &#x60;read&#x60; (token required).
+  /// JSON merge patch of name, members, saved views, investigation and &#x60;private&#x60;. Needs editor role with agent scope, or the owner&#39;s token.  **Scope:** &#x60;read&#x60; (token required).  **v2.0 (per-user, R2-012):** a workspace&#39;s &#x60;owner&#x60; is the principal of the caller that created it, which for a signed-in user is the user&#39;s principal, so a user&#39;s workspaces are their own. A signed-in user reaches the workspace operations with &#x60;self.workspaces&#x60;; every operation except createWorkspace and shareWorkspace also accepts &#x60;data.read&#x60;, so a user who may not own workspaces can still open the ones shared with them. Who may read, edit, share and delete one workspace is unchanged: ownership, membership and access-list grants decide. When a user is deleted their workspaces move to the receiving admin (deleteUser). The shapes are unchanged.
   ///
   /// Parameters:
   /// * [workspaceId] - Workspace id

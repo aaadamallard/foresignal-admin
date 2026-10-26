@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 import '../api/backend_endpoint.dart';
+import '../api/session_store.dart';
 import '../features/ai/ai_screen.dart';
 import '../features/ai/provider_screen.dart';
 import '../features/alerts/alert_builder.dart';
@@ -17,6 +18,10 @@ import '../features/analysis/cycle_screen.dart';
 import '../features/analysis/event_screen.dart';
 import '../features/analysis/recipe_screen.dart';
 import '../features/analysis/situation_screen.dart';
+import '../features/auth/auth_controller.dart';
+import '../features/auth/forgot_password_screen.dart';
+import '../features/auth/login_screen.dart';
+import '../features/auth/token_link_screen.dart';
 import '../features/connect/connect_screen.dart';
 import '../features/forecasting/edp_provider_screen.dart';
 import '../features/forecasting/forecaster_screen.dart';
@@ -347,10 +352,27 @@ class _RouterRefresh extends ChangeNotifier {
   void ping() => notifyListeners();
 }
 
+/// The landing of an emailed link of [kind], from the route's `t` (token)
+/// and `u` (backend) query.
+Widget _linkLanding(EmailedLinkKind kind, GoRouterState state) {
+  final u = state.uri.queryParameters['u'];
+  Uri? backend;
+  if (u != null && u.isNotEmpty) {
+    try {
+      backend = parseBackendUrl(u);
+    } on FormatException {
+      backend = null;
+    }
+  }
+  return TokenLinkScreen(kind: kind, token: state.uri.queryParameters['t'], backend: backend);
+}
+
 /// The app's router: the sections mounted on the current form factor (the
 /// mobile companion gets only its subset — routes for the rest do not exist
-/// there), plus Connect. Until a backend URL is set, every route redirects to
-/// Connect.
+/// there), plus Connect, and the sign-in pages outside the shell. Until a
+/// backend URL is set, every route but Connect and the sign-in pages
+/// redirects to Connect. When the backend ends the session (a 401), the app
+/// goes to Login once.
 final routerProvider = Provider<GoRouter>((ref) {
   final formFactor = ref.watch(formFactorProvider);
   final registry = ref.watch(sectionRoutesProvider);
@@ -370,12 +392,17 @@ final routerProvider = Provider<GoRouter>((ref) {
     },
     redirect: (context, state) {
       final connected = ref.read(backendEndpointProvider) != null;
-      if (!connected && state.matchedLocation != connectPath) {
+      final location = state.matchedLocation;
+      if (!connected && location != connectPath && !signInPaths.contains(location)) {
         return connectPath;
       }
       return null;
     },
     routes: <RouteBase>[
+      GoRoute(path: loginPath, builder: (context, state) => const LoginScreen()),
+      GoRoute(path: forgotPasswordPath, builder: (context, state) => const ForgotPasswordScreen()),
+      GoRoute(path: resetPasswordPath, builder: (context, state) => _linkLanding(EmailedLinkKind.reset, state)),
+      GoRoute(path: activatePath, builder: (context, state) => _linkLanding(EmailedLinkKind.activate, state)),
       ShellRoute(
         builder: (context, state, child) => AppShell(location: state.matchedLocation, child: child),
         routes: <RouteBase>[
@@ -394,6 +421,16 @@ final routerProvider = Provider<GoRouter>((ref) {
       ),
     ],
   );
+  // A session the backend ended leads to Login, once: the notice is
+  // acknowledged there, so this does not fire again until the next one.
+  ref.listen(sessionControllerProvider, (previous, next) {
+    if (next.ended && !(previous?.ended ?? false)) {
+      final location = router.state.matchedLocation;
+      if (!signInPaths.contains(location)) {
+        router.go(loginPath);
+      }
+    }
+  });
   ref.onDispose(router.dispose);
   return router;
 });

@@ -351,7 +351,7 @@ class ObjectsApi {
   }
 
   /// Find shared dependencies
-  /// Facilities and infrastructure that up to 20 objects share through &#x60;depends-on&#x60; and &#x60;located-in&#x60; paths (104), each with its weakest-edge label.  **Scope:** &#x60;read&#x60; (open while &#x60;security.openReads&#x60; is on).
+  /// Facilities and infrastructure that up to 20 objects share through &#x60;depends-on&#x60; and &#x60;located-in&#x60; paths (104), each with its weakest-edge label.  **Scope:** &#x60;read&#x60; (open while &#x60;security.openReads&#x60; is on).  **v2.0 (R2-013):** a signed-in user needs &#x60;data.read&#x60; (403 PERMISSION_DENIED otherwise, audited); what they read is clamped to their data restriction (&#x60;User.dataRestriction&#x60;) and source view. API tokens keep their scope rules.
   ///
   /// Parameters:
   /// * [commonDependenciesRequest]
@@ -522,7 +522,7 @@ class ObjectsApi {
   }
 
   /// Resolve one object reference
-  /// Returns the uniform envelope, &#x60;asOf&#x60;-aware, with &#x60;actions&#x60; the calling token may perform. Unknown types → 400 &#x60;OBJECT_REF_INVALID&#x60;; private or unshared objects are invisible (404).  **Scope:** &#x60;read&#x60; (open while &#x60;security.openReads&#x60; is on).
+  /// Returns the uniform envelope, &#x60;asOf&#x60;-aware, with &#x60;actions&#x60; the calling token may perform. Unknown types → 400 &#x60;OBJECT_REF_INVALID&#x60;; private or unshared objects are invisible (404).  **Scope:** &#x60;read&#x60; (open while &#x60;security.openReads&#x60; is on).  **v2.0 (R2-013):** a signed-in user needs &#x60;data.read&#x60; (403 PERMISSION_DENIED otherwise, audited); what they read is clamped to their data restriction (&#x60;User.dataRestriction&#x60;) and source view. API tokens keep their scope rules.
   ///
   /// Parameters:
   /// * [ref] - Object reference `{type}:{id}` as one path segment; percent-encode `/` (`record:adsblol-mil%2Fae1234`)
@@ -620,7 +620,7 @@ class ObjectsApi {
   }
 
   /// Get an object&#39;s dossier
-  /// The envelope plus bounded sections (overview, imagery, forecast, impacts, related, timeline, analysis), each with a &#x60;status&#x60;, in ≤ 64 KB. Forecasts carry their issuer and knowledge cutoff.  **Scope:** &#x60;read&#x60; (open while &#x60;security.openReads&#x60; is on).
+  /// The envelope plus bounded sections (overview, imagery, forecast, impacts, related, timeline, analysis), each with a &#x60;status&#x60;, in ≤ 64 KB. Forecasts carry their issuer and knowledge cutoff.  **Scope:** &#x60;read&#x60; (open while &#x60;security.openReads&#x60; is on).  **v2.0 (R2-013):** a signed-in user needs &#x60;data.read&#x60; (403 PERMISSION_DENIED otherwise, audited); what they read is clamped to their data restriction (&#x60;User.dataRestriction&#x60;) and source view. API tokens keep their scope rules.
   ///
   /// Parameters:
   /// * [ref] - Object reference `{type}:{id}` as one path segment; percent-encode `/` (`record:adsblol-mil%2Fae1234`)
@@ -740,7 +740,7 @@ class ObjectsApi {
   }
 
   /// Get precision from analyst verdicts
-  /// For findings (by detector), intel events (by recipe), situations (linker) and precursor-active findings: the share confirmed among verdicts with a Wilson interval and counts; &#x60;needs-review&#x60; counts as unlabeled.  **Scope:** &#x60;read&#x60; (open while &#x60;security.openReads&#x60; is on).
+  /// For findings (by detector), intel events (by recipe), situations (linker) and precursor-active findings: the share confirmed among verdicts with a Wilson interval and counts; &#x60;needs-review&#x60; counts as unlabeled.  **Scope:** &#x60;read&#x60; (open while &#x60;security.openReads&#x60; is on).  **v2.0 (R2-013):** a signed-in user needs &#x60;data.read&#x60; (403 PERMISSION_DENIED otherwise, audited); what they read is clamped to their data restriction (&#x60;User.dataRestriction&#x60;) and source view. API tokens keep their scope rules.
   ///
   /// Parameters:
   /// * [component] - Producer type
@@ -949,7 +949,7 @@ class ObjectsApi {
   }
 
   /// List an object&#39;s related objects
-  /// Neighbourhood through the relation graph, filtered by type, direction, validity at &#x60;asOf&#x60; and confidence.  **Scope:** &#x60;read&#x60; (open while &#x60;security.openReads&#x60; is on).
+  /// Neighbourhood through the relation graph, filtered by type, direction, validity at &#x60;asOf&#x60; and confidence.  **Scope:** &#x60;read&#x60; (open while &#x60;security.openReads&#x60; is on).  **v2.0 (R2-013):** a signed-in user needs &#x60;data.read&#x60; (403 PERMISSION_DENIED otherwise, audited); what they read is clamped to their data restriction (&#x60;User.dataRestriction&#x60;) and source view. API tokens keep their scope rules.
   ///
   /// Parameters:
   /// * [ref] - Object reference `{type}:{id}` as one path segment; percent-encode `/` (`record:adsblol-mil%2Fae1234`)
@@ -1080,7 +1080,7 @@ class ObjectsApi {
   }
 
   /// Discover sensors observing an area
-  /// Merged sensor envelopes: sources with 116 observability above 0.2 for the area, local receivers and SatDump stations in range, predicted satellite passes with curated capabilities, and STAC scenes and raster products in the window. Read-only; no tasking. &#x60;placeId&#x60; requires a token.  **Scope:** &#x60;read&#x60; (open while &#x60;security.openReads&#x60; is on).
+  /// Merged sensor envelopes: sources with 116 observability above 0.2 for the area, local receivers and SatDump stations in range, predicted satellite passes with curated capabilities, and STAC scenes and raster products in the window. Read-only; no tasking. &#x60;placeId&#x60; requires a token.  **Scope:** &#x60;read&#x60; (open while &#x60;security.openReads&#x60; is on).  **v2.0 (R2-013):** a signed-in user needs &#x60;data.read&#x60; (403 PERMISSION_DENIED otherwise, audited); what they read is clamped to their data restriction (&#x60;User.dataRestriction&#x60;) and source view. API tokens keep their scope rules.
   ///
   /// Parameters:
   /// * [from] - Window start
@@ -1202,7 +1202,7 @@ class ObjectsApi {
   }
 
   /// Walk ownership and affiliation chains
-  /// People and organizations reached from up to 50 seed entities through the ownership / affiliation edges (&#x60;owns&#x60;, &#x60;controls&#x60;, &#x60;officer-of&#x60;, &#x60;beneficial-owner&#x60;, &#x60;affiliated-with&#x60;), each with its strongest, shortest ownership chain (158). An entity reached from two or more seeds is a shared attribute — a common owner, officer, address or affiliate. Model and queries only; the external corporate / UBO / PEP / leak data that populates the edges is deferred (docs/Future-Roadmap.md).  **Scope:** &#x60;read&#x60; (open while &#x60;security.openReads&#x60; is on).
+  /// People and organizations reached from up to 50 seed entities through the ownership / affiliation edges (&#x60;owns&#x60;, &#x60;controls&#x60;, &#x60;officer-of&#x60;, &#x60;beneficial-owner&#x60;, &#x60;affiliated-with&#x60;), each with its strongest, shortest ownership chain (158). An entity reached from two or more seeds is a shared attribute — a common owner, officer, address or affiliate. Model and queries only; the external corporate / UBO / PEP / leak data that populates the edges is deferred (docs/Future-Roadmap.md).  **Scope:** &#x60;read&#x60; (open while &#x60;security.openReads&#x60; is on).  **v2.0 (R2-013):** a signed-in user needs &#x60;data.read&#x60; (403 PERMISSION_DENIED otherwise, audited); what they read is clamped to their data restriction (&#x60;User.dataRestriction&#x60;) and source view. API tokens keep their scope rules.
   ///
   /// Parameters:
   /// * [ownershipChainRequest]
@@ -1298,7 +1298,7 @@ class ObjectsApi {
   }
 
   /// Query a relation subgraph
-  /// Nodes (envelopes) and edges within &#x60;depth&#x60; ≤ 2 of up to 50 seed refs, limited to 2,000 edges, valid at &#x60;asOf&#x60;.  **Scope:** &#x60;read&#x60; (open while &#x60;security.openReads&#x60; is on).
+  /// Nodes (envelopes) and edges within &#x60;depth&#x60; ≤ 2 of up to 50 seed refs, limited to 2,000 edges, valid at &#x60;asOf&#x60;.  **Scope:** &#x60;read&#x60; (open while &#x60;security.openReads&#x60; is on).  **v2.0 (R2-013):** a signed-in user needs &#x60;data.read&#x60; (403 PERMISSION_DENIED otherwise, audited); what they read is clamped to their data restriction (&#x60;User.dataRestriction&#x60;) and source view. API tokens keep their scope rules.
   ///
   /// Parameters:
   /// * [graphRequest]
@@ -1391,7 +1391,7 @@ class ObjectsApi {
   }
 
   /// Resolve object references in batch
-  /// Resolves up to 500 refs; missing or invisible refs are listed, not errors.  **Scope:** &#x60;read&#x60; (open while &#x60;security.openReads&#x60; is on).
+  /// Resolves up to 500 refs; missing or invisible refs are listed, not errors.  **Scope:** &#x60;read&#x60; (open while &#x60;security.openReads&#x60; is on).  **v2.0 (R2-013):** a signed-in user needs &#x60;data.read&#x60; (403 PERMISSION_DENIED otherwise, audited); what they read is clamped to their data restriction (&#x60;User.dataRestriction&#x60;) and source view. API tokens keep their scope rules.
   ///
   /// Parameters:
   /// * [objectResolveRequest]
@@ -1487,7 +1487,7 @@ class ObjectsApi {
   }
 
   /// Summarise a viewport and time window
-  /// Layer counts (aggregated, never feature lists), a merged activity feed tagged by signal family, insights with issuer, base rate and knowledge cutoff, and top related objects, in ≤ 32 KB; cached per normalised context for 30 s.  **Scope:** &#x60;read&#x60; (open while &#x60;security.openReads&#x60; is on).
+  /// Layer counts (aggregated, never feature lists), a merged activity feed tagged by signal family, insights with issuer, base rate and knowledge cutoff, and top related objects, in ≤ 32 KB; cached per normalised context for 30 s.  **Scope:** &#x60;read&#x60; (open while &#x60;security.openReads&#x60; is on).  **v2.0 (R2-013):** a signed-in user needs &#x60;data.read&#x60; (403 PERMISSION_DENIED otherwise, audited); what they read is clamped to their data restriction (&#x60;User.dataRestriction&#x60;) and source view. API tokens keep their scope rules.
   ///
   /// Parameters:
   /// * [contextSummaryRequest]

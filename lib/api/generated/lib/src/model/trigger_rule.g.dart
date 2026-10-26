@@ -606,6 +606,8 @@ class _$TriggerRule extends TriggerRule {
   final TriggerRuleAnchorStatusEnum? anchorStatus;
   @override
   final WindowStatus? windowStatus;
+  @override
+  final String? ownerPrincipalId;
 
   factory _$TriggerRule([void Function(TriggerRuleBuilder)? updates]) =>
       (TriggerRuleBuilder()..update(updates))._build();
@@ -662,6 +664,7 @@ class _$TriggerRule extends TriggerRule {
     this.geofenceOrigin,
     this.anchorStatus,
     this.windowStatus,
+    this.ownerPrincipalId,
   }) : super._();
   @override
   TriggerRule rebuild(void Function(TriggerRuleBuilder) updates) =>
@@ -724,7 +727,8 @@ class _$TriggerRule extends TriggerRule {
         mutedUntil == other.mutedUntil &&
         geofenceOrigin == other.geofenceOrigin &&
         anchorStatus == other.anchorStatus &&
-        windowStatus == other.windowStatus;
+        windowStatus == other.windowStatus &&
+        ownerPrincipalId == other.ownerPrincipalId;
   }
 
   @override
@@ -781,6 +785,7 @@ class _$TriggerRule extends TriggerRule {
     _$hash = $jc(_$hash, geofenceOrigin.hashCode);
     _$hash = $jc(_$hash, anchorStatus.hashCode);
     _$hash = $jc(_$hash, windowStatus.hashCode);
+    _$hash = $jc(_$hash, ownerPrincipalId.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -838,7 +843,8 @@ class _$TriggerRule extends TriggerRule {
           ..add('mutedUntil', mutedUntil)
           ..add('geofenceOrigin', geofenceOrigin)
           ..add('anchorStatus', anchorStatus)
-          ..add('windowStatus', windowStatus))
+          ..add('windowStatus', windowStatus)
+          ..add('ownerPrincipalId', ownerPrincipalId))
         .toString();
   }
 }
@@ -1079,6 +1085,11 @@ class TriggerRuleBuilder implements Builder<TriggerRule, TriggerRuleBuilder> {
   set windowStatus(WindowStatusBuilder? windowStatus) =>
       _$this._windowStatus = windowStatus;
 
+  String? _ownerPrincipalId;
+  String? get ownerPrincipalId => _$this._ownerPrincipalId;
+  set ownerPrincipalId(String? ownerPrincipalId) =>
+      _$this._ownerPrincipalId = ownerPrincipalId;
+
   TriggerRuleBuilder() {
     TriggerRule._defaults(this);
   }
@@ -1137,6 +1148,7 @@ class TriggerRuleBuilder implements Builder<TriggerRule, TriggerRuleBuilder> {
       _geofenceOrigin = $v.geofenceOrigin;
       _anchorStatus = $v.anchorStatus;
       _windowStatus = $v.windowStatus?.toBuilder();
+      _ownerPrincipalId = $v.ownerPrincipalId;
       _$v = null;
     }
     return this;
@@ -1224,6 +1236,7 @@ class TriggerRuleBuilder implements Builder<TriggerRule, TriggerRuleBuilder> {
             geofenceOrigin: geofenceOrigin,
             anchorStatus: anchorStatus,
             windowStatus: _windowStatus?.build(),
+            ownerPrincipalId: ownerPrincipalId,
           );
     } catch (_) {
       late String _$failedField;

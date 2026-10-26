@@ -250,7 +250,7 @@ class TriggersApi {
   }
 
   /// Create a trigger rule
-  /// Creates a rule evaluated against persisted versions (HEARTBEAT excluded). Condition paths on volatile fields are rejected (TRIGGER_PATH_VOLATILE); line geofences need bufferMeters; &#x60;near.placeId&#x60; needs Places (PLACES_UNAVAILABLE).  **Scope:** &#x60;agent&#x60;.
+  /// Creates a rule evaluated against persisted versions (HEARTBEAT excluded). Condition paths on volatile fields are rejected (TRIGGER_PATH_VOLATILE); line geofences need bufferMeters; &#x60;near.placeId&#x60; needs Places (PLACES_UNAVAILABLE).  **Scope:** &#x60;agent&#x60;.  **v2.0 (per-user, R2-008):** a rule is owned by the user who created it (&#x60;ownerPrincipalId&#x60;, that user&#39;s principal) and its alerts go to that user&#39;s channels. A signed-in user sees and manages only their own rules; another user&#39;s rule is 404, like an unknown one. A session holding &#x60;users.manage&#x60; and every API token see and manage all rules, the shared ones (&#x60;ownerPrincipalId: null&#x60;, the rules that existed before v2.0) included; a rule an API token creates is shared. Anonymous callers see shared rules only. This is a deliberate semantic change from the single-operator v1.x behavior; the shapes are unchanged except the additive, read-only &#x60;ownerPrincipalId&#x60;.
   ///
   /// Parameters:
   /// * [triggerRuleInput]
@@ -346,7 +346,7 @@ class TriggersApi {
   }
 
   /// Delete a trigger rule
-  /// Existing alerts are kept (no cascade).  **Scope:** &#x60;agent&#x60;.
+  /// Existing alerts are kept (no cascade).  **Scope:** &#x60;agent&#x60;.  **v2.0 (per-user, R2-008):** a rule is owned by the user who created it (&#x60;ownerPrincipalId&#x60;, that user&#39;s principal) and its alerts go to that user&#39;s channels. A signed-in user sees and manages only their own rules; another user&#39;s rule is 404, like an unknown one. A session holding &#x60;users.manage&#x60; and every API token see and manage all rules, the shared ones (&#x60;ownerPrincipalId: null&#x60;, the rules that existed before v2.0) included; a rule an API token creates is shared. Anonymous callers see shared rules only. This is a deliberate semantic change from the single-operator v1.x behavior; the shapes are unchanged except the additive, read-only &#x60;ownerPrincipalId&#x60;.
   ///
   /// Parameters:
   /// * [ruleId] - Trigger rule id
@@ -524,7 +524,7 @@ class TriggersApi {
   }
 
   /// Get a trigger rule
-  /// Get a trigger rule  **Scope:** &#x60;read&#x60; (open while &#x60;security.openReads&#x60; is on).
+  /// Get a trigger rule  **Scope:** &#x60;read&#x60; (open while &#x60;security.openReads&#x60; is on).  **v2.0 (per-user, R2-008):** a rule is owned by the user who created it (&#x60;ownerPrincipalId&#x60;, that user&#39;s principal) and its alerts go to that user&#39;s channels. A signed-in user sees and manages only their own rules; another user&#39;s rule is 404, like an unknown one. A session holding &#x60;users.manage&#x60; and every API token see and manage all rules, the shared ones (&#x60;ownerPrincipalId: null&#x60;, the rules that existed before v2.0) included; a rule an API token creates is shared. Anonymous callers see shared rules only. This is a deliberate semantic change from the single-operator v1.x behavior; the shapes are unchanged except the additive, read-only &#x60;ownerPrincipalId&#x60;.
   ///
   /// Parameters:
   /// * [ruleId] - Trigger rule id
@@ -794,7 +794,7 @@ class TriggersApi {
   }
 
   /// List trigger rules
-  /// List trigger rules  **Scope:** &#x60;read&#x60; (open while &#x60;security.openReads&#x60; is on).
+  /// List trigger rules  **Scope:** &#x60;read&#x60; (open while &#x60;security.openReads&#x60; is on).  **v2.0 (per-user, R2-008):** a rule is owned by the user who created it (&#x60;ownerPrincipalId&#x60;, that user&#39;s principal) and its alerts go to that user&#39;s channels. A signed-in user sees and manages only their own rules; another user&#39;s rule is 404, like an unknown one. A session holding &#x60;users.manage&#x60; and every API token see and manage all rules, the shared ones (&#x60;ownerPrincipalId: null&#x60;, the rules that existed before v2.0) included; a rule an API token creates is shared. Anonymous callers see shared rules only. This is a deliberate semantic change from the single-operator v1.x behavior; the shapes are unchanged except the additive, read-only &#x60;ownerPrincipalId&#x60;.
   ///
   /// Parameters:
   /// * [tag] - Only rules with this tag
@@ -1695,7 +1695,7 @@ class TriggersApi {
   }
 
   /// Replace a trigger rule
-  /// Full replace; the persist gate re-converges each entity on its next observation.  **Scope:** &#x60;agent&#x60;.
+  /// Full replace; the persist gate re-converges each entity on its next observation.  **Scope:** &#x60;agent&#x60;.  **v2.0 (per-user, R2-008):** a rule is owned by the user who created it (&#x60;ownerPrincipalId&#x60;, that user&#39;s principal) and its alerts go to that user&#39;s channels. A signed-in user sees and manages only their own rules; another user&#39;s rule is 404, like an unknown one. A session holding &#x60;users.manage&#x60; and every API token see and manage all rules, the shared ones (&#x60;ownerPrincipalId: null&#x60;, the rules that existed before v2.0) included; a rule an API token creates is shared. Anonymous callers see shared rules only. This is a deliberate semantic change from the single-operator v1.x behavior; the shapes are unchanged except the additive, read-only &#x60;ownerPrincipalId&#x60;.
   ///
   /// Parameters:
   /// * [ruleId] - Trigger rule id

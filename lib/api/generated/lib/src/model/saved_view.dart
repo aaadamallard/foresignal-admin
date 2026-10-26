@@ -29,6 +29,8 @@ part 'saved_view.g.dart';
 /// * [version]
 /// * [createdAt]
 /// * [updatedAt]
+/// * [shared] - True for a shared view (no owner): managed by an admin, visible to every caller (R2-012)
+/// * [ownerPrincipalId] - The owning user's principal, or null for a shared view (R2-012)
 @BuiltValue()
 abstract class SavedView implements Built<SavedView, SavedViewBuilder> {
   @BuiltValueField(wireName: r'slug')
@@ -79,6 +81,14 @@ abstract class SavedView implements Built<SavedView, SavedViewBuilder> {
 
   @BuiltValueField(wireName: r'updatedAt')
   DateTime get updatedAt;
+
+  /// True for a shared view (no owner): managed by an admin, visible to every caller (R2-012)
+  @BuiltValueField(wireName: r'shared')
+  bool? get shared;
+
+  /// The owning user's principal, or null for a shared view (R2-012)
+  @BuiltValueField(wireName: r'ownerPrincipalId')
+  String? get ownerPrincipalId;
 
   SavedView._();
 
@@ -196,6 +206,20 @@ class _$SavedViewSerializer implements PrimitiveSerializer<SavedView> {
       object.updatedAt,
       specifiedType: const FullType(DateTime),
     );
+    if (object.shared != null) {
+      yield r'shared';
+      yield serializers.serialize(
+        object.shared,
+        specifiedType: const FullType(bool),
+      );
+    }
+    if (object.ownerPrincipalId != null) {
+      yield r'ownerPrincipalId';
+      yield serializers.serialize(
+        object.ownerPrincipalId,
+        specifiedType: const FullType.nullable(String),
+      );
+    }
   }
 
   @override
@@ -377,6 +401,26 @@ class _$SavedViewSerializer implements PrimitiveSerializer<SavedView> {
                   )
                   as DateTime;
           result.updatedAt = valueDes;
+          break;
+        case r'shared':
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
+          if (valueDes == null) continue;
+          result.shared = valueDes;
+          break;
+        case r'ownerPrincipalId':
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
+          if (valueDes == null) continue;
+          result.ownerPrincipalId = valueDes;
           break;
         default:
           unhandled.add(key);

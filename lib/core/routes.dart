@@ -6,6 +6,31 @@ library;
 /// The setup wizard (desktop).
 const String setupPath = '/setup';
 
+/// Sign in with email and password (outside the shell).
+const String loginPath = '/login';
+
+/// Ask for a password-reset email (outside the shell).
+const String forgotPasswordPath = '/forgot-password';
+
+/// Choose a new password from an emailed reset link (outside the shell).
+const String resetPasswordPath = '/reset-password';
+
+/// Activate an invited account from the welcome email's link (outside the
+/// shell).
+const String activatePath = '/activate';
+
+/// The sign-in pages, reachable before anyone is signed in or connected.
+const Set<String> signInPaths = <String>{loginPath, forgotPasswordPath, resetPasswordPath, activatePath};
+
+/// [path] with an emailed link's token `t` and backend `u` as its query.
+String withLinkQuery(String path, {String? token, Uri? backend}) {
+  final query = <String, String>{
+    if (token != null && token.isNotEmpty) 't': token,
+    if (backend != null) 'u': backend.toString(),
+  };
+  return Uri(path: path, queryParameters: query.isEmpty ? null : query).toString();
+}
+
 /// The source catalog.
 const String sourcesPath = '/sources';
 

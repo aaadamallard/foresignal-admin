@@ -87,6 +87,10 @@ class _$Me extends Me {
   final BuiltList<NotificationPreference> notificationPreferences;
   @override
   final String? defaultTlp;
+  @override
+  final User? user;
+  @override
+  final BuiltList<String>? permissions;
 
   factory _$Me([void Function(MeBuilder)? updates]) =>
       (MeBuilder()..update(updates))._build();
@@ -98,6 +102,8 @@ class _$Me extends Me {
     required this.groups,
     required this.notificationPreferences,
     this.defaultTlp,
+    this.user,
+    this.permissions,
   }) : super._();
   @override
   Me rebuild(void Function(MeBuilder) updates) =>
@@ -115,7 +121,9 @@ class _$Me extends Me {
         scopes == other.scopes &&
         groups == other.groups &&
         notificationPreferences == other.notificationPreferences &&
-        defaultTlp == other.defaultTlp;
+        defaultTlp == other.defaultTlp &&
+        user == other.user &&
+        permissions == other.permissions;
   }
 
   @override
@@ -127,6 +135,8 @@ class _$Me extends Me {
     _$hash = $jc(_$hash, groups.hashCode);
     _$hash = $jc(_$hash, notificationPreferences.hashCode);
     _$hash = $jc(_$hash, defaultTlp.hashCode);
+    _$hash = $jc(_$hash, user.hashCode);
+    _$hash = $jc(_$hash, permissions.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -139,7 +149,9 @@ class _$Me extends Me {
           ..add('scopes', scopes)
           ..add('groups', groups)
           ..add('notificationPreferences', notificationPreferences)
-          ..add('defaultTlp', defaultTlp))
+          ..add('defaultTlp', defaultTlp)
+          ..add('user', user)
+          ..add('permissions', permissions))
         .toString();
   }
 }
@@ -176,6 +188,16 @@ class MeBuilder implements Builder<Me, MeBuilder> {
   String? get defaultTlp => _$this._defaultTlp;
   set defaultTlp(String? defaultTlp) => _$this._defaultTlp = defaultTlp;
 
+  UserBuilder? _user;
+  UserBuilder get user => _$this._user ??= UserBuilder();
+  set user(UserBuilder? user) => _$this._user = user;
+
+  ListBuilder<String>? _permissions;
+  ListBuilder<String> get permissions =>
+      _$this._permissions ??= ListBuilder<String>();
+  set permissions(ListBuilder<String>? permissions) =>
+      _$this._permissions = permissions;
+
   MeBuilder() {
     Me._defaults(this);
   }
@@ -189,6 +211,8 @@ class MeBuilder implements Builder<Me, MeBuilder> {
       _groups = $v.groups.toBuilder();
       _notificationPreferences = $v.notificationPreferences.toBuilder();
       _defaultTlp = $v.defaultTlp;
+      _user = $v.user?.toBuilder();
+      _permissions = $v.permissions?.toBuilder();
       _$v = null;
     }
     return this;
@@ -219,6 +243,8 @@ class MeBuilder implements Builder<Me, MeBuilder> {
             groups: groups.build(),
             notificationPreferences: notificationPreferences.build(),
             defaultTlp: defaultTlp,
+            user: _user?.build(),
+            permissions: _permissions?.build(),
           );
     } catch (_) {
       late String _$failedField;
@@ -233,6 +259,11 @@ class MeBuilder implements Builder<Me, MeBuilder> {
         groups.build();
         _$failedField = 'notificationPreferences';
         notificationPreferences.build();
+
+        _$failedField = 'user';
+        _user?.build();
+        _$failedField = 'permissions';
+        _permissions?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(r'Me', _$failedField, e.toString());
       }

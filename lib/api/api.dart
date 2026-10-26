@@ -12,6 +12,7 @@ export 'backend_endpoint.dart';
 export 'contract_version.dart';
 export 'explicit_nulls.dart';
 export 'json_calls.dart';
+export 'session_store.dart';
 export 'sse.dart';
 export 'tolerant_enums.dart';
 export 'wire_names.dart';

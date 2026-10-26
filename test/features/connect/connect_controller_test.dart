@@ -117,8 +117,8 @@ void main() {
     expect(store.persisted, isFalse);
   });
 
-  test('an older major API version is incompatible', () async {
-    final container = testContainer(adapter: connectBackend(apiVersion: '2.0.0'));
+  test('another major API version is incompatible', () async {
+    final container = testContainer(adapter: connectBackend(apiVersion: '3.0.0'));
     addTearDown(container.dispose);
     await container
         .read(connectControllerProvider.notifier)

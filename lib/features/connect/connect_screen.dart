@@ -65,6 +65,8 @@ class ConnectScreen extends ConsumerWidget {
                             ),
                         ],
                       ),
+                      const SizedBox(height: 12),
+                      const _SignInNote(),
                       const SizedBox(height: 20),
                       ConnectForm(onConnected: (report) => _connected(context, ref, report)),
                     ],
@@ -246,6 +248,36 @@ class _ConnectFormState extends ConsumerState<ConnectForm> {
           ),
         },
       ],
+    );
+  }
+}
+
+/// Says that normal use is signing in, and that the admin token here is the
+/// machine and first-run break-glass fallback.
+class _SignInNote extends ConsumerWidget {
+  const _SignInNote();
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final signedIn = ref.watch(sessionControllerProvider).signedIn;
+    return ResultPanel(
+      key: const Key('connect.signInNote'),
+      title: signedIn ? 'Signed in' : 'Normal use is signing in',
+      tone: StatusTone.info,
+      message: 'Set the backend URL here, then sign in with your email and password. '
+          'The admin token below is for machine access and first-run or break-glass use; '
+          'a signed-in session is used ahead of it.',
+      child: signedIn
+          ? null
+          : Align(
+              alignment: Alignment.centerLeft,
+              child: TextButton.icon(
+                key: const Key('connect.signIn'),
+                onPressed: ref.watch(backendEndpointProvider) == null ? null : () => context.go(loginPath),
+                icon: const Icon(Icons.login, size: 16),
+                label: const Text('Sign in'),
+              ),
+            ),
     );
   }
 }

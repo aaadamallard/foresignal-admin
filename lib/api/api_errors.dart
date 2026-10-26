@@ -99,12 +99,13 @@ class HttpStatusException extends ApiException {
   final Duration? retryAfter;
 }
 
-/// A write was attempted without an admin token. Raised before any request is
-/// sent; the Connect screen is where a token is entered.
+/// A write was attempted with neither a signed-in session nor an admin token.
+/// Raised before any request is sent; Login is where a user signs in, and the
+/// Connect screen is where the admin token (the machine fallback) is entered.
 class AdminTokenRequiredException extends ApiException {
   /// Creates the exception.
   const AdminTokenRequiredException()
-    : super('An admin token is required for this change. Enter one on the Connect screen.');
+    : super('Sign in to make this change, or enter an admin token on the Connect screen.');
 }
 
 /// The backend could not be reached: the connection was refused or dropped,

@@ -60,4 +60,89 @@ void main() {
     expect(AdminAuthInterceptor.isWrite('POST'), isTrue);
     expect(AdminAuthInterceptor.isWrite('delete'), isTrue);
   });
+
+  group('with a signed-in session', () {
+    StoredSession session(String token) =>
+        StoredSession(token: token, userId: 'u-1', expiresAt: DateTime.utc(2099, 1, 1));
+
+    test('the session token wins over the admin token', () async {
+      final dio = createBackendDio(
+        baseUrl: Uri.parse('http://backend.test'),
+        tokenStore: InMemoryAdminTokenStore('fsr_admin'),
+        sessionStore: InMemorySessionStore(session('fss_user')),
+      )..httpClientAdapter = adapter;
+      await dio.get<Object?>('/v1/sources');
+      await dio.put<Object?>('/v1/settings/collector', data: <String, Object?>{'maxConcurrentPulls': 4});
+      for (final request in adapter.requests) {
+        expect(request.options.headers['Authorization'], 'Bearer fss_user');
+        expect(request.options.extra[AdminAuthInterceptor.credentialKey], RequestCredential.session);
+      }
+    });
+
+    test('the admin token still authorizes a write when no session is present', () async {
+      final dio = createBackendDio(
+        baseUrl: Uri.parse('http://backend.test'),
+        tokenStore: InMemoryAdminTokenStore('fsr_admin'),
+        sessionStore: InMemorySessionStore(),
+      )..httpClientAdapter = adapter;
+      await dio.put<Object?>('/v1/settings/collector', data: <String, Object?>{'maxConcurrentPulls': 4});
+      expect(adapter.requests.single.options.headers['Authorization'], 'Bearer fsr_admin');
+    });
+
+    test('the open sign-in operations are sent with no credential, even with none stored', () async {
+      final dio = createBackendDio(
+        baseUrl: Uri.parse('http://backend.test'),
+        tokenStore: InMemoryAdminTokenStore(),
+        sessionStore: InMemorySessionStore(session('fss_stale')),
+      )..httpClientAdapter = adapter;
+      for (final path in AdminAuthInterceptor.openWritePaths) {
+        await dio.post<Object?>(path, data: <String, Object?>{});
+      }
+      expect(adapter.requests.map((r) => r.uri.path), AdminAuthInterceptor.openWritePaths.toList());
+      for (final request in adapter.requests) {
+        expect(request.options.headers.containsKey('Authorization'), isFalse);
+      }
+    });
+
+    test('a 401 to a session request clears the session and reports it once', () async {
+      final sessions = InMemorySessionStore(session('fss_user'));
+      var ended = 0;
+      final dio = createBackendDio(
+        baseUrl: Uri.parse('http://backend.test'),
+        tokenStore: InMemoryAdminTokenStore('fsr_admin'),
+        sessionStore: sessions,
+        onSessionEnded: () => ended++,
+      )..httpClientAdapter = FakeAdapter(
+          (_) => FakeResponse.problem(<String, Object?>{'title': 'Unauthorized', 'status': 401}, status: 401),
+        );
+      for (var i = 0; i < 2; i++) {
+        try {
+          await dio.get<Object?>('/v1/sources');
+        } on DioException {
+          // Expected.
+        }
+      }
+      expect(await sessions.read(), isNull);
+      expect(ended, 1);
+    });
+
+    test('a 401 to an admin-token request leaves the session store alone', () async {
+      final sessions = InMemorySessionStore();
+      var ended = 0;
+      final dio = createBackendDio(
+        baseUrl: Uri.parse('http://backend.test'),
+        tokenStore: InMemoryAdminTokenStore('fsr_admin'),
+        sessionStore: sessions,
+        onSessionEnded: () => ended++,
+      )..httpClientAdapter = FakeAdapter(
+          (_) => FakeResponse.problem(<String, Object?>{'title': 'Unauthorized', 'status': 401}, status: 401),
+        );
+      try {
+        await dio.get<Object?>('/v1/sources');
+      } on DioException {
+        // Expected.
+      }
+      expect(ended, 0);
+    });
+  });
 }

@@ -1469,7 +1469,7 @@ class CollaborationApi {
   }
 
   /// The calling principal
-  /// Returns the principal behind the calling token, its token, effective scopes, groups and notification preferences.  **Scope:** &#x60;read&#x60;.
+  /// Returns the principal behind the calling token, its token, effective scopes, groups and notification preferences.  **Scope:** &#x60;read&#x60;.  **v2.0:** for a session principal this additionally reflects the authenticated user and their effective permissions (the union of the user&#39;s roles). Response shape is unchanged (additive).
   ///
   /// Parameters:
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
@@ -3545,7 +3545,7 @@ class CollaborationApi {
   }
 
   /// Run a saved search
-  /// Runs the saved search now (027 hybrid search plus structured filters over envelopes) and returns envelopes the caller can see.  **Scope:** &#x60;read&#x60;.
+  /// Runs the saved search now (027 hybrid search plus structured filters over envelopes) and returns envelopes the caller can see.  **Scope:** &#x60;read&#x60;.  **v2.0 (R2-013):** a signed-in user needs &#x60;data.read&#x60; (403 PERMISSION_DENIED otherwise, audited); what they read is clamped to their data restriction (&#x60;User.dataRestriction&#x60;) and source view. API tokens keep their scope rules.
   ///
   /// Parameters:
   /// * [savedSearchId] - Saved search id

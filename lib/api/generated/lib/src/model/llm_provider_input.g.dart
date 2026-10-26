@@ -112,6 +112,14 @@ class _$LlmProviderInput extends LlmProviderInput {
   final num? dailyCapUsd;
   @override
   final num? monthlyCapUsd;
+  @override
+  final bool? shared;
+  @override
+  final num? perUserHourlyCapUsd;
+  @override
+  final num? perUserDailyCapUsd;
+  @override
+  final num? perUserMonthlyCapUsd;
 
   factory _$LlmProviderInput([
     void Function(LlmProviderInputBuilder)? updates,
@@ -134,6 +142,10 @@ class _$LlmProviderInput extends LlmProviderInput {
     this.hourlyCapUsd,
     this.dailyCapUsd,
     this.monthlyCapUsd,
+    this.shared,
+    this.perUserHourlyCapUsd,
+    this.perUserDailyCapUsd,
+    this.perUserMonthlyCapUsd,
   }) : super._();
   @override
   LlmProviderInput rebuild(void Function(LlmProviderInputBuilder) updates) =>
@@ -162,7 +174,11 @@ class _$LlmProviderInput extends LlmProviderInput {
         pricing == other.pricing &&
         hourlyCapUsd == other.hourlyCapUsd &&
         dailyCapUsd == other.dailyCapUsd &&
-        monthlyCapUsd == other.monthlyCapUsd;
+        monthlyCapUsd == other.monthlyCapUsd &&
+        shared == other.shared &&
+        perUserHourlyCapUsd == other.perUserHourlyCapUsd &&
+        perUserDailyCapUsd == other.perUserDailyCapUsd &&
+        perUserMonthlyCapUsd == other.perUserMonthlyCapUsd;
   }
 
   @override
@@ -184,6 +200,10 @@ class _$LlmProviderInput extends LlmProviderInput {
     _$hash = $jc(_$hash, hourlyCapUsd.hashCode);
     _$hash = $jc(_$hash, dailyCapUsd.hashCode);
     _$hash = $jc(_$hash, monthlyCapUsd.hashCode);
+    _$hash = $jc(_$hash, shared.hashCode);
+    _$hash = $jc(_$hash, perUserHourlyCapUsd.hashCode);
+    _$hash = $jc(_$hash, perUserDailyCapUsd.hashCode);
+    _$hash = $jc(_$hash, perUserMonthlyCapUsd.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -206,7 +226,11 @@ class _$LlmProviderInput extends LlmProviderInput {
           ..add('pricing', pricing)
           ..add('hourlyCapUsd', hourlyCapUsd)
           ..add('dailyCapUsd', dailyCapUsd)
-          ..add('monthlyCapUsd', monthlyCapUsd))
+          ..add('monthlyCapUsd', monthlyCapUsd)
+          ..add('shared', shared)
+          ..add('perUserHourlyCapUsd', perUserHourlyCapUsd)
+          ..add('perUserDailyCapUsd', perUserDailyCapUsd)
+          ..add('perUserMonthlyCapUsd', perUserMonthlyCapUsd))
         .toString();
   }
 }
@@ -286,6 +310,25 @@ class LlmProviderInputBuilder
   set monthlyCapUsd(num? monthlyCapUsd) =>
       _$this._monthlyCapUsd = monthlyCapUsd;
 
+  bool? _shared;
+  bool? get shared => _$this._shared;
+  set shared(bool? shared) => _$this._shared = shared;
+
+  num? _perUserHourlyCapUsd;
+  num? get perUserHourlyCapUsd => _$this._perUserHourlyCapUsd;
+  set perUserHourlyCapUsd(num? perUserHourlyCapUsd) =>
+      _$this._perUserHourlyCapUsd = perUserHourlyCapUsd;
+
+  num? _perUserDailyCapUsd;
+  num? get perUserDailyCapUsd => _$this._perUserDailyCapUsd;
+  set perUserDailyCapUsd(num? perUserDailyCapUsd) =>
+      _$this._perUserDailyCapUsd = perUserDailyCapUsd;
+
+  num? _perUserMonthlyCapUsd;
+  num? get perUserMonthlyCapUsd => _$this._perUserMonthlyCapUsd;
+  set perUserMonthlyCapUsd(num? perUserMonthlyCapUsd) =>
+      _$this._perUserMonthlyCapUsd = perUserMonthlyCapUsd;
+
   LlmProviderInputBuilder() {
     LlmProviderInput._defaults(this);
   }
@@ -309,6 +352,10 @@ class LlmProviderInputBuilder
       _hourlyCapUsd = $v.hourlyCapUsd;
       _dailyCapUsd = $v.dailyCapUsd;
       _monthlyCapUsd = $v.monthlyCapUsd;
+      _shared = $v.shared;
+      _perUserHourlyCapUsd = $v.perUserHourlyCapUsd;
+      _perUserDailyCapUsd = $v.perUserDailyCapUsd;
+      _perUserMonthlyCapUsd = $v.perUserMonthlyCapUsd;
       _$v = null;
     }
     return this;
@@ -357,6 +404,10 @@ class LlmProviderInputBuilder
             hourlyCapUsd: hourlyCapUsd,
             dailyCapUsd: dailyCapUsd,
             monthlyCapUsd: monthlyCapUsd,
+            shared: shared,
+            perUserHourlyCapUsd: perUserHourlyCapUsd,
+            perUserDailyCapUsd: perUserDailyCapUsd,
+            perUserMonthlyCapUsd: perUserMonthlyCapUsd,
           );
     } catch (_) {
       late String _$failedField;

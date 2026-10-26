@@ -94,7 +94,8 @@ class _PresenceReporterState extends ConsumerState<PresenceReporter> with Widget
       return;
     }
     final token = await ref.read(adminTokenStoreProvider).read();
-    if (token == null || token.isEmpty || !mounted) {
+    final session = await ref.read(sessionStoreProvider).read();
+    if (((token == null || token.isEmpty) && session == null) || !mounted) {
       return;
     }
     final state = _state;

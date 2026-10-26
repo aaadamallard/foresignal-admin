@@ -10,6 +10,7 @@ import '../../core/routes.dart';
 import '../../core/theme.dart';
 import '../../core/theme_mode.dart';
 import '../../core/ui/ui.dart';
+import '../auth/auth_controller.dart';
 import '../notifications/presence.dart';
 import '../notifications/push_arrival_banner.dart';
 
@@ -63,7 +64,7 @@ class AppShell extends ConsumerWidget {
       return Scaffold(
         appBar: AppBar(
           title: const _Brand(),
-          actions: const <Widget>[ThemeModeButton(), _BackendIndicator()],
+          actions: const <Widget>[ThemeModeButton(), _BackendIndicator(), AccountControl()],
         ),
         body: SafeArea(child: body),
         bottomNavigationBar: NavigationBar(
@@ -169,6 +170,10 @@ class Sidebar extends StatelessWidget {
                     ),
                 ],
               ),
+            ),
+            const Padding(
+              padding: EdgeInsets.fromLTRB(10, 0, 10, 4),
+              child: AccountControl(expanded: true),
             ),
             const Padding(
               padding: EdgeInsets.fromLTRB(10, 0, 10, 10),
@@ -298,6 +303,86 @@ class _BackendIndicator extends ConsumerWidget {
           ],
         ),
       ),
+    );
+  }
+}
+
+/// Who is signed in, with Sign out; or Sign in when nobody is (the app may
+/// be running on the admin token, or read-only).
+class AccountControl extends ConsumerWidget {
+  /// Creates the control; [expanded] shows the email beside the icon (the
+  /// desktop sidebar), otherwise an icon with a menu (the phone's app bar).
+  const AccountControl({super.key, this.expanded = false});
+
+  /// Whether to show the email beside the icon.
+  final bool expanded;
+
+  Future<void> _signOut(BuildContext context, WidgetRef ref) async {
+    final failure = await ref.read(authControllerProvider).signOut();
+    if (!context.mounted) {
+      return;
+    }
+    if (failure != null) {
+      ScaffoldMessenger.maybeOf(context)?.showSnackBar(
+        SnackBar(content: Text('Signed out here; the backend did not confirm: ${failure.message}')),
+      );
+    }
+    context.go(loginPath);
+  }
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final session = ref.watch(sessionControllerProvider).session;
+    final muted = AdminPalette.of(context).muted;
+    if (session == null) {
+      if (!expanded) {
+        return IconButton(
+          key: const Key('shell.signIn'),
+          tooltip: 'Sign in',
+          icon: const Icon(Icons.login, size: 20),
+          onPressed: () => context.go(loginPath),
+        );
+      }
+      return TextButton.icon(
+        key: const Key('shell.signIn'),
+        style: TextButton.styleFrom(alignment: Alignment.centerLeft),
+        onPressed: () => context.go(loginPath),
+        icon: const Icon(Icons.login, size: 18),
+        label: const Text('Sign in'),
+      );
+    }
+    final who = session.email ?? session.tokenPrefix ?? 'Signed in';
+    if (!expanded) {
+      return PopupMenuButton<String>(
+        key: const Key('shell.account'),
+        tooltip: who,
+        icon: const Icon(Icons.account_circle),
+        onSelected: (_) => _signOut(context, ref),
+        itemBuilder: (context) => <PopupMenuEntry<String>>[
+          PopupMenuItem<String>(enabled: false, child: Text(who)),
+          const PopupMenuItem<String>(key: Key('shell.signOut'), value: 'signOut', child: Text('Sign out')),
+        ],
+      );
+    }
+    return Row(
+      children: <Widget>[
+        Icon(Icons.account_circle, size: 18, color: muted),
+        const SizedBox(width: 8),
+        Expanded(
+          child: Text(
+            who,
+            key: const Key('shell.user'),
+            overflow: TextOverflow.ellipsis,
+            style: TextStyle(fontSize: 12, color: muted),
+          ),
+        ),
+        IconButton(
+          key: const Key('shell.signOut'),
+          tooltip: 'Sign out',
+          icon: const Icon(Icons.logout, size: 18),
+          onPressed: () => _signOut(context, ref),
+        ),
+      ],
     );
   }
 }

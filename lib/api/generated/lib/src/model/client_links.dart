@@ -16,6 +16,8 @@ part 'client_links.g.dart';
 /// * [briefingRun]
 /// * [pair]
 /// * [share] - A share link opened in a client (112); placeholder {key}. No default: `?open=1` on a share-link URL redirects only when this is set.
+/// * [activate] - The account activation link of the welcome email (R2-007); placeholders {publicBaseUrl} and {token}
+/// * [passwordReset] - The password reset link of the reset email (R2-007); placeholders {publicBaseUrl} and {token}
 @BuiltValue()
 abstract class ClientLinks implements Built<ClientLinks, ClientLinksBuilder> {
   @BuiltValueField(wireName: r'alert')
@@ -33,6 +35,14 @@ abstract class ClientLinks implements Built<ClientLinks, ClientLinksBuilder> {
   /// A share link opened in a client (112); placeholder {key}. No default: `?open=1` on a share-link URL redirects only when this is set.
   @BuiltValueField(wireName: r'share')
   String? get share;
+
+  /// The account activation link of the welcome email (R2-007); placeholders {publicBaseUrl} and {token}
+  @BuiltValueField(wireName: r'activate')
+  String? get activate;
+
+  /// The password reset link of the reset email (R2-007); placeholders {publicBaseUrl} and {token}
+  @BuiltValueField(wireName: r'passwordReset')
+  String? get passwordReset;
 
   ClientLinks._();
 
@@ -90,6 +100,20 @@ class _$ClientLinksSerializer implements PrimitiveSerializer<ClientLinks> {
       yield serializers.serialize(
         object.share,
         specifiedType: const FullType.nullable(String),
+      );
+    }
+    if (object.activate != null) {
+      yield r'activate';
+      yield serializers.serialize(
+        object.activate,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.passwordReset != null) {
+      yield r'passwordReset';
+      yield serializers.serialize(
+        object.passwordReset,
+        specifiedType: const FullType(String),
       );
     }
   }
@@ -168,6 +192,26 @@ class _$ClientLinksSerializer implements PrimitiveSerializer<ClientLinks> {
                   as String?;
           if (valueDes == null) continue;
           result.share = valueDes;
+          break;
+        case r'activate':
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
+          if (valueDes == null) continue;
+          result.activate = valueDes;
+          break;
+        case r'passwordReset':
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
+          if (valueDes == null) continue;
+          result.passwordReset = valueDes;
           break;
         default:
           unhandled.add(key);

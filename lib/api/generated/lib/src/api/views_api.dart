@@ -27,7 +27,7 @@ class ViewsApi {
   const ViewsApi(this._dio, this._serializers);
 
   /// Create a saved view
-  /// Compiles the view to one &#x60;RecordPredicate&#x60; shared with rules (SQL and in-memory evaluation agree on the operator truth table).  **Scope:** &#x60;agent&#x60;.
+  /// Compiles the view to one &#x60;RecordPredicate&#x60; shared with rules (SQL and in-memory evaluation agree on the operator truth table).  **Scope:** &#x60;agent&#x60;.  **v2.0 (per-user, R2-012):** a saved view is **shared** (&#x60;shared: true&#x60;, no owner; every view from before v2.0 and every view an API token creates) or **personal** (&#x60;ownerPrincipalId&#x60;, the owning user&#39;s principal). A signed-in user reaches the view operations with &#x60;self.views&#x60; (the reads also with &#x60;data.read&#x60;): they list and render their own views and the shared ones, and create, replace and delete their own; a view they create is theirs. Another user&#39;s view is 404 UNKNOWN_VIEW, like an unknown one; replacing or deleting a shared view needs &#x60;users.manage&#x60; (403 PERMISSION_DENIED otherwise). A session holding &#x60;users.manage&#x60; and every API token see and manage all views. Slugs stay unique across all views. The shapes change only by the additive read-only &#x60;shared&#x60; and &#x60;ownerPrincipalId&#x60;.
   ///
   /// Parameters:
   /// * [savedViewInput]
@@ -120,7 +120,7 @@ class ViewsApi {
   }
 
   /// Delete a saved view
-  /// Removes the definition.  **Scope:** &#x60;agent&#x60;.
+  /// Removes the definition.  **Scope:** &#x60;agent&#x60;.  **v2.0 (per-user, R2-012):** a saved view is **shared** (&#x60;shared: true&#x60;, no owner; every view from before v2.0 and every view an API token creates) or **personal** (&#x60;ownerPrincipalId&#x60;, the owning user&#39;s principal). A signed-in user reaches the view operations with &#x60;self.views&#x60; (the reads also with &#x60;data.read&#x60;): they list and render their own views and the shared ones, and create, replace and delete their own; a view they create is theirs. Another user&#39;s view is 404 UNKNOWN_VIEW, like an unknown one; replacing or deleting a shared view needs &#x60;users.manage&#x60; (403 PERMISSION_DENIED otherwise). A session holding &#x60;users.manage&#x60; and every API token see and manage all views. Slugs stay unique across all views. The shapes change only by the additive read-only &#x60;shared&#x60; and &#x60;ownerPrincipalId&#x60;.
   ///
   /// Parameters:
   /// * [viewId] - Saved view id (uuid) or slug
@@ -176,7 +176,7 @@ class ViewsApi {
   }
 
   /// Get a saved view
-  /// 404 UNKNOWN_VIEW.  **Scope:** &#x60;read&#x60; (open while &#x60;security.openReads&#x60; is on).
+  /// 404 UNKNOWN_VIEW.  **Scope:** &#x60;read&#x60; (open while &#x60;security.openReads&#x60; is on).  **v2.0 (per-user, R2-012):** a saved view is **shared** (&#x60;shared: true&#x60;, no owner; every view from before v2.0 and every view an API token creates) or **personal** (&#x60;ownerPrincipalId&#x60;, the owning user&#39;s principal). A signed-in user reaches the view operations with &#x60;self.views&#x60; (the reads also with &#x60;data.read&#x60;): they list and render their own views and the shared ones, and create, replace and delete their own; a view they create is theirs. Another user&#39;s view is 404 UNKNOWN_VIEW, like an unknown one; replacing or deleting a shared view needs &#x60;users.manage&#x60; (403 PERMISSION_DENIED otherwise). A session holding &#x60;users.manage&#x60; and every API token see and manage all views. Slugs stay unique across all views. The shapes change only by the additive read-only &#x60;shared&#x60; and &#x60;ownerPrincipalId&#x60;.
   ///
   /// Parameters:
   /// * [viewId] - Saved view id (uuid) or slug
@@ -262,7 +262,7 @@ class ViewsApi {
   }
 
   /// Records matching a saved view
-  /// Current records matching the view&#39;s predicate, in every 014 format, keyset-paged, with the &#x60;fields&#x60; projection applied. View data follows normal read rules unless the view references a place or watchlist, in which case a token is required (401).  **Scope:** &#x60;read&#x60; (open while &#x60;security.openReads&#x60; is on).
+  /// Current records matching the view&#39;s predicate, in every 014 format, keyset-paged, with the &#x60;fields&#x60; projection applied. View data follows normal read rules unless the view references a place or watchlist, in which case a token is required (401).  **Scope:** &#x60;read&#x60; (open while &#x60;security.openReads&#x60; is on).  **v2.0 (per-user, R2-012):** a saved view is **shared** (&#x60;shared: true&#x60;, no owner; every view from before v2.0 and every view an API token creates) or **personal** (&#x60;ownerPrincipalId&#x60;, the owning user&#39;s principal). A signed-in user reaches the view operations with &#x60;self.views&#x60; (the reads also with &#x60;data.read&#x60;): they list and render their own views and the shared ones, and create, replace and delete their own; a view they create is theirs. Another user&#39;s view is 404 UNKNOWN_VIEW, like an unknown one; replacing or deleting a shared view needs &#x60;users.manage&#x60; (403 PERMISSION_DENIED otherwise). A session holding &#x60;users.manage&#x60; and every API token see and manage all views. Slugs stay unique across all views. The shapes change only by the additive read-only &#x60;shared&#x60; and &#x60;ownerPrincipalId&#x60;.
   ///
   /// Parameters:
   /// * [viewId] - Saved view id (uuid) or slug
@@ -376,7 +376,7 @@ class ViewsApi {
   }
 
   /// Vector tile of a saved view
-  /// Mapbox Vector Tile of the view&#39;s current records (016 properties); the cache key includes the view &#x60;version&#x60;. View data follows normal read rules unless the view references a place or watchlist, in which case a token is required (401).  **Scope:** &#x60;read&#x60; (open while &#x60;security.openReads&#x60; is on).
+  /// Mapbox Vector Tile of the view&#39;s current records (016 properties); the cache key includes the view &#x60;version&#x60;. View data follows normal read rules unless the view references a place or watchlist, in which case a token is required (401).  **Scope:** &#x60;read&#x60; (open while &#x60;security.openReads&#x60; is on).  **v2.0 (per-user, R2-012):** a saved view is **shared** (&#x60;shared: true&#x60;, no owner; every view from before v2.0 and every view an API token creates) or **personal** (&#x60;ownerPrincipalId&#x60;, the owning user&#39;s principal). A signed-in user reaches the view operations with &#x60;self.views&#x60; (the reads also with &#x60;data.read&#x60;): they list and render their own views and the shared ones, and create, replace and delete their own; a view they create is theirs. Another user&#39;s view is 404 UNKNOWN_VIEW, like an unknown one; replacing or deleting a shared view needs &#x60;users.manage&#x60; (403 PERMISSION_DENIED otherwise). A session holding &#x60;users.manage&#x60; and every API token see and manage all views. Slugs stay unique across all views. The shapes change only by the additive read-only &#x60;shared&#x60; and &#x60;ownerPrincipalId&#x60;.
   ///
   /// Parameters:
   /// * [viewId] - Saved view id (uuid) or slug
@@ -494,7 +494,7 @@ class ViewsApi {
   }
 
   /// TileJSON for a saved view
-  /// TileJSON 3.0.0 document whose tile template carries the view version. View data follows normal read rules unless the view references a place or watchlist, in which case a token is required (401).  **Scope:** &#x60;read&#x60; (open while &#x60;security.openReads&#x60; is on).
+  /// TileJSON 3.0.0 document whose tile template carries the view version. View data follows normal read rules unless the view references a place or watchlist, in which case a token is required (401).  **Scope:** &#x60;read&#x60; (open while &#x60;security.openReads&#x60; is on).  **v2.0 (per-user, R2-012):** a saved view is **shared** (&#x60;shared: true&#x60;, no owner; every view from before v2.0 and every view an API token creates) or **personal** (&#x60;ownerPrincipalId&#x60;, the owning user&#39;s principal). A signed-in user reaches the view operations with &#x60;self.views&#x60; (the reads also with &#x60;data.read&#x60;): they list and render their own views and the shared ones, and create, replace and delete their own; a view they create is theirs. Another user&#39;s view is 404 UNKNOWN_VIEW, like an unknown one; replacing or deleting a shared view needs &#x60;users.manage&#x60; (403 PERMISSION_DENIED otherwise). A session holding &#x60;users.manage&#x60; and every API token see and manage all views. Slugs stay unique across all views. The shapes change only by the additive read-only &#x60;shared&#x60; and &#x60;ownerPrincipalId&#x60;.
   ///
   /// Parameters:
   /// * [viewId] - Saved view id (uuid) or slug
@@ -592,7 +592,7 @@ class ViewsApi {
   }
 
   /// List saved views
-  /// View definitions.  **Scope:** &#x60;read&#x60; (open while &#x60;security.openReads&#x60; is on).
+  /// View definitions.  **Scope:** &#x60;read&#x60; (open while &#x60;security.openReads&#x60; is on).  **v2.0 (per-user, R2-012):** a saved view is **shared** (&#x60;shared: true&#x60;, no owner; every view from before v2.0 and every view an API token creates) or **personal** (&#x60;ownerPrincipalId&#x60;, the owning user&#39;s principal). A signed-in user reaches the view operations with &#x60;self.views&#x60; (the reads also with &#x60;data.read&#x60;): they list and render their own views and the shared ones, and create, replace and delete their own; a view they create is theirs. Another user&#39;s view is 404 UNKNOWN_VIEW, like an unknown one; replacing or deleting a shared view needs &#x60;users.manage&#x60; (403 PERMISSION_DENIED otherwise). A session holding &#x60;users.manage&#x60; and every API token see and manage all views. Slugs stay unique across all views. The shapes change only by the additive read-only &#x60;shared&#x60; and &#x60;ownerPrincipalId&#x60;.
   ///
   /// Parameters:
   /// * [cursor] - Opaque cursor from the previous page's `nextCursor`
@@ -687,7 +687,7 @@ class ViewsApi {
   }
 
   /// Change stream of a saved view (SSE)
-  /// 015 SSE semantics (replay from &#x60;Last-Event-ID&#x60;/&#x60;after&#x60;, live and touch lanes, resync and reset; &#x60;leftFilter&#x60; unchanged) filtered by the view&#39;s predicate. View data follows normal read rules unless the view references a place or watchlist, in which case a token is required (401).  **Scope:** &#x60;read&#x60; (open while &#x60;security.openReads&#x60; is on).
+  /// 015 SSE semantics (replay from &#x60;Last-Event-ID&#x60;/&#x60;after&#x60;, live and touch lanes, resync and reset; &#x60;leftFilter&#x60; unchanged) filtered by the view&#39;s predicate. View data follows normal read rules unless the view references a place or watchlist, in which case a token is required (401).  **Scope:** &#x60;read&#x60; (open while &#x60;security.openReads&#x60; is on).  **v2.0 (per-user, R2-012):** a saved view is **shared** (&#x60;shared: true&#x60;, no owner; every view from before v2.0 and every view an API token creates) or **personal** (&#x60;ownerPrincipalId&#x60;, the owning user&#39;s principal). A signed-in user reaches the view operations with &#x60;self.views&#x60; (the reads also with &#x60;data.read&#x60;): they list and render their own views and the shared ones, and create, replace and delete their own; a view they create is theirs. Another user&#39;s view is 404 UNKNOWN_VIEW, like an unknown one; replacing or deleting a shared view needs &#x60;users.manage&#x60; (403 PERMISSION_DENIED otherwise). A session holding &#x60;users.manage&#x60; and every API token see and manage all views. Slugs stay unique across all views. The shapes change only by the additive read-only &#x60;shared&#x60; and &#x60;ownerPrincipalId&#x60;.
   ///
   /// Parameters:
   /// * [viewId] - Saved view id (uuid) or slug
@@ -798,7 +798,7 @@ class ViewsApi {
   }
 
   /// Replace a saved view
-  /// Bumps &#x60;version&#x60; (tile cache keys include it).  **Scope:** &#x60;agent&#x60;.
+  /// Bumps &#x60;version&#x60; (tile cache keys include it).  **Scope:** &#x60;agent&#x60;.  **v2.0 (per-user, R2-012):** a saved view is **shared** (&#x60;shared: true&#x60;, no owner; every view from before v2.0 and every view an API token creates) or **personal** (&#x60;ownerPrincipalId&#x60;, the owning user&#39;s principal). A signed-in user reaches the view operations with &#x60;self.views&#x60; (the reads also with &#x60;data.read&#x60;): they list and render their own views and the shared ones, and create, replace and delete their own; a view they create is theirs. Another user&#39;s view is 404 UNKNOWN_VIEW, like an unknown one; replacing or deleting a shared view needs &#x60;users.manage&#x60; (403 PERMISSION_DENIED otherwise). A session holding &#x60;users.manage&#x60; and every API token see and manage all views. Slugs stay unique across all views. The shapes change only by the additive read-only &#x60;shared&#x60; and &#x60;ownerPrincipalId&#x60;.
   ///
   /// Parameters:
   /// * [viewId] - Saved view id (uuid) or slug

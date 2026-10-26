@@ -71,6 +71,7 @@ part 'trigger_rule.g.dart';
 /// * [geofenceOrigin] - 036
 /// * [anchorStatus] - Moving-anchor state (036); stale suspends the rule (ANCHOR_STALE)
 /// * [windowStatus] - Windowed rules only
+/// * [ownerPrincipalId] - The principal of the user who owns the rule (R2-008); null for a shared rule managed by an admin. Ignored on input.
 @BuiltValue()
 abstract class TriggerRule implements Built<TriggerRule, TriggerRuleBuilder> {
   @BuiltValueField(wireName: r'name')
@@ -266,6 +267,10 @@ abstract class TriggerRule implements Built<TriggerRule, TriggerRuleBuilder> {
   /// Windowed rules only
   @BuiltValueField(wireName: r'windowStatus')
   WindowStatus? get windowStatus;
+
+  /// The principal of the user who owns the rule (R2-008); null for a shared rule managed by an admin. Ignored on input.
+  @BuiltValueField(wireName: r'ownerPrincipalId')
+  String? get ownerPrincipalId;
 
   TriggerRule._();
 
@@ -639,6 +644,13 @@ class _$TriggerRuleSerializer implements PrimitiveSerializer<TriggerRule> {
       yield serializers.serialize(
         object.windowStatus,
         specifiedType: const FullType.nullable(WindowStatus),
+      );
+    }
+    if (object.ownerPrincipalId != null) {
+      yield r'ownerPrincipalId';
+      yield serializers.serialize(
+        object.ownerPrincipalId,
+        specifiedType: const FullType.nullable(String),
       );
     }
   }
@@ -1195,6 +1207,16 @@ class _$TriggerRuleSerializer implements PrimitiveSerializer<TriggerRule> {
                   as WindowStatus?;
           if (valueDes == null) continue;
           result.windowStatus.replace(valueDes);
+          break;
+        case r'ownerPrincipalId':
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
+          if (valueDes == null) continue;
+          result.ownerPrincipalId = valueDes;
           break;
         default:
           unhandled.add(key);

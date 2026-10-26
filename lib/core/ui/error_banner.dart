@@ -39,7 +39,7 @@ class ErrorBanner extends StatelessWidget {
           lines.add('Retry after ${retryAfter.inSeconds} s.');
         }
       case AdminTokenRequiredException():
-        heading ??= 'Admin token required';
+        heading ??= 'Sign-in required';
         color = AdminPalette.of(context).warning;
         lines.add(api.message);
       case NetworkException():

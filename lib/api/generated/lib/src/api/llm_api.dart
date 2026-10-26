@@ -18,6 +18,7 @@ import 'package:foresignal_api/src/model/llm_provider_input.dart';
 import 'package:foresignal_api/src/model/llm_settings.dart';
 import 'package:foresignal_api/src/model/llm_test_result.dart';
 import 'package:foresignal_api/src/model/llm_usage_series.dart';
+import 'package:foresignal_api/src/model/me_llm_budget.dart';
 import 'package:foresignal_api/src/model/problem.dart';
 import 'package:foresignal_api/src/model/prompt_template.dart';
 import 'package:foresignal_api/src/model/prompt_template_list.dart';
@@ -30,7 +31,7 @@ class LLMApi {
   const LLMApi(this._dio, this._serializers);
 
   /// Add an LLM provider
-  /// Add an LLM provider. Defaults: &#x60;anthropic&#x60; → &#x60;baseUrl&#x60; https://api.anthropic.com, &#x60;chatModel&#x60; claude-opus-5-5, &#x60;options.effort&#x60; medium, &#x60;options.maxTokens&#x60; 16000, and &#x60;apiKey&#x60; is required; &#x60;ollama&#x60; → &#x60;baseUrl&#x60; http://ollama:11434; &#x60;openai-compatible&#x60; must name &#x60;baseUrl&#x60;. &#x60;baseUrl&#x60; must be http or https with a host and no user info or fragment; private-network URLs are allowed (035 adds OutboundUrlPolicy LAN_ALLOWED). The key is encrypted at rest and never returned (&#x60;apiKeySet&#x60;).  **Scope:** &#x60;admin&#x60;.
+  /// Add an LLM provider. Defaults: &#x60;anthropic&#x60; → &#x60;baseUrl&#x60; https://api.anthropic.com, &#x60;chatModel&#x60; claude-opus-5-5, &#x60;options.effort&#x60; medium, &#x60;options.maxTokens&#x60; 16000, and &#x60;apiKey&#x60; is required; &#x60;ollama&#x60; → &#x60;baseUrl&#x60; http://ollama:11434; &#x60;openai-compatible&#x60; must name &#x60;baseUrl&#x60;. &#x60;baseUrl&#x60; must be http or https with a host and no user info or fragment; private-network URLs are allowed (035 adds OutboundUrlPolicy LAN_ALLOWED). The key is encrypted at rest and never returned (&#x60;apiKeySet&#x60;).  **Scope:** &#x60;admin&#x60;.  **v2.0 (shared and personal, R2-011):** a provider is **shared** (&#x60;shared: true&#x60;, no owner; every provider from before v2.0, managed with &#x60;llm.shared.manage&#x60;) or **personal** (&#x60;ownerPrincipalId&#x60;, the owning user&#39;s principal, managed by that user with &#x60;self.llm&#x60;). A signed-in user reaches the provider operations with either permission: they see their own providers and the shared ones; they change, delete and test their own, list its models and read its budget; on a shared provider those need &#x60;llm.shared.manage&#x60; (403 PERMISSION_DENIED otherwise), and another user&#39;s provider is 404, like an unknown one. A session holding &#x60;users.manage&#x60; and every API token see and manage all providers. On create, &#x60;shared&#x60; picks the kind: absent, a user holding &#x60;self.llm&#x60; gets a personal provider and anyone else a shared one; an API token always creates shared providers; a replace keeps the kind. Only a shared provider can hold an instance role (getLlmSettings) or carry &#x60;perUser*CapUsd&#x60;, the caps on each user&#39;s own spend on it. A personal provider is never &#x60;local&#x60; for LLM egress. Calls made for a user are metered to that user as well (getMyLlmBudget). The shapes change only by the additive &#x60;shared&#x60;, &#x60;ownerPrincipalId&#x60; and &#x60;perUser*CapUsd&#x60;.
   ///
   /// Parameters:
   /// * [llmProviderInput]
@@ -126,7 +127,7 @@ class LLMApi {
   }
 
   /// Delete an LLM provider
-  /// Returns 409 while it is assigned to a role.  **Scope:** &#x60;admin&#x60;.
+  /// Returns 409 while it is assigned to a role.  **Scope:** &#x60;admin&#x60;.  **v2.0 (shared and personal, R2-011):** a provider is **shared** (&#x60;shared: true&#x60;, no owner; every provider from before v2.0, managed with &#x60;llm.shared.manage&#x60;) or **personal** (&#x60;ownerPrincipalId&#x60;, the owning user&#39;s principal, managed by that user with &#x60;self.llm&#x60;). A signed-in user reaches the provider operations with either permission: they see their own providers and the shared ones; they change, delete and test their own, list its models and read its budget; on a shared provider those need &#x60;llm.shared.manage&#x60; (403 PERMISSION_DENIED otherwise), and another user&#39;s provider is 404, like an unknown one. A session holding &#x60;users.manage&#x60; and every API token see and manage all providers. On create, &#x60;shared&#x60; picks the kind: absent, a user holding &#x60;self.llm&#x60; gets a personal provider and anyone else a shared one; an API token always creates shared providers; a replace keeps the kind. Only a shared provider can hold an instance role (getLlmSettings) or carry &#x60;perUser*CapUsd&#x60;, the caps on each user&#39;s own spend on it. A personal provider is never &#x60;local&#x60; for LLM egress. Calls made for a user are metered to that user as well (getMyLlmBudget). The shapes change only by the additive &#x60;shared&#x60;, &#x60;ownerPrincipalId&#x60; and &#x60;perUser*CapUsd&#x60;.
   ///
   /// Parameters:
   /// * [providerId] - LLM provider id
@@ -182,7 +183,7 @@ class LLMApi {
   }
 
   /// Get an LLM provider
-  /// Get an LLM provider  **Scope:** &#x60;admin&#x60;.
+  /// Get an LLM provider  **Scope:** &#x60;admin&#x60;.  **v2.0 (shared and personal, R2-011):** a provider is **shared** (&#x60;shared: true&#x60;, no owner; every provider from before v2.0, managed with &#x60;llm.shared.manage&#x60;) or **personal** (&#x60;ownerPrincipalId&#x60;, the owning user&#39;s principal, managed by that user with &#x60;self.llm&#x60;). A signed-in user reaches the provider operations with either permission: they see their own providers and the shared ones; they change, delete and test their own, list its models and read its budget; on a shared provider those need &#x60;llm.shared.manage&#x60; (403 PERMISSION_DENIED otherwise), and another user&#39;s provider is 404, like an unknown one. A session holding &#x60;users.manage&#x60; and every API token see and manage all providers. On create, &#x60;shared&#x60; picks the kind: absent, a user holding &#x60;self.llm&#x60; gets a personal provider and anyone else a shared one; an API token always creates shared providers; a replace keeps the kind. Only a shared provider can hold an instance role (getLlmSettings) or carry &#x60;perUser*CapUsd&#x60;, the caps on each user&#39;s own spend on it. A personal provider is never &#x60;local&#x60; for LLM egress. Calls made for a user are metered to that user as well (getMyLlmBudget). The shapes change only by the additive &#x60;shared&#x60;, &#x60;ownerPrincipalId&#x60; and &#x60;perUser*CapUsd&#x60;.
   ///
   /// Parameters:
   /// * [providerId] - LLM provider id
@@ -268,7 +269,7 @@ class LLMApi {
   }
 
   /// A provider&#39;s spend against its USD caps
-  /// Per window (the UTC hour, day and month) the USD spent, the estimated USD of calls in flight, the cap, what remains and when the window resets; the token and request limits; and, for providers whose API reports one to the same key, the provider-reported balance (DeepSeek, OpenRouter), shown for information and never enforced. Spend is Foresignal&#39;s own metered tokens at the provider&#39;s &#x60;pricing&#x60;.  **Scope:** &#x60;admin&#x60;.
+  /// Per window (the UTC hour, day and month) the USD spent, the estimated USD of calls in flight, the cap, what remains and when the window resets; the token and request limits; and, for providers whose API reports one to the same key, the provider-reported balance (DeepSeek, OpenRouter), shown for information and never enforced. Spend is Foresignal&#39;s own metered tokens at the provider&#39;s &#x60;pricing&#x60;.  **Scope:** &#x60;admin&#x60;.  **v2.0 (shared and personal, R2-011):** a provider is **shared** (&#x60;shared: true&#x60;, no owner; every provider from before v2.0, managed with &#x60;llm.shared.manage&#x60;) or **personal** (&#x60;ownerPrincipalId&#x60;, the owning user&#39;s principal, managed by that user with &#x60;self.llm&#x60;). A signed-in user reaches the provider operations with either permission: they see their own providers and the shared ones; they change, delete and test their own, list its models and read its budget; on a shared provider those need &#x60;llm.shared.manage&#x60; (403 PERMISSION_DENIED otherwise), and another user&#39;s provider is 404, like an unknown one. A session holding &#x60;users.manage&#x60; and every API token see and manage all providers. On create, &#x60;shared&#x60; picks the kind: absent, a user holding &#x60;self.llm&#x60; gets a personal provider and anyone else a shared one; an API token always creates shared providers; a replace keeps the kind. Only a shared provider can hold an instance role (getLlmSettings) or carry &#x60;perUser*CapUsd&#x60;, the caps on each user&#39;s own spend on it. A personal provider is never &#x60;local&#x60; for LLM egress. Calls made for a user are metered to that user as well (getMyLlmBudget). The shapes change only by the additive &#x60;shared&#x60;, &#x60;ownerPrincipalId&#x60; and &#x60;perUser*CapUsd&#x60;.
   ///
   /// Parameters:
   /// * [providerId] - LLM provider id
@@ -354,7 +355,7 @@ class LLMApi {
   }
 
   /// Get LLM roles and options
-  /// Get LLM roles and options  **Scope:** &#x60;admin&#x60;.
+  /// Get LLM roles and options  **Scope:** &#x60;admin&#x60;.  **v2.0 (shared and personal, R2-011):** this operation concerns the shared LLM configuration only and needs &#x60;llm.shared.manage&#x60;; personal providers are managed through the provider operations with &#x60;self.llm&#x60;, and the instance roles can be held only by shared providers.
   ///
   /// Parameters:
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
@@ -429,7 +430,7 @@ class LLMApi {
   }
 
   /// LLM usage over time
-  /// LLM usage over time  **Scope:** &#x60;admin&#x60;.
+  /// LLM usage over time  **Scope:** &#x60;admin&#x60;.  **v2.0 (shared and personal, R2-011):** this operation concerns the shared LLM configuration only and needs &#x60;llm.shared.manage&#x60;; personal providers are managed through the provider operations with &#x60;self.llm&#x60;, and the instance roles can be held only by shared providers.
   ///
   /// Parameters:
   /// * [provider] - Provider id (default all)
@@ -524,6 +525,81 @@ class LLMApi {
     }
 
     return Response<LlmUsageSeries>(
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      requestOptions: _response.requestOptions,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
+    );
+  }
+
+  /// Get my LLM budget and spend
+  /// Returns the calling user&#39;s LLM spend this UTC month on every provider they can use: the enabled shared providers and their own personal ones, by id. &#x60;spentUsd&#x60; counts only calls made for this user (their own requests, and work done on their behalf such as enriching their alerts); calls made with an API token are the machine&#39;s and are not counted. On a shared provider &#x60;capUsd&#x60; is its &#x60;perUserMonthlyCapUsd&#x60;, the user&#39;s share; on a personal provider it is the provider&#39;s own &#x60;monthlyCapUsd&#x60;. &#x60;remainingUsd&#x60; is the cap minus the spend, never below zero, or null when uncapped. A budget belongs to a signed-in user, so an API token gets &#x60;401&#x60;. Requires &#x60;self.llm&#x60;.  **Scope:** &#x60;read&#x60;.
+  ///
+  /// Parameters:
+  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
+  /// * [headers] - Can be used to add additional headers to the request
+  /// * [extras] - Can be used to add flags to the request
+  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
+  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
+  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///
+  /// Returns a [Future] containing a [Response] with a [MeLlmBudget] as data
+  /// Throws [DioException] if API call or serialization fails
+  Future<Response<MeLlmBudget>> getMyLlmBudget({
+    CancelToken? cancelToken,
+    Map<String, dynamic>? headers,
+    Map<String, dynamic>? extra,
+    ValidateStatus? validateStatus,
+    ProgressCallback? onSendProgress,
+    ProgressCallback? onReceiveProgress,
+  }) async {
+    final _path = r'/v1/me/llm/budget';
+    final _options = Options(
+      method: r'GET',
+      headers: <String, dynamic>{...?headers},
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[
+          {'type': 'http', 'scheme': 'bearer', 'name': 'bearerToken'},
+        ],
+        ...?extra,
+      },
+      validateStatus: validateStatus,
+    );
+
+    final _response = await _dio.request<Object>(
+      _path,
+      options: _options,
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
+
+    MeLlmBudget? _responseData;
+
+    try {
+      final rawResponse = _response.data;
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+                  rawResponse,
+                  specifiedType: const FullType(MeLlmBudget),
+                )
+                as MeLlmBudget;
+    } catch (error, stackTrace) {
+      throw DioException(
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioExceptionType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
+    }
+
+    return Response<MeLlmBudget>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -634,7 +710,7 @@ class LLMApi {
   }
 
   /// List models available from a provider
-  /// Queries the provider&#39;s model list (Anthropic Models API, OpenAI-compatible /models, Ollama /api/tags).  **Scope:** &#x60;admin&#x60;.
+  /// Queries the provider&#39;s model list (Anthropic Models API, OpenAI-compatible /models, Ollama /api/tags).  **Scope:** &#x60;admin&#x60;.  **v2.0 (shared and personal, R2-011):** a provider is **shared** (&#x60;shared: true&#x60;, no owner; every provider from before v2.0, managed with &#x60;llm.shared.manage&#x60;) or **personal** (&#x60;ownerPrincipalId&#x60;, the owning user&#39;s principal, managed by that user with &#x60;self.llm&#x60;). A signed-in user reaches the provider operations with either permission: they see their own providers and the shared ones; they change, delete and test their own, list its models and read its budget; on a shared provider those need &#x60;llm.shared.manage&#x60; (403 PERMISSION_DENIED otherwise), and another user&#39;s provider is 404, like an unknown one. A session holding &#x60;users.manage&#x60; and every API token see and manage all providers. On create, &#x60;shared&#x60; picks the kind: absent, a user holding &#x60;self.llm&#x60; gets a personal provider and anyone else a shared one; an API token always creates shared providers; a replace keeps the kind. Only a shared provider can hold an instance role (getLlmSettings) or carry &#x60;perUser*CapUsd&#x60;, the caps on each user&#39;s own spend on it. A personal provider is never &#x60;local&#x60; for LLM egress. Calls made for a user are metered to that user as well (getMyLlmBudget). The shapes change only by the additive &#x60;shared&#x60;, &#x60;ownerPrincipalId&#x60; and &#x60;perUser*CapUsd&#x60;.
   ///
   /// Parameters:
   /// * [providerId] - LLM provider id
@@ -722,7 +798,7 @@ class LLMApi {
   }
 
   /// List LLM providers
-  /// API keys are never returned.  **Scope:** &#x60;admin&#x60;.
+  /// API keys are never returned.  **Scope:** &#x60;admin&#x60;.  **v2.0 (shared and personal, R2-011):** a provider is **shared** (&#x60;shared: true&#x60;, no owner; every provider from before v2.0, managed with &#x60;llm.shared.manage&#x60;) or **personal** (&#x60;ownerPrincipalId&#x60;, the owning user&#39;s principal, managed by that user with &#x60;self.llm&#x60;). A signed-in user reaches the provider operations with either permission: they see their own providers and the shared ones; they change, delete and test their own, list its models and read its budget; on a shared provider those need &#x60;llm.shared.manage&#x60; (403 PERMISSION_DENIED otherwise), and another user&#39;s provider is 404, like an unknown one. A session holding &#x60;users.manage&#x60; and every API token see and manage all providers. On create, &#x60;shared&#x60; picks the kind: absent, a user holding &#x60;self.llm&#x60; gets a personal provider and anyone else a shared one; an API token always creates shared providers; a replace keeps the kind. Only a shared provider can hold an instance role (getLlmSettings) or carry &#x60;perUser*CapUsd&#x60;, the caps on each user&#39;s own spend on it. A personal provider is never &#x60;local&#x60; for LLM egress. Calls made for a user are metered to that user as well (getMyLlmBudget). The shapes change only by the additive &#x60;shared&#x60;, &#x60;ownerPrincipalId&#x60; and &#x60;perUser*CapUsd&#x60;.
   ///
   /// Parameters:
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
@@ -874,7 +950,7 @@ class LLMApi {
   }
 
   /// Test an unsaved LLM provider and list its models
-  /// Dry run for the provider editor: takes an LlmProviderInput that is not saved and, in one round trip, lists the provider&#39;s models and runs the testLlmProvider probes (a tiny chat when &#x60;chatModel&#x60; is set, an embedding when an embedding model and dimensions are). Without a model the model listing is the connection test. Nothing is persisted: no provider, no usage, no health, no budget; the &#x60;apiKey&#x60; is used for these requests and discarded. Without &#x60;apiKey&#x60;, the stored key of the saved provider named by &#x60;id&#x60; is used when there is one, so a saved provider can be tested with edits that are not saved yet. The body is validated as createLlmProvider validates it (400, and 400 URL_NOT_ALLOWED for a base URL the outbound URL policy refuses); the requests go through the same outbound URL policy and pinning as a saved provider&#39;s. A provider failure is reported in the result, never as an error status.  **Scope:** &#x60;admin&#x60;.
+  /// Dry run for the provider editor: takes an LlmProviderInput that is not saved and, in one round trip, lists the provider&#39;s models and runs the testLlmProvider probes (a tiny chat when &#x60;chatModel&#x60; is set, an embedding when an embedding model and dimensions are). Without a model the model listing is the connection test. Nothing is persisted: no provider, no usage, no health, no budget; the &#x60;apiKey&#x60; is used for these requests and discarded. Without &#x60;apiKey&#x60;, the stored key of the saved provider named by &#x60;id&#x60; is used when there is one, so a saved provider can be tested with edits that are not saved yet. The body is validated as createLlmProvider validates it (400, and 400 URL_NOT_ALLOWED for a base URL the outbound URL policy refuses); the requests go through the same outbound URL policy and pinning as a saved provider&#39;s. A provider failure is reported in the result, never as an error status.  **Scope:** &#x60;admin&#x60;.  **v2.0 (shared and personal, R2-011):** this operation concerns the shared LLM configuration only and needs &#x60;llm.shared.manage&#x60;; personal providers are managed through the provider operations with &#x60;self.llm&#x60;, and the instance roles can be held only by shared providers.
   ///
   /// Parameters:
   /// * [llmProviderInput]
@@ -970,7 +1046,7 @@ class LLMApi {
   }
 
   /// Test an LLM provider
-  /// Sends a tiny chat request (\&quot;Reply with the single word: ok\&quot;, 16 output tokens, purpose &#x60;test&#x60;) and an embedding of \&quot;test\&quot; when the provider has an embedding model, and reports latency, model, token usage (cached tokens included) and the normalized stop reason. Consumes budget. A provider failure or refusal is reported in the result (&#x60;success: false&#x60;, &#x60;error&#x60;, &#x60;refusalCategory&#x60;); only a budget refusal is an error status. A destination refused by the outbound URL policy at send time answers &#x60;success: false&#x60; with an &#x60;error&#x60; containing URL_NOT_ALLOWED (035).  **Scope:** &#x60;admin&#x60;.
+  /// Sends a tiny chat request (\&quot;Reply with the single word: ok\&quot;, 16 output tokens, purpose &#x60;test&#x60;) and an embedding of \&quot;test\&quot; when the provider has an embedding model, and reports latency, model, token usage (cached tokens included) and the normalized stop reason. Consumes budget. A provider failure or refusal is reported in the result (&#x60;success: false&#x60;, &#x60;error&#x60;, &#x60;refusalCategory&#x60;); only a budget refusal is an error status. A destination refused by the outbound URL policy at send time answers &#x60;success: false&#x60; with an &#x60;error&#x60; containing URL_NOT_ALLOWED (035).  **Scope:** &#x60;admin&#x60;.  **v2.0 (shared and personal, R2-011):** a provider is **shared** (&#x60;shared: true&#x60;, no owner; every provider from before v2.0, managed with &#x60;llm.shared.manage&#x60;) or **personal** (&#x60;ownerPrincipalId&#x60;, the owning user&#39;s principal, managed by that user with &#x60;self.llm&#x60;). A signed-in user reaches the provider operations with either permission: they see their own providers and the shared ones; they change, delete and test their own, list its models and read its budget; on a shared provider those need &#x60;llm.shared.manage&#x60; (403 PERMISSION_DENIED otherwise), and another user&#39;s provider is 404, like an unknown one. A session holding &#x60;users.manage&#x60; and every API token see and manage all providers. On create, &#x60;shared&#x60; picks the kind: absent, a user holding &#x60;self.llm&#x60; gets a personal provider and anyone else a shared one; an API token always creates shared providers; a replace keeps the kind. Only a shared provider can hold an instance role (getLlmSettings) or carry &#x60;perUser*CapUsd&#x60;, the caps on each user&#39;s own spend on it. A personal provider is never &#x60;local&#x60; for LLM egress. Calls made for a user are metered to that user as well (getMyLlmBudget). The shapes change only by the additive &#x60;shared&#x60;, &#x60;ownerPrincipalId&#x60; and &#x60;perUser*CapUsd&#x60;.
   ///
   /// Parameters:
   /// * [providerId] - LLM provider id
@@ -1056,7 +1132,7 @@ class LLMApi {
   }
 
   /// Replace an LLM provider
-  /// Omit &#x60;apiKey&#x60; to keep the stored key. Changing model or dimensions of the active embedding provider (or reassigning &#x60;embeddingProvider&#x60;) publishes an embedding-model change and starts a zero-downtime reindex (027). &#x60;baseUrl&#x60; passes OutboundUrlPolicy LAN_ALLOWED (035). A body &#x60;id&#x60;, when present, must equal the path id. The change is refused (400) when it would leave a role the provider holds unserved (disabled, no chatModel, or no embedding model).  **Scope:** &#x60;admin&#x60;.
+  /// Omit &#x60;apiKey&#x60; to keep the stored key. Changing model or dimensions of the active embedding provider (or reassigning &#x60;embeddingProvider&#x60;) publishes an embedding-model change and starts a zero-downtime reindex (027). &#x60;baseUrl&#x60; passes OutboundUrlPolicy LAN_ALLOWED (035). A body &#x60;id&#x60;, when present, must equal the path id. The change is refused (400) when it would leave a role the provider holds unserved (disabled, no chatModel, or no embedding model).  **Scope:** &#x60;admin&#x60;.  **v2.0 (shared and personal, R2-011):** a provider is **shared** (&#x60;shared: true&#x60;, no owner; every provider from before v2.0, managed with &#x60;llm.shared.manage&#x60;) or **personal** (&#x60;ownerPrincipalId&#x60;, the owning user&#39;s principal, managed by that user with &#x60;self.llm&#x60;). A signed-in user reaches the provider operations with either permission: they see their own providers and the shared ones; they change, delete and test their own, list its models and read its budget; on a shared provider those need &#x60;llm.shared.manage&#x60; (403 PERMISSION_DENIED otherwise), and another user&#39;s provider is 404, like an unknown one. A session holding &#x60;users.manage&#x60; and every API token see and manage all providers. On create, &#x60;shared&#x60; picks the kind: absent, a user holding &#x60;self.llm&#x60; gets a personal provider and anyone else a shared one; an API token always creates shared providers; a replace keeps the kind. Only a shared provider can hold an instance role (getLlmSettings) or carry &#x60;perUser*CapUsd&#x60;, the caps on each user&#39;s own spend on it. A personal provider is never &#x60;local&#x60; for LLM egress. Calls made for a user are metered to that user as well (getMyLlmBudget). The shapes change only by the additive &#x60;shared&#x60;, &#x60;ownerPrincipalId&#x60; and &#x60;perUser*CapUsd&#x60;.
   ///
   /// Parameters:
   /// * [providerId] - LLM provider id
@@ -1163,7 +1239,7 @@ class LLMApi {
   }
 
   /// Set LLM roles and options
-  /// Replaces the LLM roles and options; omitted members take their defaults. Reassigning &#x60;embeddingProvider&#x60; publishes an embedding-model change (027 reindexes). &#x60;allowPrivateLocal&#x60; is accepted only as false until prompt 039.  **Scope:** &#x60;admin&#x60;.
+  /// Replaces the LLM roles and options; omitted members take their defaults. Reassigning &#x60;embeddingProvider&#x60; publishes an embedding-model change (027 reindexes). &#x60;allowPrivateLocal&#x60; is accepted only as false until prompt 039.  **Scope:** &#x60;admin&#x60;.  **v2.0 (shared and personal, R2-011):** this operation concerns the shared LLM configuration only and needs &#x60;llm.shared.manage&#x60;; personal providers are managed through the provider operations with &#x60;self.llm&#x60;, and the instance roles can be held only by shared providers.
   ///
   /// Parameters:
   /// * [llmSettings]

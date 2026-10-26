@@ -33,6 +33,7 @@ part 'settings_bundle_channels_inner.g.dart';
 /// * [deferWhileActiveSeconds] - Defer non-critical alerts while a desktop client is active (033); for phone-type channels
 /// * [acceptExercise] - Receive exercise alerts
 /// * [language] - BCP 47 language for notifications on this channel (141), stored canonicalized (`pt-br` → `pt-BR`); null uses `notify.defaultLanguage`. When the primary language or script differs from it, title and body are translated through the 026 chat role (budget `translate`, low effort), code spans, URLs and placeholders untouched, cached 24 h; after 8 s, or on any failure, the original is sent with the title prefixed `[untranslated]`.
+/// * [global] - On create only (R2-009): true for a global channel (needs `channels.global`), false for a personal one (needs `self.channels`). Absent, a user holding `self.channels` gets a personal channel and anyone else a global one; an API token always creates global channels. Ignored on update.
 /// * [id] - The channel id; import upserts by it
 @BuiltValue()
 abstract class SettingsBundleChannelsInner
@@ -109,6 +110,10 @@ abstract class SettingsBundleChannelsInner
   /// BCP 47 language for notifications on this channel (141), stored canonicalized (`pt-br` → `pt-BR`); null uses `notify.defaultLanguage`. When the primary language or script differs from it, title and body are translated through the 026 chat role (budget `translate`, low effort), code spans, URLs and placeholders untouched, cached 24 h; after 8 s, or on any failure, the original is sent with the title prefixed `[untranslated]`.
   @BuiltValueField(wireName: r'language')
   String? get language;
+
+  /// On create only (R2-009): true for a global channel (needs `channels.global`), false for a personal one (needs `self.channels`). Absent, a user holding `self.channels` gets a personal channel and anyone else a global one; an API token always creates global channels. Ignored on update.
+  @BuiltValueField(wireName: r'global')
+  bool? get global;
 
   /// The channel id; import upserts by it
   @BuiltValueField(wireName: r'id')
@@ -278,6 +283,13 @@ class _$SettingsBundleChannelsInnerSerializer
       yield serializers.serialize(
         object.language,
         specifiedType: const FullType.nullable(String),
+      );
+    }
+    if (object.global != null) {
+      yield r'global';
+      yield serializers.serialize(
+        object.global,
+        specifiedType: const FullType.nullable(bool),
       );
     }
     yield r'id';
@@ -512,6 +524,16 @@ class _$SettingsBundleChannelsInnerSerializer
                   as String?;
           if (valueDes == null) continue;
           result.language = valueDes;
+          break;
+        case r'global':
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
+          if (valueDes == null) continue;
+          result.global = valueDes;
           break;
         case r'id':
           final valueDes =

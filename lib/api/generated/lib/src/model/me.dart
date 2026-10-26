@@ -7,6 +7,7 @@ import 'package:foresignal_api/src/model/notification_preference.dart';
 import 'package:foresignal_api/src/model/me_groups_inner.dart';
 import 'package:built_collection/built_collection.dart';
 import 'package:foresignal_api/src/model/me_token.dart';
+import 'package:foresignal_api/src/model/user.dart';
 import 'package:foresignal_api/src/model/principal.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
@@ -22,6 +23,8 @@ part 'me.g.dart';
 /// * [groups]
 /// * [notificationPreferences]
 /// * [defaultTlp] - Traffic Light Protocol 2.0 label
+/// * [user]
+/// * [permissions] - Effective permission keys (union of the user's roles), present only for a login session (R2-003)
 @BuiltValue()
 abstract class Me implements Built<Me, MeBuilder> {
   @BuiltValueField(wireName: r'principal')
@@ -44,6 +47,13 @@ abstract class Me implements Built<Me, MeBuilder> {
   /// Traffic Light Protocol 2.0 label
   @BuiltValueField(wireName: r'defaultTlp')
   String? get defaultTlp;
+
+  @BuiltValueField(wireName: r'user')
+  User? get user;
+
+  /// Effective permission keys (union of the user's roles), present only for a login session (R2-003)
+  @BuiltValueField(wireName: r'permissions')
+  BuiltList<String>? get permissions;
 
   Me._();
 
@@ -100,6 +110,20 @@ class _$MeSerializer implements PrimitiveSerializer<Me> {
       yield serializers.serialize(
         object.defaultTlp,
         specifiedType: const FullType(String),
+      );
+    }
+    if (object.user != null) {
+      yield r'user';
+      yield serializers.serialize(
+        object.user,
+        specifiedType: const FullType(User),
+      );
+    }
+    if (object.permissions != null) {
+      yield r'permissions';
+      yield serializers.serialize(
+        object.permissions,
+        specifiedType: const FullType(BuiltList, [FullType(String)]),
       );
     }
   }
@@ -189,6 +213,28 @@ class _$MeSerializer implements PrimitiveSerializer<Me> {
                   as String?;
           if (valueDes == null) continue;
           result.defaultTlp = valueDes;
+          break;
+        case r'user':
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(User),
+                  )
+                  as User?;
+          if (valueDes == null) continue;
+          result.user.replace(valueDes);
+          break;
+        case r'permissions':
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>?;
+          if (valueDes == null) continue;
+          result.permissions.replace(valueDes);
           break;
         default:
           unhandled.add(key);

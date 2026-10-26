@@ -326,6 +326,8 @@ void main() {
         (ref) => createBackendDio(
           baseUrl: ref.watch(backendEndpointProvider),
           tokenStore: ref.watch(adminTokenStoreProvider),
+          sessionStore: ref.watch(sessionStoreProvider),
+          onSessionEnded: () => ref.read(sessionControllerProvider.notifier).ended(),
         )..httpClientAdapter = _PreviewAdapter(),
       ),
       connectionProbeApiProvider.overrideWithValue(

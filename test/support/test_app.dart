@@ -19,7 +19,9 @@ import 'fake_adapter.dart';
 /// The device id every test container uses.
 const String testDeviceId = '0f8e2d3c-1b4a-4c5d-8e6f-7a8b9c0d1e2f';
 
-/// A [ProviderContainer] with in-memory stores, a fixed [formFactor], and
+/// A [ProviderContainer] with in-memory stores (a signed-in session only when
+/// [sessionStore] holds one — restore it with `SessionController.restore`),
+/// a fixed [formFactor], and
 /// every backend call answered by [adapter] (connection probes included).
 /// The device id is [testDeviceId]; presence reporting is off unless
 /// [reportPresence]; [pushTokens] and [pushArrivals] stand in for Firebase
@@ -28,6 +30,7 @@ ProviderContainer testContainer({
   required FakeAdapter adapter,
   FormFactor formFactor = FormFactor.desktop,
   InMemoryConnectionStore? store,
+  InMemorySessionStore? sessionStore,
   Uri? connectedTo,
   InMemorySetupWizardStore? wizardStore,
   bool reportPresence = false,
@@ -42,6 +45,7 @@ ProviderContainer testContainer({
     overrides: [
       connectionStoreProvider.overrideWithValue(connection),
       adminTokenStoreProvider.overrideWithValue(connection),
+      sessionStoreProvider.overrideWithValue(sessionStore ?? InMemorySessionStore()),
       themePreferenceStoreProvider.overrideWithValue(InMemoryThemeStore()),
       setupWizardStoreProvider.overrideWithValue(wizardStore ?? InMemorySetupWizardStore()),
       formFactorProvider.overrideWithValue(formFactor),
@@ -63,6 +67,8 @@ ProviderContainer testContainer({
         final dio = createBackendDio(
           baseUrl: ref.watch(backendEndpointProvider),
           tokenStore: ref.watch(adminTokenStoreProvider),
+          sessionStore: ref.watch(sessionStoreProvider),
+          onSessionEnded: () => ref.read(sessionControllerProvider.notifier).ended(),
         )..httpClientAdapter = adapter;
         return dio;
       }),
@@ -81,8 +87,8 @@ Widget testApp(ProviderContainer container) =>
 /// Contract-shaped bodies (SystemInfo, Contract, ServerSettings) for the
 /// three Connect probe operations.
 const Map<String, Object?> systemBody = <String, Object?>{
-  'version': '1.5.0',
-  'apiVersion': '1.5.0',
+  'version': '2.0.0',
+  'apiVersion': '2.0.0',
   'startedAt': '2026-10-22T13:00:00Z',
   'status': 'ok',
   'mode': 'full',
@@ -110,7 +116,7 @@ const Map<String, Object?> serverSettingsBody = <String, Object?>{
 /// [apiVersion].
 FakeAdapter connectBackend({
   String adminToken = 'fsr_good',
-  String apiVersion = '1.5.0',
+  String apiVersion = '2.0.0',
   int badTokenStatus = 401,
   Map<String, Object?> serverSettings = serverSettingsBody,
 }) {

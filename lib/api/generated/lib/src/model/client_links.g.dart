@@ -17,6 +17,10 @@ class _$ClientLinks extends ClientLinks {
   final String? pair;
   @override
   final String? share;
+  @override
+  final String? activate;
+  @override
+  final String? passwordReset;
 
   factory _$ClientLinks([void Function(ClientLinksBuilder)? updates]) =>
       (ClientLinksBuilder()..update(updates))._build();
@@ -27,6 +31,8 @@ class _$ClientLinks extends ClientLinks {
     this.briefingRun,
     this.pair,
     this.share,
+    this.activate,
+    this.passwordReset,
   }) : super._();
   @override
   ClientLinks rebuild(void Function(ClientLinksBuilder) updates) =>
@@ -43,7 +49,9 @@ class _$ClientLinks extends ClientLinks {
         record == other.record &&
         briefingRun == other.briefingRun &&
         pair == other.pair &&
-        share == other.share;
+        share == other.share &&
+        activate == other.activate &&
+        passwordReset == other.passwordReset;
   }
 
   @override
@@ -54,6 +62,8 @@ class _$ClientLinks extends ClientLinks {
     _$hash = $jc(_$hash, briefingRun.hashCode);
     _$hash = $jc(_$hash, pair.hashCode);
     _$hash = $jc(_$hash, share.hashCode);
+    _$hash = $jc(_$hash, activate.hashCode);
+    _$hash = $jc(_$hash, passwordReset.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -65,7 +75,9 @@ class _$ClientLinks extends ClientLinks {
           ..add('record', record)
           ..add('briefingRun', briefingRun)
           ..add('pair', pair)
-          ..add('share', share))
+          ..add('share', share)
+          ..add('activate', activate)
+          ..add('passwordReset', passwordReset))
         .toString();
   }
 }
@@ -93,6 +105,15 @@ class ClientLinksBuilder implements Builder<ClientLinks, ClientLinksBuilder> {
   String? get share => _$this._share;
   set share(String? share) => _$this._share = share;
 
+  String? _activate;
+  String? get activate => _$this._activate;
+  set activate(String? activate) => _$this._activate = activate;
+
+  String? _passwordReset;
+  String? get passwordReset => _$this._passwordReset;
+  set passwordReset(String? passwordReset) =>
+      _$this._passwordReset = passwordReset;
+
   ClientLinksBuilder() {
     ClientLinks._defaults(this);
   }
@@ -105,6 +126,8 @@ class ClientLinksBuilder implements Builder<ClientLinks, ClientLinksBuilder> {
       _briefingRun = $v.briefingRun;
       _pair = $v.pair;
       _share = $v.share;
+      _activate = $v.activate;
+      _passwordReset = $v.passwordReset;
       _$v = null;
     }
     return this;
@@ -132,6 +155,8 @@ class ClientLinksBuilder implements Builder<ClientLinks, ClientLinksBuilder> {
           briefingRun: briefingRun,
           pair: pair,
           share: share,
+          activate: activate,
+          passwordReset: passwordReset,
         );
     replace(_$result);
     return _$result;

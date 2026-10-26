@@ -8,6 +8,11 @@ void main() {
     expect(File('openapi/VERSION').readAsStringSync().trim(), vendoredApiVersion);
   });
 
+  test('the vendored contract is the 2.0.0 release', () {
+    expect(vendoredApiVersion, '2.0.0');
+    expect(File('openapi/OpenAPI.json').readAsStringSync(), contains('"version": "2.0.0"'));
+  });
+
   test('compareApiVersion', () {
     expect(compareApiVersion('1.3.0', built: '1.3.0'), VersionMatch.exact);
     expect(compareApiVersion('1.1.0', built: '1.3.0'), VersionMatch.compatible);
