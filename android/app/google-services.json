@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "759334424308",
+    "project_id": "foresignal-3e54f",
+    "storage_bucket": "foresignal-3e54f.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:759334424308:android:3233a043056881b60358a1",
+        "android_client_info": {
+          "package_name": "com.foresignal.foresignal_admin"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCbmfTjKQ-9lLpVoNls-hn6tSy25WRrJDI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

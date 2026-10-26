@@ -99,4 +99,35 @@ void main() {
     expect(find.byType(NavigationBar), findsOneWidget);
     expect(find.text('System'), findsNothing);
   });
+
+  testWidgets(
+    'the phone bottom bar says Notification; the desktop sidebar keeps Notifications',
+    (
+      tester,
+    ) async {
+      // Whether a label wraps is checked on a real phone: the test font draws every glyph as a
+      // square, so widths here are not a device's.
+      tester.view.physicalSize = const Size(412, 915);
+      tester.view.devicePixelRatio = 1;
+      addTearDown(tester.view.reset);
+      final mobile = testContainer(
+        adapter: connectBackend(),
+        formFactor: FormFactor.mobile,
+        connectedTo: Uri.parse('http://h:8080'),
+      );
+      addTearDown(mobile.dispose);
+      await tester.pumpWidget(testApp(mobile));
+      await tester.pumpAndSettle();
+
+      final bar = find.byType(NavigationBar);
+      expect(find.descendant(of: bar, matching: find.text('Notification')), findsOneWidget);
+      expect(find.descendant(of: bar, matching: find.text('Notifications')), findsNothing);
+
+      // The desktop sidebar keeps the full word.
+      expect(
+        navSectionsFor(FormFactor.desktop).singleWhere((s) => s.path == '/notifications').label,
+        'Notifications',
+      );
+    },
+  );
 }

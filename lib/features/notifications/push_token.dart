@@ -1,6 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/foundation.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 /// A push token from the platform: the transport it goes through, the
@@ -44,12 +45,16 @@ class FirebasePushTokenSource implements PushTokenSource {
       final messaging = FirebaseMessaging.instance;
       final settings = await messaging.requestPermission();
       if (settings.authorizationStatus == AuthorizationStatus.denied) {
-        throw const PushTokenUnavailable('Notifications are turned off for this app in the phone settings.');
+        throw const PushTokenUnavailable(
+          'Notifications are turned off for this app in the phone settings.',
+        );
       }
       if (platform == TargetPlatform.iOS) {
         final token = await messaging.getAPNSToken();
         if (token == null || token.isEmpty) {
-          throw const PushTokenUnavailable('iOS has not issued an APNs token yet; try again in a moment.');
+          throw const PushTokenUnavailable(
+            'iOS has not issued an APNs token yet; try again in a moment.',
+          );
         }
         return (
           transport: 'apns',
@@ -69,10 +74,34 @@ class FirebasePushTokenSource implements PushTokenSource {
       return (transport: 'fcm', platform: 'android', token: token, environment: null);
     } on PushTokenUnavailable {
       rethrow;
-    } on Object catch (e) {
-      throw PushTokenUnavailable('Push is not set up in this build: $e');
+    } on Object catch (e, stack) {
+      // The person sees one plain sentence; the exception and its Java stack
+      // trace go to the log.
+      debugPrint('Push registration failed: $e\n$stack');
+      throw PushTokenUnavailable(pushFailureText(e));
     }
   }
+}
+
+/// [error], a failure from Firebase or the platform, as one sentence a
+/// person can act on: never an exception's class name or stack trace.
+String pushFailureText(Object error) {
+  final String? message = switch (error) {
+    FirebaseException(:final message) => message,
+    PlatformException(:final message) => message,
+    _ => null,
+  };
+  final detail = (message ?? '').split('\n').first.trim();
+  if (detail.contains('FirebaseOptions') ||
+      detail.contains('values.xml') ||
+      detail.contains('No Firebase App')) {
+    return "Push isn't set up in this build: it was built without its Firebase configuration "
+        '(google-services.json on Android, GoogleService-Info.plist on iOS).';
+  }
+  if (detail.isEmpty) {
+    return 'Push could not be set up on this device.';
+  }
+  return 'Push could not be set up on this device: ${detail.endsWith('.') ? detail.substring(0, detail.length - 1) : detail}.';
 }
 
 /// The push token source. Tests and the preview override it.
@@ -87,5 +116,7 @@ String appIdFor(String platform) {
   if (override.isNotEmpty) {
     return override;
   }
-  return platform == 'android' ? 'com.foresignal.foresignal_admin' : 'com.foresignal.foresignalAdmin';
+  return platform == 'android'
+      ? 'com.foresignal.foresignal_admin'
+      : 'com.foresignal.foresignalAdmin';
 }

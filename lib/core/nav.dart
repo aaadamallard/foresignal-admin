@@ -11,6 +11,7 @@ class NavSection {
     required this.icon,
     required this.summary,
     required this.formFactors,
+    this.barLabel,
   });
 
   /// The route path, e.g. `/sources`.
@@ -27,6 +28,10 @@ class NavSection {
 
   /// Which shells mount the section.
   final Set<FormFactor> formFactors;
+
+  /// A shorter label for the phone's bottom bar, where [label] would wrap;
+  /// `null` uses [label].
+  final String? barLabel;
 }
 
 const Set<FormFactor> _desktop = <FormFactor>{FormFactor.desktop};
@@ -88,6 +93,7 @@ const List<NavSection> allNavSections = <NavSection>[
   NavSection(
     path: '/notifications',
     label: 'Notifications',
+    barLabel: 'Notification',
     icon: Icons.inbox,
     summary: 'The notification inbox, Web Push and native push.',
     formFactors: _both,

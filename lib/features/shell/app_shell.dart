@@ -51,7 +51,10 @@ class AppShell extends ConsumerWidget {
         const PresenceReporter(),
         const _GlobalErrorSurface(),
         if (formFactor == FormFactor.mobile) const PushArrivalBanner(),
-        _PageBackBar(roots: <String>[for (final d in destinations) d.path], mobile: formFactor == FormFactor.mobile),
+        _PageBackBar(
+          roots: <String>[for (final d in destinations) d.path],
+          mobile: formFactor == FormFactor.mobile,
+        ),
         Expanded(child: child),
       ],
     );
@@ -67,7 +70,8 @@ class AppShell extends ConsumerWidget {
           selectedIndex: selected,
           onDestinationSelected: (i) => context.go(destinations[i].path),
           destinations: <Widget>[
-            for (final d in destinations) NavigationDestination(icon: Icon(d.icon), label: d.label),
+            for (final d in destinations)
+              NavigationDestination(icon: Icon(d.icon), label: d.barLabel ?? d.label),
           ],
         ),
       );
@@ -113,7 +117,9 @@ class _PageBackBar extends StatelessWidget {
           return const SizedBox.shrink();
         }
         return Padding(
-          padding: mobile ? const EdgeInsets.fromLTRB(12, 8, 16, 0) : const EdgeInsets.fromLTRB(24, 14, 28, 0),
+          padding: mobile
+              ? const EdgeInsets.fromLTRB(12, 8, 16, 0)
+              : const EdgeInsets.fromLTRB(24, 14, 28, 0),
           child: BackLink(location: location),
         );
       },
