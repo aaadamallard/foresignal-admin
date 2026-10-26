@@ -24,6 +24,8 @@ part 'egress_route.g.dart';
 /// * [secretsSet] - Names of secrets that have a stored value
 /// * [createdAt]
 /// * [updatedAt]
+/// * [available] - Whether the server can send through this route now: false for a wireguard route (the server cannot bring a tunnel up), a disabled route, an interface it cannot find, or secrets it cannot open (R2-018)
+/// * [unavailableReason] - Why the route is unavailable; null when available
 @BuiltValue()
 abstract class EgressRoute implements Built<EgressRoute, EgressRouteBuilder> {
   @BuiltValueField(wireName: r'id')
@@ -62,6 +64,14 @@ abstract class EgressRoute implements Built<EgressRoute, EgressRouteBuilder> {
 
   @BuiltValueField(wireName: r'updatedAt')
   DateTime? get updatedAt;
+
+  /// Whether the server can send through this route now: false for a wireguard route (the server cannot bring a tunnel up), a disabled route, an interface it cannot find, or secrets it cannot open (R2-018)
+  @BuiltValueField(wireName: r'available')
+  bool? get available;
+
+  /// Why the route is unavailable; null when available
+  @BuiltValueField(wireName: r'unavailableReason')
+  String? get unavailableReason;
 
   EgressRoute._();
 
@@ -153,6 +163,20 @@ class _$EgressRouteSerializer implements PrimitiveSerializer<EgressRoute> {
       yield serializers.serialize(
         object.updatedAt,
         specifiedType: const FullType(DateTime),
+      );
+    }
+    if (object.available != null) {
+      yield r'available';
+      yield serializers.serialize(
+        object.available,
+        specifiedType: const FullType(bool),
+      );
+    }
+    if (object.unavailableReason != null) {
+      yield r'unavailableReason';
+      yield serializers.serialize(
+        object.unavailableReason,
+        specifiedType: const FullType.nullable(String),
       );
     }
   }
@@ -289,6 +313,26 @@ class _$EgressRouteSerializer implements PrimitiveSerializer<EgressRoute> {
                   as DateTime?;
           if (valueDes == null) continue;
           result.updatedAt = valueDes;
+          break;
+        case r'available':
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
+          if (valueDes == null) continue;
+          result.available = valueDes;
+          break;
+        case r'unavailableReason':
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
+          if (valueDes == null) continue;
+          result.unavailableReason = valueDes;
           break;
         default:
           unhandled.add(key);

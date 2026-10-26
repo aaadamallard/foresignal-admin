@@ -487,6 +487,7 @@ import 'package:foresignal_api/src/model/edp_validation_request.dart';
 import 'package:foresignal_api/src/model/edr_instance_list.dart';
 import 'package:foresignal_api/src/model/edr_instance_list_instances_inner.dart';
 import 'package:foresignal_api/src/model/egress_health.dart';
+import 'package:foresignal_api/src/model/egress_health_sources_inner.dart';
 import 'package:foresignal_api/src/model/egress_route.dart';
 import 'package:foresignal_api/src/model/egress_route_input.dart';
 import 'package:foresignal_api/src/model/egress_route_input_secrets.dart';
@@ -2295,6 +2296,7 @@ part 'serializers.g.dart';
   EdrInstanceList,
   EdrInstanceListInstancesInner,
   EgressHealth,
+  EgressHealthSourcesInner,
   EgressRoute,
   EgressRouteInput,
   EgressRouteInputSecrets,
@@ -5970,6 +5972,10 @@ Serializers serializers =
           ..addBuilderFactory(
             const FullType(BuiltList, [FullType(IntelCalibrationBinsInner)]),
             () => ListBuilder<IntelCalibrationBinsInner>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(EgressHealthSourcesInner)]),
+            () => ListBuilder<EgressHealthSourcesInner>(),
           )
           ..addBuilderFactory(
             const FullType(BuiltList, [

@@ -11,16 +11,16 @@ part 'source_egress_assignment.g.dart';
 /// Per-source egress assignment (C1/181)
 ///
 /// Properties:
-/// * [routeId] - Pin the source to this route; null uses the default/rotation
-/// * [excludeFromRotation] - Keep the source on its pinned/default route and out of rotation
+/// * [routeId] - Pin the source to this route (with rotation on); null uses the rotation. A pinned route that is unusable fails the pull rather than moving it (R2-018)
+/// * [excludeFromRotation] - With rotation on and no pin, keep the source on the default route, or direct when there is none (R2-018)
 @BuiltValue()
 abstract class SourceEgressAssignment
     implements Built<SourceEgressAssignment, SourceEgressAssignmentBuilder> {
-  /// Pin the source to this route; null uses the default/rotation
+  /// Pin the source to this route (with rotation on); null uses the rotation. A pinned route that is unusable fails the pull rather than moving it (R2-018)
   @BuiltValueField(wireName: r'routeId')
   String? get routeId;
 
-  /// Keep the source on its pinned/default route and out of rotation
+  /// With rotation on and no pin, keep the source on the default route, or direct when there is none (R2-018)
   @BuiltValueField(wireName: r'excludeFromRotation')
   bool? get excludeFromRotation;
 

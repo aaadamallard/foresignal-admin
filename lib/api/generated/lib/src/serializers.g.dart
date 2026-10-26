@@ -805,6 +805,7 @@ Serializers _$serializers =
           ..add(EdrInstanceList.serializer)
           ..add(EdrInstanceListInstancesInner.serializer)
           ..add(EgressHealth.serializer)
+          ..add(EgressHealthSourcesInner.serializer)
           ..add(EgressRoute.serializer)
           ..add(EgressRouteInput.serializer)
           ..add(EgressRouteInputSecrets.serializer)
@@ -4159,6 +4160,12 @@ Serializers _$serializers =
             () => ListBuilder<OgcLink>(),
           )
           ..addBuilderFactory(
+            const FullType(BuiltList, const [
+              const FullType(EgressHealthSourcesInner),
+            ]),
+            () => ListBuilder<EgressHealthSourcesInner>(),
+          )
+          ..addBuilderFactory(
             const FullType(BuiltList, const [const FullType(EgressRoute)]),
             () => ListBuilder<EgressRoute>(),
           )
@@ -6007,10 +6014,6 @@ Serializers _$serializers =
               const FullType(StormTrackPayloadNowcastInner),
             ]),
             () => ListBuilder<StormTrackPayloadNowcastInner>(),
-          )
-          ..addBuilderFactory(
-            const FullType(BuiltList, const [const FullType(String)]),
-            () => ListBuilder<String>(),
           )
           ..addBuilderFactory(
             const FullType(BuiltList, const [const FullType(String)]),
@@ -8560,6 +8563,21 @@ Serializers _$serializers =
               const FullType.nullable(JsonObject),
             ]),
             () => MapBuilder<String, JsonObject?>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, const [const FullType(String)]),
+            () => ListBuilder<String>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltMap, const [
+              const FullType(String),
+              const FullType.nullable(JsonObject),
+            ]),
+            () => MapBuilder<String, JsonObject?>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, const [const FullType(String)]),
+            () => ListBuilder<String>(),
           )
           ..addBuilderFactory(
             const FullType(BuiltList, const [const FullType(String)]),

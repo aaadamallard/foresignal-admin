@@ -574,6 +574,7 @@ export 'package:foresignal_api/src/model/edp_validation_request.dart';
 export 'package:foresignal_api/src/model/edr_instance_list.dart';
 export 'package:foresignal_api/src/model/edr_instance_list_instances_inner.dart';
 export 'package:foresignal_api/src/model/egress_health.dart';
+export 'package:foresignal_api/src/model/egress_health_sources_inner.dart';
 export 'package:foresignal_api/src/model/egress_route.dart';
 export 'package:foresignal_api/src/model/egress_route_input.dart';
 export 'package:foresignal_api/src/model/egress_route_input_secrets.dart';

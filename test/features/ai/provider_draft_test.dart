@@ -171,6 +171,8 @@ void main() {
         'options': <String, Object?>{'effort': 'high', 'maxTokens': 8000},
         'tokensPerDay': 500000,
         'enabled': true,
+        // On create the kind is named: shared unless the draft is personal.
+        'shared': true,
       });
       expect(draft.toModel(standardSerializers).apiKey, 'sk-test');
     });

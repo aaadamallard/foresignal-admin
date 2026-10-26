@@ -29,6 +29,10 @@ class _$EgressRoute extends EgressRoute {
   final DateTime? createdAt;
   @override
   final DateTime? updatedAt;
+  @override
+  final bool? available;
+  @override
+  final String? unavailableReason;
 
   factory _$EgressRoute([void Function(EgressRouteBuilder)? updates]) =>
       (EgressRouteBuilder()..update(updates))._build();
@@ -45,6 +49,8 @@ class _$EgressRoute extends EgressRoute {
     this.secretsSet,
     this.createdAt,
     this.updatedAt,
+    this.available,
+    this.unavailableReason,
   }) : super._();
   @override
   EgressRoute rebuild(void Function(EgressRouteBuilder) updates) =>
@@ -67,7 +73,9 @@ class _$EgressRoute extends EgressRoute {
         health == other.health &&
         secretsSet == other.secretsSet &&
         createdAt == other.createdAt &&
-        updatedAt == other.updatedAt;
+        updatedAt == other.updatedAt &&
+        available == other.available &&
+        unavailableReason == other.unavailableReason;
   }
 
   @override
@@ -84,6 +92,8 @@ class _$EgressRoute extends EgressRoute {
     _$hash = $jc(_$hash, secretsSet.hashCode);
     _$hash = $jc(_$hash, createdAt.hashCode);
     _$hash = $jc(_$hash, updatedAt.hashCode);
+    _$hash = $jc(_$hash, available.hashCode);
+    _$hash = $jc(_$hash, unavailableReason.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -101,7 +111,9 @@ class _$EgressRoute extends EgressRoute {
           ..add('health', health)
           ..add('secretsSet', secretsSet)
           ..add('createdAt', createdAt)
-          ..add('updatedAt', updatedAt))
+          ..add('updatedAt', updatedAt)
+          ..add('available', available)
+          ..add('unavailableReason', unavailableReason))
         .toString();
   }
 }
@@ -156,6 +168,15 @@ class EgressRouteBuilder implements Builder<EgressRoute, EgressRouteBuilder> {
   DateTime? get updatedAt => _$this._updatedAt;
   set updatedAt(DateTime? updatedAt) => _$this._updatedAt = updatedAt;
 
+  bool? _available;
+  bool? get available => _$this._available;
+  set available(bool? available) => _$this._available = available;
+
+  String? _unavailableReason;
+  String? get unavailableReason => _$this._unavailableReason;
+  set unavailableReason(String? unavailableReason) =>
+      _$this._unavailableReason = unavailableReason;
+
   EgressRouteBuilder() {
     EgressRoute._defaults(this);
   }
@@ -174,6 +195,8 @@ class EgressRouteBuilder implements Builder<EgressRoute, EgressRouteBuilder> {
       _secretsSet = $v.secretsSet?.toBuilder();
       _createdAt = $v.createdAt;
       _updatedAt = $v.updatedAt;
+      _available = $v.available;
+      _unavailableReason = $v.unavailableReason;
       _$v = null;
     }
     return this;
@@ -221,6 +244,8 @@ class EgressRouteBuilder implements Builder<EgressRoute, EgressRouteBuilder> {
             secretsSet: _secretsSet?.build(),
             createdAt: createdAt,
             updatedAt: updatedAt,
+            available: available,
+            unavailableReason: unavailableReason,
           );
     } catch (_) {
       late String _$failedField;

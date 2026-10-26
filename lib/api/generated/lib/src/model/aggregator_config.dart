@@ -15,9 +15,9 @@ part 'aggregator_config.g.dart';
 /// Properties:
 /// * [enabled]
 /// * [mode]
-/// * [endpoint]
-/// * [config] - Domain-specific settings (receiver, feed URL, decoders)
-/// * [disableSupersededSources] - Default the public/mirror sources off once this aggregator is live (nothing is removed)
+/// * [endpoint] - Required to enable. adsb: an http or https URL of the readsb aircraft.json on this host or the LAN (it must resolve to a loopback, private or unique-local address, and is pinned); no credentials, query or fragment (R2-019)
+/// * [config] - Domain-specific settings (adsb: `band`, 1090 or 978, default 1090); an unknown member is a 400 (R2-019)
+/// * [disableSupersededSources] - Default the public/mirror sources off once this aggregator is live (nothing is removed); the sources it turned off are turned back on when it stops being live or this is set to false (R2-019)
 @BuiltValue()
 abstract class AggregatorConfig
     implements Built<AggregatorConfig, AggregatorConfigBuilder> {
@@ -27,14 +27,15 @@ abstract class AggregatorConfig
   @BuiltValueField(wireName: r'mode')
   String? get mode;
 
+  /// Required to enable. adsb: an http or https URL of the readsb aircraft.json on this host or the LAN (it must resolve to a loopback, private or unique-local address, and is pinned); no credentials, query or fragment (R2-019)
   @BuiltValueField(wireName: r'endpoint')
   String? get endpoint;
 
-  /// Domain-specific settings (receiver, feed URL, decoders)
+  /// Domain-specific settings (adsb: `band`, 1090 or 978, default 1090); an unknown member is a 400 (R2-019)
   @BuiltValueField(wireName: r'config')
   BuiltMap<String, JsonObject?>? get config;
 
-  /// Default the public/mirror sources off once this aggregator is live (nothing is removed)
+  /// Default the public/mirror sources off once this aggregator is live (nothing is removed); the sources it turned off are turned back on when it stops being live or this is set to false (R2-019)
   @BuiltValueField(wireName: r'disableSupersededSources')
   bool? get disableSupersededSources;
 

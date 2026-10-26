@@ -3,6 +3,9 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../api/api.dart';
+import '../../core/access.dart';
+import '../../core/ownership.dart';
+import '../../core/permissions.dart';
 import '../../core/routes.dart';
 import '../../core/theme.dart';
 import '../../core/ui/ui.dart';
@@ -20,18 +23,23 @@ enum AiTab {
   providers('Providers'),
 
   /// Which provider serves each role (mock D2).
-  roles('Roles'),
+  roles('Roles', sharedOnly: true),
 
   /// Ask, enrichment and content options.
-  options('Options'),
+  options('Options', sharedOnly: true),
 
   /// Versioned prompt templates.
   templates('Prompt Templates'),
 
-  /// Requests and tokens over time.
-  usage('Usage');
+  /// Requests and tokens over time, instance-wide.
+  usage('Usage', sharedOnly: true);
 
-  const AiTab(this.label);
+  const AiTab(this.label, {this.sharedOnly = false});
+
+  /// Whether the tab is the shared configuration's (`llm.shared.manage`):
+  /// the instance roles, options and usage. A user without it manages only
+  /// their personal providers and sees their own spend.
+  final bool sharedOnly;
 
   /// The tab text.
   final String label;
@@ -61,7 +69,9 @@ String llmTypeText(LlmProviderTypeEnum type) => switch (type) {
 };
 
 /// AI configuration (Screens §D, desktop): providers, the roles they serve,
-/// options, prompt templates and usage.
+/// options, prompt templates and usage. Providers are shared (an operator's,
+/// `llm.shared.manage`) or the signed-in user's personal ones (`self.llm`);
+/// the roles, options and usage tabs are the shared configuration's.
 class AiScreen extends ConsumerStatefulWidget {
   /// Creates the screen.
   const AiScreen({super.key});
@@ -75,6 +85,13 @@ class _AiScreenState extends ConsumerState<AiScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final access = ref.watch(accessProvider);
+    final tabs = <AiTab>[
+      for (final tab in AiTab.values)
+        if (!tab.sharedOnly || access.can(Permissions.llmSharedManage)) tab,
+    ];
+    final shown = tabs.contains(_tab) ? _tab : tabs.first;
+    final mayOwn = access.kind == AccessKind.session && access.can(Permissions.selfLlm);
     return ListView(
       padding: const EdgeInsets.all(28),
       children: <Widget>[
@@ -84,29 +101,43 @@ class _AiScreenState extends ConsumerState<AiScreen> {
               'The language models the engine uses, the jobs they do, and what they cost in '
               'tokens.',
           actions: <Widget>[
-            if (_tab == AiTab.providers)
-              FilledButton.icon(
-                key: const Key('ai.addProvider'),
-                onPressed: () => context.go(aiNewProviderPath),
-                icon: const Icon(Icons.add),
-                label: const Text('Add Provider'),
+            if (shown == AiTab.providers) ...<Widget>[
+              if (mayOwn)
+                FilledButton.icon(
+                  key: const Key('ai.addPersonalProvider'),
+                  onPressed: () => context.go(aiNewProviderKindPath(shared: false)),
+                  icon: const Icon(Icons.add),
+                  label: const Text('Add Personal Provider'),
+                ),
+              PermissionGate(
+                permission: Permissions.llmSharedManage,
+                child: FilledButton.icon(
+                  key: const Key('ai.addProvider'),
+                  onPressed: () => context.go(
+                    mayOwn ? aiNewProviderKindPath(shared: true) : aiNewProviderPath,
+                  ),
+                  icon: const Icon(Icons.add),
+                  label: Text(mayOwn ? 'Add Shared Provider' : 'Add Provider'),
+                ),
               ),
+            ],
           ],
         ),
         DefaultTabController(
-          length: AiTab.values.length,
-          initialIndex: _tab.index,
+          key: ValueKey<int>(tabs.length),
+          length: tabs.length,
+          initialIndex: tabs.indexOf(shown),
           child: TabBar(
             isScrollable: true,
             tabAlignment: TabAlignment.start,
-            onTap: (i) => setState(() => _tab = AiTab.values[i]),
+            onTap: (i) => setState(() => _tab = tabs[i]),
             tabs: <Widget>[
-              for (final tab in AiTab.values) Tab(key: Key('ai.tab.${tab.name}'), text: tab.label),
+              for (final tab in tabs) Tab(key: Key('ai.tab.${tab.name}'), text: tab.label),
             ],
           ),
         ),
         const SizedBox(height: 20),
-        switch (_tab) {
+        switch (shown) {
           AiTab.providers => const ProvidersPanel(),
           AiTab.roles => const LlmSettingsPanel(section: LlmSettingsSection.roles),
           AiTab.options => const LlmSettingsPanel(section: LlmSettingsSection.options),
@@ -118,67 +149,234 @@ class _AiScreenState extends ConsumerState<AiScreen> {
   }
 }
 
-/// The providers table (mock D1).
+/// Whether [p] is shared (no owner) rather than a user's personal provider.
+bool isSharedProvider(LlmProvider p) => p.shared ?? p.ownerPrincipalId == null;
+
+/// USD as `$1.23`.
+String usdText(num n) => '\$${n.toStringAsFixed(2)}';
+
+/// The providers (mock D1), split into the **shared** ones (an operator's,
+/// managed with `llm.shared.manage`, read-only for everyone else, who can
+/// still use them) and the **personal** ones (the signed-in user's own,
+/// `self.llm`; every user's for an admin who manages users). A signed-in
+/// user with `self.llm` sees their own budget above them.
 class ProvidersPanel extends ConsumerWidget {
   /// Creates the panel.
   const ProvidersPanel({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final muted = AdminPalette.of(context).muted;
+    final access = ref.watch(accessProvider);
+    final mayOwn = access.kind == AccessKind.session && access.can(Permissions.selfLlm);
+    final manageShared = access.can(Permissions.llmSharedManage);
     return AsyncView<List<LlmProvider>>(
       value: ref.watch(llmProvidersProvider),
       onRetry: () => ref.invalidate(llmProvidersProvider),
-      data: (providers) => DataTableCard<LlmProvider>(
-        key: const Key('ai.providers'),
-        rows: providers,
-        empty: 'No LLM providers yet.',
-        onTap: (p) => context.go(aiProviderPath(p.id)),
-        columns: <TableColumnSpec<LlmProvider>>[
+      data: (providers) {
+        final shared = providers.where(isSharedProvider).toList();
+        final personal = ownedByCaller(
+          access,
+          providers.where((p) => !isSharedProvider(p)),
+          (p) => p.ownerPrincipalId,
+        );
+        return Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: <Widget>[
+            if (mayOwn) ...<Widget>[const MyLlmBudgetCard(), const SizedBox(height: 20)],
+            SectionCard(
+              key: const Key('ai.shared'),
+              title: 'Shared providers',
+              subtitle: manageShared
+                  ? "The instance's providers, with the instance's keys; each user spends within "
+                        'their share.'
+                  : 'Managed by an operator for everyone. You can use them within your share; '
+                        'they are read-only here.',
+              child: _ProviderTable(
+                key: const Key('ai.providers'),
+                rows: shared,
+                readOnly: !manageShared,
+                empty: 'No shared providers yet.',
+              ),
+            ),
+            if (mayOwn || personal.isNotEmpty) ...<Widget>[
+              const SizedBox(height: 20),
+              SectionCard(
+                key: const Key('ai.personal'),
+                title: seesEveryOwner(access) ? 'Personal providers' : 'Your personal providers',
+                subtitle: 'Each uses its owner\'s own key, and only its owner\'s work runs on it.',
+                child: _ProviderTable(
+                  key: const Key('ai.personalProviders'),
+                  rows: personal,
+                  readOnly: !access.can(Permissions.selfLlm) && !seesEveryOwner(access),
+                  owners: true,
+                  empty: mayOwn
+                      ? 'You have no personal providers. Add Personal Provider uses your own key.'
+                      : 'No personal providers.',
+                ),
+              ),
+            ],
+          ],
+        );
+      },
+    );
+  }
+}
+
+/// One table of providers; a [readOnly] one offers View, not Edit.
+class _ProviderTable extends ConsumerWidget {
+  const _ProviderTable({
+    super.key,
+    required this.rows,
+    required this.readOnly,
+    required this.empty,
+    this.owners = false,
+  });
+
+  final List<LlmProvider> rows;
+  final bool readOnly;
+  final String empty;
+  final bool owners;
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final muted = AdminPalette.of(context).muted;
+    final access = ref.watch(accessProvider);
+    return DataTableCard<LlmProvider>(
+      rows: rows,
+      empty: empty,
+      onTap: (p) => context.go(aiProviderPath(p.id)),
+      columns: <TableColumnSpec<LlmProvider>>[
+        TableColumnSpec<LlmProvider>(
+          label: 'Name',
+          cell: (p) => Text(p.id, style: const TextStyle(fontWeight: FontWeight.w600)),
+        ),
+        if (owners)
           TableColumnSpec<LlmProvider>(
-            label: 'Name',
-            cell: (p) => Text(p.id, style: const TextStyle(fontWeight: FontWeight.w600)),
-          ),
-          TableColumnSpec<LlmProvider>(label: 'Type', cell: (p) => Text(llmTypeText(p.type))),
-          TableColumnSpec<LlmProvider>(
-            label: 'Models',
-            cell: (p) => Text(
-              _models(p).join(' · ').ifEmpty('—'),
-              style: _models(p).isEmpty ? TextStyle(color: muted) : null,
+            label: 'Owner',
+            cell: (p) => OwnershipChip(
+              key: Key('ai.owner.${p.id}'),
+              ownership: ownershipOf(access, p.ownerPrincipalId),
+              ownerPrincipalId: p.ownerPrincipalId,
             ),
           ),
+        TableColumnSpec<LlmProvider>(label: 'Type', cell: (p) => Text(llmTypeText(p.type))),
+        TableColumnSpec<LlmProvider>(
+          label: 'Models',
+          cell: (p) => Text(
+            _models(p).join(' · ').ifEmpty('—'),
+            style: _models(p).isEmpty ? TextStyle(color: muted) : null,
+          ),
+        ),
+        if (!owners)
           TableColumnSpec<LlmProvider>(
             label: 'Roles',
             cell: (p) => Text(
               wireListShown(p.roles ?? const <LlmProviderRolesEnum>[], p, 'roles').ifEmpty('—'),
             ),
           ),
-          TableColumnSpec<LlmProvider>(
-            label: 'Tokens today',
-            numeric: true,
-            cell: (p) => Text(
-              p.tokensPerDay == null
-                  ? compactCount(p.tokensToday ?? 0)
-                  : '${compactCount(p.tokensToday ?? 0)} / ${compactCount(p.tokensPerDay!)}',
-            ),
+        TableColumnSpec<LlmProvider>(
+          label: 'Monthly cap',
+          cell: (p) => Text(
+            <String>[
+              if (p.monthlyCapUsd case final cap?) usdText(cap),
+              if (p.perUserMonthlyCapUsd case final each?) '${usdText(each)} each',
+            ].join(' · ').ifEmpty('—'),
           ),
-          TableColumnSpec<LlmProvider>(
-            label: 'Status',
-            cell: (p) => StatusLabel(
-              label: llmStatusText(p.status),
-              tone: llmStatusTone(p.status),
-              tooltip: p.lastError,
-            ),
+        ),
+        TableColumnSpec<LlmProvider>(
+          label: 'Tokens today',
+          numeric: true,
+          cell: (p) => Text(
+            p.tokensPerDay == null
+                ? compactCount(p.tokensToday ?? 0)
+                : '${compactCount(p.tokensToday ?? 0)} / ${compactCount(p.tokensPerDay!)}',
           ),
-          TableColumnSpec<LlmProvider>(
-            label: 'Actions',
-            cell: (p) => TonalButton(
-              key: Key('ai.edit.${p.id}'),
-              label: 'Edit',
-              onPressed: () => context.go(aiProviderPath(p.id)),
-            ),
+        ),
+        TableColumnSpec<LlmProvider>(
+          label: 'Status',
+          cell: (p) => StatusLabel(
+            label: llmStatusText(p.status),
+            tone: llmStatusTone(p.status),
+            tooltip: p.lastError,
           ),
-        ],
+        ),
+        TableColumnSpec<LlmProvider>(
+          label: 'Actions',
+          cell: (p) => TonalButton(
+            key: Key('ai.edit.${p.id}'),
+            label: readOnly ? 'View' : 'Edit',
+            onPressed: () => context.go(aiProviderPath(p.id)),
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+/// The signed-in user's own LLM budget this UTC month (`getMyLlmBudget`):
+/// the total spent and, per provider they can use, their cap (their share
+/// of a shared provider, or a personal provider's own monthly cap), their
+/// spend and what remains.
+class MyLlmBudgetCard extends ConsumerWidget {
+  /// Creates the card.
+  const MyLlmBudgetCard({super.key});
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    return SectionCard(
+      key: const Key('ai.myBudget'),
+      title: 'My LLM budget',
+      subtitle: 'What your own work spent this UTC month, against your cap on each provider.',
+      child: AsyncView<MeLlmBudget>(
+        value: ref.watch(myLlmBudgetProvider),
+        onRetry: () => ref.invalidate(myLlmBudgetProvider),
+        data: (budget) => Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: <Widget>[
+            Text(
+              'Spent this month: ${usdText(budget.totalSpentUsd)}',
+              key: const Key('ai.myBudget.total'),
+              style: Theme.of(context).textTheme.titleMedium,
+            ),
+            const SizedBox(height: 12),
+            DataTableCard<LlmBudgetProvider>(
+              key: const Key('ai.myBudget.table'),
+              rows: budget.providers.toList(),
+              empty: 'No provider is available to you yet.',
+              columns: <TableColumnSpec<LlmBudgetProvider>>[
+                TableColumnSpec<LlmBudgetProvider>(
+                  label: 'Provider',
+                  cell: (b) => Text(b.name.isEmpty ? b.providerId : b.name),
+                ),
+                TableColumnSpec<LlmBudgetProvider>(
+                  label: 'Kind',
+                  cell: (b) => StatusChip(
+                    label: b.shared ? 'Shared' : 'Yours',
+                    tone: b.shared ? StatusTone.neutral : StatusTone.info,
+                  ),
+                ),
+                TableColumnSpec<LlmBudgetProvider>(
+                  label: 'Cap',
+                  numeric: true,
+                  cell: (b) => Text(b.capUsd == null ? 'No cap' : usdText(b.capUsd!)),
+                ),
+                TableColumnSpec<LlmBudgetProvider>(
+                  label: 'Spent',
+                  numeric: true,
+                  cell: (b) => Text(usdText(b.spentUsd)),
+                ),
+                TableColumnSpec<LlmBudgetProvider>(
+                  label: 'Remaining',
+                  numeric: true,
+                  cell: (b) => Text(
+                    b.remainingUsd == null ? '—' : usdText(b.remainingUsd!),
+                    key: Key('ai.myBudget.remaining.${b.providerId}'),
+                  ),
+                ),
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }

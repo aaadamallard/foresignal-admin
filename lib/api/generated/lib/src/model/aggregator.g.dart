@@ -23,6 +23,16 @@ class _$Aggregator extends Aggregator {
   final BuiltList<String>? supersededSources;
   @override
   final DateTime? lastSeenAt;
+  @override
+  final BuiltMap<String, JsonObject?>? config;
+  @override
+  final bool? disableSupersededSources;
+  @override
+  final bool? implemented;
+  @override
+  final String? statusReason;
+  @override
+  final BuiltList<String>? sourceIds;
 
   factory _$Aggregator([void Function(AggregatorBuilder)? updates]) =>
       (AggregatorBuilder()..update(updates))._build();
@@ -36,6 +46,11 @@ class _$Aggregator extends Aggregator {
     this.status,
     this.supersededSources,
     this.lastSeenAt,
+    this.config,
+    this.disableSupersededSources,
+    this.implemented,
+    this.statusReason,
+    this.sourceIds,
   }) : super._();
   @override
   Aggregator rebuild(void Function(AggregatorBuilder) updates) =>
@@ -55,7 +70,12 @@ class _$Aggregator extends Aggregator {
         endpoint == other.endpoint &&
         status == other.status &&
         supersededSources == other.supersededSources &&
-        lastSeenAt == other.lastSeenAt;
+        lastSeenAt == other.lastSeenAt &&
+        config == other.config &&
+        disableSupersededSources == other.disableSupersededSources &&
+        implemented == other.implemented &&
+        statusReason == other.statusReason &&
+        sourceIds == other.sourceIds;
   }
 
   @override
@@ -69,6 +89,11 @@ class _$Aggregator extends Aggregator {
     _$hash = $jc(_$hash, status.hashCode);
     _$hash = $jc(_$hash, supersededSources.hashCode);
     _$hash = $jc(_$hash, lastSeenAt.hashCode);
+    _$hash = $jc(_$hash, config.hashCode);
+    _$hash = $jc(_$hash, disableSupersededSources.hashCode);
+    _$hash = $jc(_$hash, implemented.hashCode);
+    _$hash = $jc(_$hash, statusReason.hashCode);
+    _$hash = $jc(_$hash, sourceIds.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -83,7 +108,12 @@ class _$Aggregator extends Aggregator {
           ..add('endpoint', endpoint)
           ..add('status', status)
           ..add('supersededSources', supersededSources)
-          ..add('lastSeenAt', lastSeenAt))
+          ..add('lastSeenAt', lastSeenAt)
+          ..add('config', config)
+          ..add('disableSupersededSources', disableSupersededSources)
+          ..add('implemented', implemented)
+          ..add('statusReason', statusReason)
+          ..add('sourceIds', sourceIds))
         .toString();
   }
 }
@@ -125,6 +155,31 @@ class AggregatorBuilder implements Builder<Aggregator, AggregatorBuilder> {
   DateTime? get lastSeenAt => _$this._lastSeenAt;
   set lastSeenAt(DateTime? lastSeenAt) => _$this._lastSeenAt = lastSeenAt;
 
+  MapBuilder<String, JsonObject?>? _config;
+  MapBuilder<String, JsonObject?> get config =>
+      _$this._config ??= MapBuilder<String, JsonObject?>();
+  set config(MapBuilder<String, JsonObject?>? config) =>
+      _$this._config = config;
+
+  bool? _disableSupersededSources;
+  bool? get disableSupersededSources => _$this._disableSupersededSources;
+  set disableSupersededSources(bool? disableSupersededSources) =>
+      _$this._disableSupersededSources = disableSupersededSources;
+
+  bool? _implemented;
+  bool? get implemented => _$this._implemented;
+  set implemented(bool? implemented) => _$this._implemented = implemented;
+
+  String? _statusReason;
+  String? get statusReason => _$this._statusReason;
+  set statusReason(String? statusReason) => _$this._statusReason = statusReason;
+
+  ListBuilder<String>? _sourceIds;
+  ListBuilder<String> get sourceIds =>
+      _$this._sourceIds ??= ListBuilder<String>();
+  set sourceIds(ListBuilder<String>? sourceIds) =>
+      _$this._sourceIds = sourceIds;
+
   AggregatorBuilder() {
     Aggregator._defaults(this);
   }
@@ -140,6 +195,11 @@ class AggregatorBuilder implements Builder<Aggregator, AggregatorBuilder> {
       _status = $v.status;
       _supersededSources = $v.supersededSources?.toBuilder();
       _lastSeenAt = $v.lastSeenAt;
+      _config = $v.config?.toBuilder();
+      _disableSupersededSources = $v.disableSupersededSources;
+      _implemented = $v.implemented;
+      _statusReason = $v.statusReason;
+      _sourceIds = $v.sourceIds?.toBuilder();
       _$v = null;
     }
     return this;
@@ -184,12 +244,23 @@ class AggregatorBuilder implements Builder<Aggregator, AggregatorBuilder> {
             status: status,
             supersededSources: _supersededSources?.build(),
             lastSeenAt: lastSeenAt,
+            config: _config?.build(),
+            disableSupersededSources: disableSupersededSources,
+            implemented: implemented,
+            statusReason: statusReason,
+            sourceIds: _sourceIds?.build(),
           );
     } catch (_) {
       late String _$failedField;
       try {
         _$failedField = 'supersededSources';
         _supersededSources?.build();
+
+        _$failedField = 'config';
+        _config?.build();
+
+        _$failedField = 'sourceIds';
+        _sourceIds?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
           r'Aggregator',

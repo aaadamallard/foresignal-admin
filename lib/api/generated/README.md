@@ -1453,6 +1453,7 @@ Class | Method | HTTP request | Description
  - [EdrInstanceList](doc/EdrInstanceList.md)
  - [EdrInstanceListInstancesInner](doc/EdrInstanceListInstancesInner.md)
  - [EgressHealth](doc/EgressHealth.md)
+ - [EgressHealthSourcesInner](doc/EgressHealthSourcesInner.md)
  - [EgressRoute](doc/EgressRoute.md)
  - [EgressRouteInput](doc/EgressRouteInput.md)
  - [EgressRouteInputSecrets](doc/EgressRouteInputSecrets.md)

@@ -4,10 +4,14 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../api/api.dart';
+import '../../core/access.dart';
 import '../../core/format/instant_text.dart';
+import '../../core/ownership.dart';
+import '../../core/permissions.dart';
 import '../../core/routes.dart';
 import '../../core/theme.dart';
 import '../../core/ui/ui.dart';
+import '../forecasting/forecasting_widgets.dart' show Footnote;
 import '../sources/source_widgets.dart';
 import 'ai_providers.dart';
 import 'ai_screen.dart';
@@ -25,25 +29,73 @@ import 'provider_draft.dart';
 /// is cleared once Save sends it, and the page shows only whether a key is set
 /// (`apiKeySet`).
 class ProviderScreen extends ConsumerWidget {
-  /// Creates the page; a `null` [providerId] adds a provider.
-  const ProviderScreen({super.key, this.providerId});
+  /// Creates the page; a `null` [providerId] adds a provider, shared or
+  /// personal as [shared] asks (`null` picks for the user).
+  const ProviderScreen({super.key, this.providerId, this.shared});
 
   /// The provider edited, or `null` to add one.
   final String? providerId;
 
+  /// While adding: whether the provider is shared (the instance's key) or
+  /// the signed-in user's personal one (their own key).
+  final bool? shared;
+
+  /// The kind a new provider is for [access]: personal for a signed-in user
+  /// who may own one, unless [asked] is shared and they may also manage the
+  /// shared configuration; shared for everyone else (an API token always
+  /// creates shared providers).
+  static bool newKind(AccessState access, bool? asked) {
+    final mayOwn = access.kind == AccessKind.session && access.can(Permissions.selfLlm);
+    final mayShare = access.can(Permissions.llmSharedManage);
+    if (!mayOwn) {
+      return true;
+    }
+    return mayShare && (asked ?? false);
+  }
+
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final id = providerId;
+    final access = ref.watch(accessProvider);
+    final kind = newKind(access, shared);
+    final both =
+        access.kind == AccessKind.session &&
+        access.can(Permissions.selfLlm) &&
+        access.can(Permissions.llmSharedManage);
     return ListView(
       padding: const EdgeInsets.all(28),
       children: <Widget>[
         if (id == null)
           ProviderForm(
-            draft: ProviderDraft.create(),
-            header: (actions) => PageHeader(
-              title: 'Add provider',
-              crumbs: const <Crumb>[Crumb('AI', aiPath), Crumb('Add provider')],
-              actions: actions,
+            key: ValueKey<bool>(kind),
+            draft: ProviderDraft.create(shared: kind),
+            header: (actions) => Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: <Widget>[
+                PageHeader(
+                  title: kind ? 'Add shared provider' : 'Add personal provider',
+                  crumbs: const <Crumb>[Crumb('AI', aiPath), Crumb('Add provider')],
+                  subtitle: kind
+                      ? 'For everyone, with the instance\'s key; each user spends within their share.'
+                      : 'Yours alone, with your own key; only your work uses it.',
+                  actions: actions,
+                ),
+                if (both) ...<Widget>[
+                  Align(
+                    alignment: Alignment.centerLeft,
+                    child: SegmentedButton<bool>(
+                      key: const Key('provider.kind'),
+                      segments: const <ButtonSegment<bool>>[
+                        ButtonSegment<bool>(value: false, label: Text('Personal'), icon: Icon(Icons.person_outline)),
+                        ButtonSegment<bool>(value: true, label: Text('Shared'), icon: Icon(Icons.groups_outlined)),
+                      ],
+                      selected: <bool>{kind},
+                      onSelectionChanged: (v) => context.go(aiNewProviderKindPath(shared: v.first)),
+                    ),
+                  ),
+                  const SizedBox(height: 16),
+                ],
+              ],
             ),
           )
         else
@@ -58,6 +110,11 @@ class ProviderScreen extends ConsumerWidget {
                 crumbs: <Crumb>[const Crumb('AI', aiPath), Crumb(p.id)],
                 subtitle: llmTypeText(p.type),
                 titleTrailing: <Widget>[
+                  OwnershipChip(
+                    key: const Key('provider.kindChip'),
+                    ownership: ownershipOf(access, p.ownerPrincipalId),
+                    ownerPrincipalId: p.ownerPrincipalId,
+                  ),
                   StatusLabel(
                     key: const Key('provider.status'),
                     label: llmStatusText(p.status),
@@ -92,6 +149,10 @@ class ProviderForm extends ConsumerStatefulWidget {
 
 class _ProviderFormState extends ConsumerState<ProviderForm> {
   late final ProviderDraft _d = widget.draft;
+
+  /// The permission that changes this provider: the shared configuration's,
+  /// or the signed-in user's own for a personal one.
+  String get _manage => _d.shared ? Permissions.llmSharedManage : Permissions.selfLlm;
   late final Map<String, TextEditingController> _text = <String, TextEditingController>{
     for (final entry in _d.text.entries) entry.key: TextEditingController(text: entry.value),
   };
@@ -430,18 +491,22 @@ class _ProviderFormState extends ConsumerState<ProviderForm> {
         onPressed: busy ? null : _cancel,
         child: const Text('Cancel'),
       ),
-      FilledButton(
-        key: const Key('form.save'),
-        onPressed: busy || _probing || _testing ? null : _save,
-        child: busy
-            ? const SizedBox(
-                width: 16,
-                height: 16,
-                child: CircularProgressIndicator(strokeWidth: 2, color: Colors.white),
-              )
-            : Text(_d.creating ? 'Add Provider' : 'Save Changes'),
+      PermissionGate(
+        permission: _manage,
+        child: FilledButton(
+          key: const Key('form.save'),
+          onPressed: busy || _probing || _testing ? null : _save,
+          child: busy
+              ? const SizedBox(
+                  width: 16,
+                  height: 16,
+                  child: CircularProgressIndicator(strokeWidth: 2, color: Colors.white),
+                )
+              : Text(_d.creating ? 'Add Provider' : 'Save Changes'),
+        ),
       ),
     ];
+    final readOnly = !ref.watch(accessProvider).can(_manage);
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: <Widget>[
@@ -455,6 +520,18 @@ class _ProviderFormState extends ConsumerState<ProviderForm> {
               children: <Widget>[
                 if (_write is! WriteIdle) ...<Widget>[
                   WriteStatusLine(state: _write),
+                  const SizedBox(height: 12),
+                ],
+                if (readOnly && _d.shared && !_d.creating) ...<Widget>[
+                  const ResultPanel(
+                    key: Key('provider.sharedReadOnly'),
+                    title: 'Shared provider',
+                    tone: StatusTone.info,
+                    message:
+                        'An operator manages this provider for everyone, and its key is the '
+                        "instance's. You can use it within your per-user caps; changing, testing or "
+                        'deleting it needs llm.shared.manage.',
+                  ),
                   const SizedBox(height: 12),
                 ],
                 SectionCard(
@@ -601,11 +678,17 @@ class _ProviderFormState extends ConsumerState<ProviderForm> {
                                 _write = const WriteIdle();
                               }),
                             ),
-                            TonalButton(
-                              key: const Key('provider.probe'),
-                              label: 'Test',
-                              icon: Icons.bolt,
-                              onPressed: _probing || busy ? null : _runProbe,
+                            // Testing unsaved settings (probeLlmProvider) is
+                            // the shared configuration's; a personal provider
+                            // is tested once saved.
+                            PermissionGate(
+                              permission: Permissions.llmSharedManage,
+                              child: TonalButton(
+                                key: const Key('provider.probe'),
+                                label: 'Test',
+                                icon: Icons.bolt,
+                                onPressed: _probing || busy ? null : _runProbe,
+                              ),
                             ),
                             if (_probing)
                               const SizedBox(
@@ -747,6 +830,38 @@ class _ProviderFormState extends ConsumerState<ProviderForm> {
                         decimal: true,
                         prefix: r'$',
                       ),
+                      if (_d.shared) ...<Widget>[
+                        const SizedBox(height: 8),
+                        Text('Each user\'s share', style: Theme.of(context).textTheme.titleSmall),
+                        const Footnote(
+                          'The most any one user may spend on this shared provider; their own '
+                          'balance is their monthly share minus what they spent.',
+                        ),
+                        _field(
+                          'perUserHourlyCapUsd',
+                          'Per-user hourly cap',
+                          help: 'Resets at the top of each UTC hour',
+                          hint: 'No per-user cap',
+                          decimal: true,
+                          prefix: r'$',
+                        ),
+                        _field(
+                          'perUserDailyCapUsd',
+                          'Per-user daily cap',
+                          help: 'Resets at 00:00 UTC',
+                          hint: 'No per-user cap',
+                          decimal: true,
+                          prefix: r'$',
+                        ),
+                        _field(
+                          'perUserMonthlyCapUsd',
+                          'Per-user monthly cap',
+                          help: 'Resets on the 1st, 00:00 UTC',
+                          hint: 'No per-user cap',
+                          decimal: true,
+                          prefix: r'$',
+                        ),
+                      ],
                     ],
                   ),
                 ),
@@ -865,11 +980,14 @@ class _ProviderFormState extends ConsumerState<ProviderForm> {
                         'Tests the provider as saved: a tiny chat request, and an embedding when it has an '
                         'embedding model. It spends a little of the budget.',
                     actions: <Widget>[
-                      TonalButton(
-                        key: const Key('provider.test'),
-                        label: 'Test Provider',
-                        icon: Icons.play_arrow,
-                        onPressed: _testing || busy ? null : _runTest,
+                      PermissionGate(
+                        permission: _manage,
+                        child: TonalButton(
+                          key: const Key('provider.test'),
+                          label: 'Test Provider',
+                          icon: Icons.play_arrow,
+                          onPressed: _testing || busy ? null : _runTest,
+                        ),
                       ),
                     ],
                     child: Column(
@@ -896,10 +1014,13 @@ class _ProviderFormState extends ConsumerState<ProviderForm> {
                     crossAxisAlignment: WrapCrossAlignment.center,
                     children: <Widget>[
                       if (!_confirmDelete)
-                        DangerButton(
-                          key: const Key('provider.delete'),
-                          label: 'Delete Provider',
-                          onPressed: _deleting ? null : () => setState(() => _confirmDelete = true),
+                        PermissionGate(
+                          permission: _manage,
+                          child: DangerButton(
+                            key: const Key('provider.delete'),
+                            label: 'Delete Provider',
+                            onPressed: _deleting ? null : () => setState(() => _confirmDelete = true),
+                          ),
                         )
                       else ...<Widget>[
                         DangerButton(

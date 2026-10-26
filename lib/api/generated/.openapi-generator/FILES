@@ -574,6 +574,7 @@ lib/src/model/edp_validation_request.dart
 lib/src/model/edr_instance_list.dart
 lib/src/model/edr_instance_list_instances_inner.dart
 lib/src/model/egress_health.dart
+lib/src/model/egress_health_sources_inner.dart
 lib/src/model/egress_route.dart
 lib/src/model/egress_route_input.dart
 lib/src/model/egress_route_input_secrets.dart

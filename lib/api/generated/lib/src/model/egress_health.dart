@@ -3,6 +3,8 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:built_collection/built_collection.dart';
+import 'package:foresignal_api/src/model/egress_health_sources_inner.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -17,6 +19,8 @@ part 'egress_health.g.dart';
 /// * [lastCheckedAt]
 /// * [consecutiveFailures]
 /// * [backoffUntil] - Skipped until this time after failures
+/// * [lastError] - The last failure carrying a request through the route (R2-018)
+/// * [sources] - Only on getEgressRouteHealth: the sources held off this route by a 429 or Retry-After received through it (R2-018)
 @BuiltValue()
 abstract class EgressHealth
     implements Built<EgressHealth, EgressHealthBuilder> {
@@ -39,6 +43,14 @@ abstract class EgressHealth
   /// Skipped until this time after failures
   @BuiltValueField(wireName: r'backoffUntil')
   DateTime? get backoffUntil;
+
+  /// The last failure carrying a request through the route (R2-018)
+  @BuiltValueField(wireName: r'lastError')
+  String? get lastError;
+
+  /// Only on getEgressRouteHealth: the sources held off this route by a 429 or Retry-After received through it (R2-018)
+  @BuiltValueField(wireName: r'sources')
+  BuiltList<EgressHealthSourcesInner>? get sources;
 
   EgressHealth._();
 
@@ -101,6 +113,22 @@ class _$EgressHealthSerializer implements PrimitiveSerializer<EgressHealth> {
       yield serializers.serialize(
         object.backoffUntil,
         specifiedType: const FullType.nullable(DateTime),
+      );
+    }
+    if (object.lastError != null) {
+      yield r'lastError';
+      yield serializers.serialize(
+        object.lastError,
+        specifiedType: const FullType.nullable(String),
+      );
+    }
+    if (object.sources != null) {
+      yield r'sources';
+      yield serializers.serialize(
+        object.sources,
+        specifiedType: const FullType(BuiltList, [
+          FullType(EgressHealthSourcesInner),
+        ]),
       );
     }
   }
@@ -188,6 +216,28 @@ class _$EgressHealthSerializer implements PrimitiveSerializer<EgressHealth> {
                   as DateTime?;
           if (valueDes == null) continue;
           result.backoffUntil = valueDes;
+          break;
+        case r'lastError':
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
+          if (valueDes == null) continue;
+          result.lastError = valueDes;
+          break;
+        case r'sources':
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(EgressHealthSourcesInner),
+                    ]),
+                  )
+                  as BuiltList<EgressHealthSourcesInner>?;
+          if (valueDes == null) continue;
+          result.sources.replace(valueDes);
           break;
         default:
           unhandled.add(key);

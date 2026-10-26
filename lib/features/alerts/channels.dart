@@ -134,8 +134,8 @@ class _ChannelTestButtonState extends ConsumerState<ChannelTestButton> {
 /// The notification channels (Screens §G): name, type, events, minimum
 /// severity, status and recent failures, with Test and **New Channel**. A
 /// channel is personal (`ownerPrincipalId`) or global (`global`): a signed-in
-/// user lists their own and the global ones; an admin who manages users sees
-/// every channel with whose it is.
+/// user lists their own, and the global ones only with `channels.global`; an
+/// admin who manages users sees every channel with whose it is.
 class ChannelsPanel extends ConsumerWidget {
   /// Creates the panel.
   const ChannelsPanel({super.key});
@@ -174,7 +174,12 @@ class ChannelsPanel extends ConsumerWidget {
           onRetry: () => ref.invalidate(channelsProvider),
           data: (channels) => DataTableCard<Json>(
             key: const Key('channels.table'),
-            rows: ownedByCaller(access, channels, (c) => c['ownerPrincipalId'] as String?, keepUnowned: true),
+            rows: ownedByCaller(
+              access,
+              channels,
+              (c) => c['ownerPrincipalId'] as String?,
+              keepUnowned: access.can(Permissions.channelsGlobal),
+            ),
             empty: 'No channels yet.',
             onTap: (c) => context.go(alertChannelPath('${c['id']}')),
             columns: <TableColumnSpec<Json>>[
@@ -269,12 +274,26 @@ class ChannelScreen extends ConsumerStatefulWidget {
 
 class _ChannelScreenState extends ConsumerState<ChannelScreen> {
   String? _newType;
+  bool? _global;
+
+  /// Whether a new channel is global: the choice made, else personal for a
+  /// signed-in user who may own channels, global for one who may only
+  /// manage global ones, and the server's choice on the admin token.
+  bool? _newGlobal(AccessState access) {
+    if (access.kind != AccessKind.session) {
+      return null;
+    }
+    final own = access.can(Permissions.selfChannels);
+    final global = access.can(Permissions.channelsGlobal);
+    return own && global ? (_global ?? false) : !own;
+  }
 
   @override
   Widget build(BuildContext context) {
     final id = widget.channelId;
     final types = ref.watch(channelTypesProvider);
     final crumbs = <Crumb>[const Crumb('Alerts', alertsPath), const Crumb('Channels', alertChannelsPath)];
+    final access = ref.watch(accessProvider);
     if (id == null) {
       return ListView(
         padding: const EdgeInsets.all(28),
@@ -288,6 +307,26 @@ class _ChannelScreenState extends ConsumerState<ChannelScreen> {
               return Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: <Widget>[
+                  if (access.kind == AccessKind.session &&
+                      access.can(Permissions.selfChannels) &&
+                      access.can(Permissions.channelsGlobal)) ...<Widget>[
+                    SectionCard(
+                      title: 'Kind',
+                      child: Align(
+                        alignment: Alignment.centerLeft,
+                        child: SegmentedButton<bool>(
+                          key: const Key('channel.kind'),
+                          segments: const <ButtonSegment<bool>>[
+                            ButtonSegment<bool>(value: false, label: Text('Mine'), icon: Icon(Icons.person_outline)),
+                            ButtonSegment<bool>(value: true, label: Text('Global'), icon: Icon(Icons.public)),
+                          ],
+                          selected: <bool>{_newGlobal(access) ?? false},
+                          onSelectionChanged: (v) => setState(() => _global = v.first),
+                        ),
+                      ),
+                    ),
+                    const SizedBox(height: 16),
+                  ],
                   SectionCard(
                     title: 'Type',
                     child: Column(
@@ -312,7 +351,16 @@ class _ChannelScreenState extends ConsumerState<ChannelScreen> {
                     const SizedBox(height: 16),
                     SectionCard(
                       title: 'Settings',
-                      child: ChannelForm(key: ValueKey<String>('new.${type['id']}'), type: type),
+                      subtitle: switch (_newGlobal(access)) {
+                        true => 'A global channel serves the whole instance.',
+                        false => 'Your own channel: only your alerts use it.',
+                        null => null,
+                      },
+                      child: ChannelForm(
+                        key: ValueKey<String>('new.${type['id']}.${_newGlobal(access)}'),
+                        type: type,
+                        global: _newGlobal(access),
+                      ),
                     ),
                   ],
                 ],
@@ -418,7 +466,12 @@ class _ChannelScreenState extends ConsumerState<ChannelScreen> {
 /// `updateChannel` and confirmed by re-reading.
 class ChannelForm extends ConsumerStatefulWidget {
   /// Creates the form for [channel] of [type], or a new channel of [type].
-  const ChannelForm({super.key, required this.type, this.channel, this.initialRuleIds, this.onCreated});
+  const ChannelForm({super.key, required this.type, this.channel, this.initialRuleIds, this.onCreated, this.global});
+
+  /// On create, whether the channel is global (`channels.global`) rather
+  /// than the signed-in user's own; `null` leaves the choice to the server
+  /// (an API token always creates a global channel).
+  final bool? global;
 
   /// The channel type (`ChannelType`).
   final Json type;
@@ -507,7 +560,10 @@ class _ChannelFormState extends ConsumerState<ChannelForm> with WriteTracking<Ch
     }
     // JSON, not the generated client: it drops `config` (see [jsonCall]).
     final dio = ref.read(backendDioProvider);
-    final body = _draft.toJson(creating: _creating);
+    final body = <String, Object?>{
+      ..._draft.toJson(creating: _creating),
+      if (_creating && widget.global != null) 'global': widget.global,
+    };
     final id = widget.channel?['id'] as String?;
     if (id == null) {
       final created = await track(() => jsonObjectCall(dio, 'POST', '/v1/channels', body: body));

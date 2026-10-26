@@ -4,6 +4,7 @@
 
 // ignore_for_file: unused_element
 import 'package:built_collection/built_collection.dart';
+import 'package:built_value/json_object.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -16,10 +17,15 @@ part 'aggregator.g.dart';
 /// * [name]
 /// * [enabled]
 /// * [mode] - Own receiver, aggregated feed, or both
-/// * [endpoint] - Local endpoint the adapter reads (e.g. http://localhost for readsb)
-/// * [status]
+/// * [endpoint] - Local endpoint the adapter reads. For adsb, the readsb aircraft.json, for example http://readsb/data/aircraft.json (R2-019)
+/// * [status] - ok when the aggregator's source is healthy, degraded when degraded or not yet run, down when failing, unconfigured when not enabled with an endpoint (R2-019)
 /// * [supersededSources] - Public/mirror source ids this aggregator supersedes; defaulted off when it is live
-/// * [lastSeenAt]
+/// * [lastSeenAt] - When the aggregator's source last brought data (R2-019)
+/// * [config] - Domain-specific settings as stored (adsb: `band`, 1090 or 978) (R2-019)
+/// * [disableSupersededSources] - Whether the superseded sources are kept off while the aggregator is live (R2-019)
+/// * [implemented] - Whether this server has the domain's backend; a domain without one can be configured only disabled (R2-019)
+/// * [statusReason] - Why the status is what it is: the health reason of the aggregator's source, or why it is unconfigured (R2-019)
+/// * [sourceIds] - The first-party sources the aggregator drives; the first one's health is its status (adsb: local-adsb-aggregator) (R2-019)
 @BuiltValue()
 abstract class Aggregator implements Built<Aggregator, AggregatorBuilder> {
   @BuiltValueField(wireName: r'domain')
@@ -35,10 +41,11 @@ abstract class Aggregator implements Built<Aggregator, AggregatorBuilder> {
   @BuiltValueField(wireName: r'mode')
   String? get mode;
 
-  /// Local endpoint the adapter reads (e.g. http://localhost for readsb)
+  /// Local endpoint the adapter reads. For adsb, the readsb aircraft.json, for example http://readsb/data/aircraft.json (R2-019)
   @BuiltValueField(wireName: r'endpoint')
   String? get endpoint;
 
+  /// ok when the aggregator's source is healthy, degraded when degraded or not yet run, down when failing, unconfigured when not enabled with an endpoint (R2-019)
   @BuiltValueField(wireName: r'status')
   String? get status;
 
@@ -46,8 +53,29 @@ abstract class Aggregator implements Built<Aggregator, AggregatorBuilder> {
   @BuiltValueField(wireName: r'supersededSources')
   BuiltList<String>? get supersededSources;
 
+  /// When the aggregator's source last brought data (R2-019)
   @BuiltValueField(wireName: r'lastSeenAt')
   DateTime? get lastSeenAt;
+
+  /// Domain-specific settings as stored (adsb: `band`, 1090 or 978) (R2-019)
+  @BuiltValueField(wireName: r'config')
+  BuiltMap<String, JsonObject?>? get config;
+
+  /// Whether the superseded sources are kept off while the aggregator is live (R2-019)
+  @BuiltValueField(wireName: r'disableSupersededSources')
+  bool? get disableSupersededSources;
+
+  /// Whether this server has the domain's backend; a domain without one can be configured only disabled (R2-019)
+  @BuiltValueField(wireName: r'implemented')
+  bool? get implemented;
+
+  /// Why the status is what it is: the health reason of the aggregator's source, or why it is unconfigured (R2-019)
+  @BuiltValueField(wireName: r'statusReason')
+  String? get statusReason;
+
+  /// The first-party sources the aggregator drives; the first one's health is its status (adsb: local-adsb-aggregator) (R2-019)
+  @BuiltValueField(wireName: r'sourceIds')
+  BuiltList<String>? get sourceIds;
 
   Aggregator._();
 
@@ -120,6 +148,44 @@ class _$AggregatorSerializer implements PrimitiveSerializer<Aggregator> {
       yield serializers.serialize(
         object.lastSeenAt,
         specifiedType: const FullType.nullable(DateTime),
+      );
+    }
+    if (object.config != null) {
+      yield r'config';
+      yield serializers.serialize(
+        object.config,
+        specifiedType: const FullType(BuiltMap, [
+          FullType(String),
+          FullType.nullable(JsonObject),
+        ]),
+      );
+    }
+    if (object.disableSupersededSources != null) {
+      yield r'disableSupersededSources';
+      yield serializers.serialize(
+        object.disableSupersededSources,
+        specifiedType: const FullType(bool),
+      );
+    }
+    if (object.implemented != null) {
+      yield r'implemented';
+      yield serializers.serialize(
+        object.implemented,
+        specifiedType: const FullType(bool),
+      );
+    }
+    if (object.statusReason != null) {
+      yield r'statusReason';
+      yield serializers.serialize(
+        object.statusReason,
+        specifiedType: const FullType.nullable(String),
+      );
+    }
+    if (object.sourceIds != null) {
+      yield r'sourceIds';
+      yield serializers.serialize(
+        object.sourceIds,
+        specifiedType: const FullType(BuiltList, [FullType(String)]),
       );
     }
   }
@@ -227,6 +293,61 @@ class _$AggregatorSerializer implements PrimitiveSerializer<Aggregator> {
                   as DateTime?;
           if (valueDes == null) continue;
           result.lastSeenAt = valueDes;
+          break;
+        case r'config':
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltMap, [
+                      FullType(String),
+                      FullType.nullable(JsonObject),
+                    ]),
+                  )
+                  as BuiltMap<String, JsonObject?>?;
+          if (valueDes == null) continue;
+          result.config.replace(valueDes);
+          break;
+        case r'disableSupersededSources':
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
+          if (valueDes == null) continue;
+          result.disableSupersededSources = valueDes;
+          break;
+        case r'implemented':
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
+          if (valueDes == null) continue;
+          result.implemented = valueDes;
+          break;
+        case r'statusReason':
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
+          if (valueDes == null) continue;
+          result.statusReason = valueDes;
+          break;
+        case r'sourceIds':
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>?;
+          if (valueDes == null) continue;
+          result.sourceIds.replace(valueDes);
           break;
         default:
           unhandled.add(key);

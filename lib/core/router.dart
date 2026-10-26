@@ -128,7 +128,16 @@ Map<String, SectionRoutes> sectionRoutesFor(FormFactor formFactor) {
       aiPath: SectionRoutes(
         builder: (context, state) => const AiScreen(),
         routes: <RouteBase>[
-          GoRoute(path: 'new-provider', builder: (context, state) => const ProviderScreen()),
+          GoRoute(
+            path: 'new-provider',
+            builder: (context, state) => ProviderScreen(
+              shared: switch (state.uri.queryParameters['kind']) {
+                'shared' => true,
+                'personal' => false,
+                _ => null,
+              },
+            ),
+          ),
           GoRoute(
             path: 'providers/:providerId',
             builder: (context, state) =>

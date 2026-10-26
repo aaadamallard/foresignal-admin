@@ -58,6 +58,10 @@ const String aiPath = '/ai';
 /// Adds an LLM provider.
 const String aiNewProviderPath = '$aiPath/new-provider';
 
+/// Add a provider of the kind given: shared or the user's personal one.
+String aiNewProviderKindPath({required bool shared}) =>
+    '$aiNewProviderPath?kind=${shared ? 'shared' : 'personal'}';
+
 /// One LLM provider.
 String aiProviderPath(String providerId) => '$aiPath/providers/${Uri.encodeComponent(providerId)}';
 

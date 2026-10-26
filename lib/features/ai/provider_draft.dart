@@ -31,8 +31,9 @@ final RegExp _datePattern = RegExp(r'^\d{4}-\d{2}-\d{2}$');
 /// when typed, and an edit that leaves it empty keeps the stored key.
 class ProviderDraft {
   /// A draft for a new provider: an online Anthropic provider until a preset
-  /// is chosen.
-  ProviderDraft.create()
+  /// is chosen; [shared] picks a shared (instance) provider or the signed-in
+  /// user's personal one.
+  ProviderDraft.create({this.shared = true})
     : stored = null,
       type = 'anthropic',
       enabled = true,
@@ -43,6 +44,7 @@ class ProviderDraft {
   /// A draft of [provider], as last read.
   ProviderDraft.edit(LlmProvider provider)
     : stored = provider,
+      shared = provider.shared ?? provider.ownerPrincipalId == null,
       type = wireOf(provider.type, provider, 'type'),
       enabled = provider.enabled,
       local = _option(provider, 'local') == true,
@@ -85,6 +87,9 @@ class ProviderDraft {
     text['hourlyCapUsd'] = _money(provider.hourlyCapUsd);
     text['dailyCapUsd'] = _money(provider.dailyCapUsd);
     text['monthlyCapUsd'] = _money(provider.monthlyCapUsd);
+    text['perUserHourlyCapUsd'] = _money(provider.perUserHourlyCapUsd);
+    text['perUserDailyCapUsd'] = _money(provider.perUserDailyCapUsd);
+    text['perUserMonthlyCapUsd'] = _money(provider.perUserMonthlyCapUsd);
   }
 
   /// [n] as typed back into a field: no exponent, no trailing `.0`.
@@ -109,6 +114,18 @@ class ProviderDraft {
 
   /// Whether this adds a provider.
   bool get creating => stored == null;
+
+  /// Whether the provider is shared (no owner, the instance's key, managed
+  /// with `llm.shared.manage`) rather than a user's personal one (their own
+  /// key, `self.llm`). Chosen while adding; a replace keeps the kind.
+  bool shared;
+
+  /// The caps on each user's own spend, which only a shared provider has.
+  static const List<String> perUserCaps = <String>[
+    'perUserHourlyCapUsd',
+    'perUserDailyCapUsd',
+    'perUserMonthlyCapUsd',
+  ];
 
   /// The provider type, by wire name. Fixed once the provider exists.
   String type;
@@ -174,8 +191,8 @@ class ProviderDraft {
   /// `requestsPerMinute`, `tokensPerDay`, `knowledgeCutoff`, `maxTokens`,
   /// `temperature`, `ttsModel`, `ttsCharactersPerDay`, `extraHeaders`, the
   /// prices `priceInput`, `priceOutput`, `priceCachedInput`, `priceEmbedding`
-  /// (USD per million tokens) and the caps `hourlyCapUsd`, `dailyCapUsd`,
-  /// `monthlyCapUsd`.
+  /// (USD per million tokens), the caps `hourlyCapUsd`, `dailyCapUsd`,
+  /// `monthlyCapUsd`, and a shared provider's per-user caps ([perUserCaps]).
   final Map<String, String> text = <String, String>{
     for (final k in const <String>[
       'id',
@@ -199,6 +216,7 @@ class ProviderDraft {
       'hourlyCapUsd',
       'dailyCapUsd',
       'monthlyCapUsd',
+      ...perUserCaps,
     ])
       k: '',
   };
@@ -292,11 +310,12 @@ class ProviderDraft {
     if (!takesEmbeddings && _t('priceEmbedding').isNotEmpty) {
       errors['priceEmbedding'] = 'Anthropic has no embeddings, so no embedding price.';
     }
-    for (final key in const <String>['hourlyCapUsd', 'dailyCapUsd', 'monthlyCapUsd']) {
+    final caps = <String>['hourlyCapUsd', 'dailyCapUsd', 'monthlyCapUsd', if (shared) ...perUserCaps];
+    for (final key in caps) {
       _decimal(errors, key, min: 0, max: 10000000000, places: 4, inclusiveMin: false);
     }
     final priced = _pricing().isNotEmpty;
-    for (final key in const <String>['hourlyCapUsd', 'dailyCapUsd', 'monthlyCapUsd']) {
+    for (final key in caps) {
       if (_t(key).isNotEmpty && !priced && !errors.containsKey(key)) {
         errors[key] = 'Set a price first: spend is the metered tokens at these prices.';
       }
@@ -412,6 +431,9 @@ class ProviderDraft {
       'hourlyCapUsd': ?d('hourlyCapUsd'),
       'dailyCapUsd': ?d('dailyCapUsd'),
       'monthlyCapUsd': ?d('monthlyCapUsd'),
+      if (creating) 'shared': shared,
+      if (shared)
+        for (final key in perUserCaps) key: ?d(key),
     };
   }
 
@@ -478,6 +500,12 @@ class ProviderDraft {
     money('Hourly cap', sent['hourlyCapUsd'], reread.hourlyCapUsd);
     money('Daily cap', sent['dailyCapUsd'], reread.dailyCapUsd);
     money('Monthly cap', sent['monthlyCapUsd'], reread.monthlyCapUsd);
+    money('Per-user hourly cap', sent['perUserHourlyCapUsd'], reread.perUserHourlyCapUsd);
+    money('Per-user daily cap', sent['perUserDailyCapUsd'], reread.perUserDailyCapUsd);
+    money('Per-user monthly cap', sent['perUserMonthlyCapUsd'], reread.perUserMonthlyCapUsd);
+    if (sent['shared'] case final bool kind when reread.shared != null && reread.shared != kind) {
+      differs.add(kind ? 'the provider reads back personal' : 'the provider reads back shared');
+    }
     if (sent.containsKey('apiKey') && reread.apiKeySet != true) {
       differs.add('the API key is still not set');
     }

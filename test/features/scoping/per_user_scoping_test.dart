@@ -248,36 +248,31 @@ void main() {
     );
   });
 
-  testWidgets('a user\'s channel list keeps their own and the global ones', (tester) async {
+  testWidgets('a non-operator\'s channel list keeps only their own channels', (tester) async {
     final permissions = RoleTier.editor.permissions;
-    Map<String, Object?> channel(String id, String name, String? owner) => <String, Object?>{
-      'id': id,
-      'name': name,
-      'type': 'webhook',
-      'enabled': true,
-      'events': <String>['alert.fired'],
-      'ownerPrincipalId': owner,
-      'global': owner == null,
-    };
-    final adapter = scopedBackend(
-      permissions,
-      channels: <Map<String, Object?>>[
-        channel('c-mine', 'My hook', mePrincipal),
-        channel('c-other', 'Their hook', otherPrincipal),
-        channel('c-global', 'Ops hook', null),
-      ],
-    );
+    final adapter = scopedBackend(permissions, channels: threeChannels());
     await openSignedIn(tester, adapter, permissions, alertChannelsPath);
 
     expect(find.text('My hook'), findsOneWidget);
-    expect(find.text('Ops hook'), findsOneWidget);
+    expect(find.text('Ops hook'), findsNothing);
     expect(find.text('Their hook'), findsNothing);
-    expect(
-      find.descendant(
-        of: find.byKey(const Key('channels.owner.c-global')),
-        matching: find.text('Global'),
-      ),
-      findsOneWidget,
-    );
   });
 }
+
+/// A channel body owned by [owner] (`null` for a global channel).
+Map<String, Object?> channelBody(String id, String name, String? owner) => <String, Object?>{
+  'id': id,
+  'name': name,
+  'type': 'webhook',
+  'enabled': true,
+  'events': <String>['alert.fired'],
+  'ownerPrincipalId': owner,
+  'global': owner == null,
+};
+
+/// The caller's channel, another user's, and a global one.
+List<Map<String, Object?>> threeChannels() => <Map<String, Object?>>[
+  channelBody('c-mine', 'My hook', mePrincipal),
+  channelBody('c-other', 'Their hook', otherPrincipal),
+  channelBody('c-global', 'Ops hook', null),
+];

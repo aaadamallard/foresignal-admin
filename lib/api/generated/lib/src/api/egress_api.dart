@@ -26,7 +26,7 @@ class EgressApi {
   const EgressApi(this._dio, this._serializers);
 
   /// Assign a source&#39;s egress
-  /// Pins a source to an egress route, or excludes it from rotation (e.g. a geo-locked source to an in-region exit). Requires &#x60;network.manage&#x60;.  **Scope:** &#x60;admin&#x60;.
+  /// Pins a source to an egress route, or excludes it from rotation (e.g. a geo-locked source to an in-region exit). Requires &#x60;network.manage&#x60;.  **Scope:** &#x60;admin&#x60;.  **R2-018:** 404 UNKNOWN_SOURCE for a source this server does not have; 400 for a &#x60;routeId&#x60; that names no route.
   ///
   /// Parameters:
   /// * [sourceId] - Source id
@@ -133,7 +133,7 @@ class EgressApi {
   }
 
   /// Create an egress route
-  /// Adds a proxy, WireGuard profile or bound interface to the egress pool; credentials are stored encrypted, never returned. Requires &#x60;network.manage&#x60;.  **Scope:** &#x60;admin&#x60;.
+  /// Adds a proxy, WireGuard profile or bound interface to the egress pool; credentials are stored encrypted, never returned. Requires &#x60;network.manage&#x60;.  **Scope:** &#x60;admin&#x60;.  **R2-018:** &#x60;url&#x60; is &#x60;http://host:port&#x60; or &#x60;socks5://host:port&#x60; (no path, no credentials in it) for those types, and its host must pass the outbound URL policy&#39;s &#x60;LAN_ALLOWED&#x60; profile (400 URL_NOT_ALLOWED otherwise); &#x60;interface&#x60; takes &#x60;boundInterface&#x60; (an interface name or an address literal); names are unique ignoring case; &#x60;wireguard&#x60; takes &#x60;secrets.wireguardConfig&#x60; and is recorded but always unavailable, because the server cannot bring a tunnel up. Secrets are sealed with the instance key and never returned; &#x60;secretsSet&#x60; names those stored.
   ///
   /// Parameters:
   /// * [egressRouteInput]
@@ -229,7 +229,7 @@ class EgressApi {
   }
 
   /// Delete an egress route
-  /// Removes an egress route. Sources pinned to it fall back to the default route. Requires &#x60;network.manage&#x60;.  **Scope:** &#x60;admin&#x60;.
+  /// Removes an egress route. Sources pinned to it fall back to the default route. Requires &#x60;network.manage&#x60;.  **Scope:** &#x60;admin&#x60;.  **R2-018:** sources pinned to the route lose the pin, and the default route is cleared when it was this one.
   ///
   /// Parameters:
   /// * [id] - Egress route id
@@ -363,7 +363,7 @@ class EgressApi {
   }
 
   /// Get egress route health
-  /// Returns reachability, latency, exit IP and backoff state for one route. Requires &#x60;network.manage&#x60;.  **Scope:** &#x60;admin&#x60;.
+  /// Returns reachability, latency, exit IP and backoff state for one route. Requires &#x60;network.manage&#x60;.  **Scope:** &#x60;admin&#x60;.  **R2-018:** health is held in memory and starts empty at restart; three consecutive failures mark the route unreachable, skip it in rotation and raise &#x60;system.egress_unhealthy&#x60;; a later success raises &#x60;system.egress_recovered&#x60;. &#x60;sources&#x60; lists the per-source holds on the route.
   ///
   /// Parameters:
   /// * [id] - Egress route id
@@ -520,7 +520,7 @@ class EgressApi {
   }
 
   /// List egress routes
-  /// Lists the egress pool with per-route health and last observed exit IP (C1/181). Requires &#x60;network.manage&#x60;.  **Scope:** &#x60;admin&#x60;.
+  /// Lists the egress pool with per-route health and last observed exit IP (C1/181). Requires &#x60;network.manage&#x60;.  **Scope:** &#x60;admin&#x60;.  **R2-018:** ordered by name; 400 for a cursor this server did not issue.
   ///
   /// Parameters:
   /// * [cursor] - Opaque pagination cursor
@@ -615,7 +615,7 @@ class EgressApi {
   }
 
   /// Test an egress route
-  /// Makes a probe call through the route and reports the observed public exit IP and latency; nothing is persisted beyond the route&#39;s health (C1/181). Requires &#x60;network.manage&#x60;.  **Scope:** &#x60;admin&#x60;.
+  /// Makes a probe call through the route and reports the observed public exit IP and latency; nothing is persisted beyond the route&#39;s health (C1/181). Requires &#x60;network.manage&#x60;.  **Scope:** &#x60;admin&#x60;.  **R2-018:** one &#x60;GET&#x60; of the configured exit-IP service (&#x60;foresignal.egress.probe-url&#x60;, default &#x60;https://checkip.amazonaws.com/&#x60;, checked against the public-only outbound policy) through the route. Always 200: &#x60;ok&#x60; false with a &#x60;message&#x60; when the route is unavailable or the call fails. A passing test records &#x60;exitIp&#x60; on the route.
   ///
   /// Parameters:
   /// * [id] - Egress route id
@@ -697,7 +697,7 @@ class EgressApi {
   }
 
   /// Update an egress route
-  /// Replaces an egress route; an omitted secret keeps the stored one. Requires &#x60;network.manage&#x60;.  **Scope:** &#x60;admin&#x60;.
+  /// Replaces an egress route; an omitted secret keeps the stored one. Requires &#x60;network.manage&#x60;.  **Scope:** &#x60;admin&#x60;.  **R2-018:** the same validation as create; an omitted &#x60;secrets&#x60; member keeps the stored value, an empty string or null clears it, and a secret the new type cannot use is dropped.
   ///
   /// Parameters:
   /// * [id] - Egress route id
@@ -800,7 +800,7 @@ class EgressApi {
   }
 
   /// Update egress policy
-  /// Replaces the rotation policy and default route. Default is direct (no egress routing). Requires &#x60;network.manage&#x60;.  **Scope:** &#x60;admin&#x60;.
+  /// Replaces the rotation policy and default route. Default is direct (no egress routing). Requires &#x60;network.manage&#x60;.  **Scope:** &#x60;admin&#x60;.  **R2-018:** 400 for an unknown &#x60;rotation&#x60;, or a &#x60;defaultRoute&#x60; that names no route. With rotation on and no usable route for a source, its pull fails rather than going direct.
   ///
   /// Parameters:
   /// * [egressSettings]

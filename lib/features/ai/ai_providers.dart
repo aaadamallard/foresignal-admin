@@ -38,6 +38,13 @@ final llmBudgetProvider = FutureProvider.autoDispose.family<LlmProviderBudget, S
   return callApiRequired(() => api.getLLMApi().getLlmProviderBudget(providerId: id));
 });
 
+/// The signed-in user's own LLM spend this UTC month on every provider
+/// they can use, against their cap on each (`getMyLlmBudget`).
+final myLlmBudgetProvider = FutureProvider.autoDispose<MeLlmBudget>((ref) async {
+  final api = ref.watch(foresignalApiProvider);
+  return callApiRequired(() => api.getLLMApi().getMyLlmBudget());
+});
+
 /// The LLM roles and options (`getLlmSettings`).
 final llmSettingsProvider = FutureProvider<LlmSettings>((ref) async {
   final api = ref.watch(foresignalApiProvider);

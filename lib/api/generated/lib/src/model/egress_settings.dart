@@ -11,16 +11,16 @@ part 'egress_settings.g.dart';
 /// Egress routing policy (settings key `egress`); default direct/off, opt-in (C1/181)
 ///
 /// Properties:
-/// * [rotation] - How outbound requests pick a route; direct means no egress routing
-/// * [defaultRoute] - Route used when rotation is off or a source has no assignment
+/// * [rotation] - How outbound requests pick a route; direct means no egress routing at all: pins and the default route are ignored and every pull goes direct (R2-018)
+/// * [defaultRoute] - With rotation on, the route a source excluded from rotation uses (an excluded source with no default route goes direct); it must name an existing route (R2-018)
 @BuiltValue()
 abstract class EgressSettings
     implements Built<EgressSettings, EgressSettingsBuilder> {
-  /// How outbound requests pick a route; direct means no egress routing
+  /// How outbound requests pick a route; direct means no egress routing at all: pins and the default route are ignored and every pull goes direct (R2-018)
   @BuiltValueField(wireName: r'rotation')
   String get rotation;
 
-  /// Route used when rotation is off or a source has no assignment
+  /// With rotation on, the route a source excluded from rotation uses (an excluded source with no default route goes direct); it must name an existing route (R2-018)
   @BuiltValueField(wireName: r'defaultRoute')
   String? get defaultRoute;
 

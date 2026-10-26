@@ -19,6 +19,10 @@ class _$EgressHealth extends EgressHealth {
   final int? consecutiveFailures;
   @override
   final DateTime? backoffUntil;
+  @override
+  final String? lastError;
+  @override
+  final BuiltList<EgressHealthSourcesInner>? sources;
 
   factory _$EgressHealth([void Function(EgressHealthBuilder)? updates]) =>
       (EgressHealthBuilder()..update(updates))._build();
@@ -30,6 +34,8 @@ class _$EgressHealth extends EgressHealth {
     this.lastCheckedAt,
     this.consecutiveFailures,
     this.backoffUntil,
+    this.lastError,
+    this.sources,
   }) : super._();
   @override
   EgressHealth rebuild(void Function(EgressHealthBuilder) updates) =>
@@ -47,7 +53,9 @@ class _$EgressHealth extends EgressHealth {
         latencyMs == other.latencyMs &&
         lastCheckedAt == other.lastCheckedAt &&
         consecutiveFailures == other.consecutiveFailures &&
-        backoffUntil == other.backoffUntil;
+        backoffUntil == other.backoffUntil &&
+        lastError == other.lastError &&
+        sources == other.sources;
   }
 
   @override
@@ -59,6 +67,8 @@ class _$EgressHealth extends EgressHealth {
     _$hash = $jc(_$hash, lastCheckedAt.hashCode);
     _$hash = $jc(_$hash, consecutiveFailures.hashCode);
     _$hash = $jc(_$hash, backoffUntil.hashCode);
+    _$hash = $jc(_$hash, lastError.hashCode);
+    _$hash = $jc(_$hash, sources.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -71,7 +81,9 @@ class _$EgressHealth extends EgressHealth {
           ..add('latencyMs', latencyMs)
           ..add('lastCheckedAt', lastCheckedAt)
           ..add('consecutiveFailures', consecutiveFailures)
-          ..add('backoffUntil', backoffUntil))
+          ..add('backoffUntil', backoffUntil)
+          ..add('lastError', lastError)
+          ..add('sources', sources))
         .toString();
   }
 }
@@ -107,6 +119,16 @@ class EgressHealthBuilder
   set backoffUntil(DateTime? backoffUntil) =>
       _$this._backoffUntil = backoffUntil;
 
+  String? _lastError;
+  String? get lastError => _$this._lastError;
+  set lastError(String? lastError) => _$this._lastError = lastError;
+
+  ListBuilder<EgressHealthSourcesInner>? _sources;
+  ListBuilder<EgressHealthSourcesInner> get sources =>
+      _$this._sources ??= ListBuilder<EgressHealthSourcesInner>();
+  set sources(ListBuilder<EgressHealthSourcesInner>? sources) =>
+      _$this._sources = sources;
+
   EgressHealthBuilder() {
     EgressHealth._defaults(this);
   }
@@ -120,6 +142,8 @@ class EgressHealthBuilder
       _lastCheckedAt = $v.lastCheckedAt;
       _consecutiveFailures = $v.consecutiveFailures;
       _backoffUntil = $v.backoffUntil;
+      _lastError = $v.lastError;
+      _sources = $v.sources?.toBuilder();
       _$v = null;
     }
     return this;
@@ -139,20 +163,38 @@ class EgressHealthBuilder
   EgressHealth build() => _build();
 
   _$EgressHealth _build() {
-    final _$result =
-        _$v ??
-        _$EgressHealth._(
-          reachable: BuiltValueNullFieldError.checkNotNull(
-            reachable,
-            r'EgressHealth',
-            'reachable',
-          ),
-          exitIp: exitIp,
-          latencyMs: latencyMs,
-          lastCheckedAt: lastCheckedAt,
-          consecutiveFailures: consecutiveFailures,
-          backoffUntil: backoffUntil,
+    _$EgressHealth _$result;
+    try {
+      _$result =
+          _$v ??
+          _$EgressHealth._(
+            reachable: BuiltValueNullFieldError.checkNotNull(
+              reachable,
+              r'EgressHealth',
+              'reachable',
+            ),
+            exitIp: exitIp,
+            latencyMs: latencyMs,
+            lastCheckedAt: lastCheckedAt,
+            consecutiveFailures: consecutiveFailures,
+            backoffUntil: backoffUntil,
+            lastError: lastError,
+            sources: _sources?.build(),
+          );
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'sources';
+        _sources?.build();
+      } catch (e) {
+        throw BuiltValueNestedFieldError(
+          r'EgressHealth',
+          _$failedField,
+          e.toString(),
         );
+      }
+      rethrow;
+    }
     replace(_$result);
     return _$result;
   }
