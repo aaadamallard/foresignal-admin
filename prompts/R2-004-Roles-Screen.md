@@ -4,8 +4,8 @@
 roles created and deleted, and a **permission editor** that composes a role from the permission catalog.
 
 **Depends on.** R2-002 (permission provider / gating) and R2-003 (the Users & Roles section exists; this
-adds its Roles tab). Backend-landed with prompt **R2-006 (Role-Management)**; the client carries the
-operations from the 2.0.0 vendor.
+adds its Roles tab) — intra-admin only; it does **not** wait on the backend. The client carries the
+role-management operations from the 2.0.0 vendor.
 
 **Read first.** The v2.0 roadmap Part A2 (role set, catalog groups, built-ins = named permission
 subsets); R2-003-CR; `lib/core/ui/` (`section_card`, `data_table_card`, `write_confirm`) and the editor

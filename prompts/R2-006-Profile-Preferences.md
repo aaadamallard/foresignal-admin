@@ -4,10 +4,9 @@
 timezone and display preferences, and notification preferences — the self-service counterpart to the
 admin's Users screen.
 
-**Depends on.** R2-001 (session) and R2-002 (current-user provider). The preferences operations land
-with backend prompt **R2-012 (per-user preferences/views)**; the password-reset path reuses backend
-**R2-002/R2-003 (account lifecycle, auth)** and **R2-007 (transactional email)**. The client carries
-these from the 2.0.0 vendor. Re-vendor `../foresignal/docs/OpenAPI.json` only if it changed since R2-002.
+**Depends on.** R2-001 (session) and R2-002 (current-user provider) — intra-admin only; it does **not**
+wait on the backend. The client carries the preferences and password-reset operations from the 2.0.0
+vendor. Re-vendor `../foresignal/docs/OpenAPI.json` only if it changed since R2-002.
 
 **Operations.** `getMe` (identity + roles); `getMyPreferences` / `updateMyPreferences` (the
 `UserPreferences`: `timezone`, `locale`, `theme`, `notifications`, `ui`); `listMyNotificationPreferences`

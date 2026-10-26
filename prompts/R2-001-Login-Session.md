@@ -6,10 +6,11 @@ a **machine/break-glass fallback**. Plus the **forgot-password** and **activatio
 emailed links land on. This is the first half of the v2.0 spine (R2-002 is the other half); nearly
 every later R2 screen assumes a signed-in user exists.
 
-**Depends on.** Nothing earlier in the admin R2 track — this runs first. On the backend it needs
-prompts **R2-002 (Password-Lifecycle)** and **R2-003 (Auth-Sessions)** landed; the client carries the
-auth operations from the 2.0.0 vendor. Everything after it (R2-002…R2-011) assumes the session +
-secure store this prompt builds.
+**Depends on.** Nothing earlier in the admin R2 track — this runs first, against the committed 2.0.0
+contract (it does the one-time 1.5.0→2.0.0 re-vendor below). It does **not** wait on the backend; the
+client carries the auth operations from the 2.0.0 vendor, and an operation the backend has not
+implemented yet surfaces its error on-screen (the directional policy from 018). Everything after it
+(R2-002…R2-011) assumes the session + secure store this prompt builds.
 
 **Read first.** The v2.0 roadmap Part A3/A6/A7 (auth, transactional email, admin app); Screens.md §A
 (Connect) and Architecture.md §4/§6 (auth, secrets); 003-CR (App-Shell-And-Connect); and the existing

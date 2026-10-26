@@ -5,10 +5,9 @@
 config + inventory, and **backup/restore** (run, schedule, history). One `storage.manage`-gated area
 over the backend's resource/retention/archive/backup machinery.
 
-**Depends on.** R2-002 (gating). Backend-landed across prompts **R2-014…R2-017** (disk/resource
-monitoring, retention control, cold-storage archival, backup/restore); the client carries the
-operations from the 2.0.0 vendor. Re-vendor `../foresignal/docs/OpenAPI.json` only if it changed since
-R2-002.
+**Depends on.** R2-002 (gating) — intra-admin only; it does **not** wait on the backend. The client
+carries the resource/retention/archive/backup operations from the 2.0.0 vendor. Re-vendor
+`../foresignal/docs/OpenAPI.json` only if it changed since R2-002.
 
 **Read first.** The v2.0 roadmap Part B (B1 monitoring + thresholds, B2 retention, B3 archival, B4
 backup); 007-CR (the existing retention/rate-limit panels under `lib/features/usage/`) and 015-CR (the

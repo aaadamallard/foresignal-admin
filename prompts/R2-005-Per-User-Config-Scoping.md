@@ -6,11 +6,11 @@ serves "my sources / my alerts / my channels / my preferences" to every user, wh
 knobs (the collection union, the collector governor, shared LLM, global channels, server/security,
 serving) are gated. This is where v1's single-operator screens become multi-user.
 
-**Depends on.** R2-002 (the permission provider / nav + control gating). It builds on the v1 features in
-`lib/features/sources/`, `lib/features/ai/`, `lib/features/alerts/`, `lib/features/notifications/`, and
-`lib/features/system/`. Backend-landed across prompts **R2-008…R2-013** (per-user alerts, channels,
-source views, LLM, preferences/views, data-access gating); the client carries the new operations from
-the 2.0.0 vendor. Re-vendor `../foresignal/docs/OpenAPI.json` only if it changed since R2-002.
+**Depends on.** R2-002 (the permission provider / nav + control gating) — intra-admin only; it does
+**not** wait on the backend. It builds on the v1 features in `lib/features/sources/`, `lib/features/ai/`,
+`lib/features/alerts/`, `lib/features/notifications/`, and `lib/features/system/`. The client carries the
+new per-user operations from the 2.0.0 vendor. Re-vendor `../foresignal/docs/OpenAPI.json` only if it
+changed since R2-002.
 
 **The split (what moves where).**
 - **Shared collection vs my sources.** The source catalog gets two levels. A user's own

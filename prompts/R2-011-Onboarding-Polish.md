@@ -7,8 +7,8 @@ empty states across the app. This is the **last admin prompt**; it closes the v2
 **final re-vendor** and leaves both test suites complete.
 
 **Depends on.** R2-001…R2-010 (the wizard composes their screens — it owns no business logic, it chains
-them). Backend-landed with prompt **R2-027 (first-run/onboarding bootstrap + the API → 2.0.0
-close-out)**; the client carries the operations from the 2.0.0 vendor.
+them) — intra-admin only; it does **not** wait on the backend. The client carries the first-run,
+SMTP, and threshold operations from the 2.0.0 vendor.
 
 **Read first.** The v2.0 roadmap Part A6/A8 and Part D (C4 onboarding); 004-CR (the v1 first-run wizard
 this replaces/extends) and R2-001-CR through R2-010-CR; `lib/features/setup/` (the existing wizard store

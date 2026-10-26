@@ -6,9 +6,9 @@ proxy or WireGuard route; **Test shows the exit IP**), the **rotation policy** a
 AIS / datalink / satellite / ground) with their setup, endpoints, live status, and the **default-off
 toggle** for each superseded public source.
 
-**Depends on.** R2-002 (gating). Backend-landed across prompts **R2-018…R2-023** (egress routing, the
-ADS-B / AIS / datalink / satellite / ground-sensor aggregators); the client carries the operations from
-the 2.0.0 vendor. Re-vendor `../foresignal/docs/OpenAPI.json` only if it changed since R2-002.
+**Depends on.** R2-002 (gating) — intra-admin only; it does **not** wait on the backend. The client
+carries the egress and aggregator operations from the 2.0.0 vendor. Re-vendor
+`../foresignal/docs/OpenAPI.json` only if it changed since R2-002.
 
 **Read first.** The v2.0 roadmap Part C (C1 egress, C2 local ADS-B aggregator, C3 first-party
 aggregators across RF/sensor domains — the local-first principle and the "keep public mirrors but

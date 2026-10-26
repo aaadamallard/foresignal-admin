@@ -5,8 +5,8 @@ roles, suspend/unsuspend, delete with reassign, reset password, resend invite). 
 the backend's welcome email. This is the Users half of a "Users & Roles" section; R2-004 adds the Roles
 half on the same section.
 
-**Depends on.** R2-002 (the permission provider and `PermissionGate`). The user-management operations
-land with backend prompt **R2-005 (User-Management)**; the client already carries them from the 2.0.0
+**Depends on.** R2-002 (the permission provider and `PermissionGate`) — intra-admin only; it does
+**not** wait on the backend. The client already carries the user-management operations from the 2.0.0
 vendor.
 
 **Read first.** The v2.0 roadmap Part A1/A4/A6/A7 (identity model, delete-reassign, welcome email);

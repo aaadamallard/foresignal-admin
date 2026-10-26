@@ -89,8 +89,11 @@ screens. The backend design is in the foresignal repo's [RBAC-Design](../../fore
 [Screens.md](Screens.md) group L (and the gated-nav note in the navigation section).
 
 - **The only backend contract is the re-vendored `openapi/OpenAPI.json`** (API **2.0.0**), as always;
-  the generated client (`lib/api/generated/`) is never hand-edited. Admin prompts run **after** the
-  backend endpoints they consume exist and the contract is re-vendored.
+  the generated client (`lib/api/generated/`) is never hand-edited. The admin builds against the
+  committed 2.0.0 contract and runs **in parallel** with the backend — it does **not** wait on the
+  backend implementation. An operation the backend has not implemented yet simply surfaces its error
+  on-screen (the app's directional policy from §1.4). The only dependencies are intra-admin: the
+  login + permission-gating spine (R2-001 → R2-002), after which the screens fan out in parallel.
 - **Numbering:** admin v2.0 prompts continue from **019** (v1 ended at 018). The Release-2 driver labels
   them **R2-001 … R2-011** in `prompts/000-Run-Sequence.md`; each R2-NNN is prompt 18 + NNN.
 - Same guardrails as §2: `flutter analyze` clean + build; tests written not run; secrets never in the
@@ -112,5 +115,5 @@ screens. The backend design is in the foresignal repo's [RBAC-Design](../../fore
 | R2-010 | 028 Account-Security-UI | L | MFA setup; session list/revoke; API-token management. Ops: `enrollMfa`, `verifyMfa`, `disableMfa`, `getMfaRecoveryCodes`, `listSessions`, `revokeSession`, `revokeAllSessions`, `listMyTokens`, `createMyToken`, `revokeMyToken` |
 | R2-011 | 029 Onboarding-And-Polish | A, L | onboarding wizard (first admin → SMTP → starter sources → retention/disk thresholds); finish + commit the mobile companion push; permission-denied/empty-state polish; final re-vendor; both suites green. Ops: `getFirstRunStatus` + the screens it chains |
 
-**Status:** not started. 11 prompts (019–029), built in one pass after the backend endpoints land and
-the contract is re-vendored. No phasing.
+**Status:** not started. 11 prompts (019–029), built in one pass against the committed 2.0.0 contract,
+in parallel with the backend (no backend wait). No phasing.

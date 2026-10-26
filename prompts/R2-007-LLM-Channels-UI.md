@@ -4,9 +4,9 @@
 providers and channels alongside each user's **personal** ones, with **per-user USD budgets**. This
 takes v1's single-tenant AI screen (prompt 008) and v1's channels (prompt 012) into the owner model.
 
-**Depends on.** R2-002 (gating) and R2-005 (per-user scoping). Backend-landed with prompts **R2-009
-(Per-User-Channels)** and **R2-011 (LLM-Shared-Personal)**; the client carries the operations from the
-2.0.0 vendor. Re-vendor `../foresignal/docs/OpenAPI.json` only if it changed since R2-005.
+**Depends on.** R2-002 (gating) and R2-005 (per-user scoping) — intra-admin only; it does **not** wait
+on the backend. The client carries the LLM and channel operations from the 2.0.0 vendor. Re-vendor
+`../foresignal/docs/OpenAPI.json` only if it changed since R2-005.
 
 **Read first.** The v2.0 roadmap Part A4/A5 (LLM shared + personal, per-user budgets; per-user
 channels); 008-CR and 012/013-CR; `lib/features/ai/` and the channels work under

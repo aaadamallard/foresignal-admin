@@ -5,9 +5,9 @@ whole app reads, and the **gating** it drives — nav sections and write control
 signed-in user holds the permission behind them. After this, every later R2 screen declares the
 permission it needs instead of re-deriving it.
 
-**Depends on.** R2-001 (a session exists and is stored); on the backend, prompt **R2-004
-(Authorization)** supplies the effective-permission checks. Everything from R2-003 onward gates against
-the provider this prompt creates.
+**Depends on.** R2-001 (a session exists and is stored) — intra-admin only; it does **not** wait on the
+backend. The client carries the effective-permission operations from the 2.0.0 vendor. Everything from
+R2-003 onward gates against the provider this prompt creates.
 
 **Read first.** The v2.0 roadmap Part A2 (the permission catalog and built-in roles) and A7; 003-CR and
 R2-001-CR; `lib/core/nav.dart`, `lib/features/shell/app_shell.dart`, `lib/core/router.dart`,

@@ -6,8 +6,8 @@ recovery codes, their **active sessions** (list and revoke), and their **user-ow
 revoke any session).
 
 **Depends on.** R2-001 (session, and the MFA-at-login code field already accepted) and R2-006 (the
-profile screen this attaches to). Backend-landed with prompts **R2-024 (MFA/2FA)** and **R2-025
-(Session & API-token management)**; the client carries the operations from the 2.0.0 vendor. Re-vendor
+profile screen this attaches to) — intra-admin only; it does **not** wait on the backend. The client
+carries the MFA, session, and API-token operations from the 2.0.0 vendor. Re-vendor
 `../foresignal/docs/OpenAPI.json` only if it changed since R2-006.
 
 **Read first.** The v2.0 roadmap Part D (C1 MFA, C2 session & token management); R2-001-CR and R2-006-CR;
