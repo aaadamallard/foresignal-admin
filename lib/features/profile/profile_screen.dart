@@ -17,13 +17,15 @@ import '../auth/auth_controller.dart';
 import '../forecasting/forecasting_providers.dart' show Json;
 import '../forecasting/forecasting_widgets.dart'
     show Footnote, PlainField, WireDropdown, WriteTracking, whenText;
+import 'account_security.dart';
 import 'profile_providers.dart';
 
 /// The signed-in user's own profile (`/profile`, every form factor): who
 /// they are and their roles (`getMe`), a password change through the reset
 /// email, their preferences, their notification preferences and a glance at
-/// their quota. It needs no permission beyond being signed in; each card
-/// that needs one says so.
+/// their quota, and their account security (MFA, sessions, API tokens). It
+/// needs no permission beyond being signed in; each card that needs one says
+/// so.
 class ProfileScreen extends ConsumerWidget {
   /// Creates the screen.
   const ProfileScreen({super.key});
@@ -80,6 +82,8 @@ class ProfileScreen extends ConsumerWidget {
         const NotificationPreferencesCard(),
         const SizedBox(height: 20),
         const QuotaCard(),
+        const SizedBox(height: 28),
+        const AccountSecuritySection(),
       ],
     );
   }

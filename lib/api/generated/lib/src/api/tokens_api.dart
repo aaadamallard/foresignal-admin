@@ -218,7 +218,7 @@ class TokensApi {
   }
 
   /// Mint an API token
-  /// Mints an API token owned by the calling user, with the existing area/path/tile-key restrictions; its scope cannot exceed the caller&#39;s own permissions (D2/188). The secret is shown once. Requires &#x60;self.workspaces&#x60;.  **Scope:** &#x60;read&#x60;.
+  /// Mints an API token owned by the calling user, with the existing area/path/tile-key restrictions; its scope cannot exceed the caller&#39;s own permissions (D2/188). The secret is shown once. Any signed-in user; needs a session (an API token is 401), so a token never mints another (R2-025). The token is &#x60;createdVia: self&#x60; and owned by the caller&#39;s principal; &#x60;principalId&#x60; is refused (400). Its scope is at most &#x60;admin&#x60; for a user holding every permission, &#x60;agent&#x60; for one whose sessions are &#x60;agent&#x60; or &#x60;admin&#x60;, else &#x60;read&#x60;; &#x60;privateAccess&#x60; needs an admin-derived session; anything wider is 403 TOKEN_EXCEEDS_USER. On every request the token is capped again by its owner&#39;s current roles, narrowed by the owner&#39;s data restriction, refused (401) while the owner may not sign in, and audited as the owner (R2-025).  **Scope:** &#x60;read&#x60;.
   ///
   /// Parameters:
   /// * [apiTokenInput]
@@ -900,7 +900,7 @@ class TokensApi {
   }
 
   /// List my API tokens
-  /// Lists the API tokens owned by the calling user (user-attributable machine tokens, D2/188). An admin manages all tokens via /v1/tokens. Requires &#x60;self.workspaces&#x60;.  **Scope:** &#x60;read&#x60;.
+  /// Lists the API tokens owned by the calling user (user-attributable machine tokens, D2/188). An admin manages all tokens via /v1/tokens. Any signed-in user; needs a session (an API token is 401). Revoked tokens are listed with &#x60;revokedAt&#x60;; a value is never returned (R2-025).  **Scope:** &#x60;read&#x60;.
   ///
   /// Parameters:
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
@@ -1282,7 +1282,7 @@ class TokensApi {
   }
 
   /// Revoke one of my API tokens
-  /// Revokes an API token owned by the calling user. Requires &#x60;self.workspaces&#x60;.  **Scope:** &#x60;read&#x60;.
+  /// Revokes an API token owned by the calling user. Any signed-in user; needs a session (an API token is 401). A token the caller does not own is 404, as if it did not exist; the revoked token stops authenticating at once (R2-025).  **Scope:** &#x60;read&#x60;.
   ///
   /// Parameters:
   /// * [id] - Token id

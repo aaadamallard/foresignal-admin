@@ -25,7 +25,7 @@ part 'api_token_created.g.dart';
 /// * [bootstrap]
 /// * [restrictions] - Data and endpoint restrictions (data restrictions enforced from 035)
 /// * [device]
-/// * [createdVia]
+/// * [createdVia] - `self`: minted by a signed-in user with createMyToken and owned by that user's principal (R2-025)
 /// * [principalId] - ULID identifier
 /// * [privateAccess] - May see private sources (039)
 /// * [licencePolicy] - Licence policy floor applied to every read with this token; requests may add flags but never remove these
@@ -69,9 +69,10 @@ abstract class ApiTokenCreated
   @BuiltValueField(wireName: r'device')
   DeviceInfo? get device;
 
+  /// `self`: minted by a signed-in user with createMyToken and owned by that user's principal (R2-025)
   @BuiltValueField(wireName: r'createdVia')
   ApiTokenCreatedCreatedViaEnum? get createdVia;
-  // enum createdViaEnum {  api,  pairing,  bootstrap,  };
+  // enum createdViaEnum {  api,  pairing,  bootstrap,  self,  };
 
   /// ULID identifier
   @BuiltValueField(wireName: r'principalId')
@@ -476,6 +477,7 @@ class ApiTokenCreatedScopeEnum extends EnumClass {
       _$apiTokenCreatedScopeEnumValueOf(name);
 }
 
+/// `self`: minted by a signed-in user with createMyToken and owned by that user's principal (R2-025)
 class ApiTokenCreatedCreatedViaEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'api')
   static const ApiTokenCreatedCreatedViaEnum api =
@@ -486,6 +488,9 @@ class ApiTokenCreatedCreatedViaEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'bootstrap')
   static const ApiTokenCreatedCreatedViaEnum bootstrap =
       _$apiTokenCreatedCreatedViaEnum_bootstrap;
+  @BuiltValueEnumConst(wireName: r'self')
+  static const ApiTokenCreatedCreatedViaEnum self =
+      _$apiTokenCreatedCreatedViaEnum_self;
   @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
   static const ApiTokenCreatedCreatedViaEnum unknownDefaultOpenApi =
       _$apiTokenCreatedCreatedViaEnum_unknownDefaultOpenApi;

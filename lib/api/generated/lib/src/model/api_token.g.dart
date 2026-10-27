@@ -47,6 +47,8 @@ const ApiTokenCreatedViaEnum _$apiTokenCreatedViaEnum_pairing =
     const ApiTokenCreatedViaEnum._('pairing');
 const ApiTokenCreatedViaEnum _$apiTokenCreatedViaEnum_bootstrap =
     const ApiTokenCreatedViaEnum._('bootstrap');
+const ApiTokenCreatedViaEnum _$apiTokenCreatedViaEnum_self =
+    const ApiTokenCreatedViaEnum._('self');
 const ApiTokenCreatedViaEnum _$apiTokenCreatedViaEnum_unknownDefaultOpenApi =
     const ApiTokenCreatedViaEnum._('unknownDefaultOpenApi');
 
@@ -58,6 +60,8 @@ ApiTokenCreatedViaEnum _$apiTokenCreatedViaEnumValueOf(String name) {
       return _$apiTokenCreatedViaEnum_pairing;
     case 'bootstrap':
       return _$apiTokenCreatedViaEnum_bootstrap;
+    case 'self':
+      return _$apiTokenCreatedViaEnum_self;
     case 'unknownDefaultOpenApi':
       return _$apiTokenCreatedViaEnum_unknownDefaultOpenApi;
     default:
@@ -70,6 +74,7 @@ final BuiltSet<ApiTokenCreatedViaEnum> _$apiTokenCreatedViaEnumValues =
       _$apiTokenCreatedViaEnum_api,
       _$apiTokenCreatedViaEnum_pairing,
       _$apiTokenCreatedViaEnum_bootstrap,
+      _$apiTokenCreatedViaEnum_self,
       _$apiTokenCreatedViaEnum_unknownDefaultOpenApi,
     ]);
 
@@ -156,12 +161,14 @@ class _$ApiTokenCreatedViaEnumSerializer
     'api': 'api',
     'pairing': 'pairing',
     'bootstrap': 'bootstrap',
+    'self': 'self',
     'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'api': 'api',
     'pairing': 'pairing',
     'bootstrap': 'bootstrap',
+    'self': 'self',
     'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 

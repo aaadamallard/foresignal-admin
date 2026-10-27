@@ -17,7 +17,7 @@ part 'api_token_input.g.dart';
 /// * [scope]
 /// * [expiresAt]
 /// * [restrictions] - Rejected on admin tokens (400 RESTRICTION_NOT_ALLOWED, 035)
-/// * [principalId] - Owning principal (id or handle); default: a new principal named after the token
+/// * [principalId] - Owning principal (id or handle); default: a new principal named after the token; not accepted by createMyToken, whose tokens are always the caller's (R2-025)
 /// * [privateAccess] - Grant visibility of private sources (039)
 /// * [licencePolicy] - Licence policy floor applied to every read with this token; requests may add flags but never remove these
 @BuiltValue()
@@ -37,7 +37,7 @@ abstract class ApiTokenInput
   @BuiltValueField(wireName: r'restrictions')
   ReadRestriction? get restrictions;
 
-  /// Owning principal (id or handle); default: a new principal named after the token
+  /// Owning principal (id or handle); default: a new principal named after the token; not accepted by createMyToken, whose tokens are always the caller's (R2-025)
   @BuiltValueField(wireName: r'principalId')
   String? get principalId;
 
