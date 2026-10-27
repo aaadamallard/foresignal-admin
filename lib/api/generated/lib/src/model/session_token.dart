@@ -12,19 +12,19 @@ part 'session_token.g.dart';
 /// A newly issued session; the token is a bearer carried in the Authorization header on later requests (Argon2id-verified login, 166)
 ///
 /// Properties:
-/// * [token] - The session bearer; shown once, stored hashed server-side
+/// * [token] - The session bearer; shown once, stored hashed server-side. Empty while mfaRequired: no session was issued (R2-024)
 /// * [tokenPrefix] - First characters, for display in a session list
 /// * [userId]
 /// * [issuedAt]
-/// * [expiresAt] - Absolute expiry
+/// * [expiresAt] - Absolute expiry; null while mfaRequired (no session was issued, R2-024)
 /// * [idleExpiresAt] - Idle expiry; refreshed on use
-/// * [mfaRequired] - True when MFA is enrolled and a code must still be supplied to complete login
+/// * [mfaRequired] - True when MFA is enrolled and a code must still be supplied to complete login: no session was issued, and the client signs in again with mfaCode (R2-024)
 /// * [scopes] - Effective coarse scopes the session carries
 /// * [permissions] - Effective permission keys (union of the user's roles)
 @BuiltValue()
 abstract class SessionToken
     implements Built<SessionToken, SessionTokenBuilder> {
-  /// The session bearer; shown once, stored hashed server-side
+  /// The session bearer; shown once, stored hashed server-side. Empty while mfaRequired: no session was issued (R2-024)
   @BuiltValueField(wireName: r'token')
   String get token;
 
@@ -38,15 +38,15 @@ abstract class SessionToken
   @BuiltValueField(wireName: r'issuedAt')
   DateTime? get issuedAt;
 
-  /// Absolute expiry
+  /// Absolute expiry; null while mfaRequired (no session was issued, R2-024)
   @BuiltValueField(wireName: r'expiresAt')
-  DateTime get expiresAt;
+  DateTime? get expiresAt;
 
   /// Idle expiry; refreshed on use
   @BuiltValueField(wireName: r'idleExpiresAt')
   DateTime? get idleExpiresAt;
 
-  /// True when MFA is enrolled and a code must still be supplied to complete login
+  /// True when MFA is enrolled and a code must still be supplied to complete login: no session was issued, and the client signs in again with mfaCode (R2-024)
   @BuiltValueField(wireName: r'mfaRequired')
   bool? get mfaRequired;
 
@@ -106,10 +106,12 @@ class _$SessionTokenSerializer implements PrimitiveSerializer<SessionToken> {
       );
     }
     yield r'expiresAt';
-    yield serializers.serialize(
-      object.expiresAt,
-      specifiedType: const FullType(DateTime),
-    );
+    yield object.expiresAt == null
+        ? null
+        : serializers.serialize(
+            object.expiresAt,
+            specifiedType: const FullType.nullable(DateTime),
+          );
     if (object.idleExpiresAt != null) {
       yield r'idleExpiresAt';
       yield serializers.serialize(
@@ -207,9 +209,10 @@ class _$SessionTokenSerializer implements PrimitiveSerializer<SessionToken> {
           final valueDes =
               serializers.deserialize(
                     value,
-                    specifiedType: const FullType(DateTime),
+                    specifiedType: const FullType.nullable(DateTime),
                   )
-                  as DateTime;
+                  as DateTime?;
+          if (valueDes == null) continue;
           result.expiresAt = valueDes;
           break;
         case r'idleExpiresAt':

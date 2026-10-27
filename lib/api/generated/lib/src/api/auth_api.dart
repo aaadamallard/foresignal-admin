@@ -181,7 +181,7 @@ class AuthApi {
   }
 
   /// Log in with email and password
-  /// Verifies the email + Argon2id password (and the MFA code when enrolled) and issues a session bearer (166). The session carries the user&#39;s effective permissions (the union of the user&#39;s roles). A suspended or disabled account is refused (403). Repeated failures from one address are rate-limited (429). When MFA is enrolled but no &#x60;mfaCode&#x60; is given, the response reports &#x60;mfaRequired&#x60; and issues no usable session.  **Scope:** &#x60;open&#x60;.
+  /// Verifies the email + Argon2id password (and the MFA code when enrolled) and issues a session bearer (166). The session carries the user&#39;s effective permissions (the union of the user&#39;s roles). A suspended or disabled account is refused (403). Repeated failures from one address are rate-limited (429). When MFA is enrolled but no &#x60;mfaCode&#x60; is given, the response reports &#x60;mfaRequired&#x60; and issues no usable session (&#x60;token&#x60; empty, &#x60;expiresAt&#x60; null); a wrong &#x60;mfaCode&#x60; (TOTP or recovery code) is the same 401 INVALID_CREDENTIALS (R2-024). A session of a user holding the Admin or Operator role who has not enrolled MFA may read, enroll (enrollMfa, verifyMfa), set preferences, sign out and revoke its own sessions; every other write is 403 MFA_ENROLLMENT_REQUIRED until verifyMfa activates MFA (R2-024).  **Scope:** &#x60;open&#x60;.
   ///
   /// Parameters:
   /// * [loginRequest]

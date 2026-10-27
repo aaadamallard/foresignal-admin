@@ -3,6 +3,7 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:foresignal_api/src/model/mfa_recovery_codes.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -14,6 +15,7 @@ part 'mfa_status.g.dart';
 /// * [enabled]
 /// * [enrolledAt]
 /// * [required_] - True when a role the user holds (Admin/Operator) requires MFA
+/// * [recoveryCodes]
 @BuiltValue()
 abstract class MfaStatus implements Built<MfaStatus, MfaStatusBuilder> {
   @BuiltValueField(wireName: r'enabled')
@@ -25,6 +27,9 @@ abstract class MfaStatus implements Built<MfaStatus, MfaStatusBuilder> {
   /// True when a role the user holds (Admin/Operator) requires MFA
   @BuiltValueField(wireName: r'required')
   bool? get required_;
+
+  @BuiltValueField(wireName: r'recoveryCodes')
+  MfaRecoveryCodes? get recoveryCodes;
 
   MfaStatus._();
 
@@ -66,6 +71,13 @@ class _$MfaStatusSerializer implements PrimitiveSerializer<MfaStatus> {
       yield serializers.serialize(
         object.required_,
         specifiedType: const FullType(bool),
+      );
+    }
+    if (object.recoveryCodes != null) {
+      yield r'recoveryCodes';
+      yield serializers.serialize(
+        object.recoveryCodes,
+        specifiedType: const FullType(MfaRecoveryCodes),
       );
     }
   }
@@ -123,6 +135,16 @@ class _$MfaStatusSerializer implements PrimitiveSerializer<MfaStatus> {
                   as bool?;
           if (valueDes == null) continue;
           result.required_ = valueDes;
+          break;
+        case r'recoveryCodes':
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(MfaRecoveryCodes),
+                  )
+                  as MfaRecoveryCodes?;
+          if (valueDes == null) continue;
+          result.recoveryCodes.replace(valueDes);
           break;
         default:
           unhandled.add(key);

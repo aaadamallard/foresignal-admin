@@ -12,11 +12,12 @@ part 'mfa_recovery_codes.g.dart';
 /// Single-use recovery codes, shown once at generation (D1/187)
 ///
 /// Properties:
-/// * [codes]
+/// * [codes] - Ten single-use codes (xxxxx-xxxxx); stored hashed, accepted case-insensitively with or without the dash
 /// * [generatedAt]
 @BuiltValue()
 abstract class MfaRecoveryCodes
     implements Built<MfaRecoveryCodes, MfaRecoveryCodesBuilder> {
+  /// Ten single-use codes (xxxxx-xxxxx); stored hashed, accepted case-insensitively with or without the dash
   @BuiltValueField(wireName: r'codes')
   BuiltList<String> get codes;
 

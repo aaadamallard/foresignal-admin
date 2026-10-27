@@ -11,11 +11,11 @@ part 'mfa_verify_request.g.dart';
 /// Confirm enrollment (or step-up) with a TOTP code
 ///
 /// Properties:
-/// * [code] - Current 6-digit TOTP code
+/// * [code] - Current 6-digit TOTP code; once MFA is active, a recovery code is accepted too (consumed on use)
 @BuiltValue()
 abstract class MfaVerifyRequest
     implements Built<MfaVerifyRequest, MfaVerifyRequestBuilder> {
-  /// Current 6-digit TOTP code
+  /// Current 6-digit TOTP code; once MFA is active, a recovery code is accepted too (consumed on use)
   @BuiltValueField(wireName: r'code')
   String get code;
 

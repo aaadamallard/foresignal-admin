@@ -11,17 +11,17 @@ part 'mfa_enrollment.g.dart';
 /// A pending TOTP enrollment; confirm with verifyMfa before it takes effect (D1/187)
 ///
 /// Properties:
-/// * [secret] - Base32 TOTP secret
-/// * [otpauthUri] - otpauth:// provisioning URI for an authenticator app
+/// * [secret] - Base32 TOTP secret (RFC 6238: HMAC-SHA1, 6 digits, 30 s); stored sealed with the instance key, shown only here
+/// * [otpauthUri] - otpauth:// provisioning URI for an authenticator app: otpauth://totp/ForeSignal:<email>?secret=…&issuer=ForeSignal
 /// * [qrSvg] - Inline SVG QR of the provisioning URI
 @BuiltValue()
 abstract class MfaEnrollment
     implements Built<MfaEnrollment, MfaEnrollmentBuilder> {
-  /// Base32 TOTP secret
+  /// Base32 TOTP secret (RFC 6238: HMAC-SHA1, 6 digits, 30 s); stored sealed with the instance key, shown only here
   @BuiltValueField(wireName: r'secret')
   String get secret;
 
-  /// otpauth:// provisioning URI for an authenticator app
+  /// otpauth:// provisioning URI for an authenticator app: otpauth://totp/ForeSignal:<email>?secret=…&issuer=ForeSignal
   @BuiltValueField(wireName: r'otpauthUri')
   String get otpauthUri;
 

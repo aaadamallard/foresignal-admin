@@ -16,7 +16,7 @@ class _$SessionToken extends SessionToken {
   @override
   final DateTime? issuedAt;
   @override
-  final DateTime expiresAt;
+  final DateTime? expiresAt;
   @override
   final DateTime? idleExpiresAt;
   @override
@@ -34,7 +34,7 @@ class _$SessionToken extends SessionToken {
     this.tokenPrefix,
     required this.userId,
     this.issuedAt,
-    required this.expiresAt,
+    this.expiresAt,
     this.idleExpiresAt,
     this.mfaRequired,
     this.scopes,
@@ -189,11 +189,7 @@ class SessionTokenBuilder
               'userId',
             ),
             issuedAt: issuedAt,
-            expiresAt: BuiltValueNullFieldError.checkNotNull(
-              expiresAt,
-              r'SessionToken',
-              'expiresAt',
-            ),
+            expiresAt: expiresAt,
             idleExpiresAt: idleExpiresAt,
             mfaRequired: mfaRequired,
             scopes: _scopes?.build(),

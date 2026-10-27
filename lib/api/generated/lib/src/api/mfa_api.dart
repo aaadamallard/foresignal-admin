@@ -23,7 +23,7 @@ class MFAApi {
   const MFAApi(this._dio, this._serializers);
 
   /// Disable MFA
-  /// Disables MFA after re-authenticating with a code or the account password. A role that requires MFA refuses this (409). Requires &#x60;self.preferences&#x60;.  **Scope:** &#x60;read&#x60;.
+  /// Disables MFA after re-authenticating with a code or the account password. A role that requires MFA (Admin, Operator) refuses this (409 MFA_REQUIRED; an administrator reset is the way out); 409 MFA_NOT_ENABLED with nothing to disable. A wrong code is 400 MFA_CODE_INVALID, a wrong password 400 VALIDATION_FAILED; at most 10 code checks a minute per user (429). Any signed-in user (a session; an API token is 401), whatever their roles, so an Operator can enroll (R2-024).  **Scope:** &#x60;read&#x60;.
   ///
   /// Parameters:
   /// * [mfaDisableRequest]
@@ -119,7 +119,7 @@ class MFAApi {
   }
 
   /// Begin MFA enrollment
-  /// Starts TOTP enrollment and returns the secret and provisioning URI; enrollment is not active until verifyMfa confirms a code. Requires &#x60;self.preferences&#x60;.  **Scope:** &#x60;read&#x60;.
+  /// Starts TOTP enrollment and returns the secret and provisioning URI; enrollment is not active until verifyMfa confirms a code. Any signed-in user (a session; an API token is 401), whatever their roles, so an Operator can enroll (R2-024).  **Scope:** &#x60;read&#x60;.
   ///
   /// Parameters:
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
@@ -194,7 +194,7 @@ class MFAApi {
   }
 
   /// Generate MFA recovery codes
-  /// Generates a fresh set of single-use recovery codes, invalidating any previous set; shown once. Requires MFA to be enabled and &#x60;self.preferences&#x60;.  **Scope:** &#x60;read&#x60;.
+  /// Generates a fresh set of single-use recovery codes, invalidating any previous set; shown once. Each is accepted once wherever a TOTP code is (login, verifyMfa, disableMfa). Requires MFA to be enabled (409 MFA_NOT_ENABLED). Any signed-in user (a session; an API token is 401), whatever their roles, so an Operator can enroll (R2-024).  **Scope:** &#x60;read&#x60;.
   ///
   /// Parameters:
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
@@ -269,7 +269,7 @@ class MFAApi {
   }
 
   /// Confirm MFA enrollment
-  /// Confirms a pending TOTP enrollment with a current code, enabling MFA for the account. Requires &#x60;self.preferences&#x60;.  **Scope:** &#x60;read&#x60;.
+  /// Confirms a pending TOTP enrollment with a current code, enabling MFA for the account; that answer carries the first recovery codes once (&#x60;recoveryCodes&#x60;). Once MFA is active it is the step-up check: a current TOTP or unused recovery code. A code is within one 30 s step of now and never accepted twice. 400 MFA_CODE_INVALID for a wrong, expired or reused code; at most 10 code checks a minute per user (429). Any signed-in user (a session; an API token is 401), whatever their roles, so an Operator can enroll (R2-024).  **Scope:** &#x60;read&#x60;.
   ///
   /// Parameters:
   /// * [mfaVerifyRequest]

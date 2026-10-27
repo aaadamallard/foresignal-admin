@@ -4,11 +4,14 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../api/api.dart';
+import '../../core/access.dart';
 import '../../core/format/duration_text.dart';
 import '../../core/format/money_text.dart';
+import '../../core/permissions.dart';
 import '../../core/routes.dart';
 import '../../core/theme.dart';
 import '../../core/ui/ui.dart';
+import '../network/egress_panel.dart' show SourceEgressCard;
 import '../vetting/vetting_providers.dart';
 import 'source_config.dart';
 import 'source_providers.dart';
@@ -158,7 +161,18 @@ class _SourceDetailScreenState extends ConsumerState<SourceDetailScreen> {
             key: ValueKey<String>('config.${detail.descriptor.id}'),
             detail: detail,
           ),
-          SourceDetailTab.health => SourceHealthView(health: detail.health),
+          SourceDetailTab.health => Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: <Widget>[
+              SourceHealthView(health: detail.health),
+              // Egress routing is surfaced on the source as well as under
+              // System → Network / Sourcing.
+              if (ref.watch(accessProvider).can(Permissions.networkManage)) ...<Widget>[
+                const SizedBox(height: 20),
+                SourceEgressCard(sourceId: detail.descriptor.id),
+              ],
+            ],
+          ),
         },
       ],
     );

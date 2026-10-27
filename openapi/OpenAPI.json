@@ -89146,7 +89146,7 @@
         ],
         "operationId": "login",
         "summary": "Log in with email and password",
-        "description": "Verifies the email + Argon2id password (and the MFA code when enrolled) and issues a session bearer (166). The session carries the user's effective permissions (the union of the user's roles). A suspended or disabled account is refused (403). Repeated failures from one address are rate-limited (429). When MFA is enrolled but no `mfaCode` is given, the response reports `mfaRequired` and issues no usable session.\n\n**Scope:** `open`.",
+        "description": "Verifies the email + Argon2id password (and the MFA code when enrolled) and issues a session bearer (166). The session carries the user's effective permissions (the union of the user's roles). A suspended or disabled account is refused (403). Repeated failures from one address are rate-limited (429). When MFA is enrolled but no `mfaCode` is given, the response reports `mfaRequired` and issues no usable session (`token` empty, `expiresAt` null); a wrong `mfaCode` (TOTP or recovery code) is the same 401 INVALID_CREDENTIALS (R2-024). A session of a user holding the Admin or Operator role who has not enrolled MFA may read, enroll (enrollMfa, verifyMfa), set preferences, sign out and revoke its own sessions; every other write is 403 MFA_ENROLLMENT_REQUIRED until verifyMfa activates MFA (R2-024).\n\n**Scope:** `open`.",
         "requestBody": {
           "required": true,
           "content": {
@@ -93207,7 +93207,7 @@
         ],
         "operationId": "listAggregators",
         "summary": "List first-party aggregators",
-        "description": "Lists the first-party aggregators across RF/sensor domains with status and the public sources each supersedes (C3). Requires `network.manage`.\n\n**Scope:** `admin`.\n\n**R2-019:** every domain is listed. adsb is implemented, ais since R2-020, datalink since R2-021, and satellite since R2-022; a domain whose backend this server does not have reads `implemented: false` and `status: unconfigured`.",
+        "description": "Lists the first-party aggregators across RF/sensor domains with status and the public sources each supersedes (C3). Requires `network.manage`.\n\n**Scope:** `admin`.\n\n**R2-019:** every domain is listed. adsb is implemented, ais since R2-020, datalink since R2-021, satellite since R2-022 and ground-sensors since R2-023, so every domain reads `implemented: true`; a domain whose backend a server does not have reads `implemented: false` and `status: unconfigured`.",
         "responses": {
           "200": {
             "description": "The aggregators",
@@ -93335,7 +93335,7 @@
         ],
         "operationId": "updateAggregator",
         "summary": "Configure a domain aggregator",
-        "description": "Enables and configures a domain's first-party aggregator and, by default, defaults the superseded public/mirror sources off (they stay in the catalog as opt-in fallbacks). Requires `network.manage`.\n\n**Scope:** `admin`.\n\n**R2-019:** the configuration is replaced whole. adsb writes `endpoint` (and `config.band`) to the `local-adsb-aggregator` source and turns it on while the aggregator is live (enabled with an endpoint), off otherwise. While live with `disableSupersededSources`, every registered `adsblol-*`, `adsbfi-*` and `airplaneslive-*` source and `gpsjam-daily` that is on is turned off, and seeding and `enable-core`/`enable-free` leave them off; when the aggregator stops being live, or `disableSupersededSources` is false, the sources it turned off are turned back on. 400 for a bad member, an endpoint that is not an http(s) aircraft.json URL (adsb) or a tcp:// or udp:// NMEA endpoint (ais, R2-020; udp:// needs config.allowSenders) or a tcp://host decoder host with at least one decoder selected (datalink, R2-021) or an http(s) SatDump URL without config.location (satellite, R2-022) or does not resolve to a local address, or `enabled: true` on a domain this server has no backend for. A live aggregator whose source starts failing raises `system.aggregator_down` (and `system.aggregator_recovered` when it is healthy again).",
+        "description": "Enables and configures a domain's first-party aggregator and, by default, defaults the superseded public/mirror sources off (they stay in the catalog as opt-in fallbacks). Requires `network.manage`.\n\n**Scope:** `admin`.\n\n**R2-019:** the configuration is replaced whole. adsb writes `endpoint` (and `config.band`) to the `local-adsb-aggregator` source and turns it on while the aggregator is live (enabled with an endpoint), off otherwise. While live with `disableSupersededSources`, every registered `adsblol-*`, `adsbfi-*` and `airplaneslive-*` source and `gpsjam-daily` that is on is turned off, and seeding and `enable-core`/`enable-free` leave them off; when the aggregator stops being live, or `disableSupersededSources` is false, the sources it turned off are turned back on. 400 for a bad member, an endpoint that is not an http(s) aircraft.json URL (adsb) or a tcp:// or udp:// NMEA endpoint (ais, R2-020; udp:// needs config.allowSenders) or a tcp://host decoder host with at least one decoder selected (datalink, R2-021) or an http(s) SatDump URL without config.location (satellite, R2-022) or any endpoint, an unknown sensor or member, or no sensor enabled (ground-sensors, R2-023, where a source's own parameter error is reported at the sensor's member) or does not resolve to a local address, or `enabled: true` on a domain this server has no backend for. A live aggregator whose source starts failing raises `system.aggregator_down` (and `system.aggregator_recovered` when it is healthy again).\n\n**R2-023:** ground-sensors is live while enabled with a sensor enabled. Each enabled sensor's members are written into its local read, which is turned on while live; a read a previous configuration drove and this one does not is turned off, and one never driven is left alone. Only the enabled sensors' mirrors are superseded, and a configuration that supersedes less turns the rest back on.",
         "parameters": [
           {
             "name": "domain",
@@ -93434,7 +93434,7 @@
         ],
         "operationId": "testAggregator",
         "summary": "Test a domain aggregator",
-        "description": "Probes the aggregator's local endpoint and reports reachability and a sample object count; nothing is persisted. Requires `network.manage`.\n\n**Scope:** `admin`.\n\n**R2-019:** reads the stored endpoint once through the aggregator's source (its budget and pinning apply). Always 200; `ok` false with a `message` when nothing is configured, the endpoint cannot be reached, or the answer is not readsb aircraft.json. `sampleCount` is the number of aircraft in it.\n\n**R2-020:** for ais, listens to the stored NMEA endpoint for 10 s through `local-ais-aggregator` and reports the vessel records decoded (at most 100); a live UDP listener, which cannot be bound twice, is reported from its statistics (distinct MMSIs in the last 10 minutes).\n\n**R2-021:** for datalink, listens to every selected read (ACARS/VDLM2/HFDL and APRS) at once for 10 s and sums the messages decoded; `reachable` is false only when no selected read could be connected.\n\n**R2-022:** for satellite, runs the satdump-aggregator station for 10 s (its /api read and inbox scan) and counts the records it produced: station state, passes and products.",
+        "description": "Probes the aggregator's local endpoint and reports reachability and a sample object count; nothing is persisted. Requires `network.manage`.\n\n**Scope:** `admin`.\n\n**R2-019:** reads the stored endpoint once through the aggregator's source (its budget and pinning apply). Always 200; `ok` false with a `message` when nothing is configured, the endpoint cannot be reached, or the answer is not readsb aircraft.json. `sampleCount` is the number of aircraft in it.\n\n**R2-020:** for ais, listens to the stored NMEA endpoint for 10 s through `local-ais-aggregator` and reports the vessel records decoded (at most 100); a live UDP listener, which cannot be bound twice, is reported from its statistics (distinct MMSIs in the last 10 minutes).\n\n**R2-021:** for datalink, listens to every selected read (ACARS/VDLM2/HFDL and APRS) at once for 10 s and sums the messages decoded; `reachable` is false only when no selected read could be connected.\n\n**R2-022:** for satellite, runs the satdump-aggregator station for 10 s (its /api read and inbox scan) and counts the records it produced: station state, passes and products.\n\n**R2-023:** for ground-sensors, probes every enabled sensor's polling or streaming read at once for 10 s and sums the records; a push source (seismic, same, the MeshCore bridge) or a live local-sonde UDP listener is reachable once it has received data. A failing sensor is named in `message`; `reachable` is false only when every sensor fails.",
         "parameters": [
           {
             "name": "domain",
@@ -93513,7 +93513,7 @@
         ],
         "operationId": "enrollMfa",
         "summary": "Begin MFA enrollment",
-        "description": "Starts TOTP enrollment and returns the secret and provisioning URI; enrollment is not active until verifyMfa confirms a code. Requires `self.preferences`.\n\n**Scope:** `read`.",
+        "description": "Starts TOTP enrollment and returns the secret and provisioning URI; enrollment is not active until verifyMfa confirms a code. Any signed-in user (a session; an API token is 401), whatever their roles, so an Operator can enroll (R2-024).\n\n**Scope:** `read`.",
         "responses": {
           "200": {
             "description": "Pending enrollment",
@@ -93584,7 +93584,7 @@
         ],
         "operationId": "verifyMfa",
         "summary": "Confirm MFA enrollment",
-        "description": "Confirms a pending TOTP enrollment with a current code, enabling MFA for the account. Requires `self.preferences`.\n\n**Scope:** `read`.",
+        "description": "Confirms a pending TOTP enrollment with a current code, enabling MFA for the account; that answer carries the first recovery codes once (`recoveryCodes`). Once MFA is active it is the step-up check: a current TOTP or unused recovery code. A code is within one 30 s step of now and never accepted twice. 400 MFA_CODE_INVALID for a wrong, expired or reused code; at most 10 code checks a minute per user (429). Any signed-in user (a session; an API token is 401), whatever their roles, so an Operator can enroll (R2-024).\n\n**Scope:** `read`.",
         "requestBody": {
           "required": true,
           "content": {
@@ -93645,6 +93645,16 @@
                 }
               }
             }
+          },
+          "409": {
+            "description": "Conflict (MFA_NOT_ENABLED: nothing pending or active)",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
           }
         },
         "x-foresignal-scope": "read",
@@ -93665,7 +93675,7 @@
         ],
         "operationId": "disableMfa",
         "summary": "Disable MFA",
-        "description": "Disables MFA after re-authenticating with a code or the account password. A role that requires MFA refuses this (409). Requires `self.preferences`.\n\n**Scope:** `read`.",
+        "description": "Disables MFA after re-authenticating with a code or the account password. A role that requires MFA (Admin, Operator) refuses this (409 MFA_REQUIRED; an administrator reset is the way out); 409 MFA_NOT_ENABLED with nothing to disable. A wrong code is 400 MFA_CODE_INVALID, a wrong password 400 VALIDATION_FAILED; at most 10 code checks a minute per user (429). Any signed-in user (a session; an API token is 401), whatever their roles, so an Operator can enroll (R2-024).\n\n**Scope:** `read`.",
         "requestBody": {
           "required": true,
           "content": {
@@ -93756,7 +93766,7 @@
         ],
         "operationId": "getMfaRecoveryCodes",
         "summary": "Generate MFA recovery codes",
-        "description": "Generates a fresh set of single-use recovery codes, invalidating any previous set; shown once. Requires MFA to be enabled and `self.preferences`.\n\n**Scope:** `read`.",
+        "description": "Generates a fresh set of single-use recovery codes, invalidating any previous set; shown once. Each is accepted once wherever a TOTP code is (login, verifyMfa, disableMfa). Requires MFA to be enabled (409 MFA_NOT_ENABLED). Any signed-in user (a session; an API token is 401), whatever their roles, so an Operator can enroll (R2-024).\n\n**Scope:** `read`.",
         "responses": {
           "200": {
             "description": "Recovery codes",
@@ -177145,7 +177155,7 @@
         "properties": {
           "token": {
             "type": "string",
-            "description": "The session bearer; shown once, stored hashed server-side",
+            "description": "The session bearer; shown once, stored hashed server-side. Empty while mfaRequired: no session was issued (R2-024)",
             "readOnly": true
           },
           "tokenPrefix": {
@@ -177161,9 +177171,12 @@
             "format": "date-time"
           },
           "expiresAt": {
-            "type": "string",
+            "type": [
+              "string",
+              "null"
+            ],
             "format": "date-time",
-            "description": "Absolute expiry"
+            "description": "Absolute expiry; null while mfaRequired (no session was issued, R2-024)"
           },
           "idleExpiresAt": {
             "type": [
@@ -177175,7 +177188,7 @@
           },
           "mfaRequired": {
             "type": "boolean",
-            "description": "True when MFA is enrolled and a code must still be supplied to complete login",
+            "description": "True when MFA is enrolled and a code must still be supplied to complete login: no session was issued, and the client signs in again with mfaCode (R2-024)",
             "default": false
           },
           "scopes": {
@@ -179583,11 +179596,11 @@
               "string",
               "null"
             ],
-            "description": "Required to enable. adsb: an http or https URL of the readsb aircraft.json on this host or the LAN (it must resolve to a loopback, private or unique-local address, and is pinned); no credentials, query or fragment (R2-019). ais: the AIS decoder's NMEA feed, either tcp://host:port (its TCP server, for example AIS-catcher -S 5012; a loopback, private or unique-local address, pinned) or udp://bindHost:port (where this server listens for its datagrams, which needs config.allowSenders); the port is always explicit (R2-020). datalink: tcp://host, the host the decoders run on, with no port; each decoder's port is in config (R2-021). satellite: SatDump's web server, an http or https URL (any base path is kept; its /api is read), on this host or the LAN (R2-022)"
+            "description": "Required to enable, except for ground-sensors. adsb: an http or https URL of the readsb aircraft.json on this host or the LAN (it must resolve to a loopback, private or unique-local address, and is pinned); no credentials, query or fragment (R2-019). ais: the AIS decoder's NMEA feed, either tcp://host:port (its TCP server, for example AIS-catcher -S 5012; a loopback, private or unique-local address, pinned) or udp://bindHost:port (where this server listens for its datagrams, which needs config.allowSenders); the port is always explicit (R2-020). datalink: tcp://host, the host the decoders run on, with no port; each decoder's port is in config (R2-021). satellite: SatDump's web server, an http or https URL (any base path is kept; its /api is read), on this host or the LAN (R2-022). ground-sensors: not used; a value is a 400 — each sensor's address is in config (R2-023)"
           },
           "config": {
             "type": "object",
-            "description": "Domain-specific settings; an unknown member is a 400 (R2-019). adsb: `band`, 1090 or 978, default 1090. ais (R2-020): `allowSenders`, a list of IPs or CIDRs in private space whose datagrams are read, required with a udp:// endpoint; `stationName`, the observer of every record, default `local`. datalink (R2-021): the decoders `acars`, `vdlm2`, `hfdl` (acars_router's TCP servers) and `aprs` (the igate's KISS TCP port), each a port on the endpoint host or a whole tcp://host:port, at least one to enable; `stationId` (ACARS observer), `stationCallsign` (APRS observer), `includeMessages` (boolean). satellite (R2-022): `location` (required with an endpoint: lat,lon[,altM] or a place id), `inboxPath` (SatDump's output directory under FORESIGNAL_INBOX_DIR), `satdumpVersion` (1.2 or 2.0), `predictNorad` (NORAD numbers of the polar satellites to predict), `goes` (east or west: the GOES the dish receives, whose ABI imagery pull is superseded)",
+            "description": "Domain-specific settings; an unknown member is a 400 (R2-019). adsb: `band`, 1090 or 978, default 1090. ais (R2-020): `allowSenders`, a list of IPs or CIDRs in private space whose datagrams are read, required with a udp:// endpoint; `stationName`, the observer of every record, default `local`. datalink (R2-021): the decoders `acars`, `vdlm2`, `hfdl` (acars_router's TCP servers) and `aprs` (the igate's KISS TCP port), each a port on the endpoint host or a whole tcp://host:port, at least one to enable; `stationId` (ACARS observer), `stationCallsign` (APRS observer), `includeMessages` (boolean). satellite (R2-022): `location` (required with an endpoint: lat,lon[,altM] or a place id), `inboxPath` (SatDump's output directory under FORESIGNAL_INBOX_DIR), `satdumpVersion` (1.2 or 2.0), `predictNorad` (NORAD numbers of the polar satellites to predict), `goes` (east or west: the GOES the dish receives, whose ABI imagery pull is superseded). ground-sensors (R2-023): one object per sensor, each with `enabled` and at least one enabled to enable: `seismic` and `same` (`source`, the custom push source the bridge posts to), `radiosonde` (`endpoint` udp://bindHost:port, `allowSenders`, `stationCallsign`; supersedes sondehub), `airq` (`deviceType` purpleair, airrohr or airgradient, `endpoint`, `lat`, `lon`, `indoor`, `name`; supersedes openaq and sensor-community), `pws` (`station` davis or ecowitt, `endpoint`, `lat`, `lon`), `mesh` (`meshtastic` mqtt:// broker with `root`, supersedes meshtastic-mqtt and meshtastic-map; `meshcore` tcp:// companion; `bridge` boolean)",
             "additionalProperties": true
           },
           "disableSupersededSources": {
@@ -179639,12 +179652,12 @@
         "properties": {
           "secret": {
             "type": "string",
-            "description": "Base32 TOTP secret",
+            "description": "Base32 TOTP secret (RFC 6238: HMAC-SHA1, 6 digits, 30 s); stored sealed with the instance key, shown only here",
             "readOnly": true
           },
           "otpauthUri": {
             "type": "string",
-            "description": "otpauth:// provisioning URI for an authenticator app",
+            "description": "otpauth:// provisioning URI for an authenticator app: otpauth://totp/ForeSignal:<email>?secret=…&issuer=ForeSignal",
             "readOnly": true
           },
           "qrSvg": {
@@ -179667,7 +179680,7 @@
         "properties": {
           "code": {
             "type": "string",
-            "description": "Current 6-digit TOTP code"
+            "description": "Current 6-digit TOTP code; once MFA is active, a recovery code is accepted too (consumed on use)"
           }
         },
         "required": [
@@ -179691,6 +179704,11 @@
           "required": {
             "type": "boolean",
             "description": "True when a role the user holds (Admin/Operator) requires MFA"
+          },
+          "recoveryCodes": {
+            "$ref": "#/components/schemas/MfaRecoveryCodes",
+            "description": "Present only on the verifyMfa answer that activated MFA: the first single-use recovery codes, shown once (R2-024)",
+            "readOnly": true
           }
         },
         "required": [
@@ -179726,7 +179744,8 @@
             "items": {
               "type": "string"
             },
-            "readOnly": true
+            "readOnly": true,
+            "description": "Ten single-use codes (xxxxx-xxxxx); stored hashed, accepted case-insensitively with or without the dash"
           },
           "generatedAt": {
             "type": "string",

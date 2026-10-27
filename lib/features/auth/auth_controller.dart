@@ -118,12 +118,22 @@ class AuthController {
     if (token.mfaRequired ?? false) {
       return const LoginMfaRequired();
     }
+    // Only an answer that still awaits a code may lack the bearer or its
+    // expiry; one that claims a session without them cannot be signed in with.
+    final expiresAt = token.expiresAt;
+    if (token.token.isEmpty || expiresAt == null) {
+      throw RequestFailedException(
+        RequestFailure.unexpectedReply,
+        'The backend answered the sign-in without a session token or expiry.',
+        status: 200,
+      );
+    }
     final session = StoredSession(
       token: token.token,
       tokenPrefix: token.tokenPrefix,
       userId: token.userId,
       email: email.trim(),
-      expiresAt: token.expiresAt,
+      expiresAt: expiresAt,
       idleExpiresAt: token.idleExpiresAt,
       permissions: List<String>.unmodifiable(token.permissions ?? const <String>[]),
       scopes: List<String>.unmodifiable(token.scopes ?? const <String>[]),

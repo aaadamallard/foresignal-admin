@@ -180,10 +180,20 @@ const List<NavSection> allNavSections = <NavSection>[
     path: '/system',
     label: 'System',
     icon: Icons.settings,
-    summary: 'Server and security settings, tokens, signing, plugins, diagnostics and backup.',
+    summary: 'Server and security settings, tokens, signing, plugins, network and sourcing, diagnostics and backup.',
     formFactors: _desktop,
-    readPermissions: <String>{Permissions.systemSettings, Permissions.usersManage, Permissions.auditRead, Permissions.storageManage},
-    writePermissions: <String>{Permissions.systemSettings, Permissions.usersManage},
+    readPermissions: <String>{
+      Permissions.systemSettings,
+      Permissions.usersManage,
+      Permissions.auditRead,
+      Permissions.storageManage,
+      Permissions.networkManage,
+    },
+    writePermissions: <String>{
+      Permissions.systemSettings,
+      Permissions.usersManage,
+      Permissions.networkManage,
+    },
   ),
   NavSection(
     path: '/device',

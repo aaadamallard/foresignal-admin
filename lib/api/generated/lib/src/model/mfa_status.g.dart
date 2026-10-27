@@ -13,12 +13,18 @@ class _$MfaStatus extends MfaStatus {
   final DateTime? enrolledAt;
   @override
   final bool? required_;
+  @override
+  final MfaRecoveryCodes? recoveryCodes;
 
   factory _$MfaStatus([void Function(MfaStatusBuilder)? updates]) =>
       (MfaStatusBuilder()..update(updates))._build();
 
-  _$MfaStatus._({required this.enabled, this.enrolledAt, this.required_})
-    : super._();
+  _$MfaStatus._({
+    required this.enabled,
+    this.enrolledAt,
+    this.required_,
+    this.recoveryCodes,
+  }) : super._();
   @override
   MfaStatus rebuild(void Function(MfaStatusBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -32,7 +38,8 @@ class _$MfaStatus extends MfaStatus {
     return other is MfaStatus &&
         enabled == other.enabled &&
         enrolledAt == other.enrolledAt &&
-        required_ == other.required_;
+        required_ == other.required_ &&
+        recoveryCodes == other.recoveryCodes;
   }
 
   @override
@@ -41,6 +48,7 @@ class _$MfaStatus extends MfaStatus {
     _$hash = $jc(_$hash, enabled.hashCode);
     _$hash = $jc(_$hash, enrolledAt.hashCode);
     _$hash = $jc(_$hash, required_.hashCode);
+    _$hash = $jc(_$hash, recoveryCodes.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -50,7 +58,8 @@ class _$MfaStatus extends MfaStatus {
     return (newBuiltValueToStringHelper(r'MfaStatus')
           ..add('enabled', enabled)
           ..add('enrolledAt', enrolledAt)
-          ..add('required_', required_))
+          ..add('required_', required_)
+          ..add('recoveryCodes', recoveryCodes))
         .toString();
   }
 }
@@ -70,6 +79,12 @@ class MfaStatusBuilder implements Builder<MfaStatus, MfaStatusBuilder> {
   bool? get required_ => _$this._required_;
   set required_(bool? required_) => _$this._required_ = required_;
 
+  MfaRecoveryCodesBuilder? _recoveryCodes;
+  MfaRecoveryCodesBuilder get recoveryCodes =>
+      _$this._recoveryCodes ??= MfaRecoveryCodesBuilder();
+  set recoveryCodes(MfaRecoveryCodesBuilder? recoveryCodes) =>
+      _$this._recoveryCodes = recoveryCodes;
+
   MfaStatusBuilder() {
     MfaStatus._defaults(this);
   }
@@ -80,6 +95,7 @@ class MfaStatusBuilder implements Builder<MfaStatus, MfaStatusBuilder> {
       _enabled = $v.enabled;
       _enrolledAt = $v.enrolledAt;
       _required_ = $v.required_;
+      _recoveryCodes = $v.recoveryCodes?.toBuilder();
       _$v = null;
     }
     return this;
@@ -99,17 +115,34 @@ class MfaStatusBuilder implements Builder<MfaStatus, MfaStatusBuilder> {
   MfaStatus build() => _build();
 
   _$MfaStatus _build() {
-    final _$result =
-        _$v ??
-        _$MfaStatus._(
-          enabled: BuiltValueNullFieldError.checkNotNull(
-            enabled,
-            r'MfaStatus',
-            'enabled',
-          ),
-          enrolledAt: enrolledAt,
-          required_: required_,
+    _$MfaStatus _$result;
+    try {
+      _$result =
+          _$v ??
+          _$MfaStatus._(
+            enabled: BuiltValueNullFieldError.checkNotNull(
+              enabled,
+              r'MfaStatus',
+              'enabled',
+            ),
+            enrolledAt: enrolledAt,
+            required_: required_,
+            recoveryCodes: _recoveryCodes?.build(),
+          );
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'recoveryCodes';
+        _recoveryCodes?.build();
+      } catch (e) {
+        throw BuiltValueNestedFieldError(
+          r'MfaStatus',
+          _$failedField,
+          e.toString(),
         );
+      }
+      rethrow;
+    }
     replace(_$result);
     return _$result;
   }

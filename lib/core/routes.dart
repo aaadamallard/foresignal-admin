@@ -280,6 +280,9 @@ const String systemOperationsPath = '$systemPath/operations';
 /// Settings export and import.
 const String systemBackupPath = '$systemPath/backup';
 
+/// Egress routing and the first-party aggregators.
+const String systemNetworkPath = '$systemPath/network';
+
 /// The section root a [path] belongs to: `/sources/x/test` → `/sources`.
 String sectionRootOf(String path) {
   final segments = Uri.parse(path).pathSegments;
@@ -307,6 +310,7 @@ const Set<String> sectionTabPaths = <String>{
   systemPluginsPath,
   systemOperationsPath,
   systemBackupPath,
+  systemNetworkPath,
   storageRetentionPath,
   storageArchivePath,
   storageBackupPath,

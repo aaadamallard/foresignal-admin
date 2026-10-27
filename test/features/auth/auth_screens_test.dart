@@ -323,4 +323,62 @@ void main() {
     expect(EmailedLink.parse(' tok-1 ')!.token, 'tok-1');
     expect(EmailedLink.parse('  '), isNull);
   });
+
+  testWidgets('an MFA challenge without a token or expiry asks for the code (R2-024 shape)', (
+    tester,
+  ) async {
+    final sessions = InMemorySessionStore();
+    final adapter = authBackend(
+      login: (_) => FakeResponse.json(<String, Object?>{
+        ...sessionTokenBody(mfaRequired: true),
+        'token': '',
+        'expiresAt': null,
+        'idleExpiresAt': null,
+      }),
+    );
+    final container = testContainer(adapter: adapter, connectedTo: backend, sessionStore: sessions);
+    addTearDown(container.dispose);
+    await _open(tester, container, loginPath);
+
+    await tester.enterText(find.byKey(const Key('login.email')), 'ana@example.com');
+    await tester.enterText(
+      find.descendant(
+        of: find.byKey(const Key('login.password')),
+        matching: find.byType(TextField),
+      ),
+      'pw',
+    );
+    await tester.tap(find.byKey(const Key('login.submit')));
+    await tester.pumpAndSettle();
+
+    expect(find.byKey(const Key('login.mfa')), findsOneWidget);
+    expect(await sessions.read(), isNull);
+  });
+
+  testWidgets('a sign-in answer that claims a session without an expiry is refused', (
+    tester,
+  ) async {
+    final sessions = InMemorySessionStore();
+    final adapter = authBackend(
+      login: (_) => FakeResponse.json(<String, Object?>{...sessionTokenBody(), 'expiresAt': null}),
+    );
+    final container = testContainer(adapter: adapter, connectedTo: backend, sessionStore: sessions);
+    addTearDown(container.dispose);
+    await _open(tester, container, loginPath);
+
+    await tester.enterText(find.byKey(const Key('login.email')), 'ana@example.com');
+    await tester.enterText(
+      find.descendant(
+        of: find.byKey(const Key('login.password')),
+        matching: find.byType(TextField),
+      ),
+      'pw',
+    );
+    await tester.tap(find.byKey(const Key('login.submit')));
+    await tester.pumpAndSettle();
+
+    expect(find.text('Could not sign in'), findsOneWidget);
+    expect(await sessions.read(), isNull);
+    expect(container.read(sessionControllerProvider).signedIn, isFalse);
+  });
 }
