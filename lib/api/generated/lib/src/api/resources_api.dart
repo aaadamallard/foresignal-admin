@@ -170,7 +170,7 @@ class ResourcesApi {
   }
 
   /// Update resource thresholds
-  /// Replaces the thresholds; a breach raises /v1/system warnings and fires alerts through the channel system. Each alert is edge-triggered: entering &#x60;warn&#x60; or &#x60;critical&#x60; publishes one &#x60;system&#x60; notification (&#x60;system.disk_low&#x60;, &#x60;system.disk_critical&#x60;, &#x60;system.memory_low&#x60;, &#x60;system.memory_critical&#x60;, &#x60;system.source_storm&#x60;, &#x60;system.collector_backlog&#x60;) and returning to normal publishes one recovery (&#x60;system.disk_recovered&#x60;, &#x60;system.memory_recovered&#x60;, &#x60;system.source_storm_cleared&#x60;, &#x60;system.collector_backlog_cleared&#x60;). Requires &#x60;storage.manage&#x60;.  **Scope:** &#x60;admin&#x60;.
+  /// Replaces the thresholds; a breach raises /v1/system warnings and fires alerts through the channel system. Each alert is edge-triggered: entering &#x60;warn&#x60; or &#x60;critical&#x60; publishes one &#x60;system&#x60; notification (&#x60;system.disk_low&#x60;, &#x60;system.disk_critical&#x60;, &#x60;system.memory_low&#x60;, &#x60;system.memory_critical&#x60;, &#x60;system.source_storm&#x60;, &#x60;system.collector_backlog&#x60;, &#x60;system.user_rate_limited&#x60;) and returning to normal publishes one recovery (&#x60;system.disk_recovered&#x60;, &#x60;system.memory_recovered&#x60;, &#x60;system.source_storm_cleared&#x60;, &#x60;system.collector_backlog_cleared&#x60;, &#x60;system.user_rate_limit_cleared&#x60;). Requires &#x60;storage.manage&#x60;.  **Scope:** &#x60;admin&#x60;.
   ///
   /// Parameters:
   /// * [resourceThresholds]

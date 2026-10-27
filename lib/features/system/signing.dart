@@ -94,7 +94,7 @@ class _SigningKeysCardState extends ConsumerState<SigningKeysCard> with WriteTra
             data: (keys) => DataTableCard<Json>(
               key: const Key('signing.keys'),
               rows: keys,
-              empty: 'No keys.',
+              empty: 'No signing keys yet. Rotate Signing Key generates one.',
               columns: <TableColumnSpec<Json>>[
                 TableColumnSpec<Json>(
                   label: 'Key id',
@@ -249,7 +249,7 @@ class _AttributionsCardState extends ConsumerState<AttributionsCard> {
                   DataTableCard<Json>(
                     key: const Key('attributions.table'),
                     rows: rows,
-                    empty: 'Nothing to attribute in this scope.',
+                    empty: 'Nothing to attribute in this scope. Widen Sources or Kinds, then Show.',
                     columns: <TableColumnSpec<Json>>[
                       TableColumnSpec<Json>(label: 'Source', cell: (a) => Text('${a['sourceId'] ?? '—'}')),
                       TableColumnSpec<Json>(label: 'Attribution', cell: (a) => Text('${a['text']}')),

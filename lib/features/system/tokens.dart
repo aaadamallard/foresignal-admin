@@ -365,7 +365,7 @@ class _ApiTokensCardState extends ConsumerState<ApiTokensCard> with WriteTrackin
               DataTableCard<Json>(
                 key: const Key('tokens.table'),
                 rows: tokens,
-                empty: 'No tokens.',
+                empty: 'No API tokens yet. New Token mints one.',
                 columns: <TableColumnSpec<Json>>[
                   TableColumnSpec<Json>(
                     label: 'Token',
@@ -775,7 +775,7 @@ class _PairingCodesCardState extends ConsumerState<PairingCodesCard> with WriteT
               DataTableCard<Json>(
                 key: const Key('pairing.table'),
                 rows: codes,
-                empty: 'No open codes.',
+                empty: 'No open pairing codes. New Code issues one.',
                 columns: <TableColumnSpec<Json>>[
                   TableColumnSpec<Json>(label: 'Token name', cell: (c) => Text('${c['name']}')),
                   TableColumnSpec<Json>(
@@ -991,7 +991,7 @@ class _FeedKeysCardState extends ConsumerState<FeedKeysCard> with WriteTracking<
               DataTableCard<Json>(
                 key: const Key('feedKeys.table'),
                 rows: keys,
-                empty: 'No feed keys.',
+                empty: 'No feed keys yet. New Feed Key mints one.',
                 columns: <TableColumnSpec<Json>>[
                   TableColumnSpec<Json>(
                     label: 'Key',
@@ -1213,7 +1213,7 @@ class _TileKeysCardState extends ConsumerState<TileKeysCard> with WriteTracking<
               DataTableCard<Json>(
                 key: const Key('tileKeys.table'),
                 rows: keys,
-                empty: 'No tile keys.',
+                empty: 'No tile keys yet. New Tile Key mints one.',
                 columns: <TableColumnSpec<Json>>[
                   TableColumnSpec<Json>(
                     label: 'Key',

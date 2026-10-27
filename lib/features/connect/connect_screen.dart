@@ -8,20 +8,40 @@ import '../../core/form_factor.dart';
 import '../../core/routes.dart';
 import '../../core/theme.dart';
 import '../../core/ui/ui.dart';
+import '../forecasting/forecasting_providers.dart' show Json;
+import '../onboarding/onboarding_providers.dart';
 import '../setup/setup_wizard_store.dart';
 import 'connect_controller.dart';
 
 /// Connect (Screens.md §A, mock A1): the backend URL and admin token, tested
 /// with `getSystem`, `getContract` and `getServerSettings`, then saved — the
 /// token to the platform secure store unless the operator unticks it.
-/// Failures are shown here, never as a crash. On the desktop, the first
-/// successful admin connection opens the setup wizard.
+/// Failures are shown here, never as a crash. On the desktop, a backend with
+/// no users yet opens onboarding; otherwise the first successful admin
+/// connection opens the setup wizard.
 class ConnectScreen extends ConsumerWidget {
   /// Creates the screen.
   const ConnectScreen({super.key});
 
   Future<void> _connected(BuildContext context, WidgetRef ref, ConnectionReport report) async {
-    if (ref.read(formFactorProvider) != FormFactor.desktop || !report.canConfigure) {
+    if (ref.read(formFactorProvider) != FormFactor.desktop) {
+      return;
+    }
+    // A backend with no users yet goes to onboarding, not the older wizard.
+    Json? firstRun;
+    try {
+      ref.invalidate(firstRunStatusProvider);
+      firstRun = await ref.read(firstRunStatusProvider.future);
+    } on Object {
+      firstRun = null;
+    }
+    if (isFirstRun(firstRun)) {
+      if (context.mounted) {
+        context.go(onboardingPath);
+      }
+      return;
+    }
+    if (!report.canConfigure) {
       return;
     }
     final status = await ref.read(setupWizardStoreProvider).read();

@@ -21,7 +21,7 @@ class QuotasApi {
   const QuotasApi(this._dio, this._serializers);
 
   /// Get my quota and usage
-  /// Returns the calling user&#39;s quota and current usage against each limit (D5/189).  **Scope:** &#x60;read&#x60;.
+  /// Returns the calling user&#39;s effective quota (their own limits over the instance default; null is unlimited) and current usage: &#x60;alerts&#x60;, &#x60;channels&#x60; and &#x60;savedViews&#x60; (the trigger rules, notification channels and saved views they own), &#x60;storageBytes&#x60; (their uploaded attachments plus the JSON of the workspaces they own) and &#x60;apiRequestsThisMinute&#x60; (requests in the current clock minute across their sessions and own API tokens) (D5/189, R2-026). A session or a user&#39;s own API token (R2-025); an API token with no user has no quota and gets 401.  **Scope:** &#x60;read&#x60;.
   ///
   /// Parameters:
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
@@ -96,7 +96,7 @@ class QuotasApi {
   }
 
   /// Get a user&#39;s quota
-  /// Returns the per-user quota for a user (D5/189). Requires &#x60;users.manage&#x60;.  **Scope:** &#x60;admin&#x60;.
+  /// Returns a user&#39;s own quota (D5/189, R2-026): the limits set for that user, null where the instance default applies. The effective quota is what &#x60;getMyQuota&#x60; reports to the user. Requires &#x60;users.manage&#x60;.  **Scope:** &#x60;admin&#x60;.
   ///
   /// Parameters:
   /// * [id] - User id
@@ -178,7 +178,7 @@ class QuotasApi {
   }
 
   /// Set a user&#39;s quota
-  /// Replaces a user&#39;s quota; a null limit uses the instance default. Requires &#x60;users.manage&#x60;.  **Scope:** &#x60;admin&#x60;.
+  /// Replaces a user&#39;s own quota whole (R2-026): every member is a non-negative integer or null, and null (or absent) uses the instance default; an unknown member is 400. A quota with every member null removes the user&#39;s own limits. &#x60;0&#x60; allows nothing: no API requests, or no further alert rules, channels, views or stored bytes. &#x60;apiRateLimitPerMinute&#x60; limits the user&#39;s sessions and own API tokens together (429 RATE_LIMITED with Retry-After, &#x60;class: user&#x60;); when a user is refused in every minute for 5 minutes an operational alert &#x60;system.user_rate_limited&#x60; is raised, and &#x60;system.user_rate_limit_cleared&#x60; once a minute passes without a refusal. The count and storage limits apply when the user creates (409 QUOTA_EXCEEDED). Requires &#x60;users.manage&#x60;.  **Scope:** &#x60;admin&#x60;.
   ///
   /// Parameters:
   /// * [id] - User id

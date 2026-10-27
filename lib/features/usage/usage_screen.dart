@@ -505,7 +505,7 @@ class BudgetTable extends StatelessWidget {
     final paid = rows.any((r) => r.health.spentUsdThisMonth != null);
     return DataTableCard<SourceBudgetRow>(
       rows: rows,
-      empty: 'No sources.',
+      empty: 'No sources report health yet. A source appears here once it is collected.',
       onTap: (r) => context.go(sourceDetailPath(r.id)),
       // Nine columns fit a 1280-wide window: a long name or cap reason wraps
       // onto a second line rather than widening the table past the screen.

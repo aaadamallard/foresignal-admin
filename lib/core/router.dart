@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
@@ -31,6 +33,8 @@ import '../features/notifications/notification_inbox.dart';
 import '../features/notifications/notifications_screen.dart';
 import '../features/notifications/push_native.dart';
 import '../features/notifications/this_device.dart';
+import '../features/onboarding/onboarding_providers.dart';
+import '../features/onboarding/onboarding_screen.dart';
 import '../features/profile/profile_screen.dart';
 import '../features/serving/exports.dart';
 import '../features/serving/peers.dart';
@@ -464,8 +468,10 @@ final routerProvider = Provider<GoRouter>((ref) {
             ),
           GoRoute(path: connectPath, builder: (context, state) => const ConnectScreen()),
           GoRoute(path: profilePath, builder: (context, state) => const ProfileScreen()),
-          if (formFactor == FormFactor.desktop)
+          if (formFactor == FormFactor.desktop) ...<RouteBase>[
             GoRoute(path: setupPath, builder: (context, state) => const SetupWizardScreen()),
+            GoRoute(path: onboardingPath, builder: (context, state) => const OnboardingScreen()),
+          ],
         ],
       ),
     ],
@@ -480,6 +486,29 @@ final routerProvider = Provider<GoRouter>((ref) {
       }
     }
   });
+  // A backend with no users yet opens onboarding (desktop), at launch and
+  // whenever the app is pointed at a backend. Any other answer, or a backend
+  // without the operation, keeps the usual landing.
+  Future<void> landOnFirstRun() async {
+    if (formFactor != FormFactor.desktop) {
+      return;
+    }
+    try {
+      final status = await ref.read(firstRunStatusProvider.future);
+      final location = router.state.matchedLocation;
+      if (isFirstRun(status) && location != onboardingPath && !signInPaths.contains(location)) {
+        router.go(onboardingPath);
+      }
+    } on Object {
+      return;
+    }
+  }
+
+  ref.listen(backendEndpointProvider, (_, next) {
+    if (next != null) {
+      unawaited(landOnFirstRun());
+    }
+  }, fireImmediately: true);
   ref.onDispose(router.dispose);
   return router;
 });

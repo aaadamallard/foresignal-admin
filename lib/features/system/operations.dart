@@ -247,7 +247,7 @@ class _InfraRulesCardState extends ConsumerState<InfraRulesCard> {
             DataTableCard<Json>(
               key: const Key('infra.table'),
               rows: rules,
-              empty: 'No rules.',
+              empty: 'The backend reports no infrastructure rules.',
               selected: (r) => r['id'] == _editing,
               onTap: (r) => setState(() => _editing = '${r['id']}'),
               columns: <TableColumnSpec<Json>>[

@@ -198,7 +198,7 @@ class _ProvidersCard extends ConsumerWidget {
         data: (list) => DataTableCard<Json>(
           key: const Key('push.providers.table'),
           rows: list,
-          empty: 'No providers yet. Add an APNs key for iPhones, or an FCM service account for Android.',
+          empty: 'No providers yet. Add Provider takes an APNs key for iPhones or an FCM service account for Android.',
           columns: <TableColumnSpec<Json>>[
             TableColumnSpec<Json>(
               label: 'Provider',
@@ -300,7 +300,7 @@ class _DevicesCardState extends ConsumerState<_DevicesCard> {
             data: (list) => DataTableCard<Json>(
               key: const Key('push.devices.table'),
               rows: list,
-              empty: 'No devices registered.',
+              empty: 'No devices registered. Phones register themselves from the mobile companion.',
               columns: <TableColumnSpec<Json>>[
                 TableColumnSpec<Json>(
                   label: 'Device',

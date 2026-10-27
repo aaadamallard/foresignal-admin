@@ -180,7 +180,7 @@ class _MySourcesPanelState extends ConsumerState<MySourcesPanel>
               return DataTableCard<String>(
                 key: const Key('mySources.table'),
                 rows: rows,
-                empty: 'No sources are registered on this instance.',
+                empty: 'No sources are registered on this instance. Built-in and custom sources appear here once registered.',
                 columns: <TableColumnSpec<String>>[
                   TableColumnSpec<String>(
                     label: 'Source',
@@ -418,7 +418,7 @@ class _CollectionPanelState extends ConsumerState<CollectionPanel>
             data: (set) => DataTableCard<CollectionSource>(
               key: const Key('collection.table'),
               rows: set.sources.toList(),
-              empty: 'No sources are registered on this instance.',
+              empty: 'No sources are registered on this instance. Built-in and custom sources appear here once registered.',
               columns: <TableColumnSpec<CollectionSource>>[
                 TableColumnSpec<CollectionSource>(
                   label: 'Source',

@@ -194,7 +194,7 @@ class _ExportsPanelState extends ConsumerState<ExportsPanel> {
           DataTableCard<Json>(
             key: const Key('exports.table'),
             rows: _items,
-            empty: 'No jobs.',
+            empty: 'No jobs here. New Job starts one, or choose All kinds and Any status to see all.',
             onTap: (j) => context.go(servingExportPath('${j['id']}')),
             columns: <TableColumnSpec<Json>>[
               TableColumnSpec<Json>(

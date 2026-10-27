@@ -725,7 +725,7 @@ class _EventMembersCardState extends ConsumerState<EventMembersCard> {
           ],
           DataTableCard<IntelEventMember>(
             rows: members,
-            empty: 'No members.',
+            empty: 'No members yet. Add Member attaches one.',
             columns: <TableColumnSpec<IntelEventMember>>[
               TableColumnSpec<IntelEventMember>(
                 label: 'Role',

@@ -198,7 +198,7 @@ class _LatestForecasts extends StatelessWidget {
       child: DataTableCard<Json>(
         key: const Key('question.forecasts'),
         rows: rows,
-        empty: 'No forecasts yet.',
+        empty: 'No forecasts yet. Each forecaster\'s latest forecast on this question appears here.',
         columns: <TableColumnSpec<Json>>[
           TableColumnSpec<Json>(
             label: 'Forecaster',
@@ -272,7 +272,7 @@ class QuestionHistoryCard extends ConsumerWidget {
           return DataTableCard<({String date, String forecaster, Json point})>(
             key: const Key('question.history'),
             rows: rows.take(200).toList(),
-            empty: 'No history yet.',
+            empty: 'No history yet. A point is recorded at the end of each day a forecast stands.',
             columns: <TableColumnSpec<({String date, String forecaster, Json point})>>[
               TableColumnSpec<({String date, String forecaster, Json point})>(label: 'Day', cell: (r) => Text(r.date)),
               TableColumnSpec<({String date, String forecaster, Json point})>(

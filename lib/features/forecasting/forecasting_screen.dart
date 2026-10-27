@@ -163,7 +163,7 @@ class _ForecastersPanelState extends ConsumerState<ForecastersPanel> {
           data: (rows) => DataTableCard<Json>(
             key: const Key('forecasters.table'),
             rows: rows,
-            empty: 'No forecasters.',
+            empty: 'No forecasters yet. Register Forecaster adds one.',
             onTap: (f) => context.go(forecastingForecasterPath('${f['id']}')),
             columns: <TableColumnSpec<Json>>[
               TableColumnSpec<Json>(
@@ -406,7 +406,7 @@ class _QuestionsPanelState extends ConsumerState<QuestionsPanel> {
           data: (rows) => DataTableCard<Json>(
             key: const Key('questions.table'),
             rows: rows,
-            empty: 'No questions match.',
+            empty: 'No questions match these filters. Widen the status or category to see more.',
             onTap: (q) => context.go(forecastingQuestionPath('${q['id']}')),
             columns: <TableColumnSpec<Json>>[
               TableColumnSpec<Json>(

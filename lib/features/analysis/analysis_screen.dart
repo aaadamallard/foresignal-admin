@@ -328,7 +328,7 @@ class RecipesPanel extends ConsumerWidget {
       data: (recipes) => DataTableCard<CorrelationRecipe>(
         key: const Key('analysis.recipes'),
         rows: recipes,
-        empty: 'No recipes.',
+        empty: 'No recipes yet. New Recipe creates one.',
         onTap: (r) => context.go(analysisRecipePath(r.id)),
         columns: <TableColumnSpec<CorrelationRecipe>>[
           TableColumnSpec<CorrelationRecipe>(
@@ -467,7 +467,7 @@ class _EventsPanelState extends ConsumerState<EventsPanel> {
               DataTableCard<IntelEventSummary>(
                 key: const Key('analysis.events'),
                 rows: page.items.toList(),
-                empty: 'No events match.',
+                empty: 'No events match these filters. Widen the status or type to see more.',
                 onTap: (e) => context.go(analysisEventPath(e.id)),
                 columns: <TableColumnSpec<IntelEventSummary>>[
                   TableColumnSpec<IntelEventSummary>(
@@ -602,7 +602,7 @@ class _CyclesPanelState extends ConsumerState<CyclesPanel> {
           data: (cycles) => DataTableCard<AnalysisCycle>(
             key: const Key('analysis.cycles'),
             rows: cycles,
-            empty: 'No cycles.',
+            empty: 'No cycles yet. New Cycle creates one.',
             onTap: (c) => context.go(analysisCyclePath(c.id)),
             columns: <TableColumnSpec<AnalysisCycle>>[
               TableColumnSpec<AnalysisCycle>(

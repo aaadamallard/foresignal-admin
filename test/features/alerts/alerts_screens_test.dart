@@ -98,7 +98,7 @@ void main() {
     expect(find.text('The backend did not answer in time'), findsOneWidget);
     expect(find.textContaining('GET /v1/alerts got no answer'), findsOneWidget);
     expect(find.text('Backend unreachable'), findsNothing);
-    expect(find.text('No alerts match.'), findsNothing);
+    expect(find.text('No alerts match these filters. Choose All or Any severity to see more.'), findsNothing);
     final before = adapter.requests.where((r) => r.uri.path == '/v1/alerts').length;
     failing = false;
     await tapVisible(tester, find.widgetWithText(TextButton, 'Retry'));

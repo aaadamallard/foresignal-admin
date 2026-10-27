@@ -551,7 +551,7 @@ class _SessionsCardState extends ConsumerState<SessionsCard> with WriteTracking<
         children: <Widget>[
           DataTableCard<Json>(
             rows: sessions,
-            empty: 'No sessions.',
+            empty: 'No sessions are listed. Signing in starts one.',
             selected: (s) => s['current'] == true,
             columns: <TableColumnSpec<Json>>[
               TableColumnSpec<Json>(
@@ -699,7 +699,7 @@ class _MyTokensCardState extends ConsumerState<MyTokensCard> with WriteTracking<
           onRetry: () => ref.invalidate(myTokensProvider),
           data: (tokens) => DataTableCard<Json>(
             rows: tokens,
-            empty: 'No tokens.',
+            empty: 'No API tokens yet. New Token mints one.',
             columns: <TableColumnSpec<Json>>[
               TableColumnSpec<Json>(label: 'Name', cell: (t) => Text('${t['name']}')),
               TableColumnSpec<Json>(label: 'Scope', cell: (t) => Text(wireText('${t['scope']}'))),

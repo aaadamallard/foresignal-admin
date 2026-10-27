@@ -178,7 +178,7 @@ class PlatformScreen extends ConsumerWidget {
                   title: 'Collection paths',
                   child: DataTableCard<SocialCollectionPath>(
                     rows: p.paths.toList(),
-                    empty: 'No collection paths.',
+                    empty: 'This platform offers no collection paths.',
                     columns: <TableColumnSpec<SocialCollectionPath>>[
                       TableColumnSpec<SocialCollectionPath>(
                         label: 'Path',

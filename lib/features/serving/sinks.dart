@@ -57,7 +57,7 @@ class SinksPanel extends ConsumerWidget {
             data: (sinks) => DataTableCard<Json>(
               key: const Key('sinks.table'),
               rows: sinks,
-              empty: 'No sinks yet.',
+              empty: 'No sinks yet. Add Sink connects one.',
               onTap: (s) => context.go(servingSinkPath('${s['id']}')),
               columns: <TableColumnSpec<Json>>[
                 TableColumnSpec<Json>(

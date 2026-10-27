@@ -195,7 +195,7 @@ class ProvidersPanel extends ConsumerWidget {
                 key: const Key('ai.providers'),
                 rows: shared,
                 readOnly: !manageShared,
-                empty: 'No shared providers yet.',
+                empty: 'No shared providers yet. An operator adds them for everyone.',
               ),
             ),
             if (mayOwn || personal.isNotEmpty) ...<Widget>[
@@ -342,7 +342,7 @@ class MyLlmBudgetCard extends ConsumerWidget {
             DataTableCard<LlmBudgetProvider>(
               key: const Key('ai.myBudget.table'),
               rows: budget.providers.toList(),
-              empty: 'No provider is available to you yet.',
+              empty: 'No provider is available to you yet. Add Personal Provider uses your own key.',
               columns: <TableColumnSpec<LlmBudgetProvider>>[
                 TableColumnSpec<LlmBudgetProvider>(
                   label: 'Provider',
@@ -979,7 +979,7 @@ class _LlmUsagePanelState extends ConsumerState<LlmUsagePanel> {
         DataTableCard<String>(
           key: const Key('ai.usage.table'),
           rows: rows,
-          empty: 'No providers.',
+          empty: 'No provider used tokens in this window.',
           columns: <TableColumnSpec<String>>[
             const TableColumnSpec<String>(label: 'Provider', cell: Text.new),
             TableColumnSpec<String>(

@@ -439,7 +439,7 @@ class _DoctorPanelState extends ConsumerState<DoctorPanel> {
           onRetry: () => ref.invalidate(sourceDoctorReportsProvider(widget.sourceId)),
           data: (reports) => DataTableCard<DoctorReport>(
             rows: reports,
-            empty: 'The doctor has not run on this source.',
+            empty: 'The doctor has not run on this source. Run Doctor runs it.',
             onTap: (r) => setState(() {
               _report = r;
               _error = null;

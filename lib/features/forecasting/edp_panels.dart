@@ -70,7 +70,7 @@ class _EdpSourcesPanelState extends ConsumerState<EdpSourcesPanel> {
           data: (rows) => DataTableCard<Json>(
             key: const Key('providers.table'),
             rows: rows,
-            empty: 'No providers.',
+            empty: 'No providers here. Register Provider adds one, or choose All to see every state.',
             onTap: (s) => context.go(forecastingProviderPath('${s['sourceId']}')),
             columns: <TableColumnSpec<Json>>[
               TableColumnSpec<Json>(
@@ -436,7 +436,7 @@ class _RegistrationTokensPanelState extends ConsumerState<RegistrationTokensPane
           data: (rows) => DataTableCard<Json>(
             key: const Key('tokens.table'),
             rows: rows,
-            empty: 'No registration tokens.',
+            empty: 'No registration tokens yet. Create Token mints one.',
             columns: <TableColumnSpec<Json>>[
               TableColumnSpec<Json>(label: 'Name', cell: (t) => Text('${t['name']}')),
               TableColumnSpec<Json>(label: 'Prefix', cell: (t) => Text('${t['prefix']}…')),

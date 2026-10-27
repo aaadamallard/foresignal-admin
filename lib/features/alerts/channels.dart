@@ -180,7 +180,7 @@ class ChannelsPanel extends ConsumerWidget {
               (c) => c['ownerPrincipalId'] as String?,
               keepUnowned: access.can(Permissions.channelsGlobal),
             ),
-            empty: 'No channels yet.',
+            empty: 'No channels yet. New Channel creates one.',
             onTap: (c) => context.go(alertChannelPath('${c['id']}')),
             columns: <TableColumnSpec<Json>>[
               TableColumnSpec<Json>(
@@ -892,7 +892,7 @@ class _DeliveriesCardState extends ConsumerState<DeliveriesCard> {
         onRetry: () => ref.invalidate(channelDeliveriesProvider(query)),
         data: (rows) => DataTableCard<Json>(
           rows: rows,
-          empty: 'No deliveries.',
+          empty: 'No deliveries here. Send Test sends one, or choose Every status to see all.',
           columns: <TableColumnSpec<Json>>[
             TableColumnSpec<Json>(
               label: 'Event',

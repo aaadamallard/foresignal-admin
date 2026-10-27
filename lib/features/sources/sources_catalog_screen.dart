@@ -303,7 +303,7 @@ class _SourcesCatalogScreenState extends ConsumerState<SourcesCatalogScreen> {
       numbered: true,
       // Nine columns, the info button last, fit a 1280-wide window.
       columnSpacing: 16,
-      empty: 'No source matches these filters.',
+      empty: 'No source matches these filters. Clear a filter to see more.',
       onTap: (s) => context.go(sourceDetailPath(s.id)),
       columns: <TableColumnSpec<SourceSummary>>[
         TableColumnSpec<SourceSummary>(

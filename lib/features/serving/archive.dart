@@ -367,7 +367,7 @@ class _HoldsCardState extends ConsumerState<_HoldsCard> with WriteTracking<_Hold
             data: (holds) => DataTableCard<Json>(
               key: const Key('holds.table'),
               rows: holds,
-              empty: 'No holds.',
+              empty: 'No holds yet. Add Hold sets one.',
               columns: <TableColumnSpec<Json>>[
                 TableColumnSpec<Json>(
                   label: 'Hold',
@@ -690,7 +690,7 @@ class _CatalogCardState extends ConsumerState<_CatalogCard> {
             DataTableCard<Json>(
               key: const Key('catalog.table'),
               rows: _items,
-              empty: 'No archived partitions.',
+              empty: 'No archived partitions in this range. Change Source, From or To, then Show.',
               selected: (p) => _key(p) == _open,
               onTap: (p) => setState(() => _open = _key(p) == _open ? null : _key(p)),
               columns: <TableColumnSpec<Json>>[
@@ -745,7 +745,7 @@ class _PartitionView extends StatelessWidget {
         const SizedBox(height: 8),
         DataTableCard<Json>(
           rows: files,
-          empty: 'No files.',
+          empty: 'This partition holds no part files.',
           columns: <TableColumnSpec<Json>>[
             TableColumnSpec<Json>(label: 'File', cell: (f) => Text('${f['name'] ?? '—'}')),
             TableColumnSpec<Json>(

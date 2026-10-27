@@ -164,7 +164,7 @@ class _SubscriptionsCardState extends ConsumerState<_SubscriptionsCard> with Wri
             data: (list) => DataTableCard<Json>(
               key: const Key('webpush.table'),
               rows: list,
-              empty: 'No subscriptions.',
+              empty: 'No subscriptions yet. Add Subscription adds one.',
               columns: <TableColumnSpec<Json>>[
                 TableColumnSpec<Json>(
                   label: 'Subscription',

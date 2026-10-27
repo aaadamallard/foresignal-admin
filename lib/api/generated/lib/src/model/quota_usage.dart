@@ -11,17 +11,17 @@ import 'package:built_value/serializer.dart';
 
 part 'quota_usage.g.dart';
 
-/// The caller's quota with current usage against each limit
+/// The caller's effective quota (own limits over the instance default; null is unlimited) with current usage against each limit
 ///
 /// Properties:
 /// * [quota]
-/// * [usage] - Current counts/bytes used
+/// * [usage] - Current usage: `alerts`, `channels`, `savedViews`, `storageBytes` and `apiRequestsThisMinute`
 @BuiltValue()
 abstract class QuotaUsage implements Built<QuotaUsage, QuotaUsageBuilder> {
   @BuiltValueField(wireName: r'quota')
   Quota get quota;
 
-  /// Current counts/bytes used
+  /// Current usage: `alerts`, `channels`, `savedViews`, `storageBytes` and `apiRequestsThisMinute`
   @BuiltValueField(wireName: r'usage')
   BuiltMap<String, JsonObject?> get usage;
 

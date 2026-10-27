@@ -237,7 +237,7 @@ class _ArchiveInventoryCardState extends ConsumerState<ArchiveInventoryCard>
         children: <Widget>[
           DataTableCard<Json>(
             rows: archives,
-            empty: 'No archives yet.',
+            empty: 'No archives yet. Run Archive, with Dry run off, makes one.',
             columns: <TableColumnSpec<Json>>[
               TableColumnSpec<Json>(label: 'Created', cell: (a) => Text(whenText(a['createdAt']))),
               TableColumnSpec<Json>(

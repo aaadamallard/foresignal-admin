@@ -112,7 +112,7 @@ class _WatchlistsPanelState extends ConsumerState<WatchlistsPanel> {
         data: (lists) => DataTableCard<Json>(
           key: const Key('watchlists.table'),
           rows: lists,
-          empty: 'No watchlists yet.',
+          empty: 'No watchlists yet. New Watchlist creates one.',
           onTap: (w) => context.go(alertWatchlistPath('${w['id']}')),
           columns: <TableColumnSpec<Json>>[
             TableColumnSpec<Json>(

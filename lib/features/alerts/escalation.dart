@@ -66,7 +66,7 @@ class EscalationPanel extends ConsumerWidget {
         data: (policies) => DataTableCard<Json>(
           key: const Key('policies.table'),
           rows: policies,
-          empty: 'No escalation policies yet.',
+          empty: 'No escalation policies yet. New Policy creates one.',
           onTap: (p) => context.go(alertPolicyPath('${p['id']}')),
           columns: <TableColumnSpec<Json>>[
             TableColumnSpec<Json>(

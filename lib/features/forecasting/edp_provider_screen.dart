@@ -573,7 +573,7 @@ class _BindingsCardState extends ConsumerState<BindingsCard> with WriteTracking<
             data: (rows) => DataTableCard<Json>(
               key: const Key('bindings.table'),
               rows: rows,
-              empty: 'No bindings.',
+              empty: 'No bindings yet. New Binding adds one.',
               columns: <TableColumnSpec<Json>>[
                 TableColumnSpec<Json>(label: 'Stream', cell: (b) => Text('${b['streamId']}')),
                 TableColumnSpec<Json>(
@@ -740,7 +740,7 @@ class _PreviewView extends StatelessWidget {
           for (final e in errors) Text('$e'),
           DataTableCard<Json>(
             rows: jsonList(p, 'effects').take(50).toList(),
-            empty: 'No effects.',
+            empty: 'No recent item would produce an effect under this binding.',
             columns: <TableColumnSpec<Json>>[
               TableColumnSpec<Json>(label: 'Item', cell: (e) => Text('${e['itemRef']}')),
               TableColumnSpec<Json>(label: 'Action', cell: (e) => Text(wireText('${e['action']}'))),
@@ -908,7 +908,7 @@ class _QuestionLinksCardState extends ConsumerState<QuestionLinksCard> with Writ
             data: (rows) => DataTableCard<Json>(
               key: const Key('links.table'),
               rows: rows,
-              empty: 'No question links.',
+              empty: 'No question links yet. Link maps a provider question to a ledger question.',
               columns: <TableColumnSpec<Json>>[
                 TableColumnSpec<Json>(label: 'Stream', cell: (l) => Text('${l['streamId']}')),
                 TableColumnSpec<Json>(label: 'Provider question', cell: (l) => Text('${l['externalQuestionId']}')),

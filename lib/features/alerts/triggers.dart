@@ -987,7 +987,7 @@ class _RuleAlertsCard extends ConsumerWidget {
       onRetry: () => ref.invalidate(ruleAlertsProvider(ruleId)),
       data: (alerts) => DataTableCard<Json>(
         rows: alerts,
-        empty: 'This rule has not fired.',
+        empty: 'This rule has not fired. Its alerts appear here when it matches.',
         onTap: (a) => context.go(alertPath(a['id']! as int)),
         columns: <TableColumnSpec<Json>>[
           TableColumnSpec<Json>(label: 'Severity', cell: (a) => severityLabel(a['severity'])),

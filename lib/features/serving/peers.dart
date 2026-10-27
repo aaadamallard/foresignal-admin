@@ -73,7 +73,7 @@ class PeersPanel extends ConsumerWidget {
           data: (peers) => DataTableCard<Json>(
             key: const Key('peers.table'),
             rows: peers,
-            empty: 'No peers yet.',
+            empty: 'No peers yet. Add Peer connects one.',
             onTap: (p) => context.go(servingPeerPath('${p['id']}')),
             columns: <TableColumnSpec<Json>>[
               TableColumnSpec<Json>(

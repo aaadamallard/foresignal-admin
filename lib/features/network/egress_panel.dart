@@ -121,7 +121,7 @@ class _EgressPoolCardState extends ConsumerState<EgressPoolCard>
         children: <Widget>[
           DataTableCard<Json>(
             rows: routes,
-            empty: 'No routes. Every pull goes direct.',
+            empty: 'No routes yet. Add Route creates one; until then every pull goes direct.',
             columns: <TableColumnSpec<Json>>[
               TableColumnSpec<Json>(label: 'Name', cell: (r) => Text('${r['name']}')),
               TableColumnSpec<Json>(

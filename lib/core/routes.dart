@@ -6,6 +6,9 @@ library;
 /// The setup wizard (desktop).
 const String setupPath = '/setup';
 
+/// First-run onboarding for an instance with no users (desktop).
+const String onboardingPath = '/onboarding';
+
 /// Sign in with email and password (outside the shell).
 const String loginPath = '/login';
 
@@ -283,6 +286,9 @@ const String systemBackupPath = '$systemPath/backup';
 /// Egress routing and the first-party aggregators.
 const String systemNetworkPath = '$systemPath/network';
 
+/// The SMTP server for outbound email.
+const String systemSmtpPath = '$systemPath/smtp';
+
 /// The section root a [path] belongs to: `/sources/x/test` → `/sources`.
 String sectionRootOf(String path) {
   final segments = Uri.parse(path).pathSegments;
@@ -311,6 +317,7 @@ const Set<String> sectionTabPaths = <String>{
   systemOperationsPath,
   systemBackupPath,
   systemNetworkPath,
+  systemSmtpPath,
   storageRetentionPath,
   storageArchivePath,
   storageBackupPath,

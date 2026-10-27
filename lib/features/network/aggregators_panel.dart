@@ -98,7 +98,7 @@ class _AggregatorsCardState extends ConsumerState<AggregatorsCard> {
         children: <Widget>[
           DataTableCard<Json>(
             rows: aggregators,
-            empty: 'The server lists no aggregators.',
+            empty: 'The server lists no aggregator domains.',
             onTap: (a) => setState(() => _open = _open == a['domain'] ? null : '${a['domain']}'),
             selected: (a) => a['domain'] == _open,
             columns: <TableColumnSpec<Json>>[

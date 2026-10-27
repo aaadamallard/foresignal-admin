@@ -523,7 +523,7 @@ class _BackupHistoryCardState extends ConsumerState<BackupHistoryCard>
         children: <Widget>[
           DataTableCard<Json>(
             rows: backups,
-            empty: 'No backups yet.',
+            empty: 'No backups yet. Back Up Now makes one.',
             columns: <TableColumnSpec<Json>>[
               TableColumnSpec<Json>(label: 'Created', cell: (b) => Text(whenText(b['createdAt']))),
               TableColumnSpec<Json>(

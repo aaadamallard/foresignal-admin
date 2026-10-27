@@ -111,7 +111,7 @@ class CalibrationView extends StatelessWidget {
       DataTableCard<Json>(
         key: const Key('calibration.bins'),
         rows: bins,
-        empty: 'No bins yet.',
+        empty: 'No bins yet. Resolved questions fill them.',
         columns: <TableColumnSpec<Json>>[
           TableColumnSpec<Json>(label: 'Forecast', cell: (b) => Text('${pct(b['lower'])}–${pct(b['upper'])}')),
           TableColumnSpec<Json>(label: 'Questions', numeric: true, cell: (b) => Text('${b['n'] ?? 0}')),
@@ -155,7 +155,7 @@ class CalibrationView extends StatelessWidget {
       DataTableCard<Json>(
         key: const Key('calibration.quantiles'),
         rows: quantiles,
-        empty: 'No quantiles yet.',
+        empty: 'No quantiles yet. Resolved numeric questions fill them.',
         columns: <TableColumnSpec<Json>>[
           TableColumnSpec<Json>(label: 'Quantile', cell: (q) => Text('${q['quantile'] ?? q['level']}')),
           TableColumnSpec<Json>(label: 'Questions', numeric: true, cell: (q) => Text('${q['n'] ?? 0}')),
@@ -179,7 +179,7 @@ class CalibrationView extends StatelessWidget {
       DataTableCard<Json>(
         key: const Key('calibration.pit'),
         rows: pitBins,
-        empty: 'No PIT bins yet.',
+        empty: 'No PIT bins yet. Resolved numeric questions fill them.',
         columns: <TableColumnSpec<Json>>[
           TableColumnSpec<Json>(label: 'PIT', cell: (b) => Text('${fixed(b['lower'], 2)}–${fixed(b['upper'], 2)}')),
           TableColumnSpec<Json>(label: 'Count', numeric: true, cell: (b) => Text('${b['count'] ?? 0}')),
@@ -311,7 +311,7 @@ class ScorecardTable extends StatelessWidget {
     return DataTableCard<Json>(
       key: const Key('scorecard.table'),
       rows: entries,
-      empty: 'No scored forecasters.',
+      empty: 'No scored forecasters. A forecast is scored when its question resolves.',
       columns: <TableColumnSpec<Json>>[
         TableColumnSpec<Json>(
           label: 'Forecaster',
@@ -634,7 +634,7 @@ class _EnsembleRefitCardState extends ConsumerState<EnsembleRefitCard> with Writ
             const SizedBox(height: 12),
             DataTableCard<Json>(
               rows: weights,
-              empty: 'No weights fitted.',
+              empty: 'No weights fitted. The refit draws them from resolved questions.',
               columns: <TableColumnSpec<Json>>[
                 TableColumnSpec<Json>(label: 'Forecaster', cell: (w) => Text('${w['forecasterId']}')),
                 TableColumnSpec<Json>(label: 'Category', cell: (w) => Text('${w['category'] ?? 'All'}')),
@@ -832,7 +832,7 @@ class _EvaluationsPanelState extends ConsumerState<EvaluationsPanel> with WriteT
           DataTableCard<Json>(
             key: const Key('evaluation.list'),
             rows: rows,
-            empty: 'No evaluation started or opened here yet.',
+            empty: 'No evaluation started or opened here yet. Start Evaluation runs one.',
             columns: <TableColumnSpec<Json>>[
               TableColumnSpec<Json>(label: 'Evaluation', cell: (e) => SelectableText('${e['id']}')),
               TableColumnSpec<Json>(label: 'Forecaster', cell: (e) => Text('${e['forecasterId']}')),

@@ -486,7 +486,7 @@ class _CycleRunsCardState extends ConsumerState<CycleRunsCard> {
             onRetry: () => ref.invalidate(cycleRunsProvider(id)),
             data: (runs) => DataTableCard<CycleRun>(
               rows: runs,
-              empty: 'No runs yet.',
+              empty: 'No runs yet. Run Now starts one.',
               onTap: (r) => context.go(analysisRunPath(r.id)),
               columns: <TableColumnSpec<CycleRun>>[
                 TableColumnSpec<CycleRun>(

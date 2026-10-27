@@ -606,7 +606,7 @@ class _EntityKeysCardState extends ConsumerState<EntityKeysCard> {
           ],
           DataTableCard<EntityKey>(
             rows: keys,
-            empty: 'No keys.',
+            empty: 'No keys yet. Add Key attaches one.',
             columns: <TableColumnSpec<EntityKey>>[
               TableColumnSpec<EntityKey>(
                 label: 'Key',
@@ -752,7 +752,7 @@ class _AliasesCard extends StatelessWidget {
       title: 'Aliases',
       child: DataTableCard<EntityAlias>(
         rows: entity.aliases?.toList() ?? const <EntityAlias>[],
-        empty: 'No aliases.',
+        empty: 'No aliases yet. Registries and observed records add them.',
         columns: <TableColumnSpec<EntityAlias>>[
           TableColumnSpec<EntityAlias>(label: 'Alias', cell: (a) => Text(a.alias)),
           TableColumnSpec<EntityAlias>(label: 'Type', cell: (a) => Text(wireLabel(a.aliasType, a, 'aliasType'))),
@@ -806,7 +806,7 @@ class _EntityRecordsCardState extends ConsumerState<EntityRecordsCard> {
         onRetry: () => ref.invalidate(entityRecordsProvider(key)),
         data: (list) => DataTableCard<EntityRecord>(
           rows: list.items.toList(),
-          empty: 'No linked records.',
+          empty: 'No linked records. A record links here when its keys match this entity\'s.',
           columns: <TableColumnSpec<EntityRecord>>[
             TableColumnSpec<EntityRecord>(
               label: 'Record',
@@ -1275,7 +1275,7 @@ class _GraphView extends StatelessWidget {
         const SizedBox(height: 8),
         DataTableCard<Relation>(
           rows: graph.edges.toList(),
-          empty: 'No relations within reach.',
+          empty: 'No relations within reach. Raise Hops or lower Min confidence to reach further.',
           columns: <TableColumnSpec<Relation>>[
             TableColumnSpec<Relation>(
               label: 'From',

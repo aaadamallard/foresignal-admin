@@ -358,7 +358,7 @@ class _KeysPanelState extends ConsumerState<KeysPanel> {
                 onRetry: () => ref.invalidate(ingestDevicesProvider(_id)),
                 data: (devices) => DataTableCard<IngestDevice>(
                   rows: devices,
-                  empty: 'No device keys yet.',
+                  empty: 'No device keys yet. Add Device issues one.',
                   columns: <TableColumnSpec<IngestDevice>>[
                     TableColumnSpec<IngestDevice>(label: 'Name', cell: (d) => Text(d.name)),
                     TableColumnSpec<IngestDevice>(

@@ -429,7 +429,7 @@ class _InboxPanelState extends ConsumerState<InboxPanel> {
   Widget _table(BuildContext context) => DataTableCard<Json>(
     key: const Key('inbox.table'),
     rows: _alerts,
-    empty: 'No alerts match.',
+    empty: 'No alerts match these filters. Choose All or Any severity to see more.',
     columns: <TableColumnSpec<Json>>[
       TableColumnSpec<Json>(label: 'Severity', cell: (a) => severityLabel(a['severity'])),
       TableColumnSpec<Json>(

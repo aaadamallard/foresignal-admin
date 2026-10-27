@@ -4385,7 +4385,7 @@ class CollaborationApi {
   }
 
   /// Upload an attachment
-  /// Multipart upload (≤ &#x60;collab.maxUploadMb&#x60;, default 50). Allowed: images (through 043 ImageGuard; EXIF stripped unless &#x60;collab.keepExif&#x60;), PDF, plain text, CSV, JSON, GeoJSON, KML, Markdown. Stored content-addressed (dedup by sha256); text is extracted for search. Files are data, never executed.  **Scope:** &#x60;read&#x60;.
+  /// Multipart upload (≤ &#x60;collab.maxUploadMb&#x60;, default 50). Allowed: images (through 043 ImageGuard; EXIF stripped unless &#x60;collab.keepExif&#x60;), PDF, plain text, CSV, JSON, GeoJSON, KML, Markdown. Stored content-addressed (dedup by sha256); text is extracted for search. Files are data, never executed. The bytes it adds count against the &#x60;maxStorageBytes&#x60; quota of the uploader (409 QUOTA_EXCEEDED, R2-026).  **Scope:** &#x60;read&#x60;.
   ///
   /// Parameters:
   /// * [file]

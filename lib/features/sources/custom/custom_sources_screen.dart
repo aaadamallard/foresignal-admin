@@ -115,7 +115,7 @@ class _CustomSourcesScreenState extends ConsumerState<CustomSourcesScreen> {
           onRetry: () => ref.invalidate(customSourcesProvider),
           data: (list) => DataTableCard<CustomSource>(
             rows: list,
-            empty: 'No custom source yet.',
+            empty: 'No custom source yet. New Custom Source creates one.',
             onTap: (s) => context.go(customSourcePath(s.id)),
             columns: <TableColumnSpec<CustomSource>>[
               TableColumnSpec<CustomSource>(label: 'Name', cell: (s) => Text(s.name)),

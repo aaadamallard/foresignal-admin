@@ -249,7 +249,7 @@ class _ClaimsPanelState extends ConsumerState<ClaimsPanel> {
               DataTableCard<Claim>(
                 key: const Key('vetting.claims'),
                 rows: page.items.toList(),
-                empty: 'No claims match.',
+                empty: 'No claims match these filters. Widen the status or clear Claim type to see more.',
                 onTap: (c) => context.go(vettingClaimPath(c.id)),
                 columns: <TableColumnSpec<Claim>>[
                   TableColumnSpec<Claim>(
@@ -353,7 +353,7 @@ class NarrativesPanel extends ConsumerWidget {
       data: (list) => DataTableCard<NarrativeSummary>(
         key: const Key('vetting.narratives'),
         rows: list,
-        empty: 'No narratives.',
+        empty: 'No narratives yet. Collected social posts group into narratives here.',
         columns: <TableColumnSpec<NarrativeSummary>>[
           TableColumnSpec<NarrativeSummary>(
             label: 'Narrative',
@@ -413,7 +413,7 @@ class ComparisonsPanel extends ConsumerWidget {
       data: (list) => DataTableCard<SocialComparison>(
         key: const Key('vetting.comparisons'),
         rows: list,
-        empty: 'No comparisons.',
+        empty: 'No comparisons yet. The engine compares claims with physical evidence and lists each one here.',
         onTap: (c) => context.go(vettingClaimPath(c.claimId)),
         columns: <TableColumnSpec<SocialComparison>>[
           TableColumnSpec<SocialComparison>(label: 'Claim', cell: (c) => Text(shortId(c.claimId))),
@@ -463,7 +463,7 @@ class CuesPanel extends ConsumerWidget {
       data: (list) => DataTableCard<SocialCue>(
         key: const Key('vetting.cues'),
         rows: list,
-        empty: 'No cues.',
+        empty: 'No cues yet. The Cues rules on the Settings tab raise them.',
         columns: <TableColumnSpec<SocialCue>>[
           TableColumnSpec<SocialCue>(
             label: 'Trigger',
@@ -541,7 +541,7 @@ class LeadTimesPanel extends ConsumerWidget {
           DataTableCard<LeadTimeStatsGroupsInner>(
             key: const Key('vetting.leadTimes'),
             rows: stats.groups.toList(),
-            empty: 'No comparisons yet.',
+            empty: 'No comparisons yet. Lead times appear once claims are compared with physical, news and official evidence.',
             columns: <TableColumnSpec<LeadTimeStatsGroupsInner>>[
               TableColumnSpec<LeadTimeStatsGroupsInner>(
                 label: 'Claim type',
@@ -599,7 +599,7 @@ class PlatformsPanel extends ConsumerWidget {
       data: (list) => DataTableCard<SocialPlatform>(
         key: const Key('vetting.platforms'),
         rows: list,
-        empty: 'No platforms.',
+        empty: 'The backend offers no social platforms.',
         onTap: (p) => context.go(vettingPlatformPath(wireOf(p.id, p, 'id'))),
         columns: <TableColumnSpec<SocialPlatform>>[
           TableColumnSpec<SocialPlatform>(

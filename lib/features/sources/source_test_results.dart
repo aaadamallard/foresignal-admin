@@ -239,7 +239,7 @@ class FetchLogTable extends StatelessWidget {
   Widget build(BuildContext context) {
     return DataTableCard<FetchLogEntry>(
       rows: entries,
-      empty: 'No fetches recorded yet.',
+      empty: 'No fetches recorded yet. Fetch Now runs one.',
       columns: <TableColumnSpec<FetchLogEntry>>[
         TableColumnSpec<FetchLogEntry>(label: 'Time', cell: (f) => Text(utcText(f.startedAt))),
         TableColumnSpec<FetchLogEntry>(label: 'Trigger', cell: (f) => Text(wireShown(f.trigger, f, 'trigger'))),

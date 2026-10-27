@@ -8,28 +8,33 @@ import 'package:built_value/serializer.dart';
 
 part 'quota.g.dart';
 
-/// Per-user limits so one user cannot exhaust the instance (D5/189); null leaves a limit unset (instance default)
+/// Per-user limits so one user cannot exhaust the instance (D5/189, R2-026). In a user's quota a null member uses the instance default; unset there too it is unlimited. `0` allows nothing.
 ///
 /// Properties:
-/// * [apiRateLimitPerMinute]
-/// * [maxStorageBytes]
-/// * [maxAlerts]
-/// * [maxChannels]
-/// * [maxSavedViews]
+/// * [apiRateLimitPerMinute] - Requests a minute across the user's sessions and own API tokens; over it is 429 RATE_LIMITED
+/// * [maxStorageBytes] - Bytes of uploaded attachments plus the JSON of owned workspaces
+/// * [maxAlerts] - Trigger rules the user owns
+/// * [maxChannels] - Notification channels the user owns
+/// * [maxSavedViews] - Saved views the user owns
 @BuiltValue()
 abstract class Quota implements Built<Quota, QuotaBuilder> {
+  /// Requests a minute across the user's sessions and own API tokens; over it is 429 RATE_LIMITED
   @BuiltValueField(wireName: r'apiRateLimitPerMinute')
   int? get apiRateLimitPerMinute;
 
+  /// Bytes of uploaded attachments plus the JSON of owned workspaces
   @BuiltValueField(wireName: r'maxStorageBytes')
   int? get maxStorageBytes;
 
+  /// Trigger rules the user owns
   @BuiltValueField(wireName: r'maxAlerts')
   int? get maxAlerts;
 
+  /// Notification channels the user owns
   @BuiltValueField(wireName: r'maxChannels')
   int? get maxChannels;
 
+  /// Saved views the user owns
   @BuiltValueField(wireName: r'maxSavedViews')
   int? get maxSavedViews;
 

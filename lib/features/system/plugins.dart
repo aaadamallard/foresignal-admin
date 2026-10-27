@@ -100,7 +100,7 @@ class _PluginsPanelState extends ConsumerState<PluginsPanel> with WriteTracking<
                   DataTableCard<Json>(
                     key: const Key('plugins.table'),
                     rows: plugins,
-                    empty: 'No plugins found.',
+                    empty: 'No parser plugins found. Put a WASM parser under the data directory, then Refresh.',
                     selected: (p) => p['name'] == _selected,
                     onTap: (p) => setState(() => _selected = '${p['name']}'),
                     columns: <TableColumnSpec<Json>>[
