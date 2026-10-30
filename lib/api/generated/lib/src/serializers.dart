@@ -137,6 +137,8 @@ import 'package:foresignal_api/src/model/archive_settings_s3.dart';
 import 'package:foresignal_api/src/model/archive_settings_secrets.dart';
 import 'package:foresignal_api/src/model/ask_action.dart';
 import 'package:foresignal_api/src/model/ask_citation.dart';
+import 'package:foresignal_api/src/model/ask_citation_corroboration.dart';
+import 'package:foresignal_api/src/model/ask_citation_provenance.dart';
 import 'package:foresignal_api/src/model/ask_delta_event.dart';
 import 'package:foresignal_api/src/model/ask_message.dart';
 import 'package:foresignal_api/src/model/ask_progress_event.dart';
@@ -212,11 +214,15 @@ import 'package:foresignal_api/src/model/benchmark_run_page.dart';
 import 'package:foresignal_api/src/model/benchmark_status.dart';
 import 'package:foresignal_api/src/model/benchmark_status_components_inner.dart';
 import 'package:foresignal_api/src/model/benchmark_status_components_inner_gating.dart';
+import 'package:foresignal_api/src/model/breaking_news_config.dart';
 import 'package:foresignal_api/src/model/briefing.dart';
 import 'package:foresignal_api/src/model/briefing_input.dart';
 import 'package:foresignal_api/src/model/briefing_input_audio.dart';
+import 'package:foresignal_api/src/model/briefing_input_site.dart';
 import 'package:foresignal_api/src/model/briefing_run.dart';
 import 'package:foresignal_api/src/model/briefing_run_audio.dart';
+import 'package:foresignal_api/src/model/briefing_run_breaking.dart';
+import 'package:foresignal_api/src/model/briefing_run_delivery_results_inner.dart';
 import 'package:foresignal_api/src/model/briefing_run_page.dart';
 import 'package:foresignal_api/src/model/briefing_scope.dart';
 import 'package:foresignal_api/src/model/budget.dart';
@@ -400,6 +406,7 @@ import 'package:foresignal_api/src/model/declared_observability.dart';
 import 'package:foresignal_api/src/model/declared_observability_kinds_value.dart';
 import 'package:foresignal_api/src/model/declared_observability_kinds_value_area.dart';
 import 'package:foresignal_api/src/model/declared_observability_kinds_value_thresholds_inner.dart';
+import 'package:foresignal_api/src/model/delivery_target.dart';
 import 'package:foresignal_api/src/model/derived_evidence_ref.dart';
 import 'package:foresignal_api/src/model/derived_payload_common.dart';
 import 'package:foresignal_api/src/model/detectability.dart';
@@ -447,6 +454,8 @@ import 'package:foresignal_api/src/model/dossier_sections_overview_links.dart';
 import 'package:foresignal_api/src/model/dossier_sections_related.dart';
 import 'package:foresignal_api/src/model/dossier_sections_timeline.dart';
 import 'package:foresignal_api/src/model/dossier_sections_timeline_items_inner.dart';
+import 'package:foresignal_api/src/model/edition_site.dart';
+import 'package:foresignal_api/src/model/edition_summary.dart';
 import 'package:foresignal_api/src/model/edp_analysis_request.dart';
 import 'package:foresignal_api/src/model/edp_batch.dart';
 import 'package:foresignal_api/src/model/edp_coverage.dart';
@@ -882,6 +891,7 @@ import 'package:foresignal_api/src/model/legend.dart';
 import 'package:foresignal_api/src/model/legend_tick.dart';
 import 'package:foresignal_api/src/model/licence_terms.dart';
 import 'package:foresignal_api/src/model/lightning_cluster_payload.dart';
+import 'package:foresignal_api/src/model/list_my_editions200_response.dart';
 import 'package:foresignal_api/src/model/list_records200_response.dart';
 import 'package:foresignal_api/src/model/live_event.dart';
 import 'package:foresignal_api/src/model/llm_budget_provider.dart';
@@ -992,9 +1002,13 @@ import 'package:foresignal_api/src/model/network_salt_input.dart';
 import 'package:foresignal_api/src/model/network_salt_status.dart';
 import 'package:foresignal_api/src/model/news_article.dart';
 import 'package:foresignal_api/src/model/news_article_page.dart';
+import 'package:foresignal_api/src/model/news_article_translation_provenance.dart';
 import 'package:foresignal_api/src/model/news_story.dart';
 import 'package:foresignal_api/src/model/news_story_outlets_inner.dart';
 import 'package:foresignal_api/src/model/news_story_page.dart';
+import 'package:foresignal_api/src/model/news_subscription.dart';
+import 'package:foresignal_api/src/model/news_subscription_update.dart';
+import 'package:foresignal_api/src/model/news_subscription_view.dart';
 import 'package:foresignal_api/src/model/normalized_record_preview.dart';
 import 'package:foresignal_api/src/model/normalized_record_preview_geometry.dart';
 import 'package:foresignal_api/src/model/notification.dart';
@@ -1733,6 +1747,9 @@ import 'package:foresignal_api/src/model/track.dart';
 import 'package:foresignal_api/src/model/track_properties.dart';
 import 'package:foresignal_api/src/model/transit_catalog_entry.dart';
 import 'package:foresignal_api/src/model/transit_catalog_page.dart';
+import 'package:foresignal_api/src/model/translation_settings.dart';
+import 'package:foresignal_api/src/model/translation_settings_input.dart';
+import 'package:foresignal_api/src/model/translation_settings_input_budget.dart';
 import 'package:foresignal_api/src/model/trigger_rule.dart';
 import 'package:foresignal_api/src/model/trigger_rule_feedback_counts.dart';
 import 'package:foresignal_api/src/model/trigger_rule_input.dart';
@@ -1945,6 +1962,8 @@ part 'serializers.g.dart';
   ArchiveSettingsSecrets,
   AskAction,
   AskCitation,
+  AskCitationCorroboration,
+  AskCitationProvenance,
   AskDeltaEvent,
   AskMessage,
   AskProgressEvent,
@@ -2020,11 +2039,15 @@ part 'serializers.g.dart';
   BenchmarkStatus,
   BenchmarkStatusComponentsInner,
   BenchmarkStatusComponentsInnerGating,
+  BreakingNewsConfig,
   Briefing,
   BriefingInput,
   BriefingInputAudio,
+  BriefingInputSite,
   BriefingRun,
   BriefingRunAudio,
+  BriefingRunBreaking,
+  BriefingRunDeliveryResultsInner,
   BriefingRunPage,
   BriefingScope,
   Budget,
@@ -2209,6 +2232,7 @@ part 'serializers.g.dart';
   DeclaredObservabilityKindsValue,
   DeclaredObservabilityKindsValueArea,
   DeclaredObservabilityKindsValueThresholdsInner,
+  DeliveryTarget,
   DerivedEvidenceRef,
   DerivedPayloadCommon,
   Detectability,
@@ -2256,6 +2280,8 @@ part 'serializers.g.dart';
   DossierSectionsRelated,
   DossierSectionsTimeline,
   DossierSectionsTimelineItemsInner,
+  EditionSite,
+  EditionSummary,
   EdpAnalysisRequest,
   EdpBatch,
   EdpCoverage,
@@ -2691,6 +2717,7 @@ part 'serializers.g.dart';
   LegendTick,
   LicenceTerms,
   LightningClusterPayload,
+  ListMyEditions200Response,
   ListRecords200Response,
   LiveEvent,
   LlmBudgetProvider,
@@ -2801,9 +2828,13 @@ part 'serializers.g.dart';
   NetworkSaltStatus,
   NewsArticle,
   NewsArticlePage,
+  NewsArticleTranslationProvenance,
   NewsStory,
   NewsStoryOutletsInner,
   NewsStoryPage,
+  NewsSubscription,
+  NewsSubscriptionUpdate,
+  NewsSubscriptionView,
   NormalizedRecordPreview,
   NormalizedRecordPreviewGeometry,
   Notification,
@@ -3542,6 +3573,9 @@ part 'serializers.g.dart';
   TrackProperties,
   TransitCatalogEntry,
   TransitCatalogPage,
+  TranslationSettings,
+  TranslationSettingsInput,
+  TranslationSettingsInputBudget,
   TriggerRule,
   TriggerRuleFeedbackCounts,
   TriggerRuleInput,
@@ -4073,6 +4107,10 @@ Serializers serializers =
             () => ListBuilder<EdpSuggestedBinding>(),
           )
           ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(EditionSummary)]),
+            () => ListBuilder<EditionSummary>(),
+          )
+          ..addBuilderFactory(
             const FullType(BuiltList, [FullType(FieldThreshold)]),
             () => ListBuilder<FieldThreshold>(),
           )
@@ -4126,6 +4164,10 @@ Serializers serializers =
             () => ListBuilder<BuiltList<num>>(),
           )
           ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(NewsSubscription)]),
+            () => ListBuilder<NewsSubscription>(),
+          )
+          ..addBuilderFactory(
             const FullType(BuiltList, [FullType(AnomalyBaselineSlot)]),
             () => ListBuilder<AnomalyBaselineSlot>(),
           )
@@ -4156,6 +4198,10 @@ Serializers serializers =
           ..addBuilderFactory(
             const FullType(BuiltList, [FullType(WatchPair)]),
             () => ListBuilder<WatchPair>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(DeliveryTarget)]),
+            () => ListBuilder<DeliveryTarget>(),
           )
           ..addBuilderFactory(
             const FullType(BuiltList, [FullType(Indicator)]),
@@ -4666,6 +4712,12 @@ Serializers serializers =
           ..addBuilderFactory(
             const FullType(BuiltList, [FullType(ObjectAction)]),
             () => ListBuilder<ObjectAction>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [
+              FullType(BriefingRunDeliveryResultsInner),
+            ]),
+            () => ListBuilder<BriefingRunDeliveryResultsInner>(),
           )
           ..addBuilderFactory(
             const FullType(BuiltList, [FullType(Feature)]),

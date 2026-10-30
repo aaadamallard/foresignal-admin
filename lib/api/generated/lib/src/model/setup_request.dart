@@ -18,7 +18,7 @@ part 'setup_request.g.dart';
 /// Properties:
 /// * [admin]
 /// * [smtp]
-/// * [sources] - Source ids to enable in the collection set
+/// * [sources] - Source ids to enable in the collection set; each must be a registered source
 /// * [thresholds]
 /// * [retention] - Optional retention policy to seed
 @BuiltValue()
@@ -30,7 +30,7 @@ abstract class SetupRequest
   @BuiltValueField(wireName: r'smtp')
   SmtpSettingsInput? get smtp;
 
-  /// Source ids to enable in the collection set
+  /// Source ids to enable in the collection set; each must be a registered source
   @BuiltValueField(wireName: r'sources')
   BuiltList<String>? get sources;
 

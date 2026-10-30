@@ -8,12 +8,14 @@ import 'package:foresignal_api/src/model/problem_references.dart';
 import 'package:foresignal_api/src/model/ask_action.dart';
 import 'package:foresignal_api/src/model/ask_delta_event.dart';
 import 'package:foresignal_api/src/model/ask_response_usage.dart';
-import 'package:built_collection/built_collection.dart';
 import 'package:foresignal_api/src/model/ask_citation.dart';
 import 'package:foresignal_api/src/model/ask_progress_event.dart';
+import 'package:foresignal_api/src/model/ask_citation_corroboration.dart';
+import 'package:foresignal_api/src/model/ask_response.dart';
+import 'package:foresignal_api/src/model/ask_citation_provenance.dart';
+import 'package:built_collection/built_collection.dart';
 import 'package:foresignal_api/src/model/ask_warning_event.dart';
 import 'package:foresignal_api/src/model/problem.dart';
-import 'package:foresignal_api/src/model/ask_response.dart';
 import 'package:built_value/json_object.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
@@ -38,6 +40,8 @@ part 'ask_stream200_response.g.dart';
 /// * [step]
 /// * [validTime]
 /// * [ageMinutes]
+/// * [provenance]
+/// * [corroboration]
 /// * [message]
 /// * [description]
 /// * [payload]

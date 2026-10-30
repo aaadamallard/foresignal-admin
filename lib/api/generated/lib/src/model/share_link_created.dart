@@ -42,7 +42,7 @@ abstract class ShareLinkCreated
 
   @BuiltValueField(wireName: r'targetType')
   ShareLinkCreatedTargetTypeEnum get targetType;
-  // enum targetTypeEnum {  record,  alert,  view,  track,  briefing-run,  export,  workspace,  report,  };
+  // enum targetTypeEnum {  record,  alert,  view,  track,  briefing-run,  export,  workspace,  report,  edition-site,  };
 
   @BuiltValueField(wireName: r'targetRef')
   String get targetRef;
@@ -456,6 +456,9 @@ class ShareLinkCreatedTargetTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'report')
   static const ShareLinkCreatedTargetTypeEnum report =
       _$shareLinkCreatedTargetTypeEnum_report;
+  @BuiltValueEnumConst(wireName: r'edition-site')
+  static const ShareLinkCreatedTargetTypeEnum editionSite =
+      _$shareLinkCreatedTargetTypeEnum_editionSite;
   @BuiltValueEnumConst(wireName: r'unknown_default_open_api', fallback: true)
   static const ShareLinkCreatedTargetTypeEnum unknownDefaultOpenApi =
       _$shareLinkCreatedTargetTypeEnum_unknownDefaultOpenApi;

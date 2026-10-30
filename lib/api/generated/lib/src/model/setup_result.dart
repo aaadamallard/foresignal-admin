@@ -14,13 +14,13 @@ part 'setup_result.g.dart';
 ///
 /// Properties:
 /// * [user]
-/// * [session] - A session for the new admin, when issued
+/// * [session] - A session for the new admin; null only if the sign-in asked for a second factor
 @BuiltValue()
 abstract class SetupResult implements Built<SetupResult, SetupResultBuilder> {
   @BuiltValueField(wireName: r'user')
   User get user;
 
-  /// A session for the new admin, when issued
+  /// A session for the new admin; null only if the sign-in asked for a second factor
   @BuiltValueField(wireName: r'session')
   SessionToken? get session;
 

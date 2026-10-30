@@ -25,6 +25,9 @@ _$shareLinkCreatedTargetTypeEnum_workspace =
 const ShareLinkCreatedTargetTypeEnum _$shareLinkCreatedTargetTypeEnum_report =
     const ShareLinkCreatedTargetTypeEnum._('report');
 const ShareLinkCreatedTargetTypeEnum
+_$shareLinkCreatedTargetTypeEnum_editionSite =
+    const ShareLinkCreatedTargetTypeEnum._('editionSite');
+const ShareLinkCreatedTargetTypeEnum
 _$shareLinkCreatedTargetTypeEnum_unknownDefaultOpenApi =
     const ShareLinkCreatedTargetTypeEnum._('unknownDefaultOpenApi');
 
@@ -48,6 +51,8 @@ ShareLinkCreatedTargetTypeEnum _$shareLinkCreatedTargetTypeEnumValueOf(
       return _$shareLinkCreatedTargetTypeEnum_workspace;
     case 'report':
       return _$shareLinkCreatedTargetTypeEnum_report;
+    case 'editionSite':
+      return _$shareLinkCreatedTargetTypeEnum_editionSite;
     case 'unknownDefaultOpenApi':
       return _$shareLinkCreatedTargetTypeEnum_unknownDefaultOpenApi;
     default:
@@ -67,6 +72,7 @@ _$shareLinkCreatedTargetTypeEnumValues =
         _$shareLinkCreatedTargetTypeEnum_export_,
         _$shareLinkCreatedTargetTypeEnum_workspace,
         _$shareLinkCreatedTargetTypeEnum_report,
+        _$shareLinkCreatedTargetTypeEnum_editionSite,
         _$shareLinkCreatedTargetTypeEnum_unknownDefaultOpenApi,
       ],
     );
@@ -126,6 +132,7 @@ class _$ShareLinkCreatedTargetTypeEnumSerializer
     'export_': 'export',
     'workspace': 'workspace',
     'report': 'report',
+    'editionSite': 'edition-site',
     'unknownDefaultOpenApi': 'unknown_default_open_api',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
@@ -137,6 +144,7 @@ class _$ShareLinkCreatedTargetTypeEnumSerializer
     'export': 'export_',
     'workspace': 'workspace',
     'report': 'report',
+    'edition-site': 'editionSite',
     'unknown_default_open_api': 'unknownDefaultOpenApi',
   };
 

@@ -106,6 +106,10 @@ class _$AskCitation extends AskCitation {
   final DateTime? validTime;
   @override
   final num? ageMinutes;
+  @override
+  final AskCitationProvenance? provenance;
+  @override
+  final AskCitationCorroboration? corroboration;
 
   factory _$AskCitation([void Function(AskCitationBuilder)? updates]) =>
       (AskCitationBuilder()..update(updates))._build();
@@ -121,6 +125,8 @@ class _$AskCitation extends AskCitation {
     this.step,
     this.validTime,
     this.ageMinutes,
+    this.provenance,
+    this.corroboration,
   }) : super._();
   @override
   AskCitation rebuild(void Function(AskCitationBuilder) updates) =>
@@ -142,7 +148,9 @@ class _$AskCitation extends AskCitation {
         run == other.run &&
         step == other.step &&
         validTime == other.validTime &&
-        ageMinutes == other.ageMinutes;
+        ageMinutes == other.ageMinutes &&
+        provenance == other.provenance &&
+        corroboration == other.corroboration;
   }
 
   @override
@@ -158,6 +166,8 @@ class _$AskCitation extends AskCitation {
     _$hash = $jc(_$hash, step.hashCode);
     _$hash = $jc(_$hash, validTime.hashCode);
     _$hash = $jc(_$hash, ageMinutes.hashCode);
+    _$hash = $jc(_$hash, provenance.hashCode);
+    _$hash = $jc(_$hash, corroboration.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -174,7 +184,9 @@ class _$AskCitation extends AskCitation {
           ..add('run', run)
           ..add('step', step)
           ..add('validTime', validTime)
-          ..add('ageMinutes', ageMinutes))
+          ..add('ageMinutes', ageMinutes)
+          ..add('provenance', provenance)
+          ..add('corroboration', corroboration))
         .toString();
   }
 }
@@ -222,6 +234,18 @@ class AskCitationBuilder implements Builder<AskCitation, AskCitationBuilder> {
   num? get ageMinutes => _$this._ageMinutes;
   set ageMinutes(num? ageMinutes) => _$this._ageMinutes = ageMinutes;
 
+  AskCitationProvenanceBuilder? _provenance;
+  AskCitationProvenanceBuilder get provenance =>
+      _$this._provenance ??= AskCitationProvenanceBuilder();
+  set provenance(AskCitationProvenanceBuilder? provenance) =>
+      _$this._provenance = provenance;
+
+  AskCitationCorroborationBuilder? _corroboration;
+  AskCitationCorroborationBuilder get corroboration =>
+      _$this._corroboration ??= AskCitationCorroborationBuilder();
+  set corroboration(AskCitationCorroborationBuilder? corroboration) =>
+      _$this._corroboration = corroboration;
+
   AskCitationBuilder() {
     AskCitation._defaults(this);
   }
@@ -239,6 +263,8 @@ class AskCitationBuilder implements Builder<AskCitation, AskCitationBuilder> {
       _step = $v.step;
       _validTime = $v.validTime;
       _ageMinutes = $v.ageMinutes;
+      _provenance = $v.provenance?.toBuilder();
+      _corroboration = $v.corroboration?.toBuilder();
       _$v = null;
     }
     return this;
@@ -258,24 +284,44 @@ class AskCitationBuilder implements Builder<AskCitation, AskCitationBuilder> {
   AskCitation build() => _build();
 
   _$AskCitation _build() {
-    final _$result =
-        _$v ??
-        _$AskCitation._(
-          id: BuiltValueNullFieldError.checkNotNull(id, r'AskCitation', 'id'),
-          seq: seq,
-          title: BuiltValueNullFieldError.checkNotNull(
-            title,
-            r'AskCitation',
-            'title',
-          ),
-          type: type,
-          productId: productId,
-          frameKey: frameKey,
-          run: run,
-          step: step,
-          validTime: validTime,
-          ageMinutes: ageMinutes,
+    _$AskCitation _$result;
+    try {
+      _$result =
+          _$v ??
+          _$AskCitation._(
+            id: BuiltValueNullFieldError.checkNotNull(id, r'AskCitation', 'id'),
+            seq: seq,
+            title: BuiltValueNullFieldError.checkNotNull(
+              title,
+              r'AskCitation',
+              'title',
+            ),
+            type: type,
+            productId: productId,
+            frameKey: frameKey,
+            run: run,
+            step: step,
+            validTime: validTime,
+            ageMinutes: ageMinutes,
+            provenance: _provenance?.build(),
+            corroboration: _corroboration?.build(),
+          );
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'provenance';
+        _provenance?.build();
+        _$failedField = 'corroboration';
+        _corroboration?.build();
+      } catch (e) {
+        throw BuiltValueNestedFieldError(
+          r'AskCitation',
+          _$failedField,
+          e.toString(),
         );
+      }
+      rethrow;
+    }
     replace(_$result);
     return _$result;
   }

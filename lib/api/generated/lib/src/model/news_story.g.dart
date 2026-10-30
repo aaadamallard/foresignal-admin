@@ -108,6 +108,14 @@ class _$NewsStory extends NewsStory {
   final BuiltList<ObjectEnvelope>? situations;
   @override
   final BuiltList<ObjectEnvelope>? canonicalEvents;
+  @override
+  final String? targetLanguage;
+  @override
+  final String? translatedTitle;
+  @override
+  final String? translatedExcerpt;
+  @override
+  final NewsArticleTranslationProvenance? translationProvenance;
 
   factory _$NewsStory([void Function(NewsStoryBuilder)? updates]) =>
       (NewsStoryBuilder()..update(updates))._build();
@@ -131,6 +139,10 @@ class _$NewsStory extends NewsStory {
     this.outlets,
     this.situations,
     this.canonicalEvents,
+    this.targetLanguage,
+    this.translatedTitle,
+    this.translatedExcerpt,
+    this.translationProvenance,
   }) : super._();
   @override
   NewsStory rebuild(void Function(NewsStoryBuilder) updates) =>
@@ -160,7 +172,11 @@ class _$NewsStory extends NewsStory {
         situationIds == other.situationIds &&
         outlets == other.outlets &&
         situations == other.situations &&
-        canonicalEvents == other.canonicalEvents;
+        canonicalEvents == other.canonicalEvents &&
+        targetLanguage == other.targetLanguage &&
+        translatedTitle == other.translatedTitle &&
+        translatedExcerpt == other.translatedExcerpt &&
+        translationProvenance == other.translationProvenance;
   }
 
   @override
@@ -184,6 +200,10 @@ class _$NewsStory extends NewsStory {
     _$hash = $jc(_$hash, outlets.hashCode);
     _$hash = $jc(_$hash, situations.hashCode);
     _$hash = $jc(_$hash, canonicalEvents.hashCode);
+    _$hash = $jc(_$hash, targetLanguage.hashCode);
+    _$hash = $jc(_$hash, translatedTitle.hashCode);
+    _$hash = $jc(_$hash, translatedExcerpt.hashCode);
+    _$hash = $jc(_$hash, translationProvenance.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -208,7 +228,11 @@ class _$NewsStory extends NewsStory {
           ..add('situationIds', situationIds)
           ..add('outlets', outlets)
           ..add('situations', situations)
-          ..add('canonicalEvents', canonicalEvents))
+          ..add('canonicalEvents', canonicalEvents)
+          ..add('targetLanguage', targetLanguage)
+          ..add('translatedTitle', translatedTitle)
+          ..add('translatedExcerpt', translatedExcerpt)
+          ..add('translationProvenance', translationProvenance))
         .toString();
   }
 }
@@ -303,6 +327,29 @@ class NewsStoryBuilder implements Builder<NewsStory, NewsStoryBuilder> {
   set canonicalEvents(ListBuilder<ObjectEnvelope>? canonicalEvents) =>
       _$this._canonicalEvents = canonicalEvents;
 
+  String? _targetLanguage;
+  String? get targetLanguage => _$this._targetLanguage;
+  set targetLanguage(String? targetLanguage) =>
+      _$this._targetLanguage = targetLanguage;
+
+  String? _translatedTitle;
+  String? get translatedTitle => _$this._translatedTitle;
+  set translatedTitle(String? translatedTitle) =>
+      _$this._translatedTitle = translatedTitle;
+
+  String? _translatedExcerpt;
+  String? get translatedExcerpt => _$this._translatedExcerpt;
+  set translatedExcerpt(String? translatedExcerpt) =>
+      _$this._translatedExcerpt = translatedExcerpt;
+
+  NewsArticleTranslationProvenanceBuilder? _translationProvenance;
+  NewsArticleTranslationProvenanceBuilder get translationProvenance =>
+      _$this._translationProvenance ??=
+          NewsArticleTranslationProvenanceBuilder();
+  set translationProvenance(
+    NewsArticleTranslationProvenanceBuilder? translationProvenance,
+  ) => _$this._translationProvenance = translationProvenance;
+
   NewsStoryBuilder() {
     NewsStory._defaults(this);
   }
@@ -328,6 +375,10 @@ class NewsStoryBuilder implements Builder<NewsStory, NewsStoryBuilder> {
       _outlets = $v.outlets?.toBuilder();
       _situations = $v.situations?.toBuilder();
       _canonicalEvents = $v.canonicalEvents?.toBuilder();
+      _targetLanguage = $v.targetLanguage;
+      _translatedTitle = $v.translatedTitle;
+      _translatedExcerpt = $v.translatedExcerpt;
+      _translationProvenance = $v.translationProvenance?.toBuilder();
       _$v = null;
     }
     return this;
@@ -402,6 +453,10 @@ class NewsStoryBuilder implements Builder<NewsStory, NewsStoryBuilder> {
             outlets: _outlets?.build(),
             situations: _situations?.build(),
             canonicalEvents: _canonicalEvents?.build(),
+            targetLanguage: targetLanguage,
+            translatedTitle: translatedTitle,
+            translatedExcerpt: translatedExcerpt,
+            translationProvenance: _translationProvenance?.build(),
           );
     } catch (_) {
       late String _$failedField;
@@ -421,6 +476,9 @@ class NewsStoryBuilder implements Builder<NewsStory, NewsStoryBuilder> {
         _situations?.build();
         _$failedField = 'canonicalEvents';
         _canonicalEvents?.build();
+
+        _$failedField = 'translationProvenance';
+        _translationProvenance?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
           r'NewsStory',

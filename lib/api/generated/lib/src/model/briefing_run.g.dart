@@ -184,6 +184,10 @@ class _$BriefingRun extends BriefingRun {
   final String? signature;
   @override
   final BriefingRunAudio? audio;
+  @override
+  final BuiltList<BriefingRunDeliveryResultsInner>? deliveryResults;
+  @override
+  final BriefingRunBreaking? breaking;
 
   factory _$BriefingRun([void Function(BriefingRunBuilder)? updates]) =>
       (BriefingRunBuilder()..update(updates))._build();
@@ -206,6 +210,8 @@ class _$BriefingRun extends BriefingRun {
     this.warnings,
     this.signature,
     this.audio,
+    this.deliveryResults,
+    this.breaking,
   }) : super._();
   @override
   BriefingRun rebuild(void Function(BriefingRunBuilder) updates) =>
@@ -234,7 +240,9 @@ class _$BriefingRun extends BriefingRun {
         deliveries == other.deliveries &&
         warnings == other.warnings &&
         signature == other.signature &&
-        audio == other.audio;
+        audio == other.audio &&
+        deliveryResults == other.deliveryResults &&
+        breaking == other.breaking;
   }
 
   @override
@@ -257,6 +265,8 @@ class _$BriefingRun extends BriefingRun {
     _$hash = $jc(_$hash, warnings.hashCode);
     _$hash = $jc(_$hash, signature.hashCode);
     _$hash = $jc(_$hash, audio.hashCode);
+    _$hash = $jc(_$hash, deliveryResults.hashCode);
+    _$hash = $jc(_$hash, breaking.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -280,7 +290,9 @@ class _$BriefingRun extends BriefingRun {
           ..add('deliveries', deliveries)
           ..add('warnings', warnings)
           ..add('signature', signature)
-          ..add('audio', audio))
+          ..add('audio', audio)
+          ..add('deliveryResults', deliveryResults)
+          ..add('breaking', breaking))
         .toString();
   }
 }
@@ -362,6 +374,20 @@ class BriefingRunBuilder implements Builder<BriefingRun, BriefingRunBuilder> {
       _$this._audio ??= BriefingRunAudioBuilder();
   set audio(BriefingRunAudioBuilder? audio) => _$this._audio = audio;
 
+  ListBuilder<BriefingRunDeliveryResultsInner>? _deliveryResults;
+  ListBuilder<BriefingRunDeliveryResultsInner> get deliveryResults =>
+      _$this._deliveryResults ??=
+          ListBuilder<BriefingRunDeliveryResultsInner>();
+  set deliveryResults(
+    ListBuilder<BriefingRunDeliveryResultsInner>? deliveryResults,
+  ) => _$this._deliveryResults = deliveryResults;
+
+  BriefingRunBreakingBuilder? _breaking;
+  BriefingRunBreakingBuilder get breaking =>
+      _$this._breaking ??= BriefingRunBreakingBuilder();
+  set breaking(BriefingRunBreakingBuilder? breaking) =>
+      _$this._breaking = breaking;
+
   BriefingRunBuilder() {
     BriefingRun._defaults(this);
   }
@@ -386,6 +412,8 @@ class BriefingRunBuilder implements Builder<BriefingRun, BriefingRunBuilder> {
       _warnings = $v.warnings?.toBuilder();
       _signature = $v.signature;
       _audio = $v.audio?.toBuilder();
+      _deliveryResults = $v.deliveryResults?.toBuilder();
+      _breaking = $v.breaking?.toBuilder();
       _$v = null;
     }
     return this;
@@ -447,6 +475,8 @@ class BriefingRunBuilder implements Builder<BriefingRun, BriefingRunBuilder> {
             warnings: _warnings?.build(),
             signature: signature,
             audio: _audio?.build(),
+            deliveryResults: _deliveryResults?.build(),
+            breaking: _breaking?.build(),
           );
     } catch (_) {
       late String _$failedField;
@@ -464,6 +494,10 @@ class BriefingRunBuilder implements Builder<BriefingRun, BriefingRunBuilder> {
 
         _$failedField = 'audio';
         _audio?.build();
+        _$failedField = 'deliveryResults';
+        _deliveryResults?.build();
+        _$failedField = 'breaking';
+        _breaking?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
           r'BriefingRun',

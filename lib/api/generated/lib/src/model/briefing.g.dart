@@ -95,6 +95,18 @@ class _$Briefing extends Briefing {
   @override
   final BriefingInputAudio? audio;
   @override
+  final String? outputLanguage;
+  @override
+  final BuiltList<DeliveryTarget>? deliveryTargets;
+  @override
+  final BriefingInputSite? site;
+  @override
+  final BreakingNewsConfig? breakingNews;
+  @override
+  final bool? includeProvenance;
+  @override
+  final bool? includeCorroboration;
+  @override
   final String id;
   @override
   final DateTime createdAt;
@@ -108,6 +120,8 @@ class _$Briefing extends Briefing {
   final String? lastRunStatus;
   @override
   final BuiltList<String>? warnings;
+  @override
+  final String? ownerUserId;
 
   factory _$Briefing([void Function(BriefingBuilder)? updates]) =>
       (BriefingBuilder()..update(updates))._build();
@@ -124,6 +138,12 @@ class _$Briefing extends Briefing {
     this.channelIds,
     this.maxItemsPerKind,
     this.audio,
+    this.outputLanguage,
+    this.deliveryTargets,
+    this.site,
+    this.breakingNews,
+    this.includeProvenance,
+    this.includeCorroboration,
     required this.id,
     required this.createdAt,
     this.updatedAt,
@@ -131,6 +151,7 @@ class _$Briefing extends Briefing {
     this.lastRunAt,
     this.lastRunStatus,
     this.warnings,
+    this.ownerUserId,
   }) : super._();
   @override
   Briefing rebuild(void Function(BriefingBuilder) updates) =>
@@ -154,13 +175,20 @@ class _$Briefing extends Briefing {
         channelIds == other.channelIds &&
         maxItemsPerKind == other.maxItemsPerKind &&
         audio == other.audio &&
+        outputLanguage == other.outputLanguage &&
+        deliveryTargets == other.deliveryTargets &&
+        site == other.site &&
+        breakingNews == other.breakingNews &&
+        includeProvenance == other.includeProvenance &&
+        includeCorroboration == other.includeCorroboration &&
         id == other.id &&
         createdAt == other.createdAt &&
         updatedAt == other.updatedAt &&
         nextRunAt == other.nextRunAt &&
         lastRunAt == other.lastRunAt &&
         lastRunStatus == other.lastRunStatus &&
-        warnings == other.warnings;
+        warnings == other.warnings &&
+        ownerUserId == other.ownerUserId;
   }
 
   @override
@@ -177,6 +205,12 @@ class _$Briefing extends Briefing {
     _$hash = $jc(_$hash, channelIds.hashCode);
     _$hash = $jc(_$hash, maxItemsPerKind.hashCode);
     _$hash = $jc(_$hash, audio.hashCode);
+    _$hash = $jc(_$hash, outputLanguage.hashCode);
+    _$hash = $jc(_$hash, deliveryTargets.hashCode);
+    _$hash = $jc(_$hash, site.hashCode);
+    _$hash = $jc(_$hash, breakingNews.hashCode);
+    _$hash = $jc(_$hash, includeProvenance.hashCode);
+    _$hash = $jc(_$hash, includeCorroboration.hashCode);
     _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jc(_$hash, createdAt.hashCode);
     _$hash = $jc(_$hash, updatedAt.hashCode);
@@ -184,6 +218,7 @@ class _$Briefing extends Briefing {
     _$hash = $jc(_$hash, lastRunAt.hashCode);
     _$hash = $jc(_$hash, lastRunStatus.hashCode);
     _$hash = $jc(_$hash, warnings.hashCode);
+    _$hash = $jc(_$hash, ownerUserId.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -202,13 +237,20 @@ class _$Briefing extends Briefing {
           ..add('channelIds', channelIds)
           ..add('maxItemsPerKind', maxItemsPerKind)
           ..add('audio', audio)
+          ..add('outputLanguage', outputLanguage)
+          ..add('deliveryTargets', deliveryTargets)
+          ..add('site', site)
+          ..add('breakingNews', breakingNews)
+          ..add('includeProvenance', includeProvenance)
+          ..add('includeCorroboration', includeCorroboration)
           ..add('id', id)
           ..add('createdAt', createdAt)
           ..add('updatedAt', updatedAt)
           ..add('nextRunAt', nextRunAt)
           ..add('lastRunAt', lastRunAt)
           ..add('lastRunStatus', lastRunStatus)
-          ..add('warnings', warnings))
+          ..add('warnings', warnings)
+          ..add('ownerUserId', ownerUserId))
         .toString();
   }
 }
@@ -264,6 +306,38 @@ class BriefingBuilder implements Builder<Briefing, BriefingBuilder> {
       _$this._audio ??= BriefingInputAudioBuilder();
   set audio(BriefingInputAudioBuilder? audio) => _$this._audio = audio;
 
+  String? _outputLanguage;
+  String? get outputLanguage => _$this._outputLanguage;
+  set outputLanguage(String? outputLanguage) =>
+      _$this._outputLanguage = outputLanguage;
+
+  ListBuilder<DeliveryTarget>? _deliveryTargets;
+  ListBuilder<DeliveryTarget> get deliveryTargets =>
+      _$this._deliveryTargets ??= ListBuilder<DeliveryTarget>();
+  set deliveryTargets(ListBuilder<DeliveryTarget>? deliveryTargets) =>
+      _$this._deliveryTargets = deliveryTargets;
+
+  BriefingInputSiteBuilder? _site;
+  BriefingInputSiteBuilder get site =>
+      _$this._site ??= BriefingInputSiteBuilder();
+  set site(BriefingInputSiteBuilder? site) => _$this._site = site;
+
+  BreakingNewsConfigBuilder? _breakingNews;
+  BreakingNewsConfigBuilder get breakingNews =>
+      _$this._breakingNews ??= BreakingNewsConfigBuilder();
+  set breakingNews(BreakingNewsConfigBuilder? breakingNews) =>
+      _$this._breakingNews = breakingNews;
+
+  bool? _includeProvenance;
+  bool? get includeProvenance => _$this._includeProvenance;
+  set includeProvenance(bool? includeProvenance) =>
+      _$this._includeProvenance = includeProvenance;
+
+  bool? _includeCorroboration;
+  bool? get includeCorroboration => _$this._includeCorroboration;
+  set includeCorroboration(bool? includeCorroboration) =>
+      _$this._includeCorroboration = includeCorroboration;
+
   String? _id;
   String? get id => _$this._id;
   set id(String? id) => _$this._id = id;
@@ -294,6 +368,10 @@ class BriefingBuilder implements Builder<Briefing, BriefingBuilder> {
       _$this._warnings ??= ListBuilder<String>();
   set warnings(ListBuilder<String>? warnings) => _$this._warnings = warnings;
 
+  String? _ownerUserId;
+  String? get ownerUserId => _$this._ownerUserId;
+  set ownerUserId(String? ownerUserId) => _$this._ownerUserId = ownerUserId;
+
   BriefingBuilder() {
     Briefing._defaults(this);
   }
@@ -312,6 +390,12 @@ class BriefingBuilder implements Builder<Briefing, BriefingBuilder> {
       _channelIds = $v.channelIds?.toBuilder();
       _maxItemsPerKind = $v.maxItemsPerKind;
       _audio = $v.audio?.toBuilder();
+      _outputLanguage = $v.outputLanguage;
+      _deliveryTargets = $v.deliveryTargets?.toBuilder();
+      _site = $v.site?.toBuilder();
+      _breakingNews = $v.breakingNews?.toBuilder();
+      _includeProvenance = $v.includeProvenance;
+      _includeCorroboration = $v.includeCorroboration;
       _id = $v.id;
       _createdAt = $v.createdAt;
       _updatedAt = $v.updatedAt;
@@ -319,6 +403,7 @@ class BriefingBuilder implements Builder<Briefing, BriefingBuilder> {
       _lastRunAt = $v.lastRunAt;
       _lastRunStatus = $v.lastRunStatus;
       _warnings = $v.warnings?.toBuilder();
+      _ownerUserId = $v.ownerUserId;
       _$v = null;
     }
     return this;
@@ -362,6 +447,12 @@ class BriefingBuilder implements Builder<Briefing, BriefingBuilder> {
             channelIds: _channelIds?.build(),
             maxItemsPerKind: maxItemsPerKind,
             audio: _audio?.build(),
+            outputLanguage: outputLanguage,
+            deliveryTargets: _deliveryTargets?.build(),
+            site: _site?.build(),
+            breakingNews: _breakingNews?.build(),
+            includeProvenance: includeProvenance,
+            includeCorroboration: includeCorroboration,
             id: BuiltValueNullFieldError.checkNotNull(id, r'Briefing', 'id'),
             createdAt: BuiltValueNullFieldError.checkNotNull(
               createdAt,
@@ -373,6 +464,7 @@ class BriefingBuilder implements Builder<Briefing, BriefingBuilder> {
             lastRunAt: lastRunAt,
             lastRunStatus: lastRunStatus,
             warnings: _warnings?.build(),
+            ownerUserId: ownerUserId,
           );
     } catch (_) {
       late String _$failedField;
@@ -385,6 +477,13 @@ class BriefingBuilder implements Builder<Briefing, BriefingBuilder> {
 
         _$failedField = 'audio';
         _audio?.build();
+
+        _$failedField = 'deliveryTargets';
+        _deliveryTargets?.build();
+        _$failedField = 'site';
+        _site?.build();
+        _$failedField = 'breakingNews';
+        _breakingNews?.build();
 
         _$failedField = 'warnings';
         _warnings?.build();

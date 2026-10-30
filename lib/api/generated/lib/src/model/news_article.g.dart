@@ -43,6 +43,14 @@ class _$NewsArticle extends NewsArticle {
   final bool? syndicated;
   @override
   final String sourceId;
+  @override
+  final String? targetLanguage;
+  @override
+  final String? translatedTitle;
+  @override
+  final String? translatedExcerpt;
+  @override
+  final NewsArticleTranslationProvenance? translationProvenance;
 
   factory _$NewsArticle([void Function(NewsArticleBuilder)? updates]) =>
       (NewsArticleBuilder()..update(updates))._build();
@@ -66,6 +74,10 @@ class _$NewsArticle extends NewsArticle {
     this.evidenceGroupId,
     this.syndicated,
     required this.sourceId,
+    this.targetLanguage,
+    this.translatedTitle,
+    this.translatedExcerpt,
+    this.translationProvenance,
   }) : super._();
   @override
   NewsArticle rebuild(void Function(NewsArticleBuilder) updates) =>
@@ -95,7 +107,11 @@ class _$NewsArticle extends NewsArticle {
         storyId == other.storyId &&
         evidenceGroupId == other.evidenceGroupId &&
         syndicated == other.syndicated &&
-        sourceId == other.sourceId;
+        sourceId == other.sourceId &&
+        targetLanguage == other.targetLanguage &&
+        translatedTitle == other.translatedTitle &&
+        translatedExcerpt == other.translatedExcerpt &&
+        translationProvenance == other.translationProvenance;
   }
 
   @override
@@ -119,6 +135,10 @@ class _$NewsArticle extends NewsArticle {
     _$hash = $jc(_$hash, evidenceGroupId.hashCode);
     _$hash = $jc(_$hash, syndicated.hashCode);
     _$hash = $jc(_$hash, sourceId.hashCode);
+    _$hash = $jc(_$hash, targetLanguage.hashCode);
+    _$hash = $jc(_$hash, translatedTitle.hashCode);
+    _$hash = $jc(_$hash, translatedExcerpt.hashCode);
+    _$hash = $jc(_$hash, translationProvenance.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -143,7 +163,11 @@ class _$NewsArticle extends NewsArticle {
           ..add('storyId', storyId)
           ..add('evidenceGroupId', evidenceGroupId)
           ..add('syndicated', syndicated)
-          ..add('sourceId', sourceId))
+          ..add('sourceId', sourceId)
+          ..add('targetLanguage', targetLanguage)
+          ..add('translatedTitle', translatedTitle)
+          ..add('translatedExcerpt', translatedExcerpt)
+          ..add('translationProvenance', translationProvenance))
         .toString();
   }
 }
@@ -226,6 +250,29 @@ class NewsArticleBuilder implements Builder<NewsArticle, NewsArticleBuilder> {
   String? get sourceId => _$this._sourceId;
   set sourceId(String? sourceId) => _$this._sourceId = sourceId;
 
+  String? _targetLanguage;
+  String? get targetLanguage => _$this._targetLanguage;
+  set targetLanguage(String? targetLanguage) =>
+      _$this._targetLanguage = targetLanguage;
+
+  String? _translatedTitle;
+  String? get translatedTitle => _$this._translatedTitle;
+  set translatedTitle(String? translatedTitle) =>
+      _$this._translatedTitle = translatedTitle;
+
+  String? _translatedExcerpt;
+  String? get translatedExcerpt => _$this._translatedExcerpt;
+  set translatedExcerpt(String? translatedExcerpt) =>
+      _$this._translatedExcerpt = translatedExcerpt;
+
+  NewsArticleTranslationProvenanceBuilder? _translationProvenance;
+  NewsArticleTranslationProvenanceBuilder get translationProvenance =>
+      _$this._translationProvenance ??=
+          NewsArticleTranslationProvenanceBuilder();
+  set translationProvenance(
+    NewsArticleTranslationProvenanceBuilder? translationProvenance,
+  ) => _$this._translationProvenance = translationProvenance;
+
   NewsArticleBuilder() {
     NewsArticle._defaults(this);
   }
@@ -251,6 +298,10 @@ class NewsArticleBuilder implements Builder<NewsArticle, NewsArticleBuilder> {
       _evidenceGroupId = $v.evidenceGroupId;
       _syndicated = $v.syndicated;
       _sourceId = $v.sourceId;
+      _targetLanguage = $v.targetLanguage;
+      _translatedTitle = $v.translatedTitle;
+      _translatedExcerpt = $v.translatedExcerpt;
+      _translationProvenance = $v.translationProvenance?.toBuilder();
       _$v = null;
     }
     return this;
@@ -321,12 +372,19 @@ class NewsArticleBuilder implements Builder<NewsArticle, NewsArticleBuilder> {
               r'NewsArticle',
               'sourceId',
             ),
+            targetLanguage: targetLanguage,
+            translatedTitle: translatedTitle,
+            translatedExcerpt: translatedExcerpt,
+            translationProvenance: _translationProvenance?.build(),
           );
     } catch (_) {
       late String _$failedField;
       try {
         _$failedField = 'topicIds';
         _topicIds?.build();
+
+        _$failedField = 'translationProvenance';
+        _translationProvenance?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
           r'NewsArticle',

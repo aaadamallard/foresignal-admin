@@ -232,6 +232,10 @@ Serializers _$serializers =
           ..add(AskActionStatusEnum.serializer)
           ..add(AskActionTypeEnum.serializer)
           ..add(AskCitation.serializer)
+          ..add(AskCitationCorroboration.serializer)
+          ..add(AskCitationCorroborationEvidenceQualityEnum.serializer)
+          ..add(AskCitationCorroborationReliabilityEnum.serializer)
+          ..add(AskCitationProvenance.serializer)
           ..add(AskCitationTypeEnum.serializer)
           ..add(AskDeltaEvent.serializer)
           ..add(AskMessage.serializer)
@@ -359,16 +363,24 @@ Serializers _$serializers =
           ..add(BenchmarkStatusComponentsInnerStatusEnum.serializer)
           ..add(BenchmarkStatusComponentsInnerSuiteEnum.serializer)
           ..add(BenchmarkStatusOverallEnum.serializer)
+          ..add(BreakingNewsConfig.serializer)
           ..add(Briefing.serializer)
           ..add(BriefingInput.serializer)
           ..add(BriefingInputAudio.serializer)
           ..add(BriefingInputAudioFormatEnum.serializer)
           ..add(BriefingInputModeEnum.serializer)
+          ..add(BriefingInputSite.serializer)
           ..add(BriefingModeEnum.serializer)
           ..add(BriefingRun.serializer)
           ..add(BriefingRunAudio.serializer)
           ..add(BriefingRunAudioFormatEnum.serializer)
           ..add(BriefingRunAudioStatusEnum.serializer)
+          ..add(BriefingRunBreaking.serializer)
+          ..add(BriefingRunBreakingSeverityEnum.serializer)
+          ..add(BriefingRunDeliveryResultsInner.serializer)
+          ..add(BriefingRunDeliveryResultsInnerFormatEnum.serializer)
+          ..add(BriefingRunDeliveryResultsInnerKindEnum.serializer)
+          ..add(BriefingRunDeliveryResultsInnerStatusEnum.serializer)
           ..add(BriefingRunModeEnum.serializer)
           ..add(BriefingRunPage.serializer)
           ..add(BriefingRunStatusEnum.serializer)
@@ -664,6 +676,9 @@ Serializers _$serializers =
           ..add(DeclaredObservabilityKindsValueArea.serializer)
           ..add(DeclaredObservabilityKindsValueAreaTypeEnum.serializer)
           ..add(DeclaredObservabilityKindsValueThresholdsInner.serializer)
+          ..add(DeliveryTarget.serializer)
+          ..add(DeliveryTargetFormatEnum.serializer)
+          ..add(DeliveryTargetKindEnum.serializer)
           ..add(DerivedEvidenceRef.serializer)
           ..add(DerivedPayloadCommon.serializer)
           ..add(DerivedPayloadCommonStatusEnum.serializer)
@@ -738,6 +753,8 @@ Serializers _$serializers =
           ..add(DossierSectionsTimelineItemsInner.serializer)
           ..add(DossierSectionsTimelineItemsInnerKindEnum.serializer)
           ..add(DossierSectionsTimelineStatusEnum.serializer)
+          ..add(EditionSite.serializer)
+          ..add(EditionSummary.serializer)
           ..add(EdpAnalysisRequest.serializer)
           ..add(EdpAnalysisRequestAuthEnum.serializer)
           ..add(EdpBatch.serializer)
@@ -1445,6 +1462,7 @@ Serializers _$serializers =
           ..add(LicenceTermsRedistributionEnum.serializer)
           ..add(LightningClusterPayload.serializer)
           ..add(LightningClusterPayloadFlashes5mEnum.serializer)
+          ..add(ListMyEditions200Response.serializer)
           ..add(ListRecords200Response.serializer)
           ..add(LiveEvent.serializer)
           ..add(LlmBudgetProvider.serializer)
@@ -1628,10 +1646,15 @@ Serializers _$serializers =
           ..add(NetworkSaltStatus.serializer)
           ..add(NewsArticle.serializer)
           ..add(NewsArticlePage.serializer)
+          ..add(NewsArticleTranslationProvenance.serializer)
           ..add(NewsStory.serializer)
           ..add(NewsStoryBlindspotEnum.serializer)
           ..add(NewsStoryOutletsInner.serializer)
           ..add(NewsStoryPage.serializer)
+          ..add(NewsSubscription.serializer)
+          ..add(NewsSubscriptionTypeEnum.serializer)
+          ..add(NewsSubscriptionUpdate.serializer)
+          ..add(NewsSubscriptionView.serializer)
           ..add(NormalizedRecordPreview.serializer)
           ..add(NormalizedRecordPreviewGeometry.serializer)
           ..add(NormalizedRecordPreviewGeometryTypeEnum.serializer)
@@ -2764,6 +2787,10 @@ Serializers _$serializers =
           ..add(TrackTypeEnum.serializer)
           ..add(TransitCatalogEntry.serializer)
           ..add(TransitCatalogPage.serializer)
+          ..add(TranslationSettings.serializer)
+          ..add(TranslationSettingsInput.serializer)
+          ..add(TranslationSettingsInputBudget.serializer)
+          ..add(TranslationSettingsInputBudgetWindowEnum.serializer)
           ..add(TriggerRule.serializer)
           ..add(TriggerRuleAnchorStatusEnum.serializer)
           ..add(TriggerRuleCooldownScopeEnum.serializer)
@@ -3132,6 +3159,12 @@ Serializers _$serializers =
           ..addBuilderFactory(
             const FullType(BuiltList, const [const FullType(String)]),
             () => ListBuilder<String>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, const [
+              const FullType(BriefingRunDeliveryResultsInner),
+            ]),
+            () => ListBuilder<BriefingRunDeliveryResultsInner>(),
           )
           ..addBuilderFactory(
             const FullType(BuiltList, const [const FullType(AskMessage)]),
@@ -4118,6 +4151,10 @@ Serializers _$serializers =
             () => ListBuilder<DossierSectionsTimelineItemsInner>(),
           )
           ..addBuilderFactory(
+            const FullType(BuiltList, const [const FullType(EditionSummary)]),
+            () => ListBuilder<EditionSummary>(),
+          )
+          ..addBuilderFactory(
             const FullType(BuiltList, const [const FullType(EdpItem)]),
             () => ListBuilder<EdpItem>(),
           )
@@ -4924,6 +4961,14 @@ Serializers _$serializers =
           ..addBuilderFactory(
             const FullType(BuiltList, const [const FullType(NewsStory)]),
             () => ListBuilder<NewsStory>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, const [const FullType(NewsSubscription)]),
+            () => ListBuilder<NewsSubscription>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, const [const FullType(NewsSubscription)]),
+            () => ListBuilder<NewsSubscription>(),
           )
           ..addBuilderFactory(
             const FullType(BuiltList, const [
@@ -6512,6 +6557,10 @@ Serializers _$serializers =
             () => ListBuilder<String>(),
           )
           ..addBuilderFactory(
+            const FullType(BuiltList, const [const FullType(String)]),
+            () => ListBuilder<String>(),
+          )
+          ..addBuilderFactory(
             const FullType(BuiltList, const [
               const FullType(ArchiveFilesInner),
             ]),
@@ -6696,6 +6745,26 @@ Serializers _$serializers =
           ..addBuilderFactory(
             const FullType(BuiltList, const [const FullType(String)]),
             () => ListBuilder<String>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, const [const FullType(String)]),
+            () => ListBuilder<String>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, const [const FullType(String)]),
+            () => ListBuilder<String>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, const [const FullType(DeliveryTarget)]),
+            () => ListBuilder<DeliveryTarget>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, const [const FullType(String)]),
+            () => ListBuilder<String>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, const [const FullType(DeliveryTarget)]),
+            () => ListBuilder<DeliveryTarget>(),
           )
           ..addBuilderFactory(
             const FullType(BuiltList, const [const FullType(String)]),
@@ -6945,14 +7014,6 @@ Serializers _$serializers =
               const FullType(SocialPlatformPrice),
             ]),
             () => ListBuilder<SocialPlatformPrice>(),
-          )
-          ..addBuilderFactory(
-            const FullType(BuiltList, const [const FullType(String)]),
-            () => ListBuilder<String>(),
-          )
-          ..addBuilderFactory(
-            const FullType(BuiltList, const [const FullType(String)]),
-            () => ListBuilder<String>(),
           )
           ..addBuilderFactory(
             const FullType(BuiltList, const [const FullType(String)]),
@@ -10365,6 +10426,13 @@ Serializers _$serializers =
             () => MapBuilder<String, JsonObject?>(),
           )
           ..addBuilderFactory(
+            const FullType(BuiltMap, const [
+              const FullType(String),
+              const FullType.nullable(JsonObject),
+            ]),
+            () => MapBuilder<String, JsonObject?>(),
+          )
+          ..addBuilderFactory(
             const FullType(BuiltList, const [const FullType(Attribution)]),
             () => ListBuilder<Attribution>(),
           )
@@ -10989,6 +11057,22 @@ Serializers _$serializers =
               const FullType(SituationAssessmentRequestRolesEnum),
             ]),
             () => SetBuilder<SituationAssessmentRequestRolesEnum>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltSet, const [const FullType(String)]),
+            () => SetBuilder<String>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltSet, const [const FullType(String)]),
+            () => SetBuilder<String>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltSet, const [const FullType(String)]),
+            () => SetBuilder<String>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltSet, const [const FullType(String)]),
+            () => SetBuilder<String>(),
           )
           ..addBuilderFactory(
             const FullType(BuiltSet, const [const FullType(String)]),

@@ -94,6 +94,18 @@ class _$BriefingInput extends BriefingInput {
   final int? maxItemsPerKind;
   @override
   final BriefingInputAudio? audio;
+  @override
+  final String? outputLanguage;
+  @override
+  final BuiltList<DeliveryTarget>? deliveryTargets;
+  @override
+  final BriefingInputSite? site;
+  @override
+  final BreakingNewsConfig? breakingNews;
+  @override
+  final bool? includeProvenance;
+  @override
+  final bool? includeCorroboration;
 
   factory _$BriefingInput([void Function(BriefingInputBuilder)? updates]) =>
       (BriefingInputBuilder()..update(updates))._build();
@@ -110,6 +122,12 @@ class _$BriefingInput extends BriefingInput {
     this.channelIds,
     this.maxItemsPerKind,
     this.audio,
+    this.outputLanguage,
+    this.deliveryTargets,
+    this.site,
+    this.breakingNews,
+    this.includeProvenance,
+    this.includeCorroboration,
   }) : super._();
   @override
   BriefingInput rebuild(void Function(BriefingInputBuilder) updates) =>
@@ -132,7 +150,13 @@ class _$BriefingInput extends BriefingInput {
         instructions == other.instructions &&
         channelIds == other.channelIds &&
         maxItemsPerKind == other.maxItemsPerKind &&
-        audio == other.audio;
+        audio == other.audio &&
+        outputLanguage == other.outputLanguage &&
+        deliveryTargets == other.deliveryTargets &&
+        site == other.site &&
+        breakingNews == other.breakingNews &&
+        includeProvenance == other.includeProvenance &&
+        includeCorroboration == other.includeCorroboration;
   }
 
   @override
@@ -149,6 +173,12 @@ class _$BriefingInput extends BriefingInput {
     _$hash = $jc(_$hash, channelIds.hashCode);
     _$hash = $jc(_$hash, maxItemsPerKind.hashCode);
     _$hash = $jc(_$hash, audio.hashCode);
+    _$hash = $jc(_$hash, outputLanguage.hashCode);
+    _$hash = $jc(_$hash, deliveryTargets.hashCode);
+    _$hash = $jc(_$hash, site.hashCode);
+    _$hash = $jc(_$hash, breakingNews.hashCode);
+    _$hash = $jc(_$hash, includeProvenance.hashCode);
+    _$hash = $jc(_$hash, includeCorroboration.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -166,7 +196,13 @@ class _$BriefingInput extends BriefingInput {
           ..add('instructions', instructions)
           ..add('channelIds', channelIds)
           ..add('maxItemsPerKind', maxItemsPerKind)
-          ..add('audio', audio))
+          ..add('audio', audio)
+          ..add('outputLanguage', outputLanguage)
+          ..add('deliveryTargets', deliveryTargets)
+          ..add('site', site)
+          ..add('breakingNews', breakingNews)
+          ..add('includeProvenance', includeProvenance)
+          ..add('includeCorroboration', includeCorroboration))
         .toString();
   }
 }
@@ -223,6 +259,38 @@ class BriefingInputBuilder
       _$this._audio ??= BriefingInputAudioBuilder();
   set audio(BriefingInputAudioBuilder? audio) => _$this._audio = audio;
 
+  String? _outputLanguage;
+  String? get outputLanguage => _$this._outputLanguage;
+  set outputLanguage(String? outputLanguage) =>
+      _$this._outputLanguage = outputLanguage;
+
+  ListBuilder<DeliveryTarget>? _deliveryTargets;
+  ListBuilder<DeliveryTarget> get deliveryTargets =>
+      _$this._deliveryTargets ??= ListBuilder<DeliveryTarget>();
+  set deliveryTargets(ListBuilder<DeliveryTarget>? deliveryTargets) =>
+      _$this._deliveryTargets = deliveryTargets;
+
+  BriefingInputSiteBuilder? _site;
+  BriefingInputSiteBuilder get site =>
+      _$this._site ??= BriefingInputSiteBuilder();
+  set site(BriefingInputSiteBuilder? site) => _$this._site = site;
+
+  BreakingNewsConfigBuilder? _breakingNews;
+  BreakingNewsConfigBuilder get breakingNews =>
+      _$this._breakingNews ??= BreakingNewsConfigBuilder();
+  set breakingNews(BreakingNewsConfigBuilder? breakingNews) =>
+      _$this._breakingNews = breakingNews;
+
+  bool? _includeProvenance;
+  bool? get includeProvenance => _$this._includeProvenance;
+  set includeProvenance(bool? includeProvenance) =>
+      _$this._includeProvenance = includeProvenance;
+
+  bool? _includeCorroboration;
+  bool? get includeCorroboration => _$this._includeCorroboration;
+  set includeCorroboration(bool? includeCorroboration) =>
+      _$this._includeCorroboration = includeCorroboration;
+
   BriefingInputBuilder() {
     BriefingInput._defaults(this);
   }
@@ -241,6 +309,12 @@ class BriefingInputBuilder
       _channelIds = $v.channelIds?.toBuilder();
       _maxItemsPerKind = $v.maxItemsPerKind;
       _audio = $v.audio?.toBuilder();
+      _outputLanguage = $v.outputLanguage;
+      _deliveryTargets = $v.deliveryTargets?.toBuilder();
+      _site = $v.site?.toBuilder();
+      _breakingNews = $v.breakingNews?.toBuilder();
+      _includeProvenance = $v.includeProvenance;
+      _includeCorroboration = $v.includeCorroboration;
       _$v = null;
     }
     return this;
@@ -284,6 +358,12 @@ class BriefingInputBuilder
             channelIds: _channelIds?.build(),
             maxItemsPerKind: maxItemsPerKind,
             audio: _audio?.build(),
+            outputLanguage: outputLanguage,
+            deliveryTargets: _deliveryTargets?.build(),
+            site: _site?.build(),
+            breakingNews: _breakingNews?.build(),
+            includeProvenance: includeProvenance,
+            includeCorroboration: includeCorroboration,
           );
     } catch (_) {
       late String _$failedField;
@@ -296,6 +376,13 @@ class BriefingInputBuilder
 
         _$failedField = 'audio';
         _audio?.build();
+
+        _$failedField = 'deliveryTargets';
+        _deliveryTargets?.build();
+        _$failedField = 'site';
+        _site?.build();
+        _$failedField = 'breakingNews';
+        _breakingNews?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
           r'BriefingInput',

@@ -4,6 +4,8 @@
 
 // ignore_for_file: unused_element
 import 'package:built_collection/built_collection.dart';
+import 'package:foresignal_api/src/model/ask_citation_corroboration.dart';
+import 'package:foresignal_api/src/model/ask_citation_provenance.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -22,6 +24,8 @@ part 'ask_citation.g.dart';
 /// * [step]
 /// * [validTime]
 /// * [ageMinutes]
+/// * [provenance]
+/// * [corroboration]
 @BuiltValue()
 abstract class AskCitation implements Built<AskCitation, AskCitationBuilder> {
   /// <sourceId>:<externalId>, briefing:<id>, alert:<id>, or (056) wx:<productId>@<frameKey> for a weather frame and wx:<productId>@<run>/<step> for a forecast step (GFS and HRRR providers: wx:gfs@<run>/<step>, NWS: wx:nws@<updatedAt>/<hours>)
@@ -56,6 +60,12 @@ abstract class AskCitation implements Built<AskCitation, AskCitationBuilder> {
 
   @BuiltValueField(wireName: r'ageMinutes')
   num? get ageMinutes;
+
+  @BuiltValueField(wireName: r'provenance')
+  AskCitationProvenance? get provenance;
+
+  @BuiltValueField(wireName: r'corroboration')
+  AskCitationCorroboration? get corroboration;
 
   AskCitation._();
 
@@ -144,6 +154,20 @@ class _$AskCitationSerializer implements PrimitiveSerializer<AskCitation> {
       yield serializers.serialize(
         object.ageMinutes,
         specifiedType: const FullType.nullable(num),
+      );
+    }
+    if (object.provenance != null) {
+      yield r'provenance';
+      yield serializers.serialize(
+        object.provenance,
+        specifiedType: const FullType.nullable(AskCitationProvenance),
+      );
+    }
+    if (object.corroboration != null) {
+      yield r'corroboration';
+      yield serializers.serialize(
+        object.corroboration,
+        specifiedType: const FullType.nullable(AskCitationCorroboration),
       );
     }
   }
@@ -270,6 +294,30 @@ class _$AskCitationSerializer implements PrimitiveSerializer<AskCitation> {
                   as num?;
           if (valueDes == null) continue;
           result.ageMinutes = valueDes;
+          break;
+        case r'provenance':
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      AskCitationProvenance,
+                    ),
+                  )
+                  as AskCitationProvenance?;
+          if (valueDes == null) continue;
+          result.provenance.replace(valueDes);
+          break;
+        case r'corroboration':
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      AskCitationCorroboration,
+                    ),
+                  )
+                  as AskCitationCorroboration?;
+          if (valueDes == null) continue;
+          result.corroboration.replace(valueDes);
           break;
         default:
           unhandled.add(key);

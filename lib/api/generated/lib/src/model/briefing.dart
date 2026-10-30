@@ -4,7 +4,10 @@
 
 // ignore_for_file: unused_element
 import 'package:foresignal_api/src/model/briefing_scope.dart';
+import 'package:foresignal_api/src/model/breaking_news_config.dart';
+import 'package:foresignal_api/src/model/briefing_input_site.dart';
 import 'package:built_collection/built_collection.dart';
+import 'package:foresignal_api/src/model/delivery_target.dart';
 import 'package:foresignal_api/src/model/briefing_input_audio.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
@@ -25,6 +28,12 @@ part 'briefing.g.dart';
 /// * [channelIds]
 /// * [maxItemsPerKind]
 /// * [audio]
+/// * [outputLanguage] - The language the edition is written and spoken in (NP-003); null for the owner's `UserPreferences.locale`, or the source language for a briefing without an owner
+/// * [deliveryTargets] - Where each run goes (NP-004). Empty or absent: every channel in `channelIds`, as before
+/// * [site]
+/// * [breakingNews] - Breaking-news special editions (NP-006); null for none
+/// * [includeProvenance] - Each item carries the cross-linked evidence that put it in the edition (`provenance` on the run's citations, NP-007)
+/// * [includeCorroboration] - Each item carries its corroboration signal (`corroboration` on the run's citations, NP-007)
 /// * [id]
 /// * [createdAt]
 /// * [updatedAt]
@@ -32,6 +41,7 @@ part 'briefing.g.dart';
 /// * [lastRunAt]
 /// * [lastRunStatus]
 /// * [warnings] - Non-fatal validation warnings, e.g. a channel not subscribed to `briefing`
+/// * [ownerUserId] - The v2.0 user who owns the edition: the creating user for a signed-in session, null for a briefing created with an API token (NP-003)
 @BuiltValue()
 abstract class Briefing implements Built<Briefing, BriefingBuilder> {
   @BuiltValueField(wireName: r'name')
@@ -70,6 +80,29 @@ abstract class Briefing implements Built<Briefing, BriefingBuilder> {
   @BuiltValueField(wireName: r'audio')
   BriefingInputAudio? get audio;
 
+  /// The language the edition is written and spoken in (NP-003); null for the owner's `UserPreferences.locale`, or the source language for a briefing without an owner
+  @BuiltValueField(wireName: r'outputLanguage')
+  String? get outputLanguage;
+
+  /// Where each run goes (NP-004). Empty or absent: every channel in `channelIds`, as before
+  @BuiltValueField(wireName: r'deliveryTargets')
+  BuiltList<DeliveryTarget>? get deliveryTargets;
+
+  @BuiltValueField(wireName: r'site')
+  BriefingInputSite? get site;
+
+  /// Breaking-news special editions (NP-006); null for none
+  @BuiltValueField(wireName: r'breakingNews')
+  BreakingNewsConfig? get breakingNews;
+
+  /// Each item carries the cross-linked evidence that put it in the edition (`provenance` on the run's citations, NP-007)
+  @BuiltValueField(wireName: r'includeProvenance')
+  bool? get includeProvenance;
+
+  /// Each item carries its corroboration signal (`corroboration` on the run's citations, NP-007)
+  @BuiltValueField(wireName: r'includeCorroboration')
+  bool? get includeCorroboration;
+
   @BuiltValueField(wireName: r'id')
   String get id;
 
@@ -91,6 +124,10 @@ abstract class Briefing implements Built<Briefing, BriefingBuilder> {
   /// Non-fatal validation warnings, e.g. a channel not subscribed to `briefing`
   @BuiltValueField(wireName: r'warnings')
   BuiltList<String>? get warnings;
+
+  /// The v2.0 user who owns the edition: the creating user for a signed-in session, null for a briefing created with an API token (NP-003)
+  @BuiltValueField(wireName: r'ownerUserId')
+  String? get ownerUserId;
 
   Briefing._();
 
@@ -188,6 +225,48 @@ class _$BriefingSerializer implements PrimitiveSerializer<Briefing> {
         specifiedType: const FullType.nullable(BriefingInputAudio),
       );
     }
+    if (object.outputLanguage != null) {
+      yield r'outputLanguage';
+      yield serializers.serialize(
+        object.outputLanguage,
+        specifiedType: const FullType.nullable(String),
+      );
+    }
+    if (object.deliveryTargets != null) {
+      yield r'deliveryTargets';
+      yield serializers.serialize(
+        object.deliveryTargets,
+        specifiedType: const FullType(BuiltList, [FullType(DeliveryTarget)]),
+      );
+    }
+    if (object.site != null) {
+      yield r'site';
+      yield serializers.serialize(
+        object.site,
+        specifiedType: const FullType(BriefingInputSite),
+      );
+    }
+    if (object.breakingNews != null) {
+      yield r'breakingNews';
+      yield serializers.serialize(
+        object.breakingNews,
+        specifiedType: const FullType.nullable(BreakingNewsConfig),
+      );
+    }
+    if (object.includeProvenance != null) {
+      yield r'includeProvenance';
+      yield serializers.serialize(
+        object.includeProvenance,
+        specifiedType: const FullType(bool),
+      );
+    }
+    if (object.includeCorroboration != null) {
+      yield r'includeCorroboration';
+      yield serializers.serialize(
+        object.includeCorroboration,
+        specifiedType: const FullType(bool),
+      );
+    }
     yield r'id';
     yield serializers.serialize(
       object.id,
@@ -231,6 +310,13 @@ class _$BriefingSerializer implements PrimitiveSerializer<Briefing> {
       yield serializers.serialize(
         object.warnings,
         specifiedType: const FullType(BuiltList, [FullType(String)]),
+      );
+    }
+    if (object.ownerUserId != null) {
+      yield r'ownerUserId';
+      yield serializers.serialize(
+        object.ownerUserId,
+        specifiedType: const FullType.nullable(String),
       );
     }
   }
@@ -370,6 +456,68 @@ class _$BriefingSerializer implements PrimitiveSerializer<Briefing> {
           if (valueDes == null) continue;
           result.audio.replace(valueDes);
           break;
+        case r'outputLanguage':
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
+          if (valueDes == null) continue;
+          result.outputLanguage = valueDes;
+          break;
+        case r'deliveryTargets':
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(DeliveryTarget),
+                    ]),
+                  )
+                  as BuiltList<DeliveryTarget>?;
+          if (valueDes == null) continue;
+          result.deliveryTargets.replace(valueDes);
+          break;
+        case r'site':
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BriefingInputSite),
+                  )
+                  as BriefingInputSite?;
+          if (valueDes == null) continue;
+          result.site.replace(valueDes);
+          break;
+        case r'breakingNews':
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BreakingNewsConfig),
+                  )
+                  as BreakingNewsConfig?;
+          if (valueDes == null) continue;
+          result.breakingNews.replace(valueDes);
+          break;
+        case r'includeProvenance':
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
+          if (valueDes == null) continue;
+          result.includeProvenance = valueDes;
+          break;
+        case r'includeCorroboration':
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(bool),
+                  )
+                  as bool?;
+          if (valueDes == null) continue;
+          result.includeCorroboration = valueDes;
+          break;
         case r'id':
           final valueDes =
               serializers.deserialize(
@@ -439,6 +587,16 @@ class _$BriefingSerializer implements PrimitiveSerializer<Briefing> {
                   as BuiltList<String>?;
           if (valueDes == null) continue;
           result.warnings.replace(valueDes);
+          break;
+        case r'ownerUserId':
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
+          if (valueDes == null) continue;
+          result.ownerUserId = valueDes;
           break;
         default:
           unhandled.add(key);

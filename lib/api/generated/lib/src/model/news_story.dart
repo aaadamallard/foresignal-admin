@@ -7,6 +7,7 @@ import 'package:foresignal_api/src/model/news_story_outlets_inner.dart';
 import 'package:foresignal_api/src/model/object_envelope.dart';
 import 'package:built_collection/built_collection.dart';
 import 'package:foresignal_api/src/model/coverage_stats.dart';
+import 'package:foresignal_api/src/model/news_article_translation_provenance.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -33,6 +34,10 @@ part 'news_story.g.dart';
 /// * [outlets]
 /// * [situations] - Detail view
 /// * [canonicalEvents] - Detail view
+/// * [targetLanguage] - The language of the translated fields, or null when untranslated
+/// * [translatedTitle] - `title` in `targetLanguage`; the original fields are never overwritten (NP-002)
+/// * [translatedExcerpt] - The excerpt (an article's `summary`) in `targetLanguage`; the original fields are never overwritten (NP-002)
+/// * [translationProvenance]
 @BuiltValue()
 abstract class NewsStory implements Built<NewsStory, NewsStoryBuilder> {
   /// ULID identifier
@@ -95,6 +100,21 @@ abstract class NewsStory implements Built<NewsStory, NewsStoryBuilder> {
   /// Detail view
   @BuiltValueField(wireName: r'canonicalEvents')
   BuiltList<ObjectEnvelope>? get canonicalEvents;
+
+  /// The language of the translated fields, or null when untranslated
+  @BuiltValueField(wireName: r'targetLanguage')
+  String? get targetLanguage;
+
+  /// `title` in `targetLanguage`; the original fields are never overwritten (NP-002)
+  @BuiltValueField(wireName: r'translatedTitle')
+  String? get translatedTitle;
+
+  /// The excerpt (an article's `summary`) in `targetLanguage`; the original fields are never overwritten (NP-002)
+  @BuiltValueField(wireName: r'translatedExcerpt')
+  String? get translatedExcerpt;
+
+  @BuiltValueField(wireName: r'translationProvenance')
+  NewsArticleTranslationProvenance? get translationProvenance;
 
   NewsStory._();
 
@@ -225,6 +245,36 @@ class _$NewsStorySerializer implements PrimitiveSerializer<NewsStory> {
       yield serializers.serialize(
         object.canonicalEvents,
         specifiedType: const FullType(BuiltList, [FullType(ObjectEnvelope)]),
+      );
+    }
+    if (object.targetLanguage != null) {
+      yield r'targetLanguage';
+      yield serializers.serialize(
+        object.targetLanguage,
+        specifiedType: const FullType.nullable(String),
+      );
+    }
+    if (object.translatedTitle != null) {
+      yield r'translatedTitle';
+      yield serializers.serialize(
+        object.translatedTitle,
+        specifiedType: const FullType.nullable(String),
+      );
+    }
+    if (object.translatedExcerpt != null) {
+      yield r'translatedExcerpt';
+      yield serializers.serialize(
+        object.translatedExcerpt,
+        specifiedType: const FullType.nullable(String),
+      );
+    }
+    if (object.translationProvenance != null) {
+      yield r'translationProvenance';
+      yield serializers.serialize(
+        object.translationProvenance,
+        specifiedType: const FullType.nullable(
+          NewsArticleTranslationProvenance,
+        ),
       );
     }
   }
@@ -431,6 +481,48 @@ class _$NewsStorySerializer implements PrimitiveSerializer<NewsStory> {
                   as BuiltList<ObjectEnvelope>?;
           if (valueDes == null) continue;
           result.canonicalEvents.replace(valueDes);
+          break;
+        case r'targetLanguage':
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
+          if (valueDes == null) continue;
+          result.targetLanguage = valueDes;
+          break;
+        case r'translatedTitle':
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
+          if (valueDes == null) continue;
+          result.translatedTitle = valueDes;
+          break;
+        case r'translatedExcerpt':
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
+          if (valueDes == null) continue;
+          result.translatedExcerpt = valueDes;
+          break;
+        case r'translationProvenance':
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(
+                      NewsArticleTranslationProvenance,
+                    ),
+                  )
+                  as NewsArticleTranslationProvenance?;
+          if (valueDes == null) continue;
+          result.translationProvenance.replace(valueDes);
           break;
         default:
           unhandled.add(key);

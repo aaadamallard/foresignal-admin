@@ -3,6 +3,8 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:foresignal_api/src/model/briefing_run_delivery_results_inner.dart';
+import 'package:foresignal_api/src/model/briefing_run_breaking.dart';
 import 'package:built_collection/built_collection.dart';
 import 'package:foresignal_api/src/model/briefing_run_audio.dart';
 import 'package:foresignal_api/src/model/ask_citation.dart';
@@ -33,6 +35,8 @@ part 'briefing_run.g.dart';
 /// * [warnings] - Citation-verifier warnings (LLM mode) and fallback notes
 /// * [signature] - Detached JWS (`header..signature`, Ed25519, b64:false) over the stored markdown bytes; verify against /.well-known/jwks.json
 /// * [audio]
+/// * [deliveryResults] - The outcome of each of the briefing's `deliveryTargets` for this run (NP-004), in target order; null for a briefing without targets, which delivers to its channels as before
+/// * [breaking]
 @BuiltValue()
 abstract class BriefingRun implements Built<BriefingRun, BriefingRunBuilder> {
   /// null for previews
@@ -90,6 +94,13 @@ abstract class BriefingRun implements Built<BriefingRun, BriefingRunBuilder> {
 
   @BuiltValueField(wireName: r'audio')
   BriefingRunAudio? get audio;
+
+  /// The outcome of each of the briefing's `deliveryTargets` for this run (NP-004), in target order; null for a briefing without targets, which delivers to its channels as before
+  @BuiltValueField(wireName: r'deliveryResults')
+  BuiltList<BriefingRunDeliveryResultsInner>? get deliveryResults;
+
+  @BuiltValueField(wireName: r'breaking')
+  BriefingRunBreaking? get breaking;
 
   BriefingRun._();
 
@@ -224,6 +235,22 @@ class _$BriefingRunSerializer implements PrimitiveSerializer<BriefingRun> {
       yield serializers.serialize(
         object.audio,
         specifiedType: const FullType.nullable(BriefingRunAudio),
+      );
+    }
+    if (object.deliveryResults != null) {
+      yield r'deliveryResults';
+      yield serializers.serialize(
+        object.deliveryResults,
+        specifiedType: const FullType.nullable(BuiltList, [
+          FullType(BriefingRunDeliveryResultsInner),
+        ]),
+      );
+    }
+    if (object.breaking != null) {
+      yield r'breaking';
+      yield serializers.serialize(
+        object.breaking,
+        specifiedType: const FullType.nullable(BriefingRunBreaking),
       );
     }
   }
@@ -424,6 +451,28 @@ class _$BriefingRunSerializer implements PrimitiveSerializer<BriefingRun> {
                   as BriefingRunAudio?;
           if (valueDes == null) continue;
           result.audio.replace(valueDes);
+          break;
+        case r'deliveryResults':
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BuiltList, [
+                      FullType(BriefingRunDeliveryResultsInner),
+                    ]),
+                  )
+                  as BuiltList<BriefingRunDeliveryResultsInner>?;
+          if (valueDes == null) continue;
+          result.deliveryResults.replace(valueDes);
+          break;
+        case r'breaking':
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(BriefingRunBreaking),
+                  )
+                  as BriefingRunBreaking?;
+          if (valueDes == null) continue;
+          result.breaking.replace(valueDes);
           break;
         default:
           unhandled.add(key);

@@ -25,7 +25,7 @@ class SystemApi {
   const SystemApi(this._dio, this._serializers);
 
   /// Check first-run status
-  /// Reports whether the instance still needs first-run setup (no users yet), readable before any account exists so the onboarding wizard can start (C4/190).  **Scope:** &#x60;open&#x60;.
+  /// Reports whether the instance still needs first-run setup: &#x60;firstRun&#x60; while no user exists (C4/190, R2-027). Open, so the admin app can start the setup wizard before any account exists. &#x60;smtpConfigured&#x60; is true when account email is enabled with a host; &#x60;sourcesEnabled&#x60; counts the sources in the collection set; &#x60;apiVersion&#x60; is &#x60;info.version&#x60;.  **Scope:** &#x60;open&#x60;.
   ///
   /// Parameters:
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
@@ -323,7 +323,7 @@ class SystemApi {
   }
 
   /// Run first-run setup
-  /// Bootstraps a fresh instance: creates the first admin (authorized by the bootstrap admin token), migrates existing global config to shared/admin defaults, and seeds SMTP, sources and thresholds. Refused once setup is complete (409).  **Scope:** &#x60;admin&#x60;.
+  /// Bootstraps a fresh instance (C4/190, R2-027). Only the bootstrap admin token printed at first start may call it (403 for any other token or a session) and only while no user exists (409 ALREADY_SETUP after). It creates the first admin, active at once with the built-in Admin role and the given password (checked against the password policy); moves what the v1 operator owned through the instance &#x60;owner&#x60; principal (their personal channels and workspaces, and any rule, view or LLM provider bound to it) to that admin, leaving every owner-less row (source, collector and server settings, global channels, shared LLM providers, existing rules and views) shared; optionally seeds SMTP (as &#x60;updateSmtpSettings&#x60;), enables &#x60;sources&#x60; in the collection set, and stores &#x60;thresholds&#x60; and &#x60;retention&#x60; (as their settings operations); and signs the admin in. All of it is one transaction: a body refused anywhere changes nothing. The session is gated to MFA enrollment until the admin enrolls (R2-024). API tokens are not touched.  **Scope:** &#x60;admin&#x60;.
   ///
   /// Parameters:
   /// * [setupRequest]
