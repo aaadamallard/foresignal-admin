@@ -18,3 +18,9 @@ final editionProvider = FutureProvider.family<Json, String>(
 final myEditionsProvider = FutureProvider<List<Json>>(
   (ref) => jsonArrayCall(ref.watch(backendDioProvider), '/v1/me/editions'),
 );
+
+/// One edition's hosted-site URLs (`getEditionSite`): the canonical, feed-key
+/// and read-only share URLs. Family keyed by the briefing id.
+final editionSiteProvider = FutureProvider.family<Json, String>(
+  (ref, id) => jsonObjectCall(ref.watch(backendDioProvider), 'GET', '/v1/editions/$id/site'),
+);
