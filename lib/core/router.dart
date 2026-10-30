@@ -25,6 +25,8 @@ import '../features/auth/forgot_password_screen.dart';
 import '../features/auth/login_screen.dart';
 import '../features/auth/token_link_screen.dart';
 import '../features/connect/connect_screen.dart';
+import '../features/editions/edition_composer_screen.dart';
+import '../features/editions/editions_screen.dart';
 import '../features/forecasting/edp_provider_screen.dart';
 import '../features/forecasting/forecaster_screen.dart';
 import '../features/forecasting/forecasting_screen.dart';
@@ -147,6 +149,21 @@ Map<String, SectionRoutes> sectionRoutesFor(FormFactor formFactor) {
             path: 'providers/:providerId',
             builder: (context, state) =>
                 ProviderScreen(providerId: state.pathParameters['providerId']),
+          ),
+        ],
+      ),
+    if (desktop)
+      editionsPath: SectionRoutes(
+        builder: (context, state) => const EditionsScreen(),
+        routes: <RouteBase>[
+          GoRoute(
+            path: 'new',
+            builder: (context, state) => const EditionComposerScreen(),
+          ),
+          GoRoute(
+            path: ':briefingId',
+            builder: (context, state) =>
+                EditionComposerScreen(briefingId: state.pathParameters['briefingId']),
           ),
         ],
       ),

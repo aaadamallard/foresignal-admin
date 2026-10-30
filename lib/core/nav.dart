@@ -102,6 +102,19 @@ const List<NavSection> allNavSections = <NavSection>[
     writePermissions: _ai,
   ),
   NavSection(
+    path: '/editions',
+    label: 'Editions',
+    icon: Icons.newspaper,
+    summary:
+        'Automated newspaper editions: the news feed and sources, sections, schedule, language, '
+        'voice, preview — and their outputs, hosted site, breaking-news and provenance.',
+    formFactors: _desktop,
+    readPermissions: <String>{Permissions.intelRead},
+    // The edition CRUD operations need only a signed-in session (scope agent,
+    // no fine-grained permission), so anyone who can see the section can edit.
+    writePermissions: <String>{},
+  ),
+  NavSection(
     path: '/analysis',
     label: 'Analysis',
     icon: Icons.hub,

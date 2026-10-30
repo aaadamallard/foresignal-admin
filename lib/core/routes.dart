@@ -68,6 +68,16 @@ String aiNewProviderKindPath({required bool shared}) =>
 /// One LLM provider.
 String aiProviderPath(String providerId) => '$aiPath/providers/${Uri.encodeComponent(providerId)}';
 
+/// The automated-newspaper editions the operator composes.
+const String editionsPath = '/editions';
+
+/// Composes a new edition.
+const String editionNewPath = '$editionsPath/new';
+
+/// One edition, by its briefing id.
+String editionDetailPath(String briefingId) =>
+    '$editionsPath/${Uri.encodeComponent(briefingId)}';
+
 /// Correlation, analysis cycles, assessments, calibration, corroboration.
 const String analysisPath = '/analysis';
 
