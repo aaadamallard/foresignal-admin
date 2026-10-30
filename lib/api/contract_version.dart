@@ -1,6 +1,6 @@
 /// The `info.version` of the vendored contract (`openapi/VERSION`) this build
 /// was generated from. A test keeps the two in step.
-const String vendoredApiVersion = '2.1.0';
+const String vendoredApiVersion = '2.1.1';
 
 /// How a backend's API version relates to [vendoredApiVersion].
 enum VersionMatch {

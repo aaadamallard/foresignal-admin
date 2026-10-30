@@ -17,6 +17,7 @@ part 'briefing_input.g.dart';
 /// BriefingInput
 ///
 /// Properties:
+/// * [ownerUserId] - The v2.0 user who owns the edition (2.1.1). On the self-service `/v1/me/editions` operations it is ignored and forced to the caller. On `createBriefing`/`updateBriefing` it defaults to the creating user; only a caller holding `users.manage` may set it to another user, to assign an edition on their behalf. Null for a briefing created with an API token.
 /// * [name]
 /// * [enabled]
 /// * [schedule] - 5-field cron
@@ -37,6 +38,10 @@ part 'briefing_input.g.dart';
 @BuiltValue()
 abstract class BriefingInput
     implements Built<BriefingInput, BriefingInputBuilder> {
+  /// The v2.0 user who owns the edition (2.1.1). On the self-service `/v1/me/editions` operations it is ignored and forced to the caller. On `createBriefing`/`updateBriefing` it defaults to the creating user; only a caller holding `users.manage` may set it to another user, to assign an edition on their behalf. Null for a briefing created with an API token.
+  @BuiltValueField(wireName: r'ownerUserId')
+  String? get ownerUserId;
+
   @BuiltValueField(wireName: r'name')
   String get name;
 
@@ -121,6 +126,13 @@ class _$BriefingInputSerializer implements PrimitiveSerializer<BriefingInput> {
     BriefingInput object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    if (object.ownerUserId != null) {
+      yield r'ownerUserId';
+      yield serializers.serialize(
+        object.ownerUserId,
+        specifiedType: const FullType.nullable(String),
+      );
+    }
     yield r'name';
     yield serializers.serialize(
       object.name,
@@ -263,6 +275,16 @@ class _$BriefingInputSerializer implements PrimitiveSerializer<BriefingInput> {
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
+        case r'ownerUserId':
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
+          if (valueDes == null) continue;
+          result.ownerUserId = valueDes;
+          break;
         case r'name':
           final valueDes =
               serializers.deserialize(

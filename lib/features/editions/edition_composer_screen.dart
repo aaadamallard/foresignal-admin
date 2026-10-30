@@ -3,11 +3,14 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../api/api.dart';
+import '../../core/access.dart';
+import '../../core/permissions.dart';
 import '../../core/routes.dart';
 import '../../core/ui/ui.dart';
 import '../forecasting/forecasting_providers.dart' show Json;
 import '../forecasting/forecasting_widgets.dart' show Footnote, PlainField, WireDropdown, WriteTracking;
 import '../sources/source_providers.dart' show sourceListProvider;
+import '../users/users_providers.dart' show usersProvider;
 import 'edition_outputs.dart';
 import 'edition_preview.dart';
 import 'edition_providers.dart';
@@ -110,6 +113,10 @@ class _EditionComposerFormState extends ConsumerState<EditionComposerForm>
   late String _breakingSeverity = _breaking['minSeverity'] as String? ?? 'warning';
   late bool _includeProvenance = _s['includeProvenance'] as bool? ?? false;
   late bool _includeCorroboration = _s['includeCorroboration'] as bool? ?? false;
+  // NP-005: the assigned owner. Starts from the loaded edition's read-only
+  // `ownerUserId` (null for a new or unowned edition); a `users.manage` caller
+  // may reassign it. Null means "the creating user", the contract's default.
+  late String? _ownerUserId = _s['ownerUserId'] as String?;
   // A new target being composed before it is added.
   String _newTargetKind = 'channel';
   String _newTargetFormat = 'email';
@@ -219,6 +226,15 @@ class _EditionComposerFormState extends ConsumerState<EditionComposerForm>
     body['site'] = <String, Object?>{'enabled': _siteEnabled, 'shareable': _siteShareable};
     body['includeProvenance'] = _includeProvenance;
     body['includeCorroboration'] = _includeCorroboration;
+
+    // NP-005: only a caller holding `users.manage` may set the owner; others
+    // leave it off so the backend keeps the edition with its creator. Null
+    // (the "creating user" default) is also left off, not sent as null.
+    final owner = _ownerUserId;
+    if (owner != null && owner.isNotEmpty && ref.read(accessProvider).can(Permissions.usersManage)) {
+      body['ownerUserId'] = owner;
+    }
+
     body['breakingNews'] = _breakingEnabled
         ? <String, Object?>{
             'enabled': true,
@@ -373,6 +389,10 @@ class _EditionComposerFormState extends ConsumerState<EditionComposerForm>
                 ],
               ),
             ),
+            if (ref.watch(accessProvider).can(Permissions.usersManage)) ...<Widget>[
+              const SizedBox(height: 20),
+              _ownerCard(context),
+            ],
             const SizedBox(height: 20),
             SectionCard(
               key: const Key('edition.feed'),
@@ -676,6 +696,66 @@ class _EditionComposerFormState extends ConsumerState<EditionComposerForm>
       ],
     ),
   );
+
+  /// NP-005: the owner control, built only for a caller holding
+  /// `users.manage`. Picks a user (via `listUsers`) to own the edition and
+  /// shows the current owner; the empty sentinel assigns it to the creator.
+  Widget _ownerCard(BuildContext context) {
+    // A non-UUID sentinel: picking it assigns the edition to the creator
+    // (a null `ownerUserId`). It cannot collide with a real user id.
+    const defaultValue = '__creator__';
+    final currentOwnerId = _s['ownerUserId'] as String?;
+    return SectionCard(
+      key: const Key('edition.owner'),
+      title: 'Owner',
+      subtitle: 'Assign this edition to a user so it is stood up on their behalf. Without an '
+          'assignment it belongs to the creating user.',
+      child: AsyncView<List<User>>(
+        value: ref.watch(usersProvider((status: null, q: ''))),
+        onRetry: () => ref.invalidate(usersProvider((status: null, q: ''))),
+        data: (users) {
+          String labelFor(String id) {
+            for (final u in users) {
+              if (u.id == id) {
+                return u.fullName.trim().isEmpty ? u.email : '${u.fullName} (${u.email})';
+              }
+            }
+            return id;
+          }
+
+          return Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: <Widget>[
+              if (!_isNew)
+                Padding(
+                  padding: const EdgeInsets.only(bottom: 12),
+                  child: Text(
+                    currentOwnerId == null
+                        ? 'Current owner: the creating user.'
+                        : 'Current owner: ${labelFor(currentOwnerId)}.',
+                    key: const Key('edition.owner.current'),
+                  ),
+                ),
+              LabeledField(
+                label: 'Assign to',
+                help: 'The user who will own this edition.',
+                field: WireDropdown(
+                  key: const Key('edition.owner.picker'),
+                  value: _ownerUserId ?? defaultValue,
+                  values: <String>[defaultValue, for (final u in users) u.id],
+                  labels: <String, String>{
+                    defaultValue: 'The creating user (default)',
+                    for (final u in users) u.id: labelFor(u.id),
+                  },
+                  onChanged: (v) => setState(() => _ownerUserId = v == defaultValue ? null : v),
+                ),
+              ),
+            ],
+          );
+        },
+      ),
+    );
+  }
 }
 
 /// The source/kind picker: chips for each source, and for each kind the chosen

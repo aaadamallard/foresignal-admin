@@ -17,6 +17,7 @@ part 'briefing.g.dart';
 /// Briefing
 ///
 /// Properties:
+/// * [ownerUserId] - The v2.0 user who owns the edition: the creating user for a signed-in session, null for a briefing created with an API token (NP-003)
 /// * [name]
 /// * [enabled]
 /// * [schedule] - 5-field cron
@@ -41,9 +42,12 @@ part 'briefing.g.dart';
 /// * [lastRunAt]
 /// * [lastRunStatus]
 /// * [warnings] - Non-fatal validation warnings, e.g. a channel not subscribed to `briefing`
-/// * [ownerUserId] - The v2.0 user who owns the edition: the creating user for a signed-in session, null for a briefing created with an API token (NP-003)
 @BuiltValue()
 abstract class Briefing implements Built<Briefing, BriefingBuilder> {
+  /// The v2.0 user who owns the edition: the creating user for a signed-in session, null for a briefing created with an API token (NP-003)
+  @BuiltValueField(wireName: r'ownerUserId')
+  String? get ownerUserId;
+
   @BuiltValueField(wireName: r'name')
   String get name;
 
@@ -125,10 +129,6 @@ abstract class Briefing implements Built<Briefing, BriefingBuilder> {
   @BuiltValueField(wireName: r'warnings')
   BuiltList<String>? get warnings;
 
-  /// The v2.0 user who owns the edition: the creating user for a signed-in session, null for a briefing created with an API token (NP-003)
-  @BuiltValueField(wireName: r'ownerUserId')
-  String? get ownerUserId;
-
   Briefing._();
 
   factory Briefing([void updates(BriefingBuilder b)]) = _$Briefing;
@@ -152,6 +152,13 @@ class _$BriefingSerializer implements PrimitiveSerializer<Briefing> {
     Briefing object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    if (object.ownerUserId != null) {
+      yield r'ownerUserId';
+      yield serializers.serialize(
+        object.ownerUserId,
+        specifiedType: const FullType.nullable(String),
+      );
+    }
     yield r'name';
     yield serializers.serialize(
       object.name,
@@ -312,13 +319,6 @@ class _$BriefingSerializer implements PrimitiveSerializer<Briefing> {
         specifiedType: const FullType(BuiltList, [FullType(String)]),
       );
     }
-    if (object.ownerUserId != null) {
-      yield r'ownerUserId';
-      yield serializers.serialize(
-        object.ownerUserId,
-        specifiedType: const FullType.nullable(String),
-      );
-    }
   }
 
   @override
@@ -346,6 +346,16 @@ class _$BriefingSerializer implements PrimitiveSerializer<Briefing> {
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
+        case r'ownerUserId':
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType.nullable(String),
+                  )
+                  as String?;
+          if (valueDes == null) continue;
+          result.ownerUserId = valueDes;
+          break;
         case r'name':
           final valueDes =
               serializers.deserialize(
@@ -587,16 +597,6 @@ class _$BriefingSerializer implements PrimitiveSerializer<Briefing> {
                   as BuiltList<String>?;
           if (valueDes == null) continue;
           result.warnings.replace(valueDes);
-          break;
-        case r'ownerUserId':
-          final valueDes =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType.nullable(String),
-                  )
-                  as String?;
-          if (valueDes == null) continue;
-          result.ownerUserId = valueDes;
           break;
         default:
           unhandled.add(key);

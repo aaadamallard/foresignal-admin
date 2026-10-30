@@ -73,6 +73,8 @@ class _$BriefingModeEnumSerializer
 
 class _$Briefing extends Briefing {
   @override
+  final String? ownerUserId;
+  @override
   final String name;
   @override
   final bool? enabled;
@@ -120,13 +122,12 @@ class _$Briefing extends Briefing {
   final String? lastRunStatus;
   @override
   final BuiltList<String>? warnings;
-  @override
-  final String? ownerUserId;
 
   factory _$Briefing([void Function(BriefingBuilder)? updates]) =>
       (BriefingBuilder()..update(updates))._build();
 
   _$Briefing._({
+    this.ownerUserId,
     required this.name,
     this.enabled,
     required this.schedule,
@@ -151,7 +152,6 @@ class _$Briefing extends Briefing {
     this.lastRunAt,
     this.lastRunStatus,
     this.warnings,
-    this.ownerUserId,
   }) : super._();
   @override
   Briefing rebuild(void Function(BriefingBuilder) updates) =>
@@ -164,6 +164,7 @@ class _$Briefing extends Briefing {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is Briefing &&
+        ownerUserId == other.ownerUserId &&
         name == other.name &&
         enabled == other.enabled &&
         schedule == other.schedule &&
@@ -187,13 +188,13 @@ class _$Briefing extends Briefing {
         nextRunAt == other.nextRunAt &&
         lastRunAt == other.lastRunAt &&
         lastRunStatus == other.lastRunStatus &&
-        warnings == other.warnings &&
-        ownerUserId == other.ownerUserId;
+        warnings == other.warnings;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
+    _$hash = $jc(_$hash, ownerUserId.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
     _$hash = $jc(_$hash, enabled.hashCode);
     _$hash = $jc(_$hash, schedule.hashCode);
@@ -218,7 +219,6 @@ class _$Briefing extends Briefing {
     _$hash = $jc(_$hash, lastRunAt.hashCode);
     _$hash = $jc(_$hash, lastRunStatus.hashCode);
     _$hash = $jc(_$hash, warnings.hashCode);
-    _$hash = $jc(_$hash, ownerUserId.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -226,6 +226,7 @@ class _$Briefing extends Briefing {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'Briefing')
+          ..add('ownerUserId', ownerUserId)
           ..add('name', name)
           ..add('enabled', enabled)
           ..add('schedule', schedule)
@@ -249,14 +250,17 @@ class _$Briefing extends Briefing {
           ..add('nextRunAt', nextRunAt)
           ..add('lastRunAt', lastRunAt)
           ..add('lastRunStatus', lastRunStatus)
-          ..add('warnings', warnings)
-          ..add('ownerUserId', ownerUserId))
+          ..add('warnings', warnings))
         .toString();
   }
 }
 
 class BriefingBuilder implements Builder<Briefing, BriefingBuilder> {
   _$Briefing? _$v;
+
+  String? _ownerUserId;
+  String? get ownerUserId => _$this._ownerUserId;
+  set ownerUserId(String? ownerUserId) => _$this._ownerUserId = ownerUserId;
 
   String? _name;
   String? get name => _$this._name;
@@ -368,10 +372,6 @@ class BriefingBuilder implements Builder<Briefing, BriefingBuilder> {
       _$this._warnings ??= ListBuilder<String>();
   set warnings(ListBuilder<String>? warnings) => _$this._warnings = warnings;
 
-  String? _ownerUserId;
-  String? get ownerUserId => _$this._ownerUserId;
-  set ownerUserId(String? ownerUserId) => _$this._ownerUserId = ownerUserId;
-
   BriefingBuilder() {
     Briefing._defaults(this);
   }
@@ -379,6 +379,7 @@ class BriefingBuilder implements Builder<Briefing, BriefingBuilder> {
   BriefingBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _ownerUserId = $v.ownerUserId;
       _name = $v.name;
       _enabled = $v.enabled;
       _schedule = $v.schedule;
@@ -403,7 +404,6 @@ class BriefingBuilder implements Builder<Briefing, BriefingBuilder> {
       _lastRunAt = $v.lastRunAt;
       _lastRunStatus = $v.lastRunStatus;
       _warnings = $v.warnings?.toBuilder();
-      _ownerUserId = $v.ownerUserId;
       _$v = null;
     }
     return this;
@@ -428,6 +428,7 @@ class BriefingBuilder implements Builder<Briefing, BriefingBuilder> {
       _$result =
           _$v ??
           _$Briefing._(
+            ownerUserId: ownerUserId,
             name: BuiltValueNullFieldError.checkNotNull(
               name,
               r'Briefing',
@@ -464,7 +465,6 @@ class BriefingBuilder implements Builder<Briefing, BriefingBuilder> {
             lastRunAt: lastRunAt,
             lastRunStatus: lastRunStatus,
             warnings: _warnings?.build(),
-            ownerUserId: ownerUserId,
           );
     } catch (_) {
       late String _$failedField;

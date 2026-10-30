@@ -1,5 +1,5 @@
 name: foresignal_api
-version: 2.1.0
+version: 2.1.1
 description: ForeSignal API client generated from openapi/OpenAPI.json
 homepage: https://gitlab.com/adam.allard/foresignal-admin
 

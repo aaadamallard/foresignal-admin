@@ -73,6 +73,8 @@ class _$BriefingInputModeEnumSerializer
 
 class _$BriefingInput extends BriefingInput {
   @override
+  final String? ownerUserId;
+  @override
   final String name;
   @override
   final bool? enabled;
@@ -111,6 +113,7 @@ class _$BriefingInput extends BriefingInput {
       (BriefingInputBuilder()..update(updates))._build();
 
   _$BriefingInput._({
+    this.ownerUserId,
     required this.name,
     this.enabled,
     required this.schedule,
@@ -140,6 +143,7 @@ class _$BriefingInput extends BriefingInput {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is BriefingInput &&
+        ownerUserId == other.ownerUserId &&
         name == other.name &&
         enabled == other.enabled &&
         schedule == other.schedule &&
@@ -162,6 +166,7 @@ class _$BriefingInput extends BriefingInput {
   @override
   int get hashCode {
     var _$hash = 0;
+    _$hash = $jc(_$hash, ownerUserId.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
     _$hash = $jc(_$hash, enabled.hashCode);
     _$hash = $jc(_$hash, schedule.hashCode);
@@ -186,6 +191,7 @@ class _$BriefingInput extends BriefingInput {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'BriefingInput')
+          ..add('ownerUserId', ownerUserId)
           ..add('name', name)
           ..add('enabled', enabled)
           ..add('schedule', schedule)
@@ -210,6 +216,10 @@ class _$BriefingInput extends BriefingInput {
 class BriefingInputBuilder
     implements Builder<BriefingInput, BriefingInputBuilder> {
   _$BriefingInput? _$v;
+
+  String? _ownerUserId;
+  String? get ownerUserId => _$this._ownerUserId;
+  set ownerUserId(String? ownerUserId) => _$this._ownerUserId = ownerUserId;
 
   String? _name;
   String? get name => _$this._name;
@@ -298,6 +308,7 @@ class BriefingInputBuilder
   BriefingInputBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _ownerUserId = $v.ownerUserId;
       _name = $v.name;
       _enabled = $v.enabled;
       _schedule = $v.schedule;
@@ -339,6 +350,7 @@ class BriefingInputBuilder
       _$result =
           _$v ??
           _$BriefingInput._(
+            ownerUserId: ownerUserId,
             name: BuiltValueNullFieldError.checkNotNull(
               name,
               r'BriefingInput',
