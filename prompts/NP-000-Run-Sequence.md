@@ -29,6 +29,7 @@ marker, then hand this session `NP-000`; it runs `NP-001` first.
 | NP-002 | Translation configuration | Operator sets target language(s), fields, engine, budget; per-source override |
 | NP-003 | Edition composer | Define/customize an edition — feed/sources, sections, schedule, language, voice, preview |
 | NP-004 | Edition outputs & publishing | Targets (email/push/website/alerts), hosted+shareable URL, breaking-news rules, provenance toggles |
+| NP-005 | Edition owner assignment | Re-vendor 2.1.1; operator assigns an edition to a user (`ownerUserId`, `users.manage`) |
 
 ## Standing rules (same as the R2 admin campaign)
 
