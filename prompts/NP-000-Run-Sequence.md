@@ -4,8 +4,10 @@
 > of the Automated Newspaper feature (`NP-001`…`NP-004`) at API **2.1.0** — the operator surface for
 > composing and publishing editions. Separate from the finished R2 (RBAC) campaign.
 
-Run as usual: **one** Claude Code session at the repo root, prompts in order, pausing at a review gate
-after each; the owner never runs a command.
+Run as usual: **one** Claude Code session at the repo root, **runs all prompts in order straight
+through to the end without pausing**. Do not stop at per-prompt gates; any question or decision goes
+into that prompt's completion report and the run continues. Only stop on a hard failure the run
+cannot get past (e.g. compile cannot be made to pass).
 
 ## Prerequisite (hard dependency)
 
@@ -37,5 +39,6 @@ marker, then hand this session `NP-000`; it runs `NP-001` first.
 - **Gate every screen** on the signed-in permissions (the R2-002 pattern).
 - **Compile-only gate, every prompt:** `flutter analyze` clean and `flutter build linux` succeeds.
   Tests are written, not run.
-- **Review gate after each prompt;** commit `NP-00N: <Title>`, write
-  `completion-reports/NP-00N-CR-<Name>.md` (implementation hash), pause. Stage only each prompt's files.
+- **No pausing;** after each prompt commit `NP-00N: <Title>`, write
+  `completion-reports/NP-00N-CR-<Name>.md` (implementation hash + any questions), and continue
+  straight to the next prompt. Stage only each prompt's files.
