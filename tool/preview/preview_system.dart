@@ -236,6 +236,20 @@ class PreviewSystem {
       'method': 'GET',
       'canary': <String, Object?>{'enabled': true, 'interval': '1h'},
     },
+    '/v1/settings/translation': <String, Object?>{
+      'enabled': true,
+      'targetLanguages': <String>['en', 'es'],
+      'fields': <String>['title', 'excerpt'],
+      'engine': 'llm',
+      'minSourceLanguageConfidence': 0.8,
+      'budget': <String, Object?>{'window': 'day', 'capUsd': 5},
+      'spend': <String, Object?>{
+        'window': 'day',
+        'start': '2026-10-30T00:00:00Z',
+        'resetsAt': '2026-10-31T00:00:00Z',
+        'spentUsd': 0.42,
+      },
+    },
   };
 
   /// The retention settings carried in the bundle.
@@ -492,6 +506,7 @@ const List<String> _settingsPaths = <String>[
   '/v1/settings/infra-rules',
   '/v1/settings/weather',
   '/v1/settings/watchdog',
+  '/v1/settings/translation',
 ];
 
 /// Problems with a settings [body] for [path], as `errors` entries.

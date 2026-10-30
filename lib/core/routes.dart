@@ -289,6 +289,9 @@ const String systemNetworkPath = '$systemPath/network';
 /// The SMTP server for outbound email.
 const String systemSmtpPath = '$systemPath/smtp';
 
+/// News translation settings.
+const String systemTranslationPath = '$systemPath/translation';
+
 /// The section root a [path] belongs to: `/sources/x/test` → `/sources`.
 String sectionRootOf(String path) {
   final segments = Uri.parse(path).pathSegments;
@@ -318,6 +321,7 @@ const Set<String> sectionTabPaths = <String>{
   systemBackupPath,
   systemNetworkPath,
   systemSmtpPath,
+  systemTranslationPath,
   storageRetentionPath,
   storageArchivePath,
   storageBackupPath,

@@ -15,6 +15,7 @@ import 'settings_tabs.dart';
 import 'signing.dart';
 import 'smtp_settings.dart';
 import 'tokens.dart';
+import 'translation_settings.dart';
 
 /// The tabs of the System section, each with its own path.
 enum SystemTab {
@@ -41,6 +42,9 @@ enum SystemTab {
 
   /// The SMTP server for outbound email (`system.settings`).
   smtp('Email', systemSmtpPath, needs: Permissions.systemSettings),
+
+  /// News translation settings (`system.settings`).
+  translation('Translation', systemTranslationPath, needs: Permissions.systemSettings),
 
   /// Egress routing and the first-party aggregators (`network.manage`).
   network('Network / Sourcing', systemNetworkPath, needs: Permissions.networkManage),
@@ -117,6 +121,7 @@ class SystemScreen extends ConsumerWidget {
             SystemTab.plugins => const PluginsPanel(),
             SystemTab.operations => const OperationsPanel(),
             SystemTab.smtp => const SmtpSettingsPanel(),
+            SystemTab.translation => const TranslationSettingsPanel(),
             SystemTab.network => const NetworkPanel(),
             SystemTab.backup => const BackupPanel(),
           },
