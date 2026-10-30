@@ -1,11 +1,11 @@
-# R2-014 — Edition composer
+# NP-003 — Edition composer
 
 **Goal.** The heart of the admin newspaper feature: **define and customize an edition** — pick its
 news feed (sources/outlets and the per-user or shared scope), compose its sections, set the schedule,
 the output language and the voice, and **preview** it before it ships. This is "define and customize
 the news feed, select sources" from the control plane.
 
-**Depends on.** R2-012 (2.1.0 vendor), R2-013 (translation), R2-002 (gating). Backend `R2-030`
+**Depends on.** NP-001 (2.1.0 vendor), NP-002 (translation), R2-002 (gating). Backend `NP-003`
 (editions) + the existing briefing endpoints provide the operations.
 
 **Read first.** The vendored briefing/edition schemas (`BriefingInput`, `BriefingScope`,
@@ -25,7 +25,7 @@ and the source/collection list to pick the feed.
   operator sees the result before enabling the schedule — "test before trust", not "admire the config".
 - **Run now**: `runBriefing` produces a run on demand for inspection.
 - Ownership: an edition can be scoped/owned per the vendored owner field (shared vs a specific user),
-  gated appropriately; a user-owned edition follows that user's data (backend R2-030). Assigning an
+  gated appropriately; a user-owned edition follows that user's data (backend NP-003). Assigning an
   edition to a user is the operator's (`users.manage`); editing one's own is `self`.
 
 **Done when.** `flutter analyze` clean and `flutter build linux` succeeds; an operator can compose an
@@ -33,5 +33,5 @@ edition (feed/scope, sections, schedule, language, voice), preview and run it, a
 tests (do not run): create→preview→save round-trips; the scope reflects the chosen sources; the
 schedule and output language persist.
 
-**Commit.** `R2-014: Edition-Composer` + `completion-reports/R2-014-CR-*.md`. **Stage only this
+**Commit.** `NP-003: Edition-Composer` + `completion-reports/NP-003-CR-*.md`. **Stage only this
 prompt's files.**

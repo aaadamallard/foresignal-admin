@@ -1,12 +1,12 @@
-# R2-015 — Edition outputs & publishing
+# NP-004 — Edition outputs & publishing
 
 **Goal.** Configure **how an edition is delivered and published**: the output targets (email, push,
 alerts), the hosted + shareable website, breaking-news triggers, and the provenance/corroboration
 badges. This is "define the various ways we want the output formatted… email, push, a website the
 user sees, alerts" from the control plane.
 
-**Depends on.** R2-014 (edition composer), R2-012 (2.1.0 vendor), R2-002 (gating). Backend `R2-031`
-(targets), `R2-032` (hosted/shareable site), `R2-033` (breaking-news), `R2-034` (provenance) provide
+**Depends on.** NP-003 (edition composer), NP-001 (2.1.0 vendor), R2-002 (gating). Backend `NP-004`
+(targets), `NP-005` (hosted/shareable site), `NP-006` (breaking-news), `NP-007` (provenance) provide
 the operations and fields.
 
 **Read first.** The vendored `DeliveryTarget`, `BreakingNewsConfig`, `EditionSite` schemas and the
@@ -27,7 +27,7 @@ edition's `includeProvenance`/`includeCorroboration` fields; `lib/features/notif
 - **Breaking news.** Edit `BreakingNewsConfig` (enable, which trigger rules, min severity, cooldown)
   so a matching alert fires an off-schedule edition.
 - **Badges.** Toggle `includeProvenance` / `includeCorroboration`, so each item shows why it is in
-  the paper and how corroborated it is; reflect the toggle in the preview (R2-014).
+  the paper and how corroborated it is; reflect the toggle in the preview (NP-003).
 - Test before trust: after configuring a target, a test send / re-read confirms it, and the site URL
   is fetched to confirm it renders.
 
@@ -37,5 +37,5 @@ the provenance/corroboration badges — a complete automated newspaper configure
 tests (do not run): a target persists and maps to a channel; the share URL issues and revokes;
 breaking-news config round-trips; the badge toggles persist.
 
-**Commit.** `R2-015: Edition-Outputs-And-Publishing` + `completion-reports/R2-015-CR-*.md`. **Stage
+**Commit.** `NP-004: Edition-Outputs-And-Publishing` + `completion-reports/NP-004-CR-*.md`. **Stage
 only this prompt's files.**

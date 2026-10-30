@@ -1,13 +1,13 @@
-# R2-012 — Vendor OpenAPI 2.1.0
+# NP-001 — Vendor OpenAPI 2.1.0
 
 **Goal.** Bring the admin app onto the backend's **2.1.0** contract — the automated-newspaper surface
 (translation settings, per-user editions, news subscriptions, output targets, hosted/shareable site,
 breaking-news, provenance) — by re-vendoring the spec and regenerating the Dart client, compiling
 cleanly before the newspaper screens are built on it.
 
-**Depends on.** The backend newspaper set (foresignal `R2-028`…`R2-034`) being merged so
-`../foresignal/docs/OpenAPI.json` is at `info.version` 2.1.0 with the ops **active** (R2-034 flips
-them). Intra-admin: this is the foundation `R2-013`…`R2-015` compile against.
+**Depends on.** The backend newspaper set (foresignal `NP-001`…`NP-007`) being merged so
+`../foresignal/docs/OpenAPI.json` is at `info.version` 2.1.0 with the ops **active** (NP-007 flips
+them). Intra-admin: this is the foundation `NP-002`…`NP-004` compile against.
 
 **Read first.** `openapi/VERSION` and `openapi/OpenAPI.json` (the vendored copy), the generation
 script that writes `lib/api/generated/`, and how the last vendor bump (the 2.0.0 one) updated the
@@ -31,5 +31,5 @@ clean and `flutter build linux` succeeds, and the version pin reads 2.1.0. Write
 them): the vendored `info.version` is 2.1.0 and the newspaper operations are present in the generated
 client.
 
-**Commit.** `R2-012: Vendor OpenAPI 2.1.0` + `completion-reports/R2-012-CR-*.md` with the
+**Commit.** `NP-001: Vendor OpenAPI 2.1.0` + `completion-reports/NP-001-CR-*.md` with the
 implementation hash. **Stage only this prompt's files.**

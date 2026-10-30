@@ -1,11 +1,11 @@
-# R2-013 — Translation configuration
+# NP-002 — Translation configuration
 
 **Goal.** Let the operator define the system's **news translation** needs: which target language(s)
 foreign news is translated into, which fields (title / excerpt / body), the engine and the budget
 cap — and, where the sourcing model allows, a per-source translation override. This is the
 "determine translation needs" part of building the automated newspaper.
 
-**Depends on.** R2-012 (2.1.0 vendor), R2-002 (gating). Backend `R2-029` provides the endpoints;
+**Depends on.** NP-001 (2.1.0 vendor), R2-002 (gating). Backend `NP-002` provides the endpoints;
 this is the admin screen over them.
 
 **Read first.** `lib/features/system/` (settings screens) and `lib/features/network/` /
@@ -30,5 +30,5 @@ re-read translation target(s)/fields/engine/budget; a per-source override (if pr
 is editable. Write tests (do not run): settings round-trip and re-read; disabling translation is
 reflected.
 
-**Commit.** `R2-013: Translation-Configuration` + `completion-reports/R2-013-CR-*.md`. **Stage only
+**Commit.** `NP-002: Translation-Configuration` + `completion-reports/NP-002-CR-*.md`. **Stage only
 this prompt's files.**
